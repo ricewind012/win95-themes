@@ -1,0 +1,38 @@
+[class*="steamdesktop_"] {
+	/{attr(Wrapper)} {
+		@extend .ModalDialogBody;
+		background-color: transparent;
+		padding: 0 $i;
+		box(calc(100% - 2px));
+	}
+
+	/{attr(FocusBar)} {
+		display: none $i;
+	}
+	/{attr(TitleBar)} {
+		flex-direction: column-reverse;
+		height: unset;
+	}
+	/{attr(WindowControls)},
+	/{attr(RootMenuBar)} {
+		flex: initial $i;
+		cursor: default $i;
+	}
+
+	/{attr(URLBarReplacement)} {
+		display: none;
+	}
+}
+
+[class*="titlebarcontrols_"] {
+	/{attr(GamepadUIToggle)} > svg {
+		position: unset $i;
+	}
+}
+
+[class*="bottombar_"] {
+	/{attr(BottomBar)} {
+		flex: unset;
+		padding: 8px;
+	}
+}

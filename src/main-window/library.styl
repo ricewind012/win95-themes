@@ -1,0 +1,14 @@
+[class*="gamelistdropdown_"] {
+	/{attr(SearchBar)} {
+		align-items: center;
+	}
+	/{attr(MenuHeader)} {
+		@extend select;
+		font: var(--font) $i;
+		text-transform: unset $i;
+	}
+	/{attr(ScrollToTop)},
+	/{attr(Arrow)} {
+		display: none;
+	}
+}
