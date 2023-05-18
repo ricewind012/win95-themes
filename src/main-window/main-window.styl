@@ -2,7 +2,6 @@
 	/{attr(Wrapper)} {
 		@extend .ModalDialogBody;
 		background-color: transparent;
-		padding: 0 $i;
 		box(calc(100% - 2px));
 	}
 
@@ -12,11 +11,16 @@
 	/{attr(TitleBar)} {
 		flex-direction: column-reverse;
 		height: unset;
+		-webkit-app-region: no-drag;
 	}
 	/{attr(WindowControls)},
 	/{attr(RootMenuBar)} {
 		flex: initial $i;
 		cursor: default $i;
+	}
+
+	/{attr(SuperNavBar)} {
+		-webkit-app-region: no-drag;
 	}
 
 	/{attr(URLBarReplacement)} {

@@ -1,6 +1,5 @@
 .title-area {
 	background-color: var(--color-gray-text);
-	height: 14px;
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
@@ -12,18 +11,43 @@
 	}
 
 	#SteamDesktop & {
+		--window-img: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQAQMAAAAlPW0iAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAGUExURQAAAAAAAKVnuc8AAAACdFJOU/8A5bcwSgAAAAlwSFlzAAAOwwAADsMBx2+oZAAAADdJREFUCNdj+CHP8ICd4cBvhoZOhsa1DIwlDIwqDMxzGM5/YPh8gKGWgWEvI8MkRoY7zCBlP+QBgSAPR9M4h8IAAAAASUVORK5CYII=');
+
+		// Remove dragging to let the other buttons be clickable
+		// #SteamDesktop .title-area::after will take that role
+		-webkit-app-region: no-drag;
 	}
 	.ModalDialogBody & {
-		--dialog-img: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAAM1BMVEUAAABmZgCZmZn/+/Dn59aZmQD//5kzMwAcHBzAwMDMzGZNTU0AAADq6upmZmYzAACtqZA/egufAAAAAXRSTlMAQObYZgAAAHJJREFUGNNNzVESgyAMRVEu8QVLBdz/aosU1DvDzyGThPgURtG22XfBZ9/3uJU3mMU18QC8oC/EjBvOlE5cBGleoegCGQvEBWhCcneycDcGkPAM2cUETG6eZceAgolmudElhForJOBooPCP1F//XLBw9APHJgNeldevuwAAAABJRU5ErkJggg==');
+		--window-img: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAAM1BMVEUAAABmZgCZmZn/+/Dn59aZmQD//5kzMwAcHBzAwMDMzGZNTU0AAADq6upmZmYzAACtqZA/egufAAAAAXRSTlMAQObYZgAAAHJJREFUGNNNzVESgyAMRVEu8QVLBdz/aosU1DvDzyGThPgURtG22XfBZ9/3uJU3mMU18QC8oC/EjBvOlE5cBGleoegCGQvEBWhCcneycDcGkPAM2cUETG6eZceAgolmudElhForJOBooPCP1F//XLBw9APHJgNeldevuwAAAABJRU5ErkJggg==');
 	}
 
 	&::before {
 		content: '';
-		position: absolute;
+		position: fixed;
 		left: 6px;
 		top: 6px;
 		box(16px);
-		background-image: var(--dialog-img);
+		background-image: var(--window-img);
+
+		.WindowFocus #SteamDesktop & {
+			filter: invert();
+		}
+	}
+	#SteamDesktop &::after {
+		content: 'Steam';
+		position: fixed;
+		left: 26px;
+		top: 4px;
+		right: 108px;
+		height: 18px;
+		color: var(--color-button-face);
+		display: flex;
+		align-items: center;
+		-webkit-app-region: drag;
+
+		.WindowFocus & {
+			color: var(--color-active-caption-text);
+		}
 	}
 
 	&-icon {
@@ -41,6 +65,10 @@
 			--button-img: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAJCAYAAADgkQYQAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAAiSURBVChTY2RgYPgPxHgBE5QmCAiZ9J8okwajIiLCiYEBAE+8BAuR7uviAAAAAElFTkSuQmCC');
 			background-position: 1px 0 $i;
 		}
+		&.restoreButton {
+			--button-img: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAJCAYAAAAPU20uAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAA1SURBVChTY2RAgP9QGgUwQWmiADYT/oOswGo0EIDlCFoBMwHZsSCAYipWu6E0YV8QcCQDAwDdNwoEoDtCnwAAAABJRU5ErkJggg==');
+			background-position: 1px 0 $i;
+		}
 		&.closeButton {
 			--button-img: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAHAQMAAAAPl54dAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsIAAA7CARUoSoAAAAAGUExURf///wAAAFXC034AAAABdFJOUwBA5thmAAAAFElEQVQI12M4zJDGYMMgAcRpDIcBFDwC4+02LWIAAAAASUVORK5CYII=')
 			background-position-y: 1px $i;
@@ -53,11 +81,48 @@
 	}
 }
 .title-bar-actions {
+	position: fixed $i;
 	top: 7px $i;
-	right: 1px $i;
+	right: 2px $i;
+}
 
-	#SteamDesktop & {
-		top: 3px $i;
-		right: -3px $i;
+[class*="titlebarcontrols_"] {
+	/{attr(TitleBarControls)} {
+		position: absolute;
+		top: 2px;
+		right: 55px;
+		z-index: 1;
+
+		& > :nth-child(3) > div {
+			position: fixed;
+			top: 20px;
+			right: 2px;
+			height: 33px;
+			margin: 0 $i;
+			display: flex;
+			align-items: center;
+		}
+		& > :nth-child(4) {
+			margin-right: 2px;
+			order: -1;
+		}
+	}
+	/{attr(Button)} {
+		@extend .title-area-icon;
+		background-position-x: 2px $i;
+		min-width: unset;
+		min-height: unset;
+		cursor: default;
+	}
+
+	/{attr(AnnouncementsButton)} {
+		--button-img: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAICAYAAADED76LAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAAtSURBVChTY2RAgP9QGgPAJJAVwMWYoAycAGQFSDWMxgqwWQED/6lnAg7AwAAATOYP+fpPtrkAAAAASUVORK5CYII=');
+	}
+	/{attr(NotificationButtonContainer)} {
+		--button-img: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAICAYAAADED76LAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAAwSURBVChTY0AD/6EYDhihNAigSAABWI4JzMQDKFcAcwO6/TDACFKASxIrQPMmAwMAgi8HBW4J8QQAAAAASUVORK5CYII=');
+		margin: 0 $i;
+	}
+	/{attr(GamepadUIToggle)} {
+		--button-img: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAICAYAAADED76LAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAAoSURBVChTY2RgYPgPxHgBPgX/maAMnIByBQQdCVIAArgUMRIwgYEBAGefBgb8inyEAAAAAElFTkSuQmCC');
 	}
 }
