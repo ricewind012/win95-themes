@@ -102,6 +102,7 @@ textarea,
 ::-webkit-scrollbar-button,
 ::-webkit-scrollbar-thumb,
 .title-area-icon,
+[class*="titlebarcontrols_Button_"],
 .DialogDropDown,
 .DialogCheckbox,
 [class*="gamepaddialog_Toggle_"],
@@ -121,6 +122,7 @@ textarea:disabled,
 ::-webkit-scrollbar-button:disabled,
 ::-webkit-scrollbar-thumb:disabled,
 .title-area-icon:disabled,
+[class*="titlebarcontrols_Button_"]:disabled,
 .DialogDropDown:disabled,
 .DialogCheckbox:disabled,
 [class*="gamepaddialog_Toggle_"]:disabled,
@@ -215,7 +217,8 @@ input[type="submit"],
 [class*="gamepaddialog_Toggle_"][type="submit"],
 ::-webkit-scrollbar-button,
 ::-webkit-scrollbar-thumb,
-.title-area-icon {
+.title-area-icon,
+[class*="titlebarcontrols_Button_"] {
   background: var(--button-img, none) var(--color-button-face) no-repeat center !important;
   color: var(--color-button-text) !important;
   border-color: var(--button-3d-border-color-exact) !important;
@@ -234,7 +237,8 @@ input[type="submit"]:active,
 [class*="gamepaddialog_Toggle_"][type="submit"]:active,
 ::-webkit-scrollbar-button:active,
 ::-webkit-scrollbar-thumb:active,
-.title-area-icon:active {
+.title-area-icon:active,
+[class*="titlebarcontrols_Button_"]:active {
   border-color: var(--color-button-shadow) !important;
   box-shadow: 0 0 0 1px var(--color-button-shadow-dark) !important;
 }
@@ -512,7 +516,6 @@ label:has(:focus)::before {
 }
 .title-area {
   background-color: var(--color-gray-text);
-  height: 14px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -522,48 +525,121 @@ label:has(:focus)::before {
 .WindowFocus .title-area {
   background-color: var(--color-active-caption);
 }
+#SteamDesktop .title-area {
+  --window-img: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQAQMAAAAlPW0iAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAGUExURQAAAAAAAKVnuc8AAAACdFJOU/8A5bcwSgAAAAlwSFlzAAAOwwAADsMBx2+oZAAAADdJREFUCNdj+CHP8ICd4cBvhoZOhsa1DIwlDIwqDMxzGM5/YPh8gKGWgWEvI8MkRoY7zCBlP+QBgSAPR9M4h8IAAAAASUVORK5CYII=");
+  -webkit-app-region: no-drag;
+}
 .ModalDialogBody .title-area {
-  --dialog-img: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAAM1BMVEUAAABmZgCZmZn/+/Dn59aZmQD//5kzMwAcHBzAwMDMzGZNTU0AAADq6upmZmYzAACtqZA/egufAAAAAXRSTlMAQObYZgAAAHJJREFUGNNNzVESgyAMRVEu8QVLBdz/aosU1DvDzyGThPgURtG22XfBZ9/3uJU3mMU18QC8oC/EjBvOlE5cBGleoegCGQvEBWhCcneycDcGkPAM2cUETG6eZceAgolmudElhForJOBooPCP1F//XLBw9APHJgNeldevuwAAAABJRU5ErkJggg==");
+  --window-img: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAAM1BMVEUAAABmZgCZmZn/+/Dn59aZmQD//5kzMwAcHBzAwMDMzGZNTU0AAADq6upmZmYzAACtqZA/egufAAAAAXRSTlMAQObYZgAAAHJJREFUGNNNzVESgyAMRVEu8QVLBdz/aosU1DvDzyGThPgURtG22XfBZ9/3uJU3mMU18QC8oC/EjBvOlE5cBGleoegCGQvEBWhCcneycDcGkPAM2cUETG6eZceAgolmudElhForJOBooPCP1F//XLBw9APHJgNeldevuwAAAABJRU5ErkJggg==");
 }
 .title-area::before {
   content: '';
-  position: absolute;
+  position: fixed;
   left: 6px;
   top: 6px;
   width: 16px !important;
   height: 16px !important;
-  background-image: var(--dialog-img);
+  background-image: var(--window-img);
 }
-.title-area-icon {
+.WindowFocus #SteamDesktop .title-area::before {
+  filter: invert();
+}
+#SteamDesktop .title-area::after {
+  content: 'Steam';
+  position: fixed;
+  left: 26px;
+  top: 4px;
+  right: 108px;
+  height: 18px;
+  color: var(--color-button-face);
+  display: flex;
+  align-items: center;
+  -webkit-app-region: drag;
+}
+.WindowFocus #SteamDesktop .title-area::after {
+  color: var(--color-active-caption-text);
+}
+.title-area-icon,
+[class*="titlebarcontrols_Button_"] {
   padding: 0 !important;
   margin: 0 !important;
   margin-left: 2px !important;
   width: 14px !important;
   height: 12px !important;
 }
-.title-area-icon.minimizeButton {
+.title-area-icon.minimizeButton,
+[class*="titlebarcontrols_Button_"].minimizeButton {
   --button-img: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAACCAIAAAD0PzoJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAANSURBVBhXYyACMDAAAAAmAAEq5K9KAAAAAElFTkSuQmCC");
   background-position: 2px 7px !important;
 }
-.title-area-icon.maximizeButton {
+.title-area-icon.maximizeButton,
+[class*="titlebarcontrols_Button_"].maximizeButton {
   --button-img: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAJCAYAAADgkQYQAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAAiSURBVChTY2RgYPgPxHgBE5QmCAiZ9J8okwajIiLCiYEBAE+8BAuR7uviAAAAAElFTkSuQmCC");
   background-position: 1px 0 !important;
 }
-.title-area-icon.closeButton {
+.title-area-icon.restoreButton,
+[class*="titlebarcontrols_Button_"].restoreButton {
+  --button-img: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAJCAYAAAAPU20uAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAA1SURBVChTY2RAgP9QGgUwQWmiADYT/oOswGo0EIDlCFoBMwHZsSCAYipWu6E0YV8QcCQDAwDdNwoEoDtCnwAAAABJRU5ErkJggg==");
+  background-position: 1px 0 !important;
+}
+.title-area-icon.closeButton,
+[class*="titlebarcontrols_Button_"].closeButton {
   --button-img: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAHAQMAAAAPl54dAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsIAAA7CARUoSoAAAAAGUExURf///wAAAFXC034AAAABdFJOUwBA5thmAAAAFElEQVQI12M4zJDGYMMgAcRpDIcBFDwC4+02LWIAAAAASUVORK5CYII=");
   background-position-y: 1px !important;
   margin-left: 4px !important;
 }
-.title-area-icon > svg {
+.title-area-icon > svg,
+[class*="titlebarcontrols_Button_"] > svg {
   display: none;
 }
 .title-bar-actions {
+  position: fixed !important;
   top: 7px !important;
-  right: 1px !important;
+  right: 2px !important;
 }
-#SteamDesktop .title-bar-actions {
-  top: 3px !important;
-  right: -3px !important;
+[class*="titlebarcontrols_TitleBarControls_"] {
+  position: absolute;
+  top: 2px;
+  right: 55px;
+  z-index: 1;
+}
+[class*="titlebarcontrols_TitleBarControls_"] > :nth-child(3) > div {
+  position: fixed;
+  top: 20px;
+  right: 2px;
+  height: 33px;
+  margin: 0 !important;
+  display: flex;
+  align-items: center;
+}
+[class*="titlebarcontrols_TitleBarControls_"] > :nth-child(4) {
+  margin-right: 2px;
+  order: -1;
+}
+[class*="titlebarcontrols_Button_"] {
+  background-position-x: 2px !important;
+  min-width: unset;
+  min-height: unset;
+  cursor: default;
+}
+[class*="titlebarcontrols_AnnouncementsButton_"] {
+  --button-img: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAICAYAAADED76LAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAAtSURBVChTY2RAgP9QGgPAJJAVwMWYoAycAGQFSDWMxgqwWQED/6lnAg7AwAAATOYP+fpPtrkAAAAASUVORK5CYII=");
+}
+[class*="titlebarcontrols_NotificationButtonContainer_"] {
+  --button-img: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAICAYAAADED76LAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAAwSURBVChTY0AD/6EYDhihNAigSAABWI4JzMQDKFcAcwO6/TDACFKASxIrQPMmAwMAgi8HBW4J8QQAAAAASUVORK5CYII=");
+  margin: 0 !important;
+}
+[class*="titlebarcontrols_GamepadUIToggle_"] {
+  --button-img: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAICAYAAADED76LAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAAoSURBVChTY2RgYPgPxHgBPgX/maAMnIByBQQdCVIAArgUMRIwgYEBAGefBgb8inyEAAAAAElFTkSuQmCC");
+}
+[class*="tooltip_TextToolTip_"] {
+  background-color: var(--color-info-background);
+  border: 1px solid var(--color-button-shadow-dark);
+  box-shadow: inset 0 0 0 1px #c0c7c8;
+  color: var(--color-button-text);
+  font: var(--font);
+  padding: 8px 16px;
+  margin: 0;
 }
 .ModalDialogBody,
 .DialogMenuPosition ._DialogInputContainer,
@@ -575,8 +651,8 @@ label:has(:focus)::before {
   margin: 1px !important;
 }
 .ModalDialogPopup .ModalDialogBody {
-  max-height: 98% !important;
-  min-height: calc(100% - 8px) !important;
+  max-height: 96% !important;
+  min-height: calc(100% - 24px) !important;
 }
 .ModalPosition {
   background-image: none !important;
@@ -604,6 +680,10 @@ label:has(:focus)::before {
 }
 .DialogDropDown {
   align-items: center;
+}
+.DialogDropDown_CurrentDisplay {
+  padding: 0 !important;
+  padding-left: 1px !important;
 }
 .DialogDropDown_Arrow {
   display: none !important;
@@ -733,7 +813,7 @@ div:not([class]) > [class*="gamepaddialog_Field_"] [class*="FieldLabel_"],
   top: -8px;
   background-color: var(--color-button-face);
   font: var(--font) !important;
-  text-transform: unset;
+  text-transform: unset !important;
   letter-spacing: unset !important;
   color: var(--color-button-text) !important;
   padding: 0 2px;
@@ -906,7 +986,6 @@ div:not([class]) > [class*="gamepaddialog_Field_"] [class*="FieldLabel_"],
 }
 [class*="steamdesktop_Wrapper_"] {
   background-color: transparent;
-  padding: 0 !important;
   width: calc(100% - 2px) !important;
   height: calc(100% - 2px) !important;
 }
@@ -916,11 +995,15 @@ div:not([class]) > [class*="gamepaddialog_Field_"] [class*="FieldLabel_"],
 [class*="steamdesktop_TitleBar_"] {
   flex-direction: column-reverse;
   height: unset;
+  -webkit-app-region: no-drag;
 }
 [class*="steamdesktop_WindowControls_"],
 [class*="steamdesktop_RootMenuBar_"] {
   flex: initial !important;
   cursor: default !important;
+}
+[class*="steamdesktop_SuperNavBar_"] {
+  -webkit-app-region: no-drag;
 }
 [class*="steamdesktop_URLBarReplacement_"] {
   display: none;
