@@ -1,4 +1,88 @@
+[class*="library_"] {
+	/{attr(LibraryWindowDivider)} {
+		background-color: transparent $i;
+		width: 8px;
+	}
+	/{attr(AppDetailsTransitionGroup)} {
+		border: 1px solid $i;
+		border-color: var(--box-3d-border-color) $i;
+		box-shadow: var(--box-3d-box-shadow) $i;
+		margin: 1px $i;
+		margin-top: 3px $i;
+		width: calc(100% - 4px);
+	}
+}
+
+[class*="gamelistbar_"] {
+	/{attr(Container)} {
+		background-image: none;
+	}
+
+	/{attr(GameListHomeAndSearch)} {
+		background-color: transparent;
+		padding: 0;
+		margin: 3px 0;
+		box-shadow: none;
+		height: unset;
+
+		& > :first-child {
+			margin-top: -1px;
+			margin-bottom: 1px;
+
+			& > a {
+				margin: 1px $i;
+			}
+		}
+		a {
+			@extend button;
+			cursor: default;
+
+			&:hover {
+				text-decoration: none $i;
+			}
+			&[aria-current] {
+				@extend button:active;
+			}
+		}
+	}
+}
+
+[class*="gamelisthome_"] {
+	/{attr(Label)} {
+		color: var(--color-button-text) $i;
+		font: var(--font);
+		text-transform: unset;
+		margin: auto;
+	}
+
+	/{attr(CollectionButton)} {
+		letter-spacing: 0 $i;
+
+		&::before {
+			content: 'Collections';
+			text-align: center;
+			width: 100%;
+		}
+	}
+	/{attr(CollectionIcon)} {
+		display: none;
+	}
+}
+
 [class*="gamelistdropdown_"] {
+	/{attr(Bar)} {
+		padding: 0;
+		margin: 0 -1px;
+
+		circle {
+			stroke: var(--color-button-text) $i;
+		}
+		svg {
+			fill: var(--color-button-text) $i;
+			box(var(--font-size));
+		}
+	}
+
 	/{attr(SearchBar)} {
 		align-items: center;
 	}
@@ -6,9 +90,192 @@
 		@extend select;
 		font: var(--font) $i;
 		text-transform: unset $i;
+		cursor: default $i;
 	}
 	/{attr(ScrollToTop)},
 	/{attr(Arrow)} {
 		display: none;
+	}
+
+	/{attr(ViewFiltersBar)} {
+		margin: 0 $i;
+		margin-right: 3px $i;
+	}
+	/{attr(CheckboxWithImage)} {
+		@extend button;
+		margin: 0 3px $i;
+		width: 20px $i;
+		cursor: default $i;
+
+		&[class*="Active"] {
+			@extend button:active;
+		}
+	}
+}
+
+[class*="gamelistsearchbar_"] {
+	/{attr(Container)} {
+		padding: 0;
+		margin: 4px -1px;
+	}
+
+	/{attr(FilterTag)} {
+		padding: 2px $i;
+		border-radius: 0 $i;
+		margin: 0 $i;
+	}
+
+	/{attr(SearchInput)} {
+		border-radius: 0 $i;
+		margin-bottom: -1px;
+		min-height: unset $i;
+	}
+	/{attr(SearchFilterInput)} {
+		color: var(--color-button-text);
+		align-items: center;
+	}
+	/{attr(SearchFilterInputClear)} {
+		position: unset $i;
+	}
+	/{attr(SearchByTypePrompt)} {
+		font: var(--font) $i;
+		padding: 0 18px $i;
+	}
+
+	/{attr(AdvancedSearchContainer)} {
+		@extend button;
+		height: fit-content $i;
+		justify-content: center;
+
+		& > .Focusable > div {
+			cursor: default $i;
+
+			&::before {
+				content: 'Search...';
+			}
+		}
+
+		svg {
+			display: none $i;
+		}
+	}
+	/{attr(AdvancedSearchPane)} {
+		@extend .ModalDialogBody;
+		background-color: var(--color-button-face) $i;
+		border-radius: 0 $i;
+
+		&::before {
+			display: none;
+		}
+	}
+}
+
+[class*="gamelist_"] {
+	/{attr(Container)} {
+		background: var(--color-window) $i;
+		padding-right: 2px;
+		border: 1px solid $i;
+		border-color: var(--box-3d-border-color) $i;
+		box-shadow: var(--box-3d-box-shadow) $i;
+		margin-left: 1px;
+		margin-bottom: 1px;
+		width: calc(100% - 8px);
+		box-sizing: content-box; // for the scrollbar
+	}
+}
+
+[class*="gamelistentry_"] {
+	/{attr(Container)} {
+		font: var(--font);
+		box-shadow: none $i;
+
+		&[class*="Running"] {
+			color: green $i;
+		}
+		&[class*="Installed"] {
+			color: var(--color-button-text) $i;
+		}
+		&[class*="Uninstalled"] {
+			color: var(--color-gray-text) $i;
+		}
+		&[class*="Updating"],
+		&[class*="Synchronizing"],
+		&[class*="Cloud"] {
+			color: var(--color-active-caption) $i;
+		}
+		&:hover,
+		&[class*="HoverOverlay_"]
+		&[class*="Selected"] {
+			background-color: var(--color-active-caption) $i;
+			color: var(--color-active-caption-text) $i;
+		}
+
+		circle, path {
+			fill: currentColor $i;
+		}
+	}
+}
+
+[class*="gamelistsectionheader_"] {
+	/{attr(Container)} {
+		background: none $i;
+		color: var(--color-button-text);
+		box-shadow: none $i;
+
+		&, & > div {
+			color: var(--color-button-text) $i;
+			stroke: currentColor $i;
+		}
+	}
+
+	/{attr(SectionName)} {
+		font: var(--font);
+		letter-spacing: 0;
+	}
+	/{attr(SectionCount)} {
+		color: var(--color-gray-text);
+		font: var(--font);
+	}
+}
+
+[class*="appfilterpane_"] {
+	/{attr(Container)} {
+		padding: 8px;
+	}
+
+	/{attr(FilterArea)} {
+		gap: 6px 8px $i;
+	}
+	/{attr(FilterBucket)} {
+		@extend fieldset;
+		border: 1px solid;
+
+		.DialogInput_Wrapper {
+			margin: 0;
+		}
+	}
+	/{attr(FilterBucketLabel)} {
+		@extend .DialogSubHeader;
+	}
+	/{attr(FilterBucketBoxes)} {
+		padding: 0;
+		gap: 4px;
+		display: flex;
+		flex-direction: column;
+	}
+	/{attr(ExtraTall)} {
+		grid-row-end: span 2 $i;
+	}
+
+	/{attr(Default)} {
+		font-style: normal $i;
+	}
+	/{attr(Buttons)} {
+		margin: 0;
+		gap: 4px;
+
+		svg {
+			display: none;
+		}
 	}
 }
