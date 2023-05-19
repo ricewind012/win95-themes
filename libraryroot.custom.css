@@ -77,7 +77,8 @@ table {
 td {
   font: var(--font) !important;
 }
-hr {
+hr,
+[class*="steamdesktop_TitleBar_"]::before {
   border-bottom: 1px solid var(--color-button-highlight) !important;
   box-shadow: 0 -1px 0 0 var(--color-button-shadow) !important;
   margin-top: 4px !important;
@@ -1221,10 +1222,18 @@ div:not([class]) > [class*="gamepaddialog_Field_"] [class*="FieldLabel_"],
   height: unset;
   -webkit-app-region: no-drag;
 }
+[class*="steamdesktop_TitleBar_"]::before {
+  content: '';
+  width: 100%;
+}
 [class*="steamdesktop_WindowControls_"],
 [class*="steamdesktop_RootMenuBar_"] {
   flex: initial !important;
   cursor: default !important;
+}
+[class*="steamdesktop_RootMenuBar_"] {
+  gap: 0;
+  padding: 0 !important;
 }
 [class*="steamdesktop_SuperNavBar_"] {
   -webkit-app-region: no-drag;
@@ -1234,6 +1243,22 @@ div:not([class]) > [class*="gamepaddialog_Field_"] [class*="FieldLabel_"],
 }
 [class*="titlebarcontrols_GamepadUIToggle_"] > svg {
   position: unset !important;
+}
+[class*="rootmenu_RootMenuButton_"] {
+  color: var(--color-button-text) !important;
+  font: var(--font);
+  padding: 3px 6px 2px 6px;
+}
+[class*="rootmenu_RootMenuButton_"]:active,
+[class*="rootmenu_RootMenuButton_"][class*="Open"] {
+  background-color: var(--color-active-caption);
+  color: var(--color-active-caption-text) !important;
+}
+[class*="rootmenu_RootMenuButton_"] svg {
+  display: none;
+}
+[class*="rootmenu_SteamButton_"] {
+  padding: 0;
 }
 [class*="bottombar_BottomBar_"] {
   flex: unset;

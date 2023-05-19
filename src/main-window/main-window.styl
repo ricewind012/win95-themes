@@ -12,11 +12,22 @@
 		flex-direction: column-reverse;
 		height: unset;
 		-webkit-app-region: no-drag;
+
+		&::before {
+			content: '';
+			width: 100%;
+			@extend hr;
+		}
 	}
 	/{attr(WindowControls)},
 	/{attr(RootMenuBar)} {
 		flex: initial $i;
 		cursor: default $i;
+	}
+
+	/{attr(RootMenuBar)} {
+		gap: 0;
+		padding: 0 $i;
 	}
 
 	/{attr(SuperNavBar)} {
@@ -31,6 +42,27 @@
 [class*="titlebarcontrols_"] {
 	/{attr(GamepadUIToggle)} > svg {
 		position: unset $i;
+	}
+}
+
+[class*="rootmenu_"] {
+	/{attr(RootMenuButton)} {
+		color: var(--color-button-text) $i;
+		font: var(--font);
+		padding: 3px 6px 2px 6px;
+
+		&:active,
+		&[class*="Open"] {
+			background-color: var(--color-active-caption);
+			color: var(--color-active-caption-text) $i;
+		}
+
+		svg {
+			display: none;
+		}
+	}
+	/{attr(SteamButton)} {
+		padding: 0;
 	}
 }
 
