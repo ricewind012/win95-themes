@@ -111,7 +111,10 @@ textarea,
 [class*="gamelistbar_GameListHomeAndSearch_"] a,
 [class*="gamelistdropdown_MenuHeader_"],
 [class*="gamelistdropdown_CheckboxWithImage_"],
-[class*="gamelistsearchbar_AdvancedSearchContainer_"] {
+[class*="gamelistsearchbar_AdvancedSearchContainer_"],
+[class*="bottombar_AddGameButton_"],
+[class*="bottombar_DownloadStatusContent_"],
+[class*="bottombar_FriendsButton_"] {
   appearance: none !important;
   filter: none !important;
   box-sizing: border-box !important;
@@ -134,7 +137,10 @@ textarea:disabled,
 [class*="gamelistbar_GameListHomeAndSearch_"] a:disabled,
 [class*="gamelistdropdown_MenuHeader_"]:disabled,
 [class*="gamelistdropdown_CheckboxWithImage_"]:disabled,
-[class*="gamelistsearchbar_AdvancedSearchContainer_"]:disabled {
+[class*="gamelistsearchbar_AdvancedSearchContainer_"]:disabled,
+[class*="bottombar_AddGameButton_"]:disabled,
+[class*="bottombar_DownloadStatusContent_"]:disabled,
+[class*="bottombar_FriendsButton_"]:disabled {
   background-color: var(--color-button-face) !important;
   color: var(--color-gray-text) !important;
 }
@@ -229,7 +235,10 @@ input[type="submit"],
 [class*="titlebarcontrols_Button_"],
 [class*="gamelistbar_GameListHomeAndSearch_"] a,
 [class*="gamelistdropdown_CheckboxWithImage_"],
-[class*="gamelistsearchbar_AdvancedSearchContainer_"] {
+[class*="gamelistsearchbar_AdvancedSearchContainer_"],
+[class*="bottombar_AddGameButton_"],
+[class*="bottombar_DownloadStatusContent_"],
+[class*="bottombar_FriendsButton_"] {
   background: var(--button-img, none) var(--color-button-face) no-repeat center !important;
   color: var(--color-button-text) !important;
   border-color: var(--button-3d-border-color-exact) !important;
@@ -253,6 +262,9 @@ input[type="submit"]:active,
 [class*="gamelistbar_GameListHomeAndSearch_"] a:active,
 [class*="gamelistdropdown_CheckboxWithImage_"]:active,
 [class*="gamelistsearchbar_AdvancedSearchContainer_"]:active,
+[class*="bottombar_AddGameButton_"]:active,
+[class*="bottombar_DownloadStatusContent_"]:active,
+[class*="bottombar_FriendsButton_"]:active,
 [class*="gamelistbar_GameListHomeAndSearch_"] a[aria-current],
 [class*="gamelistdropdown_CheckboxWithImage_"][class*="Active"] {
   border-color: var(--color-button-shadow) !important;
@@ -611,7 +623,7 @@ label:has(:focus)::before {
 .title-bar-actions {
   position: fixed !important;
   top: 7px !important;
-  right: 2px !important;
+  right: 7px !important;
 }
 [class*="titlebarcontrols_TitleBarControls_"] {
   position: absolute;
@@ -724,31 +736,36 @@ label:has(:focus)::before {
   color: var(--color-button-text) !important;
   margin-left: 6px;
 }
+.DialogContent {
+  background: transparent !important;
+  padding: 0 !important;
+  left: -1px !important;
+  right: -1px !important;
+  bottom: 18px !important;
+}
+.DialogContentTransition {
+  background: transparent !important;
+  border-top: 1px solid;
+  border-color: var(--button-3d-border-color);
+  margin-top: -1px;
+  width: unset !important;
+  max-width: unset !important;
+}
 .DialogHeader {
   display: none !important;
 }
 .DialogBody {
   font: var(--font) !important;
-  padding: 0 !important;
-  padding-top: 4px !important;
-  margin: 0 !important;
+  padding: 14px !important;
+  margin: 1px !important;
+  margin-top: 0 !important;
+  border: 1px solid;
+  border-top: none;
+  border-color: var(--button-3d-border-color);
+  box-shadow: var(--window-3d-box-shadow);
   gap: 12px;
   -webkit-mask-image: none !important;
   overflow-y: auto !important;
-}
-.DialogContent {
-  background: transparent !important;
-  padding: 14px !important;
-  margin-top: -1px;
-  border: 1px solid;
-  border-color: var(--button-3d-border-color);
-  box-shadow: var(--window-3d-box-shadow);
-  bottom: 18px !important;
-}
-.DialogContentTransition {
-  background: transparent !important;
-  width: unset !important;
-  max-width: unset !important;
 }
 .DialogControlsSection,
 div:not([class]) > [class*="gamepaddialog_Field_"],
@@ -1010,6 +1027,7 @@ div:not([class]) > [class*="gamepaddialog_Field_"] [class*="FieldLabel_"],
   background-color: transparent;
   padding: 0;
   margin: 3px 0;
+  margin-right: -1px;
   box-shadow: none;
   height: unset;
 }
@@ -1209,6 +1227,9 @@ div:not([class]) > [class*="gamepaddialog_Field_"] [class*="FieldLabel_"],
 [class*="appfilterpane_Buttons_"] svg {
   display: none;
 }
+[class*="appdetails_PlayBar_"] {
+  width: calc(100% - 16px);
+}
 [class*="steamdesktop_Wrapper_"] {
   background-color: transparent;
   width: calc(100% - 2px) !important;
@@ -1216,6 +1237,10 @@ div:not([class]) > [class*="gamepaddialog_Field_"] [class*="FieldLabel_"],
 }
 [class*="steamdesktop_FocusBar_"] {
   display: none !important;
+}
+[class*="steamdesktop_TopBar_"] {
+  background: transparent;
+  box-shadow: none;
 }
 [class*="steamdesktop_TitleBar_"] {
   flex-direction: column-reverse;
@@ -1260,7 +1285,23 @@ div:not([class]) > [class*="gamepaddialog_Field_"] [class*="FieldLabel_"],
 [class*="rootmenu_SteamButton_"] {
   padding: 0;
 }
+[class*="supernav_SuperNavMenu_"] [class*="supernav_MenuButton_"] {
+  color: var(--color-button-text);
+}
 [class*="bottombar_BottomBar_"] {
-  flex: unset;
+  background: transparent;
+  box-shadow: none;
   padding: 8px;
+  flex: unset;
+}
+[class*="bottombar_AddGameButton_"],
+[class*="bottombar_DownloadStatusContent_"],
+[class*="bottombar_FriendsButton_"] {
+  padding: 3px 6px !important;
+  width: unset !important;
+}
+[class*="bottombar_Icon_"],
+[class*="bottombar_Text_"],
+[class*="bottombar_Queue_"] {
+  color: var(--color-button-text) !important;
 }

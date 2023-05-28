@@ -7,8 +7,8 @@
 		margin: 1px $i;
 	}
 	&DialogPopup &DialogBody {
-		max-height: 98% $i; // lol
-		min-height: calc(100% - 8px) $i;
+		max-height: 96% $i;
+		min-height: calc(100% - 24px) $i;
 	}
 	&Position {
 		background-image: none $i;
@@ -44,6 +44,10 @@
 		@extend select;
 		align-items: center;
 
+		&_CurrentDisplay {
+			padding: 0 $i;
+			padding-left: 1px $i;
+		}
 		&_Arrow {
 			display: none $i;
 		}
@@ -79,32 +83,37 @@
 		margin-left: 6px;
 	}
 
+	&Content {
+		background: transparent $i;
+		padding: 0 $i;
+		left: -1px $i;
+		right: -1px $i;
+		bottom: 18px $i;
+
+		&Transition {
+			background: transparent $i;
+			border-top: 1px solid;
+			border-color: var(--button-3d-border-color);
+			margin-top: -1px;
+			width: unset $i;
+			max-width: unset $i;
+		}
+	}
 	&Header {
 		display: none $i;
 	}
 	&Body {
 		font: var(--font) $i;
-		padding: 0 $i;
-		padding-top: 4px $i;
-		margin: 0 $i;
+		padding: 14px $i;
+		margin: 1px $i;
+		margin-top: 0 $i;
+		border: 1px solid;
+		border-top: none;
+		border-color: var(--button-3d-border-color);
+		box-shadow: var(--window-3d-box-shadow);
 		gap: 12px;
 		-webkit-mask-image: none $i; // client settings
 		overflow-y: auto $i;
-	}
-	&Content {
-		background: transparent $i;
-		padding: 14px $i;
-		margin-top: -1px;
-		border: 1px solid;
-		border-color: var(--button-3d-border-color);
-		box-shadow: var(--window-3d-box-shadow);
-		bottom: 18px $i;
-
-		&Transition {
-			background: transparent $i;
-			width: unset $i;
-			max-width: unset $i;
-		}
 	}
 	&ControlsSection {
 		border: 1px solid $i;
@@ -210,7 +219,7 @@
 				top: -8px;
 				background-color: var(--color-button-face);
 				font: var(--font) $i;
-				text-transform: unset;
+				text-transform: unset $i;
 				letter-spacing: unset $i;
 				color: var(--color-button-text) $i;
 				padding: 0 2px;

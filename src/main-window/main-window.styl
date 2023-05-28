@@ -8,6 +8,10 @@
 	/{attr(FocusBar)} {
 		display: none $i;
 	}
+	/{attr(TopBar)} {
+		background: transparent;
+		box-shadow: none;
+	}
 	/{attr(TitleBar)} {
 		flex-direction: column-reverse;
 		height: unset;
@@ -66,9 +70,30 @@
 	}
 }
 
+[class*="supernav_"] {
+	/{attr(SuperNavMenu)} {attr(MenuButton)} {
+		color: var(--color-button-text);
+	}
+}
+
 [class*="bottombar_"] {
 	/{attr(BottomBar)} {
-		flex: unset;
+		background: transparent;
+		box-shadow: none;
 		padding: 8px;
+		flex: unset;
+	}
+
+	/{attr(AddGameButton)},
+	/{attr(DownloadStatusContent)},
+	/{attr(FriendsButton)} {
+		@extend button;
+		padding: 3px 6px $i;
+		width: unset $i;
+	}
+	/{attr(Icon)},
+	/{attr(Text)},
+	/{attr(Queue)} {
+		color: var(--color-button-text) $i;
 	}
 }
