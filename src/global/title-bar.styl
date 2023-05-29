@@ -126,3 +126,23 @@
 		--button-img: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAICAYAAADED76LAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAAoSURBVChTY2RgYPgPxHgBPgX/maAMnIByBQQdCVIAArgUMRIwgYEBAGefBgb8inyEAAAAAElFTkSuQmCC');
 	}
 }
+
+.DialogHeader {
+	color: var(--color-button-face);
+	font: var(--font) $i;
+	text-transform: unset;
+	padding: 0;
+	margin: 0 $i;
+	position: fixed;
+	left: 23px;
+	top: 6px;
+
+	.WindowFocus & {
+		color: var(--color-active-caption-text);
+	}
+
+	// About Steam dialog
+	svg {
+		display: none;
+	}
+}

@@ -94,9 +94,6 @@
 			max-width: unset $i;
 		}
 	}
-	&Header {
-		display: none $i;
-	}
 	&Body {
 		font: var(--font) $i;
 		padding: 14px $i;
@@ -283,24 +280,6 @@
 		flex-direction: column;
 	}
 
-	/{attr(Title)} {
-		color: var(--color-button-face);
-		font: var(--font);
-		text-transform: unset;
-		padding: 0;
-		position: fixed;
-		left: 23px;
-		top: 6px;
-
-		.WindowFocus & {
-			color: var(--color-active-caption-text);
-		}
-
-		&::before {
-			content: 'Properties - ';
-		}
-	}
-
 	/{attr(PageList)} {
 		line-height: var(--font-line);
 		padding-left: 2px;
@@ -344,6 +323,7 @@
 	}
 }
 [class*="pagedsettings_"] {
+	/{attr(PagedSettingsDialog_Title)},
 	/{attr(PageListSeparator)},
 	/{attr(PageListItem_Icon)} {
 		display: none;
