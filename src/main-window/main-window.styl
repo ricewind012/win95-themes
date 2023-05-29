@@ -1,11 +1,11 @@
 [class*="steamdesktop_"] {
 	/{attr(Wrapper)} {
-		@extend .ModalDialogBody;
 		background-color: transparent;
-		box(calc(100% - 2px));
+		border: none;
 	}
 
-	/{attr(FocusBar)} {
+	/{attr(FocusBar)},
+	/{attr(URLBarReplacement)} {
 		display: none $i;
 	}
 	/{attr(TopBar)} {
@@ -36,10 +36,6 @@
 
 	/{attr(SuperNavBar)} {
 		-webkit-app-region: no-drag;
-	}
-
-	/{attr(URLBarReplacement)} {
-		display: none;
 	}
 }
 

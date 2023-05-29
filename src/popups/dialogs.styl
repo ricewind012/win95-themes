@@ -1,14 +1,9 @@
 .Modal {
-	&DialogBody {
-		border: 1px solid $i;
-		border-color: var(--button-3d-border-color) $i;
-		box-shadow: var(--window-3d-box-shadow) $i;
-		padding: 2px $i;
-		margin: 1px $i;
-	}
-	&DialogPopup &DialogBody {
-		max-height: 96% $i;
-		min-height: calc(100% - 24px) $i;
+	&Dialog {
+		&Popup &Body {
+			max-height: 96% $i;
+			min-height: calc(100% - 24px) $i;
+		}
 	}
 	&Position {
 		background-image: none $i;
@@ -53,7 +48,7 @@
 		}
 	}
 	&MenuPosition ._DialogInputContainer {
-		@extend .ModalDialogBody;
+		@extend .DesktopUI;
 		background-color: var(--color-window);
 		padding: 1px $i;
 		border-radius: 0;

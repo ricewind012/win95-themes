@@ -669,15 +669,16 @@ label:has(:focus)::before {
   padding: 8px 16px;
   margin: 0;
 }
-.ModalDialogBody,
+.DesktopUI,
 .DialogMenuPosition ._DialogInputContainer,
-[class*="gamelistsearchbar_AdvancedSearchPane_"],
-[class*="steamdesktop_Wrapper_"] {
+[class*="gamelistsearchbar_AdvancedSearchPane_"] {
   border: 1px solid !important;
   border-color: var(--button-3d-border-color) !important;
   box-shadow: var(--window-3d-box-shadow) !important;
   padding: 2px !important;
   margin: 1px !important;
+  width: unset !important;
+  height: -webkit-fill-available !important;
 }
 .ModalDialogPopup .ModalDialogBody {
   max-height: 96% !important;
@@ -1232,10 +1233,10 @@ div:not([class]) > [class*="gamepaddialog_Field_"] [class*="FieldLabel_"],
 }
 [class*="steamdesktop_Wrapper_"] {
   background-color: transparent;
-  width: calc(100% - 2px) !important;
-  height: calc(100% - 2px) !important;
+  border: none;
 }
-[class*="steamdesktop_FocusBar_"] {
+[class*="steamdesktop_FocusBar_"],
+[class*="steamdesktop_URLBarReplacement_"] {
   display: none !important;
 }
 [class*="steamdesktop_TopBar_"] {
@@ -1262,9 +1263,6 @@ div:not([class]) > [class*="gamepaddialog_Field_"] [class*="FieldLabel_"],
 }
 [class*="steamdesktop_SuperNavBar_"] {
   -webkit-app-region: no-drag;
-}
-[class*="steamdesktop_URLBarReplacement_"] {
-  display: none;
 }
 [class*="titlebarcontrols_GamepadUIToggle_"] > svg {
   position: unset !important;
