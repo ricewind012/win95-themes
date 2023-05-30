@@ -542,6 +542,36 @@ label:has(:focus)::before {
 [class*="titlebarcontrols_EmptyNotificationsBody_"] {
   color: inherit !important;
 }
+.PopupFullWindow:not(:only-child) .ModalPosition {
+  height: calc(100% - var(--font-size) * var(--font-line) - 6px) !important;
+}
+[class*="bottombar_BottomBarContainer_"] {
+  padding-bottom: calc(var(--font-size) * var(--font-line) + 4px);
+}
+.PopupFullWindow:not(:only-child)::after,
+[class*="bottombar_BottomBarContainer_"]::after {
+  content: '';
+  position: fixed;
+  left: 4px;
+  right: 4px;
+  bottom: 4px;
+  height: calc(var(--font-size) * var(--font-line));
+  background-color: var(--color-button-face);
+  padding: 1px 15px 1px 2px;
+  border: 1px solid var(--button-3d-border-color-inverted);
+  margin: 1px;
+  box-shadow: var(--box-3d-box-shadow);
+}
+.window_resize_grip {
+  opacity: 1 !important;
+  background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA0AAAANAgMAAAAPhQzvAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAMUExURf///8DHyIeIjwAAAPjD55kAAAAEdFJOU////wBAKqn0AAAACXBIWXMAAA7CAAAOwgEVKEqAAAAANElEQVQI1xXIMQ0AAAgDMPxgAhO45EIGcrhJxvb0qAEXBqwY4eSKbJPROe+Kt80bnesyMx6fbh/W8xR1uwAAAABJRU5ErkJggg==");
+  background-size: unset !important;
+  background-position: unset !important;
+  width: 14px !important;
+  height: 14px !important;
+  right: 3px;
+  bottom: 3px;
+}
 .title-area {
   background-color: var(--color-gray-text);
   display: flex;
@@ -660,6 +690,22 @@ label:has(:focus)::before {
 [class*="titlebarcontrols_GamepadUIToggle_"] {
   --button-img: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAICAYAAADED76LAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAAoSURBVChTY2RgYPgPxHgBPgX/maAMnIByBQQdCVIAArgUMRIwgYEBAGefBgb8inyEAAAAAElFTkSuQmCC");
 }
+.DialogHeader {
+  color: var(--color-button-face);
+  font: var(--font) !important;
+  text-transform: unset;
+  padding: 0;
+  margin: 0 !important;
+  position: fixed;
+  left: 23px;
+  top: 6px;
+}
+.WindowFocus .DialogHeader {
+  color: var(--color-active-caption-text);
+}
+.DialogHeader svg {
+  display: none;
+}
 [class*="tooltip_TextToolTip_"] {
   background-color: var(--color-info-background);
   border: 1px solid var(--color-button-shadow-dark);
@@ -681,8 +727,12 @@ label:has(:focus)::before {
   height: -webkit-fill-available !important;
 }
 .ModalDialogPopup .ModalDialogBody {
-  max-height: 96% !important;
-  min-height: calc(100% - 24px) !important;
+  min-height: unset;
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
 }
 .ModalPosition {
   background-image: none !important;
@@ -739,10 +789,6 @@ label:has(:focus)::before {
 }
 .DialogContent {
   background: transparent !important;
-  padding: 0 !important;
-  left: -1px !important;
-  right: -1px !important;
-  bottom: 18px !important;
 }
 .DialogContentTransition {
   background: transparent !important;
@@ -752,8 +798,11 @@ label:has(:focus)::before {
   width: unset !important;
   max-width: unset !important;
 }
-.DialogHeader {
-  display: none !important;
+.DialogContentTransition > .DialogContent {
+  padding: 0 !important;
+  left: -1px !important;
+  right: -1px !important;
+  bottom: 18px !important;
 }
 .DialogBody {
   font: var(--font) !important;
@@ -898,21 +947,6 @@ div:not([class]) > [class*="gamepaddialog_Field_"] [class*="FieldLabel_"],
   margin: 8px;
   flex-direction: column;
 }
-[class*="pagedsettings_PagedSettingsDialog_Title_"] {
-  color: var(--color-button-face);
-  font: var(--font);
-  text-transform: unset;
-  padding: 0;
-  position: fixed;
-  left: 23px;
-  top: 6px;
-}
-.WindowFocus [class*="pagedsettings_PagedSettingsDialog_Title_"] {
-  color: var(--color-active-caption-text);
-}
-[class*="pagedsettings_PagedSettingsDialog_Title_"]::before {
-  content: 'Properties - ';
-}
 [class*="pagedsettings_PagedSettingsDialog_PageList_"] {
   line-height: var(--font-line);
   padding-left: 2px;
@@ -949,6 +983,7 @@ div:not([class]) > [class*="gamepaddialog_Field_"] [class*="FieldLabel_"],
   padding: 3px 6px;
   z-index: 1;
 }
+[class*="pagedsettings_PagedSettingsDialog_Title_"],
 [class*="pagedsettings_PageListSeparator_"],
 [class*="pagedsettings_PageListItem_Icon_"] {
   display: none;

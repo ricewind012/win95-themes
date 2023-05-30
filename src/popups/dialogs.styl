@@ -1,8 +1,12 @@
 .Modal {
 	&Dialog {
 		&Popup &Body {
-			max-height: 96% $i;
-			min-height: calc(100% - 24px) $i;
+			min-height: unset;
+			position: fixed;
+			left: 0;
+			top: 0;
+			right: 0;
+			bottom: 0;
 		}
 	}
 	&Position {
@@ -80,10 +84,6 @@
 
 	&Content {
 		background: transparent $i;
-		padding: 0 $i;
-		left: -1px $i;
-		right: -1px $i;
-		bottom: 18px $i;
 
 		&Transition {
 			background: transparent $i;
@@ -92,6 +92,12 @@
 			margin-top: -1px;
 			width: unset $i;
 			max-width: unset $i;
+		}
+		&Transition > & {
+			padding: 0 $i;
+			left: -1px $i;
+			right: -1px $i;
+			bottom: 18px $i;
 		}
 	}
 	&Body {
