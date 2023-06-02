@@ -173,11 +173,8 @@
 
 [class*="gamelist_"] {
 	/{attr(Container)} {
-		background: var(--color-window) $i;
+		@extend table;
 		padding-right: 2px;
-		border: 1px solid $i;
-		border-color: var(--box-3d-border-color) $i;
-		box-shadow: var(--box-3d-box-shadow) $i;
 		margin-left: 1px;
 		margin-bottom: 1px;
 		width: calc(100% - 8px);

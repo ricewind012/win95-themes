@@ -368,6 +368,30 @@
 		margin-top: 4px $i;
 	}
 
+	// Workshop
+	/{attr(ViewMore)} {
+		flex: unset $i;
+	}
+	/{attr(WorkshopGrid)} {
+		@extend table;
+		padding-top: 1px;
+		margin: 0 $i;
+		box(unset);
+	}
+	/{attr(WorkshopHeader)} {
+		@extend button;
+		padding: 3px $i;
+		margin: 0 1px $i;
+		box(unset);
+	}
+	/{attr(Install)}, {attr(Name)}, {attr(SizeDisk)} {
+		margin: 3px $i;
+	}
+	/{attr(Name)} {
+		color: var(--color-button-text) $i;
+	}
+
+	// etc.
 	/{attr(BrowseDiskRow)} > .DialogButton {
 		order: -1;
 	}
