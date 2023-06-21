@@ -660,6 +660,10 @@ label:has(:focus)::before {
   background-position-y: 1px !important;
   margin-left: 4px !important;
 }
+.title-area-icon-inner,
+[class*="titlebarcontrols_Button_"]-inner {
+  display: none !important;
+}
 .title-area-icon > svg,
 [class*="titlebarcontrols_Button_"] > svg {
   display: none;
@@ -918,9 +922,6 @@ div:not([class]) > [class*="gamepaddialog_Field_"] [class*="FieldLabel_"],
   padding: 0 2px;
   margin: 0 !important;
 }
-[class*="gamepaddialog_Field_"][class*="WithBottomSeparator"] {
-  margin-bottom: 4px;
-}
 [class*="gamepaddialog_Field_"]::after {
   display: none !important;
 }
@@ -929,7 +930,7 @@ div:not([class]) > [class*="gamepaddialog_Field_"] [class*="FieldLabel_"],
 }
 [class*="gamepaddialog_FieldLabel_"] {
   font: var(--font) !important;
-  color: unset;
+  color: var(--color-window-text);
 }
 [class*="gamepaddialog_FieldLabel_"] > :not([class]) {
   display: flex;
@@ -1080,6 +1081,39 @@ div:not([class]) > [class*="gamepaddialog_Field_"] [class*="FieldLabel_"],
   font: var(--font) !important;
   letter-spacing: unset !important;
   text-transform: unset !important;
+}
+[class*="notificationssettings_NotificationGroup_"] {
+  background-color: transparent;
+  border-bottom: none;
+  margin: 0;
+}
+[class*="notificationssettings_NotificationSection_"] {
+  align-items: center;
+}
+[class*="notificationssettings_NotificationFeedToggle_"] {
+  margin-right: 4px !important;
+}
+[class*="notificationssettings_NotificationDescription_"] {
+  font: var(--font);
+  color: inherit;
+  margin: 0;
+}
+[class*="notificationssettings_NotificationPrefDetails_"] {
+  background-color: transparent;
+  padding: 0;
+  padding-left: 23px;
+  box-shadow: none;
+  flex-direction: column;
+}
+[class*="notificationssettings_NotificationPrefDetails_"] .DialogCheckbox_Container {
+  margin: 0;
+}
+[class*="notificationssettings_PrefDetailsToggle_"] svg {
+  margin: 0;
+  height: var(--font-size);
+}
+[class*="notificationssettings_Toggles_"]:not(.Focusable) {
+  gap: 42px;
 }
 [class*="library_LibraryWindowDivider_"] {
   background-color: transparent !important;

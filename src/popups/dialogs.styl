@@ -225,10 +225,6 @@
 			}
 		}
 
-		&[class*="WithBottomSeparator"] {
-			margin-bottom: 4px;
-		}
-
 		&::after { // lol
 			display: none $i;
 		}
@@ -238,7 +234,7 @@
 	}
 	/{attr(FieldLabel)} {
 		font: var(--font) $i;
-		color: unset;
+		color: var(--color-window-text);
 
 		& > :not([class]) { // has something else
 			display: flex;
@@ -443,4 +439,42 @@
 	font: var(--font) $i;
 	letter-spacing: unset $i;
 	text-transform: unset $i;
+}
+[class*="notificationssettings_"] {
+	/{attr(NotificationGroup)} {
+		background-color: transparent;
+		border-bottom: none;
+		margin: 0;
+	}
+	/{attr(NotificationSection)} {
+		align-items: center;
+	}
+
+	/{attr(NotificationFeedToggle)} {
+		margin-right: 4px $i;
+	}
+	/{attr(NotificationDescription)} {
+		font: var(--font);
+		color: inherit;
+		margin: 0;
+	}
+	/{attr(NotificationPrefDetails)} {
+		background-color: transparent;
+		padding: 0;
+		padding-left: 23px;
+		box-shadow: none;
+		flex-direction: column;
+
+		.DialogCheckbox_Container {
+			margin: 0;
+		}
+	}
+	/{attr(PrefDetailsToggle)} svg {
+		margin: 0;
+		height: var(--font-size);
+	}
+
+	/{attr(Toggles)}:not(.Focusable) {
+		gap: 42px;
+	}
 }
