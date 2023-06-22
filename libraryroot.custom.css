@@ -586,6 +586,39 @@ label:has(:focus)::before {
   right: 3px;
   bottom: 3px;
 }
+.title-area-icon,
+[class*="titlebarcontrols_Button_"] {
+  padding: 0 !important;
+  margin: 0 !important;
+  margin-left: 2px !important;
+  width: 14px !important;
+  height: 12px !important;
+}
+.title-area-icon.minimizeButton,
+[class*="titlebarcontrols_Button_"].minimizeButton {
+  --button-img: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAACCAIAAAD0PzoJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAANSURBVBhXYyACMDAAAAAmAAEq5K9KAAAAAElFTkSuQmCC");
+  background-position: 2px 7px !important;
+}
+.title-area-icon.maximizeButton,
+[class*="titlebarcontrols_Button_"].maximizeButton {
+  --button-img: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAJCAYAAADgkQYQAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAAiSURBVChTY2RgYPgPxHgBE5QmCAiZ9J8okwajIiLCiYEBAE+8BAuR7uviAAAAAElFTkSuQmCC");
+  background-position: 1px 0 !important;
+}
+.title-area-icon.restoreButton,
+[class*="titlebarcontrols_Button_"].restoreButton {
+  --button-img: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAJCAYAAAAPU20uAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAA1SURBVChTY2RAgP9QGgUwQWmiADYT/oOswGo0EIDlCFoBMwHZsSCAYipWu6E0YV8QcCQDAwDdNwoEoDtCnwAAAABJRU5ErkJggg==");
+  background-position: 1px 0 !important;
+}
+.title-area-icon.closeButton,
+[class*="titlebarcontrols_Button_"].closeButton {
+  --button-img: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAHAQMAAAAPl54dAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsIAAA7CARUoSoAAAAAGUExURf///wAAAFXC034AAAABdFJOUwBA5thmAAAAFElEQVQI12M4zJDGYMMgAcRpDIcBFDwC4+02LWIAAAAASUVORK5CYII=");
+  background-position-y: 1px !important;
+  margin-left: 4px !important;
+}
+.title-area-icon > svg,
+[class*="titlebarcontrols_Button_"] > svg {
+  display: none;
+}
 .title-area {
   background-color: var(--color-gray-text);
   display: flex;
@@ -631,42 +664,8 @@ label:has(:focus)::before {
 .WindowFocus #SteamDesktop .title-area::after {
   color: var(--color-active-caption-text);
 }
-.title-area-icon,
-[class*="titlebarcontrols_Button_"] {
-  padding: 0 !important;
-  margin: 0 !important;
-  margin-left: 2px !important;
-  width: 14px !important;
-  height: 12px !important;
-}
-.title-area-icon.minimizeButton,
-[class*="titlebarcontrols_Button_"].minimizeButton {
-  --button-img: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAACCAIAAAD0PzoJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAANSURBVBhXYyACMDAAAAAmAAEq5K9KAAAAAElFTkSuQmCC");
-  background-position: 2px 7px !important;
-}
-.title-area-icon.maximizeButton,
-[class*="titlebarcontrols_Button_"].maximizeButton {
-  --button-img: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAJCAYAAADgkQYQAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAAiSURBVChTY2RgYPgPxHgBE5QmCAiZ9J8okwajIiLCiYEBAE+8BAuR7uviAAAAAElFTkSuQmCC");
-  background-position: 1px 0 !important;
-}
-.title-area-icon.restoreButton,
-[class*="titlebarcontrols_Button_"].restoreButton {
-  --button-img: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAJCAYAAAAPU20uAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAA1SURBVChTY2RAgP9QGgUwQWmiADYT/oOswGo0EIDlCFoBMwHZsSCAYipWu6E0YV8QcCQDAwDdNwoEoDtCnwAAAABJRU5ErkJggg==");
-  background-position: 1px 0 !important;
-}
-.title-area-icon.closeButton,
-[class*="titlebarcontrols_Button_"].closeButton {
-  --button-img: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAHAQMAAAAPl54dAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsIAAA7CARUoSoAAAAAGUExURf///wAAAFXC034AAAABdFJOUwBA5thmAAAAFElEQVQI12M4zJDGYMMgAcRpDIcBFDwC4+02LWIAAAAASUVORK5CYII=");
-  background-position-y: 1px !important;
-  margin-left: 4px !important;
-}
-.title-area-icon-inner,
-[class*="titlebarcontrols_Button_"]-inner {
+.title-area-icon-inner {
   display: none !important;
-}
-.title-area-icon > svg,
-[class*="titlebarcontrols_Button_"] > svg {
-  display: none;
 }
 .title-bar-actions {
   position: fixed !important;
