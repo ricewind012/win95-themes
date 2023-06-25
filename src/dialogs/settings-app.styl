@@ -1,0 +1,66 @@
+[class*="appproperties_"] {
+	/{attr(Title)} {
+		background-color: var(--color-button-face);
+		font: var(--font);
+		text-transform: unset $i;
+		padding: 0 2px;
+		margin-top: -19px;
+		width: fit-content;
+	}
+	// note?
+	/[class*="FieldDescription_"],
+	/{attr(Detail)} {
+		font: var(--font) $i;
+		color: var(--color-button-text) $i;
+		margin: 4px 0 $i;
+	}
+
+	/{attr(SectionTopLine)} {
+		@extend .DialogControlsSection;
+
+		/*&::before {
+			content: 'Family Sharing';
+			position: absolute;
+			top: -8px;
+			background-color: var(--color-button-face);
+			padding: 0 2px;
+		}*/
+	}
+	/{attr(TopGap)} {
+		margin-top: 4px $i;
+	}
+
+	// Workshop
+	/{attr(ViewMore)} {
+		flex: unset $i;
+	}
+	/{attr(WorkshopGrid)} {
+		@extend table;
+		padding-top: 1px;
+		margin: 0 $i;
+		box(unset);
+	}
+	/{attr(WorkshopHeader)} {
+		@extend button;
+		padding: 3px $i;
+		margin: 0 1px $i;
+		box(unset);
+	}
+	/{attr(Install)}, {attr(Name)}, {attr(SizeDisk)} {
+		margin: 3px $i;
+	}
+	/{attr(Name)} {
+		color: var(--color-button-text) $i;
+	}
+
+	// etc.
+	/{attr(BrowseDiskRow)} > .DialogButton {
+		order: -1;
+	}
+	/{attr(BrowseDiskSize)} {
+		margin-left: 1ch $i;
+	}
+	/{attr(SteamInputLink)} {
+		@extend a;
+	}
+}

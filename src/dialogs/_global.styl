@@ -1,0 +1,199 @@
+.Modal {
+	&Dialog {
+		&Popup &Body {
+			min-height: unset;
+			position: fixed;
+			left: 0;
+			top: 0;
+			right: 0;
+			bottom: 0;
+		}
+	}
+	&Position {
+		background-image: none $i;
+
+		&_TopBar {
+			display: none $i;
+		}
+		&_Content {
+			color: var(--color-button-text);
+			box-shadow: none;
+		}
+	}
+}
+
+.Dialog {
+	&Input {
+		background-image: none $i;
+	}
+	&Button {
+		text-align: center $i; // library fix
+
+		[class*="FieldChildren_"] & {
+			padding: 3px 6px $i;
+			margin: 0 $i;
+			width: unset $i;
+		}
+
+		&::before { // lol
+			display: none $i;
+		}
+	}
+	&DropDown {
+		@extend select;
+		align-items: center;
+
+		&_CurrentDisplay {
+			padding: 0 $i;
+			padding-left: 1px $i;
+		}
+		&_Arrow {
+			display: none $i;
+		}
+	}
+	&MenuPosition ._DialogInputContainer {
+		@extend .DesktopUI;
+		background-color: var(--color-window);
+		padding: 1px $i;
+		border-radius: 0;
+	}
+	&Checkbox {
+		@extend input;
+		@extend input[type="checkbox"];
+
+		&.Active {
+			@extend input[type="checkbox"]:checked;
+		}
+
+		& > svg {
+			display: none $i;
+		}
+
+		&_Container {
+			background-color: transparent $i;
+			padding: 0 $i;
+			box-shadow: none $i;
+			align-items: center;
+		}
+	}
+	&Toggle_Label {
+		font: var(--font) $i;
+		color: var(--color-button-text) $i;
+		margin-left: 6px;
+	}
+
+	&Content {
+		background: transparent $i;
+
+		&Transition {
+			background: transparent $i;
+			border-top: 1px solid;
+			border-color: var(--button-3d-border-color);
+			margin-top: -1px;
+			width: unset $i;
+			max-width: unset $i;
+		}
+		&Transition > & {
+			padding: 0 $i;
+			left: -1px $i;
+			right: -1px $i;
+			bottom: 18px $i;
+		}
+	}
+	&Body {
+		font: var(--font) $i;
+		padding: 14px $i;
+		margin: 1px $i;
+		margin-top: 0 $i;
+		border: 1px solid;
+		border-top: none;
+		border-color: var(--button-3d-border-color);
+		box-shadow: var(--window-3d-box-shadow);
+		gap: 12px;
+		-webkit-mask-image: none $i; // client settings
+		overflow-y: auto $i;
+	}
+	&ControlsSection {
+		border: 1px solid $i;
+		border-color: var(--group-3d-border-color) $i;
+		box-shadow: var(--group-3d-box-shadow) $i;
+		padding: 12px 8px 4px 8px $i;
+		margin: 1px $i;
+		position: relative $i;
+	}
+}
+
+[class*="gamepaddialog_"] {
+	/{attr(Field)} {
+		--field-row-children-spacing: 4px $i;
+		padding: 0 $i;
+
+		div:not([class]) > & {
+			@extend .DialogControlsSection;
+
+			/.DialogSubHeader,
+			/.DialogBodyText,
+			[class*="FieldLabel_"],
+			/[class*="remoteplaysettings_TableHeader_"] > :first-child {
+				position: absolute;
+				top: -8px;
+				background-color: var(--color-button-face);
+				font: var(--font) $i;
+				text-transform: unset $i;
+				letter-spacing: unset $i;
+				color: var(--color-button-text) $i;
+				padding: 0 2px;
+				margin: 0 $i;
+			}
+		}
+
+		&::after { // lol
+			display: none $i;
+		}
+	}
+	/{attr(FieldChildren)} {
+		gap: 4px;
+	}
+	/{attr(FieldLabel)} {
+		font: var(--font) $i;
+		color: var(--color-window-text);
+
+		& > :not([class]) { // has something else
+			display: flex;
+			align-items: center;
+			gap: 1ch;
+		}
+	}
+	/{attr(FieldLabelRow)} {
+		flex-direction: row-reverse;
+	}
+	/{attr(FieldDescription)} {
+		order: -1;
+
+		[class*="WithDescription_"] > [class*="Row"] + & {
+			color: var(--color-gray-text) $i;
+			margin-left: 22px $i;
+		}
+	}
+
+	/{attr(ControlsListOuterPanel)} {
+		--controls-list-spacing: 6px $i;
+		flex: unset $i;
+	}
+	/{attr(ControlsListChild)} {
+		max-width: unset $i;
+	}
+
+	/{attr(Toggle)} {
+		@extend input;
+		@extend input[type="checkbox"];
+
+		&[class*="On_"] {
+			@extend input[type="checkbox"]:checked;
+		}
+	}
+	/{attr(ToggleRail)},
+	/{attr(ToggleSwitch)} {
+		display: none;
+	}
+}
