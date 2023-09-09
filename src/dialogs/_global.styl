@@ -120,6 +120,9 @@
 		padding: 12px 8px 4px 8px $i;
 		margin: 1px $i;
 		position: relative $i;
+		display: flex;
+		flex-direction: column;
+		gap: 4px;
 	}
 }
 
@@ -131,9 +134,9 @@
 		div:not([class]) > & {
 			@extend .DialogControlsSection;
 
+			/.DialogControlsSectionHeader,
 			/.DialogSubHeader,
 			/.DialogBodyText,
-			[class*="FieldLabel_"],
 			/[class*="remoteplaysettings_TableHeader_"] > :first-child {
 				position: absolute;
 				top: -8px;
@@ -168,17 +171,16 @@
 		flex-direction: row-reverse;
 	}
 	/{attr(FieldDescription)} {
-		order: -1;
-
 		[class*="WithDescription_"] > [class*="Row"] + & {
 			color: var(--color-gray-text) $i;
-			margin-left: 22px $i;
+			margin-left: 20px $i;
 		}
 	}
 
 	/{attr(ControlsListOuterPanel)} {
 		--controls-list-spacing: 6px $i;
 		flex: unset $i;
+		gap: 0 $i;
 	}
 	/{attr(ControlsListChild)} {
 		max-width: unset $i;
