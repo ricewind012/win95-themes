@@ -1,0 +1,26 @@
+.find-widget {
+  @extend body;
+
+  border-radius: 0 $i;
+
+  height: auto $i;
+
+  // Horrible layout, kill yourself
+  .button {
+    @extend $small-button;
+
+    inset: 0 $i;
+
+    &.codicon-widget-close {
+      left: 16px $i;
+      top: -39px $i;
+    }
+  }
+
+  .find-part,
+  .replace-part {
+    font();
+
+    margin: 0 $i;
+  }
+}

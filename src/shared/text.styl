@@ -1,0 +1,52 @@
+::selection {
+	background-color: var(--color-highlight) !important;
+	color: var(--color-highlight-text) !important;
+}
+
+::placeholder {
+	color: var(--color-gray-text) !important;
+}
+
+code,
+pre,
+kbd {
+	font: var(--text-monospace) !important;
+}
+
+td {
+	font: var(--text) !important;
+}
+
+legend {
+	background-color: var(--color-button-face) !important;
+	font: var(--font) !important;
+}
+
+label {
+	text-decoration: none !important;
+	gap: 7px !important;
+
+	display: inline-flex !important;
+	align-items: center !important;
+
+	position: relative !important;
+	cursor: default !important;
+
+	&:has(:focus)::before {
+		content: '' !important;
+		position: absolute !important;
+		left: 17px !important;
+		right: -3px !important;
+		height: 100% !important;
+
+		outline: dotted 1px var(--color-button-text) !important;
+	}
+}
+
+$legend-as-div {
+	@extend legend;
+
+	position: absolute;
+	top: -8px;
+	padding: 0 2px $i;
+}

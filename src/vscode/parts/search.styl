@@ -1,0 +1,52 @@
+.search {
+	&-view .query-details.more,
+	&-editor .includes-excludes.expanded {
+		h4 {
+			font();
+
+			padding: 12px 0 6px 0 $i;
+
+			&::first-letter {
+				text-transform: uppercase $i;
+			}
+		}
+	}
+
+	&-editor {
+		height: 100% $i;
+
+		.context-lines-input,
+		.messages {
+			margin: 0 $i;
+		}
+
+		.monaco {
+			&-findInput > .monaco-scrollable-element {
+				overflow: visible $i;
+			}
+		}
+
+		.includes-excludes {
+			.expand {
+				@extend .monaco-toolbar .action-label;
+			}
+
+			.file-types {
+				padding: 0 $i;
+			}
+		}
+	}
+
+	&-view,
+	&-editor {
+		.messages {
+			margin: 0 $i;
+		}
+	}
+}
+
+.query-container {
+	padding: 0 $i;
+	margin: 0 $i;
+	margin-bottom: 10px $i;
+}

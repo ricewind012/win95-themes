@@ -1,0 +1,20 @@
+.monaco {
+	&-select-box-dropdown-container {
+		@extend body;
+
+		border-radius: 0 $i;
+
+		width: 320px $i;
+
+		& > .select-box {
+			&-dropdown-list-container,
+			&-details-pane {
+				padding: 0 $i;
+			}
+
+			&-details-pane {
+				@extend hr;
+			}
+		}
+	}
+}

@@ -1,0 +1,114 @@
+.extension {
+	&-editor {
+		padding: 12px $i;
+
+		max-width: unset $i;
+
+		& > .header {
+			font();
+
+			padding: 0 $i;
+
+			.action {
+				&s-container {
+					gap: 6px $i;
+
+					& > .disabled {
+						display: none $i;
+					}
+				}
+
+				&-item {
+					overflow: visible $i;
+				}
+
+				&-label.codicon:empty {
+					@extend $small-button;
+
+					height: 23px $i;
+				}
+
+				&-dropdown-item-separator {
+					display: none $i;
+				}
+			}
+
+			.status {
+				font();
+			}
+
+			.details {
+				overflow: visible $i;
+			}
+		}
+
+		.subtitle {
+			font();
+
+			height: unset $i;
+
+			&-entry:not(:first-child) {
+				border-left: 1px solid var(--color-button-highlight) $i;
+				box-shadow: -1px 0 var(--color-button-shadow) $i;
+
+				padding-left: 10px $i;
+				margin-left: 10px $i;
+			}
+		}
+
+		.content {
+			@extend [role="tabpanel"];
+
+			margin-top: 1px $i;
+
+			height: calc(100% - 43px) $i;
+		}
+
+		.readme-container {
+			max-width: unset $i;
+		}
+	}
+
+	&-action {
+		@extend button;
+
+		margin: 0 $i;
+	}
+}
+
+.switch-to-prerelease {
+	width: 167px $i;
+
+	// why are there 2 different versions ?
+	&.icon::before {
+		content: attr(aria-label) $i;
+	}
+}
+
+// Details right sidebar
+.additional-details {
+	&-container {
+		width: 36% $i;
+
+		.category {
+			font();
+			border-radius: 0 $i;
+		}
+	}
+
+	&-content {
+		padding: 14px $i;
+	}
+
+	&-element {
+		@extend fieldset;
+	}
+
+	&-title {
+		@extend legend;
+	}
+}
+
+.more-info-entry {
+	font();
+}

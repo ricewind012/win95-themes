@@ -1,0 +1,134 @@
+.editor {
+	&-container {
+		background-color: transparent $i;
+
+		height: calc(100% - 30px) $i;
+	}
+
+	&-container > &-instance {
+		@extend [role="tabpanel"];
+
+		margin-top: 1px $i;
+	}
+
+	&-group {
+		&-container {
+			background-color: var(--color-button-face) $i;
+
+			padding: 9px 13px 4px 7px $i;
+
+			box-sizing: border-box $i;
+		}
+
+		&-watermark {
+			.shortcuts {
+				dl,
+				dt {
+					opacity: 1 $i;
+					color: inherit $i;
+				}
+
+				dt {
+					font();
+					letter-spacing: 0 $i;
+				}
+			}
+		}
+	}
+
+	&-actions {
+		padding: 0 $i;
+	}
+
+	& &-scrollable {
+		width: calc(100% - 56px) $i;
+
+		.search-results {
+			width: calc(100% - 38px) $i;
+		}
+	}
+
+	&-placeholder-label-container {
+		font();
+	}
+
+	& > .content {
+		background-color: transparent $i;
+	}
+
+	&,
+	.split-view-container,
+	.monaco-scrollable-element,
+	.monaco-grid-view,
+	.content {
+		overflow: visible !important;
+	}
+}
+
+.split-view-view {
+	&:has(> .editor-group-container) {
+		height: 100% $i;
+	}
+
+	&:not(:only-child) {
+		// Split up/down
+		&[style^="top:"][style*="height:"] > .editor-group-container > .editor-container {
+			height: calc(50% - 35px) !important;
+		}
+
+		// Split left/right
+		&:first-child > .editor-group-container {
+			width: 100% $i;
+
+			& > .editor-container {
+				height: calc(100% - 31px) $i;
+			}
+		}
+	}
+}
+
+.monaco {
+	&-scrollable-element,
+	&-split-view2.vertical.separator-border > &-scrollable-element > .split-view-container > .split-view-view {
+		height: 100% $i;
+	}
+
+	&-editor {
+		@extend table;
+
+		box(100%);
+
+		& > .overflow-guard {
+			left: 2px;
+			top: 2px;
+			box(calc(100% - 4px));
+		}
+
+		.lines-content,
+		.view-lines {
+			width: calc(100% - var(--scrollbar-size)) $i;
+		}
+
+		.view-overlays {
+			width: 100% $i;
+		}
+
+		.selected-text {
+			border-radius: 0 $i;
+		}
+
+		.editor & .current-line {
+			border: 1px solid var(--color-highlight) $i;
+
+			width: 100% $i;
+
+			&-margin-both {
+				border-right: none $i;
+			}
+
+			&-both {
+				border-left: none $i;
+			}
+		}
+	}
+}

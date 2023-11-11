@@ -1,0 +1,8 @@
+#!/bin/sh
+
+dir=../dist/vscode
+
+case $1 in
+	styl) stylus -p vscode/vscode.styl > "$dir/vscode.css" ;;
+	ts) tsc --outFile "$dir/vscode.js" ;;
+esac

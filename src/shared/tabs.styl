@@ -1,0 +1,69 @@
+[role="tab"] {
+	--color-tab-border: var(--color-button-highlight) !important;
+
+	background-color: var(--color-button-face) !important;
+	color: var(--color-button-text) !important;
+	border: 1px solid !important;
+	border-bottom: none !important;
+	border-color: var(--border-tab) !important;
+	box-shadow:
+		1px 0 var(--color-button-shadow-dark),
+		1px 1px var(--color-tab-border) !important;
+
+	margin: 0 1px -1px 0 !important;
+	padding: 2px 6px !important;
+
+	position: relative !important;
+
+	&::before,
+	&::after {
+		content: '' !important;
+
+		/* Draw the rounding pixel by pixel */
+		background-repeat: no-repeat !important;
+		background-size: 1px 1px !important;
+		background-position:
+			0   0,
+			1px 0,
+			2px 0,
+			0   1px,
+			1px 1px,
+			2px 1px !important
+
+		position: absolute !important;
+		top: -1px !important;
+		width: 3px !important;
+		height: 2px !important;
+	}
+
+	&::before {
+		background-image: var(--tab-border-left);
+
+		left: -1px !important;
+	}
+
+	&::after {
+		background-image: var(--tab-border-right);
+
+		right: -2px !important;
+	}
+
+	&[aria-selected="true"] {
+		--color-tab-border: var(--color-button-face) !important;
+
+		margin: 0 -1px -2px -4px !important;
+		padding: 3px 6px !important;
+
+		z-index: 1 !important;
+	}
+}
+
+[role="tabpanel"] {
+	background-color: var(--color-button-face) !important;
+	color: var(--color-window-text) !important;
+	box-shadow: var(--border-button-raised) !important;
+
+	padding: 4px !important;
+
+	box-sizing: border-box !important;
+}

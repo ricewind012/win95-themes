@@ -1,0 +1,88 @@
+.monaco-dialog {
+	&-modal-block {
+		background-color: transparent $i;
+	}
+
+	&-box {
+		@extend body;
+
+		padding: 1px $i;
+
+		min-width: 300px $i;
+	}
+}
+
+.dialog {
+	&-shadow {
+		box-shadow: none $i;
+	}
+
+	&-icon {
+		flex: 0 0 32px $i;
+		height: 32px $i;
+
+		&::before {
+			content: attr(aria-label) $i;
+
+			font();
+			font-weight: bold $i;
+
+			position: absolute;
+			left: 3px;
+			top: 3px;
+		}
+	}
+
+	&-toolbar-row {
+		background-color: var(--color-active-caption) $i;
+		color: var(--color-active-caption-text) $i;
+		padding: 0 2px $i;
+
+		height: unset $i;
+
+		.actions-container {
+			height: var(--titlebar-height) $i;
+		}
+	}
+
+	&-message {
+		margin-bottom: 10px $i;
+
+		min-height: unset $i;
+
+		&,
+		&-detail {
+			font();
+		}
+
+		&-row {
+			padding: 12px $i;
+		}
+
+		&-container {
+			padding-left: 16px $i;
+		}
+	}
+
+	&-checkbox-row {
+		@extend label;
+
+		padding-top: 10px $i;
+	}
+
+	&-buttons {
+		overflow: visible $i;
+
+		// !important
+		.monaco-dialog-box > &-row > & > .monaco-button {
+			outline-offset: -4px $i;
+
+			width: 81px $i;
+		}
+
+		&-row {
+			padding: 12px 14px $i;
+			padding-top: 18px $i;
+		}
+	}
+}

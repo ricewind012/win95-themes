@@ -1,0 +1,29 @@
+* {
+	outline: none $i;
+}
+
+.monaco-workbench {
+	background-color: inherit $i;
+	font();
+
+	width: 100% $i;
+	height: calc(100vh - 8px) $i;
+
+	.part > .content {
+		font();
+	}
+}
+
+.split-view {
+	&-view {
+		// Titlebar
+		&[style^="top: 35px;"] {
+			margin-top: 5px $i;
+		}
+	}
+
+	// !important
+	.monaco-split-view2.separator-border > .monaco-scrollable-element > &-container &-view:not(:first-child)::before {
+		background-color: transparent $i;
+	}
+}

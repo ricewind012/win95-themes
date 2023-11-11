@@ -1,0 +1,251 @@
+[role="tab"] {
+	margin: 2px 1px -2px 0 $i;
+
+	.action-label {
+		font-size: var(--text-size) $i;
+		font-family: var(--text-font-ui), codicon $i;
+		color: inherit $i;
+
+		padding: 0 $i;
+	}
+
+	.monaco-icon-label {
+		&::before,
+		&-container::after {
+			display: none $i;
+		}
+	}
+}
+
+// Editor
+.tab {
+	min-width: unset $i;
+
+	cursor: unset $i;
+
+	&:not([aria-selected="true"]) {
+		margin-bottom: -1px $i;
+
+		// !important
+		.monaco-workbench .part.editor > .content .editor-group-container[class] > .title &:hover {
+			background-color: var(--color-button-face) $i;
+		}
+	}
+
+	&s {
+		--editor-group-tab-height: inherit $i;
+
+		background-color: var(--color-button-face) $i;
+
+		cursor: unset $i;
+
+		&,
+		&-container,
+		&-and-actions-container,
+		.monaco-scrollable-element {
+			overflow: visible $i;
+		}
+
+		&-container {
+			padding-left: 4px $i;
+		}
+
+		&-border-bottom::after {
+			display: none $i;
+		}
+	}
+
+	&-border {
+		&-top,
+		&-bottom {
+			&-container {
+				display: none $i;
+			}
+		}
+	}
+
+	&-label {
+		padding: 0 $i;
+
+		a {
+			font();
+		}
+
+		a,
+		span {
+			cursor: unset $i;
+		}
+	}
+
+	&-actions {
+		margin-left: 4px $i;
+
+		&,
+		.monaco-action-bar,
+		.action-label {
+			box(auto);
+		}
+
+		/*
+		 * No borders, since it interferes with
+		 * editor tab height and unsaved file icon.
+		 */
+		.action-label {
+			box-shadow: none $i;
+		}
+	}
+}
+
+// Top activity bar
+.sidebar .title.has-composite-bar {
+	overflow: visible $i;
+
+	padding: 0 $i;
+	padding-left: 4px $i;
+	margin-bottom: 2px $i;
+
+	.monaco-action-bar {
+		line-height: unset $i;
+		height: unset $i;
+
+		.action {
+			&-item {
+				height: unset $i;
+
+				&::before,
+				&::after {
+					opacity: 1 $i;
+
+					margin: 0 $i;
+
+					display: block $i;
+				}
+			}
+		}
+	}
+
+	& + .content {
+		--tabs-compensation: 7px;
+
+		& > .composite {
+			@extend [role="tabpanel"];
+
+			.pane-header {
+				margin-bottom: 3px $i;
+			}
+
+			.actions {
+				padding: 1px 0 $i;
+
+				display: block $i;
+			}
+
+			&:not(.extensions-viewlet) .monaco-list {
+				height: calc(100% - 20px) $i;
+			}
+		}
+	}
+}
+
+// Panel
+.part.panel {
+	.monaco-action-bar {
+		font();
+
+		padding-top: 2px $i;
+		margin-bottom: 1px $i;
+
+		// KILL YOURSELF
+		position: relative $i;
+		bottom: 3px $i;
+		height: 100% $i;
+
+		.action-item:not(.select-container) {
+			font();
+			text-transform: unset $i;
+
+			cursor: unset $i;
+
+			&[aria-selected="true"] {
+				margin-bottom: -3px $i;
+			}
+
+			&::before,
+			&::after {
+				opacity: 1 $i;
+				background-color: transparent $i;
+
+				margin: 0 $i;
+
+				display: block $i;
+			}
+		}
+	}
+
+	.tabs-container {
+		padding: 0 $i;
+		border: none $i;
+
+		.monaco-list {
+			width: calc(100% - 64px) $i;
+			height: calc(100% - 2px) $i;
+		}
+
+		.actions {
+			display: block $i;
+		}
+	}
+}
+
+// Settings
+.settings-tabs-widget {
+	margin-left: 4px $i;
+
+	// !important
+	& > .monaco-action-bar .action {
+		&-item {
+			overflow: visible $i;
+		}
+
+		&-label {
+			@extend [role="tab"];
+
+			opacity: 1 $i;
+			overflow: visible $i;
+			font-size: var(--text-size) $i;
+
+			&.checked {
+				// Has [role="checkbox"] for some reason.
+				@extend [role="tab"][aria-selected="true"];
+
+				background-color: var(--color-button-face) $i;
+			}
+		}
+	}
+}
+
+// Marketplace
+.navbar {
+	font();
+	border: none $i;
+
+	padding: 0 $i;
+	padding-left: 4px $i;
+
+	height: unset $i;
+}
+
+.action {
+	// !important
+	.extension-editor > .body > .navbar > .monaco-action-bar > &s-container > &-item > &-label {
+		@extend [role="tab"];
+
+		font();
+		text-transform: unset $i;
+
+		&[aria-checked="true"] {
+			// Has [role="checkbox"] for some reason.
+			@extend [role="tab"][aria-selected="true"];
+		}
+	}
+}

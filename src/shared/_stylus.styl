@@ -1,0 +1,20 @@
+font() {
+	font: var(--text-ui) $i;
+}
+
+parentheses() {
+	&::before {
+		content: '(';
+	}
+
+	&::after {
+		content: ')';
+	}
+}
+
+box(size) {
+	width: size $i;
+	height: size $i;
+}
+
+$i = !important;

@@ -1,5 +1,2 @@
-# Windows 95 skin for Steam
-Only settings and context menu are styled for now.
-
-## Preview
-![Game Properties](img/game-properties.png)
+# Windows 95 themes
+Installation, preview, etc. for each program is in the [docs](./docs) folder.

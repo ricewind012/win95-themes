@@ -1,0 +1,63 @@
+.activitybar {
+	@extend table;
+
+	margin-top: 3px $i;
+
+	width: 46px $i;
+	height: calc(100% - 12px) $i;
+
+	&.right {
+		width: 40px $i;
+	}
+
+	& > .content {
+		font();
+
+		margin: 2px $i;
+
+		width: 42px $i;
+		height: 100% $i;
+	}
+
+	.action {
+		&-item {
+			background-color: transparent $i;
+			border: none $i;
+			box-shadow: none $i;
+
+			padding: 0 $i;
+			margin: 0 $i;
+
+			cursor: pointer $i;
+
+			&.checked .action-label {
+				background-color: var(--color-highlight) $i;
+				color: var(--color-highlight-text) $i;
+			}
+
+			.badge-content {
+				position: absolute $i;
+				top: 0 $i;
+				right: 4px $i;
+				z-index: 1 $i;
+			}
+
+			&.checked .badge-content {
+				color: var(--color-highlight-text) $i;
+			}
+		}
+
+		&-label {
+			background: no-repeat center;
+			color: var(--color-window-text) $i;
+			font-size: 0 $i;
+			border-radius: 0 $i;
+
+			width: 100% $i;
+		}
+	}
+
+	.active-item-indicator {
+		display: none $i;
+	}
+}

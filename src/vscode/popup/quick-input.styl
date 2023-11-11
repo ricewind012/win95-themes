@@ -1,0 +1,74 @@
+.quick-input {
+	&-widget {
+		@extend [role="tabpanel"];
+
+		background-color: var(--color-button-face) $i;
+		border-radius: 0 $i;
+
+		margin: 0 $i;
+
+		inset: 12.5% 25% $i;
+		box(50%);
+
+		.monaco {
+			&-scrollable-element {
+				padding: 0 $i;
+			}
+		}
+	}
+
+	&-title {
+		text-align: left;
+		font-weight: bold $i;
+
+		padding: 0 $i;
+		padding-left: 20px $i;
+
+		// Not even an aria-label !
+		:root:lang(en) &[style="display: none;"] {
+			display: block $i;
+
+			&::before {
+				content: 'Command Palette';
+			}
+		}
+
+		&bar {
+			background-color: var(--color-active-caption) $i;
+			color: var(--color-active-caption-text) $i;
+			border-radius: 0 $i;
+
+			height: var(--titlebar-height) $i;
+		}
+	}
+
+	&-left-action-bar:has(> .actions-container:empty) {
+		display: none $i;
+	}
+
+	&-header,
+	&-description,
+	&-list {
+		padding: 0 $i;
+		margin: 10px 8px 6px 8px $i;
+	}
+
+	&-list {
+		overflow: hidden $i;
+
+		height: calc(100% - 64px) $i;
+
+		&-label {
+			overflow: visible $i;
+		}
+	}
+}
+
+.profile {
+	&-edit {
+	}
+
+	&-type-select-container {
+		overflow: visible $i;
+	}
+}

@@ -1,0 +1,69 @@
+.context-view {
+	animation: none $i;
+
+	// Titlebar menubar button
+	/.menubar-menu-items-holder > .monaco-scrollable-element,
+	& > [role="presentation"] {
+		@extend body;
+
+		border-radius: 0 $i;
+
+		padding: 3px $i;
+	}
+}
+
+.monaco {
+	&-menu {
+		font();
+		border-radius: 0 $i;
+
+		.action {
+			&-menu-item {
+				border-radius: 0 $i;
+
+				margin: 0 $i;
+
+				height: unset $i;
+			}
+
+			&-label:not(.separator) {
+				font();
+
+				padding: 2px 20px $i;
+			}
+		}
+
+		.keybinding {
+			padding-right: 20px $i;
+		}
+	}
+
+	&-action-bar {
+		padding: 0 $i;
+	}
+
+	// !important
+	&-menu &-action-bar.vertical .action-label.separator {
+		@extend hr;
+
+		border-bottom: none $i;
+	}
+}
+
+.menu-item-check {
+	border-radius: 0 $i;
+
+	width: 19px $i;
+
+	.checked & {
+		@extend input[type="checkbox"]:checked;
+
+		&::before {
+			-webkit-mask-position: 6px 5px $i;
+		}
+	}
+
+	.action-menu-item:not(.disabled):hover > & {
+		--color-button-text: var(--color-highlight-text);
+	}
+}

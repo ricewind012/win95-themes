@@ -1,0 +1,20 @@
+.suggest-widget {
+	@extend body;
+
+	border: none $i;
+	border-radius: 0 $i;
+
+	.monaco {
+		&-scrollable-element {
+			overflow: hidden $i;
+		}
+
+		&-list-row {
+			padding-right: var(--scrollbar-size) $i;
+
+			&s {
+				margin: 0 $i;
+			}
+		}
+	}
+}

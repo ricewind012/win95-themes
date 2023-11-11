@@ -1,0 +1,54 @@
+.workbench-hover,
+.monaco-hover {
+	// Apparently, I can't repeat gradients all at once, i.e. one image.
+	background-color: var(--color-tooltip) $i;
+	color: var(--color-tooltip-text) $i;
+	font();
+	border: 1px solid var(--color-button-shadow-dark) $i;
+	border-radius: 0 $i;
+	box-shadow: none $i;
+
+	animation: none $i;
+
+	// Text
+	.hover-language-status,
+	.hover-contents {
+		padding: 3px $i;
+	}
+}
+
+.workbench-hover {
+	// Arrow
+	&-pointer {
+		display: none $i;
+	}
+}
+
+.monaco-hover {
+	&-content {
+		font();
+	}
+
+	.hover-row:not(:first-child):not(:empty),
+	.hover-language-status:not(:first-child) {
+		border: none $i;
+
+		&::before {
+			content: '';
+
+			@extend hr;
+		}
+	}
+}
+
+.monaco-editor-overlaymessage {
+	animation: none $i;
+
+	.message {
+		@extend .monaco-hover;
+	}
+
+	.anchor {
+		display: none $i;
+	}
+}

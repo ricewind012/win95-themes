@@ -1,0 +1,75 @@
+.notification {
+	&-toast {
+		opacity: 1 $i;
+		background-color: transparent $i;
+		border: none $i;
+		border-radius: 0 $i;
+		box-shadow: none $i;
+
+		transform: none $i;
+		transition: none $i;
+
+		.monaco {
+			&-list {
+				@extend [role="tabpanel"];
+
+				&-row {
+					background-color: transparent $i;
+				}
+			}
+
+			&-scrollable-element {
+				border-radius: 0 $i;
+			}
+		}
+	}
+
+	&-list-item {
+		padding: 5px $i;
+
+		&-details-row,
+		&-buttons-container {
+			overflow: visible $i;
+		}
+
+		&-icon {
+			font-size: 0 $i;
+
+			margin-left: 0 $i;
+			margin-right: 16px $i;
+
+			box(32px);
+			flex: unset $i;
+		}
+
+		&-message,
+		&-source {
+			font();
+		}
+
+		&-buttons-container > .monaco-button {
+			width: 148px $i;
+		}
+	}
+}
+
+.notifications-center {
+	@extend body;
+
+	border-radius: 0 $i;
+
+	box(auto);
+
+	&-header {
+		background-color: transparent $i;
+
+		padding: 10px $i;
+
+		height: unset $i;
+
+		&-title {
+			font();
+			text-transform: unset $i;
+		}
+	}
+}

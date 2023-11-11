@@ -1,0 +1,170 @@
+.sidebar {
+	background-color: var(--color-button-face) $i;
+	color: var(--color-window-text) $i;
+	border: none $i;
+
+	// Spacing: top/bottom - 8px, left/right - 7px
+	margin-top: 9px $i;
+
+	&:has(> .has-composite-bar) {
+		margin-left: 8px $i;
+
+		&.right {
+			margin-left: 0 $i;
+			margin-right: 8px $i;
+		}
+	}
+
+	.title {
+		padding: 3px 0 8px $i;
+		margin: 0 $i;
+
+		height: unset $i;
+
+		align-items: center $i;
+
+		&-label {
+			font();
+
+			padding: 0 $i;
+
+			h2 {
+				font();
+				color: inherit $i;
+				text-transform: unset $i;
+			}
+		}
+
+		&-actions {
+			padding: 0 $i;
+
+			height: unset $i;
+		}
+	}
+
+	h3.title {
+		text-transform: unset $i;
+
+		padding: 0 $i;
+		padding-bottom: 1px $i;
+	}
+
+	& > .content {
+		font();
+
+		width: 100% $i;
+		height: calc(
+			100vh \
+			- 39px \
+			- var(--tabs-compensation, 0px) \
+			- var(--titlebar-height) \
+			- var(--menubar-height) \
+			- var(--statusbar-height)
+		) $i;
+	}
+}
+
+// Search
+.search {
+	&-widget {
+		margin-bottom: 4px $i;
+
+		&s-container {
+			padding: 0 $i;
+			margin: 0 $i;
+			margin-bottom: 4px $i;
+		}
+	}
+
+	&-view {
+		input {
+			margin: 0 1px $i;
+		}
+
+		.search-container,
+		.query-details {
+			margin: 0 $i;
+		}
+
+		.replace-container {
+			margin-left: 0 $i;
+			margin-top: 10px $i;
+
+			.monaco-action-bar {
+				margin-left: 2px $i;
+
+				height: unset $i;
+
+				.action-label {
+					@extend $small-button;
+				}
+			}
+		}
+
+		.more.codicon {
+			@extend $small-button;
+
+			margin-bottom: 4px $i;
+		}
+
+		.message {
+			padding: 0 4px 6px $i;
+		}
+	}
+}
+
+// Source control
+.scm {
+	&-overflow-widgets-container {
+		box(0);
+	}
+
+	&-view {
+		.monaco {
+			&-editor {
+				&,
+				&-background,
+				.margin {
+					background-color: transparent $i;
+				}
+			}
+
+			&-list {
+				height: calc(100% - 7px) $i;
+
+				// Inputs & buttons
+				&-row.force-no-hover {
+					margin-left: -1px $i;
+				}
+			}
+
+			&-button {
+				margin: 0 $i;
+
+				&-dropdown {
+					overflow: visible $i;
+				}
+
+				.codicon-check,
+				&-dropdown-separator {
+					display: none $i;
+				}
+			}
+		}
+	}
+}
+
+// Extensions
+.extensions {
+	&-viewlet > .header {
+		padding: 0 $i;
+
+		height: unset $i;
+	}
+
+	&-list {
+		.monaco-list {
+			height: 100% $i;
+		}
+	}
+}

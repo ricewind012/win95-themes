@@ -1,0 +1,52 @@
+.menubar {
+	overflow: visible $i;
+
+	position: absolute $i;
+	left: 0;
+	top: calc(var(--titlebar-height) + var(--window-gap)) $i;
+	width: 100% $i;
+	height: var(--menubar-height) $i
+	z-index: 2 $i;
+
+	&::after {
+		content: '';
+
+		@extend hr;
+
+		position: absolute;
+		top: calc(var(--titlebar-height) - 1px);
+		width: 100%;
+	}
+
+	&-menu {
+		&-button {
+			visibility: visible $i;
+
+			&.open {
+				background-color: var(--color-highlight) $i;
+				color: var(--color-highlight-text) $i;
+			}
+		}
+
+		&-title {
+			padding: 3px 6px $i;
+			border-radius: 0 $i;
+
+			&.toolbar-toggle-more {
+				display: none $i;
+			}
+		}
+	}
+}
+
+// Put folder name into menubar
+/*
+#workbench\.view\.explorer .sidebar h3.title {
+	color: var(--color-gray-text) $i;
+	padding: 3px 6px $i;
+
+	position: fixed;
+	top: calc(var(--titlebar-height) + 5px);
+	right: 4px;
+}
+*/

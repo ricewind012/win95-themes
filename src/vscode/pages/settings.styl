@@ -1,0 +1,144 @@
+.settings {
+	&-toc-wrapper {
+		padding: 0 $i;
+
+		& > .monaco-list {
+			height: calc(100% - 2px) $i;
+		}
+	}
+
+	&-editor {
+		padding: 12px $i;
+
+		max-width: unset $i;
+		height: 100% $i;
+	}
+
+	&-editor > &-body {
+		height: calc(100% - 50px) $i;
+
+		& > .monaco-split-view2 {
+			margin: 0 $i;
+
+			height: 100% $i;
+		}
+	}
+
+	&-header {
+		overflow: visible $i;
+		background-color: var(--color-button-face) $i;
+
+		padding: 0 $i;
+		margin: 0 $i;
+
+		position: relative $i;
+		max-width: unset $i;
+		//z-index: 0 $i;
+
+		&-controls {
+			border: none $i;
+
+			height: unset $i;
+
+			.monaco-button {
+				width: unset $i;
+			}
+		}
+	}
+
+	&-right-controls {
+		margin-top: -6px $i;
+	}
+
+	&-group-title-label {
+		padding: 0 $i;
+	}
+
+	// !important
+	&-editor > &-body &-tree-container {
+		.monaco-list,
+		.monaco-scrollable-element {
+			overflow: hidden $i;
+		}
+
+		.monaco-list {
+			@extend [role="tabpanel"];
+
+			margin-top: 1px $i;
+
+			height: calc(100% - 23px) $i;
+			
+			&-row {
+				background-color: transparent $i;
+				font();
+
+				&s {
+					background-color: var(--color-button-face) $i;
+				}
+			}
+		}
+	}
+
+	&-clear-widget {
+		position: unset $i;
+		width: unset $i;
+	}
+
+	// What's the point ?
+	&-count-widget {
+		display: none $i;
+	}
+}
+
+.setting {
+	&-item {
+		&-contents {
+			@extend fieldset;
+		}
+
+		&-title {
+			@extend legend;
+		}
+
+		&-category {
+			opacity: 1 $i;
+		}
+
+		&-value-description {
+			gap: 7px;
+		}
+
+		&-description {
+			opacity: 1 $i;
+
+			margin: 0 $i;
+		}
+
+		&-modified-indicator {
+			border-color: red $i;
+
+			left: 3px $i;
+			top: 0 $i;
+			bottom: 0 $i;
+		}
+	}
+
+	&-list-object {
+		&-widget {
+			@extend table;
+
+			margin-bottom: 8px $i;
+		}
+
+		&-value-container {
+			height: unset $i;
+		}
+	}
+}
+
+.search-container {
+	gap: 5px $i;
+
+	display: flex $i;
+	align-items: center $i;
+}

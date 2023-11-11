@@ -1,0 +1,363 @@
+legend {
+	font();
+
+	position: absolute;
+	top: -8px;
+	padding: 0 2px $i;
+}
+
+.select-container {
+	overflow: visible $i;
+
+	&::after {
+		display: none $i;
+	}
+}
+
+.monaco {
+	// Buttons
+	&-button {
+		@extend button;
+
+		border-radius: 0 $i;
+
+		&-description {
+			font();
+		}
+	}
+
+	&-text-button-with-short-label,
+	&-description-buttons > &-button {
+		overflow: visible $i;
+
+		width: 148px $i;
+	}
+
+	&-toolbar,
+	.dialog-toolbar-row &-action-bar,
+	.notification-toast &-action-bar,
+	.settings-clear-widget &-action-bar,
+	.terminal-tabs-entry &-action-bar {
+		.action-label {
+			@extend $small-button;
+
+			&[aria-disabled] {
+				@extend $small-button-disabled;
+			}
+
+			&.clicked, // Titlebar
+			&[aria-expanded="true"] {
+				@extend button:active;
+			}
+		}
+	}
+
+	&-action-bar {
+		.action-item {
+			cursor: unset $i;
+
+			&:not([role="tab"]) {
+				margin: 0 $i;
+			}
+		}
+	}
+
+	&-dropdown {
+		& > .dropdown-label {
+			cursor: unset $i;
+		}
+
+		&-button {
+			@extend $small-button;
+
+			width: 16px $i;
+			height: 23px $i;
+		}
+	}
+
+	// Text input
+	&-inputbox {
+		overflow: visible $i;
+		background-color: transparent $i;
+		color: var(--color-window-text) $i;
+		font();
+		border: none $i;
+		border-radius: 0 $i;
+
+		height: unset $i;
+
+		.action-label {
+			padding: 0 $i;
+
+			display: flex $i;
+			justify-content: center $i;
+		}
+	}
+
+	&-findInput {
+		gap: 6px $i;
+
+		display: flex $i;
+		align-items: center $i;
+
+		& > .monaco-scrollable-element {
+			overflow: visible $i;
+			
+			flex: 1 $i;
+		}
+
+		input,
+		textarea {
+			width: 100% $i;
+		}
+
+		.controls {
+			position: unset $i;
+		}
+	}
+
+	// Checkboxes
+	&-checkbox {
+		@extend input[type="checkbox"];
+
+		border: none $i;
+		border-radius: 0 $i;
+
+		&.checked {
+			@extend input[type="checkbox"]:checked;
+		}
+	}
+
+	&-custom-toggle:not(&-checkbox) {
+		&.codicon,
+		.codicon {
+			@extend $small-button;
+
+			border: none $i;
+
+			&.checked {
+				@extend button:active;
+			}
+		}
+	}
+
+	// Badges
+	&-count-badge {
+		background-color: transparent $i;
+		color: inherit $i
+		font();
+
+		padding: 0 $i;
+
+		min-width: unset $i;
+		min-height: unset $i;
+	}
+
+	/.badge {
+		margin-left: 4px $i;
+
+		position: unset $i;
+		box(unset);
+
+		&-content {
+			background-color: transparent $i;
+			font();
+			color: inherit $i;
+			parentheses();
+
+			padding: 0 $i;
+
+			position: unset $i;
+			height: unset $i;
+		}
+	}
+
+	// Separator
+	&-sash {
+		--vscode-sash-size: 7px $i;
+		--vscode-sash-hover-size: 7px $i;
+		--vscode-sash-hoverBorder: transparent $i;
+
+		&.vertical {
+			margin-left: 2px $i;
+
+			#workbench\.parts\.editor & {
+				--vscode-sash-size: 19px $i;
+				margin-left: -11px $i;
+			}
+		}
+
+		&.horizontal {
+			margin-top: -12px $i;
+		}
+	}
+
+	// Scrollbar
+	&-scrollable-element > .scrollbar {
+		@extend ::-webkit-scrollbar;
+
+		top: 0px $i;
+		height: 100% $i;
+
+		transition: none $i;
+
+		&.horizontal {
+			width: 100% $i;
+			height: var(--scrollbar-size) $i;
+		}
+
+		& > .slider {
+			@extend ::-webkit-scrollbar-thumb;
+
+			width: var(--scrollbar-size) $i;
+		}
+
+		& > .scra {
+			@extend ::-webkit-scrollbar-button;
+
+			font-size: 0 $i;
+
+			left: 0 $i;
+			box-sizing: border-box $i;
+
+			&.codicon-scrollbar-button {
+				&-up {
+					@extend ::-webkit-scrollbar-button:decrement;
+
+					top: 0 $i;
+				}
+
+				&-down {
+					@extend ::-webkit-scrollbar-button:increment;
+
+					bottom: 0 $i;
+				}
+
+				&-left {
+					@extend ::-webkit-scrollbar-button:horizontal:decrement;
+
+					left: 0 $i;
+				}
+
+				&-right {
+					@extend ::-webkit-scrollbar-button:horizontal:increment;
+
+					left: unset $i;
+					right: 0 $i;
+				}
+			}
+		}
+	}
+
+	/.decorationsOverviewRuler {
+		top: var(--scrollbar-size) $i;
+		width: var(--scrollbar-size) $i;
+		height: calc(100% - var(--scrollbar-size) * 2) $i;
+		z-index: 12 $i;
+
+		pointer-events: none $i;
+	}
+
+	// Item list
+	&-list {
+		@extend table;
+
+		padding: 2px $i;
+
+		width: 100% $i;
+		height: calc(100% - 10px) $i;
+		box-sizing: border-box $i;
+
+		&:focus::before {
+			display: none $i;
+		}
+
+		&-row {
+			overflow: visible $i;
+			font();
+			border-radius: 0 $i;
+
+			&.selected {
+				--vscode-keybindingLabel-border: var(--color-active-caption-text);
+				--vscode-keybindingLabel-bottomBorder: var(--vscode-keybindingLabel-border);
+				--vscode-widget-shadow: @css {
+					color-mix(in srgb, var(--color-active-caption-text) 50%, transparent)
+				};
+			}
+
+			& > .option-detail {
+				opacity: 1 $i;
+			}
+		}
+
+		&-rows {
+			margin: 2px $i;
+
+			width: calc(100% - 4px) $i;
+		}
+	}
+}
+
+.action {
+	&-item.disabled &-label {
+		.monaco-action-bar & {
+			@extend $small-button-disabled;
+		}
+
+		&,
+		&::before {
+			opacity: 1 $i;
+		}
+	}
+}
+
+.scm-editor,
+.suggest-input {
+	&-container {
+		background-color: transparent $i;
+		border: none $i;
+		border-radius: 0 $i;
+
+		padding: 0 $i;
+
+		flex-grow: 1 $i;
+
+		.monaco-editor {
+			border-radius: 0 $i;
+
+			&[style*="height: 20px"],
+			&[style*="height: 21px"],
+			&[style*="height: 22px"],
+			&[style*="height: 23px"],
+			&[style*="height: 24px"] {
+				height: calc(var(--text-size) * var(--text-line) + 8px) $i;
+			}
+		}
+
+		.view-lines {
+			font();
+		}
+	}
+
+	&-placeholder {
+		font();
+
+		padding: 0 $i;
+		margin-left: 4px $i;
+		margin-top: 4px $i;
+
+		width: unset $i;
+	}
+}
+
+// !important
+.monaco-workbench .part.editor > .content .gettingStartedContainer .gettingStartedSlide .getting-started-checkbox,
+.settings-editor > .settings-body .settings-tree-container .setting-item-bool .setting-value-checkbox {
+	@extend input[type="checkbox"];
+
+	border-radius: 0 $i;
+
+	&.checked {
+		@extend input[type="checkbox"]:checked;
+	}
+}

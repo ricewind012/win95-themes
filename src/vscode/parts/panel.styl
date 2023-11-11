@@ -1,0 +1,141 @@
+.part.panel {
+	overflow: visible $i;
+	background-color: transparent $i;
+	padding: 0 10px 0 7px $i;
+	border: none $i;
+
+	width: calc(100% - 3px) $i;
+	height: calc(100% - 26px) $i;
+
+	.title {
+		border: none $i;
+
+		padding: 0 $i;
+		margin: 0 $i;
+		margin-left: 4px $i;
+		margin-top: -8px $i;
+		gap: 2px $i;
+
+		height: unset $i;
+
+		overflow: visible $i;
+
+		&-actions {
+			height: unset $i;
+		}
+
+		.monaco-inputbox,
+		.select-container {
+			margin-bottom: -4px $i;
+
+			position: relative $i;
+			bottom: 3px $i;
+		}
+
+		.select-container {
+			margin-right: 2px $i;
+		}
+	}
+
+	& > .content {
+		@extend .editor-container > .editor-instance;
+
+		margin-top: -1px $i;
+
+		box(100%);
+
+		& > .composite {
+			@extend .monaco-editor;
+		}
+	}
+
+	.pane {
+		height: calc(100% - 2px) $i;
+
+		&-body {
+			margin-left: 2px $i;
+			margin-top: 2px $i;
+
+			width: calc(100% - 32px) $i;
+		}
+	}
+
+	.single-terminal-tab {
+		width: 36px $i;
+		justify-content: center $i;
+
+		&::before {
+			background-color: transparent $i;
+		}
+
+		.codicon {
+			display: none $i;
+		}
+	}
+}
+
+.pane {
+	&.vertical {
+		height: calc(100% + 4px) $i;
+	}
+
+	&-header {
+		font();
+		border: none $i;
+
+		height: unset $i;
+
+		.title {
+			font();
+
+			padding: 0 $i;
+		}
+	}
+
+	&-body {
+		& > .monaco-editor {
+			border: none $i;
+			box-shadow: none $i;
+		}
+	}
+
+	.monaco {
+		&-list {
+			width: calc(100% - 8px) $i;
+			height: calc(100% - 10px) $i;
+
+			.sidebar.left & {
+				width: 100% $i;
+			}
+		}
+	}
+}
+
+.tree-container .monaco-list {
+	border: none $i;
+	box-shadow: none $i;
+
+	width: calc(100% - 2px) $i;
+	height: calc(100% - 5px) $i;
+}
+
+.viewpane-filter {
+	&-container {
+		margin: 1px 8px 2px -1px $i;
+
+		&:empty {
+			display: none $i;
+		}
+	}
+
+	&-controls {
+		margin-left: 6px $i;
+		margin-bottom: -4px $i;
+
+		position: unset $i;
+	}
+}
+
+.xterm {
+	inset: 0 11px 0 -20px $i;
+}

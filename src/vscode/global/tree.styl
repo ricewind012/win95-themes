@@ -1,0 +1,261 @@
+$icon-width = 16px;
+$max-nest   = 10;
+
+/**
+ * Attributes
+ *
+ * aria-expanded | directory, if present
+ * aria-level    | how deep it is
+**/
+
+[aria-level]:not([aria-level="1"]) {
+	--a: 36px;
+	--b: 12px;
+	--b-with-arrow: 24px;
+
+	&:not([aria-expanded]) {
+		--b: var(--b-with-arrow);
+	}
+
+	.monaco-tl-twistie {
+		padding-left: calc(var(--a) + var(--b) * (var(--level) - var(--multiply))) $i;
+		margin-left: var(--offset) $i;
+	}
+}
+
+for i in range(2, $max-nest) {
+	{s('[aria-level="%s"]', i)} {
+		--level: i;
+		--multiply: 3 - (0.5 * i);
+		--offset: 2px * (i - 6);
+
+		&:not([aria-expanded]) {
+			--offset: -16px * (i - 3);
+		}
+	}
+}
+
+// God knows why these need an override ...
+[aria-level="2"] {
+	--multiply: 2.5;
+	--offset: -2px;
+
+	&:not([aria-expanded]) {
+		--multiply: 1.35 $i;
+		--offset: 0px;
+	}
+}
+
+[aria-level="3"] {
+	--multiply: 2;
+	--offset: 0px;
+
+	&:not([aria-expanded]) {
+		--offset: 12px;
+	}
+}
+
+[aria-level="4"] {
+	--offset: -4px;
+}
+
+[role="treeitem"] {
+	padding-left: 4px $i;
+
+	&[aria-selected="true"] {
+		background-color: var(--color-window) $i;
+		color: var(--color-window-text) $i;
+
+		.monaco-icon-name-container {
+			background-color: var(--color-highlight) $i;
+			color: var(--color-highlight-text) $i;
+			border: 1px dotted #ff0 $i;
+		}
+	}
+
+	.monaco-icon {
+		&-label {
+			align-items: center $i;
+
+			&::before {
+				padding-right: 2px $i;
+
+				// Fix for source control tab or the extension
+				height: 16px $i;
+				z-index: 2 $i;
+			}
+
+			&::after {
+				opacity: 1 $i;
+
+				margin: 0 4px $i;
+
+				width: 12px $i;
+			}
+
+			&-container {
+				margin-top: 1px $i;
+			}
+		}
+
+		&-name-container {
+			padding: 1px 5px 0 1px $i;
+
+			.label-separator {
+				opacity: 1 $i;
+
+				margin: 0 $i;
+			}
+		}
+	}
+}
+
+// Tree dots
+.monaco-tl {
+	&-row {
+		overflow: visible $i;
+
+		margin-left: -12px $i;
+	}
+
+	&-contents {
+		overflow: visible $i;
+
+		position: relative $i;
+
+		// Expand button to icon dots
+		&::before,
+		[aria-expanded] &::after {
+			content: '';
+
+			position: absolute;
+		}
+
+		&::before {
+			border-bottom: 1px dotted var(--color-tree-border);
+
+			left: -6px;
+			top: 50%;
+			width: 7px;
+		}
+
+		// Doesn't work in search :/
+		[aria-expanded]:not([data-index="0"]) &::after {
+			border-right: 1px dotted var(--color-tree-border);
+
+			left: -12px;
+			bottom: calc(50% + 5px);
+			height: 7px;
+		}
+	}
+
+	&-twistie {
+		padding-right: 4px $i;
+
+		&,
+		&::before {
+			transform: unset $i;
+		}
+
+		&::before {
+			--color-button-text: var(--color-window-text) $i;
+
+			z-index: 2;
+		}
+
+		[aria-expanded] &::after {
+			content: '';
+
+			background-color: var(--color-window);
+			border: 1px solid var(--color-tree-border);
+
+			position: absolute;
+			box(7px);
+			z-index: 1;
+		}
+	}
+
+	&-indent {
+		top: -18px $i;
+		height: calc(100% + 22px) $i;
+
+		& > .indent-guide {
+			border-left: 1px dotted var(--color-tree-border) $i;
+
+			width: $icon-width + 4px $i;
+			height: calc(100% - 1px) $i;
+		}
+	}
+}
+
+// Icons
+.show-file-icons [role="treeitem"] {
+	.file-icon::before {
+		content: '' $i;
+
+		background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA0AAAAQCAMAAAD6fQULAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAPUExURQAAAP///4eIj8DHyAAAAIf7VzIAAAAFdFJOU/////8A+7YOUwAAAAlwSFlzAAAOwwAADsMBx2+oZAAAADZJREFUGFdjYGFhYIRCIBPIYYJCIBtIICCQBwfMWHgMDCBFOOVA0lSVgwEQjxkBGIDuhgMGFgBmBADr9EYr2gAAAABJRU5ErkJggg==') $i;
+		background-size: 13px 16px;
+		background-position: center;
+	}
+
+	&[aria-expanded] .monaco-icon-label::before {
+		content: '' $i;
+
+		background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA8AAAANCAMAAABBwMRzAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAASUExURYeIj8DHyP//AP///wAAAAAAAJRqB2kAAAAGdFJOU///////ALO/pL8AAAAJcEhZcwAADsMAAA7DAcdvqGQAAAA1SURBVBhXtYrRFQAQEMOCdv+VHcfDANKvtMVm4AWm1MguSI0ib9AuUHjuM9OPlh/7g7AupA6lNwF/p6NMjAAAAABJRU5ErkJggg==') $i;
+	}
+}
+
+// Overrides for files not at first level
+[role="treeitem"]:not([aria-expanded]):not([aria-level="1"]) {
+	.monaco-tl-contents::before {
+		border-left: 1px dotted var(--color-tree-border);
+		border-bottom: 1px dotted var(--color-tree-border);
+
+		left: $icon-width * -1;
+		top: -50%;
+		width: $icon-width - 4px;
+		height: 100%;
+		z-index: 1;
+	}
+
+	.explorer-folders-view & .monaco-icon-label {
+		margin-left: -5px $i;
+	}
+
+	.search-view & {
+		&[aria-level="2"] {
+			--multiply: 2.25 $i;
+			--b: 12px $i;
+		}
+
+		&[data-last-element="true"] .monaco-tl-indent {
+			display: none $i;
+		}
+	}
+}
+
+// Panel
+.tree-container {
+	[aria-level="2"]:not([aria-expanded]) {
+		--multiply: 2.25 $i;
+	}
+
+	.indent-guide {
+		visibility: hidden $i;
+	}
+
+	[aria-expanded] .resource-label-container {
+		margin-left: -3px $i;
+	}
+}
+
+// Settings
+.settings-toc-container {
+	[aria-level="2"]:first-child {
+		--multiply: 3 $i;
+
+		.monaco-tl-contents::before {
+			display: none $i;
+		}
+	}
+}
