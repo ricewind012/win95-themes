@@ -1,25 +1,25 @@
 [class*="contextmenu_"] {
 	/{attr(contextMenu)} {
-		background: var(--color-button-face) $i;
-		border: 1px solid $i;
-		border-color: var(--button-3d-border-color) $i;
-		box-shadow: var(--window-3d-box-shadow) $i;
-		padding: 1px $i;
+		@extend body;
+
 		min-width: unset $i;
 	}
+
 	/{attr(contextMenuContents)} {
 		background: var(--color-button-face) $i;
 	}
 
 	/{attr(contextMenuItem)} {
-		font: var(--font) $i;
 		color: var(--color-button-text) $i;
-		padding: 1px 20px $i;
+		font: var(--text-ui) $i;
 		border: none $i;
 
-		&:hover, &[class*="active"] {
-			background-color: var(--color-active-caption) $i;
-			color: var(--color-active-caption-text) $i;
+		padding: 1px 20px $i;
+
+		&:hover,
+		&[class*="active"] {
+			background-color: var(--color-highlight) $i;
+			color: var(--color-highlight-text) $i;
 		}
 	}
 }
@@ -28,6 +28,7 @@
 	// TODO radio ?
 	/{attr(Icon)} {
 		background-image: var(--control-img);
+
 		position: absolute;
 		left: 6px;
 		box(7px);
@@ -49,8 +50,10 @@
 [class*="titlebarcontrols_"] {
 	/{attr(LogoutButton)} {
 		white-space: pre;
+
 		gap: 0 $i;
 	}
+
 	/{attr(AccountName)},
 	/{attr(WalletBalance)} {
 		color: inherit $i;
@@ -58,25 +61,27 @@
 
 	/{attr(NotificationsMenu)} {
 		color: var(--color-button-text);
-		padding: 0 $i;
 		border: none;
 		box-shadow: none;
+
+		padding: 0 $i;
+
 		width: unset;
 	}
+
 	/{attr(NotificationHeader)} {
 		padding: 8px;
 		padding-right: 2px;
 	}
+
 	/{attr(AllNotificationsTitle)} {
-		font: var(--font) $i;
+		font: var(--text-ui) $i;
 	}
+
 	/{attr(EmptyNotificationsCtn)} {
-		background-color: var(--color-window);
-		border-color: var(--box-3d-border-color);
-		box-shadow: var(--box-3d-box-shadow);
-		padding: 8px;
-		margin: 8px;
+		@extend body;
 	}
+
 	/{attr(EmptyNotificationsBody)} {
 		color: inherit $i;
 	}

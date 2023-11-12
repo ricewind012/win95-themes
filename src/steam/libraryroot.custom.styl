@@ -1,8 +1,15 @@
-$i = !important;
+attr(child) {
+	original = replace('"]', s('%s_"]', child), selector());
 
-@import 'functions';
+	s('%s', unquote(original), child);
+}
+
+@import '../shared/*';
+
+* {
+	transition: none $i;
+}
 
 @import 'global/*';
-
-@import 'dialogs/*';
-@import 'main-window/*';
+@import 'parts/*';
+@import 'popup/*';

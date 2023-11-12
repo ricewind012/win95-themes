@@ -1,11 +1,12 @@
 [class*="tooltip_"] {
 	/{attr(TextToolTip)} {
-		background-color: var(--color-info-background);
+		background-color: var(--color-tooltip);
+		color: var(--color-tooltip-text);
+		font: var(--text-ui);
 		border: 1px solid var(--color-button-shadow-dark);
-		box-shadow: inset 0 0 0 1px #c0c7c8;
-		color: var(--color-button-text);
-		font: var(--font);
-		padding: 8px 16px;
+		box-shadow: none;
+
+		padding: 3px;
 		margin: 0;
 	}
 }

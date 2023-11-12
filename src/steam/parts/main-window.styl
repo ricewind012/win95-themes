@@ -8,10 +8,12 @@
 	/{attr(URLBarReplacement)} {
 		display: none $i;
 	}
+
 	/{attr(TopBar)} {
 		background: transparent;
 		box-shadow: none;
 	}
+
 	/{attr(TitleBar)} {
 		flex-direction: column-reverse;
 		height: unset;
@@ -23,6 +25,7 @@
 			@extend hr;
 		}
 	}
+
 	/{attr(WindowControls)},
 	/{attr(RootMenuBar)} {
 		flex: initial $i;
@@ -39,30 +42,21 @@
 	}
 }
 
-[class*="titlebarcontrols_"] {
-	/{attr(GamepadUIToggle)} > svg {
-		position: unset $i;
-	}
-}
-
 [class*="rootmenu_"] {
 	/{attr(RootMenuButton)} {
 		color: var(--color-button-text) $i;
-		font: var(--font);
-		padding: 3px 6px 2px 6px;
+		font: var(--text-ui);
+		padding: 3px 6px;
 
 		&:active,
 		&[class*="Open"] {
-			background-color: var(--color-active-caption);
-			color: var(--color-active-caption-text) $i;
+			background-color: var(--color-highlight);
+			color: var(--color-highlight-text) $i;
 		}
 
 		svg {
 			display: none;
 		}
-	}
-	/{attr(SteamButton)} {
-		padding: 0;
 	}
 }
 
@@ -76,7 +70,9 @@
 	/{attr(BottomBar)} {
 		background: transparent;
 		box-shadow: none;
+
 		padding: 8px;
+
 		flex: unset;
 	}
 
@@ -84,9 +80,11 @@
 	/{attr(DownloadStatusContent)},
 	/{attr(FriendsButton)} {
 		@extend button;
-		padding: 3px 6px $i;
+
 		width: unset $i;
+		display: flex $i;
 	}
+
 	/{attr(Icon)},
 	/{attr(Text)},
 	/{attr(Queue)} {

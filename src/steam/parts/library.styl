@@ -3,13 +3,9 @@
 		background-color: transparent $i;
 		width: 8px;
 	}
+
 	/{attr(AppDetailsTransitionGroup)} {
-		border: 1px solid $i;
-		border-color: var(--box-3d-border-color) $i;
-		box-shadow: var(--box-3d-box-shadow) $i;
-		margin: 1px $i;
-		margin-top: 3px $i;
-		width: calc(100% - 4px);
+		@extend table;
 	}
 }
 
@@ -20,27 +16,20 @@
 
 	/{attr(GameListHomeAndSearch)} {
 		background-color: transparent;
+		box-shadow: none;
+
 		padding: 0;
 		margin: 3px 0;
-		margin-right: -1px;
-		box-shadow: none;
+
 		height: unset;
 
-		& > :first-child {
-			margin-top: -1px;
-			margin-bottom: 1px;
-
-			& > a {
-				margin: 1px $i;
-			}
-		}
 		a {
 			@extend button;
-			cursor: default;
 
 			&:hover {
 				text-decoration: none $i;
 			}
+
 			&[aria-current] {
 				@extend button:active;
 			}
@@ -51,8 +40,9 @@
 [class*="gamelisthome_"] {
 	/{attr(Label)} {
 		color: var(--color-button-text) $i;
-		font: var(--font);
+		font: var(--text-ui);
 		text-transform: unset;
+
 		margin: auto;
 	}
 
@@ -61,10 +51,12 @@
 
 		&::before {
 			content: 'Collections';
+
 			text-align: center;
 			width: 100%;
 		}
 	}
+
 	/{attr(CollectionIcon)} {
 		display: none;
 	}
@@ -73,26 +65,27 @@
 [class*="gamelistdropdown_"] {
 	/{attr(Bar)} {
 		padding: 0;
-		margin: 0 -1px;
 
 		circle {
 			stroke: var(--color-button-text) $i;
 		}
+
 		svg {
 			fill: var(--color-button-text) $i;
-			box(var(--font-size));
 		}
 	}
 
 	/{attr(SearchBar)} {
 		align-items: center;
 	}
+
 	/{attr(MenuHeader)} {
 		@extend select;
-		font: var(--font) $i;
+		font: var(--text-ui) $i;
 		text-transform: unset $i;
 		cursor: default $i;
 	}
+
 	/{attr(ScrollToTop)},
 	/{attr(Arrow)} {
 		display: none;
@@ -102,11 +95,14 @@
 		margin: 0 $i;
 		margin-right: 3px $i;
 	}
+
 	/{attr(CheckboxWithImage)} {
-		@extend button;
-		margin: 0 3px $i;
-		width: 20px $i;
-		cursor: default $i;
+		@extend $small-button;
+
+		&::before,
+		&::after {
+			display: none $i;
+		}
 
 		&[class*="Active"] {
 			@extend button:active;
@@ -116,8 +112,7 @@
 
 [class*="gamelistsearchbar_"] {
 	/{attr(Container)} {
-		padding: 0;
-		margin: 4px -1px;
+		padding: 4px 0;
 	}
 
 	/{attr(FilterTag)} {
@@ -131,21 +126,24 @@
 		margin-bottom: -1px;
 		min-height: unset $i;
 	}
+
 	/{attr(SearchFilterInput)} {
 		color: var(--color-button-text);
 		align-items: center;
 	}
+
 	/{attr(SearchFilterInputClear)} {
 		position: unset $i;
 	}
+
 	/{attr(SearchByTypePrompt)} {
-		font: var(--font) $i;
+		font: var(--text-ui) $i;
 		padding: 0 18px $i;
 	}
 
 	/{attr(AdvancedSearchContainer)} {
 		@extend button;
-		height: fit-content $i;
+
 		justify-content: center;
 
 		& > .Focusable > div {
@@ -160,9 +158,10 @@
 			display: none $i;
 		}
 	}
+
 	/{attr(AdvancedSearchPane)} {
-		@extend .DesktopUI;
-		background-color: var(--color-button-face) $i;
+		@extend body;
+
 		border-radius: 0 $i;
 
 		&::before {
@@ -174,9 +173,11 @@
 [class*="gamelist_"] {
 	/{attr(Container)} {
 		@extend table;
+
 		padding-right: 2px;
-		margin-left: 1px;
+		margin-left: 2px;
 		margin-bottom: 1px;
+
 		width: calc(100% - 8px);
 		box-sizing: content-box; // for the scrollbar
 	}
@@ -184,31 +185,36 @@
 
 [class*="gamelistentry_"] {
 	/{attr(Container)} {
-		font: var(--font);
+		font: var(--text-ui);
 		box-shadow: none $i;
 
 		&[class*="Running"] {
 			color: green $i;
 		}
+
 		&[class*="Installed"] {
 			color: var(--color-button-text) $i;
 		}
+
 		&[class*="Uninstalled"] {
 			color: var(--color-gray-text) $i;
 		}
+
 		&[class*="Updating"],
 		&[class*="Synchronizing"],
 		&[class*="Cloud"] {
-			color: var(--color-active-caption) $i;
+			color: var(--color-highlight) $i;
 		}
+
 		&:hover,
 		&[class*="HoverOverlay_"]
 		&[class*="Selected"] {
-			background-color: var(--color-active-caption) $i;
-			color: var(--color-active-caption-text) $i;
+			background-color: var(--color-highligh) $i;
+			color: var(--color-highlight-text) $i;
 		}
 
-		circle, path {
+		circle,
+		path {
 			fill: currentColor $i;
 		}
 	}
@@ -217,22 +223,24 @@
 [class*="gamelistsectionheader_"] {
 	/{attr(Container)} {
 		background: none $i;
-		color: var(--color-button-text);
+		color: var(--color-window-text);
 		box-shadow: none $i;
 
-		&, & > div {
-			color: var(--color-button-text) $i;
+		&,
+		& > div {
+			color: var(--color-window-text) $i;
 			stroke: currentColor $i;
 		}
 	}
 
 	/{attr(SectionName)} {
-		font: var(--font);
+		font: var(--text-ui);
 		letter-spacing: 0;
 	}
+
 	/{attr(SectionCount)} {
 		color: var(--color-gray-text);
-		font: var(--font);
+		font: var(--text-ui);
 	}
 }
 
@@ -244,23 +252,31 @@
 	/{attr(FilterArea)} {
 		gap: 6px 8px $i;
 	}
+
 	/{attr(FilterBucket)} {
 		@extend fieldset;
-		border: 1px solid;
 
 		.DialogInput_Wrapper {
-			margin: 0;
+			margin: 0 $i;
 		}
 	}
+
 	/{attr(FilterBucketLabel)} {
-		@extend .DialogSubHeader;
+		@extend $legend-as-div;
+
+		font();
+		color: var(--color-button-text) $i;
+		text-transform: unset $i;
 	}
+
 	/{attr(FilterBucketBoxes)} {
 		padding: 0;
 		gap: 4px;
+
 		display: flex;
 		flex-direction: column;
 	}
+
 	/{attr(ExtraTall)} {
 		grid-row-end: span 2 $i;
 	}
@@ -268,6 +284,7 @@
 	/{attr(Default)} {
 		font-style: normal $i;
 	}
+
 	/{attr(Buttons)} {
 		margin: 0;
 		gap: 4px;

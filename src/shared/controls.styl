@@ -55,14 +55,12 @@ textarea {
 
 select,
 textarea,
-input:is(
-	:not([type]),
-	[type="url"],
-	[type="text"],
-	[type="number"],
-	[type="search"],
-	[type="password"]
-) {
+input:not([type]),
+input[type="url"],
+input[type="text"],
+input[type="number"],
+input[type="search"],
+input[type="password"] {
 	background-color: var(--color-window) !important;
 	color: var(--color-window-text) !important;
 	box-shadow: var(--border-field) !important;
@@ -72,7 +70,8 @@ input:is(
 }
 
 button,
-input:is([type="button"], [type="submit"]) {
+input[type="button"],
+input[type="submit"] {
 	background-color: var(--color-button-face) !important;
 	color: var(--color-button-text) !important;
 	text-align: center !important;
@@ -86,6 +85,7 @@ input:is([type="button"], [type="submit"]) {
 	height: unset !important;
 
 	display: block !important;
+	cursor: default !important;
 
 	&:active {
 		box-shadow: var(--border-button-sunken) !important;
@@ -123,7 +123,11 @@ input {
 				background-color: var(--color-button-text) !important;
 
 				position: absolute;
-				inset: 0;
+				// TODO: inset when steam updates chrome
+				top: 0 !important;
+				right: 0 !important;
+				bottom: 0 !important;
+				left: 0 !important;
 			}
 		}
 	}
@@ -215,11 +219,8 @@ select {
 	background-size: 1px 1px !important;
 
 	padding: 0 !important;
+	padding-left: 4px !important;
 	padding-right: 20px !important;
-
-	@supports not (-moz-appearance: none) {
-		padding-left: 4px !important;
-	}
 
 	&:focus {
 		outline: none !important; /* unable to do right side, as it conflicts with the button */
@@ -232,6 +233,7 @@ $small-button {
 	padding: 0 $i;
 	margin: 0 $i;
 
+	position: relative $i;
 	width: 16px $i;
 	height: 14px $i;
 
@@ -244,7 +246,11 @@ $small-button {
 		-webkit-mask-position: var(--button-img-pos, center) !important;
 
 		position: absolute !important;
-		inset: 0 !important;
+		// TODO: inset when steam updates chrome
+		top: 0 !important;
+		right: 0 !important;
+		bottom: 0 !important;
+		left: 0 !important;
 		height: 100% !important;
 		display: block !important;
 	}

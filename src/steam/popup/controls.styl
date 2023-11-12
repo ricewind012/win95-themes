@@ -3,11 +3,13 @@
 		padding: 1px;
 	}
 }
+
 [class*="dropdownlabel_"] {
 	/{attr(DropDownLabelTitle)} {
-		font: var(--font) $i;
+		font: var(--text-ui) $i;
 		color: inherit;
 	}
+
 	/.DialogDropDown {attr(DropDownLabelDescription)} {
 		display: none;
 	}
@@ -25,32 +27,33 @@
 		gap: 4px;
 		flex-direction: column;
 	}
+
 	/{attr(Button)} {
-		font: var(--font);
+		font: var(--text-ui);
 		color: var(--color-button-text) $i;
 		text-align: left;
+
+		gap: 7px;
+
 		flex-direction: row;
 		justify-content: left;
-		gap: 6px;
 
 		&::before {
 			content: '';
+
 			@extend input[type="radio"];
 		}
+
 		&:active::before {
 			--control-img: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMBAMAAACkW0HUAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsIAAA7CARUoSoAAAAAPUExURf///wAAAIeIj8DHyP///1QVyYYAAAABdFJOUwBA5thmAAAAOElEQVQI12NgYFBSYgACJUFBIM0kaGws6MDAJGxsbODAoGgMBCzYKagSJgZjYwYHBgYXMAISQBIAZBYIx/Jku34AAAAASUVORK5CYII=') $i;
 		}
+
 		&[class*="Active"]::before {
 			--control-img: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMAgMAAAArG7R0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAAMUExURf///wAAAIeIj////88rXQEAAAABdFJOUwBA5thmAAAAMElEQVQI12NgWMXAwBW6gEH1fwyD+v8zDPOvf2aYHwrFQDZITOE/DwM/wwcGhv8MAL1zEtdwC089AAAAAElFTkSuQmCC') $i;
 		}
 
 		& > span {
-			&::before {
-				content: '(';
-			}
-			&::after {
-				content: ')';
-			}
+			parentheses();
 		}
 	}
 }
@@ -58,19 +61,35 @@
 [class*="gamepadslider_"] {
 	/{attr(SliderControl)} {
 		@extend input[type="range"];
+
 		margin: 0 $i;
+
 		height: unset $i;
 	}
+
 	/{attr(SliderTrack)} {
 		@extend input[type="range"]::-webkit-slider-runnable-track;
+
+		border-radius: 0 $i;
+
 		margin: 0 $i;
+
+		height: 4px $i;
+
+		&::before {
+			display: none $i;
+		}
 	}
+
 	/{attr(SliderHandle)} {
 		@extend input[type="range"]::-webkit-slider-thumb;
+
+		box-shadow: none;
+
 		margin: 0 $i;
 		margin-top: -8px $i;
-		box-shadow: none;
 	}
+
 	/{attr(SliderHandleContainer)} {
 		transform: translateX(calc(-100% * var(--inverse-normalized-value) + 7px * var(--inverse-normalized-value)));
 	}

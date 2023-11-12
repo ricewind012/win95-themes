@@ -1,1 +1,2 @@
-*.css linguist-generated
+dist/*/*.css linguist-generated
+dist/*/*.js linguist-generated

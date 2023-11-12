@@ -1,397 +1,299 @@
 :root {
-  --color-button-text: #000 !important;
-  --color-button-face: #c0c0c0 !important;
-  --color-button-highlight: #fff !important;
-  --color-button-shadow: #808080 !important;
-  --color-button-shadow-dark: #000 !important;
-  --color-button-checked: #dfdfdf !important;
-  --color-window-text: #000 !important;
-  --color-window: #fff !important;
-  --color-active-caption-text: #fff !important;
-  --color-active-caption: #000080 !important;
-  --color-info-background: #ffffc0 !important;
-  --color-tree-border: #87888f !important;
-  --color-highlight-text: #fff !important;
-  --color-highlight: #000080 !important;
-  --color-gray-text: #808080 !important;
-  --color-gray-text-dark: #404040 !important;
-  --color-link: #00f !important;
-  --color-hover: #dfdfff !important;
-  --font-family: 'MS Sans Serif', 'MS Reference Sans Serif', 'Liberation Sans', Tahoma, sans-serif !important;
-  --font-family-monospace: 'Fixedsys Excelsior 3.01', 'MS Gothic', 'MS Mincho', 'MS PGothic', 'MS PMincho', monospace !important;
-  --font-size: 11px !important;
-  --font-size-text: 14px !important;
-  --font-size-bigger: 13px !important;
-  --font-size-header: 14px !important;
-  --font-line: 1.2 !important;
-  --font-line-text: 1.2 !important;
-  --font: var(--font-size)/var(--font-line) var(--font-family) !important;
-  --font-monospace: var(--font-size)/var(--font-line) var(--font-family-monospace) !important;
-  --font-text: var(--font-size-text)/var(--font-line-text) var(--font-family) !important;
-  --font-header: var(--font-size-header)/var(--font-line) var(--font-family) !important;
-  --button-3d-border-color-exact: var(--color-button-face) var(--color-button-shadow) var(--color-button-shadow) var(--color-button-face) !important;
-  --button-3d-box-shadow-exact: 0 -1px 0 0 var(--color-button-highlight), -1px 0 0 0 var(--color-button-highlight), -1px -1px 0 0 var(--color-button-highlight), -1px 1px 0 0 var(--color-button-shadow-dark), 1px 0 0 0 var(--color-button-shadow-dark), 1px 1px 0 0 var(--color-button-shadow-dark) !important;
-  --button-3d-border-color: var(--color-button-highlight) var(--color-button-shadow) var(--color-button-shadow) var(--color-button-highlight) !important;
-  --button-3d-border-color-inverted: var(--color-button-shadow) var(--color-button-highlight) var(--color-button-highlight) var(--color-button-shadow) !important;
-  --button-3d-box-shadow: 1px 0 0 var(--color-button-shadow-dark), 0 1px 0 var(--color-button-shadow-dark), 1px 1px 0 var(--color-button-shadow-dark) !important;
-  --box-3d-border-color: var(--color-button-shadow-dark) var(--color-button-face) var(--color-button-face) var(--color-button-shadow-dark) !important;
-  --box-3d-box-shadow: 0 -1px 0 0 var(--color-button-shadow), -1px 0 0 0 var(--color-button-shadow), -1px -1px 0 0 var(--color-button-shadow), -1px 1px 0 0 var(--color-button-highlight), 1px 0 0 0 var(--color-button-highlight), 1px 1px 0 0 var(--color-button-highlight) !important;
-  --group-3d-border-color: var(--color-button-highlight) var(--color-button-shadow) var(--color-button-shadow) var(--color-button-highlight) !important;
-  --group-3d-box-shadow: 0 -1px 0 0 var(--color-button-shadow), -1px 0 0 0 var(--color-button-shadow), -1px -1px 0 0 var(--color-button-shadow), -1px 1px 0 0 var(--color-button-highlight), 1px 0 0 0 var(--color-button-highlight), 1px 1px 0 0 var(--color-button-highlight) !important;
-  --window-3d-box-shadow: 0 -1px 0 0 var(--color-button-face), -1px 0 0 0 var(--color-button-face), -1px -1px 0 0 var(--color-button-face), -1px 1px 0 0 var(--color-button-shadow-dark), 1px 0 0 0 var(--color-button-shadow-dark), 1px 1px 0 0 var(--color-button-shadow-dark) !important;
+  --tab-border-left: linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)), linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)), linear-gradient(90deg, var(--color-button-highlight) 1px, var(--color-button-highlight)), linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)), linear-gradient(90deg, var(--color-button-highlight) 1px, var(--color-button-highlight)), linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face));
+  --tab-border-right: linear-gradient(90deg, var(--color-button-shadow) 1px, var(--color-button-shadow)), linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)), linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)), linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)), linear-gradient(90deg, var(--color-button-shadow-dark) 1px, var(--color-button-shadow-dark)), linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face));
 }
-* {
-  transition: none !important;
+input[type="number"],
+[class*="gamepaddialog_Toggle_"][type="number"] {
+  --button-img: linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) 1px 1px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) 2px 1px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) 3px 1px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) 4px 1px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) 5px 1px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) 6px 1px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) 7px 1px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) 8px 1px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) 9px 1px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) 10px 1px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) 11px 1px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) 12px 1px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) 13px 1px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) 14px 1px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) 15px 1px, linear-gradient(90deg, var(--color-button-shadow-dark) 1px, var(--color-button-shadow-dark)) 16px 1px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) 1px 2px, linear-gradient(90deg, var(--color-button-highlight) 1px, var(--color-button-highlight)) 2px 2px, linear-gradient(90deg, var(--color-button-highlight) 1px, var(--color-button-highlight)) 3px 2px, linear-gradient(90deg, var(--color-button-highlight) 1px, var(--color-button-highlight)) 4px 2px, linear-gradient(90deg, var(--color-button-highlight) 1px, var(--color-button-highlight)) 5px 2px, linear-gradient(90deg, var(--color-button-highlight) 1px, var(--color-button-highlight)) 6px 2px, linear-gradient(90deg, var(--color-button-highlight) 1px, var(--color-button-highlight)) 7px 2px, linear-gradient(90deg, var(--color-button-highlight) 1px, var(--color-button-highlight)) 8px 2px, linear-gradient(90deg, var(--color-button-highlight) 1px, var(--color-button-highlight)) 9px 2px, linear-gradient(90deg, var(--color-button-highlight) 1px, var(--color-button-highlight)) 10px 2px, linear-gradient(90deg, var(--color-button-highlight) 1px, var(--color-button-highlight)) 11px 2px, linear-gradient(90deg, var(--color-button-highlight) 1px, var(--color-button-highlight)) 12px 2px, linear-gradient(90deg, var(--color-button-highlight) 1px, var(--color-button-highlight)) 13px 2px, linear-gradient(90deg, var(--color-button-highlight) 1px, var(--color-button-highlight)) 14px 2px, linear-gradient(90deg, var(--color-button-shadow) 1px, var(--color-button-shadow)) 15px 2px, linear-gradient(90deg, var(--color-button-shadow-dark) 1px, var(--color-button-shadow-dark)) 16px 2px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) 1px 3px, linear-gradient(90deg, var(--color-button-highlight) 1px, var(--color-button-highlight)) 2px 3px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) 3px 3px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) 4px 3px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) 5px 3px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) 6px 3px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) 7px 3px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) 8px 3px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) 9px 3px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) 10px 3px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) 11px 3px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) 12px 3px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) 13px 3px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) 14px 3px, linear-gradient(90deg, var(--color-button-shadow) 1px, var(--color-button-shadow)) 15px 3px, linear-gradient(90deg, var(--color-button-shadow-dark) 1px, var(--color-button-shadow-dark)) 16px 3px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) 1px 4px, linear-gradient(90deg, var(--color-button-highlight) 1px, var(--color-button-highlight)) 2px 4px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) 3px 4px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) 4px 4px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) 5px 4px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) 6px 4px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) 7px 4px, linear-gradient(90deg, var(--color-button-text) 1px, var(--color-button-text)) 8px 4px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) 9px 4px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) 10px 4px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) 11px 4px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) 12px 4px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) 13px 4px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) 14px 4px, linear-gradient(90deg, var(--color-button-shadow) 1px, var(--color-button-shadow)) 15px 4px, linear-gradient(90deg, var(--color-button-shadow-dark) 1px, var(--color-button-shadow-dark)) 16px 4px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) 1px 5px, linear-gradient(90deg, var(--color-button-highlight) 1px, var(--color-button-highlight)) 2px 5px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) 3px 5px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) 4px 5px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) 5px 5px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) 6px 5px, linear-gradient(90deg, var(--color-button-text) 1px, var(--color-button-text)) 7px 5px, linear-gradient(90deg, var(--color-button-text) 1px, var(--color-button-text)) 8px 5px, linear-gradient(90deg, var(--color-button-text) 1px, var(--color-button-text)) 9px 5px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) 10px 5px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) 11px 5px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) 12px 5px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) 13px 5px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) 14px 5px, linear-gradient(90deg, var(--color-button-shadow) 1px, var(--color-button-shadow)) 15px 5px, linear-gradient(90deg, var(--color-button-shadow-dark) 1px, var(--color-button-shadow-dark)) 16px 5px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) 1px 6px, linear-gradient(90deg, var(--color-button-highlight) 1px, var(--color-button-highlight)) 2px 6px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) 3px 6px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) 4px 6px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) 5px 6px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) 6px 6px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) 7px 6px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) 8px 6px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) 9px 6px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) 10px 6px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) 11px 6px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) 12px 6px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) 13px 6px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) 14px 6px, linear-gradient(90deg, var(--color-button-shadow) 1px, var(--color-button-shadow)) 15px 6px, linear-gradient(90deg, var(--color-button-shadow-dark) 1px, var(--color-button-shadow-dark)) 16px 6px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) 1px 7px, linear-gradient(90deg, var(--color-button-shadow) 1px, var(--color-button-shadow)) 2px 7px, linear-gradient(90deg, var(--color-button-shadow) 1px, var(--color-button-shadow)) 3px 7px, linear-gradient(90deg, var(--color-button-shadow) 1px, var(--color-button-shadow)) 4px 7px, linear-gradient(90deg, var(--color-button-shadow) 1px, var(--color-button-shadow)) 5px 7px, linear-gradient(90deg, var(--color-button-shadow) 1px, var(--color-button-shadow)) 6px 7px, linear-gradient(90deg, var(--color-button-shadow) 1px, var(--color-button-shadow)) 7px 7px, linear-gradient(90deg, var(--color-button-shadow) 1px, var(--color-button-shadow)) 8px 7px, linear-gradient(90deg, var(--color-button-shadow) 1px, var(--color-button-shadow)) 9px 7px, linear-gradient(90deg, var(--color-button-shadow) 1px, var(--color-button-shadow)) 10px 7px, linear-gradient(90deg, var(--color-button-shadow) 1px, var(--color-button-shadow)) 11px 7px, linear-gradient(90deg, var(--color-button-shadow) 1px, var(--color-button-shadow)) 12px 7px, linear-gradient(90deg, var(--color-button-shadow) 1px, var(--color-button-shadow)) 13px 7px, linear-gradient(90deg, var(--color-button-shadow) 1px, var(--color-button-shadow)) 14px 7px, linear-gradient(90deg, var(--color-button-shadow) 1px, var(--color-button-shadow)) 15px 7px, linear-gradient(90deg, var(--color-button-shadow-dark) 1px, var(--color-button-shadow-dark)) 16px 7px, linear-gradient(90deg, var(--color-button-shadow-dark) 1px, var(--color-button-shadow-dark)) 1px 8px, linear-gradient(90deg, var(--color-button-shadow-dark) 1px, var(--color-button-shadow-dark)) 2px 8px, linear-gradient(90deg, var(--color-button-shadow-dark) 1px, var(--color-button-shadow-dark)) 3px 8px, linear-gradient(90deg, var(--color-button-shadow-dark) 1px, var(--color-button-shadow-dark)) 4px 8px, linear-gradient(90deg, var(--color-button-shadow-dark) 1px, var(--color-button-shadow-dark)) 5px 8px, linear-gradient(90deg, var(--color-button-shadow-dark) 1px, var(--color-button-shadow-dark)) 6px 8px, linear-gradient(90deg, var(--color-button-shadow-dark) 1px, var(--color-button-shadow-dark)) 7px 8px, linear-gradient(90deg, var(--color-button-shadow-dark) 1px, var(--color-button-shadow-dark)) 8px 8px, linear-gradient(90deg, var(--color-button-shadow-dark) 1px, var(--color-button-shadow-dark)) 9px 8px, linear-gradient(90deg, var(--color-button-shadow-dark) 1px, var(--color-button-shadow-dark)) 10px 8px, linear-gradient(90deg, var(--color-button-shadow-dark) 1px, var(--color-button-shadow-dark)) 11px 8px, linear-gradient(90deg, var(--color-button-shadow-dark) 1px, var(--color-button-shadow-dark)) 12px 8px, linear-gradient(90deg, var(--color-button-shadow-dark) 1px, var(--color-button-shadow-dark)) 13px 8px, linear-gradient(90deg, var(--color-button-shadow-dark) 1px, var(--color-button-shadow-dark)) 14px 8px, linear-gradient(90deg, var(--color-button-shadow-dark) 1px, var(--color-button-shadow-dark)) 15px 8px, linear-gradient(90deg, var(--color-button-shadow-dark) 1px, var(--color-button-shadow-dark)) 16px 8px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) 1px 9px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) 2px 9px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) 3px 9px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) 4px 9px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) 5px 9px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) 6px 9px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) 7px 9px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) 8px 9px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) 9px 9px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) 10px 9px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) 11px 9px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) 12px 9px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) 13px 9px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) 14px 9px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) 15px 9px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) 16px 9px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) 1px 10px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) 2px 10px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) 3px 10px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) 4px 10px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) 5px 10px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) 6px 10px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) 7px 10px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) 8px 10px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) 9px 10px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) 10px 10px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) 11px 10px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) 12px 10px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) 13px 10px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) 14px 10px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) 15px 10px, linear-gradient(90deg, var(--color-button-shadow-dark) 1px, var(--color-button-shadow-dark)) 16px 10px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) 1px 11px, linear-gradient(90deg, var(--color-button-highlight) 1px, var(--color-button-highlight)) 2px 11px, linear-gradient(90deg, var(--color-button-highlight) 1px, var(--color-button-highlight)) 3px 11px, linear-gradient(90deg, var(--color-button-highlight) 1px, var(--color-button-highlight)) 4px 11px, linear-gradient(90deg, var(--color-button-highlight) 1px, var(--color-button-highlight)) 5px 11px, linear-gradient(90deg, var(--color-button-highlight) 1px, var(--color-button-highlight)) 6px 11px, linear-gradient(90deg, var(--color-button-highlight) 1px, var(--color-button-highlight)) 7px 11px, linear-gradient(90deg, var(--color-button-highlight) 1px, var(--color-button-highlight)) 8px 11px, linear-gradient(90deg, var(--color-button-highlight) 1px, var(--color-button-highlight)) 9px 11px, linear-gradient(90deg, var(--color-button-highlight) 1px, var(--color-button-highlight)) 10px 11px, linear-gradient(90deg, var(--color-button-highlight) 1px, var(--color-button-highlight)) 11px 11px, linear-gradient(90deg, var(--color-button-highlight) 1px, var(--color-button-highlight)) 12px 11px, linear-gradient(90deg, var(--color-button-highlight) 1px, var(--color-button-highlight)) 13px 11px, linear-gradient(90deg, var(--color-button-highlight) 1px, var(--color-button-highlight)) 14px 11px, linear-gradient(90deg, var(--color-button-shadow) 1px, var(--color-button-shadow)) 15px 11px, linear-gradient(90deg, var(--color-button-shadow-dark) 1px, var(--color-button-shadow-dark)) 16px 11px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) 1px 12px, linear-gradient(90deg, var(--color-button-highlight) 1px, var(--color-button-highlight)) 2px 12px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) 3px 12px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) 4px 12px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) 5px 12px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) 6px 12px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) 7px 12px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) 8px 12px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) 9px 12px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) 10px 12px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) 11px 12px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) 12px 12px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) 13px 12px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) 14px 12px, linear-gradient(90deg, var(--color-button-shadow) 1px, var(--color-button-shadow)) 15px 12px, linear-gradient(90deg, var(--color-button-shadow-dark) 1px, var(--color-button-shadow-dark)) 16px 12px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) 1px 13px, linear-gradient(90deg, var(--color-button-highlight) 1px, var(--color-button-highlight)) 2px 13px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) 3px 13px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) 4px 13px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) 5px 13px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) 6px 13px, linear-gradient(90deg, var(--color-button-text) 1px, var(--color-button-text)) 7px 13px, linear-gradient(90deg, var(--color-button-text) 1px, var(--color-button-text)) 8px 13px, linear-gradient(90deg, var(--color-button-text) 1px, var(--color-button-text)) 9px 13px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) 10px 13px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) 11px 13px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) 12px 13px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) 13px 13px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) 14px 13px, linear-gradient(90deg, var(--color-button-shadow) 1px, var(--color-button-shadow)) 15px 13px, linear-gradient(90deg, var(--color-button-shadow-dark) 1px, var(--color-button-shadow-dark)) 16px 13px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) 1px 14px, linear-gradient(90deg, var(--color-button-highlight) 1px, var(--color-button-highlight)) 2px 14px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) 3px 14px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) 4px 14px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) 5px 14px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) 6px 14px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) 7px 14px, linear-gradient(90deg, var(--color-button-text) 1px, var(--color-button-text)) 8px 14px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) 9px 14px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) 10px 14px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) 11px 14px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) 12px 14px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) 13px 14px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) 14px 14px, linear-gradient(90deg, var(--color-button-shadow) 1px, var(--color-button-shadow)) 15px 14px, linear-gradient(90deg, var(--color-button-shadow-dark) 1px, var(--color-button-shadow-dark)) 16px 14px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) 1px 15px, linear-gradient(90deg, var(--color-button-highlight) 1px, var(--color-button-highlight)) 2px 15px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) 3px 15px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) 4px 15px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) 5px 15px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) 6px 15px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) 7px 15px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) 8px 15px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) 9px 15px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) 10px 15px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) 11px 15px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) 12px 15px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) 13px 15px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) 14px 15px, linear-gradient(90deg, var(--color-button-shadow) 1px, var(--color-button-shadow)) 15px 15px, linear-gradient(90deg, var(--color-button-shadow-dark) 1px, var(--color-button-shadow-dark)) 16px 15px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) 1px 16px, linear-gradient(90deg, var(--color-button-shadow) 1px, var(--color-button-shadow)) 2px 16px, linear-gradient(90deg, var(--color-button-shadow) 1px, var(--color-button-shadow)) 3px 16px, linear-gradient(90deg, var(--color-button-shadow) 1px, var(--color-button-shadow)) 4px 16px, linear-gradient(90deg, var(--color-button-shadow) 1px, var(--color-button-shadow)) 5px 16px, linear-gradient(90deg, var(--color-button-shadow) 1px, var(--color-button-shadow)) 6px 16px, linear-gradient(90deg, var(--color-button-shadow) 1px, var(--color-button-shadow)) 7px 16px, linear-gradient(90deg, var(--color-button-shadow) 1px, var(--color-button-shadow)) 8px 16px, linear-gradient(90deg, var(--color-button-shadow) 1px, var(--color-button-shadow)) 9px 16px, linear-gradient(90deg, var(--color-button-shadow) 1px, var(--color-button-shadow)) 10px 16px, linear-gradient(90deg, var(--color-button-shadow) 1px, var(--color-button-shadow)) 11px 16px, linear-gradient(90deg, var(--color-button-shadow) 1px, var(--color-button-shadow)) 12px 16px, linear-gradient(90deg, var(--color-button-shadow) 1px, var(--color-button-shadow)) 13px 16px, linear-gradient(90deg, var(--color-button-shadow) 1px, var(--color-button-shadow)) 14px 16px, linear-gradient(90deg, var(--color-button-shadow) 1px, var(--color-button-shadow)) 15px 16px, linear-gradient(90deg, var(--color-button-shadow-dark) 1px, var(--color-button-shadow-dark)) 16px 16px, linear-gradient(90deg, var(--color-button-shadow-dark) 1px, var(--color-button-shadow-dark)) 1px 17px, linear-gradient(90deg, var(--color-button-shadow-dark) 1px, var(--color-button-shadow-dark)) 2px 17px, linear-gradient(90deg, var(--color-button-shadow-dark) 1px, var(--color-button-shadow-dark)) 3px 17px, linear-gradient(90deg, var(--color-button-shadow-dark) 1px, var(--color-button-shadow-dark)) 4px 17px, linear-gradient(90deg, var(--color-button-shadow-dark) 1px, var(--color-button-shadow-dark)) 5px 17px, linear-gradient(90deg, var(--color-button-shadow-dark) 1px, var(--color-button-shadow-dark)) 6px 17px, linear-gradient(90deg, var(--color-button-shadow-dark) 1px, var(--color-button-shadow-dark)) 7px 17px, linear-gradient(90deg, var(--color-button-shadow-dark) 1px, var(--color-button-shadow-dark)) 8px 17px, linear-gradient(90deg, var(--color-button-shadow-dark) 1px, var(--color-button-shadow-dark)) 9px 17px, linear-gradient(90deg, var(--color-button-shadow-dark) 1px, var(--color-button-shadow-dark)) 10px 17px, linear-gradient(90deg, var(--color-button-shadow-dark) 1px, var(--color-button-shadow-dark)) 11px 17px, linear-gradient(90deg, var(--color-button-shadow-dark) 1px, var(--color-button-shadow-dark)) 12px 17px, linear-gradient(90deg, var(--color-button-shadow-dark) 1px, var(--color-button-shadow-dark)) 13px 17px, linear-gradient(90deg, var(--color-button-shadow-dark) 1px, var(--color-button-shadow-dark)) 14px 17px, linear-gradient(90deg, var(--color-button-shadow-dark) 1px, var(--color-button-shadow-dark)) 15px 17px, linear-gradient(90deg, var(--color-button-shadow-dark) 1px, var(--color-button-shadow-dark)) 16px 17px;
 }
-body {
-  background-color: var(--color-button-face) !important;
-  font: var(--font) !important;
-  image-rendering: pixelated !important;
+select,
+[class*="gamelistdropdown_MenuHeader_"],
+.DialogDropDown {
+  --control-img: linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 17px) 2px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 16px) 2px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 15px) 2px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 14px) 2px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 13px) 2px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 12px) 2px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 11px) 2px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 10px) 2px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 9px) 2px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 8px) 2px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 7px) 2px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 6px) 2px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 5px) 2px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 4px) 2px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 3px) 2px, linear-gradient(90deg, var(--color-button-shadow-dark) 1px, var(--color-button-shadow-dark)) calc(100% - 2px) 2px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 17px) 3px, linear-gradient(90deg, var(--color-button-highlight) 1px, var(--color-button-highlight)) calc(100% - 16px) 3px, linear-gradient(90deg, var(--color-button-highlight) 1px, var(--color-button-highlight)) calc(100% - 15px) 3px, linear-gradient(90deg, var(--color-button-highlight) 1px, var(--color-button-highlight)) calc(100% - 14px) 3px, linear-gradient(90deg, var(--color-button-highlight) 1px, var(--color-button-highlight)) calc(100% - 13px) 3px, linear-gradient(90deg, var(--color-button-highlight) 1px, var(--color-button-highlight)) calc(100% - 12px) 3px, linear-gradient(90deg, var(--color-button-highlight) 1px, var(--color-button-highlight)) calc(100% - 11px) 3px, linear-gradient(90deg, var(--color-button-highlight) 1px, var(--color-button-highlight)) calc(100% - 10px) 3px, linear-gradient(90deg, var(--color-button-highlight) 1px, var(--color-button-highlight)) calc(100% - 9px) 3px, linear-gradient(90deg, var(--color-button-highlight) 1px, var(--color-button-highlight)) calc(100% - 8px) 3px, linear-gradient(90deg, var(--color-button-highlight) 1px, var(--color-button-highlight)) calc(100% - 7px) 3px, linear-gradient(90deg, var(--color-button-highlight) 1px, var(--color-button-highlight)) calc(100% - 6px) 3px, linear-gradient(90deg, var(--color-button-highlight) 1px, var(--color-button-highlight)) calc(100% - 5px) 3px, linear-gradient(90deg, var(--color-button-highlight) 1px, var(--color-button-highlight)) calc(100% - 4px) 3px, linear-gradient(90deg, var(--color-button-shadow) 1px, var(--color-button-shadow)) calc(100% - 3px) 3px, linear-gradient(90deg, var(--color-button-shadow-dark) 1px, var(--color-button-shadow-dark)) calc(100% - 2px) 3px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 17px) 4px, linear-gradient(90deg, var(--color-button-highlight) 1px, var(--color-button-highlight)) calc(100% - 16px) 4px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 15px) 4px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 14px) 4px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 13px) 4px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 12px) 4px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 11px) 4px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 10px) 4px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 9px) 4px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 8px) 4px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 7px) 4px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 6px) 4px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 5px) 4px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 4px) 4px, linear-gradient(90deg, var(--color-button-shadow) 1px, var(--color-button-shadow)) calc(100% - 3px) 4px, linear-gradient(90deg, var(--color-button-shadow-dark) 1px, var(--color-button-shadow-dark)) calc(100% - 2px) 4px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 17px) 5px, linear-gradient(90deg, var(--color-button-highlight) 1px, var(--color-button-highlight)) calc(100% - 16px) 5px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 15px) 5px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 14px) 5px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 13px) 5px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 12px) 5px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 11px) 5px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 10px) 5px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 9px) 5px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 8px) 5px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 7px) 5px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 6px) 5px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 5px) 5px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 4px) 5px, linear-gradient(90deg, var(--color-button-shadow) 1px, var(--color-button-shadow)) calc(100% - 3px) 5px, linear-gradient(90deg, var(--color-button-shadow-dark) 1px, var(--color-button-shadow-dark)) calc(100% - 2px) 5px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 17px) 6px, linear-gradient(90deg, var(--color-button-highlight) 1px, var(--color-button-highlight)) calc(100% - 16px) 6px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 15px) 6px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 14px) 6px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 13px) 6px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 12px) 6px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 11px) 6px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 10px) 6px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 9px) 6px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 8px) 6px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 7px) 6px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 6px) 6px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 5px) 6px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 4px) 6px, linear-gradient(90deg, var(--color-button-shadow) 1px, var(--color-button-shadow)) calc(100% - 3px) 6px, linear-gradient(90deg, var(--color-button-shadow-dark) 1px, var(--color-button-shadow-dark)) calc(100% - 2px) 6px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 17px) 7px, linear-gradient(90deg, var(--color-button-highlight) 1px, var(--color-button-highlight)) calc(100% - 16px) 7px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 15px) 7px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 14px) 7px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 13px) 7px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 12px) 7px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 11px) 7px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 10px) 7px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 9px) 7px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 8px) 7px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 7px) 7px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 6px) 7px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 5px) 7px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 4px) 7px, linear-gradient(90deg, var(--color-button-shadow) 1px, var(--color-button-shadow)) calc(100% - 3px) 7px, linear-gradient(90deg, var(--color-button-shadow-dark) 1px, var(--color-button-shadow-dark)) calc(100% - 2px) 7px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 17px) 8px, linear-gradient(90deg, var(--color-button-highlight) 1px, var(--color-button-highlight)) calc(100% - 16px) 8px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 15px) 8px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 14px) 8px, linear-gradient(90deg, var(--color-button-text) 1px, var(--color-button-text)) calc(100% - 13px) 8px, linear-gradient(90deg, var(--color-button-text) 1px, var(--color-button-text)) calc(100% - 12px) 8px, linear-gradient(90deg, var(--color-button-text) 1px, var(--color-button-text)) calc(100% - 11px) 8px, linear-gradient(90deg, var(--color-button-text) 1px, var(--color-button-text)) calc(100% - 10px) 8px, linear-gradient(90deg, var(--color-button-text) 1px, var(--color-button-text)) calc(100% - 9px) 8px, linear-gradient(90deg, var(--color-button-text) 1px, var(--color-button-text)) calc(100% - 8px) 8px, linear-gradient(90deg, var(--color-button-text) 1px, var(--color-button-text)) calc(100% - 7px) 8px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 6px) 8px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 5px) 8px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 4px) 8px, linear-gradient(90deg, var(--color-button-shadow) 1px, var(--color-button-shadow)) calc(100% - 3px) 8px, linear-gradient(90deg, var(--color-button-shadow-dark) 1px, var(--color-button-shadow-dark)) calc(100% - 2px) 8px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 17px) 9px, linear-gradient(90deg, var(--color-button-highlight) 1px, var(--color-button-highlight)) calc(100% - 16px) 9px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 15px) 9px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 14px) 9px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 13px) 9px, linear-gradient(90deg, var(--color-button-text) 1px, var(--color-button-text)) calc(100% - 12px) 9px, linear-gradient(90deg, var(--color-button-text) 1px, var(--color-button-text)) calc(100% - 11px) 9px, linear-gradient(90deg, var(--color-button-text) 1px, var(--color-button-text)) calc(100% - 10px) 9px, linear-gradient(90deg, var(--color-button-text) 1px, var(--color-button-text)) calc(100% - 9px) 9px, linear-gradient(90deg, var(--color-button-text) 1px, var(--color-button-text)) calc(100% - 8px) 9px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 7px) 9px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 6px) 9px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 5px) 9px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 4px) 9px, linear-gradient(90deg, var(--color-button-shadow) 1px, var(--color-button-shadow)) calc(100% - 3px) 9px, linear-gradient(90deg, var(--color-button-shadow-dark) 1px, var(--color-button-shadow-dark)) calc(100% - 2px) 9px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 17px) 10px, linear-gradient(90deg, var(--color-button-highlight) 1px, var(--color-button-highlight)) calc(100% - 16px) 10px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 15px) 10px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 14px) 10px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 13px) 10px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 12px) 10px, linear-gradient(90deg, var(--color-button-text) 1px, var(--color-button-text)) calc(100% - 11px) 10px, linear-gradient(90deg, var(--color-button-text) 1px, var(--color-button-text)) calc(100% - 10px) 10px, linear-gradient(90deg, var(--color-button-text) 1px, var(--color-button-text)) calc(100% - 9px) 10px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 8px) 10px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 7px) 10px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 6px) 10px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 5px) 10px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 4px) 10px, linear-gradient(90deg, var(--color-button-shadow) 1px, var(--color-button-shadow)) calc(100% - 3px) 10px, linear-gradient(90deg, var(--color-button-shadow-dark) 1px, var(--color-button-shadow-dark)) calc(100% - 2px) 10px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 17px) 11px, linear-gradient(90deg, var(--color-button-highlight) 1px, var(--color-button-highlight)) calc(100% - 16px) 11px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 15px) 11px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 14px) 11px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 13px) 11px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 12px) 11px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 11px) 11px, linear-gradient(90deg, var(--color-button-text) 1px, var(--color-button-text)) calc(100% - 10px) 11px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 9px) 11px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 8px) 11px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 7px) 11px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 6px) 11px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 5px) 11px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 4px) 11px, linear-gradient(90deg, var(--color-button-shadow) 1px, var(--color-button-shadow)) calc(100% - 3px) 11px, linear-gradient(90deg, var(--color-button-shadow-dark) 1px, var(--color-button-shadow-dark)) calc(100% - 2px) 11px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 17px) 12px, linear-gradient(90deg, var(--color-button-highlight) 1px, var(--color-button-highlight)) calc(100% - 16px) 12px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 15px) 12px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 14px) 12px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 13px) 12px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 12px) 12px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 11px) 12px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 10px) 12px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 9px) 12px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 8px) 12px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 7px) 12px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 6px) 12px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 5px) 12px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 4px) 12px, linear-gradient(90deg, var(--color-button-shadow) 1px, var(--color-button-shadow)) calc(100% - 3px) 12px, linear-gradient(90deg, var(--color-button-shadow-dark) 1px, var(--color-button-shadow-dark)) calc(100% - 2px) 12px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 17px) 13px, linear-gradient(90deg, var(--color-button-highlight) 1px, var(--color-button-highlight)) calc(100% - 16px) 13px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 15px) 13px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 14px) 13px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 13px) 13px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 12px) 13px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 11px) 13px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 10px) 13px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 9px) 13px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 8px) 13px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 7px) 13px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 6px) 13px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 5px) 13px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 4px) 13px, linear-gradient(90deg, var(--color-button-shadow) 1px, var(--color-button-shadow)) calc(100% - 3px) 13px, linear-gradient(90deg, var(--color-button-shadow-dark) 1px, var(--color-button-shadow-dark)) calc(100% - 2px) 13px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 17px) 14px, linear-gradient(90deg, var(--color-button-highlight) 1px, var(--color-button-highlight)) calc(100% - 16px) 14px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 15px) 14px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 14px) 14px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 13px) 14px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 12px) 14px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 11px) 14px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 10px) 14px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 9px) 14px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 8px) 14px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 7px) 14px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 6px) 14px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 5px) 14px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 4px) 14px, linear-gradient(90deg, var(--color-button-shadow) 1px, var(--color-button-shadow)) calc(100% - 3px) 14px, linear-gradient(90deg, var(--color-button-shadow-dark) 1px, var(--color-button-shadow-dark)) calc(100% - 2px) 14px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 17px) 15px, linear-gradient(90deg, var(--color-button-highlight) 1px, var(--color-button-highlight)) calc(100% - 16px) 15px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 15px) 15px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 14px) 15px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 13px) 15px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 12px) 15px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 11px) 15px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 10px) 15px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 9px) 15px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 8px) 15px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 7px) 15px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 6px) 15px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 5px) 15px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 4px) 15px, linear-gradient(90deg, var(--color-button-shadow) 1px, var(--color-button-shadow)) calc(100% - 3px) 15px, linear-gradient(90deg, var(--color-button-shadow-dark) 1px, var(--color-button-shadow-dark)) calc(100% - 2px) 15px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 17px) 16px, linear-gradient(90deg, var(--color-button-highlight) 1px, var(--color-button-highlight)) calc(100% - 16px) 16px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 15px) 16px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 14px) 16px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 13px) 16px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 12px) 16px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 11px) 16px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 10px) 16px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 9px) 16px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 8px) 16px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 7px) 16px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 6px) 16px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 5px) 16px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 4px) 16px, linear-gradient(90deg, var(--color-button-shadow) 1px, var(--color-button-shadow)) calc(100% - 3px) 16px, linear-gradient(90deg, var(--color-button-shadow-dark) 1px, var(--color-button-shadow-dark)) calc(100% - 2px) 16px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 17px) 17px, linear-gradient(90deg, var(--color-button-shadow) 1px, var(--color-button-shadow)) calc(100% - 16px) 17px, linear-gradient(90deg, var(--color-button-shadow) 1px, var(--color-button-shadow)) calc(100% - 15px) 17px, linear-gradient(90deg, var(--color-button-shadow) 1px, var(--color-button-shadow)) calc(100% - 14px) 17px, linear-gradient(90deg, var(--color-button-shadow) 1px, var(--color-button-shadow)) calc(100% - 13px) 17px, linear-gradient(90deg, var(--color-button-shadow) 1px, var(--color-button-shadow)) calc(100% - 12px) 17px, linear-gradient(90deg, var(--color-button-shadow) 1px, var(--color-button-shadow)) calc(100% - 11px) 17px, linear-gradient(90deg, var(--color-button-shadow) 1px, var(--color-button-shadow)) calc(100% - 10px) 17px, linear-gradient(90deg, var(--color-button-shadow) 1px, var(--color-button-shadow)) calc(100% - 9px) 17px, linear-gradient(90deg, var(--color-button-shadow) 1px, var(--color-button-shadow)) calc(100% - 8px) 17px, linear-gradient(90deg, var(--color-button-shadow) 1px, var(--color-button-shadow)) calc(100% - 7px) 17px, linear-gradient(90deg, var(--color-button-shadow) 1px, var(--color-button-shadow)) calc(100% - 6px) 17px, linear-gradient(90deg, var(--color-button-shadow) 1px, var(--color-button-shadow)) calc(100% - 5px) 17px, linear-gradient(90deg, var(--color-button-shadow) 1px, var(--color-button-shadow)) calc(100% - 4px) 17px, linear-gradient(90deg, var(--color-button-shadow) 1px, var(--color-button-shadow)) calc(100% - 3px) 17px, linear-gradient(90deg, var(--color-button-shadow-dark) 1px, var(--color-button-shadow-dark)) calc(100% - 2px) 17px, linear-gradient(90deg, var(--color-button-shadow-dark) 1px, var(--color-button-shadow-dark)) calc(100% - 17px) 18px, linear-gradient(90deg, var(--color-button-shadow-dark) 1px, var(--color-button-shadow-dark)) calc(100% - 16px) 18px, linear-gradient(90deg, var(--color-button-shadow-dark) 1px, var(--color-button-shadow-dark)) calc(100% - 15px) 18px, linear-gradient(90deg, var(--color-button-shadow-dark) 1px, var(--color-button-shadow-dark)) calc(100% - 14px) 18px, linear-gradient(90deg, var(--color-button-shadow-dark) 1px, var(--color-button-shadow-dark)) calc(100% - 13px) 18px, linear-gradient(90deg, var(--color-button-shadow-dark) 1px, var(--color-button-shadow-dark)) calc(100% - 12px) 18px, linear-gradient(90deg, var(--color-button-shadow-dark) 1px, var(--color-button-shadow-dark)) calc(100% - 11px) 18px, linear-gradient(90deg, var(--color-button-shadow-dark) 1px, var(--color-button-shadow-dark)) calc(100% - 10px) 18px, linear-gradient(90deg, var(--color-button-shadow-dark) 1px, var(--color-button-shadow-dark)) calc(100% - 9px) 18px, linear-gradient(90deg, var(--color-button-shadow-dark) 1px, var(--color-button-shadow-dark)) calc(100% - 8px) 18px, linear-gradient(90deg, var(--color-button-shadow-dark) 1px, var(--color-button-shadow-dark)) calc(100% - 7px) 18px, linear-gradient(90deg, var(--color-button-shadow-dark) 1px, var(--color-button-shadow-dark)) calc(100% - 6px) 18px, linear-gradient(90deg, var(--color-button-shadow-dark) 1px, var(--color-button-shadow-dark)) calc(100% - 5px) 18px, linear-gradient(90deg, var(--color-button-shadow-dark) 1px, var(--color-button-shadow-dark)) calc(100% - 4px) 18px, linear-gradient(90deg, var(--color-button-shadow-dark) 1px, var(--color-button-shadow-dark)) calc(100% - 3px) 18px, linear-gradient(90deg, var(--color-button-shadow-dark) 1px, var(--color-button-shadow-dark)) calc(100% - 2px) 18px;
 }
-a,
-[class*="appproperties_SteamInputLink_"] {
-  color: var(--color-link) !important;
-  text-decoration: none !important;
+select:active,
+[class*="gamelistdropdown_MenuHeader_"]:active,
+.DialogDropDown:active {
+  --control-img: linear-gradient(90deg, var(--color-button-shadow) 1px, var(--color-button-shadow)) calc(100% - 2px) 2px, linear-gradient(90deg, var(--color-button-shadow) 1px, var(--color-button-shadow)) calc(100% - 3px) 2px, linear-gradient(90deg, var(--color-button-shadow) 1px, var(--color-button-shadow)) calc(100% - 4px) 2px, linear-gradient(90deg, var(--color-button-shadow) 1px, var(--color-button-shadow)) calc(100% - 5px) 2px, linear-gradient(90deg, var(--color-button-shadow) 1px, var(--color-button-shadow)) calc(100% - 6px) 2px, linear-gradient(90deg, var(--color-button-shadow) 1px, var(--color-button-shadow)) calc(100% - 7px) 2px, linear-gradient(90deg, var(--color-button-shadow) 1px, var(--color-button-shadow)) calc(100% - 8px) 2px, linear-gradient(90deg, var(--color-button-shadow) 1px, var(--color-button-shadow)) calc(100% - 9px) 2px, linear-gradient(90deg, var(--color-button-shadow) 1px, var(--color-button-shadow)) calc(100% - 10px) 2px, linear-gradient(90deg, var(--color-button-shadow) 1px, var(--color-button-shadow)) calc(100% - 11px) 2px, linear-gradient(90deg, var(--color-button-shadow) 1px, var(--color-button-shadow)) calc(100% - 12px) 2px, linear-gradient(90deg, var(--color-button-shadow) 1px, var(--color-button-shadow)) calc(100% - 13px) 2px, linear-gradient(90deg, var(--color-button-shadow) 1px, var(--color-button-shadow)) calc(100% - 14px) 2px, linear-gradient(90deg, var(--color-button-shadow) 1px, var(--color-button-shadow)) calc(100% - 15px) 2px, linear-gradient(90deg, var(--color-button-shadow) 1px, var(--color-button-shadow)) calc(100% - 16px) 2px, linear-gradient(90deg, var(--color-button-shadow) 1px, var(--color-button-shadow)) calc(100% - 17px) 2px, linear-gradient(90deg, var(--color-button-shadow) 1px, var(--color-button-shadow)) calc(100% - 2px) 3px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 3px) 3px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 4px) 3px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 5px) 3px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 6px) 3px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 7px) 3px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 8px) 3px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 9px) 3px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 10px) 3px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 11px) 3px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 12px) 3px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 13px) 3px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 14px) 3px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 15px) 3px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 16px) 3px, linear-gradient(90deg, var(--color-button-shadow) 1px, var(--color-button-shadow)) calc(100% - 17px) 3px, linear-gradient(90deg, var(--color-button-shadow) 1px, var(--color-button-shadow)) calc(100% - 2px) 4px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 3px) 4px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 4px) 4px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 5px) 4px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 6px) 4px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 7px) 4px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 8px) 4px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 9px) 4px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 10px) 4px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 11px) 4px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 12px) 4px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 13px) 4px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 14px) 4px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 15px) 4px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 16px) 4px, linear-gradient(90deg, var(--color-button-shadow) 1px, var(--color-button-shadow)) calc(100% - 17px) 4px, linear-gradient(90deg, var(--color-button-shadow) 1px, var(--color-button-shadow)) calc(100% - 2px) 5px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 3px) 5px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 4px) 5px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 5px) 5px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 6px) 5px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 7px) 5px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 8px) 5px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 9px) 5px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 10px) 5px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 11px) 5px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 12px) 5px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 13px) 5px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 14px) 5px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 15px) 5px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 16px) 5px, linear-gradient(90deg, var(--color-button-shadow) 1px, var(--color-button-shadow)) calc(100% - 17px) 5px, linear-gradient(90deg, var(--color-button-shadow) 1px, var(--color-button-shadow)) calc(100% - 2px) 6px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 3px) 6px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 4px) 6px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 5px) 6px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 6px) 6px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 7px) 6px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 8px) 6px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 9px) 6px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 10px) 6px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 11px) 6px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 12px) 6px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 13px) 6px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 14px) 6px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 15px) 6px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 16px) 6px, linear-gradient(90deg, var(--color-button-shadow) 1px, var(--color-button-shadow)) calc(100% - 17px) 6px, linear-gradient(90deg, var(--color-button-shadow) 1px, var(--color-button-shadow)) calc(100% - 2px) 7px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 3px) 7px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 4px) 7px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 5px) 7px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 6px) 7px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 7px) 7px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 8px) 7px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 9px) 7px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 10px) 7px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 11px) 7px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 12px) 7px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 13px) 7px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 14px) 7px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 15px) 7px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 16px) 7px, linear-gradient(90deg, var(--color-button-shadow) 1px, var(--color-button-shadow)) calc(100% - 17px) 7px, linear-gradient(90deg, var(--color-button-shadow) 1px, var(--color-button-shadow)) calc(100% - 2px) 8px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 3px) 8px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 4px) 8px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 5px) 8px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 6px) 8px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 7px) 8px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 8px) 8px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 9px) 8px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 10px) 8px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 11px) 8px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 12px) 8px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 13px) 8px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 14px) 8px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 15px) 8px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 16px) 8px, linear-gradient(90deg, var(--color-button-shadow) 1px, var(--color-button-shadow)) calc(100% - 17px) 8px, linear-gradient(90deg, var(--color-button-shadow) 1px, var(--color-button-shadow)) calc(100% - 2px) 9px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 3px) 9px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 4px) 9px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 5px) 9px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 6px) 9px, linear-gradient(90deg, var(--color-button-text) 1px, var(--color-button-text)) calc(100% - 7px) 9px, linear-gradient(90deg, var(--color-button-text) 1px, var(--color-button-text)) calc(100% - 8px) 9px, linear-gradient(90deg, var(--color-button-text) 1px, var(--color-button-text)) calc(100% - 9px) 9px, linear-gradient(90deg, var(--color-button-text) 1px, var(--color-button-text)) calc(100% - 10px) 9px, linear-gradient(90deg, var(--color-button-text) 1px, var(--color-button-text)) calc(100% - 11px) 9px, linear-gradient(90deg, var(--color-button-text) 1px, var(--color-button-text)) calc(100% - 12px) 9px, linear-gradient(90deg, var(--color-button-text) 1px, var(--color-button-text)) calc(100% - 13px) 9px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 14px) 9px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 15px) 9px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 16px) 9px, linear-gradient(90deg, var(--color-button-shadow) 1px, var(--color-button-shadow)) calc(100% - 17px) 9px, linear-gradient(90deg, var(--color-button-shadow) 1px, var(--color-button-shadow)) calc(100% - 2px) 10px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 3px) 10px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 4px) 10px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 5px) 10px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 6px) 10px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 7px) 10px, linear-gradient(90deg, var(--color-button-text) 1px, var(--color-button-text)) calc(100% - 8px) 10px, linear-gradient(90deg, var(--color-button-text) 1px, var(--color-button-text)) calc(100% - 9px) 10px, linear-gradient(90deg, var(--color-button-text) 1px, var(--color-button-text)) calc(100% - 10px) 10px, linear-gradient(90deg, var(--color-button-text) 1px, var(--color-button-text)) calc(100% - 11px) 10px, linear-gradient(90deg, var(--color-button-text) 1px, var(--color-button-text)) calc(100% - 12px) 10px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 13px) 10px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 14px) 10px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 15px) 10px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 16px) 10px, linear-gradient(90deg, var(--color-button-shadow) 1px, var(--color-button-shadow)) calc(100% - 17px) 10px, linear-gradient(90deg, var(--color-button-shadow) 1px, var(--color-button-shadow)) calc(100% - 2px) 11px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 3px) 11px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 4px) 11px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 5px) 11px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 6px) 11px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 7px) 11px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 8px) 11px, linear-gradient(90deg, var(--color-button-text) 1px, var(--color-button-text)) calc(100% - 9px) 11px, linear-gradient(90deg, var(--color-button-text) 1px, var(--color-button-text)) calc(100% - 10px) 11px, linear-gradient(90deg, var(--color-button-text) 1px, var(--color-button-text)) calc(100% - 11px) 11px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 12px) 11px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 13px) 11px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 14px) 11px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 15px) 11px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 16px) 11px, linear-gradient(90deg, var(--color-button-shadow) 1px, var(--color-button-shadow)) calc(100% - 17px) 11px, linear-gradient(90deg, var(--color-button-shadow) 1px, var(--color-button-shadow)) calc(100% - 2px) 12px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 3px) 12px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 4px) 12px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 5px) 12px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 6px) 12px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 7px) 12px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 8px) 12px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 9px) 12px, linear-gradient(90deg, var(--color-button-text) 1px, var(--color-button-text)) calc(100% - 10px) 12px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 11px) 12px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 12px) 12px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 13px) 12px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 14px) 12px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 15px) 12px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 16px) 12px, linear-gradient(90deg, var(--color-button-shadow) 1px, var(--color-button-shadow)) calc(100% - 17px) 12px, linear-gradient(90deg, var(--color-button-shadow) 1px, var(--color-button-shadow)) calc(100% - 2px) 13px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 3px) 13px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 4px) 13px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 5px) 13px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 6px) 13px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 7px) 13px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 8px) 13px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 9px) 13px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 10px) 13px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 11px) 13px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 12px) 13px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 13px) 13px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 14px) 13px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 15px) 13px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 16px) 13px, linear-gradient(90deg, var(--color-button-shadow) 1px, var(--color-button-shadow)) calc(100% - 17px) 13px, linear-gradient(90deg, var(--color-button-shadow) 1px, var(--color-button-shadow)) calc(100% - 2px) 14px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 3px) 14px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 4px) 14px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 5px) 14px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 6px) 14px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 7px) 14px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 8px) 14px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 9px) 14px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 10px) 14px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 11px) 14px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 12px) 14px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 13px) 14px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 14px) 14px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 15px) 14px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 16px) 14px, linear-gradient(90deg, var(--color-button-shadow) 1px, var(--color-button-shadow)) calc(100% - 17px) 14px, linear-gradient(90deg, var(--color-button-shadow) 1px, var(--color-button-shadow)) calc(100% - 2px) 15px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 3px) 15px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 4px) 15px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 5px) 15px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 6px) 15px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 7px) 15px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 8px) 15px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 9px) 15px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 10px) 15px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 11px) 15px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 12px) 15px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 13px) 15px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 14px) 15px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 15px) 15px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 16px) 15px, linear-gradient(90deg, var(--color-button-shadow) 1px, var(--color-button-shadow)) calc(100% - 17px) 15px, linear-gradient(90deg, var(--color-button-shadow) 1px, var(--color-button-shadow)) calc(100% - 2px) 16px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 3px) 16px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 4px) 16px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 5px) 16px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 6px) 16px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 7px) 16px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 8px) 16px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 9px) 16px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 10px) 16px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 11px) 16px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 12px) 16px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 13px) 16px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 14px) 16px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 15px) 16px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 16px) 16px, linear-gradient(90deg, var(--color-button-shadow) 1px, var(--color-button-shadow)) calc(100% - 17px) 16px, linear-gradient(90deg, var(--color-button-shadow) 1px, var(--color-button-shadow)) calc(100% - 2px) 17px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 3px) 17px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 4px) 17px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 5px) 17px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 6px) 17px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 7px) 17px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 8px) 17px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 9px) 17px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 10px) 17px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 11px) 17px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 12px) 17px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 13px) 17px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 14px) 17px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 15px) 17px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 16px) 17px, linear-gradient(90deg, var(--color-button-shadow) 1px, var(--color-button-shadow)) calc(100% - 17px) 17px, linear-gradient(90deg, var(--color-button-shadow) 1px, var(--color-button-shadow)) calc(100% - 2px) 18px, linear-gradient(90deg, var(--color-button-shadow) 1px, var(--color-button-shadow)) calc(100% - 3px) 18px, linear-gradient(90deg, var(--color-button-shadow) 1px, var(--color-button-shadow)) calc(100% - 4px) 18px, linear-gradient(90deg, var(--color-button-shadow) 1px, var(--color-button-shadow)) calc(100% - 5px) 18px, linear-gradient(90deg, var(--color-button-shadow) 1px, var(--color-button-shadow)) calc(100% - 6px) 18px, linear-gradient(90deg, var(--color-button-shadow) 1px, var(--color-button-shadow)) calc(100% - 7px) 18px, linear-gradient(90deg, var(--color-button-shadow) 1px, var(--color-button-shadow)) calc(100% - 8px) 18px, linear-gradient(90deg, var(--color-button-shadow) 1px, var(--color-button-shadow)) calc(100% - 9px) 18px, linear-gradient(90deg, var(--color-button-shadow) 1px, var(--color-button-shadow)) calc(100% - 10px) 18px, linear-gradient(90deg, var(--color-button-shadow) 1px, var(--color-button-shadow)) calc(100% - 11px) 18px, linear-gradient(90deg, var(--color-button-shadow) 1px, var(--color-button-shadow)) calc(100% - 12px) 18px, linear-gradient(90deg, var(--color-button-shadow) 1px, var(--color-button-shadow)) calc(100% - 13px) 18px, linear-gradient(90deg, var(--color-button-shadow) 1px, var(--color-button-shadow)) calc(100% - 14px) 18px, linear-gradient(90deg, var(--color-button-shadow) 1px, var(--color-button-shadow)) calc(100% - 15px) 18px, linear-gradient(90deg, var(--color-button-shadow) 1px, var(--color-button-shadow)) calc(100% - 16px) 18px, linear-gradient(90deg, var(--color-button-shadow) 1px, var(--color-button-shadow)) calc(100% - 17px) 18px;
 }
-a:hover,
-[class*="appproperties_SteamInputLink_"]:hover {
-  color: var(--color-link) !important;
-  text-decoration: underline !important;
+select:disabled,
+[class*="gamelistdropdown_MenuHeader_"]:disabled,
+.DialogDropDown:disabled {
+  --control-img: linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 16px) 0px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 15px) 0px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 14px) 0px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 13px) 0px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 12px) 0px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 11px) 0px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 10px) 0px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 9px) 0px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 8px) 0px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 7px) 0px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 6px) 0px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 5px) 0px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 4px) 0px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 3px) 0px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 2px) 0px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 1px) 0px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 16px) 1px, linear-gradient(90deg, var(--color-button-highlight) 1px, var(--color-button-highlight)) calc(100% - 15px) 1px, linear-gradient(90deg, var(--color-button-highlight) 1px, var(--color-button-highlight)) calc(100% - 14px) 1px, linear-gradient(90deg, var(--color-button-highlight) 1px, var(--color-button-highlight)) calc(100% - 13px) 1px, linear-gradient(90deg, var(--color-button-highlight) 1px, var(--color-button-highlight)) calc(100% - 12px) 1px, linear-gradient(90deg, var(--color-button-highlight) 1px, var(--color-button-highlight)) calc(100% - 11px) 1px, linear-gradient(90deg, var(--color-button-highlight) 1px, var(--color-button-highlight)) calc(100% - 10px) 1px, linear-gradient(90deg, var(--color-button-highlight) 1px, var(--color-button-highlight)) calc(100% - 9px) 1px, linear-gradient(90deg, var(--color-button-highlight) 1px, var(--color-button-highlight)) calc(100% - 8px) 1px, linear-gradient(90deg, var(--color-button-highlight) 1px, var(--color-button-highlight)) calc(100% - 7px) 1px, linear-gradient(90deg, var(--color-button-highlight) 1px, var(--color-button-highlight)) calc(100% - 6px) 1px, linear-gradient(90deg, var(--color-button-highlight) 1px, var(--color-button-highlight)) calc(100% - 5px) 1px, linear-gradient(90deg, var(--color-button-highlight) 1px, var(--color-button-highlight)) calc(100% - 4px) 1px, linear-gradient(90deg, var(--color-button-highlight) 1px, var(--color-button-highlight)) calc(100% - 3px) 1px, linear-gradient(90deg, var(--color-button-shadow) 1px, var(--color-button-shadow)) calc(100% - 2px) 1px, linear-gradient(90deg, var(--color-button-shadow-dark) 1px, var(--color-button-shadow-dark)) calc(100% - 1px) 1px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 16px) 2px, linear-gradient(90deg, var(--color-button-highlight) 1px, var(--color-button-highlight)) calc(100% - 15px) 2px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 14px) 2px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 13px) 2px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 12px) 2px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 11px) 2px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 10px) 2px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 9px) 2px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 8px) 2px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 7px) 2px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 6px) 2px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 5px) 2px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 4px) 2px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 3px) 2px, linear-gradient(90deg, var(--color-button-shadow) 1px, var(--color-button-shadow)) calc(100% - 2px) 2px, linear-gradient(90deg, var(--color-button-shadow-dark) 1px, var(--color-button-shadow-dark)) calc(100% - 1px) 2px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 16px) 3px, linear-gradient(90deg, var(--color-button-highlight) 1px, var(--color-button-highlight)) calc(100% - 15px) 3px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 14px) 3px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 13px) 3px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 12px) 3px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 11px) 3px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 10px) 3px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 9px) 3px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 8px) 3px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 7px) 3px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 6px) 3px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 5px) 3px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 4px) 3px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 3px) 3px, linear-gradient(90deg, var(--color-button-shadow) 1px, var(--color-button-shadow)) calc(100% - 2px) 3px, linear-gradient(90deg, var(--color-button-shadow-dark) 1px, var(--color-button-shadow-dark)) calc(100% - 1px) 3px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 16px) 4px, linear-gradient(90deg, var(--color-button-highlight) 1px, var(--color-button-highlight)) calc(100% - 15px) 4px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 14px) 4px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 13px) 4px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 12px) 4px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 11px) 4px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 10px) 4px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 9px) 4px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 8px) 4px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 7px) 4px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 6px) 4px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 5px) 4px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 4px) 4px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 3px) 4px, linear-gradient(90deg, var(--color-button-shadow) 1px, var(--color-button-shadow)) calc(100% - 2px) 4px, linear-gradient(90deg, var(--color-button-shadow-dark) 1px, var(--color-button-shadow-dark)) calc(100% - 1px) 4px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 16px) 5px, linear-gradient(90deg, var(--color-button-highlight) 1px, var(--color-button-highlight)) calc(100% - 15px) 5px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 14px) 5px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 13px) 5px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 12px) 5px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 11px) 5px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 10px) 5px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 9px) 5px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 8px) 5px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 7px) 5px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 6px) 5px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 5px) 5px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 4px) 5px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 3px) 5px, linear-gradient(90deg, var(--color-button-shadow) 1px, var(--color-button-shadow)) calc(100% - 2px) 5px, linear-gradient(90deg, var(--color-button-shadow-dark) 1px, var(--color-button-shadow-dark)) calc(100% - 1px) 5px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 16px) 6px, linear-gradient(90deg, var(--color-button-highlight) 1px, var(--color-button-highlight)) calc(100% - 15px) 6px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 14px) 6px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 13px) 6px, linear-gradient(90deg, var(--color-button-shadow) 1px, var(--color-button-shadow)) calc(100% - 12px) 6px, linear-gradient(90deg, var(--color-button-shadow) 1px, var(--color-button-shadow)) calc(100% - 11px) 6px, linear-gradient(90deg, var(--color-button-shadow) 1px, var(--color-button-shadow)) calc(100% - 10px) 6px, linear-gradient(90deg, var(--color-button-shadow) 1px, var(--color-button-shadow)) calc(100% - 9px) 6px, linear-gradient(90deg, var(--color-button-shadow) 1px, var(--color-button-shadow)) calc(100% - 8px) 6px, linear-gradient(90deg, var(--color-button-shadow) 1px, var(--color-button-shadow)) calc(100% - 7px) 6px, linear-gradient(90deg, var(--color-button-shadow) 1px, var(--color-button-shadow)) calc(100% - 6px) 6px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 5px) 6px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 4px) 6px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 3px) 6px, linear-gradient(90deg, var(--color-button-shadow) 1px, var(--color-button-shadow)) calc(100% - 2px) 6px, linear-gradient(90deg, var(--color-button-shadow-dark) 1px, var(--color-button-shadow-dark)) calc(100% - 1px) 6px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 16px) 7px, linear-gradient(90deg, var(--color-button-highlight) 1px, var(--color-button-highlight)) calc(100% - 15px) 7px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 14px) 7px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 13px) 7px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 12px) 7px, linear-gradient(90deg, var(--color-button-shadow) 1px, var(--color-button-shadow)) calc(100% - 11px) 7px, linear-gradient(90deg, var(--color-button-shadow) 1px, var(--color-button-shadow)) calc(100% - 10px) 7px, linear-gradient(90deg, var(--color-button-shadow) 1px, var(--color-button-shadow)) calc(100% - 9px) 7px, linear-gradient(90deg, var(--color-button-shadow) 1px, var(--color-button-shadow)) calc(100% - 8px) 7px, linear-gradient(90deg, var(--color-button-shadow) 1px, var(--color-button-shadow)) calc(100% - 7px) 7px, linear-gradient(90deg, var(--color-button-highlight) 1px, var(--color-button-highlight)) calc(100% - 6px) 7px, linear-gradient(90deg, var(--color-button-highlight) 1px, var(--color-button-highlight)) calc(100% - 5px) 7px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 4px) 7px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 3px) 7px, linear-gradient(90deg, var(--color-button-shadow) 1px, var(--color-button-shadow)) calc(100% - 2px) 7px, linear-gradient(90deg, var(--color-button-shadow-dark) 1px, var(--color-button-shadow-dark)) calc(100% - 1px) 7px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 16px) 8px, linear-gradient(90deg, var(--color-button-highlight) 1px, var(--color-button-highlight)) calc(100% - 15px) 8px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 14px) 8px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 13px) 8px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 12px) 8px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 11px) 8px, linear-gradient(90deg, var(--color-button-shadow) 1px, var(--color-button-shadow)) calc(100% - 10px) 8px, linear-gradient(90deg, var(--color-button-shadow) 1px, var(--color-button-shadow)) calc(100% - 9px) 8px, linear-gradient(90deg, var(--color-button-shadow) 1px, var(--color-button-shadow)) calc(100% - 8px) 8px, linear-gradient(90deg, var(--color-button-highlight) 1px, var(--color-button-highlight)) calc(100% - 7px) 8px, linear-gradient(90deg, var(--color-button-highlight) 1px, var(--color-button-highlight)) calc(100% - 6px) 8px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 5px) 8px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 4px) 8px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 3px) 8px, linear-gradient(90deg, var(--color-button-shadow) 1px, var(--color-button-shadow)) calc(100% - 2px) 8px, linear-gradient(90deg, var(--color-button-shadow-dark) 1px, var(--color-button-shadow-dark)) calc(100% - 1px) 8px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 16px) 9px, linear-gradient(90deg, var(--color-button-highlight) 1px, var(--color-button-highlight)) calc(100% - 15px) 9px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 14px) 9px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 13px) 9px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 12px) 9px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 11px) 9px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 10px) 9px, linear-gradient(90deg, var(--color-button-shadow) 1px, var(--color-button-shadow)) calc(100% - 9px) 9px, linear-gradient(90deg, var(--color-button-highlight) 1px, var(--color-button-highlight)) calc(100% - 8px) 9px, linear-gradient(90deg, var(--color-button-highlight) 1px, var(--color-button-highlight)) calc(100% - 7px) 9px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 6px) 9px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 5px) 9px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 4px) 9px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 3px) 9px, linear-gradient(90deg, var(--color-button-shadow) 1px, var(--color-button-shadow)) calc(100% - 2px) 9px, linear-gradient(90deg, var(--color-button-shadow-dark) 1px, var(--color-button-shadow-dark)) calc(100% - 1px) 9px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 16px) 10px, linear-gradient(90deg, var(--color-button-highlight) 1px, var(--color-button-highlight)) calc(100% - 15px) 10px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 14px) 10px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 13px) 10px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 12px) 10px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 11px) 10px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 10px) 10px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 9px) 10px, linear-gradient(90deg, var(--color-button-highlight) 1px, var(--color-button-highlight)) calc(100% - 8px) 10px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 7px) 10px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 6px) 10px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 5px) 10px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 4px) 10px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 3px) 10px, linear-gradient(90deg, var(--color-button-shadow) 1px, var(--color-button-shadow)) calc(100% - 2px) 10px, linear-gradient(90deg, var(--color-button-shadow-dark) 1px, var(--color-button-shadow-dark)) calc(100% - 1px) 10px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 16px) 11px, linear-gradient(90deg, var(--color-button-highlight) 1px, var(--color-button-highlight)) calc(100% - 15px) 11px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 14px) 11px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 13px) 11px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 12px) 11px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 11px) 11px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 10px) 11px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 9px) 11px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 8px) 11px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 7px) 11px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 6px) 11px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 5px) 11px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 4px) 11px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 3px) 11px, linear-gradient(90deg, var(--color-button-shadow) 1px, var(--color-button-shadow)) calc(100% - 2px) 11px, linear-gradient(90deg, var(--color-button-shadow-dark) 1px, var(--color-button-shadow-dark)) calc(100% - 1px) 11px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 16px) 12px, linear-gradient(90deg, var(--color-button-highlight) 1px, var(--color-button-highlight)) calc(100% - 15px) 12px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 14px) 12px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 13px) 12px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 12px) 12px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 11px) 12px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 10px) 12px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 9px) 12px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 8px) 12px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 7px) 12px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 6px) 12px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 5px) 12px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 4px) 12px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 3px) 12px, linear-gradient(90deg, var(--color-button-shadow) 1px, var(--color-button-shadow)) calc(100% - 2px) 12px, linear-gradient(90deg, var(--color-button-shadow-dark) 1px, var(--color-button-shadow-dark)) calc(100% - 1px) 12px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 16px) 13px, linear-gradient(90deg, var(--color-button-highlight) 1px, var(--color-button-highlight)) calc(100% - 15px) 13px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 14px) 13px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 13px) 13px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 12px) 13px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 11px) 13px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 10px) 13px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 9px) 13px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 8px) 13px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 7px) 13px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 6px) 13px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 5px) 13px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 4px) 13px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 3px) 13px, linear-gradient(90deg, var(--color-button-shadow) 1px, var(--color-button-shadow)) calc(100% - 2px) 13px, linear-gradient(90deg, var(--color-button-shadow-dark) 1px, var(--color-button-shadow-dark)) calc(100% - 1px) 13px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 16px) 14px, linear-gradient(90deg, var(--color-button-highlight) 1px, var(--color-button-highlight)) calc(100% - 15px) 14px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 14px) 14px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 13px) 14px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 12px) 14px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 11px) 14px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 10px) 14px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 9px) 14px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 8px) 14px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 7px) 14px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 6px) 14px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 5px) 14px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 4px) 14px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 3px) 14px, linear-gradient(90deg, var(--color-button-shadow) 1px, var(--color-button-shadow)) calc(100% - 2px) 14px, linear-gradient(90deg, var(--color-button-shadow-dark) 1px, var(--color-button-shadow-dark)) calc(100% - 1px) 14px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) calc(100% - 16px) 15px, linear-gradient(90deg, var(--color-button-shadow) 1px, var(--color-button-shadow)) calc(100% - 15px) 15px, linear-gradient(90deg, var(--color-button-shadow) 1px, var(--color-button-shadow)) calc(100% - 14px) 15px, linear-gradient(90deg, var(--color-button-shadow) 1px, var(--color-button-shadow)) calc(100% - 13px) 15px, linear-gradient(90deg, var(--color-button-shadow) 1px, var(--color-button-shadow)) calc(100% - 12px) 15px, linear-gradient(90deg, var(--color-button-shadow) 1px, var(--color-button-shadow)) calc(100% - 11px) 15px, linear-gradient(90deg, var(--color-button-shadow) 1px, var(--color-button-shadow)) calc(100% - 10px) 15px, linear-gradient(90deg, var(--color-button-shadow) 1px, var(--color-button-shadow)) calc(100% - 9px) 15px, linear-gradient(90deg, var(--color-button-shadow) 1px, var(--color-button-shadow)) calc(100% - 8px) 15px, linear-gradient(90deg, var(--color-button-shadow) 1px, var(--color-button-shadow)) calc(100% - 7px) 15px, linear-gradient(90deg, var(--color-button-shadow) 1px, var(--color-button-shadow)) calc(100% - 6px) 15px, linear-gradient(90deg, var(--color-button-shadow) 1px, var(--color-button-shadow)) calc(100% - 5px) 15px, linear-gradient(90deg, var(--color-button-shadow) 1px, var(--color-button-shadow)) calc(100% - 4px) 15px, linear-gradient(90deg, var(--color-button-shadow) 1px, var(--color-button-shadow)) calc(100% - 3px) 15px, linear-gradient(90deg, var(--color-button-shadow) 1px, var(--color-button-shadow)) calc(100% - 2px) 15px, linear-gradient(90deg, var(--color-button-shadow-dark) 1px, var(--color-button-shadow-dark)) calc(100% - 1px) 15px, linear-gradient(90deg, var(--color-button-shadow-dark) 1px, var(--color-button-shadow-dark)) calc(100% - 16px) 16px, linear-gradient(90deg, var(--color-button-shadow-dark) 1px, var(--color-button-shadow-dark)) calc(100% - 15px) 16px, linear-gradient(90deg, var(--color-button-shadow-dark) 1px, var(--color-button-shadow-dark)) calc(100% - 14px) 16px, linear-gradient(90deg, var(--color-button-shadow-dark) 1px, var(--color-button-shadow-dark)) calc(100% - 13px) 16px, linear-gradient(90deg, var(--color-button-shadow-dark) 1px, var(--color-button-shadow-dark)) calc(100% - 12px) 16px, linear-gradient(90deg, var(--color-button-shadow-dark) 1px, var(--color-button-shadow-dark)) calc(100% - 11px) 16px, linear-gradient(90deg, var(--color-button-shadow-dark) 1px, var(--color-button-shadow-dark)) calc(100% - 10px) 16px, linear-gradient(90deg, var(--color-button-shadow-dark) 1px, var(--color-button-shadow-dark)) calc(100% - 9px) 16px, linear-gradient(90deg, var(--color-button-shadow-dark) 1px, var(--color-button-shadow-dark)) calc(100% - 8px) 16px, linear-gradient(90deg, var(--color-button-shadow-dark) 1px, var(--color-button-shadow-dark)) calc(100% - 7px) 16px, linear-gradient(90deg, var(--color-button-shadow-dark) 1px, var(--color-button-shadow-dark)) calc(100% - 6px) 16px, linear-gradient(90deg, var(--color-button-shadow-dark) 1px, var(--color-button-shadow-dark)) calc(100% - 5px) 16px, linear-gradient(90deg, var(--color-button-shadow-dark) 1px, var(--color-button-shadow-dark)) calc(100% - 4px) 16px, linear-gradient(90deg, var(--color-button-shadow-dark) 1px, var(--color-button-shadow-dark)) calc(100% - 3px) 16px, linear-gradient(90deg, var(--color-button-shadow-dark) 1px, var(--color-button-shadow-dark)) calc(100% - 2px) 16px, linear-gradient(90deg, var(--color-button-shadow-dark) 1px, var(--color-button-shadow-dark)) calc(100% - 1px) 16px;
 }
-::selection {
-  background-color: var(--color-highlight) !important;
-  color: var(--color-highlight-text) !important;
+::-webkit-scrollbar-button:decrement {
+  --button-img: linear-gradient(90deg, transparent 1px, transparent) 4px 6px, linear-gradient(90deg, transparent 1px, transparent) 5px 6px, linear-gradient(90deg, transparent 1px, transparent) 6px 6px, linear-gradient(90deg, var(--color-button-text) 1px, var(--color-button-text)) 7px 6px, linear-gradient(90deg, transparent 1px, transparent) 8px 6px, linear-gradient(90deg, transparent 1px, transparent) 9px 6px, linear-gradient(90deg, transparent 1px, transparent) 10px 6px, linear-gradient(90deg, transparent 1px, transparent) 4px 7px, linear-gradient(90deg, transparent 1px, transparent) 5px 7px, linear-gradient(90deg, var(--color-button-text) 1px, var(--color-button-text)) 6px 7px, linear-gradient(90deg, var(--color-button-text) 1px, var(--color-button-text)) 7px 7px, linear-gradient(90deg, var(--color-button-text) 1px, var(--color-button-text)) 8px 7px, linear-gradient(90deg, transparent 1px, transparent) 9px 7px, linear-gradient(90deg, transparent 1px, transparent) 10px 7px, linear-gradient(90deg, transparent 1px, transparent) 4px 8px, linear-gradient(90deg, var(--color-button-text) 1px, var(--color-button-text)) 5px 8px, linear-gradient(90deg, var(--color-button-text) 1px, var(--color-button-text)) 6px 8px, linear-gradient(90deg, var(--color-button-text) 1px, var(--color-button-text)) 7px 8px, linear-gradient(90deg, var(--color-button-text) 1px, var(--color-button-text)) 8px 8px, linear-gradient(90deg, var(--color-button-text) 1px, var(--color-button-text)) 9px 8px, linear-gradient(90deg, transparent 1px, transparent) 10px 8px, linear-gradient(90deg, var(--color-button-text) 1px, var(--color-button-text)) 4px 9px, linear-gradient(90deg, var(--color-button-text) 1px, var(--color-button-text)) 5px 9px, linear-gradient(90deg, var(--color-button-text) 1px, var(--color-button-text)) 6px 9px, linear-gradient(90deg, var(--color-button-text) 1px, var(--color-button-text)) 7px 9px, linear-gradient(90deg, var(--color-button-text) 1px, var(--color-button-text)) 8px 9px, linear-gradient(90deg, var(--color-button-text) 1px, var(--color-button-text)) 9px 9px, linear-gradient(90deg, var(--color-button-text) 1px, var(--color-button-text)) 10px 9px;
 }
-::placeholder {
-  color: var(--color-gray-text) !important;
-  font-style: normal !important;
+::-webkit-scrollbar-button:increment {
+  --button-img: linear-gradient(90deg, var(--color-button-text) 1px, var(--color-button-text)) 4px 6px, linear-gradient(90deg, var(--color-button-text) 1px, var(--color-button-text)) 5px 6px, linear-gradient(90deg, var(--color-button-text) 1px, var(--color-button-text)) 6px 6px, linear-gradient(90deg, var(--color-button-text) 1px, var(--color-button-text)) 7px 6px, linear-gradient(90deg, var(--color-button-text) 1px, var(--color-button-text)) 8px 6px, linear-gradient(90deg, var(--color-button-text) 1px, var(--color-button-text)) 9px 6px, linear-gradient(90deg, var(--color-button-text) 1px, var(--color-button-text)) 10px 6px, linear-gradient(90deg, transparent 1px, transparent) 4px 7px, linear-gradient(90deg, var(--color-button-text) 1px, var(--color-button-text)) 5px 7px, linear-gradient(90deg, var(--color-button-text) 1px, var(--color-button-text)) 6px 7px, linear-gradient(90deg, var(--color-button-text) 1px, var(--color-button-text)) 7px 7px, linear-gradient(90deg, var(--color-button-text) 1px, var(--color-button-text)) 8px 7px, linear-gradient(90deg, var(--color-button-text) 1px, var(--color-button-text)) 9px 7px, linear-gradient(90deg, transparent 1px, transparent) 10px 7px, linear-gradient(90deg, transparent 1px, transparent) 4px 8px, linear-gradient(90deg, transparent 1px, transparent) 5px 8px, linear-gradient(90deg, var(--color-button-text) 1px, var(--color-button-text)) 6px 8px, linear-gradient(90deg, var(--color-button-text) 1px, var(--color-button-text)) 7px 8px, linear-gradient(90deg, var(--color-button-text) 1px, var(--color-button-text)) 8px 8px, linear-gradient(90deg, transparent 1px, transparent) 9px 8px, linear-gradient(90deg, transparent 1px, transparent) 10px 8px, linear-gradient(90deg, transparent 1px, transparent) 4px 9px, linear-gradient(90deg, transparent 1px, transparent) 5px 9px, linear-gradient(90deg, transparent 1px, transparent) 6px 9px, linear-gradient(90deg, var(--color-button-text) 1px, var(--color-button-text)) 7px 9px, linear-gradient(90deg, transparent 1px, transparent) 8px 9px, linear-gradient(90deg, transparent 1px, transparent) 9px 9px, linear-gradient(90deg, transparent 1px, transparent) 10px 9px;
 }
-code,
-pre,
-kbd {
-  font: var(--font-monospace) !important;
+::-webkit-scrollbar-button:horizontal:decrement {
+  --button-img: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAHCAYAAAAvZezQAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsIAAA7CARUoSoAAAAAySURBVBhXTYwBCgAwCAK1///ZZa22gygPkpIwkFTcu4J3iQmGOe8nieywXOrll1vaEjisghAJeJVSAgAAAABJRU5ErkJggg==");
+}
+::-webkit-scrollbar-button:horizontal:increment {
+  --button-img: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAHCAYAAAAvZezQAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsIAAA7CARUoSoAAAAAySURBVBhXRY3JDQAwCMOS7r8zxZEAPzgsDkuqhhwewXalayJgZFYohp0Abq2YwxH3RfqHzhAHIWlRxQAAAABJRU5ErkJggg==");
 }
 table,
-[class*="appproperties_WorkshopGrid_"],
-[class*="gamelist_Container_"] {
+[class*="library_AppDetailsTransitionGroup_"],
+[class*="gamelist_Container_"],
+[class*="appproperties_WorkshopGrid_"] {
+  background-color: var(--color-window) !important;
   border-spacing: 4px !important;
-}
-td {
-  font: var(--font) !important;
+  border: none !important;
+  box-shadow: var(--border-field) !important;
 }
 hr,
 [class*="steamdesktop_TitleBar_"]::before {
-  border-bottom: 1px solid var(--color-button-highlight) !important;
-  box-shadow: 0 -1px 0 0 var(--color-button-shadow) !important;
-  margin-top: 4px !important;
-  margin-bottom: 5px !important;
+  border-top: 1px solid var(--color-button-highlight) !important;
+  box-shadow: 0 -1px var(--color-button-shadow) !important;
+  margin-top: 3px !important;
+  margin-bottom: 4px !important;
 }
 fieldset,
-[class*="appfilterpane_FilterBucket_"] {
-  border-color: var(--group-3d-border-color) !important;
+[class*="appfilterpane_FilterBucket_"],
+[class*="appproperties_SectionTopLine_"],
+.DialogControlsSection,
+div:not([class]) > [class*="gamepaddialog_Field_"] {
+  border: 1px solid !important;
+  border-color: var(--border-groupbox-border) !important;
   border-radius: 0 !important;
-  box-shadow: var(--group-3d-box-shadow) !important;
-  padding: 12px 8px 4px 8px !important;
+  box-shadow: var(--border-groupbox-box-shadow) !important;
+  padding: 12px 11px 11px 6px !important;
   margin: 0 0 8px 0 !important;
   position: relative !important;
-}
-legend {
-  background-color: var(--color-button-face) !important;
-  font-weight: normal !important;
-}
-table,
-[class*="appproperties_WorkshopGrid_"],
-[class*="gamelist_Container_"] {
-  background: var(--color-window) !important;
-  border: 1px solid !important;
-  border-color: var(--box-3d-border-color) !important;
-  box-shadow: var(--box-3d-box-shadow) !important;
 }
 input,
 button,
 select,
 textarea,
-::-webkit-scrollbar-button,
-::-webkit-scrollbar-thumb,
 .title-area-icon,
 [class*="titlebarcontrols_Button_"],
-.DialogDropDown,
-.DialogCheckbox,
-[class*="gamepaddialog_Toggle_"],
-[class*="appproperties_WorkshopHeader_"],
 [class*="gamelistbar_GameListHomeAndSearch_"] a,
 [class*="gamelistdropdown_MenuHeader_"],
 [class*="gamelistdropdown_CheckboxWithImage_"],
 [class*="gamelistsearchbar_AdvancedSearchContainer_"],
 [class*="bottombar_AddGameButton_"],
 [class*="bottombar_DownloadStatusContent_"],
-[class*="bottombar_FriendsButton_"] {
+[class*="bottombar_FriendsButton_"],
+[class*="appproperties_WorkshopHeader_"],
+.DialogDropDown,
+[class*="gamepaddialog_Toggle_"] {
   appearance: none !important;
-  filter: none !important;
-  box-sizing: border-box !important;
-  font: var(--font) !important;
-  border: 1px solid !important;
+  outline: none !important;
+  font: var(--text-ui) !important;
+  border: none !important;
   border-radius: 0 !important;
-  height: 19px !important;
+  height: 21px !important;
+  box-sizing: border-box !important;
 }
 input:disabled,
 button:disabled,
 select:disabled,
 textarea:disabled,
-::-webkit-scrollbar-button:disabled,
-::-webkit-scrollbar-thumb:disabled,
 .title-area-icon:disabled,
 [class*="titlebarcontrols_Button_"]:disabled,
-.DialogDropDown:disabled,
-.DialogCheckbox:disabled,
-[class*="gamepaddialog_Toggle_"]:disabled,
-[class*="appproperties_WorkshopHeader_"]:disabled,
 [class*="gamelistbar_GameListHomeAndSearch_"] a:disabled,
 [class*="gamelistdropdown_MenuHeader_"]:disabled,
 [class*="gamelistdropdown_CheckboxWithImage_"]:disabled,
 [class*="gamelistsearchbar_AdvancedSearchContainer_"]:disabled,
 [class*="bottombar_AddGameButton_"]:disabled,
 [class*="bottombar_DownloadStatusContent_"]:disabled,
-[class*="bottombar_FriendsButton_"]:disabled {
-  background-color: var(--color-button-face) !important;
-  color: var(--color-gray-text) !important;
+[class*="bottombar_FriendsButton_"]:disabled,
+[class*="appproperties_WorkshopHeader_"]:disabled,
+.DialogDropDown:disabled,
+[class*="gamepaddialog_Toggle_"]:disabled {
+  --color-window: var(--color-button-face) !important;
+  --color-window-text: var(--color-gray-text) !important;
+  --color-button-text: var(--color-button-shadow) !important;
+  text-shadow: 1px 1px var(--color-button-highlight) !important;
+  pointer-events: none !important;
 }
-.field,
-select,
-textarea,
-input:not([type]),
-.DialogCheckbox:not([type]),
-[class*="gamepaddialog_Toggle_"]:not([type]),
-input[type="url"],
-.DialogCheckbox[type="url"],
-[class*="gamepaddialog_Toggle_"][type="url"],
-input[type="text"],
-.DialogCheckbox[type="text"],
-[class*="gamepaddialog_Toggle_"][type="text"],
-input[type="number"],
-.DialogCheckbox[type="number"],
-[class*="gamepaddialog_Toggle_"][type="number"],
-input[type="search"],
-.DialogCheckbox[type="search"],
-[class*="gamepaddialog_Toggle_"][type="search"],
-input[type="password"],
-.DialogCheckbox[type="password"],
-[class*="gamepaddialog_Toggle_"][type="password"],
-.DialogDropDown,
-[class*="gamelistdropdown_MenuHeader_"] {
-  background-color: var(--color-window) !important;
-  color: var(--color-window-text) !important;
-  outline: none !important;
-  box-shadow: var(--box-3d-box-shadow) !important;
-  padding: 2px !important;
-  margin: 0 2px !important;
-}
-.field,
-select,
-textarea,
-input:not([type]),
-.DialogCheckbox:not([type]),
-[class*="gamepaddialog_Toggle_"]:not([type]),
-input[type="url"],
-.DialogCheckbox[type="url"],
-[class*="gamepaddialog_Toggle_"][type="url"],
-input[type="text"],
-.DialogCheckbox[type="text"],
-[class*="gamepaddialog_Toggle_"][type="text"],
-input[type="number"],
-.DialogCheckbox[type="number"],
-[class*="gamepaddialog_Toggle_"][type="number"],
-input[type="search"],
-.DialogCheckbox[type="search"],
-[class*="gamepaddialog_Toggle_"][type="search"],
-input[type="password"],
-.DialogCheckbox[type="password"],
-[class*="gamepaddialog_Toggle_"][type="password"],
-.DialogDropDown,
-[class*="gamelistdropdown_MenuHeader_"],
-.field:focus,
+input:focus,
+button:focus,
 select:focus,
 textarea:focus,
-input:not([type]):focus,
-.DialogCheckbox:not([type]):focus,
-[class*="gamepaddialog_Toggle_"]:not([type]):focus,
-input[type="url"]:focus,
-.DialogCheckbox[type="url"]:focus,
-[class*="gamepaddialog_Toggle_"][type="url"]:focus,
-input[type="text"]:focus,
-.DialogCheckbox[type="text"]:focus,
-[class*="gamepaddialog_Toggle_"][type="text"]:focus,
-input[type="number"]:focus,
-.DialogCheckbox[type="number"]:focus,
-[class*="gamepaddialog_Toggle_"][type="number"]:focus,
-input[type="search"]:focus,
-.DialogCheckbox[type="search"]:focus,
-[class*="gamepaddialog_Toggle_"][type="search"]:focus,
-input[type="password"]:focus,
-.DialogCheckbox[type="password"]:focus,
-[class*="gamepaddialog_Toggle_"][type="password"]:focus,
+.title-area-icon:focus,
+[class*="titlebarcontrols_Button_"]:focus,
+[class*="gamelistbar_GameListHomeAndSearch_"] a:focus,
+[class*="gamelistdropdown_MenuHeader_"]:focus,
+[class*="gamelistdropdown_CheckboxWithImage_"]:focus,
+[class*="gamelistsearchbar_AdvancedSearchContainer_"]:focus,
+[class*="bottombar_AddGameButton_"]:focus,
+[class*="bottombar_DownloadStatusContent_"]:focus,
+[class*="bottombar_FriendsButton_"]:focus,
+[class*="appproperties_WorkshopHeader_"]:focus,
 .DialogDropDown:focus,
-[class*="gamelistdropdown_MenuHeader_"]:focus {
-  border-color: var(--box-3d-border-color) !important;
+[class*="gamepaddialog_Toggle_"]:focus {
+  outline: dotted 1px var(--color-button-text) !important;
+  outline-offset: -4px !important;
+}
+select,
+textarea,
+input:not([type]),
+input[type="url"],
+input[type="text"],
+input[type="number"],
+input[type="search"],
+input[type="password"],
+[class*="gamelistdropdown_MenuHeader_"],
+.DialogDropDown {
+  background-color: var(--color-window) !important;
+  color: var(--color-window-text) !important;
+  box-shadow: var(--border-field) !important;
+  padding: 4px !important;
+  margin: 0 2px !important;
 }
 button,
 input[type="button"],
-.DialogCheckbox[type="button"],
-[class*="gamepaddialog_Toggle_"][type="button"],
 input[type="submit"],
-.DialogCheckbox[type="submit"],
-[class*="gamepaddialog_Toggle_"][type="submit"],
-::-webkit-scrollbar-button,
-::-webkit-scrollbar-thumb,
 .title-area-icon,
 [class*="titlebarcontrols_Button_"],
-[class*="appproperties_WorkshopHeader_"],
 [class*="gamelistbar_GameListHomeAndSearch_"] a,
 [class*="gamelistdropdown_CheckboxWithImage_"],
 [class*="gamelistsearchbar_AdvancedSearchContainer_"],
 [class*="bottombar_AddGameButton_"],
 [class*="bottombar_DownloadStatusContent_"],
-[class*="bottombar_FriendsButton_"] {
-  background: var(--button-img, none) var(--color-button-face) no-repeat center !important;
+[class*="bottombar_FriendsButton_"],
+[class*="appproperties_WorkshopHeader_"] {
+  background-color: var(--color-button-face) !important;
   color: var(--color-button-text) !important;
-  border-color: var(--button-3d-border-color-exact) !important;
-  box-shadow: var(--button-3d-box-shadow-exact) !important;
-  padding: 3px 0 !important;
-  margin: 0 6px !important;
+  text-align: center !important;
+  box-shadow: var(--border-button-raised) !important;
+  padding: 5px !important;
+  margin: 0 3px !important;
+  position: relative !important;
   width: 74px !important;
   height: unset !important;
+  display: block !important;
+  cursor: default !important;
 }
 button:active,
 input[type="button"]:active,
-.DialogCheckbox[type="button"]:active,
-[class*="gamepaddialog_Toggle_"][type="button"]:active,
 input[type="submit"]:active,
-.DialogCheckbox[type="submit"]:active,
-[class*="gamepaddialog_Toggle_"][type="submit"]:active,
-::-webkit-scrollbar-button:active,
-::-webkit-scrollbar-thumb:active,
 .title-area-icon:active,
 [class*="titlebarcontrols_Button_"]:active,
-[class*="appproperties_WorkshopHeader_"]:active,
 [class*="gamelistbar_GameListHomeAndSearch_"] a:active,
 [class*="gamelistdropdown_CheckboxWithImage_"]:active,
 [class*="gamelistsearchbar_AdvancedSearchContainer_"]:active,
 [class*="bottombar_AddGameButton_"]:active,
 [class*="bottombar_DownloadStatusContent_"]:active,
 [class*="bottombar_FriendsButton_"]:active,
+[class*="appproperties_WorkshopHeader_"]:active,
 [class*="gamelistbar_GameListHomeAndSearch_"] a[aria-current],
 [class*="gamelistdropdown_CheckboxWithImage_"][class*="Active"] {
-  border-color: var(--color-button-shadow) !important;
-  box-shadow: 0 0 0 1px var(--color-button-shadow-dark) !important;
+  box-shadow: var(--border-button-sunken) !important;
 }
 input[type="checkbox"],
-.DialogCheckbox[type="checkbox"],
 [class*="gamepaddialog_Toggle_"][type="checkbox"],
 input[type="radio"],
-.DialogCheckbox[type="radio"],
 [class*="gamepaddialog_Toggle_"][type="radio"],
+[class*="radio_Button_"]::before,
 .DialogCheckbox,
-[class*="gamepaddialog_Toggle_"],
-[class*="radio_Button_"]::before {
-  background: var(--control-img) no-repeat center !important;
-  outline: none !important;
+[class*="gamepaddialog_Toggle_"] {
   margin: 0 !important;
+  position: relative !important;
+}
+input[type="checkbox"]:active,
+[class*="gamepaddialog_Toggle_"][type="checkbox"]:active,
+input[type="radio"]:active,
+[class*="gamepaddialog_Toggle_"][type="radio"]:active,
+[class*="radio_Button_"]::before:active,
+.DialogCheckbox:active,
+[class*="gamepaddialog_Toggle_"]:active,
+input[type="checkbox"]:disabled,
+[class*="gamepaddialog_Toggle_"][type="checkbox"]:disabled,
+input[type="radio"]:disabled,
+[class*="gamepaddialog_Toggle_"][type="radio"]:disabled,
+[class*="radio_Button_"]::before:disabled,
+.DialogCheckbox:disabled,
+[class*="gamepaddialog_Toggle_"]:disabled {
+  background-color: var(--color-button-face) !important;
 }
 input[type="checkbox"],
-.DialogCheckbox[type="checkbox"],
 [class*="gamepaddialog_Toggle_"][type="checkbox"],
 .DialogCheckbox,
 [class*="gamepaddialog_Toggle_"] {
   background-color: var(--color-window) !important;
-  border-color: var(--box-3d-border-color) !important;
-  box-shadow: var(--box-3d-box-shadow) !important;
-  width: 11px !important;
-  height: 11px !important;
+  box-shadow: var(--border-field) !important;
+  width: 13px !important;
+  height: 13px !important;
 }
-input[type="checkbox"]:active,
-.DialogCheckbox[type="checkbox"]:active,
-[class*="gamepaddialog_Toggle_"][type="checkbox"]:active,
-.DialogCheckbox:active,
-[class*="gamepaddialog_Toggle_"]:active {
-  background-color: var(--color-button-face) !important;
-}
-input[type="checkbox"]:checked,
-.DialogCheckbox[type="checkbox"]:checked,
-[class*="gamepaddialog_Toggle_"][type="checkbox"]:checked,
-.DialogCheckbox:checked,
-[class*="gamepaddialog_Toggle_"]:checked,
-[class*="rootmenu_Icon_"]:not(:empty),
-.DialogCheckbox.Active,
-[class*="gamepaddialog_Toggle_"][class*="On_"] {
-  --control-img: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAcAAAAHAQMAAAD+nMWQAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsIAAA7CARUoSoAAAAAGUExURf///wAAAFXC034AAAABdFJOUwBA5thmAAAAFklEQVQIHWNgYmBj6GO4w/CDoYBBAQARtAL73JP0cgAAAABJRU5ErkJggg==") !important;
+input[type="checkbox"]:checked::before,
+[class*="gamepaddialog_Toggle_"][type="checkbox"]:checked::before,
+.DialogCheckbox:checked::before,
+[class*="gamepaddialog_Toggle_"]:checked::before,
+[class*="rootmenu_Icon_"]:not(:empty)::before,
+.DialogCheckbox.Active::before,
+[class*="gamepaddialog_Toggle_"][class*="On_"]::before {
+  content: '';
+  --control-img: url("data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PSIwIDAgNyA3IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxyZWN0IHdpZHRoPSIxIiBoZWlnaHQ9IjMiIHg9IjYiLz48cmVjdCB3aWR0aD0iMSIgaGVpZ2h0PSIzIiB4PSI1IiB5PSIxIi8+PHJlY3Qgd2lkdGg9IjEiIGhlaWdodD0iMyIgeD0iNCIgeT0iMiIvPjxyZWN0IHdpZHRoPSIxIiBoZWlnaHQ9IjMiIHg9IjMiIHk9IjMiLz48cmVjdCB3aWR0aD0iMSIgaGVpZ2h0PSIzIiB4PSIyIiB5PSI0Ii8+PHJlY3Qgd2lkdGg9IjEiIGhlaWdodD0iMyIgeD0iMSIgeT0iMyIvPjxyZWN0IHdpZHRoPSIxIiBoZWlnaHQ9IjMiIHk9IjIiLz48L3N2Zz4K") !important;
+  -webkit-mask: var(--control-img) no-repeat !important;
+  -webkit-mask-size: 7px 7px !important;
+  -webkit-mask-position: 3px 3px !important;
+  background-color: var(--color-button-text) !important;
+  position: absolute;
+  top: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  left: 0 !important;
 }
 input[type="radio"],
-.DialogCheckbox[type="radio"],
 [class*="gamepaddialog_Toggle_"][type="radio"],
 [class*="radio_Button_"]::before {
+  background: var(--control-img) no-repeat center;
   --control-img: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMAgMAAAArG7R0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAAMUExURf///wAAAIeIj////88rXQEAAAABdFJOUwBA5thmAAAALElEQVQI12NgWMXAwBW6gEH1fwyD+v8zDPP/f0bBIDGF/zwM/AwfGBj+MwAA5NMUe8YWpVIAAAAASUVORK5CYII=") !important;
-  border: none !important;
   width: 12px !important;
   height: 12px !important;
 }
 input[type="radio"]:active,
-.DialogCheckbox[type="radio"]:active,
 [class*="gamepaddialog_Toggle_"][type="radio"]:active,
 [class*="radio_Button_"]::before:active {
   --control-img: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMBAMAAACkW0HUAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsIAAA7CARUoSoAAAAAPUExURf///wAAAIeIj8DHyP///1QVyYYAAAABdFJOUwBA5thmAAAAOElEQVQI12NgYFBSYgACJUFBIM0kaGws6MDAJGxsbODAoGgMBCzYKagSJgZjYwYHBgYXMAISQBIAZBYIx/Jku34AAAAASUVORK5CYII=") !important;
 }
 input[type="radio"]:checked,
-.DialogCheckbox[type="radio"]:checked,
 [class*="gamepaddialog_Toggle_"][type="radio"]:checked,
 [class*="radio_Button_"]::before:checked {
   --control-img: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMAgMAAAArG7R0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAAMUExURf///wAAAIeIj////88rXQEAAAABdFJOUwBA5thmAAAAMElEQVQI12NgWMXAwBW6gEH1fwyD+v8zDPOvf2aYHwrFQDZITOE/DwM/wwcGhv8MAL1zEtdwC089AAAAAElFTkSuQmCC") !important;
 }
 input[type="radio"]:checked:active,
-.DialogCheckbox[type="radio"]:checked:active,
 [class*="gamepaddialog_Toggle_"][type="radio"]:checked:active,
 [class*="radio_Button_"]::before:checked:active {
   --control-img: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMBAMAAACkW0HUAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsIAAA7CARUoSoAAAAAPUExURf///wAAAIeIj8DHyP///1QVyYYAAAABdFJOUwBA5thmAAAAPklEQVQI102KwQmAQBADh8UGwlXgVqCkgX3Yf02Gw4chzEAI0E3SUlyyNdSyr+H0vXxE0l97/C6FzcCzG4QvQrwH+/BK284AAAAASUVORK5CYII=") !important;
 }
 input[type="number"],
-.DialogCheckbox[type="number"],
 [class*="gamepaddialog_Toggle_"][type="number"] {
   padding: 0 !important;
-  padding-left: 1px !important;
-pseudoelement(moz-number-spin-up, moz-number-spin-down, webkit-inner-spin-button)
+  padding-left: 3px !important;
+}
+input[type="number"]::-webkit-inner-spin-button,
+[class*="gamepaddialog_Toggle_"][type="number"]::-webkit-inner-spin-button {
+  appearance: none !important;
+  opacity: 1 !important;
+  background: var(--button-img) !important;
+  background-repeat: no-repeat !important;
+  background-size: 1px 1px !important;
+  margin-top: -1px !important;
+  margin-right: 2px !important;
+  width: 17px !important;
+  height: 18px !important;
 }
 input[type="range"],
-.DialogCheckbox[type="range"],
 [class*="gamepaddialog_Toggle_"][type="range"],
 [class*="gamepadslider_SliderControl_"] {
   background-color: transparent !important;
-  border: none !important;
-  box-shadow: none !important;
   padding: 8px 4px 12px 4px !important;
   margin: -4px !important;
   height: 31px !important;
 }
-@supports (-moz-appearance: none) {
-  input[type="range"],
-  .DialogCheckbox[type="range"],
-  [class*="gamepaddialog_Toggle_"][type="range"],
-  [class*="gamepadslider_SliderControl_"] {
-    height: unset !important;
-    padding-bottom: 8px !important;
-  }
-}
 input[type="range"]::-webkit-slider-runnable-track,
-.DialogCheckbox[type="range"]::-webkit-slider-runnable-track,
 [class*="gamepaddialog_Toggle_"][type="range"]::-webkit-slider-runnable-track,
 [class*="gamepadslider_SliderControl_"]::-webkit-slider-runnable-track,
 [class*="gamepadslider_SliderTrack_"] {
-  border: 1px solid !important;
-  border-color: var(--box-3d-border-color) !important;
-  box-shadow: var(--box-3d-box-shadow) !important;
+  box-shadow: var(--border-field) !important;
   margin: 4px !important;
   height: 0 !important;
 }
 input[type="range"]::-webkit-slider-thumb,
-.DialogCheckbox[type="range"]::-webkit-slider-thumb,
 [class*="gamepaddialog_Toggle_"][type="range"]::-webkit-slider-thumb,
 [class*="gamepadslider_SliderControl_"]::-webkit-slider-thumb,
 [class*="gamepadslider_SliderHandle_"] {
@@ -401,52 +303,200 @@ input[type="range"]::-webkit-slider-thumb,
   border: none !important;
   border-radius: 0 !important;
   margin: -4px !important;
-  margin-top: -9px !important;
   width: 11px !important;
   height: 21px !important;
 }
 input[type="range"]::-webkit-slider-thumb:active,
-.DialogCheckbox[type="range"]::-webkit-slider-thumb:active,
 [class*="gamepaddialog_Toggle_"][type="range"]::-webkit-slider-thumb:active,
 [class*="gamepadslider_SliderControl_"]::-webkit-slider-thumb:active,
 [class*="gamepadslider_SliderHandle_"]:active {
   --control-img: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAVBAMAAABiXgn+AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAAPUExURf///wAAAIeIj8DHyP///1QVyYYAAAABdFJOUwBA5thmAAAANElEQVQI12NwAQEBBmdjY2MjIAUETkDKxMSERjwWY2dnRQYGIBfIYQByQRwGBicBMMUIxABhtBY+Cv3r7wAAAABJRU5ErkJggg==") !important;
 }
-select,
-.DialogDropDown,
-[class*="gamelistdropdown_MenuHeader_"] {
-  --control-img: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAARAgMAAACpwcRXAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAAMUExURQAAAIeIj8DHyP///zDHlOAAAAAxSURBVAjXY1i1atUKhv3//39h2LVq1RIMgoEJSDRwAYkFWkBiBRYlcGJqaGgIAwgAAFaAKE0Wbou6AAAAAElFTkSuQmCC") !important;
-  background: var(--control-img) var(--color-window) no-repeat 100% !important;
-  padding: 0 !important;
-  padding-right: 18px !important;
+input[type="range"]::-webkit-slider-thumb,
+[class*="gamepaddialog_Toggle_"][type="range"]::-webkit-slider-thumb,
+[class*="gamepadslider_SliderControl_"]::-webkit-slider-thumb,
+[class*="gamepadslider_SliderHandle_"] {
+  margin-top: -9px !important;
 }
-@supports not (-moz-appearance: none) {
-  select,
-  .DialogDropDown,
-  [class*="gamelistdropdown_MenuHeader_"] {
-    padding-left: 1px !important;
-  }
+select,
+[class*="gamelistdropdown_MenuHeader_"],
+.DialogDropDown {
+  background: var(--control-img) !important;
+  background-color: var(--color-window) !important;
+  background-repeat: no-repeat !important;
+  background-size: 1px 1px !important;
+  padding: 0 !important;
+  padding-left: 4px !important;
+  padding-right: 20px !important;
 }
 select:focus,
-.DialogDropDown:focus,
-[class*="gamelistdropdown_MenuHeader_"]:focus {
-  outline: none !important;
+[class*="gamelistdropdown_MenuHeader_"]:focus,
+.DialogDropDown:focus {
+  outline: none !important; /* unable to do right side, as it conflicts with the button */
 }
-select:active,
-.DialogDropDown:active,
-[class*="gamelistdropdown_MenuHeader_"]:active {
-  --control-img: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAARAgMAAACpwcRXAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsIAAA7CARUoSoAAAAAJUExURQAAAIeIj8DHyDTRDdUAAAAjSURBVAjXYwgFAoasVatW4iEaGIDEAiYgsYILJKaFRzHIPAD7uSQKZIptlQAAAABJRU5ErkJggg==") !important;
+.title-area-icon,
+[class*="titlebarcontrols_Button_"],
+[class*="gamelistdropdown_CheckboxWithImage_"] {
+  padding: 0 !important;
+  margin: 0 !important;
+  position: relative !important;
+  width: 16px !important;
+  height: 14px !important;
 }
-select:disabled,
-.DialogDropDown:disabled,
-[class*="gamelistdropdown_MenuHeader_"]:disabled {
-  --control-img: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAARAgMAAACpwcRXAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAAMUExURQAAAIeIj8DHyP///zDHlOAAAAA0SURBVAjXY1i1atUKhv3//39h2LVq1RIMIjQMSEyNBxJL64DEyl8giVdLsCqeGhoawgACAK8JKkoQnva4AAAAAElFTkSuQmCC") !important;
+.title-area-icon::before,
+[class*="titlebarcontrols_Button_"]::before,
+[class*="gamelistdropdown_CheckboxWithImage_"]::before,
+.title-area-icon::after,
+[class*="titlebarcontrols_Button_"]::after,
+[class*="gamelistdropdown_CheckboxWithImage_"]::after {
+  content: '' !important;
+  -webkit-mask: var(--button-img, none) no-repeat !important;
+  -webkit-mask-size: var(--button-img-size, auto auto) !important;
+  -webkit-mask-position: var(--button-img-pos, center) !important;
+  position: absolute !important;
+  top: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  left: 0 !important;
+  height: 100% !important;
+  display: block !important;
+}
+.title-area-icon::before,
+[class*="titlebarcontrols_Button_"]::before,
+[class*="gamelistdropdown_CheckboxWithImage_"]::before {
+  background-color: var(--color-button-text) !important;
+  z-index: 1 !important;
+}
+::-webkit-scrollbar {
+  background-image: repeating-conic-gradient(var(--color-scrollbar) 0% 25%, var(--color-window) 0% 50%) !important;
+  background-size: 2px 2px !important;
+}
+::-webkit-scrollbar,
+::-webkit-scrollbar-button {
+  width: var(--scrollbar-size) !important;
+  height: var(--scrollbar-size) !important;
+}
+::-webkit-scrollbar-button,
+::-webkit-scrollbar-thumb {
+  background-color: var(--color-button-face) !important;
+  box-shadow: var(--border-scrollbar-button-raised) !important;
+}
+::-webkit-scrollbar-button:active,
+::-webkit-scrollbar-thumb:active {
+  box-shadow: var(--border-scrollbar-button-sunken) !important;
+}
+::-webkit-scrollbar-button {
+  background: var(--button-img) var(--color-button-face) !important;
+  background-repeat: no-repeat !important;
+  background-size: 1px 1px !important;
+}
+::-webkit-scrollbar-corner,
+::-webkit-scrollbar-resize {
+  background-color: var(--color-scrollbar) !important;
+}
+:root {
+/**
+	 * Monochrome
+	**/
+  --icon-arrow-left: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0IDciPjxzdHlsZT5yZWN0e3dpZHRoOjFweH08L3N0eWxlPjxyZWN0IGhlaWdodD0iNyIgeD0iMyIvPjxyZWN0IGhlaWdodD0iNSIgeD0iMiIgeT0iMSIvPjxyZWN0IGhlaWdodD0iMyIgeD0iMSIgeT0iMiIvPjxyZWN0IGhlaWdodD0iMSIgeT0iMyIvPjwvc3ZnPgo=");
+  --icon-arrow-top: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA3IDQiPjxzdHlsZT5yZWN0e2hlaWdodDoxcHh9PC9zdHlsZT48cmVjdCB3aWR0aD0iNyIgeT0iMyIvPjxyZWN0IHdpZHRoPSI1IiB4PSIxIiB5PSIyIi8+PHJlY3Qgd2lkdGg9IjMiIHg9IjIiIHk9IjEiLz48cmVjdCB3aWR0aD0iMSIgeD0iMyIvPjwvc3ZnPgo=");
+  --icon-arrow-bottom: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA3IDQiPjxzdHlsZT5yZWN0e2hlaWdodDoxcHh9PC9zdHlsZT48cmVjdCB3aWR0aD0iNyIvPjxyZWN0IHdpZHRoPSI1IiB4PSIxIiB5PSIxIi8+PHJlY3Qgd2lkdGg9IjMiIHg9IjIiIHk9IjIiLz48cmVjdCB3aWR0aD0iMSIgeD0iMyIgeT0iMyIvPjwvc3ZnPgo=");
+  --icon-arrow-right: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0IDciPjxzdHlsZT5yZWN0e3dpZHRoOjFweH08L3N0eWxlPjxyZWN0IGhlaWdodD0iNyIvPjxyZWN0IGhlaWdodD0iNSIgeD0iMSIgeT0iMSIvPjxyZWN0IGhlaWdodD0iMyIgeD0iMiIgeT0iMiIvPjxyZWN0IGhlaWdodD0iMSIgeD0iMyIgeT0iMyIvPjwvc3ZnPgo=");
+  --icon-minimize: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2IDIiPjxyZWN0IHdpZHRoPSI2IiBoZWlnaHQ9IjIiLz48L3N2Zz4K");
+  --icon-maximize: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA5IDkiPjxyZWN0IHdpZHRoPSI5IiBoZWlnaHQ9IjEiLz48cmVjdCB3aWR0aD0iOSIgaGVpZ2h0PSIxIiB5PSI4Ii8+PHJlY3Qgd2lkdGg9IjEiIGhlaWdodD0iNyIgeT0iMSIvPjxyZWN0IHdpZHRoPSIxIiBoZWlnaHQ9IjciIHg9IjgiIHk9IjEiLz48cmVjdCB3aWR0aD0iNyIgaGVpZ2h0PSIxIiB4PSIxIiB5PSIxIi8+PC9zdmc+Cg==");
+  --icon-restore: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA4IDkiPjxyZWN0IHdpZHRoPSI2IiBoZWlnaHQ9IjIiIHg9IjIiLz48cmVjdCB3aWR0aD0iNiIgaGVpZ2h0PSIyIiB5PSIzIi8+PHJlY3Qgd2lkdGg9IjEiIGhlaWdodD0iMSIgeD0iMiIgeT0iMiIvPjxyZWN0IHdpZHRoPSIxIiBoZWlnaHQ9IjQiIHk9IjUiLz48cmVjdCB3aWR0aD0iNCIgaGVpZ2h0PSIxIiB4PSIxIiB5PSI4Ii8+PHJlY3Qgd2lkdGg9IjEiIGhlaWdodD0iNCIgeD0iNSIgeT0iNSIvPjxyZWN0IHdpZHRoPSIxIiBoZWlnaHQ9IjQiIHg9IjciIHk9IjIiLz48cmVjdCB3aWR0aD0iMSIgaGVpZ2h0PSIxIiB4PSI2IiB5PSI1Ii8+PC9zdmc+Cg==");
+  --icon-close: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA4IDciPjxzdHlsZT5yZWN0e3dpZHRoOjJweDtoZWlnaHQ6MXB4fTwvc3R5bGU+PHJlY3QvPjxyZWN0IHg9IjEiIHk9IjEiLz48cmVjdCB4PSIyIiB5PSIyIi8+PHJlY3QgeD0iMyIgeT0iMyIvPjxyZWN0IHg9IjQiIHk9IjQiLz48cmVjdCB4PSI1IiB5PSI1Ii8+PHJlY3QgeD0iNiIgeT0iNiIvPjxyZWN0IHk9IjYiLz48cmVjdCB4PSIxIiB5PSI1Ii8+PHJlY3QgeD0iMiIgeT0iNCIvPjxyZWN0IHg9IjQiIHk9IjIiLz48cmVjdCB4PSI1IiB5PSIxIi8+PHJlY3QgeD0iNiIvPjwvc3ZnPgo=");
+/**
+	 * Dialog
+	**/
+  --icon-dialog-error: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAPUExURagAV/8AAIeIj////wAAAAg0piAAAAAFdFJOU/////8A+7YOUwAAAAlwSFlzAAAOwwAADsMBx2+oZAAAAL5JREFUOE+VkkESwzAIA1PH/39zAQlBnKSe6gJmt3jG6TErB8MjopOBD3NxshVFykBXv85oSdQb9tDw8sjT+CUMCuQniodtGIf4KUNtrKdgwxxX6yv6BozVuDDaCxCwILaiPVGgCAerIINHi91xeeSV/y2Av19BbOFgEYhYEBc2DyWhjavtgo/RtNaEzeeGkMYa51vBP/ebAQ7h8W8fF6Qwx2IEdp6CGbXFWnEJprgTCQrcBTN6OOyChVB0zvkFXPEHlb49r94AAAAASUVORK5CYII=");
+  --icon-dialog-question: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAASUExURYeIj8DHyP///wAAAAAA/wAAAFYalhEAAAAGdFJOU///////ALO/pL8AAAAJcEhZcwAADsMAAA7DAcdvqGQAAADjSURBVDhPhZJRFsMgCAS1hPtfuQssAk1eMx+NuhOU2KXFIpwGZ4Zgf5w9HA5PGsCJ9RRmbOw0/Lm4OhDPXch8X05WCwNC5Yhuxqr9ryt+4wm2GRA4ZdSEj1j9asAjPwcXUALvVwfI9ijgJZpgWAEODbEvz3Ew80fhHMl4EjgIXBivTNAFbq2X8EYKLzBucjbpBdpdgCnEBvjcwoWfLbiB3VgZjaxvgsqtldyfgspUtmSegi45DlKPI0rB/vZ0ImVegivLjtteB00AKXBqTME7/i/AeBHQ8Ytgh+XIeBBgcKCq+gUzrAun0HGbXAAAAABJRU5ErkJggg==");
+  --icon-dialog-warning: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAASUExURaioV8DHyP//AAAAAIeIjwAAADxsqtcAAAAGdFJOU///////ALO/pL8AAAAJcEhZcwAADsMAAA7DAcdvqGQAAADBSURBVDhPfZFJEoAgDATBkP9/2exkkHIuRKer4zK4Z4wxY8wAMJ5nUsyZDkivxIpLzwd4aAHRAO9V0YkvcCg2kP2huACoKGD3qABgEtGU8waYQHqiQ3EFuiIAf4ICmuIONIUD3jdgKwAY0icLQNys17QxCAB0R0ylUKB62VFzKhCYuUGygd3L3TgloTiAngR6L6+xd7gCgfpQFgdgAQKmQABWuAKBIwKsP0BXLHxIiPUCsP7Da7RXgNmme+xf/BDML3sxDSA4Fh+VAAAAAElFTkSuQmCC");
+}
+[role="tab"],
+[class*="pagedsettings_PagedSettingsDialog_PageListItem_"] {
+  --color-tab-border: var(--color-button-highlight) !important;
+  background-color: var(--color-button-face) !important;
+  color: var(--color-button-text) !important;
+  border: 1px solid !important;
+  border-bottom: none !important;
+  border-color: var(--border-tab) !important;
+  box-shadow: 1px 0 var(--color-button-shadow-dark), 1px 1px var(--color-tab-border) !important;
+  margin: 0 1px -1px 0 !important;
+  padding: 2px 6px !important;
+  position: relative !important;
+}
+[role="tab"]::before,
+[class*="pagedsettings_PagedSettingsDialog_PageListItem_"]::before,
+[role="tab"]::after,
+[class*="pagedsettings_PagedSettingsDialog_PageListItem_"]::after {
+  content: '' !important;
+/* Draw the rounding pixel by pixel */
+  background-repeat: no-repeat !important;
+  background-size: 1px 1px !important;
+  background-position: 0 0, 1px 0, 2px 0, 0 1px, 1px 1px, 2px 1px !important;
+  position: absolute !important;
+  top: -1px !important;
+  width: 3px !important;
+  height: 2px !important;
+}
+[role="tab"]::before,
+[class*="pagedsettings_PagedSettingsDialog_PageListItem_"]::before {
+  background-image: var(--tab-border-left);
+  left: -1px !important;
+}
+[role="tab"]::after,
+[class*="pagedsettings_PagedSettingsDialog_PageListItem_"]::after {
+  background-image: var(--tab-border-right);
+  right: -2px !important;
+}
+[role="tab"][aria-selected="true"],
+[class*="pagedsettings_PagedSettingsDialog_PageListItem_"][aria-selected="true"],
+[class*="pagedsettings_PagedSettingsDialog_PageListItem_"][class*="Active"] {
+  --color-tab-border: var(--color-button-face) !important;
+  margin: 0 -1px -2px -4px !important;
+  padding: 3px 6px !important;
+  z-index: 1 !important;
+}
+[role="tabpanel"],
+.DialogBody {
+  background-color: var(--color-button-face) !important;
+  color: var(--color-button-text) !important;
+  box-shadow: var(--border-button-raised) !important;
+  padding: 4px !important;
+  box-sizing: border-box !important;
+}
+::selection {
+  background-color: var(--color-highlight) !important;
+  color: var(--color-highlight-text) !important;
+}
+::placeholder {
+  color: var(--color-gray-text) !important;
+}
+code,
+pre,
+kbd {
+  font: var(--text-ui) !important;
+}
+td {
+  font: var(--text-ui) !important;
+}
+legend,
+[class*="appfilterpane_FilterBucketLabel_"],
+.DialogControlsSectionHeader,
+.DialogSubHeader,
+.DialogBodyText,
+[class*="appproperties_Title_"],
+[class*="librarysettings_DescriptionText_"],
+[class*="remoteplaysettings_TableHeader_"] > :first-child {
+  background-color: var(--color-button-face) !important;
+  font: var(--text-ui) !important;
 }
 label {
   text-decoration: none !important;
+  gap: 7px !important;
   display: inline-flex !important;
   align-items: center !important;
-  gap: 7px !important;
   position: relative !important;
   cursor: default !important;
 }
@@ -458,58 +508,164 @@ label:has(:focus)::before {
   height: 100% !important;
   outline: dotted 1px var(--color-button-text) !important;
 }
-::-webkit-scrollbar {
-  background: repeating-conic-gradient(#c0c7c8 0% 25%, var(--color-window) 0% 50%) !important;
-  background-size: 2px 2px !important;
+[class*="appfilterpane_FilterBucketLabel_"],
+.DialogControlsSectionHeader,
+.DialogSubHeader,
+.DialogBodyText,
+[class*="appproperties_Title_"],
+[class*="librarysettings_DescriptionText_"],
+[class*="remoteplaysettings_TableHeader_"] > :first-child {
+  position: absolute;
+  top: -8px;
+  padding: 0 2px !important;
 }
-::-webkit-scrollbar-button,
-::-webkit-scrollbar-thumb {
-  border-color: var(--color-button-face) var(--color-button-shadow-dark) var(--color-button-shadow-dark) var(--color-button-face) !important;
-  box-shadow: inset 1px 1px 0 var(--color-button-highlight), inset -1px -1px 0 var(--color-button-shadow) !important;
+:root {
+/**
+	 * Colors
+	 *
+	 * Naming reference: https://learn.microsoft.com/en-us/windows/win32/controls/themesfileformat-overview#control-panelcolors-section
+	**/
+/**
+	 * Text
+	 *
+	 * I.   Fallback fonts shipped with Windows 95
+	 *      Used in the first place due to
+	 *      rendering issues on Linux.
+	 * II.  Normal
+	 * III. System
+	**/
+  --text-font-ui: 'Tahoma', 'Arial', 'Verdana', 'MS Sans Serif', 'MS Reference Sans Serif', sans-serif;
+  --text-font-monospace: 'Less Perfect DOS VGA', 'MS Gothic', 'MS Mincho', 'SimSun', monospace;
+  --text-size: 8pt;
+  --text-size-header: 16pt;
+  --text-line: 1.2;
+  --text-ui: var(--text-size)/var(--text-line) var(--text-font-ui);
+  --text-monospace: var(--text-size)/var(--text-line) var(--text-font-monospace);
+  --text-header: var(--text-size-header)/var(--text-line) var(--text-font-ui);
+/**
+	 * Borders
+	**/
+  --border-statusbar: 0 -1px var(--color-button-shadow), -1px 0 var(--color-button-shadow), -1px -1px var(--color-button-shadow), -1px 1px var(--color-button-highlight), 1px 0 var(--color-button-highlight), 1px 1px var(--color-button-highlight);
+  --border-button-raised: inset -1px -1px var(--color-button-shadow-dark), inset 1px 1px var(--color-button-highlight), inset -2px -2px var(--color-button-shadow);
+  --border-button-sunken: inset -1px -1px var(--color-button-highlight), inset 1px 1px var(--color-button-shadow-dark), inset -2px -2px var(--color-button-light), inset 2px 2px var(--color-button-shadow);
+  --border-scrollbar-button-raised: inset -1px -1px var(--color-button-shadow-dark), inset 1px 1px var(--color-button-light), inset -2px -2px var(--color-button-shadow), inset 2px 2px var(--color-button-highlight);
+  --border-scrollbar-button-sunken: inset 0 0 0 1px var(--color-button-shadow);
+  --border-field: inset -1px -1px var(--color-button-highlight), inset 1px 1px var(--color-button-shadow), inset -2px -2px var(--color-button-light), inset 2px 2px var(--color-button-shadow-dark);
+  --border-groupbox-border: var(--color-button-highlight) var(--color-button-shadow) var(--color-button-shadow) var(--color-button-highlight);
+  --border-groupbox-box-shadow: 0 -1px var(--color-button-shadow), -1px 0 var(--color-button-shadow), -1px -1px var(--color-button-shadow), -1px 1px var(--color-button-highlight), 1px 0 var(--color-button-highlight), 1px 1px var(--color-button-highlight);
+  --border-tab: var(--color-button-highlight) var(--color-button-shadow) var(--color-button-shadow) var(--color-button-highlight);
+  --border-window: inset -1px -1px var(--color-button-shadow-dark), inset 1px 1px var(--color-button-light), inset -2px -2px var(--color-button-shadow), inset 2px 2px var(--color-button-highlight);
+/**
+	 * Dimensions
+	**/
+  --window-gap: 2px;
+  --scrollbar-size: 16px;
+  --titlebar-height: 18px;
+  --menubar-height: 18px;
+  --statusbar-height: 18px;
 }
-::-webkit-scrollbar-button {
-  --button-img: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAcAAAAECAYAAABCxiV9AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAAtSURBVBhXY/z//z8DDDAygrj/GaFcBiYoDZZApkEALIksAAJwhUCMIoEADAwA3ckMC4nTcHYAAAAASUVORK5CYII=") !important;
-  display: flex !important;
+@media (prefers-color-scheme: light) {
+  :root {
+    --color-button-face: #c0c0c0;
+    --color-button-text: #000;
+    --color-button-highlight: #fff;
+    --color-button-light: #dfdfdf;
+    --color-button-shadow: #808080;
+    --color-button-shadow-dark: #000;
+    --color-window: #fff;
+    --color-window-text: #000;
+    --color-active-caption: #000080;
+    --color-active-caption-text: #fff;
+    --color-highlight: #000080;
+    --color-highlight-text: #fff;
+    --color-tooltip: #ffffe1;
+    --color-tooltip-text: #000;
+    --color-info-background: #ffffc0;
+    --color-tree-border: #87888f;
+    --color-scrollbar: #dbdbdb;
+    --color-gray-text: #808080;
+    --color-link: #00f;
+  }
 }
-::-webkit-scrollbar,
-::-webkit-scrollbar-button {
-  width: 16px !important;
-  height: 16px !important;
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-button-face: #252525;
+    --color-button-text: #ccc;
+    --color-button-highlight: #808080;
+    --color-button-light: #252525;
+    --color-button-shadow: #505050;
+    --color-button-shadow-dark: #000;
+    --color-window: #121212;
+    --color-window-text: #ccc;
+    --color-active-caption: #ccc;
+    --color-active-caption-text: #252525;
+    --color-highlight: #ccc;
+    --color-highlight-text: #252525;
+    --color-tooltip: #252525;
+    --color-tooltip-text: #ccc;
+    --color-info-background: #ffffc0;
+    --color-tree-border: #808080;
+    --color-scrollbar: #505050;
+    --color-gray-text: #808080;
+    --color-link: #8080ff;
+  }
 }
-::-webkit-scrollbar-button:increment {
-  --button-img: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAcAAAAECAYAAABCxiV9AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsIAAA7CARUoSoAAAAArSURBVBhXY2RgYPgPxFgB0////0EKMABInAnGAItAAYwPlgQBmABCIQMDAIflEvtEtJMHAAAAAElFTkSuQmCC") !important;
+@media (forced-colors: active) {
+  :root {
+    --color-button-face: ButtonFace;
+    --color-button-text: ButtonText;
+    --color-button-highlight: ButtonText;
+    --color-button-light: ButtonText;
+    --color-button-shadow: ButtonText;
+    --color-button-shadow-dark: ButtonText;
+    --color-window: ButtonFace;
+    --color-window-text: ButtonText;
+    --color-active-caption: Highlight;
+    --color-active-caption-text: HighlightText;
+    --color-highlight: Highlight;
+    --color-highlight-text: HighlightText;
+    --color-tooltip: Canvas;
+    --color-tooltip-text: CanvasText;
+    --color-info-background: #ffffc0;
+    --color-tree-border: #87888f;
+    --color-scrollbar: ButtonText;
+    --color-gray-text: GrayText;
+    --color-link: LinkText;
+  }
 }
-::-webkit-scrollbar-button:horizontal {
-  --button-img: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAHCAYAAAAvZezQAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsIAAA7CARUoSoAAAAAySURBVBhXTYwBCgAwCAK1///ZZa22gygPkpIwkFTcu4J3iQmGOe8nieywXOrll1vaEjisghAJeJVSAgAAAABJRU5ErkJggg==") !important;
+body,
+[class*="contextmenu_contextMenu_"],
+[class*="titlebarcontrols_EmptyNotificationsCtn_"],
+[class*="gamelistsearchbar_AdvancedSearchPane_"],
+.DialogMenuPosition ._DialogInputContainer {
+  background-color: var(--color-button-face) !important;
+  color: var(--color-button-text) !important;
+  font: var(--text-ui) !important;
+  image-rendering: pixelated !important;
+  box-shadow: var(--border-window) !important;
+  padding: 4px !important;
+  margin: 0 !important;
+  box-sizing: border-box !important;
 }
-::-webkit-scrollbar-button:horizontal:increment {
-  --button-img: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAHCAYAAAAvZezQAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsIAAA7CARUoSoAAAAAySURBVBhXRY3JDQAwCMOS7r8zxZEAPzgsDkuqhhwewXalayJgZFYohp0Abq2YwxH3RfqHzhAHIWlRxQAAAABJRU5ErkJggg==") !important;
-}
-::-webkit-scrollbar-corner,
-::-webkit-scrollbar-resize {
-  background-color: #c0c7c8 !important;
+* {
+  transition: none !important;
 }
 [class*="contextmenu_contextMenu_"] {
-  background: var(--color-button-face) !important;
-  border: 1px solid !important;
-  border-color: var(--button-3d-border-color) !important;
-  box-shadow: var(--window-3d-box-shadow) !important;
-  padding: 1px !important;
   min-width: unset !important;
 }
 [class*="contextmenu_contextMenuContents_"] {
   background: var(--color-button-face) !important;
 }
 [class*="contextmenu_contextMenuItem_"] {
-  font: var(--font) !important;
   color: var(--color-button-text) !important;
-  padding: 1px 20px !important;
+  font: var(--text-ui) !important;
   border: none !important;
+  padding: 1px 20px !important;
 }
 [class*="contextmenu_contextMenuItem_"]:hover,
 [class*="contextmenu_contextMenuItem_"][class*="active"] {
-  background-color: var(--color-active-caption) !important;
-  color: var(--color-active-caption-text) !important;
+  background-color: var(--color-highlight) !important;
+  color: var(--color-highlight-text) !important;
 }
 [class*="rootmenu_Icon_"] {
   background-image: var(--control-img);
@@ -534,9 +690,9 @@ label:has(:focus)::before {
 }
 [class*="titlebarcontrols_NotificationsMenu_"] {
   color: var(--color-button-text);
-  padding: 0 !important;
   border: none;
   box-shadow: none;
+  padding: 0 !important;
   width: unset;
 }
 [class*="titlebarcontrols_NotificationHeader_"] {
@@ -544,23 +700,24 @@ label:has(:focus)::before {
   padding-right: 2px;
 }
 [class*="titlebarcontrols_AllNotificationsTitle_"] {
-  font: var(--font) !important;
-}
-[class*="titlebarcontrols_EmptyNotificationsCtn_"] {
-  background-color: var(--color-window);
-  border-color: var(--box-3d-border-color);
-  box-shadow: var(--box-3d-box-shadow);
-  padding: 8px;
-  margin: 8px;
+  font: var(--text-ui) !important;
 }
 [class*="titlebarcontrols_EmptyNotificationsBody_"] {
   color: inherit !important;
 }
+::-webkit-scrollbar-button {
+  display: block !important;
+}
+::-webkit-scrollbar-thumb {
+  border-radius: 0 !important;
+  margin: 0 !important;
+  width: var(--scrollbar-size) !important;
+}
 .PopupFullWindow:not(:only-child) .ModalPosition {
-  height: calc(100% - var(--font-size) * var(--font-line) - 6px) !important;
+  height: calc(100% - var(--text-size) * var(--text-line) - 6px) !important;
 }
 [class*="bottombar_BottomBarContainer_"] {
-  padding-bottom: calc(var(--font-size) * var(--font-line) + 4px);
+  padding-bottom: calc(var(--text-size) * var(--text-line) + 4px);
 }
 .PopupFullWindow:not(:only-child)::after,
 [class*="bottombar_BottomBarContainer_"]::after {
@@ -569,63 +726,51 @@ label:has(:focus)::before {
   left: 4px;
   right: 4px;
   bottom: 4px;
-  height: calc(var(--font-size) * var(--font-line));
+  height: calc(var(--text-size) * var(--text-line));
   background-color: var(--color-button-face);
+  box-shadow: var(--border-statusbar-box-shadow);
   padding: 1px 15px 1px 2px;
-  border: 1px solid var(--button-3d-border-color-inverted);
   margin: 1px;
-  box-shadow: var(--box-3d-box-shadow);
 }
 .window_resize_grip {
   opacity: 1 !important;
   background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA0AAAANAgMAAAAPhQzvAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAMUExURf///8DHyIeIjwAAAPjD55kAAAAEdFJOU////wBAKqn0AAAACXBIWXMAAA7CAAAOwgEVKEqAAAAANElEQVQI1xXIMQ0AAAgDMPxgAhO45EIGcrhJxvb0qAEXBqwY4eSKbJPROe+Kt80bnesyMx6fbh/W8xR1uwAAAABJRU5ErkJggg==");
   background-size: unset !important;
   background-position: unset !important;
-  width: 14px !important;
-  height: 14px !important;
   right: 3px;
   bottom: 3px;
-}
-.title-area-icon,
-[class*="titlebarcontrols_Button_"] {
-  padding: 0 !important;
-  margin: 0 !important;
-  margin-left: 2px !important;
   width: 14px !important;
-  height: 12px !important;
+  height: 14px !important;
 }
-.title-area-icon.minimizeButton,
-[class*="titlebarcontrols_Button_"].minimizeButton {
-  --button-img: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAACCAIAAAD0PzoJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAANSURBVBhXYyACMDAAAAAmAAEq5K9KAAAAAElFTkSuQmCC");
-  background-position: 2px 7px !important;
+.minimizeButton {
+  --button-img: var(--icon-minimize);
+  --button-img-size: 6px 2px;
+  --button-img-pos: 4px 9px;
 }
-.title-area-icon.maximizeButton,
-[class*="titlebarcontrols_Button_"].maximizeButton {
-  --button-img: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAJCAYAAADgkQYQAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAAiSURBVChTY2RgYPgPxHgBE5QmCAiZ9J8okwajIiLCiYEBAE+8BAuR7uviAAAAAElFTkSuQmCC");
-  background-position: 1px 0 !important;
+.maximizeButton {
+  --button-img: var(--icon-maximize);
+  --button-img-size: 9px;
+  --button-img-pos: 3px 2px;
 }
-.title-area-icon.restoreButton,
-[class*="titlebarcontrols_Button_"].restoreButton {
-  --button-img: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAJCAYAAAAPU20uAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAA1SURBVChTY2RAgP9QGgUwQWmiADYT/oOswGo0EIDlCFoBMwHZsSCAYipWu6E0YV8QcCQDAwDdNwoEoDtCnwAAAABJRU5ErkJggg==");
-  background-position: 1px 0 !important;
+.restoreButton {
+  --button-img: var(--icon-restore);
+  --button-img-size: 10px 9px;
+  --button-img-pos: 2px 2px;
 }
-.title-area-icon.closeButton,
-[class*="titlebarcontrols_Button_"].closeButton {
-  --button-img: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAHAQMAAAAPl54dAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsIAAA7CARUoSoAAAAAGUExURf///wAAAFXC034AAAABdFJOUwBA5thmAAAAFElEQVQI12M4zJDGYMMgAcRpDIcBFDwC4+02LWIAAAAASUVORK5CYII=");
-  background-position-y: 1px !important;
-  margin-left: 4px !important;
-}
-.title-area-icon > svg,
-[class*="titlebarcontrols_Button_"] > svg {
-  display: none;
+.closeButton {
+  --button-img: var(--icon-close);
+  --button-img-size: 8px 7px;
+  --button-img-pos: 4px 3px;
+  margin-left: 2px !important;
 }
 .title-area {
   background-color: var(--color-gray-text);
+  padding-right: 2px !important;
+  position: unset !important;
+  max-height: var(--titlebar-height);
   display: flex;
   align-items: center;
   justify-content: space-between;
-  position: unset !important;
-  max-height: 17px;
 }
 .WindowFocus .title-area {
   background-color: var(--color-active-caption);
@@ -656,9 +801,9 @@ label:has(:focus)::before {
   top: 4px;
   right: 108px;
   height: 18px;
-  color: var(--color-button-face);
   display: flex;
   align-items: center;
+  color: var(--color-button-face);
   -webkit-app-region: drag;
 }
 .WindowFocus #SteamDesktop .title-area::after {
@@ -667,15 +812,10 @@ label:has(:focus)::before {
 .title-area-icon-inner {
   display: none !important;
 }
-.title-bar-actions {
-  position: fixed !important;
-  top: 7px !important;
-  right: 7px !important;
-}
 [class*="titlebarcontrols_TitleBarControls_"] {
   position: absolute;
-  top: 2px;
-  right: 55px;
+  top: 1px;
+  right: 46px;
   z-index: 1;
 }
 [class*="titlebarcontrols_TitleBarControls_"] > :nth-child(3) > div {
@@ -692,24 +832,30 @@ label:has(:focus)::before {
   order: -1;
 }
 [class*="titlebarcontrols_Button_"] {
-  background-position-x: 2px !important;
+  --button-img-pos: 3px 2px !important;
   min-width: unset;
   min-height: unset;
   cursor: default;
 }
 [class*="titlebarcontrols_AnnouncementsButton_"] {
   --button-img: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAICAYAAADED76LAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAAtSURBVChTY2RAgP9QGgPAJJAVwMWYoAycAGQFSDWMxgqwWQED/6lnAg7AwAAATOYP+fpPtrkAAAAASUVORK5CYII=");
+  --button-img-size: 9px;
 }
 [class*="titlebarcontrols_NotificationButtonContainer_"] {
   --button-img: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAICAYAAADED76LAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAAwSURBVChTY0AD/6EYDhihNAigSAABWI4JzMQDKFcAcwO6/TDACFKASxIrQPMmAwMAgi8HBW4J8QQAAAAASUVORK5CYII=");
-  margin: 0 !important;
+  --button-img-size: 9px;
 }
 [class*="titlebarcontrols_GamepadUIToggle_"] {
   --button-img: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAICAYAAADED76LAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAAoSURBVChTY2RgYPgPxHgBPgX/maAMnIByBQQdCVIAArgUMRIwgYEBAGefBgb8inyEAAAAAElFTkSuQmCC");
+  --button-img-size: 9px;
+}
+[class*="titlebarcontrols_"] svg {
+  display: none !important;
 }
 .DialogHeader {
   color: var(--color-button-face);
-  font: var(--font) !important;
+  font: var(--text-ui) !important;
+  font-weight: bold !important;
   text-transform: unset;
   padding: 0;
   margin: 0 !important;
@@ -724,450 +870,34 @@ label:has(:focus)::before {
   display: none;
 }
 [class*="tooltip_TextToolTip_"] {
-  background-color: var(--color-info-background);
+  background-color: var(--color-tooltip);
+  color: var(--color-tooltip-text);
+  font: var(--text-ui) !important;
   border: 1px solid var(--color-button-shadow-dark);
-  box-shadow: inset 0 0 0 1px #c0c7c8;
-  color: var(--color-button-text);
-  font: var(--font);
-  padding: 8px 16px;
-  margin: 0;
-}
-.DesktopUI,
-.DialogMenuPosition ._DialogInputContainer,
-[class*="gamelistsearchbar_AdvancedSearchPane_"] {
-  border: 1px solid !important;
-  border-color: var(--button-3d-border-color) !important;
-  box-shadow: var(--window-3d-box-shadow) !important;
-  padding: 2px !important;
-  margin: 1px !important;
-  width: unset !important;
-  height: -webkit-fill-available !important;
-}
-.ModalDialogPopup .ModalDialogBody {
-  min-height: unset;
-  position: fixed;
-  left: 0;
-  top: 0;
-  right: 0;
-  bottom: 0;
-}
-.ModalPosition {
-  background-image: none !important;
-}
-.ModalPosition_TopBar {
-  display: none !important;
-}
-.ModalPosition_Content {
-  color: var(--color-button-text);
   box-shadow: none;
-}
-.DialogInput {
-  background-image: none !important;
-}
-.DialogButton {
-  text-align: center !important;
-}
-[class*="FieldChildren_"] .DialogButton {
-  padding: 3px 6px !important;
-  margin: 0 !important;
-  width: unset !important;
-}
-.DialogButton::before {
-  display: none !important;
-}
-.DialogDropDown {
-  align-items: center;
-}
-.DialogDropDown_CurrentDisplay {
-  padding: 0 !important;
-  padding-left: 1px !important;
-}
-.DialogDropDown_Arrow {
-  display: none !important;
-}
-.DialogMenuPosition ._DialogInputContainer {
-  background-color: var(--color-window);
-  padding: 1px !important;
-  border-radius: 0;
-}
-.DialogCheckbox > svg {
-  display: none !important;
-}
-.DialogCheckbox_Container {
-  background-color: transparent !important;
-  padding: 0 !important;
-  box-shadow: none !important;
-  align-items: center;
-}
-.DialogToggle_Label {
-  font: var(--font) !important;
-  color: var(--color-button-text) !important;
-  margin-left: 6px;
-}
-.DialogContent {
-  background: transparent !important;
-}
-.DialogContentTransition {
-  background: transparent !important;
-  border-top: 1px solid;
-  border-color: var(--button-3d-border-color);
-  margin-top: -1px;
-  width: unset !important;
-  max-width: unset !important;
-}
-.DialogContentTransition > .DialogContent {
-  padding: 0 !important;
-  left: -1px !important;
-  right: -1px !important;
-  bottom: 18px !important;
-}
-.DialogBody {
-  font: var(--font) !important;
-  padding: 14px !important;
-  margin: 1px !important;
-  margin-top: 0 !important;
-  border: 1px solid;
-  border-top: none;
-  border-color: var(--button-3d-border-color);
-  box-shadow: var(--window-3d-box-shadow);
-  gap: 12px;
-  -webkit-mask-image: none !important;
-  overflow-y: auto !important;
-}
-.DialogControlsSection,
-div:not([class]) > [class*="gamepaddialog_Field_"],
-[class*="appproperties_SectionTopLine_"] {
-  border: 1px solid !important;
-  border-color: var(--group-3d-border-color) !important;
-  box-shadow: var(--group-3d-box-shadow) !important;
-  padding: 12px 8px 4px 8px !important;
-  margin: 1px !important;
-  position: relative !important;
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-}
-[class*="gamepaddialog_Field_"] {
-  --field-row-children-spacing: 4px !important;
-  padding: 0 !important;
-}
-.DialogControlsSectionHeader,
-.DialogSubHeader,
-.DialogBodyText,
-[class*="remoteplaysettings_TableHeader_"] > :first-child,
-[class*="appfilterpane_FilterBucketLabel_"] {
-  position: absolute;
-  top: -8px;
-  background-color: var(--color-button-face);
-  font: var(--font) !important;
-  text-transform: unset !important;
-  letter-spacing: unset !important;
-  color: var(--color-button-text) !important;
-  padding: 0 2px;
-  margin: 0 !important;
-}
-[class*="gamepaddialog_Field_"]::after {
-  display: none !important;
-}
-[class*="gamepaddialog_FieldChildren_"] {
-  gap: 4px;
-}
-[class*="gamepaddialog_FieldLabel_"] {
-  font: var(--font) !important;
-  color: var(--color-window-text);
-}
-[class*="gamepaddialog_FieldLabel_"] > :not([class]) {
-  display: flex;
-  align-items: center;
-  gap: 1ch;
-}
-[class*="gamepaddialog_FieldLabelRow_"] {
-  flex-direction: row-reverse;
-}
-[class*="WithDescription_"] > [class*="Row"] + [class*="gamepaddialog_FieldDescription_"] {
-  color: var(--color-gray-text) !important;
-  margin-left: 20px !important;
-}
-[class*="gamepaddialog_ControlsListOuterPanel_"] {
-  --controls-list-spacing: 6px !important;
-  flex: unset !important;
-  gap: 0 !important;
-}
-[class*="gamepaddialog_ControlsListChild_"] {
-  max-width: unset !important;
-}
-[class*="gamepaddialog_ToggleRail_"],
-[class*="gamepaddialog_ToggleSwitch_"] {
-  display: none;
-}
-[class*="dropdown_DialogDropDownMenu_Item_"] {
-  padding: 1px;
-}
-[class*="dropdownlabel_DropDownLabelTitle_"] {
-  font: var(--font) !important;
-  color: inherit;
-}
-.DialogDropDown [class*="dropdownlabel_DropDownLabelDescription_"] {
-  display: none;
-}
-[class*="radio_Group_"],
-[class*="radio_Button_"] {
-  background-color: transparent !important;
-  padding: 0;
-}
-[class*="radio_Group_"] {
-  box-shadow: none;
-  gap: 4px;
-  flex-direction: column;
-}
-[class*="radio_Button_"] {
-  font: var(--font);
-  color: var(--color-button-text) !important;
-  text-align: left;
-  flex-direction: row;
-  justify-content: left;
-  gap: 6px;
-}
-[class*="radio_Button_"]::before {
-  content: '';
-}
-[class*="radio_Button_"]:active::before {
-  --control-img: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMBAMAAACkW0HUAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsIAAA7CARUoSoAAAAAPUExURf///wAAAIeIj8DHyP///1QVyYYAAAABdFJOUwBA5thmAAAAOElEQVQI12NgYFBSYgACJUFBIM0kaGws6MDAJGxsbODAoGgMBCzYKagSJgZjYwYHBgYXMAISQBIAZBYIx/Jku34AAAAASUVORK5CYII=") !important;
-}
-[class*="radio_Button_"][class*="Active"]::before {
-  --control-img: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMAgMAAAArG7R0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAAMUExURf///wAAAIeIj////88rXQEAAAABdFJOUwBA5thmAAAAMElEQVQI12NgWMXAwBW6gEH1fwyD+v8zDPOvf2aYHwrFQDZITOE/DwM/wwcGhv8MAL1zEtdwC089AAAAAElFTkSuQmCC") !important;
-}
-[class*="radio_Button_"] > span::before {
-  content: '(';
-}
-[class*="radio_Button_"] > span::after {
-  content: ')';
-}
-[class*="gamepadslider_SliderControl_"] {
-  margin: 0 !important;
-  height: unset !important;
-}
-[class*="gamepadslider_SliderTrack_"] {
-  margin: 0 !important;
-}
-[class*="gamepadslider_SliderHandle_"] {
-  margin: 0 !important;
-  margin-top: -8px !important;
-  box-shadow: none;
-}
-[class*="gamepadslider_SliderHandleContainer_"] {
-  transform: translateX(calc(-100% * var(--inverse-normalized-value) + 7px * var(--inverse-normalized-value)));
-}
-[class*="appproperties_Title_"] {
-  background-color: var(--color-button-face);
-  font: var(--font);
-  text-transform: unset !important;
-  padding: 0 2px;
-  margin-top: -19px;
-  width: fit-content;
-}
-[class*="FieldDescription_"],
-[class*="appproperties_Detail_"] {
-  font: var(--font) !important;
-  color: var(--color-button-text) !important;
-  margin: 4px 0 !important;
-}
-[class*="appproperties_TopGap_"] {
-  margin-top: 4px !important;
-}
-[class*="appproperties_ViewMore_"] {
-  flex: unset !important;
-}
-[class*="appproperties_WorkshopGrid_"] {
-  padding-top: 1px;
-  margin: 0 !important;
-  width: unset !important;
-  height: unset !important;
-}
-[class*="appproperties_WorkshopHeader_"] {
-  padding: 3px !important;
-  margin: 0 1px !important;
-  width: unset !important;
-  height: unset !important;
-}
-[class*="appproperties_Install_"],
-[class*="appproperties_"] [class*="appproperties_Name_"],
-[class*="appproperties_"] [class*="appproperties_SizeDisk_"] {
-  margin: 3px !important;
-}
-[class*="appproperties_Name_"] {
-  color: var(--color-button-text) !important;
-}
-[class*="appproperties_BrowseDiskRow_"] > .DialogButton {
-  order: -1;
-}
-[class*="appproperties_BrowseDiskSize_"] {
-  margin-left: 1ch !important;
-}
-.ModalPosition_Content > [class*="pagedsettings_PagedSettingsDialog_"] {
-  margin: 8px;
-  min-width: unset !important;
-  min-height: unset !important;
-  flex-direction: column;
-}
-[class*="pagedsettings_PagedSettingsDialog_PageList_"] {
-  line-height: var(--font-line);
-  padding-left: 2px;
-  padding-top: 2px;
-  flex-direction: row;
-  overflow-y: hidden;
-}
-[class*="pagedsettings_PagedSettingsDialog_PageListColumn_"] {
-  background-color: transparent;
-  padding: 0;
-  max-width: unset;
-  flex-grow: 0;
-}
-[class*="pagedsettings_PagedSettingsDialog_PageListItem_"] {
-  --color-tab-border: var(--color-button-highlight);
-  background-color: var(--color-button-face) !important;
-  color: var(--color-button-text) !important;
-  font-size: var(--font-size);
-  font-weight: normal;
-  text-decoration: none !important;
-  border: 1px solid;
-  border-bottom: none;
-  border-color: var(--button-3d-border-color);
-  border-radius: 2px 2px 0 0;
-  box-shadow: 1px 0 var(--color-button-shadow-dark), 1px 1px var(--color-tab-border);
-  margin: 0 1px -1px 0 !important;
-  padding: 2px 6px;
-  align-items: unset;
-  cursor: default;
-}
-[class*="pagedsettings_PagedSettingsDialog_PageListItem_"][class*="Active"] {
-  --color-tab-border: var(--color-button-face);
-  margin: -2px 0 0 -2px !important;
-  padding: 3px 6px;
-  z-index: 1;
-}
-[class*="pagedsettings_PagedSettingsDialog_Title_"],
-[class*="pagedsettings_PageListSeparator_"],
-[class*="pagedsettings_PageListItem_Icon_"] {
-  display: none;
-}
-[class*="accountpanel_FatButton_"] svg,
-[class*="accountpanel_Details_"] {
-  display: none;
-}
-[class*="accountpanel_Label_"] {
-  color: var(--color-window-text) !important;
-  font: var(--font) !important;
-}
-[class*="friendssettings_FakeFriend_"] {
+  padding: 3px;
   margin: 0;
-}
-[class*="desktopsecuritysettings_EntryLabel_"],
-[class*="accountsettings_EntryLabel_"] {
-  padding: 0;
-}
-[class*="desktopsecuritysettings_EntryValue_"],
-[class*="accountsettings_EntryValue_"] {
-  font: var(--font);
-  color: var(--color-button-text);
-}
-[class*="desktopsecuritysettings_EntryValue_"]::before,
-[class*="accountsettings_EntryValue_"]::before {
-  content: ': ';
-}
-[class*="desktopsecuritysettings_SteamGuardIcon_"] {
-  color: #f00;
-}
-[class*="desktopsecuritysettings_SteamGuardIcon_"][class*="Enabled"] {
-  color: #008000;
-}
-[class*="librarysettings_ActionSection_"] {
-  flex-direction: row !important;
-  gap: 0 !important;
-}
-[class*="voicesettings_MicrophoneTest_"] {
-  gap: 4px;
-  flex-direction: row-reverse;
-}
-[class*="remoteplaysettings_TableHeader_"],
-[class*="notificationssettings_ToggleHeader_"] {
-  color: var(--color-button-text) !important;
-  font: var(--font) !important;
-  letter-spacing: unset !important;
-  text-transform: unset !important;
-}
-[class*="notificationssettings_NotificationGroup_"] {
-  background-color: transparent;
-  border-bottom: none;
-  margin: 0;
-}
-[class*="notificationssettings_NotificationSection_"] {
-  align-items: center;
-}
-[class*="notificationssettings_NotificationFeedToggle_"] {
-  margin-right: 0 !important;
-}
-[class*="notificationssettings_NotificationDescription_"] {
-  font: var(--font);
-  color: inherit;
-  margin: 0;
-}
-[class*="notificationssettings_NotificationPrefDetails_"] {
-  background-color: transparent;
-  padding: 0;
-  padding-left: 23px;
-  box-shadow: none;
-  flex-direction: column;
-}
-[class*="notificationssettings_NotificationPrefDetails_"] .DialogCheckbox_Container {
-  margin: 0;
-}
-[class*="notificationssettings_PrefDetailsToggle_"] svg {
-  margin: 0;
-  height: var(--font-size);
-}
-[class*="notificationssettings_Toggles_"].Panel {
-  gap: 106px;
 }
 [class*="library_LibraryWindowDivider_"] {
   background-color: transparent !important;
   width: 8px;
-}
-[class*="library_AppDetailsTransitionGroup_"] {
-  border: 1px solid !important;
-  border-color: var(--box-3d-border-color) !important;
-  box-shadow: var(--box-3d-box-shadow) !important;
-  margin: 1px !important;
-  margin-top: 3px !important;
-  width: calc(100% - 4px);
 }
 [class*="gamelistbar_Container_"] {
   background-image: none;
 }
 [class*="gamelistbar_GameListHomeAndSearch_"] {
   background-color: transparent;
+  box-shadow: none;
   padding: 0;
   margin: 3px 0;
-  margin-right: -1px;
-  box-shadow: none;
   height: unset;
-}
-[class*="gamelistbar_GameListHomeAndSearch_"] > :first-child {
-  margin-top: -1px;
-  margin-bottom: 1px;
-}
-[class*="gamelistbar_GameListHomeAndSearch_"] > :first-child > a {
-  margin: 1px !important;
-}
-[class*="gamelistbar_GameListHomeAndSearch_"] a {
-  cursor: default;
 }
 [class*="gamelistbar_GameListHomeAndSearch_"] a:hover {
   text-decoration: none !important;
 }
 [class*="gamelisthome_Label_"] {
   color: var(--color-button-text) !important;
-  font: var(--font);
+  font: var(--text-ui) !important;
   text-transform: unset;
   margin: auto;
 }
@@ -1184,21 +914,18 @@ div:not([class]) > [class*="gamepaddialog_Field_"],
 }
 [class*="gamelistdropdown_Bar_"] {
   padding: 0;
-  margin: 0 -1px;
 }
 [class*="gamelistdropdown_Bar_"] circle {
   stroke: var(--color-button-text) !important;
 }
 [class*="gamelistdropdown_Bar_"] svg {
   fill: var(--color-button-text) !important;
-  width: var(--font-size) !important;
-  height: var(--font-size) !important;
 }
 [class*="gamelistdropdown_SearchBar_"] {
   align-items: center;
 }
 [class*="gamelistdropdown_MenuHeader_"] {
-  font: var(--font) !important;
+  font: var(--text-ui) !important;
   text-transform: unset !important;
   cursor: default !important;
 }
@@ -1210,14 +937,12 @@ div:not([class]) > [class*="gamepaddialog_Field_"],
   margin: 0 !important;
   margin-right: 3px !important;
 }
-[class*="gamelistdropdown_CheckboxWithImage_"] {
-  margin: 0 3px !important;
-  width: 20px !important;
-  cursor: default !important;
+[class*="gamelistdropdown_CheckboxWithImage_"]::before,
+[class*="gamelistdropdown_CheckboxWithImage_"]::after {
+  display: none !important;
 }
 [class*="gamelistsearchbar_Container_"] {
-  padding: 0;
-  margin: 4px -1px;
+  padding: 4px 0;
 }
 [class*="gamelistsearchbar_FilterTag_"] {
   padding: 2px !important;
@@ -1237,11 +962,10 @@ div:not([class]) > [class*="gamepaddialog_Field_"],
   position: unset !important;
 }
 [class*="gamelistsearchbar_SearchByTypePrompt_"] {
-  font: var(--font) !important;
+  font: var(--text-ui) !important;
   padding: 0 18px !important;
 }
 [class*="gamelistsearchbar_AdvancedSearchContainer_"] {
-  height: fit-content !important;
   justify-content: center;
 }
 [class*="gamelistsearchbar_AdvancedSearchContainer_"] > .Focusable > div {
@@ -1254,7 +978,6 @@ div:not([class]) > [class*="gamepaddialog_Field_"],
   display: none !important;
 }
 [class*="gamelistsearchbar_AdvancedSearchPane_"] {
-  background-color: var(--color-button-face) !important;
   border-radius: 0 !important;
 }
 [class*="gamelistsearchbar_AdvancedSearchPane_"]::before {
@@ -1262,13 +985,13 @@ div:not([class]) > [class*="gamepaddialog_Field_"],
 }
 [class*="gamelist_Container_"] {
   padding-right: 2px;
-  margin-left: 1px;
+  margin-left: 2px;
   margin-bottom: 1px;
   width: calc(100% - 8px);
   box-sizing: content-box;
 }
 [class*="gamelistentry_Container_"] {
-  font: var(--font);
+  font: var(--text-ui) !important;
   box-shadow: none !important;
 }
 [class*="gamelistentry_Container_"][class*="Running"] {
@@ -1283,13 +1006,13 @@ div:not([class]) > [class*="gamepaddialog_Field_"],
 [class*="gamelistentry_Container_"][class*="Updating"],
 [class*="gamelistentry_Container_"][class*="Synchronizing"],
 [class*="gamelistentry_Container_"][class*="Cloud"] {
-  color: var(--color-active-caption) !important;
+  color: var(--color-highlight) !important;
 }
 [class*="gamelistentry_Container_"]:hover,
 [class*="gamelistentry_Container_"][class*="HoverOverlay_"],
 [class*="gamelistentry_Container_"][class*="Selected"] {
-  background-color: var(--color-active-caption) !important;
-  color: var(--color-active-caption-text) !important;
+  background-color: var(--color-highligh) !important;
+  color: var(--color-highlight-text) !important;
 }
 [class*="gamelistentry_Container_"] circle,
 [class*="gamelistentry_Container_"] path {
@@ -1297,21 +1020,21 @@ div:not([class]) > [class*="gamepaddialog_Field_"],
 }
 [class*="gamelistsectionheader_Container_"] {
   background: none !important;
-  color: var(--color-button-text);
+  color: var(--color-window-text);
   box-shadow: none !important;
 }
 [class*="gamelistsectionheader_Container_"],
 [class*="gamelistsectionheader_Container_"] > div {
-  color: var(--color-button-text) !important;
+  color: var(--color-window-text) !important;
   stroke: currentColor !important;
 }
 [class*="gamelistsectionheader_SectionName_"] {
-  font: var(--font);
+  font: var(--text-ui) !important;
   letter-spacing: 0;
 }
 [class*="gamelistsectionheader_SectionCount_"] {
   color: var(--color-gray-text);
-  font: var(--font);
+  font: var(--text-ui) !important;
 }
 [class*="appfilterpane_Container_"] {
   padding: 8px;
@@ -1319,11 +1042,13 @@ div:not([class]) > [class*="gamepaddialog_Field_"],
 [class*="appfilterpane_FilterArea_"] {
   gap: 6px 8px !important;
 }
-[class*="appfilterpane_FilterBucket_"] {
-  border: 1px solid;
-}
 [class*="appfilterpane_FilterBucket_"] .DialogInput_Wrapper {
-  margin: 0;
+  margin: 0 !important;
+}
+[class*="appfilterpane_FilterBucketLabel_"] {
+  font: var(--text-ui) !important;
+  color: var(--color-button-text) !important;
+  text-transform: unset !important;
 }
 [class*="appfilterpane_FilterBucketBoxes_"] {
   padding: 0;
@@ -1380,24 +1105,18 @@ div:not([class]) > [class*="gamepaddialog_Field_"],
 [class*="steamdesktop_SuperNavBar_"] {
   -webkit-app-region: no-drag;
 }
-[class*="titlebarcontrols_GamepadUIToggle_"] > svg {
-  position: unset !important;
-}
 [class*="rootmenu_RootMenuButton_"] {
   color: var(--color-button-text) !important;
-  font: var(--font);
-  padding: 3px 6px 2px 6px;
+  font: var(--text-ui) !important;
+  padding: 3px 6px;
 }
 [class*="rootmenu_RootMenuButton_"]:active,
 [class*="rootmenu_RootMenuButton_"][class*="Open"] {
-  background-color: var(--color-active-caption);
-  color: var(--color-active-caption-text) !important;
+  background-color: var(--color-highlight);
+  color: var(--color-highlight-text) !important;
 }
 [class*="rootmenu_RootMenuButton_"] svg {
   display: none;
-}
-[class*="rootmenu_SteamButton_"] {
-  padding: 0;
 }
 [class*="supernav_SuperNavMenu_"] [class*="supernav_MenuButton_"] {
   color: var(--color-button-text);
@@ -1411,11 +1130,345 @@ div:not([class]) > [class*="gamepaddialog_Field_"],
 [class*="bottombar_AddGameButton_"],
 [class*="bottombar_DownloadStatusContent_"],
 [class*="bottombar_FriendsButton_"] {
-  padding: 3px 6px !important;
   width: unset !important;
+  display: flex !important;
 }
 [class*="bottombar_Icon_"],
 [class*="bottombar_Text_"],
 [class*="bottombar_Queue_"] {
   color: var(--color-button-text) !important;
+}
+[class*="FieldDescription_"],
+[class*="appproperties_Detail_"] {
+  font: var(--text-ui) !important;
+  color: var(--color-button-text) !important;
+  margin: 4px 0 !important;
+}
+[class*="appproperties_TopGap_"] {
+  margin-top: 4px !important;
+}
+[class*="appproperties_ViewMore_"] {
+  flex: unset !important;
+}
+[class*="appproperties_WorkshopGrid_"] {
+  padding: 2px !important;
+  margin: 0 !important;
+  width: unset !important;
+  height: unset !important;
+}
+[class*="appproperties_WorkshopHeader_"] {
+  margin: 0 !important;
+  width: unset !important;
+  height: unset !important;
+}
+[class*="appproperties_TriangleUp_"],
+[class*="appproperties_TriangleDown_"] {
+  display: inline-block !important;
+}
+[class*="appproperties_Install_"],
+[class*="appproperties_Name_"],
+[class*="appproperties_SizeDisk_"] {
+  margin: 3px !important;
+}
+[class*="appproperties_Name_"] {
+  color: var(--color-button-text) !important;
+}
+[class*="appproperties_BrowseDiskRow_"] > .DialogButton {
+  order: -1;
+}
+[class*="appproperties_BrowseDiskSize_"] {
+  margin-left: 1ch !important;
+}
+[class*="appproperties_SteamInputLink_"] {
+  color: var(--color-link) !important;
+}
+[class*="dropdown_DialogDropDownMenu_Item_"] {
+  padding: 1px;
+}
+[class*="dropdownlabel_DropDownLabelTitle_"] {
+  font: var(--text-ui) !important;
+  color: inherit;
+}
+.DialogDropDown [class*="dropdownlabel_DropDownLabelDescription_"] {
+  display: none;
+}
+[class*="radio_Group_"],
+[class*="radio_Button_"] {
+  background-color: transparent !important;
+  padding: 0;
+}
+[class*="radio_Group_"] {
+  box-shadow: none;
+  gap: 4px;
+  flex-direction: column;
+}
+[class*="radio_Button_"] {
+  font: var(--text-ui) !important;
+  color: var(--color-button-text) !important;
+  text-align: left;
+  gap: 7px;
+  flex-direction: row;
+  justify-content: left;
+}
+[class*="radio_Button_"]::before {
+  content: '';
+}
+[class*="radio_Button_"]:active::before {
+  --control-img: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMBAMAAACkW0HUAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsIAAA7CARUoSoAAAAAPUExURf///wAAAIeIj8DHyP///1QVyYYAAAABdFJOUwBA5thmAAAAOElEQVQI12NgYFBSYgACJUFBIM0kaGws6MDAJGxsbODAoGgMBCzYKagSJgZjYwYHBgYXMAISQBIAZBYIx/Jku34AAAAASUVORK5CYII=") !important;
+}
+[class*="radio_Button_"][class*="Active"]::before {
+  --control-img: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMAgMAAAArG7R0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAAMUExURf///wAAAIeIj////88rXQEAAAABdFJOUwBA5thmAAAAMElEQVQI12NgWMXAwBW6gEH1fwyD+v8zDPOvf2aYHwrFQDZITOE/DwM/wwcGhv8MAL1zEtdwC089AAAAAElFTkSuQmCC") !important;
+}
+[class*="radio_Button_"] > span::before {
+  content: '(';
+}
+[class*="radio_Button_"] > span::after {
+  content: ')';
+}
+[class*="gamepadslider_SliderControl_"] {
+  margin: 0 !important;
+  height: unset !important;
+}
+[class*="gamepadslider_SliderTrack_"] {
+  border-radius: 0 !important;
+  margin: 0 !important;
+  height: 4px !important;
+}
+[class*="gamepadslider_SliderTrack_"]::before {
+  display: none !important;
+}
+[class*="gamepadslider_SliderHandle_"] {
+  box-shadow: none;
+  margin: 0 !important;
+  margin-top: -8px !important;
+}
+[class*="gamepadslider_SliderHandleContainer_"] {
+  transform: translateX(calc(-100% * var(--inverse-normalized-value) + 7px * var(--inverse-normalized-value)));
+}
+.ModalPosition {
+  background-image: none !important;
+}
+.ModalPosition_TopBar {
+  display: none !important;
+}
+.ModalPosition_Content {
+  color: var(--color-button-text);
+  box-shadow: none;
+}
+.DialogButton::before {
+  display: none !important;
+}
+.DialogDropDown_Arrow {
+  display: none !important;
+}
+.DialogMenuPosition ._DialogInputContainer {
+  border-radius: 0;
+}
+.DialogCheckbox {
+  border-radius: 0 !important;
+}
+.DialogCheckbox > svg {
+  display: none !important;
+}
+.DialogCheckbox_Container {
+  background-color: transparent !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+  align-items: center;
+}
+.DialogToggle_Label {
+  font: var(--text-ui) !important;
+  color: var(--color-button-text) !important;
+  margin-left: 6px;
+}
+.DialogContent {
+  background: transparent !important;
+}
+.DialogContentTransition {
+  background: transparent !important;
+  margin-top: -1px;
+  width: unset !important;
+  max-width: unset !important;
+}
+.DialogContentTransition > .DialogContent {
+  padding: 0 !important;
+  bottom: 6px !important;
+}
+.DialogBody {
+  overflow: auto !important;
+  -webkit-mask-image: none !important;
+  font: var(--text-ui) !important;
+  padding: 14px !important;
+  margin: 1px !important;
+  margin-top: 0 !important;
+  gap: 8px;
+}
+.DialogBody a {
+  color: var(--color-link) !important;
+}
+.DialogControlsSection,
+div:not([class]) > [class*="gamepaddialog_Field_"] {
+  gap: 4px;
+  display: flex;
+  flex-direction: column;
+}
+[class*="gamepaddialog_Field_"] {
+  --field-row-children-spacing: 7px !important;
+  background-color: transparent !important;
+  padding: 0 !important;
+}
+[class*="gamepaddialog_Field_"]::after {
+  display: none !important;
+}
+[class*="gamepaddialog_FieldChildren_"] {
+  gap: 4px;
+}
+[class*="gamepaddialog_FieldLabel_"] {
+  font: var(--text-ui) !important;
+  color: var(--color-button-text);
+}
+[class*="gamepaddialog_FieldLabel_"] > :not([class]) {
+  gap: 1ch;
+  display: flex;
+  align-items: center;
+}
+[class*="gamepaddialog_FieldLabelRow_"] {
+  flex-direction: row-reverse;
+}
+[class*="WithDescription_"] > [class*="Row"] + [class*="gamepaddialog_FieldDescription_"] {
+  color: var(--color-gray-text) !important;
+  margin-left: 17px !important;
+}
+[class*="gamepaddialog_ControlsListOuterPanel_"] {
+  --controls-list-spacing: 6px !important;
+  gap: 0 !important;
+  flex: unset !important;
+}
+[class*="gamepaddialog_ControlsListChild_"] {
+  max-width: unset !important;
+}
+[class*="gamepaddialog_ToggleRail_"],
+[class*="gamepaddialog_ToggleSwitch_"] {
+  display: none;
+}
+.DialogControlsSectionHeader,
+.DialogSubHeader,
+.DialogBodyText,
+[class*="appproperties_Title_"],
+[class*="librarysettings_DescriptionText_"],
+[class*="remoteplaysettings_TableHeader_"] > :first-child {
+  color: var(--color-button-text) !important;
+  text-transform: unset !important;
+  letter-spacing: unset !important;
+  margin: 0 !important;
+}
+.ModalPosition_Content > [class*="pagedsettings_PagedSettingsDialog_"] {
+  margin: 8px;
+  min-width: unset !important;
+  min-height: unset !important;
+  height: unset !important;
+  flex-direction: column;
+}
+[class*="pagedsettings_PagedSettingsDialog_PageList_"] {
+  overflow-y: hidden;
+  font: var(--text-ui) !important;
+  padding: 0 !important;
+  padding-left: 5px !important;
+  height: unset !important;
+  flex-grow: 0 !important;
+  flex-direction: row;
+}
+[class*="pagedsettings_PagedSettingsDialog_PageListColumn_"] {
+  background-color: transparent;
+  padding: 0;
+  max-width: unset;
+  flex-grow: 0;
+}
+[class*="pagedsettings_PagedSettingsDialog_PageListItem_"] {
+  font: var(--text-ui) !important;
+  margin-top: 2px !important;
+  cursor: default;
+}
+[class*="pagedsettings_PagedSettingsDialog_Title_"],
+[class*="pagedsettings_PageListSeparator_"],
+[class*="pagedsettings_PageListItem_Icon_"] {
+  display: none;
+}
+[class*="accountpanel_FatButton_"] svg,
+[class*="accountpanel_Details_"] {
+  display: none;
+}
+[class*="accountpanel_Label_"] {
+  color: var(--color-window-text) !important;
+  font: var(--text-ui) !important;
+}
+[class*="friendssettings_FakeFriend_"] {
+  margin: 0;
+}
+[class*="desktopsecuritysettings_EntryLabel_"],
+[class*="accountsettings_EntryLabel_"] {
+  padding: 0;
+}
+[class*="desktopsecuritysettings_EntryValue_"],
+[class*="accountsettings_EntryValue_"] {
+  font: var(--text-ui) !important;
+  color: var(--color-button-text);
+}
+[class*="desktopsecuritysettings_EntryValue_"]::before,
+[class*="accountsettings_EntryValue_"]::before {
+  content: ': ';
+}
+[class*="desktopsecuritysettings_SteamGuardIcon_"] {
+  color: #f00;
+}
+[class*="desktopsecuritysettings_SteamGuardIcon_"][class*="Enabled"] {
+  color: #008000;
+}
+[class*="librarysettings_ActionSection_"] {
+  flex-direction: row !important;
+  gap: 0 !important;
+}
+[class*="voicesettings_MicrophoneTest_"] {
+  gap: 4px;
+  flex-direction: row-reverse;
+}
+[class*="remoteplaysettings_TableHeader_"],
+[class*="notificationssettings_ToggleHeader_"] {
+  color: var(--color-button-text) !important;
+  font: var(--text-ui) !important;
+  letter-spacing: unset !important;
+  text-transform: unset !important;
+}
+[class*="notificationssettings_NotificationGroup_"] {
+  background-color: transparent;
+  border-bottom: none;
+  margin: 0;
+}
+[class*="notificationssettings_NotificationSection_"] {
+  align-items: center;
+}
+[class*="notificationssettings_NotificationFeedToggle_"] {
+  margin-right: 0 !important;
+}
+[class*="notificationssettings_NotificationDescription_"] {
+  font: var(--text-ui) !important;
+  color: inherit;
+  margin: 0;
+}
+[class*="notificationssettings_NotificationPrefDetails_"] {
+  background-color: transparent;
+  padding: 0;
+  padding-left: 23px;
+  box-shadow: none;
+  flex-direction: column;
+}
+[class*="notificationssettings_NotificationPrefDetails_"] .DialogCheckbox_Container {
+  margin: 0;
+}
+[class*="notificationssettings_PrefDetailsToggle_"] svg {
+  margin: 0;
+  height: var(--font-size);
+}
+[class*="notificationssettings_Toggles_"].Panel {
+  gap: 106px;
 }

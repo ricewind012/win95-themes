@@ -1,24 +1,26 @@
 .PopupFullWindow:not(:only-child) {
 	.ModalPosition {
-		height: calc(100% - var(--font-size) * var(--font-line) - 6px) $i;
+		height: calc(100% - var(--text-size) * var(--text-line) - 6px) $i;
 	}
 
 	/[class*="bottombar_BottomBarContainer_"] {
-		padding-bottom: calc(var(--font-size) * var(--font-line) + 4px);
+		padding-bottom: calc(var(--text-size) * var(--text-line) + 4px);
 
 		~/, & {
 			&::after {
 				content: '';
+
 				position: fixed;
 				left: 4px;
 				right: 4px;
 				bottom: 4px;
-				height: calc(var(--font-size) * var(--font-line));
+				height: calc(var(--text-size) * var(--text-line));
+
 				background-color: var(--color-button-face);
+				box-shadow: var(--border-statusbar-box-shadow);
+
 				padding: 1px 15px 1px 2px;
-				border: 1px solid var(--button-3d-border-color-inverted);
 				margin: 1px;
-				box-shadow: var(--box-3d-box-shadow);
 			}
 		}
 	}
@@ -29,7 +31,8 @@
 	background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA0AAAANAgMAAAAPhQzvAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAMUExURf///8DHyIeIjwAAAPjD55kAAAAEdFJOU////wBAKqn0AAAACXBIWXMAAA7CAAAOwgEVKEqAAAAANElEQVQI1xXIMQ0AAAgDMPxgAhO45EIGcrhJxvb0qAEXBqwY4eSKbJPROe+Kt80bnesyMx6fbh/W8xR1uwAAAABJRU5ErkJggg==');
 	background-size: unset $i;
 	background-position: unset $i;
-	box(14px);
+
 	right: 3px;
 	bottom: 3px;
+	box(14px);
 }

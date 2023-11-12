@@ -1,0 +1,24 @@
+#!/bin/sh
+
+if [ "$#" -eq 0 ]; then
+	exit 2
+fi
+
+dir=dist/$1
+
+case $1 in
+	steam) distfile=libraryroot.custom ;;
+	vscode) distfile=vscode ;;
+esac
+
+case $2 in
+	styl)
+		stylus -p "src/$1/$distfile.styl" > "$dir/$distfile.css"
+	;;
+
+	ts)
+		tsc src/shared/*.ts "src/$1/$distfile.ts" \
+			--target es2017 \
+			--outFile "$dir/$distfile.js"
+	;;
+esac

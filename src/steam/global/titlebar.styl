@@ -1,41 +1,40 @@
-// Stylus thinks [class*="yep"]-smthelse is valid
-$title-area-icon {
-	@extend button;
-	padding: 0 $i;
-	margin: 0 $i;
+.minimizeButton {
+	--button-img: var(--icon-minimize);
+	--button-img-size: 6px 2px;
+	--button-img-pos: 4px 9px;
+}
+
+.maximizeButton {
+	--button-img: var(--icon-maximize);
+	--button-img-size: 9px;
+	--button-img-pos: 3px 2px;
+}
+
+.restoreButton {
+	--button-img: var(--icon-restore);
+	--button-img-size: 10px 9px;
+	--button-img-pos: 2px 2px;
+}
+
+.closeButton {
+	--button-img: var(--icon-close);
+	--button-img-size: 8px 7px;
+	--button-img-pos: 4px 3px;
+
 	margin-left: 2px $i;
-	box(14px, 12px);
-
-	&.minimizeButton {
-		--button-img: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAACCAIAAAD0PzoJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAANSURBVBhXYyACMDAAAAAmAAEq5K9KAAAAAElFTkSuQmCC');
-		background-position: 2px 7px $i;
-	}
-	&.maximizeButton {
-		--button-img: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAJCAYAAADgkQYQAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAAiSURBVChTY2RgYPgPxHgBE5QmCAiZ9J8okwajIiLCiYEBAE+8BAuR7uviAAAAAElFTkSuQmCC');
-		background-position: 1px 0 $i;
-	}
-	&.restoreButton {
-		--button-img: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAJCAYAAAAPU20uAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAA1SURBVChTY2RAgP9QGgUwQWmiADYT/oOswGo0EIDlCFoBMwHZsSCAYipWu6E0YV8QcCQDAwDdNwoEoDtCnwAAAABJRU5ErkJggg==');
-		background-position: 1px 0 $i;
-	}
-	&.closeButton {
-		--button-img: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAHAQMAAAAPl54dAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsIAAA7CARUoSoAAAAAGUExURf///wAAAFXC034AAAABdFJOUwBA5thmAAAAFElEQVQI12M4zJDGYMMgAcRpDIcBFDwC4+02LWIAAAAASUVORK5CYII=')
-		background-position-y: 1px $i;
-		margin-left: 4px $i;
-	}
-
-	& > svg {
-		display: none;
-	}
 }
 
 .title-area {
 	background-color: var(--color-gray-text);
+
+	padding-right: 2px $i;
+
+	position: unset $i;
+	max-height: var(--titlebar-height);
+
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-	position: unset $i;
-	max-height: 17px;
 
 	.WindowFocus & {
 		background-color: var(--color-active-caption);
@@ -48,32 +47,39 @@ $title-area-icon {
 		// #SteamDesktop .title-area::after will take that role
 		-webkit-app-region: no-drag;
 	}
+
 	.ModalDialogBody & {
 		--window-img: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAAM1BMVEUAAABmZgCZmZn/+/Dn59aZmQD//5kzMwAcHBzAwMDMzGZNTU0AAADq6upmZmYzAACtqZA/egufAAAAAXRSTlMAQObYZgAAAHJJREFUGNNNzVESgyAMRVEu8QVLBdz/aosU1DvDzyGThPgURtG22XfBZ9/3uJU3mMU18QC8oC/EjBvOlE5cBGleoegCGQvEBWhCcneycDcGkPAM2cUETG6eZceAgolmudElhForJOBooPCP1F//XLBw9APHJgNeldevuwAAAABJRU5ErkJggg==');
 	}
 
 	&::before {
 		content: '';
+
 		position: fixed;
 		left: 6px;
 		top: 6px;
 		box(16px);
+
 		background-image: var(--window-img);
 
 		.WindowFocus #SteamDesktop & {
 			filter: invert();
 		}
 	}
+
 	#SteamDesktop &::after {
 		content: 'Steam';
+
 		position: fixed;
 		left: 26px;
 		top: 4px;
 		right: 108px;
 		height: 18px;
-		color: var(--color-button-face);
 		display: flex;
 		align-items: center;
+
+		color: var(--color-button-face);
+
 		-webkit-app-region: drag;
 
 		.WindowFocus & {
@@ -82,24 +88,19 @@ $title-area-icon {
 	}
 
 	&-icon {
-		@extend $title-area-icon;
+		@extend $small-button;
 
 		&-inner {
 			display: none $i;
 		}
 	}
 }
-.title-bar-actions {
-	position: fixed $i;
-	top: 7px $i;
-	right: 7px $i;
-}
 
 [class*="titlebarcontrols_"] {
 	/{attr(TitleBarControls)} {
 		position: absolute;
-		top: 2px;
-		right: 55px;
+		top: 1px;
+		right: 46px;
 		z-index: 1;
 
 		& > :nth-child(3) > div {
@@ -107,41 +108,60 @@ $title-area-icon {
 			top: 20px;
 			right: 2px;
 			height: 33px;
+
 			margin: 0 $i;
+
 			display: flex;
 			align-items: center;
 		}
+
 		& > :nth-child(4) {
 			margin-right: 2px;
+
 			order: -1;
 		}
 	}
+
 	/{attr(Button)} {
-		@extend $title-area-icon;
-		background-position-x: 2px $i;
+		@extend $small-button;
+
+		--button-img-pos: 3px 2px $i;
+
 		min-width: unset;
 		min-height: unset;
+
 		cursor: default;
 	}
 
 	/{attr(AnnouncementsButton)} {
 		--button-img: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAICAYAAADED76LAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAAtSURBVChTY2RAgP9QGgPAJJAVwMWYoAycAGQFSDWMxgqwWQED/6lnAg7AwAAATOYP+fpPtrkAAAAASUVORK5CYII=');
+		--button-img-size: 9px;
 	}
+
 	/{attr(NotificationButtonContainer)} {
 		--button-img: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAICAYAAADED76LAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAAwSURBVChTY0AD/6EYDhihNAigSAABWI4JzMQDKFcAcwO6/TDACFKASxIrQPMmAwMAgi8HBW4J8QQAAAAASUVORK5CYII=');
-		margin: 0 $i;
+		--button-img-size: 9px;
 	}
+
 	/{attr(GamepadUIToggle)} {
 		--button-img: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAICAYAAADED76LAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAAoSURBVChTY2RgYPgPxHgBPgX/maAMnIByBQQdCVIAArgUMRIwgYEBAGefBgb8inyEAAAAAElFTkSuQmCC');
+		--button-img-size: 9px;
+	}
+
+	svg {
+		display: none $i;
 	}
 }
 
 .DialogHeader {
 	color: var(--color-button-face);
-	font: var(--font) $i;
+	font: var(--text-ui) $i;
+	font-weight: bold $i;
 	text-transform: unset;
+
 	padding: 0;
 	margin: 0 $i;
+
 	position: fixed;
 	left: 23px;
 	top: 6px;

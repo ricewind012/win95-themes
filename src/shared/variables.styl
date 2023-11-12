@@ -1,4 +1,4 @@
-@css {
+// TODO: make this css when steam updates chrome
 :root {
 	/**
 	 * Colors
@@ -108,9 +108,9 @@
 	--text-size-header: 16pt;
 	--text-line:        1.2;
 
-	--text-ui:          var(--text-size)        / var(--text-line) var(--text-font-ui);
-	--text-monospace:   var(--text-size)        / var(--text-line) var(--text-font-monospace);
-	--text-header:      var(--text-size-header) / var(--text-line) var(--text-font-ui);
+	--text-ui:          var(--text-size)        \/ var(--text-line) var(--text-font-ui);
+	--text-monospace:   var(--text-size)        \/ var(--text-line) var(--text-font-monospace);
+	--text-header:      var(--text-size-header) \/ var(--text-line) var(--text-font-ui);
 
 	/**
 	 * Borders
@@ -148,9 +148,9 @@
 		inset  2px  2px var(--color-button-shadow-dark);
 
 	--border-groupbox-border:
-		var(--color-button-highlight)
-		var(--color-button-shadow)
-		var(--color-button-shadow)
+		var(--color-button-highlight) \
+		var(--color-button-shadow) \
+		var(--color-button-shadow) \
 		var(--color-button-highlight);
 	--border-groupbox-box-shadow:
 		   0 -1px var(--color-button-shadow),
@@ -161,9 +161,9 @@
 		 1px  1px var(--color-button-highlight);
 
 	--border-tab:
-		var(--color-button-highlight)
-		var(--color-button-shadow)
-		var(--color-button-shadow)
+		var(--color-button-highlight) \
+		var(--color-button-shadow) \
+		var(--color-button-shadow) \
 		var(--color-button-highlight);
 
 	--border-window:
@@ -182,5 +182,4 @@
 	--titlebar-height:  18px;
 	--menubar-height:   18px;
 	--statusbar-height: 18px;
-}
 }
