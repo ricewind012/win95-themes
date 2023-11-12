@@ -1,0 +1,84 @@
+{
+	"Patches": [
+		{
+			"MatchRegexString": "https://.*.steampowered.com",
+			"TargetCss": "dist/steam/webkit.css",
+			"TargetJs": "dist/steam/webkit.js"
+		},
+		{
+			"MatchRegexString": "https://steamcommunity.com",
+			"TargetCss": "dist/steam/webkit.css",
+			"TargetJs": "dist/steam/webkit.js"
+		},
+		{
+			"MatchRegexString": "^Steam$",
+			"TargetCss": "dist/steam/libraryroot.custom.css",
+			"TargetJs": "dist/steam/libraryroot.custom.js"
+		},
+		{
+			"MatchRegexString": "^OverlayBrowser_Browser$",
+			"TargetCss": "dist/steam/libraryroot.custom.css",
+			"TargetJs": "dist/steam/libraryroot.custom.js"
+		},
+		{
+			"MatchRegexString": "^SP Overlay:",
+			"TargetCss": "dist/steam/libraryroot.custom.css",
+			"TargetJs": "dist/steam/libraryroot.custom.js"
+		},
+		{
+			"MatchRegexString": "Supernav$",
+			"TargetCss": "dist/steam/libraryroot.custom.css",
+			"TargetJs": "dist/steam/libraryroot.custom.js"
+		},
+		{
+			"MatchRegexString": "^notificationtoasts_",
+			"TargetCss": "dist/steam/notifications.custom.css",
+			"TargetJs": "dist/steam/notifications.custom.js"
+		},
+		{
+			"MatchRegexString": "^SteamBrowser_Find$",
+			"TargetCss": "dist/steam/libraryroot.custom.css",
+			"TargetJs": "dist/steam/libraryroot.custom.js"
+		},
+		{
+			"MatchRegexString": "^OverlayTab\\d+_Find$",
+			"TargetCss": "dist/steam/libraryroot.custom.css",
+			"TargetJs": "dist/steam/libraryroot.custom.js"
+		},
+		{
+			"MatchRegexString": "^Steam Big Picture Mode$",
+			"TargetCss": "dist/steam/bigpicture.custom.css",
+			"TargetJs": "dist/steam/bigpicture.custom.js"
+		},
+		{
+			"MatchRegexString": "^QuickAccess_",
+			"TargetCss": "dist/steam/bigpicture.custom.css",
+			"TargetJs": "dist/steam/bigpicture.custom.js"
+		},
+		{
+			"MatchRegexString": "^MainMenu_",
+			"TargetCss": "dist/steam/bigpicture.custom.css",
+			"TargetJs": "dist/steam/bigpicture.custom.js"
+		},
+		{
+			"MatchRegexString": ".friendsui-container",
+			"TargetCss": "dist/steam/friends.custom.css",
+			"TargetJs": "dist/steam/friends.custom.js"
+		},
+		{
+			"MatchRegexString": "Menu$",
+			"TargetCss": "dist/steam/libraryroot.custom.css",
+			"TargetJs": "dist/steam/libraryroot.custom.js"
+		},
+		{
+			"MatchRegexString": ".ModalDialogPopup",
+			"TargetCss": "dist/steam/libraryroot.custom.css",
+			"TargetJs": "dist/steam/libraryroot.custom.js"
+		},
+		{
+			"MatchRegexString": ".FullModalOverlay",
+			"TargetCss": "dist/steam/libraryroot.custom.css",
+			"TargetJs": "dist/steam/libraryroot.custom.js"
+		}
+	]
+}
