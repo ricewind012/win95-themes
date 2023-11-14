@@ -1,5 +1,7 @@
 .workbench-hover,
 .monaco-hover {
+	--vscode-editorHoverWidget-border: var(--color-button-shadow-dark);
+
 	// Apparently, I can't repeat gradients all at once, i.e. one image.
 	background-color: var(--color-tooltip) $i;
 	color: var(--color-tooltip-text) $i;
@@ -50,5 +52,35 @@
 
 	.anchor {
 		display: none $i;
+	}
+}
+
+.parameter-hints-widget {
+	@extend .monaco-hover;
+
+	.overloads {
+		font();
+
+		height: unset $i;
+	}
+
+	.codicon {
+		color: inherit $i;
+	}
+
+	.body::before {
+		opacity: 1 $i;
+	}
+
+	.signature {
+		padding: 3px $i;
+	}
+
+	.docs {
+		padding: 0 3px $i;
+
+		code {
+			border-radius: 0 $i;
+		}
 	}
 }
