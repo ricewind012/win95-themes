@@ -37,8 +37,8 @@ select:disabled {
 table,
 .monaco-list,
 .activitybar,
-.monaco-editor,
-.part.panel > .content > .composite,
+.monaco-editor[role="code"],
+.part.panel > .content > .composite[role="code"],
 .setting-list-object-widget {
   background-color: var(--color-window) !important;
   border-spacing: 4px !important;
@@ -551,7 +551,9 @@ select:focus {
 [role="tabpanel"],
 .sidebar .title.has-composite-bar + .content > .composite,
 .editor-container > .editor-instance,
+.monaco-editor:not([role="code"]),
 .part.panel > .content,
+.part.panel > .content > .composite:not([role="code"]),
 .extension-editor .content,
 .settings-editor > .settings-body .settings-tree-container .monaco-list,
 .notification-toast .monaco-list,
@@ -2073,6 +2075,10 @@ legend,
 }
 .monaco-editor,
 .part.panel > .content > .composite {
+  border-radius: 0 !important;
+}
+.monaco-editor[role="code"],
+.part.panel > .content > .composite[role="code"] {
   width: 100% !important;
   height: 100% !important;
 }
@@ -2904,6 +2910,11 @@ legend,
 }
 .profile-type-select-container {
   overflow: visible !important;
+}
+.rename-label {
+  opacity: 1 !important;
+  font: var(--text-ui) !important;
+  margin: 2px 4px !important;
 }
 .monaco-select-box-dropdown-container {
   border-radius: 0 !important;

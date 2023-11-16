@@ -94,9 +94,19 @@
 	}
 
 	&-editor {
-		@extend table;
+		border-radius: 0 $i;
 
-		box(100%);
+		// The actual editor, i.e. not widgets
+		&[role="code"] {
+			@extend table;
+
+			box(100%);
+		}
+
+		// Widgets
+		&:not([role="code"]) {
+			@extend [role="tabpanel"];
+		}
 
 		& > .overflow-guard {
 			left: 2px;
