@@ -1,0 +1,66 @@
+.peekview {
+	&-widget {
+		@extend [role="tabpanel"];
+
+		border: none $i;
+
+		width: calc(100% - 50px) $i;
+
+		& > .head {
+			font();
+
+			height: var(--titlebar-height) $i;
+			align-items: center $i;
+		}
+
+		& > .body {
+			border: none $i;
+
+			height: calc(100% - 19px) $i;
+		}
+
+		.inline {
+			position: relative $i;
+			box(100%);
+		}
+
+		.ref-tree {
+			width: calc(100% - 62px) $i;
+		}
+
+		.monaco {
+			// TODO: scrollbar is out of bounds
+			&-editor {
+				@extend table;
+
+				box(100%);
+			}
+
+			&-list {
+				margin-left: 3px $i;
+
+				height: 100% $i;
+			}
+		}
+	}
+
+	&-title {
+		font();
+
+		margin: 0 $i;
+
+		.filenaame {
+			color: var(--color-button-text) $i;
+		}
+
+		.dirname:not(:empty) {
+			color: var(--color-gray-text) $i;
+			font();
+		}
+	}
+
+	&-actions {
+		padding: 0 $i;
+		margin-top: 1px $i;
+	}
+}

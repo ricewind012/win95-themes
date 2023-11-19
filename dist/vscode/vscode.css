@@ -37,9 +37,10 @@ select:disabled {
 table,
 .monaco-list,
 .activitybar,
-.monaco-editor[role="code"],
-.part.panel > .content > .composite[role="code"],
-.setting-list-object-widget {
+.editor-instance > .monaco-editor,
+.editor-instance > .part.panel > .content > .composite,
+.setting-list-object-widget,
+.peekview-widget .monaco-editor {
   background-color: var(--color-window) !important;
   border-spacing: 4px !important;
   border: none !important;
@@ -78,6 +79,7 @@ select,
 textarea,
 .monaco-button,
 .monaco-toolbar .action-label,
+.peekview-widget .monaco-action-bar .action-label,
 .dialog-toolbar-row .monaco-action-bar .action-label,
 .notification-toast .monaco-action-bar .action-label,
 .settings-clear-widget .monaco-action-bar .action-label,
@@ -106,6 +108,7 @@ select:disabled,
 textarea:disabled,
 .monaco-button:disabled,
 .monaco-toolbar .action-label:disabled,
+.peekview-widget .monaco-action-bar .action-label:disabled,
 .dialog-toolbar-row .monaco-action-bar .action-label:disabled,
 .notification-toast .monaco-action-bar .action-label:disabled,
 .settings-clear-widget .monaco-action-bar .action-label:disabled,
@@ -121,6 +124,7 @@ textarea:disabled,
 .extension-action:disabled,
 .find-widget .button:disabled,
 .monaco-toolbar .action-label[aria-disabled],
+.peekview-widget .monaco-action-bar .action-label[aria-disabled],
 .dialog-toolbar-row .monaco-action-bar .action-label[aria-disabled],
 .notification-toast .monaco-action-bar .action-label[aria-disabled],
 .settings-clear-widget .monaco-action-bar .action-label[aria-disabled],
@@ -139,6 +143,7 @@ select:focus,
 textarea:focus,
 .monaco-button:focus,
 .monaco-toolbar .action-label:focus,
+.peekview-widget .monaco-action-bar .action-label:focus,
 .dialog-toolbar-row .monaco-action-bar .action-label:focus,
 .notification-toast .monaco-action-bar .action-label:focus,
 .settings-clear-widget .monaco-action-bar .action-label:focus,
@@ -175,6 +180,7 @@ input[type="button"],
 input[type="submit"],
 .monaco-button,
 .monaco-toolbar .action-label,
+.peekview-widget .monaco-action-bar .action-label,
 .dialog-toolbar-row .monaco-action-bar .action-label,
 .notification-toast .monaco-action-bar .action-label,
 .settings-clear-widget .monaco-action-bar .action-label,
@@ -206,6 +212,7 @@ input[type="button"]:active,
 input[type="submit"]:active,
 .monaco-button:active,
 .monaco-toolbar .action-label:active,
+.peekview-widget .monaco-action-bar .action-label:active,
 .dialog-toolbar-row .monaco-action-bar .action-label:active,
 .notification-toast .monaco-action-bar .action-label:active,
 .settings-clear-widget .monaco-action-bar .action-label:active,
@@ -221,11 +228,13 @@ input[type="submit"]:active,
 .extension-action:active,
 .find-widget .button:active,
 .monaco-toolbar .action-label.clicked,
+.peekview-widget .monaco-action-bar .action-label.clicked,
 .dialog-toolbar-row .monaco-action-bar .action-label.clicked,
 .notification-toast .monaco-action-bar .action-label.clicked,
 .settings-clear-widget .monaco-action-bar .action-label.clicked,
 .terminal-tabs-entry .monaco-action-bar .action-label.clicked,
 .monaco-toolbar .action-label[aria-expanded="true"],
+.peekview-widget .monaco-action-bar .action-label[aria-expanded="true"],
 .dialog-toolbar-row .monaco-action-bar .action-label[aria-expanded="true"],
 .notification-toast .monaco-action-bar .action-label[aria-expanded="true"],
 .settings-clear-widget .monaco-action-bar .action-label[aria-expanded="true"],
@@ -355,6 +364,7 @@ select:focus {
   outline: none !important; /* unable to do right side, as it conflicts with the button */
 }
 .monaco-toolbar .action-label,
+.peekview-widget .monaco-action-bar .action-label,
 .dialog-toolbar-row .monaco-action-bar .action-label,
 .notification-toast .monaco-action-bar .action-label,
 .settings-clear-widget .monaco-action-bar .action-label,
@@ -375,6 +385,7 @@ select:focus {
   height: 14px !important;
 }
 .monaco-toolbar .action-label::before,
+.peekview-widget .monaco-action-bar .action-label::before,
 .dialog-toolbar-row .monaco-action-bar .action-label::before,
 .notification-toast .monaco-action-bar .action-label::before,
 .settings-clear-widget .monaco-action-bar .action-label::before,
@@ -389,6 +400,7 @@ select:focus {
 .extension-editor > .header .action-label.codicon:empty::before,
 .find-widget .button::before,
 .monaco-toolbar .action-label::after,
+.peekview-widget .monaco-action-bar .action-label::after,
 .dialog-toolbar-row .monaco-action-bar .action-label::after,
 .notification-toast .monaco-action-bar .action-label::after,
 .settings-clear-widget .monaco-action-bar .action-label::after,
@@ -415,6 +427,7 @@ select:focus {
   display: block !important;
 }
 .monaco-toolbar .action-label::before,
+.peekview-widget .monaco-action-bar .action-label::before,
 .dialog-toolbar-row .monaco-action-bar .action-label::before,
 .notification-toast .monaco-action-bar .action-label::before,
 .settings-clear-widget .monaco-action-bar .action-label::before,
@@ -432,6 +445,7 @@ select:focus {
   z-index: 1 !important;
 }
 .monaco-toolbar .action-label[aria-disabled]::after,
+.peekview-widget .monaco-action-bar .action-label[aria-disabled]::after,
 .dialog-toolbar-row .monaco-action-bar .action-label[aria-disabled]::after,
 .notification-toast .monaco-action-bar .action-label[aria-disabled]::after,
 .settings-clear-widget .monaco-action-bar .action-label[aria-disabled]::after,
@@ -557,6 +571,7 @@ select:focus {
 .extension-editor .content,
 .settings-editor > .settings-body .settings-tree-container .monaco-list,
 .notification-toast .monaco-list,
+.peekview-widget,
 .quick-input-widget {
   background-color: var(--color-button-face) !important;
   color: var(--color-button-text) !important;
@@ -1903,6 +1918,9 @@ legend,
   --vscode-editorGutter-background: transparent !important;
   --vscode-editor-foreground: var(--color-window-text) !important;
   --vscode-scrollbar-shadow: transparent !important;
+  --vscode-peekViewEditor-background: var(--color-window) !important;
+  --vscode-peekViewEditorGutter-background: var(--color-window) !important;
+  --vscode-peekViewEditorStickyScroll-background: var(--color-window) !important;
   --vscode-activityBar-foreground: var(--color-button-text) !important;
   --vscode-panelTitle-activeForeground: var(--color-button-text) !important;
   --vscode-panelTitle-inactiveForeground: var(--color-button-text) !important;
@@ -2077,8 +2095,8 @@ legend,
 .part.panel > .content > .composite {
   border-radius: 0 !important;
 }
-.monaco-editor[role="code"],
-.part.panel > .content > .composite[role="code"] {
+.editor-instance > .monaco-editor,
+.editor-instance > .part.panel > .content > .composite {
   width: 100% !important;
   height: 100% !important;
 }
@@ -2862,6 +2880,50 @@ legend,
 .notifications-center-header-title {
   font: var(--text-ui) !important;
   text-transform: unset !important;
+}
+.peekview-widget {
+  border: none !important;
+  width: calc(100% - 50px) !important;
+}
+.peekview-widget > .head {
+  font: var(--text-ui) !important;
+  height: var(--titlebar-height) !important;
+  align-items: center !important;
+}
+.peekview-widget > .body {
+  border: none !important;
+  height: calc(100% - 19px) !important;
+}
+.peekview-widget .inline {
+  position: relative !important;
+  width: 100% !important;
+  height: 100% !important;
+}
+.peekview-widget .ref-tree {
+  width: calc(100% - 62px) !important;
+}
+.peekview-widget .monaco-editor {
+  width: 100% !important;
+  height: 100% !important;
+}
+.peekview-widget .monaco-list {
+  margin-left: 3px !important;
+  height: 100% !important;
+}
+.peekview-title {
+  font: var(--text-ui) !important;
+  margin: 0 !important;
+}
+.peekview-title .filenaame {
+  color: var(--color-button-text) !important;
+}
+.peekview-title .dirname:not(:empty) {
+  color: var(--color-gray-text) !important;
+  font: var(--text-ui) !important;
+}
+.peekview-actions {
+  padding: 0 !important;
+  margin-top: 1px !important;
 }
 .quick-input-widget {
   background-color: var(--color-button-face) !important;
