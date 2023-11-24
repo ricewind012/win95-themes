@@ -45,7 +45,7 @@
 		box(100%);
 
 		& > .composite {
-			@extend .monaco-editor;
+			@extend table;
 		}
 	}
 
@@ -111,12 +111,22 @@
 	}
 }
 
-.tree-container .monaco-list {
-	border: none $i;
-	box-shadow: none $i;
+.tree-container {
+	.monaco-list {
+		border: none $i;
+		box-shadow: none $i;
 
-	width: calc(100% - 2px) $i;
-	height: calc(100% - 5px) $i;
+		height: calc(100% - 3px) $i;
+	}
+
+	.marker-code,
+	.marker-line,
+	.marker-source,
+	.related-info-resource,
+	.related-info-resource-separator {
+		opacity: 1 $i;
+		color: var(--color-gray-text) $i;
+	}
 }
 
 .viewpane-filter {
