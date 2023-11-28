@@ -1948,6 +1948,7 @@ legend,
   --vscode-list-warningForeground: #ff0 !important;
   --vscode-list-invalidItemForeground: #ff0 !important;
   --vscode-sideBar-background: var(--color-window) !important;
+  --vscode-gitDecoration-ignoredResourceForeground: var(--color-gray-text) !important;
   --vscode-settings-focusedRowBackground: transparent !important;
   --vscode-settings-rowHoverBackground: transparent !important;
   --vscode-settings-dropdownBackground: transparent !important;
@@ -2001,7 +2002,7 @@ legend,
 .activitybar {
   margin-top: 3px !important;
   width: 46px !important;
-  height: calc(100% - 12px) !important;
+  height: calc(100% - 10px) !important;
 }
 .activitybar.right {
   width: 40px !important;
@@ -2311,6 +2312,9 @@ legend,
 .sidebar:has(> .has-composite-bar).right {
   margin-left: 0 !important;
   margin-right: 8px !important;
+}
+.sidebar:has(> .has-composite-bar).right .monaco-list {
+  width: 100% !important;
 }
 .sidebar .title {
   padding: 3px 0 8px !important;
