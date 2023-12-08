@@ -122,6 +122,25 @@
 		}
 	}
 
+	/{attr(AccountMenu)} {
+		@extend select;
+
+		margin-top: -8px $i;
+
+		.avatar {
+			border: none $i;
+			box-shadow: none $i;
+
+			box(100%);
+
+			&Holder {
+				box(16px);
+
+				transform: none $i;
+			}
+		}
+	}
+
 	/{attr(Button)} {
 		@extend $small-button;
 
