@@ -4,8 +4,24 @@
 		width: 8px;
 	}
 
+	/{attr(MainPanel)} {
+		--tab-height: 18px;
+		margin-top: var(--tab-height);
+	}
+
 	/{attr(AppDetailsTransitionGroup)} {
+		@extend [role="tabpanel"];
+	}
+
+	/{attr(AppDetailsMain)} {
 		@extend table;
+
+		padding: 2px;
+
+		top: 3px;
+		right: 4px;
+		bottom: 4px;
+		left: 3px;
 	}
 }
 
@@ -19,25 +35,41 @@
 		box-shadow: none;
 
 		padding: 0;
-		margin: 3px 0;
+		padding-left: 4px;
+		// TODO: make it work with resizing
+		margin-left: 269px;
 
 		height: unset;
 
 		a {
-			@extend button;
+			@extend [role="tab"];
+
+			margin-top: 2px $i;
+
+			height: unset $i;
 
 			&:hover {
 				text-decoration: none $i;
 			}
 
 			&[aria-current] {
-				@extend button:active;
+				@extend [role="tab"][aria-selected="true"];
 			}
 		}
+	}
+
+	/{attr(HomeBox)} {
+		overflow: visible $i;
+
+		flex: unset $i;
 	}
 }
 
 [class*="gamelisthome_"] {
+	/{attr(Bar)} {
+		border-radius: 0;
+	}
+
 	/{attr(Label)} {
 		color: var(--color-button-text) $i;
 		font: var(--text-ui);
@@ -47,7 +79,15 @@
 	}
 
 	/{attr(CollectionButton)} {
+		font: var(--text);
 		letter-spacing: 0 $i;
+	}
+
+	/{attr(CollectionIcon)} {
+		padding: 0;
+
+		box(unset);
+		display: block $i;
 
 		&::before {
 			content: 'Collections';
@@ -57,7 +97,7 @@
 		}
 	}
 
-	/{attr(CollectionIcon)} {
+	/{attr(CollectionIconBox)} {
 		display: none;
 	}
 }
