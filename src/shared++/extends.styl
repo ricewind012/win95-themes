@@ -1,0 +1,53 @@
+$small-button {
+	@extend button;
+
+	padding: 0;
+	margin: 0;
+
+	position: relative;
+	width: 16px;
+	height: 14px;
+
+	&::before,
+	&::after {
+		content: '';
+
+		-webkit-mask: var(--button-img, none) no-repeat;
+		-webkit-mask-size: var(--button-img-size, auto auto);
+		-webkit-mask-position: var(--button-img-pos, center);
+
+		position: absolute;
+		// TODO: inset when steam updates chrome
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		height: 100%;
+		display: block;
+	}
+
+	&::before {
+		background-color: var(--color-button-text);
+
+		z-index: 1;
+	}
+}
+
+$small-button-disabled {
+	@extend button:disabled;
+
+	&::after {
+		background-color: var(--color-button-highlight);
+
+		left: 1px;
+		top: 1px;
+	}
+}
+
+$legend-as-div {
+	@extend legend;
+
+	position: absolute;
+	top: -8px;
+	padding: 0 2px;
+}

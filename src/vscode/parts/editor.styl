@@ -1,50 +1,50 @@
 .editor {
 	&-container {
-		background-color: transparent $i;
+		background-color: transparent;
 
-		height: calc(100% - 30px) $i;
+		height: calc(100% - 30px);
 	}
 
 	&-container > &-instance {
 		@extend [role="tabpanel"];
 
-		margin-top: 1px $i;
+		margin-top: 1px;
 	}
 
 	&-group {
 		&-container {
-			background-color: var(--color-button-face) $i;
+			background-color: var(--color-button-face);
 
-			padding: 9px 13px 4px 7px $i;
+			padding: 9px 13px 4px 7px;
 
-			box-sizing: border-box $i;
+			box-sizing: border-box;
 		}
 
 		&-watermark {
 			.shortcuts {
 				dl,
 				dt {
-					opacity: 1 $i;
-					color: inherit $i;
+					opacity: 1;
+					color: inherit;
 				}
 
 				dt {
 					font();
-					letter-spacing: 0 $i;
+					letter-spacing: 0;
 				}
 			}
 		}
 	}
 
 	&-actions {
-		padding: 0 $i;
+		padding: 0;
 	}
 
 	& &-scrollable {
-		width: calc(100% - 56px) $i;
+		width: calc(100% - 56px);
 
 		.search-results {
-			width: calc(100% - 38px) $i;
+			width: calc(100% - 38px);
 		}
 	}
 
@@ -53,7 +53,7 @@
 	}
 
 	& > .content {
-		background-color: transparent $i;
+		background-color: transparent;
 	}
 
 	&,
@@ -61,27 +61,27 @@
 	.monaco-scrollable-element,
 	.monaco-grid-view,
 	.content {
-		overflow: visible !important;
+		overflow: visible;
 	}
 }
 
 .split-view-view {
 	&:has(> .editor-group-container) {
-		height: 100% $i;
+		height: 100%;
 	}
 
 	&:not(:only-child) {
 		// Split up/down
 		&[style^="top:"][style*="height:"] > .editor-group-container > .editor-container {
-			height: calc(50% - 35px) !important;
+			height: calc(50% - 35px);
 		}
 
 		// Split left/right
 		&:first-child > .editor-group-container {
-			width: 100% $i;
+			width: 100%;
 
 			& > .editor-container {
-				height: calc(100% - 31px) $i;
+				height: calc(100% - 31px);
 			}
 		}
 	}
@@ -90,11 +90,11 @@
 .monaco {
 	&-scrollable-element,
 	&-split-view2.vertical.separator-border > &-scrollable-element > .split-view-container > .split-view-view {
-		height: 100% $i;
+		height: 100%;
 	}
 
 	&-editor {
-		border-radius: 0 $i;
+		border-radius: 0;
 
 		// The actual editor, i.e. not widgets
 		.editor-instance > & {
@@ -116,28 +116,28 @@
 
 		.lines-content,
 		.view-lines {
-			width: calc(100% - var(--scrollbar-size)) $i;
+			width: calc(100% - var(--scrollbar-size));
 		}
 
 		.view-overlays {
-			width: 100% $i;
+			width: 100%;
 		}
 
 		.selected-text {
-			border-radius: 0 $i;
+			border-radius: 0;
 		}
 
 		.editor & .current-line {
-			border: 1px solid var(--color-highlight) $i;
+			border: 1px solid var(--color-highlight);
 
-			width: 100% $i;
+			width: 100%;
 
 			&-margin-both {
-				border-right: none $i;
+				border-right: none;
 			}
 
 			&-both {
-				border-left: none $i;
+				border-left: none;
 			}
 		}
 	}

@@ -3,14 +3,14 @@ legend {
 
 	position: absolute;
 	top: -8px;
-	padding: 0 2px $i;
+	padding: 0 2px;
 }
 
 .select-container {
-	overflow: visible $i;
+	overflow: visible;
 
 	&::after {
-		display: none $i;
+		display: none;
 	}
 }
 
@@ -19,7 +19,7 @@ legend {
 	&-button {
 		@extend button;
 
-		border-radius: 0 $i;
+		border-radius: 0;
 
 		&-description {
 			font();
@@ -28,9 +28,9 @@ legend {
 
 	&-text-button-with-short-label,
 	&-description-buttons > &-button {
-		overflow: visible $i;
+		overflow: visible;
 
-		width: 148px $i;
+		width: 148px;
 	}
 
 	&-toolbar,
@@ -55,65 +55,65 @@ legend {
 
 	&-action-bar {
 		.action-item {
-			cursor: unset $i;
+			cursor: unset;
 
 			&:not([role="tab"]) {
-				margin: 0 $i;
+				margin: 0;
 			}
 		}
 	}
 
 	&-dropdown {
 		& > .dropdown-label {
-			cursor: unset $i;
+			cursor: unset;
 		}
 
 		&-button {
 			@extend $small-button;
 
-			width: 16px $i;
-			height: 23px $i;
+			width: 16px;
+			height: 23px;
 		}
 	}
 
 	// Text input
 	&-inputbox {
-		overflow: visible $i;
-		background-color: transparent $i;
-		color: var(--color-window-text) $i;
+		overflow: visible;
+		background-color: transparent;
+		color: var(--color-window-text);
 		font();
-		border: none $i;
-		border-radius: 0 $i;
+		border: none;
+		border-radius: 0;
 
-		height: unset $i;
+		height: unset;
 
 		.action-label {
-			padding: 0 $i;
+			padding: 0;
 
-			display: flex $i;
-			justify-content: center $i;
+			display: flex;
+			justify-content: center;
 		}
 	}
 
 	&-findInput {
-		gap: 6px $i;
+		gap: 6px;
 
-		display: flex $i;
-		align-items: center $i;
+		display: flex;
+		align-items: center;
 
 		& > .monaco-scrollable-element {
-			overflow: visible $i;
+			overflow: visible;
 			
-			flex: 1 $i;
+			flex: 1;
 		}
 
 		input,
 		textarea {
-			width: 100% $i;
+			width: 100%;
 		}
 
 		.controls {
-			position: unset $i;
+			position: unset;
 		}
 	}
 
@@ -121,8 +121,8 @@ legend {
 	&-checkbox {
 		@extend input[type="checkbox"];
 
-		border: none $i;
-		border-radius: 0 $i;
+		border: none;
+		border-radius: 0;
 
 		&.checked {
 			@extend input[type="checkbox"]:checked;
@@ -134,7 +134,7 @@ legend {
 		.codicon {
 			@extend $small-button;
 
-			border: none $i;
+			border: none;
 
 			&.checked {
 				@extend button:active;
@@ -144,53 +144,53 @@ legend {
 
 	// Badges
 	&-count-badge {
-		background-color: transparent $i;
-		color: inherit $i
+		background-color: transparent;
+		color: inherit;
 		font();
 		parentheses();
 
-		padding: 0 $i;
+		padding: 0;
 
-		min-width: unset $i;
-		min-height: unset $i;
+		min-width: unset;
+		min-height: unset;
 	}
 
 	/.badge {
-		margin-left: 4px $i;
+		margin-left: 4px;
 
-		position: unset $i;
+		position: unset;
 		box(unset);
 
 		&-content {
-			background-color: transparent $i;
-			color: inherit $i;
+			background-color: transparent;
+			color: inherit;
 			font();
 			parentheses();
 
-			padding: 0 $i;
+			padding: 0;
 
-			position: unset $i;
-			height: unset $i;
+			position: unset;
+			height: unset;
 		}
 	}
 
 	// Separator
 	&-sash {
-		--vscode-sash-size: 7px $i;
-		--vscode-sash-hover-size: 7px $i;
-		--vscode-sash-hoverBorder: transparent $i;
+		--vscode-sash-size: 7px;
+		--vscode-sash-hover-size: 7px;
+		--vscode-sash-hoverBorder: transparent;
 
 		&.vertical {
-			margin-left: 2px $i;
+			margin-left: 2px;
 
 			#workbench\.parts\.editor & {
-				--vscode-sash-size: 19px $i;
-				margin-left: -11px $i;
+				--vscode-sash-size: 19px;
+				margin-left: -11px;
 			}
 		}
 
 		&.horizontal {
-			margin-top: -12px $i;
+			margin-top: -12px;
 		}
 	}
 
@@ -198,86 +198,86 @@ legend {
 	&-scrollable-element > .scrollbar {
 		@extend ::-webkit-scrollbar;
 
-		top: 0px $i;
-		height: 100% $i;
+		top: 0px;
+		height: 100%;
 
-		transition: none $i;
+		transition: none;
 
 		&.horizontal {
-			width: 100% $i;
-			height: var(--scrollbar-size) $i;
+			width: 100%;
+			height: var(--scrollbar-size);
 		}
 
 		& > .slider {
 			@extend ::-webkit-scrollbar-thumb;
 
-			width: var(--scrollbar-size) $i;
+			width: var(--scrollbar-size);
 		}
 
 		& > .scra {
 			@extend ::-webkit-scrollbar-button;
 
-			font-size: 0 $i;
+			font-size: 0;
 
-			left: 0 $i;
-			box-sizing: border-box $i;
+			left: 0;
+			box-sizing: border-box;
 
 			&.codicon-scrollbar-button {
 				&-up {
 					@extend ::-webkit-scrollbar-button:decrement;
 
-					top: 0 $i;
+					top: 0;
 				}
 
 				&-down {
 					@extend ::-webkit-scrollbar-button:increment;
 
-					bottom: 0 $i;
+					bottom: 0;
 				}
 
 				&-left {
 					@extend ::-webkit-scrollbar-button:horizontal:decrement;
 
-					left: 0 $i;
+					left: 0;
 				}
 
 				&-right {
 					@extend ::-webkit-scrollbar-button:horizontal:increment;
 
-					left: unset $i;
-					right: 0 $i;
+					left: unset;
+					right: 0;
 				}
 			}
 		}
 	}
 
 	/.decorationsOverviewRuler {
-		top: var(--scrollbar-size) $i;
-		width: var(--scrollbar-size) $i;
-		height: calc(100% - var(--scrollbar-size) * 2) $i;
-		z-index: 12 $i;
+		top: var(--scrollbar-size);
+		width: var(--scrollbar-size);
+		height: calc(100% - var(--scrollbar-size) * 2);
+		z-index: 12;
 
-		pointer-events: none $i;
+		pointer-events: none;
 	}
 
 	// Item list
 	&-list {
 		@extend table;
 
-		padding: 2px $i;
+		padding: 2px;
 
-		width: 100% $i;
-		height: calc(100% - 10px) $i;
-		box-sizing: border-box $i;
+		width: 100%;
+		height: calc(100% - 10px);
+		box-sizing: border-box;
 
 		&:focus::before {
-			display: none $i;
+			display: none;
 		}
 
 		&-row {
-			overflow: visible $i;
+			overflow: visible;
 			font();
-			border-radius: 0 $i;
+			border-radius: 0;
 
 			&.selected {
 				--vscode-keybindingLabel-border: var(--color-active-caption-text);
@@ -288,14 +288,14 @@ legend {
 			}
 
 			& > .option-detail {
-				opacity: 1 $i;
+				opacity: 1;
 			}
 		}
 
 		&-rows {
-			margin: 2px $i;
+			margin: 2px;
 
-			width: calc(100% - 4px) $i;
+			width: calc(100% - 4px);
 		}
 	}
 }
@@ -308,7 +308,7 @@ legend {
 
 		&,
 		&::before {
-			opacity: 1 $i;
+			opacity: 1;
 		}
 	}
 }
@@ -316,23 +316,23 @@ legend {
 .scm-editor,
 .suggest-input {
 	&-container {
-		background-color: transparent $i;
-		border: none $i;
-		border-radius: 0 $i;
+		background-color: transparent;
+		border: none;
+		border-radius: 0;
 
-		padding: 0 $i;
+		padding: 0;
 
-		flex-grow: 1 $i;
+		flex-grow: 1;
 
 		.monaco-editor {
-			border-radius: 0 $i;
+			border-radius: 0;
 
 			&[style*="height: 20px"],
 			&[style*="height: 21px"],
 			&[style*="height: 22px"],
 			&[style*="height: 23px"],
 			&[style*="height: 24px"] {
-				height: calc(var(--text-size) * var(--text-line) + 8px) $i;
+				height: calc(var(--text-size) * var(--text-line) + 8px);
 			}
 		}
 
@@ -344,11 +344,11 @@ legend {
 	&-placeholder {
 		font();
 
-		padding: 0 $i;
-		margin-left: 4px $i;
-		margin-top: 4px $i;
+		padding: 0;
+		margin-left: 4px;
+		margin-top: 4px;
 
-		width: unset $i;
+		width: unset;
 	}
 }
 
@@ -357,7 +357,7 @@ legend {
 .settings-editor > .settings-body .settings-tree-container .setting-item-bool .setting-value-checkbox {
 	@extend input[type="checkbox"];
 
-	border-radius: 0 $i;
+	border-radius: 0;
 
 	&.checked {
 		@extend input[type="checkbox"]:checked;

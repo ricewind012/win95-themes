@@ -2,9 +2,9 @@
 	.ModalPosition_Content > & {
 		margin: 8px;
 
-		min-width: unset $i;
-		min-height: unset $i;
-		height: unset $i;
+		min-width: unset;
+		min-height: unset;
+		height: unset;
 		flex-direction: column;
 	}
 
@@ -12,11 +12,11 @@
 		overflow-y: hidden;
 		font();
 
-		padding: 0 $i;
-		padding-left: 5px $i;
+		padding: 0;
+		padding-left: 5px;
 
-		height: unset $i;
-		flex-grow: 0 $i;
+		height: unset;
+		flex-grow: 0;
 		flex-direction: row;
 	}
 
@@ -34,7 +34,7 @@
 
 		font();
 
-		margin-top: 2px $i;
+		margin-top: 2px;
 
 		cursor: default;
 
@@ -59,8 +59,8 @@
 	}
 
 	/{attr(Label)} {
-		color: var(--color-window-text) $i;
-		font: var(--text-ui) $i;
+		color: var(--color-window-text);
+		font: var(--text-ui);
 	}
 }
 
@@ -98,8 +98,8 @@
 
 [class*="librarysettings_"] {
 	/{attr(ActionSection)} {
-		flex-direction: row $i;
-		gap: 0 $i;
+		flex-direction: row;
+		gap: 0;
 	}
 }
 
@@ -112,10 +112,10 @@
 
 [class*="remoteplaysettings_TableHeader_"],
 [class*="notificationssettings_ToggleHeader_"] {
-	color: var(--color-button-text) $i;
-	font: var(--text-ui) $i;
-	letter-spacing: unset $i;
-	text-transform: unset $i;
+	color: var(--color-button-text);
+	font: var(--text-ui);
+	letter-spacing: unset;
+	text-transform: unset;
 }
 
 [class*="notificationssettings_"] {
@@ -130,7 +130,7 @@
 	}
 
 	/{attr(NotificationFeedToggle)} {
-		margin-right: 0 $i;
+		margin-right: 0;
 	}
 
 	/{attr(NotificationDescription)} {

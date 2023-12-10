@@ -6,7 +6,7 @@
 
 	/{attr(FocusBar)},
 	/{attr(URLBarReplacement)} {
-		display: none $i;
+		display: none;
 	}
 
 	/{attr(TopBar)} {
@@ -24,7 +24,7 @@
 
 			@extend hr;
 
-			margin-top: 2px $i;
+			margin-top: 2px;
 
 			width: 100%;
 		}
@@ -32,13 +32,13 @@
 
 	/{attr(WindowControls)},
 	/{attr(RootMenuBar)} {
-		flex: initial $i;
-		cursor: default $i;
+		flex: initial;
+		cursor: default;
 	}
 
 	/{attr(RootMenuBar)} {
 		gap: 0;
-		padding: 0 $i;
+		padding: 0;
 	}
 
 	/{attr(SuperNavBar)} {
@@ -48,14 +48,14 @@
 
 [class*="rootmenu_"] {
 	/{attr(RootMenuButton)} {
-		color: var(--color-button-text) $i;
+		color: var(--color-button-text);
 		font: var(--text-ui);
 		padding: 3px 6px;
 
 		&:active,
 		&[class*="Open"] {
 			background-color: var(--color-highlight);
-			color: var(--color-highlight-text) $i;
+			color: var(--color-highlight-text);
 		}
 
 		svg {
@@ -85,13 +85,13 @@
 	/{attr(FriendsButton)} {
 		@extend button;
 
-		width: unset $i;
-		display: flex $i;
+		width: unset;
+		display: flex;
 	}
 
 	/{attr(Icon)},
 	/{attr(Text)},
 	/{attr(Queue)} {
-		color: var(--color-button-text) $i;
+		color: var(--color-button-text);
 	}
 }

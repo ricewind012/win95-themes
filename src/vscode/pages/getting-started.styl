@@ -3,13 +3,13 @@
 		font();
 
 		.header {
-			align-self: unset $i;
+			align-self: unset;
 		}
 
 		.index-list {
 			@extend fieldset;
 
-			min-height: unset $i;
+			min-height: unset;
 
 			& > h2 {
 				@extend legend;
@@ -22,41 +22,41 @@
 			}
 
 			li {
-				margin: 0 $i;
+				margin: 0;
 			}
 
 			button {
-				width: 85px $i;
+				width: 85px;
 			}
 		}
 
 		.getting-started {
 			ul {
-				gap: 2px $i;
+				gap: 2px;
 
-				display: flex $i;
-				flex-direction: column $i;
-				align-items: center $i;
+				display: flex;
+				flex-direction: column;
+				align-items: center;
 			}
 
 			button {
-				width: 100% $i;
+				width: 100%;
 
 				.featured {
-					display: none $i;
+					display: none;
 				}
 			}
 
 			.category-title {
-				margin: 0 $i;
+				margin: 0;
 			}
 
 			.description-content {
-				margin-left: 0 $i;
-				margin-bottom: 10px $i;
+				margin-left: 0;
+				margin-bottom: 10px;
 
 				&:empty {
-					display: none $i;
+					display: none;
 				}
 			}
 		}
@@ -67,36 +67,36 @@
 	}
 
 	&CategoriesContainer {
-		display: flex $i;
-		flex-direction: column $i;
+		display: flex;
+		flex-direction: column;
 
 		& > * {
-			overflow: visible $i;
+			overflow: visible;
 		}
 	}
 
 	&SlideCategories {
 		ul,
 		li {
-			overflow: visible $i;
+			overflow: visible;
 			font();
 		}
 
 		li {
-			margin-top: 2px $i;
+			margin-top: 2px;
 
-			display: flex $i;
-			align-items: center $i;
+			display: flex;
+			align-items: center;
 		}
 
 		button {
 			.codicon {
-				display: none $i;
+				display: none;
 			}
 		}
 
 		.path {
-			padding: 0 $i;
+			padding: 0;
 		}
 	}
 }

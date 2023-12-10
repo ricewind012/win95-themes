@@ -3,26 +3,26 @@
 	--vscode-editorHoverWidget-border: var(--color-button-shadow-dark);
 
 	// Apparently, I can't repeat gradients all at once, i.e. one image.
-	background-color: var(--color-tooltip) $i;
-	color: var(--color-tooltip-text) $i;
+	background-color: var(--color-tooltip);
+	color: var(--color-tooltip-text);
 	font();
-	border: 1px solid var(--color-button-shadow-dark) $i;
-	border-radius: 0 $i;
-	box-shadow: none $i;
+	border: 1px solid var(--color-button-shadow-dark);
+	border-radius: 0;
+	box-shadow: none;
 
-	animation: none $i;
+	animation: none;
 
 	// Text
 	.hover-language-status,
 	.hover-contents {
-		padding: 3px $i;
+		padding: 3px;
 	}
 }
 
 .workbench-hover {
 	// Arrow
 	&-pointer {
-		display: none $i;
+		display: none;
 	}
 }
 
@@ -33,7 +33,7 @@
 
 	.hover-row:not(:first-child):not(:empty),
 	.hover-language-status:not(:first-child) {
-		border: none $i;
+		border: none;
 
 		&::before {
 			content: '';
@@ -44,14 +44,14 @@
 }
 
 .monaco-editor-overlaymessage {
-	animation: none $i;
+	animation: none;
 
 	.message {
 		@extend .monaco-hover;
 	}
 
 	.anchor {
-		display: none $i;
+		display: none;
 	}
 }
 
@@ -61,26 +61,26 @@
 	.overloads {
 		font();
 
-		height: unset $i;
+		height: unset;
 	}
 
 	.codicon {
-		color: inherit $i;
+		color: inherit;
 	}
 
 	.body::before {
-		opacity: 1 $i;
+		opacity: 1;
 	}
 
 	.signature {
-		padding: 3px $i;
+		padding: 3px;
 	}
 
 	.docs {
-		padding: 0 3px $i;
+		padding: 0 3px;
 
 		code {
-			border-radius: 0 $i;
+			border-radius: 0;
 		}
 	}
 }

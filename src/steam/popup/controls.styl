@@ -6,7 +6,7 @@
 
 [class*="dropdownlabel_"] {
 	/{attr(DropDownLabelTitle)} {
-		font: var(--text-ui) $i;
+		font: var(--text-ui);
 		color: inherit;
 	}
 
@@ -18,7 +18,7 @@
 [class*="radio_"] {
 	/{attr(Group)},
 	/{attr(Button)} {
-		background-color: transparent $i;
+		background-color: transparent;
 		padding: 0;
 	}
 
@@ -30,7 +30,7 @@
 
 	/{attr(Button)} {
 		font: var(--text-ui);
-		color: var(--color-button-text) $i;
+		color: var(--color-button-text);
 		text-align: left;
 
 		gap: 7px;
@@ -45,11 +45,11 @@
 		}
 
 		&:active::before {
-			--control-img: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMBAMAAACkW0HUAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsIAAA7CARUoSoAAAAAPUExURf///wAAAIeIj8DHyP///1QVyYYAAAABdFJOUwBA5thmAAAAOElEQVQI12NgYFBSYgACJUFBIM0kaGws6MDAJGxsbODAoGgMBCzYKagSJgZjYwYHBgYXMAISQBIAZBYIx/Jku34AAAAASUVORK5CYII=') $i;
+			--control-img: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMBAMAAACkW0HUAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsIAAA7CARUoSoAAAAAPUExURf///wAAAIeIj8DHyP///1QVyYYAAAABdFJOUwBA5thmAAAAOElEQVQI12NgYFBSYgACJUFBIM0kaGws6MDAJGxsbODAoGgMBCzYKagSJgZjYwYHBgYXMAISQBIAZBYIx/Jku34AAAAASUVORK5CYII=');
 		}
 
 		&[class*="Active"]::before {
-			--control-img: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMAgMAAAArG7R0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAAMUExURf///wAAAIeIj////88rXQEAAAABdFJOUwBA5thmAAAAMElEQVQI12NgWMXAwBW6gEH1fwyD+v8zDPOvf2aYHwrFQDZITOE/DwM/wwcGhv8MAL1zEtdwC089AAAAAElFTkSuQmCC') $i;
+			--control-img: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMAgMAAAArG7R0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAAMUExURf///wAAAIeIj////88rXQEAAAABdFJOUwBA5thmAAAAMElEQVQI12NgWMXAwBW6gEH1fwyD+v8zDPOvf2aYHwrFQDZITOE/DwM/wwcGhv8MAL1zEtdwC089AAAAAElFTkSuQmCC');
 		}
 
 		& > span {
@@ -62,22 +62,22 @@
 	/{attr(SliderControl)} {
 		@extend input[type="range"];
 
-		margin: 0 $i;
+		margin: 0;
 
-		height: unset $i;
+		height: unset;
 	}
 
 	/{attr(SliderTrack)} {
 		@extend input[type="range"]::-webkit-slider-runnable-track;
 
-		border-radius: 0 $i;
+		border-radius: 0;
 
-		margin: 0 $i;
+		margin: 0;
 
-		height: 4px $i;
+		height: 4px;
 
 		&::before {
-			display: none $i;
+			display: none;
 		}
 	}
 
@@ -86,8 +86,8 @@
 
 		box-shadow: none;
 
-		margin: 0 $i;
-		margin-top: -8px $i;
+		margin: 0;
+		margin-top: -8px;
 	}
 
 	/{attr(SliderHandleContainer)} {

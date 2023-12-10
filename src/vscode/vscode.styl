@@ -1,6 +1,6 @@
 codicon() {
-	font-family: codicon $i;
-	font-size: 11px $i;
+	font-family: codicon;
+	font-size: 11px;
 }
 
 replace-icon(w, h = w) {
@@ -12,17 +12,9 @@ replace-icon(w, h = w) {
 		-webkit-mask-position: var(--icon-img-pos, center);
 		background-color: var(--color-button-text);
 
-		width: w $i;
-		height: h $i;
+		width: w;
+		height: h;
 
 		display: block;
 	}
 }
-
-@import '../shared/*';
-
-@import 'extensions/*';
-@import 'global/*';
-@import 'parts/*';
-@import 'pages/*';
-@import 'popup/*';

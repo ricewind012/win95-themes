@@ -2,24 +2,24 @@
 	/{attr(contextMenu)} {
 		@extend body;
 
-		min-width: unset $i;
+		min-width: unset;
 	}
 
 	/{attr(contextMenuContents)} {
-		background: var(--color-button-face) $i;
+		background: var(--color-button-face);
 	}
 
 	/{attr(contextMenuItem)} {
-		color: var(--color-button-text) $i;
-		font: var(--text-ui) $i;
-		border: none $i;
+		color: var(--color-button-text);
+		font: var(--text-ui);
+		border: none;
 
-		padding: 1px 20px $i;
+		padding: 1px 20px;
 
 		&:hover,
 		&[class*="active"] {
-			background-color: var(--color-highlight) $i;
-			color: var(--color-highlight-text) $i;
+			background-color: var(--color-highlight);
+			color: var(--color-highlight-text);
 		}
 	}
 }
@@ -51,12 +51,12 @@
 	/{attr(LogoutButton)} {
 		white-space: pre;
 
-		gap: 0 $i;
+		gap: 0;
 	}
 
 	/{attr(AccountName)},
 	/{attr(WalletBalance)} {
-		color: inherit $i;
+		color: inherit;
 	}
 
 	/{attr(NotificationsMenu)} {
@@ -64,7 +64,7 @@
 		border: none;
 		box-shadow: none;
 
-		padding: 0 $i;
+		padding: 0;
 
 		width: unset;
 	}
@@ -75,7 +75,7 @@
 	}
 
 	/{attr(AllNotificationsTitle)} {
-		font: var(--text-ui) $i;
+		font: var(--text-ui);
 	}
 
 	/{attr(EmptyNotificationsCtn)} {
@@ -83,6 +83,6 @@
 	}
 
 	/{attr(EmptyNotificationsBody)} {
-		color: inherit $i;
+		color: inherit;
 	}
 }

@@ -2,31 +2,31 @@
 	&-widget {
 		@extend [role="tabpanel"];
 
-		background-color: var(--color-button-face) $i;
-		border-radius: 0 $i;
+		background-color: var(--color-button-face);
+		border-radius: 0;
 
-		margin: 0 $i;
+		margin: 0;
 
-		inset: 12.5% 25% $i;
+		inset: 12.5% 25%;
 		box(50%);
 
 		.monaco {
 			&-scrollable-element {
-				padding: 0 $i;
+				padding: 0;
 			}
 		}
 	}
 
 	&-title {
 		text-align: left;
-		font-weight: bold $i;
+		font-weight: bold;
 
-		padding: 0 $i;
-		padding-left: 20px $i;
+		padding: 0;
+		padding-left: 20px;
 
 		// Not even an aria-label !
 		:root:lang(en) &[style="display: none;"] {
-			display: block $i;
+			display: block;
 
 			&::before {
 				content: 'Command Palette';
@@ -34,32 +34,32 @@
 		}
 
 		&bar {
-			background-color: var(--color-active-caption) $i;
-			color: var(--color-active-caption-text) $i;
-			border-radius: 0 $i;
+			background-color: var(--color-active-caption);
+			color: var(--color-active-caption-text);
+			border-radius: 0;
 
-			height: var(--titlebar-height) $i;
+			height: var(--titlebar-height);
 		}
 	}
 
 	&-left-action-bar:has(> .actions-container:empty) {
-		display: none $i;
+		display: none;
 	}
 
 	&-header,
 	&-description,
 	&-list {
-		padding: 0 $i;
-		margin: 10px 8px 6px 8px $i;
+		padding: 0;
+		margin: 10px 8px 6px 8px;
 	}
 
 	&-list {
-		overflow: hidden $i;
+		overflow: hidden;
 
-		height: calc(100% - 64px) $i;
+		height: calc(100% - 64px);
 
 		&-label {
-			overflow: visible $i;
+			overflow: visible;
 		}
 	}
 }
@@ -69,6 +69,6 @@
 	}
 
 	&-type-select-container {
-		overflow: visible $i;
+		overflow: visible;
 	}
 }

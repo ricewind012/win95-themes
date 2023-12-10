@@ -1,31 +1,31 @@
 .monaco-dialog {
 	&-modal-block {
-		background-color: transparent $i;
+		background-color: transparent;
 	}
 
 	&-box {
 		@extend body;
 
-		padding: 1px $i;
+		padding: 1px;
 
-		min-width: 300px $i;
+		min-width: 300px;
 	}
 }
 
 .dialog {
 	&-shadow {
-		box-shadow: none $i;
+		box-shadow: none;
 	}
 
 	&-icon {
-		flex: 0 0 32px $i;
-		height: 32px $i;
+		flex: 0 0 32px;
+		height: 32px;
 
 		&::before {
-			content: attr(aria-label) $i;
+			content: attr(aria-label);
 
 			font();
-			font-weight: bold $i;
+			font-weight: bold;
 
 			position: absolute;
 			left: 3px;
@@ -34,21 +34,21 @@
 	}
 
 	&-toolbar-row {
-		background-color: var(--color-active-caption) $i;
-		color: var(--color-active-caption-text) $i;
-		padding: 0 2px $i;
+		background-color: var(--color-active-caption);
+		color: var(--color-active-caption-text);
+		padding: 0 2px;
 
-		height: unset $i;
+		height: unset;
 
 		.actions-container {
-			height: var(--titlebar-height) $i;
+			height: var(--titlebar-height);
 		}
 	}
 
 	&-message {
-		margin-bottom: 10px $i;
+		margin-bottom: 10px;
 
-		min-height: unset $i;
+		min-height: unset;
 
 		&,
 		&-detail {
@@ -56,33 +56,33 @@
 		}
 
 		&-row {
-			padding: 12px $i;
+			padding: 12px;
 		}
 
 		&-container {
-			padding-left: 16px $i;
+			padding-left: 16px;
 		}
 	}
 
 	&-checkbox-row {
 		@extend label;
 
-		padding-top: 10px $i;
+		padding-top: 10px;
 	}
 
 	&-buttons {
-		overflow: visible $i;
+		overflow: visible;
 
 		// !important
 		.monaco-dialog-box > &-row > & > .monaco-button {
-			outline-offset: -4px $i;
+			outline-offset: -4px;
 
-			width: 81px $i;
+			width: 81px;
 		}
 
 		&-row {
-			padding: 12px 14px $i;
-			padding-top: 18px $i;
+			padding: 12px 14px;
+			padding-top: 18px;
 		}
 	}
 }

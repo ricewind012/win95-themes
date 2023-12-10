@@ -1,6 +1,6 @@
 [class*="library_"] {
 	/{attr(LibraryWindowDivider)} {
-		background-color: transparent $i;
+		background-color: transparent;
 		width: 8px;
 	}
 
@@ -44,12 +44,12 @@
 		a {
 			@extend [role="tab"];
 
-			margin-top: 2px $i;
+			margin-top: 2px;
 
-			height: unset $i;
+			height: unset;
 
 			&:hover {
-				text-decoration: none $i;
+				text-decoration: none;
 			}
 
 			&[aria-current] {
@@ -59,9 +59,9 @@
 	}
 
 	/{attr(HomeBox)} {
-		overflow: visible $i;
+		overflow: visible;
 
-		flex: unset $i;
+		flex: unset;
 	}
 }
 
@@ -71,7 +71,7 @@
 	}
 
 	/{attr(Label)} {
-		color: var(--color-button-text) $i;
+		color: var(--color-button-text);
 		font: var(--text-ui);
 		text-transform: unset;
 
@@ -80,14 +80,14 @@
 
 	/{attr(CollectionButton)} {
 		font: var(--text);
-		letter-spacing: 0 $i;
+		letter-spacing: 0;
 	}
 
 	/{attr(CollectionIcon)} {
 		padding: 0;
 
 		box(unset);
-		display: block $i;
+		display: block;
 
 		&::before {
 			content: 'Collections';
@@ -107,11 +107,11 @@
 		padding: 0;
 
 		circle {
-			stroke: var(--color-button-text) $i;
+			stroke: var(--color-button-text);
 		}
 
 		svg {
-			fill: var(--color-button-text) $i;
+			fill: var(--color-button-text);
 		}
 	}
 
@@ -121,9 +121,9 @@
 
 	/{attr(MenuHeader)} {
 		@extend select;
-		font: var(--text-ui) $i;
-		text-transform: unset $i;
-		cursor: default $i;
+		font: var(--text-ui);
+		text-transform: unset;
+		cursor: default;
 	}
 
 	/{attr(ScrollToTop)},
@@ -132,8 +132,8 @@
 	}
 
 	/{attr(ViewFiltersBar)} {
-		margin: 0 $i;
-		margin-right: 3px $i;
+		margin: 0;
+		margin-right: 3px;
 	}
 
 	/{attr(CheckboxWithImage)} {
@@ -141,7 +141,7 @@
 
 		&::before,
 		&::after {
-			display: none $i;
+			display: none;
 		}
 
 		&[class*="Active"] {
@@ -156,15 +156,15 @@
 	}
 
 	/{attr(FilterTag)} {
-		padding: 2px $i;
-		border-radius: 0 $i;
-		margin: 0 $i;
+		padding: 2px;
+		border-radius: 0;
+		margin: 0;
 	}
 
 	/{attr(SearchInput)} {
-		border-radius: 0 $i;
+		border-radius: 0;
 		margin-bottom: -1px;
-		min-height: unset $i;
+		min-height: unset;
 	}
 
 	/{attr(SearchFilterInput)} {
@@ -173,12 +173,12 @@
 	}
 
 	/{attr(SearchFilterInputClear)} {
-		position: unset $i;
+		position: unset;
 	}
 
 	/{attr(SearchByTypePrompt)} {
-		font: var(--text-ui) $i;
-		padding: 0 18px $i;
+		font: var(--text-ui);
+		padding: 0 18px;
 	}
 
 	/{attr(AdvancedSearchContainer)} {
@@ -187,7 +187,7 @@
 		justify-content: center;
 
 		& > .Focusable > div {
-			cursor: default $i;
+			cursor: default;
 
 			&::before {
 				content: 'Search...';
@@ -195,14 +195,14 @@
 		}
 
 		svg {
-			display: none $i;
+			display: none;
 		}
 	}
 
 	/{attr(AdvancedSearchPane)} {
 		@extend body;
 
-		border-radius: 0 $i;
+		border-radius: 0;
 
 		&::before {
 			display: none;
@@ -226,50 +226,50 @@
 [class*="gamelistentry_"] {
 	/{attr(Container)} {
 		font: var(--text-ui);
-		box-shadow: none $i;
+		box-shadow: none;
 
 		&[class*="Running"] {
-			color: green $i;
+			color: green;
 		}
 
 		&[class*="Installed"] {
-			color: var(--color-button-text) $i;
+			color: var(--color-button-text);
 		}
 
 		&[class*="Uninstalled"] {
-			color: var(--color-gray-text) $i;
+			color: var(--color-gray-text);
 		}
 
 		&[class*="Updating"],
 		&[class*="Synchronizing"],
 		&[class*="Cloud"] {
-			color: var(--color-highlight) $i;
+			color: var(--color-highlight);
 		}
 
 		&:hover,
 		&[class*="HoverOverlay_"]
 		&[class*="Selected"] {
-			background-color: var(--color-highligh) $i;
-			color: var(--color-highlight-text) $i;
+			background-color: var(--color-highligh);
+			color: var(--color-highlight-text);
 		}
 
 		circle,
 		path {
-			fill: currentColor $i;
+			fill: currentColor;
 		}
 	}
 }
 
 [class*="gamelistsectionheader_"] {
 	/{attr(Container)} {
-		background: none $i;
+		background: none;
 		color: var(--color-window-text);
-		box-shadow: none $i;
+		box-shadow: none;
 
 		&,
 		& > div {
-			color: var(--color-window-text) $i;
-			stroke: currentColor $i;
+			color: var(--color-window-text);
+			stroke: currentColor;
 		}
 	}
 
@@ -290,14 +290,14 @@
 	}
 
 	/{attr(FilterArea)} {
-		gap: 6px 8px $i;
+		gap: 6px 8px;
 	}
 
 	/{attr(FilterBucket)} {
 		@extend fieldset;
 
 		.DialogInput_Wrapper {
-			margin: 0 $i;
+			margin: 0;
 		}
 	}
 
@@ -305,8 +305,8 @@
 		@extend $legend-as-div;
 
 		font();
-		color: var(--color-button-text) $i;
-		text-transform: unset $i;
+		color: var(--color-button-text);
+		text-transform: unset;
 	}
 
 	/{attr(FilterBucketBoxes)} {
@@ -318,11 +318,11 @@
 	}
 
 	/{attr(ExtraTall)} {
-		grid-row-end: span 2 $i;
+		grid-row-end: span 2;
 	}
 
 	/{attr(Default)} {
-		font-style: normal $i;
+		font-style: normal;
 	}
 
 	/{attr(Buttons)} {

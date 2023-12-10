@@ -1,92 +1,92 @@
 .settings {
 	&-toc-wrapper {
-		padding: 0 $i;
+		padding: 0;
 
 		& > .monaco-list {
-			height: calc(100% - 2px) $i;
+			height: calc(100% - 2px);
 		}
 	}
 
 	&-editor {
-		padding: 12px $i;
+		padding: 12px;
 
-		max-width: unset $i;
-		height: 100% $i;
+		max-width: unset;
+		height: 100%;
 	}
 
 	&-editor > &-body {
-		height: calc(100% - 50px) $i;
+		height: calc(100% - 50px);
 
 		& > .monaco-split-view2 {
-			margin: 0 $i;
+			margin: 0;
 
-			height: 100% $i;
+			height: 100%;
 		}
 	}
 
 	&-header {
-		overflow: visible $i;
-		background-color: var(--color-button-face) $i;
+		overflow: visible;
+		background-color: var(--color-button-face);
 
-		padding: 0 $i;
-		margin: 0 $i;
+		padding: 0;
+		margin: 0;
 
-		position: relative $i;
-		max-width: unset $i;
-		//z-index: 0 $i;
+		position: relative;
+		max-width: unset;
+		//z-index: 0;
 
 		&-controls {
-			border: none $i;
+			border: none;
 
-			height: unset $i;
+			height: unset;
 
 			.monaco-button {
-				width: unset $i;
+				width: unset;
 			}
 		}
 	}
 
 	&-right-controls {
-		margin-top: -6px $i;
+		margin-top: -6px;
 	}
 
 	&-group-title-label {
-		padding: 0 $i;
+		padding: 0;
 	}
 
 	// !important
 	&-editor > &-body &-tree-container {
 		.monaco-list,
 		.monaco-scrollable-element {
-			overflow: hidden $i;
+			overflow: hidden;
 		}
 
 		.monaco-list {
 			@extend [role="tabpanel"];
 
-			margin-top: 1px $i;
+			margin-top: 1px;
 
-			height: calc(100% - 23px) $i;
+			height: calc(100% - 23px);
 			
 			&-row {
-				background-color: transparent $i;
+				background-color: transparent;
 				font();
 
 				&s {
-					background-color: var(--color-button-face) $i;
+					background-color: var(--color-button-face);
 				}
 			}
 		}
 	}
 
 	&-clear-widget {
-		position: unset $i;
-		width: unset $i;
+		position: unset;
+		width: unset;
 	}
 
 	// What's the point ?
 	&-count-widget {
-		display: none $i;
+		display: none;
 	}
 }
 
@@ -101,7 +101,7 @@
 		}
 
 		&-category {
-			opacity: 1 $i;
+			opacity: 1;
 		}
 
 		&-value-description {
@@ -109,17 +109,17 @@
 		}
 
 		&-description {
-			opacity: 1 $i;
+			opacity: 1;
 
-			margin: 0 $i;
+			margin: 0;
 		}
 
 		&-modified-indicator {
-			border-color: red $i;
+			border-color: red;
 
-			left: 3px $i;
-			top: 0 $i;
-			bottom: 0 $i;
+			left: 3px;
+			top: 0;
+			bottom: 0;
 		}
 	}
 
@@ -127,18 +127,18 @@
 		&-widget {
 			@extend table;
 
-			margin-bottom: 8px $i;
+			margin-bottom: 8px;
 		}
 
 		&-value-container {
-			height: unset $i;
+			height: unset;
 		}
 	}
 }
 
 .search-container {
-	gap: 5px $i;
+	gap: 5px;
 
-	display: flex $i;
-	align-items: center $i;
+	display: flex;
+	align-items: center;
 }

@@ -1,65 +1,65 @@
 .context-view {
-	animation: none $i;
+	animation: none;
 
 	// Titlebar menubar button
 	/.menubar-menu-items-holder > .monaco-scrollable-element,
 	& > [role="presentation"] {
 		@extend body;
 
-		border-radius: 0 $i;
+		border-radius: 0;
 
-		padding: 3px $i;
+		padding: 3px;
 	}
 }
 
 .monaco {
 	&-menu {
 		font();
-		border-radius: 0 $i;
+		border-radius: 0;
 
 		.action {
 			&-menu-item {
-				border-radius: 0 $i;
+				border-radius: 0;
 
-				margin: 0 $i;
+				margin: 0;
 
-				height: unset $i;
+				height: unset;
 			}
 
 			&-label:not(.separator) {
 				font();
 
-				padding: 2px 20px $i;
+				padding: 2px 20px;
 			}
 		}
 
 		.keybinding {
-			padding-right: 20px $i;
+			padding-right: 20px;
 		}
 	}
 
 	&-action-bar {
-		padding: 0 $i;
+		padding: 0;
 	}
 
 	// !important
 	&-menu &-action-bar.vertical .action-label.separator {
 		@extend hr;
 
-		border-bottom: none $i;
+		border-bottom: none;
 	}
 }
 
 .menu-item-check {
-	border-radius: 0 $i;
+	border-radius: 0;
 
-	width: 19px $i;
+	width: 19px;
 
 	.checked & {
 		@extend input[type="checkbox"]:checked;
 
 		&::before {
-			-webkit-mask-position: 6px 5px $i;
+			-webkit-mask-position: 6px 5px;
 		}
 	}
 

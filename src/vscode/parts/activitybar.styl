@@ -1,63 +1,63 @@
 .activitybar {
 	@extend table;
 
-	margin-top: 3px $i;
+	margin-top: 3px;
 
-	width: 46px $i;
-	height: calc(100% - 10px) $i;
+	width: 46px;
+	height: calc(100% - 10px);
 
 	&.right {
-		width: 40px $i;
+		width: 40px;
 	}
 
 	& > .content {
 		font();
 
-		margin: 2px $i;
+		margin: 2px;
 
-		width: 42px $i;
-		height: 100% $i;
+		width: 42px;
+		height: 100%;
 	}
 
 	.action {
 		&-item {
-			background-color: transparent $i;
-			border: none $i;
-			box-shadow: none $i;
+			background-color: transparent;
+			border: none;
+			box-shadow: none;
 
-			padding: 0 $i;
-			margin: 0 $i;
+			padding: 0;
+			margin: 0;
 
-			cursor: pointer $i;
+			cursor: pointer;
 
 			&.checked .action-label {
-				background-color: var(--color-highlight) $i;
-				color: var(--color-highlight-text) $i;
+				background-color: var(--color-highlight);
+				color: var(--color-highlight-text);
 			}
 
 			.badge-content {
-				position: absolute $i;
-				top: 0 $i;
-				right: 4px $i;
-				z-index: 1 $i;
+				position: absolute;
+				top: 0;
+				right: 4px;
+				z-index: 1;
 			}
 
 			&.checked .badge-content {
-				color: var(--color-highlight-text) $i;
+				color: var(--color-highlight-text);
 			}
 		}
 
 		&-label {
 			background: no-repeat center;
-			color: var(--color-window-text) $i;
-			font-size: 0 $i;
-			border-radius: 0 $i;
+			color: var(--color-window-text);
+			font-size: 0;
+			border-radius: 0;
 
-			width: 100% $i;
+			width: 100%;
 		}
 	}
 
 	.active-item-indicator {
-		display: none $i;
+		display: none;
 	}
 }

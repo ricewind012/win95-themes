@@ -1,13 +1,13 @@
 * {
-	outline: none $i;
+	outline: none;
 }
 
 .monaco-workbench {
-	background-color: inherit $i;
+	background-color: inherit;
 	font();
 
-	width: 100% $i;
-	height: calc(100vh - 8px) $i;
+	width: 100%;
+	height: calc(100vh - 8px);
 
 	.part > .content {
 		font();
@@ -18,12 +18,12 @@
 	&-view {
 		// Titlebar
 		&[style^="top: 35px;"] {
-			margin-top: 5px $i;
+			margin-top: 5px;
 		}
 	}
 
 	// !important
 	.monaco-split-view2.separator-border > .monaco-scrollable-element > &-container &-view:not(:first-child)::before {
-		background-color: transparent $i;
+		background-color: transparent;
 	}
 }

@@ -21,15 +21,15 @@
 	--button-img-size: 8px 7px;
 	--button-img-pos: 4px 3px;
 
-	margin-left: 2px $i;
+	margin-left: 2px;
 }
 
 .title-area {
 	background-color: var(--color-gray-text);
 
-	padding-right: 2px $i;
+	padding-right: 2px;
 
-	position: unset $i;
+	position: unset;
 	max-height: var(--titlebar-height);
 
 	display: flex;
@@ -91,7 +91,7 @@
 		@extend $small-button;
 
 		&-inner {
-			display: none $i;
+			display: none;
 		}
 	}
 }
@@ -109,7 +109,7 @@
 			right: 2px;
 			height: 33px;
 
-			margin: 0 $i;
+			margin: 0;
 
 			display: flex;
 			align-items: center;
@@ -125,18 +125,18 @@
 	/{attr(AccountMenu)} {
 		@extend select;
 
-		margin-top: -8px $i;
+		margin-top: -8px;
 
 		.avatar {
-			border: none $i;
-			box-shadow: none $i;
+			border: none;
+			box-shadow: none;
 
 			box(100%);
 
 			&Holder {
 				box(16px);
 
-				transform: none $i;
+				transform: none;
 			}
 		}
 	}
@@ -144,7 +144,7 @@
 	/{attr(Button)} {
 		@extend $small-button;
 
-		--button-img-pos: 3px 2px $i;
+		--button-img-pos: 3px 2px;
 
 		min-width: unset;
 		min-height: unset;
@@ -168,18 +168,18 @@
 	}
 
 	svg {
-		display: none $i;
+		display: none;
 	}
 }
 
 .DialogHeader {
 	color: var(--color-button-face);
-	font: var(--text-ui) $i;
-	font-weight: bold $i;
+	font: var(--text-ui);
+	font-weight: bold;
 	text-transform: unset;
 
 	padding: 0;
-	margin: 0 $i;
+	margin: 0;
 
 	position: fixed;
 	left: 23px;

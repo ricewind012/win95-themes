@@ -2,30 +2,30 @@
 	&-widget {
 		@extend [role="tabpanel"];
 
-		border: none $i;
+		border: none;
 
-		width: calc(100% - 50px) $i;
+		width: calc(100% - 50px);
 
 		& > .head {
 			font();
 
-			height: var(--titlebar-height) $i;
-			align-items: center $i;
+			height: var(--titlebar-height);
+			align-items: center;
 		}
 
 		& > .body {
-			border: none $i;
+			border: none;
 
-			height: calc(100% - 19px) $i;
+			height: calc(100% - 19px);
 		}
 
 		.inline {
-			position: relative $i;
+			position: relative;
 			box(100%);
 		}
 
 		.ref-tree {
-			width: calc(100% - 62px) $i;
+			width: calc(100% - 62px);
 		}
 
 		.monaco {
@@ -37,9 +37,9 @@
 			}
 
 			&-list {
-				margin-left: 3px $i;
+				margin-left: 3px;
 
-				height: 100% $i;
+				height: 100%;
 			}
 		}
 	}
@@ -47,20 +47,20 @@
 	&-title {
 		font();
 
-		margin: 0 $i;
+		margin: 0;
 
 		.filenaame {
-			color: var(--color-button-text) $i;
+			color: var(--color-button-text);
 		}
 
 		.dirname:not(:empty) {
-			color: var(--color-gray-text) $i;
+			color: var(--color-gray-text);
 			font();
 		}
 	}
 
 	&-actions {
-		padding: 0 $i;
-		margin-top: 1px $i;
+		padding: 0;
+		margin-top: 1px;
 	}
 }

@@ -1,35 +1,35 @@
 .extension {
 	&-editor {
-		padding: 12px $i;
+		padding: 12px;
 
-		max-width: unset $i;
+		max-width: unset;
 
 		& > .header {
 			font();
 
-			padding: 0 $i;
+			padding: 0;
 
 			.action {
 				&s-container {
-					gap: 6px $i;
+					gap: 6px;
 
 					& > .disabled {
-						display: none $i;
+						display: none;
 					}
 				}
 
 				&-item {
-					overflow: visible $i;
+					overflow: visible;
 				}
 
 				&-label.codicon:empty {
 					@extend $small-button;
 
-					height: 23px $i;
+					height: 23px;
 				}
 
 				&-dropdown-item-separator {
-					display: none $i;
+					display: none;
 				}
 			}
 
@@ -38,66 +38,66 @@
 			}
 
 			.details {
-				overflow: visible $i;
+				overflow: visible;
 			}
 		}
 
 		.subtitle {
 			font();
 
-			height: unset $i;
+			height: unset;
 
 			&-entry:not(:first-child) {
-				border-left: 1px solid var(--color-button-highlight) $i;
-				box-shadow: -1px 0 var(--color-button-shadow) $i;
+				border-left: 1px solid var(--color-button-highlight);
+				box-shadow: -1px 0 var(--color-button-shadow);
 
-				padding-left: 10px $i;
-				margin-left: 10px $i;
+				padding-left: 10px;
+				margin-left: 10px;
 			}
 		}
 
 		.content {
 			@extend [role="tabpanel"];
 
-			margin-top: 1px $i;
+			margin-top: 1px;
 
-			height: calc(100% - 43px) $i;
+			height: calc(100% - 43px);
 		}
 
 		.readme-container {
-			max-width: unset $i;
+			max-width: unset;
 		}
 	}
 
 	&-action {
 		@extend button;
 
-		margin: 0 $i;
+		margin: 0;
 	}
 }
 
 .switch-to-prerelease {
-	width: 167px $i;
+	width: 167px;
 
 	// why are there 2 different versions ?
 	&.icon::before {
-		content: attr(aria-label) $i;
+		content: attr(aria-label);
 	}
 }
 
 // Details right sidebar
 .additional-details {
 	&-container {
-		width: 36% $i;
+		width: 36%;
 
 		.category {
 			font();
-			border-radius: 0 $i;
+			border-radius: 0;
 		}
 	}
 
 	&-content {
-		padding: 14px $i;
+		padding: 14px;
 	}
 
 	&-element {

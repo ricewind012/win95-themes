@@ -1,62 +1,62 @@
 .sidebar {
-	background-color: var(--color-button-face) $i;
-	color: var(--color-window-text) $i;
-	border: none $i;
+	background-color: var(--color-button-face);
+	color: var(--color-window-text);
+	border: none;
 
 	// Spacing: top/bottom - 8px, left/right - 7px
-	margin-top: 9px $i;
+	margin-top: 9px;
 
 	&:has(> .has-composite-bar) {
-		margin-left: 8px $i;
+		margin-left: 8px;
 
 		&.right {
-			margin-left: 0 $i;
-			margin-right: 8px $i;
+			margin-left: 0;
+			margin-right: 8px;
 
 			.monaco-list {
-				width: 100% $i;
+				width: 100%;
 			}
 		}
 	}
 
 	.title {
-		padding: 3px 0 8px $i;
-		margin: 0 $i;
+		padding: 3px 0 8px;
+		margin: 0;
 
-		height: unset $i;
+		height: unset;
 
-		align-items: center $i;
+		align-items: center;
 
 		&-label {
 			font();
 
-			padding: 0 $i;
+			padding: 0;
 
 			h2 {
 				font();
-				color: inherit $i;
-				text-transform: unset $i;
+				color: inherit;
+				text-transform: unset;
 			}
 		}
 
 		&-actions {
-			padding: 0 $i;
+			padding: 0;
 
-			height: unset $i;
+			height: unset;
 		}
 	}
 
 	h3.title {
-		text-transform: unset $i;
+		text-transform: unset;
 
-		padding: 0 $i;
-		padding-bottom: 1px $i;
+		padding: 0;
+		padding-bottom: 1px;
 	}
 
 	& > .content {
 		font();
 
-		width: 100% $i;
+		width: 100%;
 		height: calc(
 			100vh \
 			- 39px \
@@ -64,40 +64,40 @@
 			- var(--titlebar-height) \
 			- var(--menubar-height) \
 			- var(--statusbar-height)
-		) $i;
+		);
 	}
 }
 
 // Search
 .search {
 	&-widget {
-		margin-bottom: 4px $i;
+		margin-bottom: 4px;
 
 		&s-container {
-			padding: 0 $i;
-			margin: 0 $i;
-			margin-bottom: 4px $i;
+			padding: 0;
+			margin: 0;
+			margin-bottom: 4px;
 		}
 	}
 
 	&-view {
 		input {
-			margin: 0 1px $i;
+			margin: 0 1px;
 		}
 
 		.search-container,
 		.query-details {
-			margin: 0 $i;
+			margin: 0;
 		}
 
 		.replace-container {
-			margin-left: 0 $i;
-			margin-top: 10px $i;
+			margin-left: 0;
+			margin-top: 10px;
 
 			.monaco-action-bar {
-				margin-left: 2px $i;
+				margin-left: 2px;
 
-				height: unset $i;
+				height: unset;
 
 				.action-label {
 					@extend $small-button;
@@ -108,11 +108,11 @@
 		.more.codicon {
 			@extend $small-button;
 
-			margin-bottom: 4px $i;
+			margin-bottom: 4px;
 		}
 
 		.message {
-			padding: 0 4px 6px $i;
+			padding: 0 4px 6px;
 		}
 	}
 }
@@ -129,29 +129,29 @@
 				&,
 				&-background,
 				.margin {
-					background-color: transparent $i;
+					background-color: transparent;
 				}
 			}
 
 			&-list {
-				height: calc(100% - 7px) $i;
+				height: calc(100% - 7px);
 
 				// Inputs & buttons
 				&-row.force-no-hover {
-					margin-left: -1px $i;
+					margin-left: -1px;
 				}
 			}
 
 			&-button {
-				margin: 0 $i;
+				margin: 0;
 
 				&-dropdown {
-					overflow: visible $i;
+					overflow: visible;
 				}
 
 				.codicon-check,
 				&-dropdown-separator {
-					display: none $i;
+					display: none;
 				}
 			}
 		}
@@ -161,14 +161,14 @@
 // Extensions
 .extensions {
 	&-viewlet > .header {
-		padding: 0 $i;
+		padding: 0;
 
-		height: unset $i;
+		height: unset;
 	}
 
 	&-list {
 		.monaco-list {
-			height: 100% $i;
+			height: 100%;
 		}
 	}
 }

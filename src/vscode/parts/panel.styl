@@ -1,46 +1,46 @@
 .part.panel {
-	overflow: visible $i;
-	background-color: transparent $i;
-	padding: 0 10px 0 7px $i;
-	border: none $i;
+	overflow: visible;
+	background-color: transparent;
+	padding: 0 10px 0 7px;
+	border: none;
 
-	width: calc(100% - 3px) $i;
-	height: calc(100% - 26px) $i;
+	width: calc(100% - 3px);
+	height: calc(100% - 26px);
 
 	.title {
-		border: none $i;
+		border: none;
 
-		padding: 0 $i;
-		margin: 0 $i;
-		margin-left: 4px $i;
-		margin-top: -8px $i;
-		gap: 2px $i;
+		padding: 0;
+		margin: 0;
+		margin-left: 4px;
+		margin-top: -8px;
+		gap: 2px;
 
-		height: unset $i;
+		height: unset;
 
-		overflow: visible $i;
+		overflow: visible;
 
 		&-actions {
-			height: unset $i;
+			height: unset;
 		}
 
 		.monaco-inputbox,
 		.select-container {
-			margin-bottom: -4px $i;
+			margin-bottom: -4px;
 
-			position: relative $i;
-			bottom: 3px $i;
+			position: relative;
+			bottom: 3px;
 		}
 
 		.select-container {
-			margin-right: 2px $i;
+			margin-right: 2px;
 		}
 	}
 
 	& > .content {
 		@extend .editor-container > .editor-instance;
 
-		margin-top: -1px $i;
+		margin-top: -1px;
 
 		box(100%);
 
@@ -50,62 +50,62 @@
 	}
 
 	.pane {
-		height: calc(100% - 2px) $i;
+		height: calc(100% - 2px);
 
 		&-body {
-			margin-left: 2px $i;
-			margin-top: 2px $i;
+			margin-left: 2px;
+			margin-top: 2px;
 
-			width: calc(100% - 32px) $i;
+			width: calc(100% - 32px);
 		}
 	}
 
 	.single-terminal-tab {
-		width: 36px $i;
-		justify-content: center $i;
+		width: 36px;
+		justify-content: center;
 
 		&::before {
-			background-color: transparent $i;
+			background-color: transparent;
 		}
 
 		.codicon {
-			display: none $i;
+			display: none;
 		}
 	}
 }
 
 .pane {
 	&.vertical {
-		height: calc(100% + 4px) $i;
+		height: calc(100% + 4px);
 	}
 
 	&-header {
 		font();
-		border: none $i;
+		border: none;
 
-		height: unset $i;
+		height: unset;
 
 		.title {
 			font();
 
-			padding: 0 $i;
+			padding: 0;
 		}
 	}
 
 	&-body {
 		& > .monaco-editor {
-			border: none $i;
-			box-shadow: none $i;
+			border: none;
+			box-shadow: none;
 		}
 	}
 
 	.monaco {
 		&-list {
-			width: calc(100% - 8px) $i;
-			height: calc(100% - 10px) $i;
+			width: calc(100% - 8px);
+			height: calc(100% - 10px);
 
 			.sidebar.left & {
-				width: 100% $i;
+				width: 100%;
 			}
 		}
 	}
@@ -113,10 +113,10 @@
 
 .tree-container {
 	.monaco-list {
-		border: none $i;
-		box-shadow: none $i;
+		border: none;
+		box-shadow: none;
 
-		height: calc(100% - 3px) $i;
+		height: calc(100% - 3px);
 	}
 
 	.marker-code,
@@ -124,28 +124,28 @@
 	.marker-source,
 	.related-info-resource,
 	.related-info-resource-separator {
-		opacity: 1 $i;
-		color: var(--color-gray-text) $i;
+		opacity: 1;
+		color: var(--color-gray-text);
 	}
 }
 
 .viewpane-filter {
 	&-container {
-		margin: 1px 8px 2px -1px $i;
+		margin: 1px 8px 2px -1px;
 
 		&:empty {
-			display: none $i;
+			display: none;
 		}
 	}
 
 	&-controls {
-		margin-left: 6px $i;
-		margin-bottom: -4px $i;
+		margin-left: 6px;
+		margin-bottom: -4px;
 
-		position: unset $i;
+		position: unset;
 	}
 }
 
 .xterm {
-	inset: 0 11px 0 -20px $i;
+	inset: 0 11px 0 -20px;
 }

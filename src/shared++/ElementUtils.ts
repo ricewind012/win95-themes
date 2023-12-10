@@ -9,7 +9,7 @@ module ElementUtils {
 	export function make(
 		tag: string,
 		attrs: any,
-		parent: HTMLElement = null,
+		parent: HTMLElement | null = null,
 		prepend: boolean = false,
 	): HTMLElement {
 		let el = document.createElement(tag);

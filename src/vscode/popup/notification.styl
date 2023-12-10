@@ -1,45 +1,45 @@
 .notification {
 	&-toast {
-		opacity: 1 $i;
-		background-color: transparent $i;
-		border: none $i;
-		border-radius: 0 $i;
-		box-shadow: none $i;
+		opacity: 1;
+		background-color: transparent;
+		border: none;
+		border-radius: 0;
+		box-shadow: none;
 
-		transform: none $i;
-		transition: none $i;
+		transform: none;
+		transition: none;
 
 		.monaco {
 			&-list {
 				@extend [role="tabpanel"];
 
 				&-row {
-					background-color: transparent $i;
+					background-color: transparent;
 				}
 			}
 
 			&-scrollable-element {
-				border-radius: 0 $i;
+				border-radius: 0;
 			}
 		}
 	}
 
 	&-list-item {
-		padding: 5px $i;
+		padding: 5px;
 
 		&-details-row,
 		&-buttons-container {
-			overflow: visible $i;
+			overflow: visible;
 		}
 
 		&-icon {
-			font-size: 0 $i;
+			font-size: 0;
 
-			margin-left: 0 $i;
-			margin-right: 16px $i;
+			margin-left: 0;
+			margin-right: 16px;
 
 			box(32px);
-			flex: unset $i;
+			flex: unset;
 		}
 
 		&-message,
@@ -48,7 +48,7 @@
 		}
 
 		&-buttons-container > .monaco-button {
-			width: 148px $i;
+			width: 148px;
 		}
 	}
 }
@@ -56,20 +56,20 @@
 .notifications-center {
 	@extend body;
 
-	border-radius: 0 $i;
+	border-radius: 0;
 
 	box(auto);
 
 	&-header {
-		background-color: transparent $i;
+		background-color: transparent;
 
-		padding: 10px $i;
+		padding: 10px;
 
-		height: unset $i;
+		height: unset;
 
 		&-title {
 			font();
-			text-transform: unset $i;
+			text-transform: unset;
 		}
 	}
 }

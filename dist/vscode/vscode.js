@@ -57,8 +57,11 @@ var ElementUtils;
     ElementUtils.wait = wait;
 })(ElementUtils || (ElementUtils = {}));
 function icon(s) {
-    var _a;
-    console.log((_a = document.getElementById('codiconStyles')) === null || _a === void 0 ? void 0 : _a.innerText.split('\n').filter(e => e.match(s)).map(e => `&-${e.match(/^\.codicon-(.*?):/)[1]}`).join(',\n'));
+    console.log(document.getElementById('codiconStyles')?.innerText
+        .split('\n')
+        .filter(e => e.match(s))
+        .map(e => `&-${e.match(/^\.codicon-(.*?):/)[1]}`)
+        .join(',\n'));
 }
 (async () => {
     /**

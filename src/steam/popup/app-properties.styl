@@ -2,9 +2,9 @@
 	// note?
 	/[class*="FieldDescription_"],
 	/{attr(Detail)} {
-		font: var(--text-ui) $i;
-		color: var(--color-button-text) $i;
-		margin: 4px 0 $i;
+		font: var(--text-ui);
+		color: var(--color-button-text);
+		margin: 4px 0;
 	}
 
 	/{attr(SectionTopLine)} {
@@ -12,19 +12,19 @@
 	}
 
 	/{attr(TopGap)} {
-		margin-top: 4px $i;
+		margin-top: 4px;
 	}
 
 	// Workshop
 	/{attr(ViewMore)} {
-		flex: unset $i;
+		flex: unset;
 	}
 
 	/{attr(WorkshopGrid)} {
 		@extend table;
 
-		padding: 2px $i;
-		margin: 0 $i;
+		padding: 2px;
+		margin: 0;
 
 		box(unset);
 	}
@@ -32,23 +32,23 @@
 	/{attr(WorkshopHeader)} {
 		@extend button;
 
-		margin: 0 $i;
+		margin: 0;
 		box(unset);
 	}
 
 	/{attr(TriangleUp)},
 	/{attr(TriangleDown)} {
-		display: inline-block $i;
+		display: inline-block;
 	}
 
 	/{attr(Install)},
 	/{attr(Name)},
 	/{attr(SizeDisk)} {
-		margin: 3px $i;
+		margin: 3px;
 	}
 
 	/{attr(Name)} {
-		color: var(--color-button-text) $i;
+		color: var(--color-button-text);
 	}
 
 	// etc.
@@ -57,10 +57,10 @@
 	}
 
 	/{attr(BrowseDiskSize)} {
-		margin-left: 1ch $i;
+		margin-left: 1ch;
 	}
 
 	/{attr(SteamInputLink)} {
-		color: var(--color-link) $i;
+		color: var(--color-link);
 	}
 }

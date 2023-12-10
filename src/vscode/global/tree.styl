@@ -18,8 +18,8 @@ $max-nest   = 10;
 	}
 
 	.monaco-tl-twistie {
-		padding-left: calc(var(--a) + var(--b) * (var(--level) - var(--multiply))) $i;
-		margin-left: var(--offset) $i;
+		padding-left: calc(var(--a) + var(--b) * (var(--level) - var(--multiply)));
+		margin-left: var(--offset);
 	}
 }
 
@@ -41,7 +41,7 @@ for i in range(2, $max-nest) {
 	--offset: -2px;
 
 	&:not([aria-expanded]) {
-		--multiply: 1.35 $i;
+		--multiply: 1.35;
 		--offset: 0px;
 	}
 }
@@ -60,51 +60,51 @@ for i in range(2, $max-nest) {
 }
 
 [role="treeitem"] {
-	padding-left: 4px $i;
+	padding-left: 4px;
 
 	&[aria-selected="true"] {
-		background-color: var(--color-window) $i;
-		color: var(--color-window-text) $i;
+		background-color: var(--color-window);
+		color: var(--color-window-text);
 
 		.monaco-icon-name-container {
-			background-color: var(--color-highlight) $i;
-			color: var(--color-highlight-text) $i;
-			border: 1px dotted #ff0 $i;
+			background-color: var(--color-highlight);
+			color: var(--color-highlight-text);
+			border: 1px dotted #ff0;
 		}
 	}
 
 	.monaco-icon {
 		&-label {
-			align-items: center $i;
+			align-items: center;
 
 			&::before {
-				padding-right: 2px $i;
+				padding-right: 2px;
 
 				// Fix for source control tab or the extension
-				height: 16px $i;
-				z-index: 2 $i;
+				height: 16px;
+				z-index: 2;
 			}
 
 			&::after {
-				opacity: 1 $i;
+				opacity: 1;
 
-				margin: 0 4px $i;
+				margin: 0 4px;
 
-				width: 12px $i;
+				width: 12px;
 			}
 
 			&-container {
-				margin-top: 1px $i;
+				margin-top: 1px;
 			}
 		}
 
 		&-name-container {
-			padding: 1px 5px 0 1px $i;
+			padding: 1px 5px 0 1px;
 
 			.label-separator {
-				opacity: 1 $i;
+				opacity: 1;
 
-				margin: 0 $i;
+				margin: 0;
 			}
 		}
 	}
@@ -113,15 +113,15 @@ for i in range(2, $max-nest) {
 // Tree dots
 .monaco-tl {
 	&-row {
-		overflow: visible $i;
+		overflow: visible;
 
-		margin-left: -12px $i;
+		margin-left: -12px;
 	}
 
 	&-contents {
-		overflow: visible $i;
+		overflow: visible;
 
-		position: relative $i;
+		position: relative;
 
 		// Expand button to icon dots
 		&::before,
@@ -150,15 +150,15 @@ for i in range(2, $max-nest) {
 	}
 
 	&-twistie {
-		padding-right: 4px $i;
+		padding-right: 4px;
 
 		&,
 		&::before {
-			transform: unset $i;
+			transform: unset;
 		}
 
 		&::before {
-			--color-button-text: var(--color-window-text) $i;
+			--color-button-text: var(--color-window-text);
 
 			z-index: 2;
 		}
@@ -176,14 +176,14 @@ for i in range(2, $max-nest) {
 	}
 
 	&-indent {
-		top: -18px $i;
-		height: calc(100% + 22px) $i;
+		top: -18px;
+		height: calc(100% + 22px);
 
 		& > .indent-guide {
-			border-left: 1px dotted var(--color-tree-border) $i;
+			border-left: 1px dotted var(--color-tree-border);
 
-			width: $icon-width + 4px $i;
-			height: calc(100% - 1px) $i;
+			width: $icon-width + 4px;
+			height: calc(100% - 1px);
 		}
 	}
 }
@@ -191,17 +191,17 @@ for i in range(2, $max-nest) {
 // Icons
 .show-file-icons [role="treeitem"] {
 	.file-icon::before {
-		content: '' $i;
+		content: '';
 
-		background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA0AAAAQCAMAAAD6fQULAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAPUExURQAAAP///4eIj8DHyAAAAIf7VzIAAAAFdFJOU/////8A+7YOUwAAAAlwSFlzAAAOwwAADsMBx2+oZAAAADZJREFUGFdjYGFhYIRCIBPIYYJCIBtIICCQBwfMWHgMDCBFOOVA0lSVgwEQjxkBGIDuhgMGFgBmBADr9EYr2gAAAABJRU5ErkJggg==') $i;
+		background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA0AAAAQCAMAAAD6fQULAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAPUExURQAAAP///4eIj8DHyAAAAIf7VzIAAAAFdFJOU/////8A+7YOUwAAAAlwSFlzAAAOwwAADsMBx2+oZAAAADZJREFUGFdjYGFhYIRCIBPIYYJCIBtIICCQBwfMWHgMDCBFOOVA0lSVgwEQjxkBGIDuhgMGFgBmBADr9EYr2gAAAABJRU5ErkJggg==');
 		background-size: 13px 16px;
 		background-position: center;
 	}
 
 	&[aria-expanded] .monaco-icon-label::before {
-		content: '' $i;
+		content: '';
 
-		background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA8AAAANCAMAAABBwMRzAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAASUExURYeIj8DHyP//AP///wAAAAAAAJRqB2kAAAAGdFJOU///////ALO/pL8AAAAJcEhZcwAADsMAAA7DAcdvqGQAAAA1SURBVBhXtYrRFQAQEMOCdv+VHcfDANKvtMVm4AWm1MguSI0ib9AuUHjuM9OPlh/7g7AupA6lNwF/p6NMjAAAAABJRU5ErkJggg==') $i;
+		background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA8AAAANCAMAAABBwMRzAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAASUExURYeIj8DHyP//AP///wAAAAAAAJRqB2kAAAAGdFJOU///////ALO/pL8AAAAJcEhZcwAADsMAAA7DAcdvqGQAAAA1SURBVBhXtYrRFQAQEMOCdv+VHcfDANKvtMVm4AWm1MguSI0ib9AuUHjuM9OPlh/7g7AupA6lNwF/p6NMjAAAAABJRU5ErkJggg==');
 	}
 }
 
@@ -219,17 +219,17 @@ for i in range(2, $max-nest) {
 	}
 
 	.explorer-folders-view & .monaco-icon-label {
-		margin-left: -5px $i;
+		margin-left: -5px;
 	}
 
 	.search-view & {
 		&[aria-level="2"] {
-			--multiply: 2.25 $i;
-			--b: 12px $i;
+			--multiply: 2.25;
+			--b: 12px;
 		}
 
 		&[data-last-element="true"] .monaco-tl-indent {
-			display: none $i;
+			display: none;
 		}
 	}
 }
@@ -237,25 +237,25 @@ for i in range(2, $max-nest) {
 // Panel
 .tree-container {
 	[aria-level="2"]:not([aria-expanded]) {
-		--multiply: 2.25 $i;
+		--multiply: 2.25;
 	}
 
 	.indent-guide {
-		visibility: hidden $i;
+		visibility: hidden;
 	}
 
 	[aria-expanded] .resource-label-container {
-		margin-left: -3px $i;
+		margin-left: -3px;
 	}
 }
 
 // Settings
 .settings-toc-container {
 	[aria-level="2"]:first-child {
-		--multiply: 3 $i;
+		--multiply: 3;
 
 		.monaco-tl-contents::before {
-			display: none $i;
+			display: none;
 		}
 	}
 }
