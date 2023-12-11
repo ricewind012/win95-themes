@@ -73,6 +73,8 @@
 		@extend button;
 
 		margin: 0;
+
+		display: block;
 	}
 }
 
@@ -88,7 +90,7 @@
 // Details right sidebar
 .additional-details {
 	&-container {
-		width: 36%;
+		width: 37%;
 
 		.category {
 			font();
@@ -111,4 +113,16 @@
 
 .more-info-entry {
 	font();
+}
+
+// Extension readme
+.webview {
+	box-shadow: var(--border-button-raised);
+
+	box-sizing: border-box;
+	padding: 1px 2px;
+}
+
+body[role="document"] {
+	box-shadow: none;
 }

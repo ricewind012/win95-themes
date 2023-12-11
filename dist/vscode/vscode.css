@@ -277,7 +277,7 @@ textarea:focus,
 }
 select,
 textarea,
-input:is(:not([type]),
+input:-webkit-any(:not([type]),
 [type="url"],
 [type="text"],
 [type="number"],
@@ -290,7 +290,7 @@ input:is(:not([type]),
   margin: 0 2px !important;
 }
 button,
-input:is([type="button"],
+input:-webkit-any([type="button"],
 [type="submit"]),
 .monaco-button,
 .monaco-toolbar .action-label,
@@ -320,7 +320,7 @@ input:is([type="button"],
   height: unset !important;
 }
 button:active,
-input:is([type="button"]:active,
+input:-webkit-any([type="button"]:active,
 [type="submit"]):active,
 .monaco-button:active,
 .monaco-toolbar .action-label:active,
@@ -1249,8 +1249,7 @@ legend,
 .codicon.codicon-testing-update-profiles::before,
 .codicon.codicon-tasks-list-configure::before,
 .codicon.codicon-theme-selection-manage-extension::before {
-  top: -1px !important;
-  height: 11px !important;
+  height: 13px !important;
 }
 .codicon-trash,
 .codicon-trashcan,
@@ -2046,6 +2045,7 @@ legend,
 }
 .extension-action {
   margin: 0 !important;
+  display: block !important;
 }
 .switch-to-prerelease {
   width: 167px !important;
@@ -2054,7 +2054,7 @@ legend,
   content: attr(aria-label) !important;
 }
 .additional-details-container {
-  width: 36% !important;
+  width: 37% !important;
 }
 .additional-details-container .category {
   font: var(--text-ui) !important;
@@ -2065,6 +2065,14 @@ legend,
 }
 .more-info-entry {
   font: var(--text-ui) !important;
+}
+.webview {
+  box-shadow: var(--border-button-raised) !important;
+  box-sizing: border-box !important;
+  padding: 1px 2px !important;
+}
+body[role="document"] {
+  box-shadow: none !important;
 }
 .gettingStartedContainer {
   font: var(--text-ui) !important;
@@ -2721,10 +2729,10 @@ legend,
 .window-close {
   margin-left: 2px !important;
 }
-.layout-controls-container {
+.action-toolbar-container {
   min-width: unset !important;
 }
-.layout-controls-container .action-label {
+.action-toolbar-container [role="presentation"] {
   --button-img-pos: 3px 2px !important;
 }
 .monaco-dialog-modal-block {
