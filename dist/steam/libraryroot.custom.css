@@ -170,6 +170,8 @@ hr,
   margin-bottom: 4px !important;
 }
 fieldset,
+[class*="pageablecontainer_PageableContainer_"],
+[class*="libraryhomeshowcases_Showcase_"],
 [class*="appfilterpane_FilterBucket_"],
 [class*="appproperties_SectionTopLine_"],
 .DialogControlsSection,
@@ -189,6 +191,15 @@ textarea,
 .title-area-icon,
 [class*="titlebarcontrols_AccountMenu_"],
 [class*="titlebarcontrols_Button_"],
+[class*="libraryhomenewupdates_SettingsButton_"],
+[class*="libraryhomenewupdates_EventOptions_"] > div,
+[class*="libraryhomenewupdates_GameIconAndName_"],
+[class*="pageablecontainer_"][class*="PageLeft"],
+[class*="libraryhomeshowcases_"][class*="PageLeft"],
+[class*="pageablecontainer_"][class*="PageRight"],
+[class*="libraryhomeshowcases_"][class*="PageRight"],
+[class*="libraryhomeshowcases_AddShowcase_"],
+[class*="libraryhomeshowcases_Collapser_"],
 [class*="gamelistdropdown_MenuHeader_"],
 [class*="gamelistdropdown_CheckboxWithImage_"],
 [class*="gamelistsearchbar_AdvancedSearchContainer_"],
@@ -213,6 +224,15 @@ textarea:disabled,
 .title-area-icon:disabled,
 [class*="titlebarcontrols_AccountMenu_"]:disabled,
 [class*="titlebarcontrols_Button_"]:disabled,
+[class*="libraryhomenewupdates_SettingsButton_"]:disabled,
+[class*="libraryhomenewupdates_EventOptions_"] > div:disabled,
+[class*="libraryhomenewupdates_GameIconAndName_"]:disabled,
+[class*="pageablecontainer_"][class*="PageLeft"]:disabled,
+[class*="libraryhomeshowcases_"][class*="PageLeft"]:disabled,
+[class*="pageablecontainer_"][class*="PageRight"]:disabled,
+[class*="libraryhomeshowcases_"][class*="PageRight"]:disabled,
+[class*="libraryhomeshowcases_AddShowcase_"]:disabled,
+[class*="libraryhomeshowcases_Collapser_"]:disabled,
 [class*="gamelistdropdown_MenuHeader_"]:disabled,
 [class*="gamelistdropdown_CheckboxWithImage_"]:disabled,
 [class*="gamelistsearchbar_AdvancedSearchContainer_"]:disabled,
@@ -221,7 +241,11 @@ textarea:disabled,
 [class*="bottombar_FriendsButton_"]:disabled,
 [class*="appproperties_WorkshopHeader_"]:disabled,
 .DialogDropDown:disabled,
-[class*="gamepaddialog_Toggle_"]:disabled {
+[class*="gamepaddialog_Toggle_"]:disabled,
+[class*="pageablecontainer_"][class*="PageLeft"][class*="Disabled"],
+[class*="libraryhomeshowcases_"][class*="PageLeft"][class*="Disabled"],
+[class*="pageablecontainer_"][class*="PageRight"][class*="Disabled"],
+[class*="libraryhomeshowcases_"][class*="PageRight"][class*="Disabled"] {
   --color-window: var(--color-button-face) !important;
   --color-window-text: var(--color-gray-text) !important;
   --color-button-text: var(--color-button-shadow) !important;
@@ -235,6 +259,15 @@ textarea:focus,
 .title-area-icon:focus,
 [class*="titlebarcontrols_AccountMenu_"]:focus,
 [class*="titlebarcontrols_Button_"]:focus,
+[class*="libraryhomenewupdates_SettingsButton_"]:focus,
+[class*="libraryhomenewupdates_EventOptions_"] > div:focus,
+[class*="libraryhomenewupdates_GameIconAndName_"]:focus,
+[class*="pageablecontainer_"][class*="PageLeft"]:focus,
+[class*="libraryhomeshowcases_"][class*="PageLeft"]:focus,
+[class*="pageablecontainer_"][class*="PageRight"]:focus,
+[class*="libraryhomeshowcases_"][class*="PageRight"]:focus,
+[class*="libraryhomeshowcases_AddShowcase_"]:focus,
+[class*="libraryhomeshowcases_Collapser_"]:focus,
 [class*="gamelistdropdown_MenuHeader_"]:focus,
 [class*="gamelistdropdown_CheckboxWithImage_"]:focus,
 [class*="gamelistsearchbar_AdvancedSearchContainer_"]:focus,
@@ -249,7 +282,7 @@ textarea:focus,
 }
 select,
 textarea,
-input:is(:not([type]),
+input:-webkit-any(:not([type]),
 [type="url"],
 [type="text"],
 [type="number"],
@@ -265,10 +298,19 @@ input:is(:not([type]),
   margin: 0 2px !important;
 }
 button,
-input:is([type="button"],
+input:-webkit-any([type="button"],
 [type="submit"]),
 .title-area-icon,
 [class*="titlebarcontrols_Button_"],
+[class*="libraryhomenewupdates_SettingsButton_"],
+[class*="libraryhomenewupdates_EventOptions_"] > div,
+[class*="libraryhomenewupdates_GameIconAndName_"],
+[class*="pageablecontainer_"][class*="PageLeft"],
+[class*="libraryhomeshowcases_"][class*="PageLeft"],
+[class*="pageablecontainer_"][class*="PageRight"],
+[class*="libraryhomeshowcases_"][class*="PageRight"],
+[class*="libraryhomeshowcases_AddShowcase_"],
+[class*="libraryhomeshowcases_Collapser_"],
 [class*="gamelistdropdown_CheckboxWithImage_"],
 [class*="gamelistsearchbar_AdvancedSearchContainer_"],
 [class*="bottombar_AddGameButton_"],
@@ -286,10 +328,19 @@ input:is([type="button"],
   height: unset !important;
 }
 button:active,
-input:is([type="button"]:active,
+input:-webkit-any([type="button"]:active,
 [type="submit"]):active,
 .title-area-icon:active,
 [class*="titlebarcontrols_Button_"]:active,
+[class*="libraryhomenewupdates_SettingsButton_"]:active,
+[class*="libraryhomenewupdates_EventOptions_"] > div:active,
+[class*="libraryhomenewupdates_GameIconAndName_"]:active,
+[class*="pageablecontainer_"][class*="PageLeft"]:active,
+[class*="libraryhomeshowcases_"][class*="PageLeft"]:active,
+[class*="pageablecontainer_"][class*="PageRight"]:active,
+[class*="libraryhomeshowcases_"][class*="PageRight"]:active,
+[class*="libraryhomeshowcases_AddShowcase_"]:active,
+[class*="libraryhomeshowcases_Collapser_"]:active,
 [class*="gamelistdropdown_CheckboxWithImage_"]:active,
 [class*="gamelistsearchbar_AdvancedSearchContainer_"]:active,
 [class*="bottombar_AddGameButton_"]:active,
@@ -579,6 +630,8 @@ td {
   font: var(--text-ui) !important;
 }
 legend,
+[class*="pageablecontainer_Name_"],
+[class*="libraryhomeshowcases_ShowcaseHeader_"],
 [class*="appfilterpane_FilterBucketLabel_"],
 .DialogControlsSectionHeader,
 .DialogSubHeader,
@@ -621,6 +674,12 @@ body,
 }
 .title-area-icon,
 [class*="titlebarcontrols_Button_"],
+[class*="libraryhomenewupdates_SettingsButton_"],
+[class*="libraryhomenewupdates_EventOptions_"] > div,
+[class*="pageablecontainer_"][class*="PageLeft"],
+[class*="libraryhomeshowcases_"][class*="PageLeft"],
+[class*="pageablecontainer_"][class*="PageRight"],
+[class*="libraryhomeshowcases_"][class*="PageRight"],
 [class*="gamelistdropdown_CheckboxWithImage_"] {
   padding: 0 !important;
   margin: 0 !important;
@@ -630,9 +689,21 @@ body,
 }
 .title-area-icon::before,
 [class*="titlebarcontrols_Button_"]::before,
+[class*="libraryhomenewupdates_SettingsButton_"]::before,
+[class*="libraryhomenewupdates_EventOptions_"] > div::before,
+[class*="pageablecontainer_"][class*="PageLeft"]::before,
+[class*="libraryhomeshowcases_"][class*="PageLeft"]::before,
+[class*="pageablecontainer_"][class*="PageRight"]::before,
+[class*="libraryhomeshowcases_"][class*="PageRight"]::before,
 [class*="gamelistdropdown_CheckboxWithImage_"]::before,
 .title-area-icon::after,
 [class*="titlebarcontrols_Button_"]::after,
+[class*="libraryhomenewupdates_SettingsButton_"]::after,
+[class*="libraryhomenewupdates_EventOptions_"] > div::after,
+[class*="pageablecontainer_"][class*="PageLeft"]::after,
+[class*="libraryhomeshowcases_"][class*="PageLeft"]::after,
+[class*="pageablecontainer_"][class*="PageRight"]::after,
+[class*="libraryhomeshowcases_"][class*="PageRight"]::after,
 [class*="gamelistdropdown_CheckboxWithImage_"]::after {
   content: '' !important;
   -webkit-mask: var(--button-img, none) no-repeat !important;
@@ -648,10 +719,26 @@ body,
 }
 .title-area-icon::before,
 [class*="titlebarcontrols_Button_"]::before,
+[class*="libraryhomenewupdates_SettingsButton_"]::before,
+[class*="libraryhomenewupdates_EventOptions_"] > div::before,
+[class*="pageablecontainer_"][class*="PageLeft"]::before,
+[class*="libraryhomeshowcases_"][class*="PageLeft"]::before,
+[class*="pageablecontainer_"][class*="PageRight"]::before,
+[class*="libraryhomeshowcases_"][class*="PageRight"]::before,
 [class*="gamelistdropdown_CheckboxWithImage_"]::before {
   background-color: var(--color-button-text) !important;
   z-index: 1 !important;
 }
+[class*="pageablecontainer_"][class*="PageLeft"][class*="Disabled"]::after,
+[class*="libraryhomeshowcases_"][class*="PageLeft"][class*="Disabled"]::after,
+[class*="pageablecontainer_"][class*="PageRight"][class*="Disabled"]::after,
+[class*="libraryhomeshowcases_"][class*="PageRight"][class*="Disabled"]::after {
+  background-color: var(--color-button-highlight) !important;
+  left: 1px !important;
+  top: 1px !important;
+}
+[class*="pageablecontainer_Name_"],
+[class*="libraryhomeshowcases_ShowcaseHeader_"],
 [class*="appfilterpane_FilterBucketLabel_"],
 .DialogControlsSectionHeader,
 .DialogSubHeader,
@@ -904,6 +991,167 @@ body,
   box-shadow: none !important;
   padding: 3px !important;
   margin: 0 !important;
+}
+[class*="libraryhome_Container_"] {
+  background: transparent !important;
+}
+[class*="libraryhome_UpdatesContainer_"],
+[class*="libraryhome_LibraryHome_"] {
+  background: none !important;
+  color: var(--color-window-text) !important;
+  height: unset !important;
+}
+[class*="libraryhomenewupdates_SettingsButton_"] {
+  --button-img: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMSAxMSI+PHJlY3Qgd2lkdGg9IjEiIGhlaWdodD0iMSIgeD0iNSIgeT0iNCIvPjxyZWN0IHdpZHRoPSIxIiBoZWlnaHQ9IjEiIHg9IjUiIHk9IjYiLz48cmVjdCB3aWR0aD0iMSIgaGVpZ2h0PSIxIiB4PSI0IiB5PSI1Ii8+PHJlY3Qgd2lkdGg9IjEiIGhlaWdodD0iMSIgeD0iNiIgeT0iNSIvPjxyZWN0IHdpZHRoPSIzIiBoZWlnaHQ9IjEiIHg9IjQiLz48cmVjdCB3aWR0aD0iMSIgaGVpZ2h0PSIyIiB4PSI0IiB5PSIxIi8+PHJlY3Qgd2lkdGg9IjEiIGhlaWdodD0iMiIgeD0iNiIgeT0iMSIvPjxyZWN0IHdpZHRoPSIzIiBoZWlnaHQ9IjEiIHg9IjQiIHk9IjEwIi8+PHJlY3Qgd2lkdGg9IjEiIGhlaWdodD0iMiIgeD0iNCIgeT0iOCIvPjxyZWN0IHdpZHRoPSIxIiBoZWlnaHQ9IjIiIHg9IjYiIHk9IjgiLz48cmVjdCB3aWR0aD0iMSIgaGVpZ2h0PSIxIiB4PSIyIiB5PSIxIi8+PHJlY3Qgd2lkdGg9IjEiIGhlaWdodD0iMSIgeD0iMiIgeT0iMyIvPjxyZWN0IHdpZHRoPSIxIiBoZWlnaHQ9IjEiIHg9IjEiIHk9IjIiLz48cmVjdCB3aWR0aD0iMSIgaGVpZ2h0PSIxIiB4PSIzIiB5PSIyIi8+PHJlY3Qgd2lkdGg9IjEiIGhlaWdodD0iMiIgeD0iNiIgeT0iOCIvPjxyZWN0IHdpZHRoPSIxIiBoZWlnaHQ9IjEiIHg9IjgiIHk9IjEiLz48cmVjdCB3aWR0aD0iMSIgaGVpZ2h0PSIxIiB4PSI4IiB5PSIzIi8+PHJlY3Qgd2lkdGg9IjEiIGhlaWdodD0iMSIgeD0iNyIgeT0iMiIvPjxyZWN0IHdpZHRoPSIxIiBoZWlnaHQ9IjEiIHg9IjkiIHk9IjIiLz48cmVjdCB3aWR0aD0iMSIgaGVpZ2h0PSIxIiB4PSI4IiB5PSI3Ii8+PHJlY3Qgd2lkdGg9IjEiIGhlaWdodD0iMSIgeD0iOCIgeT0iOSIvPjxyZWN0IHdpZHRoPSIxIiBoZWlnaHQ9IjEiIHg9IjciIHk9IjgiLz48cmVjdCB3aWR0aD0iMSIgaGVpZ2h0PSIxIiB4PSI5IiB5PSI4Ii8+PHJlY3Qgd2lkdGg9IjEiIGhlaWdodD0iMSIgeD0iMiIgeT0iNyIvPjxyZWN0IHdpZHRoPSIxIiBoZWlnaHQ9IjEiIHg9IjIiIHk9IjkiLz48cmVjdCB3aWR0aD0iMSIgaGVpZ2h0PSIxIiB4PSIxIiB5PSI4Ii8+PHJlY3Qgd2lkdGg9IjEiIGhlaWdodD0iMSIgeD0iMyIgeT0iOCIvPjxyZWN0IHdpZHRoPSIxIiBoZWlnaHQ9IjMiIHk9IjQiLz48cmVjdCB3aWR0aD0iMSIgaGVpZ2h0PSIzIiB4PSIxMCIgeT0iNCIvPjxyZWN0IHdpZHRoPSIyIiBoZWlnaHQ9IjEiIHg9IjEiIHk9IjQiLz48cmVjdCB3aWR0aD0iMiIgaGVpZ2h0PSIxIiB4PSIxIiB5PSI2Ii8+PHJlY3Qgd2lkdGg9IjIiIGhlaWdodD0iMSIgeD0iOCIgeT0iNCIvPjxyZWN0IHdpZHRoPSIyIiBoZWlnaHQ9IjEiIHg9IjgiIHk9IjYiLz48L3N2Zz4K") !important;
+  --button-img-size: 11px !important;
+  --button-img-pos: 2px !important;
+}
+[class*="libraryhomenewupdates_SettingsButton_"]::before {
+  height: 13px !important;
+}
+[class*="libraryhomenewupdates_SettingsButton_"] svg {
+  display: none !important;
+}
+[class*="libraryhomenewupdates_EventRowCarousel_"] {
+  margin: 0 !important;
+}
+[class*="libraryhomenewupdates_EventTime_"] {
+  font: var(--text-ui) !important;
+  color: inherit !important;
+  padding-top: 4px !important;
+}
+[class*="libraryhomenewupdates_EventOptions_"] {
+  opacity: 1 !important;
+  padding-top: 4px !important;
+  padding-right: 4px !important;
+}
+[class*="libraryhomenewupdates_EventOptions_"] > div {
+  --button-img: var(--icon-arrow-bottom) !important;
+  --button-img-size: 7px 4px !important;
+  --button-img-pos: 4px center !important;
+  background-image: none !important;
+}
+[class*="libraryhomenewupdates_PartnerEventRowCapsule_TextTitle_"] {
+  font: var(--text-ui) !important;
+  color: var(--color-window-text) !important;
+}
+[class*="libraryhomenewupdates_GameIconAndName_"] {
+  width: unset !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+[class*="libraryhomenewupdates_GameIcon_"] {
+  filter: none !important;
+  margin-right: 4px !important;
+  width: 16px !important;
+  height: 16px !important;
+}
+[class*="libraryhomenewupdates_GameName_"] {
+  color: inherit !important;
+}
+[class*="boxcarousel_MaskRight_"] {
+  --negative-margin: 12px !important;
+}
+[class*="pageablecontainer_"][class*="PageLeft"],
+[class*="libraryhomeshowcases_"][class*="PageLeft"],
+[class*="pageablecontainer_"][class*="PageRight"],
+[class*="libraryhomeshowcases_"][class*="PageRight"] {
+  --button-img-size: 4px 7px !important;
+  --button-img-pos: center !important;
+  opacity: 1 !important;
+}
+[class*="pageablecontainer_"][class*="PageLeft"] svg,
+[class*="libraryhomeshowcases_"][class*="PageLeft"] svg,
+[class*="pageablecontainer_"][class*="PageRight"] svg,
+[class*="libraryhomeshowcases_"][class*="PageRight"] svg {
+  display: none !important;
+}
+[class*="pageablecontainer_"][class*="PageLeft"],
+[class*="libraryhomeshowcases_"][class*="PageLeft"] {
+  --button-img: var(--icon-arrow-left) !important;
+}
+[class*="pageablecontainer_"][class*="PageRight"],
+[class*="libraryhomeshowcases_"][class*="PageRight"] {
+  --button-img: var(--icon-arrow-right) !important;
+}
+[class*="pageablecontainer_PageableContainer_"] svg {
+  color: inherit !important;
+}
+[class*="pageablecontainer_PageableContainer_"] polyline {
+  stroke: var(--color-window-text) !important;
+}
+[class*="pageablecontainer_HeaderPageControls_"] {
+  font: var(--text-ui) !important;
+  color: inherit !important;
+}
+[class*="pageablecontainer_Name_"] {
+  background-color: var(--color-window) !important;
+  letter-spacing: 0 !important;
+}
+[class*="libraryhomeshowcases_AddShowcase_"] {
+  text-transform: unset !important;
+  justify-content: center !important;
+}
+[class*="libraryhomeshowcases_AddShowcase_"] svg {
+  display: none !important;
+}
+[class*="libraryhomeshowcases_Collapser_"] {
+  padding: 4px !important;
+  width: 20px !important;
+  height: 20px !important;
+}
+[class*="libraryhomeshowcases_Collapser_"] svg {
+  margin: 0 !important;
+}
+[class*="libraryhomeshowcases_Collapser_"] polyline {
+  stroke: var(--color-button-text) !important;
+}
+[class*="libraryhomeshowcases_Showcase_"] {
+  margin-bottom: 16px !important;
+}
+[class*="libraryhomeshowcases_ShowcaseHeader_"] {
+  background-color: var(--color-window) !important;
+  color: inherit !important;
+  border: none !important;
+  top: -12px !important;
+  align-items: center !important;
+}
+[class*="libraryhomeshowcases_CountDisplay_"] {
+  color: inherit !important;
+}
+[class*="libraryhomeshowcases_PageButtons_"] {
+  margin: 0 !important;
+}
+[class*="libraryhomeshowcases_ChildrenContainer_"] > div {
+  border: none !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+[class*="libraryhomerecentgames_RecentGames_"] {
+  height: unset !important;
+}
+[class*="libraryhomerecentgames_AddedDate_"] {
+  font: var(--text-ui) !important;
+  letter-spacing: 0 !important;
+  color: inherit !important;
+}
+[class*="libraryhomerecentgames_EmptyDate_"] {
+  height: calc(var(--text-size) * var(--text-line)) !important;
+}
+[class*="appgrid_SortingDropDownLabel_"] {
+  font: var(--text-ui) !important;
+  color: inherit !important;
+  text-transform: unset !important;
+  letter-spacing: 0 !important;
+  margin: 0 !important;
+}
+[class*="appgrid_SortingDropDownLabel_"]::after {
+  content: ': ' !important;
+}
+[class*="appportrait_LibraryItemBox_"] {
+  border: none !important;
+  box-shadow: 0 0 1px var(--color-button-shadow) !important;
 }
 [class*="library_LibraryWindowDivider_"] {
   background-color: transparent !important;

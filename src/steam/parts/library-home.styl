@@ -1,0 +1,251 @@
+[class*="libraryhome_"] {
+	/{attr(Container)} {
+		background: transparent;
+	}
+
+	/{attr(UpdatesContainer)},
+	/{attr(LibraryHome)} {
+		background: none;
+		color: var(--color-window-text);
+
+		height: unset;
+	}
+}
+
+[class*="libraryhomenewupdates_"] {
+	/{attr(SettingsButton)} {
+		@extend $small-button;
+
+		--button-img: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMSAxMSI+PHJlY3Qgd2lkdGg9IjEiIGhlaWdodD0iMSIgeD0iNSIgeT0iNCIvPjxyZWN0IHdpZHRoPSIxIiBoZWlnaHQ9IjEiIHg9IjUiIHk9IjYiLz48cmVjdCB3aWR0aD0iMSIgaGVpZ2h0PSIxIiB4PSI0IiB5PSI1Ii8+PHJlY3Qgd2lkdGg9IjEiIGhlaWdodD0iMSIgeD0iNiIgeT0iNSIvPjxyZWN0IHdpZHRoPSIzIiBoZWlnaHQ9IjEiIHg9IjQiLz48cmVjdCB3aWR0aD0iMSIgaGVpZ2h0PSIyIiB4PSI0IiB5PSIxIi8+PHJlY3Qgd2lkdGg9IjEiIGhlaWdodD0iMiIgeD0iNiIgeT0iMSIvPjxyZWN0IHdpZHRoPSIzIiBoZWlnaHQ9IjEiIHg9IjQiIHk9IjEwIi8+PHJlY3Qgd2lkdGg9IjEiIGhlaWdodD0iMiIgeD0iNCIgeT0iOCIvPjxyZWN0IHdpZHRoPSIxIiBoZWlnaHQ9IjIiIHg9IjYiIHk9IjgiLz48cmVjdCB3aWR0aD0iMSIgaGVpZ2h0PSIxIiB4PSIyIiB5PSIxIi8+PHJlY3Qgd2lkdGg9IjEiIGhlaWdodD0iMSIgeD0iMiIgeT0iMyIvPjxyZWN0IHdpZHRoPSIxIiBoZWlnaHQ9IjEiIHg9IjEiIHk9IjIiLz48cmVjdCB3aWR0aD0iMSIgaGVpZ2h0PSIxIiB4PSIzIiB5PSIyIi8+PHJlY3Qgd2lkdGg9IjEiIGhlaWdodD0iMiIgeD0iNiIgeT0iOCIvPjxyZWN0IHdpZHRoPSIxIiBoZWlnaHQ9IjEiIHg9IjgiIHk9IjEiLz48cmVjdCB3aWR0aD0iMSIgaGVpZ2h0PSIxIiB4PSI4IiB5PSIzIi8+PHJlY3Qgd2lkdGg9IjEiIGhlaWdodD0iMSIgeD0iNyIgeT0iMiIvPjxyZWN0IHdpZHRoPSIxIiBoZWlnaHQ9IjEiIHg9IjkiIHk9IjIiLz48cmVjdCB3aWR0aD0iMSIgaGVpZ2h0PSIxIiB4PSI4IiB5PSI3Ii8+PHJlY3Qgd2lkdGg9IjEiIGhlaWdodD0iMSIgeD0iOCIgeT0iOSIvPjxyZWN0IHdpZHRoPSIxIiBoZWlnaHQ9IjEiIHg9IjciIHk9IjgiLz48cmVjdCB3aWR0aD0iMSIgaGVpZ2h0PSIxIiB4PSI5IiB5PSI4Ii8+PHJlY3Qgd2lkdGg9IjEiIGhlaWdodD0iMSIgeD0iMiIgeT0iNyIvPjxyZWN0IHdpZHRoPSIxIiBoZWlnaHQ9IjEiIHg9IjIiIHk9IjkiLz48cmVjdCB3aWR0aD0iMSIgaGVpZ2h0PSIxIiB4PSIxIiB5PSI4Ii8+PHJlY3Qgd2lkdGg9IjEiIGhlaWdodD0iMSIgeD0iMyIgeT0iOCIvPjxyZWN0IHdpZHRoPSIxIiBoZWlnaHQ9IjMiIHk9IjQiLz48cmVjdCB3aWR0aD0iMSIgaGVpZ2h0PSIzIiB4PSIxMCIgeT0iNCIvPjxyZWN0IHdpZHRoPSIyIiBoZWlnaHQ9IjEiIHg9IjEiIHk9IjQiLz48cmVjdCB3aWR0aD0iMiIgaGVpZ2h0PSIxIiB4PSIxIiB5PSI2Ii8+PHJlY3Qgd2lkdGg9IjIiIGhlaWdodD0iMSIgeD0iOCIgeT0iNCIvPjxyZWN0IHdpZHRoPSIyIiBoZWlnaHQ9IjEiIHg9IjgiIHk9IjYiLz48L3N2Zz4K');
+		--button-img-size: 11px;
+		--button-img-pos: 2px;
+
+		&::before {
+			height: 13px;
+		}
+
+		svg {
+			display: none;
+		}
+	}
+
+	/{attr(EventRowCarousel)} {
+		margin: 0;
+	}
+
+	/{attr(EventTime)} {
+		font: var(--text-ui);
+		color: inherit;
+
+		padding-top: 4px;
+	}
+
+	/{attr(EventOptions)} {
+		opacity: 1;
+
+		padding-top: 4px;
+		padding-right: 4px;
+
+		& > div {
+			@extend $small-button;
+
+			--button-img: var(--icon-arrow-bottom);
+			--button-img-size: 7px 4px;
+			--button-img-pos: 4px center;
+
+			background-image: none;
+		}
+	}
+
+	/{attr(PartnerEventRowCapsule)} {
+		/{attr(TextTitle)} {
+			font: var(--text-ui);
+			color: var(--color-window-text);
+		}
+	}
+
+	/{attr(GameIconAndName)} {
+		@extend button;
+
+		width: unset;
+		align-items: center;
+		justify-content: center;
+	}
+
+	/{attr(GameIcon)} {
+		filter: none;
+
+		margin-right: 4px;
+
+		box(16px);
+	}
+
+	/{attr(GameName)} {
+		color: inherit;
+	}
+}
+
+[class*="boxcarousel_"] {
+	/{attr(MaskRight)} {
+		--negative-margin: 12px;
+	}
+}
+
+[class*="pageablecontainer_"],
+[class*="libraryhomeshowcases_"] {
+	&[class*="PageLeft"],
+	&[class*="PageRight"] {
+		@extend $small-button;
+
+		--button-img-size: 4px 7px;
+		--button-img-pos: center;
+
+		opacity: 1;
+
+		&[class*="Disabled"] {
+			@extend $small-button-disabled;
+		}
+
+		svg {
+			display: none;
+		}
+	}
+
+	&[class*="PageLeft"] {
+		--button-img: var(--icon-arrow-left);
+	}
+
+	&[class*="PageRight"] {
+		--button-img: var(--icon-arrow-right);
+	}
+}
+
+[class*="pageablecontainer_"] {
+	/{attr(PageableContainer)} {
+		@extend fieldset;
+
+		svg {
+			color: inherit;
+		}
+
+		polyline {
+			stroke: var(--color-window-text);
+		}
+	}
+
+	/{attr(HeaderPageControls)} {
+		font: var(--text-ui);
+		color: inherit;
+	}
+
+	/{attr(Name)} {
+		@extend $legend-as-div;
+
+		background-color: var(--color-window);
+
+		letter-spacing: 0;
+	}
+}
+
+[class*="libraryhomeshowcases_"] {
+	/{attr(AddShowcase)} {
+		@extend button;
+
+		text-transform: unset;
+		justify-content: center;
+
+		svg {
+			display: none;
+		}
+	}
+
+	/{attr(Collapser)} {
+		@extend button;
+
+		padding: 4px;
+
+		box(20px);
+
+		svg {
+			margin: 0;
+		}
+
+		polyline {
+			stroke: var(--color-button-text);
+		}
+	}
+
+	/{attr(Showcase)} {
+		@extend fieldset;
+
+		margin-bottom: 16px;
+	}
+
+	/{attr(ShowcaseHeader)} {
+		@extend $legend-as-div;
+
+		background-color: var(--color-window);
+		color: inherit;
+		border: none;
+
+		top: -12px;
+		align-items: center;
+	}
+
+	/{attr(CountDisplay)} {
+		color: inherit;
+	}
+
+	/{attr(PageButtons)} {
+		margin: 0;
+	}
+
+	/{attr(ChildrenContainer)} {
+		// PageableContainer
+		& > div {
+			border: none;
+			box-shadow: none;
+
+			padding: 0;
+			margin: 0;
+		}
+	}
+}
+
+[class*="libraryhomerecentgames_"] {
+	/{attr(RecentGames)} {
+		height: unset;
+	}
+
+	/{attr(AddedDate)} {
+		font: var(--text-ui);
+		letter-spacing: 0;
+		color: inherit;
+	}
+
+	/{attr(EmptyDate)} {
+		height: calc(var(--text-size) * var(--text-line));
+	}
+}
+
+[class*="appgrid_"] {
+	/{attr(SortingDropDownLabel)} {
+		font: var(--text-ui);
+		color: inherit;
+		text-transform: unset;
+		letter-spacing: 0;
+
+		margin: 0;
+
+		&::after {
+			content: ': ';
+		}
+	}
+}
+
+[class*="appportrait_"] {
+	/{attr(LibraryItemBox)} {
+		border: none;
+		box-shadow: 0 0 1px var(--color-button-shadow);
+	}
+}

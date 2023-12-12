@@ -66,11 +66,15 @@ switch (process.argv[3]) {
 
 		renderer.render((err, css) => {
 			if (err)
-				console.log(err.message);
+				throw new Error(err.message);
 
 			css = css
 				.split('\n')
-				.map(e => e.replace(/;$/g, ' !important;'))
+				.map(e => e
+					.replace(/;$/g, ' !important;')
+					// TODO: remove when Steam updates chrome
+					.replace(/:is/g, ':-webkit-any')
+				)
 				.join('\n');
 
 			fs.writeFileSync(outFile, css);
