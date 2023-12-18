@@ -88,6 +88,11 @@ switch (process.argv[3]) {
 				path.join(rootDir, `${file}.ts`),
 			], {
 				target:  ts.ScriptTarget.ES2020,
+				lib:     [
+					"es2020",
+					"dom",
+					"dom.iterable",
+				].map(e => `lib.${e}.d.ts`),
 				outFile: outFile,
 			}
 		);

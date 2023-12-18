@@ -1175,9 +1175,12 @@ body,
   background-color: transparent !important;
   box-shadow: none !important;
   padding: 0 !important;
-  padding-left: 4px !important;
+  padding-left: 10px !important;
   margin-left: 269px !important;
+  margin-top: -1px !important;
+  position: fixed !important;
   height: unset !important;
+  z-index: 1 !important;
 }
 [class*="gamelistbar_GameListHomeAndSearch_"] a {
   margin-top: 2px !important;

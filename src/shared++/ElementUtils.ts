@@ -52,15 +52,15 @@ module ElementUtils {
 	export function wait(
 		selector: string,
 		parent: Document | Element = document,
-	): Promise<Element> {
+	): Promise<HTMLElement> {
 		return new Promise((resolve) => {
-			let el: Element | null = parent.querySelector(selector);
+			let el: HTMLElement | null = parent.querySelector(selector);
 
 			if (el)
 				resolve(el);
 
 			let observer = new MutationObserver(() => {
-				let el: Element | null = parent.querySelector(selector);
+				let el: HTMLElement | null = parent.querySelector(selector);
 
 				if (!el)
 					return;
