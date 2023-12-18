@@ -117,14 +117,9 @@
 		}
 	}
 
-	/{attr(SearchBar)} {
-		align-items: center;
-	}
-
 	/{attr(MenuHeader)} {
 		@extend select;
-		font: var(--text-ui);
-		text-transform: unset;
+
 		cursor: default;
 	}
 
@@ -154,7 +149,9 @@
 
 [class*="gamelistsearchbar_"] {
 	/{attr(Container)} {
-		padding: 4px 0;
+		background-color: transparent;
+
+		margin: 4px 0;
 	}
 
 	/{attr(FilterTag)} {
@@ -164,8 +161,6 @@
 	}
 
 	/{attr(SearchInput)} {
-		border-radius: 0;
-		margin-bottom: -1px;
 		min-height: unset;
 	}
 

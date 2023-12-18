@@ -16,39 +16,77 @@
 	}
 
 	// Workshop
-	/{attr(ViewMore)} {
-		flex: unset;
-	}
-
-	/{attr(WorkshopGrid)} {
+	/{attr(WorkshopItemsRowsScrollable)} {
 		@extend table;
+
+		font: var(--text-ui);
 
 		padding: 2px;
 		margin: 0;
-
-		box(unset);
 	}
 
-	/{attr(WorkshopHeader)} {
-		@extend button;
-
-		margin: 0;
-		box(unset);
+	/{attr(WorkshopItemRowsScroll)} {
+		border: none;
+		box-shadow: none;
 	}
 
-	/{attr(TriangleUp)},
-	/{attr(TriangleDown)} {
-		display: inline-block;
+	/{attr(WorkshopItemRow)} {
+		filter: none;
+		background-color: var(--color-window);
+		box-shadow: none;
+
+		&[class*="IsDragging_"] {
+			background-color: var(--color-highlight);
+			--color-window-text: var(--color-highlight-text);
+		}
 	}
 
-	/{attr(Install)},
-	/{attr(Name)},
-	/{attr(SizeDisk)} {
-		margin: 3px;
+	/{attr(LoadOrder)},
+	/{attr(SortedColumn)} {
+		font: var(--text-ui);
+		color: var(--color-window-text);
 	}
 
-	/{attr(Name)} {
-		color: var(--color-button-text);
+	/{attr(Details)} {
+		& > :first-child {
+			width: 88px;
+
+			display: flex;
+			justify-content: center;
+		}
+	}
+
+	/{attr(TextDetails)} {
+		background-color: transparent;
+		color: var(--color-window-text);
+	}
+
+	/{attr(WorkshopItemDependencies)},
+	/{attr(WorkshopItemTagsContainer)} {
+		background-color: transparent;
+		font: var(--text-ui);
+		color: var(--color-gray-text);
+	}
+
+	/{attr(DragHandle)} {
+		opacity: 1;
+		color: var(--color-window-text);
+
+		left: 80%;
+	}
+
+	/{attr(Controls)} {
+		& > .DialogButton {
+			@extend $small-button;
+
+			--button-img: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA5IDkiPjxyZWN0IHdpZHRoPSI5IiBoZWlnaHQ9IjEiIHk9IjIiLz48cmVjdCB3aWR0aD0iMSIgaGVpZ2h0PSIxIiB4PSIyIiB5PSIxIi8+PHJlY3Qgd2lkdGg9IjMiIGhlaWdodD0iMSIgeD0iMyIvPjxyZWN0IHdpZHRoPSIxIiBoZWlnaHQ9IjEiIHg9IjYiIHk9IjEiLz48cmVjdCB3aWR0aD0iMSIgaGVpZ2h0PSI1IiB4PSIxIiB5PSIzIi8+PHJlY3Qgd2lkdGg9IjEiIGhlaWdodD0iMyIgeD0iMyIgeT0iNCIvPjxyZWN0IHdpZHRoPSIxIiBoZWlnaHQ9IjMiIHg9IjUiIHk9IjQiLz48cmVjdCB3aWR0aD0iMSIgaGVpZ2h0PSI1IiB4PSI3IiB5PSIzIi8+PHJlY3Qgd2lkdGg9IjUiIGhlaWdodD0iMSIgeD0iMiIgeT0iOCIvPjwvc3ZnPgo=');
+			--button-img-size: 9px;
+			--button-img-pos: 3px 2px;
+
+			svg {
+				display: none;
+			}
+		}
 	}
 
 	// etc.

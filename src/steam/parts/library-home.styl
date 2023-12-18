@@ -40,11 +40,17 @@
 		padding-top: 4px;
 	}
 
+	/{attr(MainImageContainer)} {
+		border-radius: 0;
+	}
+
 	/{attr(EventOptions)} {
 		opacity: 1;
 
 		padding-top: 4px;
 		padding-right: 4px;
+
+		right: 0;
 
 		& > div {
 			@extend $small-button;

@@ -1,5 +1,7 @@
 let classes: any = {};
 
+declare var SteamClient: any;
+
 new Set(
 	[...document.querySelectorAll<HTMLStyleElement>('[rel="stylesheet"]')]
 		.map(e => [...e.sheet.cssRules])
@@ -23,21 +25,27 @@ new Set(
 
 let el = (s: string) => document.querySelector<HTMLElement>(`.${s}`);
 
-(async () => {
-	let sidebar = await ElementUtils.wait(`.${classes.library.LeftListSizableContainer}`);
-	let tabs = await ElementUtils.wait(
-		`.${classes.gamelistbar.GameListHomeAndSearch}`,
-		sidebar
-	);
+if (document.title == 'Steam') {
+	(async () => {
+		let sidebar = await ElementUtils.wait(`.${classes.library.LeftListSizableContainer}`);
+		let tabs = await ElementUtils.wait(
+			`.${classes.gamelistbar.GameListHomeAndSearch}`,
+			sidebar
+		);
 
-	ElementUtils.act(
-		sidebar,
-		() => {
-			tabs.style.marginLeft = `${sidebar.style.width} !important`;
-		},
-		{
-			attributes: true,
-			attributeFilter: [ 'style' ],
-		}
-	);
-})();
+		ElementUtils.act(
+			sidebar,
+			() => {
+				tabs.style.marginLeft = `${sidebar.style.width} !important`;
+			},
+			{
+				attributes: true,
+				attributeFilter: [ 'style' ],
+			}
+		);
+	})();
+}
+
+if (document.title == 'Steam Settings') {
+	SteamClient.Window.ResizeTo(1010, 722, true);
+}

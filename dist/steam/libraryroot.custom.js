@@ -73,13 +73,18 @@ new Set([...document.querySelectorAll('[rel="stylesheet"]')]
     classes[namespace][classname] = e;
 });
 let el = (s) => document.querySelector(`.${s}`);
-(async () => {
-    let sidebar = await ElementUtils.wait(`.${classes.library.LeftListSizableContainer}`);
-    let tabs = await ElementUtils.wait(`.${classes.gamelistbar.GameListHomeAndSearch}`);
-    ElementUtils.act(sidebar, () => {
-        tabs.style.marginLeft = `${sidebar.style.width} !important`;
-    }, {
-        attributes: true,
-        attributeFilter: ['style'],
-    });
-})();
+if (document.title == 'Steam') {
+    (async () => {
+        let sidebar = await ElementUtils.wait(`.${classes.library.LeftListSizableContainer}`);
+        let tabs = await ElementUtils.wait(`.${classes.gamelistbar.GameListHomeAndSearch}`, sidebar);
+        ElementUtils.act(sidebar, () => {
+            tabs.style.marginLeft = `${sidebar.style.width} !important`;
+        }, {
+            attributes: true,
+            attributeFilter: ['style'],
+        });
+    })();
+}
+if (document.title == 'Steam Settings') {
+    SteamClient.Window.ResizeTo(1010, 722, true);
+}

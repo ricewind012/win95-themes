@@ -16,6 +16,9 @@
 .Dialog {
 	&Button {
 		&::before {
+			opacity: 1;
+
+			// There is a shadow if there are no icons.
 			display: none;
 		}
 	}
@@ -62,6 +65,12 @@
 		color: var(--color-button-text);
 
 		margin-left: 6px;
+	}
+
+	&Label {
+		font();
+		color: inherit;
+		text-transform: unset;
 	}
 
 	&Content {
