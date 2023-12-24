@@ -507,6 +507,24 @@ select:focus,
 .DialogDropDown:focus {
   outline: none; /* unable to do right side, as it conflicts with the button */
 }
+progress,
+[class*="appdetailsplaysection_DetailsProgressContainer_"] {
+  appearance: none !important;
+  box-shadow: var(--border-statusbar) !important;
+  padding: 1px !important;
+  block-size: 12px !important;
+}
+progress::-webkit-progress-bar,
+[class*="appdetailsplaysection_DetailsProgressContainer_"]::-webkit-progress-bar {
+  background-color: var(--color-button-face) !important;
+}
+progress::-webkit-progress-value,
+[class*="appdetailsplaysection_DetailsProgressContainer_"]::-webkit-progress-value,
+[class*="appdetailsplaysection_DetailsProgressBar_"] {
+  --block-width: 7px !important;
+  background-color: transparent !important;
+  background-image: repeating-linear-gradient(90deg, var(--color-highlight) 0 var(--block-width), transparent var(--block-width) calc(var(--block-width) + 2px)) !important;
+}
 ::-webkit-scrollbar {
   background-image: repeating-conic-gradient(var(--color-scrollbar) 0% 25%, var(--color-window) 0% 50%) !important;
   background-size: 2px 2px !important;
@@ -816,6 +834,16 @@ body,
   border-radius: 0 !important;
   margin: 0 !important;
   width: var(--scrollbar-size) !important;
+}
+[class*="appdetailsplaysection_DetailsProgressContainer_"] {
+  border-radius: 0 !important;
+}
+[class*="appdetailsplaysection_DetailsProgressBar_"] {
+  border-radius: 0 !important;
+}
+[class*="appdetailsplaysection_PlayBarDetailLabel_"],
+[class*="appdetailsplaysection_LastPlayedInfo_"] {
+  color: var(--color-button-text) !important;
 }
 .PopupFullWindow:not(:only-child) .ModalPosition {
   height: calc(100% - var(--text-size) * var(--text-line) - 6px) !important;
@@ -1580,6 +1608,13 @@ body,
 }
 [class*="gamepadslider_SliderHandleContainer_"] {
   transform: translateX(calc(-100% * var(--inverse-normalized-value) + 7px * var(--inverse-normalized-value))) !important;
+}
+[class*="gamelaunchingdialog_GameLaunchingDialog_"] {
+  padding: 8px !important;
+}
+[class*="gamelaunchingdialog_Launching_"],
+[class*="gamelaunchingdialog_GameName_"] {
+  font: var(--text-ui) !important;
 }
 .ModalPosition {
   background-image: none !important;

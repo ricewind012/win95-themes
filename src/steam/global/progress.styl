@@ -1,0 +1,19 @@
+[class*="appdetailsplaysection_"] {
+	/{attr(DetailsProgressContainer)} {
+		@extend progress;
+
+		border-radius: 0;
+	}
+
+	/{attr(DetailsProgressBar)} {
+		@extend progress::-webkit-progress-value;
+
+		border-radius: 0;
+	}
+
+	/{attr(PlayBarDetailLabel)},
+	/{attr(LastPlayedInfo)} {
+		color: var(--color-button-text);
+	}
+}
+
