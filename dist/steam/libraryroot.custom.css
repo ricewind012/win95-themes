@@ -153,15 +153,6 @@ select:disabled,
 ::-webkit-scrollbar-button:horizontal:increment {
   --button-img: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAHCAYAAAAvZezQAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsIAAA7CARUoSoAAAAAySURBVBhXRY3JDQAwCMOS7r8zxZEAPzgsDkuqhhwewXalayJgZFYohp0Abq2YwxH3RfqHzhAHIWlRxQAAAABJRU5ErkJggg==") !important;
 }
-table,
-[class*="library_AppDetailsMain_"],
-[class*="gamelist_Container_"],
-[class*="appproperties_WorkshopItemsRowsScrollable_"] {
-  background-color: var(--color-window) !important;
-  border-spacing: 4px !important;
-  border: none !important;
-  box-shadow: var(--border-field) !important;
-}
 hr,
 [class*="steamdesktop_TitleBar_"]::before {
   border-top: 1px solid var(--color-button-highlight) !important;
@@ -208,7 +199,9 @@ textarea,
 [class*="bottombar_FriendsButton_"],
 [class*="appproperties_Controls_"] > .DialogButton,
 .DialogDropDown,
-[class*="gamepaddialog_Toggle_"] {
+[class*="gamepaddialog_Toggle_"],
+[class*="serverbrowserdialog_SelectColumnsButton_"],
+[class*="serverbrowserdialog_ServerListHeaderCell_"] {
   appearance: none !important;
   outline: none !important;
   font: var(--text-ui) !important;
@@ -242,6 +235,8 @@ textarea:disabled,
 [class*="appproperties_Controls_"] > .DialogButton:disabled,
 .DialogDropDown:disabled,
 [class*="gamepaddialog_Toggle_"]:disabled,
+[class*="serverbrowserdialog_SelectColumnsButton_"]:disabled,
+[class*="serverbrowserdialog_ServerListHeaderCell_"]:disabled,
 [class*="pageablecontainer_"][class*="PageLeft"][class*="Disabled"],
 [class*="libraryhomeshowcases_"][class*="PageLeft"][class*="Disabled"],
 [class*="pageablecontainer_"][class*="PageRight"][class*="Disabled"],
@@ -276,7 +271,9 @@ textarea:focus,
 [class*="bottombar_FriendsButton_"]:focus,
 [class*="appproperties_Controls_"] > .DialogButton:focus,
 .DialogDropDown:focus,
-[class*="gamepaddialog_Toggle_"]:focus {
+[class*="gamepaddialog_Toggle_"]:focus,
+[class*="serverbrowserdialog_SelectColumnsButton_"]:focus,
+[class*="serverbrowserdialog_ServerListHeaderCell_"]:focus {
   outline: dotted 1px var(--color-button-text) !important;
   outline-offset: -4px !important;
 }
@@ -316,7 +313,9 @@ input:-webkit-any([type="button"],
 [class*="bottombar_AddGameButton_"],
 [class*="bottombar_DownloadStatusContent_"],
 [class*="bottombar_FriendsButton_"],
-[class*="appproperties_Controls_"] > .DialogButton {
+[class*="appproperties_Controls_"] > .DialogButton,
+[class*="serverbrowserdialog_SelectColumnsButton_"],
+[class*="serverbrowserdialog_ServerListHeaderCell_"] {
   background-color: var(--color-button-face) !important;
   color: var(--color-button-text) !important;
   text-align: center !important;
@@ -347,6 +346,8 @@ input:-webkit-any([type="button"]:active,
 [class*="bottombar_DownloadStatusContent_"]:active,
 [class*="bottombar_FriendsButton_"]:active,
 [class*="appproperties_Controls_"] > .DialogButton:active,
+[class*="serverbrowserdialog_SelectColumnsButton_"]:active,
+[class*="serverbrowserdialog_ServerListHeaderCell_"]:active,
 [class*="gamelistdropdown_CheckboxWithImage_"][class*="Active"] {
   box-shadow: var(--border-button-sunken) !important;
 }
@@ -571,8 +572,55 @@ progress::-webkit-progress-value,
   --icon-dialog-question: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAASUExURYeIj8DHyP///wAAAAAA/wAAAFYalhEAAAAGdFJOU///////ALO/pL8AAAAJcEhZcwAADsMAAA7DAcdvqGQAAADjSURBVDhPhZJRFsMgCAS1hPtfuQssAk1eMx+NuhOU2KXFIpwGZ4Zgf5w9HA5PGsCJ9RRmbOw0/Lm4OhDPXch8X05WCwNC5Yhuxqr9ryt+4wm2GRA4ZdSEj1j9asAjPwcXUALvVwfI9ijgJZpgWAEODbEvz3Ew80fhHMl4EjgIXBivTNAFbq2X8EYKLzBucjbpBdpdgCnEBvjcwoWfLbiB3VgZjaxvgsqtldyfgspUtmSegi45DlKPI0rB/vZ0ImVegivLjtteB00AKXBqTME7/i/AeBHQ8Ytgh+XIeBBgcKCq+gUzrAun0HGbXAAAAABJRU5ErkJggg==") !important;
   --icon-dialog-warning: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAASUExURaioV8DHyP//AAAAAIeIjwAAADxsqtcAAAAGdFJOU///////ALO/pL8AAAAJcEhZcwAADsMAAA7DAcdvqGQAAADBSURBVDhPfZFJEoAgDATBkP9/2exkkHIuRKer4zK4Z4wxY8wAMJ5nUsyZDkivxIpLzwd4aAHRAO9V0YkvcCg2kP2huACoKGD3qABgEtGU8waYQHqiQ3EFuiIAf4ICmuIONIUD3jdgKwAY0icLQNys17QxCAB0R0ylUKB62VFzKhCYuUGygd3L3TgloTiAngR6L6+xd7gCgfpQFgdgAQKmQABWuAKBIwKsP0BXLHxIiPUCsP7Da7RXgNmme+xf/BDML3sxDSA4Fh+VAAAAAElFTkSuQmCC") !important;
 }
+table,
+[class*="library_AppDetailsMain_"],
+[class*="gamelist_Container_"],
+[class*="appproperties_WorkshopItemsRowsScrollable_"],
+[class*="serverbrowserdialog_ServerList_"] {
+  background-color: var(--color-window) !important;
+  border-spacing: 4px !important;
+  border: none !important;
+  box-shadow: var(--border-field) !important;
+}
+.table-button,
+[class*="serverbrowserdialog_SelectColumnsButton_"],
+[class*="serverbrowserdialog_ServerListHeaderCell_"] {
+  overflow: hidden !important;
+  text-align: left !important;
+  text-overflow: ellipsis !important;
+  white-space: nowrap !important;
+  padding: 2px 7px !important;
+  margin: 0 !important;
+  position: relative !important;
+  width: 100% !important;
+}
+.table-button[sort]:not([sort="none"])::after,
+[class*="serverbrowserdialog_SelectColumnsButton_"][sort]:not([sort="none"])::after,
+[class*="serverbrowserdialog_ServerListHeaderCell_"][sort]:not([sort="none"])::after {
+  content: '' !important;
+  background-color: var(--color-button-text) !important;
+  -webkit-mask: var(--button-img, none) no-repeat !important;
+  -webkit-mask-size: 7px 4px !important;
+  -webkit-mask-position: center !important;
+  position: absolute !important;
+  top: -1px !important;
+  right: 7px !important;
+  width: 7px !important;
+  height: 100% !important;
+}
+.table-button[sort="ascending"],
+[class*="serverbrowserdialog_SelectColumnsButton_"][sort="ascending"],
+[class*="serverbrowserdialog_ServerListHeaderCell_"][sort="ascending"] {
+  --button-img: var(--icon-arrow-bottom) !important;
+}
+.table-button[sort="descending"],
+[class*="serverbrowserdialog_SelectColumnsButton_"][sort="descending"],
+[class*="serverbrowserdialog_ServerListHeaderCell_"][sort="descending"] {
+  --button-img: var(--icon-arrow-top) !important;
+}
 [role="tab"],
 [class*="gamelistbar_GameListHomeAndSearch_"] a,
+[class*="serverbrowserdialog_SwitchTabButton_"],
 [class*="pagedsettings_PagedSettingsDialog_PageListItem_"] {
   --color-tab-border: var(--color-button-highlight) !important;
   background-color: var(--color-button-face) !important;
@@ -587,9 +635,11 @@ progress::-webkit-progress-value,
 }
 [role="tab"]::before,
 [class*="gamelistbar_GameListHomeAndSearch_"] a::before,
+[class*="serverbrowserdialog_SwitchTabButton_"]::before,
 [class*="pagedsettings_PagedSettingsDialog_PageListItem_"]::before,
 [role="tab"]::after,
 [class*="gamelistbar_GameListHomeAndSearch_"] a::after,
+[class*="serverbrowserdialog_SwitchTabButton_"]::after,
 [class*="pagedsettings_PagedSettingsDialog_PageListItem_"]::after {
   content: '' !important;
 /* Draw the rounding pixel by pixel */
@@ -603,20 +653,24 @@ progress::-webkit-progress-value,
 }
 [role="tab"]::before,
 [class*="gamelistbar_GameListHomeAndSearch_"] a::before,
+[class*="serverbrowserdialog_SwitchTabButton_"]::before,
 [class*="pagedsettings_PagedSettingsDialog_PageListItem_"]::before {
   background-image: var(--tab-border-left) !important;
   left: -1px !important;
 }
 [role="tab"]::after,
 [class*="gamelistbar_GameListHomeAndSearch_"] a::after,
+[class*="serverbrowserdialog_SwitchTabButton_"]::after,
 [class*="pagedsettings_PagedSettingsDialog_PageListItem_"]::after {
   background-image: var(--tab-border-right) !important;
   right: -2px !important;
 }
 [role="tab"][aria-selected="true"],
 [class*="gamelistbar_GameListHomeAndSearch_"] a[aria-selected="true"],
+[class*="serverbrowserdialog_SwitchTabButton_"][aria-selected="true"],
 [class*="pagedsettings_PagedSettingsDialog_PageListItem_"][aria-selected="true"],
 [class*="gamelistbar_GameListHomeAndSearch_"] a[aria-current],
+[class*="serverbrowserdialog_SwitchTabButton_"][class*="Selected"],
 [class*="pagedsettings_PagedSettingsDialog_PageListItem_"][class*="Active"] {
   --color-tab-border: var(--color-button-face) !important;
   margin: 0 -1px -2px -4px !important;
@@ -625,7 +679,8 @@ progress::-webkit-progress-value,
 }
 [role="tabpanel"],
 [class*="library_AppDetailsTransitionGroup_"],
-.DialogBody {
+.DialogBody,
+[class*="serverbrowserdialog_ServerTabPane_"] {
   background-color: var(--color-button-face) !important;
   color: var(--color-window-text) !important;
   box-shadow: var(--border-button-raised) !important;
@@ -1626,6 +1681,9 @@ body,
   color: var(--color-button-text) !important;
   box-shadow: none !important;
 }
+.DialogButton {
+  background-image: none !important;
+}
 .DialogButton::before {
   opacity: 1 !important;
   display: none !important;
@@ -1738,6 +1796,124 @@ div:not([class]) > [class*="gamepaddialog_Field_"] {
   text-transform: unset !important;
   letter-spacing: unset !important;
   margin: 0 !important;
+}
+[class*="serverbrowserdialog_TitleBar_"] ~ :last-child .DialogContent {
+  padding: 7px !important;
+  padding-bottom: 14px !important;
+}
+[class*="serverbrowserdialog_DialogBody_"] {
+  box-shadow: none !important;
+  padding: 0 !important;
+  gap: 0 !important;
+}
+[class*="serverbrowserdialog_DialogBody_"] .DialogButton svg {
+  color: inherit !important;
+}
+[class*="serverbrowserdialog_TopControlsCtr_"] {
+  gap: 0 !important;
+  margin-left: 4px !important;
+  margin-bottom: 1px !important;
+}
+[class*="serverbrowserdialog_TopControlsCtr_"] .DialogDropDown {
+  right: calc(var(--search-button-width) + var(--right-offset) * 2) !important;
+  width: 33vw !important;
+}
+[class*="serverbrowserdialog_TopControlsCtr_"] .DialogDropDown,
+[class*="serverbrowserdialog_SearchButton_"] {
+  --search-button-width: calc(2ex + 5px * 2) !important;
+  --right-offset: 6px !important;
+  position: absolute !important;
+  top: 2px !important;
+}
+[class*="serverbrowserdialog_SearchButton_"] {
+  right: var(--right-offset) !important;
+  width: var(--search-button-width) !important;
+}
+[class*="serverbrowserdialog_SwitchTabButton_"] {
+  margin-top: 2px !important;
+  width: unset !important;
+}
+[class*="serverbrowserdialog_SwitchTabButton_"]::before {
+  display: block !important;
+}
+[class*="serverbrowserdialog_SwitchTabButton_"] svg {
+  display: none !important;
+}
+[class*="serverbrowserdialog_ServerList_"] {
+  margin: 0 !important;
+  padding: 2px !important;
+}
+[class*="serverbrowserdialog_ServerListHeaderCtr_"] {
+  background-color: transparent !important;
+  padding: 0 !important;
+}
+[class*="serverbrowserdialog_ServerListHeaderRow_"] {
+  gap: 0 !important;
+}
+[class*="serverbrowserdialog_RadioButtonColumn_"] {
+  display: none !important;
+}
+[class*="serverbrowserdialog_SelectColumnsButton_"],
+[class*="serverbrowserdialog_ServerListHeaderCell_"] {
+  height: 17px !important;
+}
+[class*="serverbrowserdialog_ServerListHeaderSort_"] {
+  color: inherit !important;
+  font: var(--text-ui) !important;
+  text-transform: unset !important;
+  justify-content: space-between !important;
+}
+[class*="serverbrowserdialog_ServerListHeaderSort_"] svg {
+  width: calc(var(--text-size) * var(--text-line)) !important;
+  height: calc(var(--text-size) * var(--text-line)) !important;
+}
+[class*="serverbrowserdialog_ColumnResizer_"] {
+  --separator-size: 13px !important;
+  opacity: 0 !important;
+  padding: 0 !important;
+  width: var(--separator-size) !important;
+  margin-right: calc(var(--separator-size) / -2) !important;
+}
+[class*="serverbrowserdialog_SelectColumnsButton_"] {
+  width: 21px !important;
+}
+[class*="serverbrowserdialog_ServerRow_"]:hover {
+  background-color: transparent !important;
+}
+[class*="serverbrowserdialog_ServerRow_"][class*="Selected"] {
+  background: var(--color-highlight) !important;
+  color: var(--color-highlight-text) !important;
+}
+[class*="serverbrowserdialog_FilterOptionsCtr_"] {
+  padding: 0 !important;
+}
+[class*="serverbrowserdialog_FilterOptionsCtr_"]:not([class*="Collapsed"]) {
+  gap: 0 !important;
+  height: unset !important;
+}
+[class*="serverbrowserdialog_FilterOptionsCtr_"][class*="Collapsed"] {
+  display: none !important;
+}
+[class*="serverbrowserdialog_FilterOptionsCtr_"] .DialogInput {
+  width: 100% !important;
+}
+[class*="serverbrowserdialog_DropdownLabel_"] {
+  font: var(--text-ui) !important;
+  margin-bottom: 4px !important;
+  display: block !important;
+}
+[class*="serverbrowserdialog_BottomControlsRow_"] {
+  padding: 4px 0 !important;
+  height: unset !important;
+}
+[class*="serverbrowserdialog_BottomControlsRow_"] .DialogTwoColLayout {
+  gap: 0 !important;
+}
+[class*="serverbrowserdialog_BottomControlsRow_"] .DialogTwoColLayout > .DialogButton {
+  min-width: unset !important;
+}
+[class*="serverbrowserdialog_ToggleShowFilterDetailsButton_"] {
+  width: 111px !important;
 }
 .ModalPosition_Content > [class*="pagedsettings_PagedSettingsDialog_"] {
   margin: 8px !important;

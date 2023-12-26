@@ -72,9 +72,9 @@ new Set([...document.querySelectorAll('[rel="stylesheet"]')]
         classes[namespace] = {};
     classes[namespace][classname] = e;
 });
-let el = (s) => document.querySelector(`.${s}`);
-if (document.title == 'Steam') {
-    (async () => {
+(async () => {
+    let el = (s) => document.querySelector(`.${s}`);
+    if (document.title == 'Steam') {
         let sidebar = await ElementUtils.wait(`.${classes.library.LeftListSizableContainer}`);
         let tabs = await ElementUtils.wait(`.${classes.gamelistbar.GameListHomeAndSearch}`, sidebar);
         ElementUtils.act(sidebar, () => {
@@ -83,8 +83,11 @@ if (document.title == 'Steam') {
             attributes: true,
             attributeFilter: ['style'],
         });
-    })();
-}
-if (document.title == 'Steam Settings') {
-    SteamClient.Window.ResizeTo(1010, 722, true);
-}
+    }
+    if (document.title == 'Steam Settings') {
+        SteamClient.Window.ResizeTo(1010, 722, true);
+    }
+    if (document.title == 'Game Servers') {
+        SteamClient.Window.SetMinSize(500, 500);
+    }
+})();
