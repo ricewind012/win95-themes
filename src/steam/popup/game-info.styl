@@ -1,0 +1,53 @@
+[class*="gameinfodialog_"] {
+	/div{attr(DialogBody)} {
+		gap: 0;
+
+		.DialogBodyText {
+			padding: 0;
+
+			position: unset;
+			top: unset;
+
+			display: flex;
+			flex-direction: column;
+		}
+
+		[class*="gamepaddialog_FieldLabelRow"] {
+			gap: 0;
+
+			// Align with the "IP Address" copy button.
+			height: 22px;
+
+			display: grid;
+			grid-template-columns: 25% 75%;
+		}
+
+		.DialogFooter {
+			svg {
+				display: none;
+			}
+		}
+	}
+
+	/{attr(PlayersList)} {
+		@extend table;
+
+		padding: 2px;
+		margin-top: 0;
+		margin-bottom: 8px;
+
+		order: -1;
+	}
+
+	/{attr(Header)} {
+		@extend button;
+		@extend .table-button;
+
+		text-transform: unset;
+		letter-spacing: 0;
+	}
+
+	/{attr(Details)} {
+		border: none;
+	}
+}

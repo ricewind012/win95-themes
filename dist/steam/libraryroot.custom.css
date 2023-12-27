@@ -198,6 +198,7 @@ textarea,
 [class*="bottombar_DownloadStatusContent_"],
 [class*="bottombar_FriendsButton_"],
 [class*="appproperties_Controls_"] > .DialogButton,
+[class*="gameinfodialog_Header_"],
 .DialogDropDown,
 [class*="gamepaddialog_Toggle_"],
 [class*="serverbrowserdialog_SelectColumnsButton_"],
@@ -233,6 +234,7 @@ textarea:disabled,
 [class*="bottombar_DownloadStatusContent_"]:disabled,
 [class*="bottombar_FriendsButton_"]:disabled,
 [class*="appproperties_Controls_"] > .DialogButton:disabled,
+[class*="gameinfodialog_Header_"]:disabled,
 .DialogDropDown:disabled,
 [class*="gamepaddialog_Toggle_"]:disabled,
 [class*="serverbrowserdialog_SelectColumnsButton_"]:disabled,
@@ -271,6 +273,7 @@ textarea:focus,
 [class*="bottombar_DownloadStatusContent_"]:focus,
 [class*="bottombar_FriendsButton_"]:focus,
 [class*="appproperties_Controls_"] > .DialogButton:focus,
+[class*="gameinfodialog_Header_"]:focus,
 .DialogDropDown:focus,
 [class*="gamepaddialog_Toggle_"]:focus,
 [class*="serverbrowserdialog_SelectColumnsButton_"]:focus,
@@ -315,6 +318,7 @@ input:-webkit-any([type="button"],
 [class*="bottombar_DownloadStatusContent_"],
 [class*="bottombar_FriendsButton_"],
 [class*="appproperties_Controls_"] > .DialogButton,
+[class*="gameinfodialog_Header_"],
 [class*="serverbrowserdialog_SelectColumnsButton_"],
 [class*="serverbrowserdialog_ServerListHeaderCell_"] {
   background-color: var(--color-button-face) !important;
@@ -347,6 +351,7 @@ input:-webkit-any([type="button"]:active,
 [class*="bottombar_DownloadStatusContent_"]:active,
 [class*="bottombar_FriendsButton_"]:active,
 [class*="appproperties_Controls_"] > .DialogButton:active,
+[class*="gameinfodialog_Header_"]:active,
 [class*="serverbrowserdialog_SelectColumnsButton_"]:active,
 [class*="serverbrowserdialog_ServerListHeaderCell_"]:active,
 [class*="gamelistdropdown_CheckboxWithImage_"][class*="Active"] {
@@ -577,6 +582,7 @@ table,
 [class*="library_AppDetailsMain_"],
 [class*="gamelist_Container_"],
 [class*="appproperties_WorkshopItemsRowsScrollable_"],
+[class*="gameinfodialog_PlayersList_"],
 [class*="serverbrowserdialog_ServerList_"] {
   background-color: var(--color-window) !important;
   border-spacing: 4px !important;
@@ -584,6 +590,7 @@ table,
   box-shadow: var(--border-field) !important;
 }
 .table-button,
+[class*="gameinfodialog_Header_"],
 [class*="serverbrowserdialog_SelectColumnsButton_"],
 [class*="serverbrowserdialog_ServerListHeaderCell_"] {
   overflow: hidden !important;
@@ -596,6 +603,7 @@ table,
   width: 100% !important;
 }
 .table-button[sort]:not([sort="none"])::after,
+[class*="gameinfodialog_Header_"][sort]:not([sort="none"])::after,
 [class*="serverbrowserdialog_SelectColumnsButton_"][sort]:not([sort="none"])::after,
 [class*="serverbrowserdialog_ServerListHeaderCell_"][sort]:not([sort="none"])::after {
   content: '' !important;
@@ -610,11 +618,13 @@ table,
   height: 100% !important;
 }
 .table-button[sort="ascending"],
+[class*="gameinfodialog_Header_"][sort="ascending"],
 [class*="serverbrowserdialog_SelectColumnsButton_"][sort="ascending"],
 [class*="serverbrowserdialog_ServerListHeaderCell_"][sort="ascending"] {
   --button-img: var(--icon-arrow-bottom) !important;
 }
 .table-button[sort="descending"],
+[class*="gameinfodialog_Header_"][sort="descending"],
 [class*="serverbrowserdialog_SelectColumnsButton_"][sort="descending"],
 [class*="serverbrowserdialog_ServerListHeaderCell_"][sort="descending"] {
   --button-img: var(--icon-arrow-top) !important;
@@ -1665,6 +1675,38 @@ body,
 [class*="gamepadslider_SliderHandleContainer_"] {
   transform: translateX(calc(-100% * var(--inverse-normalized-value) + 7px * var(--inverse-normalized-value))) !important;
 }
+div[class*="gameinfodialog_DialogBody_"] {
+  gap: 0 !important;
+}
+div[class*="gameinfodialog_DialogBody_"] .DialogBodyText {
+  padding: 0 !important;
+  position: unset !important;
+  top: unset !important;
+  display: flex !important;
+  flex-direction: column !important;
+}
+div[class*="gameinfodialog_DialogBody_"] [class*="gamepaddialog_FieldLabelRow"] {
+  gap: 0 !important;
+  height: 22px !important;
+  display: grid !important;
+  grid-template-columns: 25% 75% !important;
+}
+div[class*="gameinfodialog_DialogBody_"] .DialogFooter svg {
+  display: none !important;
+}
+[class*="gameinfodialog_PlayersList_"] {
+  padding: 2px !important;
+  margin-top: 0 !important;
+  margin-bottom: 8px !important;
+  order: -1 !important;
+}
+[class*="gameinfodialog_Header_"] {
+  text-transform: unset !important;
+  letter-spacing: 0 !important;
+}
+[class*="gameinfodialog_Details_"] {
+  border: none !important;
+}
 [class*="gamelaunchingdialog_GameLaunchingDialog_"] {
   padding: 8px !important;
 }
@@ -1684,6 +1726,7 @@ body,
 }
 .DialogButton {
   background-image: none !important;
+  min-width: unset !important;
 }
 .DialogButton::before {
   opacity: 1 !important;
@@ -1722,6 +1765,8 @@ body,
 }
 .DialogContent {
   background: transparent !important;
+  padding: 7px !important;
+  padding-bottom: 24px !important;
 }
 .DialogContentTransition {
   background: transparent !important;
@@ -1745,11 +1790,17 @@ body,
 .DialogBody a {
   color: var(--color-link) !important;
 }
+.DialogFooter {
+  padding-top: 6px !important;
+}
 .DialogControlsSection,
 div:not([class]) > [class*="gamepaddialog_Field_"] {
   gap: 4px !important;
   display: flex !important;
   flex-direction: column !important;
+}
+._DialogColLayout {
+  gap: 0 !important;
 }
 [class*="gamepaddialog_Field_"] {
   --field-row-children-spacing: 7px !important;
