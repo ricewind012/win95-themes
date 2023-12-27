@@ -240,7 +240,8 @@ textarea:disabled,
 [class*="pageablecontainer_"][class*="PageLeft"][class*="Disabled"],
 [class*="libraryhomeshowcases_"][class*="PageLeft"][class*="Disabled"],
 [class*="pageablecontainer_"][class*="PageRight"][class*="Disabled"],
-[class*="libraryhomeshowcases_"][class*="PageRight"][class*="Disabled"] {
+[class*="libraryhomeshowcases_"][class*="PageRight"][class*="Disabled"],
+.DialogButton.Disabled {
   --color-window: var(--color-button-face) !important;
   --color-window-text: var(--color-gray-text) !important;
   --color-button-text: var(--color-button-shadow) !important;
@@ -1687,6 +1688,9 @@ body,
 .DialogButton::before {
   opacity: 1 !important;
   display: none !important;
+}
+.DialogDropDown {
+  align-items: center !important;
 }
 .DialogDropDown_Arrow {
   display: none !important;

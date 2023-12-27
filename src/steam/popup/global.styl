@@ -17,6 +17,10 @@
 	&Button {
 		background-image: none;
 
+		&.Disabled {
+			@extend button:disabled;
+		}
+
 		&::before {
 			opacity: 1;
 
@@ -27,6 +31,8 @@
 
 	&DropDown {
 		@extend select;
+
+		align-items: center;
 
 		&_Arrow {
 			display: none;
