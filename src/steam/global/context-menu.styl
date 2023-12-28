@@ -1,8 +1,6 @@
 [class*="contextmenu_"] {
 	/{attr(contextMenu)} {
-		@extend body;
-
-		min-width: unset;
+		@extend .menu;
 	}
 
 	/{attr(contextMenuContents)} {
@@ -10,16 +8,53 @@
 	}
 
 	/{attr(contextMenuItem)} {
-		color: var(--color-button-text);
+		@extend .menu-entry;
+
 		font: var(--text-ui);
+		color: var(--color-button-text);
 		border: none;
 
-		padding: 1px 20px;
+		// library_ContextMenuAction
+		background-image: none;
+		text-transform: unset;
+		letter-spacing: 0;
+		border-radius: 0;
 
 		&:hover,
 		&[class*="active"] {
+			--color-button-text: var(--color-highlight-text);
 			background-color: var(--color-highlight);
 			color: var(--color-highlight-text);
+		}
+
+		.SVGIcon_Button:not(.SVGIcon_DownArrowContextMenu) {
+			fill: var(--color-button-text);
+
+			position: absolute;
+			left: 4px;
+			box(var(--text-size));
+		}
+	}
+
+	// TODO submenus
+
+	/{attr(ContextMenuSeparator)} {
+		@extend hr;
+	}
+}
+
+// Window
+.ContextMenuPopupBody {
+	@extend .menu;
+
+	[class*="contextmenu_"] {
+		/{attr(contextMenu)} {
+			box-shadow: none;
+
+			padding: 0;
+
+			width: 100%; 
+			min-width: unset;
 		}
 	}
 }
@@ -86,3 +121,37 @@
 		color: inherit;
 	}
 }
+
+// Home collection
+[class*="libraryhomeshowcases_"] {
+	/{attr(CollectionDropDownContainer)} {
+		// !important
+		.DesktopUI && ._DialogInputContainer {
+			@extend .menu;
+		}
+	}
+
+	/{attr(DropDownItems)} {
+		font: var(--text-ui);
+
+		margin: 0;
+
+		&[class*="OptionsRule"] {
+			border: none;
+
+			&::before {
+				content: '';
+				display: block;
+
+				@extend hr;
+
+				background-color: var(--color-button-face);
+
+				margin-left: -20px;
+
+				width: calc(100% + 40px);
+			}
+		}
+	}
+}
+

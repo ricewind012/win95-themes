@@ -154,6 +154,8 @@ select:disabled,
   --button-img: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAHCAYAAAAvZezQAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsIAAA7CARUoSoAAAAAySURBVBhXRY3JDQAwCMOS7r8zxZEAPzgsDkuqhhwewXalayJgZFYohp0Abq2YwxH3RfqHzhAHIWlRxQAAAABJRU5ErkJggg==") !important;
 }
 hr,
+[class*="contextmenu_ContextMenuSeparator_"],
+[class*="libraryhomeshowcases_DropDownItems_"][class*="OptionsRule"]::before,
 [class*="steamdesktop_TitleBar_"]::before {
   border-top: 1px solid var(--color-button-highlight) !important;
   box-shadow: 0 -1px var(--color-button-shadow) !important;
@@ -578,6 +580,27 @@ progress::-webkit-progress-value,
   --icon-dialog-question: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAASUExURYeIj8DHyP///wAAAAAA/wAAAFYalhEAAAAGdFJOU///////ALO/pL8AAAAJcEhZcwAADsMAAA7DAcdvqGQAAADjSURBVDhPhZJRFsMgCAS1hPtfuQssAk1eMx+NuhOU2KXFIpwGZ4Zgf5w9HA5PGsCJ9RRmbOw0/Lm4OhDPXch8X05WCwNC5Yhuxqr9ryt+4wm2GRA4ZdSEj1j9asAjPwcXUALvVwfI9ijgJZpgWAEODbEvz3Ew80fhHMl4EjgIXBivTNAFbq2X8EYKLzBucjbpBdpdgCnEBvjcwoWfLbiB3VgZjaxvgsqtldyfgspUtmSegi45DlKPI0rB/vZ0ImVegivLjtteB00AKXBqTME7/i/AeBHQ8Ytgh+XIeBBgcKCq+gUzrAun0HGbXAAAAABJRU5ErkJggg==") !important;
   --icon-dialog-warning: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAASUExURaioV8DHyP//AAAAAIeIjwAAADxsqtcAAAAGdFJOU///////ALO/pL8AAAAJcEhZcwAADsMAAA7DAcdvqGQAAADBSURBVDhPfZFJEoAgDATBkP9/2exkkHIuRKer4zK4Z4wxY8wAMJ5nUsyZDkivxIpLzwd4aAHRAO9V0YkvcCg2kP2huACoKGD3qABgEtGU8waYQHqiQ3EFuiIAf4ICmuIONIUD3jdgKwAY0icLQNys17QxCAB0R0ylUKB62VFzKhCYuUGygd3L3TgloTiAngR6L6+xd7gCgfpQFgdgAQKmQABWuAKBIwKsP0BXLHxIiPUCsP7Da7RXgNmme+xf/BDML3sxDSA4Fh+VAAAAAElFTkSuQmCC") !important;
 }
+.menu,
+[class*="contextmenu_contextMenu_"],
+.ContextMenuPopupBody,
+.DesktopUI [class*="libraryhomeshowcases_CollectionDropDownContainer_"][class*="libraryhomeshowcases_CollectionDropDownContainer_"] ._DialogInputContainer,
+.DialogMenuPosition ._DialogInputContainer {
+  background-color: var(--color-button-face) !important;
+  color: var(--color-button-text) !important;
+  box-shadow: var(--border-window) !important;
+  padding: 3px !important;
+}
+.menu-entry,
+[class*="contextmenu_contextMenuItem_"],
+[class*="dropdown_DialogDropDownMenu_Item_"] {
+  padding: 2px 20px !important;
+}
+.menu-entry:hover,
+[class*="contextmenu_contextMenuItem_"]:hover,
+[class*="dropdown_DialogDropDownMenu_Item_"]:hover {
+  background-color: var(--color-highlight) !important;
+  color: var(--color-highlight-text) !important;
+}
 table,
 [class*="library_AppDetailsMain_"],
 [class*="gamelist_Container_"],
@@ -743,10 +766,8 @@ label:has(:focus)::before {
   outline: dotted 1px var(--color-button-text) !important;
 }
 body,
-[class*="contextmenu_contextMenu_"],
 [class*="titlebarcontrols_EmptyNotificationsCtn_"],
-[class*="gamelistsearchbar_AdvancedSearchPane_"],
-.DialogMenuPosition ._DialogInputContainer {
+[class*="gamelistsearchbar_AdvancedSearchPane_"] {
   background-color: var(--color-button-face) !important;
   color: var(--color-button-text) !important;
   font: var(--text-ui) !important;
@@ -838,22 +859,36 @@ body,
   top: -8px !important;
   padding: 0 2px !important;
 }
-[class*="contextmenu_contextMenu_"] {
-  min-width: unset !important;
-}
 [class*="contextmenu_contextMenuContents_"] {
   background: var(--color-button-face) !important;
 }
 [class*="contextmenu_contextMenuItem_"] {
-  color: var(--color-button-text) !important;
   font: var(--text-ui) !important;
+  color: var(--color-button-text) !important;
   border: none !important;
-  padding: 1px 20px !important;
+  background-image: none !important;
+  text-transform: unset !important;
+  letter-spacing: 0 !important;
+  border-radius: 0 !important;
 }
 [class*="contextmenu_contextMenuItem_"]:hover,
 [class*="contextmenu_contextMenuItem_"][class*="active"] {
+  --color-button-text: var(--color-highlight-text) !important;
   background-color: var(--color-highlight) !important;
   color: var(--color-highlight-text) !important;
+}
+[class*="contextmenu_contextMenuItem_"] .SVGIcon_Button:not(.SVGIcon_DownArrowContextMenu) {
+  fill: var(--color-button-text) !important;
+  position: absolute !important;
+  left: 4px !important;
+  width: var(--text-size) !important;
+  height: var(--text-size) !important;
+}
+.ContextMenuPopupBody [class*="contextmenu_contextMenu_"] {
+  box-shadow: none !important;
+  padding: 0 !important;
+  width: 100% !important;
+  min-width: unset !important;
 }
 [class*="rootmenu_Icon_"] {
   background-image: var(--control-img) !important;
@@ -892,6 +927,20 @@ body,
 }
 [class*="titlebarcontrols_EmptyNotificationsBody_"] {
   color: inherit !important;
+}
+[class*="libraryhomeshowcases_DropDownItems_"] {
+  font: var(--text-ui) !important;
+  margin: 0 !important;
+}
+[class*="libraryhomeshowcases_DropDownItems_"][class*="OptionsRule"] {
+  border: none !important;
+}
+[class*="libraryhomeshowcases_DropDownItems_"][class*="OptionsRule"]::before {
+  content: '' !important;
+  display: block !important;
+  background-color: var(--color-button-face) !important;
+  margin-left: -20px !important;
+  width: calc(100% + 40px) !important;
 }
 ::-webkit-scrollbar-button {
   display: block !important;
@@ -1612,9 +1661,6 @@ body,
 [class*="appproperties_SteamInputLink_"] {
   color: var(--color-link) !important;
 }
-[class*="dropdown_DialogDropDownMenu_Item_"] {
-  padding: 1px !important;
-}
 [class*="dropdownlabel_DropDownLabelTitle_"] {
   font: var(--text-ui) !important;
   color: inherit !important;
@@ -1739,6 +1785,7 @@ div[class*="gameinfodialog_DialogBody_"] .DialogFooter svg {
   display: none !important;
 }
 .DialogMenuPosition ._DialogInputContainer {
+  font: var(--text-ui) !important;
   border-radius: 0 !important;
 }
 .DialogCheckbox {
