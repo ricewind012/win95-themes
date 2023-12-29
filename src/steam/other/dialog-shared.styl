@@ -85,6 +85,29 @@
 		text-transform: unset;
 	}
 
+	&Header {
+		color: var(--color-button-face);
+		font: var(--text-ui);
+		font-weight: bold;
+		text-transform: unset;
+
+		padding: 0;
+		margin: 0;
+
+		position: fixed;
+		left: 23px;
+		top: 6px;
+
+		.WindowFocus & {
+			color: var(--color-active-caption-text);
+		}
+
+		// About Steam dialog
+		svg {
+			display: none;
+		}
+	}
+
 	&Content {
 		background: transparent;
 
@@ -141,78 +164,6 @@
 ._Dialog {
 	&ColLayout {
 		gap: 0;
-	}
-}
-
-[class*="gamepaddialog_"] {
-	/{attr(Field)} {
-		--field-row-children-spacing: 7px;
-
-		background-color: transparent;
-
-		padding: 0;
-
-		div:not([class]) > & {
-			@extend .DialogControlsSection;
-		}
-
-		&::after { // lol
-			display: none;
-		}
-	}
-
-	/{attr(FieldChildren)} {
-		gap: 4px;
-	}
-
-	/{attr(FieldLabel)} {
-		font: var(--text-ui);
-		color: var(--color-button-text);
-
-		& > :not([class]) { // has something else
-			gap: 1ch;
-
-			display: flex;
-			align-items: center;
-		}
-	}
-
-	/{attr(FieldLabelRow)} {
-		flex-direction: row-reverse;
-	}
-
-	/{attr(FieldDescription)} {
-		[class*="WithDescription_"] > [class*="Row"] + & {
-			color: var(--color-gray-text);
-
-			margin-left: 17px;
-		}
-	}
-
-	/{attr(ControlsListOuterPanel)} {
-		--controls-list-spacing: 6px;
-
-		gap: 0;
-
-		flex: unset;
-	}
-
-	/{attr(ControlsListChild)} {
-		max-width: unset;
-	}
-
-	/{attr(Toggle)} {
-		@extend input;
-		@extend input[type="checkbox"];
-
-		&[class*="On_"] {
-			@extend input[type="checkbox"]:checked;
-		}
-	}
-
-	/{attr(ToggleRail)},
-	/{attr(ToggleSwitch)} {
-		display: none;
 	}
 }
 

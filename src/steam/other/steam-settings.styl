@@ -1,0 +1,23 @@
+[class*="desktopsecuritysettings_"],
+[class*="accountsettings_"] {
+	/{attr(EntryLabel)} {
+		padding: 0;
+	}
+
+	/{attr(EntryValue)} {
+		font: var(--text-ui);
+		color: var(--color-button-text);
+
+		&::before {
+			content: ': ';
+		}
+	}
+}
+
+[class*="remoteplaysettings_TableHeader_"],
+[class*="notificationssettings_ToggleHeader_"] {
+	color: var(--color-button-text);
+	font: var(--text-ui);
+	letter-spacing: unset;
+	text-transform: unset;
+}

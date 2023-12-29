@@ -1,0 +1,26 @@
+[class*="pageablecontainer_"] {
+	/{attr(PageableContainer)} {
+		@extend fieldset;
+
+		svg {
+			color: inherit;
+		}
+
+		polyline {
+			stroke: var(--color-window-text);
+		}
+	}
+
+	/{attr(HeaderPageControls)} {
+		font: var(--text-ui);
+		color: inherit;
+	}
+
+	/{attr(Name)} {
+		@extend $legend-as-div;
+
+		background-color: var(--color-window);
+
+		letter-spacing: 0;
+	}
+}

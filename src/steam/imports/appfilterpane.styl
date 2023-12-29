@@ -1,0 +1,50 @@
+[class*="appfilterpane_"] {
+	/{attr(Container)} {
+		padding: 8px;
+	}
+
+	/{attr(FilterArea)} {
+		gap: 6px 8px;
+	}
+
+	/{attr(FilterBucket)} {
+		@extend fieldset;
+
+		.DialogInput_Wrapper {
+			margin: 0;
+		}
+	}
+
+	/{attr(FilterBucketLabel)} {
+		@extend $legend-as-div;
+
+		font();
+		color: var(--color-button-text);
+		text-transform: unset;
+	}
+
+	/{attr(FilterBucketBoxes)} {
+		padding: 0;
+		gap: 4px;
+
+		display: flex;
+		flex-direction: column;
+	}
+
+	/{attr(ExtraTall)} {
+		grid-row-end: span 2;
+	}
+
+	/{attr(Default)} {
+		font-style: normal;
+	}
+
+	/{attr(Buttons)} {
+		margin: 0;
+		gap: 4px;
+
+		svg {
+			display: none;
+		}
+	}
+}

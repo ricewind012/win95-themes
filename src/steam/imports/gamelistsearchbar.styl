@@ -1,0 +1,59 @@
+[class*="gamelistsearchbar_"] {
+	/{attr(Container)} {
+		background-color: transparent;
+
+		margin: 4px 0;
+	}
+
+	/{attr(FilterTag)} {
+		padding: 2px;
+		border-radius: 0;
+		margin: 0;
+	}
+
+	/{attr(SearchInput)} {
+		min-height: unset;
+	}
+
+	/{attr(SearchFilterInput)} {
+		color: var(--color-button-text);
+		align-items: center;
+	}
+
+	/{attr(SearchFilterInputClear)} {
+		position: unset;
+	}
+
+	/{attr(SearchByTypePrompt)} {
+		font: var(--text-ui);
+		padding: 0 18px;
+	}
+
+	/{attr(AdvancedSearchContainer)} {
+		@extend button;
+
+		justify-content: center;
+
+		& > .Focusable > div {
+			cursor: default;
+
+			&::before {
+				content: 'Search...';
+			}
+		}
+
+		svg {
+			display: none;
+		}
+	}
+
+	/{attr(AdvancedSearchPane)} {
+		@extend body;
+
+		border-radius: 0;
+
+		&::before {
+			display: none;
+		}
+	}
+}

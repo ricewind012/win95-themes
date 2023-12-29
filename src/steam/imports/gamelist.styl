@@ -1,0 +1,12 @@
+[class*="gamelist_"] {
+	/{attr(Container)} {
+		@extend table;
+
+		padding-right: 2px;
+		margin-left: 2px;
+		margin-bottom: 1px;
+
+		width: calc(100% - 8px);
+		box-sizing: content-box; // for the scrollbar
+	}
+}

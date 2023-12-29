@@ -1,0 +1,36 @@
+[class*="gamelistentry_"] {
+	/{attr(Container)} {
+		font: var(--text-ui);
+		box-shadow: none;
+
+		&[class*="Running"] {
+			color: green;
+		}
+
+		&[class*="Installed"] {
+			color: var(--color-button-text);
+		}
+
+		&[class*="Uninstalled"] {
+			color: var(--color-gray-text);
+		}
+
+		&[class*="Updating"],
+		&[class*="Synchronizing"],
+		&[class*="Cloud"] {
+			color: var(--color-highlight);
+		}
+
+		&:hover,
+		&[class*="HoverOverlay_"]
+		&[class*="Selected"] {
+			background-color: var(--color-highligh);
+			color: var(--color-highlight-text);
+		}
+
+		circle,
+		path {
+			fill: currentColor;
+		}
+	}
+}

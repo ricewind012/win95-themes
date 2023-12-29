@@ -1,0 +1,25 @@
+[class*="bottombar_"] {
+	/{attr(BottomBar)} {
+		background: transparent;
+		box-shadow: none;
+
+		padding: 8px;
+
+		flex: unset;
+	}
+
+	/{attr(AddGameButton)},
+	/{attr(DownloadStatusContent)},
+	/{attr(FriendsButton)} {
+		@extend button;
+
+		width: unset;
+		display: flex;
+	}
+
+	/{attr(Icon)},
+	/{attr(Text)},
+	/{attr(Queue)} {
+		color: var(--color-button-text);
+	}
+}

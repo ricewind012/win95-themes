@@ -1,0 +1,95 @@
+[class*="libraryhomeshowcases_"] {
+	/{attr(AddShowcase)} {
+		@extend button;
+
+		text-transform: unset;
+		justify-content: center;
+
+		svg {
+			display: none;
+		}
+	}
+
+	/{attr(Collapser)} {
+		@extend button;
+
+		padding: 4px;
+
+		box(20px);
+
+		svg {
+			margin: 0;
+		}
+
+		polyline {
+			stroke: var(--color-button-text);
+		}
+	}
+
+	/{attr(Showcase)} {
+		@extend fieldset;
+
+		margin-bottom: 16px;
+	}
+
+	/{attr(ShowcaseHeader)} {
+		@extend $legend-as-div;
+
+		background-color: var(--color-window);
+		color: inherit;
+		border: none;
+
+		top: -12px;
+		align-items: center;
+	}
+
+	/{attr(CountDisplay)} {
+		color: inherit;
+	}
+
+	/{attr(PageButtons)} {
+		margin: 0;
+	}
+
+	/{attr(ChildrenContainer)} {
+		// PageableContainer
+		& > div {
+			border: none;
+			box-shadow: none;
+
+			padding: 0;
+			margin: 0;
+		}
+	}
+
+	// Context menu
+	/{attr(CollectionDropDownContainer)} {
+		// !important
+		.DesktopUI && ._DialogInputContainer {
+			@extend .menu;
+		}
+	}
+
+	/{attr(DropDownItems)} {
+		font: var(--text-ui);
+
+		margin: 0;
+
+		&[class*="OptionsRule"] {
+			border: none;
+
+			&::before {
+				content: '';
+				display: block;
+
+				@extend hr;
+
+				background-color: var(--color-button-face);
+
+				margin-left: -20px;
+
+				width: calc(100% + 40px);
+			}
+		}
+	}
+}

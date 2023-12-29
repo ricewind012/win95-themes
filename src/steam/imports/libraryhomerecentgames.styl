@@ -1,0 +1,15 @@
+[class*="libraryhomerecentgames_"] {
+	/{attr(RecentGames)} {
+		height: unset;
+	}
+
+	/{attr(AddedDate)} {
+		font: var(--text-ui);
+		letter-spacing: 0;
+		color: inherit;
+	}
+
+	/{attr(EmptyDate)} {
+		height: calc(var(--text-size) * var(--text-line));
+	}
+}

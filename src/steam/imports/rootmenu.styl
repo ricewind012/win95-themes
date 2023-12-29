@@ -1,0 +1,40 @@
+[class*="rootmenu_"] {
+	// TODO radio ?
+	/{attr(Icon)} {
+		background-image: var(--control-img);
+
+		position: absolute;
+		left: 6px;
+		box(7px);
+
+		:hover > & {
+			filter: invert();
+		}
+
+		&:not(:empty) {
+			@extend input[type="checkbox"]:checked;
+		}
+
+		& > svg {
+			display: none;
+		}
+	}
+}
+
+[class*="rootmenu_"] {
+	/{attr(RootMenuButton)} {
+		color: var(--color-button-text);
+		font: var(--text-ui);
+		padding: 3px 6px;
+
+		&:active,
+		&[class*="Open"] {
+			background-color: var(--color-highlight);
+			color: var(--color-highlight-text);
+		}
+
+		svg {
+			display: none;
+		}
+	}
+}

@@ -1,0 +1,46 @@
+[class*="pagedsettings_PagedSettingsDialog_"] {
+	.ModalPosition_Content > & {
+		margin: 8px;
+
+		min-width: unset;
+		min-height: unset;
+		height: unset;
+		flex-direction: column;
+	}
+
+	/{attr(PageList)} {
+		overflow: auto hidden;
+		font();
+
+		padding: 0;
+		padding-left: 5px;
+
+		height: unset;
+		flex-grow: 0;
+		flex-direction: row;
+	}
+
+	/{attr(PageListColumn)} {
+		background-color: transparent;
+
+		padding: 0;
+
+		max-width: unset;
+		min-height: unset;
+		flex-grow: 0;
+	}
+
+	/{attr(PageListItem)} {
+		@extend [role="tab"];
+
+		font();
+
+		margin-top: 2px;
+
+		cursor: default;
+
+		&[class*="Active"] {
+			@extend [role="tab"][aria-selected="true"];
+		}
+	}
+}

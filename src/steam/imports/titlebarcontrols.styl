@@ -1,0 +1,115 @@
+[class*="titlebarcontrols_"] {
+	// Title bar
+	/{attr(TitleBarControls)} {
+		position: absolute;
+		top: 1px;
+		right: 46px;
+		z-index: 1;
+
+		& > :nth-child(3) > div {
+			position: fixed;
+			top: 20px;
+			right: 2px;
+			height: 33px;
+
+			margin: 0;
+
+			display: flex;
+			align-items: center;
+		}
+
+		& > :nth-child(4) {
+			margin-right: 2px;
+
+			order: -1;
+		}
+	}
+
+	/{attr(AccountMenu)} {
+		@extend select;
+
+		margin-top: -8px;
+
+		.avatar {
+			border: none;
+			box-shadow: none;
+
+			box(100%);
+
+			&Holder {
+				box(16px);
+
+				transform: none;
+			}
+		}
+	}
+
+	/{attr(Button)} {
+		@extend $small-button;
+
+		--button-img-pos: 3px 2px;
+
+		min-width: unset;
+		min-height: unset;
+
+		cursor: default;
+	}
+
+	/{attr(AnnouncementsButton)} {
+		--button-img: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAICAYAAADED76LAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAAtSURBVChTY2RAgP9QGgPAJJAVwMWYoAycAGQFSDWMxgqwWQED/6lnAg7AwAAATOYP+fpPtrkAAAAASUVORK5CYII=');
+		--button-img-size: 9px;
+	}
+
+	/{attr(NotificationButtonContainer)} {
+		--button-img: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAICAYAAADED76LAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAAwSURBVChTY0AD/6EYDhihNAigSAABWI4JzMQDKFcAcwO6/TDACFKASxIrQPMmAwMAgi8HBW4J8QQAAAAASUVORK5CYII=');
+		--button-img-size: 9px;
+	}
+
+	/{attr(GamepadUIToggle)} {
+		--button-img: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAICAYAAADED76LAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAAoSURBVChTY2RgYPgPxHgBPgX/maAMnIByBQQdCVIAArgUMRIwgYEBAGefBgb8inyEAAAAAElFTkSuQmCC');
+		--button-img-size: 9px;
+	}
+
+	svg {
+		display: none;
+	}
+
+	// Notifications / menu
+	/{attr(LogoutButton)} {
+		white-space: pre;
+
+		gap: 0;
+	}
+
+	/{attr(AccountName)},
+	/{attr(WalletBalance)} {
+		color: inherit;
+	}
+
+	/{attr(NotificationsMenu)} {
+		color: var(--color-button-text);
+		border: none;
+		box-shadow: none;
+
+		padding: 0;
+
+		width: unset;
+	}
+
+	/{attr(NotificationHeader)} {
+		padding: 8px;
+		padding-right: 2px;
+	}
+
+	/{attr(AllNotificationsTitle)} {
+		font: var(--text-ui);
+	}
+
+	/{attr(EmptyNotificationsCtn)} {
+		@extend body;
+	}
+
+	/{attr(EmptyNotificationsBody)} {
+		color: inherit;
+	}
+}

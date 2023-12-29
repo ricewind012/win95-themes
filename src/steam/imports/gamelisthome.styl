@@ -1,0 +1,36 @@
+[class*="gamelisthome_"] {
+	/{attr(Bar)} {
+		border-radius: 0;
+	}
+
+	/{attr(Label)} {
+		color: var(--color-button-text);
+		font: var(--text-ui);
+		text-transform: unset;
+
+		margin: auto;
+	}
+
+	/{attr(CollectionButton)} {
+		font: var(--text);
+		letter-spacing: 0;
+	}
+
+	/{attr(CollectionIcon)} {
+		padding: 0;
+
+		box(unset);
+		display: block;
+
+		&::before {
+			content: 'Collections';
+
+			text-align: center;
+			width: 100%;
+		}
+	}
+
+	/{attr(CollectionIconBox)} {
+		display: none;
+	}
+}
