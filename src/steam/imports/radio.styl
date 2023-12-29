@@ -1,42 +1,40 @@
-[class*="radio_"] {
-	/{attr(Group)},
-	/{attr(Button)} {
-		background-color: transparent;
-		padding: 0;
+#Group,
+#Button {
+	background-color: transparent;
+	padding: 0;
+}
+
+#Group {
+	box-shadow: none;
+	gap: 4px;
+	flex-direction: column;
+}
+
+#Button {
+	font: var(--text-ui);
+	color: var(--color-button-text);
+	text-align: left;
+
+	gap: 7px;
+
+	flex-direction: row;
+	justify-content: left;
+
+	&::before {
+		content: '';
+
+		@extend input[type="radio"];
 	}
 
-	/{attr(Group)} {
-		box-shadow: none;
-		gap: 4px;
-		flex-direction: column;
+	&:active::before {
+		--control-img: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMBAMAAACkW0HUAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsIAAA7CARUoSoAAAAAPUExURf///wAAAIeIj8DHyP///1QVyYYAAAABdFJOUwBA5thmAAAAOElEQVQI12NgYFBSYgACJUFBIM0kaGws6MDAJGxsbODAoGgMBCzYKagSJgZjYwYHBgYXMAISQBIAZBYIx/Jku34AAAAASUVORK5CYII=');
 	}
 
-	/{attr(Button)} {
-		font: var(--text-ui);
-		color: var(--color-button-text);
-		text-align: left;
+	&[class*="Active"]::before {
+		--control-img: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMAgMAAAArG7R0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAAMUExURf///wAAAIeIj////88rXQEAAAABdFJOUwBA5thmAAAAMElEQVQI12NgWMXAwBW6gEH1fwyD+v8zDPOvf2aYHwrFQDZITOE/DwM/wwcGhv8MAL1zEtdwC089AAAAAElFTkSuQmCC');
+	}
 
-		gap: 7px;
-
-		flex-direction: row;
-		justify-content: left;
-
-		&::before {
-			content: '';
-
-			@extend input[type="radio"];
-		}
-
-		&:active::before {
-			--control-img: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMBAMAAACkW0HUAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsIAAA7CARUoSoAAAAAPUExURf///wAAAIeIj8DHyP///1QVyYYAAAABdFJOUwBA5thmAAAAOElEQVQI12NgYFBSYgACJUFBIM0kaGws6MDAJGxsbODAoGgMBCzYKagSJgZjYwYHBgYXMAISQBIAZBYIx/Jku34AAAAASUVORK5CYII=');
-		}
-
-		&[class*="Active"]::before {
-			--control-img: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMAgMAAAArG7R0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAAMUExURf///wAAAIeIj////88rXQEAAAABdFJOUwBA5thmAAAAMElEQVQI12NgWMXAwBW6gEH1fwyD+v8zDPOvf2aYHwrFQDZITOE/DwM/wwcGhv8MAL1zEtdwC089AAAAAElFTkSuQmCC');
-		}
-
-		& > span {
-			parentheses();
-		}
+	& > span {
+		parentheses();
 	}
 }

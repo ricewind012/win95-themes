@@ -1,47 +1,45 @@
-[class*="steamdesktop_"] {
-	/{attr(Wrapper)} {
-		background-color: transparent;
-		border: none;
+#Wrapper {
+	background-color: transparent;
+	border: none;
+}
+
+#FocusBar,
+#URLBarReplacement {
+	display: none;
+}
+
+#TopBar {
+	background: transparent;
+	box-shadow: none;
+}
+
+#TitleBar {
+	flex-direction: column-reverse;
+	height: unset;
+	-webkit-app-region: no-drag;
+
+	&::before {
+		content: '';
+
+		@extend hr;
+
+		margin-top: 2px;
+
+		width: 100%;
 	}
+}
 
-	/{attr(FocusBar)},
-	/{attr(URLBarReplacement)} {
-		display: none;
-	}
+#WindowControls,
+#RootMenuBar {
+	flex: initial;
+	cursor: default;
+}
 
-	/{attr(TopBar)} {
-		background: transparent;
-		box-shadow: none;
-	}
+#RootMenuBar {
+	gap: 0;
+	padding: 0;
+}
 
-	/{attr(TitleBar)} {
-		flex-direction: column-reverse;
-		height: unset;
-		-webkit-app-region: no-drag;
-
-		&::before {
-			content: '';
-
-			@extend hr;
-
-			margin-top: 2px;
-
-			width: 100%;
-		}
-	}
-
-	/{attr(WindowControls)},
-	/{attr(RootMenuBar)} {
-		flex: initial;
-		cursor: default;
-	}
-
-	/{attr(RootMenuBar)} {
-		gap: 0;
-		padding: 0;
-	}
-
-	/{attr(SuperNavBar)} {
-		-webkit-app-region: no-drag;
-	}
+#SuperNavBar {
+	-webkit-app-region: no-drag;
 }

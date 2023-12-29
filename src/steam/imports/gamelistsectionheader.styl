@@ -1,23 +1,21 @@
-[class*="gamelistsectionheader_"] {
-	/{attr(Container)} {
-		background: none;
+#Container {
+	background: none;
+	color: var(--color-window-text);
+	box-shadow: none;
+
+	&,
+	& > div {
 		color: var(--color-window-text);
-		box-shadow: none;
-
-		&,
-		& > div {
-			color: var(--color-window-text);
-			stroke: currentColor;
-		}
+		stroke: currentColor;
 	}
+}
 
-	/{attr(SectionName)} {
-		font: var(--text-ui);
-		letter-spacing: 0;
-	}
+#SectionName {
+	font: var(--text-ui);
+	letter-spacing: 0;
+}
 
-	/{attr(SectionCount)} {
-		color: var(--color-gray-text);
-		font: var(--text-ui);
-	}
+#SectionCount {
+	color: var(--color-gray-text);
+	font: var(--text-ui);
 }

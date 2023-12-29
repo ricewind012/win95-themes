@@ -1,44 +1,42 @@
-[class*="contextmenu_"] {
-	/{attr(contextMenu)} {
-		@extend .menu;
+#contextMenu {
+	@extend .menu;
+}
+
+#contextMenuContents {
+	background: var(--color-button-face);
+}
+
+#contextMenuItem {
+	@extend .menu-entry;
+
+	font: var(--text-ui);
+	color: var(--color-button-text);
+	border: none;
+
+	// library_ContextMenuAction
+	background-image: none;
+	text-transform: unset;
+	letter-spacing: 0;
+	border-radius: 0;
+
+	&:hover,
+	&[class*="active"] {
+		--color-button-text: var(--color-highlight-text);
+		background-color: var(--color-highlight);
+		color: var(--color-highlight-text);
 	}
 
-	/{attr(contextMenuContents)} {
-		background: var(--color-button-face);
+	.SVGIcon_Button:not(.SVGIcon_DownArrowContextMenu) {
+		fill: var(--color-button-text);
+
+		position: absolute;
+		left: 4px;
+		box(var(--text-size));
 	}
+}
 
-	/{attr(contextMenuItem)} {
-		@extend .menu-entry;
+// TODO submenus
 
-		font: var(--text-ui);
-		color: var(--color-button-text);
-		border: none;
-
-		// library_ContextMenuAction
-		background-image: none;
-		text-transform: unset;
-		letter-spacing: 0;
-		border-radius: 0;
-
-		&:hover,
-		&[class*="active"] {
-			--color-button-text: var(--color-highlight-text);
-			background-color: var(--color-highlight);
-			color: var(--color-highlight-text);
-		}
-
-		.SVGIcon_Button:not(.SVGIcon_DownArrowContextMenu) {
-			fill: var(--color-button-text);
-
-			position: absolute;
-			left: 4px;
-			box(var(--text-size));
-		}
-	}
-
-	// TODO submenus
-
-	/{attr(ContextMenuSeparator)} {
-		@extend hr;
-	}
+#ContextMenuSeparator {
+	@extend hr;
 }

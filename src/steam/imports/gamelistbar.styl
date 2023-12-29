@@ -1,41 +1,39 @@
-[class*="gamelistbar_"] {
-	/{attr(Container)} {
-		background-image: none;
-	}
+#Container {
+	background-image: none;
+}
 
-	/{attr(GameListHomeAndSearch)} {
-		background-color: transparent;
-		box-shadow: none;
+#GameListHomeAndSearch {
+	background-color: transparent;
+	box-shadow: none;
 
-		padding: 0;
-		padding-left: 10px;
-		margin-left: 269px;
-		margin-top: -1px;
+	padding: 0;
+	padding-left: 10px;
+	margin-left: 269px;
+	margin-top: -1px;
 
-		position: fixed;
+	position: fixed;
+	height: unset;
+	z-index: 1;
+
+	a {
+		@extend [role="tab"];
+
+		margin-top: 2px;
+
 		height: unset;
-		z-index: 1;
 
-		a {
-			@extend [role="tab"];
+		&:hover {
+			text-decoration: none;
+		}
 
-			margin-top: 2px;
-
-			height: unset;
-
-			&:hover {
-				text-decoration: none;
-			}
-
-			&[aria-current] {
-				@extend [role="tab"][aria-selected="true"];
-			}
+		&[aria-current] {
+			@extend [role="tab"][aria-selected="true"];
 		}
 	}
+}
 
-	/{attr(HomeBox)} {
-		overflow: visible;
+#HomeBox {
+	overflow: visible;
 
-		flex: unset;
-	}
+	flex: unset;
 }

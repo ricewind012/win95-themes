@@ -1,25 +1,23 @@
-[class*="bottombar_"] {
-	/{attr(BottomBar)} {
-		background: transparent;
-		box-shadow: none;
+#BottomBar {
+	background: transparent;
+	box-shadow: none;
 
-		padding: 8px;
+	padding: 8px;
 
-		flex: unset;
-	}
+	flex: unset;
+}
 
-	/{attr(AddGameButton)},
-	/{attr(DownloadStatusContent)},
-	/{attr(FriendsButton)} {
-		@extend button;
+#AddGameButton,
+#DownloadStatusContent,
+#FriendsButton {
+	@extend button;
 
-		width: unset;
-		display: flex;
-	}
+	width: unset;
+	display: flex;
+}
 
-	/{attr(Icon)},
-	/{attr(Text)},
-	/{attr(Queue)} {
-		color: var(--color-button-text);
-	}
+#Icon,
+#Text,
+#Queue {
+	color: var(--color-button-text);
 }

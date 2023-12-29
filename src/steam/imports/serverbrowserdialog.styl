@@ -1,179 +1,177 @@
-[class*="serverbrowserdialog_"] {
-	/{attr(TitleBar)} {
-		& ~ :last-child .DialogContent {
-			padding: 7px;
-			padding-bottom: 14px;
-		}
+#TitleBar {
+	& ~ :last-child .DialogContent {
+		padding: 7px;
+		padding-bottom: 14px;
 	}
+}
 
-	/{attr(DialogBody)} {
-		box-shadow: none;
+#DialogBody {
+	box-shadow: none;
 
-		padding: 0;
-		gap: 0;
+	padding: 0;
+	gap: 0;
 
-		.DialogButton svg {
-			color: inherit;
-		}
-	}
-
-	/{attr(TopControlsCtr)} {
-		gap: 0;
-		margin-left: 4px;
-		margin-bottom: 1px;
-
-		.DialogDropDown {
-			right: calc(var(--search-button-width) + var(--right-offset) * 2);
-			width: 33vw;
-		}
-	}
-
-	/{attr(TopControlsCtr)} .DialogDropDown,
-	/{attr(SearchButton)} {
-		--search-button-width: calc(2ex + 5px * 2);
-		--right-offset: 6px;
-
-		position: absolute;
-		top: 2px;
-	}
-
-	/{attr(SearchButton)} {
-		right: var(--right-offset);
-		width: var(--search-button-width);
-	}
-
-	/{attr(SwitchTabButton)} {
-		@extend [role="tab"];
-
-		margin-top: 2px;
-
-		width: unset;
-
-		&[class*="Selected"] {
-			@extend [role="tab"][aria-selected="true"];
-		}
-
-		&::before {
-			display: block;
-		}
-
-		svg {
-			display: none;
-		}
-	}
-
-	/{attr(ServerTabPane)} {
-		@extend [role="tabpanel"];
-	}
-
-	/{attr(ServerList)} {
-		@extend table;
-
-		margin: 0;
-		padding: 2px;
-	}
-
-	/{attr(ServerListHeaderCtr)} {
-		background-color: transparent;
-
-		padding: 0;
-	}
-
-	/{attr(ServerListHeaderRow)} {
-		gap: 0;
-	}
-
-	/{attr(RadioButtonColumn)} {
-		display: none;
-	}
-
-	/{attr(SelectColumnsButton)},
-	/{attr(ServerListHeaderCell)} {
-		@extend button;
-		@extend .table-button;
-
-		height: 17px;
-	}
-
-	/{attr(ServerListHeaderSort)} {
+	.DialogButton svg {
 		color: inherit;
-		font: var(--text-ui);
-		text-transform: unset;
+	}
+}
 
-		justify-content: space-between;
+#TopControlsCtr {
+	gap: 0;
+	margin-left: 4px;
+	margin-bottom: 1px;
 
-		svg {
-			box(calc(var(--text-size) * var(--text-line)));
-		}
+	.DialogDropDown {
+		right: calc(var(--search-button-width) + var(--right-offset) * 2);
+		width: 33vw;
+	}
+}
+
+#TopControlsCtr .DialogDropDown,
+#SearchButton {
+	--search-button-width: calc(2ex + 5px * 2);
+	--right-offset: 6px;
+
+	position: absolute;
+	top: 2px;
+}
+
+#SearchButton {
+	right: var(--right-offset);
+	width: var(--search-button-width);
+}
+
+#SwitchTabButton {
+	@extend [role="tab"];
+
+	margin-top: 2px;
+
+	width: unset;
+
+	&[class*="Selected"] {
+		@extend [role="tab"][aria-selected="true"];
 	}
 
-	/{attr(ColumnResizer)} {
-		--separator-size: 13px;
-
-		opacity: 0;
-
-		padding: 0;
-
-		width: var(--separator-size);
-		margin-right: calc(var(--separator-size) / -2);
-	}
-
-	/{attr(SelectColumnsButton)} {
-		width: 21px;
-	}
-
-	/{attr(ServerRow)} {
-		&:hover {
-			background-color: transparent;
-		}
-
-		&[class*="Selected"] {
-			background: var(--color-highlight);
-			color: var(--color-highlight-text);
-		}
-	}
-
-	/{attr(FilterOptionsCtr)} {
-		padding: 0;
-
-		&:not([class*="Collapsed"]) {
-			gap: 0;
-
-			height: unset;
-		}
-
-		&[class*="Collapsed"] {
-			display: none;
-		}
-
-		.DialogInput {
-			width: 100%;
-		}
-	}
-
-	/{attr(DropdownLabel)} {
-		font: var(--text-ui);
-
-		margin-bottom: 4px;
-
+	&::before {
 		display: block;
 	}
 
-	/{attr(BottomControlsRow)} {
-		padding: 4px 0;
+	svg {
+		display: none;
+	}
+}
+
+#ServerTabPane {
+	@extend [role="tabpanel"];
+}
+
+#ServerList {
+	@extend table;
+
+	margin: 0;
+	padding: 2px;
+}
+
+#ServerListHeaderCtr {
+	background-color: transparent;
+
+	padding: 0;
+}
+
+#ServerListHeaderRow {
+	gap: 0;
+}
+
+#RadioButtonColumn {
+	display: none;
+}
+
+#SelectColumnsButton,
+#ServerListHeaderCell {
+	@extend button;
+	@extend .table-button;
+
+	height: 17px;
+}
+
+#ServerListHeaderSort {
+	color: inherit;
+	font: var(--text-ui);
+	text-transform: unset;
+
+	justify-content: space-between;
+
+	svg {
+		box(calc(var(--text-size) * var(--text-line)));
+	}
+}
+
+#ColumnResizer {
+	--separator-size: 13px;
+
+	opacity: 0;
+
+	padding: 0;
+
+	width: var(--separator-size);
+	margin-right: calc(var(--separator-size) / -2);
+}
+
+#SelectColumnsButton {
+	width: 21px;
+}
+
+#ServerRow {
+	&:hover {
+		background-color: transparent;
+	}
+
+	&[class*="Selected"] {
+		background: var(--color-highlight);
+		color: var(--color-highlight-text);
+	}
+}
+
+#FilterOptionsCtr {
+	padding: 0;
+
+	&:not([class*="Collapsed"]) {
+		gap: 0;
 
 		height: unset;
+	}
 
-		.DialogTwoColLayout {
-			gap: 0;
+	&[class*="Collapsed"] {
+		display: none;
+	}
 
-			& > .DialogButton {
-				min-width: unset;
-			}
+	.DialogInput {
+		width: 100%;
+	}
+}
+
+#DropdownLabel {
+	font: var(--text-ui);
+
+	margin-bottom: 4px;
+
+	display: block;
+}
+
+#BottomControlsRow {
+	padding: 4px 0;
+
+	height: unset;
+
+	.DialogTwoColLayout {
+		gap: 0;
+
+		& > .DialogButton {
+			min-width: unset;
 		}
 	}
+}
 
-	/{attr(ToggleShowFilterDetailsButton)} {
-		width: 111px;
-	}
+#ToggleShowFilterDetailsButton {
+	width: 111px;
 }

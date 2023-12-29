@@ -1,104 +1,102 @@
-[class*="appproperties_"] {
-	// note?
-	/[class*="FieldDescription_"],
-	/{attr(Detail)} {
-		font: var(--text-ui);
-		color: var(--color-button-text);
-		margin: 4px 0;
+// note?
+[class*="FieldDescription_"],
+#Detail {
+	font: var(--text-ui);
+	color: var(--color-button-text);
+	margin: 4px 0;
+}
+
+#SectionTopLine {
+	@extend fieldset;
+}
+
+#TopGap {
+	margin-top: 4px;
+}
+
+// Workshop
+#WorkshopItemsRowsScrollable {
+	@extend table;
+
+	font: var(--text-ui);
+
+	padding: 2px;
+	margin: 0;
+}
+
+#WorkshopItemRowsScroll {
+	border: none;
+	box-shadow: none;
+}
+
+#WorkshopItemRow {
+	filter: none;
+	background-color: var(--color-window);
+	box-shadow: none;
+
+	&[class*="IsDragging_"] {
+		background-color: var(--color-highlight);
+		--color-window-text: var(--color-highlight-text);
 	}
+}
 
-	/{attr(SectionTopLine)} {
-		@extend fieldset;
+#LoadOrder,
+#SortedColumn {
+	font: var(--text-ui);
+	color: var(--color-window-text);
+}
+
+#Details {
+	& > :first-child {
+		width: 88px;
+
+		display: flex;
+		justify-content: center;
 	}
+}
 
-	/{attr(TopGap)} {
-		margin-top: 4px;
-	}
+#TextDetails {
+	background-color: transparent;
+	color: var(--color-window-text);
+}
 
-	// Workshop
-	/{attr(WorkshopItemsRowsScrollable)} {
-		@extend table;
+#WorkshopItemDependencies,
+#WorkshopItemTagsContainer {
+	background-color: transparent;
+	font: var(--text-ui);
+	color: var(--color-gray-text);
+}
 
-		font: var(--text-ui);
+#DragHandle {
+	opacity: 1;
+	color: var(--color-window-text);
 
-		padding: 2px;
-		margin: 0;
-	}
+	left: 80%;
+}
 
-	/{attr(WorkshopItemRowsScroll)} {
-		border: none;
-		box-shadow: none;
-	}
+#Controls {
+	& > .DialogButton {
+		@extend $small-button;
 
-	/{attr(WorkshopItemRow)} {
-		filter: none;
-		background-color: var(--color-window);
-		box-shadow: none;
+		--button-img: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA5IDkiPjxyZWN0IHdpZHRoPSI5IiBoZWlnaHQ9IjEiIHk9IjIiLz48cmVjdCB3aWR0aD0iMSIgaGVpZ2h0PSIxIiB4PSIyIiB5PSIxIi8+PHJlY3Qgd2lkdGg9IjMiIGhlaWdodD0iMSIgeD0iMyIvPjxyZWN0IHdpZHRoPSIxIiBoZWlnaHQ9IjEiIHg9IjYiIHk9IjEiLz48cmVjdCB3aWR0aD0iMSIgaGVpZ2h0PSI1IiB4PSIxIiB5PSIzIi8+PHJlY3Qgd2lkdGg9IjEiIGhlaWdodD0iMyIgeD0iMyIgeT0iNCIvPjxyZWN0IHdpZHRoPSIxIiBoZWlnaHQ9IjMiIHg9IjUiIHk9IjQiLz48cmVjdCB3aWR0aD0iMSIgaGVpZ2h0PSI1IiB4PSI3IiB5PSIzIi8+PHJlY3Qgd2lkdGg9IjUiIGhlaWdodD0iMSIgeD0iMiIgeT0iOCIvPjwvc3ZnPgo=');
+		--button-img-size: 9px;
+		--button-img-pos: 3px 2px;
 
-		&[class*="IsDragging_"] {
-			background-color: var(--color-highlight);
-			--color-window-text: var(--color-highlight-text);
+		svg {
+			display: none;
 		}
 	}
+}
 
-	/{attr(LoadOrder)},
-	/{attr(SortedColumn)} {
-		font: var(--text-ui);
-		color: var(--color-window-text);
-	}
+// etc.
+#BrowseDiskRow > .DialogButton {
+	order: -1;
+}
 
-	/{attr(Details)} {
-		& > :first-child {
-			width: 88px;
+#BrowseDiskSize {
+	margin-left: 1ch;
+}
 
-			display: flex;
-			justify-content: center;
-		}
-	}
-
-	/{attr(TextDetails)} {
-		background-color: transparent;
-		color: var(--color-window-text);
-	}
-
-	/{attr(WorkshopItemDependencies)},
-	/{attr(WorkshopItemTagsContainer)} {
-		background-color: transparent;
-		font: var(--text-ui);
-		color: var(--color-gray-text);
-	}
-
-	/{attr(DragHandle)} {
-		opacity: 1;
-		color: var(--color-window-text);
-
-		left: 80%;
-	}
-
-	/{attr(Controls)} {
-		& > .DialogButton {
-			@extend $small-button;
-
-			--button-img: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA5IDkiPjxyZWN0IHdpZHRoPSI5IiBoZWlnaHQ9IjEiIHk9IjIiLz48cmVjdCB3aWR0aD0iMSIgaGVpZ2h0PSIxIiB4PSIyIiB5PSIxIi8+PHJlY3Qgd2lkdGg9IjMiIGhlaWdodD0iMSIgeD0iMyIvPjxyZWN0IHdpZHRoPSIxIiBoZWlnaHQ9IjEiIHg9IjYiIHk9IjEiLz48cmVjdCB3aWR0aD0iMSIgaGVpZ2h0PSI1IiB4PSIxIiB5PSIzIi8+PHJlY3Qgd2lkdGg9IjEiIGhlaWdodD0iMyIgeD0iMyIgeT0iNCIvPjxyZWN0IHdpZHRoPSIxIiBoZWlnaHQ9IjMiIHg9IjUiIHk9IjQiLz48cmVjdCB3aWR0aD0iMSIgaGVpZ2h0PSI1IiB4PSI3IiB5PSIzIi8+PHJlY3Qgd2lkdGg9IjUiIGhlaWdodD0iMSIgeD0iMiIgeT0iOCIvPjwvc3ZnPgo=');
-			--button-img-size: 9px;
-			--button-img-pos: 3px 2px;
-
-			svg {
-				display: none;
-			}
-		}
-	}
-
-	// etc.
-	/{attr(BrowseDiskRow)} > .DialogButton {
-		order: -1;
-	}
-
-	/{attr(BrowseDiskSize)} {
-		margin-left: 1ch;
-	}
-
-	/{attr(SteamInputLink)} {
-		color: var(--color-link);
-	}
+#SteamInputLink {
+	color: var(--color-link);
 }

@@ -1,59 +1,57 @@
-[class*="gamelistsearchbar_"] {
-	/{attr(Container)} {
-		background-color: transparent;
+#Container {
+	background-color: transparent;
 
-		margin: 4px 0;
-	}
+	margin: 4px 0;
+}
 
-	/{attr(FilterTag)} {
-		padding: 2px;
-		border-radius: 0;
-		margin: 0;
-	}
+#FilterTag {
+	padding: 2px;
+	border-radius: 0;
+	margin: 0;
+}
 
-	/{attr(SearchInput)} {
-		min-height: unset;
-	}
+#SearchInput {
+	min-height: unset;
+}
 
-	/{attr(SearchFilterInput)} {
-		color: var(--color-button-text);
-		align-items: center;
-	}
+#SearchFilterInput {
+	color: var(--color-button-text);
+	align-items: center;
+}
 
-	/{attr(SearchFilterInputClear)} {
-		position: unset;
-	}
+#SearchFilterInputClear {
+	position: unset;
+}
 
-	/{attr(SearchByTypePrompt)} {
-		font: var(--text-ui);
-		padding: 0 18px;
-	}
+#SearchByTypePrompt {
+	font: var(--text-ui);
+	padding: 0 18px;
+}
 
-	/{attr(AdvancedSearchContainer)} {
-		@extend button;
+#AdvancedSearchContainer {
+	@extend button;
 
-		justify-content: center;
+	justify-content: center;
 
-		& > .Focusable > div {
-			cursor: default;
-
-			&::before {
-				content: 'Search...';
-			}
-		}
-
-		svg {
-			display: none;
-		}
-	}
-
-	/{attr(AdvancedSearchPane)} {
-		@extend body;
-
-		border-radius: 0;
+	& > .Focusable > div {
+		cursor: default;
 
 		&::before {
-			display: none;
+			content: 'Search...';
 		}
+	}
+
+	svg {
+		display: none;
+	}
+}
+
+#AdvancedSearchPane {
+	@extend body;
+
+	border-radius: 0;
+
+	&::before {
+		display: none;
 	}
 }

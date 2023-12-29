@@ -1,40 +1,36 @@
-[class*="rootmenu_"] {
-	// TODO radio ?
-	/{attr(Icon)} {
-		background-image: var(--control-img);
+// TODO radio ?
+#Icon {
+	background-image: var(--control-img);
 
-		position: absolute;
-		left: 6px;
-		box(7px);
+	position: absolute;
+	left: 6px;
+	box(7px);
 
-		:hover > & {
-			filter: invert();
-		}
+	:hover > & {
+		filter: invert();
+	}
 
-		&:not(:empty) {
-			@extend input[type="checkbox"]:checked;
-		}
+	&:not(:empty) {
+		@extend input[type="checkbox"]:checked;
+	}
 
-		& > svg {
-			display: none;
-		}
+	& > svg {
+		display: none;
 	}
 }
 
-[class*="rootmenu_"] {
-	/{attr(RootMenuButton)} {
-		color: var(--color-button-text);
-		font: var(--text-ui);
-		padding: 3px 6px;
+#RootMenuButton {
+	color: var(--color-button-text);
+	font: var(--text-ui);
+	padding: 3px 6px;
 
-		&:active,
-		&[class*="Open"] {
-			background-color: var(--color-highlight);
-			color: var(--color-highlight-text);
-		}
+	&:active,
+	&[class*="Open"] {
+		background-color: var(--color-highlight);
+		color: var(--color-highlight-text);
+	}
 
-		svg {
-			display: none;
-		}
+	svg {
+		display: none;
 	}
 }

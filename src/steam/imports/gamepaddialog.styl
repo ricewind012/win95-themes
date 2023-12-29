@@ -1,76 +1,74 @@
-[class*="gamepaddialog_"] {
-	/{attr(Field)} {
-		--field-row-children-spacing: 7px;
+#Field {
+	--field-row-children-spacing: 7px;
 
-		background-color: transparent;
+	background-color: transparent;
 
-		padding: 0;
+	padding: 0;
 
-		div:not([class]) > & {
-			@extend fieldset;
+	div:not([class]) > & {
+		@extend fieldset;
 
-			gap: 4px;
-
-			display: flex;
-			flex-direction: column;
-		}
-
-		&::after { // lol
-			display: none;
-		}
-	}
-
-	/{attr(FieldChildren)} {
 		gap: 4px;
+
+		display: flex;
+		flex-direction: column;
 	}
 
-	/{attr(FieldLabel)} {
-		font: var(--text-ui);
-		color: var(--color-button-text);
-
-		& > :not([class]) { // has something else
-			gap: 1ch;
-
-			display: flex;
-			align-items: center;
-		}
-	}
-
-	/{attr(FieldLabelRow)} {
-		flex-direction: row-reverse;
-	}
-
-	/{attr(FieldDescription)} {
-		[class*="WithDescription_"] > [class*="Row"] + & {
-			color: var(--color-gray-text);
-
-			margin-left: 17px;
-		}
-	}
-
-	/{attr(ControlsListOuterPanel)} {
-		--controls-list-spacing: 6px;
-
-		gap: 0;
-
-		flex: unset;
-	}
-
-	/{attr(ControlsListChild)} {
-		max-width: unset;
-	}
-
-	/{attr(Toggle)} {
-		@extend input;
-		@extend input[type="checkbox"];
-
-		&[class*="On_"] {
-			@extend input[type="checkbox"]:checked;
-		}
-	}
-
-	/{attr(ToggleRail)},
-	/{attr(ToggleSwitch)} {
+	&::after { // lol
 		display: none;
 	}
+}
+
+#FieldChildren {
+	gap: 4px;
+}
+
+#FieldLabel {
+	font: var(--text-ui);
+	color: var(--color-button-text);
+
+	& > :not([class]) { // has something else
+		gap: 1ch;
+
+		display: flex;
+		align-items: center;
+	}
+}
+
+#FieldLabelRow {
+	flex-direction: row-reverse;
+}
+
+#FieldDescription {
+	[class*="WithDescription_"] > [class*="Row"] + & {
+		color: var(--color-gray-text);
+
+		margin-left: 17px;
+	}
+}
+
+#ControlsListOuterPanel {
+	--controls-list-spacing: 6px;
+
+	gap: 0;
+
+	flex: unset;
+}
+
+#ControlsListChild {
+	max-width: unset;
+}
+
+#Toggle {
+	@extend input;
+	@extend input[type="checkbox"];
+
+	&[class*="On_"] {
+		@extend input[type="checkbox"]:checked;
+	}
+}
+
+#ToggleRail,
+#ToggleSwitch {
+	display: none;
 }

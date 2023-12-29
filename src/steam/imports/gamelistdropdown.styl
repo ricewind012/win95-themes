@@ -1,42 +1,40 @@
-[class*="gamelistdropdown_"] {
-	/{attr(Bar)} {
-		padding: 0;
+#Bar {
+	padding: 0;
 
-		circle {
-			stroke: var(--color-button-text);
-		}
-
-		svg {
-			fill: var(--color-button-text);
-		}
+	circle {
+		stroke: var(--color-button-text);
 	}
 
-	/{attr(MenuHeader)} {
-		@extend select;
-
-		cursor: default;
+	svg {
+		fill: var(--color-button-text);
 	}
+}
 
-	/{attr(ScrollToTop)},
-	/{attr(Arrow)} {
+#MenuHeader {
+	@extend select;
+
+	cursor: default;
+}
+
+#ScrollToTop,
+#Arrow {
+	display: none;
+}
+
+#ViewFiltersBar {
+	margin: 0;
+	margin-right: 3px;
+}
+
+#CheckboxWithImage {
+	@extend $small-button;
+
+	&::before,
+	&::after {
 		display: none;
 	}
 
-	/{attr(ViewFiltersBar)} {
-		margin: 0;
-		margin-right: 3px;
-	}
-
-	/{attr(CheckboxWithImage)} {
-		@extend $small-button;
-
-		&::before,
-		&::after {
-			display: none;
-		}
-
-		&[class*="Active"] {
-			@extend button:active;
-		}
+	&[class*="Active"] {
+		@extend button:active;
 	}
 }

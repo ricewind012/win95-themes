@@ -1,95 +1,93 @@
-[class*="libraryhomeshowcases_"] {
-	/{attr(AddShowcase)} {
-		@extend button;
+#AddShowcase {
+	@extend button;
 
-		text-transform: unset;
-		justify-content: center;
+	text-transform: unset;
+	justify-content: center;
 
-		svg {
-			display: none;
-		}
+	svg {
+		display: none;
+	}
+}
+
+#Collapser {
+	@extend button;
+
+	padding: 4px;
+
+	box(20px);
+
+	svg {
+		margin: 0;
 	}
 
-	/{attr(Collapser)} {
-		@extend button;
-
-		padding: 4px;
-
-		box(20px);
-
-		svg {
-			margin: 0;
-		}
-
-		polyline {
-			stroke: var(--color-button-text);
-		}
+	polyline {
+		stroke: var(--color-button-text);
 	}
+}
 
-	/{attr(Showcase)} {
-		@extend fieldset;
+#Showcase {
+	@extend fieldset;
 
-		margin-bottom: 16px;
+	margin-bottom: 16px;
+}
+
+#ShowcaseHeader {
+	@extend $legend-as-div;
+
+	background-color: var(--color-window);
+	color: inherit;
+	border: none;
+
+	top: -12px;
+	align-items: center;
+}
+
+#CountDisplay {
+	color: inherit;
+}
+
+#PageButtons {
+	margin: 0;
+}
+
+#ChildrenContainer {
+	// PageableContainer
+	& > div {
+		border: none;
+		box-shadow: none;
+
+		padding: 0;
+		margin: 0;
 	}
+}
 
-	/{attr(ShowcaseHeader)} {
-		@extend $legend-as-div;
+// Context menu
+#CollectionDropDownContainer {
+	// !important
+	.DesktopUI && ._DialogInputContainer {
+		@extend .menu;
+	}
+}
 
-		background-color: var(--color-window);
-		color: inherit;
+#DropDownItems {
+	font: var(--text-ui);
+
+	margin: 0;
+
+	&[class*="OptionsRule"] {
 		border: none;
 
-		top: -12px;
-		align-items: center;
-	}
+		&::before {
+			content: '';
+			display: block;
 
-	/{attr(CountDisplay)} {
-		color: inherit;
-	}
+			@extend hr;
 
-	/{attr(PageButtons)} {
-		margin: 0;
-	}
+			background-color: var(--color-button-face);
 
-	/{attr(ChildrenContainer)} {
-		// PageableContainer
-		& > div {
-			border: none;
-			box-shadow: none;
+			margin-left: -20px;
 
-			padding: 0;
-			margin: 0;
-		}
-	}
-
-	// Context menu
-	/{attr(CollectionDropDownContainer)} {
-		// !important
-		.DesktopUI && ._DialogInputContainer {
-			@extend .menu;
-		}
-	}
-
-	/{attr(DropDownItems)} {
-		font: var(--text-ui);
-
-		margin: 0;
-
-		&[class*="OptionsRule"] {
-			border: none;
-
-			&::before {
-				content: '';
-				display: block;
-
-				@extend hr;
-
-				background-color: var(--color-button-face);
-
-				margin-left: -20px;
-
-				width: calc(100% + 40px);
-			}
+			width: calc(100% + 40px);
 		}
 	}
 }

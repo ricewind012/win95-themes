@@ -1,36 +1,34 @@
-[class*="gamepadslider_"] {
-	/{attr(SliderControl)} {
-		@extend input[type="range"];
+#SliderControl {
+	@extend input[type="range"];
 
-		margin: 0;
+	margin: 0;
 
-		height: unset;
+	height: unset;
+}
+
+#SliderTrack {
+	@extend input[type="range"]::-webkit-slider-runnable-track;
+
+	border-radius: 0;
+
+	margin: 0;
+
+	height: 4px;
+
+	&::before {
+		display: none;
 	}
+}
 
-	/{attr(SliderTrack)} {
-		@extend input[type="range"]::-webkit-slider-runnable-track;
+#SliderHandle {
+	@extend input[type="range"]::-webkit-slider-thumb;
 
-		border-radius: 0;
+	box-shadow: none;
 
-		margin: 0;
+	margin: 0;
+	margin-top: -8px;
+}
 
-		height: 4px;
-
-		&::before {
-			display: none;
-		}
-	}
-
-	/{attr(SliderHandle)} {
-		@extend input[type="range"]::-webkit-slider-thumb;
-
-		box-shadow: none;
-
-		margin: 0;
-		margin-top: -8px;
-	}
-
-	/{attr(SliderHandleContainer)} {
-		transform: translateX(calc(-100% * var(--inverse-normalized-value) + 7px * var(--inverse-normalized-value)));
-	}
+#SliderHandleContainer {
+	transform: translateX(calc(-100% * var(--inverse-normalized-value) + 7px * var(--inverse-normalized-value)));
 }

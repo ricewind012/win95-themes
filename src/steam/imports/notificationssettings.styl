@@ -1,42 +1,40 @@
-[class*="notificationssettings_"] {
-	/{attr(NotificationGroup)} {
-		background-color: transparent;
-		border-bottom: none;
+#NotificationGroup {
+	background-color: transparent;
+	border-bottom: none;
+	margin: 0;
+}
+
+#NotificationSection {
+	align-items: center;
+}
+
+#NotificationFeedToggle {
+	margin-right: 0;
+}
+
+#NotificationDescription {
+	font: var(--text-ui);
+	color: inherit;
+	margin: 0;
+}
+
+#NotificationPrefDetails {
+	background-color: transparent;
+	padding: 0;
+	padding-left: 23px;
+	box-shadow: none;
+	flex-direction: column;
+
+	.DialogCheckbox_Container {
 		margin: 0;
 	}
+}
 
-	/{attr(NotificationSection)} {
-		align-items: center;
-	}
+#PrefDetailsToggle svg {
+	margin: 0;
+	height: var(--font-size);
+}
 
-	/{attr(NotificationFeedToggle)} {
-		margin-right: 0;
-	}
-
-	/{attr(NotificationDescription)} {
-		font: var(--text-ui);
-		color: inherit;
-		margin: 0;
-	}
-
-	/{attr(NotificationPrefDetails)} {
-		background-color: transparent;
-		padding: 0;
-		padding-left: 23px;
-		box-shadow: none;
-		flex-direction: column;
-
-		.DialogCheckbox_Container {
-			margin: 0;
-		}
-	}
-
-	/{attr(PrefDetailsToggle)} svg {
-		margin: 0;
-		height: var(--font-size);
-	}
-
-	/{attr(Toggles)}.Panel {
-		gap: 106px;
-	}
+#Toggles.Panel {
+	gap: 106px;
 }

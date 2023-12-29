@@ -36,6 +36,7 @@ let file = (() => {
 		default:      return process.argv[2];
 	}
 })();
+let isSteam = process.argv[2] == 'steam';
 let rootDir = path.join('src', process.argv[2]);
 let outExt = process.argv[3] == 'ts' ? 'js' : 'css';
 let outFile = path.join('dist', process.argv[2], `${file}.${outExt}`);
@@ -44,7 +45,7 @@ switch (process.argv[3]) {
 	case 'styl':
 		let sharedCss = fs.readdirSync(SHARED_STYLUS_DIR)
 			.map(e => path.join(SHARED_STYLUS_DIR, e));
-		let includedDirs = fs.readdirSync(rootDir)
+		let includedDirs = (isSteam ? [ 'other' ] : fs.readdirSync(rootDir))
 			.filter(e => fs.lstatSync(path.join(rootDir, e)).isDirectory())
 			.map(e => `${rootDir}/${e}/*`);
 		let imports = [
@@ -53,8 +54,20 @@ switch (process.argv[3]) {
 			...sharedFiles,
 			...includedDirs,
 		]
-			.map(e => `@import '${e}'`)
-			.join(';');
+			.map(e => `@import '${e}';`)
+			.join('\n');
+
+		if (isSteam) {
+			let importsPath = path.join('src', process.argv[2], 'imports');
+
+			imports += fs.readdirSync(importsPath)
+				.map(e => fs.readFileSync(path.join(importsPath, e))
+					.toString()
+					.replace(/#(\w+)/g, `[class*="${e.replace('.styl', '')}_$1_"]`)
+				)
+				.join('\n');
+		}
+
 		// Variables have to be manually edited due to a Stylus bug (or its age).
 		let cssVars = fs.readFileSync(path.join(SHARED_DIR, 'variables.css'))
 			.toString()
