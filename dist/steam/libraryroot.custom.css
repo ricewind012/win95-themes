@@ -581,7 +581,6 @@ progress::-webkit-progress-value,
   --icon-dialog-warning: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAASUExURaioV8DHyP//AAAAAIeIjwAAADxsqtcAAAAGdFJOU///////ALO/pL8AAAAJcEhZcwAADsMAAA7DAcdvqGQAAADBSURBVDhPfZFJEoAgDATBkP9/2exkkHIuRKer4zK4Z4wxY8wAMJ5nUsyZDkivxIpLzwd4aAHRAO9V0YkvcCg2kP2huACoKGD3qABgEtGU8waYQHqiQ3EFuiIAf4ICmuIONIUD3jdgKwAY0icLQNys17QxCAB0R0ylUKB62VFzKhCYuUGygd3L3TgloTiAngR6L6+xd7gCgfpQFgdgAQKmQABWuAKBIwKsP0BXLHxIiPUCsP7Da7RXgNmme+xf/BDML3sxDSA4Fh+VAAAAAElFTkSuQmCC") !important;
 }
 .menu,
-.ContextMenuPopupBody,
 .DialogMenuPosition ._DialogInputContainer,
 [class*="contextmenu_contextMenu_"],
 .DesktopUI [class*="libraryhomeshowcases_CollectionDropDownContainer_"][class*="libraryhomeshowcases_CollectionDropDownContainer_"] ._DialogInputContainer {
@@ -859,11 +858,9 @@ body,
   top: -8px !important;
   padding: 0 2px !important;
 }
-.ContextMenuPopupBody [class*="contextmenu_contextMenu_"] {
+.ContextMenuPopupBody {
   box-shadow: none !important;
   padding: 0 !important;
-  width: 100% !important;
-  min-width: unset !important;
 }
 .ModalPosition {
   background-image: none !important;
@@ -2059,6 +2056,9 @@ div:not([class]) > [class*="gamepaddialog_Field_"] {
   margin-right: 2px !important;
   order: -1 !important;
 }
+[class*="titlebarcontrols_TitleBarControls_"] svg {
+  display: none !important;
+}
 [class*="titlebarcontrols_AccountMenu_"] {
   margin-top: -8px !important;
 }
@@ -2090,9 +2090,6 @@ div:not([class]) > [class*="gamepaddialog_Field_"] {
 [class*="titlebarcontrols_GamepadUIToggle_"] {
   --button-img: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAICAYAAADED76LAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAAoSURBVChTY2RgYPgPxHgBPgX/maAMnIByBQQdCVIAArgUMRIwgYEBAGefBgb8inyEAAAAAElFTkSuQmCC") !important;
   --button-img-size: 9px !important;
-}
-svg {
-  display: none !important;
 }
 [class*="titlebarcontrols_LogoutButton_"] {
   white-space: pre !important;
