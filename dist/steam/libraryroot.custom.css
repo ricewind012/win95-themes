@@ -154,6 +154,7 @@ select:disabled,
   --button-img: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAHCAYAAAAvZezQAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsIAAA7CARUoSoAAAAAySURBVBhXRY3JDQAwCMOS7r8zxZEAPzgsDkuqhhwewXalayJgZFYohp0Abq2YwxH3RfqHzhAHIWlRxQAAAABJRU5ErkJggg==") !important;
 }
 hr,
+[class*="appdetailsachievementssection_ShowDivider_"]::before,
 [class*="contextmenu_ContextMenuSeparator_"],
 [class*="libraryhomeshowcases_DropDownItems_"][class*="OptionsRule"]::before,
 [class*="steamdesktop_TitleBar_"]::before {
@@ -164,6 +165,12 @@ hr,
 }
 fieldset,
 .DialogControlsSection,
+[class*="appactivityday_AppActivityDay_"],
+[class*="appactivityday_PartnerEvent_"],
+[class*="appdetailsactivitysection_AddToFeed_"],
+[class*="appdetailsgameinfopanel_Container_"],
+[class*="appdetailssection_RightColumnSection_"],
+[class*="appdetailsspotlight_ReviewContainer_"],
 [class*="appfilterpane_FilterBucket_"],
 [class*="appproperties_SectionTopLine_"],
 div:not([class]) > [class*="gamepaddialog_Field_"],
@@ -187,10 +194,15 @@ textarea,
 [class*="pageablecontainer_"][class*="PageRight"],
 [class*="libraryhomeshowcases_"][class*="PageRight"],
 .title-area-icon,
+[class*="appdetailsachievementssection_Remainder_"],
+[class*="appdetailsprimarylinkssection_MenuButton_"],
 [class*="appproperties_Controls_"] > .DialogButton,
 [class*="bottombar_AddGameButton_"],
 [class*="bottombar_DownloadStatusContent_"],
 [class*="bottombar_FriendsButton_"],
+[class*="comment_thread_LikeButton_"],
+[class*="comment_thread_CommentButton_"],
+[class*="comment_thread_Reactions_"],
 [class*="gameinfodialog_Header_"],
 [class*="gamelistdropdown_MenuHeader_"],
 [class*="gamelistdropdown_CheckboxWithImage_"],
@@ -201,6 +213,7 @@ textarea,
 [class*="libraryhomenewupdates_GameIconAndName_"],
 [class*="libraryhomeshowcases_AddShowcase_"],
 [class*="libraryhomeshowcases_Collapser_"],
+[class*="posttextentry_PostButton_"],
 [class*="serverbrowserdialog_SelectColumnsButton_"],
 [class*="serverbrowserdialog_ServerListHeaderCell_"],
 [class*="titlebarcontrols_AccountMenu_"],
@@ -223,10 +236,15 @@ textarea:disabled,
 [class*="pageablecontainer_"][class*="PageRight"]:disabled,
 [class*="libraryhomeshowcases_"][class*="PageRight"]:disabled,
 .title-area-icon:disabled,
+[class*="appdetailsachievementssection_Remainder_"]:disabled,
+[class*="appdetailsprimarylinkssection_MenuButton_"]:disabled,
 [class*="appproperties_Controls_"] > .DialogButton:disabled,
 [class*="bottombar_AddGameButton_"]:disabled,
 [class*="bottombar_DownloadStatusContent_"]:disabled,
 [class*="bottombar_FriendsButton_"]:disabled,
+[class*="comment_thread_LikeButton_"]:disabled,
+[class*="comment_thread_CommentButton_"]:disabled,
+[class*="comment_thread_Reactions_"]:disabled,
 [class*="gameinfodialog_Header_"]:disabled,
 [class*="gamelistdropdown_MenuHeader_"]:disabled,
 [class*="gamelistdropdown_CheckboxWithImage_"]:disabled,
@@ -237,6 +255,7 @@ textarea:disabled,
 [class*="libraryhomenewupdates_GameIconAndName_"]:disabled,
 [class*="libraryhomeshowcases_AddShowcase_"]:disabled,
 [class*="libraryhomeshowcases_Collapser_"]:disabled,
+[class*="posttextentry_PostButton_"]:disabled,
 [class*="serverbrowserdialog_SelectColumnsButton_"]:disabled,
 [class*="serverbrowserdialog_ServerListHeaderCell_"]:disabled,
 [class*="titlebarcontrols_AccountMenu_"]:disabled,
@@ -262,10 +281,15 @@ textarea:focus,
 [class*="pageablecontainer_"][class*="PageRight"]:focus,
 [class*="libraryhomeshowcases_"][class*="PageRight"]:focus,
 .title-area-icon:focus,
+[class*="appdetailsachievementssection_Remainder_"]:focus,
+[class*="appdetailsprimarylinkssection_MenuButton_"]:focus,
 [class*="appproperties_Controls_"] > .DialogButton:focus,
 [class*="bottombar_AddGameButton_"]:focus,
 [class*="bottombar_DownloadStatusContent_"]:focus,
 [class*="bottombar_FriendsButton_"]:focus,
+[class*="comment_thread_LikeButton_"]:focus,
+[class*="comment_thread_CommentButton_"]:focus,
+[class*="comment_thread_Reactions_"]:focus,
 [class*="gameinfodialog_Header_"]:focus,
 [class*="gamelistdropdown_MenuHeader_"]:focus,
 [class*="gamelistdropdown_CheckboxWithImage_"]:focus,
@@ -276,6 +300,7 @@ textarea:focus,
 [class*="libraryhomenewupdates_GameIconAndName_"]:focus,
 [class*="libraryhomeshowcases_AddShowcase_"]:focus,
 [class*="libraryhomeshowcases_Collapser_"]:focus,
+[class*="posttextentry_PostButton_"]:focus,
 [class*="serverbrowserdialog_SelectColumnsButton_"]:focus,
 [class*="serverbrowserdialog_ServerListHeaderCell_"]:focus,
 [class*="titlebarcontrols_AccountMenu_"]:focus,
@@ -308,10 +333,15 @@ input:-webkit-any([type="button"],
 [class*="pageablecontainer_"][class*="PageRight"],
 [class*="libraryhomeshowcases_"][class*="PageRight"],
 .title-area-icon,
+[class*="appdetailsachievementssection_Remainder_"],
+[class*="appdetailsprimarylinkssection_MenuButton_"],
 [class*="appproperties_Controls_"] > .DialogButton,
 [class*="bottombar_AddGameButton_"],
 [class*="bottombar_DownloadStatusContent_"],
 [class*="bottombar_FriendsButton_"],
+[class*="comment_thread_LikeButton_"],
+[class*="comment_thread_CommentButton_"],
+[class*="comment_thread_Reactions_"],
 [class*="gameinfodialog_Header_"],
 [class*="gamelistdropdown_CheckboxWithImage_"],
 [class*="gamelistsearchbar_AdvancedSearchContainer_"],
@@ -320,6 +350,7 @@ input:-webkit-any([type="button"],
 [class*="libraryhomenewupdates_GameIconAndName_"],
 [class*="libraryhomeshowcases_AddShowcase_"],
 [class*="libraryhomeshowcases_Collapser_"],
+[class*="posttextentry_PostButton_"],
 [class*="serverbrowserdialog_SelectColumnsButton_"],
 [class*="serverbrowserdialog_ServerListHeaderCell_"],
 [class*="titlebarcontrols_Button_"] {
@@ -341,10 +372,15 @@ input:-webkit-any([type="button"]:active,
 [class*="pageablecontainer_"][class*="PageRight"]:active,
 [class*="libraryhomeshowcases_"][class*="PageRight"]:active,
 .title-area-icon:active,
+[class*="appdetailsachievementssection_Remainder_"]:active,
+[class*="appdetailsprimarylinkssection_MenuButton_"]:active,
 [class*="appproperties_Controls_"] > .DialogButton:active,
 [class*="bottombar_AddGameButton_"]:active,
 [class*="bottombar_DownloadStatusContent_"]:active,
 [class*="bottombar_FriendsButton_"]:active,
+[class*="comment_thread_LikeButton_"]:active,
+[class*="comment_thread_CommentButton_"]:active,
+[class*="comment_thread_Reactions_"]:active,
 [class*="gameinfodialog_Header_"]:active,
 [class*="gamelistdropdown_CheckboxWithImage_"]:active,
 [class*="gamelistsearchbar_AdvancedSearchContainer_"]:active,
@@ -353,6 +389,7 @@ input:-webkit-any([type="button"]:active,
 [class*="libraryhomenewupdates_GameIconAndName_"]:active,
 [class*="libraryhomeshowcases_AddShowcase_"]:active,
 [class*="libraryhomeshowcases_Collapser_"]:active,
+[class*="posttextentry_PostButton_"]:active,
 [class*="serverbrowserdialog_SelectColumnsButton_"]:active,
 [class*="serverbrowserdialog_ServerListHeaderCell_"]:active,
 [class*="titlebarcontrols_Button_"]:active,
@@ -517,6 +554,7 @@ select:focus,
   outline: none; /* unable to do right side, as it conflicts with the button */
 }
 progress,
+[class*="appdetailsachievementssection_AchievementProgressContainer_"],
 [class*="appdetailsplaysection_DetailsProgressContainer_"] {
   appearance: none !important;
   box-shadow: var(--border-statusbar) !important;
@@ -524,11 +562,14 @@ progress,
   block-size: 12px !important;
 }
 progress::-webkit-progress-bar,
+[class*="appdetailsachievementssection_AchievementProgressContainer_"]::-webkit-progress-bar,
 [class*="appdetailsplaysection_DetailsProgressContainer_"]::-webkit-progress-bar {
   background-color: var(--color-button-face) !important;
 }
 progress::-webkit-progress-value,
+[class*="appdetailsachievementssection_AchievementProgressContainer_"]::-webkit-progress-value,
 [class*="appdetailsplaysection_DetailsProgressContainer_"]::-webkit-progress-value,
+[class*="appdetailsachievementssection_AchievementProgress_"],
 [class*="appdetailsplaysection_DetailsProgressBar_"] {
   --block-width: 7px !important;
   background-color: transparent !important;
@@ -742,9 +783,13 @@ legend,
 [class*="appproperties_Title_"],
 [class*="librarysettings_DescriptionText_"],
 [class*="remoteplaysettings_TableHeader_"] > :first-child,
+[class*="appactivityday_AppActivityDate_"],
+[class*="appactivityday_PartnerEventFeaturedHeader_"],
+[class*="appdetailssectionheader_SectionHeader_"],
 [class*="appfilterpane_FilterBucketLabel_"],
 [class*="libraryhomeshowcases_ShowcaseHeader_"],
-[class*="pageablecontainer_Name_"] {
+[class*="pageablecontainer_Name_"],
+[class*="spotlightgameplaysummary_GamePlaySummaryHeader_"] {
   background-color: var(--color-button-face) !important;
   font: var(--text-ui) !important;
 }
@@ -781,6 +826,7 @@ body,
 [class*="pageablecontainer_"][class*="PageRight"],
 [class*="libraryhomeshowcases_"][class*="PageRight"],
 .title-area-icon,
+[class*="appdetailsprimarylinkssection_MenuButton_"],
 [class*="appproperties_Controls_"] > .DialogButton,
 [class*="gamelistdropdown_CheckboxWithImage_"],
 [class*="libraryhomenewupdates_SettingsButton_"],
@@ -797,6 +843,7 @@ body,
 [class*="pageablecontainer_"][class*="PageRight"]::before,
 [class*="libraryhomeshowcases_"][class*="PageRight"]::before,
 .title-area-icon::before,
+[class*="appdetailsprimarylinkssection_MenuButton_"]::before,
 [class*="appproperties_Controls_"] > .DialogButton::before,
 [class*="gamelistdropdown_CheckboxWithImage_"]::before,
 [class*="libraryhomenewupdates_SettingsButton_"]::before,
@@ -807,6 +854,7 @@ body,
 [class*="pageablecontainer_"][class*="PageRight"]::after,
 [class*="libraryhomeshowcases_"][class*="PageRight"]::after,
 .title-area-icon::after,
+[class*="appdetailsprimarylinkssection_MenuButton_"]::after,
 [class*="appproperties_Controls_"] > .DialogButton::after,
 [class*="gamelistdropdown_CheckboxWithImage_"]::after,
 [class*="libraryhomenewupdates_SettingsButton_"]::after,
@@ -829,6 +877,7 @@ body,
 [class*="pageablecontainer_"][class*="PageRight"]::before,
 [class*="libraryhomeshowcases_"][class*="PageRight"]::before,
 .title-area-icon::before,
+[class*="appdetailsprimarylinkssection_MenuButton_"]::before,
 [class*="appproperties_Controls_"] > .DialogButton::before,
 [class*="gamelistdropdown_CheckboxWithImage_"]::before,
 [class*="libraryhomenewupdates_SettingsButton_"]::before,
@@ -845,15 +894,57 @@ body,
   left: 1px !important;
   top: 1px !important;
 }
+[class*="appactivityday_AppActivityDate_"],
+[class*="appactivityday_PartnerEventFeaturedHeader_"],
+[class*="appactivityday_PartnerEventMediumImage_Title_"],
+[class*="appactivityday_PartnerEventTextOnly_Title_"],
+[class*="appactivityday_PartnerEventType_"],
+[class*="appdetailsachievementssection_Label_"],
+[class*="appdetailsachievementssection_RemainderText_"],
+[class*="appdetailsactivitysection_ViewLastNews_"],
+[class*="appdetailsfeatureicon_Label_"],
+[class*="appdetailsfriendssection_SubsectionHeader_"],
+[class*="appdetailsgameinfopanel_Container_"],
+[class*="appdetailsgameinfopanel_Date_"],
+[class*="appdetailsgameinfopanel_Name_"],
+[class*="appdetailsgameinfopanel_Label_"],
+[class*="appdetailsgameinfopanel_GameDescription_"],
+[class*="appdetailsreviewsection_PlayedForTime_"],
+[class*="appdetailsscreenshotssection_InstructionText_"],
+[class*="appdetailsscreenshotssection_NoneTaken_"],
+[class*="appdetailssectionheader_SectionHeader_"],
+[class*="appdetailsspotlight_ReviewContainer_"],
+[class*="comment_thread_LikeCount_"],
+[class*="comment_thread_CommentCount_"],
+[class*="comment_thread_ReactionCount_"],
+[class*="spotlightgameplaysummary_EventHeaderBlock_"],
+[class*="spotlightgameplaysummary_GamePlaySummaryHeader_"],
+[class*="writereview_LeftContainer_"] {
+  color: inherit !important;
+  font: var(--text-ui) !important;
+  letter-spacing: 0 !important;
+  text-shadow: none !important;
+  text-transform: unset !important;
+}
+[class*="appdetailsprimarylinkssection_Text_"] {
+  color: var(--color-link) !important;
+}
+[class*="appdetailsprimarylinkssection_Text_"]:hover {
+  text-decoration: underline !important;
+}
 .DialogControlsSectionHeader,
 .DialogSubHeader,
 .DialogBodyText,
 [class*="appproperties_Title_"],
 [class*="librarysettings_DescriptionText_"],
 [class*="remoteplaysettings_TableHeader_"] > :first-child,
+[class*="appactivityday_AppActivityDate_"],
+[class*="appactivityday_PartnerEventFeaturedHeader_"],
+[class*="appdetailssectionheader_SectionHeader_"],
 [class*="appfilterpane_FilterBucketLabel_"],
 [class*="libraryhomeshowcases_ShowcaseHeader_"],
-[class*="pageablecontainer_Name_"] {
+[class*="pageablecontainer_Name_"],
+[class*="spotlightgameplaysummary_GamePlaySummaryHeader_"] {
   position: absolute !important;
   top: -8px !important;
   padding: 0 2px !important;
@@ -1135,8 +1226,106 @@ body,
   color: var(--color-window-text) !important;
   font: var(--text-ui) !important;
 }
+[class*="appactivityday_AppActivityDate_"],
+[class*="appactivityday_PartnerEventFeaturedHeader_"] {
+  background: var(--color-window) !important;
+}
+[class*="appactivityday_AppActivityDay_"],
+[class*="appactivityday_PartnerEvent_"] {
+  background: none !important;
+}
+[class*="appactivityday_EventBody_"] {
+  box-shadow: none !important;
+  margin: 0 !important;
+}
+[class*="appactivityday_PartnerEventMediumImage_Container_"] {
+  background: none !important;
+}
+[class*="appactivityday_PartnerEventMediumImage_Contents_"] {
+  padding: 0 !important;
+}
+[class*="appactivityday_PartnerEventMediumImage_Summary_"] {
+  font: var(--text-ui) !important;
+  text-shadow: none !important;
+  color: inherit !important;
+}
+[class*="appactivityday_PartnerEventMediumImage_TextColumn_"] {
+  text-shadow: none !important;
+  padding: 0 !important;
+}
+[class*="appactivityday_PartnerEventTextOnly_Container_"] {
+  padding: 0 !important;
+}
+[class*="appactivityday_PartnerEventTextOnly_Icon_"] {
+  width: 32px !important;
+  height: 32px !important;
+}
+[class*="appactivityday_PartnerEventType_"] {
+  color: var(--color-gray-text) !important;
+}
+[class*="appdetails_ScrollContainer_"] {
+  background: none !important;
+}
 [class*="appdetails_PlayBar_"] {
   width: calc(100% - 16px) !important;
+}
+[class*="appdetailsachievementssection_AchievementProgressContainer_"] {
+  background-color: transparent !important;
+  border-radius: 0 !important;
+}
+[class*="appdetailsachievementssection_AddAdditionalItem_"] {
+  background-color: transparent !important;
+}
+[class*="appdetailsachievementssection_Remainder_"] {
+  margin: 0 !important;
+  width: 48px !important;
+  height: 48px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+[class*="appdetailsachievementssection_ShowDivider_"] {
+  border: none !important;
+  margin: 0 !important;
+}
+[class*="appdetailsachievementssection_ShowDivider_"]::before {
+  content: '' !important;
+  display: block !important;
+}
+[class*="appdetailsactivitysection_ViewLastNews_"] {
+  background-color: transparent !important;
+  color: var(--color-link) !important;
+}
+[class*="appdetailsbutton_AppDetailsButton_"] {
+  width: 111px !important;
+}
+[class*="appdetailsfeatureicon_Icon_"] {
+  filter: invert() !important;
+}
+[class*="appdetailsfriendssection_ShowMore_"] {
+  width: 148px !important;
+}
+[class*="appdetailsgameinfopanel_Container_"] {
+  background-color: transparent !important;
+}
+[class*="appdetailsgameinfopanel_GameDescription_"] {
+  padding: 0 !important;
+}
+[class*="appdetailsgameinfopanel_InnerContainer_"] {
+  padding: 0 !important;
+}
+[class*="appdetailsnotessection_NoteLink_"] {
+  font: var(--text-ui) !important;
+}
+[class*="appdetailsoverview_Backdrop_"] {
+  display: none !important;
+}
+[class*="appdetailsoverview_RightColumn_"] {
+  position: relative !important;
+  z-index: 999 !important;
+}
+[class*="appdetailsoverview_SeekTarget_"] {
+  position: relative !important;
 }
 [class*="appdetailsplaysection_DetailsProgressContainer_"] {
   border-radius: 0 !important;
@@ -1147,6 +1336,58 @@ body,
 [class*="appdetailsplaysection_PlayBarDetailLabel_"],
 [class*="appdetailsplaysection_LastPlayedInfo_"] {
   color: var(--color-button-text) !important;
+}
+[class*="appdetailsplaysection_PlayBar_"] {
+  opacity: 1 !important;
+  background-image: none !important;
+  margin: 0 !important;
+}
+[class*="appdetailsplaysection_StickyHeader_"]:not([class*="appdetailsplaysection_PlayBar_"]) {
+  display: none !important;
+}
+[class*="appdetailsprimarylinkssection_Links_"] {
+  height: unset !important;
+}
+[class*="appdetailsprimarylinkssection_LinksSection_"] > div {
+  border: none !important;
+}
+[class*="appdetailsprimarylinkssection_Link_"] {
+  background-color: transparent !important;
+}
+[class*="appdetailsprimarylinkssection_Link_"]:hover {
+  text-decoration: underline !important;
+}
+[class*="appdetailsprimarylinkssection_LinkInner_"] {
+  font: var(--text-ui) !important;
+  padding-top: 0 !important;
+  margin-right: 12px !important;
+}
+[class*="appdetailsprimarylinkssection_MenuButton_"] {
+  --button-img: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA4IDIiPjxzdHlsZT5yZWN0e3dpZHRoOjJweDtoZWlnaHQ6MnB4fTwvc3R5bGU+PHJlY3QgeD0iMCIvPjxyZWN0IHg9IjMiLz48cmVjdCB4PSI2Ii8+PC9zdmc+Cg==") !important;
+  --button-img-size: 8px auto !important;
+}
+[class*="appdetailssection_AppDetailsSection_"] {
+  color: inherit !important;
+  margin: 0 !important;
+}
+div[class*="appdetailssection_AppDetailsSectionContainer_"] {
+  background: none !important;
+  color: var(--color-window-text) !important;
+  margin-top: 0 !important;
+}
+[class*="appdetailssection_Body_"] {
+  padding: 0 !important;
+}
+[class*="appdetailssection_LinksSectionBody_"] {
+  padding: 0 !important;
+}
+[class*="appdetailssectionheader_SectionHeader_"] {
+  background-color: var(--color-window) !important;
+  margin-left: 16px !important;
+  z-index: 1 !important;
+}
+[class*="appdetailsspotlight_ReviewContainer_"] {
+  background-color: transparent !important;
 }
 [class*="appfilterpane_Container_"] {
   padding: 8px !important;
@@ -1283,6 +1524,32 @@ body,
 }
 [class*="boxcarousel_MaskRight_"] {
   --negative-margin: 12px !important;
+}
+[class*="comment_thread_LikeIcon_"],
+[class*="comment_thread_CommentIcon_"],
+[class*="comment_thread_RatingIcon_"],
+[class*="comment_thread_ReactionIcon_"],
+[class*="comment_thread_LikeIcon_"] path,
+[class*="comment_thread_CommentIcon_"] path,
+[class*="comment_thread_RatingIcon_"] path,
+[class*="comment_thread_ReactionIcon_"] path {
+  color: inherit !important;
+  fill: inherit !important;
+  stroke: inherit !important;
+}
+[class*="comment_thread_LikeIcon_"],
+[class*="comment_thread_CommentIcon_"],
+[class*="comment_thread_RatingIcon_"],
+[class*="comment_thread_ReactionIcon_"] {
+  width: 16px !important;
+  height: 16px !important;
+}
+[class*="comment_thread_ButtonSpacer_"] {
+  display: none !important;
+}
+[class*="comment_thread_RatingBar_"] {
+  opacity: 1 !important;
+  font: var(--text-ui) !important;
 }
 [class*="contextmenu_contextMenuContents_"] {
   background: var(--color-button-face) !important;
@@ -2000,6 +2267,25 @@ div:not([class]) > [class*="gamepaddialog_Field_"] {
 [class*="serverbrowserdialog_ToggleShowFilterDetailsButton_"] {
   width: 111px !important;
 }
+[class*="spotlightgameplaysummary_EventDaySeparator_"] {
+  margin: 0 16px !important;
+}
+[class*="spotlightgameplaysummary_GamePlaySummaryHeader_"] {
+  background-color: var(--color-window) !important;
+}
+[class*="spotlightgameplaysummary_SummaryCarouselContainer_"] {
+  background: none !important;
+  padding: 0 !important;
+}
+[class*="spotlightgameplaysummary_SummaryCarouselContainer_"]::after {
+  display: none !important;
+}
+[class*="spotlightgameplaysummary_SummaryContainer_"] {
+  margin: 0 !important;
+}
+[class*="spotlightgameplaysummary_SummaryScreenshot_"] {
+  box-shadow: none !important;
+}
 [class*="steamdesktop_Wrapper_"] {
   background-color: transparent !important;
   border: none !important;
@@ -2128,4 +2414,21 @@ div:not([class]) > [class*="gamepaddialog_Field_"] {
 [class*="voicesettings_MicrophoneTest_"] {
   gap: 4px !important;
   flex-direction: row-reverse !important;
+}
+[class*="writereview_Playtime_"],
+[class*="writereview_RecommendGame_"] {
+  color: inherit !important;
+}
+[class*="writereview_RatingContainer_"] {
+  background-color: transparent !important;
+  padding: 0 !important;
+}
+[class*="writereview_ReviewThumbButton_"]:not([class*="writereview_NoIcon_"]) {
+  margin: 0 !important;
+}
+[class*="writereview_ThumbIcon_"] {
+  fill: inherit !important;
+  left: 16px !important;
+  width: 16px !important;
+  height: 16px !important;
 }
