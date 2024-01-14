@@ -1,4 +1,4 @@
-module ElementUtils {
+const ElementUtils = {
 	/**
 	 * Create an element.
 	 * @param tag HTML tag.
@@ -6,7 +6,7 @@ module ElementUtils {
 	 * @param parent Element to prepend to.
 	 * @param prepend Prepend the element to its parent?
 	 */
-	export function make(
+	make(
 		tag: string,
 		attrs: any,
 		parent: HTMLElement | null = null,
@@ -24,7 +24,7 @@ module ElementUtils {
 				parent.appendChild(el);
 
 		return el;
-	}
+	},
 
 	/**
 	 * Do something on a DOM mutation event.
@@ -32,7 +32,7 @@ module ElementUtils {
 	 * @param callback The function to be called on DOM mutation.
 	 * @param opts MutationObserver options.
 	 */
-	export function act(
+	act(
 		el: Element,
 		callback: (records: MutationRecord[]) => any,
 		opts: MutationObserverInit,
@@ -42,14 +42,14 @@ module ElementUtils {
 		observer.observe(el, opts);
 
 		return observer;
-	}
+	},
 
 	/**
 	 * Wait for an element.
 	 * @param selector CSS selector.
 	 * @param parent Element to look in.
 	 */
-	export function wait(
+	wait(
 		selector: string,
 		parent: Document | Element = document,
 	): Promise<HTMLElement> {
@@ -74,5 +74,7 @@ module ElementUtils {
 				childList: true,
 			});
 		});
-	}
+	},
 }
+
+export default ElementUtils;

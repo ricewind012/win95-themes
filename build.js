@@ -95,19 +95,22 @@ switch (process.argv[3]) {
 		break;
 
 	case 'ts':
+		let programOutOption = isSteam
+			? { outDir: 'dist' }
+			: { outFile: outFile };
 		let program = ts.createProgram(
 			[
 				...sharedFiles.filter(e => e.endsWith(process.argv[3])),
 				path.join(rootDir, `${file}.ts`),
-			], {
-				target:  ts.ScriptTarget.ES2020,
+			], Object.assign({
+				target:  ts.ScriptTarget.ESNext,
+				module:  ts.ModuleKind.ESNext,
 				lib:     [
-					"es2020",
+					"esnext",
 					"dom",
 					"dom.iterable",
 				].map(e => `lib.${e}.d.ts`),
-				outFile: outFile,
-			}
+			}, programOutOption)
 		);
 		let result = program.emit();
 
@@ -132,6 +135,19 @@ switch (process.argv[3]) {
 					console.log(ts.flattenDiagnosticMessageText(e.messageText, '\n'));
 				}
 			});
+
+		// The extension doesn't assign [type="module"] to its <scripts>s
+		if (!isSteam) {
+			fs.writeFileSync(
+				outFile,
+				fs.readFileSync(path.join('dist', 'shared++', 'ElementUtils.js'))
+					.toString()
+					.split('\n')
+					.slice(0, -2)
+					.join('\n')
+				+ fs.readFileSync(outFile).toString()
+			);
+		}
 
 		process.exit(result.emitSkipped ? 1 : 0);
 }
