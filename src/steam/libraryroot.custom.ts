@@ -1,16 +1,18 @@
-import classes from './classes.js';
-import ElementUtils from '../shared++/ElementUtils.js';
+import classes from "./classes.js";
+import ElementUtils from "../shared++/ElementUtils.js";
 
 declare var SteamClient: any;
 
 (async () => {
 	let el = (s: string) => document.querySelector<HTMLElement>(`.${s}`);
 
-	if (document.title == 'Steam') {
-		let sidebar = await ElementUtils.wait(`.${classes.library.LeftListSizableContainer}`);
+	if (document.title == "Steam") {
+		let sidebar = await ElementUtils.wait(
+			`.${classes.library.LeftListSizableContainer}`,
+		);
 		let tabs = await ElementUtils.wait(
 			`.${classes.gamelistbar.GameListHomeAndSearch}`,
-			sidebar
+			sidebar,
 		);
 
 		ElementUtils.act(
@@ -20,20 +22,20 @@ declare var SteamClient: any;
 			},
 			{
 				attributes: true,
-				attributeFilter: [ 'style' ],
-			}
+				attributeFilter: ["style"],
+			},
 		);
 	}
 
-	if (document.title == 'Steam Settings') {
+	if (document.title == "Steam Settings") {
 		SteamClient.Window.ResizeTo(1010, 722, true);
 	}
 
-	if (document.title == 'Game Servers') {
+	if (document.title == "Game Servers") {
 		SteamClient.Window.SetMinSize(500, 500);
 	}
 
-	if (document.title.startsWith('Game Info - ')) {
+	if (document.title.startsWith("Game Info - ")) {
 		SteamClient.Window.ResizeTo(500, 600, true);
 	}
 })();

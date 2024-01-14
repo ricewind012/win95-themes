@@ -9,10 +9,10 @@ new Set(
 				e?.match(/_[\w-]{5}(::(before|after))?$/) &&
 				e
 					.match(/\.[\w-]+/g)
-					?.filter((e) => e.includes("_") && !e.match(/^\._?Dialog/))
+					?.filter((e) => e.includes("_") && !e.match(/^\._?Dialog/)),
 		)
 		.filter(Boolean)
-		.map((e) => e.replace(".", ""))
+		.map((e) => e.replace(".", "")),
 ).forEach((e) => {
 	let classnorm: string = e.replace(/_[\w-]{5}$/, "");
 	let namespace = classnorm.replace(/_[a-zA-Z]+$/, "");

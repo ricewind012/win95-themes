@@ -1,6 +1,7 @@
 const ElementUtils = {
 	/**
 	 * Create an element.
+	 *
 	 * @param tag HTML tag.
 	 * @param attrs Key/value attributes.
 	 * @param parent Element to prepend to.
@@ -12,22 +13,26 @@ const ElementUtils = {
 		parent: HTMLElement | null = null,
 		prepend: boolean = false,
 	): HTMLElement {
-		let el = document.createElement(tag);
+		const el = document.createElement(tag);
 
-		for (let k in attrs)
+		for (const k in attrs) {
 			el.setAttribute(k, attrs[k]);
+		}
 
-		if (parent)
-			if (prepend)
+		if (parent) {
+			if (prepend) {
 				parent.prepend(el);
-			else
+			} else {
 				parent.appendChild(el);
+			}
+		}
 
 		return el;
 	},
 
 	/**
 	 * Do something on a DOM mutation event.
+	 *
 	 * @param el Element to look in.
 	 * @param callback The function to be called on DOM mutation.
 	 * @param opts MutationObserver options.
@@ -37,7 +42,7 @@ const ElementUtils = {
 		callback: (records: MutationRecord[]) => any,
 		opts: MutationObserverInit,
 	): MutationObserver {
-		let observer = new MutationObserver(callback);
+		const observer = new MutationObserver(callback);
 
 		observer.observe(el, opts);
 
@@ -46,6 +51,7 @@ const ElementUtils = {
 
 	/**
 	 * Wait for an element.
+	 *
 	 * @param selector CSS selector.
 	 * @param parent Element to look in.
 	 */
@@ -54,27 +60,27 @@ const ElementUtils = {
 		parent: Document | Element = document,
 	): Promise<HTMLElement> {
 		return new Promise((resolve) => {
-			let el: HTMLElement | null = parent.querySelector(selector);
-
-			if (el)
+			const el: HTMLElement | null = parent.querySelector(selector);
+			if (el) {
 				resolve(el);
+			}
 
-			let observer = new MutationObserver(() => {
-				let el: HTMLElement | null = parent.querySelector(selector);
-
-				if (!el)
+			const observer = new MutationObserver(() => {
+				const el: HTMLElement | null = parent.querySelector(selector);
+				if (!el) {
 					return;
+				}
 
 				resolve(el);
 				observer.disconnect();
 			});
 
 			observer.observe(document.body, {
-				subtree:   true,
+				subtree: true,
 				childList: true,
 			});
 		});
 	},
-}
+};
 
 export default ElementUtils;
