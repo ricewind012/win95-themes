@@ -1,23 +1,44 @@
+#AddGameButton {
+	@extend select;
+}
+
 #BottomBar {
 	background: transparent;
 	box-shadow: none;
 
 	padding: 8px;
 
+	position: fixed;
+	top: 41px;
+	right: -7px;
+
 	flex: unset;
 }
 
-#AddGameButton,
 #DownloadStatusContent,
 #FriendsButton {
 	@extend button;
 
 	width: unset;
 	display: flex;
+
+	// Empty div without a class
+	& > :empty {
+		display: none;
+	}
 }
 
-#Icon,
+#FriendsButton {
+	#Text::after {
+		content: '...';
+	}
+}
+
+#Icon {
+	display: none;
+}
+
 #Text,
 #Queue {
-	color: var(--color-button-text);
+	@extend $text-reset;
 }

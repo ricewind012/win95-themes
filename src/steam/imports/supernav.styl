@@ -1,3 +1,55 @@
-#SuperNavMenu #MenuButton {
-	color: var(--color-button-text);
+#Arrow {
+	@extend button;
+
+	margin: 0;
+
+	box(22px);
+
+	// TODO: it's a fucking <svg>
+	/*
+	&:nth-child(1) {
+		--button-img: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1IDkiPjxzdHlsZT5yZWN0e3dpZHRoOjFweH08L3N0eWxlPjxyZWN0IGhlaWdodD0iOSIgeD0iNCIvPjxyZWN0IGhlaWdodD0iNyIgeD0iMyIgeT0iMSIvPjxyZWN0IGhlaWdodD0iNSIgeD0iMiIgeT0iMiIvPjxyZWN0IGhlaWdodD0iMyIgeD0iMSIgeT0iMyIvPjxyZWN0IGhlaWdodD0iMSIgeT0iNCIvPjwvc3ZnPgo=');
+	}
+
+	&:nth-child(2) {
+		--button-img: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1IDkiPjxzdHlsZT5yZWN0e3dpZHRoOjFweH08L3N0eWxlPjxyZWN0IGhlaWdodD0iOSIvPjxyZWN0IGhlaWdodD0iNyIgeD0iMSIgeT0iMSIvPjxyZWN0IGhlaWdodD0iNSIgeD0iMiIgeT0iMiIvPjxyZWN0IGhlaWdodD0iMyIgeD0iMyIgeT0iMyIvPjxyZWN0IGhlaWdodD0iMSIgeD0iNCIgeT0iNCIvPjwvc3ZnPgo=');
+	}
+
+	path {
+		display: none;
+	}
+	*/
+}
+
+#Disabled {
+	@extend button:disabled;
+}
+
+#MenuButton {
+	@extend $text-reset;
+
+	&::after {
+		display: none;
+	}
+}
+
+#SuperNav {
+	padding-bottom: 2px;
+}
+
+#SuperNavMenu {
+	@extend button;
+
+	text-transform: unset;
+
+	margin: 0;
+
+	&#Selected {
+		@extend button:active;
+	}
+
+	&:nth-of-type(1),
+	&:nth-of-type(9) {
+		margin-left: 6px;
+	}
 }

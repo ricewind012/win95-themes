@@ -41,5 +41,18 @@
 }
 
 #SuperNavBar {
+	padding: 0;
+
+	height: unset;
+	min-height: unset;
+	flex-direction: column;
+
 	-webkit-app-region: no-drag;
+
+	&::after {
+		content: '';
+		display: block;
+
+		@extend hr;
+	}
 }
