@@ -1,7 +1,8 @@
 #Container {
 	background-color: transparent;
 
-	margin: 4px 0;
+	margin: 0;
+	margin-bottom: 2px;
 }
 
 #FilterTag {
@@ -11,7 +12,15 @@
 }
 
 #SearchInput {
+	border-radius: 0;
+
 	min-height: unset;
+
+	.DialogTextInputBase {
+		background-image: none;
+
+		margin: 0;
+	}
 }
 
 #SearchFilterInput {
@@ -30,6 +39,8 @@
 
 #AdvancedSearchContainer {
 	@extend button;
+
+	margin-right: 0;
 
 	justify-content: center;
 

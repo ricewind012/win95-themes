@@ -5,7 +5,9 @@
 
 	/[class*="bottombar_BottomBarContainer_"] {
 		padding-bottom: calc(var(--text-size) * var(--text-line) + 4px);
+	}
 
+	/[class*="bottombar_AddGameButton_"] {
 		~/, & {
 			&::after {
 				content: '';
@@ -17,7 +19,7 @@
 				height: calc(var(--text-size) * var(--text-line));
 
 				background-color: var(--color-button-face);
-				box-shadow: var(--border-statusbar-box-shadow);
+				box-shadow: var(--border-statusbar);
 
 				padding: 1px 15px 1px 2px;
 				margin: 1px;
