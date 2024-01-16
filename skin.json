@@ -1,4 +1,18 @@
 {
+	"author": "ricewind",
+	"name": "Windows 95",
+	"description": "A Windows 95 look",
+	"source": "",
+	"version": "1.0.0",
+
+	"header_image": "https://cdn.discordapp.com/attachments/1110324184556503130/1196788190397333554/image.png",
+	"splash_image": "https://cdn.discordapp.com/attachments/1110324184556503130/1196788190397333554/image.png",
+
+	"github": {
+		"owner": "ricewind012",
+		"repo_name": "win95-themes"
+	},
+
 	"Patches": [
 		{
 			"MatchRegexString": "https://.*.steampowered.com",
@@ -32,8 +46,8 @@
 		},
 		{
 			"MatchRegexString": "^notificationtoasts_",
-			"TargetCss": "dist/steam/notifications.custom.css",
-			"TargetJs": "dist/steam/notifications.custom.js"
+			"TargetCss": "dist/steam/libraryroot.custom.css",
+			"TargetJs": "dist/steam/libraryroot.custom.js"
 		},
 		{
 			"MatchRegexString": "^SteamBrowser_Find$",
@@ -46,24 +60,9 @@
 			"TargetJs": "dist/steam/libraryroot.custom.js"
 		},
 		{
-			"MatchRegexString": "^Steam Big Picture Mode$",
-			"TargetCss": "dist/steam/bigpicture.custom.css",
-			"TargetJs": "dist/steam/bigpicture.custom.js"
-		},
-		{
-			"MatchRegexString": "^QuickAccess_",
-			"TargetCss": "dist/steam/bigpicture.custom.css",
-			"TargetJs": "dist/steam/bigpicture.custom.js"
-		},
-		{
-			"MatchRegexString": "^MainMenu_",
-			"TargetCss": "dist/steam/bigpicture.custom.css",
-			"TargetJs": "dist/steam/bigpicture.custom.js"
-		},
-		{
 			"MatchRegexString": ".friendsui-container",
-			"TargetCss": "dist/steam/friends.custom.css",
-			"TargetJs": "dist/steam/friends.custom.js"
+			"TargetCss": "dist/steam/libraryroot.custom.css",
+			"TargetJs": "dist/steam/libraryroot.custom.js"
 		},
 		{
 			"MatchRegexString": "Menu$",
