@@ -1,0 +1,68 @@
+// Stylus doesn't import it if placed in "imports", wtf ?
+[class*="console_"] {
+	/{attr(Console)} {
+		background-color: transparent;
+		font: var(--text-ui);
+
+		pre {
+			// Its height is 17px anyway
+			font-size: 12pt;
+			color: var(--color-window-text);
+		}
+	}
+
+	/{attr(ConsoleInput)} {
+		padding: 0;
+
+		.DialogInput {
+			margin: 2px 0;
+		}
+	}
+
+	/{attr(ConsoleInner)} {
+		@extend table;
+	}
+
+	/{attr(Timestamp)} {
+		&::before {
+			content: '[';
+		}
+
+		&::after {
+			content: ']';
+		}
+	}
+
+	// Console colors
+	/{attr(Assert)},
+	/{attr(Error)} {
+		color: #800;
+	}
+
+	/{attr(Warning)} {
+		color: #880;
+	}
+
+	/{attr(Input)} {
+		color: #008;
+	}
+
+	// Suggestions
+	/{attr(Suggestion)} {
+		@extend .menu-entry;
+
+		background-color: transparent;
+		border-radius: 0;
+
+		height: unset;
+	}
+
+	/{attr(Suggestions)} {
+		@extend .menu;
+
+		gap: 0;
+
+		flex-direction: column;
+		height: unset;
+	}
+}

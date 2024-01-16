@@ -640,6 +640,7 @@ progress::-webkit-progress-value,
   --icon-dialog-warning: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAASUExURaioV8DHyP//AAAAAIeIjwAAADxsqtcAAAAGdFJOU///////ALO/pL8AAAAJcEhZcwAADsMAAA7DAcdvqGQAAADBSURBVDhPfZFJEoAgDATBkP9/2exkkHIuRKer4zK4Z4wxY8wAMJ5nUsyZDkivxIpLzwd4aAHRAO9V0YkvcCg2kP2huACoKGD3qABgEtGU8waYQHqiQ3EFuiIAf4ICmuIONIUD3jdgKwAY0icLQNys17QxCAB0R0ylUKB62VFzKhCYuUGygd3L3TgloTiAngR6L6+xd7gCgfpQFgdgAQKmQABWuAKBIwKsP0BXLHxIiPUCsP7Da7RXgNmme+xf/BDML3sxDSA4Fh+VAAAAAElFTkSuQmCC") !important;
 }
 .menu,
+[class*="console_Suggestions_"],
 .DialogMenuPosition ._DialogInputContainer,
 [class*="contextmenu_contextMenu_"],
 .DesktopUI [class*="libraryhomeshowcases_CollectionDropDownContainer_"][class*="libraryhomeshowcases_CollectionDropDownContainer_"] ._DialogInputContainer {
@@ -649,17 +650,20 @@ progress::-webkit-progress-value,
   padding: 3px !important;
 }
 .menu-entry,
+[class*="console_Suggestion_"],
 [class*="contextmenu_contextMenuItem_"],
 [class*="dropdown_DialogDropDownMenu_Item_"] {
   padding: 2px 20px !important;
 }
 .menu-entry:hover,
+[class*="console_Suggestion_"]:hover,
 [class*="contextmenu_contextMenuItem_"]:hover,
 [class*="dropdown_DialogDropDownMenu_Item_"]:hover {
   background-color: var(--color-highlight) !important;
   color: var(--color-highlight-text) !important;
 }
 table,
+[class*="console_ConsoleInner_"],
 [class*="appproperties_WorkshopItemsRowsScrollable_"],
 [class*="gameinfodialog_PlayersList_"],
 [class*="gamelist_Container_"],
@@ -969,6 +973,46 @@ body,
   position: absolute !important;
   top: -8px !important;
   padding: 0 2px !important;
+}
+[class*="console_Console_"] {
+  background-color: transparent !important;
+  font: var(--text-ui) !important;
+}
+[class*="console_Console_"] pre {
+  font-size: 12pt !important;
+  color: var(--color-window-text) !important;
+}
+[class*="console_ConsoleInput_"] {
+  padding: 0 !important;
+}
+[class*="console_ConsoleInput_"] .DialogInput {
+  margin: 2px 0 !important;
+}
+[class*="console_Timestamp_"]::before {
+  content: '[' !important;
+}
+[class*="console_Timestamp_"]::after {
+  content: ']' !important;
+}
+[class*="console_Assert_"],
+[class*="console_Error_"] {
+  color: #800 !important;
+}
+[class*="console_Warning_"] {
+  color: #880 !important;
+}
+[class*="console_Input_"] {
+  color: #008 !important;
+}
+[class*="console_Suggestion_"] {
+  background-color: transparent !important;
+  border-radius: 0 !important;
+  height: unset !important;
+}
+[class*="console_Suggestions_"] {
+  gap: 0 !important;
+  flex-direction: column !important;
+  height: unset !important;
 }
 .ContextMenuPopupBody {
   box-shadow: none !important;
