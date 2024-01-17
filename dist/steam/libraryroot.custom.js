@@ -3,6 +3,7 @@ import ElementUtils from "../shared++/ElementUtils.js";
 (async () => {
     let el = (s) => document.querySelector(`.${s}`);
     if (document.title == "Steam") {
+        // Align tabs with sidebar width
         let sidebar = await ElementUtils.wait(`.${classes.library.LeftListSizableContainer}`);
         let tabs = await ElementUtils.wait(`.${classes.gamelistbar.GameListHomeAndSearch}`, sidebar);
         ElementUtils.act(sidebar, () => {
@@ -11,6 +12,11 @@ import ElementUtils from "../shared++/ElementUtils.js";
             attributes: true,
             attributeFilter: ["style"],
         });
+        // Set a variable for when an application is downloading
+        let footer = await ElementUtils.wait(`.${classes.bottombar.BottomBarContainer}`);
+        footer.style.setProperty("--manage-downloads-loctoken", "'" +
+            window.opener.LocalizationManager.LocalizeString("#BottomBar_Manage") +
+            "'");
     }
     if (document.title == "Steam Settings") {
         SteamClient.Window.ResizeTo(1010, 722, true);

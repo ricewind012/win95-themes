@@ -936,6 +936,7 @@ body,
 [class*="appdetailsscreenshotssection_NoneTaken_"],
 [class*="appdetailssectionheader_SectionHeader_"],
 [class*="appdetailsspotlight_ReviewContainer_"],
+[class*="bottombar_Status_"],
 [class*="bottombar_Text_"],
 [class*="bottombar_Queue_"],
 [class*="comment_thread_LikeCount_"],
@@ -1591,11 +1592,47 @@ div[class*="appdetailssection_AppDetailsSectionContainer_"] {
 [class*="bottombar_FriendsButton_"] > :empty {
   display: none !important;
 }
+[class*="bottombar_DetailedDownloadProgress_"] {
+  width: unset !important;
+  justify-content: center !important;
+}
+[class*="bottombar_DetailedDownloadProgress_"]::before {
+  content: var(--manage-downloads-loctoken) !important;
+}
+[class*="bottombar_DetailedDownloadProgress_"] [class*="bottombar_Icon_"] {
+  box-shadow: none !important;
+  width: 16px !important;
+  height: 16px !important;
+  position: fixed !important;
+  left: 8px !important;
+  bottom: 5px !important;
+  display: block !important;
+}
+[class*="bottombar_Percentage_"]::before {
+  content: '(' !important;
+}
+[class*="bottombar_Percentage_"]::after {
+  content: ')' !important;
+}
+[class*="bottombar_ProgressBar_"] {
+  display: none !important;
+}
+[class*="bottombar_ProgressBarWrapper_"] {
+  flex-grow: 0 !important;
+  position: fixed !important;
+  left: 28px !important;
+  bottom: 7px !important;
+}
 [class*="bottombar_FriendsButton_"] [class*="bottombar_Text_"]::after {
   content: '...' !important;
 }
-[class*="bottombar_Icon_"] {
+[class*="bottombar_Icon_"],
+[class*="bottombar_IconBevel_"] {
   display: none !important;
+}
+[class*="bottombar_StatusLine_"] {
+  color: inherit !important;
+  gap: 4px !important;
 }
 [class*="boxcarousel_MaskRight_"] {
   --negative-margin: 12px !important;

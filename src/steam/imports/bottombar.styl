@@ -28,16 +28,62 @@
 	}
 }
 
+#DetailedDownloadProgress {
+	width: unset;
+
+	justify-content: center;
+
+	&::before {
+		content: var(--manage-downloads-loctoken);
+	}
+
+	#Icon {
+		box-shadow: none;
+
+		box(16px);
+
+		position: fixed;
+		left: 8px;
+		bottom: 5px;
+		display: block;
+	}
+}
+
+#Percentage {
+	parentheses();
+}
+
+#ProgressBar {
+	// I am not styling your 10th progress bar
+	display: none;
+}
+
+#ProgressBarWrapper {
+	flex-grow: 0;
+
+	position: fixed;
+	left: 28px;
+	bottom: 7px;
+}
+
 #FriendsButton {
 	#Text::after {
 		content: '...';
 	}
 }
 
-#Icon {
+#Icon,
+#IconBevel {
 	display: none;
 }
 
+#StatusLine {
+	color: inherit;
+
+	gap: 4px;
+}
+
+#Status,
 #Text,
 #Queue {
 	@extend $text-reset;

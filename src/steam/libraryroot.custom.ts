@@ -7,6 +7,7 @@ declare var SteamClient: any;
 	let el = (s: string) => document.querySelector<HTMLElement>(`.${s}`);
 
 	if (document.title == "Steam") {
+		// Align tabs with sidebar width
 		let sidebar = await ElementUtils.wait(
 			`.${classes.library.LeftListSizableContainer}`,
 		);
@@ -24,6 +25,18 @@ declare var SteamClient: any;
 				attributes: true,
 				attributeFilter: ["style"],
 			},
+		);
+
+		// Set a variable for when an application is downloading
+		let footer = await ElementUtils.wait(
+			`.${classes.bottombar.BottomBarContainer}`,
+		);
+
+		footer.style.setProperty(
+			"--manage-downloads-loctoken",
+			"'" +
+				window.opener.LocalizationManager.LocalizeString("#BottomBar_Manage") +
+				"'",
 		);
 	}
 
