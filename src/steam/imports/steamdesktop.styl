@@ -58,3 +58,64 @@
 		margin-bottom: 2px;
 	}
 }
+
+// The browser view is above everything else
+#Browser {
+	margin-left: 2px;
+	margin-top: 2px;
+
+	position: relative;
+	width: calc(100% - 4px);
+
+	&::before {
+		content: '';
+
+		position: absolute;
+		left: -2px;
+		top: -2px;
+		right: -2px;
+		bottom: -3px;
+
+		@extend table;
+	}
+}
+
+#BrowserWrapper {
+	height: calc(100% - 5px);
+}
+
+#LockIcon {
+	@extend $text-reset;
+
+	padding-bottom: 1px;
+}
+
+#ReloadButton {
+	@extend button;
+
+	margin: 0;
+
+	box(21px);
+
+	svg {
+		padding: 0;
+	}
+}
+
+#URL {
+	@extend $text-reset;
+}
+
+#URLBar {
+	background-color: transparent;
+	box-shadow: none;
+
+	padding: 0;
+	margin-bottom: 3px;
+}
+
+#URLBarText {
+	@extend select;
+
+	width: 100%;
+}
