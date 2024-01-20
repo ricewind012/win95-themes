@@ -96,9 +96,7 @@ switch (process.argv[3]) {
 						.replace(
 							/::-webkit-scrollbar-button\s/g,
 							"::-webkit-scrollbar-button:enabled:not(:disabled)",
-						)
-						// TODO: remove when Steam updates chrome
-						.replace(/:is/g, ":-webkit-any"),
+						),
 				)
 				.join("\n");
 

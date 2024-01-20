@@ -330,7 +330,7 @@ textarea:focus,
 }
 select,
 textarea,
-input:-webkit-any(:not([type]),
+input:is(:not([type]),
 [type="url"],
 [type="text"],
 [type="number"],
@@ -348,7 +348,7 @@ input:-webkit-any(:not([type]),
   margin: 0 2px !important;
 }
 button,
-input:-webkit-any([type="button"],
+input:is([type="button"],
 [type="submit"]),
 [class*="pageablecontainer_"][class*="PageLeft"],
 [class*="libraryhomeshowcases_"][class*="PageLeft"],
@@ -389,7 +389,7 @@ input:-webkit-any([type="button"],
   height: unset !important;
 }
 button:active,
-input:-webkit-any([type="button"]:active,
+input:is([type="button"]:active,
 [type="submit"]):active,
 [class*="pageablecontainer_"][class*="PageLeft"]:active,
 [class*="libraryhomeshowcases_"][class*="PageLeft"]:active,
@@ -902,10 +902,7 @@ body,
   -webkit-mask-size: var(--button-img-size, auto auto) !important;
   -webkit-mask-position: var(--button-img-pos, center) !important;
   position: absolute !important;
-  top: 0 !important;
-  right: 0 !important;
-  bottom: 0 !important;
-  left: 0 !important;
+  inset: 0 !important;
   height: 100% !important;
   display: block !important;
 }
@@ -2010,10 +2007,7 @@ div:not([class]) > [class*="gamepaddialog_Field_"] {
 }
 [class*="library_AppDetailsMain_"] {
   padding: 2px !important;
-  top: 3px !important;
-  right: 4px !important;
-  bottom: 4px !important;
-  left: 3px !important;
+  inset: 3px 4px 4px 3px !important;
 }
 [class*="libraryhome_Container_"] {
   background: transparent !important;
@@ -2473,10 +2467,7 @@ div:not([class]) > [class*="gamepaddialog_Field_"] {
 [class*="steamdesktop_Browser_"]::before {
   content: '' !important;
   position: absolute !important;
-  left: -2px !important;
-  top: -2px !important;
-  right: -2px !important;
-  bottom: -3px !important;
+  inset: -2px -2px -3px -2px !important;
 }
 [class*="steamdesktop_BrowserWrapper_"] {
   height: calc(100% - 5px) !important;
