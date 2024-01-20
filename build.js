@@ -91,6 +91,12 @@ switch (process.argv[3]) {
 				.map((e) =>
 					e
 						.replace(/;$/g, " !important;")
+						.replace(/!important !important/g, "!important")
+						// TODO: is this a chrome bug ? same with ::-webkit nesting
+						.replace(
+							/::-webkit-scrollbar-button\s/g,
+							"::-webkit-scrollbar-button:enabled:not(:disabled)",
+						)
 						// TODO: remove when Steam updates chrome
 						.replace(/:is/g, ":-webkit-any"),
 				)
