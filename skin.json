@@ -13,6 +13,15 @@
 		"repo_name": "win95-themes"
 	},
 
+	"Configuration": [
+		{
+			"Name": "Green colorscheme",
+			"ToolTip": "Use the green colors used in older Steam",
+			"Type": "CheckBox",
+			"Value": false
+		}
+	],
+
 	"Patches": [
 		{
 			"MatchRegexString": "https://.*.steampowered.com",
@@ -27,57 +36,145 @@
 		{
 			"MatchRegexString": "^Steam$",
 			"TargetCss": "dist/steam/libraryroot.custom.css",
-			"TargetJs": "dist/steam/libraryroot.custom.js"
+			"TargetJs": "dist/steam/libraryroot.custom.js",
+
+			"Statement": {
+				"If": "Green colorscheme",
+				"Equals": true,
+				"True": {
+					"TargetCss": "dist/green.css"
+				}
+			}
 		},
 		{
 			"MatchRegexString": "^OverlayBrowser_Browser$",
 			"TargetCss": "dist/steam/libraryroot.custom.css",
-			"TargetJs": "dist/steam/libraryroot.custom.js"
+			"TargetJs": "dist/steam/libraryroot.custom.js",
+
+			"Statement": {
+				"If": "Green colorscheme",
+				"Equals": true,
+				"True": {
+					"TargetCss": "dist/green.css"
+				}
+			}
 		},
 		{
 			"MatchRegexString": "^SP Overlay:",
 			"TargetCss": "dist/steam/libraryroot.custom.css",
-			"TargetJs": "dist/steam/libraryroot.custom.js"
+			"TargetJs": "dist/steam/libraryroot.custom.js",
+
+			"Statement": {
+				"If": "Green colorscheme",
+				"Equals": true,
+				"True": {
+					"TargetCss": "dist/green.css"
+				}
+			}
 		},
 		{
 			"MatchRegexString": "Supernav$",
 			"TargetCss": "dist/steam/libraryroot.custom.css",
-			"TargetJs": "dist/steam/libraryroot.custom.js"
+			"TargetJs": "dist/steam/libraryroot.custom.js",
+
+			"Statement": {
+				"If": "Green colorscheme",
+				"Equals": true,
+				"True": {
+					"TargetCss": "dist/green.css"
+				}
+			}
 		},
 		{
 			"MatchRegexString": "^notificationtoasts_",
 			"TargetCss": "dist/steam/libraryroot.custom.css",
-			"TargetJs": "dist/steam/libraryroot.custom.js"
+			"TargetJs": "dist/steam/libraryroot.custom.js",
+
+			"Statement": {
+				"If": "Green colorscheme",
+				"Equals": true,
+				"True": {
+					"TargetCss": "dist/green.css"
+				}
+			}
 		},
 		{
 			"MatchRegexString": "^SteamBrowser_Find$",
 			"TargetCss": "dist/steam/libraryroot.custom.css",
-			"TargetJs": "dist/steam/libraryroot.custom.js"
+			"TargetJs": "dist/steam/libraryroot.custom.js",
+
+			"Statement": {
+				"If": "Green colorscheme",
+				"Equals": true,
+				"True": {
+					"TargetCss": "dist/green.css"
+				}
+			}
 		},
 		{
 			"MatchRegexString": "^OverlayTab\\d+_Find$",
 			"TargetCss": "dist/steam/libraryroot.custom.css",
-			"TargetJs": "dist/steam/libraryroot.custom.js"
+			"TargetJs": "dist/steam/libraryroot.custom.js",
+
+			"Statement": {
+				"If": "Green colorscheme",
+				"Equals": true,
+				"True": {
+					"TargetCss": "dist/green.css"
+				}
+			}
 		},
 		{
 			"MatchRegexString": ".friendsui-container",
 			"TargetCss": "dist/steam/libraryroot.custom.css",
-			"TargetJs": "dist/steam/libraryroot.custom.js"
+			"TargetJs": "dist/steam/libraryroot.custom.js",
+
+			"Statement": {
+				"If": "Green colorscheme",
+				"Equals": true,
+				"True": {
+					"TargetCss": "dist/green.css"
+				}
+			}
 		},
 		{
 			"MatchRegexString": "Menu$",
 			"TargetCss": "dist/steam/libraryroot.custom.css",
-			"TargetJs": "dist/steam/libraryroot.custom.js"
+			"TargetJs": "dist/steam/libraryroot.custom.js",
+
+			"Statement": {
+				"If": "Green colorscheme",
+				"Equals": true,
+				"True": {
+					"TargetCss": "dist/green.css"
+				}
+			}
 		},
 		{
 			"MatchRegexString": ".ModalDialogPopup",
 			"TargetCss": "dist/steam/libraryroot.custom.css",
-			"TargetJs": "dist/steam/libraryroot.custom.js"
+			"TargetJs": "dist/steam/libraryroot.custom.js",
+
+			"Statement": {
+				"If": "Green colorscheme",
+				"Equals": true,
+				"True": {
+					"TargetCss": "dist/green.css"
+				}
+			}
 		},
 		{
 			"MatchRegexString": ".FullModalOverlay",
 			"TargetCss": "dist/steam/libraryroot.custom.css",
-			"TargetJs": "dist/steam/libraryroot.custom.js"
+			"TargetJs": "dist/steam/libraryroot.custom.js",
+
+			"Statement": {
+				"If": "Green colorscheme",
+				"Equals": true,
+				"True": {
+					"TargetCss": "dist/green.css"
+				}
+			}
 		}
 	]
 }
