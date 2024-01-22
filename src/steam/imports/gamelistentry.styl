@@ -1,34 +1,54 @@
 #Container {
-	font: var(--text-ui);
+	@extend .tree-entry
+	@extend .tree-entry[open];
+	@extend $text-reset;
+
+	overflow: visible;
+	background-color: transparent;
 	box-shadow: none;
 
-	&[class*="Running"] {
-		color: green;
+	padding: 3px 0;
+
+	&::before {
+		left: 8px;
+		top: -11px;
+		width: 18px;
+		height: 24px;
 	}
 
-	&[class*="Installed"] {
-		color: var(--color-button-text);
+	&::after {
+		left: -9px;
+		top: -10px;
+		height: calc(100% - 1px);
 	}
 
-	&[class*="Uninstalled"] {
-		color: var(--color-gray-text);
-	}
-
-	&[class*="Updating"],
-	&[class*="Synchronizing"],
-	&[class*="Cloud"] {
-		color: var(--color-highlight);
-	}
-
-	&:hover,
-	&[class*="HoverOverlay_"]
-	&[class*="Selected"] {
-		background-color: var(--color-highligh);
-		color: var(--color-highlight-text);
+	&#Selected {
+		@extend .tree-entry[selected] > .tree-entry-content > .tree-entry-name;
 	}
 
 	circle,
 	path {
 		fill: currentColor;
+	}
+}
+
+#GameIcon {
+	border-radius: 0;
+
+	margin-right: 7px;
+
+	box(var(--icon-size));
+}
+
+#GameListEntryContainer {
+	background-color: transparent;
+
+	align-items: center;
+
+	&::before {
+		left: 7px;
+		top: -14px;
+		width: 8px;
+		height: 24px;
 	}
 }

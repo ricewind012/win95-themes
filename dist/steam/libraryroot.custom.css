@@ -42,6 +42,7 @@
   --titlebar-height: 18px !important;
   --menubar-height: 18px !important;
   --statusbar-height: 18px !important;
+  --icon-size: 16px !important;
 }
 @media (prefers-color-scheme: light) {
   :root {
@@ -118,6 +119,8 @@
 :root {
   --tab-border-left: linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)), linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)), linear-gradient(90deg, var(--color-button-highlight) 1px, var(--color-button-highlight)), linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)), linear-gradient(90deg, var(--color-button-highlight) 1px, var(--color-button-highlight)), linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) !important;
   --tab-border-right: linear-gradient(90deg, var(--color-button-shadow) 1px, var(--color-button-shadow)), linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)), linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)), linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)), linear-gradient(90deg, var(--color-button-shadow-dark) 1px, var(--color-button-shadow-dark)), linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) !important;
+  --tree-icon-collapsed: linear-gradient(90deg, var(--color-button-text) 1px, var(--color-button-text)) 3px 1px, linear-gradient(90deg, var(--color-button-text) 1px, var(--color-button-text)) 3px 2px, linear-gradient(90deg, var(--color-button-text) 1px, var(--color-button-text)) 3px 3px, linear-gradient(90deg, var(--color-button-text) 1px, var(--color-button-text)) 3px 4px, linear-gradient(90deg, var(--color-button-text) 1px, var(--color-button-text)) 3px 5px, linear-gradient(90deg, var(--color-button-text) 1px, var(--color-button-text)) 1px 3px, linear-gradient(90deg, var(--color-button-text) 1px, var(--color-button-text)) 2px 3px, linear-gradient(90deg, var(--color-button-text) 1px, var(--color-button-text)) 4px 3px, linear-gradient(90deg, var(--color-button-text) 1px, var(--color-button-text)) 5px 3px !important;
+  --tree-icon-expanded: linear-gradient(90deg, var(--color-button-text) 1px, var(--color-button-text)) 1px 3px, linear-gradient(90deg, var(--color-button-text) 1px, var(--color-button-text)) 2px 3px, linear-gradient(90deg, var(--color-button-text) 1px, var(--color-button-text)) 3px 3px, linear-gradient(90deg, var(--color-button-text) 1px, var(--color-button-text)) 4px 3px, linear-gradient(90deg, var(--color-button-text) 1px, var(--color-button-text)) 5px 3px !important;
 }
 input[type="number"],
 [class*="gamepaddialog_Toggle_"][type="number"] {
@@ -846,6 +849,86 @@ label:has(:focus)::before {
   height: 100% !important;
   outline: dotted 1px var(--color-button-text) !important;
 }
+.tree-entry,
+[class*="gamelistentry_Container_"] {
+  --icon: var(--tree-icon-collapsed) !important;
+  padding: 0 4px !important;
+  margin-left: var(--icon-size) !important;
+  position: relative !important;
+}
+.tree-entry::before,
+[class*="gamelistentry_Container_"]::before {
+  content: '' !important;
+  border-left: 1px dotted var(--color-tree-border) !important;
+  border-bottom: 1px dotted var(--color-tree-border) !important;
+  position: absolute !important;
+  left: -12px !important;
+  top: -7px !important;
+  width: 14px !important;
+  height: 14px !important;
+}
+.tree-entry[open],
+[class*="gamelistentry_Container_"][open],
+[class*="gamelistentry_Container_"] {
+  --icon: var(--tree-icon-expanded) !important;
+}
+.tree-entry[open]::after,
+[class*="gamelistentry_Container_"][open]::after,
+[class*="gamelistentry_Container_"]::after {
+  content: '' !important;
+  border-left: 1px dotted var(--color-tree-border) !important;
+  position: absolute !important;
+  left: -12px !important;
+  top: 9px !important;
+  height: calc(100% - 17px) !important;
+}
+.tree-entry-icon,
+[class*="collapseicon_Container_"] {
+  --icon-size: 9px !important;
+  position: relative !important;
+  width: var(--icon-size) !important;
+  height: var(--icon-size) !important;
+}
+.tree-entry-icon::before,
+[class*="collapseicon_Container_"]::before,
+.tree-entry-icon::after,
+[class*="collapseicon_Container_"]::after {
+  content: '' !important;
+  position: absolute !important;
+}
+.tree-entry-icon::before,
+[class*="collapseicon_Container_"]::before {
+  background: var(--icon) !important;
+  background-color: var(--color-window) !important;
+  background-size: 1px 1px !important;
+  background-repeat: no-repeat !important;
+  border: 1px solid var(--color-tree-border) !important;
+  width: calc(var(--icon-size) - 2px) !important;
+  height: calc(var(--icon-size) - 2px) !important;
+  z-index: 1 !important;
+}
+.tree-entry-icon::after,
+[class*="collapseicon_Container_"]::after {
+  border-left: 1px dotted var(--color-tree-border) !important;
+  border-bottom: 1px dotted var(--color-tree-border) !important;
+  left: 4px !important;
+  top: -10px !important;
+  width: 10px !important;
+  height: 14px !important;
+}
+.tree-entry-name {
+  padding: 1px 5px 0 1px !important;
+  margin-top: -1px !important;
+/* TODO: make it layout-independent */
+}
+.tree-entry[selected] > .tree-entry-content > .tree-entry-name,
+[class*="gamelistentry_Container_"][class*="gamelistentry_Selected_"],
+[class*="gamelistsectionheader_Selected_"] > [class*="gamelistsectionheader_SectionHeaderContent_"] {
+  background-color: var(--color-highlight) !important;
+  color: var(--color-highlight-text) !important;
+/* TODO: wtf is this color */
+  border: 1px dotted #ff0 !important;
+}
 body,
 [class*="gamelistsearchbar_AdvancedSearchPane_"],
 [class*="titlebarcontrols_EmptyNotificationsCtn_"] {
@@ -954,6 +1037,7 @@ body,
 [class*="comment_thread_LikeCount_"],
 [class*="comment_thread_CommentCount_"],
 [class*="comment_thread_ReactionCount_"],
+[class*="gamelistentry_Container_"],
 [class*="spotlightgameplaysummary_EventHeaderBlock_"],
 [class*="spotlightgameplaysummary_GamePlaySummaryHeader_"],
 [class*="steamdesktop_LockIcon_"],
@@ -1650,6 +1734,22 @@ div[class*="appdetailssection_AppDetailsSectionContainer_"] {
 [class*="boxcarousel_MaskRight_"] {
   --negative-margin: 12px !important;
 }
+[class*="collapseicon_Container_"] {
+  --icon: var(--tree-icon-expanded) !important;
+  padding: 0 !important;
+  margin-right: 6px !important;
+  box-sizing: border-box !important;
+}
+[class*="collapseicon_Container_"]::after {
+  top: -19px !important;
+  height: 22px !important;
+}
+[class*="collapseicon_Container_"][class*="collapseicon_Collapsed_"] {
+  --icon: var(--tree-icon-collapsed) !important;
+}
+[class*="collapseicon_Container_"] svg {
+  display: none !important;
+}
 [class*="comment_thread_LikeIcon_"],
 [class*="comment_thread_CommentIcon_"],
 [class*="comment_thread_RatingIcon_"],
@@ -1812,32 +1912,41 @@ div[class*="gameinfodialog_DialogBody_"] .DialogFooter svg {
   display: none !important;
 }
 [class*="gamelistentry_Container_"] {
-  font: var(--text-ui) !important;
+  overflow: visible !important;
+  background-color: transparent !important;
   box-shadow: none !important;
+  padding: 3px 0 !important;
   circle: , !important;
 }
-[class*="gamelistentry_Container_"][class*="Running"] {
-  color: #008000 !important;
+[class*="gamelistentry_Container_"]::before {
+  left: 8px !important;
+  top: -11px !important;
+  width: 18px !important;
+  height: 24px !important;
 }
-[class*="gamelistentry_Container_"][class*="Installed"] {
-  color: var(--color-button-text) !important;
-}
-[class*="gamelistentry_Container_"][class*="Uninstalled"] {
-  color: var(--color-gray-text) !important;
-}
-[class*="gamelistentry_Container_"][class*="Updating"],
-[class*="gamelistentry_Container_"][class*="Synchronizing"],
-[class*="gamelistentry_Container_"][class*="Cloud"] {
-  color: var(--color-highlight) !important;
-}
-[class*="gamelistentry_Container_"]:hover,
-[class*="gamelistentry_Container_"][class*="HoverOverlay_"],
-[class*="gamelistentry_Container_"][class*="Selected"] {
-  background-color: var(--color-highligh) !important;
-  color: var(--color-highlight-text) !important;
+[class*="gamelistentry_Container_"]::after {
+  left: -9px !important;
+  top: -10px !important;
+  height: calc(100% - 1px) !important;
 }
 [class*="gamelistentry_Container_"] path {
   fill: currentColor !important;
+}
+[class*="gamelistentry_GameIcon_"] {
+  border-radius: 0 !important;
+  margin-right: 7px !important;
+  width: var(--icon-size) !important;
+  height: var(--icon-size) !important;
+}
+[class*="gamelistentry_GameListEntryContainer_"] {
+  background-color: transparent !important;
+  align-items: center !important;
+}
+[class*="gamelistentry_GameListEntryContainer_"]::before {
+  left: 7px !important;
+  top: -14px !important;
+  width: 8px !important;
+  height: 24px !important;
 }
 [class*="gamelisthome_Bar_"] {
   border-radius: 0 !important;
@@ -1915,22 +2024,41 @@ div[class*="gameinfodialog_DialogBody_"] .DialogFooter svg {
   display: none !important;
 }
 [class*="gamelistsectionheader_Container_"] {
+  overflow: visible !important;
   background: none !important;
   color: var(--color-window-text) !important;
+  border: none !important;
   box-shadow: none !important;
+  padding: 0 4px !important;
+  align-items: center !important;
 }
-[class*="gamelistsectionheader_Container_"],
-[class*="gamelistsectionheader_Container_"] > div {
-  color: var(--color-window-text) !important;
-  stroke: currentColor !important;
+[class*="gamelistsectionheader_SectionHeaderContent_"] {
+  color: inherit !important;
+  padding: 5px 0 !important;
+  align-items: center !important;
+/*
+	 * This can have *just* the text highlighted,
+	 * but better make it consistent with the rest of it.
+	 */
 }
-[class*="gamelistsectionheader_SectionName_"] {
-  font: var(--text-ui) !important;
-  letter-spacing: 0 !important;
+[class*="gamelistsectionheader_SectionHeaderContent_"]::before {
+  content: '' !important;
+  background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA8AAAANCAMAAABBwMRzAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAASUExURYeIj8DHyP//AP///wAAAAAAAJRqB2kAAAAGdFJOU///////ALO/pL8AAAAJcEhZcwAADsMAAA7DAcdvqGQAAAA1SURBVBhXtYrRFQAQEMOCdv+VHcfDANKvtMVm4AWm1MguSI0ib9AuUHjuM9OPlh/7g7AupA6lNwF/p6NMjAAAAABJRU5ErkJggg==") !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  margin-right: 7px !important;
+  width: var(--icon-size) !important;
+  height: var(--icon-size) !important;
+  z-index: 1 !important;
+}
+[class*="gamelistsectionheader_SectionCount_"],
+[class*="gamelistsectionheader_SectionName_"],
+[class*="gamelistsectionheader_SectionRule_"] {
+  all: unset !important;
 }
 [class*="gamelistsectionheader_SectionCount_"] {
   color: var(--color-gray-text) !important;
-  font: var(--text-ui) !important;
+  margin-left: 4px !important;
 }
 [class*="gamepaddialog_Field_"] {
   --field-row-children-spacing: 7px !important;

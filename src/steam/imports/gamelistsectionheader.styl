@@ -1,21 +1,52 @@
 #Container {
+	overflow: visible;
 	background: none;
 	color: var(--color-window-text);
+	border: none;
 	box-shadow: none;
 
-	&,
-	& > div {
-		color: var(--color-window-text);
-		stroke: currentColor;
+	padding: 0 4px;
+
+	align-items: center;
+}
+
+#SectionHeaderContent {
+	color: inherit;
+
+	padding: 5px 0;
+
+	align-items: center;
+
+	/*
+	 * This can have *just* the text highlighted,
+	 * but better make it consistent with the rest of it.
+	 */
+	#Selected > & {
+		@extend .tree-entry[selected] > .tree-entry-content > .tree-entry-name;
+	}
+
+	&::before {
+		content: '';
+
+		background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA8AAAANCAMAAABBwMRzAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAASUExURYeIj8DHyP//AP///wAAAAAAAJRqB2kAAAAGdFJOU///////ALO/pL8AAAAJcEhZcwAADsMAAA7DAcdvqGQAAAA1SURBVBhXtYrRFQAQEMOCdv+VHcfDANKvtMVm4AWm1MguSI0ib9AuUHjuM9OPlh/7g7AupA6lNwF/p6NMjAAAAABJRU5ErkJggg==');
+		background-position: center;
+		background-repeat: no-repeat;
+
+		margin-right: 7px;
+
+		box(var(--icon-size));
+		z-index: 1;
 	}
 }
 
-#SectionName {
-	font: var(--text-ui);
-	letter-spacing: 0;
+#SectionCount,
+#SectionName,
+#SectionRule {
+	all: unset;
 }
 
 #SectionCount {
 	color: var(--color-gray-text);
-	font: var(--text-ui);
+
+	margin-left: 4px;
 }
