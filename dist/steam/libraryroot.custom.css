@@ -1776,6 +1776,9 @@ div[class*="appdetailssection_AppDetailsSectionContainer_"] {
   opacity: 1 !important;
   font: var(--text-ui) !important;
 }
+[class*="contextmenu_contextMenu_"] {
+  box-sizing: border-box !important;
+}
 [class*="contextmenu_contextMenuContents_"] {
   background: var(--color-button-face) !important;
 }
@@ -2124,6 +2127,13 @@ div:not([class]) > [class*="gamepaddialog_Field_"] {
 [class*="gamepadslider_SliderHandleContainer_"] {
   transform: translateX(calc(-100% * var(--inverse-normalized-value) + 7px * var(--inverse-normalized-value))) !important;
 }
+[class*="jumplist_GameIcon_"],
+[class*="jumplist_Icon_"] {
+  position: absolute !important;
+  left: 0 !important;
+  width: 16px !important;
+  height: 16px !important;
+}
 [class*="library_LibraryWindowDivider_"] {
   background-color: transparent !important;
   width: 8px !important;
@@ -2266,6 +2276,9 @@ div:not([class]) > [class*="gamepaddialog_Field_"] {
 [class*="librarysettings_ActionSection_"] {
   flex-direction: row !important;
   gap: 0 !important;
+}
+[class*="menu_Separator_"] {
+  border-bottom: none !important;
 }
 [class*="notificationssettings_NotificationGroup_"] {
   background-color: transparent !important;
