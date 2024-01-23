@@ -10,9 +10,29 @@
 	}
 }
 
+#PageClickContainer {
+	background-color: var(--color-window);
+
+	padding-right: 2px;
+
+	position: absolute;
+	top: -8px;
+	right: 8px;
+}
+
 #HeaderPageControls {
 	font: var(--text-ui);
 	color: inherit;
+
+	& > div:not([class]) {
+		background-color: var(--color-window);
+
+		padding: 0 2px;
+
+		position: absolute;
+		top: -8px;
+		right: 42px;
+	}
 }
 
 #Name {

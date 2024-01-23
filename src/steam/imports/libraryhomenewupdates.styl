@@ -48,11 +48,21 @@
 	}
 }
 
-#PartnerEventRowCapsule {
-	#TextTitle {
-		font: var(--text-ui);
-		color: var(--color-window-text);
-	}
+#PartnerEventRowCapsule_MainImageContainer {
+	border-radius: 0;
+}
+
+#PartnerEventRowCapsule_TextCtn {
+	@extend $text-reset;
+
+	padding: 0;
+	padding-top: 4px;
+}
+
+#PartnerEventRowCapsule_TextTitle {
+	@extend $text-reset;
+
+	min-height: 40px;
 }
 
 #GameIconAndName {
