@@ -1,0 +1,58 @@
+#AvatarAndName {
+	color: inherit;
+
+	gap: 4px;
+}
+
+#DescriptionText {
+	margin-bottom: 4px;
+
+	position: initial;
+}
+
+#PlayersDialog {
+	.DialogBody {
+		padding: 0;
+	}
+}
+
+#PlayersList {
+	@extend table;
+
+	padding: 2px;
+	margin: 0;
+}
+
+#PlayersListBody {
+	overflow: auto;
+	background-color: transparent;
+
+	padding: 0;
+
+	[role="cell"] {
+		@extend $text-reset;
+	}
+}
+
+#PlayersListHeaderCtr {
+	background-color: transparent;
+
+	padding: 0;
+}
+
+#PlayersListHeaderCell {
+	@extend button;
+	@extend .table-button;
+
+	// "Add Friend" column
+	&:last-of-type {
+		height: 17px;
+	}
+}
+
+#PlayersListHeaderColumn {
+	padding: 0;
+
+	display: flex;
+	justify-content: space-between;
+}

@@ -223,6 +223,7 @@ textarea,
 [class*="libraryhomenewupdates_GameIconAndName_"],
 [class*="libraryhomeshowcases_AddShowcase_"],
 [class*="libraryhomeshowcases_Collapser_"],
+[class*="playersdialog_PlayersListHeaderCell_"],
 [class*="posttextentry_PostButton_"],
 [class*="serverbrowserdialog_SelectColumnsButton_"],
 [class*="serverbrowserdialog_ServerListHeaderCell_"],
@@ -269,6 +270,7 @@ textarea:disabled,
 [class*="libraryhomenewupdates_GameIconAndName_"]:disabled,
 [class*="libraryhomeshowcases_AddShowcase_"]:disabled,
 [class*="libraryhomeshowcases_Collapser_"]:disabled,
+[class*="playersdialog_PlayersListHeaderCell_"]:disabled,
 [class*="posttextentry_PostButton_"]:disabled,
 [class*="serverbrowserdialog_SelectColumnsButton_"]:disabled,
 [class*="serverbrowserdialog_ServerListHeaderCell_"]:disabled,
@@ -319,6 +321,7 @@ textarea:focus,
 [class*="libraryhomenewupdates_GameIconAndName_"]:focus,
 [class*="libraryhomeshowcases_AddShowcase_"]:focus,
 [class*="libraryhomeshowcases_Collapser_"]:focus,
+[class*="playersdialog_PlayersListHeaderCell_"]:focus,
 [class*="posttextentry_PostButton_"]:focus,
 [class*="serverbrowserdialog_SelectColumnsButton_"]:focus,
 [class*="serverbrowserdialog_ServerListHeaderCell_"]:focus,
@@ -374,6 +377,7 @@ input:is([type="button"],
 [class*="libraryhomenewupdates_GameIconAndName_"],
 [class*="libraryhomeshowcases_AddShowcase_"],
 [class*="libraryhomeshowcases_Collapser_"],
+[class*="playersdialog_PlayersListHeaderCell_"],
 [class*="posttextentry_PostButton_"],
 [class*="serverbrowserdialog_SelectColumnsButton_"],
 [class*="serverbrowserdialog_ServerListHeaderCell_"],
@@ -415,6 +419,7 @@ input:is([type="button"]:active,
 [class*="libraryhomenewupdates_GameIconAndName_"]:active,
 [class*="libraryhomeshowcases_AddShowcase_"]:active,
 [class*="libraryhomeshowcases_Collapser_"]:active,
+[class*="playersdialog_PlayersListHeaderCell_"]:active,
 [class*="posttextentry_PostButton_"]:active,
 [class*="serverbrowserdialog_SelectColumnsButton_"]:active,
 [class*="serverbrowserdialog_ServerListHeaderCell_"]:active,
@@ -685,6 +690,7 @@ table,
 [class*="gameinfodialog_PlayersList_"],
 [class*="gamelist_Container_"],
 [class*="library_AppDetailsMain_"],
+[class*="playersdialog_PlayersList_"],
 [class*="serverbrowserdialog_ServerList_"],
 [class*="steamdesktop_Browser_"]::before {
   background-color: var(--color-window) !important;
@@ -694,6 +700,7 @@ table,
 }
 .table-button,
 [class*="gameinfodialog_Header_"],
+[class*="playersdialog_PlayersListHeaderCell_"],
 [class*="serverbrowserdialog_SelectColumnsButton_"],
 [class*="serverbrowserdialog_ServerListHeaderCell_"] {
   overflow: hidden !important;
@@ -707,6 +714,7 @@ table,
 }
 .table-button[sort]:not([sort="none"])::after,
 [class*="gameinfodialog_Header_"][sort]:not([sort="none"])::after,
+[class*="playersdialog_PlayersListHeaderCell_"][sort]:not([sort="none"])::after,
 [class*="serverbrowserdialog_SelectColumnsButton_"][sort]:not([sort="none"])::after,
 [class*="serverbrowserdialog_ServerListHeaderCell_"][sort]:not([sort="none"])::after {
   content: '' !important;
@@ -722,12 +730,14 @@ table,
 }
 .table-button[sort="ascending"],
 [class*="gameinfodialog_Header_"][sort="ascending"],
+[class*="playersdialog_PlayersListHeaderCell_"][sort="ascending"],
 [class*="serverbrowserdialog_SelectColumnsButton_"][sort="ascending"],
 [class*="serverbrowserdialog_ServerListHeaderCell_"][sort="ascending"] {
   --button-img: var(--icon-arrow-bottom) !important;
 }
 .table-button[sort="descending"],
 [class*="gameinfodialog_Header_"][sort="descending"],
+[class*="playersdialog_PlayersListHeaderCell_"][sort="descending"],
 [class*="serverbrowserdialog_SelectColumnsButton_"][sort="descending"],
 [class*="serverbrowserdialog_ServerListHeaderCell_"][sort="descending"] {
   --button-img: var(--icon-arrow-top) !important;
@@ -1042,6 +1052,7 @@ body,
 [class*="libraryhomenewupdates_PartnerEventRowCapsule_TextTitle_"],
 [class*="libraryhomeshowcases_Message_"],
 [class*="libraryhomeshowcases_CountDisplay_"],
+[class*="playersdialog_PlayersListBody_"] [role="cell"],
 [class*="spotlightgameplaysummary_EventHeaderBlock_"],
 [class*="spotlightgameplaysummary_GamePlaySummaryHeader_"],
 [class*="steamdesktop_LockIcon_"],
@@ -2402,6 +2413,38 @@ div:not([class]) > [class*="gamepaddialog_Field_"] {
   font: var(--text-ui) !important;
   margin-top: 2px !important;
   cursor: default !important;
+}
+[class*="playersdialog_AvatarAndName_"] {
+  color: inherit !important;
+  gap: 4px !important;
+}
+[class*="playersdialog_DescriptionText_"] {
+  margin-bottom: 4px !important;
+  position: initial !important;
+}
+[class*="playersdialog_PlayersDialog_"] .DialogBody {
+  padding: 0 !important;
+}
+[class*="playersdialog_PlayersList_"] {
+  padding: 2px !important;
+  margin: 0 !important;
+}
+[class*="playersdialog_PlayersListBody_"] {
+  overflow: auto !important;
+  background-color: transparent !important;
+  padding: 0 !important;
+}
+[class*="playersdialog_PlayersListHeaderCtr_"] {
+  background-color: transparent !important;
+  padding: 0 !important;
+}
+[class*="playersdialog_PlayersListHeaderCell_"]:last-of-type {
+  height: 17px !important;
+}
+[class*="playersdialog_PlayersListHeaderColumn_"] {
+  padding: 0 !important;
+  display: flex !important;
+  justify-content: space-between !important;
 }
 [class*="radio_Group_"],
 [class*="radio_Button_"] {
