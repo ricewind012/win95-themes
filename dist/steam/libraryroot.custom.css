@@ -1244,6 +1244,11 @@ body,
   letter-spacing: unset !important;
   margin: 0 !important;
 }
+.ChatTabs {
+  box-shadow: none !important;
+  border: none !important;
+  padding: 0 !important;
+}
 [class*="pageablecontainer_"][class*="PageLeft"],
 [class*="libraryhomeshowcases_"][class*="PageLeft"],
 [class*="pageablecontainer_"][class*="PageRight"],
@@ -1347,6 +1352,7 @@ body,
   background-color: var(--color-gray-text) !important;
   padding-right: 2px !important;
   position: unset !important;
+  min-height: var(--titlebar-height) !important;
   max-height: var(--titlebar-height) !important;
   display: flex !important;
   align-items: center !important;
@@ -1390,6 +1396,9 @@ body,
   color: var(--color-active-caption-text) !important;
 }
 .title-area-icon-inner {
+  display: none !important;
+}
+.title-area-highlight {
   display: none !important;
 }
 [class*="accountpanel_FatButton_"] svg,
