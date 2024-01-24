@@ -165,7 +165,7 @@ select:disabled,
 hr,
 [class*="appdetailsachievementssection_ShowDivider_"]::before,
 [class*="contextmenu_ContextMenuSeparator_"],
-[class*="libraryhomeshowcases_DropDownItems_"][class*="OptionsRule"]::before,
+[class*="libraryhomeshowcases_DropDownItems_"][class*="libraryhomeshowcases_OptionsRule_"]::before,
 [class*="steamdesktop_TitleBar_"]::before,
 [class*="steamdesktop_SuperNavBar_"]::after {
   border-top: 1px solid var(--color-button-highlight) !important;
@@ -427,7 +427,7 @@ input:is([type="button"]:active,
 [class*="supernav_Arrow_"]:active,
 [class*="supernav_SuperNavMenu_"]:active,
 [class*="titlebarcontrols_Button_"]:active,
-[class*="gamelistdropdown_CheckboxWithImage_"][class*="Active"],
+[class*="gamelistdropdown_CheckboxWithImage_"][class*="gamelistdropdown_Active_"],
 [class*="supernav_SuperNavMenu_"][class*="supernav_Selected_"] {
   box-shadow: var(--border-button-sunken) !important;
 }
@@ -471,7 +471,7 @@ input[type="checkbox"]:checked::before,
 .DialogCheckbox:checked::before,
 [class*="gamepaddialog_Toggle_"]:checked::before,
 .DialogCheckbox.Active::before,
-[class*="gamepaddialog_Toggle_"][class*="On_"]::before,
+[class*="gamepaddialog_Toggle_"][class*="gamepaddialog_On_"]::before,
 [class*="rootmenu_Icon_"]:not(:empty)::before {
   content: '' !important;
   --control-img: url("data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PSIwIDAgNyA3IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxyZWN0IHdpZHRoPSIxIiBoZWlnaHQ9IjMiIHg9IjYiLz48cmVjdCB3aWR0aD0iMSIgaGVpZ2h0PSIzIiB4PSI1IiB5PSIxIi8+PHJlY3Qgd2lkdGg9IjEiIGhlaWdodD0iMyIgeD0iNCIgeT0iMiIvPjxyZWN0IHdpZHRoPSIxIiBoZWlnaHQ9IjMiIHg9IjMiIHk9IjMiLz48cmVjdCB3aWR0aD0iMSIgaGVpZ2h0PSIzIiB4PSIyIiB5PSI0Ii8+PHJlY3Qgd2lkdGg9IjEiIGhlaWdodD0iMyIgeD0iMSIgeT0iMyIvPjxyZWN0IHdpZHRoPSIxIiBoZWlnaHQ9IjMiIHk9IjIiLz48L3N2Zz4K") !important;
@@ -794,8 +794,8 @@ table,
 [class*="pagedsettings_PagedSettingsDialog_PageListItem_"][aria-selected="true"],
 [class*="serverbrowserdialog_SwitchTabButton_"][aria-selected="true"],
 [class*="gamelistbar_GameListHomeAndSearch_"] a[aria-current],
-[class*="pagedsettings_PagedSettingsDialog_PageListItem_"][class*="Active"],
-[class*="serverbrowserdialog_SwitchTabButton_"][class*="Selected"] {
+[class*="pagedsettings_PagedSettingsDialog_PageListItem_"][class*="pagedsettings_PagedSettingsDialog_Active_"],
+[class*="serverbrowserdialog_SwitchTabButton_"][class*="serverbrowserdialog_Selected_"] {
   --color-tab-border: var(--color-button-face) !important;
   margin: 0 -1px -2px -4px !important;
   padding: 3px 6px !important;
@@ -1653,7 +1653,7 @@ div[class*="appdetailssection_AppDetailsSectionContainer_"] {
   background-color: var(--color-window) !important;
   box-shadow: none !important;
 }
-[class*="appproperties_WorkshopItemRow_"][class*="IsDragging_"] {
+[class*="appproperties_WorkshopItemRow_"][class*="appproperties_IsDragging__"] {
   background-color: var(--color-highlight) !important;
   --color-window-text: var(--color-highlight-text) !important;
 }
@@ -1820,7 +1820,7 @@ div[class*="appdetailssection_AppDetailsSectionContainer_"] {
   border-radius: 0 !important;
 }
 [class*="contextmenu_contextMenuItem_"]:hover,
-[class*="contextmenu_contextMenuItem_"][class*="active"] {
+[class*="contextmenu_contextMenuItem_"][class*="contextmenu_active_"] {
   --color-button-text: var(--color-highlight-text) !important;
   background-color: var(--color-highlight) !important;
   color: var(--color-highlight-text) !important;
@@ -2119,7 +2119,7 @@ div:not([class]) > [class*="gamepaddialog_Field_"] {
 [class*="gamepaddialog_FieldLabelRow_"] {
   flex-direction: row-reverse !important;
 }
-[class*="WithDescription_"] > [class*="Row"] + [class*="gamepaddialog_FieldDescription_"] {
+[class*="gamepaddialog_WithDescription_"] > [class*="gamepaddialog_Row_"] + [class*="gamepaddialog_FieldDescription_"] {
   color: var(--color-gray-text) !important;
   margin-left: 17px !important;
 }
@@ -2303,10 +2303,10 @@ div:not([class]) > [class*="gamepaddialog_Field_"] {
   font: var(--text-ui) !important;
   margin: 0 !important;
 }
-[class*="libraryhomeshowcases_DropDownItems_"][class*="OptionsRule"] {
+[class*="libraryhomeshowcases_DropDownItems_"][class*="libraryhomeshowcases_OptionsRule_"] {
   border: none !important;
 }
-[class*="libraryhomeshowcases_DropDownItems_"][class*="OptionsRule"]::before {
+[class*="libraryhomeshowcases_DropDownItems_"][class*="libraryhomeshowcases_OptionsRule_"]::before {
   content: '' !important;
   display: block !important;
   background-color: var(--color-button-face) !important;
@@ -2470,7 +2470,7 @@ div:not([class]) > [class*="gamepaddialog_Field_"] {
 [class*="radio_Button_"]:active::before {
   --control-img: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMBAMAAACkW0HUAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsIAAA7CARUoSoAAAAAPUExURf///wAAAIeIj8DHyP///1QVyYYAAAABdFJOUwBA5thmAAAAOElEQVQI12NgYFBSYgACJUFBIM0kaGws6MDAJGxsbODAoGgMBCzYKagSJgZjYwYHBgYXMAISQBIAZBYIx/Jku34AAAAASUVORK5CYII=") !important;
 }
-[class*="radio_Button_"][class*="Active"]::before {
+[class*="radio_Button_"][class*="radio_Active_"]::before {
   --control-img: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMAgMAAAArG7R0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAAMUExURf///wAAAIeIj////88rXQEAAAABdFJOUwBA5thmAAAAMElEQVQI12NgWMXAwBW6gEH1fwyD+v8zDPOvf2aYHwrFQDZITOE/DwM/wwcGhv8MAL1zEtdwC089AAAAAElFTkSuQmCC") !important;
 }
 [class*="radio_Button_"] > span::before {
@@ -2498,7 +2498,7 @@ div:not([class]) > [class*="gamepaddialog_Field_"] {
   padding: 3px 6px !important;
 }
 [class*="rootmenu_RootMenuButton_"]:active,
-[class*="rootmenu_RootMenuButton_"][class*="Open"] {
+[class*="rootmenu_RootMenuButton_"][class*="rootmenu_Open_"] {
   background-color: var(--color-highlight) !important;
   color: var(--color-highlight-text) !important;
 }
@@ -2588,18 +2588,18 @@ div:not([class]) > [class*="gamepaddialog_Field_"] {
 [class*="serverbrowserdialog_ServerRow_"]:hover {
   background-color: transparent !important;
 }
-[class*="serverbrowserdialog_ServerRow_"][class*="Selected"] {
+[class*="serverbrowserdialog_ServerRow_"][class*="serverbrowserdialog_Selected_"] {
   background: var(--color-highlight) !important;
   color: var(--color-highlight-text) !important;
 }
 [class*="serverbrowserdialog_FilterOptionsCtr_"] {
   padding: 0 !important;
 }
-[class*="serverbrowserdialog_FilterOptionsCtr_"]:not([class*="Collapsed"]) {
+[class*="serverbrowserdialog_FilterOptionsCtr_"]:not([class*="serverbrowserdialog_Collapsed_"]) {
   gap: 0 !important;
   height: unset !important;
 }
-[class*="serverbrowserdialog_FilterOptionsCtr_"][class*="Collapsed"] {
+[class*="serverbrowserdialog_FilterOptionsCtr_"][class*="serverbrowserdialog_Collapsed_"] {
   display: none !important;
 }
 [class*="serverbrowserdialog_FilterOptionsCtr_"] .DialogInput {

@@ -40,7 +40,7 @@
 }
 
 #FieldDescription {
-	[class*="WithDescription_"] > [class*="Row"] + & {
+	#WithDescription > #Row + & {
 		color: var(--color-gray-text);
 
 		margin-left: 17px;
@@ -63,7 +63,7 @@
 	@extend input;
 	@extend input[type="checkbox"];
 
-	&[class*="On_"] {
+	&#On {
 		@extend input[type="checkbox"]:checked;
 	}
 }

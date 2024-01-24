@@ -48,7 +48,7 @@
 
 	width: unset;
 
-	&[class*="Selected"] {
+	&#Selected {
 		@extend [role="tab"][aria-selected="true"];
 	}
 
@@ -126,7 +126,7 @@
 		background-color: transparent;
 	}
 
-	&[class*="Selected"] {
+	&#Selected {
 		background: var(--color-highlight);
 		color: var(--color-highlight-text);
 	}
@@ -135,13 +135,13 @@
 #FilterOptionsCtr {
 	padding: 0;
 
-	&:not([class*="Collapsed"]) {
+	&:not(#Collapsed) {
 		gap: 0;
 
 		height: unset;
 	}
 
-	&[class*="Collapsed"] {
+	&#Collapsed {
 		display: none;
 	}
 
