@@ -1,0 +1,146 @@
+#AutoUpdateHours {
+	@extend $text-reset;
+
+	parentheses();
+}
+
+#AutoUpdateSettings {
+	@extend $text-reset;
+	@extend button;
+
+	width: 111px;
+
+	&::after {
+		content: '...';
+	}
+}
+
+#ButtonWrapper {
+	margin: 0;
+
+	width: unset;
+	height: unset;
+}
+
+#Count {
+	@extend $text-reset;
+
+	margin: 0;
+}
+
+#DownloadsPage {
+	background: none;
+}
+
+#EmptyTransfers {
+	padding: 0;
+}
+
+#ItemLists {
+	overflow: auto;
+
+	padding: 14px;
+
+	box-sizing: border-box;
+}
+
+#Name {
+	@extend $text-reset;
+
+	margin-bottom: 4px;
+}
+
+#ProgressDetails {
+	@extend $text-reset;
+}
+
+#RemoveFromQueue {
+	@extend $small-button;
+
+	--button-img: var(--icon-close);
+	--button-img-size: 8px 7px;
+	--button-img-pos: 4px 3px;
+
+	opacity: 1;
+
+	&::after {
+		background-color: var(--color-button-text);
+	}
+
+	svg {
+		display: none;
+	}
+}
+
+#Rule {
+	margin: 0 2px;
+
+	height: 0;
+}
+
+#Section {
+	@extend fieldset;
+
+	margin-bottom: 16px;
+}
+
+#SectionItem {
+	background-color: transparent;
+
+	padding: 0;
+}
+
+#SectionItemCenter,
+#SectionItemContent {
+	gap: 8px;
+}
+
+#SectionItemColumn {
+	// Progress
+	&:first-child {
+		flex-basis: 75%;
+	}
+}
+
+#SectionItemStatus {
+	@extend $text-reset;
+}
+
+#SectionList {
+	border: none;
+
+	gap: 8px;
+	padding: 0;
+	margin: 0;
+
+	display: flex;
+	flex-direction: column;
+}
+
+#SectionTitle {
+	@extend $text-reset;
+	@extend $legend-as-div;
+
+	background-color: var(--color-window);
+
+	// Adjust for "Clear all" button
+	&:has(.DialogButton) {
+		top: -12px;
+	}
+}
+
+#Text {
+	height: unset;
+}
+
+#Title {
+	color: inherit;
+}
+
+#TopBar {
+	display: none;
+}
+
+#Value {
+	@extend $text-reset;
+}

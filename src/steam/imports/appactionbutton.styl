@@ -1,0 +1,20 @@
+#ButtonChild {
+	@extend button;
+
+	background-image: none;
+
+	svg {
+		fill: var(--color-button-text);
+
+		width: 16px;
+		height: 16px;
+	}
+}
+
+#ButtonText {
+	@extend $text-reset;
+}
+
+#PlayButtonContainer {
+	height: unset;
+}
