@@ -3,3 +3,47 @@
 #PageListItem_Icon {
 	display: none;
 }
+
+:is(.PopupFullWindow, .ModalPosition_Content) > #PagedSettingsDialog {
+	margin: 8px;
+
+	min-width: unset;
+	min-height: unset;
+	flex-direction: column;
+}
+
+#PagedSettingsDialog_PageList {
+	overflow: auto hidden;
+	font();
+
+	padding: 0;
+	padding-left: 4px;
+
+	height: unset;
+	flex-grow: 0;
+	flex-direction: row;
+}
+
+#PagedSettingsDialog_PageListColumn {
+	background-color: transparent;
+
+	padding: 0;
+
+	max-width: unset;
+	min-height: unset;
+	flex-grow: 0;
+}
+
+#PagedSettingsDialog_PageListItem {
+	@extend [role="tab"];
+
+	font();
+
+	margin-top: 2px;
+
+	cursor: default;
+
+	&#Active {
+		@extend [role="tab"][aria-selected="true"];
+	}
+}
