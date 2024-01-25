@@ -1,0 +1,184 @@
+#AppActionBar {
+	padding: 0;
+	padding-top: 6px;
+
+	z-index: 1;
+}
+
+#AppActionSelected {
+	@extend $text-reset;
+
+	position: fixed;
+	left: 8px;
+	bottom: 6px;
+}
+
+#AppBody {
+	background-color: var(--color-window);
+	color: var(--color-window-text);
+
+	&:hover {
+		--color-window: var(--color-highlight);
+		--color-window-text: var(--color-highlight-text);
+	}
+
+	svg {
+		display: none;
+	}
+}
+
+#AppHeader {
+	@extend $text-reset;
+
+	padding: 0;
+}
+
+#AppHeaderContainer {
+	@extend $legend-as-div;
+
+	top: -12px;
+}
+
+#AppHeaderValue {
+	@extend $text-reset;
+
+	parentheses();
+
+	margin-left: 4px;
+
+	display: flex;
+}
+
+#AppInfoItem {
+	@extend $text-reset;
+
+	gap: 4px;
+}
+
+#AppList {
+	padding: 0;
+}
+
+#AppName {
+	@extend $text-reset;
+}
+
+#AppsGrid {
+	@extend fieldset;
+
+	margin-top: 20px;
+	margin-bottom: 0;
+}
+
+#AppSize {
+	@extend $text-reset;
+}
+
+#AppUsageText,
+#AppUsageValue {
+	@extend $text-reset;
+
+	margin: 0;
+}
+
+// Redundant with the top <select>
+#DriveUsage > #DriveName {
+	display: none;
+}
+
+#DriveSettingsButton {
+	@extend $small-button;
+
+	--button-img: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA4IDIiPjxzdHlsZT5yZWN0e3dpZHRoOjJweDtoZWlnaHQ6MnB4fTwvc3R5bGU+PHJlY3QgeD0iMCIvPjxyZWN0IHg9IjMiLz48cmVjdCB4PSI2Ii8+PC9zdmc+Cg==');
+	--button-img-size: 8px auto;
+
+	margin: 0;
+
+	svg {
+		display: none;
+	}
+}
+
+#DriveUsageBar {
+	@extend progress::-webkit-progress-value;
+}
+
+#DriveUsageDot {
+	background-color: var(--color-highlight);
+	border-radius: 0;
+}
+
+#DriveUsageIndicator {
+	@extend progress;
+
+	background-color: transparent;
+	border-radius: 0;
+}
+
+#DriveUsageNumber,
+#DriveUsageText {
+	@extend $text-reset;
+}
+
+#AppUsageText,
+#DriveUsageText {
+	display: flex;
+
+	&::after {
+		content: ':';
+	}
+}
+
+// Not alphabetical to sort colors
+// Stylus also bails out with hex colors here, wtf lol
+#DriveUsageWorkshop {
+	--color-highlight: darkorange;
+}
+#DriveUsageShader {
+	--color-highlight: darkmagenta;
+}
+#DriveUsageOther {
+	--color-highlight: var(--color-gray-text);
+}
+#DriveUsageFreeSpace {
+	--color-highlight: transparent;
+}
+
+#InstallDropdownOption {
+	color: inherit;
+
+	svg,
+	#DriveName,
+	#DriveSize {
+		@extend $text-reset;
+	}
+}
+
+#LibraryContent,
+#LibraryHeader {
+	padding: 0;
+}
+
+#LibraryContent {
+	// For <fieldset> & <progress> borders
+	overflow: visible;
+}
+
+#LibraryHeader {
+	gap: 11px;
+
+	align-items: start;
+}
+
+#LibraryInventory {
+	@extend table
+
+	padding: 2px;
+}
+
+#Rule {
+	margin: 0 2px;
+
+	height: 0;
+}
+
