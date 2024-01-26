@@ -1860,6 +1860,26 @@ div[class*="appdetailssection_AppDetailsSectionContainer_"] {
 [class*="appproperties_SteamInputLink_"] {
   color: var(--color-link) !important;
 }
+[class*="artworkmodal_ArtworkContainer_"] {
+  box-shadow: none !important;
+}
+[class*="artworkmodal_ArtworkModal_"] {
+  border: none !important;
+}
+[class*="artworkmodal_ArtworkModalContainer_"] {
+  overflow: auto !important;
+  -webkit-mask-image: none !important;
+  padding: 14px !important;
+  height: calc(100% - 18px) !important;
+  justify-content: center !important;
+}
+[class*="artworkmodal_ArtworkModalDetails_"] {
+  display: none !important;
+}
+[class*="artworkmodal_ModalBox_"] {
+  background: none !important;
+  box-shadow: none !important;
+}
 [class*="bottombar_BottomBar_"] {
   background: transparent !important;
   box-shadow: none !important;
