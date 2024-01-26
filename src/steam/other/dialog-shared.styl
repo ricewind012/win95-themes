@@ -1,4 +1,10 @@
 .Modal {
+	&Overlay {
+		&Background {
+			display: none;
+		}
+	}
+
 	&Position {
 		background-image: none;
 
@@ -9,6 +15,19 @@
 		&_Content {
 			color: var(--color-button-text);
 			box-shadow: none;
+		}
+
+		&_Dismiss {
+			top: 6px;
+			right: 6px;
+
+			.closeButton {
+				@extend $small-button;
+
+				--button-img: var(--icon-close);
+				--button-img-size: 8px 7px;
+				--button-img-pos: 4px 3px;
+			}
 		}
 	}
 }
@@ -95,7 +114,7 @@
 		text-transform: unset;
 	}
 
-	&Header {
+	.PopupFullWindow > .ModalPosition &Header {
 		color: var(--color-button-face);
 		font: var(--text-ui);
 		font-weight: bold;
@@ -156,6 +175,12 @@
 		margin: 0;
 		gap: 8px;
 
+		&Text {
+			@extend $text-reset;
+
+			margin: 0;
+		}
+
 		a {
 			color: var(--color-link);
 		}
@@ -181,9 +206,47 @@
 	}
 }
 
+// In-client/page dialog
+.FullModalOverlay .Dialog {
+	&Body {
+		box-shadow: none;
+	}
+
+	&Button {
+		&.Primary {
+			width: 111px;
+		}
+	}
+
+	&Content {
+		@extend body;
+	}
+
+	&Header {
+		@extend $text-reset;
+
+		background-color: var(--color-active-caption);
+		color: var(--color-active-caption-text);
+		font-weight: bold;
+
+		padding: 1px 2px;
+		margin: 0;
+
+		height: var(--titlebar-height);
+		box-sizing: border-box;
+		display: flex;
+		align-items: center;
+
+		// "Mark as Private" dialog
+		div {
+			display: none;
+		}
+	}
+}
+
 /.DialogControlsSectionHeader,
 /.DialogSubHeader,
-/.DialogBodyText,
+/.PopupFullWindow > .ModalPosition .DialogBodyText,
 /[class*="appproperties_Title_"],
 /[class*="librarysettings_DescriptionText_"],
 /[class*="remoteplaysettings_TableHeader_"] > :first-child {

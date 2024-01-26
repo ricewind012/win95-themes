@@ -196,7 +196,9 @@ fieldset,
 [class*="downloads_Section_"],
 div:not([class]) > [class*="gamepaddialog_Field_"],
 [class*="libraryhomeshowcases_Showcase_"],
-[class*="pageablecontainer_PageableContainer_"] {
+[class*="pageablecontainer_PageableContainer_"],
+[class*="savecollectiondialog_SaveCollectionContainer_"] .DialogBodyText,
+[class*="savecollectiondialog_SaveCollectionContainer_"] .DialogFooter {
   border: 1px solid !important;
   border-color: var(--border-groupbox-border) !important;
   border-radius: 0 !important;
@@ -209,6 +211,7 @@ input,
 button,
 select,
 textarea,
+.ModalPosition_Dismiss .closeButton,
 .DialogDropDown,
 [class*="pageablecontainer_"][class*="PageLeft"],
 [class*="libraryhomeshowcases_"][class*="PageLeft"],
@@ -262,6 +265,7 @@ input:disabled,
 button:disabled,
 select:disabled,
 textarea:disabled,
+.ModalPosition_Dismiss .closeButton:disabled,
 .DialogDropDown:disabled,
 [class*="pageablecontainer_"][class*="PageLeft"]:disabled,
 [class*="libraryhomeshowcases_"][class*="PageLeft"]:disabled,
@@ -308,6 +312,7 @@ textarea:disabled,
 [class*="libraryhomeshowcases_"][class*="PageLeft"][class*="Disabled"],
 [class*="pageablecontainer_"][class*="PageRight"][class*="Disabled"],
 [class*="libraryhomeshowcases_"][class*="PageRight"][class*="Disabled"],
+[class*="savecollectiondialog_Disabled_"] > .DialogButton,
 [class*="supernav_Disabled_"] {
   --color-window: var(--color-button-face) !important;
   --color-window-text: var(--color-gray-text) !important;
@@ -319,6 +324,7 @@ input:focus,
 button:focus,
 select:focus,
 textarea:focus,
+.ModalPosition_Dismiss .closeButton:focus,
 .DialogDropDown:focus,
 [class*="pageablecontainer_"][class*="PageLeft"]:focus,
 [class*="libraryhomeshowcases_"][class*="PageLeft"]:focus,
@@ -386,6 +392,7 @@ input:is(:not([type]),
 button,
 input:is([type="button"],
 [type="submit"]),
+.ModalPosition_Dismiss .closeButton,
 [class*="pageablecontainer_"][class*="PageLeft"],
 [class*="libraryhomeshowcases_"][class*="PageLeft"],
 [class*="pageablecontainer_"][class*="PageRight"],
@@ -433,6 +440,7 @@ input:is([type="button"],
 button:active,
 input:is([type="button"]:active,
 [type="submit"]):active,
+.ModalPosition_Dismiss .closeButton:active,
 [class*="pageablecontainer_"][class*="PageLeft"]:active,
 [class*="libraryhomeshowcases_"][class*="PageLeft"]:active,
 [class*="pageablecontainer_"][class*="PageRight"]:active,
@@ -878,7 +886,7 @@ td {
 legend,
 .DialogControlsSectionHeader,
 .DialogSubHeader,
-.DialogBodyText,
+.PopupFullWindow > .ModalPosition .DialogBodyText,
 [class*="appproperties_Title_"],
 [class*="librarysettings_DescriptionText_"],
 [class*="remoteplaysettings_TableHeader_"] > :first-child,
@@ -890,6 +898,8 @@ legend,
 [class*="downloads_SectionTitle_"],
 [class*="libraryhomeshowcases_ShowcaseHeader_"],
 [class*="pageablecontainer_Name_"],
+[class*="savecollectiondialog_SaveCollectionContainer_"] .DialogBodyText > [class*="savecollectiondialog_InputContainer_"],
+[class*="savecollectiondialog_SaveCollectionContainer_"] .DialogFooter > .DialogLabel,
 [class*="spotlightgameplaysummary_GamePlaySummaryHeader_"] {
   background-color: var(--color-button-face) !important;
   font: var(--text-ui) !important;
@@ -991,6 +1001,7 @@ label:has(:focus)::before {
   border: 1px dotted #ff0 !important;
 }
 body,
+.FullModalOverlay .DialogContent,
 [class*="gamelistsearchbar_AdvancedSearchPane_"],
 [class*="titlebarcontrols_EmptyNotificationsCtn_"] {
   background-color: var(--color-button-face) !important;
@@ -1011,6 +1022,7 @@ body,
   height: 14px !important;
   cursor: se-resize !important;
 }
+.ModalPosition_Dismiss .closeButton,
 [class*="pageablecontainer_"][class*="PageLeft"],
 [class*="libraryhomeshowcases_"][class*="PageLeft"],
 [class*="pageablecontainer_"][class*="PageRight"],
@@ -1031,6 +1043,7 @@ body,
   width: 16px !important;
   height: 14px !important;
 }
+.ModalPosition_Dismiss .closeButton::before,
 [class*="pageablecontainer_"][class*="PageLeft"]::before,
 [class*="libraryhomeshowcases_"][class*="PageLeft"]::before,
 [class*="pageablecontainer_"][class*="PageRight"]::before,
@@ -1045,6 +1058,7 @@ body,
 [class*="libraryhomenewupdates_SettingsButton_"]::before,
 [class*="libraryhomenewupdates_EventOptions_"] > div::before,
 [class*="titlebarcontrols_Button_"]::before,
+.ModalPosition_Dismiss .closeButton::after,
 [class*="pageablecontainer_"][class*="PageLeft"]::after,
 [class*="libraryhomeshowcases_"][class*="PageLeft"]::after,
 [class*="pageablecontainer_"][class*="PageRight"]::after,
@@ -1068,6 +1082,7 @@ body,
   height: 100% !important;
   display: block !important;
 }
+.ModalPosition_Dismiss .closeButton::before,
 [class*="pageablecontainer_"][class*="PageLeft"]::before,
 [class*="libraryhomeshowcases_"][class*="PageLeft"]::before,
 [class*="pageablecontainer_"][class*="PageRight"]::before,
@@ -1093,6 +1108,8 @@ body,
   left: 1px !important;
   top: 1px !important;
 }
+.DialogBodyText,
+.FullModalOverlay .DialogHeader,
 [class*="appactionbutton_ButtonText_"],
 [class*="appactivityday_AppActivityDate_"],
 [class*="appactivityday_PartnerEventFeaturedHeader_"],
@@ -1141,12 +1158,14 @@ body,
 [class*="downloads_SectionItemStatus_"],
 [class*="downloads_SectionTitle_"],
 [class*="downloads_Value_"],
+[class*="gamelistcollectionmenu_CollectionDeleteContainer_"] .DialogBodyText span,
 [class*="gamelistentry_Container_"],
 [class*="libraryhomenewupdates_PartnerEventRowCapsule_TextCtn_"],
 [class*="libraryhomenewupdates_PartnerEventRowCapsule_TextTitle_"],
 [class*="libraryhomeshowcases_Message_"],
 [class*="libraryhomeshowcases_CountDisplay_"],
 [class*="playersdialog_PlayersListBody_"] [role="cell"],
+[class*="savecollectiondialog_Description_"],
 [class*="spotlightgameplaysummary_EventHeaderBlock_"],
 [class*="spotlightgameplaysummary_GamePlaySummaryHeader_"],
 [class*="steamdesktop_LockIcon_"],
@@ -1167,7 +1186,7 @@ body,
 }
 .DialogControlsSectionHeader,
 .DialogSubHeader,
-.DialogBodyText,
+.PopupFullWindow > .ModalPosition .DialogBodyText,
 [class*="appproperties_Title_"],
 [class*="librarysettings_DescriptionText_"],
 [class*="remoteplaysettings_TableHeader_"] > :first-child,
@@ -1179,6 +1198,8 @@ body,
 [class*="downloads_SectionTitle_"],
 [class*="libraryhomeshowcases_ShowcaseHeader_"],
 [class*="pageablecontainer_Name_"],
+[class*="savecollectiondialog_SaveCollectionContainer_"] .DialogBodyText > [class*="savecollectiondialog_InputContainer_"],
+[class*="savecollectiondialog_SaveCollectionContainer_"] .DialogFooter > .DialogLabel,
 [class*="spotlightgameplaysummary_GamePlaySummaryHeader_"] {
   position: absolute !important;
   top: -8px !important;
@@ -1228,6 +1249,9 @@ body,
   box-shadow: none !important;
   padding: 0 !important;
 }
+.ModalOverlayBackground {
+  display: none !important;
+}
 .ModalPosition {
   background-image: none !important;
 }
@@ -1237,6 +1261,15 @@ body,
 .ModalPosition_Content {
   color: var(--color-button-text) !important;
   box-shadow: none !important;
+}
+.ModalPosition_Dismiss {
+  top: 6px !important;
+  right: 6px !important;
+}
+.ModalPosition_Dismiss .closeButton {
+  --button-img: var(--icon-close) !important;
+  --button-img-size: 8px 7px !important;
+  --button-img-pos: 4px 3px !important;
 }
 .DialogButton {
   background-image: none !important;
@@ -1285,7 +1318,7 @@ body,
   color: inherit !important;
   text-transform: unset !important;
 }
-.DialogHeader {
+.PopupFullWindow > .ModalPosition .DialogHeader {
   color: var(--color-button-face) !important;
   font: var(--text-ui) !important;
   font-weight: bold !important;
@@ -1296,10 +1329,10 @@ body,
   left: 23px !important;
   top: 6px !important;
 }
-.WindowFocus .DialogHeader {
+.WindowFocus .PopupFullWindow > .ModalPosition .DialogHeader {
   color: var(--color-active-caption-text) !important;
 }
-.DialogHeader svg {
+.PopupFullWindow > .ModalPosition .DialogHeader svg {
   display: none !important;
 }
 .DialogContent {
@@ -1328,6 +1361,9 @@ body,
   margin: 0 !important;
   gap: 8px !important;
 }
+.DialogBodyText {
+  margin: 0 !important;
+}
 .DialogBody a {
   color: var(--color-link) !important;
 }
@@ -1342,9 +1378,29 @@ body,
 ._DialogColLayout {
   gap: 0 !important;
 }
+.FullModalOverlay .DialogBody {
+  box-shadow: none !important;
+}
+.FullModalOverlay .DialogButton.Primary {
+  width: 111px !important;
+}
+.FullModalOverlay .DialogHeader {
+  background-color: var(--color-active-caption) !important;
+  color: var(--color-active-caption-text) !important;
+  font-weight: bold !important;
+  padding: 1px 2px !important;
+  margin: 0 !important;
+  height: var(--titlebar-height) !important;
+  box-sizing: border-box !important;
+  display: flex !important;
+  align-items: center !important;
+}
+.FullModalOverlay .DialogHeader div {
+  display: none !important;
+}
 .DialogControlsSectionHeader,
 .DialogSubHeader,
-.DialogBodyText,
+.PopupFullWindow > .ModalPosition .DialogBodyText,
 [class*="appproperties_Title_"],
 [class*="librarysettings_DescriptionText_"],
 [class*="remoteplaysettings_TableHeader_"] > :first-child {
@@ -2236,6 +2292,9 @@ div[class*="gameinfodialog_DialogBody_"] .DialogFooter svg {
   overflow: visible !important;
   flex: unset !important;
 }
+[class*="gamelistcollectionmenu_CollectionDelete_"] {
+  display: none !important;
+}
 [class*="gamelistdropdown_Bar_"] {
   padding: 0 !important;
   margin-bottom: 2px !important;
@@ -2799,6 +2858,9 @@ div:not([class]) > [class*="gamepaddialog_Field_"] {
 [class*="radio_Button_"] > span::after {
   content: ')' !important;
 }
+[class*="removefreeappdialog_Question_"] {
+  margin-top: 16px !important;
+}
 [class*="rootmenu_Icon_"] {
   background-image: var(--control-img) !important;
   position: absolute !important;
@@ -2824,6 +2886,41 @@ div:not([class]) > [class*="gamepaddialog_Field_"] {
 }
 [class*="rootmenu_RootMenuButton_"] svg {
   display: none !important;
+}
+[class*="savecollectiondialog_ActionLabel_"] {
+  text-transform: unset !important;
+  margin: 0 !important;
+  margin-bottom: 8px !important;
+  width: 148px !important;
+}
+[class*="savecollectiondialog_ActionLabel_"] svg {
+  display: none !important;
+}
+[class*="savecollectiondialog_TwoOptionsContainer_"] {
+  gap: 16px !important;
+}
+[class*="savecollectiondialog_Description_"] {
+  background-image: none !important;
+  padding: 0 !important;
+}
+[class*="savecollectiondialog_Option_"] {
+  margin: 0 !important;
+}
+[class*="savecollectiondialog_Required_"] {
+  margin-left: 4px !important;
+}
+[class*="savecollectiondialog_SaveCollectionContainer_"] .DialogBody {
+  padding: 14px 7px 5px 9px !important;
+}
+[class*="savecollectiondialog_SaveCollectionContainer_"] .DialogBodyText > [class*="savecollectiondialog_InputContainer_"],
+[class*="savecollectiondialog_SaveCollectionContainer_"] .DialogFooter > .DialogLabel {
+  margin: 0 !important;
+}
+[class*="savecollectiondialog_SaveCollectionContainer_"] .DialogTextInputBase {
+  text-transform: unset !important;
+}
+[class*="savecollectiondialog_TwoOptionsContainer_"] {
+  background-color: transparent !important;
 }
 [class*="serverbrowserdialog_TitleBar_"] ~ :last-child .DialogContent {
   padding: 7px !important;
@@ -3164,6 +3261,10 @@ div:not([class]) > [class*="gamepaddialog_Field_"] {
   box-shadow: none !important;
   padding: 3px !important;
   margin: 0 !important;
+}
+[class*="uninstalldialog_UninstallDialog_"] {
+  min-width: 400px !important;
+  max-width: 400px !important;
 }
 [class*="voicesettings_MicrophoneTest_"] {
   gap: 4px !important;

@@ -1,0 +1,68 @@
+#ActionLabel {
+	text-transform: unset;
+
+	margin: 0;
+	margin-bottom: 8px;
+
+	width: 148px;
+
+	svg {
+		display: none;
+	}
+}
+
+#TwoOptionsContainer {
+	gap: 16px;
+}
+
+#Description {
+	@extend $text-reset;
+
+	background-image: none;
+
+	padding: 0;
+}
+
+#Disabled {
+	& > .DialogButton {
+		@extend button:disabled;
+	}
+}
+
+#Option {
+	margin: 0;
+}
+
+#Required {
+	margin-left: 4px;
+}
+
+#SaveCollectionContainer {
+	.DialogBody {
+		// TODO: Probably pixel-perfect for 7px, don't have dialogs yet.
+		padding: 14px 7px 5px 9px;
+
+		&Text {
+			@extend fieldset;
+		}
+	}
+
+	.DialogFooter {
+		@extend fieldset;
+	}
+
+	.DialogBodyText > #InputContainer,
+	.DialogFooter > .DialogLabel {
+		@extend $legend-as-div;
+
+		margin: 0;
+	}
+
+	.DialogTextInputBase {
+		text-transform: unset;
+	}
+}
+
+#TwoOptionsContainer {
+	background-color: transparent;
+}
