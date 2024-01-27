@@ -1,0 +1,287 @@
+replace-text(token) {
+	&::before {
+		content: s('var(--%s)', token);
+	}
+
+	svg {
+		display: none;
+	}
+}
+
+#Bullet {
+	@extend $text-reset;
+}
+
+#ButtonBox:not(#Combobox, #Dropdown) {
+	@extend button;
+
+	&#Disabled {
+		@extend button:disabled;
+	}
+}
+
+#ButtonGroup {
+	gap: 6px;
+
+	#ButtonBox {
+		margin: 0;
+	}
+
+	// Top
+	&:first-child {
+		& > #ButtonBox {
+			max-width: unset;
+		}
+	}
+
+	// List/grid buttons
+	&:last-child {
+		gap: 0;
+
+		flex-direction: row-reverse;
+
+		& > :nth-child(1) {
+			--button-img: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA8AAAANCAYAAAB2HjRBAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAABFSURBVDhPY2BgWPEfgnEB3PJMIOL//3AgCVcAomEYDHDJgzUzMq4EUTDAiITBgJD8gADcAQIBuOVHAwwrwC0/UAHGwAgAao9By4PPZU8AAAAASUVORK5CYIIK');
+		}
+
+		& > :nth-child(2) {
+			--button-img: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAANCAYAAACZ3F9/AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAABcSURBVChTrZCLCsAgCEVdP1mf2F86bsmyZa+tA6EEV/FclIicKwjyN8ZJJWYvnR7S5wmCEp5TBXcwbgRrd34Ck3sy1NbWOm5EY72Kt/UtOdr6X6szDlpfSRrWiW4Icxa56YPnXwAAAABJRU5ErkJgggo=');
+		}
+
+		#ButtonBox {
+			@extend $small-button;
+
+			width: 32px;
+			height: 32px;
+
+			&:has(> #Active) {
+				@extend button:active;
+			}
+
+			svg {
+				display: none;
+			}
+		}
+	}
+}
+
+#CaptionField {
+	margin: 0;
+
+	// 8px = borders + padding
+	height: calc((var(--text-size) * var(--text-line)) * 3 + 8px);
+}
+
+#CloudStorageImpact {
+	@extend $text-reset;
+}
+
+#ComboboxSelector {
+	padding: 0;
+}
+
+#ComboboxSelectorContextMenu {
+	@extend .menu;
+
+	border-radius: 0;
+}
+
+#Combobox,
+#Dropdown {
+	@extend select;
+
+	svg {
+		display: none;
+	}
+}
+
+#Explainer,
+#Details > div {
+	color: inherit;
+	text-align: start;
+
+	gap: 8px;
+	padding: 4px;
+
+	align-items: start;
+}
+
+#ExplainerBox,
+#FocusedScreenshots {
+	@extend table;
+
+	border-radius: 0;
+
+	padding: 2px;
+
+	height: 100%;
+
+	#ButtonBox {
+		width: 148px;
+	}
+}
+
+#Details {
+	flex: unset;
+	align-items: start;
+}
+
+#Header {
+	@extend $text-reset;
+}
+
+#IconButton {
+	#ButtonGroup:nth-child(2) & {
+		replace-text(ScreenshotUploader_Settings);
+	}
+
+	#ButtonGroup:nth-child(1) &,
+	#ScreenshotFormActions > :nth-last-child(3) > & {
+		replace-text(ScreenshotUploader_ShowOnDisk);
+	}
+
+	#ScreenshotFormActions > :nth-last-child(2):first-child > & {
+		replace-text(ScreenshotUploader_CopyURL);
+	}
+
+	#FocusedScreenshots #ScreenshotFormActions > :first-child > &,
+	&:has([d="M4.66675 9.33325H19.3334L18.0001 21.3333H6.00008L4.66675 9.33325ZM16.0001 3.99992L14.6667 1.33325H9.33342L8.00008 3.99992H2.66675V6.66659H21.3334V3.99992H16.0001Z"]) {
+		replace-text(Generic_Delete);
+	}
+}
+
+#KeyboardKey {
+	@extend $text-reset;
+
+	border: none;
+
+	padding: 0;
+	margin: 0;
+
+	&::before {
+		content: open-quote;
+	}
+
+	&::after {
+		content: close-quote;
+	}
+}
+
+#Label {
+	@extend $text-reset;
+}
+
+#Line {
+	@extend hr;
+
+	background-color: transparent;
+
+	height: unset;
+}
+
+#Metadata {
+	@extend $text-reset;
+
+	margin-top: 4px;
+}
+
+#Option {
+	margin: 0;
+}
+
+#ScreenshotForm {
+	gap: 8px;
+
+	align-items: start;
+}
+
+#ScreenshotFormActions {
+	gap: 0;
+
+	// "Copy link to screenshot"
+	& > :nth-last-child(2):first-child > #IconButton {
+		width: 148px;
+	}
+}
+
+#ScreenshotFormRow {
+	gap: 6px;
+
+	width: 100%;
+	flex-direction: column;
+	align-items: start;
+}
+
+#ScreenshotList {
+	--pos-bottom: 69px;
+
+	background-color: var(--color-window);
+
+	margin: 2px;
+
+	// Fullscreen
+	.PopupFullWindow:only-child & {
+		--pos-bottom: 50px;
+	}
+
+	// An alternative to "@extend table" for special elements
+	&::before {
+		content: '';
+
+		box-shadow: var(--border-field);
+
+		position: fixed;
+		inset: 11px;
+		top: 91px;
+		bottom: 69px;
+		width: 300px;
+
+		pointer-events: none;
+	}
+}
+
+#ScreenshotListItem {
+	&#Selected,
+	&:hover {
+		border-color: var(--color-highlight);
+	}
+}
+
+#ScreenshotListItemRow {
+	gap: 0;
+}
+
+#SectionHeading {
+	@extend $text-reset;
+
+	padding: 0 4px;
+}
+
+#ScreenshotStack {
+	display: none;
+}
+
+#Text {
+	color: inherit;
+}
+
+#SpoilerField,
+#VisibilityField {
+	gap: 4px;
+}
+
+#SpoilerField {
+	flex-direction: row-reverse;
+}
+
+#Warning {
+	font-weight: bold;
+}
+
+#Narrow {
+	display: none;
+}
+#Wide {
+	display: flex;
+}
+

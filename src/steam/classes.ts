@@ -1,7 +1,7 @@
 let classes: any = {};
 
 new Set(
-	[...document.querySelectorAll<HTMLStyleElement>('[rel="stylesheet"]')]
+	[...window.opener.document.querySelectorAll('[rel="stylesheet"]')]
 		.map((e) => [...e.sheet.cssRules])
 		.flatMap((e) => e.map((e: CSSStyleRule) => e.selectorText))
 		.flatMap(

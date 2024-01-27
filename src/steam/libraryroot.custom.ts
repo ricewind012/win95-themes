@@ -3,6 +3,13 @@ import ElementUtils from "../shared++/ElementUtils.js";
 
 declare var SteamClient: any;
 
+function SetTokenAsVar(token: string) {
+	document.body.style.setProperty(
+		"--" + token,
+		"'" + window.opener.LocalizationManager.LocalizeString("#" + token) + "'",
+	);
+}
+
 (async () => {
 	let el = (s: string) => document.querySelector<HTMLElement>(`.${s}`);
 
@@ -28,16 +35,16 @@ declare var SteamClient: any;
 		);
 
 		// Set a variable for when an application is downloading
-		let footer = await ElementUtils.wait(
-			`.${classes.bottombar.BottomBarContainer}`,
-		);
+		SetTokenAsVar("BottomBar_Manage");
+	}
 
-		footer.style.setProperty(
-			"--manage-downloads-loctoken",
-			"'" +
-				window.opener.LocalizationManager.LocalizeString("#BottomBar_Manage") +
-				"'",
-		);
+	if (document.title == "Screenshot Manager") {
+		[
+			"Generic_Delete",
+			"ScreenshotUploader_CopyURL",
+			"ScreenshotUploader_Settings",
+			"ScreenshotUploader_ShowOnDisk",
+		].forEach((e) => SetTokenAsVar(e));
 	}
 
 	if (document.title == "Steam Settings") {

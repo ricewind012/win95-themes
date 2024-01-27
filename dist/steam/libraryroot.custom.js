@@ -1,5 +1,8 @@
 import classes from "./classes.js";
 import ElementUtils from "../shared++/ElementUtils.js";
+function SetTokenAsVar(token) {
+    document.body.style.setProperty("--" + token, "'" + window.opener.LocalizationManager.LocalizeString("#" + token) + "'");
+}
 (async () => {
     let el = (s) => document.querySelector(`.${s}`);
     if (document.title == "Steam") {
@@ -13,10 +16,15 @@ import ElementUtils from "../shared++/ElementUtils.js";
             attributeFilter: ["style"],
         });
         // Set a variable for when an application is downloading
-        let footer = await ElementUtils.wait(`.${classes.bottombar.BottomBarContainer}`);
-        footer.style.setProperty("--manage-downloads-loctoken", "'" +
-            window.opener.LocalizationManager.LocalizeString("#BottomBar_Manage") +
-            "'");
+        SetTokenAsVar("BottomBar_Manage");
+    }
+    if (document.title == "Screenshot Manager") {
+        [
+            "Generic_Delete",
+            "ScreenshotUploader_CopyURL",
+            "ScreenshotUploader_Settings",
+            "ScreenshotUploader_ShowOnDisk",
+        ].forEach((e) => SetTokenAsVar(e));
     }
     if (document.title == "Steam Settings") {
         SteamClient.Window.ResizeTo(1010, 722, true);

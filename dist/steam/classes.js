@@ -1,5 +1,5 @@
 let classes = {};
-new Set([...document.querySelectorAll('[rel="stylesheet"]')]
+new Set([...window.opener.document.querySelectorAll('[rel="stylesheet"]')]
     .map((e) => [...e.sheet.cssRules])
     .flatMap((e) => e.map((e) => e.selectorText))
     .flatMap((e) => e?.match(/_[\w-]{5}(::(before|after))?$/) &&

@@ -136,6 +136,8 @@ select,
 .DialogDropDown,
 [class*="bottombar_AddGameButton_"],
 [class*="gamelistdropdown_MenuHeader_"],
+[class*="mediamanagerutils_Combobox_"],
+[class*="mediamanagerutils_Dropdown_"],
 [class*="sortingdropdowncontrolbutton_SortingDropDownControlButton_"],
 [class*="steamdesktop_URLBarText_"],
 [class*="titlebarcontrols_AccountMenu_"] {
@@ -145,6 +147,8 @@ select:active,
 .DialogDropDown:active,
 [class*="bottombar_AddGameButton_"]:active,
 [class*="gamelistdropdown_MenuHeader_"]:active,
+[class*="mediamanagerutils_Combobox_"]:active,
+[class*="mediamanagerutils_Dropdown_"]:active,
 [class*="sortingdropdowncontrolbutton_SortingDropDownControlButton_"]:active,
 [class*="steamdesktop_URLBarText_"]:active,
 [class*="titlebarcontrols_AccountMenu_"]:active {
@@ -154,6 +158,8 @@ select:disabled,
 .DialogDropDown:disabled,
 [class*="bottombar_AddGameButton_"]:disabled,
 [class*="gamelistdropdown_MenuHeader_"]:disabled,
+[class*="mediamanagerutils_Combobox_"]:disabled,
+[class*="mediamanagerutils_Dropdown_"]:disabled,
 [class*="sortingdropdowncontrolbutton_SortingDropDownControlButton_"]:disabled,
 [class*="steamdesktop_URLBarText_"]:disabled,
 [class*="titlebarcontrols_AccountMenu_"]:disabled {
@@ -175,6 +181,7 @@ hr,
 [class*="appdetailsachievementssection_ShowDivider_"]::before,
 [class*="contextmenu_ContextMenuSeparator_"],
 [class*="libraryhomeshowcases_DropDownItems_"][class*="libraryhomeshowcases_OptionsRule_"]::before,
+[class*="mediamanagerutils_Line_"],
 [class*="steamdesktop_TitleBar_"]::before,
 [class*="steamdesktop_SuperNavBar_"]::after {
   border-top: 1px solid var(--color-button-highlight) !important;
@@ -242,6 +249,11 @@ textarea,
 [class*="libraryhomenewupdates_GameIconAndName_"],
 [class*="libraryhomeshowcases_AddShowcase_"],
 [class*="libraryhomeshowcases_Collapser_"],
+[class*="mediamanagerutils_ButtonBox_"]:not([class*="mediamanagerutils_Combobox_"],
+[class*="mediamanagerutils_Dropdown_"]),
+[class*="mediamanagerutils_ButtonGroup_"]:last-child [class*="mediamanagerutils_ButtonBox_"],
+[class*="mediamanagerutils_Combobox_"],
+[class*="mediamanagerutils_Dropdown_"],
 [class*="playersdialog_PlayersListHeaderCell_"],
 [class*="posttextentry_PostButton_"],
 [class*="serverbrowserdialog_SelectColumnsButton_"],
@@ -296,6 +308,11 @@ textarea:disabled,
 [class*="libraryhomenewupdates_GameIconAndName_"]:disabled,
 [class*="libraryhomeshowcases_AddShowcase_"]:disabled,
 [class*="libraryhomeshowcases_Collapser_"]:disabled,
+[class*="mediamanagerutils_ButtonBox_"]:not([class*="mediamanagerutils_Combobox_"]:disabled,
+[class*="mediamanagerutils_Dropdown_"]):disabled,
+[class*="mediamanagerutils_ButtonGroup_"]:last-child [class*="mediamanagerutils_ButtonBox_"]:disabled,
+[class*="mediamanagerutils_Combobox_"]:disabled,
+[class*="mediamanagerutils_Dropdown_"]:disabled,
 [class*="playersdialog_PlayersListHeaderCell_"]:disabled,
 [class*="posttextentry_PostButton_"]:disabled,
 [class*="serverbrowserdialog_SelectColumnsButton_"]:disabled,
@@ -312,6 +329,8 @@ textarea:disabled,
 [class*="libraryhomeshowcases_"][class*="PageLeft"][class*="Disabled"],
 [class*="pageablecontainer_"][class*="PageRight"][class*="Disabled"],
 [class*="libraryhomeshowcases_"][class*="PageRight"][class*="Disabled"],
+[class*="mediamanagerutils_ButtonBox_"]:not([class*="mediamanagerutils_Combobox_"][class*="mediamanagerutils_Disabled_"],
+[class*="mediamanagerutils_Dropdown_"])[class*="mediamanagerutils_Disabled_"],
 [class*="savecollectiondialog_Disabled_"] > .DialogButton,
 [class*="supernav_Disabled_"] {
   --color-window: var(--color-button-face) !important;
@@ -355,6 +374,11 @@ textarea:focus,
 [class*="libraryhomenewupdates_GameIconAndName_"]:focus,
 [class*="libraryhomeshowcases_AddShowcase_"]:focus,
 [class*="libraryhomeshowcases_Collapser_"]:focus,
+[class*="mediamanagerutils_ButtonBox_"]:not([class*="mediamanagerutils_Combobox_"]:focus,
+[class*="mediamanagerutils_Dropdown_"]):focus,
+[class*="mediamanagerutils_ButtonGroup_"]:last-child [class*="mediamanagerutils_ButtonBox_"]:focus,
+[class*="mediamanagerutils_Combobox_"]:focus,
+[class*="mediamanagerutils_Dropdown_"]:focus,
 [class*="playersdialog_PlayersListHeaderCell_"]:focus,
 [class*="posttextentry_PostButton_"]:focus,
 [class*="serverbrowserdialog_SelectColumnsButton_"]:focus,
@@ -380,6 +404,8 @@ input:is(:not([type]),
 .DialogDropDown,
 [class*="bottombar_AddGameButton_"],
 [class*="gamelistdropdown_MenuHeader_"],
+[class*="mediamanagerutils_Combobox_"],
+[class*="mediamanagerutils_Dropdown_"],
 [class*="sortingdropdowncontrolbutton_SortingDropDownControlButton_"],
 [class*="steamdesktop_URLBarText_"],
 [class*="titlebarcontrols_AccountMenu_"] {
@@ -419,6 +445,9 @@ input:is([type="button"],
 [class*="libraryhomenewupdates_GameIconAndName_"],
 [class*="libraryhomeshowcases_AddShowcase_"],
 [class*="libraryhomeshowcases_Collapser_"],
+[class*="mediamanagerutils_ButtonBox_"]:not([class*="mediamanagerutils_Combobox_"],
+[class*="mediamanagerutils_Dropdown_"]),
+[class*="mediamanagerutils_ButtonGroup_"]:last-child [class*="mediamanagerutils_ButtonBox_"],
 [class*="playersdialog_PlayersListHeaderCell_"],
 [class*="posttextentry_PostButton_"],
 [class*="serverbrowserdialog_SelectColumnsButton_"],
@@ -467,6 +496,9 @@ input:is([type="button"]:active,
 [class*="libraryhomenewupdates_GameIconAndName_"]:active,
 [class*="libraryhomeshowcases_AddShowcase_"]:active,
 [class*="libraryhomeshowcases_Collapser_"]:active,
+[class*="mediamanagerutils_ButtonBox_"]:not([class*="mediamanagerutils_Combobox_"]:active,
+[class*="mediamanagerutils_Dropdown_"]):active,
+[class*="mediamanagerutils_ButtonGroup_"]:last-child [class*="mediamanagerutils_ButtonBox_"]:active,
 [class*="playersdialog_PlayersListHeaderCell_"]:active,
 [class*="posttextentry_PostButton_"]:active,
 [class*="serverbrowserdialog_SelectColumnsButton_"]:active,
@@ -476,6 +508,7 @@ input:is([type="button"]:active,
 [class*="supernav_SuperNavMenu_"]:active,
 [class*="titlebarcontrols_Button_"]:active,
 [class*="gamelistdropdown_CheckboxWithImage_"][class*="gamelistdropdown_Active_"],
+[class*="mediamanagerutils_ButtonGroup_"]:last-child [class*="mediamanagerutils_ButtonBox_"]:has(> [class*="mediamanagerutils_Active_"]),
 [class*="supernav_SuperNavMenu_"][class*="supernav_Selected_"] {
   box-shadow: var(--border-button-sunken) !important;
 }
@@ -615,6 +648,8 @@ select,
 .DialogDropDown,
 [class*="bottombar_AddGameButton_"],
 [class*="gamelistdropdown_MenuHeader_"],
+[class*="mediamanagerutils_Combobox_"],
+[class*="mediamanagerutils_Dropdown_"],
 [class*="sortingdropdowncontrolbutton_SortingDropDownControlButton_"],
 [class*="steamdesktop_URLBarText_"],
 [class*="titlebarcontrols_AccountMenu_"] {
@@ -630,6 +665,8 @@ select,
   .DialogDropDown,
   [class*="bottombar_AddGameButton_"],
   [class*="gamelistdropdown_MenuHeader_"],
+  [class*="mediamanagerutils_Combobox_"],
+  [class*="mediamanagerutils_Dropdown_"],
   [class*="sortingdropdowncontrolbutton_SortingDropDownControlButton_"],
   [class*="steamdesktop_URLBarText_"],
   [class*="titlebarcontrols_AccountMenu_"] {
@@ -640,6 +677,8 @@ select:focus,
 .DialogDropDown:focus,
 [class*="bottombar_AddGameButton_"]:focus,
 [class*="gamelistdropdown_MenuHeader_"]:focus,
+[class*="mediamanagerutils_Combobox_"]:focus,
+[class*="mediamanagerutils_Dropdown_"]:focus,
 [class*="sortingdropdowncontrolbutton_SortingDropDownControlButton_"]:focus,
 [class*="steamdesktop_URLBarText_"]:focus,
 [class*="titlebarcontrols_AccountMenu_"]:focus {
@@ -721,7 +760,8 @@ progress::-webkit-progress-value,
 .DialogMenuPosition ._DialogInputContainer,
 .DesktopUI [class*="appgrid_SortingDropDownContainer_"] > div,
 [class*="contextmenu_contextMenu_"],
-.DesktopUI [class*="libraryhomeshowcases_CollectionDropDownContainer_"][class*="libraryhomeshowcases_CollectionDropDownContainer_"] ._DialogInputContainer {
+.DesktopUI [class*="libraryhomeshowcases_CollectionDropDownContainer_"][class*="libraryhomeshowcases_CollectionDropDownContainer_"] ._DialogInputContainer,
+[class*="mediamanagerutils_ComboboxSelectorContextMenu_"] {
   background-color: var(--color-button-face) !important;
   color: var(--color-button-text) !important;
   box-shadow: var(--border-window) !important;
@@ -747,6 +787,8 @@ table,
 [class*="gameinfodialog_PlayersList_"],
 [class*="gamelist_Container_"],
 [class*="library_AppDetailsMain_"],
+[class*="mediamanagerutils_ExplainerBox_"],
+[class*="mediamanagerutils_FocusedScreenshots_"],
 [class*="playersdialog_PlayersList_"],
 [class*="serverbrowserdialog_ServerList_"],
 [class*="steamdesktop_Browser_"]::before {
@@ -1036,6 +1078,7 @@ body,
 [class*="gamelistdropdown_CheckboxWithImage_"],
 [class*="libraryhomenewupdates_SettingsButton_"],
 [class*="libraryhomenewupdates_EventOptions_"] > div,
+[class*="mediamanagerutils_ButtonGroup_"]:last-child [class*="mediamanagerutils_ButtonBox_"],
 [class*="titlebarcontrols_Button_"] {
   padding: 0 !important;
   margin: 0 !important;
@@ -1057,6 +1100,7 @@ body,
 [class*="gamelistdropdown_CheckboxWithImage_"]::before,
 [class*="libraryhomenewupdates_SettingsButton_"]::before,
 [class*="libraryhomenewupdates_EventOptions_"] > div::before,
+[class*="mediamanagerutils_ButtonGroup_"]:last-child [class*="mediamanagerutils_ButtonBox_"]::before,
 [class*="titlebarcontrols_Button_"]::before,
 .ModalPosition_Dismiss .closeButton::after,
 [class*="pageablecontainer_"][class*="PageLeft"]::after,
@@ -1072,6 +1116,7 @@ body,
 [class*="gamelistdropdown_CheckboxWithImage_"]::after,
 [class*="libraryhomenewupdates_SettingsButton_"]::after,
 [class*="libraryhomenewupdates_EventOptions_"] > div::after,
+[class*="mediamanagerutils_ButtonGroup_"]:last-child [class*="mediamanagerutils_ButtonBox_"]::after,
 [class*="titlebarcontrols_Button_"]::after {
   content: '' !important;
   -webkit-mask: var(--button-img, none) no-repeat !important;
@@ -1096,6 +1141,7 @@ body,
 [class*="gamelistdropdown_CheckboxWithImage_"]::before,
 [class*="libraryhomenewupdates_SettingsButton_"]::before,
 [class*="libraryhomenewupdates_EventOptions_"] > div::before,
+[class*="mediamanagerutils_ButtonGroup_"]:last-child [class*="mediamanagerutils_ButtonBox_"]::before,
 [class*="titlebarcontrols_Button_"]::before {
   background-color: var(--color-button-text) !important;
   z-index: 1 !important;
@@ -1108,6 +1154,7 @@ body,
   left: 1px !important;
   top: 1px !important;
 }
+.ModalPosition_Content,
 .DialogBodyText,
 .FullModalOverlay .DialogHeader,
 [class*="appactionbutton_ButtonText_"],
@@ -1164,6 +1211,13 @@ body,
 [class*="libraryhomenewupdates_PartnerEventRowCapsule_TextTitle_"],
 [class*="libraryhomeshowcases_Message_"],
 [class*="libraryhomeshowcases_CountDisplay_"],
+[class*="mediamanagerutils_Bullet_"],
+[class*="mediamanagerutils_CloudStorageImpact_"],
+[class*="mediamanagerutils_Header_"],
+[class*="mediamanagerutils_KeyboardKey_"],
+[class*="mediamanagerutils_Label_"],
+[class*="mediamanagerutils_Metadata_"],
+[class*="mediamanagerutils_SectionHeading_"],
 [class*="playersdialog_PlayersListBody_"] [role="cell"],
 [class*="savecollectiondialog_Description_"],
 [class*="spotlightgameplaysummary_EventHeaderBlock_"],
@@ -1259,7 +1313,6 @@ body,
   display: none !important;
 }
 .ModalPosition_Content {
-  color: var(--color-button-text) !important;
   box-shadow: none !important;
 }
 .ModalPosition_Dismiss {
@@ -1903,7 +1956,7 @@ div[class*="appdetailssection_AppDetailsSectionContainer_"] {
   justify-content: center !important;
 }
 [class*="bottombar_DetailedDownloadProgress_"]::before {
-  content: var(--manage-downloads-loctoken) !important;
+  content: var(--BottomBar_Manage) !important;
 }
 [class*="bottombar_DetailedDownloadProgress_"] [class*="bottombar_Icon_"] {
   box-shadow: none !important;
@@ -2715,6 +2768,183 @@ div:not([class]) > [class*="gamepaddialog_Field_"] {
 [class*="librarysettings_ActionSection_"] {
   flex-direction: row !important;
   gap: 0 !important;
+}
+[class*="mediamanagerutils_ButtonGroup_"] {
+  gap: 6px !important;
+}
+[class*="mediamanagerutils_ButtonGroup_"] [class*="mediamanagerutils_ButtonBox_"] {
+  margin: 0 !important;
+}
+[class*="mediamanagerutils_ButtonGroup_"]:first-child > [class*="mediamanagerutils_ButtonBox_"] {
+  max-width: unset !important;
+}
+[class*="mediamanagerutils_ButtonGroup_"]:last-child {
+  gap: 0 !important;
+  flex-direction: row-reverse !important;
+}
+[class*="mediamanagerutils_ButtonGroup_"]:last-child > :nth-child(1) {
+  --button-img: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA8AAAANCAYAAAB2HjRBAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAABFSURBVDhPY2BgWPEfgnEB3PJMIOL//3AgCVcAomEYDHDJgzUzMq4EUTDAiITBgJD8gADcAQIBuOVHAwwrwC0/UAHGwAgAao9By4PPZU8AAAAASUVORK5CYIIK") !important;
+}
+[class*="mediamanagerutils_ButtonGroup_"]:last-child > :nth-child(2) {
+  --button-img: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAANCAYAAACZ3F9/AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAABcSURBVChTrZCLCsAgCEVdP1mf2F86bsmyZa+tA6EEV/FclIicKwjyN8ZJJWYvnR7S5wmCEp5TBXcwbgRrd34Ck3sy1NbWOm5EY72Kt/UtOdr6X6szDlpfSRrWiW4Icxa56YPnXwAAAABJRU5ErkJgggo=") !important;
+}
+[class*="mediamanagerutils_ButtonGroup_"]:last-child [class*="mediamanagerutils_ButtonBox_"] {
+  width: 32px !important;
+  height: 32px !important;
+}
+[class*="mediamanagerutils_ButtonGroup_"]:last-child [class*="mediamanagerutils_ButtonBox_"] svg {
+  display: none !important;
+}
+[class*="mediamanagerutils_CaptionField_"] {
+  margin: 0 !important;
+  height: calc((var(--text-size) * var(--text-line)) * 3 + 8px) !important;
+}
+[class*="mediamanagerutils_ComboboxSelector_"] {
+  padding: 0 !important;
+}
+[class*="mediamanagerutils_ComboboxSelectorContextMenu_"] {
+  border-radius: 0 !important;
+}
+[class*="mediamanagerutils_Combobox_"] svg,
+[class*="mediamanagerutils_Dropdown_"] svg {
+  display: none !important;
+}
+[class*="mediamanagerutils_Explainer_"],
+[class*="mediamanagerutils_Details_"] > div {
+  color: inherit !important;
+  text-align: start !important;
+  gap: 8px !important;
+  padding: 4px !important;
+  align-items: start !important;
+}
+[class*="mediamanagerutils_ExplainerBox_"],
+[class*="mediamanagerutils_FocusedScreenshots_"] {
+  border-radius: 0 !important;
+  padding: 2px !important;
+  height: 100% !important;
+}
+[class*="mediamanagerutils_ExplainerBox_"] [class*="mediamanagerutils_ButtonBox_"],
+[class*="mediamanagerutils_FocusedScreenshots_"] [class*="mediamanagerutils_ButtonBox_"] {
+  width: 148px !important;
+}
+[class*="mediamanagerutils_Details_"] {
+  flex: unset !important;
+  align-items: start !important;
+}
+[class*="mediamanagerutils_ButtonGroup_"]:nth-child(2) [class*="mediamanagerutils_IconButton_"]::before {
+  content: var(--ScreenshotUploader_Settings) !important;
+}
+[class*="mediamanagerutils_ButtonGroup_"]:nth-child(2) [class*="mediamanagerutils_IconButton_"] svg {
+  display: none !important;
+}
+[class*="mediamanagerutils_ButtonGroup_"]:nth-child(1) [class*="mediamanagerutils_IconButton_"]::before,
+[class*="mediamanagerutils_ScreenshotFormActions_"] > :nth-last-child(3) > [class*="mediamanagerutils_IconButton_"]::before {
+  content: var(--ScreenshotUploader_ShowOnDisk) !important;
+}
+[class*="mediamanagerutils_ButtonGroup_"]:nth-child(1) [class*="mediamanagerutils_IconButton_"] svg,
+[class*="mediamanagerutils_ScreenshotFormActions_"] > :nth-last-child(3) > [class*="mediamanagerutils_IconButton_"] svg {
+  display: none !important;
+}
+[class*="mediamanagerutils_ScreenshotFormActions_"] > :nth-last-child(2):first-child > [class*="mediamanagerutils_IconButton_"]::before {
+  content: var(--ScreenshotUploader_CopyURL) !important;
+}
+[class*="mediamanagerutils_ScreenshotFormActions_"] > :nth-last-child(2):first-child > [class*="mediamanagerutils_IconButton_"] svg {
+  display: none !important;
+}
+[class*="mediamanagerutils_FocusedScreenshots_"] [class*="mediamanagerutils_ScreenshotFormActions_"] > :first-child > [class*="mediamanagerutils_IconButton_"]::before,
+[class*="mediamanagerutils_IconButton_"]:has([d="M4.66675 9.33325H19.3334L18.0001 21.3333H6.00008L4.66675 9.33325ZM16.0001 3.99992L14.6667 1.33325H9.33342L8.00008 3.99992H2.66675V6.66659H21.3334V3.99992H16.0001Z"])::before {
+  content: var(--Generic_Delete) !important;
+}
+[class*="mediamanagerutils_FocusedScreenshots_"] [class*="mediamanagerutils_ScreenshotFormActions_"] > :first-child > [class*="mediamanagerutils_IconButton_"] svg,
+[class*="mediamanagerutils_IconButton_"]:has([d="M4.66675 9.33325H19.3334L18.0001 21.3333H6.00008L4.66675 9.33325ZM16.0001 3.99992L14.6667 1.33325H9.33342L8.00008 3.99992H2.66675V6.66659H21.3334V3.99992H16.0001Z"]) svg {
+  display: none !important;
+}
+[class*="mediamanagerutils_KeyboardKey_"] {
+  border: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+[class*="mediamanagerutils_KeyboardKey_"]::before {
+  content: open-quote !important;
+}
+[class*="mediamanagerutils_KeyboardKey_"]::after {
+  content: close-quote !important;
+}
+[class*="mediamanagerutils_Line_"] {
+  background-color: transparent !important;
+  height: unset !important;
+}
+[class*="mediamanagerutils_Metadata_"] {
+  margin-top: 4px !important;
+}
+[class*="mediamanagerutils_Option_"] {
+  margin: 0 !important;
+}
+[class*="mediamanagerutils_ScreenshotForm_"] {
+  gap: 8px !important;
+  align-items: start !important;
+}
+[class*="mediamanagerutils_ScreenshotFormActions_"] {
+  gap: 0 !important;
+}
+[class*="mediamanagerutils_ScreenshotFormActions_"] > :nth-last-child(2):first-child > [class*="mediamanagerutils_IconButton_"] {
+  width: 148px !important;
+}
+[class*="mediamanagerutils_ScreenshotFormRow_"] {
+  gap: 6px !important;
+  width: 100% !important;
+  flex-direction: column !important;
+  align-items: start !important;
+}
+[class*="mediamanagerutils_ScreenshotList_"] {
+  --pos-bottom: 69px !important;
+  background-color: var(--color-window) !important;
+  margin: 2px !important;
+}
+.PopupFullWindow:only-child [class*="mediamanagerutils_ScreenshotList_"] {
+  --pos-bottom: 50px !important;
+}
+[class*="mediamanagerutils_ScreenshotList_"]::before {
+  content: '' !important;
+  box-shadow: var(--border-field) !important;
+  position: fixed !important;
+  inset: 11px !important;
+  top: 91px !important;
+  bottom: 69px !important;
+  width: 300px !important;
+  pointer-events: none !important;
+}
+[class*="mediamanagerutils_ScreenshotListItem_"][class*="mediamanagerutils_Selected_"],
+[class*="mediamanagerutils_ScreenshotListItem_"]:hover {
+  border-color: var(--color-highlight) !important;
+}
+[class*="mediamanagerutils_ScreenshotListItemRow_"] {
+  gap: 0 !important;
+}
+[class*="mediamanagerutils_SectionHeading_"] {
+  padding: 0 4px !important;
+}
+[class*="mediamanagerutils_ScreenshotStack_"] {
+  display: none !important;
+}
+[class*="mediamanagerutils_Text_"] {
+  color: inherit !important;
+}
+[class*="mediamanagerutils_SpoilerField_"],
+[class*="mediamanagerutils_VisibilityField_"] {
+  gap: 4px !important;
+}
+[class*="mediamanagerutils_SpoilerField_"] {
+  flex-direction: row-reverse !important;
+}
+[class*="mediamanagerutils_Warning_"] {
+  font-weight: bold !important;
+}
+[class*="mediamanagerutils_Narrow_"] {
+  display: none !important;
+}
+[class*="mediamanagerutils_Wide_"] {
+  display: flex !important;
 }
 [class*="menu_Separator_"] {
   border-bottom: none !important;
