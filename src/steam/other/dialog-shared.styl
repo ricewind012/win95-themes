@@ -54,6 +54,7 @@
 	&DropDown {
 		@extend select;
 
+		display: flex;
 		align-items: center;
 
 		&_Arrow {
@@ -84,6 +85,8 @@
 
 		border-radius: 0;
 
+		flex-shrink: 0;
+
 		&.Active {
 			@extend input[type="checkbox"]:checked;
 		}
@@ -93,20 +96,19 @@
 		}
 
 		&_Container {
+			@extend label;
+
 			background-color: transparent;
 			box-shadow: none;
 
 			padding: 0;
-
-			align-items: center;
+			margin-bottom: 4px;
 		}
 	}
 
 	&Toggle_Label {
 		font: var(--text-ui);
 		color: var(--color-button-text);
-
-		margin-left: 6px;
 	}
 
 	&Label {
@@ -115,7 +117,7 @@
 		text-transform: unset;
 	}
 
-	.PopupFullWindow > .ModalPosition &Header {
+	.PopupFullWindow > :last-child &Header {
 		color: var(--color-button-face);
 		font: var(--text-ui);
 		font-weight: bold;

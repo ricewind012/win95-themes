@@ -43,10 +43,6 @@
 
 	#SteamDesktop & {
 		--window-img: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQAQMAAAAlPW0iAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAGUExURQAAAAAAAKVnuc8AAAACdFJOU/8A5bcwSgAAAAlwSFlzAAAOwwAADsMBx2+oZAAAADdJREFUCNdj+CHP8ICd4cBvhoZOhsa1DIwlDIwqDMxzGM5/YPh8gKGWgWEvI8MkRoY7zCBlP+QBgSAPR9M4h8IAAAAASUVORK5CYII=');
-
-		// Remove dragging to let the other buttons be clickable
-		// #SteamDesktop .title-area::after will take that role
-		-webkit-app-region: no-drag;
 	}
 
 	.ModalDialogBody & {
@@ -73,15 +69,12 @@
 
 		position: fixed;
 		left: 26px;
-		top: 4px;
-		right: 108px;
 		height: 18px;
 		display: flex;
 		align-items: center;
 
 		color: var(--color-button-face);
-
-		-webkit-app-region: drag;
+		font-weight: bold;
 
 		.WindowFocus & {
 			color: var(--color-active-caption-text);
@@ -100,3 +93,22 @@
 		display: none;
 	}
 }
+
+#SteamDesktop {
+	&::before {
+		content: '';
+
+		position: fixed;
+		top: 4px;
+		left: 4px;
+		width: calc(100% - 112px);
+		height: 18px;
+
+		app-region: drag;
+	}
+}
+
+.singleWindowFocusBar {
+	display: none;
+}
+

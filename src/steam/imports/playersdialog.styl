@@ -4,10 +4,26 @@
 	gap: 4px;
 }
 
-#DescriptionText {
+#ColumnResizer {
+	--separator-size: 13px;
+
+	opacity: 0;
+
+	padding: 0;
+
+	width: var(--separator-size);
+	margin-right: calc(var(--separator-size) / -2);
+}
+
+// !important in ../other/dialog-shared.styl
+.ModalDialogPopup > .ModalDialogBody #DescriptionText {
 	margin-bottom: 4px;
 
 	position: initial;
+}
+
+#Empty {
+	@extend $text-reset;
 }
 
 #PlayersDialog {
@@ -51,8 +67,11 @@
 }
 
 #PlayersListHeaderColumn {
+	color: inherit;
+
 	padding: 0;
 
 	display: flex;
 	justify-content: space-between;
 }
+

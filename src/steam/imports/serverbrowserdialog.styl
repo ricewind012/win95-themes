@@ -1,7 +1,7 @@
 #TitleBar {
 	& ~ :last-child .DialogContent {
 		padding: 7px;
-		padding-bottom: 14px;
+		padding-bottom: 25px;
 	}
 }
 
@@ -70,6 +70,10 @@
 
 	margin: 0;
 	padding: 2px;
+
+	div[role="rowgroup"] {
+		overflow: auto;
+	}
 }
 
 #ServerListHeaderCtr {
@@ -118,6 +122,8 @@
 }
 
 #SelectColumnsButton {
+	text-overflow: unset;
+
 	width: 21px;
 }
 
@@ -170,8 +176,21 @@
 			min-width: unset;
 		}
 	}
+
+	.DialogFooter {
+		padding: 0;
+	}
 }
 
 #ToggleShowFilterDetailsButton {
 	width: 111px;
+
+	&#Selected {
+		@extend button:active;
+	}
+
+	svg {
+		display: none;
+	}
 }
+

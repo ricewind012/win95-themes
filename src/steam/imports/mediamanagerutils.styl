@@ -213,30 +213,17 @@ replace-text(token) {
 }
 
 #ScreenshotList {
-	--pos-bottom: 69px;
+	--inset: 91px 11px 69px 11px;
 
-	background-color: var(--color-window);
-
-	margin: 2px;
+	@extend $table-alt;
 
 	// Fullscreen
 	.PopupFullWindow:only-child & {
 		--pos-bottom: 50px;
 	}
 
-	// An alternative to "@extend table" for special elements
 	&::before {
-		content: '';
-
-		box-shadow: var(--border-field);
-
-		position: fixed;
-		inset: 11px;
-		top: 91px;
-		bottom: 69px;
 		width: 300px;
-
-		pointer-events: none;
 	}
 }
 
