@@ -1,0 +1,102 @@
+#AddNonSteamGameDialog {
+	min-width: unset;
+
+	.DialogInput,
+	.DialogButton {
+		margin: 0;
+	}
+}
+
+#AppName {
+	justify-content: space-between;
+}
+
+#AppName,
+#ExePath {
+	@extend $text-reset;
+
+	opacity: 1;
+	// Seems like V*lve forgot about this one
+	text-overflow: ellipsis;
+
+	padding: 2px 7px;
+}
+
+// !important in ../other/dialog-shared.styl
+.PopupFullWindow > .ModalPosition #DialogBodyText {
+	margin-bottom: 4px;
+
+	position: initial;
+}
+
+#Footer {
+	gap: 6px;
+	padding-top: 6px;
+
+	& > .DialogButton.Primary {
+		width: 148px;
+	}
+}
+
+#GameList {
+	--inset: 73px 11px 58px 11px;
+
+	@extend $table-alt;
+
+	overflow: auto;
+	border: none;
+	border-radius: 0;
+	box-shadow: none;
+
+	// For #Header
+	margin-top: 0;
+
+	// Fullscreen
+	.PopupFullWindow:only-child & {
+		--inset: 73px 11px 39px 11px;
+	}
+}
+
+#GameRow {
+	background-color: transparent;
+
+	padding: 0;
+
+	#Checkbox {
+		padding: 2px 8px;
+	}
+}
+
+#Header {
+	border: none;
+	border-radius: 0;
+
+	padding: 0;
+	margin: 0 2px;
+	margin-top: 8px;
+
+	& > div {
+		@extend $text-reset;
+		@extend button;
+		@extend .table-button;
+	}
+
+	btns = 5% 6% 32% 62%;
+
+	for btn, i in btns {
+		& > :nth-child({i + 1}) {
+			width: btn;
+		}
+	}
+}
+
+#IconContainer {
+	margin: 0;
+
+	justify-content: center;
+
+	img {
+		width: 16px;
+		height: 16px;
+	}
+}

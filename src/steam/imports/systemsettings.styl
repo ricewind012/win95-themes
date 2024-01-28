@@ -1,0 +1,36 @@
+#SteamRuntimeSystemInfoDialogContent {
+	.DialogBody {
+		box-shadow: none;
+
+		padding: 0;
+	}
+
+	// !important in ../other/dialog-shared.styl
+	.PopupFullWindow > .ModalPosition & .DialogBodyText {
+		margin-bottom: 9px;
+
+		position: initial;
+	}
+}
+
+#SteamRuntimeSystemInfoContainer {
+	@extend table;
+
+	padding: 2px;
+	margin-top: 4px;
+
+	box-sizing: border-box;
+}
+
+#Text {
+	@extend $text-reset;
+
+	font-family: var(--text-font-monospace);
+}
+
+#TextContainer {
+	background-color: transparent;
+	border-radius: 0;
+	box-shadow: none;
+}
+

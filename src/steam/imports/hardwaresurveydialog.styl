@@ -1,0 +1,42 @@
+// !important in ../other/dialog-shared.styl
+.PopupFullWindow > .ModalPosition #DialogBodyText {
+	margin-bottom: 4px;
+
+	position: initial;
+}
+
+#HardwareSurveyDialog {
+	.DialogButton.Primary {
+		width: 148px;
+	}
+}
+
+#HardwareSurveySection {
+	&,
+	h3 {
+		@extend $text-reset;
+	}
+
+	h3 {
+		font-size: var(--text-size-header);
+	}
+}
+
+#HardwareSurveySections {
+	--inset: 46px 11px 58px 11px;
+
+	@extend $table-alt;
+
+	overflow: auto;
+	border: none;
+	border-radius: 0;
+	box-shadow: none;
+
+	padding: 2px 10px;
+
+	// Fullscreen
+	.PopupFullWindow:only-child & {
+		--inset: 73px 11px 39px 11px;
+	}
+}
+

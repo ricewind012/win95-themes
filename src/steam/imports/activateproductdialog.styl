@@ -1,0 +1,15 @@
+#HeaderContainer {
+	width: unset;
+}
+
+#InfoExample {
+	@extend $text-reset;
+}
+
+#InfoExampleHeader {
+	@extend $text-reset;
+
+	&::after {
+		content: ':';
+	}
+}

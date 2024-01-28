@@ -1,0 +1,132 @@
+#AppLogo {
+	// x1.5, since I have more space anyway
+	width: 132px;
+	height: 60px;
+}
+
+#AppName {
+	@extend $text-reset;
+}
+
+#AppsToInstall {
+	border: none;
+
+	margin: 0;
+
+	&::after {
+		content: '';
+
+		@extend hr;
+
+		margin: 8px 0;
+
+		width: 100%;
+		display: block;
+	}
+}
+
+#AppToInstall {
+	line-height: inherit;
+	border: none;
+
+	padding: 0;
+
+	align-items: center;
+}
+
+#CreateShortcuts {
+	gap: 0;
+	margin: 0;
+	margin-bottom: 12px;
+
+	flex-direction: column;
+}
+
+#DiskSpace {
+	@extend $text-reset;
+}
+
+// TODO: maybe DO display icons there for warnings
+#FolderFlag {
+	display: none;
+}
+
+#FolderFlagStar {
+	margin: 0;
+	margin-top: -2px;
+}
+
+#FolderName {
+	color: inherit;
+}
+
+// TODO: .list-entry
+#FolderOption {
+	@extend $text-reset;
+
+	background-color: transparent;
+	color: var(--color-window-text);
+	border-radius: 0;
+
+	gap: 4px;
+	padding: 0 3px;
+	margin: 0;
+
+	height: 13px;
+
+	&#Active {
+		background-color: var(--color-highlight);
+		color: var(--color-highlight-text);
+	}
+}
+
+#FolderSelector {
+	@extend fieldset;
+
+	& > :not([class]) {
+		@extend table;
+
+		padding: 2px;
+	}
+}
+
+#FolderSettings {
+	--button-img: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA4IDIiPjxzdHlsZT5yZWN0e3dpZHRoOjJweDtoZWlnaHQ6MnB4fTwvc3R5bGU+PHJlY3QgeD0iMCIvPjxyZWN0IHg9IjMiLz48cmVjdCB4PSI2Ii8+PC9zdmc+Cg==');
+	--button-img-size: 8px auto;
+
+	@extend $small-button;
+
+	svg {
+		display: none;
+	}
+}
+
+#Header {
+	@extend $legend-as-div;
+	@extend $text-reset;
+}
+
+#NoticeInstallFolder:not(:has(> :empty)) {
+	@extend $text-reset;
+
+	// TODO .tooltip/.info
+	background-color: var(--color-tooltip);
+	color: var(--color-tooltip-text);
+	border: 1px solid var(--color-button-shadow-dark);
+
+	padding: 3px;
+
+	align-items: center;
+	justify-content: start;
+
+	&::before {
+		content: '';
+
+		background-image: var(--icon-dialog-warning);
+
+		margin-right: 8px;
+
+		width: 32px;
+		height: 32px;
+	}
+}
