@@ -1,0 +1,71 @@
+.console {
+	&-object-preview {
+		font-style: normal;
+	}
+
+	&-searchable-view {
+		--settings-height: 70px;
+
+		@extend .content-container;
+	}
+
+	&-searchable-view:has(> &-settings-pane:not(.hidden)) {
+		margin-top: var(--settings-height);
+	}
+
+	&-settings-pane {
+		border: none;
+
+		position: absolute;
+		width: 100%;
+		height: var(--settings-height);
+		top: calc(var(--settings-height) * -1 - 2px);
+	}
+
+	&-view {
+		gap: var(--window-gap);
+
+		&-object-properties-section {
+			--border-field: none;
+			margin: -2px;
+			margin-left: -5px;
+		}
+	}
+}
+
+#console-messages {
+	background-color: transparent;
+
+	.devtools-link {
+		color: var(--color-link);
+	}
+}
+
+.cm {
+	&-content {
+		font: var(--font-monospace);
+		box-shadow: none;
+		padding: 4px 0;
+
+		height: unset;
+	}
+
+	&-tooltip-autocomplete {
+		@extend .window;
+		@extend .window.child;
+
+		border: none;
+
+		& > ul {
+			background-color: transparent;
+
+			& > li {
+				@extend .menu-entry;
+
+				&[aria-selected] {
+					@extend .menu-entry:hover;
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,38 @@
+.panel-section-separator {
+	display: none;
+}
+
+button {
+	opacity: 1;
+	border-radius: 0;
+}
+
+// For description
+input[type="checkbox"] {
+	align-self: start;
+}
+
+.chrome-select {
+	border-radius: 0;
+
+	width: unset;
+	min-height: unset;
+
+	&-label {
+		@extend fieldset;
+
+		padding-top: calc(var(--text-full) + 16px);
+
+		label {
+			@extend $legend-as-div;
+
+			p {
+				color: inherit;
+
+				position: absolute;
+				top: calc(var(--text-full) + 8px);
+				width: max-content;
+			}
+		}
+	}
+}

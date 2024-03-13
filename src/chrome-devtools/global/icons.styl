@@ -1,0 +1,56 @@
+$icon-selector = '[is="ui-icon"]';
+
+{$icon-selector} {
+	margin: 0;
+
+	position: absolute;
+
+	&.icon-mask {
+		--override-force-white-icons-background: var(--color-button-text);
+		background-color: var(--color-button-text);
+	}
+
+	// Tree
+	.icons-container > & {
+		margin-left: 0;
+		margin-right: 1px;
+
+		position: unset;
+	}
+}
+
+// Replace custom elements with normal icons, too.
+// TODO: own icons
+icons = {
+	'Toggle common rendering emulations': 'ic_rendering.svg',
+	'More network conditions…': 'network_conditions_icon.svg',
+}
+
+.toolbar-button {
+	for k, v in icons {
+		&{s('[title="%s"]', unquote(k))} {
+			--button-img: s('url("devtools://devtools/bundled/Images/%s")', unquote(v));
+		}
+	}
+}
+
+.toolbar-button > devtools-icon {
+	display: none;
+}
+
+.infobar .icon {
+	background-color: transparent;
+	-webkit-mask: none;
+
+	width: 32px;
+	height: 32px;
+}
+
+.error-icon {
+	background-image: var(--icon-dialog-error);
+}
+
+.info-icon,
+.warning-icon {
+	background-image: var(--icon-dialog-warning);
+}

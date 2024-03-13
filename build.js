@@ -49,9 +49,9 @@ switch (process.argv[3]) {
 			.filter((e) => fs.lstatSync(path.join(rootDir, e)).isDirectory())
 			.map((e) => `${rootDir}/${e}/*`);
 		let imports = [
-			path.join(rootDir, `${file}.styl`),
 			...sharedCss,
 			...sharedFiles,
+			path.join(rootDir, `${file}.styl`),
 			...includedDirs,
 		]
 			.map((e) => `@import '${e}';`)

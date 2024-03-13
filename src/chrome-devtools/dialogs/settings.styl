@@ -1,0 +1,101 @@
+.settings {
+	&-block {
+		@extend fieldset;
+
+		width: unset;
+	}
+
+	&-container-wrapper {
+		border: none;
+		padding: 14px;
+
+		inset: 0;
+	}
+
+	&-section-title {
+		@extend $text-reset;
+		@extend $legend-as-div;
+
+		margin: 0;
+	}
+
+	&-select {
+		label {
+			padding-bottom: 4px;
+		}
+	}
+
+	&-tab {
+		overflow: visible;
+
+		&-container {
+			header {
+				display: none;
+			}
+		}
+	}
+
+	&-window {
+		&-main {
+			padding-top: calc(var(--titlebar-height) + var(--window-gap));
+
+			[role="tabpanel"] {
+				padding: 0;
+			}
+		}
+
+		&-title {
+			@extend .titlebar-name;
+
+			color: var(--color-active-caption-text);
+			font-size: var(--text-ui-size);
+		}
+	}
+}
+
+// "Devices" & "Locations" tabs
+.devices,
+.locations {
+	&-list {
+		@extend .content-container;
+
+		&-item {
+			height: unset;
+		}
+	}
+}
+
+// "Devices" tab
+.devices-edit-fields {
+	&,
+	& > .hbox {
+		gap: 2px;
+	}
+
+	b {
+		font-weight: normal;
+		margin-top: 2px;
+		margin-bottom: 2px;
+	}
+}
+
+// "Experiments" tab
+.settings-experiment {
+	&-unstable {
+		color: inherit;
+	}
+
+	.feedback-link {
+		color: var(--color-link);
+	}
+}
+
+// "Shortcuts" tab
+.keybinds-set-select {
+	& > .settings-select {
+		gap: 6px;
+
+		display: flex;
+		align-items: baseline;
+	}
+}

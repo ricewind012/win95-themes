@@ -1,0 +1,7 @@
+{
+	"name": "DevTools custom CSS",
+	"version": "1.0.0",
+	"description": "Custom CSS for Chrome DevTools",
+	"devtools_page": "devtools.html",
+	"manifest_version": 3
+}

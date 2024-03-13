@@ -1,0 +1,20 @@
+.network-config {
+	&-group {
+		@extend fieldset;
+	}
+
+	&-title {
+		@extend $text-reset;
+		@extend $legend-as-div;
+
+		width: unset;
+	}
+
+	&-ua-custom {
+		opacity: 1;
+	}
+
+	& > .panel-section-separator {
+		display: none;
+	}
+}

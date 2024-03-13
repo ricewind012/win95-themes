@@ -1,0 +1,22 @@
+.coverage {
+	&-message {
+		@extend .statusbar-item;
+
+		width: 100%;
+	}
+
+	&-results {
+		margin: var(--window-gap) 0;
+	}
+
+	&-toolbar {
+		&-summary {
+			@extend .statusbar;
+
+			border: none;
+			padding: 0;
+
+			flex-basis: auto;
+		}
+	}
+}

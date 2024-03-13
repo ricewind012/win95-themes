@@ -1,11 +1,7 @@
 $small-button {
 	@extend button;
 
-	padding: 0;
-	margin: 0;
-
-	position: relative;
-	width: 16px;
+	min-width: 16px;
 	height: 14px;
 
 	&::before,
@@ -50,16 +46,15 @@ $text-reset {
 
 $link {
 	color: var(--color-link);
-
-	&:hover {
-		text-decoration: underline;
-	}
+	text-decoration: underline;
 }
 
 $legend-as-div {
 	@extend legend;
 
+	padding: 0 2px;
+	margin: 0;
+
 	position: absolute;
 	top: -8px;
-	padding: 0 2px;
 }

@@ -1,0 +1,46 @@
+.soft-context-menu {
+	border: none;
+
+	&-item {
+		font-size: inherit;
+
+		&[aria-label$=" checked"] {
+			@extend .menu-entry[checked][type="checkbox"];
+		}
+
+		&[aria-haspopup] {
+			@extend .menu-entry[type="parent"];
+		}
+
+		&-mouse-over {
+			@extend .menu-entry:hover;
+		}
+
+		[is="ui-icon"] {
+			display: none;
+		}
+	}
+
+	&-separator {
+		@extend hr;
+
+		height: unset;
+
+		& > .separator-line {
+			display: none;
+		}
+	}
+
+	&-shortcut {
+		color: inherit;
+	}
+}
+
+// Console menu
+.item {
+	&-list > & > div {
+		padding: 0;
+
+		height: unset;
+	}
+}

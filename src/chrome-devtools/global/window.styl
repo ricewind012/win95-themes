@@ -1,0 +1,148 @@
+[role="dialog"] {
+	--dialog-width: 82%;
+	--dialog-height: 76%;
+	--dialog-left: calc((100% - var(--dialog-width)) / 2);
+	--dialog-top: calc((100% - var(--dialog-height)) / 2);
+	--border-width: 3px;
+
+	@extend .window;
+	@extend .window.child;
+
+	border-radius: 0;
+
+	left: var(--dialog-left);
+	top: var(--dialog-top);
+	width: var(--dialog-width);
+	height: var(--dialog-height);
+
+	&[aria-label="Quick open"] {
+		--dialog-width: 50%;
+	}
+
+	// Make a fake titlebar
+	&::before {
+		content: '';
+
+		position: fixed;
+		left: calc(var(--dialog-left) + var(--border-width));
+		top: calc(var(--dialog-top) + var(--border-width));
+		width: calc(var(--dialog-width) - var(--border-width) * 2);
+		height: var(--titlebar-height);
+		z-index: 1;
+
+		background-color: var(--color-active-caption);
+	}
+}
+
+.vbox {
+	// Colors
+	&:has(> .spectrum-color) {
+		@extend .window;
+		@extend .window.child;
+	}
+}
+
+// Make a fake titlebar
+.dialog-close-button {
+	top: 5px;
+	right: 5px;
+}
+
+.close-button {
+	--button-img: var(--icon-close);
+	--button-img-size: 8px 7px;
+	--button-img-pos: 4px 3px;
+
+	@extend button;
+	@extend .titlebar-button;
+
+	[is="ui-icon"] {
+		display: none;
+	}
+}
+
+.toolbar {
+	--toolbar-height: unset;
+
+	border: none;
+	padding: 0;
+
+	&-button {
+		&.monospace {
+			min-width: 4ch;
+			height: 22px;
+
+			.toolbar-text {
+				font-family: var(--text-monospace-font);
+			}
+		}
+	}
+
+	// Acts as a gap, since all toolbar items share 1 parent.
+	&-divider {
+		background-color: transparent;
+		margin: 0;
+
+		width: var(--spacing-toolbar);
+	}
+
+	&-has-dropdown,
+	&-select-container {
+		[is="ui-icon"] {
+			display: none;
+		}
+	}
+
+	&-has-dropdown {
+		@extend select;
+
+		.toolbar-text {
+			color: inherit;
+			text-align: left;
+			margin: 0;
+		}
+	}
+
+	&-button:has(> &-icon),
+	&-has-glyph {
+		@extend .icon-button;
+
+		&[aria-pressed="true"] {
+			@extend .icon-button[selected];
+		}
+	}
+
+	&-has-glyph:has(> &-text:not(.hidden)) {
+		[is="ui-icon"] {
+			margin: -4px;
+
+			position: initial;
+		}
+	}
+
+	&-input {
+		border: none;
+		padding: 0;
+	}
+
+	&-item {
+		opacity: 1;
+	}
+
+	&-state-on {
+		@extend button:active;
+	}
+
+	&-item:not(:disabled),
+	&-text {
+		color: inherit;
+		margin: 0;
+	}
+}
+
+.coverage-toolbar,
+.developer-resource-view-toolbar {
+	&-container {
+		border: none;
+	}
+}

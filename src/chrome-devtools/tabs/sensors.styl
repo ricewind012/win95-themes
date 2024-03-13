@@ -1,0 +1,20 @@
+.latlong-group {
+	gap: var(--spacing-label);
+	margin-bottom: 8px;
+}
+
+.sensors {
+	&-group {
+		@extend fieldset;
+
+		&-title {
+			@extend $legend-as-div;
+		}
+	}
+
+	&-view {
+		fieldset[disabled] {
+			opacity: 1;
+		}
+	}
+}

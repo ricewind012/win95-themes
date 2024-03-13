@@ -1,0 +1,77 @@
+.filter {
+	&-bitset-filter {
+		padding: 0;
+
+		height: unset;
+
+		&-divider {
+			display: none;
+		}
+
+		span {
+			@extend button;
+			@extend .table-button;
+
+			min-width: unset;
+
+			&.selected {
+				@extend button:active;
+			}
+		}
+	}
+
+	&-input-container,
+	&-text-filter {
+		margin: 0;
+	}
+}
+
+.network {
+	&-status-pane {
+		@extend .content-container;
+
+		& > .recording-hint {
+			@extend $text-reset;
+		}
+	}
+
+	// TODO: this is a statusbar, but shadow DOM bullshit ...
+	// TODO: .toolbar overrides this
+	& &-summary-bar {
+		@extend .content-container;
+
+		padding: 7px;
+	}
+
+	&-waterfall {
+		&-header {
+			@extend button;
+			@extend .table-button;
+
+			div {
+				@extend $text-reset;
+
+				padding: 0;
+			}
+		}
+
+		&-view {
+			@extend .content-container;
+		}
+	}
+}
+
+#network-container {
+	border: none;
+}
+
+#network-overview-container {
+	@extend .content-container;
+
+	border: none;
+	margin-bottom: var(--window-gap);
+}
+
+.resources-dividers-label-bar {
+	inset: 2px;
+}
