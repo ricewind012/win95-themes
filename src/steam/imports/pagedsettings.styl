@@ -13,13 +13,11 @@
 }
 
 #PagedSettingsDialog_PageList {
-	overflow: auto hidden;
-	font();
+	@extend [role="tablist"];
 
 	padding: 0;
-	padding-left: 4px;
 
-	height: unset;
+	overflow: visible;
 	flex-grow: 0;
 	flex-direction: row;
 }
@@ -38,8 +36,6 @@
 	@extend [role="tab"];
 
 	font();
-
-	margin-top: 2px;
 
 	cursor: default;
 

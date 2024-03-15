@@ -11,27 +11,31 @@
 }
 
 #Button {
+	@extend label;
+	@extend input[type="radio"];
+
 	font: var(--text-ui);
 	color: var(--color-button-text);
 	text-align: left;
+	gap: 0;
 
-	gap: 7px;
-
+	width: unset;
 	flex-direction: row;
 	justify-content: left;
 
-	&::before {
+	&::before,
+	&::after {
 		content: '';
-
-		@extend input[type="radio"];
 	}
 
-	&:active::before {
-		--control-img: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMBAMAAACkW0HUAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsIAAA7CARUoSoAAAAAPUExURf///wAAAIeIj8DHyP///1QVyYYAAAABdFJOUwBA5thmAAAAOElEQVQI12NgYFBSYgACJUFBIM0kaGws6MDAJGxsbODAoGgMBCzYKagSJgZjYwYHBgYXMAISQBIAZBYIx/Jku34AAAAASUVORK5CYII=');
+	// Use as ::before for label spacing
+	&::after {
+		width: calc(var(--spacing-label) + 13px);
+		order: -1;
 	}
 
-	&#Active::before {
-		--control-img: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMAgMAAAArG7R0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAAMUExURf///wAAAIeIj////88rXQEAAAABdFJOUwBA5thmAAAAMElEQVQI12NgWMXAwBW6gEH1fwyD+v8zDPOvf2aYHwrFQDZITOE/DwM/wwcGhv8MAL1zEtdwC089AAAAAElFTkSuQmCC');
+	&#Active {
+		@extend input[type="radio"]:checked;
 	}
 
 	& > span {

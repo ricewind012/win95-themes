@@ -1,5 +1,10 @@
+#Arrow {
+	display: none;
+}
+
 #contextMenu {
-	@extend .menu;
+	@extend .window;
+	@extend .window.child;
 
 	background-image: none;
 
@@ -15,34 +20,42 @@
 #contextMenuItem {
 	@extend .menu-entry;
 
-	font: var(--text-ui);
+	font-size: var(--text-ui-size);
 	color: var(--color-button-text);
 	border: none;
 
-	// library_ContextMenuAction
-	background-image: none;
-	text-transform: unset;
-	letter-spacing: 0;
-	border-radius: 0;
+	&:has(.SVGIcon_Check) {
+		@extend .menu-entry[checked][type="checkbox"];
+	}
+
+	&.disabled {
+		@extend .menu-entry[disabled];
+	}
 
 	&:hover,
 	&#active {
-		--color-button-text: var(--color-highlight-text);
-		background-color: var(--color-highlight);
-		color: var(--color-highlight-text);
+		@extend .menu-entry:hover;
 	}
 
-	.SVGIcon_Button:not(.SVGIcon_DownArrowContextMenu) {
+	.SVGIcon_Button {
 		fill: var(--color-button-text);
+		margin: 0;
 
 		position: absolute;
 		left: 4px;
-		box(var(--text-size));
+		box(var(--text-ui-size));
 	}
 }
 
-// TODO submenus
-
 #ContextMenuSeparator {
 	@extend hr;
+}
+
+// checkbox ?
+#IconContainer {
+	display: none;
+}
+
+#SubMenu {
+	@extend .menu-entry[type="parent"];
 }

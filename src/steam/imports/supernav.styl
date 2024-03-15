@@ -1,9 +1,8 @@
 #Arrow {
 	@extend button;
 
-	margin: 0;
-
-	box(22px);
+	min-width: 22px;
+	height: 22px;
 
 	// TODO: it's a fucking <svg>
 	/*
@@ -42,10 +41,8 @@
 
 	text-transform: unset;
 
-	margin: 0;
-
 	&#Selected {
-		@extend button:active;
+		@extend .icon-button:active;
 	}
 
 	&:nth-of-type(1),

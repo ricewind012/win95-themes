@@ -1,3 +1,12 @@
+#ContextMenuAction {
+	@extend .menu-entry[primary];
+
+	background-image: none;
+	text-transform: unset;
+	letter-spacing: 0;
+	border-radius: 0;
+}
+
 #LibraryWindowDivider {
 	background-color: transparent;
 
@@ -15,9 +24,7 @@
 }
 
 #AppDetailsMain {
-	@extend table;
-
-	padding: 2px;
+	@extend .content-container;
 
 	inset: 3px 4px 4px 3px;
 }

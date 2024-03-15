@@ -1,6 +1,10 @@
+icons = \
+	url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAg0lEQVQ4jaVTWw7AIAgTsvtfuftQJk9ZYpPFgbSUOce4BP2sQ8XrBDwxGOBDEcJLlAQnWyjJSZKHHaOzHMDYJHLPhzqYDqQ1ZFWi+VdWSSYVohxhp+EqaKYoawRLJiMgDHUKsgXEPjXYdq+Iu8R7peXxMMIZjyOIYG3BiXc/0e1d6fEC6iwvBhF890UAAAAASUVORK5CYII=') \
+	url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAm0lEQVQ4ja1TyxKEIAxLnP1w+fJ4wAp9wD5me3EMTYhtJOrSAuc7QB+yWWCQ6uZkidPD+h7yALwPkk7IRF7RooIPsmOGk3RujmgdAFrj3Xw+RMPCJ8nsq1/uCzgT1vHBOZAqbWp7lgTI+N5AtvLMJCVUA9z4uAfJ2YEwVhUHNmNxCy4HuzVGsuXgqyBVafxblF3frz/T6sKFRq8LBTNs/ZuU14QAAAAASUVORK5CYII=') \
+	url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAlklEQVQ4jY2SUQ6AMAhDy+K9rSefH8hkE2QkRgN9hU0EcfQgJ5FwTSrIQPnmJqZNMBPYDLTWSY4Jza2nYGJGEiSllWLrcEbXohOU3T0sl4wpANQThLCLtoo9UMEAcFRd/+DPBJHwDzYD8ZfogRSm/kYgOULVddK6771l4rtEc17Xsz9G3+ep+TVeJzCTcb6lZu/98+3EDRZ6RZSjgajFAAAAAElFTkSuQmCC');
+
 #Bar {
 	padding: 0;
-	margin-bottom: 2px;
 
 	circle {
 		stroke: var(--color-button-text);
@@ -26,18 +30,26 @@
 
 #ViewFiltersBar {
 	margin: 0;
-	margin-left: 3px;
+	margin-left: var(--spacing-toolbar);
 }
 
 #CheckboxWithImage {
-	@extend $small-button;
+	--button-img-pos: 3px 2px;
 
-	&::before,
-	&::after {
-		display: none;
-	}
+	@extend button;
+	@extend .icon-button;
 
 	&#Active {
-		@extend button:active;
+		@extend .icon-button:active;
+	}
+
+	for img, i in icons {
+		&:nth-child({i + 1}) {
+			--button-img: img;
+		}
+	}
+
+	svg {
+		display: none;
 	}
 }

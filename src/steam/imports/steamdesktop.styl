@@ -55,7 +55,7 @@
 
 		@extend hr;
 
-		margin-bottom: 2px;
+		margin-bottom: 0;
 	}
 }
 
@@ -73,12 +73,12 @@
 		position: absolute;
 		inset: -2px -2px -3px -2px;
 
-		@extend table;
+		@extend .content-container;
 	}
 }
 
 #BrowserWrapper {
-	height: calc(100% - 5px);
+	height: calc(100% - 3px);
 }
 
 #LockIcon {
@@ -87,12 +87,15 @@
 	padding-bottom: 1px;
 }
 
+#OuterFrame {
+	gap: var(--window-gap);
+}
+
 #ReloadButton {
 	@extend button;
 
-	margin: 0;
-
-	box(21px);
+	min-width: 21px;
+	height: 21px;
 
 	svg {
 		padding: 0;

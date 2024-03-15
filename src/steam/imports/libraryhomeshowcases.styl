@@ -15,10 +15,7 @@
 
 #Collapser {
 	@extend button;
-
-	padding: 4px;
-
-	box(20px);
+	@extend .titlebar-button;
 
 	svg {
 		margin: 0;
@@ -75,7 +72,8 @@
 #CollectionDropDownContainer {
 	// !important
 	.DesktopUI && ._DialogInputContainer {
-		@extend .menu;
+		@extend .window;
+		@extend .window.child;
 	}
 }
 
@@ -97,6 +95,7 @@
 
 			margin-left: -20px;
 
+			position: unset;
 			width: calc(100% + 40px);
 		}
 	}

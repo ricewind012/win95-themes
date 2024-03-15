@@ -1,6 +1,6 @@
 #Container {
-	@extend .tree-entry
-	@extend .tree-entry[open];
+	@extend .tree-item
+	@extend .tree-item[open];
 	@extend $text-reset;
 
 	overflow: visible;
@@ -23,7 +23,7 @@
 	}
 
 	&#Selected {
-		@extend .tree-entry[selected] > .tree-entry-content > .tree-entry-name;
+		@extend .list-item[selected] > .list-item-name-container > .list-item-name;
 	}
 
 	circle {

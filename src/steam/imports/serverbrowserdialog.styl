@@ -17,9 +17,9 @@
 }
 
 #TopControlsCtr {
+	@extend [role="tablist"];
+
 	gap: 0;
-	margin-left: 4px;
-	margin-bottom: 1px;
 
 	.DialogDropDown {
 		right: calc(var(--search-button-width) + var(--right-offset) * 2);
@@ -30,7 +30,7 @@
 #TopControlsCtr .DialogDropDown,
 #SearchButton {
 	--search-button-width: calc(2ex + 5px * 2);
-	--right-offset: 6px;
+	--right-offset: 7px;
 
 	position: absolute;
 	top: 2px;
@@ -38,13 +38,11 @@
 
 #SearchButton {
 	right: var(--right-offset);
-	width: var(--search-button-width);
+	min-width: var(--search-button-width);
 }
 
 #SwitchTabButton {
 	@extend [role="tab"];
-
-	margin-top: 2px;
 
 	width: unset;
 
@@ -66,10 +64,10 @@
 }
 
 #ServerList {
-	@extend table;
+	@extend .content-container;
 
+	border: none;
 	margin: 0;
-	padding: 2px;
 
 	div[role="rowgroup"] {
 		overflow: auto;
@@ -95,7 +93,13 @@
 	@extend button;
 	@extend .table-button;
 
+	min-width: unset;
 	height: 17px;
+}
+
+#PasswordColumn,
+#SecureColumn {
+	padding: 0 2px;
 }
 
 #ServerListHeaderSort {
@@ -106,7 +110,7 @@
 	justify-content: space-between;
 
 	svg {
-		box(calc(var(--text-size) * var(--text-line)));
+		box(var(--text-full));
 	}
 }
 
@@ -128,21 +132,28 @@
 }
 
 #ServerRow {
+	gap: 0;
+
 	&:hover {
 		background-color: transparent;
 	}
 
-	&#Selected {
+	&#SelectedRow {
 		background: var(--color-highlight);
 		color: var(--color-highlight-text);
 	}
 }
 
+#FilterOptionsCheckboxesCtr {
+	align-self: center;
+}
+
 #FilterOptionsCtr {
 	padding: 0;
+	padding-top: 6px;
 
 	&:not(#Collapsed) {
-		gap: 0;
+		gap: 6px;
 
 		height: unset;
 	}
@@ -153,6 +164,11 @@
 
 	.DialogInput {
 		width: 100%;
+	}
+
+	.DialogDropDown,
+	.DialogInput {
+		margin-bottom: 6px;
 	}
 }
 
@@ -165,7 +181,7 @@
 }
 
 #BottomControlsRow {
-	padding: 4px 0;
+	padding-top: 6px;
 
 	height: unset;
 

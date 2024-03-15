@@ -29,9 +29,8 @@ div#DialogBody {
 }
 
 #PlayersList {
-	@extend table;
+	@extend .content-container;
 
-	padding: 2px;
 	margin-top: 0;
 	margin-bottom: 8px;
 
@@ -39,11 +38,9 @@ div#DialogBody {
 }
 
 #Header {
+	@extend $text-reset;
 	@extend button;
 	@extend .table-button;
-
-	text-transform: unset;
-	letter-spacing: 0;
 }
 
 #Details {

@@ -11,6 +11,8 @@
 	}
 
 	&:not(:empty) {
+		--control-img: var(--icon-checkmark);
+
 		@extend input[type="checkbox"]:checked;
 	}
 
@@ -20,14 +22,12 @@
 }
 
 #RootMenuButton {
-	color: var(--color-button-text);
-	font: var(--text-ui);
-	padding: 3px 6px;
+	@extend $text-reset;
+	@extend .menubar-item;
 
 	&:active,
-	&#Open {
-		background-color: var(--color-highlight);
-		color: var(--color-highlight-text);
+	&[class*="Open"] {
+		@extend .menubar-item:active;
 	}
 
 	svg {

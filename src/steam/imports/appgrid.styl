@@ -1,7 +1,8 @@
 #SortingDropDownContainer {
 	// ANOTHER fucking context menu, AND it has an !important
 	.DesktopUI & > div {
-		@extend .menu;
+		@extend .window;
+		@extend .window.child;
 	}
 }
 
@@ -12,12 +13,7 @@
 }
 
 #SortingDropDownLabel {
-	font: var(--text-ui);
-	color: inherit;
-	text-transform: unset;
-	letter-spacing: 0;
-
-	margin: 0;
+	@extend $text-reset;
 
 	&::after {
 		content: ': ';

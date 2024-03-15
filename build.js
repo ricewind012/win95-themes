@@ -93,6 +93,7 @@ switch (process.argv[3]) {
 						.replace(/;$/g, " !important;")
 						.replace(/!important !important/g, "!important")
 						// TODO: is this a chrome bug ? same with ::-webkit nesting
+						// TODO fr this time: active state
 						.replace(
 							/::-webkit-scrollbar-button\s/g,
 							"::-webkit-scrollbar-button:enabled:not(:disabled)",

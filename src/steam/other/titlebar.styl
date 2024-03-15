@@ -25,7 +25,7 @@
 }
 
 .title-area {
-	background-color: var(--color-gray-text);
+	background-color: var(--color-inactive-caption);
 
 	padding-right: 2px;
 
@@ -73,7 +73,7 @@
 		display: flex;
 		align-items: center;
 
-		color: var(--color-button-face);
+		color: var(--color-inactive-caption-text);
 		font-weight: bold;
 
 		.WindowFocus & {
@@ -82,7 +82,10 @@
 	}
 
 	&-icon {
-		@extend $small-button;
+		@extend button;
+		@extend .titlebar-button;
+
+		width: unset;
 
 		&-inner {
 			display: none;

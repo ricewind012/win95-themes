@@ -49,13 +49,10 @@ replace-text(token) {
 		}
 
 		#ButtonBox {
-			@extend $small-button;
-
-			width: 32px;
-			height: 32px;
+			@extend .icon-button;
 
 			&:has(> #Active) {
-				@extend button:active;
+				@extend .icon-button:active;
 			}
 
 			svg {
@@ -68,8 +65,7 @@ replace-text(token) {
 #CaptionField {
 	margin: 0;
 
-	// 8px = borders + padding
-	height: calc((var(--text-size) * var(--text-line)) * 3 + 8px);
+	height: calc(var(--text-full) * 3 + var(--border-size) * 2 + var(--input-spacing) * 2);
 }
 
 #CloudStorageImpact {
@@ -81,7 +77,8 @@ replace-text(token) {
 }
 
 #ComboboxSelectorContextMenu {
-	@extend .menu;
+	@extend .window;
+	@extend .window.child;
 
 	border-radius: 0;
 }
@@ -108,7 +105,7 @@ replace-text(token) {
 
 #ExplainerBox,
 #FocusedScreenshots {
-	@extend table;
+	@extend .content-container;
 
 	border-radius: 0;
 
@@ -213,9 +210,9 @@ replace-text(token) {
 }
 
 #ScreenshotList {
-	--inset: 91px 11px 69px 11px;
+	--inset: 91px 11px 59px 11px;
 
-	@extend $table-alt;
+	@extend $content-container-alt;
 
 	// Fullscreen
 	.PopupFullWindow:only-child & {

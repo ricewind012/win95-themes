@@ -2,15 +2,18 @@
 [class*="libraryhomeshowcases_"] {
 	&[class*="PageLeft"],
 	&[class*="PageRight"] {
-		@extend $small-button;
+		@extend button;
+		@extend .titlebar-button;
 
 		--button-img-size: 4px 7px;
 		--button-img-pos: center;
 
 		opacity: 1;
 
+		width: unset;
+
 		&[class*="Disabled"] {
-			@extend $small-button-disabled;
+			@extend .titlebar-button:disabled;
 		}
 
 		svg {

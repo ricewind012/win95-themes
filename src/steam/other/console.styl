@@ -20,9 +20,9 @@
 	}
 
 	/{attr(ConsoleInner)} {
-		--inset: 81px 4px 46px 4px;
+		--inset: 82px 4px 48px 4px;
 
-		@extend $table-alt;
+		@extend $content-container-alt;
 	}
 
 	/{attr(Timestamp)} {
@@ -60,7 +60,8 @@
 	}
 
 	/{attr(Suggestions)} {
-		@extend .menu;
+		@extend .window;
+		@extend .window.child;
 
 		gap: 0;
 

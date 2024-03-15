@@ -21,8 +21,7 @@
 }
 
 #HeaderPageControls {
-	font: var(--text-ui);
-	color: inherit;
+	@extend $text-reset;
 
 	& > div:not([class]) {
 		background-color: var(--color-window);
@@ -36,9 +35,8 @@
 }
 
 #Name {
+	@extend $text-reset;
 	@extend $legend-as-div;
 
 	background-color: var(--color-window);
-
-	letter-spacing: 0;
 }
