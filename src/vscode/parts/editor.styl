@@ -16,8 +16,6 @@
 			background-color: var(--color-button-face);
 
 			padding: 9px 12px 5px 7px;
-
-			box-sizing: border-box;
 		}
 
 		&-watermark {
@@ -94,8 +92,6 @@
 	}
 
 	&-editor {
-		border-radius: 0;
-
 		// The actual editor, i.e. not widgets
 		.editor-instance > & {
 			@extend .content-container;
@@ -120,10 +116,6 @@
 
 		.view-overlays {
 			width: 100%;
-		}
-
-		.selected-text {
-			border-radius: 0;
 		}
 
 		.editor & .current-line {

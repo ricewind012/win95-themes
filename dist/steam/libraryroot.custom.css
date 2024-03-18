@@ -867,7 +867,7 @@ progress::-webkit-progress-value,
 /* TODO: wtf is this color */
   border: 1px dotted #ff0 !important;
 }
-.menu-entry,
+.menu-item,
 [class*="console_Suggestion_"],
 [class*="contextmenu_contextMenuItem_"],
 [class*="dropdown_DialogDropDownMenu_Item_"] {
@@ -876,7 +876,7 @@ progress::-webkit-progress-value,
   position: relative !important;
 /* TODO: maybe a simpler version ? */
 }
-.menu-entry::before,
+.menu-item::before,
 [class*="console_Suggestion_"]::before,
 [class*="contextmenu_contextMenuItem_"]::before,
 [class*="dropdown_DialogDropDownMenu_Item_"]::before {
@@ -885,7 +885,7 @@ progress::-webkit-progress-value,
   top: 5px !important;
   background-color: var(--color-button-text) !important;
 }
-.menu-entry[checked][type="checkbox"]::before,
+.menu-item[checked][type="checkbox"]::before,
 [class*="console_Suggestion_"][checked][type="checkbox"]::before,
 [class*="contextmenu_contextMenuItem_"][checked][type="checkbox"]::before,
 [class*="dropdown_DialogDropDownMenu_Item_"][checked][type="checkbox"]::before,
@@ -895,7 +895,7 @@ progress::-webkit-progress-value,
   height: 7px !important;
   -webkit-mask: var(--icon-checkmark) !important;
 }
-.menu-entry[checked][type="radio"]::before,
+.menu-item[checked][type="radio"]::before,
 [class*="console_Suggestion_"][checked][type="radio"]::before,
 [class*="contextmenu_contextMenuItem_"][checked][type="radio"]::before,
 [class*="dropdown_DialogDropDownMenu_Item_"][checked][type="radio"]::before {
@@ -904,7 +904,7 @@ progress::-webkit-progress-value,
   height: 6px !important;
   -webkit-mask: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2IDYiPjxyZWN0IHg9IjEiIHdpZHRoPSI0IiBoZWlnaHQ9IjEiLz48cmVjdCB5PSIxIiB3aWR0aD0iNiIgaGVpZ2h0PSI0Ii8+PHJlY3QgeD0iMSIgeT0iNSIgd2lkdGg9IjQiIGhlaWdodD0iMSIvPjwvc3ZnPgo=") !important;
 }
-.menu-entry[type="parent"]::after,
+.menu-item[type="parent"]::after,
 [class*="console_Suggestion_"][type="parent"]::after,
 [class*="contextmenu_contextMenuItem_"][type="parent"]::after,
 [class*="dropdown_DialogDropDownMenu_Item_"][type="parent"]::after,
@@ -918,7 +918,7 @@ progress::-webkit-progress-value,
   -webkit-mask: var(--icon-arrow-right) !important;
   background-color: var(--color-button-text) !important;
 }
-.menu-entry[disabled],
+.menu-item[disabled],
 [class*="console_Suggestion_"][disabled],
 [class*="contextmenu_contextMenuItem_"][disabled],
 [class*="dropdown_DialogDropDownMenu_Item_"][disabled],
@@ -927,14 +927,14 @@ progress::-webkit-progress-value,
   text-shadow: 1px 1px var(--color-button-highlight) !important;
   pointer-events: none !important;
 }
-.menu-entry[primary],
+.menu-item[primary],
 [class*="console_Suggestion_"][primary],
 [class*="contextmenu_contextMenuItem_"][primary],
 [class*="dropdown_DialogDropDownMenu_Item_"][primary],
 [class*="library_ContextMenuAction_"] {
   font-weight: bold !important;
 }
-.menu-entry:hover,
+.menu-item:hover,
 [class*="console_Suggestion_"]:hover,
 [class*="contextmenu_contextMenuItem_"]:hover,
 [class*="dropdown_DialogDropDownMenu_Item_"]:hover,
@@ -1204,8 +1204,7 @@ label,
   border-left: 1px dotted var(--color-gray-text) !important;
   border-bottom: 1px dotted var(--color-gray-text) !important;
 }
-body,
-[class*="gamelistsearchbar_AdvancedSearchPane_"] {
+body {
   font: var(--text-ui) !important;
   image-rendering: pixelated !important;
   margin: 0 !important;
@@ -1243,6 +1242,7 @@ body.child,
 .FullModalOverlay .DialogContent,
 .DesktopUI [class*="appgrid_SortingDropDownContainer_"] > div,
 [class*="contextmenu_contextMenu_"],
+[class*="gamelistsearchbar_AdvancedSearchPane_"],
 .DesktopUI [class*="libraryhomeshowcases_CollectionDropDownContainer_"][class*="libraryhomeshowcases_CollectionDropDownContainer_"] ._DialogInputContainer,
 [class*="screenshotmanagerdialog_ComboboxSelectorContextMenu_"],
 [class*="titlebarcontrols_EmptyNotificationsCtn_"] {
@@ -1297,7 +1297,7 @@ body.child,
 :root[focused] .FullModalOverlay .DialogHeader,
 .FullModalOverlay .DialogHeader {
   background-color: var(--color-active-caption) !important;
-  color: var(--color-active-caption) !important;
+  color: var(--color-active-caption-text) !important;
 }
 .titlebar-name,
 .FullModalOverlay .DialogHeader {
@@ -1448,6 +1448,12 @@ body.child,
   background-color: var(--color-window) !important;
   box-shadow: var(--border-field) !important;
   padding: var(--border-size) !important;
+}
+* {
+  outline: none !important;
+  border-radius: 0 !important;
+  box-sizing: border-box !important;
+  transition: none !important;
 }
 fieldset,
 .DialogControlsSection,
@@ -1627,11 +1633,6 @@ div:not([class]) > [class*="gamepaddialog_Field_"],
   inset: var(--inset) !important;
   pointer-events: none !important;
 }
-* {
-  border-radius: 0 !important;
-  box-sizing: border-box !important;
-  transition: none !important;
-}
 button,
 .ModalPosition_Dismiss .closeButton,
 [class*="pageablecontainer_"][class*="PageLeft"],
@@ -1705,7 +1706,6 @@ button,
 }
 [class*="console_Suggestion_"] {
   background-color: transparent !important;
-  border-radius: 0 !important;
   height: unset !important;
 }
 [class*="console_Suggestions_"] {
@@ -1764,10 +1764,8 @@ button,
 }
 .DialogMenuPosition ._DialogInputContainer {
   font: var(--text-ui) !important;
-  border-radius: 0 !important;
 }
 .DialogCheckbox {
-  border-radius: 0 !important;
   margin: 0 !important;
   flex-shrink: 0 !important;
 }
@@ -1850,7 +1848,6 @@ button,
 .FullModalOverlay .DialogHeader {
   font-size: var(--text-ui-size) !important;
   margin: 0 !important;
-  box-sizing: border-box !important;
 }
 .FullModalOverlay .DialogHeader div:not(.DialogHeader) {
   display: none !important;
@@ -1910,7 +1907,6 @@ button,
 }
 ::-webkit-scrollbar-thumb {
   border: none !important;
-  border-radius: 0 !important;
 }
 [class*="accountsettings_EntryLabel_"] {
   padding: 0 !important;
@@ -2056,7 +2052,6 @@ button,
   --inset: 73px 11px 58px 11px !important;
   overflow: auto !important;
   border: none !important;
-  border-radius: 0 !important;
   box-shadow: none !important;
   margin-top: 0 !important;
 }
@@ -2072,7 +2067,6 @@ button,
 }
 [class*="addnonsteamgamedialog_Header_"] {
   border: none !important;
-  border-radius: 0 !important;
   padding: 0 !important;
   margin: 0 2px !important;
   margin-top: 8px !important;
@@ -2153,7 +2147,6 @@ button,
 }
 [class*="appdetailsachievementssection_AchievementProgressContainer_"] {
   background-color: transparent !important;
-  border-radius: 0 !important;
 }
 [class*="appdetailsachievementssection_AddAdditionalItem_"] {
   background-color: transparent !important;
@@ -2208,12 +2201,6 @@ button,
 }
 [class*="appdetailsoverview_SeekTarget_"] {
   position: relative !important;
-}
-[class*="appdetailsplaysection_DetailsProgressContainer_"] {
-  border-radius: 0 !important;
-}
-[class*="appdetailsplaysection_DetailsProgressBar_"] {
-  border-radius: 0 !important;
 }
 [class*="appdetailsplaysection_PlayBarDetailLabel_"],
 [class*="appdetailsplaysection_LastPlayedInfo_"] {
@@ -2465,7 +2452,6 @@ div[class*="appdetailssection_AppDetailsSectionContainer_"] {
   --icon: var(--tree-icon-expanded) !important;
   padding: 0 !important;
   margin-right: 6px !important;
-  box-sizing: border-box !important;
 }
 [class*="collapseicon_Container_"]::after {
   top: -19px !important;
@@ -2566,11 +2552,9 @@ div[class*="appdetailssection_AppDetailsSectionContainer_"] {
 }
 [class*="contentmanagement_DriveUsageDot_"] {
   background-color: var(--color-highlight) !important;
-  border-radius: 0 !important;
 }
 [class*="contentmanagement_DriveUsageIndicator_"] {
   background-color: transparent !important;
-  border-radius: 0 !important;
 }
 [class*="contentmanagement_AppUsageText_"],
 [class*="contentmanagement_DriveUsageText_"] {
@@ -2616,7 +2600,6 @@ div[class*="appdetailssection_AppDetailsSectionContainer_"] {
 }
 [class*="contextmenu_contextMenu_"] {
   background-image: none !important;
-  box-sizing: border-box !important;
 }
 [class*="contextmenu_contextMenuContents_"] {
   background: var(--color-button-face) !important;
@@ -2684,7 +2667,6 @@ div[class*="appdetailssection_AppDetailsSectionContainer_"] {
 [class*="downloads_ItemLists_"] {
   overflow: auto !important;
   padding: 14px !important;
-  box-sizing: border-box !important;
 }
 [class*="downloads_Name_"] {
   margin-bottom: 4px !important;
@@ -2884,7 +2866,6 @@ div[class*="gameinfodialog_DialogBody_"] .DialogFooter svg {
   right: 0 !important;
 }
 [class*="gamelistentry_GameIcon_"] {
-  border-radius: 0 !important;
   margin-right: 7px !important;
   width: var(--icon-size) !important;
   height: var(--icon-size) !important;
@@ -2898,9 +2879,6 @@ div[class*="gameinfodialog_DialogBody_"] .DialogFooter svg {
   top: -14px !important;
   width: 8px !important;
   height: 24px !important;
-}
-[class*="gamelisthome_Bar_"] {
-  border-radius: 0 !important;
 }
 [class*="gamelisthome_Label_"] {
   color: var(--color-button-text) !important;
@@ -2933,11 +2911,9 @@ div[class*="gameinfodialog_DialogBody_"] .DialogFooter svg {
 }
 [class*="gamelistsearchbar_FilterTag_"] {
   padding: 2px !important;
-  border-radius: 0 !important;
   margin: 0 !important;
 }
 [class*="gamelistsearchbar_SearchInput_"] {
-  border-radius: 0 !important;
   min-height: unset !important;
 }
 [class*="gamelistsearchbar_SearchInput_"] .DialogTextInputBase {
@@ -2968,9 +2944,6 @@ div[class*="gameinfodialog_DialogBody_"] .DialogFooter svg {
 }
 [class*="gamelistsearchbar_AdvancedSearchContainer_"] svg {
   display: none !important;
-}
-[class*="gamelistsearchbar_AdvancedSearchPane_"] {
-  border-radius: 0 !important;
 }
 [class*="gamelistsearchbar_AdvancedSearchPane_"]::before {
   display: none !important;
@@ -3082,7 +3055,6 @@ div:not([class]) > [class*="gamepaddialog_Field_"] {
   --inset: 46px 11px 58px 11px !important;
   overflow: auto !important;
   border: none !important;
-  border-radius: 0 !important;
   box-shadow: none !important;
   padding: 2px 10px !important;
 }
@@ -3128,7 +3100,6 @@ div:not([class]) > [class*="gamepaddialog_Field_"] {
 [class*="installrequest_FolderOption_"] {
   background-color: transparent !important;
   color: var(--color-window-text) !important;
-  border-radius: 0 !important;
   gap: 4px !important;
   padding: 0 3px !important;
   margin: 0 !important;
@@ -3174,7 +3145,6 @@ div:not([class]) > [class*="gamepaddialog_Field_"] {
   background-image: none !important;
   text-transform: unset !important;
   letter-spacing: 0 !important;
-  border-radius: 0 !important;
 }
 [class*="library_LibraryWindowDivider_"] {
   background-color: transparent !important;
@@ -3220,9 +3190,6 @@ div:not([class]) > [class*="gamepaddialog_Field_"] {
   color: inherit !important;
   padding-top: 4px !important;
 }
-[class*="libraryhomenewupdates_MainImageContainer_"] {
-  border-radius: 0 !important;
-}
 [class*="libraryhomenewupdates_EventOptions_"] {
   opacity: 1 !important;
   padding-top: 4px !important;
@@ -3234,9 +3201,6 @@ div:not([class]) > [class*="gamepaddialog_Field_"] {
   --button-img-size: 7px 4px !important;
   --button-img-pos: 4px center !important;
   background-image: none !important;
-}
-[class*="libraryhomenewupdates_PartnerEventRowCapsule_MainImageContainer_"] {
-  border-radius: 0 !important;
 }
 [class*="libraryhomenewupdates_PartnerEventRowCapsule_TextCtn_"] {
   padding: 0 !important;
@@ -3573,9 +3537,6 @@ div:not([class]) > [class*="gamepaddialog_Field_"] {
 [class*="screenshotmanagerdialog_ComboboxSelector_"] {
   padding: 0 !important;
 }
-[class*="screenshotmanagerdialog_ComboboxSelectorContextMenu_"] {
-  border-radius: 0 !important;
-}
 [class*="screenshotmanagerdialog_Combobox_"] svg,
 [class*="screenshotmanagerdialog_Dropdown_"] svg {
   display: none !important;
@@ -3590,7 +3551,6 @@ div:not([class]) > [class*="gamepaddialog_Field_"] {
 }
 [class*="screenshotmanagerdialog_ExplainerBox_"],
 [class*="screenshotmanagerdialog_FocusedScreenshots_"] {
-  border-radius: 0 !important;
   padding: 2px !important;
   height: 100% !important;
 }
@@ -3998,14 +3958,12 @@ body:has(> #popup_target > [class*="steamdesktopoverlay_Wrapper_"]) {
 }
 [class*="systemsettings_SteamRuntimeSystemInfoContainer_"] {
   margin-top: 4px !important;
-  box-sizing: border-box !important;
 }
 [class*="systemsettings_Text_"] {
   font-family: var(--text-font-monospace) !important;
 }
 [class*="systemsettings_TextContainer_"] {
   background-color: transparent !important;
-  border-radius: 0 !important;
   box-shadow: none !important;
 }
 [class*="titlebarcontrols_TitleBarControls_"] {

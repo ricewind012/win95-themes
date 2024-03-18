@@ -7,8 +7,6 @@
 	@extend .window.child;
 
 	background-image: none;
-
-	box-sizing: border-box;
 }
 
 #contextMenuContents {
@@ -18,23 +16,23 @@
 }
 
 #contextMenuItem {
-	@extend .menu-entry;
+	@extend .menu-item;
 
 	font-size: var(--text-ui-size);
 	color: var(--color-button-text);
 	border: none;
 
 	&:has(.SVGIcon_Check) {
-		@extend .menu-entry[checked][type="checkbox"];
+		@extend .menu-item[checked][type="checkbox"];
 	}
 
 	&.disabled {
-		@extend .menu-entry[disabled];
+		@extend .menu-item[disabled];
 	}
 
 	&:hover,
 	&#active {
-		@extend .menu-entry:hover;
+		@extend .menu-item:hover;
 	}
 
 	.SVGIcon_Button {
@@ -57,5 +55,5 @@
 }
 
 #SubMenu {
-	@extend .menu-entry[type="parent"];
+	@extend .menu-item[type="parent"];
 }

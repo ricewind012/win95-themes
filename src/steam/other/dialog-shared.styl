@@ -80,15 +80,12 @@
 		@extend .window.child;
 
 		font: var(--text-ui);
-
-		border-radius: 0;
 	}
 
 	&Checkbox {
 		@extend input;
 		@extend input[type="checkbox"];
 
-		border-radius: 0;
 		margin: 0;
 
 		flex-shrink: 0;
@@ -234,8 +231,6 @@
 
 		font-size: var(--text-ui-size);
 		margin: 0;
-
-		box-sizing: border-box;
 
 		// "Mark as Private" dialog
 		div:not(.DialogHeader) {

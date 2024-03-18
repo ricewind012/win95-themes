@@ -7,13 +7,10 @@
 
 #FilterTag {
 	padding: 2px;
-	border-radius: 0;
 	margin: 0;
 }
 
 #SearchInput {
-	border-radius: 0;
-
 	min-height: unset;
 
 	.DialogTextInputBase {
@@ -59,9 +56,8 @@
 }
 
 #AdvancedSearchPane {
-	@extend body;
-
-	border-radius: 0;
+	@extend .window;
+	@extend .window.child;
 
 	&::before {
 		display: none;

@@ -1256,6 +1256,12 @@ body.child,
   box-shadow: var(--border-field) !important;
   padding: var(--border-size) !important;
 }
+* {
+  outline: none !important;
+  border-radius: 0 !important;
+  box-sizing: border-box !important;
+  transition: none !important;
+}
 fieldset,
 .additional-details-element,
 .gettingStartedContainer .index-list,
@@ -1297,9 +1303,6 @@ fieldset,
 .select-container::after {
   display: none !important;
 }
-.monaco-button {
-  border-radius: 0 !important;
-}
 .monaco-button-description {
   font: var(--text-ui) !important;
 }
@@ -1330,7 +1333,6 @@ fieldset,
   color: var(--color-window-text) !important;
   font: var(--text-ui) !important;
   border: none !important;
-  border-radius: 0 !important;
   height: unset !important;
 }
 .monaco-inputbox .action-label {
@@ -1356,7 +1358,6 @@ fieldset,
 }
 .monaco-checkbox {
   border: none !important;
-  border-radius: 0 !important;
   margin: 0 !important;
 }
 .monaco-custom-toggle:not(.monaco-checkbox).codicon,
@@ -1416,7 +1417,6 @@ fieldset,
 .monaco-scrollable-element > .scrollbar {
   top: 0px !important;
   height: 100% !important;
-  transition: none !important;
 }
 .monaco-scrollable-element > .scrollbar.horizontal {
   width: 100% !important;
@@ -1428,7 +1428,6 @@ fieldset,
 .monaco-scrollable-element > .scrollbar > .scra.codicon {
   font-size: 0 !important;
   left: 0 !important;
-  box-sizing: border-box !important;
 }
 .monaco-scrollable-element > .scrollbar > .scra.codicon-scrollbar-button-up {
   top: 0 !important;
@@ -1453,7 +1452,6 @@ fieldset,
 .monaco-list {
   width: 100% !important;
   height: calc(100% - 10px) !important;
-  box-sizing: border-box !important;
 }
 .monaco-list:focus::before {
   display: none !important;
@@ -1461,7 +1459,6 @@ fieldset,
 .monaco-list-row {
   overflow: visible !important;
   font: var(--text-ui) !important;
-  border-radius: 0 !important;
 }
 .monaco-list-row.selected {
   --vscode-keybindingLabel-border: var(--color-active-caption-text) !important;
@@ -1478,12 +1475,7 @@ fieldset,
 .scm-editor-container,
 .suggest-input-container {
   border: none !important;
-  border-radius: 0 !important;
   flex-grow: 1 !important;
-}
-.scm-editor-container .monaco-editor,
-.suggest-input-container .monaco-editor {
-  border-radius: 0 !important;
 }
 .scm-editor-container .monaco-editor[style*="height: 20px"],
 .suggest-input-container .monaco-editor[style*="height: 20px"],
@@ -2336,7 +2328,6 @@ fieldset,
   z-index: 2 !important;
 }
 .monaco-tl-twistie::before {
-  border-radius: 0 !important;
   transform: unset !important;
 }
 .monaco-tl-twistie::after {
@@ -2475,11 +2466,6 @@ fieldset,
 .monaco-workbench.nostatusbar {
   --statusbar-height: var(--window-gap) !important;
 }
-* {
-  outline: none !important;
-  border-radius: 0 !important;
-  box-sizing: border-box !important;
-}
 .monaco-workbench {
   font: var(--text-ui) !important;
   width: 100% !important;
@@ -2556,7 +2542,6 @@ fieldset,
 }
 .additional-details-container .category {
   font: var(--text-ui) !important;
-  border-radius: 0 !important;
 }
 .additional-details-content {
   padding: 14px !important;
@@ -2566,7 +2551,6 @@ fieldset,
 }
 .webview {
   box-shadow: var(--border-button-raised) !important;
-  box-sizing: border-box !important;
   padding: 1px 2px !important;
 }
 body[role="document"] {
@@ -2763,7 +2747,6 @@ body[role="document"] {
   background: no-repeat center !important;
   color: var(--color-window-text) !important;
   font-size: 0 !important;
-  border-radius: 0 !important;
   width: 100% !important;
 }
 .activitybar .active-item-indicator {
@@ -2780,7 +2763,6 @@ body[role="document"] {
 .editor-group-container {
   background-color: var(--color-button-face) !important;
   padding: 9px 12px 5px 7px !important;
-  box-sizing: border-box !important;
 }
 .editor-group-watermark .shortcuts dl,
 .editor-group-watermark .shortcuts dt {
@@ -2829,9 +2811,6 @@ body[role="document"] {
 .monaco-split-view2.vertical.separator-border > .monaco-scrollable-element > .split-view-container > .split-view-view {
   height: 100% !important;
 }
-.monaco-editor {
-  border-radius: 0 !important;
-}
 .editor-instance > .monaco-editor {
   width: 100% !important;
   height: 100% !important;
@@ -2846,9 +2825,6 @@ body[role="document"] {
 }
 .monaco-editor .view-overlays {
   width: 100% !important;
-}
-.monaco-editor .selected-text {
-  border-radius: 0 !important;
 }
 .editor .monaco-editor .current-line {
   border: 1px solid var(--color-highlight) !important;
@@ -2874,9 +2850,6 @@ body[role="document"] {
   position: absolute !important;
   top: calc(var(--menubar-height) - 1px) !important;
   width: 100% !important;
-}
-.menubar-menu-title {
-  border-radius: 0 !important;
 }
 .menubar-menu-title.toolbar-toggle-more {
   display: none !important;
@@ -3154,7 +3127,6 @@ body[role="document"] {
   background-color: transparent !important;
   color: inherit !important;
   border: none !important;
-  border-radius: 0 !important;
   margin: 0 4px !important;
   width: unset !important;
   height: unset !important;
@@ -3242,7 +3214,6 @@ body[role="document"] {
   padding: 12px 14px !important;
 }
 .find-widget {
-  border-radius: 0 !important;
   height: auto !important;
 }
 .find-widget .button {
@@ -3257,22 +3228,17 @@ body[role="document"] {
   font: var(--text-ui) !important;
   margin: 0 !important;
 }
-[role="menu"] {
-  border-radius: 0 !important;
-}
 .context-view {
   animation: none !important;
   box-shadow: none !important;
 }
 [role="menu"] [role="menuitem"],
 [role="menuitemcheckbox"] {
-  border-radius: 0 !important;
   margin: 0 !important;
   height: unset !important;
 }
 .monaco-menu {
   font: var(--text-ui) !important;
-  border-radius: 0 !important;
 }
 .monaco-menu .action-label,
 .monaco-menu .keybinding {
@@ -3299,16 +3265,11 @@ body[role="document"] {
   opacity: 1 !important;
   background-color: transparent !important;
   border: none !important;
-  border-radius: 0 !important;
   box-shadow: none !important;
   transform: none !important;
-  transition: none !important;
 }
 .notification-toast .monaco-list-row {
   background-color: transparent !important;
-}
-.notification-toast .monaco-scrollable-element {
-  border-radius: 0 !important;
 }
 .notification-list-item {
   padding: 5px !important;
@@ -3333,7 +3294,6 @@ body[role="document"] {
   width: 148px !important;
 }
 .notifications-center {
-  border-radius: 0 !important;
   width: auto !important;
   height: auto !important;
 }
@@ -3419,7 +3379,6 @@ body[role="document"] {
 .quick-input-titlebar {
   background-color: var(--color-active-caption) !important;
   color: var(--color-active-caption-text) !important;
-  border-radius: 0 !important;
   height: var(--titlebar-height) !important;
 }
 .quick-input-left-action-bar:has(> .actions-container:empty) {
@@ -3453,7 +3412,6 @@ body[role="document"] {
   margin-top: 4px !important;
 }
 .monaco-select-box-dropdown-container {
-  border-radius: 0 !important;
   width: 320px !important;
 }
 .monaco-select-box-dropdown-container .monaco-list {
@@ -3465,7 +3423,6 @@ body[role="document"] {
 }
 .suggest-widget {
   border: none !important;
-  border-radius: 0 !important;
 }
 .suggest-widget .monaco-scrollable-element {
   overflow: hidden !important;
@@ -3538,7 +3495,4 @@ body[role="document"] {
 }
 .parameter-hints-widget .docs {
   padding: 0 3px !important;
-}
-.parameter-hints-widget .docs code {
-  border-radius: 0 !important;
 }

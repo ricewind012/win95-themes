@@ -11,8 +11,6 @@
 	&-button {
 		@extend button;
 
-		border-radius: 0;
-
 		&-description {
 			font();
 		}
@@ -88,7 +86,6 @@
 		color: var(--color-window-text);
 		font();
 		border: none;
-		border-radius: 0;
 
 		height: unset;
 
@@ -128,7 +125,6 @@
 		@extend input[type="checkbox"];
 
 		border: none;
-		border-radius: 0;
 		margin: 0;
 
 		&.checked {
@@ -211,8 +207,6 @@
 		top: 0px;
 		height: 100%;
 
-		transition: none;
-
 		&.horizontal {
 			width: 100%;
 			height: var(--scrollbar-size);
@@ -230,7 +224,6 @@
 			font-size: 0;
 
 			left: 0;
-			box-sizing: border-box;
 
 			&:active {
 				@extend ::-webkit-scrollbar-button:active;
@@ -280,7 +273,6 @@
 
 		width: 100%;
 		height: calc(100% - 10px);
-		box-sizing: border-box;
 
 		&:focus::before {
 			display: none;
@@ -289,7 +281,6 @@
 		&-row {
 			overflow: visible;
 			font();
-			border-radius: 0;
 
 			&.selected {
 				--vscode-keybindingLabel-border: var(--color-active-caption-text);
@@ -326,13 +317,10 @@
 		@extend input[type="text"];
 
 		border: none;
-		border-radius: 0;
 
 		flex-grow: 1;
 
 		.monaco-editor {
-			border-radius: 0;
-
 			&[style*="height: 20px"],
 			&[style*="height: 21px"],
 			&[style*="height: 22px"],
