@@ -1,9 +1,15 @@
 * {
 	outline: none;
+	border-radius: 0;
+
+	box-sizing: border-box;
+}
+
+body {
+	@extend .window;
 }
 
 .monaco-workbench {
-	background-color: inherit;
 	font();
 
 	width: 100%;
@@ -19,6 +25,11 @@
 		// Titlebar
 		&[style^="top: 35px;"] {
 			margin-top: 5px;
+		}
+
+		// Statusbar
+		&[style$="height: 22px;"] {
+			margin-top: calc(var(--window-gap) * -1);
 		}
 	}
 

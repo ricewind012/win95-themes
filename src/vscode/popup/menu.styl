@@ -1,14 +1,37 @@
+[role="menu"] {
+	@extend .window;
+	@extend .window.child;
+
+	border-radius: 0;
+}
+
 .context-view {
 	animation: none;
+	box-shadow: none;
+}
 
-	// Titlebar menubar button
-	/.menubar-menu-items-holder > .monaco-scrollable-element,
-	& > [role="presentation"] {
-		@extend body;
+[role="menu"] [role="menuitem"],
+[role="menuitemcheckbox"] {
+	@extend .menu-item;
 
-		border-radius: 0;
+	border-radius: 0;
+	margin: 0;
 
-		padding: 3px;
+	height: unset;
+
+	&:hover {
+		@extend .menu-item:hover;
+	}
+}
+
+[aria-checked="true"] {
+	&[role="menuitemcheckbox"] {
+		@extend .menu-item[checked][type="checkbox"];
+	}
+
+	// Not present in 1.85, but just in case
+	&[role="menuitemradio"] {
+		@extend .menu-item[checked][type="radio"];
 	}
 }
 
@@ -17,24 +40,18 @@
 		font();
 		border-radius: 0;
 
-		.action {
-			&-menu-item {
-				border-radius: 0;
+		.action-label,
+		.keybinding {
+			line-height: inherit;
+			padding: 0;
+		}
 
-				margin: 0;
-
-				height: unset;
-			}
-
-			&-label:not(.separator) {
-				font();
-
-				padding: 2px 20px;
-			}
+		.action-label {
+			padding-left: 0;
 		}
 
 		.keybinding {
-			padding-right: 20px;
+			padding-right: 0;
 		}
 	}
 
@@ -48,22 +65,13 @@
 
 		border-bottom: none;
 	}
+
+	&-submenu-item {
+		@extend .menu-item[type="parent"];
+	}
 }
 
+.submenu-indicator,
 .menu-item-check {
-	border-radius: 0;
-
-	width: 19px;
-
-	.checked & {
-		@extend input[type="checkbox"]:checked;
-
-		&::before {
-			-webkit-mask-position: 6px 5px;
-		}
-	}
-
-	.action-menu-item:not(.disabled):hover > & {
-		--color-button-text: var(--color-highlight-text);
-	}
+	display: none;
 }

@@ -1,61 +1,27 @@
 .statusbar {
 	background-color: var(--color-button-face);
 	color: var(--color-button-text);
-	font();
-
-	padding: 1px 5px;
 
 	height: unset;
 
-	&::before {
-		content: '';
-
-		box-shadow: var(--border-statusbar);
-
-		position: absolute;
-		inset: 1px 1px 0;
-		height: calc(100% - 10px);
-	}
-
-	&::after {
-		display: none;
-	}
-
 	&-item {
-		font();
-
-		padding: 0;
-
 		position: relative;
+		max-width: unset;
 
 		&-label {
 			font();
 
 			padding: 0;
 			margin: 0;
-
-			&::after {
-				content: '';
-
-				background-color: var(--color-button-face);
-				border: 1px solid;
-				border-color:
-					var(--color-button-face) \
-					var(--color-button-shadow) \
-					var(--color-button-face) \
-					var(--color-button-highlight);
-
-				position: absolute;
-				right: -7px;
-				bottom: -2px;
-				width: 2px;
-				height: calc(100% + 2px);
-			}
 		}
 	}
 
 	& > .left-items,
 	& > .right-items {
-		gap: 10px;
+		gap: 2px;
+	}
+
+	& > .left-items &-item:last-child {
+		flex-grow: 1;
 	}
 }

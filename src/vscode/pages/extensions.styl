@@ -23,9 +23,10 @@
 				}
 
 				&-label.codicon:empty {
-					@extend $small-button;
+					@extend button;
+					@extend .titlebar-button;
 
-					height: 23px;
+					height: 22px;
 				}
 
 				&-dropdown-item-separator {
@@ -59,8 +60,6 @@
 		.content {
 			@extend [role="tabpanel"];
 
-			margin-top: 1px;
-
 			height: calc(100% - 43px);
 		}
 
@@ -72,9 +71,7 @@
 	&-action {
 		@extend button;
 
-		margin: 0;
-
-		display: block;
+		justify-content: center;
 	}
 }
 
@@ -107,7 +104,8 @@
 	}
 
 	&-title {
-		@extend legend;
+		@extend $text-reset;
+		@extend $legend-as-div;
 	}
 }
 

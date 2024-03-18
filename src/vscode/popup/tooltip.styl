@@ -2,13 +2,7 @@
 .monaco-hover {
 	--vscode-editorHoverWidget-border: var(--color-button-shadow-dark);
 
-	// Apparently, I can't repeat gradients all at once, i.e. one image.
-	background-color: var(--color-tooltip);
-	color: var(--color-tooltip-text);
-	font();
-	border: 1px solid var(--color-button-shadow-dark);
-	border-radius: 0;
-	box-shadow: none;
+	@extend .tooltip;
 
 	animation: none;
 

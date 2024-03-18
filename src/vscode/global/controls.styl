@@ -1,11 +1,3 @@
-legend {
-	font();
-
-	position: absolute;
-	top: -8px;
-	padding: 0 2px;
-}
-
 .select-container {
 	overflow: visible;
 
@@ -26,6 +18,10 @@ legend {
 		}
 	}
 
+	&-text-button {
+		height: unset;
+	}
+
 	&-text-button-with-short-label,
 	&-description-buttons > &-button {
 		overflow: visible;
@@ -36,18 +32,26 @@ legend {
 	&-toolbar,
 	.peekview-widget &-action-bar,
 	.dialog-toolbar-row &-action-bar,
+	.notifications-center &-action-bar,
 	.notification-toast &-action-bar,
 	.settings-clear-widget &-action-bar,
 	.terminal-tabs-entry &-action-bar {
 		.action-label {
-			@extend $small-button;
+			@extend button;
+			@extend .titlebar-button;
 
 			&[aria-disabled] {
-				@extend $small-button-disabled;
+				@extend button:disabled;
 			}
 
-			&.clicked, // Titlebar
 			&[aria-expanded="true"] {
+				@extend button:active;
+			}
+		}
+
+		.action-item {
+			// Titlebar
+			&.clicked > .action-label {
 				@extend button:active;
 			}
 		}
@@ -69,7 +73,8 @@ legend {
 		}
 
 		&-button {
-			@extend $small-button;
+			@extend button;
+			@extend .titlebar-button;
 
 			width: 16px;
 			height: 23px;
@@ -96,7 +101,7 @@ legend {
 	}
 
 	&-findInput {
-		gap: 6px;
+		gap: var(--spacing-toolbar);
 
 		display: flex;
 		align-items: center;
@@ -119,10 +124,12 @@ legend {
 
 	// Checkboxes
 	&-checkbox {
+		@extend input;
 		@extend input[type="checkbox"];
 
 		border: none;
 		border-radius: 0;
+		margin: 0;
 
 		&.checked {
 			@extend input[type="checkbox"]:checked;
@@ -132,9 +139,12 @@ legend {
 	&-custom-toggle:not(&-checkbox) {
 		&.codicon,
 		.codicon {
-			@extend $small-button;
+			@extend button;
+			@extend .titlebar-button;
 
 			border: none;
+
+			width: unset;
 
 			&.checked {
 				@extend button:active;
@@ -214,7 +224,7 @@ legend {
 			width: var(--scrollbar-size);
 		}
 
-		& > .scra {
+		& > .scra.codicon {
 			@extend ::-webkit-scrollbar-button;
 
 			font-size: 0;
@@ -222,15 +232,19 @@ legend {
 			left: 0;
 			box-sizing: border-box;
 
-			&.codicon-scrollbar-button {
+			&:active {
+				@extend ::-webkit-scrollbar-button:active;
+			}
+
+			&-scrollbar-button {
 				&-up {
-					@extend ::-webkit-scrollbar-button:decrement;
+					@extend ::-webkit-scrollbar-button:vertical:decrement;
 
 					top: 0;
 				}
 
 				&-down {
-					@extend ::-webkit-scrollbar-button:increment;
+					@extend ::-webkit-scrollbar-button:vertical:increment;
 
 					bottom: 0;
 				}
@@ -262,9 +276,7 @@ legend {
 
 	// Item list
 	&-list {
-		@extend table;
-
-		padding: 2px;
+		@extend .content-container;
 
 		width: 100%;
 		height: calc(100% - 10px);
@@ -291,19 +303,13 @@ legend {
 				opacity: 1;
 			}
 		}
-
-		&-rows {
-			margin: 2px;
-
-			width: calc(100% - 4px);
-		}
 	}
 }
 
 .action {
 	&-item.disabled &-label {
 		.monaco-action-bar & {
-			@extend $small-button-disabled;
+			@extend .titlebar-button:disabled;
 		}
 
 		&,
@@ -316,11 +322,11 @@ legend {
 .scm-editor,
 .suggest-input {
 	&-container {
-		background-color: transparent;
+		@extend input;
+		@extend input[type="text"];
+
 		border: none;
 		border-radius: 0;
-
-		padding: 0;
 
 		flex-grow: 1;
 
@@ -345,8 +351,7 @@ legend {
 		font();
 
 		padding: 0;
-		margin-left: 4px;
-		margin-top: 4px;
+		margin: 0;
 
 		width: unset;
 	}
@@ -355,9 +360,10 @@ legend {
 // !important
 .monaco-workbench .part.editor > .content .gettingStartedContainer .gettingStartedSlide .getting-started-checkbox,
 .settings-editor > .settings-body .settings-tree-container .setting-item-bool .setting-value-checkbox {
+	@extend input;
 	@extend input[type="checkbox"];
 
-	border-radius: 0;
+	min-width: unset;
 
 	&.checked {
 		@extend input[type="checkbox"]:checked;

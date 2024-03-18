@@ -1,18 +1,17 @@
 .part.panel {
 	overflow: visible;
 	background-color: transparent;
-	padding: 0 10px 0 7px;
+	padding: 0 9px 0 7px;
 	border: none;
 
 	width: calc(100% - 3px);
-	height: calc(100% - 26px);
+	height: calc(100% - 28px);
 
 	.title {
 		border: none;
 
 		padding: 0;
 		margin: 0;
-		margin-left: 4px;
 		margin-top: -8px;
 		gap: 2px;
 
@@ -29,7 +28,8 @@
 			margin-bottom: -4px;
 
 			position: relative;
-			bottom: 3px;
+			bottom: 4px;
+			height: unset;
 		}
 
 		.select-container {
@@ -40,12 +40,10 @@
 	& > .content {
 		@extend .editor-container > .editor-instance;
 
-		margin-top: -1px;
-
 		box(100%);
 
 		& > .composite {
-			@extend table;
+			@extend .content-container;
 		}
 	}
 
@@ -139,8 +137,8 @@
 	}
 
 	&-controls {
-		margin-left: 6px;
-		margin-bottom: -4px;
+		margin-left: var(--spacing-toolbar);
+		margin-bottom: -1px;
 
 		position: unset;
 	}

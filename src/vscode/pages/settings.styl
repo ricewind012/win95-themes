@@ -1,10 +1,6 @@
 .settings {
 	&-toc-wrapper {
 		padding: 0;
-
-		& > .monaco-list {
-			height: calc(100% - 2px);
-		}
 	}
 
 	&-editor {
@@ -59,14 +55,11 @@
 		.monaco-list,
 		.monaco-scrollable-element {
 			overflow: hidden;
+			height: 100%;
 		}
 
 		.monaco-list {
 			@extend [role="tabpanel"];
-
-			margin-top: 1px;
-
-			height: calc(100% - 23px);
 			
 			&-row {
 				background-color: transparent;
@@ -97,7 +90,11 @@
 		}
 
 		&-title {
-			@extend legend;
+			@extend $legend-as-div;
+		}
+
+		&-label {
+			@extend $text-reset;
 		}
 
 		&-category {
@@ -123,21 +120,34 @@
 		}
 	}
 
-	&-list-object {
-		&-widget {
-			@extend table;
+	&-list {
+		&-object {
+			&-widget {
+				@extend .content-container;
 
-			margin-bottom: 8px;
+				margin-bottom: 9px;
+			}
+
+			&-value-container {
+				//height: unset;
+			}
 		}
 
-		&-value-container {
-			height: unset;
+		&-row-header &-object-key,
+		&-row-header &-object-value {
+			@extend .table-header-row;
+
+			margin: 0;
 		}
+	}
+
+	&-toolbar-container {
+		left: -12px;
 	}
 }
 
 .search-container {
-	gap: 5px;
+	gap: var(--spacing-toolbar);
 
 	display: flex;
 	align-items: center;

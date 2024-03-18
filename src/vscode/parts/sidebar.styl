@@ -2,12 +2,10 @@
 	background-color: var(--color-button-face);
 	color: var(--color-window-text);
 	border: none;
-
-	// Spacing: top/bottom - 8px, left/right - 7px
-	margin-top: 9px;
+	margin-top: 8px;
 
 	&:has(> .has-composite-bar) {
-		margin-left: 8px;
+		margin-left: 6px;
 
 		&.right {
 			margin-left: 0;
@@ -76,15 +74,10 @@
 		&s-container {
 			padding: 0;
 			margin: 0;
-			margin-bottom: 4px;
 		}
 	}
 
 	&-view {
-		input {
-			margin: 0 1px;
-		}
-
 		.search-container,
 		.query-details {
 			margin: 0;
@@ -100,19 +93,22 @@
 				height: unset;
 
 				.action-label {
-					@extend $small-button;
+					@extend button;
+					@extend .titlebar-button;
 				}
 			}
 		}
 
 		.more.codicon {
-			@extend $small-button;
+			@extend button;
+			@extend .titlebar-button;
 
 			margin-bottom: 4px;
 		}
 
 		.message {
-			padding: 0 4px 6px;
+			padding: 0;
+			padding-bottom: 4px;
 		}
 	}
 }
@@ -135,16 +131,9 @@
 
 			&-list {
 				height: calc(100% - 7px);
-
-				// Inputs & buttons
-				&-row.force-no-hover {
-					margin-left: -1px;
-				}
 			}
 
 			&-button {
-				margin: 0;
-
 				&-dropdown {
 					overflow: visible;
 				}

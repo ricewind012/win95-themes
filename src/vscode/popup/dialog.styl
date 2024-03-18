@@ -1,15 +1,12 @@
-.monaco-dialog {
-	&-modal-block {
-		background-color: transparent;
-	}
+[role="dialog"] {
+	@extend .window;
+	@extend .window.child;
 
-	&-box {
-		@extend body;
+	min-width: 300px;
+}
 
-		padding: 1px;
-
-		min-width: 300px;
-	}
+.monaco-dialog-modal-block {
+	background-color: transparent;
 }
 
 .dialog {
@@ -18,8 +15,11 @@
 	}
 
 	&-icon {
-		flex: 0 0 32px;
-		height: 32px;
+		--a: calc(var(--border-size) + var(--window-spacing));
+		--icon-size: 32px;
+
+		flex: 0 0 var(--icon-size);
+		height: var(--icon-size);
 
 		&::before {
 			content: attr(aria-label);
@@ -28,12 +28,13 @@
 			font-weight: bold;
 
 			position: absolute;
-			left: 3px;
-			top: 3px;
+			left: calc(var(--a) + 2px);
+			top: calc(var(--a) + 3px);
 		}
 	}
 
 	&-toolbar-row {
+		// TODO?: vscode also has .titlebar and only there can I get focused state
 		background-color: var(--color-active-caption);
 		color: var(--color-active-caption-text);
 		padding: 0 2px;
@@ -71,18 +72,17 @@
 	}
 
 	&-buttons {
+		gap: 6px;
+
 		overflow: visible;
 
 		// !important
 		.monaco-dialog-box > &-row > & > .monaco-button {
-			outline-offset: -4px;
-
-			width: 81px;
+			outline-offset: calc(var(--button-spacing) * -1);
 		}
 
 		&-row {
 			padding: 12px 14px;
-			padding-top: 18px;
 		}
 	}
 }

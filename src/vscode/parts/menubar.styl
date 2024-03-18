@@ -14,22 +14,20 @@
 		@extend hr;
 
 		position: absolute;
-		top: calc(var(--titlebar-height) - 1px);
+		top: calc(var(--menubar-height) - 1px);
 		width: 100%;
 	}
 
 	&-menu {
 		&-button {
-			visibility: visible;
-
 			&.open {
-				background-color: var(--color-highlight);
-				color: var(--color-highlight-text);
+				@extend .menubar-item:active;
 			}
 		}
 
 		&-title {
-			padding: 3px 6px;
+			@extend .menubar-item;
+
 			border-radius: 0;
 
 			&.toolbar-toggle-more {

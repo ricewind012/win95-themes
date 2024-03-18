@@ -1,12 +1,15 @@
 .peekview {
 	&-widget {
-		@extend [role="tabpanel"];
+		@extend .window;
+		@extend .window.child;
 
 		border: none;
 
 		width: calc(100% - 50px);
 
 		& > .head {
+			background-color: var(--color-active-caption);
+			color: var(--color-active-caption-text);
 			font();
 
 			height: var(--titlebar-height);
@@ -15,8 +18,9 @@
 
 		& > .body {
 			border: none;
+			margin-top: var(--window-gap);
 
-			height: calc(100% - 19px);
+			height: calc(100% - var(--window-gap) - 19px);
 		}
 
 		.inline {
@@ -25,19 +29,19 @@
 		}
 
 		.ref-tree {
-			width: calc(100% - 62px);
+			width: calc(100% - 58px);
 		}
 
 		.monaco {
 			// TODO: scrollbar is out of bounds
 			&-editor {
-				@extend table;
+				@extend .content-container;
 
 				box(100%);
 			}
 
 			&-list {
-				margin-left: 3px;
+				margin-left: var(--window-gap);
 
 				height: 100%;
 			}
@@ -45,22 +49,23 @@
 	}
 
 	&-title {
-		font();
+		margin-left: 2px;
 
-		margin: 0;
+		.filename,
+		.dirname:not(:empty),
+		.meta {
+			@extend .titlebar-name;
 
-		.filenaame {
-			color: var(--color-button-text);
+			font-size: var(--text-ui-size);
+			color: inherit;
 		}
 
 		.dirname:not(:empty) {
-			color: var(--color-gray-text);
-			font();
+			parentheses();
 		}
 	}
 
 	&-actions {
-		padding: 0;
-		margin-top: 1px;
+		padding-top: 2px;
 	}
 }

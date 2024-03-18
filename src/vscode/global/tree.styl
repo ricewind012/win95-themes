@@ -1,5 +1,4 @@
-$icon-width = 16px;
-$max-nest   = 10;
+$max-nest = 10;
 
 /**
  * Attributes
@@ -17,78 +16,117 @@ $max-nest   = 10;
 		--b: var(--b-with-arrow);
 	}
 
+	&::before {
+		display: none;
+	}
+
 	.monaco-tl-twistie {
-		padding-left: calc(var(--a) + var(--b) * (var(--level) - var(--multiply)));
-		margin-left: var(--offset);
+		padding-left: 0;
+		margin-left: calc(var(--offset) + var(--a) + var(--b) * (var(--level) - var(--multiply)));
 	}
 }
 
 for i in range(2, $max-nest) {
 	{s('[aria-level="%s"]', i)} {
 		--level: i;
-		--multiply: 3 - (0.5 * i);
+		--multiply: 4 - (0.5 * i);
 		--offset: 2px * (i - 6);
 
 		&:not([aria-expanded]) {
-			--offset: -16px * (i - 3);
+			--offset: -14px * (i - 3);
 		}
 	}
 }
 
 // God knows why these need an override ...
+.part.sidebar div[aria-level="1"] {
+	&:not([aria-expanded]) {
+		margin-left: 4px;
+
+		&::before {
+			top: -6px;
+			left: 4px;
+			display: initial;
+		}
+	}
+
+	&::before {
+		top: -6px;
+		left: 8px;
+	}
+
+	.monaco-tl-contents::before,
+	.monaco-tl-twistie::after {
+		display: none;
+	}
+}
+
 [aria-level="2"] {
-	--multiply: 2.5;
-	--offset: -2px;
+	--offset: 0px;
 
 	&:not([aria-expanded]) {
-		--multiply: 1.35;
-		--offset: 0px;
+		--multiply: 2;
+		--offset: 2px;
 	}
 }
 
 [aria-level="3"] {
-	--multiply: 2;
 	--offset: 0px;
 
 	&:not([aria-expanded]) {
-		--offset: 12px;
+		--offset: 7px;
 	}
 }
 
 [aria-level="4"] {
-	--offset: -4px;
+	--offset: 0px;
+
+	&:not([aria-expanded]) {
+		--offset: -10px;
+	}
 }
 
-[role="treeitem"] {
-	padding-left: 4px;
+.part.sidebar [role="treeitem"] {
+	@extend .tree-item;
+
+	// Revert for @extend
+	margin: 0;
+
+	position: absolute;
+
+	&[aria-expanded="true"] {
+		@extend .tree-item[open];
+	}
 
 	&[aria-selected="true"] {
 		background-color: var(--color-window);
 		color: var(--color-window-text);
 
 		.monaco-icon-name-container {
-			background-color: var(--color-highlight);
-			color: var(--color-highlight-text);
-			border: 1px dotted #ff0;
+			@extend .list-item[selected] > .list-item-name-container > .list-item-name;
 		}
 	}
 
 	.monaco-icon {
 		&-label {
+			gap: 2px;
+
 			align-items: center;
 
 			&::before {
 				padding-right: 2px;
 
 				// Fix for source control tab or the extension
-				height: 16px;
-				z-index: 2;
+				position: relative;
+				height: var(--icon-size);
+				z-index: 99;
 			}
 
 			&::after {
 				opacity: 1;
+				font-size: inherit;
 
-				margin: 0 4px;
+				margin: 0;
 
 				width: 12px;
 			}
@@ -99,7 +137,7 @@ for i in range(2, $max-nest) {
 		}
 
 		&-name-container {
-			padding: 1px 5px 0 1px;
+			@extend .list-item-name;
 
 			.label-separator {
 				opacity: 1;
@@ -115,7 +153,11 @@ for i in range(2, $max-nest) {
 	&-row {
 		overflow: visible;
 
-		margin-left: -12px;
+		margin-left: -7px;
+	}
+
+	&-indent {
+		left: 11px;
 	}
 
 	&-contents {
@@ -132,46 +174,30 @@ for i in range(2, $max-nest) {
 		}
 
 		&::before {
-			border-bottom: 1px dotted var(--color-tree-border);
+			border-bottom: 1px dotted var(--color-gray-text);
 
 			left: -6px;
 			top: 50%;
 			width: 7px;
 		}
-
-		// Doesn't work in search :/
-		[aria-expanded]:not([data-index="0"]) &::after {
-			border-right: 1px dotted var(--color-tree-border);
-
-			left: -12px;
-			bottom: calc(50% + 5px);
-			height: 7px;
-		}
 	}
 
 	&-twistie {
-		padding-right: 4px;
+		@extend .tree-item-icon;
 
-		&,
+		margin-right: var(--spacing-tree);
+
+		flex-shrink: 0;
+		z-index: 2;
+
 		&::before {
+			border-radius: 0;
 			transform: unset;
 		}
 
-		&::before {
-			--color-button-text: var(--color-window-text);
-
-			z-index: 2;
-		}
-
-		[aria-expanded] &::after {
-			content: '';
-
-			background-color: var(--color-window);
-			border: 1px solid var(--color-tree-border);
-
-			position: absolute;
-			box(7px);
-			z-index: 1;
+		&::after {
+			left: 1px;
+			width: 11px;
 		}
 	}
 
@@ -180,9 +206,9 @@ for i in range(2, $max-nest) {
 		height: calc(100% + 22px);
 
 		& > .indent-guide {
-			border-left: 1px dotted var(--color-tree-border);
+			border-left: 1px dotted var(--color-gray-text);
 
-			width: $icon-width + 4px;
+			width: calc(11px + var(--spacing-tree));
 			height: calc(100% - 1px);
 		}
 	}
@@ -194,7 +220,7 @@ for i in range(2, $max-nest) {
 		content: '';
 
 		background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA0AAAAQCAMAAAD6fQULAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAPUExURQAAAP///4eIj8DHyAAAAIf7VzIAAAAFdFJOU/////8A+7YOUwAAAAlwSFlzAAAOwwAADsMBx2+oZAAAADZJREFUGFdjYGFhYIRCIBPIYYJCIBtIICCQBwfMWHgMDCBFOOVA0lSVgwEQjxkBGIDuhgMGFgBmBADr9EYr2gAAAABJRU5ErkJggg==');
-		background-size: 13px 16px;
+		background-size: 13px var(--icon-size);
 		background-position: center;
 	}
 
@@ -202,24 +228,25 @@ for i in range(2, $max-nest) {
 		content: '';
 
 		background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA8AAAANCAMAAABBwMRzAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAASUExURYeIj8DHyP//AP///wAAAAAAAJRqB2kAAAAGdFJOU///////ALO/pL8AAAAJcEhZcwAADsMAAA7DAcdvqGQAAAA1SURBVBhXtYrRFQAQEMOCdv+VHcfDANKvtMVm4AWm1MguSI0ib9AuUHjuM9OPlh/7g7AupA6lNwF/p6NMjAAAAABJRU5ErkJggg==');
+		background-size: 15px;
 	}
 }
 
 // Overrides for files not at first level
 [role="treeitem"]:not([aria-expanded]):not([aria-level="1"]) {
 	.monaco-tl-contents::before {
-		border-left: 1px dotted var(--color-tree-border);
-		border-bottom: 1px dotted var(--color-tree-border);
+		border-left: 1px dotted var(--color-gray-text);
+		border-bottom: 1px dotted var(--color-gray-text);
 
-		left: $icon-width * -1;
+		left: calc(var(--icon-size) * -1);
 		top: -50%;
-		width: $icon-width - 4px;
+		width: calc(var(--icon-size) - var(--spacing-tree));
 		height: 100%;
 		z-index: 1;
 	}
 
 	.explorer-folders-view & .monaco-icon-label {
-		margin-left: -5px;
+		margin-left: -7px;
 	}
 
 	.search-view & {

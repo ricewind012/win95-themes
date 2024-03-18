@@ -1,9 +1,13 @@
 [role="tab"] {
-	margin: 2px 1px -2px 0;
+	cursor: unset;
+
+	&[aria-selected="true"]:not(.tab) {
+		margin-top: 1px;
+	}
 
 	.action-label {
-		font-size: var(--text-size);
-		font-family: var(--text-font-ui), codicon;
+		font-size: var(--text-ui-size);
+		font-family: var(--text-ui-font), codicon;
 		color: inherit;
 
 		padding: 0;
@@ -19,13 +23,7 @@
 
 // Editor
 .tab {
-	min-width: unset;
-
-	cursor: unset;
-
 	&:not([aria-selected="true"]) {
-		margin-bottom: -1px;
-
 		// !important
 		.monaco-workbench .part.editor > .content .editor-group-container[class] > .title &:hover {
 			background-color: var(--color-button-face);
@@ -35,19 +33,15 @@
 	&s {
 		--editor-group-tab-height: inherit;
 
-		background-color: var(--color-button-face);
+		background-color: transparent;
 
 		cursor: unset;
 
 		&,
 		&-container,
-		&-and-actions-container,
+		//&-and-actions-container,
 		.monaco-scrollable-element {
 			overflow: visible;
-		}
-
-		&-container {
-			padding-left: 4px;
 		}
 
 		&-border-bottom::after {
@@ -67,12 +61,9 @@
 	&-label {
 		padding: 0;
 
-		a {
-			font();
-		}
-
 		a,
 		span {
+			font();
 			cursor: unset;
 		}
 	}
@@ -101,47 +92,40 @@
 	overflow: visible;
 
 	padding: 0;
-	padding-left: 4px;
-	margin-bottom: 2px;
 
 	.monaco-action-bar {
-		line-height: unset;
 		height: unset;
 
-		.action {
-			&-item {
-				height: unset;
+		.action-item {
+			&::before,
+			&::after {
+				opacity: 1;
 
-				&::before,
-				&::after {
-					opacity: 1;
+				margin: 0;
 
-					margin: 0;
-
-					display: block;
-				}
+				display: block;
 			}
 		}
 	}
 
 	& + .content {
-		--tabs-compensation: 7px;
+		--tabs-compensation: 8px;
 
 		& > .composite {
 			@extend [role="tabpanel"];
 
+			padding: calc(var(--border-size) + 2px);
+
 			.pane-header {
-				margin-bottom: 3px;
+				margin-bottom: 2px;
 			}
 
 			.actions {
-				padding: 1px 0;
-
 				display: block;
 			}
 
 			&:not(.extensions-viewlet) .monaco-list {
-				height: calc(100% - 20px);
+				height: calc(100% - 21px);
 			}
 		}
 	}
@@ -150,14 +134,6 @@
 // Panel
 .part.panel {
 	.monaco-action-bar {
-		font();
-
-		padding-top: 2px;
-		margin-bottom: 1px;
-
-		// KILL YOURSELF
-		position: relative;
-		bottom: 3px;
 		height: 100%;
 
 		.action-item:not(.select-container) {
@@ -165,10 +141,6 @@
 			text-transform: unset;
 
 			cursor: unset;
-
-			&[aria-selected="true"] {
-				margin-bottom: -3px;
-			}
 
 			&::before,
 			&::after {
@@ -199,7 +171,7 @@
 
 // Settings
 .settings-tabs-widget {
-	margin-left: 4px;
+	@extend [role="tablist"];
 
 	// !important
 	& > .monaco-action-bar .action {
@@ -211,14 +183,16 @@
 			@extend [role="tab"];
 
 			opacity: 1;
+			font-size: var(--text-ui-size);
+
 			overflow: visible;
-			font-size: var(--text-size);
 
 			&.checked {
 				// Has [role="checkbox"] for some reason.
 				@extend [role="tab"][aria-selected="true"];
 
 				background-color: var(--color-button-face);
+				margin-top: 1px;
 			}
 		}
 	}
@@ -226,11 +200,11 @@
 
 // Marketplace
 .navbar {
+	@extend [role="tablist"];
+
 	font();
 	border: none;
-
 	padding: 0;
-	padding-left: 4px;
 
 	height: unset;
 }
@@ -238,14 +212,14 @@
 .action {
 	// !important
 	.extension-editor > .body > .navbar > .monaco-action-bar > &s-container > &-item > &-label {
+		@extend $text-reset;
 		@extend [role="tab"];
-
-		font();
-		text-transform: unset;
 
 		&[aria-checked="true"] {
 			// Has [role="checkbox"] for some reason.
 			@extend [role="tab"][aria-selected="true"];
+
+			margin-top: 1px;
 		}
 	}
 }

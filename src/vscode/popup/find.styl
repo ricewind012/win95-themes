@@ -1,5 +1,6 @@
 .find-widget {
-  @extend body;
+  @extend .window;
+  @extend .window.child;
 
   border-radius: 0;
 
@@ -7,7 +8,8 @@
 
   // Horrible layout, kill yourself
   .button {
-    @extend $small-button;
+    @extend button;
+    @extend .titlebar-button;
 
     inset: 0;
 

@@ -1,10 +1,15 @@
 .monaco {
 	&-select-box-dropdown-container {
-		@extend body;
+		@extend .window;
+		@extend .window.child;
 
 		border-radius: 0;
 
 		width: 320px;
+
+		.monaco-list {
+			height: calc(100% - 8px);
+		}
 
 		& > .select-box {
 			&-dropdown-list-container,
