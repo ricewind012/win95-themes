@@ -1103,7 +1103,6 @@ kbd {
 legend,
 .DialogControlsSectionHeader,
 .DialogSubHeader,
-.PopupFullWindow > .ModalPosition .DialogBodyText,
 [class*="appproperties_Title_"],
 [class*="librarysettings_DescriptionText_"],
 [class*="remoteplaysettings_TableHeader_"] > :first-child,
@@ -1479,7 +1478,6 @@ div:not([class]) > [class*="gamepaddialog_Field_"],
 .DialogBodyText,
 .DialogControlsSectionHeader,
 .DialogSubHeader,
-.PopupFullWindow > .ModalPosition .DialogBodyText,
 [class*="appproperties_Title_"],
 [class*="librarysettings_DescriptionText_"],
 [class*="remoteplaysettings_TableHeader_"] > :first-child,
@@ -1588,7 +1586,6 @@ div:not([class]) > [class*="gamepaddialog_Field_"],
 }
 .DialogControlsSectionHeader,
 .DialogSubHeader,
-.PopupFullWindow > .ModalPosition .DialogBodyText,
 [class*="appproperties_Title_"],
 [class*="librarysettings_DescriptionText_"],
 [class*="remoteplaysettings_TableHeader_"] > :first-child,
@@ -1828,6 +1825,10 @@ button,
   margin: 0 !important;
   gap: 8px !important;
 }
+.DialogBodyText {
+  padding: 0 !important;
+  margin-bottom: 4px !important;
+}
 .DialogFooter {
   padding-top: 6px !important;
 }
@@ -2007,10 +2008,6 @@ button,
 [class*="aboutsteamdialog_AboutSteamDialog_"] .DialogContent_InnerWidth {
   height: 100% !important;
 }
-.PopupFullWindow > .ModalPosition [class*="aboutsteamdialog_DialogBodyText_"] {
-  position: initial !important;
-  flex-grow: 1 !important;
-}
 [class*="accountpanel_FatButton_"] svg,
 [class*="accountpanel_Details_"] {
   display: none !important;
@@ -2036,10 +2033,6 @@ button,
   opacity: 1 !important;
   text-overflow: ellipsis !important;
   padding: 2px 7px !important;
-}
-.PopupFullWindow > .ModalPosition [class*="addnonsteamgamedialog_DialogBodyText_"] {
-  margin-bottom: 4px !important;
-  position: initial !important;
 }
 [class*="addnonsteamgamedialog_Footer_"] {
   gap: 6px !important;
@@ -2743,9 +2736,6 @@ div[class*="gameinfodialog_DialogBody_"] {
   gap: 0 !important;
 }
 div[class*="gameinfodialog_DialogBody_"] .DialogBodyText {
-  padding: 0 !important;
-  position: unset !important;
-  top: unset !important;
   display: flex !important;
   flex-direction: column !important;
 }
@@ -3040,10 +3030,6 @@ div:not([class]) > [class*="gamepaddialog_Field_"] {
 }
 [class*="gamepadslider_SliderHandleContainer_"] {
   transform: translateX(calc(-100% * var(--inverse-normalized-value) + 7px * var(--inverse-normalized-value))) !important;
-}
-.PopupFullWindow > .ModalPosition [class*="hardwaresurveydialog_DialogBodyText_"] {
-  margin-bottom: 4px !important;
-  position: initial !important;
 }
 [class*="hardwaresurveydialog_HardwareSurveyDialog_"] .DialogButton.Primary {
   width: 148px !important;
@@ -3389,10 +3375,6 @@ div:not([class]) > [class*="gamepaddialog_Field_"] {
   padding: 0 !important;
   width: var(--separator-size) !important;
   margin-right: calc(var(--separator-size) / -2) !important;
-}
-.ModalDialogPopup > .ModalDialogBody [class*="playersdialog_DescriptionText_"] {
-  margin-bottom: 4px !important;
-  position: initial !important;
 }
 [class*="playersdialog_PlayersDialog_"] .DialogBody {
   padding: 0 !important;
@@ -3951,10 +3933,6 @@ body:has(> #popup_target > [class*="steamdesktopoverlay_Wrapper_"]) {
 [class*="systemsettings_SteamRuntimeSystemInfoDialogContent_"] .DialogBody {
   box-shadow: none !important;
   padding: 0 !important;
-}
-.PopupFullWindow > .ModalPosition [class*="systemsettings_SteamRuntimeSystemInfoDialogContent_"] .DialogBodyText {
-  margin-bottom: 9px !important;
-  position: initial !important;
 }
 [class*="systemsettings_SteamRuntimeSystemInfoContainer_"] {
   margin-top: 4px !important;
