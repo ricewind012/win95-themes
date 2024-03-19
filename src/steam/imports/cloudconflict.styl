@@ -1,0 +1,54 @@
+// TODO: revisit this again & simplify, because I can't now
+#Popup {
+	.DialogBody {
+		box-shadow: none;
+
+		padding: 0;
+	}
+}
+
+#ConflictChoiceIcon {
+	width: 24px;
+	height: 24px;
+}
+
+#ConflictChoiceIcon,
+#ConflictChoiceText {
+	margin-left: var(--spacing-label);
+}
+
+#DialogChoiceButton {
+	padding: 0;
+	margin: 0;
+
+	width: 100%;
+
+	&,
+	&:active,
+	&:focus {
+		outline: none;
+		box-shadow: none;
+	}
+}
+
+#DialogChoiceRow {
+	height: unset;
+}
+
+#RadioButton {
+	@extend input[type="radio"];
+
+	// TODO: this matches, but doesn't show in devtools, wtf
+	#Active & {
+		@extend input[type="radio"]:checked;
+	}
+
+	#DialogChoiceButton:active & {
+		@extend input[type="radio"]:active;
+	}
+}
+
+#TitleWarning {
+	@extend $text-reset;
+}
+

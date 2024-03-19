@@ -1,3 +1,17 @@
+#OverlayPopup {
+	background: none;
+	padding: var(--dialog-spacing);
+
+	height: calc(100% - 19px);
+}
+
+#WindowControls {
+	margin: calc(var(--dialog-spacing) * -1);
+	margin-bottom: var(--dialog-spacing);
+
+	height: unset;
+}
+
 #Wrapper {
 	/{s('body:has(> #%s > %s)', popup_target, unquote(selector()))} {
 		background-color: transparent;

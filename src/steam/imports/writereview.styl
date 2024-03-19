@@ -1,5 +1,58 @@
+#ButtonText {
+	margin: 0;
+}
+
+#DescribeGame,
+#OptionsContainer {
+	margin-top: 16px;
+	margin-bottom: var(--text-spacing);
+
+	position: relative;
+
+	&::before {
+		content: '';
+
+		position: absolute;
+		top: -10px;
+		width: 100%;
+
+		@extend hr;
+	}
+}
+
+#Header {
+	color: inherit;
+	font-size: var(--text-header-size);
+}
+
 #LeftContainer {
 	@extend $text-reset;
+}
+
+#OptionButton {
+	background: none;
+
+	width: unset;
+}
+
+#OptionDesc {
+	text-align: left;
+	padding: 0;
+	margin-top: var(--text-spacing);
+}
+
+#OptionsContainer {
+	background-color: transparent;
+	padding: 0;
+
+	& > div {
+		border: none;
+		padding: 0;
+	}
+}
+
+#OptionSvg {
+	display: none;
 }
 
 #Playtime,
@@ -11,10 +64,35 @@
 	background-color: transparent;
 
 	padding: 0;
+	margin: var(--text-spacing) 0;
 }
 
-#ReviewThumbButton:not(#NoIcon) {
+#ReviewThumbButton {
+	background: none;
+
+	&#Selected {
+		@extend .icon-button:active;
+	}
+
+	span {
+		padding-left: 10px;
+	}
+}
+
+#ReviewSettingsChecks {
 	margin: 0;
+}
+
+#ReviewSettingsContainer {
+	margin-top: var(--text-spacing);
+}
+
+#ReviewSettingsRow {
+	align-items: center;
+
+	& > span {
+		margin-right: var(--text-spacing);
+	}
 }
 
 #ThumbIcon {
@@ -23,4 +101,13 @@
 	left: 16px;
 	width: 16px;
 	height: 16px;
+
+	&#Down {
+		top: 3px;
+	}
 }
+
+#WriteReviewContainer {
+	font-size: var(--text-ui-size);
+}
+

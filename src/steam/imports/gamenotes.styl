@@ -1,0 +1,47 @@
+.DialogLabel {
+	margin: 0;
+}
+
+#CloseWindowButton {
+	height: unset;
+}
+
+#EditorInput {
+	@extend textarea;
+
+	& > .ProseMirror {
+		overflow: auto;
+
+		padding: 0;
+	}
+}
+
+#NoteActions {
+	gap: 6px;
+	margin-top: 6px;
+
+	position: unset;
+	justify-content: right;
+
+	.DialogButton {
+		opacity: 1;
+	}
+
+	svg {
+		width: 16px;
+		height: 16px;
+	}
+}
+
+#NoteEditorArea {
+	margin: 0;
+}
+
+#Toolbar {
+	padding: 0;
+
+	& > div {
+		height: unset;
+	}
+}
+

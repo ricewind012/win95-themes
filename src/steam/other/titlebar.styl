@@ -81,6 +81,19 @@
 		}
 	}
 
+	// Used only in overlay browser ?
+	&-children {
+		@extend .titlebar-name;
+
+		font-size: var(--font-ui-size);
+		color: var(--color-inactive-caption-text);
+		padding-left: calc(var(--icon-size) + 4px);
+
+		.WindowFocus & {
+			color: var(--color-active-caption-text);
+		}
+	}
+
 	&-icon {
 		@extend button;
 		@extend .titlebar-button;

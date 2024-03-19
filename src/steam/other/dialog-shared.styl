@@ -71,8 +71,19 @@
 		}
 	}
 
-	&InputPlaceholder {
-		font-style: normal;
+	&Input {
+		// It's an <input>, but overlay browser has type="input"
+		background: var(--color-window);
+		color: var(--color-window-text);
+		box-shadow: none;
+
+		&LabelGroup {
+			margin: 0;
+		}
+
+		&Placeholder {
+			font-style: normal;
+		}
 	}
 
 	&MenuPosition ._DialogInputContainer {

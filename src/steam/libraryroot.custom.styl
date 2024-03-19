@@ -22,6 +22,20 @@ $content-container-alt {
 	}
 }
 
+$dialog-title {
+	color: var(--color-inactive-caption-text);
+	font: var(--text-ui);
+	font-weight: bold;
+
+	position: fixed;
+	left: 23px;
+	top: 6px;
+
+	.WindowFocus & {
+		color: var(--color-active-caption-text);
+	}
+}
+
 body {
 	@extend .window;
 }

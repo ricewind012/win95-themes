@@ -136,6 +136,7 @@
 input[type="radio"],
 .DialogCheckbox[type="radio"],
 [class*="gamepaddialog_Toggle_"][type="radio"],
+[class*="cloudconflict_RadioButton_"],
 [class*="radio_Button_"] {
   background: linear-gradient(90deg, var(--color-gray-text) 1px, var(--color-gray-text)) 5px 1px, linear-gradient(90deg, var(--color-gray-text) 1px, var(--color-gray-text)) 6px 1px, linear-gradient(90deg, var(--color-gray-text) 1px, var(--color-gray-text)) 7px 1px, linear-gradient(90deg, var(--color-gray-text) 1px, var(--color-gray-text)) 8px 1px, linear-gradient(90deg, var(--color-gray-text) 1px, var(--color-gray-text)) 3px 2px, linear-gradient(90deg, var(--color-gray-text) 1px, var(--color-gray-text)) 4px 2px, linear-gradient(90deg, var(--color-button-shadow-dark) 1px, var(--color-button-shadow-dark)) 5px 2px, linear-gradient(90deg, var(--color-button-shadow-dark) 1px, var(--color-button-shadow-dark)) 6px 2px, linear-gradient(90deg, var(--color-button-shadow-dark) 1px, var(--color-button-shadow-dark)) 7px 2px, linear-gradient(90deg, var(--color-button-shadow-dark) 1px, var(--color-button-shadow-dark)) 8px 2px, linear-gradient(90deg, var(--color-gray-text) 1px, var(--color-gray-text)) 9px 2px, linear-gradient(90deg, var(--color-gray-text) 1px, var(--color-gray-text)) 10px 2px, linear-gradient(90deg, var(--color-gray-text) 1px, var(--color-gray-text)) 2px 3px, linear-gradient(90deg, var(--color-button-shadow-dark) 1px, var(--color-button-shadow-dark)) 3px 3px, linear-gradient(90deg, var(--color-button-shadow-dark) 1px, var(--color-button-shadow-dark)) 4px 3px, linear-gradient(90deg, var(--color-to-change) 1px, var(--color-to-change)) 5px 3px, linear-gradient(90deg, var(--color-to-change) 1px, var(--color-to-change)) 6px 3px, linear-gradient(90deg, var(--color-to-change) 1px, var(--color-to-change)) 7px 3px, linear-gradient(90deg, var(--color-to-change) 1px, var(--color-to-change)) 8px 3px, linear-gradient(90deg, var(--color-button-shadow-dark) 1px, var(--color-button-shadow-dark)) 9px 3px, linear-gradient(90deg, var(--color-button-shadow-dark) 1px, var(--color-button-shadow-dark)) 10px 3px, linear-gradient(90deg, var(--color-window) 1px, var(--color-window)) 11px 3px, linear-gradient(90deg, var(--color-gray-text) 1px, var(--color-gray-text)) 2px 4px, linear-gradient(90deg, var(--color-button-shadow-dark) 1px, var(--color-button-shadow-dark)) 3px 4px, linear-gradient(90deg, var(--color-to-change) 1px, var(--color-to-change)) 4px 4px, linear-gradient(90deg, var(--color-to-change) 1px, var(--color-to-change)) 5px 4px, linear-gradient(90deg, var(--color-to-change) 1px, var(--color-to-change)) 6px 4px, linear-gradient(90deg, var(--color-to-change) 1px, var(--color-to-change)) 7px 4px, linear-gradient(90deg, var(--color-to-change) 1px, var(--color-to-change)) 8px 4px, linear-gradient(90deg, var(--color-to-change) 1px, var(--color-to-change)) 9px 4px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) 10px 4px, linear-gradient(90deg, var(--color-window) 1px, var(--color-window)) 11px 4px, linear-gradient(90deg, var(--color-gray-text) 1px, var(--color-gray-text)) 1px 5px, linear-gradient(90deg, var(--color-button-shadow-dark) 1px, var(--color-button-shadow-dark)) 2px 5px, linear-gradient(90deg, var(--color-to-change) 1px, var(--color-to-change)) 3px 5px, linear-gradient(90deg, var(--color-to-change) 1px, var(--color-to-change)) 4px 5px, linear-gradient(90deg, var(--color-to-change) 1px, var(--color-to-change)) 5px 5px, linear-gradient(90deg, var(--color-to-change) 1px, var(--color-to-change)) 6px 5px, linear-gradient(90deg, var(--color-to-change) 1px, var(--color-to-change)) 7px 5px, linear-gradient(90deg, var(--color-to-change) 1px, var(--color-to-change)) 8px 5px, linear-gradient(90deg, var(--color-to-change) 1px, var(--color-to-change)) 9px 5px, linear-gradient(90deg, var(--color-to-change) 1px, var(--color-to-change)) 10px 5px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) 11px 5px, linear-gradient(90deg, var(--color-window) 1px, var(--color-window)) 12px 5px, linear-gradient(90deg, var(--color-gray-text) 1px, var(--color-gray-text)) 1px 6px, linear-gradient(90deg, var(--color-button-shadow-dark) 1px, var(--color-button-shadow-dark)) 2px 6px, linear-gradient(90deg, var(--color-to-change) 1px, var(--color-to-change)) 3px 6px, linear-gradient(90deg, var(--color-to-change) 1px, var(--color-to-change)) 4px 6px, linear-gradient(90deg, var(--color-to-change) 1px, var(--color-to-change)) 5px 6px, linear-gradient(90deg, var(--color-to-change) 1px, var(--color-to-change)) 6px 6px, linear-gradient(90deg, var(--color-to-change) 1px, var(--color-to-change)) 7px 6px, linear-gradient(90deg, var(--color-to-change) 1px, var(--color-to-change)) 8px 6px, linear-gradient(90deg, var(--color-to-change) 1px, var(--color-to-change)) 9px 6px, linear-gradient(90deg, var(--color-to-change) 1px, var(--color-to-change)) 10px 6px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) 11px 6px, linear-gradient(90deg, var(--color-window) 1px, var(--color-window)) 12px 6px, linear-gradient(90deg, var(--color-gray-text) 1px, var(--color-gray-text)) 1px 7px, linear-gradient(90deg, var(--color-button-shadow-dark) 1px, var(--color-button-shadow-dark)) 2px 7px, linear-gradient(90deg, var(--color-to-change) 1px, var(--color-to-change)) 3px 7px, linear-gradient(90deg, var(--color-to-change) 1px, var(--color-to-change)) 4px 7px, linear-gradient(90deg, var(--color-to-change) 1px, var(--color-to-change)) 5px 7px, linear-gradient(90deg, var(--color-to-change) 1px, var(--color-to-change)) 6px 7px, linear-gradient(90deg, var(--color-to-change) 1px, var(--color-to-change)) 7px 7px, linear-gradient(90deg, var(--color-to-change) 1px, var(--color-to-change)) 8px 7px, linear-gradient(90deg, var(--color-to-change) 1px, var(--color-to-change)) 9px 7px, linear-gradient(90deg, var(--color-to-change) 1px, var(--color-to-change)) 10px 7px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) 11px 7px, linear-gradient(90deg, var(--color-window) 1px, var(--color-window)) 12px 7px, linear-gradient(90deg, var(--color-gray-text) 1px, var(--color-gray-text)) 1px 8px, linear-gradient(90deg, var(--color-button-shadow-dark) 1px, var(--color-button-shadow-dark)) 2px 8px, linear-gradient(90deg, var(--color-to-change) 1px, var(--color-to-change)) 3px 8px, linear-gradient(90deg, var(--color-to-change) 1px, var(--color-to-change)) 4px 8px, linear-gradient(90deg, var(--color-to-change) 1px, var(--color-to-change)) 5px 8px, linear-gradient(90deg, var(--color-to-change) 1px, var(--color-to-change)) 6px 8px, linear-gradient(90deg, var(--color-to-change) 1px, var(--color-to-change)) 7px 8px, linear-gradient(90deg, var(--color-to-change) 1px, var(--color-to-change)) 8px 8px, linear-gradient(90deg, var(--color-to-change) 1px, var(--color-to-change)) 9px 8px, linear-gradient(90deg, var(--color-to-change) 1px, var(--color-to-change)) 10px 8px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) 11px 8px, linear-gradient(90deg, var(--color-window) 1px, var(--color-window)) 12px 8px, linear-gradient(90deg, var(--color-gray-text) 1px, var(--color-gray-text)) 2px 9px, linear-gradient(90deg, var(--color-button-shadow-dark) 1px, var(--color-button-shadow-dark)) 3px 9px, linear-gradient(90deg, var(--color-to-change) 1px, var(--color-to-change)) 4px 9px, linear-gradient(90deg, var(--color-to-change) 1px, var(--color-to-change)) 5px 9px, linear-gradient(90deg, var(--color-to-change) 1px, var(--color-to-change)) 6px 9px, linear-gradient(90deg, var(--color-to-change) 1px, var(--color-to-change)) 7px 9px, linear-gradient(90deg, var(--color-to-change) 1px, var(--color-to-change)) 8px 9px, linear-gradient(90deg, var(--color-to-change) 1px, var(--color-to-change)) 9px 9px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) 10px 9px, linear-gradient(90deg, var(--color-window) 1px, var(--color-window)) 11px 9px, linear-gradient(90deg, var(--color-gray-text) 1px, var(--color-gray-text)) 2px 10px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) 3px 10px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) 4px 10px, linear-gradient(90deg, var(--color-to-change) 1px, var(--color-to-change)) 5px 10px, linear-gradient(90deg, var(--color-to-change) 1px, var(--color-to-change)) 6px 10px, linear-gradient(90deg, var(--color-to-change) 1px, var(--color-to-change)) 7px 10px, linear-gradient(90deg, var(--color-to-change) 1px, var(--color-to-change)) 8px 10px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) 9px 10px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) 10px 10px, linear-gradient(90deg, var(--color-window) 1px, var(--color-window)) 11px 10px, linear-gradient(90deg, var(--color-window) 1px, var(--color-window)) 3px 11px, linear-gradient(90deg, var(--color-window) 1px, var(--color-window)) 4px 11px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) 5px 11px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) 6px 11px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) 7px 11px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) 8px 11px, linear-gradient(90deg, var(--color-window) 1px, var(--color-window)) 9px 11px, linear-gradient(90deg, var(--color-window) 1px, var(--color-window)) 10px 11px, linear-gradient(90deg, var(--color-window) 1px, var(--color-window)) 5px 12px, linear-gradient(90deg, var(--color-window) 1px, var(--color-window)) 6px 12px, linear-gradient(90deg, var(--color-window) 1px, var(--color-window)) 7px 12px, linear-gradient(90deg, var(--color-window) 1px, var(--color-window)) 8px 12px !important;
   background-repeat: no-repeat !important;
@@ -193,7 +194,9 @@ hr,
 [class*="libraryhomeshowcases_DropDownItems_"][class*="libraryhomeshowcases_OptionsRule_"]::before,
 [class*="screenshotmanagerdialog_Line_"],
 [class*="steamdesktop_TitleBar_"]::before,
-[class*="steamdesktop_SuperNavBar_"]::after {
+[class*="steamdesktop_SuperNavBar_"]::after,
+[class*="writereview_DescribeGame_"]::before,
+[class*="writereview_OptionsContainer_"]::before {
   border: none !important;
   border-top: 1px solid var(--color-button-highlight) !important;
   box-shadow: 0 -1px var(--color-button-shadow) !important;
@@ -258,15 +261,18 @@ textarea,
 [class*="comment_thread_Reactions_"],
 [class*="contentmanagement_AppsGrid_"],
 [class*="contentmanagement_DriveSettingsButton_"],
+[class*="desktopbrowser_NavigationButton_"],
 [class*="downloads_AutoUpdateSettings_"],
 [class*="downloads_Section_"],
 [class*="gameinfodialog_Header_"],
 [class*="gamelistdropdown_MenuHeader_"],
 [class*="gamelistdropdown_CheckboxWithImage_"],
 [class*="gamelistsearchbar_AdvancedSearchContainer_"],
+[class*="gamenotes_EditorInput_"],
 div:not([class]) > [class*="gamepaddialog_Field_"]:not([class*="settings_OverlayTabSetting_"]),
 [class*="gamepaddialog_Toggle_"],
 [class*="installrequest_FolderSelector_"],
+[class*="launchoptionsdialog_ButtonContainer_"] > div,
 [class*="libraryhomenewupdates_SettingsButton_"],
 [class*="libraryhomenewupdates_EventOptions_"] > div,
 [class*="libraryhomenewupdates_GameIconAndName_"],
@@ -328,15 +334,18 @@ textarea:disabled,
 [class*="comment_thread_Reactions_"]:disabled,
 [class*="contentmanagement_AppsGrid_"]:disabled,
 [class*="contentmanagement_DriveSettingsButton_"]:disabled,
+[class*="desktopbrowser_NavigationButton_"]:disabled,
 [class*="downloads_AutoUpdateSettings_"]:disabled,
 [class*="downloads_Section_"]:disabled,
 [class*="gameinfodialog_Header_"]:disabled,
 [class*="gamelistdropdown_MenuHeader_"]:disabled,
 [class*="gamelistdropdown_CheckboxWithImage_"]:disabled,
 [class*="gamelistsearchbar_AdvancedSearchContainer_"]:disabled,
+[class*="gamenotes_EditorInput_"]:disabled,
 div:not([class]) > [class*="gamepaddialog_Field_"]:not([class*="settings_OverlayTabSetting_"]):disabled,
 [class*="gamepaddialog_Toggle_"]:disabled,
 [class*="installrequest_FolderSelector_"]:disabled,
+[class*="launchoptionsdialog_ButtonContainer_"] > div:disabled,
 [class*="libraryhomenewupdates_SettingsButton_"]:disabled,
 [class*="libraryhomenewupdates_EventOptions_"] > div:disabled,
 [class*="libraryhomenewupdates_GameIconAndName_"]:disabled,
@@ -363,6 +372,7 @@ div:not([class]) > [class*="gamepaddialog_Field_"]:not([class*="settings_Overlay
 [class*="titlebarcontrols_AccountMenu_"]:disabled,
 [class*="titlebarcontrols_Button_"]:disabled,
 .DialogButton.Disabled,
+[class*="desktopbrowser_NavigationButton_"][class*="desktopbrowser_Disabled_"],
 [class*="savecollectiondialog_Disabled_"] > .DialogButton,
 [class*="screenshotmanagerdialog_ButtonBox_"]:not([class*="screenshotmanagerdialog_Combobox_"][class*="screenshotmanagerdialog_Disabled_"],
 [class*="screenshotmanagerdialog_Dropdown_"])[class*="screenshotmanagerdialog_Disabled_"],
@@ -397,12 +407,15 @@ textarea,
 [class*="comment_thread_CommentButton_"],
 [class*="comment_thread_Reactions_"],
 [class*="contentmanagement_DriveSettingsButton_"],
+[class*="desktopbrowser_NavigationButton_"],
 [class*="downloads_AutoUpdateSettings_"],
 [class*="gameinfodialog_Header_"],
 [class*="gamelistdropdown_MenuHeader_"],
 [class*="gamelistdropdown_CheckboxWithImage_"],
 [class*="gamelistsearchbar_AdvancedSearchContainer_"],
+[class*="gamenotes_EditorInput_"],
 [class*="gamepaddialog_Toggle_"],
+[class*="launchoptionsdialog_ButtonContainer_"] > div,
 [class*="libraryhomenewupdates_SettingsButton_"],
 [class*="libraryhomenewupdates_EventOptions_"] > div,
 [class*="libraryhomenewupdates_GameIconAndName_"],
@@ -442,7 +455,9 @@ input[type="search"],
 input[type="password"],
 .DialogDropDown,
 [class*="bottombar_AddGameButton_"],
+[class*="desktopbrowser_URLBarText_"],
 [class*="gamelistdropdown_MenuHeader_"],
+[class*="gamenotes_EditorInput_"],
 [class*="screenshotmanagerdialog_Combobox_"],
 [class*="screenshotmanagerdialog_Dropdown_"],
 [class*="sortingdropdowncontrolbutton_SortingDropDownControlButton_"],
@@ -474,10 +489,12 @@ input:where([type="button"],
 [class*="comment_thread_CommentButton_"],
 [class*="comment_thread_Reactions_"],
 [class*="contentmanagement_DriveSettingsButton_"],
+[class*="desktopbrowser_NavigationButton_"],
 [class*="downloads_AutoUpdateSettings_"],
 [class*="gameinfodialog_Header_"],
 [class*="gamelistdropdown_CheckboxWithImage_"],
 [class*="gamelistsearchbar_AdvancedSearchContainer_"],
+[class*="launchoptionsdialog_ButtonContainer_"] > div,
 [class*="libraryhomenewupdates_SettingsButton_"],
 [class*="libraryhomenewupdates_EventOptions_"] > div,
 [class*="libraryhomenewupdates_GameIconAndName_"],
@@ -520,10 +537,12 @@ input:where([type="button"]:focus,
 [class*="comment_thread_CommentButton_"]:focus,
 [class*="comment_thread_Reactions_"]:focus,
 [class*="contentmanagement_DriveSettingsButton_"]:focus,
+[class*="desktopbrowser_NavigationButton_"]:focus,
 [class*="downloads_AutoUpdateSettings_"]:focus,
 [class*="gameinfodialog_Header_"]:focus,
 [class*="gamelistdropdown_CheckboxWithImage_"]:focus,
 [class*="gamelistsearchbar_AdvancedSearchContainer_"]:focus,
+[class*="launchoptionsdialog_ButtonContainer_"] > div:focus,
 [class*="libraryhomenewupdates_SettingsButton_"]:focus,
 [class*="libraryhomenewupdates_EventOptions_"] > div:focus,
 [class*="libraryhomenewupdates_GameIconAndName_"]:focus,
@@ -563,10 +582,12 @@ input:where([type="button"]:active,
 [class*="comment_thread_CommentButton_"]:active,
 [class*="comment_thread_Reactions_"]:active,
 [class*="contentmanagement_DriveSettingsButton_"]:active,
+[class*="desktopbrowser_NavigationButton_"]:active,
 [class*="downloads_AutoUpdateSettings_"]:active,
 [class*="gameinfodialog_Header_"]:active,
 [class*="gamelistdropdown_CheckboxWithImage_"]:active,
 [class*="gamelistsearchbar_AdvancedSearchContainer_"]:active,
+[class*="launchoptionsdialog_ButtonContainer_"] > div:active,
 [class*="libraryhomenewupdates_SettingsButton_"]:active,
 [class*="libraryhomenewupdates_EventOptions_"] > div:active,
 [class*="libraryhomenewupdates_GameIconAndName_"]:active,
@@ -602,8 +623,11 @@ input:where([type="button"]:active,
 [class*="gamelistdropdown_CheckboxWithImage_"][selected],
 [class*="screenshotmanagerdialog_ButtonGroup_"]:last-child [class*="screenshotmanagerdialog_ButtonBox_"][selected],
 [class*="gamelistdropdown_CheckboxWithImage_"][class*="gamelistdropdown_Active_"],
+[class*="prosemirror_CommandButton_"]:active,
+[class*="prosemirror_CommandButton_"][class*="prosemirror_Toggled_"],
 [class*="screenshotmanagerdialog_ButtonGroup_"]:last-child [class*="screenshotmanagerdialog_ButtonBox_"]:has(> [class*="screenshotmanagerdialog_Active_"]),
-[class*="supernav_SuperNavMenu_"][class*="supernav_Selected_"] {
+[class*="supernav_SuperNavMenu_"][class*="supernav_Selected_"],
+[class*="writereview_ReviewThumbButton_"][class*="writereview_Selected_"] {
   background: var(--checkerboard) !important;
   box-shadow: var(--border-button-sunken) !important;
 }
@@ -614,8 +638,11 @@ input:where([type="button"]:active,
 [class*="gamelistdropdown_CheckboxWithImage_"][selected]::before,
 [class*="screenshotmanagerdialog_ButtonGroup_"]:last-child [class*="screenshotmanagerdialog_ButtonBox_"][selected]::before,
 [class*="gamelistdropdown_CheckboxWithImage_"][class*="gamelistdropdown_Active_"]::before,
+[class*="prosemirror_CommandButton_"]:active::before,
+[class*="prosemirror_CommandButton_"][class*="prosemirror_Toggled_"]::before,
 [class*="screenshotmanagerdialog_ButtonGroup_"]:last-child [class*="screenshotmanagerdialog_ButtonBox_"]:has(> [class*="screenshotmanagerdialog_Active_"])::before,
-[class*="supernav_SuperNavMenu_"][class*="supernav_Selected_"]::before {
+[class*="supernav_SuperNavMenu_"][class*="supernav_Selected_"]::before,
+[class*="writereview_ReviewThumbButton_"][class*="writereview_Selected_"]::before {
   inset: 1px !important;
 }
 .icon-button::before,
@@ -641,6 +668,7 @@ input[type="radio"],
 .DialogCheckbox[type="radio"],
 [class*="gamepaddialog_Toggle_"][type="radio"],
 .DialogCheckbox,
+[class*="cloudconflict_RadioButton_"],
 [class*="gamepaddialog_Toggle_"],
 [class*="radio_Button_"] {
   --color-to-change: var(--color-window) !important;
@@ -654,6 +682,7 @@ input[type="radio"]:active,
 .DialogCheckbox[type="radio"]:active,
 [class*="gamepaddialog_Toggle_"][type="radio"]:active,
 .DialogCheckbox:active,
+[class*="cloudconflict_RadioButton_"]:active,
 [class*="gamepaddialog_Toggle_"]:active,
 [class*="radio_Button_"]:active,
 input[type="checkbox"]:disabled,
@@ -663,8 +692,10 @@ input[type="radio"]:disabled,
 .DialogCheckbox[type="radio"]:disabled,
 [class*="gamepaddialog_Toggle_"][type="radio"]:disabled,
 .DialogCheckbox:disabled,
+[class*="cloudconflict_RadioButton_"]:disabled,
 [class*="gamepaddialog_Toggle_"]:disabled,
-[class*="radio_Button_"]:disabled {
+[class*="radio_Button_"]:disabled,
+[class*="cloudconflict_DialogChoiceButton_"]:active [class*="cloudconflict_RadioButton_"] {
   --color-to-change: var(--color-button-face) !important;
 }
 input[type="checkbox"]:checked::before,
@@ -674,9 +705,11 @@ input[type="radio"]:checked::before,
 .DialogCheckbox[type="radio"]:checked::before,
 [class*="gamepaddialog_Toggle_"][type="radio"]:checked::before,
 .DialogCheckbox:checked::before,
+[class*="cloudconflict_RadioButton_"]:checked::before,
 [class*="gamepaddialog_Toggle_"]:checked::before,
 [class*="radio_Button_"]:checked::before,
 .DialogCheckbox.Active::before,
+[class*="cloudconflict_Active_"] [class*="cloudconflict_RadioButton_"]::before,
 [class*="gamepaddialog_Toggle_"][class*="gamepaddialog_On_"]::before,
 [class*="radio_Button_"][class*="radio_Active_"]::before,
 [class*="rootmenu_Icon_"]:not(:empty)::before {
@@ -702,6 +735,7 @@ input[type="checkbox"],
 input[type="radio"],
 .DialogCheckbox[type="radio"],
 [class*="gamepaddialog_Toggle_"][type="radio"],
+[class*="cloudconflict_RadioButton_"],
 [class*="radio_Button_"] {
   --control-img: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0IDQiPjxzdHlsZT5yZWN0e2hlaWdodDoxcHh9PC9zdHlsZT48cmVjdCB4PSIxIiB3aWR0aD0iMiIvPjxyZWN0IHk9IjEiIHdpZHRoPSI0Ii8+PHJlY3QgeT0iMiIgd2lkdGg9IjQiLz48cmVjdCB4PSIxIiB5PSIzIiB3aWR0aD0iMiIvPjwvc3ZnPgo=") !important;
   --control-img-size: 4px 4px !important;
@@ -1018,6 +1052,7 @@ table {
   padding-bottom: 3px !important;
 }
 [role="tab"],
+[class*="desktopbrowser_BrowserTab_"],
 [class*="gamelistbar_GameListHomeAndSearch_"] a,
 [class*="pagedsettings_PagedSettingsDialog_PageListItem_"],
 [class*="serverbrowserdialog_SwitchTabButton_"] {
@@ -1035,10 +1070,12 @@ table {
   height: 18px !important;
 }
 [role="tab"]::before,
+[class*="desktopbrowser_BrowserTab_"]::before,
 [class*="gamelistbar_GameListHomeAndSearch_"] a::before,
 [class*="pagedsettings_PagedSettingsDialog_PageListItem_"]::before,
 [class*="serverbrowserdialog_SwitchTabButton_"]::before,
 [role="tab"]::after,
+[class*="desktopbrowser_BrowserTab_"]::after,
 [class*="gamelistbar_GameListHomeAndSearch_"] a::after,
 [class*="pagedsettings_PagedSettingsDialog_PageListItem_"]::after,
 [class*="serverbrowserdialog_SwitchTabButton_"]::after {
@@ -1053,6 +1090,7 @@ table {
   background-position: 0 0, 1px 0, 2px 0, 0 1px, 1px 1px, 2px 1px !important;
 }
 [role="tab"]::before,
+[class*="desktopbrowser_BrowserTab_"]::before,
 [class*="gamelistbar_GameListHomeAndSearch_"] a::before,
 [class*="pagedsettings_PagedSettingsDialog_PageListItem_"]::before,
 [class*="serverbrowserdialog_SwitchTabButton_"]::before {
@@ -1060,6 +1098,7 @@ table {
   background-image: var(--tab-border-left) !important;
 }
 [role="tab"]::after,
+[class*="desktopbrowser_BrowserTab_"]::after,
 [class*="gamelistbar_GameListHomeAndSearch_"] a::after,
 [class*="pagedsettings_PagedSettingsDialog_PageListItem_"]::after,
 [class*="serverbrowserdialog_SwitchTabButton_"]::after {
@@ -1067,9 +1106,11 @@ table {
   background-image: var(--tab-border-right) !important;
 }
 [role="tab"][aria-selected="true"],
+[class*="desktopbrowser_BrowserTab_"][aria-selected="true"],
 [class*="gamelistbar_GameListHomeAndSearch_"] a[aria-selected="true"],
 [class*="pagedsettings_PagedSettingsDialog_PageListItem_"][aria-selected="true"],
 [class*="serverbrowserdialog_SwitchTabButton_"][aria-selected="true"],
+[class*="desktopbrowser_BrowserTab_"][class*="desktopbrowser_Active_"],
 [class*="gamelistbar_GameListHomeAndSearch_"] a[aria-current],
 [class*="pagedsettings_PagedSettingsDialog_PageListItem_"][class*="pagedsettings_Active_"],
 [class*="serverbrowserdialog_SwitchTabButton_"][class*="serverbrowserdialog_Selected_"] {
@@ -1081,6 +1122,7 @@ table {
   z-index: 1 !important;
 }
 [role="tablist"],
+[class*="desktopbrowser_BrowserTabs_"],
 [class*="pagedsettings_PagedSettingsDialog_PageList_"],
 [class*="serverbrowserdialog_TopControlsCtr_"] {
   margin-left: 4px !important;
@@ -1308,7 +1350,8 @@ body.child,
   color: var(--color-active-caption-text) !important;
 }
 .titlebar-name,
-.FullModalOverlay .DialogHeader {
+.FullModalOverlay .DialogHeader,
+.title-area-children {
   font-weight: bold !important;
 }
 .titlebar-button,
@@ -1534,6 +1577,7 @@ div:not([class]) > [class*="gamepaddialog_Field_"]:not([class*="settings_Overlay
 [class*="bottombar_Status_"],
 [class*="bottombar_Text_"],
 [class*="bottombar_Queue_"],
+[class*="cloudconflict_TitleWarning_"],
 [class*="comment_thread_LikeCount_"],
 [class*="comment_thread_CommentCount_"],
 [class*="comment_thread_ReactionCount_"],
@@ -1549,6 +1593,7 @@ div:not([class]) > [class*="gamepaddialog_Field_"]:not([class*="settings_Overlay
 [class*="contentmanagement_DriveUsageText_"],
 [class*="contentmanagement_InstallDropdownOption_"] [class*="contentmanagement_DriveName_"],
 [class*="contentmanagement_InstallDropdownOption_"] [class*="contentmanagement_DriveSize_"],
+[class*="desktopbrowser_TabTitle_"],
 [class*="desktopsecuritysettings_EntryValue_"],
 [class*="downloads_AutoUpdateHours_"],
 [class*="downloads_AutoUpdateSettings_"],
@@ -1568,6 +1613,7 @@ div:not([class]) > [class*="gamepaddialog_Field_"]:not([class*="settings_Overlay
 [class*="installrequest_FolderOption_"],
 [class*="installrequest_Header_"],
 [class*="installrequest_NoticeInstallFolder_"]:not(:has(> :empty)),
+[class*="launchoptionsdialog_ListHeader_"],
 [class*="libraryhomenewupdates_PartnerEventRowCapsule_TextCtn_"],
 [class*="libraryhomenewupdates_PartnerEventRowCapsule_TextTitle_"],
 [class*="libraryhomeshowcases_Message_"],
@@ -1636,6 +1682,8 @@ div:not([class]) > [class*="gamepaddialog_Field_"]:not([class*="settings_Overlay
   --spacing-label: 6px !important;
   --spacing-toolbar: 8px !important;
   --spacing-tree: 6px !important;
+  --dialog-spacing: 7px !important;
+  --text-spacing: 4px !important;
   --tree-item-spacing-x: 4px !important;
   --text-full: calc(var(--text-ui-size) * var(--text-line)) !important;
 }
@@ -1656,6 +1704,17 @@ div:not([class]) > [class*="gamepaddialog_Field_"]:not([class*="settings_Overlay
   inset: var(--inset) !important;
   pointer-events: none !important;
 }
+div[class*="launchoptionsdialog_AppNameHeader_"] {
+  color: var(--color-inactive-caption-text) !important;
+  font: var(--text-ui) !important;
+  font-weight: bold !important;
+  position: fixed !important;
+  left: 23px !important;
+  top: 6px !important;
+}
+.WindowFocus div[class*="launchoptionsdialog_AppNameHeader_"] {
+  color: var(--color-active-caption-text) !important;
+}
 button,
 .ModalPosition_Dismiss .closeButton,
 [class*="pageablecontainer_"][class*="PageLeft"],
@@ -1673,10 +1732,12 @@ button,
 [class*="comment_thread_CommentButton_"],
 [class*="comment_thread_Reactions_"],
 [class*="contentmanagement_DriveSettingsButton_"],
+[class*="desktopbrowser_NavigationButton_"],
 [class*="downloads_AutoUpdateSettings_"],
 [class*="gameinfodialog_Header_"],
 [class*="gamelistdropdown_CheckboxWithImage_"],
 [class*="gamelistsearchbar_AdvancedSearchContainer_"],
+[class*="launchoptionsdialog_ButtonContainer_"] > div,
 [class*="libraryhomenewupdates_SettingsButton_"],
 [class*="libraryhomenewupdates_EventOptions_"] > div,
 [class*="libraryhomenewupdates_GameIconAndName_"],
@@ -1782,6 +1843,14 @@ button,
 .DialogDropDown_CurrentDisplay {
   background-color: transparent !important;
   padding: 0 !important;
+}
+.DialogInput {
+  background: var(--color-window) !important;
+  color: var(--color-window-text) !important;
+  box-shadow: none !important;
+}
+.DialogInputLabelGroup {
+  margin: 0 !important;
 }
 .DialogInputPlaceholder {
   font-style: normal !important;
@@ -2009,6 +2078,14 @@ button,
   font-weight: bold !important;
 }
 .WindowFocus #SteamDesktop .title-area::after {
+  color: var(--color-active-caption-text) !important;
+}
+.title-area-children {
+  font-size: var(--font-ui-size) !important;
+  color: var(--color-inactive-caption-text) !important;
+  padding-left: calc(var(--icon-size) + 4px) !important;
+}
+.WindowFocus .title-area-children {
   color: var(--color-active-caption-text) !important;
 }
 .title-area-icon {
@@ -2473,6 +2550,32 @@ div[class*="appdetailssection_AppDetailsSectionContainer_"] {
 [class*="boxcarousel_MaskRight_"] {
   --negative-margin: 12px !important;
 }
+[class*="cloudconflict_Popup_"] .DialogBody {
+  box-shadow: none !important;
+  padding: 0 !important;
+}
+[class*="cloudconflict_ConflictChoiceIcon_"] {
+  width: 24px !important;
+  height: 24px !important;
+}
+[class*="cloudconflict_ConflictChoiceIcon_"],
+[class*="cloudconflict_ConflictChoiceText_"] {
+  margin-left: var(--spacing-label) !important;
+}
+[class*="cloudconflict_DialogChoiceButton_"] {
+  padding: 0 !important;
+  margin: 0 !important;
+  width: 100% !important;
+}
+[class*="cloudconflict_DialogChoiceButton_"],
+[class*="cloudconflict_DialogChoiceButton_"]:active,
+[class*="cloudconflict_DialogChoiceButton_"]:focus {
+  outline: none !important;
+  box-shadow: none !important;
+}
+[class*="cloudconflict_DialogChoiceRow_"] {
+  height: unset !important;
+}
 [class*="collapseicon_Container_"] {
   --icon: var(--tree-icon-expanded) !important;
   padding: 0 !important;
@@ -2646,6 +2749,67 @@ div[class*="appdetailssection_AppDetailsSectionContainer_"] {
 }
 [class*="contextmenu_IconContainer_"] {
   display: none !important;
+}
+[class*="desktopbrowser_BrowserTab_"] {
+  gap: 4px !important;
+}
+[class*="desktopbrowser_BrowserTabIcon_"],
+[class*="desktopbrowser_CloseTabButton_"] {
+  padding: 0 !important;
+}
+[class*="desktopbrowser_BrowserTabs_"] {
+  overflow: visible !important;
+}
+[class*="desktopbrowser_BrowserTabs_"] > [class*="desktopbrowser_BrowserTab_"] {
+  min-width: auto !important;
+}
+[class*="desktopbrowser_BrowserViewHost_"] {
+  --offset: 2px !important;
+  background: var(--color-window) !important;
+  margin: calc(var(--border-size) + var(--offset)) !important;
+  position: relative !important;
+  top: var(--offset) !important;
+  left: var(--offset) !important;
+  width: calc(100% - var(--offset) * 6) !important;
+  height: calc(100% - var(--offset) * 6) !important;
+}
+[class*="desktopbrowser_BrowserViewHost_"]::before,
+[class*="desktopbrowser_BrowserViewHost_"]::after {
+  content: '' !important;
+  position: absolute !important;
+}
+[class*="desktopbrowser_BrowserViewHost_"]::before {
+  top: calc(var(--offset) * -3) !important;
+  left: calc(var(--offset) * -3) !important;
+  width: calc(100% + var(--offset) * 6) !important;
+  height: calc(100% + var(--offset) * 6) !important;
+  box-shadow: var(--border-button-raised) !important;
+}
+[class*="desktopbrowser_BrowserViewHost_"]::after {
+  top: calc(var(--offset) * -1) !important;
+  left: calc(var(--offset) * -1) !important;
+  width: calc(100% + var(--offset) * 2) !important;
+  height: calc(100% + var(--offset) * 2) !important;
+  box-shadow: var(--border-field) !important;
+}
+[class*="desktopbrowser_NavigationButton_"] {
+  min-width: 23px !important;
+  height: 21px !important;
+}
+[class*="desktopbrowser_URLBar_"] {
+  background-color: transparent !important;
+  padding: 4px !important;
+  margin-bottom: var(--window-gap) !important;
+  box-shadow: var(--border-button-raised) !important;
+}
+[class*="desktopbrowser_URLBarText_"] {
+  margin-left: var(--spacing-toolbar) !important;
+}
+[class*="desktopbrowser_URLBarText_"]::before {
+  display: none !important;
+}
+[class*="desktopbrowser_URLBarText_"] input {
+  padding: 0 !important;
 }
 [class*="desktopsecuritysettings_EntryLabel_"] {
   padding-right: 4px !important;
@@ -3011,6 +3175,38 @@ div[class*="gameinfodialog_DialogBody_"] .DialogFooter svg {
   color: var(--color-gray-text) !important;
   margin-left: 4px !important;
 }
+.DialogLabel {
+  margin: 0 !important;
+}
+[class*="gamenotes_CloseWindowButton_"] {
+  height: unset !important;
+}
+[class*="gamenotes_EditorInput_"] > .ProseMirror {
+  overflow: auto !important;
+  padding: 0 !important;
+}
+[class*="gamenotes_NoteActions_"] {
+  gap: 6px !important;
+  margin-top: 6px !important;
+  position: unset !important;
+  justify-content: right !important;
+}
+[class*="gamenotes_NoteActions_"] .DialogButton {
+  opacity: 1 !important;
+}
+[class*="gamenotes_NoteActions_"] svg {
+  width: 16px !important;
+  height: 16px !important;
+}
+[class*="gamenotes_NoteEditorArea_"] {
+  margin: 0 !important;
+}
+[class*="gamenotes_Toolbar_"] {
+  padding: 0 !important;
+}
+[class*="gamenotes_Toolbar_"] > div {
+  height: unset !important;
+}
 [class*="gamepaddialog_Field_"] {
   --field-row-children-spacing: 7px !important;
   background-color: transparent !important;
@@ -3165,6 +3361,39 @@ div:not([class]) > [class*="gamepaddialog_Field_"]:not([class*="settings_Overlay
   left: 0 !important;
   width: 16px !important;
   height: 16px !important;
+}
+[class*="launchoptionsdialog_ButtonContainer_"] {
+  gap: 6px !important;
+  margin-top: 6px !important;
+  margin-bottom: calc(8px + var(--dialog-spacing)) !important;
+}
+[class*="launchoptionsdialog_LaunchOptionDialog_"] {
+  background: none !important;
+  color: inherit !important;
+  padding: var(--dialog-spacing) !important;
+}
+[class*="launchoptionsdialog_ListContainer_"] {
+  background-color: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  gap: var(--text-spacing) !important;
+  padding: 0 !important;
+  overflow: auto !important;
+}
+[class*="launchoptionsdialog_ListHeader_"] {
+  margin-bottom: var(--text-spacing) !important;
+}
+[class*="launchoptionsdialog_ListItem_"] {
+  background-color: transparent !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+[class*="launchoptionsdialog_ListItem_"] label {
+  font: var(--text-ui) !important;
+  padding-left: var(--spacing-label) !important;
+}
+[class*="launchoptionsdialog_OptionList_"] {
+  padding: 0 !important;
 }
 [class*="library_ContextMenuAction_"] {
   background-image: none !important;
@@ -3454,6 +3683,29 @@ div:not([class]) > [class*="gamepaddialog_Field_"]:not([class*="settings_Overlay
   padding: 0 !important;
   display: flex !important;
   justify-content: space-between !important;
+}
+[class*="prosemirror_CommandButton_"] {
+  min-width: 32px !important;
+  height: 32px !important;
+}
+[class*="prosemirror_CommandButton_"] .SVGIcon_Button {
+  opacity: 1 !important;
+  fill: var(--color-button-text) !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+[class*="prosemirror_CommandButton_"] path {
+  fill: var(--color-button-text) !important;
+}
+[class*="prosemirror_ExpandButton_"] {
+  display: none !important;
+}
+[class*="prosemirror_Gap_"] {
+  width: var(--spacing-toolbar) !important;
+}
+[class*="prosemirror_ToolbarRow_"] {
+  margin-top: 0 !important;
+  margin-bottom: var(--spacing-toolbar) !important;
 }
 [class*="radio_Group_"],
 [class*="radio_Button_"] {
@@ -3950,6 +4202,16 @@ div:not([class]) > [class*="gamepaddialog_Field_"]:not([class*="settings_Overlay
 [class*="steamdesktop_URLBarText_"] {
   width: 100% !important;
 }
+[class*="steamdesktopoverlay_OverlayPopup_"] {
+  background: none !important;
+  padding: var(--dialog-spacing) !important;
+  height: calc(100% - 19px) !important;
+}
+[class*="steamdesktopoverlay_WindowControls_"] {
+  margin: calc(var(--dialog-spacing) * -1) !important;
+  margin-bottom: var(--dialog-spacing) !important;
+  height: unset !important;
+}
 body:has(> #popup_target > [class*="steamdesktopoverlay_Wrapper_"]) {
   background-color: transparent !important;
   box-shadow: none !important;
@@ -4086,6 +4348,46 @@ body:has(> #popup_target > [class*="steamdesktopoverlay_Wrapper_"]) {
   gap: 4px !important;
   flex-direction: row-reverse !important;
 }
+[class*="writereview_ButtonText_"] {
+  margin: 0 !important;
+}
+[class*="writereview_DescribeGame_"],
+[class*="writereview_OptionsContainer_"] {
+  margin-top: 16px !important;
+  margin-bottom: var(--text-spacing) !important;
+  position: relative !important;
+}
+[class*="writereview_DescribeGame_"]::before,
+[class*="writereview_OptionsContainer_"]::before {
+  content: '' !important;
+  position: absolute !important;
+  top: -10px !important;
+  width: 100% !important;
+}
+[class*="writereview_Header_"] {
+  color: inherit !important;
+  font-size: var(--text-header-size) !important;
+}
+[class*="writereview_OptionButton_"] {
+  background: none !important;
+  width: unset !important;
+}
+[class*="writereview_OptionDesc_"] {
+  text-align: left !important;
+  padding: 0 !important;
+  margin-top: var(--text-spacing) !important;
+}
+[class*="writereview_OptionsContainer_"] {
+  background-color: transparent !important;
+  padding: 0 !important;
+}
+[class*="writereview_OptionsContainer_"] > div {
+  border: none !important;
+  padding: 0 !important;
+}
+[class*="writereview_OptionSvg_"] {
+  display: none !important;
+}
 [class*="writereview_Playtime_"],
 [class*="writereview_RecommendGame_"] {
   color: inherit !important;
@@ -4093,13 +4395,35 @@ body:has(> #popup_target > [class*="steamdesktopoverlay_Wrapper_"]) {
 [class*="writereview_RatingContainer_"] {
   background-color: transparent !important;
   padding: 0 !important;
+  margin: var(--text-spacing) 0 !important;
 }
-[class*="writereview_ReviewThumbButton_"]:not([class*="writereview_NoIcon_"]) {
+[class*="writereview_ReviewThumbButton_"] {
+  background: none !important;
+}
+[class*="writereview_ReviewThumbButton_"] span {
+  padding-left: 10px !important;
+}
+[class*="writereview_ReviewSettingsChecks_"] {
   margin: 0 !important;
+}
+[class*="writereview_ReviewSettingsContainer_"] {
+  margin-top: var(--text-spacing) !important;
+}
+[class*="writereview_ReviewSettingsRow_"] {
+  align-items: center !important;
+}
+[class*="writereview_ReviewSettingsRow_"] > span {
+  margin-right: var(--text-spacing) !important;
 }
 [class*="writereview_ThumbIcon_"] {
   fill: inherit !important;
   left: 16px !important;
   width: 16px !important;
   height: 16px !important;
+}
+[class*="writereview_ThumbIcon_"][class*="writereview_Down_"] {
+  top: 3px !important;
+}
+[class*="writereview_WriteReviewContainer_"] {
+  font-size: var(--text-ui-size) !important;
 }
