@@ -5,7 +5,7 @@
 
 	padding: 0;
 
-	div:not([class]) > & {
+	div:not([class]) > &:not([class*="settings_OverlayTabSetting_"]) {
 		@extend fieldset;
 
 		gap: 4px;
@@ -21,6 +21,10 @@
 
 #FieldChildren {
 	gap: 4px;
+}
+
+#FieldIcon {
+	display: none;
 }
 
 #FieldLabel {

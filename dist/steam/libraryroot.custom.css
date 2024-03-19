@@ -212,7 +212,7 @@ fieldset,
 [class*="appproperties_SectionTopLine_"],
 [class*="contentmanagement_AppsGrid_"],
 [class*="downloads_Section_"],
-div:not([class]) > [class*="gamepaddialog_Field_"],
+div:not([class]) > [class*="gamepaddialog_Field_"]:not([class*="settings_OverlayTabSetting_"]),
 [class*="installrequest_FolderSelector_"],
 [class*="libraryhomeshowcases_Showcase_"],
 [class*="pageablecontainer_PageableContainer_"],
@@ -264,7 +264,7 @@ textarea,
 [class*="gamelistdropdown_MenuHeader_"],
 [class*="gamelistdropdown_CheckboxWithImage_"],
 [class*="gamelistsearchbar_AdvancedSearchContainer_"],
-div:not([class]) > [class*="gamepaddialog_Field_"],
+div:not([class]) > [class*="gamepaddialog_Field_"]:not([class*="settings_OverlayTabSetting_"]),
 [class*="gamepaddialog_Toggle_"],
 [class*="installrequest_FolderSelector_"],
 [class*="libraryhomenewupdates_SettingsButton_"],
@@ -273,6 +273,7 @@ div:not([class]) > [class*="gamepaddialog_Field_"],
 [class*="libraryhomeshowcases_AddShowcase_"],
 [class*="libraryhomeshowcases_Collapser_"],
 [class*="libraryhomeshowcases_Showcase_"],
+[class*="notificationssettings_PrefDetailsToggle_"],
 [class*="pageablecontainer_PageableContainer_"],
 [class*="playersdialog_PlayersListHeaderCell_"],
 [class*="posttextentry_PostButton_"],
@@ -333,7 +334,7 @@ textarea:disabled,
 [class*="gamelistdropdown_MenuHeader_"]:disabled,
 [class*="gamelistdropdown_CheckboxWithImage_"]:disabled,
 [class*="gamelistsearchbar_AdvancedSearchContainer_"]:disabled,
-div:not([class]) > [class*="gamepaddialog_Field_"]:disabled,
+div:not([class]) > [class*="gamepaddialog_Field_"]:not([class*="settings_OverlayTabSetting_"]):disabled,
 [class*="gamepaddialog_Toggle_"]:disabled,
 [class*="installrequest_FolderSelector_"]:disabled,
 [class*="libraryhomenewupdates_SettingsButton_"]:disabled,
@@ -342,6 +343,7 @@ div:not([class]) > [class*="gamepaddialog_Field_"]:disabled,
 [class*="libraryhomeshowcases_AddShowcase_"]:disabled,
 [class*="libraryhomeshowcases_Collapser_"]:disabled,
 [class*="libraryhomeshowcases_Showcase_"]:disabled,
+[class*="notificationssettings_PrefDetailsToggle_"]:disabled,
 [class*="pageablecontainer_PageableContainer_"]:disabled,
 [class*="playersdialog_PlayersListHeaderCell_"]:disabled,
 [class*="posttextentry_PostButton_"]:disabled,
@@ -406,6 +408,7 @@ textarea,
 [class*="libraryhomenewupdates_GameIconAndName_"],
 [class*="libraryhomeshowcases_AddShowcase_"],
 [class*="libraryhomeshowcases_Collapser_"],
+[class*="notificationssettings_PrefDetailsToggle_"],
 [class*="playersdialog_PlayersListHeaderCell_"],
 [class*="posttextentry_PostButton_"],
 [class*="screenshotmanagerdialog_ButtonBox_"]:not([class*="screenshotmanagerdialog_Combobox_"],
@@ -480,6 +483,7 @@ input:where([type="button"],
 [class*="libraryhomenewupdates_GameIconAndName_"],
 [class*="libraryhomeshowcases_AddShowcase_"],
 [class*="libraryhomeshowcases_Collapser_"],
+[class*="notificationssettings_PrefDetailsToggle_"],
 [class*="playersdialog_PlayersListHeaderCell_"],
 [class*="posttextentry_PostButton_"],
 [class*="screenshotmanagerdialog_ButtonBox_"]:not([class*="screenshotmanagerdialog_Combobox_"],
@@ -525,6 +529,7 @@ input:where([type="button"]:focus,
 [class*="libraryhomenewupdates_GameIconAndName_"]:focus,
 [class*="libraryhomeshowcases_AddShowcase_"]:focus,
 [class*="libraryhomeshowcases_Collapser_"]:focus,
+[class*="notificationssettings_PrefDetailsToggle_"]:focus,
 [class*="playersdialog_PlayersListHeaderCell_"]:focus,
 [class*="posttextentry_PostButton_"]:focus,
 [class*="screenshotmanagerdialog_ButtonBox_"]:not([class*="screenshotmanagerdialog_Combobox_"]:focus,
@@ -567,6 +572,7 @@ input:where([type="button"]:active,
 [class*="libraryhomenewupdates_GameIconAndName_"]:active,
 [class*="libraryhomeshowcases_AddShowcase_"]:active,
 [class*="libraryhomeshowcases_Collapser_"]:active,
+[class*="notificationssettings_PrefDetailsToggle_"]:active,
 [class*="playersdialog_PlayersListHeaderCell_"]:active,
 [class*="posttextentry_PostButton_"]:active,
 [class*="screenshotmanagerdialog_ButtonBox_"]:not([class*="screenshotmanagerdialog_Combobox_"]:active,
@@ -577,6 +583,7 @@ input:where([type="button"]:active,
 [class*="supernav_Arrow_"]:active,
 [class*="supernav_SuperNavMenu_"]:active,
 [class*="titlebarcontrols_Button_"]:active,
+[class*="notificationssettings_PrefDetailsToggle_"][class*="notificationssettings_Selected_"],
 [class*="serverbrowserdialog_ToggleShowFilterDetailsButton_"][class*="serverbrowserdialog_Selected_"] {
   color: transparent !important;
   text-shadow: 1px 1px var(--color-button-text) !important;
@@ -1105,11 +1112,13 @@ legend,
 .DialogSubHeader,
 [class*="appproperties_Title_"],
 [class*="librarysettings_DescriptionText_"],
+[class*="settings_SettingsDialogBodyText"],
 [class*="remoteplaysettings_TableHeader_"] > :first-child,
 [class*="appactivityday_AppActivityDate_"],
 [class*="appactivityday_PartnerEventFeaturedHeader_"],
 [class*="appdetailssectionheader_SectionHeader_"],
 [class*="appfilterpane_FilterBucketLabel_"],
+[class*="appproperties_BetaLabel_"],
 [class*="contentmanagement_AppHeaderContainer_"],
 [class*="downloads_SectionTitle_"],
 [class*="installrequest_Header_"],
@@ -1318,6 +1327,7 @@ body.child,
 [class*="libraryhomenewupdates_SettingsButton_"],
 [class*="libraryhomenewupdates_EventOptions_"] > div,
 [class*="libraryhomeshowcases_Collapser_"],
+[class*="notificationssettings_PrefDetailsToggle_"],
 [class*="titlebarcontrols_Button_"] {
   min-width: 16px !important;
   height: 14px !important;
@@ -1338,6 +1348,7 @@ body.child,
 [class*="libraryhomenewupdates_SettingsButton_"]::before,
 [class*="libraryhomenewupdates_EventOptions_"] > div::before,
 [class*="libraryhomeshowcases_Collapser_"]::before,
+[class*="notificationssettings_PrefDetailsToggle_"]::before,
 [class*="titlebarcontrols_Button_"]::before,
 .titlebar-button::after,
 .ModalPosition_Dismiss .closeButton::after,
@@ -1355,6 +1366,7 @@ body.child,
 [class*="libraryhomenewupdates_SettingsButton_"]::after,
 [class*="libraryhomenewupdates_EventOptions_"] > div::after,
 [class*="libraryhomeshowcases_Collapser_"]::after,
+[class*="notificationssettings_PrefDetailsToggle_"]::after,
 [class*="titlebarcontrols_Button_"]::after {
   content: '' !important;
   position: absolute !important;
@@ -1379,6 +1391,7 @@ body.child,
 [class*="libraryhomenewupdates_SettingsButton_"]::before,
 [class*="libraryhomenewupdates_EventOptions_"] > div::before,
 [class*="libraryhomeshowcases_Collapser_"]::before,
+[class*="notificationssettings_PrefDetailsToggle_"]::before,
 [class*="titlebarcontrols_Button_"]::before {
   z-index: 1 !important;
   background-color: var(--color-button-text) !important;
@@ -1399,6 +1412,7 @@ body.child,
 [class*="libraryhomenewupdates_SettingsButton_"]:active::before,
 [class*="libraryhomenewupdates_EventOptions_"] > div:active::before,
 [class*="libraryhomeshowcases_Collapser_"]:active::before,
+[class*="notificationssettings_PrefDetailsToggle_"]:active::before,
 [class*="titlebarcontrols_Button_"]:active::before {
   inset: 1px !important;
 }
@@ -1418,6 +1432,7 @@ body.child,
 [class*="libraryhomenewupdates_SettingsButton_"]:disabled::after,
 [class*="libraryhomenewupdates_EventOptions_"] > div:disabled::after,
 [class*="libraryhomeshowcases_Collapser_"]:disabled::after,
+[class*="notificationssettings_PrefDetailsToggle_"]:disabled::after,
 [class*="titlebarcontrols_Button_"]:disabled::after,
 [class*="pageablecontainer_"][class*="PageLeft"][class*="Disabled"]::after,
 [class*="libraryhomeshowcases_"][class*="PageLeft"][class*="Disabled"]::after,
@@ -1466,7 +1481,7 @@ fieldset,
 [class*="appproperties_SectionTopLine_"],
 [class*="contentmanagement_AppsGrid_"],
 [class*="downloads_Section_"],
-div:not([class]) > [class*="gamepaddialog_Field_"],
+div:not([class]) > [class*="gamepaddialog_Field_"]:not([class*="settings_OverlayTabSetting_"]),
 [class*="installrequest_FolderSelector_"],
 [class*="libraryhomeshowcases_Showcase_"],
 [class*="pageablecontainer_PageableContainer_"],
@@ -1480,6 +1495,7 @@ div:not([class]) > [class*="gamepaddialog_Field_"],
 .DialogSubHeader,
 [class*="appproperties_Title_"],
 [class*="librarysettings_DescriptionText_"],
+[class*="settings_SettingsDialogBodyText"],
 [class*="remoteplaysettings_TableHeader_"] > :first-child,
 [class*="remoteplaysettings_TableHeader_"],
 [class*="notificationssettings_ToggleHeader_"],
@@ -1513,6 +1529,8 @@ div:not([class]) > [class*="gamepaddialog_Field_"],
 [class*="appdetailsspotlight_ReviewContainer_"],
 [class*="appgrid_SortingDropDownItems_"],
 [class*="appgrid_SortingDropDownLabel_"],
+[class*="appproperties_BetaLabel_"],
+[class*="appproperties_BuildInfo_"],
 [class*="bottombar_Status_"],
 [class*="bottombar_Text_"],
 [class*="bottombar_Queue_"],
@@ -1531,6 +1549,7 @@ div:not([class]) > [class*="gamepaddialog_Field_"],
 [class*="contentmanagement_DriveUsageText_"],
 [class*="contentmanagement_InstallDropdownOption_"] [class*="contentmanagement_DriveName_"],
 [class*="contentmanagement_InstallDropdownOption_"] [class*="contentmanagement_DriveSize_"],
+[class*="desktopsecuritysettings_EntryValue_"],
 [class*="downloads_AutoUpdateHours_"],
 [class*="downloads_AutoUpdateSettings_"],
 [class*="downloads_Count_"],
@@ -1553,6 +1572,8 @@ div:not([class]) > [class*="gamepaddialog_Field_"],
 [class*="libraryhomenewupdates_PartnerEventRowCapsule_TextTitle_"],
 [class*="libraryhomeshowcases_Message_"],
 [class*="libraryhomeshowcases_CountDisplay_"],
+[class*="notificationssettings_FriendsDescription_"],
+[class*="notificationssettings_Subheader_"],
 [class*="pageablecontainer_HeaderPageControls_"],
 [class*="pageablecontainer_Name_"],
 [class*="playersdialog_Empty_"],
@@ -1566,6 +1587,7 @@ div:not([class]) > [class*="gamepaddialog_Field_"],
 [class*="screenshotmanagerdialog_Label_"],
 [class*="screenshotmanagerdialog_Metadata_"],
 [class*="screenshotmanagerdialog_SectionHeading_"],
+[class*="settings_SettingsDialogLink_"],
 [class*="spotlightgameplaysummary_EventHeaderBlock_"],
 [class*="spotlightgameplaysummary_GamePlaySummaryHeader_"],
 [class*="steamdesktop_LockIcon_"],
@@ -1580,7 +1602,9 @@ div:not([class]) > [class*="gamepaddialog_Field_"],
   text-transform: unset !important;
 }
 .DialogBody a,
-[class*="appdetailsprimarylinkssection_Text_"] {
+[class*="appdetailsprimarylinkssection_Text_"],
+[class*="appproperties_SteamInputLink_"],
+[class*="appproperties_ViewMore_"] {
   color: var(--color-link) !important;
   text-decoration: underline !important;
 }
@@ -1588,11 +1612,13 @@ div:not([class]) > [class*="gamepaddialog_Field_"],
 .DialogSubHeader,
 [class*="appproperties_Title_"],
 [class*="librarysettings_DescriptionText_"],
+[class*="settings_SettingsDialogBodyText"],
 [class*="remoteplaysettings_TableHeader_"] > :first-child,
 [class*="appactivityday_AppActivityDate_"],
 [class*="appactivityday_PartnerEventFeaturedHeader_"],
 [class*="appdetailssectionheader_SectionHeader_"],
 [class*="appfilterpane_FilterBucketLabel_"],
+[class*="appproperties_BetaLabel_"],
 [class*="contentmanagement_AppHeaderContainer_"],
 [class*="downloads_SectionTitle_"],
 [class*="installrequest_Header_"],
@@ -1656,6 +1682,7 @@ button,
 [class*="libraryhomenewupdates_GameIconAndName_"],
 [class*="libraryhomeshowcases_AddShowcase_"],
 [class*="libraryhomeshowcases_Collapser_"],
+[class*="notificationssettings_PrefDetailsToggle_"],
 [class*="playersdialog_PlayersListHeaderCell_"],
 [class*="posttextentry_PostButton_"],
 [class*="screenshotmanagerdialog_ButtonBox_"]:not([class*="screenshotmanagerdialog_Combobox_"],
@@ -2360,8 +2387,13 @@ div[class*="appdetailssection_AppDetailsSectionContainer_"] {
 [class*="appproperties_BrowseDiskSize_"] {
   margin-left: 1ch !important;
 }
-[class*="appproperties_SteamInputLink_"] {
-  color: var(--color-link) !important;
+[class*="appproperties_ViewMore_"] {
+  padding: 0 !important;
+  flex: 0 0 auto !important;
+}
+[class*="appproperties_ViewMore_"],
+[class*="appproperties_ViewMore_"]:focus {
+  box-shadow: none !important;
 }
 [class*="artworkmodal_ArtworkContainer_"] {
   box-shadow: none !important;
@@ -2539,6 +2571,7 @@ div[class*="appdetailssection_AppDetailsSectionContainer_"] {
 [class*="contentmanagement_DriveSettingsButton_"] {
   --button-img: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA4IDIiPjxzdHlsZT5yZWN0e3dpZHRoOjJweDtoZWlnaHQ6MnB4fTwvc3R5bGU+PHJlY3QgeD0iMCIvPjxyZWN0IHg9IjMiLz48cmVjdCB4PSI2Ii8+PC9zdmc+Cg==") !important;
   --button-img-size: 8px auto !important;
+  width: unset !important;
 }
 [class*="contentmanagement_DriveSettingsButton_"] svg {
   display: none !important;
@@ -2613,6 +2646,9 @@ div[class*="appdetailssection_AppDetailsSectionContainer_"] {
 }
 [class*="contextmenu_IconContainer_"] {
   display: none !important;
+}
+[class*="desktopsecuritysettings_EntryLabel_"] {
+  padding-right: 4px !important;
 }
 [class*="desktopsecuritysettings_SteamGuardIcon_"] {
   color: #f00 !important;
@@ -2980,7 +3016,7 @@ div[class*="gameinfodialog_DialogBody_"] .DialogFooter svg {
   background-color: transparent !important;
   padding: 0 !important;
 }
-div:not([class]) > [class*="gamepaddialog_Field_"] {
+div:not([class]) > [class*="gamepaddialog_Field_"]:not([class*="settings_OverlayTabSetting_"]) {
   gap: 4px !important;
   display: flex !important;
   flex-direction: column !important;
@@ -2990,6 +3026,9 @@ div:not([class]) > [class*="gamepaddialog_Field_"] {
 }
 [class*="gamepaddialog_FieldChildren_"] {
   gap: 4px !important;
+}
+[class*="gamepaddialog_FieldIcon_"] {
+  display: none !important;
 }
 [class*="gamepaddialog_FieldLabel_"] {
   font: var(--text-ui) !important;
@@ -3295,20 +3334,32 @@ div:not([class]) > [class*="gamepaddialog_Field_"] {
   color: inherit !important;
   margin: 0 !important;
 }
+[class*="notificationssettings_NotificationListSection_"] {
+  gap: 4px !important;
+  display: flex !important;
+  flex-direction: column !important;
+}
 [class*="notificationssettings_NotificationPrefDetails_"] {
   background-color: transparent !important;
+  gap: 4px !important;
   padding: 0 !important;
-  padding-left: 23px !important;
+  padding-left: calc(13px + var(--spacing-label)) !important;
   box-shadow: none !important;
   flex-direction: column !important;
 }
 [class*="notificationssettings_NotificationPrefDetails_"] .DialogCheckbox_Container {
   margin: 0 !important;
 }
+[class*="notificationssettings_PrefDetailsToggle_"] {
+  --button-img: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA4IDIiPjxzdHlsZT5yZWN0e3dpZHRoOjJweDtoZWlnaHQ6MnB4fTwvc3R5bGU+PHJlY3QgeD0iMCIvPjxyZWN0IHg9IjMiLz48cmVjdCB4PSI2Ii8+PC9zdmc+Cg==") !important;
+  --button-img-size: 8px auto !important;
+  width: unset !important;
+}
+[class*="notificationssettings_PrefDetailsToggle_"]::before {
+  display: initial !important;
+}
 [class*="notificationssettings_PrefDetailsToggle_"] svg {
-  margin: 0 !important;
-  height: var(--text-ui-size) !important;
-  display: block !important;
+  display: none !important;
 }
 [class*="notificationssettings_Toggles_"].Panel {
   gap: 106px !important;
@@ -3347,6 +3398,10 @@ div:not([class]) > [class*="gamepaddialog_Field_"] {
   min-width: unset !important;
   min-height: unset !important;
   flex-direction: column !important;
+}
+:is(.PopupFullWindow .DialogDropDown,
+.ModalPosition_Content) > [class*="pagedsettings_PagedSettingsDialog_"] .DialogDropDown {
+  min-width: 75px !important;
 }
 [class*="pagedsettings_PagedSettingsDialog_PageList_"] {
   padding: 0 !important;

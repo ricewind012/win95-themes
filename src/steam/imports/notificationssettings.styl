@@ -1,3 +1,8 @@
+#FriendsDescription,
+#Subheader {
+	@extend $text-reset;
+}
+
 #NotificationGroup {
 	background-color: transparent;
 	border-bottom: none;
@@ -18,11 +23,20 @@
 	margin: 0;
 }
 
+#NotificationListSection {
+	gap: 4px;
+
+	display: flex;
+	flex-direction: column;
+}
+
 #NotificationPrefDetails {
 	background-color: transparent;
+	gap: 4px;
 	padding: 0;
-	padding-left: 23px;
+	padding-left: calc(13px + var(--spacing-label));
 	box-shadow: none;
+
 	flex-direction: column;
 
 	.DialogCheckbox_Container {
@@ -30,10 +44,26 @@
 	}
 }
 
-#PrefDetailsToggle svg {
-	margin: 0;
-	height: var(--text-ui-size);
-	display: block;
+#PrefDetailsToggle {
+	@extend button;
+	@extend .titlebar-button;
+
+	--button-img: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA4IDIiPjxzdHlsZT5yZWN0e3dpZHRoOjJweDtoZWlnaHQ6MnB4fTwvc3R5bGU+PHJlY3QgeD0iMCIvPjxyZWN0IHg9IjMiLz48cmVjdCB4PSI2Ii8+PC9zdmc+Cg==');
+	--button-img-size: 8px auto;
+
+	width: unset;
+
+	&#Selected {
+		@extend button:active;
+	}
+
+	&::before {
+		display: initial;
+	}
+
+	svg {
+		display: none;
+	}
 }
 
 #Toggles.Panel {

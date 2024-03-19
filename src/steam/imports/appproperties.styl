@@ -1,3 +1,12 @@
+#BetaLabel {
+	@extend $text-reset;
+	@extend $legend-as-div;
+}
+
+#BuildInfo {
+	@extend $text-reset;
+}
+
 // note?
 [class*="FieldDescription_"],
 #Detail {
@@ -98,5 +107,18 @@
 }
 
 #SteamInputLink {
-	color: var(--color-link);
+	@extend $link;
+}
+
+#ViewMore {
+	@extend $link;
+
+	padding: 0;
+
+	flex: 0 0 auto;
+
+	&,
+	&:focus {
+		box-shadow: none;
+	}
 }
