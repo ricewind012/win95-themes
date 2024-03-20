@@ -38,7 +38,7 @@ function SetTokenAsVar(token: string) {
 		SetTokenAsVar("BottomBar_Manage");
 	}
 
-	if (document.title == "Screenshot Manager") {
+	if (document.title.match(/^Screenshot(\s+)?Manager$/)) {
 		[
 			"Generic_Delete",
 			"ScreenshotUploader_CopyURL",

@@ -1,0 +1,32 @@
+#AchievementSearchHeader {
+	@extend fieldset;
+
+	gap: var(--text-spacing);
+
+	// Move out of content
+	position: fixed;
+	top: -52px;
+	right: 0;
+	left: 0;
+}
+
+#Label {
+	@extend $text-reset;
+}
+
+#StatsBlock {
+	@extend fieldset;
+
+	background-color: transparent;
+}
+
+#Title {
+	@extend $dialog-title;
+}
+
+#ProgressLabel {
+	@extend $legend-as-div;
+
+	gap: var(--text-spacing);
+}
+

@@ -1,0 +1,22 @@
+#AchievementList {
+	padding: 0;
+}
+
+#AchievementListItemBase {
+	background-color: transparent;
+
+	&::after {
+		content: '';
+
+		@extend hr;
+	}
+}
+
+#AchievementDescription,
+#AchievementGlobalPercentage,
+#AchievementTitle,
+#HeaderText,
+#UnlockDate {
+	@extend $text-reset;
+}
+

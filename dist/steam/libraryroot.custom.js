@@ -18,7 +18,7 @@ function SetTokenAsVar(token) {
         // Set a variable for when an application is downloading
         SetTokenAsVar("BottomBar_Manage");
     }
-    if (document.title == "Screenshot Manager") {
+    if (document.title.match(/^Screenshot(\s+)?Manager$/)) {
         [
             "Generic_Delete",
             "ScreenshotUploader_CopyURL",

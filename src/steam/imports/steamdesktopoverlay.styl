@@ -1,3 +1,66 @@
+// GAME OVERVIEW START (here in preparation for beta restructure)
+// TODO: clearly this needs a better icon
+#DragHandle {
+	padding: 0;
+}
+
+#GameOverview {
+	background: none;
+	padding: 0;
+
+	// TODO: does this ever need scrolling ?
+	overflow: visible;
+}
+
+#GameOverviewSection {
+	@extend fieldset;
+
+	background-color: transparent;
+}
+
+#GameOverviewSectionChildren {
+	padding: 0;
+}
+
+#GameOverviewSectionHeader {
+	@extend $text-reset;
+	@extend $legend-as-div;
+
+	background-color: transparent;
+
+	svg {
+		color: inherit;
+		margin: 0;
+	}
+}
+
+#GameOverviewSectionTitle {
+	gap: var(--text-spacing);
+}
+
+#GuideListItem {
+	background-color: transparent;
+	color: inherit;
+	padding: 0;
+	margin-top: var(--text-spacing);
+}
+
+#GuideTitle {
+	@extend $text-reset;
+	@extend $link;
+}
+
+#OverviewTitle {
+	@extend $dialog-title;
+}
+
+#Playtime {
+	@extend $text-reset;
+
+	gap: var(--text-spacing);
+}
+// END
+
 #OverlayPopup {
 	background: none;
 	padding: var(--dialog-spacing);

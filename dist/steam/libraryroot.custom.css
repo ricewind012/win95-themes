@@ -188,6 +188,7 @@ select:active,
   background: linear-gradient(90deg, var(--color-button-text) 1px, var(--color-button-text)) calc(var(--offset) + 6px) calc(var(--offset) + 4px), linear-gradient(90deg, var(--color-button-text) 1px, var(--color-button-text)) calc(var(--offset) + 6px) calc(var(--offset) + 5px), linear-gradient(90deg, var(--color-button-text) 1px, var(--color-button-text)) calc(var(--offset) + 7px) calc(var(--offset) + 5px), linear-gradient(90deg, var(--color-button-text) 1px, var(--color-button-text)) calc(var(--offset) + 6px) calc(var(--offset) + 6px), linear-gradient(90deg, var(--color-button-text) 1px, var(--color-button-text)) calc(var(--offset) + 7px) calc(var(--offset) + 6px), linear-gradient(90deg, var(--color-button-text) 1px, var(--color-button-text)) calc(var(--offset) + 8px) calc(var(--offset) + 6px), linear-gradient(90deg, var(--color-button-text) 1px, var(--color-button-text)) calc(var(--offset) + 6px) calc(var(--offset) + 7px), linear-gradient(90deg, var(--color-button-text) 1px, var(--color-button-text)) calc(var(--offset) + 7px) calc(var(--offset) + 7px), linear-gradient(90deg, var(--color-button-text) 1px, var(--color-button-text)) calc(var(--offset) + 8px) calc(var(--offset) + 7px), linear-gradient(90deg, var(--color-button-text) 1px, var(--color-button-text)) calc(var(--offset) + 9px) calc(var(--offset) + 7px), linear-gradient(90deg, var(--color-button-text) 1px, var(--color-button-text)) calc(var(--offset) + 6px) calc(var(--offset) + 8px), linear-gradient(90deg, var(--color-button-text) 1px, var(--color-button-text)) calc(var(--offset) + 7px) calc(var(--offset) + 8px), linear-gradient(90deg, var(--color-button-text) 1px, var(--color-button-text)) calc(var(--offset) + 8px) calc(var(--offset) + 8px), linear-gradient(90deg, var(--color-button-text) 1px, var(--color-button-text)) calc(var(--offset) + 6px) calc(var(--offset) + 9px), linear-gradient(90deg, var(--color-button-text) 1px, var(--color-button-text)) calc(var(--offset) + 7px) calc(var(--offset) + 9px), linear-gradient(90deg, var(--color-button-text) 1px, var(--color-button-text)) calc(var(--offset) + 6px) calc(var(--offset) + 10px) !important;
 }
 hr,
+[class*="achievementslist_AchievementListItemBase_"]::after,
 [class*="appdetailsachievementssection_ShowDivider_"]::before,
 [class*="contextmenu_ContextMenuSeparator_"],
 [class*="installrequest_AppsToInstall_"]::after,
@@ -205,6 +206,8 @@ hr,
 }
 fieldset,
 .DialogControlsSection,
+[class*="achievementsheader_AchievementSearchHeader_"],
+[class*="achievementsheader_StatsBlock_"],
 [class*="appactivityday_AppActivityDay_"],
 [class*="appactivityday_PartnerEvent_"],
 [class*="appdetailsactivitysection_AddToFeed_"],
@@ -220,7 +223,8 @@ div:not([class]) > [class*="gamepaddialog_Field_"]:not([class*="settings_Overlay
 [class*="libraryhomeshowcases_Showcase_"],
 [class*="pageablecontainer_PageableContainer_"],
 [class*="savecollectiondialog_SaveCollectionContainer_"] .DialogBodyText,
-[class*="savecollectiondialog_SaveCollectionContainer_"] .DialogFooter {
+[class*="savecollectiondialog_SaveCollectionContainer_"] .DialogFooter,
+[class*="steamdesktopoverlay_GameOverviewSection_"] {
   border: none !important;
   box-shadow: var(--border-groupbox) !important;
   padding: 11px !important;
@@ -241,6 +245,8 @@ textarea,
 [class*="pageablecontainer_"][class*="PageRight"],
 [class*="libraryhomeshowcases_"][class*="PageRight"],
 .title-area-icon,
+[class*="achievementsheader_AchievementSearchHeader_"],
+[class*="achievementsheader_StatsBlock_"],
 [class*="addnonsteamgamedialog_Header_"] > div,
 [class*="appactionbutton_ButtonChild_"],
 [class*="appactivityday_AppActivityDay_"],
@@ -294,6 +300,7 @@ div:not([class]) > [class*="gamepaddialog_Field_"]:not([class*="settings_Overlay
 [class*="sortingdropdowncontrolbutton_SortingDropDownControlButton_"],
 [class*="steamdesktop_ReloadButton_"],
 [class*="steamdesktop_URLBarText_"],
+[class*="steamdesktopoverlay_GameOverviewSection_"],
 [class*="supernav_Arrow_"],
 [class*="supernav_SuperNavMenu_"],
 [class*="titlebarcontrols_AccountMenu_"],
@@ -314,6 +321,8 @@ textarea:disabled,
 [class*="pageablecontainer_"][class*="PageRight"]:disabled,
 [class*="libraryhomeshowcases_"][class*="PageRight"]:disabled,
 .title-area-icon:disabled,
+[class*="achievementsheader_AchievementSearchHeader_"]:disabled,
+[class*="achievementsheader_StatsBlock_"]:disabled,
 [class*="addnonsteamgamedialog_Header_"] > div:disabled,
 [class*="appactionbutton_ButtonChild_"]:disabled,
 [class*="appactivityday_AppActivityDay_"]:disabled,
@@ -367,6 +376,7 @@ div:not([class]) > [class*="gamepaddialog_Field_"]:not([class*="settings_Overlay
 [class*="sortingdropdowncontrolbutton_SortingDropDownControlButton_"]:disabled,
 [class*="steamdesktop_ReloadButton_"]:disabled,
 [class*="steamdesktop_URLBarText_"]:disabled,
+[class*="steamdesktopoverlay_GameOverviewSection_"]:disabled,
 [class*="supernav_Arrow_"]:disabled,
 [class*="supernav_SuperNavMenu_"]:disabled,
 [class*="titlebarcontrols_AccountMenu_"]:disabled,
@@ -811,7 +821,8 @@ select,
 progress,
 [class*="appdetailsachievementssection_AchievementProgressContainer_"],
 [class*="appdetailsplaysection_DetailsProgressContainer_"],
-[class*="contentmanagement_DriveUsageIndicator_"] {
+[class*="contentmanagement_DriveUsageIndicator_"],
+[class*="progressbar_ProgressBar_"] {
   appearance: none !important;
   box-shadow: var(--border-statusbar) !important;
   padding: 1px !important;
@@ -820,16 +831,19 @@ progress,
 progress::-webkit-progress-bar,
 [class*="appdetailsachievementssection_AchievementProgressContainer_"]::-webkit-progress-bar,
 [class*="appdetailsplaysection_DetailsProgressContainer_"]::-webkit-progress-bar,
-[class*="contentmanagement_DriveUsageIndicator_"]::-webkit-progress-bar {
+[class*="contentmanagement_DriveUsageIndicator_"]::-webkit-progress-bar,
+[class*="progressbar_ProgressBar_"]::-webkit-progress-bar {
   background-color: var(--color-button-face) !important;
 }
 progress::-webkit-progress-value,
 [class*="appdetailsachievementssection_AchievementProgressContainer_"]::-webkit-progress-value,
 [class*="appdetailsplaysection_DetailsProgressContainer_"]::-webkit-progress-value,
 [class*="contentmanagement_DriveUsageIndicator_"]::-webkit-progress-value,
+[class*="progressbar_ProgressBar_"]::-webkit-progress-value,
 [class*="appdetailsachievementssection_AchievementProgress_"],
 [class*="appdetailsplaysection_DetailsProgressBar_"],
-[class*="contentmanagement_DriveUsageBar_"] {
+[class*="contentmanagement_DriveUsageBar_"],
+[class*="progressbar_Percent_"] {
   --block-width: 7px !important;
   background-color: transparent !important;
   background-image: repeating-linear-gradient(90deg, var(--color-highlight) 0 var(--block-width), transparent var(--block-width) calc(var(--block-width) + 2px)) !important;
@@ -1054,6 +1068,7 @@ table {
 [role="tab"],
 [class*="desktopbrowser_BrowserTab_"],
 [class*="gamelistbar_GameListHomeAndSearch_"] a,
+[class*="gamepadtabbedpage_Tab_"],
 [class*="pagedsettings_PagedSettingsDialog_PageListItem_"],
 [class*="serverbrowserdialog_SwitchTabButton_"] {
   --color-tab-border: var(--color-button-highlight) !important;
@@ -1072,11 +1087,13 @@ table {
 [role="tab"]::before,
 [class*="desktopbrowser_BrowserTab_"]::before,
 [class*="gamelistbar_GameListHomeAndSearch_"] a::before,
+[class*="gamepadtabbedpage_Tab_"]::before,
 [class*="pagedsettings_PagedSettingsDialog_PageListItem_"]::before,
 [class*="serverbrowserdialog_SwitchTabButton_"]::before,
 [role="tab"]::after,
 [class*="desktopbrowser_BrowserTab_"]::after,
 [class*="gamelistbar_GameListHomeAndSearch_"] a::after,
+[class*="gamepadtabbedpage_Tab_"]::after,
 [class*="pagedsettings_PagedSettingsDialog_PageListItem_"]::after,
 [class*="serverbrowserdialog_SwitchTabButton_"]::after {
   content: '' !important;
@@ -1092,6 +1109,7 @@ table {
 [role="tab"]::before,
 [class*="desktopbrowser_BrowserTab_"]::before,
 [class*="gamelistbar_GameListHomeAndSearch_"] a::before,
+[class*="gamepadtabbedpage_Tab_"]::before,
 [class*="pagedsettings_PagedSettingsDialog_PageListItem_"]::before,
 [class*="serverbrowserdialog_SwitchTabButton_"]::before {
   left: -1px !important;
@@ -1100,6 +1118,7 @@ table {
 [role="tab"]::after,
 [class*="desktopbrowser_BrowserTab_"]::after,
 [class*="gamelistbar_GameListHomeAndSearch_"] a::after,
+[class*="gamepadtabbedpage_Tab_"]::after,
 [class*="pagedsettings_PagedSettingsDialog_PageListItem_"]::after,
 [class*="serverbrowserdialog_SwitchTabButton_"]::after {
   right: -2px !important;
@@ -1108,10 +1127,12 @@ table {
 [role="tab"][aria-selected="true"],
 [class*="desktopbrowser_BrowserTab_"][aria-selected="true"],
 [class*="gamelistbar_GameListHomeAndSearch_"] a[aria-selected="true"],
+[class*="gamepadtabbedpage_Tab_"][aria-selected="true"],
 [class*="pagedsettings_PagedSettingsDialog_PageListItem_"][aria-selected="true"],
 [class*="serverbrowserdialog_SwitchTabButton_"][aria-selected="true"],
 [class*="desktopbrowser_BrowserTab_"][class*="desktopbrowser_Active_"],
 [class*="gamelistbar_GameListHomeAndSearch_"] a[aria-current],
+[class*="gamepadtabbedpage_Tab_"][class*="gamepadtabbedpage_Selected_"],
 [class*="pagedsettings_PagedSettingsDialog_PageListItem_"][class*="pagedsettings_Active_"],
 [class*="serverbrowserdialog_SwitchTabButton_"][class*="serverbrowserdialog_Selected_"] {
   --color-tab-border: var(--color-button-face) !important;
@@ -1123,6 +1144,7 @@ table {
 }
 [role="tablist"],
 [class*="desktopbrowser_BrowserTabs_"],
+[class*="gamepadtabbedpage_TabRowTabs_"],
 [class*="pagedsettings_PagedSettingsDialog_PageList_"],
 [class*="serverbrowserdialog_TopControlsCtr_"] {
   margin-left: 4px !important;
@@ -1130,6 +1152,7 @@ table {
 }
 [role="tabpanel"],
 .DialogBody,
+[class*="gamepadtabbedpage_TabContentsScroll_"],
 [class*="library_AppDetailsTransitionGroup_"],
 [class*="serverbrowserdialog_ServerTabPane_"] {
   background-color: var(--color-button-face) !important;
@@ -1156,6 +1179,7 @@ legend,
 [class*="librarysettings_DescriptionText_"],
 [class*="settings_SettingsDialogBodyText"],
 [class*="remoteplaysettings_TableHeader_"] > :first-child,
+[class*="achievementsheader_ProgressLabel_"],
 [class*="appactivityday_AppActivityDate_"],
 [class*="appactivityday_PartnerEventFeaturedHeader_"],
 [class*="appdetailssectionheader_SectionHeader_"],
@@ -1168,7 +1192,8 @@ legend,
 [class*="pageablecontainer_Name_"],
 [class*="savecollectiondialog_SaveCollectionContainer_"] .DialogBodyText > [class*="savecollectiondialog_InputContainer_"],
 [class*="savecollectiondialog_SaveCollectionContainer_"] .DialogFooter > .DialogLabel,
-[class*="spotlightgameplaysummary_GamePlaySummaryHeader_"] {
+[class*="spotlightgameplaysummary_GamePlaySummaryHeader_"],
+[class*="steamdesktopoverlay_GameOverviewSectionHeader_"] {
   background-color: var(--color-button-face) !important;
 }
 label,
@@ -1514,6 +1539,8 @@ body.child,
 }
 fieldset,
 .DialogControlsSection,
+[class*="achievementsheader_AchievementSearchHeader_"],
+[class*="achievementsheader_StatsBlock_"],
 [class*="appactivityday_AppActivityDay_"],
 [class*="appactivityday_PartnerEvent_"],
 [class*="appdetailsactivitysection_AddToFeed_"],
@@ -1529,7 +1556,8 @@ div:not([class]) > [class*="gamepaddialog_Field_"]:not([class*="settings_Overlay
 [class*="libraryhomeshowcases_Showcase_"],
 [class*="pageablecontainer_PageableContainer_"],
 [class*="savecollectiondialog_SaveCollectionContainer_"] .DialogBodyText,
-[class*="savecollectiondialog_SaveCollectionContainer_"] .DialogFooter {
+[class*="savecollectiondialog_SaveCollectionContainer_"] .DialogFooter,
+[class*="steamdesktopoverlay_GameOverviewSection_"] {
   position: relative !important;
 }
 .ModalPosition_Content,
@@ -1544,6 +1572,13 @@ div:not([class]) > [class*="gamepaddialog_Field_"]:not([class*="settings_Overlay
 [class*="notificationssettings_ToggleHeader_"],
 [class*="aboutsteamdialog_DialogBodyLabel_"],
 [class*="accountpanel_Label_"],
+[class*="achievementsheader_Label_"],
+[class*="achievementslist_AchievementDescription_"],
+[class*="achievementslist_AchievementGlobalPercentage_"],
+[class*="achievementslist_AchievementTitle_"],
+[class*="achievementslist_HeaderText_"],
+[class*="achievementslist_UnlockDate_"],
+[class*="achievementspage_Label_"],
 [class*="activateproductdialog_InfoExample_"],
 [class*="activateproductdialog_InfoExampleHeader_"],
 [class*="addnonsteamgamedialog_AppName_"],
@@ -1606,6 +1641,7 @@ div:not([class]) > [class*="gamepaddialog_Field_"]:not([class*="settings_Overlay
 [class*="gameinfodialog_Header_"],
 [class*="gamelistcollectionmenu_CollectionDeleteContainer_"] .DialogBodyText span,
 [class*="gamelistentry_Container_"],
+[class*="gamepadtabbedpage_Tab_"],
 [class*="hardwaresurveydialog_HardwareSurveySection_"],
 [class*="hardwaresurveydialog_HardwareSurveySection_"] h3,
 [class*="installrequest_AppName_"],
@@ -1638,6 +1674,9 @@ div:not([class]) > [class*="gamepaddialog_Field_"]:not([class*="settings_Overlay
 [class*="spotlightgameplaysummary_GamePlaySummaryHeader_"],
 [class*="steamdesktop_LockIcon_"],
 [class*="steamdesktop_URL_"],
+[class*="steamdesktopoverlay_GameOverviewSectionHeader_"],
+[class*="steamdesktopoverlay_GuideTitle_"],
+[class*="steamdesktopoverlay_Playtime_"],
 [class*="supernav_MenuButton_"],
 [class*="systemsettings_Text_"],
 [class*="writereview_LeftContainer_"] {
@@ -1650,7 +1689,8 @@ div:not([class]) > [class*="gamepaddialog_Field_"]:not([class*="settings_Overlay
 .DialogBody a,
 [class*="appdetailsprimarylinkssection_Text_"],
 [class*="appproperties_SteamInputLink_"],
-[class*="appproperties_ViewMore_"] {
+[class*="appproperties_ViewMore_"],
+[class*="steamdesktopoverlay_GuideTitle_"] {
   color: var(--color-link) !important;
   text-decoration: underline !important;
 }
@@ -1660,6 +1700,7 @@ div:not([class]) > [class*="gamepaddialog_Field_"]:not([class*="settings_Overlay
 [class*="librarysettings_DescriptionText_"],
 [class*="settings_SettingsDialogBodyText"],
 [class*="remoteplaysettings_TableHeader_"] > :first-child,
+[class*="achievementsheader_ProgressLabel_"],
 [class*="appactivityday_AppActivityDate_"],
 [class*="appactivityday_PartnerEventFeaturedHeader_"],
 [class*="appdetailssectionheader_SectionHeader_"],
@@ -1672,7 +1713,8 @@ div:not([class]) > [class*="gamepaddialog_Field_"]:not([class*="settings_Overlay
 [class*="pageablecontainer_Name_"],
 [class*="savecollectiondialog_SaveCollectionContainer_"] .DialogBodyText > [class*="savecollectiondialog_InputContainer_"],
 [class*="savecollectiondialog_SaveCollectionContainer_"] .DialogFooter > .DialogLabel,
-[class*="spotlightgameplaysummary_GamePlaySummaryHeader_"] {
+[class*="spotlightgameplaysummary_GamePlaySummaryHeader_"],
+[class*="steamdesktopoverlay_GameOverviewSectionHeader_"] {
   padding: 0 2px !important;
   margin: 0 !important;
   position: absolute !important;
@@ -1686,8 +1728,10 @@ div:not([class]) > [class*="gamepaddialog_Field_"]:not([class*="settings_Overlay
   --text-spacing: 4px !important;
   --tree-item-spacing-x: 4px !important;
   --text-full: calc(var(--text-ui-size) * var(--text-line)) !important;
+  --tabs-height: 20px !important;
 }
 [class*="console_ConsoleInner_"],
+[class*="achievementspage_List_"],
 [class*="addnonsteamgamedialog_GameList_"],
 [class*="hardwaresurveydialog_HardwareSurveySections_"],
 [class*="screenshotmanagerdialog_ScreenshotList_"] {
@@ -1695,6 +1739,7 @@ div:not([class]) > [class*="gamepaddialog_Field_"]:not([class*="settings_Overlay
   margin: var(--border-size) !important;
 }
 [class*="console_ConsoleInner_"]::before,
+[class*="achievementspage_List_"]::before,
 [class*="addnonsteamgamedialog_GameList_"]::before,
 [class*="hardwaresurveydialog_HardwareSurveySections_"]::before,
 [class*="screenshotmanagerdialog_ScreenshotList_"]::before {
@@ -1704,7 +1749,9 @@ div:not([class]) > [class*="gamepaddialog_Field_"]:not([class*="settings_Overlay
   inset: var(--inset) !important;
   pointer-events: none !important;
 }
-div[class*="launchoptionsdialog_AppNameHeader_"] {
+[class*="achievementsheader_Title_"],
+div[class*="launchoptionsdialog_AppNameHeader_"],
+[class*="steamdesktopoverlay_OverviewTitle_"] {
   color: var(--color-inactive-caption-text) !important;
   font: var(--text-ui) !important;
   font-weight: bold !important;
@@ -1712,7 +1759,9 @@ div[class*="launchoptionsdialog_AppNameHeader_"] {
   left: 23px !important;
   top: 6px !important;
 }
-.WindowFocus div[class*="launchoptionsdialog_AppNameHeader_"] {
+.WindowFocus [class*="achievementsheader_Title_"],
+.WindowFocus div[class*="launchoptionsdialog_AppNameHeader_"],
+.WindowFocus [class*="steamdesktopoverlay_OverviewTitle_"] {
   color: var(--color-active-caption-text) !important;
 }
 button,
@@ -2115,6 +2164,44 @@ button,
 [class*="accountpanel_FatButton_"] svg,
 [class*="accountpanel_Details_"] {
   display: none !important;
+}
+[class*="achievementsheader_AchievementSearchHeader_"] {
+  gap: var(--text-spacing) !important;
+  position: fixed !important;
+  top: -52px !important;
+  right: 0 !important;
+  left: 0 !important;
+}
+[class*="achievementsheader_StatsBlock_"] {
+  background-color: transparent !important;
+}
+[class*="achievementsheader_ProgressLabel_"] {
+  gap: var(--text-spacing) !important;
+}
+[class*="achievementslist_AchievementList_"] {
+  padding: 0 !important;
+}
+[class*="achievementslist_AchievementListItemBase_"] {
+  background-color: transparent !important;
+}
+[class*="achievementslist_AchievementListItemBase_"]::after {
+  content: '' !important;
+}
+[class*="achievementspage_DragHandle_"] {
+  position: absolute !important;
+  right: 0 !important;
+}
+[class*="achievementspage_HeaderContainer_"] {
+  padding: 0 !important;
+}
+[class*="achievementspage_List_"] {
+  --inset: 34px 14px 10px 14px !important;
+  gap: 0 !important;
+  overflow: auto !important;
+  height: 100% !important;
+}
+[class*="achievementspage_SortableUserAchievementInner_"] {
+  background-color: transparent !important;
 }
 [class*="activateproductdialog_HeaderContainer_"] {
   width: unset !important;
@@ -3266,6 +3353,34 @@ div:not([class]) > [class*="gamepaddialog_Field_"]:not([class*="settings_Overlay
 [class*="gamepadslider_SliderHandleContainer_"] {
   transform: translateX(calc(-100% * var(--inverse-normalized-value) + 7px * var(--inverse-normalized-value))) !important;
 }
+[class*="gamepadtabbedpage_FixCenterAlignScroll_"] {
+  gap: 0 !important;
+  padding: 0 !important;
+  overflow: visible !important;
+}
+[class*="gamepadtabbedpage_Glyphs_"] {
+  display: none !important;
+}
+[class*="gamepadtabbedpage_TabHeaderRowWrapper_"],
+[class*="gamepadtabbedpage_TabContents_"] {
+  top: 53px !important;
+}
+[class*="gamepadtabbedpage_TabContentsScroll_"] {
+  margin-top: var(--tabs-height) !important;
+  overflow: hidden !important;
+}
+[class*="gamepadtabbedpage_TabHeaderRowWrapper_"] {
+  padding: 0 !important;
+}
+[class*="gamepadtabbedpage_TabHeaderRowWrapper_"]::before {
+  display: none !important;
+}
+[class*="gamepadtabbedpage_TabRowSpacer_"] {
+  display: none !important;
+}
+[class*="gamepadtabbedpage_TabsRowScroll_"] {
+  -webkit-mask-image: none !important;
+}
 [class*="hardwaresurveydialog_HardwareSurveyDialog_"] .DialogButton.Primary {
   width: 148px !important;
 }
@@ -3660,10 +3775,12 @@ div:not([class]) > [class*="gamepaddialog_Field_"]:not([class*="settings_Overlay
   width: var(--separator-size) !important;
   margin-right: calc(var(--separator-size) / -2) !important;
 }
+[class*="playersdialog_OverlayPlayersDialog_"],
 [class*="playersdialog_PlayersDialog_"] .DialogBody {
   padding: 0 !important;
 }
 [class*="playersdialog_PlayersList_"] {
+  border: none !important;
   margin: 0 !important;
 }
 [class*="playersdialog_PlayersListBody_"] {
@@ -3683,6 +3800,9 @@ div:not([class]) > [class*="gamepaddialog_Field_"]:not([class*="settings_Overlay
   padding: 0 !important;
   display: flex !important;
   justify-content: space-between !important;
+}
+[class*="progressbar_ProgressBar_"] {
+  background-color: transparent !important;
 }
 [class*="prosemirror_CommandButton_"] {
   min-width: 32px !important;
@@ -3797,6 +3917,10 @@ div:not([class]) > [class*="gamepaddialog_Field_"]:not([class*="settings_Overlay
 [class*="savecollectiondialog_TwoOptionsContainer_"] {
   background-color: transparent !important;
 }
+[class*="screenshotmanagerdialog_ButtonBox_"]:not([class*="screenshotmanagerdialog_Combobox_"],
+[class*="screenshotmanagerdialog_Dropdown_"]) {
+  opacity: 1 !important;
+}
 [class*="screenshotmanagerdialog_ButtonGroup_"] {
   gap: 6px !important;
 }
@@ -3851,6 +3975,9 @@ div:not([class]) > [class*="gamepaddialog_Field_"]:not([class*="settings_Overlay
   flex: unset !important;
   align-items: start !important;
 }
+[class*="screenshotmanagerdialog_FocusedContainer_"] {
+  overflow: auto !important;
+}
 [class*="screenshotmanagerdialog_ButtonGroup_"]:nth-child(2) [class*="screenshotmanagerdialog_IconButton_"]::before {
   content: var(--ScreenshotUploader_Settings) !important;
 }
@@ -3899,6 +4026,11 @@ div:not([class]) > [class*="gamepaddialog_Field_"]:not([class*="settings_Overlay
 }
 [class*="screenshotmanagerdialog_Option_"] {
   margin: 0 !important;
+}
+[class*="screenshotmanagerdialog_OverlayScreenshotManagerContainer_"] {
+  padding: 0 !important;
+  height: calc(100% - 17px) !important;
+  flex-grow: 1 !important;
 }
 [class*="screenshotmanagerdialog_ScreenshotForm_"] {
   gap: 8px !important;
@@ -4201,6 +4333,39 @@ div:not([class]) > [class*="gamepaddialog_Field_"]:not([class*="settings_Overlay
 }
 [class*="steamdesktop_URLBarText_"] {
   width: 100% !important;
+}
+[class*="steamdesktopoverlay_DragHandle_"] {
+  padding: 0 !important;
+}
+[class*="steamdesktopoverlay_GameOverview_"] {
+  background: none !important;
+  padding: 0 !important;
+  overflow: visible !important;
+}
+[class*="steamdesktopoverlay_GameOverviewSection_"] {
+  background-color: transparent !important;
+}
+[class*="steamdesktopoverlay_GameOverviewSectionChildren_"] {
+  padding: 0 !important;
+}
+[class*="steamdesktopoverlay_GameOverviewSectionHeader_"] {
+  background-color: transparent !important;
+}
+[class*="steamdesktopoverlay_GameOverviewSectionHeader_"] svg {
+  color: inherit !important;
+  margin: 0 !important;
+}
+[class*="steamdesktopoverlay_GameOverviewSectionTitle_"] {
+  gap: var(--text-spacing) !important;
+}
+[class*="steamdesktopoverlay_GuideListItem_"] {
+  background-color: transparent !important;
+  color: inherit !important;
+  padding: 0 !important;
+  margin-top: var(--text-spacing) !important;
+}
+[class*="steamdesktopoverlay_Playtime_"] {
+  gap: var(--text-spacing) !important;
 }
 [class*="steamdesktopoverlay_OverlayPopup_"] {
   background: none !important;
