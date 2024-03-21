@@ -10,7 +10,6 @@
 
 #AppsToInstall {
 	border: none;
-
 	margin: 0;
 
 	&::after {
@@ -28,7 +27,6 @@
 #AppToInstall {
 	line-height: inherit;
 	border: none;
-
 	padding: 0;
 
 	align-items: center;
@@ -66,7 +64,6 @@
 
 	background-color: transparent;
 	color: var(--color-window-text);
-
 	gap: 4px;
 	padding: 0 3px;
 	margin: 0;
@@ -84,8 +81,6 @@
 
 	& > :not([class]) {
 		@extend .content-container;
-
-		padding: 2px;
 	}
 }
 
@@ -107,13 +102,7 @@
 
 #NoticeInstallFolder:not(:has(> :empty)) {
 	@extend $text-reset;
-
-	// TODO .tooltip/.info
-	background-color: var(--color-tooltip);
-	color: var(--color-tooltip-text);
-	border: 1px solid var(--color-button-shadow-dark);
-
-	padding: 3px;
+	@extend .tooltip;
 
 	align-items: center;
 	justify-content: start;
@@ -121,11 +110,10 @@
 	&::before {
 		content: '';
 
-		background-image: var(--icon-dialog-warning);
-
-		margin-right: 8px;
-
 		width: 32px;
 		height: 32px;
+
+		background-image: var(--icon-dialog-warning);
+		margin-right: 8px;
 	}
 }

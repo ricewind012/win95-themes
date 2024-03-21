@@ -114,21 +114,20 @@ for i in range(2, $max-nest) {
 			align-items: center;
 
 			&::before {
-				padding-right: 2px;
-
 				// Fix for source control tab or the extension
 				position: relative;
 				height: var(--icon-size);
 				z-index: 99;
+
+				padding-right: 2px;
 			}
 
 			&::after {
+				width: 12px;
+
 				opacity: 1;
 				font-size: inherit;
-
 				margin: 0;
-
-				width: 12px;
 			}
 
 			&-container {
@@ -141,7 +140,6 @@ for i in range(2, $max-nest) {
 
 			.label-separator {
 				opacity: 1;
-
 				margin: 0;
 			}
 		}
@@ -151,9 +149,9 @@ for i in range(2, $max-nest) {
 // Tree dots
 .monaco-tl {
 	&-row {
-		overflow: visible;
-
 		margin-left: -7px;
+
+		overflow: visible;
 	}
 
 	&-indent {
@@ -162,7 +160,6 @@ for i in range(2, $max-nest) {
 
 	&-contents {
 		overflow: visible;
-
 		position: relative;
 
 		// Expand button to icon dots
@@ -174,11 +171,11 @@ for i in range(2, $max-nest) {
 		}
 
 		&::before {
-			border-bottom: 1px dotted var(--color-gray-text);
-
 			left: -6px;
 			top: 50%;
 			width: 7px;
+
+			border-bottom: 1px dotted var(--color-gray-text);
 		}
 	}
 
@@ -234,14 +231,14 @@ for i in range(2, $max-nest) {
 // Overrides for files not at first level
 [role="treeitem"]:not([aria-expanded]):not([aria-level="1"]) {
 	.monaco-tl-contents::before {
-		border-left: 1px dotted var(--color-gray-text);
-		border-bottom: 1px dotted var(--color-gray-text);
-
 		left: calc(var(--icon-size) * -1);
 		top: -50%;
 		width: calc(var(--icon-size) - var(--spacing-tree));
 		height: 100%;
 		z-index: 1;
+
+		border-left: 1px dotted var(--color-gray-text);
+		border-bottom: 1px dotted var(--color-gray-text);
 	}
 
 	.explorer-folders-view & .monaco-icon-label {

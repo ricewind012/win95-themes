@@ -96,7 +96,6 @@ replace-text(token) {
 #Details > div {
 	color: inherit;
 	text-align: start;
-
 	gap: 8px;
 	padding: 4px;
 
@@ -106,8 +105,6 @@ replace-text(token) {
 #ExplainerBox,
 #FocusedScreenshots {
 	@extend .content-container;
-
-	padding: 2px;
 
 	height: 100%;
 
@@ -153,7 +150,6 @@ replace-text(token) {
 	@extend $text-reset;
 
 	border: none;
-
 	padding: 0;
 	margin: 0;
 
@@ -237,9 +233,10 @@ replace-text(token) {
 	&#Selected,
 	&:hover {
 		filter: none;
-		transform: none;
 		border-color: var(--color-highlight);
 		box-shadow: none;
+
+		transform: none;
 	}
 }
 

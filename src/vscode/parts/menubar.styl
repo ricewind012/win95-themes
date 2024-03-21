@@ -1,6 +1,5 @@
 .menubar {
 	overflow: visible;
-
 	position: absolute;
 	left: 0;
 	top: calc(var(--titlebar-height) + var(--window-gap));
@@ -11,11 +10,11 @@
 	&::after {
 		content: '';
 
-		@extend hr;
-
 		position: absolute;
 		top: calc(var(--menubar-height) - 1px);
 		width: 100%;
+
+		@extend hr;
 	}
 
 	&-menu {

@@ -1289,8 +1289,11 @@ fieldset,
   --spacing-label: 6px !important;
   --spacing-toolbar: 8px !important;
   --spacing-tree: 6px !important;
+  --dialog-spacing: 7px !important;
+  --text-spacing: 4px !important;
   --tree-item-spacing-x: 4px !important;
   --text-full: calc(var(--text-ui-size) * var(--text-line)) !important;
+  --tabs-height: 20px !important;
 }
 .editor .monaco-editor .monaco-scrollable-element::after,
 .editor .monaco-editor .empty::before {
@@ -1328,11 +1331,11 @@ fieldset,
   height: 23px !important;
 }
 .monaco-inputbox {
-  overflow: visible !important;
   background-color: transparent !important;
   color: var(--color-window-text) !important;
   font: var(--text-ui) !important;
   border: none !important;
+  overflow: visible !important;
   height: unset !important;
 }
 .monaco-inputbox .action-label {
@@ -1544,13 +1547,13 @@ fieldset,
 .codicon-folding-collapsed::before,
 .codicon-folding-manual-collapsed::before {
   content: '' !important;
+  width: 4px !important;
+  height: 7px !important;
+  display: block !important;
   -webkit-mask: var(--icon-img) no-repeat !important;
   -webkit-mask-size: 4px 7px !important;
   -webkit-mask-position: var(--icon-img-pos, center) !important;
   background-color: var(--color-button-text) !important;
-  width: 4px !important;
-  height: 7px !important;
-  display: block !important;
 }
 .codicon-chevron-down,
 .codicon-drop-down-button,
@@ -1576,13 +1579,13 @@ fieldset,
 .codicon-folding-expanded::before,
 .codicon-folding-manual-expanded::before {
   content: '' !important;
+  width: 7px !important;
+  height: 4px !important;
+  display: block !important;
   -webkit-mask: var(--icon-img) no-repeat !important;
   -webkit-mask-size: 7px 4px !important;
   -webkit-mask-position: var(--icon-img-pos, center) !important;
   background-color: var(--color-button-text) !important;
-  width: 7px !important;
-  height: 4px !important;
-  display: block !important;
 }
 .codicon-add,
 .codicon-plus,
@@ -1611,13 +1614,13 @@ fieldset,
 .codicon-extensions-warning-message::before,
 .codicon-markers-view-icon::before {
   content: '' !important;
+  width: 9px !important;
+  height: 9px !important;
+  display: block !important;
   -webkit-mask: var(--icon-img) no-repeat !important;
   -webkit-mask-size: 9px 9px !important;
   -webkit-mask-position: var(--icon-img-pos, center) !important;
   background-color: var(--color-button-text) !important;
-  width: 9px !important;
-  height: 9px !important;
-  display: block !important;
 }
 .codicon-book,
 .codicon-remote-explorer-documentation,
@@ -1684,13 +1687,13 @@ fieldset,
 .codicon-testing-cancel-refresh-tests::before,
 .codicon-testing-failed-icon::before {
   content: '' !important;
+  width: 10px !important;
+  height: 10px !important;
+  display: block !important;
   -webkit-mask: var(--icon-img) no-repeat !important;
   -webkit-mask-size: 10px 10px !important;
   -webkit-mask-position: var(--icon-img-pos, center) !important;
   background-color: var(--color-button-text) !important;
-  width: 10px !important;
-  height: 10px !important;
-  display: block !important;
 }
 .codicon-symbol-reference,
 .codicon-go-to-file,
@@ -1823,13 +1826,13 @@ fieldset,
 }
 .codicon-bell::before {
   content: '' !important;
+  width: 9px !important;
+  height: 9px !important;
+  display: block !important;
   -webkit-mask: var(--icon-img) no-repeat !important;
   -webkit-mask-size: 9px 9px !important;
   -webkit-mask-position: var(--icon-img-pos, center) !important;
   background-color: var(--color-button-text) !important;
-  width: 9px !important;
-  height: 9px !important;
-  display: block !important;
 }
 .codicon-chrome-maximize {
   --button-img: var(--icon-maximize) !important;
@@ -1866,13 +1869,13 @@ fieldset,
 }
 .codicon-menu-submenu::before {
   content: '' !important;
+  width: 4px !important;
+  height: 7px !important;
+  display: block !important;
   -webkit-mask: var(--icon-img) no-repeat !important;
   -webkit-mask-size: 4px 7px !important;
   -webkit-mask-position: var(--icon-img-pos, center) !important;
   background-color: var(--color-button-text) !important;
-  width: 4px !important;
-  height: 7px !important;
-  display: block !important;
 }
 .action-menu-item:hover > .codicon-menu-submenu {
   --color-button-text: var(--color-highlight-text) !important;
@@ -2056,17 +2059,17 @@ fieldset,
   box-shadow: none !important;
 }
 .sidebar .title.has-composite-bar {
-  overflow: visible !important;
   padding: 0 !important;
+  overflow: visible !important;
 }
 .sidebar .title.has-composite-bar .monaco-action-bar {
   height: unset !important;
 }
 .sidebar .title.has-composite-bar .monaco-action-bar .action-item::before,
 .sidebar .title.has-composite-bar .monaco-action-bar .action-item::after {
+  display: block !important;
   opacity: 1 !important;
   margin: 0 !important;
-  display: block !important;
 }
 .sidebar .title.has-composite-bar + .content {
   --tabs-compensation: 8px !important;
@@ -2282,16 +2285,16 @@ fieldset,
   align-items: center !important;
 }
 .part.sidebar [role="treeitem"] .monaco-icon-label::before {
-  padding-right: 2px !important;
   position: relative !important;
   height: var(--icon-size) !important;
   z-index: 99 !important;
+  padding-right: 2px !important;
 }
 .part.sidebar [role="treeitem"] .monaco-icon-label::after {
+  width: 12px !important;
   opacity: 1 !important;
   font-size: inherit !important;
   margin: 0 !important;
-  width: 12px !important;
 }
 .part.sidebar [role="treeitem"] .monaco-icon-label-container {
   margin-top: 1px !important;
@@ -2301,8 +2304,8 @@ fieldset,
   margin: 0 !important;
 }
 .monaco-tl-row {
-  overflow: visible !important;
   margin-left: -7px !important;
+  overflow: visible !important;
 }
 .monaco-tl-indent {
   left: 11px !important;
@@ -2317,10 +2320,10 @@ fieldset,
   position: absolute !important;
 }
 .monaco-tl-contents::before {
-  border-bottom: 1px dotted var(--color-gray-text) !important;
   left: -6px !important;
   top: 50% !important;
   width: 7px !important;
+  border-bottom: 1px dotted var(--color-gray-text) !important;
 }
 .monaco-tl-twistie {
   margin-right: var(--spacing-tree) !important;
@@ -2355,13 +2358,13 @@ fieldset,
   background-size: 15px !important;
 }
 [role="treeitem"]:not([aria-expanded]):not([aria-level="1"]) .monaco-tl-contents::before {
-  border-left: 1px dotted var(--color-gray-text) !important;
-  border-bottom: 1px dotted var(--color-gray-text) !important;
   left: calc(var(--icon-size) * -1) !important;
   top: -50% !important;
   width: calc(var(--icon-size) - var(--spacing-tree)) !important;
   height: 100% !important;
   z-index: 1 !important;
+  border-left: 1px dotted var(--color-gray-text) !important;
+  border-bottom: 1px dotted var(--color-gray-text) !important;
 }
 .explorer-folders-view [role="treeitem"]:not([aria-expanded]):not([aria-level="1"]) .monaco-icon-label {
   margin-left: -7px !important;
@@ -2608,8 +2611,8 @@ body[role="document"] {
 }
 .gettingStartedSlideCategories ul,
 .gettingStartedSlideCategories li {
-  overflow: visible !important;
   font: var(--text-ui) !important;
+  overflow: visible !important;
 }
 .gettingStartedSlideCategories li {
   margin-top: 2px !important;
@@ -2855,10 +2858,10 @@ body[role="document"] {
   display: none !important;
 }
 .part.panel {
-  overflow: visible !important;
   background-color: transparent !important;
   padding: 0 9px 0 7px !important;
   border: none !important;
+  overflow: visible !important;
   width: calc(100% - 3px) !important;
   height: calc(100% - 28px) !important;
 }
@@ -2868,8 +2871,8 @@ body[role="document"] {
   margin: 0 !important;
   margin-top: -8px !important;
   gap: 2px !important;
-  height: unset !important;
   overflow: visible !important;
+  height: unset !important;
 }
 .part.panel .title-actions {
   height: unset !important;
@@ -3171,11 +3174,11 @@ body[role="document"] {
 }
 .dialog-icon::before {
   content: attr(aria-label) !important;
-  font: var(--text-ui) !important;
-  font-weight: bold !important;
   position: absolute !important;
   left: calc(var(--a) + 2px) !important;
   top: calc(var(--a) + 3px) !important;
+  font: var(--text-ui) !important;
+  font-weight: bold !important;
 }
 .dialog-toolbar-row {
   background-color: var(--color-active-caption) !important;

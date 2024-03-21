@@ -3,7 +3,6 @@
 
 	opacity: 1;
 	text-transform: unset;
-
 	margin-bottom: 16px;
 
 	justify-content: center;
@@ -62,7 +61,6 @@
 	& > div {
 		border: none;
 		box-shadow: none;
-
 		padding: 0;
 		margin: 0;
 	}
@@ -79,7 +77,6 @@
 
 #DropDownItems {
 	font: var(--text-ui);
-
 	margin: 0;
 
 	&#OptionsRule {
@@ -87,16 +84,15 @@
 
 		&::before {
 			content: '';
+
+			position: unset;
+			width: calc(100% + 40px);
 			display: block;
 
 			@extend hr;
 
 			background-color: var(--color-button-face);
-
 			margin-left: -20px;
-
-			position: unset;
-			width: calc(100% + 40px);
 		}
 	}
 }
