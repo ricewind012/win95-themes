@@ -2462,6 +2462,7 @@ fieldset,
   --vscode-problemsWarningIcon-foreground: var(--color-active-caption-text) !important;
   --vscode-notifications-background: var(--color-button-face) !important;
   --vscode-notifications-foreground: var(--color-button-text) !important;
+  --vscode-activityBarTop-activeBorder: transparent !important;
   --vscode-focusBorder: transparent !important;
   --vscode-textCodeBlock-background: color-mix(in srgb, currentColor 25%, transparent) !important;
   --vscode-widget-shadow: transparent !important;
@@ -2528,6 +2529,12 @@ fieldset,
 .extension-editor .content {
   height: calc(100% - 43px) !important;
 }
+.extension-editor .feature-contributions {
+  margin: 0 !important;
+}
+.extension-editor .features-list-wrapper {
+  padding: 0 !important;
+}
 .extension-editor .readme-container {
   max-width: unset !important;
 }
@@ -2550,6 +2557,7 @@ fieldset,
   padding: 14px !important;
 }
 .more-info-entry {
+  background-color: transparent !important;
   font: var(--text-ui) !important;
 }
 .webview {
@@ -3252,6 +3260,7 @@ body[role="document"] {
   padding-left: 0 !important;
 }
 .monaco-menu .keybinding {
+  padding-left: 20px !important;
   padding-right: 0 !important;
 }
 .monaco-action-bar {
