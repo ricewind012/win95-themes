@@ -1721,6 +1721,36 @@ div:not([class]) > [class*="gamepaddialog_Field_"]:not([class*="settings_Overlay
   position: absolute !important;
   top: -5px !important;
 }
+[class*="titlebarcontrols_NotificationButtonContainer_"] {
+  --button-img: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAICAYAAADED76LAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAAwSURBVChTY0AD/6EYDhihNAigSAABWI4JzMQDKFcAcwO6/TDACFKASxIrQPMmAwMAgi8HBW4J8QQAAAAASUVORK5CYII=") !important;
+  --button-img-size: 9px !important;
+}
+[class*="titlebarcontrols_GamepadUIToggle_"] {
+  --button-img: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAICAYAAADED76LAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAAoSURBVChTY2RgYPgPxHgBPgX/maAMnIByBQQdCVIAArgUMRIwgYEBAGefBgb8inyEAAAAAElFTkSuQmCC") !important;
+  --button-img-size: 9px !important;
+}
+[class*="appdetailsprimarylinkssection_MenuButton_"],
+[class*="contentmanagement_DriveSettingsButton_"],
+[class*="installrequest_FolderSettings_"],
+[class*="notificationssettings_PrefDetailsToggle_"] {
+  --button-img: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA4IDIiPjxzdHlsZT5yZWN0e3dpZHRoOjJweDtoZWlnaHQ6MnB4fTwvc3R5bGU+PHJlY3QgeD0iMCIvPjxyZWN0IHg9IjMiLz48cmVjdCB4PSI2Ii8+PC9zdmc+Cg==") !important;
+  --button-img-size: 8px auto !important;
+}
+[class*="titlebarcontrols_AnnouncementsButton_"] {
+  --button-img: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAICAYAAADED76LAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAAtSURBVChTY2RAgP9QGgPAJJAVwMWYoAycAGQFSDWMxgqwWQED/6lnAg7AwAAATOYP+fpPtrkAAAAASUVORK5CYII=") !important;
+  --button-img-size: 9px !important;
+}
+[class*="downloadgraph_SettingsButton_"] [class*="downloadgraph_Button_"],
+[class*="libraryhomenewupdates_SettingsButton_"] {
+  --button-img: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMSAxMSI+PHJlY3Qgd2lkdGg9IjEiIGhlaWdodD0iMSIgeD0iNSIgeT0iNCIvPjxyZWN0IHdpZHRoPSIxIiBoZWlnaHQ9IjEiIHg9IjUiIHk9IjYiLz48cmVjdCB3aWR0aD0iMSIgaGVpZ2h0PSIxIiB4PSI0IiB5PSI1Ii8+PHJlY3Qgd2lkdGg9IjEiIGhlaWdodD0iMSIgeD0iNiIgeT0iNSIvPjxyZWN0IHdpZHRoPSIzIiBoZWlnaHQ9IjEiIHg9IjQiLz48cmVjdCB3aWR0aD0iMSIgaGVpZ2h0PSIyIiB4PSI0IiB5PSIxIi8+PHJlY3Qgd2lkdGg9IjEiIGhlaWdodD0iMiIgeD0iNiIgeT0iMSIvPjxyZWN0IHdpZHRoPSIzIiBoZWlnaHQ9IjEiIHg9IjQiIHk9IjEwIi8+PHJlY3Qgd2lkdGg9IjEiIGhlaWdodD0iMiIgeD0iNCIgeT0iOCIvPjxyZWN0IHdpZHRoPSIxIiBoZWlnaHQ9IjIiIHg9IjYiIHk9IjgiLz48cmVjdCB3aWR0aD0iMSIgaGVpZ2h0PSIxIiB4PSIyIiB5PSIxIi8+PHJlY3Qgd2lkdGg9IjEiIGhlaWdodD0iMSIgeD0iMiIgeT0iMyIvPjxyZWN0IHdpZHRoPSIxIiBoZWlnaHQ9IjEiIHg9IjEiIHk9IjIiLz48cmVjdCB3aWR0aD0iMSIgaGVpZ2h0PSIxIiB4PSIzIiB5PSIyIi8+PHJlY3Qgd2lkdGg9IjEiIGhlaWdodD0iMiIgeD0iNiIgeT0iOCIvPjxyZWN0IHdpZHRoPSIxIiBoZWlnaHQ9IjEiIHg9IjgiIHk9IjEiLz48cmVjdCB3aWR0aD0iMSIgaGVpZ2h0PSIxIiB4PSI4IiB5PSIzIi8+PHJlY3Qgd2lkdGg9IjEiIGhlaWdodD0iMSIgeD0iNyIgeT0iMiIvPjxyZWN0IHdpZHRoPSIxIiBoZWlnaHQ9IjEiIHg9IjkiIHk9IjIiLz48cmVjdCB3aWR0aD0iMSIgaGVpZ2h0PSIxIiB4PSI4IiB5PSI3Ii8+PHJlY3Qgd2lkdGg9IjEiIGhlaWdodD0iMSIgeD0iOCIgeT0iOSIvPjxyZWN0IHdpZHRoPSIxIiBoZWlnaHQ9IjEiIHg9IjciIHk9IjgiLz48cmVjdCB3aWR0aD0iMSIgaGVpZ2h0PSIxIiB4PSI5IiB5PSI4Ii8+PHJlY3Qgd2lkdGg9IjEiIGhlaWdodD0iMSIgeD0iMiIgeT0iNyIvPjxyZWN0IHdpZHRoPSIxIiBoZWlnaHQ9IjEiIHg9IjIiIHk9IjkiLz48cmVjdCB3aWR0aD0iMSIgaGVpZ2h0PSIxIiB4PSIxIiB5PSI4Ii8+PHJlY3Qgd2lkdGg9IjEiIGhlaWdodD0iMSIgeD0iMyIgeT0iOCIvPjxyZWN0IHdpZHRoPSIxIiBoZWlnaHQ9IjMiIHk9IjQiLz48cmVjdCB3aWR0aD0iMSIgaGVpZ2h0PSIzIiB4PSIxMCIgeT0iNCIvPjxyZWN0IHdpZHRoPSIyIiBoZWlnaHQ9IjEiIHg9IjEiIHk9IjQiLz48cmVjdCB3aWR0aD0iMiIgaGVpZ2h0PSIxIiB4PSIxIiB5PSI2Ii8+PHJlY3Qgd2lkdGg9IjIiIGhlaWdodD0iMSIgeD0iOCIgeT0iNCIvPjxyZWN0IHdpZHRoPSIyIiBoZWlnaHQ9IjEiIHg9IjgiIHk9IjYiLz48L3N2Zz4=") !important;
+  --button-img-size: 11px !important;
+  --button-img-pos: 2px !important;
+}
+[class*="appproperties_Controls_"] > .DialogButton {
+  --button-img: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA5IDkiPjxyZWN0IHdpZHRoPSI5IiBoZWlnaHQ9IjEiIHk9IjIiLz48cmVjdCB3aWR0aD0iMSIgaGVpZ2h0PSIxIiB4PSIyIiB5PSIxIi8+PHJlY3Qgd2lkdGg9IjMiIGhlaWdodD0iMSIgeD0iMyIvPjxyZWN0IHdpZHRoPSIxIiBoZWlnaHQ9IjEiIHg9IjYiIHk9IjEiLz48cmVjdCB3aWR0aD0iMSIgaGVpZ2h0PSI1IiB4PSIxIiB5PSIzIi8+PHJlY3Qgd2lkdGg9IjEiIGhlaWdodD0iMyIgeD0iMyIgeT0iNCIvPjxyZWN0IHdpZHRoPSIxIiBoZWlnaHQ9IjMiIHg9IjUiIHk9IjQiLz48cmVjdCB3aWR0aD0iMSIgaGVpZ2h0PSI1IiB4PSI3IiB5PSIzIi8+PHJlY3Qgd2lkdGg9IjUiIGhlaWdodD0iMSIgeD0iMiIgeT0iOCIvPjwvc3ZnPgo=") !important;
+  --button-img-size: 9px !important;
+  --button-img-pos: 3px 2px !important;
+}
 :root {
   --spacing-label: 6px !important;
   --spacing-toolbar: 8px !important;
@@ -2416,10 +2446,6 @@ button,
   padding-top: 0 !important;
   margin-right: 12px !important;
 }
-[class*="appdetailsprimarylinkssection_MenuButton_"] {
-  --button-img: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA4IDIiPjxzdHlsZT5yZWN0e3dpZHRoOjJweDtoZWlnaHQ6MnB4fTwvc3R5bGU+PHJlY3QgeD0iMCIvPjxyZWN0IHg9IjMiLz48cmVjdCB4PSI2Ii8+PC9zdmc+Cg==") !important;
-  --button-img-size: 8px auto !important;
-}
 [class*="appdetailssection_AppDetailsSection_"] {
   color: inherit !important;
   margin: 0 !important;
@@ -2536,11 +2562,6 @@ div[class*="appdetailssection_AppDetailsSectionContainer_"] {
   opacity: 1 !important;
   color: var(--color-window-text) !important;
   left: 80% !important;
-}
-[class*="appproperties_Controls_"] > .DialogButton {
-  --button-img: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA5IDkiPjxyZWN0IHdpZHRoPSI5IiBoZWlnaHQ9IjEiIHk9IjIiLz48cmVjdCB3aWR0aD0iMSIgaGVpZ2h0PSIxIiB4PSIyIiB5PSIxIi8+PHJlY3Qgd2lkdGg9IjMiIGhlaWdodD0iMSIgeD0iMyIvPjxyZWN0IHdpZHRoPSIxIiBoZWlnaHQ9IjEiIHg9IjYiIHk9IjEiLz48cmVjdCB3aWR0aD0iMSIgaGVpZ2h0PSI1IiB4PSIxIiB5PSIzIi8+PHJlY3Qgd2lkdGg9IjEiIGhlaWdodD0iMyIgeD0iMyIgeT0iNCIvPjxyZWN0IHdpZHRoPSIxIiBoZWlnaHQ9IjMiIHg9IjUiIHk9IjQiLz48cmVjdCB3aWR0aD0iMSIgaGVpZ2h0PSI1IiB4PSI3IiB5PSIzIi8+PHJlY3Qgd2lkdGg9IjUiIGhlaWdodD0iMSIgeD0iMiIgeT0iOCIvPjwvc3ZnPgo=") !important;
-  --button-img-size: 9px !important;
-  --button-img-pos: 3px 2px !important;
 }
 [class*="appproperties_Controls_"] > .DialogButton svg {
   display: none !important;
@@ -2759,8 +2780,6 @@ div[class*="appdetailssection_AppDetailsSectionContainer_"] {
   display: none !important;
 }
 [class*="contentmanagement_DriveSettingsButton_"] {
-  --button-img: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA4IDIiPjxzdHlsZT5yZWN0e3dpZHRoOjJweDtoZWlnaHQ6MnB4fTwvc3R5bGU+PHJlY3QgeD0iMCIvPjxyZWN0IHg9IjMiLz48cmVjdCB4PSI2Ii8+PC9zdmc+Cg==") !important;
-  --button-img-size: 8px auto !important;
   width: unset !important;
 }
 [class*="contentmanagement_DriveSettingsButton_"] svg {
@@ -2909,11 +2928,6 @@ div[class*="appdetailssection_AppDetailsSectionContainer_"] {
 }
 [class*="downloadgraph_GraphAndStats_"] {
   height: unset !important;
-}
-[class*="downloadgraph_SettingsButton_"] [class*="downloadgraph_Button_"] {
-  --button-img: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMSAxMSI+PHJlY3Qgd2lkdGg9IjEiIGhlaWdodD0iMSIgeD0iNSIgeT0iNCIvPjxyZWN0IHdpZHRoPSIxIiBoZWlnaHQ9IjEiIHg9IjUiIHk9IjYiLz48cmVjdCB3aWR0aD0iMSIgaGVpZ2h0PSIxIiB4PSI0IiB5PSI1Ii8+PHJlY3Qgd2lkdGg9IjEiIGhlaWdodD0iMSIgeD0iNiIgeT0iNSIvPjxyZWN0IHdpZHRoPSIzIiBoZWlnaHQ9IjEiIHg9IjQiLz48cmVjdCB3aWR0aD0iMSIgaGVpZ2h0PSIyIiB4PSI0IiB5PSIxIi8+PHJlY3Qgd2lkdGg9IjEiIGhlaWdodD0iMiIgeD0iNiIgeT0iMSIvPjxyZWN0IHdpZHRoPSIzIiBoZWlnaHQ9IjEiIHg9IjQiIHk9IjEwIi8+PHJlY3Qgd2lkdGg9IjEiIGhlaWdodD0iMiIgeD0iNCIgeT0iOCIvPjxyZWN0IHdpZHRoPSIxIiBoZWlnaHQ9IjIiIHg9IjYiIHk9IjgiLz48cmVjdCB3aWR0aD0iMSIgaGVpZ2h0PSIxIiB4PSIyIiB5PSIxIi8+PHJlY3Qgd2lkdGg9IjEiIGhlaWdodD0iMSIgeD0iMiIgeT0iMyIvPjxyZWN0IHdpZHRoPSIxIiBoZWlnaHQ9IjEiIHg9IjEiIHk9IjIiLz48cmVjdCB3aWR0aD0iMSIgaGVpZ2h0PSIxIiB4PSIzIiB5PSIyIi8+PHJlY3Qgd2lkdGg9IjEiIGhlaWdodD0iMiIgeD0iNiIgeT0iOCIvPjxyZWN0IHdpZHRoPSIxIiBoZWlnaHQ9IjEiIHg9IjgiIHk9IjEiLz48cmVjdCB3aWR0aD0iMSIgaGVpZ2h0PSIxIiB4PSI4IiB5PSIzIi8+PHJlY3Qgd2lkdGg9IjEiIGhlaWdodD0iMSIgeD0iNyIgeT0iMiIvPjxyZWN0IHdpZHRoPSIxIiBoZWlnaHQ9IjEiIHg9IjkiIHk9IjIiLz48cmVjdCB3aWR0aD0iMSIgaGVpZ2h0PSIxIiB4PSI4IiB5PSI3Ii8+PHJlY3Qgd2lkdGg9IjEiIGhlaWdodD0iMSIgeD0iOCIgeT0iOSIvPjxyZWN0IHdpZHRoPSIxIiBoZWlnaHQ9IjEiIHg9IjciIHk9IjgiLz48cmVjdCB3aWR0aD0iMSIgaGVpZ2h0PSIxIiB4PSI5IiB5PSI4Ii8+PHJlY3Qgd2lkdGg9IjEiIGhlaWdodD0iMSIgeD0iMiIgeT0iNyIvPjxyZWN0IHdpZHRoPSIxIiBoZWlnaHQ9IjEiIHg9IjIiIHk9IjkiLz48cmVjdCB3aWR0aD0iMSIgaGVpZ2h0PSIxIiB4PSIxIiB5PSI4Ii8+PHJlY3Qgd2lkdGg9IjEiIGhlaWdodD0iMSIgeD0iMyIgeT0iOCIvPjxyZWN0IHdpZHRoPSIxIiBoZWlnaHQ9IjMiIHk9IjQiLz48cmVjdCB3aWR0aD0iMSIgaGVpZ2h0PSIzIiB4PSIxMCIgeT0iNCIvPjxyZWN0IHdpZHRoPSIyIiBoZWlnaHQ9IjEiIHg9IjEiIHk9IjQiLz48cmVjdCB3aWR0aD0iMiIgaGVpZ2h0PSIxIiB4PSIxIiB5PSI2Ii8+PHJlY3Qgd2lkdGg9IjIiIGhlaWdodD0iMSIgeD0iOCIgeT0iNCIvPjxyZWN0IHdpZHRoPSIyIiBoZWlnaHQ9IjEiIHg9IjgiIHk9IjYiLz48L3N2Zz4K") !important;
-  --button-img-size: 11px !important;
-  --button-img-pos: 2px !important;
 }
 [class*="downloadgraph_SettingsButton_"] [class*="downloadgraph_Button_"] svg {
   display: none !important;
@@ -3445,10 +3459,6 @@ div:not([class]) > [class*="gamepaddialog_Field_"]:not([class*="settings_Overlay
   background-color: var(--color-highlight) !important;
   color: var(--color-highlight-text) !important;
 }
-[class*="installrequest_FolderSettings_"] {
-  --button-img: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA4IDIiPjxzdHlsZT5yZWN0e3dpZHRoOjJweDtoZWlnaHQ6MnB4fTwvc3R5bGU+PHJlY3QgeD0iMCIvPjxyZWN0IHg9IjMiLz48cmVjdCB4PSI2Ii8+PC9zdmc+Cg==") !important;
-  --button-img-size: 8px auto !important;
-}
 [class*="installrequest_FolderSettings_"] svg {
   display: none !important;
 }
@@ -3532,11 +3542,6 @@ div:not([class]) > [class*="gamepaddialog_Field_"]:not([class*="settings_Overlay
 }
 [class*="libraryhome_LibraryHome_"] {
   position: relative !important;
-}
-[class*="libraryhomenewupdates_SettingsButton_"] {
-  --button-img: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMSAxMSI+PHJlY3Qgd2lkdGg9IjEiIGhlaWdodD0iMSIgeD0iNSIgeT0iNCIvPjxyZWN0IHdpZHRoPSIxIiBoZWlnaHQ9IjEiIHg9IjUiIHk9IjYiLz48cmVjdCB3aWR0aD0iMSIgaGVpZ2h0PSIxIiB4PSI0IiB5PSI1Ii8+PHJlY3Qgd2lkdGg9IjEiIGhlaWdodD0iMSIgeD0iNiIgeT0iNSIvPjxyZWN0IHdpZHRoPSIzIiBoZWlnaHQ9IjEiIHg9IjQiLz48cmVjdCB3aWR0aD0iMSIgaGVpZ2h0PSIyIiB4PSI0IiB5PSIxIi8+PHJlY3Qgd2lkdGg9IjEiIGhlaWdodD0iMiIgeD0iNiIgeT0iMSIvPjxyZWN0IHdpZHRoPSIzIiBoZWlnaHQ9IjEiIHg9IjQiIHk9IjEwIi8+PHJlY3Qgd2lkdGg9IjEiIGhlaWdodD0iMiIgeD0iNCIgeT0iOCIvPjxyZWN0IHdpZHRoPSIxIiBoZWlnaHQ9IjIiIHg9IjYiIHk9IjgiLz48cmVjdCB3aWR0aD0iMSIgaGVpZ2h0PSIxIiB4PSIyIiB5PSIxIi8+PHJlY3Qgd2lkdGg9IjEiIGhlaWdodD0iMSIgeD0iMiIgeT0iMyIvPjxyZWN0IHdpZHRoPSIxIiBoZWlnaHQ9IjEiIHg9IjEiIHk9IjIiLz48cmVjdCB3aWR0aD0iMSIgaGVpZ2h0PSIxIiB4PSIzIiB5PSIyIi8+PHJlY3Qgd2lkdGg9IjEiIGhlaWdodD0iMiIgeD0iNiIgeT0iOCIvPjxyZWN0IHdpZHRoPSIxIiBoZWlnaHQ9IjEiIHg9IjgiIHk9IjEiLz48cmVjdCB3aWR0aD0iMSIgaGVpZ2h0PSIxIiB4PSI4IiB5PSIzIi8+PHJlY3Qgd2lkdGg9IjEiIGhlaWdodD0iMSIgeD0iNyIgeT0iMiIvPjxyZWN0IHdpZHRoPSIxIiBoZWlnaHQ9IjEiIHg9IjkiIHk9IjIiLz48cmVjdCB3aWR0aD0iMSIgaGVpZ2h0PSIxIiB4PSI4IiB5PSI3Ii8+PHJlY3Qgd2lkdGg9IjEiIGhlaWdodD0iMSIgeD0iOCIgeT0iOSIvPjxyZWN0IHdpZHRoPSIxIiBoZWlnaHQ9IjEiIHg9IjciIHk9IjgiLz48cmVjdCB3aWR0aD0iMSIgaGVpZ2h0PSIxIiB4PSI5IiB5PSI4Ii8+PHJlY3Qgd2lkdGg9IjEiIGhlaWdodD0iMSIgeD0iMiIgeT0iNyIvPjxyZWN0IHdpZHRoPSIxIiBoZWlnaHQ9IjEiIHg9IjIiIHk9IjkiLz48cmVjdCB3aWR0aD0iMSIgaGVpZ2h0PSIxIiB4PSIxIiB5PSI4Ii8+PHJlY3Qgd2lkdGg9IjEiIGhlaWdodD0iMSIgeD0iMyIgeT0iOCIvPjxyZWN0IHdpZHRoPSIxIiBoZWlnaHQ9IjMiIHk9IjQiLz48cmVjdCB3aWR0aD0iMSIgaGVpZ2h0PSIzIiB4PSIxMCIgeT0iNCIvPjxyZWN0IHdpZHRoPSIyIiBoZWlnaHQ9IjEiIHg9IjEiIHk9IjQiLz48cmVjdCB3aWR0aD0iMiIgaGVpZ2h0PSIxIiB4PSIxIiB5PSI2Ii8+PHJlY3Qgd2lkdGg9IjIiIGhlaWdodD0iMSIgeD0iOCIgeT0iNCIvPjxyZWN0IHdpZHRoPSIyIiBoZWlnaHQ9IjEiIHg9IjgiIHk9IjYiLz48L3N2Zz4K") !important;
-  --button-img-size: 11px !important;
-  --button-img-pos: 2px !important;
 }
 [class*="libraryhomenewupdates_SettingsButton_"]::before {
   height: 13px !important;
@@ -3688,8 +3693,6 @@ div:not([class]) > [class*="gamepaddialog_Field_"]:not([class*="settings_Overlay
   margin: 0 !important;
 }
 [class*="notificationssettings_PrefDetailsToggle_"] {
-  --button-img: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA4IDIiPjxzdHlsZT5yZWN0e3dpZHRoOjJweDtoZWlnaHQ6MnB4fTwvc3R5bGU+PHJlY3QgeD0iMCIvPjxyZWN0IHg9IjMiLz48cmVjdCB4PSI2Ii8+PC9zdmc+Cg==") !important;
-  --button-img-size: 8px auto !important;
   width: unset !important;
 }
 [class*="notificationssettings_PrefDetailsToggle_"]::before {
@@ -4459,18 +4462,6 @@ body:has(> #popup_target > [class*="steamdesktopoverlay_Wrapper_"]) {
   width: unset !important;
   min-height: unset !important;
   cursor: default !important;
-}
-[class*="titlebarcontrols_AnnouncementsButton_"] {
-  --button-img: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAICAYAAADED76LAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAAtSURBVChTY2RAgP9QGgPAJJAVwMWYoAycAGQFSDWMxgqwWQED/6lnAg7AwAAATOYP+fpPtrkAAAAASUVORK5CYII=") !important;
-  --button-img-size: 9px !important;
-}
-[class*="titlebarcontrols_NotificationButtonContainer_"] {
-  --button-img: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAICAYAAADED76LAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAAwSURBVChTY0AD/6EYDhihNAigSAABWI4JzMQDKFcAcwO6/TDACFKASxIrQPMmAwMAgi8HBW4J8QQAAAAASUVORK5CYII=") !important;
-  --button-img-size: 9px !important;
-}
-[class*="titlebarcontrols_GamepadUIToggle_"] {
-  --button-img: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAICAYAAADED76LAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAAoSURBVChTY2RgYPgPxHgBPgX/maAMnIByBQQdCVIAArgUMRIwgYEBAGefBgb8inyEAAAAAElFTkSuQmCC") !important;
-  --button-img-size: 9px !important;
 }
 [class*="titlebarcontrols_LogoutButton_"] {
   white-space: pre !important;
