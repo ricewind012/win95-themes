@@ -74,7 +74,7 @@ for i in range(2, $max-nest) {
 	--offset: 0px;
 
 	&:not([aria-expanded]) {
-		--offset: 7px;
+		--offset: 8px;
 	}
 }
 
@@ -188,6 +188,9 @@ for i in range(2, $max-nest) {
 		z-index: 2;
 
 		&::before {
+			border-radius: 0;
+
+			z-index: 1;
 			transform: unset;
 		}
 
@@ -206,6 +209,10 @@ for i in range(2, $max-nest) {
 
 			width: calc(11px + var(--spacing-tree));
 			height: calc(100% - 1px);
+
+			&:nth-child(even) {
+				--spacing-tree: 7px;
+			}
 		}
 	}
 }

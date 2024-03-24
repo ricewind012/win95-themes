@@ -4,7 +4,7 @@
 	margin-top: 3px;
 
 	width: 46px;
-	height: calc(100% - 10px);
+	height: calc(100% - 12px);
 
 	&.right {
 		width: 40px;
@@ -12,10 +12,18 @@
 
 	& > .content {
 		font();
-		margin: 2px;
 
 		width: 42px;
 		height: 100%;
+	}
+
+	[role="tablist"],
+	[role="tab"][aria-selected]:not(.tab) {
+		margin: 0;
+	}
+
+	[role="tablist"] {
+		display: inline-block;
 	}
 
 	.action {
@@ -25,6 +33,9 @@
 			box-shadow: none;
 			padding: 0;
 			margin: 0;
+
+			min-width: unset;
+			height: unset;
 
 			cursor: pointer;
 
@@ -46,7 +57,8 @@
 		}
 
 		&-label {
-			background: no-repeat center;
+			background-repeat: no-repeat;
+			background-position: center;
 			color: var(--color-window-text);
 			font-size: 0;
 

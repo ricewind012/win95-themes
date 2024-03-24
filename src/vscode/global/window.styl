@@ -24,6 +24,13 @@ body {
 		&[style$="height: 22px;"] {
 			margin-top: calc(var(--window-gap) * -1);
 		}
+
+		// Maximised bottom panel
+		&[style="top: 0px; height: 0px;"] + & > .part.panel {
+			margin-top: 16px;
+
+			height: calc(100% - 44px);
+		}
 	}
 
 	// !important
