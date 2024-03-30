@@ -903,8 +903,7 @@ table {
 .extension-editor .content,
 .settings-editor > .settings-body .settings-tree-container .monaco-list,
 .editor-container > .editor-instance,
-.part.panel > .content,
-.notification-toast .monaco-list {
+.part.panel > .content {
   background-color: var(--color-button-face) !important;
   color: var(--color-window-text) !important;
   box-shadow: var(--border-button-raised) !important;
@@ -1866,9 +1865,6 @@ fieldset,
 .codicon.codicon-theme-selection-manage-extension::before {
   height: 13px !important;
 }
-.notification-toast .codicon-error {
-  background-image: var(--icon-dialog-error) !important;
-}
 .codicon-info,
 .codicon-shield,
 .codicon-dialog-warning {
@@ -2418,6 +2414,9 @@ fieldset,
   --vscode-editorGutter-background: transparent !important;
   --vscode-editor-foreground: var(--color-window-text) !important;
   --vscode-scrollbar-shadow: transparent !important;
+  --vscode-editorStickyScroll-background: var(--color-window) !important;
+  --vscode-editorStickyScroll-border: var(--color-window-text) !important;
+  --vscode-editorStickyScroll-shadow: transparent !important;
   --vscode-peekViewEditor-background: var(--color-window) !important;
   --vscode-peekViewEditorGutter-background: var(--color-window) !important;
   --vscode-peekViewEditorStickyScroll-background: var(--color-window) !important;
@@ -3298,6 +3297,10 @@ body[role="document"] {
   box-shadow: none !important;
   transform: none !important;
 }
+.notification-toast .monaco-list {
+  box-shadow: none !important;
+  padding: 0 !important;
+}
 .notification-toast .monaco-list-row {
   background-color: transparent !important;
 }
@@ -3316,12 +3319,18 @@ body[role="document"] {
   height: 32px !important;
   flex: unset !important;
 }
+.notification-list-item-icon.codicon-error {
+  background-image: var(--icon-dialog-error) !important;
+}
+.notification-list-item-icon.codicon-warning {
+  background-image: var(--icon-dialog-warning) !important;
+}
+.notification-list-item-icon::before {
+  display: none !important;
+}
 .notification-list-item-message,
 .notification-list-item-source {
   font: var(--text-ui) !important;
-}
-.notification-list-item-buttons-container > .monaco-button {
-  width: 148px !important;
 }
 .notifications-center {
   width: auto !important;
