@@ -88,43 +88,62 @@
 }
 
 // Top activity bar
-.sidebar .title.has-composite-bar {
-	padding: 0;
+.sidebar {
+	--s: calc(var(--border-size) + 2px);
+	--offset: 1px;
 
-	overflow: visible;
+	position: relative;
 
-	.monaco-action-bar {
-		height: unset;
+	.composite.has-composite-bar {
+		overflow: visible;
 
-		.action-item {
-			&::before,
-			&::after {
-				display: block;
+		.monaco-action-bar {
+			height: unset;
 
-				opacity: 1;
-				margin: 0;
+			.action-item {
+				// Allow icon tabs to be small
+				min-width: unset;
+
+				&::before,
+				&::after {
+					display: block;
+
+					opacity: 1;
+					margin: 0;
+				}
 			}
 		}
-	}
 
-	& + .content {
-		--tabs-compensation: 8px;
+		& + .title {
+			padding: 0;
+			margin-top: var(--s);
+			margin-left: calc(var(--s) + var(--offset));
 
-		& > .composite {
-			@extend [role="tabpanel"];
+			position: absolute;
+			width: calc(100% - var(--s) * 2 - var(--offset) * 2);
+			overflow: visible;
+		}
 
-			padding: calc(var(--border-size) + 2px);
+		& ~ .content {
+			--tabs-compensation: 8px;
 
-			.pane-header {
-				margin-bottom: 2px;
-			}
+			& > .composite {
+				@extend [role="tabpanel"];
 
-			.actions {
-				display: block;
-			}
+				padding: var(--s);
+				padding-top: calc(var(--s) + 17px);
 
-			&:not(.extensions-viewlet) .monaco-list {
-				height: calc(100% - 21px);
+				.pane-header {
+					margin-bottom: 2px;
+				}
+
+				.actions {
+					display: block;
+				}
+
+				&:not(.extensions-viewlet) .monaco-list {
+					height: calc(100% - 3px);
+				}
 			}
 		}
 	}
