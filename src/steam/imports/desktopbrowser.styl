@@ -1,7 +1,7 @@
 #BrowserTab {
 	@extend [role="tab"];
 
-	gap: 4px;
+	gap: var(--text-spacing);
 
 	&#Active {
 		@extend [role="tab"][aria-selected="true"];
@@ -90,7 +90,7 @@
 #URLBarText {
 	@extend input[type="text"];
 
-	margin-left: var(--spacing-toolbar);
+	margin-left: var(--toolbar-spacing);
 
 	&::before {
 		display: none;

@@ -1,6 +1,6 @@
 #AppActionBar {
 	padding: 0;
-	padding-top: 6px;
+	padding-top: var(--dialog-button-spacing);
 
 	z-index: 1;
 }
@@ -42,7 +42,7 @@
 #AppHeaderValue {
 	@extend $text-reset;
 
-	margin-left: 4px;
+	margin-left: var(--text-spacing);
 
 	display: flex;
 
@@ -52,7 +52,7 @@
 #AppInfoItem {
 	@extend $text-reset;
 
-	gap: 4px;
+	gap: var(--text-spacing);
 }
 
 #AppList {

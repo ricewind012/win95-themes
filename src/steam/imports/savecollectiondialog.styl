@@ -1,7 +1,7 @@
 #ActionLabel {
 	text-transform: unset;
 	margin: 0;
-	margin-bottom: 8px;
+	margin-bottom: var(--text-spacing);
 
 	width: 148px;
 
@@ -32,14 +32,11 @@
 }
 
 #Required {
-	margin-left: 4px;
+	margin-left: var(--text-spacing);
 }
 
 #SaveCollectionContainer {
 	.DialogBody {
-		// TODO: Probably pixel-perfect for 7px, don't have dialogs yet.
-		padding: 14px 7px 5px 9px;
-
 		&Text {
 			@extend fieldset;
 		}

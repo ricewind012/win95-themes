@@ -37,7 +37,7 @@
 }
 
 #ItemLists {
-	padding: 14px;
+	padding: calc(var(--border-size) + var(--tabpanel-spacing));
 
 	overflow: auto;
 }
@@ -45,7 +45,7 @@
 #Name {
 	@extend $text-reset;
 
-	margin-bottom: 4px;
+	margin-bottom: var(--text-spacing);
 }
 
 #ProgressDetails {
@@ -71,7 +71,7 @@
 }
 
 #Rule {
-	margin: 0 2px;
+	margin: 0 var(--text-spacing);
 
 	height: 0;
 }

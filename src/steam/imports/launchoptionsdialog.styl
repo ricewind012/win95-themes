@@ -4,8 +4,8 @@ div#AppNameHeader {
 }
 
 #ButtonContainer {
-	gap: 6px;
-	margin-top: 6px
+	gap: var(--dialog-button-spacing);
+	margin-top: var(--dialog-button-spacing);
 	// TODO: weird as hell - goes out of bounds for no reason
 	margin-bottom: calc(8px + var(--dialog-spacing));
 
@@ -44,7 +44,7 @@ div#AppNameHeader {
 
 	label {
 		font: var(--text-ui);
-		padding-left: var(--spacing-label);
+		padding-left: var(--label-spacing);
 	}
 }
 

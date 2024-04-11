@@ -182,7 +182,7 @@ for i in range(2, $max-nest) {
 	&-twistie {
 		@extend .tree-item-icon;
 
-		margin-right: var(--spacing-tree);
+		margin-right: var(--tree-spacing);
 
 		flex-shrink: 0;
 		z-index: 2;
@@ -207,11 +207,11 @@ for i in range(2, $max-nest) {
 		& > .indent-guide {
 			border-left: 1px dotted var(--color-gray-text);
 
-			width: calc(11px + var(--spacing-tree));
+			width: calc(11px + var(--tree-spacing));
 			height: calc(100% - 1px);
 
 			&:nth-child(even) {
-				--spacing-tree: 7px;
+				--tree-spacing: 7px;
 			}
 		}
 	}
@@ -240,7 +240,7 @@ for i in range(2, $max-nest) {
 	.monaco-tl-contents::before {
 		left: calc(var(--icon-size) * -1);
 		top: -50%;
-		width: calc(var(--icon-size) - var(--spacing-tree));
+		width: calc(var(--icon-size) - var(--tree-spacing));
 		height: 100%;
 		z-index: 1;
 

@@ -24,7 +24,7 @@
 }
 
 #NotificationListSection {
-	gap: 4px;
+	gap: var(--text-spacing);
 
 	display: flex;
 	flex-direction: column;
@@ -32,9 +32,9 @@
 
 #NotificationPrefDetails {
 	background-color: transparent;
-	gap: 4px;
+	gap: var(--text-spacing);
 	padding: 0;
-	padding-left: calc(13px + var(--spacing-label));
+	padding-left: calc(var(--sel-button-size) + var(--label-spacing));
 	box-shadow: none;
 
 	flex-direction: column;

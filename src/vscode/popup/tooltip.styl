@@ -1,5 +1,7 @@
 .workbench-hover,
 .monaco-hover {
+	// TODO
+	--tooltip-spacing: 3px;
 	--vscode-editorHoverWidget-border: var(--color-button-shadow-dark);
 
 	@extend .tooltip;
@@ -9,7 +11,7 @@
 	// Text
 	.hover-language-status,
 	.hover-contents {
-		padding: 3px;
+		padding: var(--tooltip-spacing);
 	}
 }
 
@@ -67,10 +69,10 @@
 	}
 
 	.signature {
-		padding: 3px;
+		padding: var(--tooltip-spacing);
 	}
 
 	.docs {
-		padding: 0 3px;
+		padding: 0 var(--tooltip-spacing);
 	}
 }

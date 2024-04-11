@@ -47,7 +47,7 @@
 	}
 
 	&-message {
-		margin-bottom: 10px;
+		margin-bottom: var(--messagebox-content-spacing);
 
 		min-height: unset;
 
@@ -57,22 +57,22 @@
 		}
 
 		&-row {
-			padding: 12px;
+			padding: var(--messagebox-spacing);
 		}
 
 		&-container {
-			padding-left: 16px;
+			padding-left: var(--messagebox-content-spacing);
 		}
 	}
 
 	&-checkbox-row {
 		@extend label;
 
-		padding-top: 10px;
+		padding-top: var(--messagebox-content-spacing);
 	}
 
 	&-buttons {
-		gap: 6px;
+		gap: var(--dialog-button-spacing);
 
 		overflow: visible;
 
@@ -82,7 +82,7 @@
 		}
 
 		&-row {
-			padding: 12px 14px;
+			padding: var(--messagebox-spacing);
 		}
 	}
 }

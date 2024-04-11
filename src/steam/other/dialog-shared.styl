@@ -114,7 +114,7 @@
 			background-color: transparent;
 			box-shadow: none;
 			padding: 0;
-			margin-bottom: 4px;
+			margin-bottom: var(--text-spacing);
 		}
 	}
 
@@ -153,8 +153,8 @@
 
 	&Content {
 		background: transparent;
-		padding: 7px;
-		padding-bottom: 24px;
+		padding: var(--dialog-spacing);
+		padding-bottom: calc(var(--text-full) + 3px + var(--window-gap) + var(--dialog-spacing));
 
 		&Transition {
 			background: transparent;
@@ -181,7 +181,7 @@
 		-webkit-mask-image: none; // client settings
 		font: var(--text-ui);
 		margin: 0;
-		gap: 8px;
+		gap: var(--text-spacing);
 
 		overflow: auto;
 
@@ -189,7 +189,7 @@
 			@extend $text-reset;
 
 			padding: 0;
-			margin-bottom: 4px;
+			margin-bottom: var(--text-spacing);
 		}
 
 		a {
@@ -198,13 +198,13 @@
 	}
 
 	&Footer {
-		padding-top: 6px;
+		padding-top: var(--dialog-button-spacing);
 	}
 
 	&ControlsSection {
 		@extend fieldset;
 
-		gap: 4px;
+		gap: var(--text-spacing);
 
 		display: flex;
 		flex-direction: column;
@@ -213,7 +213,7 @@
 
 ._Dialog {
 	&ColLayout {
-		gap: 6px;
+		gap: var(--dialog-button-spacing);
 	}
 }
 

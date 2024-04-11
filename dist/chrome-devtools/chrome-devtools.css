@@ -43,13 +43,24 @@
 	 * Dimensions
 	**/
   --border-size: 2px !important;
-  --window-spacing: 2px !important;
   --window-gap: 2px !important;
+  --icon-size: 16px !important;
   --scrollbar-size: 16px !important;
+  --sel-button-size: 13px !important;
   --titlebar-height: 18px !important;
   --menubar-height: 18px !important;
   --statusbar-height: 18px !important;
-  --icon-size: 16px !important;
+  --messagebox-spacing: 11px 10px !important;
+  --messagebox-content-spacing: 17px !important;
+  --dialog-spacing: 7px !important;
+  --dialog-button-spacing: 6px !important;
+  --label-spacing: 6px !important;
+  --tabpanel-spacing: 12px !important;
+  --text-spacing: 4px !important;
+  --titlebar-spacing: 4px !important;
+  --toolbar-spacing: 8px !important;
+  --tree-spacing: 6px !important;
+  --window-spacing: 2px !important;
 /**
 	 * Other
 	**/
@@ -252,7 +263,6 @@ textarea:disabled,
   --color-button-text: var(--color-button-shadow) !important;
   --color-arrow-shadow: var(--color-button-highlight) !important;
   text-shadow: 1px 1px var(--color-button-highlight) !important;
-  pointer-events: none !important;
 }
 input,
 button,
@@ -421,8 +431,8 @@ input[type="checkbox"],
 input[type="radio"],
 [role="textbox"][type="radio"] {
   --color-to-change: var(--color-window) !important;
-  width: 13px !important;
-  height: 13px !important;
+  width: var(--sel-button-size) !important;
+  height: var(--sel-button-size) !important;
 }
 input[type="checkbox"]:active,
 [role="textbox"][type="checkbox"]:active,
@@ -610,11 +620,18 @@ progress::-webkit-progress-value,
 }
 .menu-item::before,
 [role="menuitem"]::before,
-.cm-tooltip-autocomplete > ul > li::before {
+.cm-tooltip-autocomplete > ul > li::before,
+.menu-item::after,
+[role="menuitem"]::after,
+.cm-tooltip-autocomplete > ul > li::after {
   content: '' !important;
   position: absolute !important;
-  top: 5px !important;
   background-color: var(--color-button-text) !important;
+}
+.menu-item[checked]::before,
+[role="menuitem"][checked]::before,
+.cm-tooltip-autocomplete > ul > li[checked]::before {
+  top: 5px !important;
 }
 .menu-item[checked][type="checkbox"]::before,
 [role="menuitem"][checked][type="checkbox"]::before,
@@ -637,14 +654,11 @@ progress::-webkit-progress-value,
 [role="menuitem"][type="parent"]::after,
 .cm-tooltip-autocomplete > ul > li[type="parent"]::after,
 .soft-context-menu-item[aria-haspopup]::after {
-  content: '' !important;
-  position: absolute !important;
   top: 4px !important;
   right: 6px !important;
   width: 4px !important;
   height: 7px !important;
   -webkit-mask: var(--icon-arrow-right) !important;
-  background-color: var(--color-button-text) !important;
 }
 .menu-item[disabled],
 [role="menuitem"][disabled],
@@ -761,14 +775,14 @@ table {
 }
 [role="tab"][aria-selected="true"] {
   --color-tab-border: var(--color-button-face) !important;
-  margin: 0 -2px -1px -4px !important;
+  margin: 0 -2px -1px -2px !important;
   padding: 3px 6px !important;
   padding-left: 7px !important;
   height: 21px !important;
   z-index: 1 !important;
 }
 [role="tablist"] {
-  margin-left: 4px !important;
+  margin-left: 2px !important;
   display: flex !important;
 }
 [role="tabpanel"],
@@ -778,7 +792,13 @@ table {
   background-color: var(--color-button-face) !important;
   color: var(--color-window-text) !important;
   box-shadow: var(--border-button-raised) !important;
-  padding: calc(var(--border-size) + 12px) !important;
+  padding: calc(var(--border-size) + var(--tabpanel-spacing)) !important;
+}
+[role="tabpanel"][compact],
+.timeline-tree-view[compact],
+.timeline-view[compact],
+#sources-panel-sources-view > .vbox > .vbox > .vbox[compact] {
+  --tabpanel-spacing: 2px !important;
 }
 ::selection {
   background-color: var(--color-highlight) !important;
@@ -806,10 +826,9 @@ legend,
 }
 label,
 [is="dt-radio"] {
-  gap: 6px !important;
+  gap: var(--label-spacing) !important;
   display: flex !important;
   align-items: center !important;
-  position: relative !important;
 }
 .tooltip,
 .widget.has-padding,
@@ -817,7 +836,6 @@ label,
   background-color: var(--color-tooltip) !important;
   color: var(--color-tooltip-text) !important;
   border: 1px solid var(--color-button-shadow-dark) !important;
-  box-shadow: none !important;
   padding: 3px !important;
 }
 .tree-item,
@@ -992,7 +1010,7 @@ body {
   background-color: var(--color-inactive-caption) !important;
   color: var(--color-inactive-caption-text) !important;
   padding: 1px 2px !important;
-  gap: 4px !important;
+  gap: var(--titlebar-spacing) !important;
   height: var(--titlebar-height) !important;
   display: flex !important;
   align-items: center !important;
@@ -1044,7 +1062,7 @@ body {
 }
 .toolbar,
 .lh-topbar {
-  gap: 8px !important;
+  gap: var(--toolbar-spacing) !important;
   display: flex !important;
 }
 .content-container,
@@ -1143,11 +1161,9 @@ fieldset,
   top: -5px !important;
 }
 :root {
-  --spacing-label: 6px !important;
-  --spacing-toolbar: 8px !important;
-  --spacing-tree: 6px !important;
   --tree-item-spacing-x: 4px !important;
   --text-full: calc(var(--text-ui-size) * var(--text-line)) !important;
+  --tabs-height: 20px !important;
 }
 #console-issues-counter,
 devtools-sync-section,
@@ -1495,8 +1511,8 @@ input[type="checkbox"]:disabled + .dt-checkbox-text {
 }
 .elements-tree-outline li.parent .selection,
 .tree-outline li.parent .selection {
-  margin-left: calc(var(--icon-size) * -1 - var(--spacing-tree)) !important;
-  margin-right: var(--spacing-tree) !important;
+  margin-left: calc(var(--icon-size) * -1 - var(--tree-spacing)) !important;
+  margin-right: var(--tree-spacing) !important;
   z-index: initial !important;
   display: initial !important;
   flex-shrink: 0 !important;
@@ -1599,7 +1615,7 @@ li[role="treeitem"]:has(> .expand-icon) .selection {
   display: none !important;
 }
 .elements-disclosure li:not(.parent) > div {
-  margin-left: var(--spacing-tree) !important;
+  margin-left: var(--tree-spacing) !important;
 }
 .elements-tree-outline {
   margin-left: -11px !important;
@@ -1646,7 +1662,7 @@ div.tree-outline-disclosure > .tree-outline:has(.styles-clipboard-only) ol.child
 }
 .expandable-view-title {
   background-color: transparent !important;
-  gap: var(--spacing-tree) !important;
+  gap: var(--tree-spacing) !important;
   padding: 2px var(--tree-item-spacing-x) !important;
   margin: 0 !important;
 }
@@ -1754,7 +1770,7 @@ div.tree-outline-disclosure > .tree-outline:has(.styles-clipboard-only) ol.child
 .lh-topbar-divider {
   background-color: transparent !important;
   margin: 0 !important;
-  width: var(--spacing-toolbar) !important;
+  width: var(--toolbar-spacing) !important;
 }
 .toolbar-has-dropdown [is="ui-icon"],
 .lh-topbar-has-dropdown [is="ui-icon"],
@@ -1895,7 +1911,7 @@ div.tree-outline-disclosure > .tree-outline:has(.styles-clipboard-only) ol.child
   color: var(--color-highlight-text) !important;
 }
 .elements-disclosure li .highlight {
-  margin-left: var(--spacing-tree) !important;
+  margin-left: var(--tree-spacing) !important;
 }
 devtools-adorner,
 .elements-disclosure .gutter-container,
@@ -1957,7 +1973,7 @@ devtools-adorner,
 }
 .styles-sidebar-pane-toolbar {
   border: none !important;
-  gap: var(--spacing-toolbar) !important;
+  gap: var(--toolbar-spacing) !important;
 }
 .styles-sidebar-pane-toolbar-container {
   position: absolute !important;
@@ -2166,7 +2182,7 @@ devtools-adorner,
   border: none !important;
 }
 .latlong-group {
-  gap: var(--spacing-label) !important;
+  gap: var(--label-spacing) !important;
   margin-bottom: 8px !important;
 }
 .sensors-view fieldset[disabled] {

@@ -64,7 +64,7 @@
 
 	background-color: transparent;
 	color: var(--color-window-text);
-	gap: 4px;
+	gap: var(--text-spacing);
 	padding: 0 3px;
 	margin: 0;
 
@@ -98,20 +98,27 @@
 	@extend $text-reset;
 }
 
-#NoticeInstallFolder:not(:has(> :empty)) {
-	@extend $text-reset;
-	@extend .tooltip;
+#NoticeInstallFolder {
+	// TODO: 4px looks too small
+	gap: 8px;
 
-	align-items: center;
-	justify-content: start;
+	&:not(:has(> :empty)) {
+		@extend $text-reset;
+		@extend .tooltip;
 
-	&::before {
-		content: '';
+		align-items: center;
+		justify-content: start;
 
-		width: 32px;
-		height: 32px;
+		&::before {
+			--icon-size: 32px;
 
-		background-image: var(--icon-dialog-warning);
-		margin-right: 8px;
+			content: '';
+
+			width: var(--icon-size);
+			height: var(--icon-size);
+
+			background-image: var(--icon-dialog-warning);
+		}
 	}
 }
+

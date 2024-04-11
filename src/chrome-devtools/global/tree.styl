@@ -25,8 +25,8 @@
 			.selection {
 				@extend .tree-item-icon;
 
-				margin-left: calc(var(--icon-size) * -1 - var(--spacing-tree));
-				margin-right: var(--spacing-tree);
+				margin-left: calc(var(--icon-size) * -1 - var(--tree-spacing));
+				margin-right: var(--tree-spacing);
 
 				z-index: initial;
 				display: initial;
@@ -155,7 +155,7 @@ td.disclosure {
 
 		&:not(.parent) {
 			& > div {
-				margin-left: var(--spacing-tree);
+				margin-left: var(--tree-spacing);
 			}
 		}
 	}
@@ -239,7 +239,7 @@ td.disclosure {
 
 .expandable-view-title {
 	background-color: transparent;
-	gap: var(--spacing-tree);
+	gap: var(--tree-spacing);
 	padding: 2px var(--tree-item-spacing-x);
 	margin: 0;
 

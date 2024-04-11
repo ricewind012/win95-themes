@@ -23,7 +23,7 @@ replace-text(token) {
 }
 
 #ButtonGroup {
-	gap: 6px;
+	gap: var(--dialog-button-spacing);
 
 	#ButtonBox {
 		margin: 0;
@@ -96,7 +96,7 @@ replace-text(token) {
 #Details > div {
 	color: inherit;
 	text-align: start;
-	gap: 8px;
+	gap: var(--text-spacing);
 	padding: 4px;
 
 	align-items: start;
@@ -177,7 +177,7 @@ replace-text(token) {
 #Metadata {
 	@extend $text-reset;
 
-	margin-top: 4px;
+	margin-top: var(--text-spacing);
 }
 
 #Option {
@@ -192,7 +192,7 @@ replace-text(token) {
 }
 
 #ScreenshotForm {
-	gap: 8px;
+	gap: var(--text-spacing);
 
 	align-items: start;
 }
@@ -207,7 +207,7 @@ replace-text(token) {
 }
 
 #ScreenshotFormRow {
-	gap: 6px;
+	gap: var(--text-spacing);
 
 	width: 100%;
 	flex-direction: column;
@@ -260,7 +260,7 @@ replace-text(token) {
 
 #SpoilerField,
 #VisibilityField {
-	gap: 4px;
+	gap: var(--text-spacing);
 }
 
 #SpoilerField {

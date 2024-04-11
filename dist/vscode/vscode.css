@@ -43,13 +43,24 @@
 	 * Dimensions
 	**/
   --border-size: 2px !important;
-  --window-spacing: 2px !important;
   --window-gap: 2px !important;
+  --icon-size: 16px !important;
   --scrollbar-size: 16px !important;
+  --sel-button-size: 13px !important;
   --titlebar-height: 18px !important;
   --menubar-height: 18px !important;
   --statusbar-height: 18px !important;
-  --icon-size: 16px !important;
+  --messagebox-spacing: 11px 10px !important;
+  --messagebox-content-spacing: 17px !important;
+  --dialog-spacing: 7px !important;
+  --dialog-button-spacing: 6px !important;
+  --label-spacing: 6px !important;
+  --tabpanel-spacing: 12px !important;
+  --text-spacing: 4px !important;
+  --titlebar-spacing: 4px !important;
+  --toolbar-spacing: 8px !important;
+  --tree-spacing: 6px !important;
+  --window-spacing: 2px !important;
 /**
 	 * Other
 	**/
@@ -285,7 +296,6 @@ textarea:disabled,
   --color-button-text: var(--color-button-shadow) !important;
   --color-arrow-shadow: var(--color-button-highlight) !important;
   text-shadow: 1px 1px var(--color-button-highlight) !important;
-  pointer-events: none !important;
 }
 input,
 button,
@@ -479,8 +489,8 @@ input[type="radio"],
 .monaco-workbench .part.editor > .content .gettingStartedContainer .gettingStartedSlide .getting-started-checkbox,
 .settings-editor > .settings-body .settings-tree-container .setting-item-bool .setting-value-checkbox {
   --color-to-change: var(--color-window) !important;
-  width: 13px !important;
-  height: 13px !important;
+  width: var(--sel-button-size) !important;
+  height: var(--sel-button-size) !important;
 }
 input[type="checkbox"]:active,
 .monaco-checkbox[type="checkbox"]:active,
@@ -741,11 +751,18 @@ progress::-webkit-progress-value {
 }
 .menu-item::before,
 [role="menu"] [role="menuitem"]::before,
-[role="menuitemcheckbox"]::before {
+[role="menuitemcheckbox"]::before,
+.menu-item::after,
+[role="menu"] [role="menuitem"]::after,
+[role="menuitemcheckbox"]::after {
   content: '' !important;
   position: absolute !important;
-  top: 5px !important;
   background-color: var(--color-button-text) !important;
+}
+.menu-item[checked]::before,
+[role="menu"] [role="menuitem"][checked]::before,
+[role="menuitemcheckbox"][checked]::before {
+  top: 5px !important;
 }
 .menu-item[checked][type="checkbox"]::before,
 [role="menu"] [role="menuitem"][checked][type="checkbox"]::before,
@@ -769,14 +786,11 @@ progress::-webkit-progress-value {
 [role="menu"] [role="menuitem"][type="parent"]::after,
 [role="menuitemcheckbox"][type="parent"]::after,
 .monaco-submenu-item::after {
-  content: '' !important;
-  position: absolute !important;
   top: 4px !important;
   right: 6px !important;
   width: 4px !important;
   height: 7px !important;
   -webkit-mask: var(--icon-arrow-right) !important;
-  background-color: var(--color-button-text) !important;
 }
 .menu-item[disabled],
 [role="menu"] [role="menuitem"][disabled],
@@ -886,7 +900,7 @@ table {
 .settings-tabs-widget > .monaco-action-bar .action-label.checked,
 .extension-editor > .body > .navbar > .monaco-action-bar > .actions-container > .action-item > .action-label[aria-checked="true"] {
   --color-tab-border: var(--color-button-face) !important;
-  margin: 0 -2px -1px -4px !important;
+  margin: 0 -2px -1px -2px !important;
   padding: 3px 6px !important;
   padding-left: 7px !important;
   height: 21px !important;
@@ -895,7 +909,7 @@ table {
 [role="tablist"],
 .settings-tabs-widget,
 .navbar {
-  margin-left: 4px !important;
+  margin-left: 2px !important;
   display: flex !important;
 }
 [role="tabpanel"],
@@ -907,7 +921,15 @@ table {
   background-color: var(--color-button-face) !important;
   color: var(--color-window-text) !important;
   box-shadow: var(--border-button-raised) !important;
-  padding: calc(var(--border-size) + 12px) !important;
+  padding: calc(var(--border-size) + var(--tabpanel-spacing)) !important;
+}
+[role="tabpanel"][compact],
+.sidebar .title.has-composite-bar + .content > .composite[compact],
+.extension-editor .content[compact],
+.settings-editor > .settings-body .settings-tree-container .monaco-list[compact],
+.editor-container > .editor-instance[compact],
+.part.panel > .content[compact] {
+  --tabpanel-spacing: 2px !important;
 }
 ::selection {
   background-color: var(--color-highlight) !important;
@@ -929,10 +951,9 @@ legend,
 }
 label,
 .dialog-checkbox-row {
-  gap: 6px !important;
+  gap: var(--label-spacing) !important;
   display: flex !important;
   align-items: center !important;
-  position: relative !important;
 }
 .tooltip,
 .workbench-hover,
@@ -942,7 +963,6 @@ label,
   background-color: var(--color-tooltip) !important;
   color: var(--color-tooltip-text) !important;
   border: 1px solid var(--color-button-shadow-dark) !important;
-  box-shadow: none !important;
   padding: 3px !important;
 }
 .tree-item,
@@ -1094,7 +1114,7 @@ body.child,
   background-color: var(--color-inactive-caption) !important;
   color: var(--color-inactive-caption-text) !important;
   padding: 1px 2px !important;
-  gap: 4px !important;
+  gap: var(--titlebar-spacing) !important;
   height: var(--titlebar-height) !important;
   display: flex !important;
   align-items: center !important;
@@ -1241,7 +1261,7 @@ body.child,
   background-color: var(--color-button-highlight) !important;
 }
 .toolbar {
-  gap: 8px !important;
+  gap: var(--toolbar-spacing) !important;
   display: flex !important;
 }
 .content-container,
@@ -1497,11 +1517,6 @@ fieldset,
   --button-img-pos: 2px 2px !important;
 }
 :root {
-  --spacing-label: 6px !important;
-  --spacing-toolbar: 8px !important;
-  --spacing-tree: 6px !important;
-  --dialog-spacing: 7px !important;
-  --text-spacing: 4px !important;
   --tree-item-spacing-x: 4px !important;
   --text-full: calc(var(--text-ui-size) * var(--text-line)) !important;
   --tabs-height: 20px !important;
@@ -1555,7 +1570,7 @@ fieldset,
   justify-content: center !important;
 }
 .monaco-findInput {
-  gap: var(--spacing-toolbar) !important;
+  gap: var(--toolbar-spacing) !important;
   display: flex !important;
   align-items: center !important;
 }
@@ -1594,7 +1609,7 @@ fieldset,
   content: ')' !important;
 }
 .badge {
-  margin-left: 4px !important;
+  margin-left: var(--text-spacing) !important;
   position: unset !important;
   width: unset !important;
   height: unset !important;
@@ -2039,7 +2054,7 @@ fieldset,
   cursor: unset !important;
 }
 .tab-actions {
-  margin-left: 4px !important;
+  margin-left: var(--text-spacing) !important;
 /*
 		 * No borders, since it interferes with
 		 * editor tab height and unsaved file icon.
@@ -2136,7 +2151,7 @@ fieldset,
 :has(> :empty)) {
   opacity: 1 !important;
   font: var(--text-ui) !important;
-  margin-left: 4px !important;
+  margin-left: var(--text-spacing) !important;
 }
 .monaco-grid-view .label-description:not(:empty::before,
 :has(> :empty))::before {
@@ -2322,7 +2337,7 @@ fieldset,
   border-bottom: 1px dotted var(--color-gray-text) !important;
 }
 .monaco-tl-twistie {
-  margin-right: var(--spacing-tree) !important;
+  margin-right: var(--tree-spacing) !important;
   flex-shrink: 0 !important;
   z-index: 2 !important;
 }
@@ -2341,11 +2356,11 @@ fieldset,
 }
 .monaco-tl-indent > .indent-guide {
   border-left: 1px dotted var(--color-gray-text) !important;
-  width: calc(11px + var(--spacing-tree)) !important;
+  width: calc(11px + var(--tree-spacing)) !important;
   height: calc(100% - 1px) !important;
 }
 .monaco-tl-indent > .indent-guide:nth-child(even) {
-  --spacing-tree: 7px !important;
+  --tree-spacing: 7px !important;
 }
 .show-file-icons [role="treeitem"] .file-icon::before {
   content: '' !important;
@@ -2361,7 +2376,7 @@ fieldset,
 [role="treeitem"]:not([aria-expanded]):not([aria-level="1"]) .monaco-tl-contents::before {
   left: calc(var(--icon-size) * -1) !important;
   top: -50% !important;
-  width: calc(var(--icon-size) - var(--spacing-tree)) !important;
+  width: calc(var(--icon-size) - var(--tree-spacing)) !important;
   height: 100% !important;
   z-index: 1 !important;
   border-left: 1px dotted var(--color-gray-text) !important;
@@ -2496,7 +2511,7 @@ fieldset,
   background-color: transparent !important;
 }
 .extension-editor {
-  padding: 12px !important;
+  padding: var(--tabpanel-spacing) !important;
   max-width: unset !important;
 }
 .extension-editor > .header {
@@ -2645,7 +2660,7 @@ body[role="document"] {
   padding: 0 !important;
 }
 .settings-editor {
-  padding: 12px !important;
+  padding: var(--tabpanel-spacing) !important;
   max-width: unset !important;
   height: 100% !important;
 }
@@ -2723,7 +2738,7 @@ body[role="document"] {
   left: -12px !important;
 }
 .search-container {
-  gap: var(--spacing-toolbar) !important;
+  gap: var(--toolbar-spacing) !important;
   display: flex !important;
   align-items: center !important;
 }
@@ -2977,7 +2992,7 @@ body[role="document"] {
   display: none !important;
 }
 .viewpane-filter-controls {
-  margin-left: var(--spacing-toolbar) !important;
+  margin-left: var(--toolbar-spacing) !important;
   margin-bottom: -1px !important;
   position: unset !important;
 }
@@ -3061,7 +3076,7 @@ body[role="document"] {
   height: calc(100vh - 39px - var(--tabs-compensation, 0px) - var(--titlebar-height) - var(--menubar-height) - var(--statusbar-height)) !important;
 }
 .search-widget {
-  margin-bottom: 4px !important;
+  margin-bottom: var(--text-spacing) !important;
 }
 .search-widgets-container {
   padding: 0 !important;
@@ -3080,11 +3095,11 @@ body[role="document"] {
   height: unset !important;
 }
 .search-view .more.codicon {
-  margin-bottom: 4px !important;
+  margin-bottom: var(--text-spacing) !important;
 }
 .search-view .message {
   padding: 0 !important;
-  padding-bottom: 4px !important;
+  padding-bottom: var(--text-spacing) !important;
 }
 .scm-overflow-widgets-container {
   width: 0 !important;
@@ -3155,7 +3170,7 @@ body[role="document"] {
   background-color: transparent !important;
   color: inherit !important;
   border: none !important;
-  margin: 0 4px !important;
+  margin: 0 var(--titlebar-spacing) !important;
   width: unset !important;
   height: unset !important;
   order: -1 !important;
@@ -3215,7 +3230,7 @@ body[role="document"] {
   height: var(--titlebar-height) !important;
 }
 .dialog-message {
-  margin-bottom: 10px !important;
+  margin-bottom: var(--messagebox-content-spacing) !important;
   min-height: unset !important;
 }
 .dialog-message,
@@ -3223,23 +3238,23 @@ body[role="document"] {
   font: var(--text-ui) !important;
 }
 .dialog-message-row {
-  padding: 12px !important;
+  padding: var(--messagebox-spacing) !important;
 }
 .dialog-message-container {
-  padding-left: 16px !important;
+  padding-left: var(--messagebox-content-spacing) !important;
 }
 .dialog-checkbox-row {
-  padding-top: 10px !important;
+  padding-top: var(--messagebox-content-spacing) !important;
 }
 .dialog-buttons {
-  gap: 6px !important;
+  gap: var(--dialog-button-spacing) !important;
   overflow: visible !important;
 }
 .monaco-dialog-box > .dialog-buttons-row > .dialog-buttons > .monaco-button {
   outline-offset: calc(var(--button-spacing) * -1) !important;
 }
 .dialog-buttons-row {
-  padding: 12px 14px !important;
+  padding: var(--messagebox-spacing) !important;
 }
 .find-widget {
   height: auto !important;
@@ -3314,7 +3329,7 @@ body[role="document"] {
 .notification-list-item-icon {
   font-size: 0 !important;
   margin-left: 0 !important;
-  margin-right: 16px !important;
+  margin-right: var(--messagebox-content-spacing) !important;
   width: 32px !important;
   height: 32px !important;
   flex: unset !important;
@@ -3393,7 +3408,7 @@ body[role="document"] {
   content: ')' !important;
 }
 .peekview-actions {
-  padding-top: 2px !important;
+  padding-top: var(--text-spacing) !important;
 }
 .quick-input-widget {
   margin: 0 !important;
@@ -3427,7 +3442,7 @@ body[role="document"] {
 .quick-input-description,
 .quick-input-list {
   padding: 0 !important;
-  margin: 10px 8px 6px 8px !important;
+  margin: var(--dialog-spacing) !important;
 }
 .quick-input-list {
   overflow: hidden !important;
@@ -3448,7 +3463,7 @@ body[role="document"] {
 .rename-label {
   opacity: 1 !important;
   font: var(--text-ui) !important;
-  margin-top: 4px !important;
+  margin-top: var(--text-spacing) !important;
 }
 .monaco-select-box-dropdown-container {
   width: 320px !important;
@@ -3476,6 +3491,7 @@ body[role="document"] {
 .monaco-hover,
 .monaco-editor-overlaymessage .message,
 .parameter-hints-widget {
+  --tooltip-spacing: 3px !important;
   --vscode-editorHoverWidget-border: var(--color-button-shadow-dark) !important;
   animation: none !important;
 }
@@ -3487,7 +3503,7 @@ body[role="document"] {
 .monaco-hover .hover-contents,
 .monaco-editor-overlaymessage .message .hover-contents,
 .parameter-hints-widget .hover-contents {
-  padding: 3px !important;
+  padding: var(--tooltip-spacing) !important;
 }
 .workbench-hover-pointer {
   display: none !important;
@@ -3530,8 +3546,8 @@ body[role="document"] {
   opacity: 1 !important;
 }
 .parameter-hints-widget .signature {
-  padding: 3px !important;
+  padding: var(--tooltip-spacing) !important;
 }
 .parameter-hints-widget .docs {
-  padding: 0 3px !important;
+  padding: 0 var(--tooltip-spacing) !important;
 }

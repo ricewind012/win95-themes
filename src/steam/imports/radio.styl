@@ -6,7 +6,7 @@
 
 #Group {
 	box-shadow: none;
-	gap: 4px;
+	gap: var(--text-spacing);
 	flex-direction: column;
 }
 
@@ -30,7 +30,7 @@
 
 	// Use as ::before for label spacing
 	&::after {
-		width: calc(var(--spacing-label) + 13px);
+		width: calc(var(--sel-button-size) + var(--label-spacing));
 		order: -1;
 	}
 

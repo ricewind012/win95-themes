@@ -54,8 +54,8 @@
 		position: fixed;
 		left: 6px;
 		top: 6px;
-		width: 16px;
-		height: 16px;
+		width: var(--icon-size);
+		height: var(--icon-size);
 
 		background-image: var(--window-img);
 
@@ -68,8 +68,8 @@
 		content: 'Steam';
 
 		position: fixed;
-		left: 26px;
-		height: 18px;
+		left: calc(12px + var(--titlebar-spacing) + var(--icon-size));
+		height: var(--titlebar-spacing);
 		display: flex;
 		align-items: center;
 
@@ -87,7 +87,7 @@
 
 		font-size: var(--font-ui-size);
 		color: var(--color-inactive-caption-text);
-		padding-left: calc(var(--icon-size) + 4px);
+		padding-left: calc(var(--icon-size) + var(--titlebar-spacing));
 
 		.WindowFocus & {
 			color: var(--color-active-caption-text);
@@ -115,10 +115,10 @@
 		content: '';
 
 		position: fixed;
-		top: 4px;
-		left: 4px;
-		width: calc(100% - 112px);
-		height: 18px;
+		top: calc(var(--border-size) + var(--window-spacing));
+		left: calc(var(--border-size) + var(--window-spacing));
+		width: calc(100% - var(--titlebar-spacing) * 2 - var(--icon-size) - 88px);
+		height: var(--titlebar-height);
 
 		app-region: drag;
 	}
