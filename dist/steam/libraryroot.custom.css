@@ -1228,6 +1228,7 @@ label,
 }
 .tooltip,
 [class*="installrequest_NoticeInstallFolder_"]:not(:has(> :empty)),
+[class*="hoverposition_"] > [class*="steamdesktopoverlay_ToolbarToolTip_"],
 [class*="tooltip_TextToolTip_"] {
   background-color: var(--color-tooltip) !important;
   color: var(--color-tooltip-text) !important;
@@ -1418,6 +1419,7 @@ body.child,
 [class*="libraryhomenewupdates_EventOptions_"] > div,
 [class*="libraryhomeshowcases_Collapser_"],
 [class*="notificationssettings_PrefDetailsToggle_"],
+[class*="steamdesktopoverlay_BackToGameBtn_"],
 [class*="titlebarcontrols_Button_"] {
   min-width: 16px !important;
   height: 14px !important;
@@ -1439,6 +1441,7 @@ body.child,
 [class*="libraryhomenewupdates_EventOptions_"] > div::before,
 [class*="libraryhomeshowcases_Collapser_"]::before,
 [class*="notificationssettings_PrefDetailsToggle_"]::before,
+[class*="steamdesktopoverlay_BackToGameBtn_"]::before,
 [class*="titlebarcontrols_Button_"]::before,
 .titlebar-button::after,
 .ModalPosition_Dismiss .closeButton::after,
@@ -1457,6 +1460,7 @@ body.child,
 [class*="libraryhomenewupdates_EventOptions_"] > div::after,
 [class*="libraryhomeshowcases_Collapser_"]::after,
 [class*="notificationssettings_PrefDetailsToggle_"]::after,
+[class*="steamdesktopoverlay_BackToGameBtn_"]::after,
 [class*="titlebarcontrols_Button_"]::after {
   content: '' !important;
   position: absolute !important;
@@ -1482,6 +1486,7 @@ body.child,
 [class*="libraryhomenewupdates_EventOptions_"] > div::before,
 [class*="libraryhomeshowcases_Collapser_"]::before,
 [class*="notificationssettings_PrefDetailsToggle_"]::before,
+[class*="steamdesktopoverlay_BackToGameBtn_"]::before,
 [class*="titlebarcontrols_Button_"]::before {
   z-index: 1 !important;
   background-color: var(--color-button-text) !important;
@@ -1503,6 +1508,7 @@ body.child,
 [class*="libraryhomenewupdates_EventOptions_"] > div:active::before,
 [class*="libraryhomeshowcases_Collapser_"]:active::before,
 [class*="notificationssettings_PrefDetailsToggle_"]:active::before,
+[class*="steamdesktopoverlay_BackToGameBtn_"]:active::before,
 [class*="titlebarcontrols_Button_"]:active::before {
   inset: 1px !important;
 }
@@ -1523,6 +1529,7 @@ body.child,
 [class*="libraryhomenewupdates_EventOptions_"] > div:disabled::after,
 [class*="libraryhomeshowcases_Collapser_"]:disabled::after,
 [class*="notificationssettings_PrefDetailsToggle_"]:disabled::after,
+[class*="steamdesktopoverlay_BackToGameBtn_"]:disabled::after,
 [class*="titlebarcontrols_Button_"]:disabled::after,
 [class*="pageablecontainer_"][class*="PageLeft"][class*="Disabled"]::after,
 [class*="libraryhomeshowcases_"][class*="PageLeft"][class*="Disabled"]::after,
@@ -1699,6 +1706,7 @@ div:not([class]) > [class*="gamepaddialog_Field_"]:not([class*="settings_Overlay
 [class*="steamdesktopoverlay_GameOverviewSectionHeader_"],
 [class*="steamdesktopoverlay_GuideTitle_"],
 [class*="steamdesktopoverlay_Playtime_"],
+[class*="steamdesktopoverlay_ToolbarToolTip_"],
 [class*="supernav_MenuButton_"],
 [class*="systemsettings_Text_"],
 [class*="writereview_LeftContainer_"] {
@@ -4371,15 +4379,81 @@ div:not([class]) > [class*="gamepaddialog_Field_"]:not([class*="settings_Overlay
 [class*="steamdesktopoverlay_Playtime_"] {
   gap: var(--text-spacing) !important;
 }
+[class*="steamdesktopoverlay_BackToGame_"] {
+  gap: var(--text-spacing) !important;
+}
+[class*="steamdesktopoverlay_BackToGameBtn_"] {
+  --button-img: var(--icon-close) !important;
+  --button-img-size: 8px 7px !important;
+  --button-img-pos: 4px 3px !important;
+  width: unset !important;
+}
+[class*="steamdesktopoverlay_BackToGameBtn_"]::before {
+  display: initial !important;
+}
+[class*="steamdesktopoverlay_BackToGameBtn_"] svg {
+  display: none !important;
+}
+[class*="steamdesktopoverlay_ExitGameBtn_"] {
+  text-transform: unset !important;
+  margin-top: var(--text-spacing) !important;
+}
+
+	[class*="steamdesktopoverlay_CurrentTime_"],	[class*="steamdesktopoverlay_GameName_"] {
+		font: var(--text-header) !important;
+	}
+[class*="steamdesktopoverlay_CurrentDate_"],
+[class*="steamdesktopoverlay_KBShortcut_"],
+[class*="steamdesktopoverlay_PlaytimeCurrentSession_"] {
+  font: var(--text-ui) !important;
+}
 [class*="steamdesktopoverlay_OverlayPopup_"] {
   background: none !important;
   padding: var(--dialog-spacing) !important;
   height: calc(100% - 19px) !important;
 }
+[class*="steamdesktopoverlay_TextContainer_"] {
+  max-width: unset !important;
+}
+[class*="steamdesktopoverlay_TopSection_"],
+[class*="steamdesktopoverlay_ToolbarMaxWidthContainer_"] {
+  padding: 0 !important;
+}
+[class*="steamdesktopoverlay_Toolbar_"] {
+  opacity: 1 !important;
+}
+[class*="steamdesktopoverlay_ToolbarButton_"] {
+  gap: var(--text-spacing) !important;
+  height: unset !important;
+  display: flex !important;
+  align-items: center !important;
+}
+[class*="steamdesktopoverlay_ToolbarButton_"] svg {
+  margin: 0 !important;
+  width: var(--icon-size) !important;
+  height: var(--icon-size) !important;
+}
+[class*="steamdesktopoverlay_ToolbarContainer_"] {
+  transform: none !important;
+  left: 0 !important;
+}
+[class*="steamdesktopoverlay_ToolbarContainer_"][class*="steamdesktopoverlay_LocationBottom_"] .DialogButton {
+  width: calc(16px + var(--button-spacing) * 2) !important;
+  min-width: var(--icon-size) !important;
+}
+[class*="steamdesktopoverlay_ToolbarToolTip_"] {
+  text-align: start !important;
+  padding: 0 !important;
+  flex-grow: 1 !important;
+}
 [class*="steamdesktopoverlay_WindowControls_"] {
   margin: calc(var(--dialog-spacing) * -1) !important;
   margin-bottom: var(--dialog-spacing) !important;
   height: unset !important;
+}
+[class*="steamdesktopoverlay_Wrapper_"] {
+  gap: 16px !important;
+  padding: 32px !important;
 }
 body:has(> #popup_target > [class*="steamdesktopoverlay_Wrapper_"]) {
   background-color: transparent !important;

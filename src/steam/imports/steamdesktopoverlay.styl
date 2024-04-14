@@ -61,11 +61,107 @@
 }
 // END
 
+#BackToGame {
+	gap: var(--text-spacing);
+}
+
+#BackToGameBtn {
+	--button-img: var(--icon-close);
+	--button-img-size: 8px 7px;
+	--button-img-pos: 4px 3px;
+
+	@extend .titlebar-button;
+
+	width: unset;
+
+	&::before {
+		display: initial;
+	}
+
+	svg {
+		display: none;
+	}
+}
+
+#ExitGameBtn {
+	text-transform: unset;
+	margin-top: var(--text-spacing);
+}
+
+// TODO remove font()
+@css {
+	#CurrentTime,
+	#GameName {
+		font: var(--text-header);
+	}
+}
+
+#CurrentDate,
+#KBShortcut,
+#PlaytimeCurrentSession {
+	font: var(--text-ui);
+}
+
 #OverlayPopup {
 	background: none;
 	padding: var(--dialog-spacing);
 
 	height: calc(100% - 19px);
+}
+
+#TextContainer {
+	max-width: unset;
+}
+
+#TopSection,
+#ToolbarMaxWidthContainer {
+	padding: 0;
+}
+
+#Toolbar {
+	opacity: 1;
+}
+
+#ToolbarButton {
+	gap: var(--text-spacing);
+
+	height: unset;
+	display: flex;
+	align-items: center;
+
+	svg {
+		margin: 0;
+
+		width: var(--icon-size);
+		height: var(--icon-size);
+	}
+}
+
+#ToolbarContainer {
+	transform: none;
+
+	left: 0;
+
+	&#LocationBottom {
+		.DialogButton {
+			width: calc(16px + var(--button-spacing) * 2);
+			min-width: var(--icon-size);
+		}
+	}
+}
+
+#ToolbarToolTip {
+	@extend $text-reset;
+
+	text-align: start;
+	padding: 0;
+
+	flex-grow: 1;
+
+	// The *actual* tooltip
+	[class*="hoverposition_"] > & {
+		@extend .tooltip;
+	}
 }
 
 #WindowControls {
@@ -76,6 +172,9 @@
 }
 
 #Wrapper {
+	gap: 16px;
+	padding: 32px;
+
 	/{s('body:has(> #%s > %s)', popup_target, unquote(selector()))} {
 		background-color: transparent;
 		box-shadow: none;
