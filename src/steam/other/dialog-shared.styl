@@ -80,7 +80,7 @@
 			margin: 0;
 		}
 
-		&Placeholder {
+		&::placeholder {
 			font-style: normal;
 		}
 	}
@@ -251,10 +251,10 @@
 
 /.DialogControlsSectionHeader,
 /.DialogSubHeader,
-/[class*="appproperties_Title_"],
-/[class*="librarysettings_DescriptionText_"],
-/[class*="settings_SettingsDialogBodyText"],
-/[class*="remoteplaysettings_TableHeader_"] > :first-child {
+/div[class*="appproperties_Title_"],
+/div[class*="librarysettings_DescriptionText_"],
+/div[class*="settings_SettingsDialogBodyText"],
+/div[class*="remoteplaysettings_TableHeader_"] > :first-child {
 	@extend $text-reset;
 	@extend $legend-as-div;
 }

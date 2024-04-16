@@ -25,6 +25,8 @@
 }
 
 .title-area {
+	--window-img: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQAQMAAAAlPW0iAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAGUExURQAAAAAAAKVnuc8AAAACdFJOU/8A5bcwSgAAAAlwSFlzAAAOwwAADsMBx2+oZAAAADdJREFUCNdj+CHP8ICd4cBvhoZOhsa1DIwlDIwqDMxzGM5/YPh8gKGWgWEvI8MkRoY7zCBlP+QBgSAPR9M4h8IAAAAASUVORK5CYII=');
+
 	background-color: var(--color-inactive-caption);
 	padding-right: 2px;
 
@@ -38,14 +40,6 @@
 
 	.WindowFocus & {
 		background-color: var(--color-active-caption);
-	}
-
-	#SteamDesktop & {
-		--window-img: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQAQMAAAAlPW0iAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAGUExURQAAAAAAAKVnuc8AAAACdFJOU/8A5bcwSgAAAAlwSFlzAAAOwwAADsMBx2+oZAAAADdJREFUCNdj+CHP8ICd4cBvhoZOhsa1DIwlDIwqDMxzGM5/YPh8gKGWgWEvI8MkRoY7zCBlP+QBgSAPR9M4h8IAAAAASUVORK5CYII=');
-	}
-
-	.ModalDialogBody & {
-		--window-img: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAAM1BMVEUAAABmZgCZmZn/+/Dn59aZmQD//5kzMwAcHBzAwMDMzGZNTU0AAADq6upmZmYzAACtqZA/egufAAAAAXRSTlMAQObYZgAAAHJJREFUGNNNzVESgyAMRVEu8QVLBdz/aosU1DvDzyGThPgURtG22XfBZ9/3uJU3mMU18QC8oC/EjBvOlE5cBGleoegCGQvEBWhCcneycDcGkPAM2cUETG6eZceAgolmudElhForJOBooPCP1F//XLBw9APHJgNeldevuwAAAABJRU5ErkJggg==');
 	}
 
 	&::before {
@@ -68,7 +62,7 @@
 		content: 'Steam';
 
 		position: fixed;
-		left: calc(12px + var(--titlebar-spacing) + var(--icon-size));
+		left: calc(6px + var(--titlebar-spacing) + var(--icon-size));
 		height: var(--titlebar-spacing);
 		display: flex;
 		align-items: center;

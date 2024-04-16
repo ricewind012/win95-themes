@@ -1198,16 +1198,15 @@ kbd {
 legend,
 .DialogControlsSectionHeader,
 .DialogSubHeader,
-[class*="appproperties_Title_"],
-[class*="librarysettings_DescriptionText_"],
-[class*="settings_SettingsDialogBodyText"],
-[class*="remoteplaysettings_TableHeader_"] > :first-child,
+div[class*="appproperties_Title_"],
+div[class*="librarysettings_DescriptionText_"],
+div[class*="settings_SettingsDialogBodyText"],
+div[class*="remoteplaysettings_TableHeader_"] > :first-child,
 [class*="achievementsheader_ProgressLabel_"],
 [class*="appactivityday_AppActivityDate_"],
 [class*="appactivityday_PartnerEventFeaturedHeader_"],
 [class*="appdetailssectionheader_SectionHeader_"],
 [class*="appfilterpane_FilterBucketLabel_"],
-[class*="appproperties_BetaLabel_"],
 [class*="contentmanagement_AppHeaderContainer_"],
 [class*="downloads_SectionTitle_"],
 [class*="installrequest_Header_"],
@@ -1593,10 +1592,10 @@ div:not([class]) > [class*="gamepaddialog_Field_"]:not([class*="settings_Overlay
 .DialogBodyText,
 .DialogControlsSectionHeader,
 .DialogSubHeader,
-[class*="appproperties_Title_"],
-[class*="librarysettings_DescriptionText_"],
-[class*="settings_SettingsDialogBodyText"],
-[class*="remoteplaysettings_TableHeader_"] > :first-child,
+div[class*="appproperties_Title_"],
+div[class*="librarysettings_DescriptionText_"],
+div[class*="settings_SettingsDialogBodyText"],
+div[class*="remoteplaysettings_TableHeader_"] > :first-child,
 [class*="remoteplaysettings_TableHeader_"],
 [class*="notificationssettings_ToggleHeader_"],
 [class*="aboutsteamdialog_DialogBodyLabel_"],
@@ -1610,6 +1609,8 @@ div:not([class]) > [class*="gamepaddialog_Field_"]:not([class*="settings_Overlay
 [class*="achievementspage_Label_"],
 [class*="activateproductdialog_InfoExample_"],
 [class*="activateproductdialog_InfoExampleHeader_"],
+[class*="addnonsteamgamedialog_Checkbox_"],
+[class*="addnonsteamgamedialog_IconContainer_"],
 [class*="addnonsteamgamedialog_AppName_"],
 [class*="addnonsteamgamedialog_ExePath_"],
 [class*="addnonsteamgamedialog_Header_"] > div,
@@ -1636,8 +1637,9 @@ div:not([class]) > [class*="gamepaddialog_Field_"]:not([class*="settings_Overlay
 [class*="appdetailsspotlight_ReviewContainer_"],
 [class*="appgrid_SortingDropDownItems_"],
 [class*="appgrid_SortingDropDownLabel_"],
-[class*="appproperties_BetaLabel_"],
+[class*="appproperties_BlueHighlight_"],
 [class*="appproperties_BuildInfo_"],
+[class*="appproperties_Detail_"],
 [class*="bottombar_Status_"],
 [class*="bottombar_Text_"],
 [class*="bottombar_Queue_"],
@@ -1670,6 +1672,7 @@ div:not([class]) > [class*="gamepaddialog_Field_"]:not([class*="settings_Overlay
 [class*="gameinfodialog_Header_"],
 [class*="gamelistcollectionmenu_CollectionDeleteContainer_"] .DialogBodyText span,
 [class*="gamelistentry_Container_"],
+[class*="gamepaddialog_FieldDescription_"],
 [class*="gamepadtabbedpage_Tab_"],
 [class*="hardwaresurveydialog_HardwareSurveySection_"],
 [class*="hardwaresurveydialog_HardwareSurveySection_"] h3,
@@ -1726,16 +1729,15 @@ div:not([class]) > [class*="gamepaddialog_Field_"]:not([class*="settings_Overlay
 }
 .DialogControlsSectionHeader,
 .DialogSubHeader,
-[class*="appproperties_Title_"],
-[class*="librarysettings_DescriptionText_"],
-[class*="settings_SettingsDialogBodyText"],
-[class*="remoteplaysettings_TableHeader_"] > :first-child,
+div[class*="appproperties_Title_"],
+div[class*="librarysettings_DescriptionText_"],
+div[class*="settings_SettingsDialogBodyText"],
+div[class*="remoteplaysettings_TableHeader_"] > :first-child,
 [class*="achievementsheader_ProgressLabel_"],
 [class*="appactivityday_AppActivityDate_"],
 [class*="appactivityday_PartnerEventFeaturedHeader_"],
 [class*="appdetailssectionheader_SectionHeader_"],
 [class*="appfilterpane_FilterBucketLabel_"],
-[class*="appproperties_BetaLabel_"],
 [class*="contentmanagement_AppHeaderContainer_"],
 [class*="downloads_SectionTitle_"],
 [class*="installrequest_Header_"],
@@ -1956,7 +1958,7 @@ button,
 .DialogInputLabelGroup {
   margin: 0 !important;
 }
-.DialogInputPlaceholder {
+.DialogInput::placeholder {
   font-style: normal !important;
 }
 .DialogMenuPosition ._DialogInputContainer {
@@ -2108,6 +2110,7 @@ button,
 }
 ::-webkit-scrollbar-thumb {
   border: none !important;
+  border-radius: 0 !important;
 }
 [class*="accountsettings_EntryLabel_"] {
   padding: 0 !important;
@@ -2118,6 +2121,14 @@ button,
 }
 [class*="accountsettings_EntryValue_"]::before {
   content: ': ' !important;
+}
+img[src="/images/steam_spinner.png"] {
+  image-rendering: auto !important;
+}
+@media (prefers-color-scheme: light) {
+  img[src="/images/steam_spinner.png"] {
+    filter: invert(1) !important;
+  }
 }
 .minimizeButton {
   --button-img: var(--icon-minimize) !important;
@@ -2141,6 +2152,7 @@ button,
   margin-left: 2px !important;
 }
 .title-area {
+  --window-img: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQAQMAAAAlPW0iAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAGUExURQAAAAAAAKVnuc8AAAACdFJOU/8A5bcwSgAAAAlwSFlzAAAOwwAADsMBx2+oZAAAADdJREFUCNdj+CHP8ICd4cBvhoZOhsa1DIwlDIwqDMxzGM5/YPh8gKGWgWEvI8MkRoY7zCBlP+QBgSAPR9M4h8IAAAAASUVORK5CYII=") !important;
   background-color: var(--color-inactive-caption) !important;
   padding-right: 2px !important;
   position: unset !important;
@@ -2152,12 +2164,6 @@ button,
 }
 .WindowFocus .title-area {
   background-color: var(--color-active-caption) !important;
-}
-#SteamDesktop .title-area {
-  --window-img: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQAQMAAAAlPW0iAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAGUExURQAAAAAAAKVnuc8AAAACdFJOU/8A5bcwSgAAAAlwSFlzAAAOwwAADsMBx2+oZAAAADdJREFUCNdj+CHP8ICd4cBvhoZOhsa1DIwlDIwqDMxzGM5/YPh8gKGWgWEvI8MkRoY7zCBlP+QBgSAPR9M4h8IAAAAASUVORK5CYII=") !important;
-}
-.ModalDialogBody .title-area {
-  --window-img: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAAM1BMVEUAAABmZgCZmZn/+/Dn59aZmQD//5kzMwAcHBzAwMDMzGZNTU0AAADq6upmZmYzAACtqZA/egufAAAAAXRSTlMAQObYZgAAAHJJREFUGNNNzVESgyAMRVEu8QVLBdz/aosU1DvDzyGThPgURtG22XfBZ9/3uJU3mMU18QC8oC/EjBvOlE5cBGleoegCGQvEBWhCcneycDcGkPAM2cUETG6eZceAgolmudElhForJOBooPCP1F//XLBw9APHJgNeldevuwAAAABJRU5ErkJggg==") !important;
 }
 .title-area::before {
   content: '' !important;
@@ -2174,7 +2180,7 @@ button,
 #SteamDesktop .title-area::after {
   content: 'Steam' !important;
   position: fixed !important;
-  left: calc(12px + var(--titlebar-spacing) + var(--icon-size)) !important;
+  left: calc(6px + var(--titlebar-spacing) + var(--icon-size)) !important;
   height: var(--titlebar-spacing) !important;
   display: flex !important;
   align-items: center !important;
@@ -2264,21 +2270,22 @@ button,
 [class*="activateproductdialog_InfoExampleHeader_"]::after {
   content: ':' !important;
 }
-[class*="addnonsteamgamedialog_AddNonSteamGameDialog_"] {
-  min-width: unset !important;
-}
-[class*="addnonsteamgamedialog_AddNonSteamGameDialog_"] .DialogInput,
-[class*="addnonsteamgamedialog_AddNonSteamGameDialog_"] .DialogButton {
-  margin: 0 !important;
+[class*="addnonsteamgamedialog_AddNonSteamGameDialog_"] .DialogContent_InnerWidth {
+  overflow: hidden !important;
 }
 [class*="addnonsteamgamedialog_AppName_"] {
   justify-content: space-between !important;
 }
+[class*="addnonsteamgamedialog_GameRow_"] [class*="addnonsteamgamedialog_AppName_"] {
+  width: calc(32% + 24px) !important;
+}
+[class*="addnonsteamgamedialog_Checkbox_"],
+[class*="addnonsteamgamedialog_IconContainer_"],
 [class*="addnonsteamgamedialog_AppName_"],
 [class*="addnonsteamgamedialog_ExePath_"] {
   opacity: 1 !important;
   text-overflow: ellipsis !important;
-  padding: 2px 7px !important;
+  padding: 2px 10px !important;
 }
 [class*="addnonsteamgamedialog_Footer_"] {
   gap: var(--dialog-button-spacing) !important;
@@ -2288,7 +2295,7 @@ button,
   width: 148px !important;
 }
 [class*="addnonsteamgamedialog_GameList_"] {
-  --inset: 73px 11px 58px 11px !important;
+  --inset: 69px 11px 58px 11px !important;
   overflow: auto !important;
   border: none !important;
   box-shadow: none !important;
@@ -2300,9 +2307,6 @@ button,
 [class*="addnonsteamgamedialog_GameRow_"] {
   background-color: transparent !important;
   padding: 0 !important;
-}
-[class*="addnonsteamgamedialog_GameRow_"] [class*="addnonsteamgamedialog_Checkbox_"] {
-  padding: 2px 8px !important;
 }
 [class*="addnonsteamgamedialog_Header_"] {
   border: none !important;
@@ -2318,9 +2322,6 @@ button,
 }
 [class*="addnonsteamgamedialog_Header_"] > :nth-child(3) {
   min-width: 32% !important;
-}
-[class*="addnonsteamgamedialog_Header_"] > :nth-child(4) {
-  min-width: 62% !important;
 }
 [class*="addnonsteamgamedialog_IconContainer_"] {
   margin: 0 !important;
@@ -2533,14 +2534,28 @@ div[class*="appdetailssection_AppDetailsSectionContainer_"] {
   border: none !important;
   box-shadow: 0 0 1px var(--color-button-shadow) !important;
 }
-[class*="FieldDescription_"],
+[class*="appproperties_AsyncBackedInputChildren_"] {
+  margin: 0 !important;
+}
+[class*="appproperties_BetaAccessCodeRow_"] {
+  gap: var(--label-spacing) !important;
+  margin: 0 !important;
+}
+[class*="appproperties_BetaLabel_"] {
+  color: inherit !important;
+}
+
+	[class*="appproperties_BetaLabel_"] {
+		font: var(--text-header) !important;
+	}
 [class*="appproperties_Detail_"] {
-  font: var(--text-ui) !important;
-  color: var(--color-button-text) !important;
-  margin: var(--text-spacing) 0 !important;
+  margin: 0 !important;
 }
 [class*="appproperties_TopGap_"] {
   margin-top: var(--text-spacing) !important;
+}
+[class*="appproperties_TopGapSmall_"] {
+  margin: 0 !important;
 }
 [class*="appproperties_WorkshopItemsRowsScrollable_"] {
   font: var(--text-ui) !important;
@@ -2587,11 +2602,20 @@ div[class*="appdetailssection_AppDetailsSectionContainer_"] {
 [class*="appproperties_Controls_"] > .DialogButton svg {
   display: none !important;
 }
+[class*="appproperties_BrowseDiskRow_"] {
+  gap: var(--text-spacing) !important;
+}
 [class*="appproperties_BrowseDiskRow_"] > .DialogButton {
   order: -1 !important;
 }
 [class*="appproperties_BrowseDiskSize_"] {
-  margin-left: 1ch !important;
+  margin-left: 0 !important;
+}
+[class*="appproperties_SteamCloudSection_"] {
+  gap: var(--text-spacing) !important;
+}
+[class*="appproperties_SteamCloudUsage_"] {
+  align-self: start !important;
 }
 [class*="appproperties_ViewMore_"] {
   padding: 0 !important;
@@ -3157,13 +3181,13 @@ div[class*="gameinfodialog_DialogBody_"] .DialogFooter svg {
   padding: 3px 0 !important;
 }
 [class*="gamelistentry_Container_"]::before {
-  left: 8px !important;
+  left: 12px !important;
   top: -11px !important;
   width: 18px !important;
   height: 24px !important;
 }
 [class*="gamelistentry_Container_"]::after {
-  left: -9px !important;
+  left: -7px !important;
   top: -10px !important;
   height: calc(100% - 1px) !important;
 }
@@ -3345,6 +3369,9 @@ div:not([class]) > [class*="gamepaddialog_Field_"]:not([class*="settings_Overlay
 [class*="gamepaddialog_FieldChildren_"] {
   gap: var(--text-spacing) !important;
 }
+[class*="gamepaddialog_FieldDescription_"] {
+  margin-top: var(--text-spacing) !important;
+}
 [class*="gamepaddialog_FieldIcon_"] {
   display: none !important;
 }
@@ -3386,7 +3413,7 @@ div:not([class]) > [class*="gamepaddialog_Field_"]:not([class*="settings_Overlay
   box-shadow: none !important;
 }
 [class*="gamepadslider_SliderHandleContainer_"] {
-  transform: translateX(calc(-100% * var(--inverse-normalized-value) + 7px * var(--inverse-normalized-value))) !important;
+  transform: translateX(calc(-100% * var(--inverse-normalized-value) + 11px * var(--inverse-normalized-value))) !important;
 }
 [class*="gamepadtabbedpage_FixCenterAlignScroll_"] {
   gap: 0 !important;
@@ -3862,6 +3889,7 @@ div:not([class]) > [class*="gamepaddialog_Field_"]:not([class*="settings_Overlay
   color: var(--color-button-text) !important;
   text-align: left !important;
   gap: 0 !important;
+  position: relative !important;
   width: unset !important;
   flex-direction: row !important;
   justify-content: left !important;
@@ -4065,7 +4093,7 @@ div:not([class]) > [class*="gamepaddialog_Field_"]:not([class*="settings_Overlay
   align-items: start !important;
 }
 [class*="screenshotmanagerdialog_ScreenshotList_"] {
-  --inset: 91px 11px 59px 11px !important;
+  --inset: 91px 11px 60px 11px !important;
 }
 .PopupFullWindow:only-child [class*="screenshotmanagerdialog_ScreenshotList_"] {
   --pos-bottom: 50px !important;
@@ -4494,6 +4522,9 @@ body:has(> #popup_target > [class*="steamdesktopoverlay_Wrapper_"]) {
   box-shadow: none !important;
   padding: 0 !important;
 }
+[class*="systemsettings_SteamRuntimeSystemInfoDialogContent_"] .DialogBodyText {
+  margin-bottom: calc(var(--dialog-button-spacing) + 6px) !important;
+}
 [class*="systemsettings_SteamRuntimeSystemInfoContainer_"] {
   margin-top: var(--text-spacing) !important;
 }
@@ -4568,6 +4599,9 @@ body:has(> #popup_target > [class*="steamdesktopoverlay_Wrapper_"]) {
 }
 [class*="titlebarcontrols_EmptyNotificationsBody_"] {
   color: inherit !important;
+}
+[class*="tooltip_TextToolTip_"] {
+  box-shadow: none !important;
 }
 [class*="uninstalldialog_UninstallDialog_"] {
   min-width: 400px !important;

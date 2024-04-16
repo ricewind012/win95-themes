@@ -1,16 +1,19 @@
 #AddNonSteamGameDialog {
-	min-width: unset;
-
-	.DialogInput,
-	.DialogButton {
-		margin: 0;
+	.DialogContent_InnerWidth {
+		overflow: hidden;
 	}
 }
 
 #AppName {
 	justify-content: space-between;
+
+	#GameRow & {
+		width: calc(32% + 24px);
+	}
 }
 
+#Checkbox,
+#IconContainer,
 #AppName,
 #ExePath {
 	@extend $text-reset;
@@ -18,7 +21,7 @@
 	opacity: 1;
 	// Seems like V*lve forgot about this one
 	text-overflow: ellipsis;
-	padding: 2px 7px;
+	padding: 2px 10px;
 }
 
 #Footer {
@@ -31,7 +34,7 @@
 }
 
 #GameList {
-	--inset: 73px 11px 58px 11px;
+	--inset: 69px 11px 58px 11px;
 
 	@extend $content-container-alt;
 
@@ -51,10 +54,6 @@
 #GameRow {
 	background-color: transparent;
 	padding: 0;
-
-	#Checkbox {
-		padding: 2px 8px;
-	}
 }
 
 #Header {
@@ -69,7 +68,7 @@
 		@extend .table-button;
 	}
 
-	btns = 5% 6% 32% 62%;
+	btns = 5% 6% 32%;
 
 	for btn, i in btns {
 		& > :nth-child({i + 1}) {

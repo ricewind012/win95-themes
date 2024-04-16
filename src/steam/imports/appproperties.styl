@@ -1,18 +1,34 @@
+#AsyncBackedInputChildren {
+	margin: 0;
+}
+
+#BetaAccessCodeRow {
+	gap: var(--label-spacing);
+	margin: 0;
+}
+
 #BetaLabel {
+	color: inherit;
+}
+
+@css {
+	#BetaLabel {
+		font: var(--text-header);
+	}
+}
+
+#BlueHighlight {
 	@extend $text-reset;
-	@extend $legend-as-div;
 }
 
 #BuildInfo {
 	@extend $text-reset;
 }
 
-// note?
-[class*="FieldDescription_"],
 #Detail {
-	font: var(--text-ui);
-	color: var(--color-button-text);
-	margin: var(--text-spacing) 0;
+	@extend $text-reset;
+
+	margin: 0;
 }
 
 #SectionTopLine {
@@ -21,6 +37,10 @@
 
 #TopGap {
 	margin-top: var(--text-spacing);
+}
+
+#TopGapSmall {
+	margin: 0;
 }
 
 // Workshop
@@ -93,12 +113,24 @@
 }
 
 // etc.
-#BrowseDiskRow > .DialogButton {
-	order: -1;
+#BrowseDiskRow {
+	gap: var(--text-spacing);
+
+	& > .DialogButton {
+		order: -1;
+	}
 }
 
 #BrowseDiskSize {
-	margin-left: 1ch;
+	margin-left: 0;
+}
+
+#SteamCloudSection {
+	gap: var(--text-spacing);
+}
+
+#SteamCloudUsage {
+	align-self: start;
 }
 
 #SteamInputLink {
