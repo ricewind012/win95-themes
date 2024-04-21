@@ -6,34 +6,20 @@
 #GameListHomeAndSearch {
 	background-color: transparent;
 	box-shadow: none;
+	gap: var(--dialog-button-spacing);
 	padding: 0;
-	padding-left: 10px;
-	margin-left: 269px;
-	margin-top: -2px;
+	padding-bottom: 2px;
 
-	position: fixed;
 	height: unset;
 	z-index: 1;
 
 	a {
-		@extend [role="tab"];
-
-		margin-top: 2px;
+		@extend button;
 
 		height: unset;
 
-		&:hover {
-			text-decoration: none;
-		}
-
 		&[aria-current] {
-			@extend [role="tab"][aria-selected="true"];
+			@extend .icon-button:active;
 		}
 	}
-}
-
-#HomeBox {
-	overflow: visible;
-
-	flex: unset;
 }

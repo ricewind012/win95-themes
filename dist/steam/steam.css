@@ -282,6 +282,7 @@ textarea,
 [class*="downloads_AutoUpdateSettings_"],
 [class*="downloads_Section_"],
 [class*="gameinfodialog_Header_"],
+[class*="gamelistbar_GameListHomeAndSearch_"] a,
 [class*="gamelistdropdown_MenuHeader_"],
 [class*="gamelistdropdown_CheckboxWithImage_"],
 [class*="gamelistsearchbar_AdvancedSearchContainer_"],
@@ -358,6 +359,7 @@ textarea:disabled,
 [class*="downloads_AutoUpdateSettings_"]:disabled,
 [class*="downloads_Section_"]:disabled,
 [class*="gameinfodialog_Header_"]:disabled,
+[class*="gamelistbar_GameListHomeAndSearch_"] a:disabled,
 [class*="gamelistdropdown_MenuHeader_"]:disabled,
 [class*="gamelistdropdown_CheckboxWithImage_"]:disabled,
 [class*="gamelistsearchbar_AdvancedSearchContainer_"]:disabled,
@@ -430,6 +432,7 @@ textarea,
 [class*="desktopbrowser_NavigationButton_"],
 [class*="downloads_AutoUpdateSettings_"],
 [class*="gameinfodialog_Header_"],
+[class*="gamelistbar_GameListHomeAndSearch_"] a,
 [class*="gamelistdropdown_MenuHeader_"],
 [class*="gamelistdropdown_CheckboxWithImage_"],
 [class*="gamelistsearchbar_AdvancedSearchContainer_"],
@@ -512,6 +515,7 @@ input:where([type="button"],
 [class*="desktopbrowser_NavigationButton_"],
 [class*="downloads_AutoUpdateSettings_"],
 [class*="gameinfodialog_Header_"],
+[class*="gamelistbar_GameListHomeAndSearch_"] a,
 [class*="gamelistdropdown_CheckboxWithImage_"],
 [class*="gamelistsearchbar_AdvancedSearchContainer_"],
 [class*="launchoptionsdialog_ButtonContainer_"] > div,
@@ -560,6 +564,7 @@ input:where([type="button"]:focus,
 [class*="desktopbrowser_NavigationButton_"]:focus,
 [class*="downloads_AutoUpdateSettings_"]:focus,
 [class*="gameinfodialog_Header_"]:focus,
+[class*="gamelistbar_GameListHomeAndSearch_"] a:focus,
 [class*="gamelistdropdown_CheckboxWithImage_"]:focus,
 [class*="gamelistsearchbar_AdvancedSearchContainer_"]:focus,
 [class*="launchoptionsdialog_ButtonContainer_"] > div:focus,
@@ -605,6 +610,7 @@ input:where([type="button"]:active,
 [class*="desktopbrowser_NavigationButton_"]:active,
 [class*="downloads_AutoUpdateSettings_"]:active,
 [class*="gameinfodialog_Header_"]:active,
+[class*="gamelistbar_GameListHomeAndSearch_"] a:active,
 [class*="gamelistdropdown_CheckboxWithImage_"]:active,
 [class*="gamelistsearchbar_AdvancedSearchContainer_"]:active,
 [class*="launchoptionsdialog_ButtonContainer_"] > div:active,
@@ -642,6 +648,7 @@ input:where([type="button"]:active,
 .icon-button[selected],
 [class*="gamelistdropdown_CheckboxWithImage_"][selected],
 [class*="screenshotmanagerdialog_ButtonGroup_"]:last-child [class*="screenshotmanagerdialog_ButtonBox_"][selected],
+[class*="gamelistbar_GameListHomeAndSearch_"] a[aria-current],
 [class*="gamelistdropdown_CheckboxWithImage_"][class*="gamelistdropdown_Active_"],
 [class*="prosemirror_CommandButton_"]:active,
 [class*="prosemirror_CommandButton_"][class*="prosemirror_Toggled_"],
@@ -657,6 +664,7 @@ input:where([type="button"]:active,
 .icon-button[selected]::before,
 [class*="gamelistdropdown_CheckboxWithImage_"][selected]::before,
 [class*="screenshotmanagerdialog_ButtonGroup_"]:last-child [class*="screenshotmanagerdialog_ButtonBox_"][selected]::before,
+[class*="gamelistbar_GameListHomeAndSearch_"] a[aria-current]::before,
 [class*="gamelistdropdown_CheckboxWithImage_"][class*="gamelistdropdown_Active_"]::before,
 [class*="prosemirror_CommandButton_"]:active::before,
 [class*="prosemirror_CommandButton_"][class*="prosemirror_Toggled_"]::before,
@@ -1083,7 +1091,6 @@ table {
 }
 [role="tab"],
 [class*="desktopbrowser_BrowserTab_"],
-[class*="gamelistbar_GameListHomeAndSearch_"] a,
 [class*="gamepadtabbedpage_Tab_"],
 [class*="pagedsettings_PagedSettingsDialog_PageListItem_"],
 [class*="serverbrowserdialog_SwitchTabButton_"] {
@@ -1102,13 +1109,11 @@ table {
 }
 [role="tab"]::before,
 [class*="desktopbrowser_BrowserTab_"]::before,
-[class*="gamelistbar_GameListHomeAndSearch_"] a::before,
 [class*="gamepadtabbedpage_Tab_"]::before,
 [class*="pagedsettings_PagedSettingsDialog_PageListItem_"]::before,
 [class*="serverbrowserdialog_SwitchTabButton_"]::before,
 [role="tab"]::after,
 [class*="desktopbrowser_BrowserTab_"]::after,
-[class*="gamelistbar_GameListHomeAndSearch_"] a::after,
 [class*="gamepadtabbedpage_Tab_"]::after,
 [class*="pagedsettings_PagedSettingsDialog_PageListItem_"]::after,
 [class*="serverbrowserdialog_SwitchTabButton_"]::after {
@@ -1124,7 +1129,6 @@ table {
 }
 [role="tab"]::before,
 [class*="desktopbrowser_BrowserTab_"]::before,
-[class*="gamelistbar_GameListHomeAndSearch_"] a::before,
 [class*="gamepadtabbedpage_Tab_"]::before,
 [class*="pagedsettings_PagedSettingsDialog_PageListItem_"]::before,
 [class*="serverbrowserdialog_SwitchTabButton_"]::before {
@@ -1133,7 +1137,6 @@ table {
 }
 [role="tab"]::after,
 [class*="desktopbrowser_BrowserTab_"]::after,
-[class*="gamelistbar_GameListHomeAndSearch_"] a::after,
 [class*="gamepadtabbedpage_Tab_"]::after,
 [class*="pagedsettings_PagedSettingsDialog_PageListItem_"]::after,
 [class*="serverbrowserdialog_SwitchTabButton_"]::after {
@@ -1142,12 +1145,10 @@ table {
 }
 [role="tab"][aria-selected="true"],
 [class*="desktopbrowser_BrowserTab_"][aria-selected="true"],
-[class*="gamelistbar_GameListHomeAndSearch_"] a[aria-selected="true"],
 [class*="gamepadtabbedpage_Tab_"][aria-selected="true"],
 [class*="pagedsettings_PagedSettingsDialog_PageListItem_"][aria-selected="true"],
 [class*="serverbrowserdialog_SwitchTabButton_"][aria-selected="true"],
 [class*="desktopbrowser_BrowserTab_"][class*="desktopbrowser_Active_"],
-[class*="gamelistbar_GameListHomeAndSearch_"] a[aria-current],
 [class*="gamepadtabbedpage_Tab_"][class*="gamepadtabbedpage_Selected_"],
 [class*="pagedsettings_PagedSettingsDialog_PageListItem_"][class*="pagedsettings_Active_"],
 [class*="serverbrowserdialog_SwitchTabButton_"][class*="serverbrowserdialog_Selected_"] {
@@ -1841,6 +1842,7 @@ button,
 [class*="desktopbrowser_NavigationButton_"],
 [class*="downloads_AutoUpdateSettings_"],
 [class*="gameinfodialog_Header_"],
+[class*="gamelistbar_GameListHomeAndSearch_"] a,
 [class*="gamelistdropdown_CheckboxWithImage_"],
 [class*="gamelistsearchbar_AdvancedSearchContainer_"],
 [class*="launchoptionsdialog_ButtonContainer_"] > div,
@@ -3116,24 +3118,14 @@ div[class*="gameinfodialog_DialogBody_"] .DialogFooter svg {
 [class*="gamelistbar_GameListHomeAndSearch_"] {
   background-color: transparent !important;
   box-shadow: none !important;
+  gap: var(--dialog-button-spacing) !important;
   padding: 0 !important;
-  padding-left: 10px !important;
-  margin-left: 269px !important;
-  margin-top: -2px !important;
-  position: fixed !important;
+  padding-bottom: 2px !important;
   height: unset !important;
   z-index: 1 !important;
 }
 [class*="gamelistbar_GameListHomeAndSearch_"] a {
-  margin-top: 2px !important;
   height: unset !important;
-}
-[class*="gamelistbar_GameListHomeAndSearch_"] a:hover {
-  text-decoration: none !important;
-}
-[class*="gamelistbar_HomeBox_"] {
-  overflow: visible !important;
-  flex: unset !important;
 }
 [class*="gamelistcollectionmenu_CollectionDelete_"] {
   display: none !important;
@@ -3223,19 +3215,16 @@ div[class*="gameinfodialog_DialogBody_"] .DialogFooter svg {
   margin: auto !important;
 }
 [class*="gamelisthome_CollectionButton_"] {
-  font: var(--text-ui) !important;
   letter-spacing: 0 !important;
 }
 [class*="gamelisthome_CollectionIcon_"] {
   padding: 0 !important;
-  width: unset !important;
+  width: 100% !important;
   height: unset !important;
   display: block !important;
 }
 [class*="gamelisthome_CollectionIcon_"]::before {
-  content: 'Collections' !important;
-  text-align: center !important;
-  width: 100% !important;
+  content: var(--AllCollectionsView_InfoIconCollections) !important;
 }
 [class*="gamelisthome_CollectionIconBox_"] {
   display: none !important;
@@ -3572,11 +3561,6 @@ div:not([class]) > [class*="gamepaddialog_Field_"]:not([class*="settings_Overlay
 [class*="library_LibraryWindowDivider_"] {
   background-color: transparent !important;
   width: 8px !important;
-}
-[class*="library_MainPanel_"] {
-  --tab-height: 18px !important;
-  margin-top: var(--tab-height) !important;
-  margin-bottom: 2px !important;
 }
 [class*="library_AppDetailsMain_"] {
   inset: 3px 4px 4px 3px !important;
