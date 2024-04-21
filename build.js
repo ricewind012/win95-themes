@@ -2,13 +2,12 @@ const fs = require("node:fs");
 const path = require("node:path");
 const stylus = require("stylus");
 
-const progs = fs.readdirSync("src").filter((e) => !e.startsWith("shared"));
-
 const SHARED_DIR = path.join("src", "shared");
 const SHARED_PP_DIR = path.join("src", "shared++");
 const SHARED_STYLUS_DIR = path.join("src", "shared-styl");
 
-function usage() {
+const progs = fs.readdirSync("src").filter((e) => !e.startsWith("shared"));
+if (process.argv.length == 2 || !progs.some((e) => process.argv[2] == e)) {
 	console.error(
 		"Usage: %s [%s]",
 		path.basename(process.argv[1]),
@@ -17,21 +16,11 @@ function usage() {
 	process.exit(2);
 }
 
-if (process.argv.length == 2) usage();
-if (!progs.some((e) => process.argv[2] == e)) usage();
-
 const sharedFiles = fs
 	.readdirSync(SHARED_PP_DIR)
 	.map((e) => path.join(SHARED_PP_DIR, e));
-const file = (() => {
-	switch (process.argv[2]) {
-		case "steam":
-			return "libraryroot.custom";
-		default:
-			return process.argv[2];
-	}
-})();
-const isSteam = process.argv[2] == "steam";
+const file = process.argv[2];
+const isSteam = file == "steam";
 const rootDir = path.join("src", process.argv[2]);
 const outFile = path.join("dist", process.argv[2], `${file}.css`);
 

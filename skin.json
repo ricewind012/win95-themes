@@ -35,8 +35,8 @@
 		},
 		{
 			"MatchRegexString": "^Steam$",
-			"TargetCss": "dist/steam/libraryroot.custom.css",
-			"TargetJs": "dist/steam/libraryroot.custom.js",
+			"TargetCss": "dist/steam/steam.css",
+			"TargetJs": "dist/steam/steam.js",
 
 			"Statement": {
 				"If": "Green colorscheme",
@@ -48,8 +48,8 @@
 		},
 		{
 			"MatchRegexString": "^OverlayBrowser_Browser$",
-			"TargetCss": "dist/steam/libraryroot.custom.css",
-			"TargetJs": "dist/steam/libraryroot.custom.js",
+			"TargetCss": "dist/steam/steam.css",
+			"TargetJs": "dist/steam/steam.js",
 
 			"Statement": {
 				"If": "Green colorscheme",
@@ -61,8 +61,8 @@
 		},
 		{
 			"MatchRegexString": "^SP Overlay:",
-			"TargetCss": "dist/steam/libraryroot.custom.css",
-			"TargetJs": "dist/steam/libraryroot.custom.js",
+			"TargetCss": "dist/steam/steam.css",
+			"TargetJs": "dist/steam/steam.js",
 
 			"Statement": {
 				"If": "Green colorscheme",
@@ -74,8 +74,8 @@
 		},
 		{
 			"MatchRegexString": "Supernav$",
-			"TargetCss": "dist/steam/libraryroot.custom.css",
-			"TargetJs": "dist/steam/libraryroot.custom.js",
+			"TargetCss": "dist/steam/steam.css",
+			"TargetJs": "dist/steam/steam.js",
 
 			"Statement": {
 				"If": "Green colorscheme",
@@ -87,8 +87,8 @@
 		},
 		{
 			"MatchRegexString": "^notificationtoasts_",
-			"TargetCss": "dist/steam/libraryroot.custom.css",
-			"TargetJs": "dist/steam/libraryroot.custom.js",
+			"TargetCss": "dist/steam/steam.css",
+			"TargetJs": "dist/steam/steam.js",
 
 			"Statement": {
 				"If": "Green colorscheme",
@@ -100,8 +100,8 @@
 		},
 		{
 			"MatchRegexString": "^SteamBrowser_Find$",
-			"TargetCss": "dist/steam/libraryroot.custom.css",
-			"TargetJs": "dist/steam/libraryroot.custom.js",
+			"TargetCss": "dist/steam/steam.css",
+			"TargetJs": "dist/steam/steam.js",
 
 			"Statement": {
 				"If": "Green colorscheme",
@@ -113,8 +113,8 @@
 		},
 		{
 			"MatchRegexString": "^OverlayTab\\d+_Find$",
-			"TargetCss": "dist/steam/libraryroot.custom.css",
-			"TargetJs": "dist/steam/libraryroot.custom.js",
+			"TargetCss": "dist/steam/steam.css",
+			"TargetJs": "dist/steam/steam.js",
 
 			"Statement": {
 				"If": "Green colorscheme",
@@ -126,8 +126,8 @@
 		},
 		{
 			"MatchRegexString": ".friendsui-container",
-			"TargetCss": "dist/steam/libraryroot.custom.css",
-			"TargetJs": "dist/steam/libraryroot.custom.js",
+			"TargetCss": "dist/steam/steam.css",
+			"TargetJs": "dist/steam/steam.js",
 
 			"Statement": {
 				"If": "Green colorscheme",
@@ -139,8 +139,8 @@
 		},
 		{
 			"MatchRegexString": "Menu$",
-			"TargetCss": "dist/steam/libraryroot.custom.css",
-			"TargetJs": "dist/steam/libraryroot.custom.js",
+			"TargetCss": "dist/steam/steam.css",
+			"TargetJs": "dist/steam/steam.js",
 
 			"Statement": {
 				"If": "Green colorscheme",
@@ -152,8 +152,8 @@
 		},
 		{
 			"MatchRegexString": ".ModalDialogPopup",
-			"TargetCss": "dist/steam/libraryroot.custom.css",
-			"TargetJs": "dist/steam/libraryroot.custom.js",
+			"TargetCss": "dist/steam/steam.css",
+			"TargetJs": "dist/steam/steam.js",
 
 			"Statement": {
 				"If": "Green colorscheme",
@@ -165,8 +165,8 @@
 		},
 		{
 			"MatchRegexString": ".FullModalOverlay",
-			"TargetCss": "dist/steam/libraryroot.custom.css",
-			"TargetJs": "dist/steam/libraryroot.custom.js",
+			"TargetCss": "dist/steam/steam.css",
+			"TargetJs": "dist/steam/steam.js",
 
 			"Statement": {
 				"If": "Green colorscheme",
