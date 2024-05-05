@@ -1160,6 +1160,12 @@ fieldset,
   position: absolute !important;
   top: -5px !important;
 }
+.close-button {
+  --button-img: var(--icon-close) !important;
+  --button-img-size: 8px 7px !important;
+  --button-img-pos: 4px 3px !important;
+  margin-left: 2px !important;
+}
 :root {
   --tree-item-spacing-x: 4px !important;
   --text-full: calc(var(--text-ui-size) * var(--text-line)) !important;
@@ -1742,11 +1748,6 @@ div.tree-outline-disclosure > .tree-outline:has(.styles-clipboard-only) ol.child
 .dialog-close-button {
   top: 5px !important;
   right: 5px !important;
-}
-.close-button {
-  --button-img: var(--icon-close) !important;
-  --button-img-size: 8px 7px !important;
-  --button-img-pos: 4px 3px !important;
 }
 .close-button [is="ui-icon"] {
   display: none !important;

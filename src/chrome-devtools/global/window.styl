@@ -47,12 +47,9 @@
 }
 
 .close-button {
-	--button-img: var(--icon-close);
-	--button-img-size: 8px 7px;
-	--button-img-pos: 4px 3px;
-
 	@extend button;
 	@extend .titlebar-button;
+	@extend $titlebar-button-close;
 
 	[is="ui-icon"] {
 		display: none;

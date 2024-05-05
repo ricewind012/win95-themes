@@ -1753,6 +1753,30 @@ div[class*="remoteplaysettings_TableHeader_"] > :first-child,
   position: absolute !important;
   top: -5px !important;
 }
+.minimizeButton {
+  --button-img: var(--icon-minimize) !important;
+  --button-img-size: 6px 2px !important;
+  --button-img-pos: 4px 9px !important;
+}
+.maximizeButton {
+  --button-img: var(--icon-maximize) !important;
+  --button-img-size: 9px !important;
+  --button-img-pos: 3px 2px !important;
+}
+.restoreButton {
+  --button-img: var(--icon-restore) !important;
+  --button-img-size: 10px 9px !important;
+  --button-img-pos: 2px 2px !important;
+}
+.ModalPosition_Dismiss .closeButton,
+.closeButton,
+[class*="downloads_RemoveFromQueue_"],
+[class*="steamdesktopoverlay_BackToGameBtn_"] {
+  --button-img: var(--icon-close) !important;
+  --button-img-size: 8px 7px !important;
+  --button-img-pos: 4px 3px !important;
+  margin-left: 2px !important;
+}
 [class*="titlebarcontrols_NotificationButtonContainer_"] {
   --button-img: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAICAYAAADED76LAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAAwSURBVChTY0AD/6EYDhihNAigSAABWI4JzMQDKFcAcwO6/TDACFKASxIrQPMmAwMAgi8HBW4J8QQAAAAASUVORK5CYII=") !important;
   --button-img-size: 9px !important;
@@ -1925,11 +1949,6 @@ button,
 .ModalPosition_Dismiss {
   top: 5px !important;
   right: 5px !important;
-}
-.ModalPosition_Dismiss .closeButton {
-  --button-img: var(--icon-close) !important;
-  --button-img-size: 8px 7px !important;
-  --button-img-pos: 4px 3px !important;
 }
 .ModalPosition_Dismiss svg {
   display: none !important;
@@ -2131,27 +2150,6 @@ img[src="/images/steam_spinner.png"] {
   img[src="/images/steam_spinner.png"] {
     filter: invert(1) !important;
   }
-}
-.minimizeButton {
-  --button-img: var(--icon-minimize) !important;
-  --button-img-size: 6px 2px !important;
-  --button-img-pos: 4px 9px !important;
-}
-.maximizeButton {
-  --button-img: var(--icon-maximize) !important;
-  --button-img-size: 9px !important;
-  --button-img-pos: 3px 2px !important;
-}
-.restoreButton {
-  --button-img: var(--icon-restore) !important;
-  --button-img-size: 10px 9px !important;
-  --button-img-pos: 2px 2px !important;
-}
-.closeButton {
-  --button-img: var(--icon-close) !important;
-  --button-img-size: 8px 7px !important;
-  --button-img-pos: 4px 3px !important;
-  margin-left: 2px !important;
 }
 .title-area {
   --window-img: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQAQMAAAAlPW0iAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAGUExURQAAAAAAAKVnuc8AAAACdFJOU/8A5bcwSgAAAAlwSFlzAAAOwwAADsMBx2+oZAAAADdJREFUCNdj+CHP8ICd4cBvhoZOhsa1DIwlDIwqDMxzGM5/YPh8gKGWgWEvI8MkRoY7zCBlP+QBgSAPR9M4h8IAAAAASUVORK5CYII=") !important;
@@ -3013,9 +3011,6 @@ div[class*="appdetailssection_AppDetailsSectionContainer_"] {
   margin-bottom: var(--text-spacing) !important;
 }
 [class*="downloads_RemoveFromQueue_"] {
-  --button-img: var(--icon-close) !important;
-  --button-img-size: 8px 7px !important;
-  --button-img-pos: 4px 3px !important;
   opacity: 1 !important;
 }
 [class*="downloads_RemoveFromQueue_"]::after {
@@ -4395,9 +4390,6 @@ div:not([class]) > [class*="gamepaddialog_Field_"]:not([class*="settings_Overlay
   gap: var(--text-spacing) !important;
 }
 [class*="steamdesktopoverlay_BackToGameBtn_"] {
-  --button-img: var(--icon-close) !important;
-  --button-img-size: 8px 7px !important;
-  --button-img-pos: 4px 3px !important;
   width: unset !important;
 }
 [class*="steamdesktopoverlay_BackToGameBtn_"]::before {

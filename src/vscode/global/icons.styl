@@ -110,7 +110,7 @@
 	&-notifications-collapse,
 
 	&-close,
-	&-chrome-close,
+	.titlebar &-chrome-close,
 	&-dialog-close,
 	&-diff-review-close,
 	&-notifications-clear,
@@ -127,9 +127,7 @@
 	&-workspace-trust-editor-cross,
 	&-workspace-trust-editor-remove-folder,
 	&-x {
-		--button-img: var(--icon-close);
-		--button-img-size: 8px 7px;
-		--button-img-pos: 4px 3px;
+		@extend $titlebar-button-close;
 	}
 
 	&-collapse-all,
@@ -276,21 +274,15 @@
 
 	&-chrome {
 		&-maximize {
-			--button-img: var(--icon-maximize);
-			--button-img-size: 9px;
-			--button-img-pos: 3px 2px;
+			@extend $titlebar-button-maximize;
 		}
 
 		&-minimize {
-			--button-img: var(--icon-minimize);
-			--button-img-size: 6px 2px;
-			--button-img-pos: 4px 9px;
+			@extend $titlebar-button-minimize;
 		}
 
 		&-restore {
-			--button-img: var(--icon-restore);
-			--button-img-size: 10px 9px;
-			--button-img-pos: 2px 2px;
+			@extend $titlebar-button-restore;
 		}
 	}
 

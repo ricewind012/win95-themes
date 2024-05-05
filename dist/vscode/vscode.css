@@ -1304,6 +1304,46 @@ fieldset,
   position: absolute !important;
   top: -5px !important;
 }
+.codicon-chrome-minimize {
+  --button-img: var(--icon-minimize) !important;
+  --button-img-size: 6px 2px !important;
+  --button-img-pos: 4px 9px !important;
+}
+.codicon-chrome-maximize {
+  --button-img: var(--icon-maximize) !important;
+  --button-img-size: 9px !important;
+  --button-img-pos: 3px 2px !important;
+}
+.codicon-chrome-restore {
+  --button-img: var(--icon-restore) !important;
+  --button-img-size: 10px 9px !important;
+  --button-img-pos: 2px 2px !important;
+}
+.codicon-notifications-hide,
+.codicon-notifications-collapse,
+.codicon-close,
+.titlebar .codicon-chrome-close,
+.codicon-dialog-close,
+.codicon-diff-review-close,
+.codicon-notifications-clear,
+.codicon-panel-close,
+.codicon-ports-stop-forward-icon,
+.codicon-remove-close,
+.codicon-search-remove,
+.codicon-settings-remove,
+.codicon-tasks-remove,
+.codicon-terminal-command-history-remove,
+.codicon-tree-filter-clear,
+.codicon-watch-expression-remove,
+.codicon-widget-close,
+.codicon-workspace-trust-editor-cross,
+.codicon-workspace-trust-editor-remove-folder,
+.codicon-x {
+  --button-img: var(--icon-close) !important;
+  --button-img-size: 8px 7px !important;
+  --button-img-pos: 4px 3px !important;
+  margin-left: 2px !important;
+}
 .codicon-bell {
   --button-img: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAICAYAAADED76LAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAAwSURBVChTY0AD/6EYDhihNAigSAABWI4JzMQDKFcAcwO6/TDACFKASxIrQPMmAwMAgi8HBW4J8QQAAAAASUVORK5CYII=") !important;
   --button-img-size: 9px !important;
@@ -1827,30 +1867,6 @@ fieldset,
   -webkit-mask-position: var(--icon-img-pos, center) !important;
   background-color: var(--color-button-text) !important;
 }
-.codicon-notifications-hide,
-.codicon-notifications-collapse,
-.codicon-close,
-.codicon-chrome-close,
-.codicon-dialog-close,
-.codicon-diff-review-close,
-.codicon-notifications-clear,
-.codicon-panel-close,
-.codicon-ports-stop-forward-icon,
-.codicon-remove-close,
-.codicon-search-remove,
-.codicon-settings-remove,
-.codicon-tasks-remove,
-.codicon-terminal-command-history-remove,
-.codicon-tree-filter-clear,
-.codicon-watch-expression-remove,
-.codicon-widget-close,
-.codicon-workspace-trust-editor-cross,
-.codicon-workspace-trust-editor-remove-folder,
-.codicon-x {
-  --button-img: var(--icon-close) !important;
-  --button-img-size: 8px 7px !important;
-  --button-img-pos: 4px 3px !important;
-}
 .codicon-error::before,
 .codicon-stop::before,
 .codicon-extensions-error-message::before,
@@ -1911,21 +1927,6 @@ fieldset,
   -webkit-mask-size: 9px 9px !important;
   -webkit-mask-position: var(--icon-img-pos, center) !important;
   background-color: var(--color-button-text) !important;
-}
-.codicon-chrome-maximize {
-  --button-img: var(--icon-maximize) !important;
-  --button-img-size: 9px !important;
-  --button-img-pos: 3px 2px !important;
-}
-.codicon-chrome-minimize {
-  --button-img: var(--icon-minimize) !important;
-  --button-img-size: 6px 2px !important;
-  --button-img-pos: 4px 9px !important;
-}
-.codicon-chrome-restore {
-  --button-img: var(--icon-restore) !important;
-  --button-img-size: 10px 9px !important;
-  --button-img-pos: 2px 2px !important;
 }
 .codicon-menu-submenu {
   --icon-img: var(--icon-arrow-right) !important;
@@ -3213,9 +3214,6 @@ body[role="document"] {
 }
 .titlebar .window-icon {
   width: unset !important;
-}
-.titlebar .window-close {
-  margin-left: 2px !important;
 }
 .action-toolbar-container {
   min-width: unset !important;
