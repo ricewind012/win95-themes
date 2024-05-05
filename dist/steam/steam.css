@@ -2544,10 +2544,9 @@ div[class*="appdetailssection_AppDetailsSectionContainer_"] {
 [class*="appproperties_BetaLabel_"] {
   color: inherit !important;
 }
-
-	[class*="appproperties_BetaLabel_"] {
-		font: var(--text-header) !important;
-	}
+[class*="appproperties_BetaLabel_"] {
+  font: var(--text-header) !important;
+}
 [class*="appproperties_Detail_"] {
   margin: 0 !important;
 }
@@ -4402,10 +4401,10 @@ div:not([class]) > [class*="gamepaddialog_Field_"]:not([class*="settings_Overlay
   text-transform: unset !important;
   margin-top: var(--text-spacing) !important;
 }
-
-	[class*="steamdesktopoverlay_CurrentTime_"],	[class*="steamdesktopoverlay_GameName_"] {
-		font: var(--text-header) !important;
-	}
+[class*="steamdesktopoverlay_CurrentTime_"],
+[class*="steamdesktopoverlay_GameName_"] {
+  font: var(--text-header) !important;
+}
 [class*="steamdesktopoverlay_CurrentDate_"],
 [class*="steamdesktopoverlay_KBShortcut_"],
 [class*="steamdesktopoverlay_PlaytimeCurrentSession_"] {

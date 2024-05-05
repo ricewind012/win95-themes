@@ -12,7 +12,7 @@
 		@extend button;
 
 		&-description {
-			font();
+			font: var(--text-ui);
 		}
 	}
 
@@ -82,7 +82,7 @@
 	&-inputbox {
 		background-color: transparent;
 		color: var(--color-window-text);
-		font();
+		font: var(--text-ui);
 		border: none;
 
 		overflow: visible;
@@ -150,7 +150,7 @@
 	&-count-badge {
 		background-color: transparent;
 		color: inherit;
-		font();
+		font: var(--text-ui);
 		parentheses();
 		padding: 0;
 
@@ -169,7 +169,7 @@
 		&-content {
 			background-color: transparent;
 			color: inherit;
-			font();
+			font: var(--text-ui);
 			parentheses();
 			padding: 0;
 
@@ -278,7 +278,7 @@
 
 		&-row {
 			overflow: visible;
-			font();
+			font: var(--text-ui);
 
 			&.selected {
 				--vscode-keybindingLabel-border: var(--color-active-caption-text);
@@ -329,12 +329,12 @@
 		}
 
 		.view-lines {
-			font();
+			font: var(--text-ui);
 		}
 	}
 
 	&-placeholder {
-		font();
+		font: var(--text-ui);
 		padding: 0;
 		margin: 0;
 

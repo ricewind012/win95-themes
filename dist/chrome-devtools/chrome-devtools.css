@@ -1874,7 +1874,7 @@ div.tree-outline-disclosure > .tree-outline:has(.styles-clipboard-only) ol.child
   color: var(--color-link) !important;
 }
 .cm-content {
-  font: var(--text-ui) !important;
+  font: var(--font-monospace) !important;
   box-shadow: none !important;
   padding: 4px 0 !important;
   height: unset !important;
