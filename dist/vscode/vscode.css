@@ -193,7 +193,7 @@ select:active {
 }
 hr,
 .menubar::after,
-.monaco-menu .monaco-action-bar.vertical .action-label.separator,
+div.monaco-menu .monaco-action-bar.vertical .action-label.separator,
 .monaco-select-box-dropdown-container > .select-box-details-pane,
 .monaco-hover .hover-row:not(:first-child):not(:empty)::before,
 .monaco-hover .hover-language-status:not(:first-child)::before,
@@ -2466,6 +2466,8 @@ fieldset,
   --vscode-list-warningForeground: #ff0 !important;
   --vscode-list-invalidItemForeground: #ff0 !important;
   --vscode-sideBar-background: var(--color-window) !important;
+  --vscode-sideBarTitle-background: transparent !important;
+  --vscode-sideBarTitle-foreground: var(--color-button-text) !important;
   --vscode-gitDecoration-ignoredResourceForeground: var(--color-gray-text) !important;
   --vscode-settings-focusedRowBackground: transparent !important;
   --vscode-settings-rowHoverBackground: transparent !important;
@@ -2566,7 +2568,7 @@ fieldset,
   margin-left: 10px !important;
 }
 .extension-editor .content {
-  height: calc(100% - 43px) !important;
+  height: calc(100% - 21px) !important;
 }
 .extension-editor .feature-contributions {
   margin: 0 !important;
@@ -3322,7 +3324,7 @@ body[role="document"] {
 .monaco-action-bar {
   padding: 0 !important;
 }
-.monaco-menu .monaco-action-bar.vertical .action-label.separator {
+div.monaco-menu .monaco-action-bar.vertical .action-label.separator {
   border-bottom: none !important;
 }
 .submenu-indicator,
