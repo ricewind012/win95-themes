@@ -1,25 +1,25 @@
 .find-widget {
-  @extend .window;
-  @extend .window.child;
+	@extend .window;
+	@extend .window.child;
 
-  height: auto;
+	height: auto;
 
-  // Horrible layout, kill yourself
-  .button {
-    @extend button;
-    @extend .titlebar-button;
+	// Horrible layout, kill yourself
+	.button {
+		@extend button;
+		@extend .titlebar-button;
 
-    inset: 0;
+		inset: 0;
 
-    &.codicon-widget-close {
-      left: 16px;
-      top: -39px;
-    }
-  }
+		&.codicon-widget-close {
+			left: 16px;
+			top: -39px;
+		}
+	}
 
-  .find-part,
-  .replace-part {
-    font: var(--text-ui);
-    margin: 0;
-  }
+	.find-part,
+	.replace-part {
+		font: var(--text-ui);
+		margin: 0;
+	}
 }

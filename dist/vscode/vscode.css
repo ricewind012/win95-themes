@@ -928,7 +928,9 @@ table {
 .extension-editor .content[compact],
 .settings-editor > .settings-body .settings-tree-container .monaco-list[compact],
 .editor-container > .editor-instance[compact],
-.part.panel > .content[compact] {
+.part.panel > .content[compact],
+.editor-container > .editor-instance,
+.part.panel > .content {
   --tabpanel-spacing: 2px !important;
 }
 ::selection {
@@ -2817,10 +2819,6 @@ body[role="document"] {
 .editor-container {
   background-color: transparent !important;
   height: calc(100% - 30px) !important;
-}
-.editor-container > .editor-instance,
-.part.panel > .content {
-  padding: calc(var(--border-size) + 2px) !important;
 }
 .editor-group-container {
   background-color: var(--color-button-face) !important;

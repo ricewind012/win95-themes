@@ -797,7 +797,11 @@ table {
 [role="tabpanel"][compact],
 .timeline-tree-view[compact],
 .timeline-view[compact],
-#sources-panel-sources-view > .vbox > .vbox > .vbox[compact] {
+#sources-panel-sources-view > .vbox > .vbox > .vbox[compact],
+[role="tabpanel"],
+.timeline-tree-view,
+.timeline-view,
+#sources-panel-sources-view > .vbox > .vbox > .vbox {
   --tabpanel-spacing: 2px !important;
 }
 ::selection {
@@ -1457,12 +1461,6 @@ div.tabbed-pane-shadow.vertical-tab-layout .tabbed-pane-left-toolbar {
 }
 .tabbed-pane-tab-slider {
   display: none !important;
-}
-[role="tabpanel"],
-.timeline-tree-view,
-.timeline-view,
-#sources-panel-sources-view > .vbox > .vbox > .vbox {
-  padding: 4px !important;
 }
 .dt-checkbox-text {
   color: var(--color-button-text) !important;
@@ -2193,9 +2191,6 @@ devtools-adorner,
   --sources-header-margin-top: 0px !important;
   --sources-header-margin-bottom: -2px !important;
   --sources-tabs-margin-bottom: 2px !important;
-}
-#sources-panel-sources-view > .vbox > .vbox > .vbox {
-  padding: 4px !important;
 }
 #sources-panel-sources-view .sources-toolbar {
   border: none !important;
