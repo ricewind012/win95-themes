@@ -6,6 +6,8 @@ const SHARED_DIR = path.join("src", "shared");
 const SHARED_PP_DIR = path.join("src", "shared++");
 const SHARED_STYLUS_DIR = path.join("src", "shared-styl");
 
+const STEAM_CLASS_MAPS_FILE = "steam_class_maps.json";
+
 const progs = fs.readdirSync("src").filter((e) => !e.startsWith("shared"));
 if (process.argv.length == 2 || !progs.some((e) => process.argv[2] == e)) {
 	console.error(
@@ -41,6 +43,8 @@ let imports = [
 
 if (isSteam) {
 	const importsPath = path.join("src", process.argv[2], "imports");
+	const maps = JSON.parse(fs.readFileSync(STEAM_CLASS_MAPS_FILE).toString());
+	const keys = Object.keys(maps);
 
 	imports += fs
 		.readdirSync(importsPath)
@@ -48,7 +52,13 @@ if (isSteam) {
 			fs
 				.readFileSync(path.join(importsPath, e))
 				.toString()
-				.replace(/#(\w+)/g, `[class*="${e.replace(".styl", "")}_$1_"]`),
+				.replace(/#(\w+)/g, (_, s) => {
+					let a = `${e.replace(".styl", "")}_${s}_`;
+					console.log("%s => %s", a.padStart(60));
+					let b = maps[keys.find((e) => e.startsWith(a))];
+
+					return `.${b}`;
+				}),
 		)
 		.join("\n");
 }
