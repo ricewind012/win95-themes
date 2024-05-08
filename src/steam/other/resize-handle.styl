@@ -1,30 +1,8 @@
 .PopupFullWindow:not(:only-child) {
+	@extend $statusbar-alt;
+
 	.ModalPosition {
 		height: calc(100% - var(--text-full) - 6px);
-	}
-
-	/[class*="bottombar_BottomBarContainer_"] {
-		--statusbar-height: calc(var(--text-full) + 2px);
-
-		padding-bottom: calc(var(--statusbar-height) + var(--window-gap));
-	}
-
-	/[class*="bottombar_AddGameButton_"] {
-		~/, & {
-			&::after {
-				content: '';
-
-				position: fixed;
-				left: 4px;
-				right: 4px;
-				bottom: 4px;
-				height: calc(var(--text-full) + 2px);
-
-				background-color: var(--color-button-face);
-				box-shadow: var(--border-statusbar);
-				padding: 1px 15px 1px 2px;
-			}
-		}
 	}
 }
 

@@ -50,23 +50,6 @@
 		}
 	}
 
-	#SteamDesktop &::after {
-		content: 'Steam';
-
-		position: fixed;
-		left: calc(6px + var(--titlebar-spacing) + var(--icon-size));
-		height: var(--titlebar-spacing);
-		display: flex;
-		align-items: center;
-
-		color: var(--color-inactive-caption-text);
-		font-weight: bold;
-
-		.WindowFocus & {
-			color: var(--color-active-caption-text);
-		}
-	}
-
 	// Used only in overlay browser ?
 	&-children {
 		@extend .titlebar-name;

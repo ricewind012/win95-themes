@@ -161,14 +161,7 @@
 		}
 
 		&Transition > & {
-			padding: 0;
-
-			bottom: 53px;
-
-			// Steam settings
-			[class*="settings_SettingsModal_"] > & {
-				bottom: 18px;
-			}
+			--dialog-spacing: 0px;
 		}
 	}
 
@@ -189,6 +182,11 @@
 			margin-bottom: var(--text-spacing);
 		}
 
+		// "In Game" settings tab
+		& > .DialogSubHeader {
+			position: unset;
+		}
+
 		a {
 			@extend $link;
 		}
@@ -205,6 +203,20 @@
 
 		display: flex;
 		flex-direction: column;
+
+		&Header {
+			@extend $text-reset;
+			@extend $legend-as-div;
+		}
+
+		& > .DialogBodyText {
+			@extend $legend-as-div;
+		}
+	}
+
+	&SubHeader {
+		@extend $text-reset;
+		@extend $legend-as-div;
 	}
 }
 
@@ -246,12 +258,3 @@
 	}
 }
 
-/.DialogControlsSectionHeader,
-/.DialogSubHeader,
-/div[class*="appproperties_Title_"],
-/div[class*="librarysettings_DescriptionText_"],
-/div[class*="settings_SettingsDialogBodyText"],
-/div[class*="remoteplaysettings_TableHeader_"] > :first-child {
-	@extend $text-reset;
-	@extend $legend-as-div;
-}

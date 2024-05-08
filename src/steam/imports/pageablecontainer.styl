@@ -39,3 +39,20 @@
 
 	background-color: var(--color-window);
 }
+
+#PageLeft,
+#PageRight {
+	@extend $pageable-container-button;
+
+	&#Disabled {
+		@extend .titlebar-button:disabled;
+	}
+}
+
+#PageLeft {
+	--button-img: var(--icon-arrow-left);
+}
+
+#PageRight {
+	--button-img: var(--icon-arrow-right);
+}

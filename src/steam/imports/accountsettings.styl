@@ -1,15 +1,12 @@
 #EntryLabel {
 	padding-right: var(--text-spacing);
+
+	&::after {
+		content: ':';
+	}
 }
 
 #EntryValue {
 	@extend $text-reset;
 }
 
-#SteamGuardIcon {
-	color: red;
-
-	&#Enabled {
-		color: green;
-	}
-}

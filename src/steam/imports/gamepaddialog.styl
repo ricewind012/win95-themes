@@ -1,10 +1,10 @@
 #Field {
-	--field-row-children-spacing: 7px;
+	--field-row-children-spacing: var(--label-spacing);
 
 	background-color: transparent;
 	padding: 0;
 
-	div:not([class]) > &:not([class*="settings_OverlayTabSetting_"]) {
+	div:not([class]) > & {
 		@extend fieldset;
 
 		gap: var(--text-spacing);
@@ -16,10 +16,6 @@
 	&::after { // lol
 		display: none;
 	}
-}
-
-#FieldChildren {
-	gap: var(--text-spacing);
 }
 
 #FieldDescription {
@@ -49,7 +45,7 @@
 }
 
 #FieldDescription {
-	#WithDescription > #Row + & {
+	#WithDescription > div + & {
 		color: var(--color-gray-text);
 		margin-left: calc(var(--sel-button-size) + var(--label-spacing));
 	}
@@ -58,7 +54,7 @@
 #ControlsListOuterPanel {
 	--controls-list-spacing: var(--label-spacing);
 
-	gap: 0;
+	gap: var(--dialog-button-spacing);
 
 	flex: unset;
 }

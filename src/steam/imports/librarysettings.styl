@@ -1,5 +1,11 @@
 #ActionSection {
-	gap: 0;
+	gap: var(--dialog-button-spacing);
 
 	flex-direction: row;
 }
+
+#DescriptionText {
+	@extend $text-reset;
+	@extend $legend-as-div;
+}
+

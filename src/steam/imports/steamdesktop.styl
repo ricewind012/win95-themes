@@ -36,6 +36,14 @@
 	cursor: default;
 }
 
+#WindowControls {
+	&::after {
+		content: 'Steam';
+
+		@extend $dialog-title;
+	}
+}
+
 #RootMenuBar {
 	gap: 0;
 	padding: 0;

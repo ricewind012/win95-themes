@@ -23,11 +23,12 @@
 }
 
 #RootMenuButton {
-	@extend $text-reset;
 	@extend .menubar-item;
 
-	&:active,
-	&[class*="Open"] {
+	color: var(--color-menubar-text);
+	font-size: var(--text-ui-size);
+
+	&:active {
 		@extend .menubar-item:active;
 	}
 

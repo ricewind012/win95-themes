@@ -33,7 +33,7 @@
 #NotificationPrefDetails {
 	background-color: transparent;
 	gap: var(--text-spacing);
-	padding: 0;
+	padding-top: var(--text-spacing);
 	padding-left: calc(var(--sel-button-size) + var(--label-spacing));
 	box-shadow: none;
 
@@ -62,6 +62,10 @@
 	svg {
 		display: none;
 	}
+}
+
+#ToggleHeader {
+	@extend $text-reset;
 }
 
 #Toggles.Panel {

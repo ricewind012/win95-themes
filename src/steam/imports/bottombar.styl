@@ -1,5 +1,6 @@
 #AddGameButton {
 	@extend select;
+	@extend $statusbar-alt;
 }
 
 #BottomBar {
@@ -11,6 +12,12 @@
 	top: 41px;
 	right: -5px;
 	flex: unset;
+}
+
+#BottomBarContainer {
+	--statusbar-height: calc(var(--text-full) + 2px);
+
+	padding-bottom: calc(var(--statusbar-height) + var(--window-gap));
 }
 
 #DownloadStatusContent,

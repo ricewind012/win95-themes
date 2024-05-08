@@ -38,6 +38,38 @@ $dialog-title {
 	}
 }
 
+$statusbar-alt {
+	&::after {
+		content: '';
+
+		position: fixed;
+		left: 4px;
+		right: 4px;
+		bottom: 4px;
+		height: calc(var(--text-full) + 2px);
+
+		background-color: var(--color-button-face);
+		box-shadow: var(--border-statusbar);
+		padding: 1px 15px 1px 2px;
+	}
+}
+
+$pageable-container-button {
+	@extend button;
+	@extend .titlebar-button;
+
+	--button-img-size: 4px 7px;
+	--button-img-pos: center;
+
+	opacity: 1;
+
+	width: unset;
+
+	svg {
+		display: none;
+	}
+}
+
 body {
 	@extend .window;
 }
