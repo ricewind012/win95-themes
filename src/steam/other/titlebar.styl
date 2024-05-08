@@ -33,17 +33,19 @@
 	}
 
 	&::before {
+		--s: calc(1px + var(--border-size) + var(--window-spacing));
+
 		content: '';
 
 		position: fixed;
-		left: 6px;
-		top: 6px;
+		left: var(--s);
+		top: var(--s);
 		width: var(--icon-size);
 		height: var(--icon-size);
 
 		background-image: var(--window-img);
 
-		.WindowFocus #SteamDesktop & {
+		.WindowFocus & {
 			filter: invert();
 		}
 	}

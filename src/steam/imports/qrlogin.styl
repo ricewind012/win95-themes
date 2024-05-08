@@ -1,0 +1,36 @@
+#Box {
+	background-color: transparent;
+
+	& > button {
+		@extend .titlebar-button;
+		@extend $icon-refresh;
+
+		&::before {
+			display: initial;
+		}
+
+		& > svg {
+			display: none;
+		}
+	}
+}
+
+#Column {
+	// TODO: test
+	box-shadow: var(--border-field);
+	padding: var(--border-size);
+}
+
+#LoginQR {
+	background-color: var(--color-window);
+	border-color: var(--color-window);
+
+	&#Blur {
+		filter: none;
+
+		& > * {
+			display: none;
+		}
+	}
+}
+

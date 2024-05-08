@@ -23,13 +23,15 @@ $content-container-alt {
 }
 
 $dialog-title {
+	--s: calc(1px + var(--border-size) + var(--window-spacing));
+
 	color: var(--color-inactive-caption-text);
 	font: var(--text-ui);
 	font-weight: bold;
 
 	position: fixed;
-	left: 23px;
-	top: 6px;
+	left: calc(var(--s) + var(--icon-size) + var(--titlebar-spacing));
+	top: calc(var(--s) + 2px);
 
 	.WindowFocus & {
 		color: var(--color-active-caption-text);
