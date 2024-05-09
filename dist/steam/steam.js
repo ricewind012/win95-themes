@@ -1,32 +1,30 @@
-function SetTokenAsVar(token) {
-	document.body.style.setProperty(
-		"--" + token,
-		"'" + window.opener.LocalizationManager.LocalizeString("#" + token) + "'",
-	);
-}
+const LocalizeString = e => window.opener.LocalizationManager.LocalizeString(e)
 
-switch (document.title) {
-	case "Steam":
-		["AllCollectionsView_InfoIconCollections", "BottomBar_Manage"].forEach(
-			(e) => {
-				SetTokenAsVar(e);
-			},
+const tokens = (() => {
+		switch (document.title) {
+			case LocalizeString("#WindowName_SteamDesktop"):
+				return ["AllCollectionsView_InfoIconCollections", "BottomBar_Manage"];
+
+			case LocalizeString("#ScreenshotUploader_Heading"):
+			case "ScreenshotManager": // Overlay
+				return [
+					"Generic_Delete",
+					"ScreenshotUploader_CopyURL",
+					"ScreenshotUploader_Settings",
+					"ScreenshotUploader_ShowOnDisk",
+				];
+		}
+	})();
+
+	for (const token of tokens) {
+		document.body.style.setProperty(
+			"--" + token,
+			"'" + LocalizeString("#" + token) + "'",
 		);
-		break;
+	}
 
-	case "ScreenshotManager":
-	case "Screenshot Manager":
-		[
-			"Generic_Delete",
-			"ScreenshotUploader_CopyURL",
-			"ScreenshotUploader_Settings",
-			"ScreenshotUploader_ShowOnDisk",
-		].forEach((e) => {
-			SetTokenAsVar(e);
-		});
-		break;
-
-	case "Game Servers":
-		SteamClient.Window.SetMinSize(500, 500);
-		break;
-}
+	switch (document.title) {
+		case LocalizeString("#Menu_Servers"):
+			SteamClient.Window.SetMinSize(500, 500);
+			break;
+	}

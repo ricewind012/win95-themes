@@ -24,30 +24,7 @@
 
 	"Patches": [
 		{
-			"MatchRegexString": "https://.*.steampowered.com",
-			"TargetCss": "dist/steam/webkit.css",
-			"TargetJs": "dist/steam/webkit.js"
-		},
-		{
-			"MatchRegexString": "https://steamcommunity.com",
-			"TargetCss": "dist/steam/webkit.css",
-			"TargetJs": "dist/steam/webkit.js"
-		},
-		{
 			"MatchRegexString": "^Steam$",
-			"TargetCss": "dist/steam/steam.css",
-			"TargetJs": "dist/steam/steam.js",
-
-			"Statement": {
-				"If": "Green colorscheme",
-				"Equals": true,
-				"True": {
-					"TargetCss": "dist/green.css"
-				}
-			}
-		},
-		{
-			"MatchRegexString": "^OverlayBrowser_Browser$",
 			"TargetCss": "dist/steam/steam.css",
 			"TargetJs": "dist/steam/steam.js",
 
@@ -73,7 +50,7 @@
 			}
 		},
 		{
-			"MatchRegexString": "Supernav$",
+			"MatchRegexString": ".client_chat_frame",
 			"TargetCss": "dist/steam/steam.css",
 			"TargetJs": "dist/steam/steam.js",
 
@@ -86,59 +63,7 @@
 			}
 		},
 		{
-			"MatchRegexString": "^notificationtoasts_",
-			"TargetCss": "dist/steam/steam.css",
-			"TargetJs": "dist/steam/steam.js",
-
-			"Statement": {
-				"If": "Green colorscheme",
-				"Equals": true,
-				"True": {
-					"TargetCss": "dist/green.css"
-				}
-			}
-		},
-		{
-			"MatchRegexString": "^SteamBrowser_Find$",
-			"TargetCss": "dist/steam/steam.css",
-			"TargetJs": "dist/steam/steam.js",
-
-			"Statement": {
-				"If": "Green colorscheme",
-				"Equals": true,
-				"True": {
-					"TargetCss": "dist/green.css"
-				}
-			}
-		},
-		{
-			"MatchRegexString": "^OverlayTab\\d+_Find$",
-			"TargetCss": "dist/steam/steam.css",
-			"TargetJs": "dist/steam/steam.js",
-
-			"Statement": {
-				"If": "Green colorscheme",
-				"Equals": true,
-				"True": {
-					"TargetCss": "dist/green.css"
-				}
-			}
-		},
-		{
-			"MatchRegexString": ".friendsui-container",
-			"TargetCss": "dist/steam/steam.css",
-			"TargetJs": "dist/steam/steam.js",
-
-			"Statement": {
-				"If": "Green colorscheme",
-				"Equals": true,
-				"True": {
-					"TargetCss": "dist/green.css"
-				}
-			}
-		},
-		{
-			"MatchRegexString": "Menu$",
+			"MatchRegexString": ".fullheight",
 			"TargetCss": "dist/steam/steam.css",
 			"TargetJs": "dist/steam/steam.js",
 
@@ -152,19 +77,6 @@
 		},
 		{
 			"MatchRegexString": ".ModalDialogPopup",
-			"TargetCss": "dist/steam/steam.css",
-			"TargetJs": "dist/steam/steam.js",
-
-			"Statement": {
-				"If": "Green colorscheme",
-				"Equals": true,
-				"True": {
-					"TargetCss": "dist/green.css"
-				}
-			}
-		},
-		{
-			"MatchRegexString": ".FullModalOverlay",
 			"TargetCss": "dist/steam/steam.css",
 			"TargetJs": "dist/steam/steam.js",
 
