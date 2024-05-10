@@ -1,4 +1,5 @@
 {
+  "type": "module",
   "dependencies": {
     "stylus": "^0.62.0"
   }

@@ -1,12 +1,15 @@
-const fs = require("node:fs");
-const path = require("node:path");
-const stylus = require("stylus");
+import fs from "node:fs";
+import path from "node:path";
+import stylus from "stylus";
 
 const SHARED_DIR = path.join("src", "shared");
 const SHARED_PP_DIR = path.join("src", "shared++");
 const SHARED_STYLUS_DIR = path.join("src", "shared-styl");
 
 const STEAM_CLASS_MAPS_FILE = "steam_class_maps.json";
+
+const readFile = (e) => fs.readFileSync(e).toString();
+const mapText = (text, fn) => text.split("\n").map(fn).join("\n");
 
 const progs = fs.readdirSync("src").filter((e) => !e.startsWith("shared"));
 if (process.argv.length == 2 || !progs.some((e) => process.argv[2] == e)) {
@@ -23,8 +26,8 @@ const sharedFiles = fs
 	.map((e) => path.join(SHARED_PP_DIR, e));
 const file = process.argv[2];
 const isSteam = file == "steam";
-const rootDir = path.join("src", process.argv[2]);
-const outFile = path.join("dist", process.argv[2], `${file}.css`);
+const rootDir = path.join("src", file);
+const outFile = path.join("dist", file, `${file}.css`);
 
 const sharedCss = fs
 	.readdirSync(SHARED_STYLUS_DIR)
@@ -42,56 +45,40 @@ let imports = [
 	.join("\n");
 
 if (isSteam) {
-	const importsPath = path.join("src", process.argv[2], "imports");
-	const maps = JSON.parse(fs.readFileSync(STEAM_CLASS_MAPS_FILE).toString());
+	const importsPath = path.join("src", file, "imports");
+	const maps = JSON.parse(readFile(STEAM_CLASS_MAPS_FILE));
 	const keys = Object.keys(maps);
 
 	imports += fs
 		.readdirSync(importsPath)
 		.map((e) =>
-			fs
-				.readFileSync(path.join(importsPath, e))
-				.toString()
-				.replace(/#(\w+)/g, (_, s) => {
-					let a = `${e.replace(".styl", "")}_${s}_`;
-					console.log("%s => %s", a.padStart(60));
-					let b = maps[keys.find((e) => e.startsWith(a))];
+			readFile(path.join(importsPath, e)).replace(/#(\w+)/g, (_, s) => {
+				// TODO: doesn't work if directly passed to startsWith()
+				let klass = `${e.replace(".styl", "")}_${s}_`;
 
-					return `.${b}`;
-				}),
+				return "." + maps[keys.find((e) => e.startsWith(klass))];
+			}),
 		)
 		.join("\n");
 }
 
 // Variables have to be manually edited due to a Stylus bug (or its age).
-const cssVars = fs
-	.readFileSync(path.join(SHARED_DIR, "variables.css"))
-	.toString()
-	.replace(/ \/ /g, " \\/ ")
-	.split("\n")
-	.map((e) => (e.endsWith(")") ? `${e} \\` : e))
-	.join("\n");
-const renderer = stylus(cssVars + imports);
+const cssVars = readFile(path.join(SHARED_DIR, "variables.css")).replace(
+	/ \/ /g,
+	" \\/ ",
+);
+const actualCssVars = mapText(cssVars, (e) =>
+	e.endsWith(")") ? `${e} \\` : e,
+);
+const renderer = stylus(actualCssVars + imports);
 
 renderer.render((err, css) => {
 	if (err) {
 		throw new Error(err.message);
 	}
 
-	css = css
-		.split("\n")
-		.map((e) =>
-			e
-				.replace(/;$/g, " !important;")
-				.replace(/!important !important/g, "!important")
-				// TODO: is this a chrome bug ? same with ::-webkit nesting
-				// TODO fr this time: active state
-				.replace(
-					/::-webkit-scrollbar-button\s/g,
-					"::-webkit-scrollbar-button:enabled:not(:disabled)",
-				),
-		)
-		.join("\n");
-
-	fs.writeFileSync(outFile, css);
+	fs.writeFileSync(
+		outFile,
+		mapText(css, (e) => e.replace(/;$/g, " !important;")),
+	);
 });
