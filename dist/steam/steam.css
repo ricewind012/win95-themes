@@ -1500,7 +1500,6 @@ div._3rgV8pPmQvZC-01x9l-q-N {
   color: var(--color-active-caption-text) !important;
 }
 .titlebar-name,
-.FullModalOverlay .DialogHeader,
 .title-area-children {
   font-weight: bold !important;
 }
@@ -1960,6 +1959,7 @@ div:not([class]) > .S-_LaQG5eEOM2HWZ-geJI,
   pointer-events: none !important;
   box-shadow: var(--border-field) !important;
 }
+.PopupFullWindow > :last-child .DialogHeader,
 ._3wNylaCAUJ8XtRM6mu2C0k,
 div._3T-1PliI6PkKE-bE-o3bV0,
 ._2YAErBn5Bipgh6K9SGIQwH,
@@ -1974,6 +1974,7 @@ div._3T-1PliI6PkKE-bE-o3bV0,
   left: calc(var(--s) + var(--icon-size) + var(--titlebar-spacing)) !important;
   top: calc(var(--s) + 2px) !important;
 }
+.WindowFocus .PopupFullWindow > :last-child .DialogHeader,
 .WindowFocus ._3wNylaCAUJ8XtRM6mu2C0k,
 .WindowFocus div._3T-1PliI6PkKE-bE-o3bV0,
 .WindowFocus ._2YAErBn5Bipgh6K9SGIQwH,
@@ -2173,21 +2174,14 @@ button,
   color: inherit !important;
   text-transform: unset !important;
 }
-.PopupFullWindow > :last-child .DialogHeader {
-  color: var(--color-button-face) !important;
-  font: var(--text-ui) !important;
+.DialogHeader {
+  font-size: var(--text-ui-size) !important;
   font-weight: bold !important;
   text-transform: unset !important;
   padding: 0 !important;
   margin: 0 !important;
-  position: fixed !important;
-  left: 23px !important;
-  top: 6px !important;
 }
-.WindowFocus .PopupFullWindow > :last-child .DialogHeader {
-  color: var(--color-active-caption-text) !important;
-}
-.PopupFullWindow > :last-child .DialogHeader svg {
+.DialogHeader svg {
   display: none !important;
 }
 .DialogContent {
@@ -2233,10 +2227,6 @@ button,
 }
 .FullModalOverlay .DialogButton.Primary {
   width: 111px !important;
-}
-.FullModalOverlay .DialogHeader {
-  font-size: var(--text-ui-size) !important;
-  margin: 0 !important;
 }
 .FullModalOverlay .DialogHeader div:not(.DialogHeader) {
   display: none !important;

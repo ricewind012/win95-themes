@@ -126,20 +126,15 @@
 		text-transform: unset;
 	}
 
-	.PopupFullWindow > :last-child &Header {
-		color: var(--color-button-face);
-		font: var(--text-ui);
+	&Header {
+		font-size: var(--text-ui-size);
 		font-weight: bold;
 		text-transform: unset;
 		padding: 0;
 		margin: 0;
 
-		position: fixed;
-		left: 23px;
-		top: 6px;
-
-		.WindowFocus & {
-			color: var(--color-active-caption-text);
+		.PopupFullWindow > :last-child & {
+			@extend $dialog-title;
 		}
 
 		// About Steam dialog
@@ -246,10 +241,6 @@
 	&Header {
 		@extend .titlebar;
 		@extend :root[focused] .titlebar;
-		@extend .titlebar-name;
-
-		font-size: var(--text-ui-size);
-		margin: 0;
 
 		// "Mark as Private" dialog
 		div:not(.DialogHeader) {
