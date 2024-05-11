@@ -1,27 +1,18 @@
 #Arrow {
 	@extend button;
 
-	min-width: 22px;
-	height: 22px;
+	transform: none;
 
-	// TODO: it's a fucking <svg>
-	/*
-	&:nth-child(1) {
-		--button-img: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1IDkiPjxzdHlsZT5yZWN0e3dpZHRoOjFweH08L3N0eWxlPjxyZWN0IGhlaWdodD0iOSIgeD0iNCIvPjxyZWN0IGhlaWdodD0iNyIgeD0iMyIgeT0iMSIvPjxyZWN0IGhlaWdodD0iNSIgeD0iMiIgeT0iMiIvPjxyZWN0IGhlaWdodD0iMyIgeD0iMSIgeT0iMyIvPjxyZWN0IGhlaWdodD0iMSIgeT0iNCIvPjwvc3ZnPgo=');
+	min-width: var(--icon-width);
+	height: var(--icon-height);
+
+	&#Disabled {
+		pointer-events: none;
 	}
 
-	&:nth-child(2) {
-		--button-img: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1IDkiPjxzdHlsZT5yZWN0e3dpZHRoOjFweH08L3N0eWxlPjxyZWN0IGhlaWdodD0iOSIvPjxyZWN0IGhlaWdodD0iNyIgeD0iMSIgeT0iMSIvPjxyZWN0IGhlaWdodD0iNSIgeD0iMiIgeT0iMiIvPjxyZWN0IGhlaWdodD0iMyIgeD0iMyIgeT0iMyIvPjxyZWN0IGhlaWdodD0iMSIgeD0iNCIgeT0iNCIvPjwvc3ZnPgo=');
-	}
-
-	path {
+	& > path {
 		display: none;
 	}
-	*/
-}
-
-#Disabled {
-	@extend button:disabled;
 }
 
 #MenuButton {
@@ -33,7 +24,70 @@
 }
 
 #SuperNav {
+	--icon-width: 25px;
+	--icon-height: 23px;
+
 	padding-bottom: 2px;
+
+	position: relative;
+
+	// Use empty divs as icons, as svgs can not have pseudo-elements
+	& > :nth-child(4),
+	& > :nth-child(6) {
+		--button-img-pos: center;
+
+		position: absolute;
+		width: var(--icon-width);
+		height: var(--icon-height);
+
+		pointer-events: none;
+
+		&:active {
+			@extend .icon-button:active;
+		}
+
+		&::before,
+		&::after {
+			content: '';
+
+			position: absolute;
+			inset: 0;
+
+			-webkit-mask: var(--button-img) no-repeat;
+			-webkit-mask-size: var(--button-img-size);
+			-webkit-mask-position: var(--button-img-pos, center);
+		}
+
+		&::before {
+			background-color: var(--color-button-text);
+
+			z-index: 1;
+		}
+	}
+
+	& > :nth-child(4) {
+		@extend $icon-big-arrow-left;
+	}
+
+	& > :nth-child(6) {
+		@extend $icon-big-arrow-right;
+
+		left: var(--icon-width);
+	}
+
+	&:has(> #Disabled:nth-child(1)) > :nth-child(4),
+	&:has(> #Disabled:nth-child(2)) > :nth-child(6) {
+		&::before {
+			background-color: var(--color-gray-text);
+		}
+
+		&::after {
+			background-color: var(--color-button-highlight);
+
+			top: 2px;
+			left: 1px;
+		}
+	}
 }
 
 #SuperNavMenu {
