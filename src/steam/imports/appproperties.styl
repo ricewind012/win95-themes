@@ -1,3 +1,7 @@
+#AppProperties {
+	height: calc(100% - var(--text-full) - 18px + var(--dialog-spacing));
+}
+
 #AsyncBackedInputChildren {
 	margin: 0;
 }
@@ -39,6 +43,49 @@
 
 #TopGapSmall {
 	margin: 0;
+}
+
+// DLC
+#DlcGrid {
+	--inset: 88px 25px 65px 25px;
+
+	@extend $content-container-alt;
+
+	font-size: var(--text-ui-size);
+	border: none;
+	box-shadow: none;
+}
+
+#DlcHeader {
+	@extend button;
+	@extend .table-button;
+	@extend .table-button[sort];
+
+	text-transform: unset;
+
+	&:has(> #TriangleHide)::after {
+		display: none;
+	}
+
+	&:has(> #TriangleUp) {
+		@extend .table-button[sort="descending"];
+	}
+
+	&:has(> #TriangleDown) {
+		@extend .table-button[sort="ascending"];
+	}
+
+	& > div {
+		display: none;
+	}
+}
+
+#DlcTopRow > .DialogInput_Wrapper {
+	margin-left: var(--text-spacing);
+}
+
+#Name {
+	@extend $text-reset;
 }
 
 // Workshop
