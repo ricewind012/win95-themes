@@ -24,20 +24,7 @@
 
 	"Patches": [
 		{
-			"MatchRegexString": "^Steam$",
-			"TargetCss": "dist/steam/steam.css",
-			"TargetJs": "dist/steam/steam.js",
-
-			"Statement": {
-				"If": "Green colorscheme",
-				"Equals": true,
-				"True": {
-					"TargetCss": "dist/green.css"
-				}
-			}
-		},
-		{
-			"MatchRegexString": "^SP Overlay:",
+			"MatchRegexString": ".DesktopUI",
 			"TargetCss": "dist/steam/steam.css",
 			"TargetJs": "dist/steam/steam.js",
 

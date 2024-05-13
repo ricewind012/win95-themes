@@ -5,6 +5,9 @@ const tokens = (() => {
 			case LocalizeString("#WindowName_SteamDesktop"):
 				return ["AllCollectionsView_InfoIconCollections", "BottomBar_Manage"];
 
+			case LocalizeString("#SignIn_Title"):
+				return ["NavigateBack"];
+
 			case LocalizeString("#ScreenshotUploader_Heading"):
 			case "ScreenshotManager": // Overlay
 				return [
