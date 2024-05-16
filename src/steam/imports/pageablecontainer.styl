@@ -15,21 +15,20 @@
 	padding-right: 2px;
 
 	position: absolute;
-	top: -8px;
+	top: -7px;
 	right: 8px;
 }
 
 #HeaderPageControls {
 	@extend $text-reset;
 
-	// TODO @extend
 	& > div:not([class]) {
-		background-color: var(--color-window);
-		padding: 0 2px;
+		@extend $legend-as-div;
 
-		position: absolute;
-		top: -8px;
-		right: 42px;
+		background-color: var(--color-window);
+
+		top: -7px;
+		right: calc(10px + 16px * 2);
 	}
 }
 
@@ -45,6 +44,7 @@
 	@extend $pageable-container-button;
 
 	&#Disabled {
+		@extend button:disabled;
 		@extend .titlebar-button:disabled;
 	}
 }
