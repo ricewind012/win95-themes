@@ -144,7 +144,9 @@
 	&Content {
 		background: transparent;
 		padding: var(--dialog-spacing);
-		padding-bottom: calc(var(--text-full) + 3px + var(--window-gap) + var(--dialog-spacing));
+		//padding-bottom: calc(var(--text-full) + 3px + var(--window-gap) + var(--dialog-spacing));
+
+		display: block;
 
 		&Transition {
 			background: transparent;
@@ -216,6 +218,16 @@
 ._Dialog {
 	&ColLayout {
 		gap: var(--dialog-button-spacing);
+	}
+}
+
+.GenericConfirmDialog {
+	padding: var(--messagebox-spacing);
+
+	.DialogBody {
+		box-shadow: none;
+		gap: var(--messagebox-content-spacing);
+		padding: 0;
 	}
 }
 

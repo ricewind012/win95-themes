@@ -1760,7 +1760,6 @@ div:not([class]) > .S-_LaQG5eEOM2HWZ-geJI,
 ._1sCy-pm412Smb0wJx0W-4,
 ._3OhUxFVlQYr9W5ThxstR8k,
 ._3wJnTtcTLEp0R7eQj_mK8Y,
-._3vc5HYX7AEVTqXRYl2gm8,
 ._3grvnr9zzkvx6NoBOdmTnf,
 ._2RkIcXHXACX4EdBluR3nAH,
 ._1S3Q9rK5wn6PAIXII0mBz4,
@@ -2204,7 +2203,7 @@ button,
 .DialogContent {
   background: transparent !important;
   padding: var(--dialog-spacing) !important;
-  padding-bottom: calc(var(--text-full) + 3px + var(--window-gap) + var(--dialog-spacing)) !important;
+  display: block !important;
 }
 .DialogContentTransition {
   background: transparent !important;
@@ -2238,6 +2237,14 @@ button,
 }
 ._DialogColLayout {
   gap: var(--dialog-button-spacing) !important;
+}
+.GenericConfirmDialog {
+  padding: var(--messagebox-spacing) !important;
+}
+.GenericConfirmDialog .DialogBody {
+  box-shadow: none !important;
+  gap: var(--messagebox-content-spacing) !important;
+  padding: 0 !important;
 }
 .FullModalOverlay .DialogBody {
   box-shadow: none !important;
@@ -2863,6 +2870,10 @@ div._31ptFGGMZrSQc5BCX1e5lm {
 }
 ._1e3aAVJv0Hy_mDBocob-ja {
   height: unset !important;
+}
+._3vc5HYX7AEVTqXRYl2gm8 {
+  font: var(--text-ui) !important;
+  font-weight: bold !important;
 }
 ._3SFRZYIb9Y2q7YsVtB3YKb {
   --icon: var(--tree-icon-expanded) !important;
