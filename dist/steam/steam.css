@@ -2203,7 +2203,7 @@ button,
 .DialogContent {
   background: transparent !important;
   padding: var(--dialog-spacing) !important;
-  display: block !important;
+  padding-bottom: calc(var(--text-full) + 3px + var(--window-gap) + var(--dialog-spacing)) !important;
 }
 .DialogContentTransition {
   background: transparent !important;
@@ -2239,12 +2239,15 @@ button,
   gap: var(--dialog-button-spacing) !important;
 }
 .GenericConfirmDialog {
-  padding: var(--messagebox-spacing) !important;
+  padding: 0 !important;
 }
 .GenericConfirmDialog .DialogBody {
   box-shadow: none !important;
   gap: var(--messagebox-content-spacing) !important;
-  padding: 0 !important;
+  padding: var(--messagebox-spacing) !important;
+}
+.GenericConfirmDialog .DialogBodyText {
+  margin-bottom: 0 !important;
 }
 .FullModalOverlay .DialogBody {
   box-shadow: none !important;
@@ -2653,7 +2656,7 @@ div._31ptFGGMZrSQc5BCX1e5lm {
   box-shadow: 0 0 1px var(--color-button-shadow) !important;
 }
 ._1FyBL6obxHQ2Z2CsaV2Gbz {
-  height: calc(100% - var(--text-full) - 18px + var(--dialog-spacing)) !important;
+  height: calc(100% - var(--text-full) - var(--tabs-height)) !important;
 }
 ._1y1wmpgy_HhnryUAHjEOSG {
   margin: 0 !important;
@@ -2783,6 +2786,21 @@ div._31ptFGGMZrSQc5BCX1e5lm {
   background: none !important;
   box-shadow: none !important;
 }
+.cBVQzUqhygc4rrsrAVaAf {
+  gap: var(--dialog-button-spacing) !important;
+}
+.YmQ9vcw08n7STkTEQLiYW {
+  margin: var(--dialog-spacing) !important;
+  min-width: 400px !important;
+}
+.YmQ9vcw08n7STkTEQLiYW .DialogBody {
+  padding: 0 !important;
+  margin: var(--messagebox-content-spacing) 0 !important;
+}
+.YmQ9vcw08n7STkTEQLiYW .DialogHeader {
+  margin: calc(var(--dialog-spacing) * -1) !important;
+  margin-bottom: var(--dialog-spacing) !important;
+}
 ._3vCzSrrXZzZjVJFZNg9SGu {
   background: transparent !important;
   box-shadow: none !important;
@@ -2844,6 +2862,9 @@ div._31ptFGGMZrSQc5BCX1e5lm {
 }
 ._1urF0O1V4DZOkjI28mDvRK {
   --negative-margin: 12px !important;
+}
+._4076WNFp7FvOc0MeCbvRe {
+  width: 400px !important;
 }
 ._2NgsfzeX0bCqF-QY15gcIq .DialogBody {
   box-shadow: none !important;
