@@ -1,30 +1,32 @@
-// TODO: revisit this again & simplify, because I can't now
 #Popup {
-	.DialogBody {
-		box-shadow: none;
-		padding: 0;
+	.DialogButton {
+		height: unset;
 	}
 }
 
-#ConflictChoiceIcon {
-	width: 24px;
-	height: 24px;
+#ChoiceNote {
+	margin-top: var(--messagebox-content-spacing);
 }
 
-#ConflictChoiceIcon,
+#ConflictChoiceIcon {
+	display: none;
+}
+
 #ConflictChoiceText {
+	gap: var(--text-spacing);
 	margin-left: var(--label-spacing);
 }
 
 #DialogChoiceButton {
 	padding: 0;
-	margin: 0;
+	margin-bottom: var(--text-spacing);
 
 	width: 100%;
 
 	&,
 	&:active,
 	&:focus {
+		color: var(--color-button-text);
 		outline: none;
 		box-shadow: none;
 	}
@@ -34,10 +36,19 @@
 	height: unset;
 }
 
+#FooterNote,
+#Title {
+	margin: 0;
+}
+
 #RadioButton {
+	@extend input;
 	@extend input[type="radio"];
 
-	// TODO: this matches, but doesn't show in devtools, wtf
+	box-shadow: none;
+
+	align-self: start;
+
 	#Active & {
 		@extend input[type="radio"]:checked;
 	}
