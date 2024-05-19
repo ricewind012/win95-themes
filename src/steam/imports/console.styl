@@ -1,0 +1,66 @@
+#Console {
+	background-color: transparent;
+
+	pre {
+		// Its height is 17px anyway
+		font-size: 12pt;
+		color: var(--color-window-text);
+	}
+}
+
+#ConsoleInput {
+	padding: 0;
+
+	.DialogInput {
+		margin-top: var(--window-gap);
+	}
+}
+
+#ConsoleInner {
+	--inset: 82px 4px 46px 4px;
+
+	@extend $content-container-alt;
+}
+
+#Timestamp {
+	&::before {
+		content: '[';
+	}
+
+	&::after {
+		content: ']';
+	}
+}
+
+// Console colors
+#Assert,
+#Error {
+	color: var(--darkred);
+}
+
+#Warning {
+	color: var(--darkyellow);
+}
+
+#Input {
+	color: var(--darkblue);
+}
+
+// Suggestions
+#Suggestion {
+	@extend .menu-item;
+
+	background-color: transparent;
+
+	height: unset;
+}
+
+#Suggestions {
+	@extend .window;
+	@extend .window.child;
+
+	gap: 0;
+
+	flex-direction: column;
+	height: unset;
+}

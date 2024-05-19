@@ -79,20 +79,6 @@
 	}
 }
 
-#SteamDesktop {
-	&::before {
-		content: '';
-
-		position: fixed;
-		top: calc(var(--border-size) + var(--window-spacing));
-		left: calc(var(--border-size) + var(--window-spacing));
-		width: calc(100% - var(--titlebar-spacing) * 2 - var(--icon-size) - 88px);
-		height: var(--titlebar-height);
-
-		app-region: drag;
-	}
-}
-
 .singleWindowFocusBar {
 	display: none;
 }

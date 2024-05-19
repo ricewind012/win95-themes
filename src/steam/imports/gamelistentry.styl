@@ -24,14 +24,22 @@
 
 	&#Selected {
 		@extend .list-item[selected] > .list-item-name-container > .list-item-name;
+
+		--color-gray-text: var(--color-highlight-text);
 	}
 
-	circle {
-		fill: currentColor;
+	* {
+		background-color: transparent;
 	}
-	path {
-		fill: currentColor;
-	}
+}
+
+#DownloadDash,
+#DownloadProgress {
+	color: var(--color-gray-text);
+}
+
+#DownloadProgressSVG {
+	display: none;
 }
 
 #FriendIsPlaying {
@@ -39,7 +47,9 @@
 	right: 0;
 }
 
+#AppIconDownloading,
 #GameIcon {
+	filter: none;
 	margin-right: 7px;
 
 	width: var(--icon-size);
