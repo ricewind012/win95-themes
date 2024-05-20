@@ -1,0 +1,57 @@
+.AvatarAndUser {
+	padding: 8px;
+}
+
+.ContextMenuButton {
+	@extend button;
+	@extend .titlebar-button;
+
+	// TODO: mixin
+	--button-img: var(--icon-arrow-bottom);
+	--button-img-size: 7px 4px;
+	--button-img-pos: center;
+
+	opacity: 1;
+
+	svg {
+		display: none;
+	}
+}
+
+.currentUserContainer {
+	@extend .content-container;
+
+	border: none;
+	margin-top: var(--window-gap);
+
+	.labelHolder {
+		margin-top: 0;
+		margin-right: 0;
+	}
+}
+
+.friendlist {
+	gap: var(--window-gap);
+}
+
+.friendListFooter {
+	@extend .statusbar-item;
+
+	background-color: transparent;
+
+	min-height: unset;
+
+	&::before {
+		content: '.';
+
+		color: transparent;
+	}
+}
+
+.friendListHeaderContainer {
+	background-color: transparent;
+	box-shadow: none;
+
+	min-height: unset;
+}
+
