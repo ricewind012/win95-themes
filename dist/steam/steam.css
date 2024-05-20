@@ -145,6 +145,7 @@
   background-size: 1px 1px !important;
 }
 input[type="radio"],
+.TabSearchButton[type="radio"],
 .DialogCheckbox[type="radio"],
 ._2SNqCkeOL0u8yOzul4tJuI[type="radio"],
 ._24G4gV0rYtRbebXM44GkKk[type="radio"],
@@ -156,6 +157,7 @@ input[type="radio"],
   background-size: 1px 1px !important;
 }
 input[type="number"],
+.TabSearchButton[type="number"],
 .DialogCheckbox[type="number"],
 ._2SNqCkeOL0u8yOzul4tJuI[type="number"],
 ._24G4gV0rYtRbebXM44GkKk[type="number"],
@@ -163,6 +165,7 @@ input[type="number"],
   --button-img: linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) 1px 1px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) 2px 1px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) 3px 1px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) 4px 1px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) 5px 1px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) 6px 1px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) 7px 1px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) 8px 1px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) 9px 1px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) 10px 1px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) 11px 1px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) 12px 1px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) 13px 1px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) 14px 1px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) 15px 1px, linear-gradient(90deg, var(--color-button-shadow-dark) 1px, var(--color-button-shadow-dark)) 16px 1px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) 1px 2px, linear-gradient(90deg, var(--color-button-highlight) 1px, var(--color-button-highlight)) 2px 2px, linear-gradient(90deg, var(--color-button-highlight) 1px, var(--color-button-highlight)) 3px 2px, linear-gradient(90deg, var(--color-button-highlight) 1px, var(--color-button-highlight)) 4px 2px, linear-gradient(90deg, var(--color-button-highlight) 1px, var(--color-button-highlight)) 5px 2px, linear-gradient(90deg, var(--color-button-highlight) 1px, var(--color-button-highlight)) 6px 2px, linear-gradient(90deg, var(--color-button-highlight) 1px, var(--color-button-highlight)) 7px 2px, linear-gradient(90deg, var(--color-button-highlight) 1px, var(--color-button-highlight)) 8px 2px, linear-gradient(90deg, var(--color-button-highlight) 1px, var(--color-button-highlight)) 9px 2px, linear-gradient(90deg, var(--color-button-highlight) 1px, var(--color-button-highlight)) 10px 2px, linear-gradient(90deg, var(--color-button-highlight) 1px, var(--color-button-highlight)) 11px 2px, linear-gradient(90deg, var(--color-button-highlight) 1px, var(--color-button-highlight)) 12px 2px, linear-gradient(90deg, var(--color-button-highlight) 1px, var(--color-button-highlight)) 13px 2px, linear-gradient(90deg, var(--color-button-highlight) 1px, var(--color-button-highlight)) 14px 2px, linear-gradient(90deg, var(--color-button-shadow) 1px, var(--color-button-shadow)) 15px 2px, linear-gradient(90deg, var(--color-button-shadow-dark) 1px, var(--color-button-shadow-dark)) 16px 2px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) 1px 3px, linear-gradient(90deg, var(--color-button-highlight) 1px, var(--color-button-highlight)) 2px 3px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) 3px 3px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) 4px 3px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) 5px 3px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) 6px 3px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) 7px 3px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) 8px 3px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) 9px 3px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) 10px 3px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) 11px 3px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) 12px 3px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) 13px 3px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) 14px 3px, linear-gradient(90deg, var(--color-button-shadow) 1px, var(--color-button-shadow)) 15px 3px, linear-gradient(90deg, var(--color-button-shadow-dark) 1px, var(--color-button-shadow-dark)) 16px 3px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) 1px 4px, linear-gradient(90deg, var(--color-button-highlight) 1px, var(--color-button-highlight)) 2px 4px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) 3px 4px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) 4px 4px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) 5px 4px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) 6px 4px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) 7px 4px, linear-gradient(90deg, var(--color-button-text) 1px, var(--color-button-text)) 8px 4px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) 9px 4px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) 10px 4px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) 11px 4px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) 12px 4px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) 13px 4px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) 14px 4px, linear-gradient(90deg, var(--color-button-shadow) 1px, var(--color-button-shadow)) 15px 4px, linear-gradient(90deg, var(--color-button-shadow-dark) 1px, var(--color-button-shadow-dark)) 16px 4px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) 1px 5px, linear-gradient(90deg, var(--color-button-highlight) 1px, var(--color-button-highlight)) 2px 5px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) 3px 5px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) 4px 5px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) 5px 5px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) 6px 5px, linear-gradient(90deg, var(--color-button-text) 1px, var(--color-button-text)) 7px 5px, linear-gradient(90deg, var(--color-button-text) 1px, var(--color-button-text)) 8px 5px, linear-gradient(90deg, var(--color-button-text) 1px, var(--color-button-text)) 9px 5px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) 10px 5px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) 11px 5px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) 12px 5px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) 13px 5px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) 14px 5px, linear-gradient(90deg, var(--color-button-shadow) 1px, var(--color-button-shadow)) 15px 5px, linear-gradient(90deg, var(--color-button-shadow-dark) 1px, var(--color-button-shadow-dark)) 16px 5px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) 1px 6px, linear-gradient(90deg, var(--color-button-highlight) 1px, var(--color-button-highlight)) 2px 6px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) 3px 6px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) 4px 6px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) 5px 6px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) 6px 6px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) 7px 6px, linear-gradient(90deg, var(--color-arrow-shadow) 1px, var(--color-arrow-shadow)) 8px 6px, linear-gradient(90deg, var(--color-arrow-shadow) 1px, var(--color-arrow-shadow)) 9px 6px, linear-gradient(90deg, var(--color-arrow-shadow) 1px, var(--color-arrow-shadow)) 10px 6px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) 11px 6px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) 12px 6px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) 13px 6px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) 14px 6px, linear-gradient(90deg, var(--color-button-shadow) 1px, var(--color-button-shadow)) 15px 6px, linear-gradient(90deg, var(--color-button-shadow-dark) 1px, var(--color-button-shadow-dark)) 16px 6px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) 1px 7px, linear-gradient(90deg, var(--color-button-shadow) 1px, var(--color-button-shadow)) 2px 7px, linear-gradient(90deg, var(--color-button-shadow) 1px, var(--color-button-shadow)) 3px 7px, linear-gradient(90deg, var(--color-button-shadow) 1px, var(--color-button-shadow)) 4px 7px, linear-gradient(90deg, var(--color-button-shadow) 1px, var(--color-button-shadow)) 5px 7px, linear-gradient(90deg, var(--color-button-shadow) 1px, var(--color-button-shadow)) 6px 7px, linear-gradient(90deg, var(--color-button-shadow) 1px, var(--color-button-shadow)) 7px 7px, linear-gradient(90deg, var(--color-button-shadow) 1px, var(--color-button-shadow)) 8px 7px, linear-gradient(90deg, var(--color-button-shadow) 1px, var(--color-button-shadow)) 9px 7px, linear-gradient(90deg, var(--color-button-shadow) 1px, var(--color-button-shadow)) 10px 7px, linear-gradient(90deg, var(--color-button-shadow) 1px, var(--color-button-shadow)) 11px 7px, linear-gradient(90deg, var(--color-button-shadow) 1px, var(--color-button-shadow)) 12px 7px, linear-gradient(90deg, var(--color-button-shadow) 1px, var(--color-button-shadow)) 13px 7px, linear-gradient(90deg, var(--color-button-shadow) 1px, var(--color-button-shadow)) 14px 7px, linear-gradient(90deg, var(--color-button-shadow) 1px, var(--color-button-shadow)) 15px 7px, linear-gradient(90deg, var(--color-button-shadow-dark) 1px, var(--color-button-shadow-dark)) 16px 7px, linear-gradient(90deg, var(--color-button-shadow-dark) 1px, var(--color-button-shadow-dark)) 1px 8px, linear-gradient(90deg, var(--color-button-shadow-dark) 1px, var(--color-button-shadow-dark)) 2px 8px, linear-gradient(90deg, var(--color-button-shadow-dark) 1px, var(--color-button-shadow-dark)) 3px 8px, linear-gradient(90deg, var(--color-button-shadow-dark) 1px, var(--color-button-shadow-dark)) 4px 8px, linear-gradient(90deg, var(--color-button-shadow-dark) 1px, var(--color-button-shadow-dark)) 5px 8px, linear-gradient(90deg, var(--color-button-shadow-dark) 1px, var(--color-button-shadow-dark)) 6px 8px, linear-gradient(90deg, var(--color-button-shadow-dark) 1px, var(--color-button-shadow-dark)) 7px 8px, linear-gradient(90deg, var(--color-button-shadow-dark) 1px, var(--color-button-shadow-dark)) 8px 8px, linear-gradient(90deg, var(--color-button-shadow-dark) 1px, var(--color-button-shadow-dark)) 9px 8px, linear-gradient(90deg, var(--color-button-shadow-dark) 1px, var(--color-button-shadow-dark)) 10px 8px, linear-gradient(90deg, var(--color-button-shadow-dark) 1px, var(--color-button-shadow-dark)) 11px 8px, linear-gradient(90deg, var(--color-button-shadow-dark) 1px, var(--color-button-shadow-dark)) 12px 8px, linear-gradient(90deg, var(--color-button-shadow-dark) 1px, var(--color-button-shadow-dark)) 13px 8px, linear-gradient(90deg, var(--color-button-shadow-dark) 1px, var(--color-button-shadow-dark)) 14px 8px, linear-gradient(90deg, var(--color-button-shadow-dark) 1px, var(--color-button-shadow-dark)) 15px 8px, linear-gradient(90deg, var(--color-button-shadow-dark) 1px, var(--color-button-shadow-dark)) 16px 8px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) 1px 9px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) 2px 9px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) 3px 9px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) 4px 9px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) 5px 9px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) 6px 9px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) 7px 9px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) 8px 9px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) 9px 9px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) 10px 9px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) 11px 9px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) 12px 9px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) 13px 9px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) 14px 9px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) 15px 9px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) 16px 9px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) 1px 10px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) 2px 10px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) 3px 10px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) 4px 10px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) 5px 10px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) 6px 10px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) 7px 10px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) 8px 10px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) 9px 10px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) 10px 10px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) 11px 10px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) 12px 10px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) 13px 10px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) 14px 10px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) 15px 10px, linear-gradient(90deg, var(--color-button-shadow-dark) 1px, var(--color-button-shadow-dark)) 16px 10px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) 1px 11px, linear-gradient(90deg, var(--color-button-highlight) 1px, var(--color-button-highlight)) 2px 11px, linear-gradient(90deg, var(--color-button-highlight) 1px, var(--color-button-highlight)) 3px 11px, linear-gradient(90deg, var(--color-button-highlight) 1px, var(--color-button-highlight)) 4px 11px, linear-gradient(90deg, var(--color-button-highlight) 1px, var(--color-button-highlight)) 5px 11px, linear-gradient(90deg, var(--color-button-highlight) 1px, var(--color-button-highlight)) 6px 11px, linear-gradient(90deg, var(--color-button-highlight) 1px, var(--color-button-highlight)) 7px 11px, linear-gradient(90deg, var(--color-button-highlight) 1px, var(--color-button-highlight)) 8px 11px, linear-gradient(90deg, var(--color-button-highlight) 1px, var(--color-button-highlight)) 9px 11px, linear-gradient(90deg, var(--color-button-highlight) 1px, var(--color-button-highlight)) 10px 11px, linear-gradient(90deg, var(--color-button-highlight) 1px, var(--color-button-highlight)) 11px 11px, linear-gradient(90deg, var(--color-button-highlight) 1px, var(--color-button-highlight)) 12px 11px, linear-gradient(90deg, var(--color-button-highlight) 1px, var(--color-button-highlight)) 13px 11px, linear-gradient(90deg, var(--color-button-highlight) 1px, var(--color-button-highlight)) 14px 11px, linear-gradient(90deg, var(--color-button-shadow) 1px, var(--color-button-shadow)) 15px 11px, linear-gradient(90deg, var(--color-button-shadow-dark) 1px, var(--color-button-shadow-dark)) 16px 11px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) 1px 12px, linear-gradient(90deg, var(--color-button-highlight) 1px, var(--color-button-highlight)) 2px 12px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) 3px 12px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) 4px 12px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) 5px 12px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) 6px 12px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) 7px 12px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) 8px 12px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) 9px 12px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) 10px 12px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) 11px 12px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) 12px 12px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) 13px 12px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) 14px 12px, linear-gradient(90deg, var(--color-button-shadow) 1px, var(--color-button-shadow)) 15px 12px, linear-gradient(90deg, var(--color-button-shadow-dark) 1px, var(--color-button-shadow-dark)) 16px 12px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) 1px 13px, linear-gradient(90deg, var(--color-button-highlight) 1px, var(--color-button-highlight)) 2px 13px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) 3px 13px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) 4px 13px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) 5px 13px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) 6px 13px, linear-gradient(90deg, var(--color-button-text) 1px, var(--color-button-text)) 7px 13px, linear-gradient(90deg, var(--color-button-text) 1px, var(--color-button-text)) 8px 13px, linear-gradient(90deg, var(--color-button-text) 1px, var(--color-button-text)) 9px 13px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) 10px 13px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) 11px 13px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) 12px 13px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) 13px 13px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) 14px 13px, linear-gradient(90deg, var(--color-button-shadow) 1px, var(--color-button-shadow)) 15px 13px, linear-gradient(90deg, var(--color-button-shadow-dark) 1px, var(--color-button-shadow-dark)) 16px 13px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) 1px 14px, linear-gradient(90deg, var(--color-button-highlight) 1px, var(--color-button-highlight)) 2px 14px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) 3px 14px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) 4px 14px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) 5px 14px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) 6px 14px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) 7px 14px, linear-gradient(90deg, var(--color-button-text) 1px, var(--color-button-text)) 8px 14px, linear-gradient(90deg, var(--color-arrow-shadow) 1px, var(--color-arrow-shadow)) 9px 14px, linear-gradient(90deg, var(--color-arrow-shadow) 1px, var(--color-arrow-shadow)) 10px 14px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) 11px 14px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) 12px 14px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) 13px 14px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) 14px 14px, linear-gradient(90deg, var(--color-button-shadow) 1px, var(--color-button-shadow)) 15px 14px, linear-gradient(90deg, var(--color-button-shadow-dark) 1px, var(--color-button-shadow-dark)) 16px 14px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) 1px 15px, linear-gradient(90deg, var(--color-button-highlight) 1px, var(--color-button-highlight)) 2px 15px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) 3px 15px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) 4px 15px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) 5px 15px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) 6px 15px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) 7px 15px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) 8px 15px, linear-gradient(90deg, var(--color-arrow-shadow) 1px, var(--color-arrow-shadow)) 9px 15px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) 10px 15px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) 11px 15px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) 12px 15px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) 13px 15px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) 14px 15px, linear-gradient(90deg, var(--color-button-shadow) 1px, var(--color-button-shadow)) 15px 15px, linear-gradient(90deg, var(--color-button-shadow-dark) 1px, var(--color-button-shadow-dark)) 16px 15px, linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)) 1px 16px, linear-gradient(90deg, var(--color-button-shadow) 1px, var(--color-button-shadow)) 2px 16px, linear-gradient(90deg, var(--color-button-shadow) 1px, var(--color-button-shadow)) 3px 16px, linear-gradient(90deg, var(--color-button-shadow) 1px, var(--color-button-shadow)) 4px 16px, linear-gradient(90deg, var(--color-button-shadow) 1px, var(--color-button-shadow)) 5px 16px, linear-gradient(90deg, var(--color-button-shadow) 1px, var(--color-button-shadow)) 6px 16px, linear-gradient(90deg, var(--color-button-shadow) 1px, var(--color-button-shadow)) 7px 16px, linear-gradient(90deg, var(--color-button-shadow) 1px, var(--color-button-shadow)) 8px 16px, linear-gradient(90deg, var(--color-button-shadow) 1px, var(--color-button-shadow)) 9px 16px, linear-gradient(90deg, var(--color-button-shadow) 1px, var(--color-button-shadow)) 10px 16px, linear-gradient(90deg, var(--color-button-shadow) 1px, var(--color-button-shadow)) 11px 16px, linear-gradient(90deg, var(--color-button-shadow) 1px, var(--color-button-shadow)) 12px 16px, linear-gradient(90deg, var(--color-button-shadow) 1px, var(--color-button-shadow)) 13px 16px, linear-gradient(90deg, var(--color-button-shadow) 1px, var(--color-button-shadow)) 14px 16px, linear-gradient(90deg, var(--color-button-shadow) 1px, var(--color-button-shadow)) 15px 16px, linear-gradient(90deg, var(--color-button-shadow-dark) 1px, var(--color-button-shadow-dark)) 16px 16px, linear-gradient(90deg, var(--color-button-shadow-dark) 1px, var(--color-button-shadow-dark)) 1px 17px, linear-gradient(90deg, var(--color-button-shadow-dark) 1px, var(--color-button-shadow-dark)) 2px 17px, linear-gradient(90deg, var(--color-button-shadow-dark) 1px, var(--color-button-shadow-dark)) 3px 17px, linear-gradient(90deg, var(--color-button-shadow-dark) 1px, var(--color-button-shadow-dark)) 4px 17px, linear-gradient(90deg, var(--color-button-shadow-dark) 1px, var(--color-button-shadow-dark)) 5px 17px, linear-gradient(90deg, var(--color-button-shadow-dark) 1px, var(--color-button-shadow-dark)) 6px 17px, linear-gradient(90deg, var(--color-button-shadow-dark) 1px, var(--color-button-shadow-dark)) 7px 17px, linear-gradient(90deg, var(--color-button-shadow-dark) 1px, var(--color-button-shadow-dark)) 8px 17px, linear-gradient(90deg, var(--color-button-shadow-dark) 1px, var(--color-button-shadow-dark)) 9px 17px, linear-gradient(90deg, var(--color-button-shadow-dark) 1px, var(--color-button-shadow-dark)) 10px 17px, linear-gradient(90deg, var(--color-button-shadow-dark) 1px, var(--color-button-shadow-dark)) 11px 17px, linear-gradient(90deg, var(--color-button-shadow-dark) 1px, var(--color-button-shadow-dark)) 12px 17px, linear-gradient(90deg, var(--color-button-shadow-dark) 1px, var(--color-button-shadow-dark)) 13px 17px, linear-gradient(90deg, var(--color-button-shadow-dark) 1px, var(--color-button-shadow-dark)) 14px 17px, linear-gradient(90deg, var(--color-button-shadow-dark) 1px, var(--color-button-shadow-dark)) 15px 17px, linear-gradient(90deg, var(--color-button-shadow-dark) 1px, var(--color-button-shadow-dark)) 16px 17px !important;
 }
 input[type="range"],
+.TabSearchButton[type="range"],
 .DialogCheckbox[type="range"],
 ._2SNqCkeOL0u8yOzul4tJuI[type="range"],
 ._24G4gV0rYtRbebXM44GkKk[type="range"],
@@ -253,7 +256,11 @@ input,
 button,
 select,
 textarea,
-.ContextMenuButton,
+.addFriendButton,
+.friendRequestButton,
+.chatSectionTitle .createChatRoomButton,
+.chatSectionTitle .ToggleGroupChatList,
+.TabSearchButton,
 .ModalPosition_Dismiss .closeButton,
 .DialogDropDown,
 .DialogCheckbox,
@@ -336,7 +343,11 @@ input:disabled,
 button:disabled,
 select:disabled,
 textarea:disabled,
-.ContextMenuButton:disabled,
+.addFriendButton:disabled,
+.friendRequestButton:disabled,
+.chatSectionTitle .createChatRoomButton:disabled,
+.chatSectionTitle .ToggleGroupChatList:disabled,
+.TabSearchButton:disabled,
 .ModalPosition_Dismiss .closeButton:disabled,
 .DialogDropDown:disabled,
 .DialogCheckbox:disabled,
@@ -431,7 +442,11 @@ input,
 button,
 select,
 textarea,
-.ContextMenuButton,
+.addFriendButton,
+.friendRequestButton,
+.chatSectionTitle .createChatRoomButton,
+.chatSectionTitle .ToggleGroupChatList,
+.TabSearchButton,
 .ModalPosition_Dismiss .closeButton,
 .DialogDropDown,
 .DialogCheckbox,
@@ -503,6 +518,7 @@ input[type="text"],
 input[type="number"],
 input[type="search"],
 input[type="password"],
+.TabSearchButton,
 .DialogDropDown,
 ._2foCkpRXhqq0UGVE50BWqj,
 ._1d2NZ4Jt0wrdapfvDFhpVS,
@@ -523,7 +539,10 @@ input[type="password"],
 button,
 input:where([type="button"],
 [type="submit"]),
-.ContextMenuButton,
+.addFriendButton,
+.friendRequestButton,
+.chatSectionTitle .createChatRoomButton,
+.chatSectionTitle .ToggleGroupChatList,
 .ModalPosition_Dismiss .closeButton,
 .title-area-icon,
 ._3m0MnUo45wjLOfNLpZ-3KH > div,
@@ -576,7 +595,10 @@ input:where([type="button"],
 button:focus,
 input:where([type="button"]:focus,
 [type="submit"]):focus,
-.ContextMenuButton:focus,
+.addFriendButton:focus,
+.friendRequestButton:focus,
+.chatSectionTitle .createChatRoomButton:focus,
+.chatSectionTitle .ToggleGroupChatList:focus,
 .ModalPosition_Dismiss .closeButton:focus,
 .title-area-icon:focus,
 ._3m0MnUo45wjLOfNLpZ-3KH > div:focus,
@@ -626,7 +648,10 @@ input:where([type="button"]:focus,
 button:active,
 input:where([type="button"]:active,
 [type="submit"]):active,
-.ContextMenuButton:active,
+.addFriendButton:active,
+.friendRequestButton:active,
+.chatSectionTitle .createChatRoomButton:active,
+.chatSectionTitle .ToggleGroupChatList:active,
 .ModalPosition_Dismiss .closeButton:active,
 .title-area-icon:active,
 ._3m0MnUo45wjLOfNLpZ-3KH > div:active,
@@ -676,15 +701,24 @@ input:where([type="button"]:active,
   box-shadow: var(--border-button-sunken) !important;
 }
 .icon-button,
+.activeVoiceControls button,
+.addFriendButton,
+.friendRequestButton,
 ._3mzKdQXht__YHo6PX1LmB6,
 .ya1GZgdAuRwrs6HjZp6zP:last-child ._1FPJYJrOP3sGOAaFkUKvsa {
   min-width: 23px !important;
   height: 22px !important;
 }
 .icon-button:active,
+.activeVoiceControls button:active,
+.addFriendButton:active,
+.friendRequestButton:active,
 ._3mzKdQXht__YHo6PX1LmB6:active,
 .ya1GZgdAuRwrs6HjZp6zP:last-child ._1FPJYJrOP3sGOAaFkUKvsa:active,
 .icon-button[selected],
+.activeVoiceControls button[selected],
+.addFriendButton[selected],
+.friendRequestButton[selected],
 ._3mzKdQXht__YHo6PX1LmB6[selected],
 .ya1GZgdAuRwrs6HjZp6zP:last-child ._1FPJYJrOP3sGOAaFkUKvsa[selected],
 ._2TKEazUUS3TlniZfpc8OOe a[aria-current],
@@ -700,9 +734,15 @@ input:where([type="button"]:active,
   box-shadow: var(--border-button-sunken) !important;
 }
 .icon-button:active::before,
+.activeVoiceControls button:active::before,
+.addFriendButton:active::before,
+.friendRequestButton:active::before,
 ._3mzKdQXht__YHo6PX1LmB6:active::before,
 .ya1GZgdAuRwrs6HjZp6zP:last-child ._1FPJYJrOP3sGOAaFkUKvsa:active::before,
 .icon-button[selected]::before,
+.activeVoiceControls button[selected]::before,
+.addFriendButton[selected]::before,
+.friendRequestButton[selected]::before,
 ._3mzKdQXht__YHo6PX1LmB6[selected]::before,
 .ya1GZgdAuRwrs6HjZp6zP:last-child ._1FPJYJrOP3sGOAaFkUKvsa[selected]::before,
 ._2TKEazUUS3TlniZfpc8OOe a[aria-current]::before,
@@ -717,6 +757,9 @@ input:where([type="button"]:active,
   inset: 1px !important;
 }
 .icon-button::before,
+.activeVoiceControls button::before,
+.addFriendButton::before,
+.friendRequestButton::before,
 ._3mzKdQXht__YHo6PX1LmB6::before,
 .ya1GZgdAuRwrs6HjZp6zP:last-child ._1FPJYJrOP3sGOAaFkUKvsa::before {
   content: '' !important;
@@ -727,17 +770,22 @@ input:where([type="button"]:active,
 }
 @media (prefers-color-scheme: dark) {
   .icon-button::before,
+  .activeVoiceControls button::before,
+  .addFriendButton::before,
+  .friendRequestButton::before,
   ._3mzKdQXht__YHo6PX1LmB6::before,
   .ya1GZgdAuRwrs6HjZp6zP:last-child ._1FPJYJrOP3sGOAaFkUKvsa::before {
     filter: invert() !important;
   }
 }
 input[type="checkbox"],
+.TabSearchButton[type="checkbox"],
 .DialogCheckbox[type="checkbox"],
 ._2SNqCkeOL0u8yOzul4tJuI[type="checkbox"],
 ._24G4gV0rYtRbebXM44GkKk[type="checkbox"],
 ._3tTFgWQ_SQnO3XzGEZkjRm[type="checkbox"],
 input[type="radio"],
+.TabSearchButton[type="radio"],
 .DialogCheckbox[type="radio"],
 ._2SNqCkeOL0u8yOzul4tJuI[type="radio"],
 ._24G4gV0rYtRbebXM44GkKk[type="radio"],
@@ -752,11 +800,13 @@ input[type="radio"],
   height: var(--sel-button-size) !important;
 }
 input[type="checkbox"]:active,
+.TabSearchButton[type="checkbox"]:active,
 .DialogCheckbox[type="checkbox"]:active,
 ._2SNqCkeOL0u8yOzul4tJuI[type="checkbox"]:active,
 ._24G4gV0rYtRbebXM44GkKk[type="checkbox"]:active,
 ._3tTFgWQ_SQnO3XzGEZkjRm[type="checkbox"]:active,
 input[type="radio"]:active,
+.TabSearchButton[type="radio"]:active,
 .DialogCheckbox[type="radio"]:active,
 ._2SNqCkeOL0u8yOzul4tJuI[type="radio"]:active,
 ._24G4gV0rYtRbebXM44GkKk[type="radio"]:active,
@@ -767,11 +817,13 @@ input[type="radio"]:active,
 ._3tTFgWQ_SQnO3XzGEZkjRm:active,
 ._3lwcRYJ_r7x01Cn15bcdYI:active,
 input[type="checkbox"]:disabled,
+.TabSearchButton[type="checkbox"]:disabled,
 .DialogCheckbox[type="checkbox"]:disabled,
 ._2SNqCkeOL0u8yOzul4tJuI[type="checkbox"]:disabled,
 ._24G4gV0rYtRbebXM44GkKk[type="checkbox"]:disabled,
 ._3tTFgWQ_SQnO3XzGEZkjRm[type="checkbox"]:disabled,
 input[type="radio"]:disabled,
+.TabSearchButton[type="radio"]:disabled,
 .DialogCheckbox[type="radio"]:disabled,
 ._2SNqCkeOL0u8yOzul4tJuI[type="radio"]:disabled,
 ._24G4gV0rYtRbebXM44GkKk[type="radio"]:disabled,
@@ -785,11 +837,13 @@ input[type="radio"]:disabled,
   --color-to-change: var(--color-button-face) !important;
 }
 input[type="checkbox"]:checked::before,
+.TabSearchButton[type="checkbox"]:checked::before,
 .DialogCheckbox[type="checkbox"]:checked::before,
 ._2SNqCkeOL0u8yOzul4tJuI[type="checkbox"]:checked::before,
 ._24G4gV0rYtRbebXM44GkKk[type="checkbox"]:checked::before,
 ._3tTFgWQ_SQnO3XzGEZkjRm[type="checkbox"]:checked::before,
 input[type="radio"]:checked::before,
+.TabSearchButton[type="radio"]:checked::before,
 .DialogCheckbox[type="radio"]:checked::before,
 ._2SNqCkeOL0u8yOzul4tJuI[type="radio"]:checked::before,
 ._24G4gV0rYtRbebXM44GkKk[type="radio"]:checked::before,
@@ -814,6 +868,7 @@ input[type="radio"]:checked::before,
   background-color: var(--color-button-text) !important;
 }
 input[type="checkbox"],
+.TabSearchButton[type="checkbox"],
 .DialogCheckbox[type="checkbox"],
 ._2SNqCkeOL0u8yOzul4tJuI[type="checkbox"],
 ._24G4gV0rYtRbebXM44GkKk[type="checkbox"],
@@ -828,6 +883,7 @@ input[type="checkbox"],
   --control-img-pos: 3px 3px !important;
 }
 input[type="radio"],
+.TabSearchButton[type="radio"],
 .DialogCheckbox[type="radio"],
 ._2SNqCkeOL0u8yOzul4tJuI[type="radio"],
 ._24G4gV0rYtRbebXM44GkKk[type="radio"],
@@ -839,6 +895,7 @@ input[type="radio"],
   --control-img-pos: 5px 5px !important;
 }
 input[type="number"]::-webkit-inner-spin-button,
+.TabSearchButton[type="number"]::-webkit-inner-spin-button,
 .DialogCheckbox[type="number"]::-webkit-inner-spin-button,
 ._2SNqCkeOL0u8yOzul4tJuI[type="number"]::-webkit-inner-spin-button,
 ._24G4gV0rYtRbebXM44GkKk[type="number"]::-webkit-inner-spin-button,
@@ -853,6 +910,7 @@ input[type="number"]::-webkit-inner-spin-button,
   height: 18px !important;
 }
 input[type="range"],
+.TabSearchButton[type="range"],
 .DialogCheckbox[type="range"],
 ._2SNqCkeOL0u8yOzul4tJuI[type="range"],
 ._24G4gV0rYtRbebXM44GkKk[type="range"],
@@ -862,12 +920,14 @@ input[type="range"],
   background-color: transparent !important;
 }
 input[type="range"]:active,
+.TabSearchButton[type="range"]:active,
 .DialogCheckbox[type="range"]:active,
 ._2SNqCkeOL0u8yOzul4tJuI[type="range"]:active,
 ._24G4gV0rYtRbebXM44GkKk[type="range"]:active,
 ._3tTFgWQ_SQnO3XzGEZkjRm[type="range"]:active,
 ._3o137DBNF03ytbLBl2jPri:active,
 input[type="range"]:disabled,
+.TabSearchButton[type="range"]:disabled,
 .DialogCheckbox[type="range"]:disabled,
 ._2SNqCkeOL0u8yOzul4tJuI[type="range"]:disabled,
 ._24G4gV0rYtRbebXM44GkKk[type="range"]:disabled,
@@ -876,6 +936,7 @@ input[type="range"]:disabled,
   --color-to-change: var(--color-button-highlight) !important;
 }
 input[type="range"]::-webkit-slider-runnable-track,
+.TabSearchButton[type="range"]::-webkit-slider-runnable-track,
 .DialogCheckbox[type="range"]::-webkit-slider-runnable-track,
 ._2SNqCkeOL0u8yOzul4tJuI[type="range"]::-webkit-slider-runnable-track,
 ._24G4gV0rYtRbebXM44GkKk[type="range"]::-webkit-slider-runnable-track,
@@ -886,6 +947,7 @@ input[type="range"]::-webkit-slider-runnable-track,
   height: calc(var(--border-size) * 2) !important;
 }
 input[type="range"]::-webkit-slider-thumb,
+.TabSearchButton[type="range"]::-webkit-slider-thumb,
 .DialogCheckbox[type="range"]::-webkit-slider-thumb,
 ._2SNqCkeOL0u8yOzul4tJuI[type="range"]::-webkit-slider-thumb,
 ._24G4gV0rYtRbebXM44GkKk[type="range"]::-webkit-slider-thumb,
@@ -1372,6 +1434,8 @@ body > div > .ZTbww2QfIllvCwVHmpixE,
   padding: 3px !important;
 }
 .tree-item,
+.friend,
+.friendGroup .groupName,
 ._2-O4ZG0KrnSrzISHBKctFQ {
   --icon: var(--tree-icon-collapsed) !important;
   padding: 0 4px !important;
@@ -1379,6 +1443,8 @@ body > div > .ZTbww2QfIllvCwVHmpixE,
   position: relative !important;
 }
 .tree-item::before,
+.friend::before,
+.friendGroup .groupName::before,
 ._2-O4ZG0KrnSrzISHBKctFQ::before {
   content: '' !important;
   position: absolute !important;
@@ -1390,12 +1456,18 @@ body > div > .ZTbww2QfIllvCwVHmpixE,
   border-bottom: 1px dotted var(--color-gray-text) !important;
 }
 .tree-item[open],
+.friend[open],
+.friendGroup .groupName[open],
 ._2-O4ZG0KrnSrzISHBKctFQ[open],
+.friendGroup .groupName:not(.Collapsed),
 ._2-O4ZG0KrnSrzISHBKctFQ {
   --icon: var(--tree-icon-expanded) !important;
 }
 .tree-item[open]::after,
+.friend[open]::after,
+.friendGroup .groupName[open]::after,
 ._2-O4ZG0KrnSrzISHBKctFQ[open]::after,
+.friendGroup .groupName:not(.Collapsed)::after,
 ._2-O4ZG0KrnSrzISHBKctFQ::after {
   content: '' !important;
   position: absolute !important;
@@ -1405,6 +1477,7 @@ body > div > .ZTbww2QfIllvCwVHmpixE,
   border-left: 1px dotted var(--color-gray-text) !important;
 }
 .tree-item-icon,
+.ExpandPlusMinus,
 ._3SFRZYIb9Y2q7YsVtB3YKb {
   --icon-size: 9px !important;
   position: relative !important;
@@ -1412,13 +1485,16 @@ body > div > .ZTbww2QfIllvCwVHmpixE,
   height: var(--icon-size) !important;
 }
 .tree-item-icon::before,
+.ExpandPlusMinus::before,
 ._3SFRZYIb9Y2q7YsVtB3YKb::before,
 .tree-item-icon::after,
+.ExpandPlusMinus::after,
 ._3SFRZYIb9Y2q7YsVtB3YKb::after {
   content: '' !important;
   position: absolute !important;
 }
 .tree-item-icon::before,
+.ExpandPlusMinus::before,
 ._3SFRZYIb9Y2q7YsVtB3YKb::before {
   width: calc(var(--icon-size) - 2px) !important;
   height: calc(var(--icon-size) - 2px) !important;
@@ -1430,6 +1506,7 @@ body > div > .ZTbww2QfIllvCwVHmpixE,
   border: 1px solid var(--color-gray-text) !important;
 }
 .tree-item-icon::after,
+.ExpandPlusMinus::after,
 ._3SFRZYIb9Y2q7YsVtB3YKb::after {
   left: 4px !important;
   top: -10px !important;
@@ -1539,7 +1616,8 @@ div._3rgV8pPmQvZC-01x9l-q-N {
   font-weight: bold !important;
 }
 .titlebar-button,
-.ContextMenuButton,
+.chatSectionTitle .createChatRoomButton,
+.chatSectionTitle .ToggleGroupChatList,
 .ModalPosition_Dismiss .closeButton,
 .title-area-icon,
 ._1bIMOmWaxKrMdVMWU21ku,
@@ -1564,7 +1642,8 @@ div._3rgV8pPmQvZC-01x9l-q-N {
   height: 14px !important;
 }
 .titlebar-button::before,
-.ContextMenuButton::before,
+.chatSectionTitle .createChatRoomButton::before,
+.chatSectionTitle .ToggleGroupChatList::before,
 .ModalPosition_Dismiss .closeButton::before,
 .title-area-icon::before,
 ._1bIMOmWaxKrMdVMWU21ku::before,
@@ -1586,7 +1665,8 @@ div._3rgV8pPmQvZC-01x9l-q-N {
 .mh8m9p4PBg_Qrev1bfTzc::before,
 ._2Szzh5sKyGgnLUR870zbDE::before,
 .titlebar-button::after,
-.ContextMenuButton::after,
+.chatSectionTitle .createChatRoomButton::after,
+.chatSectionTitle .ToggleGroupChatList::after,
 .ModalPosition_Dismiss .closeButton::after,
 .title-area-icon::after,
 ._1bIMOmWaxKrMdVMWU21ku::after,
@@ -1615,7 +1695,8 @@ div._3rgV8pPmQvZC-01x9l-q-N {
   -webkit-mask-position: var(--button-img-pos, center) !important;
 }
 .titlebar-button::before,
-.ContextMenuButton::before,
+.chatSectionTitle .createChatRoomButton::before,
+.chatSectionTitle .ToggleGroupChatList::before,
 .ModalPosition_Dismiss .closeButton::before,
 .title-area-icon::before,
 ._1bIMOmWaxKrMdVMWU21ku::before,
@@ -1640,7 +1721,8 @@ div._3rgV8pPmQvZC-01x9l-q-N {
   background-color: var(--color-button-text) !important;
 }
 .titlebar-button:active::before,
-.ContextMenuButton:active::before,
+.chatSectionTitle .createChatRoomButton:active::before,
+.chatSectionTitle .ToggleGroupChatList:active::before,
 .ModalPosition_Dismiss .closeButton:active::before,
 .title-area-icon:active::before,
 ._1bIMOmWaxKrMdVMWU21ku:active::before,
@@ -1664,7 +1746,8 @@ div._3rgV8pPmQvZC-01x9l-q-N {
   inset: 1px !important;
 }
 .titlebar-button:disabled::after,
-.ContextMenuButton:disabled::after,
+.chatSectionTitle .createChatRoomButton:disabled::after,
+.chatSectionTitle .ToggleGroupChatList:disabled::after,
 .ModalPosition_Dismiss .closeButton:disabled::after,
 .title-area-icon:disabled::after,
 ._1bIMOmWaxKrMdVMWU21ku:disabled::after,
@@ -1699,6 +1782,7 @@ div._3rgV8pPmQvZC-01x9l-q-N {
 }
 .content-container,
 .currentUserContainer,
+.friendlistListContainer,
 ._3ZhiKhciPyiGGxDFuGOYpc,
 ._299aNmx77BOVzXgzOho1sG,
 ._2HYiy2iyfdo7xMy_a1Cjhq,
@@ -1745,6 +1829,12 @@ div:not([class]) > .S-_LaQG5eEOM2HWZ-geJI,
 ._1vG-vFfwpDeNStVbyo1Qy6 {
   position: relative !important;
 }
+.activeVoiceName,
+.chatRoomName,
+.chatSectionTitle .groupChatSectionTitle,
+.friendGroup .groupCount,
+.friendGroup .groupName,
+.socialListTab,
 .ModalPosition_Content,
 .DialogBodyText,
 .DialogControlsSectionHeader,
@@ -1919,6 +2009,13 @@ div:not([class]) > .S-_LaQG5eEOM2HWZ-geJI,
   position: absolute !important;
   top: -5px !important;
 }
+.friendlistListContainer {
+  overflow: hidden !important;
+}
+.friendlistListContainer > div {
+  overflow: auto !important;
+  height: 100% !important;
+}
 .minimizeButton {
   --button-img: var(--icon-minimize) !important;
   --button-img-size: 6px 2px !important;
@@ -1973,6 +2070,11 @@ div:not([class]) > .S-_LaQG5eEOM2HWZ-geJI,
   --button-img: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAICAYAAADED76LAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAAtSURBVChTY2RAgP9QGgPAJJAVwMWYoAycAGQFSDWMxgqwWQED/6lnAg7AwAAATOYP+fpPtrkAAAAASUVORK5CYII=") !important;
   --button-img-size: 9px !important;
 }
+.chatSectionTitle .createChatRoomButton {
+  --button-img: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA5IDkiPjxyZWN0IHdpZHRoPSI5IiBoZWlnaHQ9IjEiIHk9IjQiLz48cmVjdCB3aWR0aD0iMSIgaGVpZ2h0PSI5IiB4PSI0Ii8+PC9zdmc+") !important;
+  --button-img-size: 9px !important;
+  --button-img-pos: 3px 2px !important;
+}
 ._2Lr2CGdPURlQfAbxtJJHqb > button {
   --button-img: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA5IDkiPjxyZWN0IHdpZHRoPSIxIiBoZWlnaHQ9IjIiIHg9IjYiLz48cmVjdCB3aWR0aD0iMSIgaGVpZ2h0PSIyIiB4PSI3IiB5PSIxIi8+PHJlY3Qgd2lkdGg9IjEiIGhlaWdodD0iNSIgeD0iOCIgeT0iMiIvPjxyZWN0IHdpZHRoPSIxIiBoZWlnaHQ9IjIiIHg9IjciIHk9IjYiLz48cmVjdCB3aWR0aD0iMSIgaGVpZ2h0PSIyIiB4PSI2IiB5PSI3Ii8+PHJlY3Qgd2lkdGg9IjMiIGhlaWdodD0iMSIgeD0iMyIgeT0iOCIvPjxyZWN0IHdpZHRoPSIxIiBoZWlnaHQ9IjIiIHg9IjIiIHk9IjciLz48cmVjdCB3aWR0aD0iMSIgaGVpZ2h0PSIyIiB4PSIxIiB5PSI2Ii8+PHJlY3Qgd2lkdGg9IjEiIGhlaWdodD0iNSIgeT0iMiIvPjxyZWN0IHdpZHRoPSIxIiBoZWlnaHQ9IjEiIHg9IjEiIHk9IjEiLz48cmVjdCB3aWR0aD0iMyIgaGVpZ2h0PSIxIi8+PHJlY3Qgd2lkdGg9IjEiIGhlaWdodD0iMiIgeD0iMiIgeT0iMSIvPjwvc3ZnPg==") !important;
   --button-img-size: 9px !important;
@@ -2015,6 +2117,8 @@ div:not([class]) > .S-_LaQG5eEOM2HWZ-geJI,
   pointer-events: none !important;
   box-shadow: var(--border-field) !important;
 }
+.ConnectionTroubleMessage,
+.tabLabel,
 .PopupFullWindow > :last-child .DialogHeader,
 ._3wNylaCAUJ8XtRM6mu2C0k,
 div._3T-1PliI6PkKE-bE-o3bV0,
@@ -2030,6 +2134,8 @@ div._3T-1PliI6PkKE-bE-o3bV0,
   left: calc(var(--s) + var(--icon-size) + var(--titlebar-spacing)) !important;
   top: calc(var(--s) + 2px) !important;
 }
+.WindowFocus .ConnectionTroubleMessage,
+.WindowFocus .tabLabel,
 .WindowFocus .PopupFullWindow > :last-child .DialogHeader,
 .WindowFocus ._3wNylaCAUJ8XtRM6mu2C0k,
 .WindowFocus div._3T-1PliI6PkKE-bE-o3bV0,
@@ -2072,7 +2178,10 @@ div._3T-1PliI6PkKE-bE-o3bV0,
   --darkblue: #008 !important;
 }
 button,
-.ContextMenuButton,
+.addFriendButton,
+.friendRequestButton,
+.chatSectionTitle .createChatRoomButton,
+.chatSectionTitle .ToggleGroupChatList,
 .ModalPosition_Dismiss .closeButton,
 .title-area-icon,
 ._3m0MnUo45wjLOfNLpZ-3KH > div,
@@ -2117,16 +2226,113 @@ button,
 ._2Szzh5sKyGgnLUR870zbDE {
   text-align: center !important;
 }
+.activeVoiceButtons {
+  padding: 0 !important;
+  min-width: unset !important;
+}
+.activeVoiceButtonsSpacer {
+  display: none !important;
+}
+.activeVoiceControls {
+  background-color: transparent !important;
+  border: none !important;
+  height: 22px !important;
+}
+.activeVoiceControls::before {
+  display: none !important;
+}
+.activeVoiceControls button {
+  padding: 0 !important;
+  min-height: unset !important;
+}
+.activeVoiceFlexBox {
+  align-items: center !important;
+}
+.activeVoiceHeader,
+.activeVoicePushToTalk {
+  display: none !important;
+}
+.activeVoiceName {
+  font-weight: bold !important;
+}
+.activeVoiceLabels {
+  padding: 0 !important;
+}
+.addFriendButton,
+.friendRequestButton {
+  padding: 2px !important;
+}
+.addFriendButton svg,
+.friendRequestButton svg {
+  margin: 0 !important;
+}
+.addFriendButton svg *,
+.friendRequestButton svg * {
+  fill: var(--color-button-text) !important;
+}
 .AvatarAndUser {
   padding: 8px !important;
 }
-.ContextMenuButton {
+.ChatRoomList {
+  padding: 0 !important;
+}
+.chatRoomListContainer {
+  background: none var(--color-window) !important;
+}
+.ChatRoomListContainerParent:not(.Collapsed) {
+  margin: var(--border-size) !important;
+  position: relative !important;
+}
+.ChatRoomListContainerParent:not(.Collapsed)::before {
+  content: '' !important;
+  position: absolute !important;
+  inset: calc(var(--border-size) * -1) !important;
+  top: 20px !important;
+  pointer-events: none !important;
+  box-shadow: var(--border-field) !important;
+}
+.ChatRoomListGroupItem:hover .ChatRoomListGroupItem_header {
+  background-color: var(--color-highlight) !important;
+  color: var(--color-highlight-text) !important;
+}
+.chatSectionTitle {
+  background-color: transparent !important;
+  color: inherit !important;
+  text-transform: unset !important;
+  margin: calc(var(--window-gap) + var(--border-size)) 0 !important;
+  height: unset !important;
+  align-items: center !important;
+}
+.chatSectionTitle .createChatRoomButton svg,
+.chatSectionTitle .ToggleGroupChatList svg {
+  display: none !important;
+}
+.chatSectionTitle .groupChatSectionTitle {
+  font-weight: bold !important;
+  padding: 0 !important;
+}
+.chatSectionTitle .ToggleGroupChatList {
   --button-img: var(--icon-arrow-bottom) !important;
   --button-img-size: 7px 4px !important;
   --button-img-pos: center !important;
-  opacity: 1 !important;
 }
-.ContextMenuButton svg {
+.Collapsed .chatSectionTitle .ToggleGroupChatList {
+  --button-img: var(--icon-arrow-top) !important;
+}
+.chatSectionTitle .voiceRoomDragBar {
+  order: -1 !important;
+}
+.ConnectionTrouble,
+.ConnectionTroubleContent {
+  height: unset !important;
+}
+.ConnectionTroubleMessage {
+  text-shadow: none !important;
+}
+.ConnectionTrouble .title-area {
+  display: none !important;
+}
+.ContextMenuButton {
   display: none !important;
 }
 .currentUserContainer {
@@ -2137,8 +2343,74 @@ button,
   margin-top: 0 !important;
   margin-right: 0 !important;
 }
+.errorDisconnected {
+  --color-active-caption: #800 !important;
+}
+.errorDisconnected .tabLabel {
+  display: none !important;
+}
+.ExpandPlusMinus {
+  margin: 0 !important;
+  margin-right: var(--tree-spacing) !important;
+}
+.ExpandPlusMinus svg {
+  visibility: hidden !important;
+}
+.friend {
+  margin-top: 4px !important;
+  margin-bottom: 4px !important;
+}
+.friend::before {
+  top: -13px !important;
+  height: 24px !important;
+}
+.friendGroup {
+  border: none !important;
+  margin: 0 !important;
+}
+.friendGroup:first-child {
+  padding-top: 2px !important;
+}
+.friendGroup:first-child .ExpandPlusMinus::after {
+  border-left-color: transparent !important;
+}
+.friendGroup:nth-last-child(2) > :nth-child(2)::before {
+  display: none !important;
+}
+.friendGroup > :nth-child(2) {
+  padding: 0 !important;
+  margin-left: var(--icon-size) !important;
+  position: relative !important;
+}
+.friendGroup > :nth-child(2)::before {
+  content: '' !important;
+  position: absolute !important;
+  top: -7px !important;
+  left: -8px !important;
+  height: calc(100% + 10px) !important;
+  border-left: 1px dotted var(--color-gray-text) !important;
+}
+.friendGroup .gameGroupContainer,
+.friendGroup .groupName {
+  align-items: center !important;
+}
+.friendGroup .groupName {
+  margin: 0 !important;
+}
+.friendGroup .groupName::before {
+  display: none !important;
+}
+.friendGroup .groupName hr {
+  display: none !important;
+}
 .friendlist {
   gap: var(--window-gap) !important;
+}
+.friendsListContainer {
+  opacity: 1 !important;
+}
+.friendlistListContainer {
+  background-image: none !important;
 }
 .friendListFooter {
   background-color: transparent !important;
@@ -2152,6 +2424,56 @@ button,
   background-color: transparent !important;
   box-shadow: none !important;
   min-height: unset !important;
+}
+.friendSearchClear {
+  display: none !important;
+}
+.friendSearchInput {
+  background-image: none !important;
+}
+.friendSearchInput,
+.friendSearchInput::placeholder {
+  font: var(--text-ui) !important;
+  letter-spacing: 0 !important;
+}
+.friendsTabButtonsContainer {
+  padding: 0 !important;
+}
+.TabSearchActive .searchIconButton {
+  display: none !important;
+}
+.searchIconButton::before {
+  content: attr(title) !important;
+  position: absolute !important;
+  top: var(--spacing) !important;
+  left: var(--spacing) !important;
+  color: var(--color-gray-text) !important;
+}
+.searchIconButton svg {
+  display: none !important;
+}
+.socialListTab {
+  --spacing: calc(var(--border-size) + 2px) !important;
+  background-color: transparent !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+  margin-top: calc(6px + var(--window-gap)) !important;
+  height: unset !important;
+}
+.socialListTab .inputContainer {
+  margin: calc(var(--spacing) * -1) !important;
+}
+.TabSearchButton {
+  margin-right: var(--toolbar-spacing) !important;
+  order: -1 !important;
+}
+.VoiceIconCtn {
+  color: inherit !important;
+  width: 16px !important;
+  height: 16px !important;
+}
+.VoiceIconCtn svg {
+  color: inherit !important;
 }
 .ContextMenuPopupBody {
   box-shadow: none !important;
@@ -3720,6 +4042,9 @@ div:not([class]) > .S-_LaQG5eEOM2HWZ-geJI {
 .PopupFullWindow:only-child ._3f3VJUtyLXUf_JDFE-BaQ6 {
   --inset: 73px 11px 39px 11px !important;
 }
+._17ewzMiLZXQiOFFbpXAZdw {
+  display: none !important;
+}
 ._3mitVrK37Z0VhEoNSmfjT8 {
   width: 132px !important;
   height: 60px !important;
@@ -4756,11 +5081,8 @@ div:not([class]) > .S-_LaQG5eEOM2HWZ-geJI {
   box-shadow: none !important;
 }
 ._1p_QrI3ixF-RAwnxad9pEm {
-  --size: calc(100% - 4px) !important;
   border: none !important;
   box-shadow: none !important;
-  width: var(--size) !important;
-  height: var(--size) !important;
 }
 ._1ENHEsrSLcTRtPQFl1F-wL {
   background-color: transparent !important;
