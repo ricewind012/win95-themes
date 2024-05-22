@@ -1,0 +1,24 @@
+.AssignCategoriesDialog {
+	&_AddNewButton {
+		--pos: calc(var(--border-size) + var(--window-spacing) + var(--dialog-spacing));
+
+		position: fixed;
+		width: min-content;
+
+		bottom: calc(var(--pos) - 32px);
+		left: var(--pos);
+
+		& > button {
+			min-width: max-content;
+		}
+	}
+
+	&_Friend {
+		background-color: transparent;
+	}
+
+	.DialogBody > .DialogTwoColLayout {
+		justify-content: start;
+	}
+}
+

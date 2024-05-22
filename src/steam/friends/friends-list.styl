@@ -208,18 +208,6 @@
 	}
 }
 
-.friend {
-	@extend .tree-item;
-
-	margin-top: 4px;
-	margin-bottom: 4px;
-
-	&::before {
-		top: -13px;
-		height: 24px;
-	}
-}
-
 .friendGroup {
 	border: none;
 	margin: 0;
@@ -287,6 +275,18 @@
 
 .friendlist {
 	gap: var(--window-gap);
+
+	.friend {
+		@extend .tree-item;
+
+		margin-top: 4px;
+		margin-bottom: 4px;
+
+		&::before {
+			top: -13px;
+			height: 24px;
+		}
+	}
 }
 
 .friendsListContainer {

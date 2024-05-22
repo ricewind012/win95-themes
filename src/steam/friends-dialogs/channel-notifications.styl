@@ -1,0 +1,55 @@
+.ChatRoomNotificationSettingsDialog {
+	// wtf
+	& & {
+		@extend label;
+
+		& > [style] {
+			margin: 0;
+		}
+	}
+
+	.ChannelSpecificNotificationSettings_Inherit {
+		opacity: 1;
+		font-style: normal;
+	}
+
+	// Just use the client settings.
+	// Why is it even here at all ?
+	.DialogFooter {
+		display: none;
+	}
+
+	.DialogLabel:nth-child(2),
+	.notificationsChannelHeader {
+		display: none;
+	}
+
+	.notificationsChannel {
+		gap: var(--label-spacing);
+		margin-bottom: var(--text-spacing);
+
+		height: unset;
+		justify-content: start;
+
+		&ListContainer {
+			padding: 0;
+		}
+	}
+
+	.NotificationChannelName {
+		@extend $text-reset;
+
+		background-color: transparent;
+		padding: 0;
+	}
+
+	.notificationGeneralHeader,
+	.notificationRow {
+		margin: 0;
+	}
+
+	.notificationGeneralHeader {
+		height: unset;
+	}
+}
+

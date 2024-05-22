@@ -1,0 +1,30 @@
+// Purpose:
+// Used in group chat settings (and possibly other older dialogs)
+
+#DialogContent {
+	padding: 0;
+	margin: 0;
+
+	& > div:only-child {
+		height: 100%;
+	}
+
+	// Empty .DialogBody
+	form:not(.DialogBody) {
+		@extend [role="tabpanel"];
+
+		height: 100%;
+
+		.DialogBody {
+			box-shadow: none;
+			padding: 0;
+
+			overflow: visible;
+		}
+	}
+}
+
+#DialogTitle {
+	display: none;
+}
+
