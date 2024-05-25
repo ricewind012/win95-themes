@@ -42,10 +42,16 @@ $statusbar-alt {
 		bottom: 4px;
 		height: calc(var(--text-full) + 2px);
 
-		background-color: var(--color-button-face);
 		box-shadow: var(--border-statusbar);
 		padding: 1px 15px 1px 2px;
 	}
+}
+
+$tooltip {
+	@extend .tooltip;
+
+	font-size: var(--text-ui-size);
+	box-shadow: none;
 }
 
 $pageable-container-button {

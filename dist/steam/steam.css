@@ -211,6 +211,8 @@ select:active,
   --arrow: linear-gradient(90deg, var(--color-button-text) 1px, var(--color-button-text)) calc(var(--offset) + 6px) calc(var(--offset) + 4px), linear-gradient(90deg, var(--color-button-text) 1px, var(--color-button-text)) calc(var(--offset) + 6px) calc(var(--offset) + 5px), linear-gradient(90deg, var(--color-button-text) 1px, var(--color-button-text)) calc(var(--offset) + 7px) calc(var(--offset) + 5px), linear-gradient(90deg, var(--color-button-text) 1px, var(--color-button-text)) calc(var(--offset) + 6px) calc(var(--offset) + 6px), linear-gradient(90deg, var(--color-button-text) 1px, var(--color-button-text)) calc(var(--offset) + 7px) calc(var(--offset) + 6px), linear-gradient(90deg, var(--color-button-text) 1px, var(--color-button-text)) calc(var(--offset) + 8px) calc(var(--offset) + 6px), linear-gradient(90deg, var(--color-button-text) 1px, var(--color-button-text)) calc(var(--offset) + 6px) calc(var(--offset) + 7px), linear-gradient(90deg, var(--color-button-text) 1px, var(--color-button-text)) calc(var(--offset) + 7px) calc(var(--offset) + 7px), linear-gradient(90deg, var(--color-button-text) 1px, var(--color-button-text)) calc(var(--offset) + 8px) calc(var(--offset) + 7px), linear-gradient(90deg, var(--color-button-text) 1px, var(--color-button-text)) calc(var(--offset) + 9px) calc(var(--offset) + 7px), linear-gradient(90deg, var(--color-button-text) 1px, var(--color-button-text)) calc(var(--offset) + 6px) calc(var(--offset) + 8px), linear-gradient(90deg, var(--color-button-text) 1px, var(--color-button-text)) calc(var(--offset) + 7px) calc(var(--offset) + 8px), linear-gradient(90deg, var(--color-button-text) 1px, var(--color-button-text)) calc(var(--offset) + 8px) calc(var(--offset) + 8px), linear-gradient(90deg, var(--color-button-text) 1px, var(--color-button-text)) calc(var(--offset) + 6px) calc(var(--offset) + 9px), linear-gradient(90deg, var(--color-button-text) 1px, var(--color-button-text)) calc(var(--offset) + 7px) calc(var(--offset) + 9px), linear-gradient(90deg, var(--color-button-text) 1px, var(--color-button-text)) calc(var(--offset) + 6px) calc(var(--offset) + 10px) !important;
 }
 hr,
+.msg.timeDivision .horizDivider,
+.msg.timeDivision .preHorizDivider,
 .DialogHBar,
 .HBar,
 ._2Kmn7fJOkLT4KyWl467a9M::after,
@@ -265,6 +267,12 @@ input,
 button,
 select,
 textarea,
+.chatFileUploadCancel,
+.chatRoomButton,
+.chatTabSelector,
+.inviteURLContainer .copyInviteLink,
+.MemberListOption,
+.VoiceRoomChatTitle .MinimizeTextChat,
 .addFriendButton,
 .friendRequestButton,
 .chatSectionTitle .createChatRoomButton,
@@ -337,6 +345,7 @@ div:not([class]) > .S-_LaQG5eEOM2HWZ-geJI,
 ._2qGnLK2G3sqjtqVgYl6phc,
 ._2VJwnBYoIWLWhunHyjXDUD,
 ._2JSyABqFEh-v_dwaTnBydR,
+.z9jg3ztyDz6xR-eLBCJvG,
 .z-cTLiR329QSsE3P9rkR .DialogBodyText,
 .z-cTLiR329QSsE3P9rkR .DialogFooter,
 ._1FPJYJrOP3sGOAaFkUKvsa:not(._1G-9fAzW5CfKYrYh48dMgL,
@@ -361,6 +370,12 @@ input:disabled,
 button:disabled,
 select:disabled,
 textarea:disabled,
+.chatFileUploadCancel:disabled,
+.chatRoomButton:disabled,
+.chatTabSelector:disabled,
+.inviteURLContainer .copyInviteLink:disabled,
+.MemberListOption:disabled,
+.VoiceRoomChatTitle .MinimizeTextChat:disabled,
 .addFriendButton:disabled,
 .friendRequestButton:disabled,
 .chatSectionTitle .createChatRoomButton:disabled,
@@ -433,6 +448,7 @@ div:not([class]) > .S-_LaQG5eEOM2HWZ-geJI:disabled,
 ._2qGnLK2G3sqjtqVgYl6phc:disabled,
 ._2VJwnBYoIWLWhunHyjXDUD:disabled,
 ._2JSyABqFEh-v_dwaTnBydR:disabled,
+.z9jg3ztyDz6xR-eLBCJvG:disabled,
 .z-cTLiR329QSsE3P9rkR .DialogBodyText:disabled,
 .z-cTLiR329QSsE3P9rkR .DialogFooter:disabled,
 ._1FPJYJrOP3sGOAaFkUKvsa:not(._1G-9fAzW5CfKYrYh48dMgL:disabled,
@@ -470,6 +486,12 @@ input,
 button,
 select,
 textarea,
+.chatFileUploadCancel,
+.chatRoomButton,
+.chatTabSelector,
+.inviteURLContainer .copyInviteLink,
+.MemberListOption,
+.VoiceRoomChatTitle .MinimizeTextChat,
 .addFriendButton,
 .friendRequestButton,
 .chatSectionTitle .createChatRoomButton,
@@ -521,6 +543,7 @@ textarea,
 ._2qGnLK2G3sqjtqVgYl6phc,
 ._2VJwnBYoIWLWhunHyjXDUD,
 ._2JSyABqFEh-v_dwaTnBydR,
+.z9jg3ztyDz6xR-eLBCJvG,
 ._1FPJYJrOP3sGOAaFkUKvsa:not(._1G-9fAzW5CfKYrYh48dMgL,
 .T1szENxewQ2_U-OCGy6ee),
 ._1G-9fAzW5CfKYrYh48dMgL,
@@ -572,6 +595,12 @@ input[type="password"],
 button,
 input:where([type="button"],
 [type="submit"]),
+.chatFileUploadCancel,
+.chatRoomButton,
+.chatTabSelector,
+.inviteURLContainer .copyInviteLink,
+.MemberListOption,
+.VoiceRoomChatTitle .MinimizeTextChat,
 .addFriendButton,
 .friendRequestButton,
 .chatSectionTitle .createChatRoomButton,
@@ -614,6 +643,7 @@ input:where([type="button"],
 ._2qGnLK2G3sqjtqVgYl6phc,
 ._2VJwnBYoIWLWhunHyjXDUD,
 ._2JSyABqFEh-v_dwaTnBydR,
+.z9jg3ztyDz6xR-eLBCJvG,
 ._1FPJYJrOP3sGOAaFkUKvsa:not(._1G-9fAzW5CfKYrYh48dMgL,
 .T1szENxewQ2_U-OCGy6ee),
 ._3mCrTKGesl-jD-k-buQ13_,
@@ -632,6 +662,12 @@ input:where([type="button"],
 button:focus,
 input:where([type="button"]:focus,
 [type="submit"]):focus,
+.chatFileUploadCancel:focus,
+.chatRoomButton:focus,
+.chatTabSelector:focus,
+.inviteURLContainer .copyInviteLink:focus,
+.MemberListOption:focus,
+.VoiceRoomChatTitle .MinimizeTextChat:focus,
 .addFriendButton:focus,
 .friendRequestButton:focus,
 .chatSectionTitle .createChatRoomButton:focus,
@@ -674,6 +710,7 @@ input:where([type="button"]:focus,
 ._2qGnLK2G3sqjtqVgYl6phc:focus,
 ._2VJwnBYoIWLWhunHyjXDUD:focus,
 ._2JSyABqFEh-v_dwaTnBydR:focus,
+.z9jg3ztyDz6xR-eLBCJvG:focus,
 ._1FPJYJrOP3sGOAaFkUKvsa:not(._1G-9fAzW5CfKYrYh48dMgL:focus,
 .T1szENxewQ2_U-OCGy6ee):focus,
 ._3mCrTKGesl-jD-k-buQ13_:focus,
@@ -689,6 +726,12 @@ input:where([type="button"]:focus,
 button:active,
 input:where([type="button"]:active,
 [type="submit"]):active,
+.chatFileUploadCancel:active,
+.chatRoomButton:active,
+.chatTabSelector:active,
+.inviteURLContainer .copyInviteLink:active,
+.MemberListOption:active,
+.VoiceRoomChatTitle .MinimizeTextChat:active,
 .addFriendButton:active,
 .friendRequestButton:active,
 .chatSectionTitle .createChatRoomButton:active,
@@ -731,6 +774,7 @@ input:where([type="button"]:active,
 ._2qGnLK2G3sqjtqVgYl6phc:active,
 ._2VJwnBYoIWLWhunHyjXDUD:active,
 ._2JSyABqFEh-v_dwaTnBydR:active,
+.z9jg3ztyDz6xR-eLBCJvG:active,
 ._1FPJYJrOP3sGOAaFkUKvsa:not(._1G-9fAzW5CfKYrYh48dMgL:active,
 .T1szENxewQ2_U-OCGy6ee):active,
 ._3mCrTKGesl-jD-k-buQ13_:active,
@@ -746,25 +790,40 @@ input:where([type="button"]:active,
   box-shadow: var(--border-button-sunken) !important;
 }
 .icon-button,
+.chatEntry button,
+.chatRoomButton,
+.inviteURLContainer .copyInviteLink,
+.MemberListOption,
 .activeVoiceControls button,
 .addFriendButton,
 .friendRequestButton,
 ._3mzKdQXht__YHo6PX1LmB6,
+.z9jg3ztyDz6xR-eLBCJvG,
 .ya1GZgdAuRwrs6HjZp6zP:last-child ._1FPJYJrOP3sGOAaFkUKvsa {
   min-width: 23px !important;
   height: 22px !important;
 }
 .icon-button:active,
+.chatEntry button:active,
+.chatRoomButton:active,
+.inviteURLContainer .copyInviteLink:active,
+.MemberListOption:active,
 .activeVoiceControls button:active,
 .addFriendButton:active,
 .friendRequestButton:active,
 ._3mzKdQXht__YHo6PX1LmB6:active,
+.z9jg3ztyDz6xR-eLBCJvG:active,
 .ya1GZgdAuRwrs6HjZp6zP:last-child ._1FPJYJrOP3sGOAaFkUKvsa:active,
 .icon-button[selected],
+.chatEntry button[selected],
+.chatRoomButton[selected],
+.inviteURLContainer .copyInviteLink[selected],
+.MemberListOption[selected],
 .activeVoiceControls button[selected],
 .addFriendButton[selected],
 .friendRequestButton[selected],
 ._3mzKdQXht__YHo6PX1LmB6[selected],
+.z9jg3ztyDz6xR-eLBCJvG[selected],
 .ya1GZgdAuRwrs6HjZp6zP:last-child ._1FPJYJrOP3sGOAaFkUKvsa[selected],
 ._2TKEazUUS3TlniZfpc8OOe a[aria-current],
 ._3mzKdQXht__YHo6PX1LmB6._1QFFkxM5hw-43miIiylbwq,
@@ -779,16 +838,26 @@ input:where([type="button"]:active,
   box-shadow: var(--border-button-sunken) !important;
 }
 .icon-button:active::before,
+.chatEntry button:active::before,
+.chatRoomButton:active::before,
+.inviteURLContainer .copyInviteLink:active::before,
+.MemberListOption:active::before,
 .activeVoiceControls button:active::before,
 .addFriendButton:active::before,
 .friendRequestButton:active::before,
 ._3mzKdQXht__YHo6PX1LmB6:active::before,
+.z9jg3ztyDz6xR-eLBCJvG:active::before,
 .ya1GZgdAuRwrs6HjZp6zP:last-child ._1FPJYJrOP3sGOAaFkUKvsa:active::before,
 .icon-button[selected]::before,
+.chatEntry button[selected]::before,
+.chatRoomButton[selected]::before,
+.inviteURLContainer .copyInviteLink[selected]::before,
+.MemberListOption[selected]::before,
 .activeVoiceControls button[selected]::before,
 .addFriendButton[selected]::before,
 .friendRequestButton[selected]::before,
 ._3mzKdQXht__YHo6PX1LmB6[selected]::before,
+.z9jg3ztyDz6xR-eLBCJvG[selected]::before,
 .ya1GZgdAuRwrs6HjZp6zP:last-child ._1FPJYJrOP3sGOAaFkUKvsa[selected]::before,
 ._2TKEazUUS3TlniZfpc8OOe a[aria-current]::before,
 ._3mzKdQXht__YHo6PX1LmB6._1QFFkxM5hw-43miIiylbwq::before,
@@ -802,10 +871,15 @@ input:where([type="button"]:active,
   inset: 1px !important;
 }
 .icon-button::before,
+.chatEntry button::before,
+.chatRoomButton::before,
+.inviteURLContainer .copyInviteLink::before,
+.MemberListOption::before,
 .activeVoiceControls button::before,
 .addFriendButton::before,
 .friendRequestButton::before,
 ._3mzKdQXht__YHo6PX1LmB6::before,
+.z9jg3ztyDz6xR-eLBCJvG::before,
 .ya1GZgdAuRwrs6HjZp6zP:last-child ._1FPJYJrOP3sGOAaFkUKvsa::before {
   content: '' !important;
   position: absolute !important;
@@ -815,10 +889,15 @@ input:where([type="button"]:active,
 }
 @media (prefers-color-scheme: dark) {
   .icon-button::before,
+  .chatEntry button::before,
+  .chatRoomButton::before,
+  .inviteURLContainer .copyInviteLink::before,
+  .MemberListOption::before,
   .activeVoiceControls button::before,
   .addFriendButton::before,
   .friendRequestButton::before,
   ._3mzKdQXht__YHo6PX1LmB6::before,
+  .z9jg3ztyDz6xR-eLBCJvG::before,
   .ya1GZgdAuRwrs6HjZp6zP:last-child ._1FPJYJrOP3sGOAaFkUKvsa::before {
     filter: invert() !important;
   }
@@ -1191,6 +1270,7 @@ progress::-webkit-progress-value,
 /* TODO: make it layout-independent */
 }
 .list-item[selected] > .list-item-name-container > .list-item-name,
+.chatRoomTextChannel.ActiveTextChannel,
 ._2-O4ZG0KrnSrzISHBKctFQ._1UBpAXP408Ez_L_mXhW5Q9,
 .sXMOsx8OIRalBMxO9yFY5 > ._3cV3O8FnPQqpJO5kIMUlLX {
   background-color: var(--color-highlight) !important;
@@ -1359,6 +1439,8 @@ table {
   padding-bottom: 3px !important;
 }
 [role="tab"],
+._1F8BhKKWf_XhG9QsmY_4lp,
+.X2iywwN7fcdh9zXpXVsrk,
 .TSlxCkeUMGwzmg21_WU8-,
 ._3eEbSktrstBdLk0dVpnKVI,
 ._2tYhabG7rEAJB2eolDND0O,
@@ -1378,12 +1460,16 @@ table {
   height: 18px !important;
 }
 [role="tab"]::before,
+._1F8BhKKWf_XhG9QsmY_4lp::before,
+.X2iywwN7fcdh9zXpXVsrk::before,
 .TSlxCkeUMGwzmg21_WU8-::before,
 ._3eEbSktrstBdLk0dVpnKVI::before,
 ._2tYhabG7rEAJB2eolDND0O::before,
 .bkfjn0yka2uHNqEvWZaTJ::before,
 ._1jEPp-_Fn1YtGfHenAZ7fT::before,
 [role="tab"]::after,
+._1F8BhKKWf_XhG9QsmY_4lp::after,
+.X2iywwN7fcdh9zXpXVsrk::after,
 .TSlxCkeUMGwzmg21_WU8-::after,
 ._3eEbSktrstBdLk0dVpnKVI::after,
 ._2tYhabG7rEAJB2eolDND0O::after,
@@ -1400,6 +1486,8 @@ table {
   background-position: 0 0, 1px 0, 2px 0, 0 1px, 1px 1px, 2px 1px !important;
 }
 [role="tab"]::before,
+._1F8BhKKWf_XhG9QsmY_4lp::before,
+.X2iywwN7fcdh9zXpXVsrk::before,
 .TSlxCkeUMGwzmg21_WU8-::before,
 ._3eEbSktrstBdLk0dVpnKVI::before,
 ._2tYhabG7rEAJB2eolDND0O::before,
@@ -1409,6 +1497,8 @@ table {
   background-image: var(--tab-border-left) !important;
 }
 [role="tab"]::after,
+._1F8BhKKWf_XhG9QsmY_4lp::after,
+.X2iywwN7fcdh9zXpXVsrk::after,
 .TSlxCkeUMGwzmg21_WU8-::after,
 ._3eEbSktrstBdLk0dVpnKVI::after,
 ._2tYhabG7rEAJB2eolDND0O::after,
@@ -1418,11 +1508,15 @@ table {
   background-image: var(--tab-border-right) !important;
 }
 [role="tab"][aria-selected="true"],
+._1F8BhKKWf_XhG9QsmY_4lp[aria-selected="true"],
+.X2iywwN7fcdh9zXpXVsrk[aria-selected="true"],
 .TSlxCkeUMGwzmg21_WU8-[aria-selected="true"],
 ._3eEbSktrstBdLk0dVpnKVI[aria-selected="true"],
 ._2tYhabG7rEAJB2eolDND0O[aria-selected="true"],
 .bkfjn0yka2uHNqEvWZaTJ[aria-selected="true"],
 ._1jEPp-_Fn1YtGfHenAZ7fT[aria-selected="true"],
+._1F8BhKKWf_XhG9QsmY_4lp._2bg1wWoNj7Bs0BSiao9e9x,
+.X2iywwN7fcdh9zXpXVsrk._1BNlZUYDbVr8VhCTmq7ksk,
 .TSlxCkeUMGwzmg21_WU8-._1W4bbifjEN3KdqKEhpmies,
 ._3eEbSktrstBdLk0dVpnKVI._3Gp1bACHx__POxmy6Gd3kG,
 ._2tYhabG7rEAJB2eolDND0O._22BLe9DAiRwH1vJMpWz-Ko,
@@ -1436,6 +1530,8 @@ table {
   z-index: 1 !important;
 }
 [role="tablist"],
+._3DjoXcx0aMRDIV1BxLzlzU,
+._19ILu15eRwfp5Tkaqhtb0a,
 .aqvbkhC1ejt4s8QvWA-c5,
 ._2VQFn3BjndH_ZmCBTJY7eZ,
 ._3o6fvTcJst7E2CI8mm7R5T,
@@ -1445,8 +1541,10 @@ table {
   display: flex !important;
 }
 [role="tabpanel"],
+.chatDialogs,
 .roleList,
 .DialogBody,
+._1c-qebyqfejBT8hBvbUY7p,
 ._3U0C5lMs9_TAIfywcurLn7 form:not(.DialogBody),
 ._1X4dtbZ_AMX_DXT-SGiK01,
 ._2YSm1vJtLeKb9BbihsLY1F {
@@ -1456,11 +1554,14 @@ table {
   padding: calc(var(--border-size) + var(--tabpanel-spacing)) !important;
 }
 [role="tabpanel"][compact],
+.chatDialogs[compact],
 .roleList[compact],
 .DialogBody[compact],
+._1c-qebyqfejBT8hBvbUY7p[compact],
 ._3U0C5lMs9_TAIfywcurLn7 form:not(.DialogBody)[compact],
 ._1X4dtbZ_AMX_DXT-SGiK01[compact],
-._2YSm1vJtLeKb9BbihsLY1F[compact] {
+._2YSm1vJtLeKb9BbihsLY1F[compact],
+.chatDialogs {
   --tabpanel-spacing: 2px !important;
 }
 ::selection {
@@ -1504,6 +1605,7 @@ legend,
   background-color: var(--color-button-face) !important;
 }
 label,
+.inviteURLContainer,
 .ChatRoomNotificationSettingsDialog .ChatRoomNotificationSettingsDialog,
 .GeneralChatSettings > .Panel,
 .DialogCheckbox_Container,
@@ -1513,7 +1615,9 @@ label,
   align-items: center !important;
 }
 .tooltip,
+._1GtsZWvAAnnuk-EjFP3su2,
 .WonjNtnAq8aOefGl_x2v4:not(:has(> :empty)),
+._1lV66vm81Z2TQREsLJzKok,
 body > div > .ZTbww2QfIllvCwVHmpixE,
 ._29b2a87G5A5NZeYh5Kgvea {
   background-color: var(--color-tooltip) !important;
@@ -1611,6 +1715,8 @@ body {
 }
 .window,
 body,
+.chatFileUploadPreviewContainer,
+.VoiceRoomChatWindow,
 .DialogMenuPosition ._DialogInputContainer,
 .FullModalOverlay .DialogContent,
 .DesktopUI ._1ZpBQtDqcKBbfIIv01Vs1R > div,
@@ -1627,6 +1733,8 @@ body,
 }
 .window.child,
 body.child,
+.chatFileUploadPreviewContainer.child,
+.VoiceRoomChatWindow.child,
 .DialogMenuPosition ._DialogInputContainer.child,
 .FullModalOverlay .DialogContent.child,
 .DesktopUI ._1ZpBQtDqcKBbfIIv01Vs1R > div.child,
@@ -1636,6 +1744,8 @@ body.child,
 .DesktopUI ._2Sj4-UDM-dHSxtxwQ_Pwwz._2Sj4-UDM-dHSxtxwQ_Pwwz ._DialogInputContainer.child,
 ._4BQHp2F51n2v8292fxZLZ.child,
 .p2CKe5nuC_8YgWL_lZbNn.child,
+.chatFileUploadPreviewContainer,
+.VoiceRoomChatWindow,
 .DialogMenuPosition ._DialogInputContainer,
 .FullModalOverlay .DialogContent,
 .DesktopUI ._1ZpBQtDqcKBbfIIv01Vs1R > div,
@@ -1674,17 +1784,22 @@ div._3rgV8pPmQvZC-01x9l-q-N {
   background-color: var(--color-highlight) !important;
   color: var(--color-highlight-text) !important;
 }
-.statusbar {
+.statusbar,
+.chatRoomGroupStats {
   gap: 2px !important;
   display: flex !important;
 }
 .statusbar-item,
+.chatRoomGroupStats .statMemberStat,
+.FriendChatTypingNotification,
+.VoiceChatTextChannelDesc,
 .friendListFooter,
 .FriendPicker_ChosenFriend {
   box-shadow: var(--border-statusbar) !important;
   padding: 2px 4px 1px 4px !important;
 }
 .titlebar,
+.VoiceRoomChatTitle,
 .FullModalOverlay .DialogHeader {
   background-color: var(--color-inactive-caption) !important;
   color: var(--color-inactive-caption-text) !important;
@@ -1695,7 +1810,9 @@ div._3rgV8pPmQvZC-01x9l-q-N {
   align-items: center !important;
 }
 :root[focused] .titlebar,
+:root[focused] .VoiceRoomChatTitle,
 :root[focused] .FullModalOverlay .DialogHeader,
+.VoiceRoomChatTitle,
 .FullModalOverlay .DialogHeader {
   background-color: var(--color-active-caption) !important;
   color: var(--color-active-caption-text) !important;
@@ -1705,6 +1822,9 @@ div._3rgV8pPmQvZC-01x9l-q-N {
   font-weight: bold !important;
 }
 .titlebar-button,
+.chatFileUploadCancel,
+.chatTabSelector,
+.VoiceRoomChatTitle .MinimizeTextChat,
 .chatSectionTitle .createChatRoomButton,
 .chatSectionTitle .ToggleGroupChatList,
 .rolePriorityButton,
@@ -1712,6 +1832,7 @@ div._3rgV8pPmQvZC-01x9l-q-N {
 .title-area-icon,
 ._1bIMOmWaxKrMdVMWU21ku,
 ._2g0BSmW_Sw6_39d-nr3tjg > .DialogButton,
+._18EIcuUAoTtqjzcDzsTcdy,
 ._1WKUOT3FdB9-48MMP0Tz9l,
 .lzk4zNVWG2zPV5Mk_o5GL ._3Tfp8-wTAttW3WVa_X9JVC,
 ._2xR-V97DWI7svSjgiCb3N-,
@@ -1732,6 +1853,9 @@ div._3rgV8pPmQvZC-01x9l-q-N {
   height: 14px !important;
 }
 .titlebar-button::before,
+.chatFileUploadCancel::before,
+.chatTabSelector::before,
+.VoiceRoomChatTitle .MinimizeTextChat::before,
 .chatSectionTitle .createChatRoomButton::before,
 .chatSectionTitle .ToggleGroupChatList::before,
 .rolePriorityButton::before,
@@ -1739,6 +1863,7 @@ div._3rgV8pPmQvZC-01x9l-q-N {
 .title-area-icon::before,
 ._1bIMOmWaxKrMdVMWU21ku::before,
 ._2g0BSmW_Sw6_39d-nr3tjg > .DialogButton::before,
+._18EIcuUAoTtqjzcDzsTcdy::before,
 ._1WKUOT3FdB9-48MMP0Tz9l::before,
 .lzk4zNVWG2zPV5Mk_o5GL ._3Tfp8-wTAttW3WVa_X9JVC::before,
 ._2xR-V97DWI7svSjgiCb3N-::before,
@@ -1756,6 +1881,9 @@ div._3rgV8pPmQvZC-01x9l-q-N {
 .mh8m9p4PBg_Qrev1bfTzc::before,
 ._2Szzh5sKyGgnLUR870zbDE::before,
 .titlebar-button::after,
+.chatFileUploadCancel::after,
+.chatTabSelector::after,
+.VoiceRoomChatTitle .MinimizeTextChat::after,
 .chatSectionTitle .createChatRoomButton::after,
 .chatSectionTitle .ToggleGroupChatList::after,
 .rolePriorityButton::after,
@@ -1763,6 +1891,7 @@ div._3rgV8pPmQvZC-01x9l-q-N {
 .title-area-icon::after,
 ._1bIMOmWaxKrMdVMWU21ku::after,
 ._2g0BSmW_Sw6_39d-nr3tjg > .DialogButton::after,
+._18EIcuUAoTtqjzcDzsTcdy::after,
 ._1WKUOT3FdB9-48MMP0Tz9l::after,
 .lzk4zNVWG2zPV5Mk_o5GL ._3Tfp8-wTAttW3WVa_X9JVC::after,
 ._2xR-V97DWI7svSjgiCb3N-::after,
@@ -1787,6 +1916,9 @@ div._3rgV8pPmQvZC-01x9l-q-N {
   -webkit-mask-position: var(--button-img-pos, center) !important;
 }
 .titlebar-button::before,
+.chatFileUploadCancel::before,
+.chatTabSelector::before,
+.VoiceRoomChatTitle .MinimizeTextChat::before,
 .chatSectionTitle .createChatRoomButton::before,
 .chatSectionTitle .ToggleGroupChatList::before,
 .rolePriorityButton::before,
@@ -1794,6 +1926,7 @@ div._3rgV8pPmQvZC-01x9l-q-N {
 .title-area-icon::before,
 ._1bIMOmWaxKrMdVMWU21ku::before,
 ._2g0BSmW_Sw6_39d-nr3tjg > .DialogButton::before,
+._18EIcuUAoTtqjzcDzsTcdy::before,
 ._1WKUOT3FdB9-48MMP0Tz9l::before,
 .lzk4zNVWG2zPV5Mk_o5GL ._3Tfp8-wTAttW3WVa_X9JVC::before,
 ._2xR-V97DWI7svSjgiCb3N-::before,
@@ -1814,6 +1947,9 @@ div._3rgV8pPmQvZC-01x9l-q-N {
   background-color: var(--color-button-text) !important;
 }
 .titlebar-button:active::before,
+.chatFileUploadCancel:active::before,
+.chatTabSelector:active::before,
+.VoiceRoomChatTitle .MinimizeTextChat:active::before,
 .chatSectionTitle .createChatRoomButton:active::before,
 .chatSectionTitle .ToggleGroupChatList:active::before,
 .rolePriorityButton:active::before,
@@ -1821,6 +1957,7 @@ div._3rgV8pPmQvZC-01x9l-q-N {
 .title-area-icon:active::before,
 ._1bIMOmWaxKrMdVMWU21ku:active::before,
 ._2g0BSmW_Sw6_39d-nr3tjg > .DialogButton:active::before,
+._18EIcuUAoTtqjzcDzsTcdy:active::before,
 ._1WKUOT3FdB9-48MMP0Tz9l:active::before,
 .lzk4zNVWG2zPV5Mk_o5GL ._3Tfp8-wTAttW3WVa_X9JVC:active::before,
 ._2xR-V97DWI7svSjgiCb3N-:active::before,
@@ -1840,6 +1977,9 @@ div._3rgV8pPmQvZC-01x9l-q-N {
   inset: 1px !important;
 }
 .titlebar-button:disabled::after,
+.chatFileUploadCancel:disabled::after,
+.chatTabSelector:disabled::after,
+.VoiceRoomChatTitle .MinimizeTextChat:disabled::after,
 .chatSectionTitle .createChatRoomButton:disabled::after,
 .chatSectionTitle .ToggleGroupChatList:disabled::after,
 .rolePriorityButton:disabled::after,
@@ -1847,6 +1987,7 @@ div._3rgV8pPmQvZC-01x9l-q-N {
 .title-area-icon:disabled::after,
 ._1bIMOmWaxKrMdVMWU21ku:disabled::after,
 ._2g0BSmW_Sw6_39d-nr3tjg > .DialogButton:disabled::after,
+._18EIcuUAoTtqjzcDzsTcdy:disabled::after,
 ._1WKUOT3FdB9-48MMP0Tz9l:disabled::after,
 .lzk4zNVWG2zPV5Mk_o5GL ._3Tfp8-wTAttW3WVa_X9JVC:disabled::after,
 ._2xR-V97DWI7svSjgiCb3N-:disabled::after,
@@ -1877,6 +2018,9 @@ div._3rgV8pPmQvZC-01x9l-q-N {
   display: flex !important;
 }
 .content-container,
+.ChatHistoryContainer,
+.chatRoomGroupNavColumn,
+.chatRoomMembers,
 .currentUserContainer,
 .friendlistListContainer,
 .FriendPickerFriendList,
@@ -1932,6 +2076,12 @@ div:not([class]) > .S-_LaQG5eEOM2HWZ-geJI,
 ._1vG-vFfwpDeNStVbyo1Qy6 {
   position: relative !important;
 }
+.chatRoomGroupStats .statMemberStat,
+.chatRoomTextChannelName,
+.inviteURLLinkDesc,
+.msg.timeDivision,
+.speakerTimeStamp,
+.VoiceChatTextChannelName,
 .activeVoiceName,
 .chatRoomName,
 .chatSectionTitle .groupChatSectionTitle,
@@ -1998,6 +2148,7 @@ div:not([class]) > .S-_LaQG5eEOM2HWZ-geJI,
 ._1sCy-pm412Smb0wJx0W-4,
 ._3OhUxFVlQYr9W5ThxstR8k,
 ._3wJnTtcTLEp0R7eQj_mK8Y,
+.J8J3o5BtWdX2ZAOJB2AE6,
 ._3grvnr9zzkvx6NoBOdmTnf,
 ._2RkIcXHXACX4EdBluR3nAH,
 ._1S3Q9rK5wn6PAIXII0mBz4,
@@ -2057,6 +2208,7 @@ div:not([class]) > .S-_LaQG5eEOM2HWZ-geJI,
 ._1k82NiWym4STegDGxRBHz2,
 ._2cgN-Vb3W5DAcPXDg4HRNB,
 ._3kjELHPFlI9SV9QYNi_TaH [role="cell"],
+.Q_Pu3nQIAya0v3x8BerPF,
 ._1HL6KuwUJaZQ7x2rmAxxSz,
 ._3uOErrMLSNVM7v6C3zKSJh,
 ._3smYD3Hn8hAh8Jj_kdnYLX,
@@ -2147,8 +2299,11 @@ div:not([class]) > .S-_LaQG5eEOM2HWZ-geJI,
   --button-img-size: 10px 9px !important;
   --button-img-pos: 2px 2px !important;
 }
+.chatFileUploadCancel,
+.VoiceRoomChatTitle .MinimizeTextChat,
 .ModalPosition_Dismiss .closeButton,
 .closeButton,
+._18EIcuUAoTtqjzcDzsTcdy,
 ._2xR-V97DWI7svSjgiCb3N-,
 .mh8m9p4PBg_Qrev1bfTzc {
   --button-img: var(--icon-close) !important;
@@ -2271,9 +2426,13 @@ div._3T-1PliI6PkKE-bE-o3bV0,
   right: 4px !important;
   bottom: 4px !important;
   height: calc(var(--text-full) + 2px) !important;
-  background-color: var(--color-button-face) !important;
   box-shadow: var(--border-statusbar) !important;
   padding: 1px 15px 1px 2px !important;
+}
+._1GtsZWvAAnnuk-EjFP3su2,
+._1lV66vm81Z2TQREsLJzKok {
+  font-size: var(--text-ui-size) !important;
+  box-shadow: none !important;
 }
 ._3uMa3icVa3JTCGQKPeUikO,
 ._2kWWyBO7w_F76NB8sBw86c,
@@ -2296,6 +2455,12 @@ div._3T-1PliI6PkKE-bE-o3bV0,
   --darkblue: #008 !important;
 }
 button,
+.chatFileUploadCancel,
+.chatRoomButton,
+.chatTabSelector,
+.inviteURLContainer .copyInviteLink,
+.MemberListOption,
+.VoiceRoomChatTitle .MinimizeTextChat,
 .addFriendButton,
 .friendRequestButton,
 .chatSectionTitle .createChatRoomButton,
@@ -2338,6 +2503,7 @@ button,
 ._2qGnLK2G3sqjtqVgYl6phc,
 ._2VJwnBYoIWLWhunHyjXDUD,
 ._2JSyABqFEh-v_dwaTnBydR,
+.z9jg3ztyDz6xR-eLBCJvG,
 ._1FPJYJrOP3sGOAaFkUKvsa:not(._1G-9fAzW5CfKYrYh48dMgL,
 .T1szENxewQ2_U-OCGy6ee),
 ._3mCrTKGesl-jD-k-buQ13_,
@@ -2347,6 +2513,334 @@ button,
 ._7AlhCx3XGzBeIrQaCneUD,
 ._2Szzh5sKyGgnLUR870zbDE {
   text-align: center !important;
+}
+.ChannelTypeTitle,
+.inviteAnotherFriendButton,
+.ScrollToBottomButton {
+  display: none !important;
+}
+.chatDialogs {
+  --statusbar-height: calc(var(--text-full) + 3px) !important;
+  background: none !important;
+  margin: 0 var(--dialog-spacing) !important;
+  margin-bottom: calc(var(--dialog-spacing) + var(--statusbar-height) + var(--window-gap)) !important;
+}
+.chatEntry {
+  background-color: transparent !important;
+  padding: 0 !important;
+  margin-top: var(--window-gap) !important;
+}
+.chatEntry button {
+  width: unset !important;
+  min-height: unset !important;
+}
+.chatEntry button.Disabled {
+  pointer-events: none !important;
+}
+.chatEntry button svg {
+  color: inherit !important;
+  margin: 0 !important;
+  width: 16px !important;
+  height: 16px !important;
+}
+.chatEntry button path {
+  fill: var(--color-button-text) !important;
+}
+.chatEntry button .SVGIcon_Submit {
+  margin-top: -2px !important;
+}
+.chatFileUploadCancel {
+  top: 0 !important;
+  right: calc(-260px + 16px + 8px + var(--border-size) + var(--window-spacing)) !important;
+  order: -1 !important;
+}
+.chatFileUploadCancel svg {
+  display: none !important;
+}
+.chatFileUploadFileName {
+  font: var(--text-ui) !important;
+  font-weight: bold !important;
+}
+.chatFileUploadPreview {
+  box-shadow: none !important;
+  padding: 0 !important;
+}
+.chatFileUploadPreviewContainer {
+  gap: var(--text-spacing) !important;
+  bottom: calc(var(--border-size) + var(--window-spacing) + 21px) !important;
+  align-items: start !important;
+}
+.chatFileUploadPreviewContainer > * {
+  padding: 0 !important;
+  margin: 0 !important;
+  margin-left: 4px !important;
+}
+.chatHeader {
+  background: none !important;
+  min-height: 0 !important;
+}
+.ChatMessageEntryVoice {
+  opacity: 1 !important;
+  border: none !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+  margin-left: 0 !important;
+  width: 23px !important;
+  min-width: 23px !important;
+}
+.chatRoomButton {
+  padding: 2px !important;
+  width: unset !important;
+}
+.chatRoomButton.InviteToGroupChat {
+  margin-right: var(--toolbar-spacing) !important;
+  order: -1 !important;
+}
+.chatRoomButton svg {
+  fill: var(--color-button-text) !important;
+  margin: 0 !important;
+  margin-top: 2px !important;
+}
+.chatRoomChannelGroups {
+  overflow: auto !important;
+  height: 100% !important;
+}
+.chatRoomChannelGroups::-webkit-scrollbar {
+  display: initial !important;
+}
+.chatRoomChannelsGroup {
+  color: var(--color-window-text) !important;
+}
+.chatRoomGroupHeader .ChatRoomGroupAvatar,
+.chatRoomGroupHeaderNameandTag,
+.chatRoomGroupNavCollapseExpand {
+  display: none !important;
+}
+.chatRoomGroupHeader {
+  border: none !important;
+  padding: 4px calc(var(--border-size) + 4px) !important;
+}
+.chatRoomGroupNavColumn {
+  margin-right: var(--window-gap) !important;
+}
+.chatRoomGroupStats {
+  flex-direction: row !important;
+}
+.chatRoomGroupStats .statCircle {
+  display: none !important;
+}
+.chatRoomGroupStats .statMemberStat {
+  margin: 0 !important;
+}
+.chatRoomGroupStats .statMemberStat:last-child {
+  flex-grow: 1 !important;
+}
+.chatRoomGroupStats .statMemberStat[title] {
+  font-size: 0 !important;
+}
+.chatRoomGroupStats .statMemberStat[title]::before {
+  content: attr(title) !important;
+  font-size: var(--text-ui-size) !important;
+}
+.chatRoomMembers {
+  border: none !important;
+}
+.chatRoomMembers .groupName {
+  position: absolute !important;
+}
+.chatRoomTextChannel {
+  color: inherit !important;
+  padding: 4px !important;
+}
+.chatRoomTextChannelIcon {
+  display: none !important;
+}
+.chatRoomTextChannelName {
+  margin: 0 !important;
+}
+.ChatTabContextMenuItem {
+  min-height: unset !important;
+}
+.ChatTabContextMenuItem.ChatTabContextMenuItem > div {
+  background-color: unset !important;
+  border: none !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+  height: unset !important;
+}
+.ChatTabContextMenuItem.ChatTabContextMenuItem > div::before,
+.ChatTabContextMenuItem.ChatTabContextMenuItem > div::after {
+  display: none !important;
+}
+.ChatTabContextMenuItem .friend {
+  padding: 0 !important;
+  margin: 0 !important;
+  height: unset !important;
+}
+.ChatTabs {
+  background-color: transparent !important;
+  box-shadow: none !important;
+  border: none !important;
+  padding: 0 !important;
+}
+.ChatTabs .HorizontalMiniSlider,
+.ChatTabs .HorizontalMiniSliderScroll {
+  overflow: visible !important;
+}
+.ChatTabs .HorizontalMiniSliderScroll::-webkit-scrollbar {
+  display: none !important;
+}
+.ChatTabs .labelHolder {
+  margin: 0 !important;
+  height: unset !important;
+}
+.chatTabSetContainer {
+  padding-right: 0 !important;
+  margin: var(--dialog-spacing) !important;
+  margin-bottom: 0 !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+}
+.chatTabSelector {
+  --button-img: var(--icon-arrow-bottom) !important;
+  --button-img-size: 7px 4px !important;
+  background-image: none !important;
+  width: unset !important;
+}
+.chatTabSelector svg {
+  display: none !important;
+}
+.chatWindow {
+  background: none !important;
+  font: var(--text-ui) !important;
+  inset: calc(var(--border-size) + var(--tabpanel-spacing)) !important;
+}
+.dropTargetBox {
+  transform: unset !important;
+  border-color: var(--color-highlight) !important;
+}
+.chatRoomGroupStats,
+.FriendChatTypingNotification {
+  --pos: calc(var(--border-size) + var(--window-spacing)) !important;
+  position: fixed !important;
+  left: var(--pos) !important;
+  bottom: var(--pos) !important;
+  width: calc(100% - var(--pos) * 2) !important;
+}
+.FriendChatTypingNotification {
+  opacity: 1 !important;
+  background: none !important;
+  color: var(--color-button-text) !important;
+}
+.FriendChatTypingNotification:not(.FriendIsTyping) {
+  color: transparent !important;
+}
+.inviteButtonJoinChat {
+  background-image: none !important;
+  min-height: unset !important;
+}
+.inviteURLAndCopy {
+  gap: var(--dialog-button-spacing) !important;
+  margin: 0 !important;
+}
+.inviteURLContainer .copyInviteLink svg {
+  stroke: var(--color-button-text) !important;
+}
+.inviteURLLink {
+  width: 100% !important;
+  min-width: unset !important;
+  max-width: unset !important;
+}
+.inviteURLLinkDesc {
+  margin: 0 !important;
+  align-self: unset !important;
+}
+.MemberListColumn {
+  margin-left: var(--window-gap) !important;
+}
+.MemberListOption {
+  opacity: 1 !important;
+}
+.MemberListOptionsContainer {
+  margin-bottom: var(--window-gap) !important;
+  height: unset !important;
+}
+.MemberListOptionsContainer .socialInputContainer {
+  margin: 0 !important;
+  margin-left: var(--toolbar-spacing) !important;
+}
+.MemberListOption svg {
+  margin-top: -2px !important;
+  margin-left: -2px !important;
+}
+.MemberListOption svg polyline {
+  stroke: var(--color-button-text) !important;
+}
+.MemberListViewCompact .socialInputContainer {
+  display: none !important;
+}
+.msg {
+  background-color: transparent !important;
+  font: var(--text-ui) !important;
+}
+.msgText {
+  color: inherit !important;
+}
+.msg.timeDivision {
+  height: unset !important;
+  align-items: center !important;
+}
+.msg.timeDivision .horizDivider,
+.msg.timeDivision .preHorizDivider {
+  width: unset !important;
+  flex-grow: 1 !important;
+}
+.RenameChatRoomInline {
+  margin: 0 !important;
+  width: 100% !important;
+}
+.speaker {
+  color: inherit !important;
+  font-size: var(--text-ui-size) !important;
+}
+.speakerHoverArea {
+  align-items: center !important;
+}
+.speakerName {
+  color: inherit !important;
+  font-weight: bold !important;
+  margin: 0 !important;
+}
+.speakerTimeStamp {
+  align-self: center !important;
+}
+.VoiceChatTextChannelDesc {
+  background-image: none !important;
+  font: var(--text-ui) !important;
+  text-shadow: none !important;
+  text-align: unset !important;
+  position: unset !important;
+  height: unset !important;
+}
+.VoiceChatTextChannelName {
+  font-weight: bold !important;
+}
+.VoiceRoomChatHistory {
+  background-color: transparent !important;
+}
+.VoiceRoomChatTitle .MinimizeTextChat {
+  opacity: 1 !important;
+  right: 0 !important;
+}
+.VoiceRoomChatTitle .MinimizeTextChat svg {
+  display: none !important;
+}
+.VoiceRoomChatWindow {
+  border: none !important;
+  gap: var(--window-gap) !important;
+}
+.VoiceRoomTitleLabels {
+  margin-left: 0 !important;
 }
 .activeVoiceButtons {
   padding: 0 !important;
@@ -2589,12 +3083,15 @@ button,
   margin-right: var(--toolbar-spacing) !important;
   order: -1 !important;
 }
-.VoiceIconCtn {
+.VoiceIconCtn,
+.VoiceToggleIconCtn {
   color: inherit !important;
+  inset: 3px !important;
   width: 16px !important;
   height: 16px !important;
 }
-.VoiceIconCtn svg {
+.VoiceIconCtn svg,
+.VoiceToggleIconCtn svg {
   color: inherit !important;
 }
 .AssignCategoriesDialog_AddNewButton {
@@ -2996,11 +3493,6 @@ button,
 .FullModalOverlay .DialogHeader div:not(.DialogHeader) {
   display: none !important;
 }
-.ChatTabs {
-  box-shadow: none !important;
-  border: none !important;
-  padding: 0 !important;
-}
 .PopupFullWindow:not(:only-child) .ModalPosition {
   height: calc(100% - var(--text-full) - 6px) !important;
 }
@@ -3186,6 +3678,32 @@ img[src="/images/steam_spinner.png"] {
 ._1lI4JF6IbYhApR8FbMR8Nr img {
   width: var(--icon-size) !important;
   height: var(--icon-size) !important;
+}
+.vzSOldNc6qJmpXlLVoi8i {
+  padding: 0 !important;
+  margin-bottom: 8px !important;
+  order: -1 !important;
+}
+.vzSOldNc6qJmpXlLVoi8i ._18mhxKaUFfaWL6pJANncsS:hover {
+  background-color: var(--color-window) !important;
+}
+._3acyH_WQ_vSWurNYLR84lI {
+  margin: var(--dialog-spacing) !important;
+}
+.undefined {
+  padding: 0 !important;
+}
+._2MluNdiOiHT-XKPQfFiIax {
+  opacity: 1 !important;
+  background-color: transparent !important;
+  color: var(--color-button-text) !important;
+  padding: 0 !important;
+  width: var(--icon-size) !important;
+  height: var(--icon-size) !important;
+}
+._3DjoXcx0aMRDIV1BxLzlzU {
+  border: none !important;
+  justify-content: unset !important;
 }
 ._2AzIX5kl9k6JnxLfR5H4kX {
   background-image: none !important;
@@ -3595,6 +4113,29 @@ div._31ptFGGMZrSQc5BCX1e5lm {
 ._4076WNFp7FvOc0MeCbvRe {
   width: 400px !important;
 }
+._1X1-nhi0oX1Wy7y1mEIc1o {
+  margin: 0 !important;
+  height: unset !important;
+}
+._3grea2u6WuuGLHj9gJFmzY,
+._2gP0DqVyb1aEACymAe6if3 {
+  background-color: transparent !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+._2gP0DqVyb1aEACymAe6if3 {
+  gap: var(--dialog-button-spacing) !important;
+  align-items: end !important;
+}
+._1IEiKQnjHpIv-m601y6hvP {
+  background-image: none !important;
+}
+._1IsiNJFc7Y3ljzNu9insUW {
+  height: unset !important;
+  min-height: unset !important;
+  align-self: unset !important;
+}
 ._2Sea0zkTKIYLZNVkvJq21X,
 ._2Vi7csvNy_HVkg923w0xxv {
   text-transform: unset !important;
@@ -3639,6 +4180,28 @@ div._31ptFGGMZrSQc5BCX1e5lm {
 }
 ._2RQiTMJcoKFa6I4yJLAXVI {
   -webkit-mask: none !important;
+}
+.X2iywwN7fcdh9zXpXVsrk {
+  --height: 22px !important;
+  width: unset !important;
+  height: calc(var(--height) + 4px) !important;
+}
+.X2iywwN7fcdh9zXpXVsrk._1BNlZUYDbVr8VhCTmq7ksk {
+  height: calc(var(--height) + 7px) !important;
+  z-index: 4 !important;
+}
+.J8J3o5BtWdX2ZAOJB2AE6 {
+  -webkit-mask: none !important;
+  font-weight: bold !important;
+}
+._19ILu15eRwfp5Tkaqhtb0a {
+  border: none !important;
+}
+._18EIcuUAoTtqjzcDzsTcdy {
+  position: relative !important;
+}
+._18EIcuUAoTtqjzcDzsTcdy svg {
+  display: none !important;
 }
 ._2NgsfzeX0bCqF-QY15gcIq .DialogButton {
   height: unset !important;
@@ -4084,6 +4647,13 @@ div._31ptFGGMZrSQc5BCX1e5lm {
 }
 .DialogDropDown ._1JPcbbojrgNM_FTODskCRa {
   display: none !important;
+}
+._1V_rH1P9mziCMvWLcZyS_m {
+  font-size: var(--text-ui-size) !important;
+}
+._1rQ1eQ0H286uwxD4INOGCJ {
+  font-size: var(--text-ui-size) !important;
+  font-weight: bold !important;
 }
 ._2JaMGV2vMu6X_6e2UKmrf_ {
   margin: 0 !important;
@@ -4832,6 +5402,9 @@ div:not([class]) > .S-_LaQG5eEOM2HWZ-geJI {
 ._21GPYlKBCLsHQpTsHw_RL_ {
   border-bottom: none !important;
 }
+._3nIwHFIw4nSXC_DUrzO_a6 {
+  display: none !important;
+}
 ._1h5_x_EoF3KpQbn_WPtVrq {
   margin-right: var(--text-spacing) !important;
 }
@@ -5150,6 +5723,17 @@ div:not([class]) > .S-_LaQG5eEOM2HWZ-geJI {
 }
 ._3lwcRYJ_r7x01Cn15bcdYI > span::after {
   content: ')' !important;
+}
+._3bVGcHTar9PyRAfd8Olggo {
+  background-color: transparent !important;
+  box-shadow: var(--border-statusbar) !important;
+  border: none !important;
+  padding: 3px !important;
+  margin-bottom: 0 !important;
+}
+.z9jg3ztyDz6xR-eLBCJvG {
+  opacity: 1 !important;
+  stroke: var(--color-button-text) !important;
 }
 ._3XydrUIw8nf4qr6HUY3Y7_ {
   margin-top: var(--messagebox-content-spacing) !important;
