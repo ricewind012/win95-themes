@@ -22,7 +22,8 @@
 	color: var(--color-button-text);
 	border: none;
 
-	&:has(.SVGIcon_Check) {
+	/&:has(.SVGIcon_Check),
+	/&:has(.DialogCheckbox.Active) {
 		@extend .menu-item[checked][type="checkbox"];
 	}
 
@@ -33,6 +34,8 @@
 	&:hover,
 	&#active {
 		@extend .menu-item:hover;
+
+		--color-gray-text: var(--color-highlight-text);
 	}
 
 	.SVGIcon_Button {
