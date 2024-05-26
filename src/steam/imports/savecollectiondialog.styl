@@ -1,6 +1,5 @@
 #ActionLabel {
 	text-transform: unset;
-	margin: 0;
 	margin-bottom: var(--text-spacing);
 
 	width: 148px;
@@ -8,6 +7,11 @@
 	svg {
 		display: none;
 	}
+}
+
+#SaveSearchDescription {
+	font: var(--text-ui);
+	margin-top: var(--messagebox-content-spacing);
 }
 
 #TwoOptionsContainer {
@@ -37,20 +41,15 @@
 
 #SaveCollectionContainer {
 	.DialogBody {
-		&Text {
-			@extend fieldset;
-		}
+		gap: 12px;
 	}
 
 	.DialogFooter {
-		@extend fieldset;
+		padding: 0;
 	}
 
-	.DialogBodyText > #InputContainer,
-	.DialogFooter > .DialogLabel {
-		@extend $legend-as-div;
-
-		margin: 0;
+	.DialogLabel {
+		margin-bottom: var(--text-spacing);
 	}
 
 	.DialogTextInputBase {

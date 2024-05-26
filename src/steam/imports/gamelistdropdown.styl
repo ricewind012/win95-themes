@@ -3,6 +3,11 @@ icons = \
 	url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAm0lEQVQ4ja1TyxKEIAxLnP1w+fJ4wAp9wD5me3EMTYhtJOrSAuc7QB+yWWCQ6uZkidPD+h7yALwPkk7IRF7RooIPsmOGk3RujmgdAFrj3Xw+RMPCJ8nsq1/uCzgT1vHBOZAqbWp7lgTI+N5AtvLMJCVUA9z4uAfJ2YEwVhUHNmNxCy4HuzVGsuXgqyBVafxblF3frz/T6sKFRq8LBTNs/ZuU14QAAAAASUVORK5CYII=') \
 	url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAlklEQVQ4jY2SUQ6AMAhDy+K9rSefH8hkE2QkRgN9hU0EcfQgJ5FwTSrIQPnmJqZNMBPYDLTWSY4Jza2nYGJGEiSllWLrcEbXohOU3T0sl4wpANQThLCLtoo9UMEAcFRd/+DPBJHwDzYD8ZfogRSm/kYgOULVddK6771l4rtEc17Xsz9G3+ep+TVeJzCTcb6lZu/98+3EDRZ6RZSjgajFAAAAAElFTkSuQmCC');
 
+#AppCount {
+	opacity: 1;
+	padding-left: var(--text-spacing);
+}
+
 #Bar {
 	padding: 0;
 
@@ -53,3 +58,25 @@ icons = \
 		display: none;
 	}
 }
+
+// !important in ../other/dialog-shared.styl
+div#Row {
+	@extend .menu-item;
+
+	margin: 0;
+
+	&:has(> .DialogCheckbox.Active) {
+		@extend .menu-item[checked][type="checkbox"];
+	}
+
+	.DialogCheckbox {
+		display: none;
+	}
+}
+
+#Rule {
+	@extend hr;
+
+	margin-inline: 0;
+}
+

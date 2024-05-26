@@ -5,12 +5,20 @@
 	margin: 0;
 }
 
-#FilterTag {
-	padding: 2px;
+#FilterTag,
+#SearchByTypePrompt {
+	@extend .statusbar-item;
+
+	background-color: transparent;
+	font: var(--text-ui);
 	margin: 0;
+
+	height: unset;
 }
 
 #SearchInput {
+	font: var(--text-ui);
+
 	min-height: unset;
 
 	.DialogTextInputBase {
@@ -20,25 +28,40 @@
 }
 
 #SearchFilterInput {
+	@extend .statusbar;
+
 	color: var(--color-button-text);
+	padding: 0;
+
 	align-items: center;
+
+	// TODO: unify
+	svg {
+		display: none;
+	}
 }
 
 #SearchFilterInputClear {
-	position: unset;
+	@extend button;
+	@extend .titlebar-button;
+	@extend $titlebar-button-close;
+
+	inset: 0;
 }
 
-#SearchByTypePrompt {
-	font: var(--text-ui);
-	padding: 0 18px;
+#AdvancedSearchButton {
+	background: none;
+
+	svg {
+		display: none;
+	}
 }
 
 #AdvancedSearchContainer {
 	@extend button;
 
-	margin-right: 0;
-
 	height: unset;
+	align-self: start;
 	justify-content: center;
 
 	& > .Focusable > div {
@@ -48,17 +71,27 @@
 			content: 'Search...';
 		}
 	}
-
-	svg {
-		display: none;
-	}
 }
 
 #AdvancedSearchPane {
 	@extend .window;
 	@extend .window.child;
 
+	// Make it an actual window
+	position: fixed;
+	inset: calc(10% - var(--titlebar-height)) 25%;
+
 	&::before {
-		display: none;
+		content: 'Advanced Search';
+
+		box-sizing: border-box;
+		position: unset;
+		width: 100%;
+
+		@extend .titlebar;
+		// TODO: make them all focused
+		@extend :root[focused] .titlebar;
+
+		font-weight: bold;
 	}
 }

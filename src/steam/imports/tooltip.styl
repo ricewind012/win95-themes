@@ -4,3 +4,19 @@
 	font-size: var(--text-ui-size);
 	box-shadow: none;
 }
+
+#ToolTipCustom {
+	@extend #TextToolTip;
+
+	gap: 1em;
+
+	display: flex;
+	flex-direction: column;
+}
+
+#ToolTipTitle,
+#ToolTipInsetContent {
+	color: inherit;
+	margin: 0;
+}
+

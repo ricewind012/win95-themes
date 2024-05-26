@@ -2,8 +2,24 @@
 	padding: var(--dialog-spacing);
 }
 
+#DropDownContainer {
+	box-shadow: none;
+
+	// TODO:
+	// I am simply not going to bother,
+	// because V*lve decided it's a good idea
+	// to use icons instead of text.
+	svg {
+		display: none;
+	}
+}
+
+#DropDownItems {
+	font: var(--text-ui);
+}
+
 #FilterArea {
-	gap: 6px 8px;
+	gap: 4px 8px;
 }
 
 #FilterBucket {
@@ -24,6 +40,20 @@
 
 #FilterBucketBoxes {
 	padding: 0;
+
+	#SearchResultsBox & {
+		// TODO: popup in win95-shared
+		@extend .window;
+		@extend .window.child;
+	}
+}
+
+#SteamDeckCompatDropDown {
+	padding: 0;
+
+	.DialogDropDown_CurrentDisplay {
+		width: unset;
+	}
 }
 
 #ExtraTall {
