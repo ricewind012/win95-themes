@@ -6,7 +6,8 @@
 
 // "Do Not Disturb"
 .contextMenuSectionContent {
-	&::after {
+	&:last-child::before,
+	&:not(:last-child)::after {
 		content: '';
 
 		@extend hr;
@@ -29,5 +30,16 @@
 	color: var(--color-gray-text);
 	padding: 0;
 	margin-top: 2px;
+}
+
+// Friend
+.contextMenuGameTitle,
+.contextMenuGameOptions svg {
+	display: none;
+}
+
+.contextMenuGameOptions,
+.contextMenuUnselectable {
+	background-color: transparent;
 }
 

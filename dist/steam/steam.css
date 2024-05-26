@@ -215,7 +215,8 @@ hr,
 .msg.timeDivision .preHorizDivider,
 .DialogHBar,
 .HBar,
-.contextMenuSectionContent::after,
+.contextMenuSectionContent:last-child::before,
+.contextMenuSectionContent:not(:last-child)::after,
 ._2Kmn7fJOkLT4KyWl467a9M::after,
 ._3i6PczGBBYzCDZXkCDbJAD::before,
 ._1F2EcTc-0vNkdiBz8ATakM,
@@ -3356,7 +3357,8 @@ button,
   box-shadow: none !important;
   padding: 0 !important;
 }
-.contextMenuSectionContent::after {
+.contextMenuSectionContent:last-child::before,
+.contextMenuSectionContent:not(:last-child)::after {
   content: '' !important;
 }
 .personaContextMenuItem .DialogCheckbox {
@@ -3371,6 +3373,14 @@ button,
   color: var(--color-gray-text) !important;
   padding: 0 !important;
   margin-top: 2px !important;
+}
+.contextMenuGameTitle,
+.contextMenuGameOptions svg {
+  display: none !important;
+}
+.contextMenuGameOptions,
+.contextMenuUnselectable {
+  background-color: transparent !important;
 }
 ::placeholder {
   font: var(--text-ui) !important;
