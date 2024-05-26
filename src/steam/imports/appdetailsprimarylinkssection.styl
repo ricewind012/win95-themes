@@ -1,13 +1,3 @@
-#Links {
-	height: unset;
-}
-
-#LinksSection {
-	& > div {
-		border: none;
-	}
-}
-
 #Link {
 	background-color: transparent;
 
@@ -22,12 +12,22 @@
 	margin-right: 12px;
 }
 
-#Text {
-	@extend $link;
+#Links {
+	height: unset;
+}
+
+#LinksSection {
+	& > div {
+		border: none;
+	}
 }
 
 #MenuButton {
 	@extend button;
 	@extend .titlebar-button;
 	@extend $icon-more;
+}
+
+#Text {
+	@extend $link;
 }

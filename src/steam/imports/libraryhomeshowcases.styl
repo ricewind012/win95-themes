@@ -12,6 +12,16 @@
 	}
 }
 
+#ChildrenContainer {
+	// PageableContainer
+	& > div {
+		border: none;
+		box-shadow: none;
+		padding: 0;
+		margin: 0;
+	}
+}
+
 #Collapser {
 	@extend button;
 	@extend .titlebar-button;
@@ -25,31 +35,45 @@
 	}
 }
 
-#Message {
-	@extend $text-reset;
-}
-
-#Showcase {
-	@extend fieldset;
-
-	margin-bottom: 16px;
-}
-
-#ShowcaseHeader {
-	@extend $legend-as-div;
-
-	background-color: var(--color-window);
-	color: inherit;
-	border: none;
-
-	top: -12px;
-	align-items: center;
+// Context menu
+#CollectionDropDownContainer {
+	// !important
+	.DesktopUI && ._DialogInputContainer {
+		@extend .window;
+		@extend .window.child;
+	}
 }
 
 #CountDisplay {
 	@extend $text-reset;
 
 	margin-left: var(--text-spacing);
+}
+
+#DropDownItems {
+	font: var(--text-ui);
+	margin: 0;
+
+	&#OptionsRule {
+		border: none;
+
+		&::before {
+			content: '';
+
+			position: unset;
+			width: calc(100% + 40px);
+			display: block;
+
+			@extend hr;
+
+			background-color: var(--color-button-face);
+			margin-left: -20px;
+		}
+	}
+}
+
+#Message {
+	@extend $text-reset;
 }
 
 #PageButtons {
@@ -74,43 +98,19 @@
 	--button-img: var(--icon-arrow-right);
 }
 
-#ChildrenContainer {
-	// PageableContainer
-	& > div {
-		border: none;
-		box-shadow: none;
-		padding: 0;
-		margin: 0;
-	}
+#Showcase {
+	@extend fieldset;
+
+	margin-bottom: 16px;
 }
 
-// Context menu
-#CollectionDropDownContainer {
-	// !important
-	.DesktopUI && ._DialogInputContainer {
-		@extend .window;
-		@extend .window.child;
-	}
-}
+#ShowcaseHeader {
+	@extend $legend-as-div;
 
-#DropDownItems {
-	font: var(--text-ui);
-	margin: 0;
+	background-color: var(--color-window);
+	color: inherit;
+	border: none;
 
-	&#OptionsRule {
-		border: none;
-
-		&::before {
-			content: '';
-
-			position: unset;
-			width: calc(100% + 40px);
-			display: block;
-
-			@extend hr;
-
-			background-color: var(--color-button-face);
-			margin-left: -20px;
-		}
-	}
+	top: -12px;
+	align-items: center;
 }

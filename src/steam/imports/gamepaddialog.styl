@@ -1,3 +1,15 @@
+#ControlsListChild {
+	max-width: unset;
+}
+
+#ControlsListOuterPanel {
+	--controls-list-spacing: var(--label-spacing);
+
+	gap: var(--dialog-button-spacing);
+
+	flex: unset;
+}
+
 #Field {
 	--field-row-children-spacing: var(--label-spacing);
 
@@ -22,6 +34,11 @@
 	@extend $text-reset;
 
 	margin-top: var(--text-spacing);
+
+	#WithDescription > div + & {
+		color: var(--color-gray-text);
+		margin-left: calc(var(--sel-button-size) + var(--label-spacing));
+	}
 }
 
 #FieldIcon {
@@ -42,25 +59,6 @@
 
 #FieldLabelRow {
 	flex-direction: row-reverse;
-}
-
-#FieldDescription {
-	#WithDescription > div + & {
-		color: var(--color-gray-text);
-		margin-left: calc(var(--sel-button-size) + var(--label-spacing));
-	}
-}
-
-#ControlsListOuterPanel {
-	--controls-list-spacing: var(--label-spacing);
-
-	gap: var(--dialog-button-spacing);
-
-	flex: unset;
-}
-
-#ControlsListChild {
-	max-width: unset;
 }
 
 #Toggle {

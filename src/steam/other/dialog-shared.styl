@@ -3,18 +3,12 @@
 }
 
 .Modal {
-	&Overlay {
-		&Background {
-			display: none;
-		}
+	&OverlayBackground {
+		display: none;
 	}
 
 	&Position {
 		background-image: none;
-
-		&_TopBar {
-			display: none;
-		}
 
 		&_Content {
 			@extend $text-reset;
@@ -36,10 +30,41 @@
 				display: none;
 			}
 		}
+
+		&_TopBar {
+			display: none;
+		}
 	}
 }
 
 .Dialog {
+	&Body {
+		@extend [role="tabpanel"];
+
+		-webkit-mask-image: none; // client settings
+		font: var(--text-ui);
+		margin: 0;
+		gap: var(--text-spacing);
+
+		overflow: auto;
+
+		&Text {
+			@extend $text-reset;
+
+			padding: 0;
+			margin-bottom: var(--text-spacing);
+		}
+
+		// "In Game" settings tab
+		& > .DialogSubHeader {
+			position: unset;
+		}
+
+		a {
+			@extend $link;
+		}
+	}
+
 	&Button {
 		background-image: none;
 
@@ -55,45 +80,6 @@
 			opacity: 1;
 			box-shadow: none;
 		}
-	}
-
-	&DropDown {
-		@extend select;
-
-		display: flex;
-		align-items: center;
-
-		&_Arrow {
-			display: none;
-		}
-
-		&_CurrentDisplay {
-			background-color: transparent;
-			padding: 0;
-		}
-	}
-
-	// TODO: :read-only in win95-shared
-	&Input {
-		// It's an <input>, but overlay browser has type="input"
-		background: var(--color-window);
-		color: var(--color-window-text);
-		box-shadow: none;
-
-		&LabelGroup {
-			margin: 0;
-		}
-
-		&_Wrapper {
-			gap: var(--dialog-button-spacing);
-		}
-	}
-
-	&MenuPosition ._DialogInputContainer {
-		@extend .window;
-		@extend .window.child;
-
-		font: var(--text-ui);
 	}
 
 	&Checkbox {
@@ -129,19 +115,59 @@
 		}
 	}
 
-	&TextInputBase {
-		box-shadow: none;
+	&Content {
+		background: transparent;
+		padding: var(--dialog-spacing);
+		padding-bottom: calc(var(--text-full) + 3px + var(--window-gap) + var(--dialog-spacing));
+
+		&Transition {
+			background: transparent;
+
+			width: unset;
+			max-width: unset;
+		}
+
+		&Transition > & {
+			--dialog-spacing: 0px;
+		}
 	}
 
-	&Toggle_Label {
-		font: var(--text-ui);
-		color: var(--color-button-text);
+	&ControlsSection {
+		@extend fieldset;
+
+		gap: var(--text-spacing);
+
+		display: flex;
+		flex-direction: column;
+
+		&Header {
+			@extend $text-reset;
+			@extend $legend-as-div;
+		}
+
+		& > .DialogBodyText {
+			@extend $legend-as-div;
+		}
 	}
 
-	&Label {
-		font: var(--text-ui);
-		color: inherit;
-		text-transform: unset;
+	&DropDown {
+		@extend select;
+
+		display: flex;
+		align-items: center;
+
+		&_Arrow {
+			display: none;
+		}
+
+		&_CurrentDisplay {
+			background-color: transparent;
+			padding: 0;
+		}
+	}
+
+	&Footer {
+		padding-top: var(--dialog-button-spacing);
 	}
 
 	&Header {
@@ -170,81 +196,53 @@
 		}
 	}
 
-	&Content {
-		background: transparent;
-		padding: var(--dialog-spacing);
-		padding-bottom: calc(var(--text-full) + 3px + var(--window-gap) + var(--dialog-spacing));
-
-		&Transition {
-			background: transparent;
-
-			width: unset;
-			max-width: unset;
-		}
-
-		&Transition > & {
-			--dialog-spacing: 0px;
-		}
-	}
-
-	&Body {
-		@extend [role="tabpanel"];
-
-		-webkit-mask-image: none; // client settings
-		font: var(--text-ui);
-		margin: 0;
-		gap: var(--text-spacing);
-
-		overflow: auto;
-
-		&Text {
-			@extend $text-reset;
-
-			padding: 0;
-			margin-bottom: var(--text-spacing);
-		}
-
-		// "In Game" settings tab
-		& > .DialogSubHeader {
-			position: unset;
-		}
-
-		a {
-			@extend $link;
-		}
-	}
-
 	&InnerBody {
 		padding: 0;
 
 		overflow: visible;
 	}
 
-	&Footer {
-		padding-top: var(--dialog-button-spacing);
+	// TODO: :read-only in win95-shared
+	&Input {
+		// It's an <input>, but overlay browser has type="input"
+		background: var(--color-window);
+		color: var(--color-window-text);
+		box-shadow: none;
+
+		&LabelGroup {
+			margin: 0;
+		}
+
+		&_Wrapper {
+			gap: var(--dialog-button-spacing);
+		}
 	}
 
-	&ControlsSection {
-		@extend fieldset;
+	&Label {
+		font: var(--text-ui);
+		color: inherit;
+		text-transform: unset;
+	}
 
-		gap: var(--text-spacing);
+	&MenuPosition ._DialogInputContainer {
+		@extend .window;
+		@extend .window.child;
 
-		display: flex;
-		flex-direction: column;
-
-		&Header {
-			@extend $text-reset;
-			@extend $legend-as-div;
-		}
-
-		& > .DialogBodyText {
-			@extend $legend-as-div;
-		}
+		font: var(--text-ui);
 	}
 
 	&SubHeader {
 		@extend $text-reset;
 		@extend $legend-as-div;
+	}
+
+	&TextInputBase {
+		box-shadow: none;
+	}
+
+	&Toggle_Label {
+		font: var(--text-ui);
+		color: var(--color-button-text);
 	}
 }
 
@@ -257,22 +255,6 @@
 
 	&ColLayout > &Layout {
 		flex: 0;
-	}
-}
-
-.GenericConfirmDialog {
-	padding: 0;
-
-	justify-content: start;
-
-	.DialogBody {
-		box-shadow: none;
-		gap: var(--messagebox-content-spacing);
-		padding: var(--messagebox-spacing);
-
-		&Text {
-			margin-bottom: 0;
-		}
 	}
 }
 
@@ -294,6 +276,22 @@
 		// "Mark as Private" dialog
 		div:not(.DialogHeader) {
 			display: none;
+		}
+	}
+}
+
+.GenericConfirmDialog {
+	padding: 0;
+
+	justify-content: start;
+
+	.DialogBody {
+		box-shadow: none;
+		gap: var(--messagebox-content-spacing);
+		padding: var(--messagebox-spacing);
+
+		&Text {
+			margin-bottom: 0;
 		}
 	}
 }

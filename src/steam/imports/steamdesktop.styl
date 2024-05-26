@@ -1,18 +1,23 @@
-#Wrapper {
-	background-color: transparent;
-	border: none;
+// The browser view is above everything else
+#Browser {
+	margin-left: 2px;
+	margin-top: 2px;
+
+	position: relative;
+	width: calc(100% - 4px);
 
 	&::before {
 		content: '';
 
-		position: fixed;
-		top: calc(var(--border-size) + var(--window-spacing));
-		left: calc(var(--border-size) + var(--window-spacing));
-		width: calc(100% - var(--titlebar-spacing) * 2 - var(--icon-size) - 88px);
-		height: var(--titlebar-height);
+		position: absolute;
+		inset: -2px -2px -3px -2px;
 
-		app-region: drag;
+		@extend .content-container;
 	}
+}
+
+#BrowserWrapper {
+	height: calc(100% - 3px);
 }
 
 #FocusBar,
@@ -20,39 +25,24 @@
 	display: none;
 }
 
-#TopBar {
-	background: transparent;
-	box-shadow: none;
+#LockIcon {
+	@extend $text-reset;
+
+	padding-bottom: 1px;
 }
 
-#TitleBar {
-	flex-direction: column-reverse;
-	height: unset;
-
-	-webkit-app-region: no-drag;
-
-	&::before {
-		content: '';
-
-		@extend hr;
-
-		margin-top: 2px;
-
-		width: 100%;
-	}
+#OuterFrame {
+	gap: var(--window-gap);
 }
 
-#WindowControls,
-#RootMenuBar {
-	flex: initial;
-	cursor: default;
-}
+#ReloadButton {
+	@extend button;
 
-#WindowControls {
-	&::after {
-		content: 'Steam';
+	min-width: 21px;
+	height: 21px;
 
-		@extend $dialog-title;
+	svg {
+		padding: 0;
 	}
 }
 
@@ -80,47 +70,26 @@
 	}
 }
 
-// The browser view is above everything else
-#Browser {
-	margin-left: 2px;
-	margin-top: 2px;
+#TitleBar {
+	flex-direction: column-reverse;
+	height: unset;
 
-	position: relative;
-	width: calc(100% - 4px);
+	-webkit-app-region: no-drag;
 
 	&::before {
 		content: '';
 
-		position: absolute;
-		inset: -2px -2px -3px -2px;
+		@extend hr;
 
-		@extend .content-container;
+		margin-top: 2px;
+
+		width: 100%;
 	}
 }
 
-#BrowserWrapper {
-	height: calc(100% - 3px);
-}
-
-#LockIcon {
-	@extend $text-reset;
-
-	padding-bottom: 1px;
-}
-
-#OuterFrame {
-	gap: var(--window-gap);
-}
-
-#ReloadButton {
-	@extend button;
-
-	min-width: 21px;
-	height: 21px;
-
-	svg {
-		padding: 0;
-	}
+#TopBar {
+	background: transparent;
+	box-shadow: none;
 }
 
 #URL {
@@ -139,3 +108,35 @@
 
 	width: 100%;
 }
+
+#RootMenuBar,
+#WindowControls {
+	flex: initial;
+	cursor: default;
+}
+
+#WindowControls {
+	&::after {
+		content: 'Steam';
+
+		@extend $dialog-title;
+	}
+}
+
+#Wrapper {
+	background-color: transparent;
+	border: none;
+
+	&::before {
+		content: '';
+
+		position: fixed;
+		top: calc(var(--border-size) + var(--window-spacing));
+		left: calc(var(--border-size) + var(--window-spacing));
+		width: calc(100% - var(--titlebar-spacing) * 2 - var(--icon-size) - 88px);
+		height: var(--titlebar-height);
+
+		app-region: drag;
+	}
+}
+

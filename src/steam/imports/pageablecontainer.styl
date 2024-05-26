@@ -19,6 +19,24 @@
 	right: 8px;
 }
 
+#PageLeft,
+#PageRight {
+	@extend $pageable-container-button;
+
+	&#Disabled {
+		@extend button:disabled;
+		@extend .titlebar-button:disabled;
+	}
+}
+
+#PageLeft {
+	--button-img: var(--icon-arrow-left);
+}
+
+#PageRight {
+	--button-img: var(--icon-arrow-right);
+}
+
 #HeaderPageControls {
 	@extend $text-reset;
 
@@ -37,22 +55,4 @@
 	@extend $legend-as-div;
 
 	background-color: var(--color-window);
-}
-
-#PageLeft,
-#PageRight {
-	@extend $pageable-container-button;
-
-	&#Disabled {
-		@extend button:disabled;
-		@extend .titlebar-button:disabled;
-	}
-}
-
-#PageLeft {
-	--button-img: var(--icon-arrow-left);
-}
-
-#PageRight {
-	--button-img: var(--icon-arrow-right);
 }

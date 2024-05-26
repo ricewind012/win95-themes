@@ -1,3 +1,31 @@
+#BottomControlsRow {
+	padding-top: 6px;
+
+	height: unset;
+
+	.DialogTwoColLayout {
+		gap: 0;
+
+		& > .DialogButton {
+			min-width: unset;
+		}
+	}
+
+	.DialogFooter {
+		padding: 0;
+	}
+}
+
+#ColumnResizer {
+	--separator-size: 13px;
+
+	opacity: 0;
+	padding: 0;
+
+	width: var(--separator-size);
+	margin-right: calc(var(--separator-size) / -2);
+}
+
 #DialogBody {
 	box-shadow: none;
 	padding: 0;
@@ -8,19 +36,47 @@
 	}
 }
 
-#TopControlsCtr {
-	@extend [role="tablist"];
+#DropdownLabel {
+	font: var(--text-ui);
+	margin-bottom: 4px;
 
-	gap: 0;
+	display: block;
+}
 
-	.DialogDropDown {
-		right: calc(var(--search-button-width) + var(--right-offset) * 2);
-		width: 33vw;
+#FilterOptionsCheckboxesCtr {
+	align-self: center;
+}
+
+#FilterOptionsCtr {
+	padding: 0;
+	padding-top: 6px;
+
+	&:not(#Collapsed) {
+		gap: 6px;
+
+		height: unset;
+	}
+
+	&#Collapsed {
+		display: none;
+	}
+
+	.DialogInput {
+		width: 100%;
+	}
+
+	.DialogDropDown,
+	.DialogInput {
+		margin-bottom: 6px;
 	}
 }
 
-#TopControlsCtr .DialogDropDown,
-#SearchButton {
+#RadioButtonColumn {
+	display: none;
+}
+
+#SearchButton,
+#TopControlsCtr .DialogDropDown {
 	--search-button-width: calc(2ex + 5px * 2);
 	--right-offset: 7px;
 
@@ -71,10 +127,6 @@
 	gap: 0;
 }
 
-#RadioButtonColumn {
-	display: none;
-}
-
 #SelectColumnsButton,
 #ServerListHeaderCell {
 	@extend button;
@@ -102,16 +154,6 @@
 	}
 }
 
-#ColumnResizer {
-	--separator-size: 13px;
-
-	opacity: 0;
-	padding: 0;
-
-	width: var(--separator-size);
-	margin-right: calc(var(--separator-size) / -2);
-}
-
 #SelectColumnsButton {
 	text-overflow: unset;
 
@@ -131,59 +173,6 @@
 	}
 }
 
-#FilterOptionsCheckboxesCtr {
-	align-self: center;
-}
-
-#FilterOptionsCtr {
-	padding: 0;
-	padding-top: 6px;
-
-	&:not(#Collapsed) {
-		gap: 6px;
-
-		height: unset;
-	}
-
-	&#Collapsed {
-		display: none;
-	}
-
-	.DialogInput {
-		width: 100%;
-	}
-
-	.DialogDropDown,
-	.DialogInput {
-		margin-bottom: 6px;
-	}
-}
-
-#DropdownLabel {
-	font: var(--text-ui);
-	margin-bottom: 4px;
-
-	display: block;
-}
-
-#BottomControlsRow {
-	padding-top: 6px;
-
-	height: unset;
-
-	.DialogTwoColLayout {
-		gap: 0;
-
-		& > .DialogButton {
-			min-width: unset;
-		}
-	}
-
-	.DialogFooter {
-		padding: 0;
-	}
-}
-
 #ToggleShowFilterDetailsButton {
 	width: 111px;
 
@@ -193,6 +182,17 @@
 
 	svg {
 		display: none;
+	}
+}
+
+#TopControlsCtr {
+	@extend [role="tablist"];
+
+	gap: 0;
+
+	.DialogDropDown {
+		right: calc(var(--search-button-width) + var(--right-offset) * 2);
+		width: 33vw;
 	}
 }
 

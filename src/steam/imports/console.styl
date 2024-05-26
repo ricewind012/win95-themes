@@ -22,16 +22,6 @@
 	@extend $content-container-alt;
 }
 
-#Timestamp {
-	&::before {
-		content: '[';
-	}
-
-	&::after {
-		content: ']';
-	}
-}
-
 // Console colors
 #Assert,
 #Error {
@@ -63,4 +53,14 @@
 
 	flex-direction: column;
 	height: unset;
+}
+
+#Timestamp {
+	&::before {
+		content: '[';
+	}
+
+	&::after {
+		content: ']';
+	}
 }

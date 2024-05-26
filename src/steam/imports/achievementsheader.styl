@@ -14,6 +14,12 @@
 	@extend $text-reset;
 }
 
+#ProgressLabel {
+	@extend $legend-as-div;
+
+	gap: var(--text-spacing);
+}
+
 #StatsBlock {
 	@extend fieldset;
 
@@ -22,11 +28,5 @@
 
 #Title {
 	@extend $dialog-title;
-}
-
-#ProgressLabel {
-	@extend $legend-as-div;
-
-	gap: var(--text-spacing);
 }
 

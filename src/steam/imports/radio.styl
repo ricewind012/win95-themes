@@ -4,12 +4,6 @@
 	padding: 0;
 }
 
-#Group {
-	box-shadow: none;
-	gap: var(--text-spacing);
-	flex-direction: column;
-}
-
 #Button {
 	@extend label;
 	@extend input[type="radio"];
@@ -42,4 +36,10 @@
 	& > span {
 		parentheses();
 	}
+}
+
+#Group {
+	box-shadow: none;
+	gap: var(--text-spacing);
+	flex-direction: column;
 }

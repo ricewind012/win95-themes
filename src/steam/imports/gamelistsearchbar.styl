@@ -1,3 +1,50 @@
+#AdvancedSearchButton {
+	background: none;
+
+	svg {
+		display: none;
+	}
+}
+
+#AdvancedSearchContainer {
+	@extend button;
+
+	height: unset;
+	align-self: start;
+	justify-content: center;
+
+	& > .Focusable > div {
+		cursor: default;
+
+		&::before {
+			content: 'Search...';
+		}
+	}
+}
+
+#AdvancedSearchPane {
+	@extend .window;
+	@extend .window.child;
+
+	// Make it an actual window
+	position: fixed;
+	inset: calc(10% - var(--titlebar-height)) 25%;
+
+	&::before {
+		content: 'Advanced Search';
+
+		box-sizing: border-box;
+		position: unset;
+		width: 100%;
+
+		@extend .titlebar;
+		// TODO: make them all focused
+		@extend :root[focused] .titlebar;
+
+		font-weight: bold;
+	}
+}
+
 #Container {
 	background-color: transparent;
 
@@ -49,49 +96,3 @@
 	inset: 0;
 }
 
-#AdvancedSearchButton {
-	background: none;
-
-	svg {
-		display: none;
-	}
-}
-
-#AdvancedSearchContainer {
-	@extend button;
-
-	height: unset;
-	align-self: start;
-	justify-content: center;
-
-	& > .Focusable > div {
-		cursor: default;
-
-		&::before {
-			content: 'Search...';
-		}
-	}
-}
-
-#AdvancedSearchPane {
-	@extend .window;
-	@extend .window.child;
-
-	// Make it an actual window
-	position: fixed;
-	inset: calc(10% - var(--titlebar-height)) 25%;
-
-	&::before {
-		content: 'Advanced Search';
-
-		box-sizing: border-box;
-		position: unset;
-		width: 100%;
-
-		@extend .titlebar;
-		// TODO: make them all focused
-		@extend :root[focused] .titlebar;
-
-		font-weight: bold;
-	}
-}

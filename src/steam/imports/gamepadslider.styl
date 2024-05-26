@@ -4,14 +4,6 @@
 	height: unset;
 }
 
-#SliderTrack {
-	@extend input[type="range"]::-webkit-slider-runnable-track;
-
-	&::before {
-		display: none;
-	}
-}
-
 #SliderHandle {
 	@extend input[type="range"]::-webkit-slider-thumb;
 
@@ -20,4 +12,12 @@
 
 #SliderHandleContainer {
 	transform: translateX(calc(-100% * var(--inverse-normalized-value) + 11px * var(--inverse-normalized-value)));
+}
+
+#SliderTrack {
+	@extend input[type="range"]::-webkit-slider-runnable-track;
+
+	&::before {
+		display: none;
+	}
 }

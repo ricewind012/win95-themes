@@ -89,6 +89,49 @@
 }
 
 // Workshop
+#Controls {
+	& > .DialogButton {
+		@extend .titlebar-button;
+		@extend $icon-trash;
+
+		svg {
+			display: none;
+		}
+	}
+}
+
+#Details {
+	& > :first-child {
+		width: 88px;
+
+		display: flex;
+		justify-content: center;
+	}
+}
+
+#DragHandle {
+	opacity: 1;
+	color: var(--color-window-text);
+
+	left: 80%;
+}
+
+#LoadOrder,
+#SortedColumn {
+	font: var(--text-ui);
+	color: var(--color-window-text);
+}
+
+#TextDetails {
+	background-color: transparent;
+	color: var(--color-window-text);
+}
+
+#Title {
+	@extend $text-reset;
+	@extend $legend-as-div;
+}
+
 #WorkshopItemsRowsScrollable {
 	@extend .content-container;
 
@@ -112,54 +155,11 @@
 	}
 }
 
-#LoadOrder,
-#SortedColumn {
-	font: var(--text-ui);
-	color: var(--color-window-text);
-}
-
-#Details {
-	& > :first-child {
-		width: 88px;
-
-		display: flex;
-		justify-content: center;
-	}
-}
-
-#TextDetails {
-	background-color: transparent;
-	color: var(--color-window-text);
-}
-
-#Title {
-	@extend $text-reset;
-	@extend $legend-as-div;
-}
-
 #WorkshopItemDependencies,
 #WorkshopItemTagsContainer {
 	background-color: transparent;
 	font: var(--text-ui);
 	color: var(--color-gray-text);
-}
-
-#DragHandle {
-	opacity: 1;
-	color: var(--color-window-text);
-
-	left: 80%;
-}
-
-#Controls {
-	& > .DialogButton {
-		@extend .titlebar-button;
-		@extend $icon-trash;
-
-		svg {
-			display: none;
-		}
-	}
 }
 
 // etc.
