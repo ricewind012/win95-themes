@@ -1431,7 +1431,9 @@ table {
 ._2VJwnBYoIWLWhunHyjXDUD[sort],
 ._3mCrTKGesl-jD-k-buQ13_[sort],
 ._1PuPpIr-INhTmdxOBEIaoE[sort],
+._3m0MnUo45wjLOfNLpZ-3KH > div:has(svg),
 ._1SKB0Xc7OpWlOlr-wSi8ho,
+._2VJwnBYoIWLWhunHyjXDUD:has(svg),
 ._3mCrTKGesl-jD-k-buQ13_:has(svg),
 ._1PuPpIr-INhTmdxOBEIaoE:has(svg) {
   --color-to-change: var(--color-button-text) !important;
@@ -1442,7 +1444,9 @@ table {
 ._2VJwnBYoIWLWhunHyjXDUD[sort="ascending"],
 ._3mCrTKGesl-jD-k-buQ13_[sort="ascending"],
 ._1PuPpIr-INhTmdxOBEIaoE[sort="ascending"],
+._3m0MnUo45wjLOfNLpZ-3KH > div:has([d="M17.98 26.54L3.20996 11.77H32.75L17.98 26.54Z"]),
 ._1SKB0Xc7OpWlOlr-wSi8ho:has(> ._2lnv61nvDJ1QaIUATpSvAI),
+._2VJwnBYoIWLWhunHyjXDUD:has([d="M17.98 26.54L3.20996 11.77H32.75L17.98 26.54Z"]),
 ._3mCrTKGesl-jD-k-buQ13_:has([d="M17.98 26.54L3.20996 11.77H32.75L17.98 26.54Z"]),
 ._1PuPpIr-INhTmdxOBEIaoE:has([d="M17.98 26.54L3.20996 11.77H32.75L17.98 26.54Z"]) {
   --button-img: var(--icon-arrow-bottom) !important;
@@ -1453,7 +1457,9 @@ table {
 ._2VJwnBYoIWLWhunHyjXDUD[sort="descending"],
 ._3mCrTKGesl-jD-k-buQ13_[sort="descending"],
 ._1PuPpIr-INhTmdxOBEIaoE[sort="descending"],
+._3m0MnUo45wjLOfNLpZ-3KH > div:has([d="M17.98 10.23L3.20996 25H32.75L17.98 10.23Z"]),
 ._1SKB0Xc7OpWlOlr-wSi8ho:has(> ._3OdnV11WP2v1gA3E8EGlR5),
+._2VJwnBYoIWLWhunHyjXDUD:has([d="M17.98 10.23L3.20996 25H32.75L17.98 10.23Z"]),
 ._3mCrTKGesl-jD-k-buQ13_:has([d="M17.98 10.23L3.20996 25H32.75L17.98 10.23Z"]),
 ._1PuPpIr-INhTmdxOBEIaoE:has([d="M17.98 10.23L3.20996 25H32.75L17.98 10.23Z"]) {
   --button-img: var(--icon-arrow-top) !important;
@@ -3750,6 +3756,9 @@ img[src="/images/steam_spinner.png"] {
   margin: 0 var(--border-size) !important;
   margin-top: var(--text-spacing) !important;
 }
+._3m0MnUo45wjLOfNLpZ-3KH svg {
+  display: none !important;
+}
 ._3m0MnUo45wjLOfNLpZ-3KH > :nth-child(1) {
   min-width: 5% !important;
 }
@@ -5836,6 +5845,9 @@ div:not([class]) > .S-_LaQG5eEOM2HWZ-geJI {
 }
 ._2VJwnBYoIWLWhunHyjXDUD:last-of-type {
   height: 17px !important;
+}
+._2VJwnBYoIWLWhunHyjXDUD svg {
+  display: none !important;
 }
 ._2I8M7g9rIxbeCZoFpl6_as {
   color: inherit !important;

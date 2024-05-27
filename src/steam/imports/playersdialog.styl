@@ -44,10 +44,15 @@
 #PlayersListHeaderCell {
 	@extend button;
 	@extend .table-button;
+	@extend $table-button-arrows;
 
 	// "Add Friend" column
 	&:last-of-type {
 		height: 17px;
+	}
+
+	svg {
+		display: none;
 	}
 }
 
