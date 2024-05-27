@@ -1,10 +1,9 @@
-#PagedSettingsDialog_Title,
 #PageListSeparator,
 #PageListItem_Icon {
 	display: none;
 }
 
-:is(.PopupFullWindow, .ModalPosition_Content) > #PagedSettingsDialog {
+#PagedSettingsDialog {
 	margin: var(--dialog-spacing);
 
 	min-width: unset;
@@ -13,6 +12,10 @@
 
 	.DialogDropDown {
 		min-width: 75px;
+	}
+
+	.DialogHeader {
+		display: none;
 	}
 }
 
@@ -46,3 +49,11 @@
 		@extend [role="tab"][aria-selected="true"];
 	}
 }
+
+#PagedSettingsDialog_Title {
+	@extend $dialog-title;
+
+	text-transform: unset;
+	padding: 0;
+}
+
