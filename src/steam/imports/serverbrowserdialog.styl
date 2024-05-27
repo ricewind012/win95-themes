@@ -1,17 +1,37 @@
-#BottomControlsRow {
-	padding-top: 6px;
+$use-icon {
+	&::before {
+		content: '';
 
+		position: absolute;
+		inset: 0;
+
+		-webkit-mask: var(--button-img) no-repeat;
+		-webkit-mask-size: var(--button-img-size);
+		-webkit-mask-position: var(--button-img-pos, center);
+		background-color: var(--color-window-text);
+	}
+}
+
+#AddFavoriteButton {
+	&::before {
+		content: attr(title);
+
+		position: unset;
+	}
+}
+
+#BottomControlsRow {
+	gap: var(--dialog-button-spacing);
+	padding-top: var(--dialog-button-spacing);
+
+	position: absolute;
+	right: var(--dialog-spacing);
+	bottom: calc(var(--text-full) + 1px + var(--pos));
+	left: var(--dialog-spacing);
 	height: unset;
 
-	.DialogTwoColLayout {
-		gap: 0;
-
-		& > .DialogButton {
-			min-width: unset;
-		}
-	}
-
 	.DialogFooter {
+		gap: var(--dialog-button-spacing);
 		padding: 0;
 	}
 }
@@ -27,32 +47,39 @@
 }
 
 #DialogBody {
+	--combobox-width: 200px;
+	--dialog-body-spacing: calc(var(--dialog-button-spacing) + 22px);
+	--label-gap: 8px;
+	--pos: calc(var(--border-size) + var(--window-spacing) + var(--dialog-spacing));
+
 	box-shadow: none;
 	padding: 0;
+	margin: var(--dialog-body-spacing) 0;
 	gap: 0;
 
-	.DialogButton svg {
-		color: inherit;
+	svg {
+		display: none;
 	}
 }
 
 #DropdownLabel {
 	font: var(--text-ui);
-	margin-bottom: 4px;
+	margin-bottom: var(--text-spacing);
 
 	display: block;
 }
 
 #FilterOptionsCheckboxesCtr {
-	align-self: center;
+	align-self: start;
 }
 
 #FilterOptionsCtr {
 	padding: 0;
-	padding-top: 6px;
+	padding-top: var(--text-spacing);
+	margin-bottom: var(--tabpanel-spacing);
 
 	&:not(#Collapsed) {
-		gap: 6px;
+		gap: var(--label-gap);
 
 		height: unset;
 	}
@@ -61,13 +88,29 @@
 		display: none;
 	}
 
+	& > :not(:last-child) {
+		gap: var(--label-gap);
+
+		display: flex;
+		flex-direction: column;
+	}
+
 	.DialogInput {
 		width: 100%;
 	}
+}
 
-	.DialogDropDown,
-	.DialogInput {
-		margin-bottom: 6px;
+#PasswordColumn,
+#SecureColumn {
+	#ServerRow &:not(:empty) {
+		--button-img: var(--icon-checkmark);
+		--button-img-size: 7px;
+
+		@extend $use-icon;
+	}
+
+	&::after {
+		display: none;
 	}
 }
 
@@ -77,34 +120,34 @@
 
 #SearchButton,
 #TopControlsCtr .DialogDropDown {
-	--search-button-width: calc(2ex + 5px * 2);
-	--right-offset: 7px;
-
-	position: absolute;
-	top: 2px;
+	position: fixed;
+	top: var(--dialog-body-spacing);
 }
 
 #SearchButton {
-	right: var(--right-offset);
-	min-width: var(--search-button-width);
+	@extend .titlebar-button;
+	@extend $icon-refresh;
+
+	// TODO: weird offset
+	left: calc(var(--pos) + var(--combobox-width) + var(--toolbar-spacing) - 2px);
+
+	&#SearchActive {
+		@extend $titlebar-button-close;
+	}
 }
 
-#SwitchTabButton {
-	@extend [role="tab"];
+// !important below
+#SecureColumn[role] {
+	min-width: calc(7px * 2 + 20px);
 
-	width: unset;
-
-	&#Selected {
-		@extend [role="tab"][aria-selected="true"];
-	}
-
-	svg {
-		display: none;
+	&:not(:empty)::before {
+		content: 'VAC';
 	}
 }
 
 #ServerTabPane {
 	@extend [role="tabpanel"];
+	@extend [role="tabpanel"][compact];
 }
 
 #ServerList {
@@ -113,14 +156,26 @@
 	border: none;
 	margin: 0;
 
-	div[role="rowgroup"] {
+	[role="rowgroup"] {
 		overflow: auto;
+
+		// No servers
+		& > div {
+			padding: 4px;
+		}
 	}
 }
 
 #ServerListHeaderCtr {
 	background-color: transparent;
 	padding: 0;
+
+	#PasswordColumn {
+		--button-img-pos: 4px 3px;
+
+		@extend $use-icon;
+		@extend $icon-lock;
+	}
 }
 
 #ServerListHeaderRow {
@@ -134,11 +189,40 @@
 
 	min-width: unset;
 	height: 17px;
+
+	// TODO: unify with other tables
+	&:has(svg) {
+		@extend .table-button[sort];
+	}
+
+	&:has([d="M17.98 26.54L3.20996 11.77H32.75L17.98 26.54Z"]) {
+		@extend .table-button[sort="ascending"];
+	}
+
+	&:has([d="M17.98 10.23L3.20996 25H32.75L17.98 10.23Z"]) {
+		@extend .table-button[sort="descending"];
+	}
 }
 
-#PasswordColumn,
-#SecureColumn {
-	padding: 0 2px;
+#SwitchTabButton {
+	@extend [role="tab"];
+
+	width: unset;
+
+	// TODO: reuse for more <button> tabs
+	&:active,
+	&:focus {
+		outline: none;
+		color: var(--color-button-text);
+		text-shadow: none;
+		box-shadow:
+			1px 0 var(--color-button-shadow-dark),
+			1px 1px var(--color-tab-border);
+	}
+
+	&#Selected {
+		@extend [role="tab"][aria-selected="true"];
+	}
 }
 
 #ServerListHeaderSort {
@@ -147,11 +231,6 @@
 	text-transform: unset;
 
 	justify-content: space-between;
-
-	svg {
-		width: var(--text-full);
-		height: var(--text-full);
-	}
 }
 
 #SelectColumnsButton {
@@ -168,20 +247,26 @@
 	}
 
 	&#SelectedRow {
+		--color-window-text: var(--color-highlight-text);
 		background: var(--color-highlight);
 		color: var(--color-highlight-text);
+	}
+
+	[role="cell"] {
+		// 4px to make #PasswordColumn checkmark visible
+		padding: 4px 7px;
+
+		// Make text overflow work
+		display: block;
 	}
 }
 
 #ToggleShowFilterDetailsButton {
-	width: 111px;
+	min-width: 111px;
 
 	&#Selected {
 		@extend button:active;
-	}
-
-	svg {
-		display: none;
+		@extend .icon-button:active;
 	}
 }
 
@@ -191,8 +276,7 @@
 	gap: 0;
 
 	.DialogDropDown {
-		right: calc(var(--search-button-width) + var(--right-offset) * 2);
-		width: 33vw;
+		width: var(--combobox-width);
 	}
 }
 
