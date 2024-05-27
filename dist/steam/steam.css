@@ -1311,7 +1311,10 @@ div._1BAKXmqQdWRWmWX9_CbhuY::after {
 ._3C1UCvuAZ2oINYSTpUPD04[checked]::before,
 .pFo3kQOzrl9qVLPXXGIMp[checked]::before,
 ._1R-DVEa2yqX0no8BYLtn9N[checked]::before,
-div._1BAKXmqQdWRWmWX9_CbhuY[checked]::before {
+div._1BAKXmqQdWRWmWX9_CbhuY[checked]::before,
+.personaContextMenuItem.menuChecked::before,
+.pFo3kQOzrl9qVLPXXGIMp:has(.SVGIcon_Check)::before,
+.pFo3kQOzrl9qVLPXXGIMp:has(.DialogCheckbox.Active)::before {
   top: 5px !important;
 }
 .menu-item[checked][type="checkbox"]::before,
@@ -1319,6 +1322,9 @@ div._1BAKXmqQdWRWmWX9_CbhuY[checked]::before {
 .pFo3kQOzrl9qVLPXXGIMp[checked][type="checkbox"]::before,
 ._1R-DVEa2yqX0no8BYLtn9N[checked][type="checkbox"]::before,
 div._1BAKXmqQdWRWmWX9_CbhuY[checked][type="checkbox"]::before,
+.personaContextMenuItem.menuChecked[type="checkbox"]::before,
+.pFo3kQOzrl9qVLPXXGIMp:has(.SVGIcon_Check)[type="checkbox"]::before,
+.pFo3kQOzrl9qVLPXXGIMp:has(.DialogCheckbox.Active)[type="checkbox"]::before,
 .pFo3kQOzrl9qVLPXXGIMp:has(.SVGIcon_Check)::before,
 .pFo3kQOzrl9qVLPXXGIMp:has(.DialogCheckbox.Active)::before,
 div._1BAKXmqQdWRWmWX9_CbhuY:has(> .DialogCheckbox.Active)::before {
@@ -1331,7 +1337,11 @@ div._1BAKXmqQdWRWmWX9_CbhuY:has(> .DialogCheckbox.Active)::before {
 ._3C1UCvuAZ2oINYSTpUPD04[checked][type="radio"]::before,
 .pFo3kQOzrl9qVLPXXGIMp[checked][type="radio"]::before,
 ._1R-DVEa2yqX0no8BYLtn9N[checked][type="radio"]::before,
-div._1BAKXmqQdWRWmWX9_CbhuY[checked][type="radio"]::before {
+div._1BAKXmqQdWRWmWX9_CbhuY[checked][type="radio"]::before,
+.personaContextMenuItem.menuChecked[type="radio"]::before,
+.pFo3kQOzrl9qVLPXXGIMp:has(.SVGIcon_Check)[type="radio"]::before,
+.pFo3kQOzrl9qVLPXXGIMp:has(.DialogCheckbox.Active)[type="radio"]::before,
+.personaContextMenuItem.menuChecked::before {
   left: 7px !important;
   width: 6px !important;
   height: 6px !important;
