@@ -52,16 +52,16 @@
 	}
 }
 
-// TODO: I don't remember how tables look, lol
 .DialogSpanningTable {
 	@extend .content-container;
-
-	// TODO: win95-shared
-	border-spacing: 0;
 
 	td,
 	th {
 		@extend $text-reset;
+	}
+
+	td {
+		@extend .table-row;
 	}
 
 	thead th {

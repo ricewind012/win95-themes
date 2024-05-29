@@ -55,6 +55,7 @@
   --dialog-spacing: 7px !important;
   --dialog-button-spacing: 6px !important;
   --label-spacing: 6px !important;
+  --table-row-spacing: 2px 7px !important;
   --tabpanel-spacing: 12px !important;
   --text-spacing: 4px !important;
   --titlebar-spacing: 4px !important;
@@ -759,7 +760,7 @@ progress::-webkit-progress-value {
 }
 .list-item {
 /* alternative -webkit-line-clamp */
-  height: calc(var(--text-size) * var(--text-line) + 3px) !important;
+  height: calc(var(--text-ui-size) * var(--text-line) + 3px) !important;
   display: flex !important;
   align-items: center !important;
 }
@@ -856,12 +857,11 @@ progress::-webkit-progress-value {
   color: var(--color-highlight-text) !important;
 }
 table {
-  border-spacing: 4px !important;
-  border: none !important;
+  border-spacing: 0 !important;
 }
 .table-button {
   text-align: left !important;
-  padding: 2px 7px !important;
+  padding: var(--table-row-spacing) !important;
 }
 .table-button:active {
   box-shadow: var(--border-button-sunken-alt) !important;
@@ -890,9 +890,15 @@ table {
 .table-header-row,
 .setting-list-row-header .setting-list-object-key,
 .setting-list-row-header .setting-list-object-value {
+  background-color: var(--color-button-face) !important;
   box-shadow: inset -1px -1px var(--color-button-highlight), inset -2px -2px var(--color-button-shadow) !important;
   padding: 2px 5px !important;
   padding-bottom: 3px !important;
+}
+.table-row,
+.setting-list-object-key,
+.setting-list-object-value {
+  padding: var(--table-row-spacing) !important;
 }
 [role="tab"],
 .settings-tabs-widget > .monaco-action-bar .action-label,
@@ -1156,6 +1162,9 @@ body.child,
   box-shadow: var(--border-statusbar) !important;
   padding: 2px 4px 1px 4px !important;
 }
+.statusbar-item:last-child {
+  flex-grow: 1 !important;
+}
 .titlebar {
   background-color: var(--color-inactive-caption) !important;
   color: var(--color-inactive-caption-text) !important;
@@ -1308,6 +1317,7 @@ body.child,
 }
 .toolbar {
   gap: var(--toolbar-spacing) !important;
+  margin: 0 6px !important;
   display: flex !important;
 }
 .content-container,
@@ -2795,9 +2805,16 @@ body[role="document"] {
 .setting-list-object-widget {
   margin-bottom: 9px !important;
 }
-.setting-list-row-header .setting-list-object-key,
-.setting-list-row-header .setting-list-object-value {
+.setting-list-object-key,
+.setting-list-object-value {
+  line-height: unset !important;
   margin: 0 !important;
+  min-height: unset !important;
+}
+.setting-list-row,
+.setting-list-row-header {
+  font-weight: normal !important;
+  padding: 0 !important;
 }
 .setting-toolbar-container {
   left: -12px !important;
@@ -3202,8 +3219,13 @@ body[role="document"] {
   height: unset !important;
 }
 .statusbar-item {
-  position: relative !important;
   max-width: unset !important;
+}
+.statusbar-item[aria-label=""] {
+  display: none !important;
+}
+.statusbar-item.right.last-visible-item {
+  margin-right: 8px !important;
 }
 .statusbar-item-label {
   font: var(--text-ui) !important;
@@ -3213,9 +3235,6 @@ body[role="document"] {
 .statusbar > .left-items,
 .statusbar > .right-items {
   gap: 2px !important;
-}
-.statusbar > .left-items .statusbar-item:last-child {
-  flex-grow: 1 !important;
 }
 .titlebar {
   width: 100% !important;

@@ -132,11 +132,25 @@
 			}
 		}
 
+		&-object-key,
+		&-object-value {
+			@extend .table-row;
+
+			line-height: unset;
+			margin: 0;
+
+			min-height: unset;
+		}
+
+		&-row,
+		&-row-header {
+			font-weight: normal;
+			padding: 0;
+		}
+
 		&-row-header &-object-key,
 		&-row-header &-object-value {
 			@extend .table-header-row;
-
-			margin: 0;
 		}
 	}
 

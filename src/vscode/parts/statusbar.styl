@@ -5,8 +5,16 @@
 	height: unset;
 
 	&-item {
-		position: relative;
 		max-width: unset;
+
+		// TODO: is this safe ?
+		&[aria-label=""] {
+			display: none;
+		}
+
+		&.right.last-visible-item {
+			margin-right: 8px;
+		}
 
 		&-label {
 			font: var(--text-ui);
@@ -18,9 +26,5 @@
 	& > .left-items,
 	& > .right-items {
 		gap: 2px;
-	}
-
-	& > .left-items &-item:last-child {
-		flex-grow: 1;
 	}
 }

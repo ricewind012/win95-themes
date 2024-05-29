@@ -55,6 +55,7 @@
   --dialog-spacing: 7px !important;
   --dialog-button-spacing: 6px !important;
   --label-spacing: 6px !important;
+  --table-row-spacing: 2px 7px !important;
   --tabpanel-spacing: 12px !important;
   --text-spacing: 4px !important;
   --titlebar-spacing: 4px !important;
@@ -1257,7 +1258,7 @@ progress::-webkit-progress-value,
 }
 .list-item {
 /* alternative -webkit-line-clamp */
-  height: calc(var(--text-size) * var(--text-line) + 3px) !important;
+  height: calc(var(--text-ui-size) * var(--text-line) + 3px) !important;
   display: flex !important;
   align-items: center !important;
 }
@@ -1388,8 +1389,7 @@ div._1BAKXmqQdWRWmWX9_CbhuY:hover,
   color: var(--color-highlight-text) !important;
 }
 table {
-  border-spacing: 4px !important;
-  border: none !important;
+  border-spacing: 0 !important;
 }
 .table-button,
 ._3m0MnUo45wjLOfNLpZ-3KH > div,
@@ -1398,7 +1398,7 @@ table {
 ._3mCrTKGesl-jD-k-buQ13_,
 ._1PuPpIr-INhTmdxOBEIaoE {
   text-align: left !important;
-  padding: 2px 7px !important;
+  padding: var(--table-row-spacing) !important;
 }
 .table-button:active,
 ._3m0MnUo45wjLOfNLpZ-3KH > div:active,
@@ -1468,9 +1468,15 @@ table {
 .FriendsSettingsNotificationRow_Header > div,
 .DialogSpanningTable thead th,
 .vATYv4EBNodEsN_HqvfJT {
+  background-color: var(--color-button-face) !important;
   box-shadow: inset -1px -1px var(--color-button-highlight), inset -2px -2px var(--color-button-shadow) !important;
   padding: 2px 5px !important;
   padding-bottom: 3px !important;
+}
+.table-row,
+.DialogSpanningTable td,
+._3s0LVYddVEc1fa7aGrAd9C {
+  padding: var(--table-row-spacing) !important;
 }
 [role="tab"],
 ._1F8BhKKWf_XhG9QsmY_4lp,
@@ -1839,6 +1845,16 @@ div._3rgV8pPmQvZC-01x9l-q-N {
   box-shadow: var(--border-statusbar) !important;
   padding: 2px 4px 1px 4px !important;
 }
+.statusbar-item:last-child,
+.chatRoomGroupStats .statMemberStat:last-child,
+.FriendChatTypingNotification:last-child,
+.VoiceChatTextChannelDesc:last-child,
+.friendListFooter:last-child,
+.FriendPicker_ChosenFriend:last-child,
+._3gzh_NvTKey56JeHY7Q1WW:last-child,
+._2zPn_rFC5ZJw3NvUu3Jt5Y:last-child {
+  flex-grow: 1 !important;
+}
 .titlebar,
 .VoiceRoomChatTitle,
 .FullModalOverlay .DialogHeader,
@@ -2071,6 +2087,7 @@ div._3rgV8pPmQvZC-01x9l-q-N {
 }
 .toolbar {
   gap: var(--toolbar-spacing) !important;
+  margin: 0 6px !important;
   display: flex !important;
 }
 .content-container,
@@ -2699,9 +2716,6 @@ button,
 }
 .chatRoomGroupStats .statMemberStat {
   margin: 0 !important;
-}
-.chatRoomGroupStats .statMemberStat:last-child {
-  flex-grow: 1 !important;
 }
 .chatRoomGroupStats .statMemberStat[title] {
   font-size: 0 !important;
@@ -3346,9 +3360,6 @@ button,
 }
 .DialogInnerBody > .displayColumn .DialogHBar {
   display: none !important;
-}
-.DialogSpanningTable {
-  border-spacing: 0 !important;
 }
 .DialogSpanningTable tbody tr {
   background: none !important;
@@ -4874,7 +4885,6 @@ div._31ptFGGMZrSQc5BCX1e5lm {
 }
 ._3s0LVYddVEc1fa7aGrAd9C {
   border: none !important;
-  padding: 2px 7px !important;
 }
 ._20PFwr9na9AT4Lz00IdtVQ {
   color: var(--color-button-text) !important;
