@@ -48,16 +48,12 @@ $statusbar-alt {
 }
 
 $table-button-arrows {
-	&:has(svg) {
-		@extend .table-button[sort];
-	}
-
 	&:has([d="M17.98 26.54L3.20996 11.77H32.75L17.98 26.54Z"]) {
-		@extend .table-button[sort="ascending"];
+		@extend .table-button[aria-sort="ascending"];
 	}
 
 	&:has([d="M17.98 10.23L3.20996 25H32.75L17.98 10.23Z"]) {
-		@extend .table-button[sort="descending"];
+		@extend .table-button[aria-sort="descending"];
 	}
 }
 

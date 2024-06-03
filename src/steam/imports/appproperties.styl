@@ -59,7 +59,6 @@
 #DlcHeader {
 	@extend button;
 	@extend .table-button;
-	@extend .table-button[sort];
 
 	text-transform: unset;
 
@@ -68,11 +67,11 @@
 	}
 
 	&:has(> #TriangleUp) {
-		@extend .table-button[sort="descending"];
+		@extend .table-button[aria-sort="descending"];
 	}
 
 	&:has(> #TriangleDown) {
-		@extend .table-button[sort="ascending"];
+		@extend .table-button[aria-sort="ascending"];
 	}
 
 	& > div {

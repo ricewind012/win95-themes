@@ -31,16 +31,12 @@
 		@extend button;
 		@extend .table-button;
 
-		&[class*="sort-"] {
-			@extend .table-button[sort];
-		}
-
 		&.sort-ascending {
-			@extend .table-button[sort="ascending"];
+			@extend .table-button[aria-sort="ascending"];
 		}
 
 		&.sort-descending {
-			@extend .table-button[sort="descending"];
+			@extend .table-button[aria-sort="descending"];
 		}
 	}
 

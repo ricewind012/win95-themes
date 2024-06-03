@@ -18,14 +18,19 @@
 	}
 
 	&-menu {
-		&-button {
+		// !important
+		&-button&-button {
+			padding: 0;
+
 			&.open {
-				@extend .menubar-item:active;
+				@extend [role="menubar"] > [role="menuitem"][aria-selected="true"];
 			}
 		}
 
 		&-title {
-			@extend .menubar-item;
+			// Move [role="menubar"] to its child element
+			// for correct context menu positioning
+			@extend [role="menubar"] > [role="menuitem"];
 
 			&.toolbar-toggle-more {
 				display: none;

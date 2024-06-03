@@ -60,11 +60,7 @@
 			background-color: transparent;
 
 			& > li {
-				@extend .menu-item;
-
-				&[aria-selected] {
-					@extend .menu-item:hover;
-				}
+				@extend [role="menu"] [role="menuitem"];
 			}
 		}
 	}

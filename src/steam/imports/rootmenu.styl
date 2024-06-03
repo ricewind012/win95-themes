@@ -24,13 +24,13 @@
 }
 
 #RootMenuButton {
-	@extend .menubar-item;
+	@extend [role="menubar"] > [role="menuitem"];
 
 	color: var(--color-menubar-text);
 	font-size: var(--text-ui-size);
 
 	&:active {
-		@extend .menubar-item:active;
+		@extend [role="menubar"] > [role="menuitem"]:active;
 	}
 
 	svg {

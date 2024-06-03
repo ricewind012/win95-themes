@@ -16,8 +16,7 @@
 
 .personaContextMenuItem {
 	&.menuChecked {
-		@extend .menu-item[checked];
-		@extend .menu-item[checked][type="radio"];
+		@extend [role="menuitemradio"][aria-checked="true"];
 	}
 
 	.DialogCheckbox {

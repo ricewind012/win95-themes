@@ -454,12 +454,12 @@ input:where([type="button"]:active,
   height: 22px !important;
 }
 .icon-button:active,
-.icon-button[selected] {
+.icon-button[aria-selected="true"] {
   background: var(--checkerboard) !important;
   box-shadow: var(--border-button-sunken) !important;
 }
 .icon-button:active::before,
-.icon-button[selected]::before {
+.icon-button[aria-selected="true"]::before {
   inset: 1px !important;
 }
 .icon-button::before {
@@ -778,83 +778,73 @@ progress::-webkit-progress-value {
   padding: 1px 5px 0 1px !important;
 /* TODO: make it layout-independent */
 }
-.list-item[selected] > .list-item-name-container > .list-item-name,
-.list-item[selected] > .list-item-name-container > .part.sidebar [role="treeitem"] .monaco-icon-name-container,
+.list-item[aria-selected="true"] > .list-item-name-container > .list-item-name,
+.list-item[aria-selected="true"] > .list-item-name-container > .part.sidebar [role="treeitem"] .monaco-icon-name-container,
 .part.sidebar [role="treeitem"][aria-selected="true"] .monaco-icon-name-container {
   background-color: var(--color-highlight) !important;
   color: var(--color-highlight-text) !important;
 /* TODO: wtf is this color */
   border: 1px dotted #ff0 !important;
 }
-.menu-item,
 [role="menu"] [role="menuitem"],
-[role="menuitemcheckbox"] {
+[role="menuitemcheckbox"],
+[role="menuitemradio"] {
   line-height: 1.25 !important;
   padding: 2px 20px !important;
   position: relative !important;
-/* TODO: maybe a simpler version ? */
 }
-.menu-item::before,
-[role="menu"] [role="menuitem"]::before,
-[role="menuitemcheckbox"]::before,
-.menu-item::after,
-[role="menu"] [role="menuitem"]::after,
-[role="menuitemcheckbox"]::after {
+[role="menu"] [role="menuitem"][primary],
+[role="menuitemcheckbox"][primary],
+[role="menuitemradio"][primary] {
+  font-weight: bold !important;
+}
+[role="menu"] [role="menuitem"][aria-haspopup]::after,
+[role="menuitemcheckbox"][aria-haspopup]::after,
+[role="menuitemradio"][aria-haspopup]::after {
   content: '' !important;
   position: absolute !important;
-  background-color: var(--color-button-text) !important;
-}
-.menu-item[checked]::before,
-[role="menu"] [role="menuitem"][checked]::before,
-[role="menuitemcheckbox"][checked]::before {
-  top: 5px !important;
-}
-.menu-item[checked][type="checkbox"]::before,
-[role="menu"] [role="menuitem"][checked][type="checkbox"]::before,
-[role="menuitemcheckbox"][checked][type="checkbox"]::before,
-[aria-checked="true"][role="menuitemcheckbox"]::before {
-  left: 6px !important;
-  width: 7px !important;
-  height: 7px !important;
-  -webkit-mask: var(--icon-checkmark) !important;
-}
-.menu-item[checked][type="radio"]::before,
-[role="menu"] [role="menuitem"][checked][type="radio"]::before,
-[role="menuitemcheckbox"][checked][type="radio"]::before,
-[aria-checked="true"][role="menuitemradio"]::before {
-  left: 7px !important;
-  width: 6px !important;
-  height: 6px !important;
-  -webkit-mask: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2IDYiPjxyZWN0IHg9IjEiIHdpZHRoPSI0IiBoZWlnaHQ9IjEiLz48cmVjdCB5PSIxIiB3aWR0aD0iNiIgaGVpZ2h0PSI0Ii8+PHJlY3QgeD0iMSIgeT0iNSIgd2lkdGg9IjQiIGhlaWdodD0iMSIvPjwvc3ZnPgo=") !important;
-}
-.menu-item[type="parent"]::after,
-[role="menu"] [role="menuitem"][type="parent"]::after,
-[role="menuitemcheckbox"][type="parent"]::after,
-.monaco-submenu-item::after {
   top: 4px !important;
   right: 6px !important;
   width: 4px !important;
   height: 7px !important;
   -webkit-mask: var(--icon-arrow-right) !important;
+  background-color: var(--color-button-text) !important;
 }
-.menu-item[disabled],
-[role="menu"] [role="menuitem"][disabled],
-[role="menuitemcheckbox"][disabled] {
+[role="menu"] [role="menuitem"][aria-disabled="true"],
+[role="menuitemcheckbox"][aria-disabled="true"],
+[role="menuitemradio"][aria-disabled="true"] {
   --color-button-text: var(--color-button-shadow) !important;
   text-shadow: 1px 1px var(--color-button-highlight) !important;
   pointer-events: none !important;
 }
-.menu-item[primary],
-[role="menu"] [role="menuitem"][primary],
-[role="menuitemcheckbox"][primary] {
-  font-weight: bold !important;
-}
-.menu-item:hover,
 [role="menu"] [role="menuitem"]:hover,
-[role="menuitemcheckbox"]:hover {
+[role="menuitemcheckbox"]:hover,
+[role="menuitemradio"]:hover,
+[role="menu"] [role="menuitem"][aria-selected="true"],
+[role="menuitemcheckbox"][aria-selected="true"],
+[role="menuitemradio"][aria-selected="true"] {
   --color-button-text: var(--color-highlight-text) !important;
   background-color: var(--color-highlight) !important;
   color: var(--color-highlight-text) !important;
+}
+[role="menuitemcheckbox"]::before,
+[role="menuitemradio"]::before {
+  content: '' !important;
+  position: absolute !important;
+  top: 5px !important;
+  background-color: var(--color-button-text) !important;
+}
+[role="menuitemcheckbox"][aria-checked="true"]::before {
+  left: 6px !important;
+  width: 7px !important;
+  height: 7px !important;
+  -webkit-mask: var(--icon-checkmark) !important;
+}
+[role="menuitemradio"][aria-checked="true"]::before {
+  left: 7px !important;
+  width: 6px !important;
+  height: 6px !important;
+  -webkit-mask: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2IDYiPjxyZWN0IHg9IjEiIHdpZHRoPSI0IiBoZWlnaHQ9IjEiLz48cmVjdCB5PSIxIiB3aWR0aD0iNiIgaGVpZ2h0PSI0Ii8+PHJlY3QgeD0iMSIgeT0iNSIgd2lkdGg9IjQiIGhlaWdodD0iMSIvPjwvc3ZnPgo=") !important;
 }
 table {
   border-spacing: 0 !important;
@@ -866,25 +856,23 @@ table {
 .table-button:active {
   box-shadow: var(--border-button-sunken-alt) !important;
 }
-.table-button::after {
+.table-button[aria-sort="ascending"]::after,
+.table-button[aria-sort="descending"]::after {
   content: '' !important;
   position: absolute !important;
   top: -1px !important;
   right: 7px !important;
   width: 7px !important;
   height: 100% !important;
-  background-color: var(--color-to-change) !important;
+  background-color: var(--color-button-text) !important;
   -webkit-mask: var(--button-img, none) no-repeat !important;
   -webkit-mask-size: 7px 4px !important;
   -webkit-mask-position: center !important;
 }
-.table-button[sort] {
-  --color-to-change: var(--color-button-text) !important;
-}
-.table-button[sort="ascending"] {
+.table-button[aria-sort="ascending"] {
   --button-img: var(--icon-arrow-bottom) !important;
 }
-.table-button[sort="descending"] {
+.table-button[aria-sort="descending"] {
   --button-img: var(--icon-arrow-top) !important;
 }
 .table-header-row,
@@ -973,12 +961,12 @@ table {
   box-shadow: var(--border-button-raised) !important;
   padding: calc(var(--border-size) + var(--tabpanel-spacing)) !important;
 }
-[role="tabpanel"][compact],
-.sidebar .composite.has-composite-bar ~ .content > .composite[compact],
-.extension-editor .content[compact],
-.settings-editor > .settings-body .settings-tree-container .monaco-list[compact],
-.editor-container > .editor-instance[compact],
-.part.panel > .content[compact],
+[role="tabpanel"].compact,
+.sidebar .composite.has-composite-bar ~ .content > .composite.compact,
+.extension-editor .content.compact,
+.settings-editor > .settings-body .settings-tree-container .monaco-list.compact,
+.editor-container > .editor-instance.compact,
+.part.panel > .content.compact,
 .editor-container > .editor-instance,
 .part.panel > .content {
   --tabpanel-spacing: 2px !important;
@@ -1017,15 +1005,19 @@ label,
   border: 1px solid var(--color-button-shadow-dark) !important;
   padding: 3px !important;
 }
-.tree-item,
-.part.sidebar [role="treeitem"] {
+[role="treeitem"] {
   --icon: var(--tree-icon-collapsed) !important;
   padding: 0 4px !important;
   margin-left: var(--icon-size) !important;
   position: relative !important;
 }
-.tree-item::before,
-.part.sidebar [role="treeitem"]::before {
+[role="tree"] > [role="treeitem"] {
+  margin-left: 0 !important;
+}
+[role="tree"] > [role="treeitem"]::before {
+  display: none !important;
+}
+[role="treeitem"]::before {
   content: '' !important;
   position: absolute !important;
   left: -12px !important;
@@ -1035,14 +1027,10 @@ label,
   border-left: 1px dotted var(--color-gray-text) !important;
   border-bottom: 1px dotted var(--color-gray-text) !important;
 }
-.tree-item[open],
-.part.sidebar [role="treeitem"][open],
-.part.sidebar [role="treeitem"][aria-expanded="true"] {
+[role="treeitem"][aria-expanded="true"] {
   --icon: var(--tree-icon-expanded) !important;
 }
-.tree-item[open]::after,
-.part.sidebar [role="treeitem"][open]::after,
-.part.sidebar [role="treeitem"][aria-expanded="true"]::after {
+[role="treeitem"][aria-expanded="true"]::after {
   content: '' !important;
   position: absolute !important;
   left: -12px !important;
@@ -1090,6 +1078,17 @@ body {
   margin: 0 !important;
   box-sizing: border-box !important;
 }
+.content-container,
+.monaco-list,
+.setting-list-object-widget,
+.activitybar,
+.editor-instance > .monaco-editor,
+.part.panel > .content > .composite,
+.peekview-widget .monaco-editor {
+  background-color: var(--color-window) !important;
+  box-shadow: var(--border-field) !important;
+  padding: var(--border-size) !important;
+}
 .window,
 body,
 .monaco-editor:not([role="code"]),
@@ -1136,21 +1135,21 @@ body.child,
   height: 14px !important;
   cursor: se-resize !important;
 }
-.menubar {
+[role="menubar"] {
   background-color: var(--color-menubar) !important;
   color: var(--color-menubar-text) !important;
   line-height: 1 !important;
   display: flex !important;
 }
-.menubar-item,
+[role="menubar"] > [role="menuitem"],
 .menubar-menu-title {
   padding: 4px 5px 3px 7px !important;
 }
-.menubar-item:active,
+[role="menubar"] > [role="menuitem"]:active,
 .menubar-menu-title:active,
-.menubar-item[selected],
-.menubar-menu-title[selected],
-.menubar-menu-button.open {
+[role="menubar"] > [role="menuitem"][aria-selected="true"],
+.menubar-menu-title[aria-selected="true"],
+.menubar-menu-button.menubar-menu-button.open {
   background-color: var(--color-highlight) !important;
   color: var(--color-highlight-text) !important;
 }
@@ -1174,7 +1173,7 @@ body.child,
   display: flex !important;
   align-items: center !important;
 }
-:root[focused] .titlebar,
+:root.focused .titlebar,
 .titlebar:not(.inactive) {
   background-color: var(--color-active-caption) !important;
   color: var(--color-active-caption-text) !important;
@@ -1315,21 +1314,10 @@ body.child,
   top: 1px !important;
   background-color: var(--color-button-highlight) !important;
 }
-.toolbar {
+[role="toolbar"] {
   gap: var(--toolbar-spacing) !important;
   margin: 0 6px !important;
   display: flex !important;
-}
-.content-container,
-.monaco-list,
-.setting-list-object-widget,
-.activitybar,
-.editor-instance > .monaco-editor,
-.part.panel > .content > .composite,
-.peekview-widget .monaco-editor {
-  background-color: var(--color-window) !important;
-  box-shadow: var(--border-field) !important;
-  padding: var(--border-size) !important;
 }
 * {
   outline: none !important;
@@ -2972,6 +2960,9 @@ body[role="document"] {
   top: calc(var(--menubar-height) - 1px) !important;
   width: 100% !important;
 }
+.menubar-menu-button.menubar-menu-button {
+  padding: 0 !important;
+}
 .menubar-menu-title.toolbar-toggle-more {
   display: none !important;
 }
@@ -3360,7 +3351,7 @@ body[role="document"] {
   animation: none !important;
   box-shadow: none !important;
 }
-[role="menu"] [role="menuitem"],
+[role="menuitem"],
 [role="menuitemcheckbox"] {
   margin: 0 !important;
   height: unset !important;

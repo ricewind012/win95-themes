@@ -87,23 +87,17 @@ for i in range(2, $max-nest) {
 }
 
 .part.sidebar [role="treeitem"] {
-	@extend .tree-item;
-
 	// Revert for @extend
 	margin: 0;
 
 	position: absolute;
-
-	&[aria-expanded="true"] {
-		@extend .tree-item[open];
-	}
 
 	&[aria-selected="true"] {
 		background-color: var(--color-window);
 		color: var(--color-window-text);
 
 		.monaco-icon-name-container {
-			@extend .list-item[selected] > .list-item-name-container > .list-item-name;
+			@extend .list-item[aria-selected="true"] > .list-item-name-container > .list-item-name;
 		}
 	}
 

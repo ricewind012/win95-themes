@@ -5,15 +5,11 @@
 		font-size: inherit;
 
 		&[aria-label$=" checked"] {
-			@extend .menu-item[checked][type="checkbox"];
-		}
-
-		&[aria-haspopup] {
-			@extend .menu-item[type="parent"];
+			@extend [role="menuitemcheckbox"][aria-checked="true"];
 		}
 
 		&-mouse-over {
-			@extend .menu-item:hover;
+			@extend [role="menu"] [role="menuitem"]:hover;
 		}
 
 		[is="ui-icon"] {

@@ -8,28 +8,11 @@
 	box-shadow: none;
 }
 
-[role="menu"] [role="menuitem"],
+[role="menuitem"],
 [role="menuitemcheckbox"] {
-	@extend .menu-item;
-
 	margin: 0;
 
 	height: unset;
-
-	&:hover {
-		@extend .menu-item:hover;
-	}
-}
-
-[aria-checked="true"] {
-	&[role="menuitemcheckbox"] {
-		@extend .menu-item[checked][type="checkbox"];
-	}
-
-	// Not present in 1.85, but just in case
-	&[role="menuitemradio"] {
-		@extend .menu-item[checked][type="radio"];
-	}
 }
 
 .monaco {
@@ -61,10 +44,6 @@
 		@extend hr;
 
 		border-bottom: none;
-	}
-
-	&-submenu-item {
-		@extend .menu-item[type="parent"];
 	}
 }
 

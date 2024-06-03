@@ -255,12 +255,12 @@
 	}
 
 	.groupName {
-		@extend .tree-item;
+		@extend [role="treeitem"];
 
 		margin: 0;
 
 		&:not(.Collapsed) {
-			@extend .tree-item[open];
+			@extend [role="treeitem"][aria-expanded="true"];
 		}
 
 		&::before {
@@ -277,7 +277,7 @@
 	gap: var(--window-gap);
 
 	.friend {
-		@extend .tree-item;
+		@extend [role="treeitem"];
 
 		margin-top: 4px;
 		margin-bottom: 4px;

@@ -38,7 +38,7 @@
 }
 
 .storage-group-list-item {
-	@extend .tree-item;
+	@extend [role="treeitem"];
 
 	border: none;
 	padding: 2px var(--tree-item-spacing-x);
@@ -46,6 +46,6 @@
 	margin: 0;
 
 	&.expanded {
-		@extend .tree-item[open];
+		@extend [role="treeitem"][aria-expanded="true"];
 	}
 }

@@ -11,7 +11,7 @@
 	--statusbar-height: calc(var(--text-full) + 3px);
 
 	@extend [role="tabpanel"];
-	@extend [role="tabpanel"][compact];
+	@extend [role="tabpanel"].compact;
 
 	background: none;
 	margin: 0 var(--dialog-spacing);
@@ -218,7 +218,7 @@
 		padding: 4px;
 
 		&.ActiveTextChannel {
-			@extend .list-item[selected] > .list-item-name-container > .list-item-name;
+			@extend .list-item[aria-selected="true"] > .list-item-name-container > .list-item-name;
 		}
 
 		&Icon {
@@ -511,7 +511,7 @@
 
 	&Title {
 		@extend .titlebar;
-		@extend :root[focused] .titlebar;
+		@extend :root.focused .titlebar;
 
 		.MinimizeTextChat {
 			@extend button;

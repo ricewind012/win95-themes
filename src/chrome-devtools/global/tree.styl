@@ -43,7 +43,7 @@
 		}
 
 		&[aria-selected] .tree-element-title {
-			@extend .list-item[selected] > .list-item-name-container > .list-item-name;
+			@extend .list-item[aria-selected="true"] > .list-item-name-container > .list-item-name;
 		}
 	}
 }
@@ -53,7 +53,7 @@ $table-left-spacing = 15px;
 $tree-max-nest = 10;
 
 td.disclosure {
-	@extend .tree-item;
+	@extend [role="treeitem"];
 	@extend .tree-item-icon;
 
 	--level: 1;
@@ -71,7 +71,7 @@ td.disclosure {
 	}
 
 	.expanded & {
-		@extend .tree-item[open];
+		@extend [role="treeitem"][aria-expanded="true"];
 	}
 
 	&::before {

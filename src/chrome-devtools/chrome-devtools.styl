@@ -12,26 +12,16 @@ devtools-sync-section,
 	@extend .window.child;
 }
 
-[role="menuitem"] {
-	@extend .menu-item;
-}
-
 [role="textbox"] {
 	@extend input;
 	@extend input[type="text"];
 }
 
 [role="treeitem"] {
-	@extend .tree-item;
-
 	// "Sources" tab sidebar
 	border: none;
 
 	height: unset;
-
-	&[aria-expanded="true"] {
-		@extend .tree-item[open];
-	}
 
 	&:not(.parent)::before {
 		left: -7px;

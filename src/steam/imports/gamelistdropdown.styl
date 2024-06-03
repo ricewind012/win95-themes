@@ -56,12 +56,12 @@ icons = \
 
 // !important in ../other/dialog-shared.styl
 div#Row {
-	@extend .menu-item;
+	@extend [role="menu"] [role="menuitem"];
 
 	margin: 0;
 
 	&:has(> .DialogCheckbox.Active) {
-		@extend .menu-item[checked][type="checkbox"];
+		@extend [role="menuitemcheckbox"][aria-checked="true"];
 	}
 
 	.DialogCheckbox {
