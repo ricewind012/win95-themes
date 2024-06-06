@@ -1,8 +1,6 @@
 #AccountMenu {
 	@extend select;
 
-	margin-top: -8px;
-
 	.avatar {
 		border: none;
 		box-shadow: none;
@@ -49,12 +47,13 @@
 	z-index: 1;
 
 	& > :nth-child(3) > div {
+		--pos: calc(var(--border-size) + var(--window-spacing));
+
 		margin: 0;
 
 		position: fixed;
-		top: 20px;
-		right: 2px;
-		height: 33px;
+		top: calc(var(--pos) + var(--titlebar-height) + var(--menubar-height) + var(--window-gap) * 2 + 8px);
+		right: var(--pos);
 		display: flex;
 		align-items: center;
 	}

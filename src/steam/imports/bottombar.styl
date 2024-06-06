@@ -1,84 +1,64 @@
-#AddGameButton {
-	@extend select;
-	@extend $statusbar-alt;
+// Just use the menubar
+#AddGameButton,
+// ^
+#FriendsButton,
+#Icon,
+#IconBevel,
+// I am not styling your 10th progress bar
+#ProgressBar {
+	display: none;
 }
 
 #BottomBar {
-	background: transparent;
-	box-shadow: none;
-	padding: 8px;
-
-	position: fixed;
-	top: 41px;
-	right: -5px;
-	flex: unset;
-}
-
-#BottomBarContainer {
 	--statusbar-height: calc(var(--text-full) + 2px);
 
+	background: transparent;
+	box-shadow: var(--border-statusbar);
 	padding-bottom: calc(var(--statusbar-height) + var(--window-gap));
+
+	flex-basis: unset;
+
+	-webkit-app-region: no-drag;
 }
 
-#DownloadStatusContent,
-#FriendsButton {
-	@extend button;
+#DownloadStatusContent {
+	color: var(--color-button-text);
+	padding: 0;
 
 	// Empty div without a class
+	// TODO: not there anymore in beta ?
 	& > :empty {
 		display: none;
 	}
 }
 
-#DetailedDownloadProgress {
+#DetailedDownloadProgress,
+#DownloadStatus {
+	position: fixed;
+	left: 8px;
+	bottom: 5px;
 	width: unset;
 	justify-content: center;
+}
 
-	&::before {
-		content: var(--BottomBar_Manage);
-	}
+#DetailedDownloadProgress {
+	gap: var(--text-spacing);
 
 	#Icon {
 		box-shadow: none;
 
 		width: var(--icon-size);
 		height: var(--icon-size);
-		position: fixed;
-		left: 8px;
-		bottom: 5px;
 		display: block;
 	}
-}
-
-#FriendsButton {
-	#Text::after {
-		content: '...';
-	}
-}
-
-#Icon,
-#IconBevel {
-	display: none;
 }
 
 #Percentage {
 	parentheses();
 }
 
-#ProgressBar {
-	// I am not styling your 10th progress bar
-	display: none;
-}
-
-#ProgressBarWrapper {
-	position: fixed;
-	left: 28px;
-	bottom: 7px;
-	flex-grow: 0;
-}
-
 #StatusLine {
-	color: inherit;
+	color: var(--color-button-text);
 	gap: var(--text-spacing);
 }
 
