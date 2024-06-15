@@ -1,5 +1,9 @@
+$sel-arrow-back = '> :nth-child(3)';
+$sel-arrow-forward = '> :nth-child(4)';
+
 #Arrow {
 	@extend button;
+	@extend .icon-button;
 
 	transform: none;
 
@@ -16,7 +20,8 @@
 }
 
 #MenuButton {
-	@extend $text-reset;
+	color: inherit;
+	text-shadow: inherit;
 
 	&::after {
 		display: none;
@@ -26,36 +31,33 @@
 #SuperNav {
 	--icon-width: 25px;
 	--icon-height: 23px;
+	// The buttons are bigger, hence the offset
+	--icon-offset: 2px;
+	--icon-disabled-offset: 1px;
 
 	padding-bottom: 2px;
 
 	position: relative;
 
-	// Use empty divs as icons, as svgs can not have pseudo-elements
-	& > :nth-child(4),
-	& > :nth-child(6) {
-		--button-img-pos: center;
-
-		position: absolute;
-		width: var(--icon-width);
-		height: var(--icon-height);
-
-		pointer-events: none;
-
-		&:active {
-			@extend .icon-button:active;
-		}
+	// Use other buttons as icons, as svgs can not have pseudo-elements
+	{$sel-arrow-back},
+	{$sel-arrow-forward} {
+		position: initial;
 
 		&::before,
 		&::after {
 			content: '';
 
 			position: absolute;
-			inset: 0;
+			top: 0;
+			width: var(--icon-width);
+			height: var(--icon-height);
 
 			-webkit-mask: var(--button-img) no-repeat;
 			-webkit-mask-size: var(--button-img-size);
 			-webkit-mask-position: var(--button-img-pos, center);
+
+			pointer-events: none;
 		}
 
 		&::before {
@@ -65,18 +67,26 @@
 		}
 	}
 
-	& > :nth-child(4) {
+	{$sel-arrow-back} {
 		@extend $icon-big-arrow-left;
+
+		&::before,
+		&::after {
+			left: var(--icon-offset);
+		}
 	}
 
-	& > :nth-child(6) {
+	{$sel-arrow-forward} {
 		@extend $icon-big-arrow-right;
 
-		left: var(--icon-width);
+		&::before,
+		&::after {
+			left: calc(var(--icon-offset) + var(--icon-width));
+		}
 	}
 
-	&:has(> #Disabled:nth-child(1)) > :nth-child(4),
-	&:has(> #Disabled:nth-child(2)) > :nth-child(6) {
+	&:has(> #Disabled:nth-child(1)) {$sel-arrow-back},
+	&:has(> #Disabled:nth-child(2)) {$sel-arrow-forward} {
 		&::before {
 			background-color: var(--color-gray-text);
 		}
@@ -84,9 +94,16 @@
 		&::after {
 			background-color: var(--color-button-highlight);
 
-			top: 2px;
-			left: 1px;
+			top: var(--icon-disabled-offset);
 		}
+	}
+
+	&:has(> #Disabled:nth-child(1)) {$sel-arrow-back}::after {
+		left: calc(var(--icon-offset) + var(--icon-disabled-offset));
+	}
+
+	&:has(> #Disabled:nth-child(2)) {$sel-arrow-forward}::after {
+		left: calc(var(--icon-offset) + var(--icon-width) + var(--icon-disabled-offset));
 	}
 }
 
@@ -99,8 +116,12 @@
 		@extend .icon-button:active;
 	}
 
+	div&#Selected:hover:not(:active) {
+		color: var(--color-button-text);
+	}
+
 	&:nth-of-type(1),
-	&:nth-of-type(9) {
-		margin-left: var(--dialog-button-spacing);
+	&:nth-of-type(5) {
+		margin-left: var(--toolbar-spacing);
 	}
 }

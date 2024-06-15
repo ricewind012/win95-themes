@@ -793,9 +793,9 @@ progress::-webkit-progress-value {
   padding: 2px 20px !important;
   position: relative !important;
 }
-[role="menu"] [role="menuitem"][primary],
-[role="menuitemcheckbox"][primary],
-[role="menuitemradio"][primary] {
+[role="menu"] [role="menuitem"].primary,
+[role="menuitemcheckbox"].primary,
+[role="menuitemradio"].primary {
   font-weight: bold !important;
 }
 [role="menu"] [role="menuitem"][aria-haspopup]::after,
