@@ -1,0 +1,39 @@
+.overrideList {
+	@extend .content-container;
+
+	margin-top: var(--text-spacing);
+
+	& > .flex > h2 {
+		@extend .table-header-row;
+
+		margin: 0;
+	}
+
+	.override {
+		@extend .list-item;
+
+		background-color: var(--color-window);
+		color: inherit;
+		border: none;
+		padding: 0;
+		margin: 0;
+
+		.channelNameContainer {
+			gap: var(--text-spacing);
+
+			display: flex;
+		}
+
+		.checkboxContainer,
+		.checkboxMute {
+			&::before {
+				display: none;
+			}
+		}
+
+		svg {
+			display: none;
+		}
+	}
+}
+

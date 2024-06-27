@@ -1,0 +1,156 @@
+$titlebar-description-selector = '> :first-child + [data-text-variant]';
+
+.backdrop {
+	background-color: transparent;
+}
+
+.formGroup {
+	@extend label;
+
+	margin-bottom: var(--text-spacing);
+
+	& > .sectionTitle {
+		& > .h5 {
+			position: initial;
+		}
+	}
+}
+
+.horizontal {
+	& > .flex,
+	& > .flexChild {
+		margin-right: var(--label-spacing);
+
+		flex-grow: 0;
+
+		& > * {
+			@extend $text-reset;
+		}
+	}
+}
+
+.root {
+	overflow: visible;
+
+	:has(> .h5):not(.sectionTitle) {
+		@extend fieldset;
+	}
+
+	.h5 {
+		@extend $text-reset;
+		@extend $legend-as-div;
+	}
+
+	&.small {
+		min-height: 150px;
+	}
+
+	& > div {
+		overflow: auto;
+	}
+
+	// wtf is this bullshit blurring everything ?
+	[style*="translate3d(0px"] {
+		transform: unset;
+
+		top: 0;
+	}
+
+	.content {
+		overflow: visible;
+
+		&.scrollerBase {
+			padding: var(--messagebox-spacing);
+			margin: 0;
+
+			overflow: auto;
+
+			& > * {
+				@extend $text-reset;
+
+				text-align: start;
+			}
+		}
+
+		& > .searchBox {
+			@extend fieldset;
+
+			& > [data-text-variant] {
+				@extend $legend-as-div;
+			}
+		}
+	}
+
+	.close {
+		@extend .titlebar-button;
+		@extend $titlebar-button-close;
+
+		opacity: 1;
+		margin: 0;
+		margin-left: auto;
+
+		inset: 0;
+
+		& > * {
+			display: none;
+		}
+	}
+
+	.footer {
+		background-color: transparent;
+		gap: var(--dialog-button-spacing);
+		padding: var(--messagebox-spacing);
+		box-shadow: none;
+
+		justify-content: end;
+
+		& > div {
+			gap: var(--dialog-button-spacing);
+		}
+	}
+
+	[role="dialog"]:not([aria-label]) > & .header.flex {
+		@extend .titlebar;
+		@extend :root.focused .titlebar;
+
+		overflow: visible;
+		flex-direction: row;
+
+		.title {
+			@extend $text-reset;
+
+			font-weight: bold;
+			margin: 0;
+		}
+
+		&:has({$titlebar-description-selector}) + .content {
+			margin-top: calc(var(--text-full) * 2 + var(--dialog-spacing));
+		}
+
+		& > [data-text-variant] {
+			@extend $text-reset;
+
+			font-weight: bold;
+			margin: 0;
+		}
+
+		// Description
+		{$titlebar-description-selector} {
+			color: var(--color-window-text);
+			font-weight: normal;
+			text-align: start;
+			margin: var(--dialog-spacing);
+
+			position: absolute;
+			top: calc(var(--titlebar-height) + var(--window-gap));
+		}
+	}
+
+	[role="dialog"][aria-label] > & > .header:has(
+		> h1:only-child,
+		/> .close,
+		/> .flexChild > h1 + [data-text-variant]
+	) {
+		display: none;
+	}
+}

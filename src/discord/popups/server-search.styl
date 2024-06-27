@@ -1,0 +1,58 @@
+[role="listbox"][style="width: 320px;"] {
+	border: none;
+
+	&:not(:empty) {
+		@extend .window;
+		@extend .window.child;
+	}
+
+	& > ul {
+		padding: 0;
+		margin: 0;
+
+		&:first-of-type::before {
+			display: none;
+		}
+
+		&::before {
+			@extend hr;
+
+			top: 0;
+
+			margin-inline: 0;
+		}
+	}
+
+	& > [role="option"],
+	.header,
+	.plusIcon,
+	.searchClearHistory,
+	.searchLearnMore {
+		display: none;
+	}
+
+	.displayedNick {
+		font-weight: bold;
+		margin: 0 var(--text-spacing);
+	}
+
+	[role="option"] {
+		@extend [role="menu"] [role="menuitem"];
+
+		font-size: var(--text-ui-size);
+		margin: 0;
+
+		// Align with avatars
+		height: 24px;
+
+		&::before,
+		&::after {
+			display: none;
+		}
+
+		& > span {
+			color: inherit;
+		}
+	}
+}
+

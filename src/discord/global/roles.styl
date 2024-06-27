@@ -1,0 +1,187 @@
+[role="button"][aria-haspopup] {
+	@extend select;
+
+	min-width: 73px;
+
+	&[aria-disabled="true"] {
+		@extend select:disabled;
+	}
+
+	& > .icons {
+		display: none;
+	}
+
+	.title {
+		margin: 0;
+	}
+}
+
+[role="dialog"]:not([aria-label=""]) {
+	@extend .window;
+	@extend .window.child;
+
+	&[aria-label] {
+		&::before {
+			content: attr(aria-label);
+
+			box-sizing: border-box;
+			flex-shrink: 0;
+
+			@extend .titlebar;
+			@extend :root.focused .titlebar;
+			@extend .titlebar-name;
+		}
+	}
+}
+
+[role="option"] {
+	&[tabindex="0"] {
+		@extend [role="option"]:hover;
+	}
+
+	svg {
+		display: none;
+	}
+}
+
+[role="menu"] {
+	@extend .window;
+	@extend .window.child;
+
+	width: unset;
+	min-width: unset;
+
+	& > .scroller {
+		padding: 0;
+
+		overflow: auto;
+	}
+
+	[role="img"],
+	svg {
+		display: none;
+	}
+}
+
+[role^="menuitem"] {
+	opacity: 1;
+	font: var(--text-ui);
+	color: var(--color-button-text);
+	margin: 0;
+
+	&.focused {
+		@extend [role="menu"] [role="menuitem"]:hover;
+
+		--color-gray-text: currentColor;
+	}
+
+	.hintContainer {
+		color: var(--color-gray-text);
+	}
+
+	.optionLabel {
+		@extend $text-reset;
+	}
+
+	.optionName {
+		margin: 0;
+	}
+
+	.subtext,
+	.optionIcon, // Attach button
+	.iconContainer {
+		display: none;
+	}
+}
+
+[role="radio"] {
+	$radio-selector = '> div > :first-child';
+
+	opacity: 1;
+	background-color: transparent;
+	margin-bottom: var(--text-spacing);
+
+	[role="radiogroup"][aria-disabled="true"] > & {
+		color: var(--color-gray-text);
+
+		{$radio-selector} {
+			@extend input[type="radio"]:disabled;
+		}
+	}
+
+	&[aria-checked="true"] {$radio-selector} {
+		@extend input[type="radio"]:checked;
+	}
+
+	& > div {
+		border: none;
+		gap: var(--label-spacing);
+		padding: 0;
+
+		& > :first-child {
+			@extend input;
+			@extend input[type="radio"];
+
+			order: -1;
+			align-self: start;
+		}
+
+		svg {
+			display: none;
+		}
+	}
+
+	[data-text-variant="text-md/medium"] {}
+
+	[data-text-variant="text-sm/normal"] {
+		color: var(--color-gray-text);
+	}
+}
+
+[role="separator"] {
+	@extend hr;
+
+	margin-inline: 0;
+}
+
+[role="slider"] {
+	@extend input[type="range"];
+
+	.bar {
+		@extend input[type="range"]::-webkit-slider-runnable-track;
+
+		top: 20px;
+	}
+
+	.barFill {
+		display: none;
+	}
+
+	.grabber {
+		@extend input[type="range"]::-webkit-slider-thumb;
+
+		border: none;
+		box-shadow: none;
+
+		cursor: initial;
+	}
+}
+
+[role="tab"] {
+	@extend $text-reset;
+
+	overflow: visible;
+}
+
+[role="tablist"] {
+	border: none;
+	padding: 0;
+	margin-top: 0;
+	margin-bottom: 0;
+}
+
+[role="textbox"] {
+	@extend input;
+	@extend input[type="text"];
+}
+

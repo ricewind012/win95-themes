@@ -1,0 +1,15 @@
+.root {
+	.container {
+		margin-bottom: var(--dialog-button-spacing);
+
+		& > .arrow,
+		& > .icon {
+			display: none;
+		}
+
+		& > [data-text-variant] {
+			@extend $text-reset;
+		}
+	}
+}
+

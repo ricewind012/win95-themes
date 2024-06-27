@@ -1,0 +1,52 @@
+.autocomplete {
+	left: calc(8px + var(--border-size));
+	right: var(--border-size);
+
+	.base {
+		padding: 0;
+	}
+
+	[role="listbox"] {
+		padding: 0;
+
+		// Header
+		& > .base,
+		// Separator
+		& > [aria-disabled="true"] {
+			display: none;
+		}
+	}
+
+	svg {
+		display: initial;
+	}
+}
+
+.autocompleteRowContent {
+	color: inherit;
+
+	min-height: unset;
+
+	& > * {
+		text-align: start;
+		margin: 0;
+	}
+
+	// TODO: remove when doing icons (.channelTextArea svg)
+	[role="img"] {
+		width: var(--icon-size);
+		height: var(--icon-size);
+	}
+}
+
+.autocompleteRowContentPrimary,
+.autocompleteRowContentSecondary {
+	width: 50%;
+}
+
+.autocompleteRowContentPrimary {
+	&:first-child {
+		margin-left: var(--icon-size);
+	}
+}
+

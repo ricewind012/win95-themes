@@ -1,0 +1,39 @@
+.connectedAccountContainer {
+	border: none;
+	box-shadow: var(--border-statusbar);
+	padding: 8px;
+
+	position: relative;
+
+	a {
+		position: absolute;
+		inset: 0;
+	}
+
+	// TODO: unify
+	svg {
+		display: none;
+	}
+}
+
+.fullSizeOverlayBackground {
+	background-color: transparent;
+	border: none;
+
+	[role="tablist"] {
+		gap: 0;
+	}
+
+	.container {
+		height: 100%;
+	}
+
+	.scrollerBase {
+		@extend [role="tabpanel"];
+
+		gap: 0;
+
+		overflow: auto;
+	}
+}
+

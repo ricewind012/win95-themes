@@ -1,0 +1,25 @@
+.messageGroupWrapper {
+	border: none;
+	margin: 0;
+}
+
+.messagesPopout {
+	padding: 0;
+	margin: var(--border-size);
+}
+
+.messagesPopoutWrap {
+	margin: var(--dialog-spacing);
+
+	max-height: 400px;
+
+	&:not(.recentMentionsPopout)::before {
+		content: '';
+
+		position: absolute;
+		inset: 0;
+
+		box-shadow: var(--border-field);
+	}
+}
+

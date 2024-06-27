@@ -1,0 +1,64 @@
+.groupLabel {
+	display: none;
+}
+
+.labelContainer {
+	min-height: unset;
+}
+
+.statusItem {
+	padding: 0;
+
+	min-height: unset;
+	display: flex;
+	flex-direction: column;
+	align-items: start;
+
+	.description {
+		color: var(--color-gray-text);
+		margin: 0;
+	}
+}
+
+.submenuPaddingContainer {
+	padding: 0;
+}
+
+// Emotes
+[role="menu"] > .scroller > [role="group"].wrapper {
+	padding: 0;
+
+	display: flex;
+	flex-direction: column;
+
+	& > [role="menuitem"] {
+		width: 100%;
+
+		& > .button {
+			background-color: transparent;
+			padding: 0;
+
+			width: unset;
+			height: unset;
+
+			&::before {
+				content: attr(aria-label);
+
+				flex-grow: 1;
+			}
+		}
+
+		& > [aria-label=":thumbsup: :+1: :thumbup: :thumbs_up:"]::before {
+			content: ':+1:';
+		}
+	}
+
+	& + div::before {
+		content: '';
+
+		display: block;
+
+		@extend hr;
+	}
+}
+

@@ -1,0 +1,55 @@
+{$selectors[tags-filter-container]} {
+	width: auto;
+	display: flex;
+	flex-direction: column-reverse;
+
+	// !important
+	&&&::before {
+		display: none;
+	}
+
+	& > button {
+		@extend [role="menuitemcheckbox"];
+
+		text-align: start;
+		box-shadow: none;
+
+		[data-text-variant] {
+			font-weight: bold;
+		}
+	}
+
+	& > .header {
+		display: none;
+	}
+
+	& > .separator {
+		@extend hr;
+	}
+
+	[role="button"] {
+		@extend [role="menuitemcheckbox"];
+
+		background-color: transparent;
+		border: none;
+
+		width: 100%;
+		height: unset;
+
+		&[aria-pressed="true"] {
+			@extend [role="menuitemcheckbox"][aria-checked="true"];
+		}
+
+		& > div {
+			font-weight: normal;
+		}
+	}
+
+	[role="list"] {
+		gap: 0;
+		padding: 0;
+
+		flex-direction: column;
+	}
+}
+
