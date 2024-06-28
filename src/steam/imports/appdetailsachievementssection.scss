@@ -1,0 +1,42 @@
+#AchievementProgressContainer {
+	@extend progress;
+
+	background-color: transparent;
+}
+
+#AchievementProgress {
+	@extend progress::-webkit-progress-value;
+}
+
+#Label {
+	@extend %text-reset;
+}
+
+#Remainder {
+	@extend button;
+
+	margin: 0;
+
+	width: 48px;
+	height: 48px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+#RemainderText {
+	@extend %text-reset;
+}
+
+#ShowDivider {
+	border: none;
+	margin: 0;
+
+	&::before {
+		content: '';
+
+		display: block;
+
+		@extend hr;
+	}
+}

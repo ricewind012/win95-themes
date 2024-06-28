@@ -1,0 +1,37 @@
+.accountProfilePopoutWrapper {
+	left: 0;
+
+	// !important
+	& > [role="dialog"][aria-modal="true"]::before,
+	.userPopoutInner > :not(:last-child),
+	.userPopoutInner > .body > :not(:last-child) {
+		display: none;
+	}
+
+	.userPopoutInner > .body {
+		padding: 0;
+	}
+
+	.userPopoutOuter {
+		width: unset;
+	}
+
+	.menus {
+		gap: 0;
+
+		// !important
+		div#{&}::after {
+			display: none;
+		}
+
+		& > div {
+			box-shadow: none;
+			padding: 0;
+		}
+	}
+}
+
+.userMenuUsername {
+	margin: 0;
+}
+

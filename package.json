@@ -2,7 +2,9 @@
   "type": "module",
   "dependencies": {
     "postcss": "^8.4.38",
+    "postcss-scss": "^4.0.9",
     "postcss-styl": "^0.12.3",
+    "sass-embedded": "^1.77.5",
     "stylus": "^0.62.0"
   }
 }

@@ -1,0 +1,115 @@
+#AddShowcase {
+	@extend button;
+
+	opacity: 1;
+	text-transform: unset;
+	margin-bottom: 16px;
+
+	justify-content: center;
+
+	svg {
+		display: none;
+	}
+}
+
+#ChildrenContainer {
+	// PageableContainer
+	& > div {
+		border: none;
+		box-shadow: none;
+		padding: 0;
+		margin: 0;
+	}
+}
+
+#Collapser {
+	@extend button;
+	@extend .titlebar-button;
+
+	svg {
+		margin: 0;
+	}
+
+	polyline {
+		stroke: var(--color-button-text);
+	}
+}
+
+// Context menu
+#CollectionDropDownContainer {
+	// !important
+	.DesktopUI && ._DialogInputContainer {
+		@extend .window, .child;
+	}
+}
+
+#CountDisplay {
+	@extend %text-reset;
+
+	margin-left: var(--text-spacing);
+}
+
+#DropDownItems {
+	font: var(--text-ui);
+	margin: 0;
+
+	&#OptionsRule {
+		border: none;
+
+		&::before {
+			content: '';
+
+			position: unset;
+			width: calc(100% + 40px);
+			display: block;
+
+			@extend hr;
+
+			background-color: var(--color-button-face);
+			margin-left: -20px;
+		}
+	}
+}
+
+#Message {
+	@extend %text-reset;
+}
+
+#PageButtons {
+	margin: 0;
+}
+
+#PageLeft,
+#PageRight {
+	@extend %pageable-container-button;
+
+	&#Disabled {
+		@extend button:disabled;
+		@extend .titlebar-button:disabled;
+	}
+}
+
+#PageLeft {
+	--button-img: var(--icon-arrow-left);
+}
+
+#PageRight {
+	--button-img: var(--icon-arrow-right);
+}
+
+#Showcase {
+	@extend fieldset;
+
+	margin-bottom: 16px;
+}
+
+#ShowcaseHeader {
+	@extend %legend-as-div;
+
+	background-color: var(--color-window);
+	color: inherit;
+	border: none;
+
+	top: -12px;
+	align-items: center;
+}

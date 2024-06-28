@@ -1,0 +1,51 @@
+.background-service-preview {
+	@extend %text-reset;
+	@extend .content-container;
+}
+
+.report {
+	&-content-box {
+		padding: 14px;
+	}
+
+
+	&-row {
+		margin: 0;
+	}
+
+	&-section-title {
+		@extend %text-reset;
+	}
+
+	&-header,
+	&-section {
+		@extend fieldset;
+
+		& > .vbox {
+			gap: 8px;
+		}
+	}
+
+	&-title,
+	&-section-header {
+		@extend %text-reset;
+		@extend %legend-as-div;
+	}
+}
+
+.resources-sidebar {
+	overflow: hidden;
+}
+
+.storage-group-list-item {
+	@extend [role="treeitem"];
+
+	border: none;
+	padding: 2px var(--tree-item-spacing-x);
+	padding-left: calc(var(--tree-item-spacing-x) + var(--icon-size));
+	margin: 0;
+
+	&.expanded {
+		@extend [role="treeitem"][aria-expanded="true"];
+	}
+}

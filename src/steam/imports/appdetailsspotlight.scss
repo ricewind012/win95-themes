@@ -1,0 +1,6 @@
+#ReviewContainer {
+	@extend fieldset;
+	@extend %text-reset;
+
+	background-color: transparent;
+}

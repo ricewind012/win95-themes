@@ -1,0 +1,98 @@
+#AccountCreationPrompt {
+	margin-right: var(--text-spacing);
+}
+
+#BackArrow,
+#HeaderLogo {
+	display: none;
+}
+
+#BackArrowContainer {
+	@extend button;
+
+	height: unset;
+
+	&::before {
+		content: var(--NavigateBack);
+	}
+}
+
+#Checkbox {
+	@extend input;
+	@extend input, [type="checkbox"];
+
+	&:not(:empty) {
+		@extend input, [type="checkbox"], :checked;
+	}
+}
+
+#CheckboxFieldLabel {
+	@extend %text-reset;
+
+	padding-left: var(--label-spacing);
+}
+
+#EmbeddedRoot {
+	background: none;
+}
+
+#EmbeddedRootFooter {
+	@extend %text-reset;
+
+	padding: 0;
+}
+
+#FieldLabel {
+	@extend %text-reset;
+}
+
+#FormError {
+	color: red;
+	font-size: var(--text-ui-size);
+	text-align: start;
+}
+
+#Login {
+	height: 100%;
+	justify-content: center;
+}
+
+#LoginForm {
+	display: flex;
+	flex-direction: column;
+}
+
+#QR {
+	margin: var(--text-spacing) 0;
+}
+
+#QRSection {
+	margin-left: 16px;
+}
+
+#SignInButtonContainer {
+	align-items: start;
+}
+
+#SubmitButton {
+	background-image: none;
+
+	width: unset;
+}
+
+#TextField {
+	gap: var(--text-spacing);
+}
+
+#TextLink {
+	@extend %link;
+
+	font-size: var(--text-ui-size);
+}
+
+#UseMobileAppForQR {
+	color: inherit;
+	font-size: var(--text-ui-size);
+	text-align: start;
+}
+

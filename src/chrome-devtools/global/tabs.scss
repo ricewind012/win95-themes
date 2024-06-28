@@ -1,0 +1,64 @@
+.tabbed-pane {
+	padding: 7px;
+
+	&[slot="insertion-point-sidebar"] {
+	}
+
+	&-content {
+		padding: 0;
+	}
+
+	&-header {
+		border: none;
+		padding: 0;
+		margin-top: var(--sources-header-margin-top);
+		margin-bottom: var(--sources-header-margin-bottom, -4px);
+
+		flex: 0 0 auto;
+
+		&-tab {
+			width: auto;
+			min-width: auto;
+		}
+
+		&-tabs {
+			margin-bottom: var(--sources-tabs-margin-bottom, 4px);
+
+			flex-direction: row;
+		}
+	}
+
+	&-left-toolbar,
+	&-right-toolbar {
+		margin: 0;
+		margin-top: -6px;
+
+		// Main tabs
+		min-width: unset;
+	}
+
+	&-placeholder {
+		@extend %text-reset;
+	}
+
+	&-shadow {
+		div#{&}.vertical-tab-layout {
+			flex-direction: column;
+
+			// Dialog title
+			.tabbed-pane-left-toolbar {
+				position: absolute;
+				top: -18px;
+				left: -18px;
+			}
+		}
+	}
+
+	&-tab-slider {
+		display: none;
+	}
+}
+
+[role="tabpanel"] {
+	@extend [role="tabpanel"].compact;
+}

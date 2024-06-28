@@ -1,0 +1,58 @@
+@mixin text-reset {
+	color: inherit;
+	font: var(--text-ui);
+	letter-spacing: 0;
+	text-shadow: none;
+	text-transform: unset;
+}
+
+@mixin link {
+	color: var(--color-link);
+	text-decoration: underline;
+}
+
+@mixin legend-as-div {
+	@extend legend;
+
+	padding: 0 2px;
+	margin: 0;
+
+	position: absolute;
+	top: -5px;
+}
+
+@mixin move-scrollbar {
+	overflow: hidden;
+
+	& > div {
+		overflow: auto;
+		height: 100%;
+	}
+}
+
+// buttons
+@mixin titlebar-button-minimize {
+	--button-img: var(--icon-minimize);
+	--button-img-size: 6px 2px;
+	--button-img-pos: 4px 9px;
+}
+
+@mixin titlebar-button-maximize {
+	--button-img: var(--icon-maximize);
+	--button-img-size: 9px;
+	--button-img-pos: 3px 2px;
+}
+
+@mixin titlebar-button-restore {
+	--button-img: var(--icon-restore);
+	--button-img-size: 10px 9px;
+	--button-img-pos: 2px 2px;
+}
+
+@mixin titlebar-button-close {
+	--button-img: var(--icon-close);
+	--button-img-size: 8px 7px;
+	--button-img-pos: 4px 3px;
+
+	margin-left: 2px;
+}

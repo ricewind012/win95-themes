@@ -1,0 +1,72 @@
+.peekview {
+	&-widget {
+		@extend .window, .child;
+
+		border: none;
+
+		width: calc(100% - 50px);
+
+		& > .head {
+			background-color: var(--color-active-caption);
+			color: var(--color-active-caption-text);
+			font: var(--text-ui);
+
+			height: var(--titlebar-height);
+			align-items: center;
+		}
+
+		& > .body {
+			border: none;
+			margin-top: var(--window-gap);
+
+			height: calc(100% - var(--window-gap) - 19px);
+		}
+
+		.inline {
+			position: relative;
+			width: 100%;
+			height: 100%;
+		}
+
+		.ref-tree {
+			width: calc(100% - 58px);
+		}
+
+		.monaco {
+			// TODO: scrollbar is out of bounds
+			&-editor {
+				@extend .content-container;
+
+				width: 100%;
+				height: 100%;
+			}
+
+			&-list {
+				margin-left: var(--window-gap);
+
+				height: 100%;
+			}
+		}
+	}
+
+	&-title {
+		margin-left: 2px;
+
+		.filename,
+		.dirname:not(:empty),
+		.meta {
+			@extend .titlebar-name;
+
+			font-size: var(--text-ui-size);
+			color: inherit;
+		}
+
+		.dirname:not(:empty) {
+			@include parentheses();
+		}
+	}
+
+	&-actions {
+		padding-top: var(--text-spacing);
+	}
+}

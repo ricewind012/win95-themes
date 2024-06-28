@@ -1,0 +1,25 @@
+.channelTextAreaUpload {
+	margin-bottom: 12px;
+}
+
+.uploadModal {
+	width: 400px;
+	min-height: unset;
+
+	& > :first-child {
+		margin: var(--dialog-spacing);
+	}
+
+	.comment {
+		margin: 0;
+	}
+
+	.file {
+		display: none;
+	}
+
+	.label {
+		@extend %text-reset;
+	}
+}
+

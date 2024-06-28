@@ -1,0 +1,188 @@
+.expressionPickerPositionLayer {
+	--custom-emoji-picker-constants-diversity-emoji-size: 16px;
+
+	left: unset;
+	width: 610px; // 3 gifs in a row
+
+	.backButton {
+		@extend button;
+		// TODO: idk
+		@extend .titlebar-button;
+		@extend %icon-big-arrow-left;
+
+		min-width: 23px;
+		height: 22px;
+
+		// TODO: unify
+		svg {
+			display: none;
+		}
+	}
+
+	.categoryList {
+		@extend .content-container;
+
+		top: calc(21px + var(--window-gap));
+		left: 0;
+		width: calc(48px + var(--scrollbar-size));
+
+		& > .unicodeShortcut {
+			@extend button;
+
+			margin: var(--border-size);
+
+			// TODO: icon
+			position: absolute;
+			width: 48px;
+			min-width: unset;
+			height: 32px;
+		}
+	}
+
+	.categoryName {
+		@extend %text-reset;
+	}
+
+	.contentWrapper {
+		gap: 0;
+		padding: var(--dialog-spacing);
+
+		display: flex;
+		flex-direction: column;
+
+		& > nav {
+			display: none;
+		}
+	}
+	// TODO: it's supposed to be resizable or something. Not my problem !
+	.drawerSizingWrapper {
+		position: unset;
+		width: 100%;
+		height: calc(100% - var(--titlebar-height) - var(--window-gap));
+
+		// Not needed anymore
+		& > .resizeHandle {
+			display: none;
+		}
+	}
+
+	// TODO: content
+	.emojiItem {
+		min-width: var(--custom-emoji-picker-constants-emoji-size-large);
+		height: 56px;
+	}
+
+	[role="button"][aria-haspopup] {
+		width: unset;
+	}
+
+	[role="grid"] {
+		@extend .content-container;
+
+		& > div {
+			inset: var(--border-size);
+		}
+
+		ul {
+			padding: 0;
+		}
+	}
+
+	[role="none presentation"] {
+		inset: 0;
+	}
+
+	.emojiPicker,
+	[role="tabpanel"] {
+		gap: var(--window-gap);
+
+		flex-grow: 1;
+		grid-template-columns: calc(48px + var(--scrollbar-size)) auto;
+	}
+
+	[role="tabpanel"] {
+		box-shadow: none;
+		padding: 0;
+
+		& > .content {
+			@extend .content-container;
+		}
+
+		.header {
+			--button-img: var(--icon-arrow-bottom);
+			--button-img-width: 7px;
+			--button-img-height: 4px;
+
+			background-color: transparent;
+			font: var(--text-ui);
+			box-shadow: none;
+			gap: var(--window-gap);
+			padding: 0;
+
+			&[aria-expanded="false"] {
+				--button-img: var(--icon-arrow-right);
+				--button-img-width: 4px;
+				--button-img-height: 7px;
+			}
+
+			.inner {
+				[role="button"] {
+					display: none;
+				}
+			}
+		}
+
+		.headerCollapseIcon,
+		.headerIcon {
+			display: none;
+		}
+
+		.headerLabel {
+			text-transform: none;
+			gap: var(--text-spacing);
+			margin: 0;
+
+			display: flex;
+			align-items: center;
+
+			&::after {
+				content: '';
+
+				width: var(--button-img-width);
+				height: var(--button-img-height);
+
+				background-color: var(--color-button-text);
+				mask: var(--button-img);
+			}
+		}
+
+		.wrapper:is(.header, .packHeader) {
+			@extend .table-header-row;
+
+			height: unset;
+		}
+	}
+}
+
+#gif-picker-tab-panel {
+	--offset: 6px;
+
+	.content[style] > div {
+		top: var(--offset);
+		left: var(--offset);
+	}
+
+	.result {
+		&:hover::after {
+			inset: calc(var(--offset) * -1);
+			z-index: -1;
+
+			background-color: var(--color-highlight);
+			border-radius: 0;
+			box-shadow: none;
+
+			transition: none;
+		}
+	}
+}
+

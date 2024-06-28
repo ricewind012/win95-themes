@@ -1,0 +1,74 @@
+.filtered-list-widget {
+	--dialog-padding: 7px;
+
+	gap: 2px;
+	padding: var(--dialog-padding);
+	padding-top: calc(var(--titlebar-height) + var(--window-gap) + var(--dialog-padding));
+
+	&-hint {
+		@extend %text-reset;
+
+		background-color: transparent;
+		color: var(--color-active-caption-text);
+		font-weight: bold;
+		border: none;
+
+		position: absolute;
+		top: 2px;
+		left: -11px;
+		z-index: 1;
+	}
+
+	&-item {
+		@extend %text-reset;
+
+		height: unset;
+
+		&-wrapper {
+			border: none;
+
+			&.selected {
+				background-color: var(--color-highlight);
+				color: var(--color-highlight-text);
+			}
+
+			// TODO: not sure what that is, either ...
+			.tag {
+				display: none;
+			}
+		}
+	}
+
+	// TODO: not sure what that is - just a border on its own.
+	&-progress {
+		display: none;
+	}
+
+	&-item.selected &-subtitle,
+	&-title {
+		color: inherit;
+	}
+
+	devtools-text-prompt {
+		// Shadow DOM variables
+		--color-primary: var(--color-gray-text);
+		--color-background-highlight: var(--color-gray-text);
+
+		@extend textarea;
+
+		flex: 0 0 21px;
+	}
+
+	& > .vbox {
+		@extend .content-container;
+
+		height: 100%;
+	}
+}
+
+.not-found-text {
+	@extend %text-reset;
+
+	background-color: transparent;
+}
+

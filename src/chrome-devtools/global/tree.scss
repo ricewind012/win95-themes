@@ -1,0 +1,267 @@
+.elements-tree-outline,
+.tree-outline {
+	padding: 0;
+
+	overflow: auto;
+	height: 100%;
+
+	ol {
+		padding-bottom: 0; // "Application" tab
+		padding-left: var(--icon-size);
+		margin: 0;
+	}
+
+	li {
+		min-height: unset;
+		align-items: center;
+
+		// Chrome uses ::before for the icon. so use .selection.
+		&.parent {
+			&::before {
+				display: none;
+			}
+
+			// TODO available on hover in elements
+			.selection {
+				@extend .tree-item-icon;
+
+				margin-left: calc(var(--icon-size) * -1 - var(--tree-spacing));
+				margin-right: var(--tree-spacing);
+
+				z-index: initial;
+				display: initial;
+				flex-shrink: 0;
+			}
+		}
+
+		.selection {
+			background-color: transparent;
+		}
+
+		.tree-element-title {
+			// TODO role=textbox, contenteditable
+		}
+
+		&[aria-selected] .tree-element-title {
+			@extend .list-item[aria-selected="true"] > .list-item-name-container > .list-item-name;
+		}
+	}
+}
+
+// Tables
+$table-left-spacing = 15px;
+$tree-max-nest = 10;
+
+td.disclosure {
+	@extend [role="treeitem"];
+	@extend .tree-item-icon;
+
+	--level: 1;
+	--multiply: s('calc(var(--level) * %s)', $table-left-spacing);
+	--multiply-m1: s('calc((var(--level) - 1) * %s)', $table-left-spacing);
+
+	padding-left: calc(var(--multiply) + var(--tree-item-spacing-x));
+
+	overflow: visible;
+
+	for i in range(1, $tree-max-nest) {
+		&{s('[style="padding-left: %s;"]', $table-left-spacing * i)} {
+			--level: i + 1;
+		}
+	}
+
+	.expanded & {
+		@extend [role="treeitem"][aria-expanded="true"];
+	}
+
+	&::before {
+		-webkit-mask-image: none;
+
+		top: 2px;
+		left: calc(var(--tree-item-spacing-x) + var(--multiply-m1));
+	}
+
+	&::after {
+		top: -8px;
+		left: calc(8px + var(--multiply-m1));
+	}
+}
+
+// Elements
+.expand-icon {
+	@extend .tree-item-icon;
+
+	-webkit-mask-image: none;
+
+	position: relative;
+	top: 1px;
+	right: 5px;
+
+	li[role="treeitem"]:has(> &) .selection {
+		display: none;
+	}
+
+	&::after {
+		display: none;
+	}
+}
+
+// DOM tree: expected to be unchanged
+.elements-disclosure {
+	ol {
+		padding-inline-start: 12px;
+	}
+
+	& > ol {
+		padding-left: 2px;
+
+		& > li.parent {
+			margin-left: -1px;
+		}
+	}
+
+	li {
+		padding: 1px 0 0 14px;
+		margin-left: 2px;
+
+		&::before {
+			display: none;
+		}
+
+		&.parent {
+			@extend .tree-item-icon;
+
+			width: unset;
+			height: unset;
+
+			&::before {
+				position: relative;
+				top: 2px;
+				left: unset;
+				box-sizing: initial;
+				display: initial;
+				align-self: start;
+				flex-shrink: 0;
+			}
+
+			&::after {
+				display: none;
+			}
+
+			.selection {
+				display: none;
+			}
+		}
+
+		&:not(.parent) {
+			& > div {
+				margin-left: var(--tree-spacing);
+			}
+		}
+	}
+}
+
+.elements-tree-outline {
+	margin-left: -11px;
+}
+
+.tree-outline {
+	// !important
+	div#{&}-disclosure > &:has(.styles-clipboard-only) {
+		li[role="treeitem"] {
+			margin-left: var(--tree-margin-left, var(--icon-size));
+		}
+
+		ol.children {
+			--tree-margin-left: calc(var(--icon-size) * 2 + 2px);
+
+			margin-top: 6px;
+
+			li::before {
+				left: -28px;
+				height: 12px;
+
+				display: initial;
+			}
+		}
+	}
+
+	/*
+	&[aria-label="Application panel sidebar"] {
+		ol.children {
+			--tree-margin-left: 0px;
+		}
+	}
+	*/
+
+	// .enabled-button - CSS properties
+	&-disclosure:not(:has(> &:empty, .enabled-button)) {
+		@extend .content-container;
+
+		width: 100%;
+		height: 100%;
+	}
+}
+
+// Tree shadow root host
+.widget > div:not([class]) {
+	padding: 0;
+
+	overflow: hidden;
+	height: 100%;
+
+	.network > .vbox > & {
+		height: unset;
+	}
+}
+
+// Tooltip
+.object-properties-section {
+	margin-left: calc(var(--icon-size) * -1);
+}
+
+// "Sources" tab
+.navigator-file-tree-item {
+	margin-left: calc(var(--icon-size) * 1.5);
+}
+
+// Breakpoints sidebar
+.breakpoint-entry {
+	line-height: inherit;
+	border: none;
+	padding: 0;
+
+	.decoration-and-content {
+		border: none;
+		padding: 0 var(--tree-item-spacing-x);
+	}
+}
+
+.expandable-view-title {
+	background-color: transparent;
+	gap: var(--tree-spacing);
+	padding: 2px var(--tree-item-spacing-x);
+	margin: 0;
+
+	//overflow: visible;
+
+	&::before {
+		display: none;
+	}
+}
+
+// "Layers" tab
+.layer-tree.overflow-auto {
+	overflow: hidden;
+}
+
+[is="ui-icon"].title-expand-icon {
+	@extend .tree-item-icon;
+
+	-webkit-mask-image: none;
+	margin: 0;
+
+	&::after {
+		display: none;
+	}
+}

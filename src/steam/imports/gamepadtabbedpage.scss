@@ -1,0 +1,53 @@
+#FixCenterAlignScroll {
+	gap: 0;
+	padding: 0;
+
+	overflow: visible;
+}
+
+#Glyphs {
+	display: none;
+}
+
+#Tab {
+	@extend %text-reset;
+	@extend [role="tab"];
+
+	&#Selected {
+		@extend [role="tab"][aria-selected="true"];
+	}
+}
+
+#TabHeaderRowWrapper,
+#TabContents {
+	top: 53px;
+}
+
+#TabContentsScroll {
+	@extend [role="tabpanel"];
+
+	margin-top: var(--tabs-height);
+
+	overflow: hidden;
+}
+
+#TabHeaderRowWrapper {
+	padding: 0;
+
+	&::before {
+		display: none;
+	}
+}
+
+#TabRowSpacer {
+	display: none;
+}
+
+#TabRowTabs {
+	@extend [role="tablist"];
+}
+
+#TabsRowScroll {
+	-webkit-mask-image: none;
+}
+

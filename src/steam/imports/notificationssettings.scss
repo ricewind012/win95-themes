@@ -1,0 +1,69 @@
+#FriendsDescription,
+#Subheader {
+	@extend %text-reset;
+}
+
+#NotificationDescription {
+	font: var(--text-ui);
+	color: inherit;
+	margin: 0;
+}
+
+#NotificationFeedToggle {
+	margin-right: 0;
+}
+
+#NotificationGroup {
+	background-color: transparent;
+	border-bottom: none;
+	margin: 0;
+}
+
+#NotificationListSection {
+	gap: var(--text-spacing);
+
+	display: flex;
+	flex-direction: column;
+}
+
+#NotificationPrefDetails {
+	background-color: transparent;
+	gap: var(--text-spacing);
+	padding-top: var(--text-spacing);
+	padding-left: calc(var(--sel-button-size) + var(--label-spacing));
+	box-shadow: none;
+
+	flex-direction: column;
+
+	.DialogCheckbox_Container {
+		margin: 0;
+	}
+}
+
+#NotificationSection {
+	align-items: center;
+}
+
+#PrefDetailsToggle {
+	@extend button;
+	@extend .titlebar-button;
+	@extend %icon-more;
+
+	width: unset;
+
+	&#Selected {
+		@extend button:active;
+	}
+
+	svg {
+		display: none;
+	}
+}
+
+#ToggleHeader {
+	@extend %text-reset;
+}
+
+#Toggles.Panel {
+	gap: 106px;
+}

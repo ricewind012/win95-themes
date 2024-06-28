@@ -1,0 +1,48 @@
+#Label {
+	@extend %text-reset;
+
+	&#Disabled {
+		opacity: 1;
+		color: var(--color-gray-text);
+	}
+}
+
+#Toggle {
+	width: unset;
+	height: unset;
+
+	&#Disabled {
+		opacity: 1;
+
+		#ToggleSwitch {
+			@extend input, [type="checkbox"], :disabled;
+		}
+	}
+}
+
+#ToggleRail {
+	display: none;
+}
+
+#ToggleRow {
+	background-color: transparent;
+	gap: var(--label-spacing);
+	padding: 0;
+	margin-bottom: var(--text-spacing);
+
+	flex-direction: row-reverse;
+	justify-content: start;
+}
+
+#ToggleSwitch {
+	@extend input;
+	@extend input, [type="checkbox"];
+
+	background-image: none;
+	transform: unset;
+
+	&#On {
+		@extend input, [type="checkbox"], :checked;
+	}
+}
+

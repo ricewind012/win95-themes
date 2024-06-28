@@ -1,0 +1,101 @@
+#BrowserTab {
+	@extend [role="tab"];
+
+	gap: var(--text-spacing);
+
+	&#Active {
+		@extend [role="tab"][aria-selected="true"];
+	}
+}
+
+#BrowserTabIcon,
+#CloseTabButton {
+	padding: 0;
+}
+
+#BrowserTabs {
+	@extend [role="tablist"];
+
+	overflow: visible;
+
+	// New tab button
+	& > #BrowserTab {
+		min-width: auto;
+	}
+}
+
+#BrowserViewHost {
+	// Draw the border ...
+	--offset: 2px;
+
+	background: var(--color-window);
+	margin: calc(var(--border-size) + var(--offset));
+
+	position: relative;
+	top: var(--offset);
+	left: var(--offset);
+	width: calc(100% - var(--offset) * 6);
+	height: calc(100% - var(--offset) * 6);
+
+	&::before,
+	&::after {
+		content: '';
+
+		position: absolute;
+	}
+
+	&::before {
+		top: calc(var(--offset) * -3);
+		left: calc(var(--offset) * -3);
+		width: calc(100% + var(--offset) * 6);
+		height: calc(100% + var(--offset) * 6);
+
+		box-shadow: var(--border-button-raised);
+	}
+
+	&::after {
+		top: calc(var(--offset) * -1);
+		left: calc(var(--offset) * -1);
+		width: calc(100% + var(--offset) * 2);
+		height: calc(100% + var(--offset) * 2);
+
+		box-shadow: var(--border-field);
+	}
+}
+
+#NavigationButton {
+	// TODO: icons
+	@extend button;
+	@extend .icon-button;
+
+	&#Disabled {
+		@extend button:disabled;
+	}
+}
+
+#TabTitle {
+	@extend %text-reset;
+}
+
+// TODO: please fucking kill me that looks like total shit !
+#URLBar {
+	background-color: transparent;
+	padding: 4px;
+	margin-bottom: var(--window-gap);
+	box-shadow: var(--border-button-raised);
+}
+
+#URLBarText {
+	@extend input[type="text"];
+
+	margin-left: var(--toolbar-spacing);
+
+	&::before {
+		display: none;
+	}
+
+	input {
+		padding: 0;
+	}
+}
+

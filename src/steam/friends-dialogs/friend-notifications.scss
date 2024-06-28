@@ -1,0 +1,28 @@
+.FriendsSettingsNotificationRow {
+	background-color: transparent;
+	color: var(--color-window-text);
+	font-size: var(--text-ui-size);
+	padding: 0;
+	margin: 0;
+
+	display: flex;
+
+	&_Header {
+		& > div {
+			@extend .table-header-row;
+		}
+	}
+
+	&_Checkbox,
+	&_Label {
+		@extend %text-reset;
+
+		text-align: start;
+		padding: 2px 5px;
+	}
+}
+
+.FriendNotificationsDialog .SettingsGroup {
+	@extend .content-container;
+}
+

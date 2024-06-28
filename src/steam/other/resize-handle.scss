@@ -1,0 +1,13 @@
+.PopupFullWindow:not(:only-child) {
+	@extend %statusbar-alt;
+
+	.ModalPosition {
+		height: calc(100% - var(--text-full) - 6px);
+	}
+}
+
+.window_resize_grip {
+	@extend .window-resize-handle;
+
+	opacity: 1;
+}

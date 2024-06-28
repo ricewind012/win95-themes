@@ -1,0 +1,14 @@
+#GraphAndStats {
+	height: unset;
+}
+
+#SettingsButton {
+	#Button {
+		@extend .titlebar-button;
+		@extend %icon-settings;
+
+		svg {
+			display: none;
+		}
+	}
+}

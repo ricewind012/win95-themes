@@ -1,0 +1,13 @@
+#AppName {
+	font-size: var(--text-ui-size);
+}
+
+#EmoticonHover {
+	@extend %tooltip;
+}
+
+#Name {
+	font-size: var(--text-ui-size);
+	font-weight: bold;
+}
+

@@ -1,0 +1,11 @@
+#CollectionDelete {
+	display: none;
+}
+
+#CollectionDeleteContainer {
+	.DialogBodyText {
+		span {
+			@extend %text-reset;
+		}
+	}
+}

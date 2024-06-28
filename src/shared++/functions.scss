@@ -1,0 +1,9 @@
+@mixin parentheses() {
+	&::before {
+		content: '(';
+	}
+
+	&::after {
+		content: ')';
+	}
+}

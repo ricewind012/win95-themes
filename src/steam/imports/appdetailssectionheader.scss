@@ -1,0 +1,9 @@
+#SectionHeader {
+	@extend %legend-as-div;
+	@extend %text-reset;
+
+	background-color: var(--color-window);
+	margin-left: 21px;
+
+	z-index: 1;
+}

@@ -1,0 +1,8 @@
+#Icon {
+	// TODO: icons
+	filter: string.unquote("invert()");
+}
+
+#Label {
+	@extend %text-reset;
+}

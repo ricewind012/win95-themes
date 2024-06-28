@@ -1,0 +1,84 @@
+.heap-snapshot {
+	&-statistics-view {
+		@extend .content-container;
+	}
+
+	&-stats-pie-chart {
+		margin: auto;
+	}
+
+	&-view-resizer {
+		border: none;
+
+		.title > span {
+			padding: 2px;
+			margin: 0;
+		}
+	}
+}
+
+.profile-launcher {
+	&-buttons {
+		gap: 6px;
+
+		justify-content: end;
+	}
+
+	&-target-list {
+		@extend .content-container;
+	}
+
+	&-view-content {
+		& > .vbox {
+			@extend fieldset;
+
+			& > h1 {
+				@extend %text-reset;
+				@extend %legend-as-div;
+
+				margin: 0;
+			}
+		}
+
+		// Description
+		p {
+			margin-left: 19px;
+		}
+	}
+}
+
+.profile-isolate-selector-block {
+	overflow: visible;
+
+	// TODO: lol
+	& > .profile-memory-usage-item {
+		@extend %text-reset;
+		@extend .statusbar;
+
+		border: none;
+		padding: 0;
+		margin: 0;
+
+		& > div {
+			@extend .statusbar-item;
+
+			margin: 0;
+		}
+	}
+}
+
+.profiles {
+	&-sidebar-tree-box {
+		overflow: hidden;
+	}
+
+	&-toolbar {
+		border: none;
+		margin-bottom: var(--window-gap);
+	}
+}
+
+[is="dt-radio"] {
+	@extend %text-reset;
+	@extend label;
+}

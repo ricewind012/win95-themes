@@ -1,0 +1,24 @@
+#LibraryImageBackgroundGlow {
+	display: none;
+}
+
+#SortingDropDownContainer {
+	// ANOTHER fucking context menu, AND it has an !important
+	.DesktopUI & > div {
+		@extend [role="listbox"];
+	}
+}
+
+#SortingDropDownItems {
+	@extend %text-reset;
+
+	margin: 0;
+}
+
+#SortingDropDownLabel {
+	@extend %text-reset;
+
+	&::after {
+		content: ': ';
+	}
+}

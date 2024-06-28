@@ -1,0 +1,82 @@
+$d: ".";
+
+// These selectors either:
+// - will cause massive lag if used with attribute selectors;
+// - can not be used with attribute selectors for other reasons.
+$selectors: (
+	checkbox-container: '.container_ed1d57',
+	tags-filter-container: '.container_ae4f46',
+);
+
+// TODO: remove
+// TODO: add position: absolute version
+// An alternative to "@extend .content-container" for special elements
+%content-container-alt {
+	background-color: var(--color-window);
+
+	margin: var(--border-size);
+
+	&::before {
+		content: '';
+
+		position: absolute;
+		inset: var(--inset);
+
+		pointer-events: none;
+
+		box-shadow: var(--border-field);
+	}
+}
+
+%pseudo-separator {
+	content: '';
+
+	width: 100%;
+	display: inline-block;
+
+	@extend hr;
+}
+
+%select-as-button {
+	@extend select;
+
+	&:active,
+	&:focus {
+		outline: none;
+		color: var(--color-window-text);
+		text-shadow: none;
+		box-shadow: var(--border-field);
+	}
+}
+
+%use-aria-label {
+	&::before {
+		content: attr(aria-label);
+	}
+
+	& > * {
+		display: none;
+	}
+}
+
+img {
+	image-rendering: auto;
+}
+
+.base > .content {
+	gap: var(--window-gap);
+}
+
+// Revert controls.css
+.file-input {
+	position: absolute;
+}
+
+// Themes
+#appearance-tab > div > [class*="children_"] > :nth-child(2),
+// Nitro
+#profile-customization-tab > [class*="container_"],
+[class*="premiumFeatureBorder_"] {
+	display: none;
+}
+

@@ -1,0 +1,183 @@
+#AppActionBar {
+	padding: 0;
+	padding-top: var(--dialog-button-spacing);
+
+	z-index: 1;
+}
+
+#AppActionBarButtons {
+	gap: var(--dialog-button-spacing);
+}
+
+#AppActionSelected {
+	@extend %text-reset;
+
+	position: fixed;
+	left: 8px;
+	bottom: 5px;
+}
+
+#AppBody {
+	background-color: var(--color-window);
+	color: var(--color-window-text);
+
+	&:hover {
+		--color-window: var(--color-highlight);
+		--color-window-text: var(--color-highlight-text);
+	}
+
+	svg {
+		display: none;
+	}
+}
+
+#AppHeader {
+	@extend %text-reset;
+
+	padding: 0;
+}
+
+#AppHeaderContainer {
+	@extend %legend-as-div;
+
+	top: -9px;
+}
+
+#AppHeaderValue {
+	@extend %text-reset;
+
+	margin-left: var(--text-spacing);
+
+	display: flex;
+
+	@include parentheses();
+}
+
+#AppInfoItem {
+	@extend %text-reset;
+
+	gap: var(--text-spacing);
+}
+
+#AppList {
+	padding: 0;
+}
+
+#AppName {
+	@extend %text-reset;
+}
+
+#AppsGrid {
+	@extend fieldset;
+
+	margin-top: 20px;
+	margin-bottom: 0;
+}
+
+#AppSize {
+	@extend %text-reset;
+}
+
+#AppUsageText,
+#AppUsageValue {
+	@extend %text-reset;
+
+	margin: 0;
+}
+
+// Redundant with the top <select>
+#DriveUsage > #DriveName {
+	display: none;
+}
+
+#DriveSettingsButton {
+	@extend button;
+	@extend .titlebar-button;
+	@extend %icon-more;
+
+	width: unset;
+
+	svg {
+		display: none;
+	}
+}
+
+#DriveUsageBar {
+	@extend progress::-webkit-progress-value;
+}
+
+#DriveUsageDot {
+	background-color: var(--color-highlight);
+}
+
+#DriveUsageIndicator {
+	@extend progress;
+
+	background-color: transparent;
+}
+
+#DriveUsageNumber,
+#DriveUsageText {
+	@extend %text-reset;
+}
+
+#AppUsageText,
+#DriveUsageText {
+	display: flex;
+
+	&::after {
+		content: ':';
+	}
+}
+
+// Not alphabetical to sort colors
+// Stylus also bails out with hex colors here, wtf lol
+#DriveUsageWorkshop {
+	--color-highlight: darkorange;
+}
+#DriveUsageShader {
+	--color-highlight: darkmagenta;
+}
+#DriveUsageOther {
+	--color-highlight: var(--color-gray-text);
+}
+#DriveUsageFreeSpace {
+	--color-highlight: transparent;
+}
+
+#InstallDropdownOption {
+	color: inherit;
+
+	svg,
+	#DriveName,
+	#DriveSize {
+		@extend %text-reset;
+	}
+}
+
+#LibraryContent,
+#LibraryHeader {
+	padding: 0;
+}
+
+#LibraryContent {
+	// For <fieldset> & <progress> borders
+	overflow: visible;
+}
+
+#LibraryHeader {
+	gap: 11px;
+
+	align-items: start;
+}
+
+#LibraryInventory {
+	@extend .content-container;
+}
+
+#Rule {
+	margin: 0 2px;
+
+	height: 0;
+}
+

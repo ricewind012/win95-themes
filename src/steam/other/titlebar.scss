@@ -1,0 +1,85 @@
+.minimizeButton {
+	@extend %titlebar-button-minimize;
+}
+
+.maximizeButton {
+	@extend %titlebar-button-maximize;
+}
+
+.restoreButton {
+	@extend %titlebar-button-restore;
+}
+
+.closeButton {
+	@extend %titlebar-button-close;
+}
+
+.singleWindowFocusBar {
+	display: none;
+}
+
+.title-area {
+	--window-img: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQAQMAAAAlPW0iAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAGUExURQAAAAAAAKVnuc8AAAACdFJOU/8A5bcwSgAAAAlwSFlzAAAOwwAADsMBx2+oZAAAADdJREFUCNdj+CHP8ICd4cBvhoZOhsa1DIwlDIwqDMxzGM5/YPh8gKGWgWEvI8MkRoY7zCBlP+QBgSAPR9M4h8IAAAAASUVORK5CYII=');
+
+	background-color: var(--color-inactive-caption);
+	padding-right: 2px;
+
+	position: unset;
+	min-height: var(--titlebar-height);
+	max-height: var(--titlebar-height);
+
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+
+	.WindowFocus & {
+		background-color: var(--color-active-caption);
+	}
+
+	&::before {
+		--s: calc(1px + var(--border-size) + var(--window-spacing));
+
+		content: '';
+
+		position: fixed;
+		left: var(--s);
+		top: var(--s);
+		width: var(--icon-size);
+		height: var(--icon-size);
+
+		background-image: var(--window-img);
+
+		.WindowFocus & {
+			filter: string.unquote("invert()");
+		}
+	}
+
+	// Used only in overlay browser ?
+	&-children {
+		@extend .titlebar-name;
+
+		font-size: var(--font-ui-size);
+		color: var(--color-inactive-caption-text);
+		padding-left: calc(var(--icon-size) + var(--titlebar-spacing));
+
+		.WindowFocus & {
+			color: var(--color-active-caption-text);
+		}
+	}
+
+	&-icon {
+		@extend button;
+		@extend .titlebar-button;
+
+		width: unset;
+
+		&-inner {
+			display: none;
+		}
+	}
+
+	&-highlight {
+		display: none;
+	}
+}
+

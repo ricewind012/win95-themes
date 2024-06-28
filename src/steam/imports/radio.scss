@@ -1,0 +1,45 @@
+#Group,
+#Button {
+	background-color: transparent;
+	padding: 0;
+}
+
+#Button {
+	@extend label;
+	@extend input[type="radio"];
+
+	font: var(--text-ui);
+	color: var(--color-button-text);
+	text-align: left;
+	gap: 0;
+
+	position: relative;
+	width: unset;
+	flex-direction: row;
+	justify-content: left;
+
+	&::before,
+	&::after {
+		content: '';
+	}
+
+	// Use as ::before for label spacing
+	&::after {
+		width: calc(var(--sel-button-size) + var(--label-spacing));
+		order: -1;
+	}
+
+	&#Active {
+		@extend input[type="radio"]:checked;
+	}
+
+	& > span {
+		@include parentheses();
+	}
+}
+
+#Group {
+	box-shadow: none;
+	gap: var(--text-spacing);
+	flex-direction: column;
+}

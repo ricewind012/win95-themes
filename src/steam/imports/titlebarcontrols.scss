@@ -1,0 +1,105 @@
+#AccountMenu {
+	@extend select;
+
+	.avatar {
+		border: none;
+		box-shadow: none;
+
+		width: 100%;
+		height: 100%;
+
+		&Holder {
+			width: var(--icon-size);
+			height: var(--icon-size);
+			transform: none;
+		}
+	}
+}
+
+#AnnouncementsButton {
+	@extend %icon-newspaper;
+}
+
+#Button {
+	@extend button;
+	@extend .titlebar-button;
+
+	--button-img-pos: 3px 2px;
+
+	width: unset;
+	min-height: unset;
+
+	cursor: default;
+}
+
+#GamepadUIToggle {
+	@extend %icon-computer;
+}
+
+#NotificationButtonContainer {
+	@extend %icon-bell;
+}
+
+#TitleBarControls {
+	position: absolute;
+	top: 1px;
+	right: 46px;
+	z-index: 1;
+
+	& > :nth-child(3) > div {
+		--pos: calc(var(--border-size) + var(--window-spacing));
+
+		margin: 0;
+
+		position: fixed;
+		top: calc(var(--pos) + var(--titlebar-height) + var(--menubar-height) + var(--window-gap) * 2 + 8px);
+		right: calc(var(--pos) + var(--toolbar-container-spacing));
+		display: flex;
+		align-items: center;
+	}
+
+	& > :nth-child(4) {
+		margin-right: 2px;
+
+		order: -1;
+	}
+
+	svg {
+		display: none;
+	}
+}
+
+// Notifications / menu
+#AccountName,
+#WalletBalance {
+	color: inherit;
+}
+
+#AllNotificationsTitle {
+	font: var(--text-ui);
+}
+
+#EmptyNotificationsBody {
+	color: inherit;
+}
+
+#EmptyNotificationsCtn {
+	@extend .window, .child;
+}
+
+#LogoutButton {
+	white-space: pre;
+	gap: 0;
+}
+
+#NotificationHeader {
+	padding: 8px;
+}
+
+#NotificationsMenu {
+	color: var(--color-button-text);
+	border: none;
+	box-shadow: none;
+
+	width: unset;
+}

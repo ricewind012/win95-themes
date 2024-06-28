@@ -1,0 +1,8 @@
+#TableHeader {
+	@extend %text-reset;
+
+	& > :first-child {
+		@extend %legend-as-div;
+	}
+}
+

@@ -1,0 +1,123 @@
+#AppLogo {
+	// x1.5, since I have more space anyway
+	width: 132px;
+	height: 60px;
+}
+
+#AppName {
+	@extend %text-reset;
+}
+
+#AppsToInstall {
+	border: none;
+	margin: 0;
+
+	&::after {
+		content: '';
+
+		@extend hr;
+
+		margin: 8px 0;
+
+		width: 100%;
+		display: block;
+	}
+}
+
+#AppToInstall {
+	line-height: inherit;
+	border: none;
+	padding: 0;
+
+	align-items: center;
+}
+
+#CreateShortcuts {
+	gap: 0;
+	margin: 0;
+	margin-bottom: 12px;
+
+	flex-direction: column;
+}
+
+#DiskSpace {
+	@extend %text-reset;
+}
+
+// TODO: maybe DO display icons there for warnings
+#FolderFlag {
+	display: none;
+}
+
+#FolderFlagStar {
+	margin: 0;
+	margin-top: -2px;
+}
+
+#FolderName {
+	color: inherit;
+}
+
+// TODO: .list-entry
+#FolderOption {
+	@extend %text-reset;
+
+	background-color: transparent;
+	color: var(--color-window-text);
+	gap: var(--text-spacing);
+	padding: 0 3px;
+	margin: 0;
+
+	height: 13px;
+
+	&#Active {
+		background-color: var(--color-highlight);
+		color: var(--color-highlight-text);
+	}
+}
+
+#FolderSelector {
+	@extend fieldset;
+
+	& > :not([class]) {
+		@extend .content-container;
+	}
+}
+
+#FolderSettings {
+	@extend .titlebar-button;
+	@extend %icon-more;
+
+	svg {
+		display: none;
+	}
+}
+
+#Header {
+	@extend %legend-as-div;
+	@extend %text-reset;
+}
+
+#NoticeInstallFolder {
+	gap: var(--messagebox-content-spacing);
+
+	&:not(:has(> :empty)) {
+		@extend %text-reset;
+		@extend .tooltip;
+
+		align-items: center;
+		justify-content: start;
+
+		&::before {
+			--icon-size: 32px;
+
+			content: '';
+
+			width: var(--icon-size);
+			height: var(--icon-size);
+
+			background-image: var(--icon-dialog-warning);
+		}
+	}
+}
+

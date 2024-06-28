@@ -1,0 +1,12 @@
+.root {
+	.errorMessage {
+		@extend %text-reset;
+
+		color: darkred;
+	}
+
+	.sampleLink {
+		@extend %text-reset;
+	}
+}
+

@@ -1,0 +1,15 @@
+.modalContent {
+	& > .name {
+		@extend fieldset;
+
+		& > label {
+			@extend %text-reset;
+			@extend %legend-as-div;
+		}
+
+		svg {
+			display: none;
+		}
+	}
+}
+

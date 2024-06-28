@@ -1,0 +1,118 @@
+// TODO: remove when doing icons
+.attachButtonInner {
+	height: unset;
+}
+
+.clipContainer > div {
+	gap: var(--toolbar-spacing);
+	margin-right: var(--toolbar-container-spacing);
+	margin-bottom: var(--toolbar-spacing);
+
+	flex-direction: row;
+	align-items: center;
+}
+
+.createThreadButton {
+	@extend button;
+
+	font-weight: normal;
+}
+
+form.form {
+	background-color: var(--color-button-face);
+	padding: 0;
+	padding-top: var(--toolbar-container-spacing);
+	margin: 0;
+	margin-left: calc(var(--toolbar-spacing) * -1);
+
+	&::before,
+	&::after {
+		display: none;
+	}
+
+	.channelTextArea {
+		margin-bottom: var(--toolbar-container-spacing);
+	}
+
+	& > .typing {
+		position: fixed;
+		right: calc(var(--window-pos) + 2px);
+		bottom: calc(var(--window-pos) + 2px);
+		// -4px offset for the <span> child
+		left: calc(var(--window-pos) + var(--sidebar-width) - 4px);
+		height: unset;
+
+		& > div {
+			@extend %text-reset;
+		}
+
+		// TODO: remove when adding icons
+		svg {
+			display: none;
+		}
+	}
+}
+
+.replyBar {
+	width: 100%;
+
+	[role="switch"] {
+		@extend input;
+		@extend input, [type="checkbox"];
+
+		margin-right: calc(36px + var(--label-spacing) + var(--toolbar-spacing));
+
+		&[aria-checked="true"] {
+			@extend input, [type="checkbox"], :checked;
+		}
+
+		& > div {
+			font-size: 0;
+			font-weight: normal;
+			padding: 0;
+
+			&::before {
+				// TODO: localize
+				content: 'Mention';
+
+				font-size: var(--text-ui-size);
+				margin-left: calc(var(--sel-button-size) + var(--label-spacing));
+			}
+		}
+	}
+
+	.closeButton {
+		--button-img: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA0AAAANCAMAAABFNRROAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAGUExURQAAAAAAAKVnuc8AAAACdFJOU/8A5bcwSgAAAAlwSFlzAAAOwwAADsMBx2+oZAAAADlJREFUGFdFjoEJADAIw/T/p9eoYR1o0yKsolaAmJ13yMQMTnSxPWNb9sHvxnpnjhUspG2EiN+orgcmKwBw9dYmLQAAAABJRU5ErkJgggo=');
+		--button-img-pos: 5px 4px;
+
+		@extend button;
+		@extend .icon-button;
+	}
+
+	.separator {
+		display: none;
+	}
+
+	// TODO: unify
+	svg {
+		display: none;
+	}
+}
+
+.replyLabel {
+	@extend %link;
+
+	& > span {
+		color: inherit;
+	}
+}
+
+.threadSuggestionBar {
+	border: none;
+	padding: 0;
+
+	& > :first-child {
+		display: none;
+	}
+}
+

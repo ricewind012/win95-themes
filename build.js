@@ -1,12 +1,11 @@
 import fs from "node:fs";
 import path from "node:path";
 import postcss from "postcss";
-import postcssStyl from "postcss-styl";
-import stylus from "stylus";
+import postcssScss from "postcss-scss";
+import * as sass from "sass-embedded";
 
 const SHARED_DIR = path.join("src", "shared");
 const SHARED_PP_DIR = path.join("src", "shared++");
-const SHARED_STYLUS_DIR = path.join("src", "shared-styl");
 
 const STEAM_CLASS_MAPS_FILE = "steam_class_maps.json";
 
@@ -22,7 +21,7 @@ selectorReplacerPlugin.postcss = true;
 const usePostcss = (opts, css) =>
 	postcss(selectorReplacerPlugin(opts)).process(css, {
 		from: undefined,
-		syntax: postcssStyl,
+		syntax: postcssScss,
 	});
 
 const progs = fs.readdirSync("src").filter((e) => !e.startsWith("shared"));
@@ -35,42 +34,40 @@ if (process.argv.length == 2 || !progs.some((e) => process.argv[2] == e)) {
 	process.exit(2);
 }
 
-// TODO: move into "imports" below
-const sharedFiles = readDir(SHARED_PP_DIR);
 const file = process.argv[2];
 const rootDir = path.join("src", file);
 const outFile = path.join("dist", file, `${file}.css`);
 
-const sharedCss = readDir(SHARED_STYLUS_DIR);
-/*
-const includedDirs = (isSteam ? ["other"] : fs.readdirSync(rootDir))
-	.filter((e) => fs.lstatSync(path.join(rootDir, e)).isDirectory())
-	.map((e) => `${rootDir}/${e}/*`);
-	*/
+const sharedCss = [
+	...readDir(SHARED_DIR).filter((e) => e != path.join(SHARED_DIR, ".git")),
+	...readDir(SHARED_PP_DIR),
+]
+	.map(readFile)
+	.join("\n")
+	// scss is shit
+	.replace("invert()", "string.unquote('invert()')");
+
 const includedDirs = (() => {
 	switch (file) {
 		case "discord":
-			return ["vencord"].map((e) => `${rootDir}/${e}/*`);
+			return ["vencord"];
 		case "steam":
 			return fs
 				.readdirSync(rootDir)
-				.filter((e) => e != `${file}.styl` && e != "imports")
-				.map((e) => path.join(rootDir, e))
-				.map((e) => `${e}/*`);
+				.filter((e) => e != `${file}.scss` && e != "imports");
 		default:
 			return fs
 				.readdirSync(rootDir)
-				.filter((e) => fs.lstatSync(path.join(rootDir, e)).isDirectory())
-				.map((e) => `${rootDir}/${e}/*`);
+				.filter((e) => fs.lstatSync(path.join(rootDir, e)).isDirectory());
 	}
 })();
-let imports = [
-	...sharedCss,
-	...sharedFiles,
-	path.join(rootDir, `${file}.styl`),
-	...includedDirs,
+
+const normalFiles = [
+	path.join(rootDir, `${file}.scss`),
+	...includedDirs.map((e) => path.join(rootDir, e)).map(readDir),
 ]
-	.map((e) => `@import '${e}';`)
+	.flat()
+	.map(readFile)
 	.join("\n");
 
 const processedFiles = (() => {
@@ -85,7 +82,7 @@ const processedFiles = (() => {
 					{
 						match: /#(\w+)/g,
 						replace: (_, s) => {
-							const className = `${e.replace(".styl", "")}_${s}_`;
+							const className = `${e.replace(".scss", "")}_${s}_`;
 
 							return "." + maps[keys.find((e) => e.startsWith(className))];
 						},
@@ -117,25 +114,26 @@ const processedFiles = (() => {
 	}
 })();
 
-imports += (await Promise.all(processedFiles)).map((e) => e.css).join("\n");
+const theEntireThing = [
+	"@use 'sass:string';",
+	sharedCss,
+	normalFiles,
+	(await Promise.all(processedFiles)).map((e) => e.css).join("\n"),
+]
+	.join("\n")
+	// scss is shit
+	.replace(/@extend :root.focused .titlebar/g, "");
 
-// Variables have to be manually edited due to a Stylus bug (or its age).
-const cssVars = readFile(path.join(SHARED_DIR, "variables.css")).replace(
-	/ \/ /g,
-	" \\/ ",
-);
-const actualCssVars = mapText(cssVars, (e) =>
-	e.endsWith(")") ? `${e} \\` : e,
-);
-const renderer = stylus(actualCssVars + imports);
-
-renderer.render((err, css) => {
-	if (err) {
-		throw new Error(err.message);
-	}
-
-	fs.writeFileSync(
-		outFile,
-		mapText(css, (e) => e.replace(/;$/g, " !important;")),
-	);
-});
+sass
+	.compileStringAsync(theEntireThing)
+	.then((e) => {
+		fs.writeFileSync(
+			outFile,
+			mapText(e.css, (e) => e.replace(/;$/g, " !important;")),
+		);
+	})
+	.catch((e) => {
+		console.log(e.message);
+		fs.writeFileSync("/tmp/error", theEntireThing);
+		process.exit(1);
+	});

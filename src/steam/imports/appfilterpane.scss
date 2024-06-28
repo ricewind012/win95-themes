@@ -1,0 +1,69 @@
+#Buttons {
+	margin: 0;
+	gap: var(--dialog-button-spacing);
+
+	svg {
+		display: none;
+	}
+}
+
+#Container {
+	padding: var(--dialog-spacing);
+}
+
+#DropDownContainer {
+	box-shadow: none;
+
+	// TODO:
+	// I am simply not going to bother,
+	// because V*lve decided it's a good idea
+	// to use icons instead of text.
+	svg {
+		display: none;
+	}
+}
+
+#DropDownItems {
+	font: var(--text-ui);
+}
+
+#ExtraTall {
+	grid-row-end: span 2;
+}
+
+#FilterArea {
+	gap: 4px 8px;
+}
+
+#FilterBucket {
+	@extend fieldset;
+
+	.DialogInput_Wrapper {
+		margin: 0;
+	}
+}
+
+#FilterBucketBoxes {
+	padding: 0;
+
+	#SearchResultsBox & {
+		// TODO: popup in win95-shared
+		@extend .window, .child;
+	}
+}
+
+#FilterBucketLabel {
+	@extend %legend-as-div;
+
+	font: var(--text-ui);
+	color: var(--color-button-text);
+	text-transform: unset;
+}
+
+#SteamDeckCompatDropDown {
+	padding: 0;
+
+	.DialogDropDown_CurrentDisplay {
+		width: unset;
+	}
+}

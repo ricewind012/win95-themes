@@ -1,0 +1,17 @@
+.dt-checkbox-text {
+	color: var(--color-button-text);
+	margin-left: 6px;
+
+	// For description
+	flex-direction: column;
+	align-items: start;
+
+	input[type="checkbox"]:disabled + & {
+		color: var(--color-gray-text);
+	}
+}
+
+// Gray color in settings and toolbar
+.devtools-link {
+	@extend %link;
+}

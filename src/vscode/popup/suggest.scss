@@ -1,0 +1,19 @@
+.suggest-widget {
+	@extend .window, .child;
+
+	border: none;
+
+	.monaco {
+		&-scrollable-element {
+			overflow: hidden;
+		}
+
+		&-list-row {
+			padding-right: var(--scrollbar-size);
+
+			&s {
+				margin: 0;
+			}
+		}
+	}
+}

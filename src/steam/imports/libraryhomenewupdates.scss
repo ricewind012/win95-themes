@@ -1,0 +1,75 @@
+#EventOptions {
+	opacity: 1;
+	padding-top: var(--text-spacing);
+	padding-right: var(--text-spacing);
+
+	right: 0;
+
+	& > div {
+		@extend button;
+		@extend .titlebar-button;
+
+		--button-img: var(--icon-arrow-bottom);
+		--button-img-size: 7px 4px;
+		--button-img-pos: 4px center;
+
+		background-image: none;
+	}
+}
+
+#EventRowCarousel {
+	margin: 0;
+}
+
+#EventTime {
+	font: var(--text-ui);
+	color: inherit;
+	padding-bottom: var(--text-spacing);
+}
+
+#GameIcon {
+	filter: none;
+	margin-right: var(--text-spacing);
+
+	width: var(--icon-size);
+	height: var(--icon-size);
+}
+
+#GameIconAndName {
+	@extend button;
+
+	min-width: 100%;
+	align-items: center;
+	justify-content: center;
+}
+
+#GameName {
+	color: inherit;
+}
+
+#PartnerEventRowCapsule_TextCtn {
+	@extend %text-reset;
+
+	padding: 0;
+	padding-top: var(--text-spacing);
+}
+
+#PartnerEventRowCapsule_TextTitle {
+	@extend %text-reset;
+
+	min-height: 40px;
+}
+
+#SettingsButton {
+	@extend button;
+	@extend .titlebar-button;
+	@extend %icon-settings;
+
+	&::before {
+		height: 13px;
+	}
+
+	svg {
+		display: none;
+	}
+}
