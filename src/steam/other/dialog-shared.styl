@@ -224,10 +224,11 @@
 	}
 
 	&MenuPosition ._DialogInputContainer {
-		@extend .window;
-		@extend .window.child;
+		@extend [role="listbox"];
 
 		font: var(--text-ui);
+		box-shadow: none;
+		padding: 0;
 	}
 
 	&SubHeader {

@@ -64,9 +64,6 @@
 				@extend $icon-more;
 
 				// TODO
-				height: 22px;
-
-				// TODO
 				&::before {
 					background-size: 16px auto;
 					margin-left: -1px;
@@ -99,9 +96,9 @@
 		}
 
 		button {
-			min-width: 23px;
-			width: 23px;
-			height: 22px;
+			@extend .icon-button;
+
+			width: unset;
 
 			// TODO: remove when adding icons
 			svg {

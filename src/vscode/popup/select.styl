@@ -1,12 +1,16 @@
 .monaco {
 	&-select-box-dropdown-container {
-		@extend .window;
-		@extend .window.child;
+		@extend [role="listbox"];
+
+		font: var(--text-ui);
 
 		width: 320px;
 
+		// The actual listbox
 		.monaco-list {
-			height: calc(100% - 8px);
+			border: none;
+			box-shadow: none;
+			padding: 0;
 		}
 
 		& > .select-box {
@@ -17,6 +21,8 @@
 
 			&-details-pane {
 				@extend hr;
+
+				margin-inline: 3px 4px;
 			}
 		}
 	}

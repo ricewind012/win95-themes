@@ -54,12 +54,15 @@
   --messagebox-content-spacing: 17px !important;
   --dialog-spacing: 7px !important;
   --dialog-button-spacing: 6px !important;
+  --toolbar-spacing: 8px !important;
+  --toolbar-container-spacing: 6px !important;
+  --icon-button-width: 23px !important;
+  --icon-button-height: 22px !important;
   --label-spacing: 6px !important;
   --table-row-spacing: 2px 7px !important;
   --tabpanel-spacing: 12px !important;
   --text-spacing: 4px !important;
   --titlebar-spacing: 4px !important;
-  --toolbar-spacing: 8px !important;
   --tree-spacing: 6px !important;
   --window-spacing: 2px !important;
 /**
@@ -450,8 +453,8 @@ input:where([type="button"]:active,
   box-shadow: var(--border-button-sunken) !important;
 }
 .icon-button {
-  min-width: 23px !important;
-  height: 22px !important;
+  min-width: var(--icon-button-width) !important;
+  height: var(--icon-button-height) !important;
 }
 .icon-button:active,
 .icon-button[aria-selected="true"] {
@@ -786,6 +789,20 @@ progress::-webkit-progress-value {
 /* TODO: wtf is this color */
   border: 1px dotted #ff0 !important;
 }
+[role="listbox"],
+.monaco-select-box-dropdown-container {
+  background-color: var(--color-window) !important;
+  color: var(--color-window-text) !important;
+  border: 1px solid var(--color-window-text) !important;
+}
+[role="option"] {
+  padding: 2px 3px !important;
+}
+[role="option"]:hover,
+[role="option"][aria-selected="true"] {
+  background-color: var(--color-highlight) !important;
+  color: var(--color-highlight-text) !important;
+}
 [role="menu"] [role="menuitem"],
 [role="menuitemcheckbox"],
 [role="menuitemradio"] {
@@ -1098,7 +1115,6 @@ body,
 .notifications-center,
 .peekview-widget,
 .quick-input-widget,
-.monaco-select-box-dropdown-container,
 .suggest-widget {
   background-color: var(--color-button-face) !important;
   color: var(--color-button-text) !important;
@@ -1114,7 +1130,6 @@ body.child,
 .notifications-center.child,
 .peekview-widget.child,
 .quick-input-widget.child,
-.monaco-select-box-dropdown-container.child,
 .suggest-widget.child,
 .monaco-editor:not([role="code"]),
 [role="dialog"],
@@ -1123,7 +1138,6 @@ body.child,
 .notifications-center,
 .peekview-widget,
 .quick-input-widget,
-.monaco-select-box-dropdown-container,
 .suggest-widget {
   --window-spacing: 1px !important;
 }
@@ -1175,8 +1189,8 @@ body.child,
 }
 :root.focused .titlebar,
 .titlebar:not(.inactive) {
-  background-color: var(--color-active-caption) !important;
-  color: var(--color-active-caption-text) !important;
+  --color-inactive-caption: var(--color-active-caption) !important;
+  --color-inactive-caption-text: var(--color-active-caption-text) !important;
 }
 .titlebar-name,
 .titlebar .action-item.command-center-center,
@@ -1316,7 +1330,7 @@ body.child,
 }
 [role="toolbar"] {
   gap: var(--toolbar-spacing) !important;
-  margin: 0 6px !important;
+  margin: 0 var(--toolbar-container-spacing) !important;
   display: flex !important;
 }
 * {
@@ -3273,6 +3287,10 @@ body[role="document"] {
 .action-toolbar-container [role="presentation"] {
   --button-img-pos: 3px 2px !important;
 }
+[role="toolbar"] {
+  gap: 0 !important;
+  margin: 0 !important;
+}
 [role="dialog"] {
   min-width: 300px !important;
 }
@@ -3542,14 +3560,20 @@ div.monaco-menu .monaco-action-bar.vertical .action-label.separator {
   margin-top: var(--text-spacing) !important;
 }
 .monaco-select-box-dropdown-container {
+  font: var(--text-ui) !important;
   width: 320px !important;
 }
 .monaco-select-box-dropdown-container .monaco-list {
-  height: calc(100% - 8px) !important;
+  border: none !important;
+  box-shadow: none !important;
+  padding: 0 !important;
 }
 .monaco-select-box-dropdown-container > .select-box-dropdown-list-container,
 .monaco-select-box-dropdown-container > .select-box-details-pane {
   padding: 0 !important;
+}
+.monaco-select-box-dropdown-container > .select-box-details-pane {
+  margin-inline: 3px 4px !important;
 }
 .suggest-widget {
   border: none !important;

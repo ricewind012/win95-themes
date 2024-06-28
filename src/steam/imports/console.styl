@@ -1,5 +1,6 @@
 #Console {
 	background-color: transparent;
+	font-family: var(--text-monospace-font);
 
 	pre {
 		// Its height is 17px anyway
@@ -38,7 +39,7 @@
 
 // Suggestions
 #Suggestion {
-	@extend [role="menu"] [role="menuitem"];
+	@extend [role="option"];
 
 	background-color: transparent;
 
@@ -46,10 +47,10 @@
 }
 
 #Suggestions {
-	@extend .window;
-	@extend .window.child;
+	@extend [role="listbox"];
 
 	gap: 0;
+	padding: 0;
 
 	flex-direction: column;
 	height: unset;
