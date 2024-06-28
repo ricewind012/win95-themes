@@ -1,6 +1,8 @@
 {
   "type": "module",
   "dependencies": {
+    "postcss": "^8.4.38",
+    "postcss-styl": "^0.12.3",
     "stylus": "^0.62.0"
   }
 }
