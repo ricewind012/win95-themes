@@ -1625,6 +1625,7 @@ legend,
 .DialogControlsSectionHeader,
 .DialogControlsSection > .DialogBodyText,
 .DialogSubHeader,
+.SettingsDialogSubHeader,
 ._27CS0ATE6JLFP5A2W9Bdj_,
 ._19LfMT7PFWg2xHOqNjR99q,
 ._1WdC0YUP8FT0dYWZ-QIVZL,
@@ -1641,7 +1642,7 @@ legend,
 ._1Y5_HA7TsAPMiqgp01e3Ci,
 ._1HL6KuwUJaZQ7x2rmAxxSz > :first-child,
 ._1RCWDLVLFja1TdD1P53BMq,
-._2_sR8WGLby5dt8XUSln6R7,
+.P_gQ8X-yCsgXeXpP68KS0,
 ._2wBK7MqJSrj6QCxf3357yL {
   background-color: var(--color-button-face) !important;
 }
@@ -1779,7 +1780,6 @@ body {
 .DialogSpanningTable,
 ._3ZhiKhciPyiGGxDFuGOYpc,
 ._299aNmx77BOVzXgzOho1sG,
-._2HYiy2iyfdo7xMy_a1Cjhq,
 ._1ijTaXJJA5YWl_fW2IxcaT,
 .vaNI84b_TV6hw20mhGl_d > :not([class]),
 ._2Nq6ov7A1hGcHXVOXNt_OE,
@@ -2175,6 +2175,7 @@ div:not([class]) > .S-_LaQG5eEOM2HWZ-geJI,
 .DialogBodyText,
 .DialogControlsSectionHeader,
 .DialogSubHeader,
+.SettingsDialogSubHeader,
 ._2yhBdvNsgdBGL_UjfmTDGH,
 ._3wadwgMy2-9k8uOKh3iSdT,
 ._3qIXY674NedSZNa-CXtNlt,
@@ -2253,7 +2254,6 @@ div:not([class]) > .S-_LaQG5eEOM2HWZ-geJI,
 ._1SyggnJY6qbRSmbZpkK3-H,
 .qq2xItSXjpCsNrcxyPJtO,
 ._1dHjjSl-57o1KQsQ1m1HSA,
-._2JaMGV2vMu6X_6e2UKmrf_,
 .vATYv4EBNodEsN_HqvfJT,
 .nYduuEpqjIl1jVi5_1sTt .DialogBodyText span,
 ._2-O4ZG0KrnSrzISHBKctFQ,
@@ -2299,8 +2299,8 @@ div:not([class]) > .S-_LaQG5eEOM2HWZ-geJI,
 ._2lo2ippNTEIrQrtG5ydaBc,
 ._1RCWDLVLFja1TdD1P53BMq,
 ._2nfitwrjDUBo3Ia5BTtw50,
-._1jiiOndFINUereBkqdHFYm,
-._2_sR8WGLby5dt8XUSln6R7,
+._3ugJ_KPVlOd9oeYm-fYC_w,
+.P_gQ8X-yCsgXeXpP68KS0,
 ._3GFljPJsX8WvOJcPupy_RG,
 .MZPxEZcxAGtPDf1NYtouS,
 ._2wBK7MqJSrj6QCxf3357yL,
@@ -2330,6 +2330,7 @@ div:not([class]) > .S-_LaQG5eEOM2HWZ-geJI,
 .DialogControlsSectionHeader,
 .DialogControlsSection > .DialogBodyText,
 .DialogSubHeader,
+.SettingsDialogSubHeader,
 ._27CS0ATE6JLFP5A2W9Bdj_,
 ._19LfMT7PFWg2xHOqNjR99q,
 ._1WdC0YUP8FT0dYWZ-QIVZL,
@@ -2346,7 +2347,7 @@ div:not([class]) > .S-_LaQG5eEOM2HWZ-geJI,
 ._1Y5_HA7TsAPMiqgp01e3Ci,
 ._1HL6KuwUJaZQ7x2rmAxxSz > :first-child,
 ._1RCWDLVLFja1TdD1P53BMq,
-._2_sR8WGLby5dt8XUSln6R7,
+.P_gQ8X-yCsgXeXpP68KS0,
 ._2wBK7MqJSrj6QCxf3357yL {
   padding: 0 2px !important;
   margin: 0 !important;
@@ -3801,9 +3802,6 @@ img[src="/images/steam_spinner.png"] {
 ._3acyH_WQ_vSWurNYLR84lI {
   margin: var(--dialog-spacing) !important;
 }
-.undefined {
-  padding: 0 !important;
-}
 ._2MluNdiOiHT-XKPQfFiIax {
   opacity: 1 !important;
   background-color: transparent !important;
@@ -3994,8 +3992,11 @@ div._31ptFGGMZrSQc5BCX1e5lm {
   margin: 0 !important;
   gap: var(--dialog-button-spacing) !important;
 }
-._2GVYKKA0-FikD4ejRjx1Oh svg {
-  display: none !important;
+._2J170P0ckFcUIlsDU13MLS {
+  padding: 0 !important;
+}
+._2J170P0ckFcUIlsDU13MLS .DialogDropDown_CurrentDisplay {
+  width: unset !important;
 }
 ._170Npw5h84elypMSQ8zNDI {
   padding: var(--dialog-spacing) !important;
@@ -4003,14 +4004,8 @@ div._31ptFGGMZrSQc5BCX1e5lm {
 ._1g2o21WAWugv5qRumV1XWB {
   box-shadow: none !important;
 }
-._1g2o21WAWugv5qRumV1XWB svg {
-  display: none !important;
-}
 .HHtHxeezIpprDH2vkTH1Y {
   font: var(--text-ui) !important;
-}
-._1001poSc0fgxSjd6VgzwID {
-  grid-row-end: span 2 !important;
 }
 ._1ennWu_xj2YF8FRYgJ2M2H {
   gap: 4px 8px !important;
@@ -4021,16 +4016,13 @@ div._31ptFGGMZrSQc5BCX1e5lm {
 ._32e6rHniKd5ztOQ1lYIulu {
   padding: 0 !important;
 }
+.MIMuVt_bcI4rYVo1e14kR ._32e6rHniKd5ztOQ1lYIulu svg {
+  display: none !important;
+}
 ._3iV2vMTw_vwWJ_gmiz1Q1k {
   font: var(--text-ui) !important;
   color: var(--color-button-text) !important;
   text-transform: unset !important;
-}
-._1SFpbc4QXF4_NR-Nd9lwis {
-  padding: 0 !important;
-}
-._1SFpbc4QXF4_NR-Nd9lwis .DialogDropDown_CurrentDisplay {
-  width: unset !important;
 }
 ._6zcMsloKVA3_bv5nQ0OQE {
   display: none !important;
@@ -4805,25 +4797,38 @@ div._31ptFGGMZrSQc5BCX1e5lm {
   font-size: var(--text-ui-size) !important;
   font-weight: bold !important;
 }
-._2JaMGV2vMu6X_6e2UKmrf_ {
-  margin: 0 !important;
+/*
+#detailText {
+	@extend $text-reset !important;
+
+	margin: 0 !important;
 }
-._2Wp_Z_M5YNw610Y0lVh5TR {
-  gap: var(--messagebox-content-spacing) !important;
+
+#OfflineContainer {
+	@extend .content-container !important;
 }
-._1BUWXzey55_H5QKdz6Olrn {
-  background-image: none !important;
-  text-transform: unset !important;
-  width: unset !important;
-  height: unset !important;
+
+#OfflineMessage {
+	gap: var(--messagebox-content-spacing) !important;
 }
-.nKXfubhpv_zmmMcEsbg0B {
-  font: var(--text-ui) !important;
-  font-weight: bold !important;
-  color: var(--color-window-text) !important;
-  text-align: start !important;
-  margin: 0 !important;
+
+#retryButton {
+	background-image: none !important;
+	text-transform: unset !important;
+
+	width: unset !important;
+	height: unset !important;
 }
+
+#summaryText {
+	// TODO: header & paragraph spacing ?
+	font: var(--text-ui) !important;
+	font-weight: bold !important;
+	color: var(--color-window-text) !important;
+	text-align: start !important;
+	margin: 0 !important;
+}
+*/
 ._3oeHwxQTKDkPcxDhz8jbhM {
   margin: 0 !important;
 }
@@ -5928,6 +5933,7 @@ div._3rgV8pPmQvZC-01x9l-q-N:active {
   font: var(--text-ui) !important;
   color: var(--color-button-text) !important;
   text-align: left !important;
+  text-shadow: none !important;
   gap: 0 !important;
   position: relative !important;
   width: unset !important;
@@ -6379,30 +6385,26 @@ box-shadow
 ._2X_ZpO2X_CIOIEfml3ZTcX .DialogDropDown {
   width: var(--combobox-width) !important;
 }
-._1SeOP2727kq8F4yXLQVkiN,
-._15dEsyOLWcvaqEtVZE1yG2 {
-  color: var(--color-gray-text) !important;
-}
 ._2ddeJfhiG4hmAfqvi1FL6X svg {
   display: none !important;
 }
-._1AIgWpLviF3aBSaRbYIwWM {
+._284XbL-B7aHiK4XgyI2DPS {
   margin: 0 16px !important;
 }
-._2_sR8WGLby5dt8XUSln6R7 {
+.P_gQ8X-yCsgXeXpP68KS0 {
   background-color: var(--color-window) !important;
 }
-.wgbDI6To-SKawn9wQwVaw {
+._2MKO5j24KqDdD-92hH5FXi {
   background: none !important;
   padding: 0 !important;
 }
-.wgbDI6To-SKawn9wQwVaw::after {
+._2MKO5j24KqDdD-92hH5FXi::after {
   display: none !important;
 }
-._3pCMW4ZhvY3oNDM--v63wE {
+._1iO7MC6rgUjbDf49AE6hCm {
   margin: 0 !important;
 }
-._2gFx1aSIrFS92Uxol8yc73 {
+._22q2XMkRbHZD96i_GXOaHh {
   box-shadow: none !important;
 }
 ._1p_QrI3ixF-RAwnxad9pEm {

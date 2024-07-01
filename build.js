@@ -8,7 +8,8 @@ const SHARED_DIR = path.join("src", "shared");
 const SHARED_PP_DIR = path.join("src", "shared++");
 const SHARED_STYLUS_DIR = path.join("src", "shared-styl");
 
-const STEAM_CLASS_MAPS_FILE = "steam_class_maps.json";
+const ERROR_POINTER_STRING = "\n^^^ HERE";
+const STEAM_CLASS_MAPS_FILE = "class_map.json";
 
 const readDir = (e) => fs.readdirSync(e).map((p) => path.join(e, p));
 const readFile = (e) => fs.readFileSync(e).toString();
@@ -19,11 +20,31 @@ const selectorReplacerPlugin = (opts) => (css) => {
 	});
 };
 selectorReplacerPlugin.postcss = true;
-const usePostcss = (opts, css) =>
-	postcss(selectorReplacerPlugin(opts)).process(css, {
-		from: undefined,
-		syntax: postcssStyl,
-	});
+const usePostcss = (opts, css, file) =>
+	postcss(selectorReplacerPlugin(opts))
+		.process(css, {
+			// TODO: remove file
+			from: file,
+			syntax: postcssStyl,
+		})
+		.catch((e) => {
+			if (!!e.postcssNode) {
+				console.log(
+					"%o @ %o is undefined",
+					e.postcssNode.nodes[0].parent.selector.replace(/\n/g, " "),
+					e.stack.split("\n")[1].replace(/.*\//, ""),
+				);
+			} else {
+				const source = e.input.source.split("\n");
+				const line = e.message.split(":")[1];
+				source[line] =
+					source[line] == ""
+						? ERROR_POINTER_STRING
+						: source[line] + ERROR_POINTER_STRING;
+
+				console.log("%s\nInput:\n%s", e.message, source.join("\n"));
+			}
+		});
 
 const progs = fs.readdirSync("src").filter((e) => !e.startsWith("shared"));
 if (process.argv.length == 2 || !progs.some((e) => process.argv[2] == e)) {
@@ -77,20 +98,23 @@ const processedFiles = (() => {
 	switch (file) {
 		case "steam":
 			const importsDir = path.join("src", file, "imports");
-			const maps = JSON.parse(readFile(STEAM_CLASS_MAPS_FILE));
-			const keys = Object.keys(maps);
+			const map = JSON.parse(readFile(STEAM_CLASS_MAPS_FILE));
 
 			return fs.readdirSync(importsDir).map((e) =>
 				usePostcss(
 					{
 						match: /#(\w+)/g,
 						replace: (_, s) => {
-							const className = `${e.replace(".styl", "")}_${s}_`;
+							const id = map[e.replace(".styl", "")][s];
+							if (!id) {
+								console.log("%o @ %o is undefined", "#" + s, e);
+							}
 
-							return "." + maps[keys.find((e) => e.startsWith(className))];
+							return "." + id;
 						},
 					},
 					readFile(path.join(importsDir, e)),
+					e,
 				),
 			);
 
@@ -100,15 +124,16 @@ const processedFiles = (() => {
 					(e) =>
 						e != path.join(rootDir, "vencord") && fs.lstatSync(e).isDirectory(),
 				)
-				.flatMap((e) => readDir(e))
-				.map((e) => readFile(e))
+				.flatMap((file) => readDir(file))
+				.map((e) => [file, readFile(e)])
 				.map((e) =>
 					usePostcss(
 						{
 							match: /\.(\w+)/g,
 							replace: '[class*="$1_"]',
 						},
-						e,
+						e[1],
+						e[0],
 					),
 				);
 
@@ -117,7 +142,12 @@ const processedFiles = (() => {
 	}
 })();
 
-imports += (await Promise.all(processedFiles)).map((e) => e.css).join("\n");
+const promises = await Promise.all(processedFiles);
+if (promises.some((e) => !e)) {
+	process.exit(1);
+}
+
+imports += promises.map((e) => e.css).join("\n");
 
 // Variables have to be manually edited due to a Stylus bug (or its age).
 const cssVars = readFile(path.join(SHARED_DIR, "variables.css")).replace(
@@ -131,6 +161,7 @@ const renderer = stylus(actualCssVars + imports);
 
 renderer.render((err, css) => {
 	if (err) {
+		fs.writeFileSync('/tmp/a', actualCssVars + imports)
 		throw new Error(err.message);
 	}
 
