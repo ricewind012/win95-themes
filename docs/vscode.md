@@ -1,8 +1,10 @@
 # Visual Studio Code
 
 ## Usage
+
 1. Install the [Apc Customize UI++](https://marketplace.visualstudio.com/items?itemName=drcika.apc-extension) extension.
 2. Add to `settings.json` (Preferences: Open User Settings (JSON)) the following:
+
 ```json
 "apc.imports": [
     "file:///path/to/dist/vscode/vscode.css",
@@ -33,9 +35,11 @@
 ```
 
 ## Caveats
+
 - [Scrollbars arrows](https://github.com/microsoft/vscode/issues/130616#issuecomment-1076061821) are undocumented and may be removed at any time.
 - Editor and scrollbars may move out of bounds.
 - Some icons are absent.
 
 ## Preview
-[Main Window](../img/vscode.png)
+
+![Main Window](../img/vscode.png)
