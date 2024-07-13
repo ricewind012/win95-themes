@@ -20,25 +20,23 @@ const selectorReplacerPlugin = (opts) => (css) => {
 	});
 };
 selectorReplacerPlugin.postcss = true;
-const usePostcss = (opts, css, file) =>
+const usePostcss = (opts, css) =>
 	postcss(selectorReplacerPlugin(opts))
 		.process(css, {
-			// TODO: remove file
-			from: file,
 			syntax: postcssStyl,
 		})
 		.catch((e) => {
-			if (!!e.postcssNode) {
+			if (e.postcssNode) {
 				console.log(
 					"%o @ %o is undefined",
 					e.postcssNode.nodes[0].parent.selector.replace(/\n/g, " "),
-					e.stack.split("\n")[1].replace(/.*\//, ""),
+					path.basename(e.stack.split("\n")[1]),
 				);
 			} else {
 				const source = e.input.source.split("\n");
 				const line = e.message.split(":")[1];
 				source[line] =
-					source[line] == ""
+					source[line] === ""
 						? ERROR_POINTER_STRING
 						: source[line] + ERROR_POINTER_STRING;
 
@@ -47,7 +45,7 @@ const usePostcss = (opts, css, file) =>
 		});
 
 const progs = fs.readdirSync("src").filter((e) => !e.startsWith("shared"));
-if (process.argv.length == 2 || !progs.some((e) => process.argv[2] == e)) {
+if (process.argv.length === 2 || !progs.some((e) => process.argv[2] === e)) {
 	console.error(
 		"Usage: %s [%s]",
 		path.basename(process.argv[1]),
@@ -56,47 +54,28 @@ if (process.argv.length == 2 || !progs.some((e) => process.argv[2] == e)) {
 	process.exit(2);
 }
 
-// TODO: move into "imports" below
-const sharedFiles = readDir(SHARED_PP_DIR);
 const file = process.argv[2];
 const rootDir = path.join("src", file);
 const outFile = path.join("dist", file, `${file}.css`);
 
-const sharedCss = readDir(SHARED_STYLUS_DIR);
-/*
-const includedDirs = (isSteam ? ["other"] : fs.readdirSync(rootDir))
-	.filter((e) => fs.lstatSync(path.join(rootDir, e)).isDirectory())
-	.map((e) => `${rootDir}/${e}/*`);
-	*/
-const includedDirs = (() => {
+const includedDirsFilter = (() => {
 	switch (file) {
 		case "discord":
-			return ["vencord"].map((e) => `${rootDir}/${e}/*`);
+			return (e) => e === "vencord";
 		case "steam":
-			return fs
-				.readdirSync(rootDir)
-				.filter((e) => e != `${file}.styl` && e != "imports")
-				.map((e) => path.join(rootDir, e))
-				.map((e) => `${e}/*`);
+			return (e) => e !== `${file}.styl` && e !== "imports";
 		default:
-			return fs
-				.readdirSync(rootDir)
-				.filter((e) => fs.lstatSync(path.join(rootDir, e)).isDirectory())
-				.map((e) => `${rootDir}/${e}/*`);
+			return (e) => fs.lstatSync(path.join(rootDir, e)).isDirectory();
 	}
 })();
-let imports = [
-	...sharedCss,
-	...sharedFiles,
-	path.join(rootDir, `${file}.styl`),
-	...includedDirs,
-]
-	.map((e) => `@import '${e}';`)
-	.join("\n");
+const includedDirs = fs
+	.readdirSync(rootDir)
+	.filter(includedDirsFilter)
+	.map((e) => `${rootDir}/${e}/*`);
 
 const processedFiles = (() => {
 	switch (file) {
-		case "steam":
+		case "steam": {
 			const importsDir = path.join("src", file, "imports");
 			const map = JSON.parse(readFile(STEAM_CLASS_MAPS_FILE));
 
@@ -107,22 +86,23 @@ const processedFiles = (() => {
 						replace: (_, s) => {
 							const id = map[e.replace(".styl", "")][s];
 							if (!id) {
-								console.log("%o @ %o is undefined", "#" + s, e);
+								console.log("%o @ %o is undefined", `#${s}`, e);
 							}
 
-							return "." + id;
+							return `.${id}`;
 						},
 					},
 					readFile(path.join(importsDir, e)),
-					e,
 				),
 			);
+		}
 
 		case "discord":
 			return readDir(rootDir)
 				.filter(
 					(e) =>
-						e != path.join(rootDir, "vencord") && fs.lstatSync(e).isDirectory(),
+						e !== path.join(rootDir, "vencord") &&
+						fs.lstatSync(e).isDirectory(),
 				)
 				.flatMap((file) => readDir(file))
 				.map((e) => [file, readFile(e)])
@@ -133,7 +113,6 @@ const processedFiles = (() => {
 							replace: '[class*="$1_"]',
 						},
 						e[1],
-						e[0],
 					),
 				);
 
@@ -147,7 +126,17 @@ if (promises.some((e) => !e)) {
 	process.exit(1);
 }
 
-imports += promises.map((e) => e.css).join("\n");
+const imports = [
+	[
+		...readDir(SHARED_STYLUS_DIR),
+		...readDir(SHARED_PP_DIR),
+		path.join(rootDir, `${file}.styl`),
+		...includedDirs,
+	]
+		.map((e) => `@import '${e}';`)
+		.join("\n"),
+	promises.map((e) => e.css).join("\n"),
+].join("\n");
 
 // Variables have to be manually edited due to a Stylus bug (or its age).
 const cssVars = readFile(path.join(SHARED_DIR, "variables.css")).replace(
@@ -161,7 +150,7 @@ const renderer = stylus(actualCssVars + imports);
 
 renderer.render((err, css) => {
 	if (err) {
-		fs.writeFileSync('/tmp/a', actualCssVars + imports)
+		fs.writeFileSync("/tmp/a", actualCssVars + imports);
 		throw new Error(err.message);
 	}
 

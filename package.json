@@ -1,5 +1,8 @@
 {
   "type": "module",
+  "scripts": {
+    "build": "node build.js"
+  },
   "dependencies": {
     "postcss": "^8.4.38",
     "postcss-styl": "^0.12.3",
