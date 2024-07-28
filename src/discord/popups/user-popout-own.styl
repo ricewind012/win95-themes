@@ -4,7 +4,7 @@
 	// !important
 	& > [role="dialog"][aria-modal="true"]::before,
 	.userPopoutInner > :not(:last-child),
-	.userPopoutInner > .body > :not(:last-child) {
+	.userPopoutInner > .body > :not(.menus) {
 		display: none;
 	}
 
@@ -24,7 +24,7 @@
 			display: none;
 		}
 
-		& > div {
+		& > div > [role="menu"] {
 			box-shadow: none;
 			padding: 0;
 		}

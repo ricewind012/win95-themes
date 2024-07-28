@@ -3492,7 +3492,7 @@ section[role="navigation"] {
 }
 [class*="accountProfilePopoutWrapper_"] > [role="dialog"][aria-modal="true"]::before,
 [class*="accountProfilePopoutWrapper_"] [class*="userPopoutInner_"] > :not(:last-child),
-[class*="accountProfilePopoutWrapper_"] [class*="userPopoutInner_"] > [class*="body_"] > :not(:last-child) {
+[class*="accountProfilePopoutWrapper_"] [class*="userPopoutInner_"] > [class*="body_"] > :not([class*="menus_"]) {
   display: none !important;
 }
 [class*="accountProfilePopoutWrapper_"] [class*="userPopoutInner_"] > [class*="body_"] {
@@ -3507,7 +3507,7 @@ section[role="navigation"] {
 div[class*="accountProfilePopoutWrapper_"] [class*="menus_"]::after {
   display: none !important;
 }
-[class*="accountProfilePopoutWrapper_"] [class*="menus_"] > div {
+[class*="accountProfilePopoutWrapper_"] [class*="menus_"] > div > [role="menu"] {
   box-shadow: none !important;
   padding: 0 !important;
 }
