@@ -2,8 +2,9 @@
 
 ## Current themes
 
-Click an link for the installation guide, preview, etc.
+Click a link for the installation guide, preview, etc.
 
+- [Chrome DevTools](./docs/chrome-devtools.md)
 - [Discord](./docs/discord.md)
 - [Steam](./docs/steam-sfp.md)
 - [Visual Studio Code](./docs/vscode.md)
