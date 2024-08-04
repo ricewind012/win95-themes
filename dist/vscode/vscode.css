@@ -250,6 +250,7 @@ textarea,
 .search-editor .includes-excludes .expand,
 .search-view .replace-container .monaco-action-bar .action-label,
 .search-view .more.codicon,
+.scm-view .action-label,
 .titlebar .window-icon,
 .find-widget .button,
 .quick-input-right-action-bar .action-label {
@@ -284,6 +285,7 @@ textarea:disabled,
 .search-editor .includes-excludes .expand:disabled,
 .search-view .replace-container .monaco-action-bar .action-label:disabled,
 .search-view .more.codicon:disabled,
+.scm-view .action-label:disabled,
 .titlebar .window-icon:disabled,
 .find-widget .button:disabled,
 .quick-input-right-action-bar .action-label:disabled,
@@ -326,6 +328,7 @@ textarea,
 .search-editor .includes-excludes .expand,
 .search-view .replace-container .monaco-action-bar .action-label,
 .search-view .more.codicon,
+.scm-view .action-label,
 .titlebar .window-icon,
 .find-widget .button,
 .quick-input-right-action-bar .action-label {
@@ -373,6 +376,7 @@ input:where([type="button"],
 .search-editor .includes-excludes .expand,
 .search-view .replace-container .monaco-action-bar .action-label,
 .search-view .more.codicon,
+.scm-view .action-label,
 .titlebar .window-icon,
 .find-widget .button,
 .quick-input-right-action-bar .action-label {
@@ -402,6 +406,7 @@ input:where([type="button"]:focus,
 .search-editor .includes-excludes .expand:focus,
 .search-view .replace-container .monaco-action-bar .action-label:focus,
 .search-view .more.codicon:focus,
+.scm-view .action-label:focus,
 .titlebar .window-icon:focus,
 .find-widget .button:focus,
 .quick-input-right-action-bar .action-label:focus {
@@ -428,6 +433,7 @@ input:where([type="button"]:active,
 .search-editor .includes-excludes .expand:active,
 .search-view .replace-container .monaco-action-bar .action-label:active,
 .search-view .more.codicon:active,
+.scm-view .action-label:active,
 .titlebar .window-icon:active,
 .find-widget .button:active,
 .quick-input-right-action-bar .action-label:active,
@@ -1216,6 +1222,7 @@ body.child,
 .search-editor .includes-excludes .expand,
 .search-view .replace-container .monaco-action-bar .action-label,
 .search-view .more.codicon,
+.scm-view .action-label,
 .titlebar .window-icon,
 .find-widget .button,
 .quick-input-right-action-bar .action-label {
@@ -1237,6 +1244,7 @@ body.child,
 .search-editor .includes-excludes .expand::before,
 .search-view .replace-container .monaco-action-bar .action-label::before,
 .search-view .more.codicon::before,
+.scm-view .action-label::before,
 .titlebar .window-icon::before,
 .find-widget .button::before,
 .quick-input-right-action-bar .action-label::before,
@@ -1255,6 +1263,7 @@ body.child,
 .search-editor .includes-excludes .expand::after,
 .search-view .replace-container .monaco-action-bar .action-label::after,
 .search-view .more.codicon::after,
+.scm-view .action-label::after,
 .titlebar .window-icon::after,
 .find-widget .button::after,
 .quick-input-right-action-bar .action-label::after {
@@ -1280,6 +1289,7 @@ body.child,
 .search-editor .includes-excludes .expand::before,
 .search-view .replace-container .monaco-action-bar .action-label::before,
 .search-view .more.codicon::before,
+.scm-view .action-label::before,
 .titlebar .window-icon::before,
 .find-widget .button::before,
 .quick-input-right-action-bar .action-label::before {
@@ -1301,6 +1311,7 @@ body.child,
 .search-editor .includes-excludes .expand:active::before,
 .search-view .replace-container .monaco-action-bar .action-label:active::before,
 .search-view .more.codicon:active::before,
+.scm-view .action-label:active::before,
 .titlebar .window-icon:active::before,
 .find-widget .button:active::before,
 .quick-input-right-action-bar .action-label:active::before {
@@ -1321,6 +1332,7 @@ body.child,
 .search-editor .includes-excludes .expand:disabled::after,
 .search-view .replace-container .monaco-action-bar .action-label:disabled::after,
 .search-view .more.codicon:disabled::after,
+.scm-view .action-label:disabled::after,
 .titlebar .window-icon:disabled::after,
 .find-widget .button:disabled::after,
 .quick-input-right-action-bar .action-label:disabled::after,
@@ -1589,6 +1601,7 @@ fieldset,
   --button-img-size: 9px !important;
   --button-img-pos: 3px 2px !important;
 }
+.codicon-discard,
 .codicon-trash,
 .codicon-trashcan,
 .codicon-debug-remove-config,
@@ -1633,6 +1646,11 @@ fieldset,
 }
 .monaco-button-description {
   font: var(--text-ui) !important;
+}
+.monaco-button-dropdown.disabled > .monaco-button-dropdown-separator,
+.monaco-button-dropdown.disabled > .monaco-button.disabled,
+.monaco-button-dropdown.disabled > .monaco-button.disabled:focus {
+  opacity: 1 !important;
 }
 .monaco-text-button {
   height: unset !important;
@@ -3208,8 +3226,15 @@ body[role="document"] {
 .scm-view .monaco-editor .margin {
   background-color: transparent !important;
 }
+.scm-view .monaco-icon-label-container {
+  height: unset !important;
+}
 .scm-view .monaco-list {
   height: calc(100% - 7px) !important;
+}
+.scm-view .monaco-tl-contents {
+  margin-top: -3px !important;
+  overflow: visible !important;
 }
 .scm-view .monaco-button-dropdown {
   overflow: visible !important;

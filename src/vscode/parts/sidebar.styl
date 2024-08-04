@@ -129,6 +129,11 @@
 	}
 
 	&-view {
+		.action-label {
+			@extend button;
+			@extend .titlebar-button;
+		}
+
 		.monaco {
 			&-editor {
 				&,
@@ -138,8 +143,18 @@
 				}
 			}
 
+			&-icon-label-container {
+				height: unset;
+			}
+
 			&-list {
 				height: calc(100% - 7px);
+			}
+
+			&-tl-contents {
+				margin-top: -3px;
+
+				overflow: visible;
 			}
 
 			&-button {
