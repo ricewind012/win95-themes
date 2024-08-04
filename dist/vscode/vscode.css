@@ -243,7 +243,7 @@ textarea,
 .monaco-workbench .part.editor > .content .gettingStartedContainer .gettingStartedSlide .getting-started-checkbox,
 .settings-editor > .settings-body .settings-tree-container .setting-item-bool .setting-value-checkbox,
 .extension-editor > .header .action-label.codicon:empty,
-.extension-action,
+.extension-action:not(.monaco-checkbox),
 .additional-details-element,
 .gettingStartedContainer .index-list,
 .setting-item-contents,
@@ -277,7 +277,7 @@ textarea:disabled,
 .monaco-workbench .part.editor > .content .gettingStartedContainer .gettingStartedSlide .getting-started-checkbox:disabled,
 .settings-editor > .settings-body .settings-tree-container .setting-item-bool .setting-value-checkbox:disabled,
 .extension-editor > .header .action-label.codicon:empty:disabled,
-.extension-action:disabled,
+.extension-action:not(.monaco-checkbox):disabled,
 .additional-details-element:disabled,
 .gettingStartedContainer .index-list:disabled,
 .setting-item-contents:disabled,
@@ -322,7 +322,7 @@ textarea,
 .monaco-workbench .part.editor > .content .gettingStartedContainer .gettingStartedSlide .getting-started-checkbox,
 .settings-editor > .settings-body .settings-tree-container .setting-item-bool .setting-value-checkbox,
 .extension-editor > .header .action-label.codicon:empty,
-.extension-action,
+.extension-action:not(.monaco-checkbox),
 .search-editor .includes-excludes .expand,
 .search-view .replace-container .monaco-action-bar .action-label,
 .search-view .more.codicon,
@@ -369,7 +369,7 @@ input:where([type="button"],
 .monaco-custom-toggle:not(.monaco-checkbox).codicon,
 .monaco-custom-toggle:not(.monaco-checkbox) .codicon,
 .extension-editor > .header .action-label.codicon:empty,
-.extension-action,
+.extension-action:not(.monaco-checkbox),
 .search-editor .includes-excludes .expand,
 .search-view .replace-container .monaco-action-bar .action-label,
 .search-view .more.codicon,
@@ -398,7 +398,7 @@ input:where([type="button"]:focus,
 .monaco-custom-toggle:not(.monaco-checkbox).codicon:focus,
 .monaco-custom-toggle:not(.monaco-checkbox) .codicon:focus,
 .extension-editor > .header .action-label.codicon:empty:focus,
-.extension-action:focus,
+.extension-action:not(.monaco-checkbox):focus,
 .search-editor .includes-excludes .expand:focus,
 .search-view .replace-container .monaco-action-bar .action-label:focus,
 .search-view .more.codicon:focus,
@@ -424,7 +424,7 @@ input:where([type="button"]:active,
 .monaco-custom-toggle:not(.monaco-checkbox).codicon:active,
 .monaco-custom-toggle:not(.monaco-checkbox) .codicon:active,
 .extension-editor > .header .action-label.codicon:empty:active,
-.extension-action:active,
+.extension-action:not(.monaco-checkbox):active,
 .search-editor .includes-excludes .expand:active,
 .search-view .replace-container .monaco-action-bar .action-label:active,
 .search-view .more.codicon:active,
@@ -1007,6 +1007,7 @@ legend,
   background-color: var(--color-button-face) !important;
 }
 label,
+.checkbox-action-item,
 .dialog-checkbox-row {
   gap: var(--label-spacing) !important;
   display: flex !important;
@@ -2219,6 +2220,9 @@ fieldset,
 .extension-editor > .body > .navbar > .monaco-action-bar > .actions-container > .action-item > .action-label[aria-checked="true"] {
   margin-top: 1px !important;
 }
+.checkbox-action-item > .checkbox-label {
+  font-size: inherit !important;
+}
 .codicon {
   font-size: var(--font-ui-size) !important;
 }
@@ -2501,6 +2505,7 @@ fieldset,
   --vscode-statusBarItem-errorBackground: #f00 !important;
   --vscode-statusBarItem-errorForeground: #fff !important;
   --vscode-editor-background: transparent !important;
+  --vscode-editorGhostText-foreground: var(--color-gray-text) !important;
   --vscode-editorGutter-background: transparent !important;
   --vscode-editor-foreground: var(--color-window-text) !important;
   --vscode-scrollbar-shadow: transparent !important;
@@ -2638,7 +2643,7 @@ fieldset,
 .extension-editor .readme-container {
   max-width: unset !important;
 }
-.extension-action {
+.extension-action:not(.monaco-checkbox) {
   justify-content: center !important;
 }
 .switch-to-prerelease {
@@ -2905,9 +2910,6 @@ body[role="document"] {
 .editor .editor-scrollable .search-results {
   width: calc(100% - 38px) !important;
 }
-.editor-placeholder-label-container {
-  font: var(--text-ui) !important;
-}
 .editor > .content {
   background-color: transparent !important;
 }
@@ -2917,6 +2919,11 @@ body[role="document"] {
 .editor .monaco-grid-view,
 .editor .content {
   overflow: visible !important;
+}
+.editorPlaceholder {
+  font: var(--text-ui) !important;
+  top: 0 !important;
+  left: 0 !important;
 }
 .split-view-view:has(> .editor-group-container) {
   height: 100% !important;
