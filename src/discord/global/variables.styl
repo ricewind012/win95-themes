@@ -37,7 +37,15 @@
 
 	--legacy-elevation-low: none;
 	--legacy-elevation-high: none;
-	--legacy-elevation--border: none;
+	--legacy-elevation-border: none;
+
+	for i in \
+		border high ledge \
+		low low-active low-hover \
+		medium top-high top-ledge top-low \
+	{
+		--shadow-{i}: none;
+	}
 
 	--custom-button-button-xl-height: unset;
 	--custom-button-button-lg-height: unset;

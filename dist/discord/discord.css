@@ -2560,7 +2560,17 @@ div[class*="privateChannelRecipientsInviteButtonIcon_"] [data-text-variant],
   --elevation-high: none !important;
   --legacy-elevation-low: none !important;
   --legacy-elevation-high: none !important;
-  --legacy-elevation--border: none !important;
+  --legacy-elevation-border: none !important;
+  --shadow-border: none !important;
+  --shadow-high: none !important;
+  --shadow-ledge: none !important;
+  --shadow-low: none !important;
+  --shadow-low-active: none !important;
+  --shadow-low-hover: none !important;
+  --shadow-medium: none !important;
+  --shadow-top-high: none !important;
+  --shadow-top-ledge: none !important;
+  --shadow-top-low: none !important;
   --custom-button-button-xl-height: unset !important;
   --custom-button-button-lg-height: unset !important;
   --custom-button-button-md-height: unset !important;
@@ -2724,6 +2734,10 @@ form[class*="form_"] > [class*="typing_"] svg {
 }
 [class*="messagesWrapper_"] > [class*="scroller_"] {
   inset: var(--border-size) !important;
+}
+[class*="repliedTextPreview_"] > div {
+  padding: 0 !important;
+  margin: 0 !important;
 }
 [class*="timestamp_"] {
   font: var(--text-ui) !important;
@@ -2910,6 +2924,7 @@ form[class*="form_"] > [class*="typing_"] svg {
   height: 32px !important;
 }
 [class*="sidebar_"] > nav > :first-child > header {
+  background-color: transparent !important;
   padding: 0 !important;
 }
 [class*="sidebar_"] > nav > :first-child > header > div {
@@ -2948,6 +2963,8 @@ form[class*="form_"] > [class*="typing_"] svg {
 }
 [class*="sidebar_"] > section > :first-child > div {
   border: none !important;
+  padding-bottom: 0 !important;
+  margin-bottom: -8px !important;
 }
 [class*="sidebar_"] > section > :nth-child(2) {
   gap: var(--toolbar-spacing) !important;
@@ -2971,6 +2988,7 @@ form[class*="form_"] > [class*="typing_"] svg {
   height: 25px !important;
   border-left: 1px dotted var(--color-gray-text) !important;
 }
+#channels [class*="containerDefault_"] [class*="children_"],
 #channels [class*="containerDefault_"] [class*="iconContainer_"],
 #channels [class*="containerDefault_"] svg {
   display: none !important;

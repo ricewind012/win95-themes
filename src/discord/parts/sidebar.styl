@@ -42,6 +42,8 @@
 			}
 
 			& > header {
+				// TODO: use modifier-hover for transparent ?
+				background-color: transparent;
 				padding: 0;
 
 				& > div {
@@ -109,6 +111,8 @@
 
 		& > :first-child > div {
 			border: none;
+			padding-bottom: 0;
+			margin-bottom: -8px;
 
 			&::after {
 				@extend $pseudo-separator;
@@ -152,6 +156,7 @@
 			border-left: 1px dotted var(--color-gray-text);
 		}
 
+		.children,
 		.iconContainer,
 		svg {
 			display: none;
