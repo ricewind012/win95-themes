@@ -6461,7 +6461,7 @@ box-shadow
 ._39oUCO1OuizVPwcnnv88no {
   flex-direction: column-reverse !important;
   height: unset !important;
-  -webkit-app-region: no-drag !important;
+  -webkit-app-region: unset !important;
 }
 ._39oUCO1OuizVPwcnnv88no::before {
   content: '' !important;
@@ -6486,21 +6486,15 @@ box-shadow
   flex: initial !important;
   cursor: default !important;
 }
+.qP17eBPXkfezFfexZ4hC3 {
+  -webkit-app-region: drag !important;
+}
 .qP17eBPXkfezFfexZ4hC3::after {
   content: 'Steam' !important;
 }
 ._1ENHEsrSLcTRtPQFl1F-wL {
   background-color: transparent !important;
   border: none !important;
-}
-._1ENHEsrSLcTRtPQFl1F-wL::before {
-  content: '' !important;
-  position: fixed !important;
-  top: calc(var(--border-size) + var(--window-spacing)) !important;
-  left: calc(var(--border-size) + var(--window-spacing)) !important;
-  width: calc(100% - var(--titlebar-spacing) * 2 - var(--icon-size) - 88px) !important;
-  height: var(--titlebar-height) !important;
-  app-region: drag !important;
 }
 .IPRP2v8nPJRvTxirY9NyU {
   padding: 0 !important;

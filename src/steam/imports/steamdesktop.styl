@@ -74,7 +74,7 @@
 	flex-direction: column-reverse;
 	height: unset;
 
-	-webkit-app-region: no-drag;
+	-webkit-app-region: unset;
 
 	&::before {
 		content: '';
@@ -116,6 +116,8 @@
 }
 
 #WindowControls {
+	-webkit-app-region: drag;
+
 	&::after {
 		content: 'Steam';
 
@@ -126,17 +128,5 @@
 #Wrapper {
 	background-color: transparent;
 	border: none;
-
-	&::before {
-		content: '';
-
-		position: fixed;
-		top: calc(var(--border-size) + var(--window-spacing));
-		left: calc(var(--border-size) + var(--window-spacing));
-		width: calc(100% - var(--titlebar-spacing) * 2 - var(--icon-size) - 88px);
-		height: var(--titlebar-height);
-
-		app-region: drag;
-	}
 }
 
