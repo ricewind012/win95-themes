@@ -2,13 +2,13 @@ const { LocalizationManager } = window.opener;
 
 const tokens = (() => {
 	switch (document.title) {
-		case LocalizeString("#WindowName_SteamDesktop"):
+		case LocalizationManager.LocalizeString("#WindowName_SteamDesktop"):
 			return ["AllCollectionsView_InfoIconCollections"];
 
-		case LocalizeString("#SignIn_Title"):
+		case LocalizationManager.LocalizeString("#SignIn_Title"):
 			return ["NavigateBack"];
 
-		case LocalizeString("#ScreenshotUploader_Heading"):
+		case LocalizationManager.LocalizeString("#ScreenshotUploader_Heading"):
 		case "ScreenshotManager": // Overlay
 			return [
 				"Generic_Delete",
@@ -30,7 +30,7 @@ for (const token of tokens) {
 }
 
 switch (document.title) {
-	case LocalizeString("#Menu_Servers"):
+	case LocalizationManager.LocalizeString("#Menu_Servers"):
 		SteamClient.Window.SetMinSize(500, 500);
 		break;
 }
