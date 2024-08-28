@@ -2537,11 +2537,6 @@ div._3T-1PliI6PkKE-bE-o3bV0,
 ._2qGnLK2G3sqjtqVgYl6phc svg {
   display: none !important;
 }
-:root {
-  --darkred: #800 !important;
-  --darkyellow: #880 !important;
-  --darkblue: #008 !important;
-}
 button,
 .chatFileUploadCancel,
 .chatRoomButton,
@@ -4443,13 +4438,13 @@ div._31ptFGGMZrSQc5BCX1e5lm {
 }
 ._3O8kZQ0Xqm4ErZTM9rQPXQ,
 ._1su6b5TTKWmVCiIO05QxQY {
-  color: var(--darkred) !important;
+  color: #800 !important;
 }
 ._1_sfF8PJnA70SCQg-HQZQM {
-  color: var(--darkyellow) !important;
+  color: #880 !important;
 }
 ._31oMFXwhAQkbEmbu8gWse9 {
-  color: var(--darkblue) !important;
+  color: #008 !important;
 }
 ._3C1UCvuAZ2oINYSTpUPD04 {
   background-color: transparent !important;
