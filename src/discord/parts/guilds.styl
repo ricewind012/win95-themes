@@ -12,8 +12,8 @@
 		padding: 0;
 
 		& > :nth-child(1),
-		& > :nth-last-child(5),
-		& > :nth-last-child(4) {
+		& > :nth-last-child(4),
+		& > :nth-last-child(3) {
 			--pos: calc(var(--window-pos) + var(--toolbar-container-spacing));
 
 			position: fixed;
@@ -71,6 +71,7 @@
 		}
 	}
 
+	& > .footer,
 	mask {
 		display: none;
 	}
