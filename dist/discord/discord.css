@@ -2711,6 +2711,11 @@ form[class*="form_"] > [class*="typing_"] svg {
   width: 16px !important;
   height: 16px !important;
 }
+[class*="message_"] > [class*="buttonContainer_"] [role="group"] {
+  background-color: transparent !important;
+  border: none !important;
+  padding: 0 !important;
+}
 [class*="message_"] [class*="headerText_"] {
   margin: 0 !important;
 }

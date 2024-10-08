@@ -70,14 +70,22 @@
 		}
 	}
 
-	& > .buttonContainer [role="button"] {
-		@extend button;
-		@extend .icon-button;
+	& > .buttonContainer {
+		[role="button"] {
+			@extend button;
+			@extend .icon-button;
 
-		// TODO: remove when doing icons
-		svg {
-			width: 16px;
-			height: 16px;
+			// TODO: remove when doing icons
+			svg {
+				width: 16px;
+				height: 16px;
+			}
+		}
+
+		[role="group"] {
+			background-color: transparent;
+			border: none;
+			padding: 0;
 		}
 	}
 
