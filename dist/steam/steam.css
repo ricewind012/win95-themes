@@ -2298,7 +2298,8 @@ div:not([class]) > .eKmEXJCm_lgme24Fp_HWt,
 ._3twsgFT0Ba--9DybmydSI8,
 .undefined,
 ._1RCWDLVLFja1TdD1P53BMq,
-._2nfitwrjDUBo3Ia5BTtw50,
+._3w92Ej5Kq7nbt5WACQ6jwI,
+.RmxP90Yut4EIwychIEg51,
 ._3ugJ_KPVlOd9oeYm-fYC_w,
 .P_gQ8X-yCsgXeXpP68KS0,
 ._3GFljPJsX8WvOJcPupy_RG,
@@ -5220,13 +5221,14 @@ div:not([class]) > .eKmEXJCm_lgme24Fp_HWt {
   display: none !important;
 }
 ._1udlGGE4F5pggcpxovorUd {
+  --slider-handle-width: 11px !important;
   height: unset !important;
 }
 ._11PBfip2UlKlY3vWSz8PA4 {
   box-shadow: none !important;
 }
-._8xNY6EWVZsDfOfUqDrus- {
-  transform: translateX(calc(-100% * var(--inverse-normalized-value) + 11px * var(--inverse-normalized-value))) !important;
+._2_vG6TwMW2XtyLlTEaODH9 {
+  background-color: transparent !important;
 }
 ._2_vG6TwMW2XtyLlTEaODH9::before {
   display: none !important;
@@ -5934,25 +5936,22 @@ div._3rgV8pPmQvZC-01x9l-q-N:active {
   color: var(--color-button-text) !important;
   text-align: left !important;
   text-shadow: none !important;
-  gap: 0 !important;
+  gap: var(--text-spacing) !important;
   position: relative !important;
   width: unset !important;
   flex-direction: row !important;
   justify-content: left !important;
+}
+.HijmccPB1BKyhOwhX1EVl:not(._3-_jME_xsuvgT3Dvq4bw_q)::before {
+  display: none !important;
 }
 .HijmccPB1BKyhOwhX1EVl::before,
 .HijmccPB1BKyhOwhX1EVl::after {
   content: '' !important;
 }
 .HijmccPB1BKyhOwhX1EVl::after {
-  width: calc(var(--sel-button-size) + var(--label-spacing)) !important;
+  width: calc(var(--sel-button-size) + var(--label-spacing) - var(--text-spacing)) !important;
   order: -1 !important;
-}
-.HijmccPB1BKyhOwhX1EVl > span::before {
-  content: '(' !important;
-}
-.HijmccPB1BKyhOwhX1EVl > span::after {
-  content: ')' !important;
 }
 ._1ml4SNc3LIyBDHIf8ekVSw {
   box-shadow: none !important;
@@ -6385,6 +6384,9 @@ box-shadow
 ._2X_ZpO2X_CIOIEfml3ZTcX .DialogDropDown {
   width: var(--combobox-width) !important;
 }
+._3w92Ej5Kq7nbt5WACQ6jwI {
+  margin: 0 !important;
+}
 ._2ddeJfhiG4hmAfqvi1FL6X svg {
   display: none !important;
 }
@@ -6814,6 +6816,9 @@ div._7AlhCx3XGzBeIrQaCneUD._1gqEjB5QsKT_NftD1dEsdZ:hover:not(:active) {
 ._2Dptk9e7W_k4zYB5wfRTcp {
   gap: var(--text-spacing) !important;
   flex-direction: row-reverse !important;
+}
+._3Q_M7UkwxmT8syYL2g2DBQ {
+  min-width: 150px !important;
 }
 ._3pmHHmcQS21JkPm0i-p9BR {
   margin: 0 !important;

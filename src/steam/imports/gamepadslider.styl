@@ -1,4 +1,6 @@
 #SliderControl {
+	--slider-handle-width: 11px;
+
 	@extend input[type="range"];
 
 	height: unset;
@@ -10,12 +12,10 @@
 	box-shadow: none;
 }
 
-#SliderHandleContainer {
-	transform: translateX(calc(-100% * var(--inverse-normalized-value) + 11px * var(--inverse-normalized-value)));
-}
-
 #SliderTrack {
 	@extend input[type="range"]::-webkit-slider-runnable-track;
+
+	background-color: transparent;
 
 	&::before {
 		display: none;
