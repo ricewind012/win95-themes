@@ -6597,14 +6597,15 @@ box-shadow
   margin-bottom: var(--dialog-spacing) !important;
   height: unset !important;
 }
-._3b_pllMxcr_an1aQ5goWvB {
-  gap: 16px !important;
-  padding: 32px !important;
-}
+._1UJDmU3N-pkv7oTJ_Zf9nK,
 body:has(> #popup_target > ._3b_pllMxcr_an1aQ5goWvB) {
   background-color: transparent !important;
   box-shadow: none !important;
   padding: 0 !important;
+}
+._3b_pllMxcr_an1aQ5goWvB {
+  gap: 16px !important;
+  padding: 32px !important;
 }
 ._25lBLzuVeYAUG279up4xP8 {
   transform: none !important;

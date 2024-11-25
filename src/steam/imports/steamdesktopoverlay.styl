@@ -161,14 +161,15 @@
 	height: unset;
 }
 
+#OverlayPopupBody,
+{s('body:has(> #%s > #Wrapper)', popup_target)} {
+	background-color: transparent;
+	box-shadow: none;
+	padding: 0;
+}
+
 #Wrapper {
 	gap: 16px;
 	padding: 32px;
-
-	/{s('body:has(> #%s > %s)', popup_target, unquote(selector()))} {
-		background-color: transparent;
-		box-shadow: none;
-		padding: 0;
-	}
 }
 
