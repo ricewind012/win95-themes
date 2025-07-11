@@ -7,12 +7,12 @@
 	&::before {
 		content: '';
 
-		width: $w;
-		height: $h;
+		width: #{$w};
+		height: #{$h};
 		display: block;
 
 		-webkit-mask: var(--icon-img) no-repeat;
-		-webkit-mask-size: $w $h;
+		-webkit-mask-size: #{$w} #{$h};
 		-webkit-mask-position: var(--icon-img-pos, center);
 		background-color: var(--color-button-text);
 	}

@@ -31,12 +31,12 @@ $max-nest: 10;
 
 @for $i from 2 through $max-nest {
 	[aria-level="#{$i}"] {
-		--level: i;
-		--multiply: 4 - (0.5 * i);
-		--offset: 2px * (i - 6);
+		--level: #{$i};
+		--multiply: calc(4 - (0.5 * #{$i}));
+		--offset: calc(2px * (#{$i} - 6));
 
 		&:not([aria-expanded]) {
-			--offset: -14px * (i - 3);
+			--offset: calc(-14px * (#{$i} - 3));
 		}
 	}
 }

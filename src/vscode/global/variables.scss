@@ -101,7 +101,7 @@
 	--vscode-menu-foreground: var(--color-window-text);
 
 	// Quick input
-	--vscode-pickerGroup-foreground: va(--color-button-text);
+	--vscode-pickerGroup-foreground: var(--color-button-text);
 	--vscode-pickerGroup-border: var(--color-button-shadow);
 
 	--vscode-quickInput-background: var(--color-window);
@@ -128,8 +128,6 @@
 	// Other
 	--vscode-activityBarTop-activeBorder: transparent;
 	--vscode-focusBorder: transparent;
-	--vscode-textCodeBlock-background: @css {
-		color-mix(in srgb, currentColor 25%, transparent)
-	};
+	--vscode-textCodeBlock-background: color-mix(in srgb, currentColor 25%, transparent);
 	--vscode-widget-shadow: transparent;
 }

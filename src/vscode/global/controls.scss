@@ -275,9 +275,7 @@
 			&.selected {
 				--vscode-keybindingLabel-border: var(--color-active-caption-text);
 				--vscode-keybindingLabel-bottomBorder: var(--vscode-keybindingLabel-border);
-				--vscode-widget-shadow: @css {
-					color-mix(in srgb, var(--color-active-caption-text) 50%, transparent)
-				};
+				--vscode-widget-shadow: color-mix(in srgb, var(--color-active-caption-text) 50%, transparent)
 			}
 
 			& > .option-detail {
