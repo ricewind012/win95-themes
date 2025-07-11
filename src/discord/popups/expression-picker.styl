@@ -5,9 +5,9 @@
 	width: 610px; // 3 gifs in a row
 
 	.backButton {
-		@extend button;
+		@include controls.button;
 		// TODO: idk
-		@extend .titlebar-button;
+		@include window.titlebar-button;
 		@extend $icon-big-arrow-left;
 
 		min-width: 23px;
@@ -20,14 +20,14 @@
 	}
 
 	.categoryList {
-		@extend .content-container;
+		@include window.content-container;
 
 		top: calc(21px + var(--window-gap));
 		left: 0;
 		width: calc(48px + var(--scrollbar-size));
 
 		& > .unicodeShortcut {
-			@extend button;
+			@include controls.button;
 
 			margin: var(--border-size);
 
@@ -40,7 +40,7 @@
 	}
 
 	.categoryName {
-		@extend $text-reset;
+		@include extends.text-reset;
 	}
 
 	.contentWrapper {
@@ -77,7 +77,7 @@
 	}
 
 	[role="grid"] {
-		@extend .content-container;
+		@include window.content-container;
 
 		& > div {
 			inset: var(--border-size);
@@ -105,7 +105,7 @@
 		padding: 0;
 
 		& > .content {
-			@extend .content-container;
+			@include window.content-container;
 		}
 
 		.header {
@@ -157,7 +157,7 @@
 		}
 
 		.wrapper:is(.header, .packHeader) {
-			@extend .table-header-row;
+			@include table.header-row;
 
 			height: unset;
 		}

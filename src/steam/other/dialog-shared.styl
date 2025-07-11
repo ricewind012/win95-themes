@@ -11,7 +11,7 @@
 		background-image: none;
 
 		&_Content {
-			@extend $text-reset;
+			@include extends.text-reset;
 
 			box-shadow: none;
 		}
@@ -21,9 +21,9 @@
 			right: 5px;
 
 			.closeButton {
-				@extend button;
-				@extend .titlebar-button;
-				@extend $titlebar-button-close;
+				@include controls.button;
+				@include window.titlebar-button;
+				@include extends.titlebar-button-close;
 			}
 
 			svg {
@@ -49,7 +49,7 @@
 		overflow: auto;
 
 		&Text {
-			@extend $text-reset;
+			@include extends.text-reset;
 
 			padding: 0;
 			margin-bottom: var(--text-spacing);
@@ -61,7 +61,7 @@
 		}
 
 		a {
-			@extend $link;
+			@include extends.link;
 		}
 	}
 
@@ -69,7 +69,7 @@
 		background-image: none;
 
 		&.Disabled {
-			@extend button:disabled;
+			@include controls.input-disabled;
 		}
 
 		&.Primary {
@@ -83,20 +83,13 @@
 	}
 
 	&Checkbox {
-		@extend input;
-		@extend input[type="checkbox"];
+		@include controls.checkbox($checked-sel: '.Active', $disabled-sel: '.Disabled');
 
 		margin: 0;
 
 		flex-shrink: 0;
 
-		&.Active {
-			@extend input[type="checkbox"]:checked;
-		}
-
 		&.Disabled {
-			@extend input[type="checkbox"]:disabled;
-
 			opacity: 1;
 			filter: none;
 		}
@@ -106,7 +99,7 @@
 		}
 
 		&_Container {
-			@extend label;
+			@include text.input-label;
 
 			background-color: transparent;
 			box-shadow: none;
@@ -133,7 +126,7 @@
 	}
 
 	&ControlsSection {
-		@extend fieldset;
+		@include controls.groupbox;
 
 		gap: var(--text-spacing);
 
@@ -141,17 +134,17 @@
 		flex-direction: column;
 
 		&Header {
-			@extend $text-reset;
-			@extend $legend-as-div;
+			@include extends.text-reset;
+			@include extends.legend-as-div;
 		}
 
 		& > .DialogBodyText {
-			@extend $legend-as-div;
+			@include extends.legend-as-div;
 		}
 	}
 
 	&DropDown {
-		@extend select;
+		@include controls.combobox;
 
 		display: flex;
 		align-items: center;
@@ -232,8 +225,8 @@
 	}
 
 	&SubHeader {
-		@extend $text-reset;
-		@extend $legend-as-div;
+		@include extends.text-reset;
+		@include extends.legend-as-div;
 	}
 
 	&TextInputBase {
@@ -270,7 +263,7 @@
 	}
 
 	&Header {
-		@extend .titlebar;
+		@include window.titlebar;
 		@extend :root.focused .titlebar;
 
 		// "Mark as Private" dialog
@@ -297,7 +290,7 @@
 }
 
 .SettingsDialogSubHeader {
-	@extend $text-reset;
-	@extend $legend-as-div;
+	@include extends.text-reset;
+	@include extends.legend-as-div;
 }
 

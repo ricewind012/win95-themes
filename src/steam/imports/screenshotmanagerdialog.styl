@@ -9,16 +9,16 @@ replace-text(token) {
 }
 
 #Bullet {
-	@extend $text-reset;
+	@include extends.text-reset;
 }
 
 #ButtonBox:not(#Combobox, #Dropdown) {
-	@extend button;
+	@include controls.button;
 
 	opacity: 1;
 
 	&#Disabled {
-		@extend button:disabled;
+		@include controls.input-disabled;
 	}
 }
 
@@ -51,10 +51,10 @@ replace-text(token) {
 		}
 
 		#ButtonBox {
-			@extend .icon-button;
+			@include controls.icon-button;
 
 			&:has(> #Active) {
-				@extend .icon-button:active;
+				@include controls.icon-button:active;
 			}
 
 			svg {
@@ -71,7 +71,7 @@ replace-text(token) {
 }
 
 #CloudStorageImpact {
-	@extend $text-reset;
+	@include extends.text-reset;
 }
 
 #ComboboxSelector {
@@ -85,7 +85,7 @@ replace-text(token) {
 
 #Combobox,
 #Dropdown {
-	@extend select;
+	@include controls.combobox;
 
 	svg {
 		display: none;
@@ -104,7 +104,7 @@ replace-text(token) {
 
 #ExplainerBox,
 #FocusedScreenshots {
-	@extend .content-container;
+	@include window.content-container;
 
 	height: 100%;
 
@@ -123,7 +123,7 @@ replace-text(token) {
 }
 
 #Header {
-	@extend $text-reset;
+	@include extends.text-reset;
 }
 
 #HeaderPaddingTop {
@@ -151,7 +151,7 @@ replace-text(token) {
 }
 
 #KeyboardKey {
-	@extend $text-reset;
+	@include extends.text-reset;
 
 	border: none;
 	padding: 0;
@@ -167,11 +167,11 @@ replace-text(token) {
 }
 
 #Label {
-	@extend $text-reset;
+	@include extends.text-reset;
 }
 
 #Line {
-	@extend hr;
+	@include controls.separator;
 
 	background-color: transparent;
 
@@ -179,7 +179,7 @@ replace-text(token) {
 }
 
 #Metadata {
-	@extend $text-reset;
+	@include extends.text-reset;
 
 	margin-top: var(--text-spacing);
 }
@@ -253,7 +253,7 @@ replace-text(token) {
 }
 
 #SectionHeading {
-	@extend $text-reset;
+	@include extends.text-reset;
 
 	padding: 0 4px;
 }

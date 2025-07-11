@@ -6,7 +6,7 @@
 
 	// Messages preview
 	.card.preview {
-		@extend .content-container;
+		@include window.content-container;
 
 		border: none;
 		margin: 0;
@@ -38,7 +38,7 @@
 	.sectionTitle + .children {
 		& > div:not([class]):not(:empty), // Accessibility tab
 		[class^="margin"] {
-			@extend fieldset;
+			@include controls.groupbox;
 
 			h1:first-child,
 			h2:first-child,
@@ -46,8 +46,8 @@
 			h4:first-child,
 			h5:first-child,
 			h6:first-child {
-				@extend $text-reset;
-				@extend $legend-as-div;
+				@include extends.text-reset;
+				@include extends.legend-as-div;
 
 				opacity: 1;
 			}
@@ -56,11 +56,11 @@
 }
 
 .customizationSection {
-	@extend fieldset;
+	@include controls.groupbox;
 
 	& > :first-child {
-		@extend $text-reset;
-		@extend $legend-as-div;
+		@include extends.text-reset;
+		@include extends.legend-as-div;
 	}
 }
 
@@ -85,7 +85,7 @@
 
 			box-sizing: border-box;
 
-			@extend .titlebar;
+			@include window.titlebar;
 			@extend :root.focused .titlebar;
 		}
 
@@ -110,9 +110,9 @@
 			right: calc(var(--border-size) * 2 + 4px + 10%);
 
 			.closeButton {
-				@extend button;
-				@extend .titlebar-button;
-				@extend $titlebar-button-close;
+				@include controls.button;
+				@include window.titlebar-button;
+				@include extends.titlebar-button-close;
 
 				border: none;
 

@@ -14,12 +14,12 @@
 	z-index: 1;
 
 	a {
-		@extend button;
+		@include controls.button;
 
 		height: unset;
 
 		&[aria-current] {
-			@extend .icon-button:active;
+			@include controls.icon-button:active;
 		}
 	}
 }

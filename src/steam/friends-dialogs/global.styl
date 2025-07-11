@@ -20,7 +20,7 @@
 
 .DialogHBar,
 .HBar {
-	@extend hr;
+	@include controls.separator;
 }
 
 .expireLinkInContainer {
@@ -46,7 +46,7 @@
 	margin: 0;
 
 	&Label {
-		@extend $text-reset;
+		@include extends.text-reset;
 	}
 }
 

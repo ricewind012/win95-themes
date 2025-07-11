@@ -12,7 +12,7 @@
 		position: absolute;
 		inset: -2px -2px -3px -2px;
 
-		@extend .content-container;
+		@include window.content-container;
 	}
 }
 
@@ -26,7 +26,7 @@
 }
 
 #LockIcon {
-	@extend $text-reset;
+	@include extends.text-reset;
 
 	padding-bottom: 1px;
 }
@@ -36,7 +36,7 @@
 }
 
 #ReloadButton {
-	@extend button;
+	@include controls.button;
 
 	min-width: 21px;
 	height: 21px;
@@ -64,7 +64,7 @@
 		content: '';
 		display: block;
 
-		@extend hr;
+		@include controls.separator;
 
 		margin-bottom: 0;
 	}
@@ -79,7 +79,7 @@
 	&::before {
 		content: '';
 
-		@extend hr;
+		@include controls.separator;
 
 		margin-top: 2px;
 
@@ -93,7 +93,7 @@
 }
 
 #URL {
-	@extend $text-reset;
+	@include extends.text-reset;
 }
 
 #URLBar {
@@ -104,7 +104,7 @@
 }
 
 #URLBarText {
-	@extend select;
+	@include controls.combobox;
 
 	width: 100%;
 }

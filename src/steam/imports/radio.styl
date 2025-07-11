@@ -5,8 +5,8 @@
 }
 
 #Button {
-	@extend label;
-	@extend input[type="radio"];
+	@include text.input-label;
+	@include controls.radio($checked-sel: '#Active');
 
 	font: var(--text-ui);
 	color: var(--color-button-text);
@@ -32,10 +32,6 @@
 	&::after {
 		width: calc(var(--sel-button-size) + var(--label-spacing) - var(--text-spacing));
 		order: -1;
-	}
-
-	&#Active {
-		@extend input[type="radio"]:checked;
 	}
 }
 

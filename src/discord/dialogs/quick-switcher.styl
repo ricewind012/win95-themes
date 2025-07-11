@@ -13,7 +13,7 @@
 	}
 
 	& > .scroller {
-		@extend .content-container;
+		@include window.content-container;
 		@extend $move-scrollbar;
 
 		margin: 0;
@@ -26,14 +26,14 @@
 
 		// Header
 		& > div:not([class]) > div {
-			@extend .table-header-row;
+			@include table.header-row;
 
 			line-height: inherit;
 
 			height: unset;
 
 			& > div {
-				@extend $text-reset;
+				@include extends.text-reset;
 
 				margin: 0;
 			}

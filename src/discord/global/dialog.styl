@@ -5,7 +5,7 @@ $titlebar-description-selector = '> :first-child + [data-text-variant]';
 }
 
 .formGroup {
-	@extend label;
+	@include text.input-label;
 
 	margin-bottom: var(--text-spacing);
 
@@ -24,7 +24,7 @@ $titlebar-description-selector = '> :first-child + [data-text-variant]';
 		flex-grow: 0;
 
 		& > * {
-			@extend $text-reset;
+			@include extends.text-reset;
 		}
 	}
 }
@@ -33,12 +33,12 @@ $titlebar-description-selector = '> :first-child + [data-text-variant]';
 	overflow: visible;
 
 	:has(> .h5):not(.sectionTitle) {
-		@extend fieldset;
+		@include controls.groupbox;
 	}
 
 	.h5 {
-		@extend $text-reset;
-		@extend $legend-as-div;
+		@include extends.text-reset;
+		@include extends.legend-as-div;
 	}
 
 	&.small {
@@ -66,24 +66,24 @@ $titlebar-description-selector = '> :first-child + [data-text-variant]';
 			overflow: auto;
 
 			& > * {
-				@extend $text-reset;
+				@include extends.text-reset;
 
 				text-align: start;
 			}
 		}
 
 		& > .searchBox {
-			@extend fieldset;
+			@include controls.groupbox;
 
 			& > [data-text-variant] {
-				@extend $legend-as-div;
+				@include extends.legend-as-div;
 			}
 		}
 	}
 
 	.close {
-		@extend .titlebar-button;
-		@extend $titlebar-button-close;
+		@include window.titlebar-button;
+		@include extends.titlebar-button-close;
 
 		opacity: 1;
 		margin: 0;
@@ -110,14 +110,14 @@ $titlebar-description-selector = '> :first-child + [data-text-variant]';
 	}
 
 	[role="dialog"]:not([aria-label]) > & .header.flex {
-		@extend .titlebar;
+		@include window.titlebar;
 		@extend :root.focused .titlebar;
 
 		overflow: visible;
 		flex-direction: row;
 
 		.title {
-			@extend $text-reset;
+			@include extends.text-reset;
 
 			font-weight: bold;
 			margin: 0;
@@ -128,7 +128,7 @@ $titlebar-description-selector = '> :first-child + [data-text-variant]';
 		}
 
 		& > [data-text-variant] {
-			@extend $text-reset;
+			@include extends.text-reset;
 
 			font-weight: bold;
 			margin: 0;

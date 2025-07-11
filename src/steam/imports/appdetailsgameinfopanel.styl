@@ -1,6 +1,6 @@
 #Container {
-	@extend fieldset;
-	@extend $text-reset;
+	@include controls.groupbox;
+	@include extends.text-reset;
 
 	background-color: transparent;
 }
@@ -8,11 +8,11 @@
 #Date,
 #Name,
 #Label {
-	@extend $text-reset;
+	@include extends.text-reset;
 }
 
 #GameDescription {
-	@extend $text-reset;
+	@include extends.text-reset;
 
 	padding: 0;
 }

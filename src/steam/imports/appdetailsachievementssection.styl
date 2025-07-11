@@ -9,11 +9,11 @@
 }
 
 #Label {
-	@extend $text-reset;
+	@include extends.text-reset;
 }
 
 #Remainder {
-	@extend button;
+	@include controls.button;
 
 	margin: 0;
 
@@ -25,7 +25,7 @@
 }
 
 #RemainderText {
-	@extend $text-reset;
+	@include extends.text-reset;
 }
 
 #ShowDivider {
@@ -37,6 +37,6 @@
 
 		display: block;
 
-		@extend hr;
+		@include controls.separator;
 	}
 }

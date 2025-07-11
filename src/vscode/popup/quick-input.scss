@@ -1,0 +1,80 @@
+@use 'shared/controls';
+@use 'shared/window';
+
+.quick-input {
+	&-widget {
+		@include window.container($child: true);
+
+		margin: 0;
+
+		inset: 12.5% 25%;
+		width: 50%;
+		height: 50%;
+
+		.monaco {
+			&-scrollable-element {
+				padding: 0;
+			}
+		}
+	}
+
+	&-title {
+		@include window.titlebar-name;
+
+		text-align: left;
+		padding: 0;
+		padding-left: 2px;
+
+		// Not even an aria-label !
+		:root:lang(en) &[style="display: none;"] {
+			display: block;
+
+			&::before {
+				content: 'Command Palette';
+			}
+		}
+
+		&bar {
+			background-color: var(--color-active-caption);
+			color: var(--color-active-caption-text);
+
+			height: var(--titlebar-height);
+		}
+	}
+
+	&-left-action-bar:has(> .actions-container:empty) {
+		display: none;
+	}
+
+	&-right-action-bar {
+		.action-label {
+			@include controls.button;
+			@include window.titlebar-button;
+		}
+	}
+
+	&-header:not(.hidden-input),
+	&-description,
+	&-list {
+		padding: 0;
+		margin: var(--dialog-spacing);
+	}
+
+	&-list {
+		overflow: hidden;
+		height: calc(100% - 64px);
+
+		&-label {
+			overflow: visible;
+		}
+	}
+}
+
+.profile {
+	&-edit {
+	}
+
+	&-type-select-container {
+		overflow: visible;
+	}
+}

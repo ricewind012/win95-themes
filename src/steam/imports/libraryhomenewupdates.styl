@@ -6,8 +6,8 @@
 	right: 0;
 
 	& > div {
-		@extend button;
-		@extend .titlebar-button;
+		@include controls.button;
+		@include window.titlebar-button;
 
 		--button-img: var(--icon-arrow-bottom);
 		--button-img-size: 7px 4px;
@@ -36,7 +36,7 @@
 }
 
 #GameIconAndName {
-	@extend button;
+	@include controls.button;
 
 	min-width: 100%;
 	align-items: center;
@@ -48,21 +48,21 @@
 }
 
 #PartnerEventRowCapsule_TextCtn {
-	@extend $text-reset;
+	@include extends.text-reset;
 
 	padding: 0;
 	padding-top: var(--text-spacing);
 }
 
 #PartnerEventRowCapsule_TextTitle {
-	@extend $text-reset;
+	@include extends.text-reset;
 
 	min-height: 40px;
 }
 
 #SettingsButton {
-	@extend button;
-	@extend .titlebar-button;
+	@include controls.button;
+	@include window.titlebar-button;
 	@extend $icon-settings;
 
 	&::before {

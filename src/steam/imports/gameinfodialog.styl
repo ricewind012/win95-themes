@@ -60,9 +60,9 @@
 }
 
 #Header {
-	@extend $text-reset;
-	@extend button;
-	@extend .table-header-row;
+	@include extends.text-reset;
+	@include controls.button;
+	@include table.header-row;
 
 	text-align: left;
 
@@ -71,7 +71,7 @@
 }
 
 #Details {
-	@extend .table-row;
+	@include table.row;
 
 	border: none;
 }

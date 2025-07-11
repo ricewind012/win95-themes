@@ -1,3 +1,5 @@
+@use 'shared/window';
+
 .PopupFullWindow:not(:only-child) {
 	@extend $statusbar-alt;
 
@@ -7,7 +9,7 @@
 }
 
 .window_resize_grip {
-	@extend .window-resize-handle;
+	@include window.resize-handle;
 
 	opacity: 1;
 }

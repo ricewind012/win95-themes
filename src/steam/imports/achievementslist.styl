@@ -8,7 +8,7 @@
 	&::after {
 		content: '';
 
-		@extend hr;
+		@include controls.separator;
 	}
 }
 
@@ -17,6 +17,6 @@
 #AchievementTitle,
 #HeaderText,
 #UnlockDate {
-	@extend $text-reset;
+	@include extends.text-reset;
 }
 

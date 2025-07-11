@@ -16,7 +16,7 @@
 #IconContainer,
 #AppName,
 #ExePath {
-	@extend $text-reset;
+	@include extends.text-reset;
 
 	opacity: 1;
 	// Seems like V*lve forgot about this one
@@ -63,9 +63,9 @@
 	margin-top: var(--text-spacing);
 
 	& > div {
-		@extend $text-reset;
-		@extend button;
-		@extend .table-button;
+		@include extends.text-reset;
+		@include controls.button;
+		@include table.button;
 		@extend $table-button-arrows;
 	}
 

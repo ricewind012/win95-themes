@@ -15,7 +15,7 @@
 	margin: 0;
 
 	&_ChosenFriend {
-		@extend .statusbar-item;
+		@include window.statusbar-item;
 
 		background-color: transparent;
 		font: var(--text-ui);
@@ -32,7 +32,7 @@
 	}
 
 	&FriendList {
-		@extend .content-container;
+		@include window.content-container;
 	}
 
 	&ScrollPanel {

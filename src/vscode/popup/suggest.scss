@@ -1,0 +1,21 @@
+@use 'shared/window';
+
+.suggest-widget {
+	@include window.container($child: true);
+
+	border: none;
+
+	.monaco {
+		&-scrollable-element {
+			overflow: hidden;
+		}
+
+		&-list-row {
+			padding-right: var(--scrollbar-size);
+
+			&s {
+				margin: 0;
+			}
+		}
+	}
+}

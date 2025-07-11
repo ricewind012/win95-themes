@@ -1,0 +1,42 @@
+@use 'shared/window';
+
+body {
+	@include window.container;
+}
+
+.monaco-workbench {
+	font: var(--text-ui);
+
+	width: 100%;
+	height: calc(100vh - 8px);
+
+	.part > .content {
+		font: var(--text-ui);
+	}
+}
+
+.split-view {
+	&-view {
+		// Titlebar
+		&[style^="top: 35px;"] {
+			margin-top: 5px;
+		}
+
+		// Statusbar
+		&[style$="height: 22px;"] {
+			margin-top: calc(var(--window-gap) * -1);
+		}
+
+		// Maximised bottom panel
+		&[style="top: 0px; height: 0px;"] + & > .part.panel {
+			margin-top: 16px;
+
+			height: calc(100% - 44px);
+		}
+	}
+
+	// !important
+	.monaco-split-view2.separator-border > .monaco-scrollable-element > &-container &-view:not(:first-child)::before {
+		background-color: transparent;
+	}
+}

@@ -10,7 +10,7 @@ $selectors = {
 
 // TODO: remove
 // TODO: add position: absolute version
-// An alternative to "@extend .content-container" for special elements
+// An alternative to "@include window.content-container" for special elements
 $content-container-alt {
 	background-color: var(--color-window);
 
@@ -34,11 +34,11 @@ $pseudo-separator {
 	width: 100%;
 	display: inline-block;
 
-	@extend hr;
+	@include controls.separator;
 }
 
 $select-as-button {
-	@extend select;
+	@include controls.combobox;
 
 	&:active,
 	&:focus {

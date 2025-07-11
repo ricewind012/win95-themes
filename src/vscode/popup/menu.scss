@@ -1,0 +1,55 @@
+@use 'shared/controls';
+@use 'shared/window';
+
+[role="menu"] {
+	@include window.container($child: true);
+}
+
+.context-view {
+	animation: none;
+	box-shadow: none;
+}
+
+[role="menuitem"],
+[role="menuitemcheckbox"] {
+	margin: 0;
+
+	height: unset;
+}
+
+.monaco {
+	&-menu {
+		font: var(--text-ui);
+
+		.action-label,
+		.keybinding {
+			line-height: inherit;
+			padding: 0;
+		}
+
+		.action-label {
+			padding-left: 0;
+		}
+
+		.keybinding {
+			padding-left: 20px;
+			padding-right: 0;
+		}
+	}
+
+	&-action-bar {
+		padding: 0;
+	}
+}
+
+// !important
+div.monaco-menu .monaco-action-bar.vertical .action-label.separator {
+	@include controls.separator;
+
+	border-bottom: none;
+}
+
+.submenu-indicator,
+.menu-item-check {
+	display: none;
+}

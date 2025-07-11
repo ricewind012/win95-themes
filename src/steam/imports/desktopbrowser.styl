@@ -65,16 +65,16 @@
 
 #NavigationButton {
 	// TODO: icons
-	@extend button;
-	@extend .icon-button;
+	@include controls.button;
+	@include controls.icon-button;
 
 	&#Disabled {
-		@extend button:disabled;
+		@include controls.input-disabled;
 	}
 }
 
 #TabTitle {
-	@extend $text-reset;
+	@include extends.text-reset;
 }
 
 // TODO: please fucking kill me that looks like total shit !

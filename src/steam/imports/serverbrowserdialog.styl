@@ -125,14 +125,14 @@ $use-icon {
 }
 
 #SearchButton {
-	@extend .titlebar-button;
+	@include window.titlebar-button;
 	@extend $icon-refresh;
 
 	// TODO: weird offset
 	left: calc(var(--pos) + var(--combobox-width) + var(--toolbar-spacing) - 2px);
 
 	&#SearchActive {
-		@extend $titlebar-button-close;
+		@include extends.titlebar-button-close;
 	}
 }
 
@@ -151,7 +151,7 @@ $use-icon {
 }
 
 #ServerList {
-	@extend .content-container;
+	@include window.content-container;
 
 	border: none;
 	margin: 0;
@@ -184,8 +184,8 @@ $use-icon {
 
 #SelectColumnsButton,
 #ServerListHeaderCell {
-	@extend button;
-	@extend .table-button;
+	@include controls.button;
+	@include table.button;
 	@extend $table-button-arrows;
 
 	min-width: unset;
@@ -253,8 +253,8 @@ $use-icon {
 	min-width: 111px;
 
 	&#Selected {
-		@extend button:active;
-		@extend .icon-button:active;
+		@include controls.button-active;
+		@include controls.icon-button:active;
 	}
 }
 

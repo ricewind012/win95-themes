@@ -1,5 +1,5 @@
 #AccountMenu {
-	@extend select;
+	@include controls.combobox;
 
 	.avatar {
 		border: none;
@@ -21,8 +21,8 @@
 }
 
 #Button {
-	@extend button;
-	@extend .titlebar-button;
+	@include controls.button;
+	@include window.titlebar-button;
 
 	--button-img-pos: 3px 2px;
 

@@ -8,16 +8,16 @@
 .text,
 .userTag,
 [data-text-variant] {
-	@extend $text-reset;
+	@include extends.text-reset;
 }
 
 .anchor {
-	@extend $text-reset;
-	@extend $link;
+	@include extends.text-reset;
+	@include extends.link;
 }
 
 {d}channelMention {
-	@extend $link;
+	@include extends.link;
 
 	background-color: transparent;
 	padding: 0;
@@ -41,7 +41,7 @@
 }
 
 .textBadge {
-	@extend $text-reset;
+	@include extends.text-reset;
 
 	background-color: transparent;
 	parentheses();

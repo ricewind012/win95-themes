@@ -15,7 +15,7 @@
 }
 
 [data-list-id="people"] {
-	@extend .content-container;
+	@include window.content-container;
 	@extend $move-scrollbar;
 }
 
@@ -47,7 +47,7 @@
 		}
 
 		.discriminator {
-			@extend $text-reset;
+			@include extends.text-reset;
 
 			visibility: visible;
 			parentheses();

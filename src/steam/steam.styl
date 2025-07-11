@@ -1,4 +1,4 @@
-// An alternative to "@extend .content-container" for special elements
+// An alternative to "@include window.content-container" for special elements
 $content-container-alt {
 	background-color: var(--color-window);
 
@@ -48,13 +48,10 @@ $statusbar-alt {
 }
 
 $table-button-arrows {
-	&:has([d="M17.98 26.54L3.20996 11.77H32.75L17.98 26.54Z"]) {
-		@extend .table-button[aria-sort="ascending"];
-	}
-
-	&:has([d="M17.98 10.23L3.20996 25H32.75L17.98 10.23Z"]) {
-		@extend .table-button[aria-sort="descending"];
-	}
+	@include table.buttons(
+		$ascending-sel: ':has([d="M17.98 26.54L3.20996 11.77H32.75L17.98 26.54Z"])',
+		$descending-sel: ':has([d="M17.98 10.23L3.20996 25H32.75L17.98 10.23Z"])'
+	);
 }
 
 $tooltip {
@@ -65,8 +62,8 @@ $tooltip {
 }
 
 $pageable-container-button {
-	@extend button;
-	@extend .titlebar-button;
+	@include controls.button;
+	@include window.titlebar-button;
 
 	--button-img-size: 4px 7px;
 	--button-img-pos: center;

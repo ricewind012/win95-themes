@@ -7,12 +7,12 @@
 	padding: 0;
 
 	[role="list"] {
-		@extend .statusbar;
+		@include window.statusbar;
 	}
 
 	.tags > [role="group"],
 	[role="listitem"] {
-		@extend .statusbar-item;
+		@include window.statusbar-item;
 
 		background-color: transparent;
 		border: none;
@@ -25,7 +25,7 @@
 	.biteSize,
 	.fullSize {
 		button {
-			@extend .icon-button;
+			@include controls.icon-button;
 		}
 	}
 
@@ -51,7 +51,7 @@
 		&::after {
 			content: '';
 
-			@extend hr;
+			@include controls.separator;
 
 			display: inline-block;
 			width: 100%;

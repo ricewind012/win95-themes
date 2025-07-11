@@ -10,7 +10,7 @@
 }
 
 #Description {
-	@extend $text-reset;
+	@include extends.text-reset;
 
 	background-image: none;
 	padding: 0;
@@ -18,7 +18,7 @@
 
 #Disabled {
 	& > .DialogButton {
-		@extend button:disabled;
+		@include controls.input-disabled;
 	}
 }
 

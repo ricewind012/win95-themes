@@ -1,0 +1,36 @@
+// TODO(port): share this?
+@use 'shared/controls-generated';
+@use 'shared/scrollbar';
+
+::-webkit-scrollbar {
+	@include scrollbar.container;
+}
+
+::-webkit-scrollbar-button {
+	@include scrollbar.button;
+
+	&:vertical:decrement {
+		@include controls-generated.scrollbar-button-vertical-decrement;
+	}
+
+	&:vertical:increment {
+		@include controls-generated.scrollbar-button-vertical-increment;
+	}
+
+	&:horizontal:decrement {
+		@include controls-generated.scrollbar-button-horizontal-decrement;
+	}
+
+	&:horizontal:increment {
+		@include controls-generated.scrollbar-button-horizontal-increment;
+	}
+}
+
+::-webkit-scrollbar-corner,
+::-webkit-scrollbar-resize {
+	@include scrollbar.corner;
+}
+
+::-webkit-scrollbar-thumb {
+	@include scrollbar.thumb;
+}

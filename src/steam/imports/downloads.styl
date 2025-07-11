@@ -1,12 +1,12 @@
 #AutoUpdateHours {
-	@extend $text-reset;
+	@include extends.text-reset;
 
 	parentheses();
 }
 
 #AutoUpdateSettings {
-	@extend $text-reset;
-	@extend button;
+	@include extends.text-reset;
+	@include controls.button;
 
 	width: 111px;
 
@@ -23,7 +23,7 @@
 }
 
 #Count {
-	@extend $text-reset;
+	@include extends.text-reset;
 
 	margin: 0;
 }
@@ -43,18 +43,18 @@
 }
 
 #Name {
-	@extend $text-reset;
+	@include extends.text-reset;
 
 	margin-bottom: var(--text-spacing);
 }
 
 #ProgressDetails {
-	@extend $text-reset;
+	@include extends.text-reset;
 }
 
 #RemoveFromQueue {
-	@extend .titlebar-button;
-	@extend $titlebar-button-close;
+	@include window.titlebar-button;
+	@include extends.titlebar-button-close;
 
 	opacity: 1;
 
@@ -74,7 +74,7 @@
 }
 
 #Section {
-	@extend fieldset;
+	@include controls.groupbox;
 
 	margin-bottom: 16px;
 }
@@ -98,7 +98,7 @@
 }
 
 #SectionItemStatus {
-	@extend $text-reset;
+	@include extends.text-reset;
 }
 
 #SectionList {
@@ -112,8 +112,8 @@
 }
 
 #SectionTitle {
-	@extend $text-reset;
-	@extend $legend-as-div;
+	@include extends.text-reset;
+	@include extends.legend-as-div;
 
 	background-color: var(--color-window);
 
@@ -136,5 +136,5 @@
 }
 
 #Value {
-	@extend $text-reset;
+	@include extends.text-reset;
 }

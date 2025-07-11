@@ -24,7 +24,7 @@
 	margin-top: var(--window-gap);
 
 	button {
-		@extend .icon-button;
+		@include controls.icon-button;
 
 		width: unset;
 		min-height: unset;
@@ -54,9 +54,9 @@
 
 .chatFileUpload {
 	&Cancel {
-		@extend button;
-		@extend .titlebar-button;
-		@extend $titlebar-button-close;
+		@include controls.button;
+		@include window.titlebar-button;
+		@include extends.titlebar-button-close;
 
 		top: 0;
 		right: calc(-260px + 16px + 8px + var(--border-size) + var(--window-spacing));
@@ -103,11 +103,11 @@
 }
 
 .ChatHistoryContainer {
-	@extend .content-container;
+	@include window.content-container;
 }
 
 .ChatMessageEntryVoice {
-	@extend .icon-button;
+	@include controls.icon-button;
 
 	opacity: 1;
 	border: none;
@@ -118,8 +118,8 @@
 
 .chatRoom {
 	&Button {
-		@extend button;
-		@extend .icon-button;
+		@include controls.button;
+		@include controls.icon-button;
 
 		// TODO: remove when adding icons
 		padding: 2px;
@@ -167,13 +167,13 @@
 		}
 
 		&NavColumn {
-			@extend .content-container;
+			@include window.content-container;
 
 			margin-right: var(--window-gap);
 		}
 
 		&Stats {
-			@extend .statusbar;
+			@include window.statusbar;
 
 			flex-direction: row;
 
@@ -182,8 +182,8 @@
 			}
 
 			.statMemberStat {
-				@extend .statusbar-item;
-				@extend $text-reset;
+				@include window.statusbar-item;
+				@include extends.text-reset;
 
 				margin: 0;
 
@@ -201,7 +201,7 @@
 	}
 
 	&Members {
-		@extend .content-container;
+		@include window.content-container;
 
 		border: none;
 
@@ -217,7 +217,7 @@
 		padding: 4px;
 
 		&.ActiveTextChannel {
-			@extend .list-item[aria-selected="true"] > .list-item-name-container > .list-item-name;
+			@include list.item-name-selected;
 		}
 
 		&Icon {
@@ -225,7 +225,7 @@
 		}
 
 		&Name {
-			@extend $text-reset;
+			@include extends.text-reset;
 
 			margin: 0;
 		}
@@ -294,8 +294,8 @@
 
 	// TODO: this goes out of bounds with too many tabs
 	&Selector {
-		@extend button;
-		@extend .titlebar-button;
+		@include controls.button;
+		@include window.titlebar-button;
 
 		// TODO: mixin
 		--button-img: var(--icon-arrow-bottom);
@@ -335,7 +335,7 @@
 }
 
 .FriendChatTypingNotification {
-	@extend .statusbar-item;
+	@include window.statusbar-item;
 
 	opacity: 1;
 	background: none;
@@ -363,11 +363,11 @@
 	}
 
 	&Container {
-		@extend label;
+		@include text.input-label;
 
 		.copyInviteLink {
-			@extend button;
-			@extend .icon-button;
+			@include controls.button;
+			@include controls.icon-button;
 
 			// TODO: remove when adding icons
 			svg {
@@ -383,7 +383,7 @@
 	}
 
 	&LinkDesc {
-		@extend $text-reset;
+		@include extends.text-reset;
 
 		margin: 0;
 
@@ -397,8 +397,8 @@
 	}
 
 	&Option {
-		@extend button;
-		@extend .icon-button;
+		@include controls.button;
+		@include controls.icon-button;
 
 		opacity: 1;
 
@@ -441,14 +441,14 @@
 	}
 
 	&.timeDivision {
-		@extend $text-reset;
+		@include extends.text-reset;
 
 		height: unset;
 		align-items: center;
 
 		.horizDivider,
 		.preHorizDivider {
-			@extend hr;
+			@include controls.separator;
 
 			width: unset;
 			flex-grow: 1;
@@ -477,7 +477,7 @@
 	}
 
 	&TimeStamp {
-		@extend $text-reset;
+		@include extends.text-reset;
 
 		align-self: center;
 	}
@@ -485,7 +485,7 @@
 
 .VoiceChatTextChannel {
 	&Desc {
-		@extend .statusbar-item;
+		@include window.statusbar-item;
 
 		background-image: none;
 		font: var(--text-ui);
@@ -497,7 +497,7 @@
 	}
 
 	&Name {
-		@extend $text-reset;
+		@include extends.text-reset;
 
 		font-weight: bold;
 	}
@@ -509,13 +509,13 @@
 	}
 
 	&Title {
-		@extend .titlebar;
+		@include window.titlebar;
 		@extend :root.focused .titlebar;
 
 		.MinimizeTextChat {
-			@extend button;
-			@extend .titlebar-button;
-			@extend $titlebar-button-close;
+			@include controls.button;
+			@include window.titlebar-button;
+			@include extends.titlebar-button-close;
 
 			opacity: 1;
 

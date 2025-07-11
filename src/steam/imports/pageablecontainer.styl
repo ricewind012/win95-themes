@@ -1,5 +1,5 @@
 #PageableContainer {
-	@extend fieldset;
+	@include controls.groupbox;
 
 	svg {
 		color: inherit;
@@ -24,8 +24,8 @@
 	@extend $pageable-container-button;
 
 	&#Disabled {
-		@extend button:disabled;
-		@extend .titlebar-button:disabled;
+		@include controls.input-disabled;
+		@include window.titlebar-button:disabled;
 	}
 }
 
@@ -38,10 +38,10 @@
 }
 
 #HeaderPageControls {
-	@extend $text-reset;
+	@include extends.text-reset;
 
 	& > div:not([class]) {
-		@extend $legend-as-div;
+		@include extends.legend-as-div;
 
 		background-color: var(--color-window);
 
@@ -51,8 +51,8 @@
 }
 
 #Name {
-	@extend $text-reset;
-	@extend $legend-as-div;
+	@include extends.text-reset;
+	@include extends.legend-as-div;
 
 	background-color: var(--color-window);
 }

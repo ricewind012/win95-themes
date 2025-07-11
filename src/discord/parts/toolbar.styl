@@ -40,11 +40,11 @@ section[role="navigation"] {
 
 .toolbar {
 	[role="button"] {
-		@extend button;
-		@extend .icon-button;
+		@include controls.button;
+		@include controls.icon-button;
 
 		&.selected {
-			@extend .icon-button:active;
+			@include controls.icon-button:active;
 		}
 
 		&[tabindex="-1"] {
@@ -74,7 +74,7 @@ section[role="navigation"] {
 		@extend input[type="text"];
 
 		{d}DraftEditor-root {
-			@extend $text-reset;
+			@include extends.text-reset;
 
 			padding: 0;
 		}
@@ -91,8 +91,8 @@ section[role="navigation"] {
 			--size: 18px;
 			--button-img: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABcAAAAXCAMAAADX9CSSAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAbUExURYeIjwAAAAD//////1eoqMDHyAAA/wAAqAAAAOUCGbgAAAAJdFJOU///////////AFNPeBIAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAB5SURBVChTrZDBEoAgCEQXDfP/vzgQAzSPLZfmPdtR0DXQ0PicUQ6UqkPJCMeAOlcIJJyF8MBSNbF3z/EfkGtS0W/nl/s4Vs6BMw8h2Jek+yG6RojYt2f7pBFwZTQTxmfuVkozsfAkVh5i4y52/ooPN3HgKo5cXkP9Aen6CymrBsQ1AAAAAElFTkSuQmCC');
 
-			@extend button;
-			@extend .icon-button;
+			@include controls.button;
+			@include controls.icon-button;
 
 			margin-top: var(--pos);
 			margin-right: var(--pos);

@@ -8,7 +8,7 @@
 }
 
 #BackArrowContainer {
-	@extend button;
+	@include controls.button;
 
 	height: unset;
 
@@ -18,16 +18,11 @@
 }
 
 #Checkbox {
-	@extend input;
-	@extend input[type="checkbox"];
-
-	&:not(:empty) {
-		@extend input[type="checkbox"]:checked;
-	}
+	@include controls.checkbox($checked-sel: ':not(:empty)');
 }
 
 #CheckboxFieldLabel {
-	@extend $text-reset;
+	@include extends.text-reset;
 
 	padding-left: var(--label-spacing);
 }
@@ -37,13 +32,13 @@
 }
 
 #EmbeddedRootFooter {
-	@extend $text-reset;
+	@include extends.text-reset;
 
 	padding: 0;
 }
 
 #FieldLabel {
-	@extend $text-reset;
+	@include extends.text-reset;
 }
 
 #FormError {
@@ -85,7 +80,7 @@
 }
 
 #TextLink {
-	@extend $link;
+	@include extends.link;
 
 	font-size: var(--text-ui-size);
 }

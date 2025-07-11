@@ -1,5 +1,5 @@
 #AchievementSearchHeader {
-	@extend fieldset;
+	@include controls.groupbox;
 
 	gap: var(--text-spacing);
 
@@ -11,17 +11,17 @@
 }
 
 #Label {
-	@extend $text-reset;
+	@include extends.text-reset;
 }
 
 #ProgressLabel {
-	@extend $legend-as-div;
+	@include extends.legend-as-div;
 
 	gap: var(--text-spacing);
 }
 
 #StatsBlock {
-	@extend fieldset;
+	@include controls.groupbox;
 
 	background-color: transparent;
 }

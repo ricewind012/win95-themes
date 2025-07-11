@@ -1,7 +1,7 @@
 .ChatRoomNotificationSettingsDialog {
 	// wtf
 	& & {
-		@extend label;
+		@include text.input-label;
 
 		& > [style] {
 			margin: 0;
@@ -37,7 +37,7 @@
 	}
 
 	.NotificationChannelName {
-		@extend $text-reset;
+		@include extends.text-reset;
 
 		background-color: transparent;
 		padding: 0;

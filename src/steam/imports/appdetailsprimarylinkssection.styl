@@ -23,11 +23,11 @@
 }
 
 #MenuButton {
-	@extend button;
-	@extend .titlebar-button;
+	@include controls.button;
+	@include window.titlebar-button;
 	@extend $icon-more;
 }
 
 #Text {
-	@extend $link;
+	@include extends.link;
 }

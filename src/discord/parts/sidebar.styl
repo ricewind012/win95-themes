@@ -8,7 +8,7 @@
 	}
 
 	& > nav {
-		@extend .content-container;
+		@include window.content-container;
 
 		--pos: calc(var(--toolbar-container-spacing) * 2 + var(--icon-button-height) + var(--window-gap));
 
@@ -61,8 +61,8 @@
 			}
 
 			[role="button"] {
-				@extend button;
-				@extend .icon-button;
+				@include controls.button;
+				@include controls.icon-button;
 				@extend $icon-more;
 
 				// TODO
@@ -89,7 +89,7 @@
 
 	& > section {
 		.avatarWrapper {
-			@extend button;
+			@include controls.button;
 			@extend $use-aria-label;
 
 			// TODO: icon
@@ -98,7 +98,7 @@
 		}
 
 		button {
-			@extend .icon-button;
+			@include controls.icon-button;
 
 			width: unset;
 
@@ -128,7 +128,7 @@
 	}
 
 	.name {
-		@extend $text-reset;
+		@include extends.text-reset;
 	}
 }
 
@@ -163,7 +163,7 @@
 		}
 
 		.link {
-			@extend $text-reset;
+			@include extends.text-reset;
 
 			background-color: var(--color-window);
 		}
@@ -185,7 +185,7 @@
 
 			&.modeSelected {
 				.link {
-					@extend .list-item[aria-selected="true"] > .list-item-name-container > .list-item-name;
+					@include list.item-name-selected;
 				}
 			}
 
@@ -240,7 +240,7 @@
 
 .privateChannels {
 	.interactiveSelected {
-		@extend .list-item[aria-selected="true"] > .list-item-name-container > .list-item-name;
+		@include list.item-name-selected;
 	}
 
 	& > .scroller {
@@ -254,8 +254,8 @@
 
 // <svg> with same class
 div.privateChannelRecipientsInviteButtonIcon {
-	@extend button;
-	@extend .icon-button;
+	@include controls.button;
+	@include controls.icon-button;
 
 	// TODO: remove when doing icons
 	padding: 3px;

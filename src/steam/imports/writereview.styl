@@ -16,7 +16,7 @@
 		top: -10px;
 		width: 100%;
 
-		@extend hr;
+		@include controls.separator;
 	}
 }
 
@@ -26,7 +26,7 @@
 }
 
 #LeftContainer {
-	@extend $text-reset;
+	@include extends.text-reset;
 }
 
 #OptionButton {
@@ -70,7 +70,7 @@
 	background-image: none;
 
 	&#Selected {
-		@extend .icon-button:active;
+		@include controls.icon-button:active;
 	}
 
 	span {

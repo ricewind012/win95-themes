@@ -15,7 +15,7 @@
 }
 
 #ChatTabContent_ChatRoomName {
-	@extend $text-reset;
+	@include extends.text-reset;
 
 	-webkit-mask: none;
 	// Make it consistent with friends
@@ -30,8 +30,8 @@
 }
 
 #CloseButton {
-	@extend .titlebar-button;
-	@extend $titlebar-button-close;
+	@include window.titlebar-button;
+	@include extends.titlebar-button-close;
 
 	position: relative;
 

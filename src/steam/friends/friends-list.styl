@@ -19,7 +19,7 @@
 	}
 
 	button {
-		@extend .icon-button;
+		@include controls.icon-button;
 
 		// TODO: remove with icons
 		padding: 0;
@@ -40,7 +40,7 @@
 }
 
 .activeVoiceName {
-	@extend $text-reset;
+	@include extends.text-reset;
 
 	font-weight: bold;
 }
@@ -51,8 +51,8 @@
 
 .addFriendButton,
 .friendRequestButton {
-	@extend button;
-	@extend .icon-button;
+	@include controls.button;
+	@include controls.icon-button;
 
 	// TODO: icons
 	padding: 2px;
@@ -106,7 +106,7 @@
 }
 
 .chatRoomName {
-	@extend $text-reset;
+	@include extends.text-reset;
 }
 
 .chatSectionTitle {
@@ -120,8 +120,8 @@
 
 	.createChatRoomButton,
 	.ToggleGroupChatList {
-		@extend button;
-		@extend .titlebar-button;
+		@include controls.button;
+		@include window.titlebar-button;
 
 		svg {
 			display: none;
@@ -133,7 +133,7 @@
 	}
 
 	.groupChatSectionTitle {
-		@extend $text-reset;
+		@include extends.text-reset;
 
 		font-weight: bold;
 		padding: 0;
@@ -177,7 +177,7 @@
 }
 
 .currentUserContainer {
-	@extend .content-container;
+	@include window.content-container;
 
 	border: none;
 	margin-top: var(--window-gap);
@@ -246,7 +246,7 @@
 
 	.groupCount,
 	.groupName {
-		@extend $text-reset;
+		@include extends.text-reset;
 	}
 
 	.gameGroupContainer,
@@ -294,14 +294,14 @@
 }
 
 .friendlistListContainer {
-	@extend .content-container;
+	@include window.content-container;
 	@extend $move-scrollbar;
 
 	background-image: none;
 }
 
 .friendListFooter {
-	@extend .statusbar-item;
+	@include window.statusbar-item;
 
 	background-color: transparent;
 
@@ -360,7 +360,7 @@
 }
 
 .socialListTab {
-	@extend $text-reset;
+	@include extends.text-reset;
 
 	// 2px = --input-spacing
 	--spacing: calc(var(--border-size) + 2px);

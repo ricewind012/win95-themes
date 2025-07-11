@@ -21,13 +21,13 @@
 }
 
 .forumPostFormButton {
-	@extend button;
+	@include controls.button;
 	@extend $use-aria-label;
 
 	height: unset;
 
 	&.forumPostFormButtonActive {
-		@extend .icon-button:active;
+		@include controls.icon-button:active;
 	}
 }
 

@@ -1,6 +1,6 @@
 #CachedAccountName,
 #CachedName {
-	@extend $text-reset;
+	@include extends.text-reset;
 
 	opacity: 1;
 	padding: 0;
@@ -44,7 +44,7 @@
 }
 
 #MoreMenuButton {
-	@extend .titlebar-button;
+	@include window.titlebar-button;
 	@extend $icon-more;
 
 	opacity: 1;
@@ -56,7 +56,7 @@
 }
 
 #NewLogin {
-	@extend button;
+	@include controls.button;
 
 	flex-basis: unset;
 }

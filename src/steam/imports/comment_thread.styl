@@ -12,13 +12,13 @@ $reset-icon-color {
 #LikeButton,
 #CommentButton,
 #Reactions {
-	@extend button;
+	@include controls.button;
 }
 
 #LikeCount,
 #CommentCount,
 #ReactionCount {
-	@extend $text-reset;
+	@include extends.text-reset;
 }
 
 #LikeIcon,

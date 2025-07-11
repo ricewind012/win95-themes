@@ -1,10 +1,10 @@
 [role="button"][aria-haspopup] {
-	@extend select;
+	@include controls.combobox;
 
 	min-width: 73px;
 
 	&[aria-disabled="true"] {
-		@extend select:disabled;
+		@include controls.combobox:disabled;
 	}
 
 	& > .icons {
@@ -27,9 +27,9 @@
 			box-sizing: border-box;
 			flex-shrink: 0;
 
-			@extend .titlebar;
+			@include window.titlebar;
 			@extend :root.focused .titlebar;
-			@extend .titlebar-name;
+			@include window.titlebar-name;
 		}
 	}
 }
@@ -80,7 +80,7 @@
 	}
 
 	.optionLabel {
-		@extend $text-reset;
+		@include extends.text-reset;
 	}
 
 	.optionName {
@@ -139,7 +139,7 @@
 }
 
 [role="separator"] {
-	@extend hr;
+	@include controls.separator;
 
 	margin-inline: 0;
 }
@@ -168,7 +168,7 @@
 }
 
 [role="tab"] {
-	@extend $text-reset;
+	@include extends.text-reset;
 
 	overflow: visible;
 }

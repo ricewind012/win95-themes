@@ -1,5 +1,5 @@
 #AddShowcase {
-	@extend button;
+	@include controls.button;
 
 	opacity: 1;
 	text-transform: unset;
@@ -23,8 +23,8 @@
 }
 
 #Collapser {
-	@extend button;
-	@extend .titlebar-button;
+	@include controls.button;
+	@include window.titlebar-button;
 
 	svg {
 		margin: 0;
@@ -45,7 +45,7 @@
 }
 
 #CountDisplay {
-	@extend $text-reset;
+	@include extends.text-reset;
 
 	margin-left: var(--text-spacing);
 }
@@ -64,7 +64,7 @@
 			width: calc(100% + 40px);
 			display: block;
 
-			@extend hr;
+			@include controls.separator;
 
 			background-color: var(--color-button-face);
 			margin-left: -20px;
@@ -73,7 +73,7 @@
 }
 
 #Message {
-	@extend $text-reset;
+	@include extends.text-reset;
 }
 
 #PageButtons {
@@ -85,8 +85,8 @@
 	@extend $pageable-container-button;
 
 	&#Disabled {
-		@extend button:disabled;
-		@extend .titlebar-button:disabled;
+		@include controls.input-disabled;
+		@include window.titlebar-button:disabled;
 	}
 }
 
@@ -99,13 +99,13 @@
 }
 
 #Showcase {
-	@extend fieldset;
+	@include controls.groupbox;
 
 	margin-bottom: 16px;
 }
 
 #ShowcaseHeader {
-	@extend $legend-as-div;
+	@include extends.legend-as-div;
 
 	background-color: var(--color-window);
 	color: inherit;

@@ -15,7 +15,7 @@
 }
 
 #Empty {
-	@extend $text-reset;
+	@include extends.text-reset;
 }
 
 #OverlayPlayersDialog,
@@ -24,7 +24,7 @@
 }
 
 #PlayersList {
-	@extend .content-container;
+	@include window.content-container;
 
 	border: none;
 	margin: 0;
@@ -37,13 +37,13 @@
 	overflow: auto;
 
 	[role="cell"] {
-		@extend $text-reset;
+		@include extends.text-reset;
 	}
 }
 
 #PlayersListHeaderCell {
-	@extend button;
-	@extend .table-button;
+	@include controls.button;
+	@include table.button;
 	@extend $table-button-arrows;
 
 	// "Add Friend" column

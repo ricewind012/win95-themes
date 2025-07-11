@@ -1,5 +1,5 @@
 .actionButtons > [role="button"] {
-	@extend button;
+	@include controls.button;
 
 	height: unset;
 	justify-content: center;
@@ -12,7 +12,7 @@ button {
 	min-height: unset;
 
 	&[aria-expanded="true"] {
-		@extend .icon-button:active;
+		@include controls.icon-button:active;
 	}
 
 	// Seems like D*scord forgot about this one
@@ -36,7 +36,7 @@ button {
 	background-color: transparent;
 
 	button {
-		@extend .icon-button;
+		@include controls.icon-button;
 
 		& > .button {
 			padding: 0;
@@ -57,7 +57,7 @@ button {
 		overflow: hidden;
 
 		& > .inner {
-			@extend [role="toolbar"];
+			@include window.toolbar;
 		}
 	}
 
@@ -105,7 +105,7 @@ button {
 		flex-direction: row-reverse;
 
 		& > label {
-			@extend $text-reset;
+			@include extends.text-reset;
 
 			opacity: 1;
 		}
@@ -158,7 +158,7 @@ button {
 
 .inputText,
 .inputWrapper {
-	@extend $text-reset;
+	@include extends.text-reset;
 
 	padding: 0;
 }
@@ -181,7 +181,7 @@ button {
 }
 
 .textArea {
-	@extend $text-reset;
+	@include extends.text-reset;
 }
 
 .placeholder {
@@ -197,7 +197,7 @@ button {
 	}
 
 	& > .select {
-		@extend select;
+		@include controls.combobox;
 
 		input {
 			box-shadow: none;

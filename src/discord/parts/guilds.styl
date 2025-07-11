@@ -6,7 +6,7 @@
 }
 
 [data-list-id="guildsnav"] {
-	@extend .content-container;
+	@include window.content-container;
 
 	& > [dir] {
 		padding: 0;
@@ -31,14 +31,14 @@
 			}
 
 			[role="treeitem"] {
-				@extend button;
-				@extend .icon-button;
+				@include controls.button;
+				@include controls.icon-button;
 
 				width: var(--icon-button-width);
 			}
 
 			.listItemWrapper.selected [role="treeitem"] {
-				@extend .icon-button:active;
+				@include controls.icon-button:active;
 			}
 
 			.pill {

@@ -1,17 +1,17 @@
 .minimizeButton {
-	@extend $titlebar-button-minimize;
+	@include extends.titlebar-button-minimize;
 }
 
 .maximizeButton {
-	@extend $titlebar-button-maximize;
+	@include extends.titlebar-button-maximize;
 }
 
 .restoreButton {
-	@extend $titlebar-button-restore;
+	@include extends.titlebar-button-restore;
 }
 
 .closeButton {
-	@extend $titlebar-button-close;
+	@include extends.titlebar-button-close;
 }
 
 .singleWindowFocusBar {
@@ -56,7 +56,7 @@
 
 	// Used only in overlay browser ?
 	&-children {
-		@extend .titlebar-name;
+		@include window.titlebar-name;
 
 		font-size: var(--font-ui-size);
 		color: var(--color-inactive-caption-text);
@@ -68,8 +68,8 @@
 	}
 
 	&-icon {
-		@extend button;
-		@extend .titlebar-button;
+		@include controls.button;
+		@include window.titlebar-button;
 
 		width: unset;
 

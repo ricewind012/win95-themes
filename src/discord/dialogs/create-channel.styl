@@ -1,10 +1,10 @@
 .modalContent {
 	& > .name {
-		@extend fieldset;
+		@include controls.groupbox;
 
 		& > label {
-			@extend $text-reset;
-			@extend $legend-as-div;
+			@include extends.text-reset;
+			@include extends.legend-as-div;
 		}
 
 		svg {

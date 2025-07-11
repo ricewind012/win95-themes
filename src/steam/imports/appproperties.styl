@@ -20,21 +20,21 @@
 }
 
 #BlueHighlight {
-	@extend $text-reset;
+	@include extends.text-reset;
 }
 
 #BuildInfo {
-	@extend $text-reset;
+	@include extends.text-reset;
 }
 
 #Detail {
-	@extend $text-reset;
+	@include extends.text-reset;
 
 	margin: 0;
 }
 
 #SectionTopLine {
-	@extend fieldset;
+	@include controls.groupbox;
 }
 
 #TopGap {
@@ -57,21 +57,16 @@
 }
 
 #DlcHeader {
-	@extend button;
-	@extend .table-button;
+	@include controls.button;
+	@include table.button(
+		$ascending-sel: ':has(> #TriangleUp)',
+		$descending-sel: ':has(> #TriangleDown)'
+	);
 
 	text-transform: unset;
 
 	&:has(> #TriangleHide)::after {
 		display: none;
-	}
-
-	&:has(> #TriangleUp) {
-		@extend .table-button[aria-sort="descending"];
-	}
-
-	&:has(> #TriangleDown) {
-		@extend .table-button[aria-sort="ascending"];
 	}
 
 	& > div {
@@ -84,13 +79,13 @@
 }
 
 #Name {
-	@extend $text-reset;
+	@include extends.text-reset;
 }
 
 // Workshop
 #Controls {
 	& > .DialogButton {
-		@extend .titlebar-button;
+		@include window.titlebar-button;
 		@extend $icon-trash;
 
 		svg {
@@ -127,12 +122,12 @@
 }
 
 #Title {
-	@extend $text-reset;
-	@extend $legend-as-div;
+	@include extends.text-reset;
+	@include extends.legend-as-div;
 }
 
 #WorkshopItemsRowsScrollable {
-	@extend .content-container;
+	@include window.content-container;
 
 	font: var(--text-ui);
 	margin: 0;
@@ -183,11 +178,11 @@
 }
 
 #SteamInputLink {
-	@extend $link;
+	@include extends.link;
 }
 
 #ViewMore {
-	@extend $link;
+	@include extends.link;
 
 	padding: 0;
 

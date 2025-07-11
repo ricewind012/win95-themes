@@ -1,14 +1,14 @@
 #AppActivityDate,
 #PartnerEventFeaturedHeader {
-	@extend $legend-as-div;
-	@extend $text-reset;
+	@include extends.legend-as-div;
+	@include extends.text-reset;
 
 	background: var(--color-window);
 }
 
 #AppActivityDay,
 #PartnerEvent {
-	@extend fieldset;
+	@include controls.groupbox;
 
 	background: none;
 }
@@ -38,7 +38,7 @@
 }
 
 #PartnerEventMediumImage_Title {
-	@extend $text-reset;
+	@include extends.text-reset;
 }
 
 #PartnerEventTextOnly_Container {
@@ -51,11 +51,11 @@
 }
 
 #PartnerEventTextOnly_Title {
-	@extend $text-reset;
+	@include extends.text-reset;
 }
 
 #PartnerEventType {
-	@extend $text-reset;
+	@include extends.text-reset;
 
 	color: var(--color-gray-text);
 }

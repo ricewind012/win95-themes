@@ -4,7 +4,7 @@ $vencord-groupbox-header {
 
 		left: 10px;
 
-		@extend $legend-as-div;
+		@include extends.legend-as-div;
 	}
 }
 
@@ -83,7 +83,7 @@ $vencord-groupbox-header {
 	&-plugins-filter-controls {
 		--header-text: 'Filter';
 
-		@extend fieldset;
+		@include controls.groupbox;
 		@extend $vencord-groupbox-header;
 
 		height: unset;
@@ -92,7 +92,7 @@ $vencord-groupbox-header {
 	&-plugins-grid {
 		--header-text: 'Plugins';
 
-		@extend fieldset;
+		@include controls.groupbox;
 		@extend $vencord-groupbox-header;
 
 		gap: var(--text-spacing);
@@ -103,17 +103,17 @@ $vencord-groupbox-header {
 	}
 
 	&-plugins-info-card {
-		@extend fieldset;
+		@include controls.groupbox;
 
 		height: unset;
 
 		& > h2 {
-			@extend $text-reset;
-			@extend $legend-as-div;
+			@include extends.text-reset;
+			@include extends.legend-as-div;
 		}
 
 		& > div {
-			@extend $text-reset;
+			@include extends.text-reset;
 		}
 	}
 
@@ -121,7 +121,7 @@ $vencord-groupbox-header {
 	[role="dialog"] > &-text-selectable {
 		[class*="content_"] > :first-child {
 			& > div {
-				@extend fieldset;
+				@include controls.groupbox;
 				@extend $vencord-groupbox-header;
 
 				&:nth-child(2) {
@@ -154,7 +154,7 @@ $vencord-groupbox-header {
 
 			// TODO: move somewhere to settings/dialog instead
 			& > :has([class*="h5_"]) {
-				@extend label;
+				@include text.input-label;
 
 				box-shadow: none;
 				padding: 0;
@@ -171,11 +171,11 @@ $vencord-groupbox-header {
 		}
 
 		.vc-m-bottom-16 {
-			@extend fieldset;
+			@include controls.groupbox;
 
 			& > h2 {
-				@extend $text-reset;
-				@extend $legend-as-div;
+				@include extends.text-reset;
+				@include extends.legend-as-div;
 			}
 		}
 	}
@@ -196,13 +196,13 @@ $vencord-groupbox-header {
 	}
 
 	&-settings-section {
-		@extend fieldset;
+		@include controls.groupbox;
 
 		// !important in dialogs/settings.styl
 		div& > [class*="sectionTitle_"] {
 			& > h2 {
-				@extend $text-reset;
-				@extend $legend-as-div;
+				@include extends.text-reset;
+				@include extends.legend-as-div;
 			}
 		}
 	}

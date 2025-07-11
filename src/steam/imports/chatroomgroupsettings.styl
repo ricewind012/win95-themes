@@ -1,6 +1,6 @@
 #Back,
 #LeaveButton {
-	@extend button;
+	@include controls.button;
 
 	text-transform: unset;
 
@@ -20,10 +20,10 @@
 }
 
 #AvatarAndUser {
-	@extend fieldset;
+	@include controls.groupbox;
 
 	.DialogLabel {
-		@extend $legend-as-div;
+		@include extends.legend-as-div;
 	}
 }
 
@@ -53,7 +53,7 @@
 }
 
 #PermissionsGroup {
-	@extend fieldset;
+	@include controls.groupbox;
 }
 
 #RoleNameHeader {

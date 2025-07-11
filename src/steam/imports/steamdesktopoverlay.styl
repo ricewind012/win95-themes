@@ -13,7 +13,7 @@
 }
 
 #GameOverviewSection {
-	@extend fieldset;
+	@include controls.groupbox;
 
 	background-color: transparent;
 }
@@ -23,8 +23,8 @@
 }
 
 #GameOverviewSectionHeader {
-	@extend $text-reset;
-	@extend $legend-as-div;
+	@include extends.text-reset;
+	@include extends.legend-as-div;
 
 	background-color: transparent;
 
@@ -46,8 +46,8 @@
 }
 
 #GuideTitle {
-	@extend $text-reset;
-	@extend $link;
+	@include extends.text-reset;
+	@include extends.link;
 }
 
 #OverviewTitle {
@@ -55,7 +55,7 @@
 }
 
 #Playtime {
-	@extend $text-reset;
+	@include extends.text-reset;
 
 	gap: var(--text-spacing);
 }
@@ -66,8 +66,8 @@
 }
 
 #BackToGameBtn {
-	@extend .titlebar-button;
-	@extend $titlebar-button-close;
+	@include window.titlebar-button;
+	@include extends.titlebar-button-close;
 
 	width: unset;
 
@@ -141,7 +141,7 @@
 }
 
 #ToolbarToolTip {
-	@extend $text-reset;
+	@include extends.text-reset;
 
 	text-align: start;
 	padding: 0;

@@ -1,7 +1,7 @@
 #Container {
 	@extend [role="treeitem"]
 	@extend [role="treeitem"][aria-expanded="true"];
-	@extend $text-reset;
+	@include extends.text-reset;
 
 	overflow: visible;
 	background-color: transparent;
@@ -23,7 +23,7 @@
 	}
 
 	&#Selected {
-		@extend .list-item[aria-selected="true"] > .list-item-name-container > .list-item-name;
+		@include list.item-name-selected;
 
 		--color-gray-text: var(--color-highlight-text);
 	}

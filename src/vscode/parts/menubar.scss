@@ -1,0 +1,58 @@
+@use 'shared/controls';
+@use 'shared/window';
+
+.menubar {
+	overflow: visible;
+	position: absolute;
+	left: 0;
+	top: calc(var(--titlebar-height) + var(--window-gap));
+	width: 100%;
+	height: var(--menubar-height);
+	z-index: 2;
+
+	&::after {
+		content: '';
+
+		position: absolute;
+		top: calc(var(--menubar-height) - 1px);
+		width: 100%;
+
+		@include controls.separator;
+	}
+
+	&-menu {
+		// !important
+		// TODO(port): original is &-button
+		&-button {
+			padding: 0;
+
+			&.open {
+				background-color: var(--color-highlight);
+				color: var(--color-highlight-text);
+			}
+		}
+
+		&-title {
+			// Move [role="menubar"] to its child element
+			// for correct context menu positioning
+			// TODO(port): $selected-sel used here?
+			@include window.menubar-item($selected-sel: '.hack');
+
+			&.toolbar-toggle-more {
+				display: none;
+			}
+		}
+	}
+}
+
+// Put folder name into menubar
+/*
+#workbench\.view\.explorer .sidebar h3.title {
+	color: var(--color-gray-text);
+	padding: 3px 6px;
+
+	position: fixed;
+	top: calc(var(--titlebar-height) + 5px);
+	right: 4px;
+}
+*/

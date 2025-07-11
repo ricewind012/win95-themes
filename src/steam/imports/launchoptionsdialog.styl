@@ -10,7 +10,7 @@ div#AppNameHeader {
 	margin-bottom: calc(8px + var(--dialog-spacing));
 
 	& > div {
-		@extend button;
+		@include controls.button;
 	}
 }
 
@@ -32,7 +32,7 @@ div#AppNameHeader {
 
 // Actually .DialogBodyText
 #ListHeader {
-	@extend $text-reset;
+	@include extends.text-reset;
 
 	margin-bottom: var(--text-spacing);
 }

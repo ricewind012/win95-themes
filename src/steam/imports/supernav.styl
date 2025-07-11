@@ -2,8 +2,8 @@ $sel-arrow-back = '> :nth-child(3)';
 $sel-arrow-forward = '> :nth-child(4)';
 
 #Arrow {
-	@extend button;
-	@extend .icon-button;
+	@include controls.button;
+	@include controls.icon-button;
 
 	transform: none;
 
@@ -109,12 +109,12 @@ $sel-arrow-forward = '> :nth-child(4)';
 }
 
 #SuperNavMenu {
-	@extend button;
+	@include controls.button;
 
 	text-transform: unset;
 
 	&#Selected {
-		@extend .icon-button:active;
+		@include controls.icon-button:active;
 	}
 
 	div&#Selected:hover:not(:active) {

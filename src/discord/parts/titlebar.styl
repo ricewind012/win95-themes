@@ -1,5 +1,5 @@
 .titleBar {
-	@extend .titlebar;
+	@include window.titlebar;
 
 	gap: 0;
 	margin: 0;
@@ -35,8 +35,8 @@
 	}
 
 	& > [role="button"] {
-		@extend button;
-		@extend .titlebar-button;
+		@include controls.button;
+		@include window.titlebar-button;
 
 		top: 0;
 		width: unset;
@@ -44,16 +44,16 @@
 		height: 14px;
 
 		&:nth-child(4) {
-			@extend $titlebar-button-minimize;
+			@include extends.titlebar-button-minimize;
 		}
 
 		// No restore button. Nice app, lol
 		&:nth-child(3) {
-			@extend $titlebar-button-maximize;
+			@include extends.titlebar-button-maximize;
 		}
 
 		&:nth-child(2) {
-			@extend $titlebar-button-close;
+			@include extends.titlebar-button-close;
 		}
 	}
 

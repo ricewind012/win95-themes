@@ -5,7 +5,7 @@
 }
 
 #AppName {
-	@extend $text-reset;
+	@include extends.text-reset;
 }
 
 #AppsToInstall {
@@ -15,7 +15,7 @@
 	&::after {
 		content: '';
 
-		@extend hr;
+		@include controls.separator;
 
 		margin: 8px 0;
 
@@ -41,7 +41,7 @@
 }
 
 #DiskSpace {
-	@extend $text-reset;
+	@include extends.text-reset;
 }
 
 // TODO: maybe DO display icons there for warnings
@@ -60,7 +60,7 @@
 
 // TODO: .list-entry
 #FolderOption {
-	@extend $text-reset;
+	@include extends.text-reset;
 
 	background-color: transparent;
 	color: var(--color-window-text);
@@ -77,15 +77,15 @@
 }
 
 #FolderSelector {
-	@extend fieldset;
+	@include controls.groupbox;
 
 	& > :not([class]) {
-		@extend .content-container;
+		@include window.content-container;
 	}
 }
 
 #FolderSettings {
-	@extend .titlebar-button;
+	@include window.titlebar-button;
 	@extend $icon-more;
 
 	svg {
@@ -94,15 +94,15 @@
 }
 
 #Header {
-	@extend $legend-as-div;
-	@extend $text-reset;
+	@include extends.legend-as-div;
+	@include extends.text-reset;
 }
 
 #NoticeInstallFolder {
 	gap: var(--messagebox-content-spacing);
 
 	&:not(:has(> :empty)) {
-		@extend $text-reset;
+		@include extends.text-reset;
 		@extend .tooltip;
 
 		align-items: center;

@@ -28,7 +28,7 @@
 }
 
 #FilterBucket {
-	@extend fieldset;
+	@include controls.groupbox;
 
 	.DialogInput_Wrapper {
 		margin: 0;
@@ -49,7 +49,7 @@
 }
 
 #FilterBucketLabel {
-	@extend $legend-as-div;
+	@include extends.legend-as-div;
 
 	font: var(--text-ui);
 	color: var(--color-button-text);

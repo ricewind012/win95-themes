@@ -28,11 +28,11 @@ icons = \
 #CheckboxWithImage {
 	--button-img-pos: 3px 2px;
 
-	@extend button;
-	@extend .icon-button;
+	@include controls.button;
+	@include controls.icon-button;
 
 	&#Active {
-		@extend .icon-button:active;
+		@include controls.icon-button:active;
 	}
 
 	for img, i in icons {
@@ -47,7 +47,7 @@ icons = \
 }
 
 #MenuHeader {
-	@extend select;
+	@include controls.combobox;
 
 	margin: 0;
 
@@ -70,7 +70,7 @@ div#Row {
 }
 
 #Rule {
-	@extend hr;
+	@include controls.separator;
 
 	margin-inline: 0;
 }

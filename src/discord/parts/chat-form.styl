@@ -13,7 +13,7 @@
 }
 
 .createThreadButton {
-	@extend button;
+	@include controls.button;
 
 	font-weight: normal;
 }
@@ -43,7 +43,7 @@ form.form {
 		height: unset;
 
 		& > div {
-			@extend $text-reset;
+			@include extends.text-reset;
 		}
 
 		// TODO: remove when adding icons
@@ -57,14 +57,9 @@ form.form {
 	width: 100%;
 
 	[role="switch"] {
-		@extend input;
-		@extend input[type="checkbox"];
+		@include controls.checkbox($checked-sel: "[aria-checked='true']");
 
 		margin-right: calc(36px + var(--label-spacing) + var(--toolbar-spacing));
-
-		&[aria-checked="true"] {
-			@extend input[type="checkbox"]:checked;
-		}
 
 		& > div {
 			font-size: 0;
@@ -85,8 +80,8 @@ form.form {
 		--button-img: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA0AAAANCAMAAABFNRROAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAGUExURQAAAAAAAKVnuc8AAAACdFJOU/8A5bcwSgAAAAlwSFlzAAAOwwAADsMBx2+oZAAAADlJREFUGFdFjoEJADAIw/T/p9eoYR1o0yKsolaAmJ13yMQMTnSxPWNb9sHvxnpnjhUspG2EiN+orgcmKwBw9dYmLQAAAABJRU5ErkJgggo=');
 		--button-img-pos: 5px 4px;
 
-		@extend button;
-		@extend .icon-button;
+		@include controls.button;
+		@include controls.icon-button;
 	}
 
 	.separator {
@@ -100,7 +95,7 @@ form.form {
 }
 
 .replyLabel {
-	@extend $link;
+	@include extends.link;
 
 	& > span {
 		color: inherit;

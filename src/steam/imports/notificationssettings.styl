@@ -1,6 +1,6 @@
 #FriendsDescription,
 #Subheader {
-	@extend $text-reset;
+	@include extends.text-reset;
 }
 
 #NotificationDescription {
@@ -45,14 +45,14 @@
 }
 
 #PrefDetailsToggle {
-	@extend button;
-	@extend .titlebar-button;
+	@include controls.button;
+	@include window.titlebar-button;
 	@extend $icon-more;
 
 	width: unset;
 
 	&#Selected {
-		@extend button:active;
+		@include controls.button-active;
 	}
 
 	svg {
@@ -61,7 +61,7 @@
 }
 
 #ToggleHeader {
-	@extend $text-reset;
+	@include extends.text-reset;
 }
 
 #Toggles.Panel {

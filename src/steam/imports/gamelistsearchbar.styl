@@ -7,7 +7,7 @@
 }
 
 #AdvancedSearchContainer {
-	@extend button;
+	@include controls.button;
 
 	height: unset;
 	align-self: start;
@@ -37,7 +37,7 @@
 		position: unset;
 		width: 100%;
 
-		@extend .titlebar;
+		@include window.titlebar;
 		// TODO: make them all focused
 		@extend :root.focused .titlebar;
 
@@ -54,7 +54,7 @@
 
 #FilterTag,
 #SearchByTypePrompt {
-	@extend .statusbar-item;
+	@include window.statusbar-item;
 
 	background-color: transparent;
 	font: var(--text-ui);
@@ -75,7 +75,7 @@
 }
 
 #SearchFilterInput {
-	@extend .statusbar;
+	@include window.statusbar;
 
 	color: var(--color-button-text);
 	padding: 0;
@@ -89,9 +89,9 @@
 }
 
 #SearchFilterInputClear {
-	@extend button;
-	@extend .titlebar-button;
-	@extend $titlebar-button-close;
+	@include controls.button;
+	@include window.titlebar-button;
+	@include extends.titlebar-button-close;
 
 	inset: 0;
 }

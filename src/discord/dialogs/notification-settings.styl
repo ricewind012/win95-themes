@@ -1,10 +1,10 @@
 .overrideList {
-	@extend .content-container;
+	@include window.content-container;
 
 	margin-top: var(--text-spacing);
 
 	& > .flex > h2 {
-		@extend .table-header-row;
+		@include table.header-row;
 
 		margin: 0;
 	}

@@ -1,5 +1,5 @@
 #SteamRuntimeSystemInfoContainer {
-	@extend .content-container;
+	@include window.content-container;
 
 	margin-top: var(--text-spacing);
 }
@@ -16,7 +16,7 @@
 }
 
 #Text {
-	@extend $text-reset;
+	@include extends.text-reset;
 
 	font-family: var(--text-font-monospace);
 }

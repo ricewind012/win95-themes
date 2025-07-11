@@ -10,7 +10,7 @@
 }
 
 #AppActionSelected {
-	@extend $text-reset;
+	@include extends.text-reset;
 
 	position: fixed;
 	left: 8px;
@@ -32,19 +32,19 @@
 }
 
 #AppHeader {
-	@extend $text-reset;
+	@include extends.text-reset;
 
 	padding: 0;
 }
 
 #AppHeaderContainer {
-	@extend $legend-as-div;
+	@include extends.legend-as-div;
 
 	top: -9px;
 }
 
 #AppHeaderValue {
-	@extend $text-reset;
+	@include extends.text-reset;
 
 	margin-left: var(--text-spacing);
 
@@ -54,7 +54,7 @@
 }
 
 #AppInfoItem {
-	@extend $text-reset;
+	@include extends.text-reset;
 
 	gap: var(--text-spacing);
 }
@@ -64,23 +64,23 @@
 }
 
 #AppName {
-	@extend $text-reset;
+	@include extends.text-reset;
 }
 
 #AppsGrid {
-	@extend fieldset;
+	@include controls.groupbox;
 
 	margin-top: 20px;
 	margin-bottom: 0;
 }
 
 #AppSize {
-	@extend $text-reset;
+	@include extends.text-reset;
 }
 
 #AppUsageText,
 #AppUsageValue {
-	@extend $text-reset;
+	@include extends.text-reset;
 
 	margin: 0;
 }
@@ -91,8 +91,8 @@
 }
 
 #DriveSettingsButton {
-	@extend button;
-	@extend .titlebar-button;
+	@include controls.button;
+	@include window.titlebar-button;
 	@extend $icon-more;
 
 	width: unset;
@@ -118,7 +118,7 @@
 
 #DriveUsageNumber,
 #DriveUsageText {
-	@extend $text-reset;
+	@include extends.text-reset;
 }
 
 #AppUsageText,
@@ -151,7 +151,7 @@
 	svg,
 	#DriveName,
 	#DriveSize {
-		@extend $text-reset;
+		@include extends.text-reset;
 	}
 }
 
@@ -172,7 +172,7 @@
 }
 
 #LibraryInventory {
-	@extend .content-container;
+	@include window.content-container;
 }
 
 #Rule {

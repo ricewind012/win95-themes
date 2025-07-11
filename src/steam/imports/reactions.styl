@@ -8,15 +8,15 @@
 
 // TODO: this is an <svg>, so I can't do anything here...
 #OpenPickerButton {
-	@extend button;
-	@extend .icon-button;
+	@include controls.button;
+	@include controls.icon-button;
 
 	opacity: 1;
 	stroke: var(--color-button-text);
 }
 
 #ReactionCount {
-	@extend $text-reset;
+	@include extends.text-reset;
 }
 
 #ReactionHover {

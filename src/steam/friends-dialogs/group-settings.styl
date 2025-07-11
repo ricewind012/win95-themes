@@ -1,7 +1,7 @@
 .ChatGroupSettingsChannels_Row {
 	.ChannelDeleteButton {
-		@extend button;
-		@extend $text-reset;
+		@include controls.button;
+		@include extends.text-reset;
 
 		height: fit-content;
 	}
@@ -39,7 +39,7 @@
 }
 
 .DialogInnerBody > .displayColumn {
-	@extend fieldset;
+	@include controls.groupbox;
 
 	gap: var(--text-spacing);
 
@@ -48,24 +48,24 @@
 	}
 
 	.DialogLabel {
-		@extend $legend-as-div;
+		@include extends.legend-as-div;
 	}
 }
 
 .DialogSpanningTable {
-	@extend .content-container;
+	@include window.content-container;
 
 	td,
 	th {
-		@extend $text-reset;
+		@include extends.text-reset;
 	}
 
 	td {
-		@extend .table-row;
+		@include table.row;
 	}
 
 	thead th {
-		@extend .table-header-row;
+		@include table.header-row;
 	}
 
 	tbody tr {
@@ -74,15 +74,15 @@
 }
 
 .GeneralChatSettings {
-	@extend fieldset;
+	@include controls.groupbox;
 
 	& > .Panel {
-		@extend label;
+		@include text.input-label;
 	}
 }
 
 .PermissionsSectionHeader {
-	@extend $legend-as-div;
+	@include extends.legend-as-div;
 }
 
 .roleButton {
@@ -107,16 +107,16 @@
 }
 
 .rolePriorityButton {
-	@extend button;
-	@extend .titlebar-button;
+	@include controls.button;
+	@include window.titlebar-button;
 
 	opacity: 1;
 
 	width: 16px;
 
 	&.Disabled {
-		@extend button:disabled;
-		@extend .titlebar-button:disabled;
+		@include controls.input-disabled;
+		@include window.titlebar-button:disabled;
 
 		pointer-events: none;
 	}
@@ -148,6 +148,6 @@
 }
 
 .roleSubtitle {
-	@extend $text-reset;
+	@include extends.text-reset;
 }
 

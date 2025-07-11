@@ -34,7 +34,7 @@
 		gap: var(--window-gap);
 
 		& > .container {
-			@extend .content-container;
+			@include window.content-container;
 		}
 	}
 }
@@ -72,8 +72,8 @@
 
 	& > .buttonContainer {
 		[role="button"] {
-			@extend button;
-			@extend .icon-button;
+			@include controls.button;
+			@include controls.icon-button;
 
 			// TODO: remove when doing icons
 			svg {
@@ -125,7 +125,7 @@
 }
 
 .messagesWrapper {
-	@extend .content-container;
+	@include window.content-container;
 
 	& > .scroller {
 		inset: var(--border-size);

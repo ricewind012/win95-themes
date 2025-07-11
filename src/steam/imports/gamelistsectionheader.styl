@@ -20,7 +20,7 @@
 	 * but better make it consistent with the rest of it.
 	 */
 	#Selected > & {
-		@extend .list-item[aria-selected="true"] > .list-item-name-container > .list-item-name;
+		@include list.item-name-selected;
 	}
 
 	&::before {

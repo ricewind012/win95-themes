@@ -17,7 +17,7 @@
 	padding: 0;
 
 	div:not([class]) > & {
-		@extend fieldset;
+		@include controls.groupbox;
 
 		gap: var(--text-spacing);
 
@@ -31,7 +31,7 @@
 }
 
 #FieldDescription {
-	@extend $text-reset;
+	@include extends.text-reset;
 
 	margin-top: var(--text-spacing);
 
@@ -66,12 +66,7 @@
 }
 
 #Toggle {
-	@extend input;
-	@extend input[type="checkbox"];
-
-	&#On {
-		@extend input[type="checkbox"]:checked;
-	}
+	@include controls.checkbox($checked-sel: '#On');
 }
 
 #ToggleRail,
