@@ -1,15 +1,16 @@
-{$selectors[tags-filter-container]} {
+#{$selectors[tags-filter-container]} {
 	width: auto;
 	display: flex;
 	flex-direction: column-reverse;
 
 	// !important
-	&&&::before {
+	// TODO(port): originally &&&::before
+	&::before {
 		display: none;
 	}
 
 	& > button {
-		@extend [role="menuitemcheckbox"];
+		@include menu.item-check;
 
 		text-align: start;
 		box-shadow: none;
@@ -28,7 +29,7 @@
 	}
 
 	[role="button"] {
-		@extend [role="menuitemcheckbox"];
+		@include menu.item-check;
 
 		background-color: transparent;
 		border: none;
@@ -37,7 +38,8 @@
 		height: unset;
 
 		&[aria-pressed="true"] {
-			@extend [role="menuitemcheckbox"][aria-checked="true"];
+			// TODO(port): what
+			@include menu.item-check;
 		}
 
 		& > div {

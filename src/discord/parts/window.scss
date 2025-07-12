@@ -1,19 +1,21 @@
+@use 'shared/window';
+
 :root {
 	--titlebar-pos: 0px;
 	--window-pos: 0px;
 
-	&{d}platform-win {
+	&.platform-win {
 		--titlebar-pos: calc(var(--titlebar-height) + var(--window-gap));
 		--window-pos: calc(var(--border-size) + var(--window-spacing));
 
-		@extend .window;
+		@include window.container
 	}
 }
 
 #app-mount > .appAsidePanelWrapper {
 	margin-bottom: calc(var(--statusbar-height) + var(--window-gap));
 
-	:root{d}platform-win > body > & {
+	:root.platform-win > body > & {
 		margin-top: var(--window-gap);
 	}
 }

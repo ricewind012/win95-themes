@@ -21,7 +21,7 @@
 }
 
 #Checkbox {
-	@include controls.checkbox($checked-sel: ':not(:empty)');
+	@include controls.checkbox($checked-sel: '&:not(:empty)');
 }
 
 #CheckboxFieldLabel {

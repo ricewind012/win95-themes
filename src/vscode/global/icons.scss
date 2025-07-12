@@ -3,10 +3,8 @@
 @use '../vscode';
 
 .codicon {
-	/*
-	 * Single icon for multiple classes,
-	 * not alphabetically sorted.
-	 */
+	// Single icon for multiple classes,
+	// not alphabetically sorted.
 	&-chevron-left,
 	&-inline-suggestion-hints-previous {
 		--icon-img: var(--icon-arrow-left);
@@ -376,7 +374,7 @@
 	}
 }
 
-/* Large icons on the side ... */
+// Large icons on the side ...
 .activitybar .codicon {
 	&-explorer-view-icon {
 		background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAbCAMAAAAqGX2oAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAVUExURYeIj///////AMDHyAAAAKioVwAAAJEBxMUAAAAHdFJOU////////wAaSwNGAAAACXBIWXMAAA7DAAAOwwHHb6hkAAAAVUlEQVQ4T+2OwQ0AIQgE1xPpv2ThhASFWIGzr8UJCBbgaDnQGZpTGDJC+7onG9jeCwPoO/Ybg0Sw8zVEIsQLZ4YKoaf8Qugpb8PK27CiwrhCYLpBPAHO0QmNm53kmwAAAABJRU5ErkJggg==');

@@ -1,3 +1,7 @@
+@use 'shared/text';
+@use 'shared/window';
+@use 'shared++/extends';
+
 $titlebar-description-selector: '> :first-child + [data-text-variant]';
 
 .backdrop {
@@ -110,8 +114,7 @@ $titlebar-description-selector: '> :first-child + [data-text-variant]';
 	}
 
 	[role="dialog"]:not([aria-label]) > & .header.flex {
-		@include window.titlebar;
-		@extend :root.focused .titlebar;
+		@include window.titlebar($focused-sel: '&');
 
 		overflow: visible;
 		flex-direction: row;

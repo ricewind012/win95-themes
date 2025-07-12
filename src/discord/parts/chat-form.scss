@@ -57,7 +57,7 @@ form.form {
 	width: 100%;
 
 	[role="switch"] {
-		@include controls.checkbox($checked-sel: "[aria-checked='true']");
+		@include controls.checkbox($checked-sel: "&[aria-checked='true']");
 
 		margin-right: calc(36px + var(--label-spacing) + var(--toolbar-spacing));
 

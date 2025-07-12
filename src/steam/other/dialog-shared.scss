@@ -91,7 +91,7 @@
 	}
 
 	&Checkbox {
-		@include controls.checkbox($checked-sel: '.Active', $disabled-sel: '.Disabled');
+		@include controls.checkbox($checked-sel: '&.Active', $disabled-sel: '&.Disabled');
 
 		margin: 0;
 

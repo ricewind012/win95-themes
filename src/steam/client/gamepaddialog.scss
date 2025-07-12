@@ -69,7 +69,7 @@
 }
 
 #Toggle {
-	@include controls.checkbox($checked-sel: '#On');
+	@include controls.checkbox($checked-sel: '&#On');
 }
 
 #ToggleRail,

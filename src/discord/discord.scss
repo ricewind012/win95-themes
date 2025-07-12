@@ -1,17 +1,17 @@
-d = '.';
+@use 'shared/controls';
 
 // These selectors either:
 // - will cause massive lag if used with attribute selectors;
 // - can not be used with attribute selectors for other reasons.
-$selectors = {
+$selectors: (
 	checkbox-container: '.container_ed1d57',
 	tags-filter-container: '.container_ae4f46',
-}
+);
 
 // TODO: remove
 // TODO: add position: absolute version
 // An alternative to "@include window.content-container" for special elements
-steam.content-container-alt {
+@mixin content-container-alt {
 	background-color: var(--color-window);
 
 	margin: var(--border-size);
@@ -28,7 +28,7 @@ steam.content-container-alt {
 	}
 }
 
-$pseudo-separator {
+@mixin pseudo-separator {
 	content: '';
 
 	width: 100%;
@@ -37,7 +37,7 @@ $pseudo-separator {
 	@include controls.separator;
 }
 
-$select-as-button {
+@mixin select-as-button {
 	@include controls.combobox;
 
 	&:active,
@@ -49,7 +49,7 @@ $select-as-button {
 	}
 }
 
-$use-aria-label {
+@mixin use-aria-label {
 	&::before {
 		content: attr(aria-label);
 	}
@@ -58,25 +58,3 @@ $use-aria-label {
 		display: none;
 	}
 }
-
-img {
-	image-rendering: auto;
-}
-
-.base > .content {
-	gap: var(--window-gap);
-}
-
-// Revert controls.css
-.file-input {
-	position: absolute;
-}
-
-// Themes
-#appearance-tab > div > [class*="children_"] > :nth-child(2),
-// Nitro
-#profile-customization-tab > [class*="container_"],
-[class*="premiumFeatureBorder_"] {
-	display: none;
-}
-

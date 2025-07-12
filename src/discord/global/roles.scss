@@ -1,3 +1,7 @@
+@use 'shared/controls';
+@use 'shared/window';
+@use 'shared++/extends';
+
 [role="button"][aria-haspopup] {
 	@include controls.combobox;
 
@@ -26,8 +30,7 @@
 			box-sizing: border-box;
 			flex-shrink: 0;
 
-			@include window.titlebar;
-			@extend :root.focused .titlebar;
+			@include window.titlebar($focused-sel: '&');
 			@include window.titlebar-name;
 		}
 	}
@@ -62,16 +65,12 @@
 }
 
 [role^="menuitem"] {
+	@include menu.item($selected-sel: '&.focused');
+
 	opacity: 1;
 	font: var(--text-ui);
 	color: var(--color-button-text);
 	margin: 0;
-
-	&.focused {
-		@extend [role="menu"] [role="menuitem"]:hover;
-
-		--color-gray-text: currentColor;
-	}
 
 	.hintContainer {
 		color: var(--color-gray-text);
@@ -93,7 +92,7 @@
 }
 
 [role="radio"] {
-	$radio-selector = '> div > :first-child';
+	$-radio-selector: '> div > :first-child';
 
 	opacity: 1;
 	background-color: transparent;
@@ -102,12 +101,12 @@
 	[role="radiogroup"][aria-disabled="true"] > & {
 		color: var(--color-gray-text);
 
-		{$radio-selector} {
-			@extend input[type="radio"]:disabled;
+		#{$-radio-selector} {
+			@extend controls.checkbox-radio-inactive;
 		}
 	}
 
-	&[aria-checked="true"] {$radio-selector} {
+	&[aria-checked="true"] #{$-radio-selector} {
 		@extend input[type="radio"]:checked;
 	}
 
@@ -180,7 +179,6 @@
 }
 
 [role="textbox"] {
-	@extend input;
-	@extend input[type="text"];
+	@include controls.text-field;
 }
 

@@ -40,7 +40,7 @@ $-icons:
 
 	@each $img, $i in $-icons {
 		&:nth-child(#{$i + 1}) {
-			--button-img: $img;
+			--button-img: #{$img};
 		}
 	}
 

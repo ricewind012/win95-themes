@@ -1,6 +1,28 @@
-// TODO(port): share this?
 @use 'shared/controls-generated';
+@use 'shared/icons';
 @use 'shared/scrollbar';
+@use 'shared/variables';
+@use 'shared/window';
+
+* {
+	outline: none;
+	border-radius: 0;
+
+	box-sizing: border-box;
+
+	transition: none;
+}
+
+:root {
+	--tree-item-spacing-x: 4px;
+	--text-full: calc(var(--text-ui-size) * var(--text-line));
+	--tabs-height: 20px;
+}
+
+body {
+	// TODO(port): just move document-body here maybe
+	@include window.document-body;
+}
 
 ::-webkit-scrollbar {
 	@include scrollbar.container;

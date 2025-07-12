@@ -1,5 +1,8 @@
+@use 'shared/tooltip';
+@use 'shared++/extends';
+
 .tooltip {
-	@extend .tooltip;
+	@include tooltip.container;
 	@include extends.text-reset;
 
 	opacity: 1;

@@ -1,3 +1,5 @@
+@use 'shared/window';
+
 .fakeEdges {
 	&::before,
 	&::after {
@@ -13,7 +15,7 @@
 
 .mediaBarInteractionVolume {
 	// TODO
-	@extend .window;
+	@include window.container;
 
 	margin: 0;
 

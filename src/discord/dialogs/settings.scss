@@ -1,3 +1,5 @@
+@use 'shared++/extends';
+
 .contentColumn {
 	min-width: 100%;
 	max-width: 100%;
@@ -140,7 +142,7 @@
 
 	inset: var(--border-size);
 
-	{d}platform-win & {
+	.platform-win & {
 		top: var(--windows-titlebar-offset);
 	}
 

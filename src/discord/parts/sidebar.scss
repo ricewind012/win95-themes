@@ -1,3 +1,7 @@
+@use 'shared/controls';
+@use 'shared/tree';
+@use 'shared/window';
+
 .sidebar {
 	margin-right: var(--window-gap);
 
@@ -171,8 +175,7 @@
 		.iconVisibility {
 			--offset: calc(var(--icon-size) + 4px);
 
-			@extend [role="treeitem"];
-			@extend [role="treeitem"][aria-expanded="true"];
+			@include tree.item($expanded-sel: '&');
 
 			&::before {
 				top: -14px;
@@ -264,13 +267,13 @@ div.privateChannelRecipientsInviteButtonIcon {
 	top: calc(var(--window-pos) + var(--titlebar-pos) + var(--toolbar-container-spacing));
 	// TODO: scss
 	left: calc(
-		var(--window-pos) \
-		+ 72px \
-		+ var(--scrollbar-size) \
-		+ var(--window-gap) \
-		+ 240px \
-		- var(--icon-button-width) \
-		- var(--toolbar-container-spacing) \
+		var(--window-pos)
+		+ 72px
+		+ var(--scrollbar-size)
+		+ var(--window-gap)
+		+ 240px
+		- var(--icon-button-width)
+		- var(--toolbar-container-spacing)
 	);
 }
 

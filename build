@@ -12,9 +12,14 @@ npx postcss "$SRC_DIR/$1/**/*.scss" \
 	--ext css
 :> "$name.css"
 while IFS= read -r file; do
+	# TODO(port): for now
+	if [ "${file##*.}" != css ]; then
+		continue
+	fi
+
 	cat "$file" >> "$name.css"
 	printf '\n' >> "$name.css"
 done <<-EOF
-$(find "$name" -type f)
+$(find "$name/" -type f)
 EOF
 #rm -rf "$name"

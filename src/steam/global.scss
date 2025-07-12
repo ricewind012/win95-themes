@@ -1,0 +1,10 @@
+@use 'shared/window';
+@use 'shared++/global';
+
+body {
+	@include window.container;
+}
+
+button {
+	text-align: center;
+}

@@ -1,3 +1,5 @@
+@use 'shared++/extends';
+
 .modalContent {
 	& > .name {
 		@include controls.groupbox;

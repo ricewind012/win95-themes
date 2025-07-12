@@ -17,10 +17,8 @@
 
 	align-items: center;
 
-	/*
-	 * This can have *just* the text highlighted,
-	 * but better make it consistent with the rest of it.
-	 */
+	// This can have *just* the text highlighted,
+	// but better make it consistent with the rest of it.
 	#Selected > & {
 		@include list.item-name-selected;
 	}

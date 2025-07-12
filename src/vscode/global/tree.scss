@@ -1,7 +1,7 @@
 @use 'shared/list';
 @use 'shared/tree';
 
-$max-nest: 10;
+$-max-nest: 10;
 
 /**
  * Attributes
@@ -29,7 +29,7 @@ $max-nest: 10;
 	}
 }
 
-@for $i from 2 through $max-nest {
+@for $i from 2 through $-max-nest {
 	[aria-level="#{$i}"] {
 		--level: #{$i};
 		--multiply: calc(4 - (0.5 * #{$i}));

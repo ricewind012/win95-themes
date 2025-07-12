@@ -1,3 +1,6 @@
+@use 'shared/table';
+@use 'shared/window';
+
 .overrideList {
 	@include window.content-container;
 

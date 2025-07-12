@@ -1,3 +1,6 @@
+@use 'shared/controls';
+@use 'shared++/extends';
+
 .actionButtons > [role="button"] {
 	@include controls.button;
 
@@ -87,7 +90,7 @@ button {
 	}
 }
 
-{$selectors[checkbox-container]} {
+#{$selectors[checkbox-container]} {
 	margin-top: var(--text-spacing);
 	margin-bottom: var(--text-spacing);
 
@@ -95,7 +98,7 @@ button {
 		color: var(--color-gray-text);
 
 		input[type="checkbox"] {
-			@extend input[type="checkbox"]:disabled;
+			@include controls.checkbox-radio-inactive;
 		}
 	}
 

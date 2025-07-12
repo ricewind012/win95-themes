@@ -1,3 +1,7 @@
+@use 'shared/controls';
+@use 'shared/window';
+@use 'shared++/extends';
+
 .upperContainer > .children {
 	&::after {
 		display: none;
@@ -70,17 +74,16 @@ section[role="navigation"] {
 	}
 
 	.searchBar {
-		@extend input;
-		@extend input[type="text"];
+		@include controls.text-field;
 
-		{d}DraftEditor-root {
+		.DraftEditor-root {
 			@include extends.text-reset;
 
 			padding: 0;
 		}
 
-		{d}public-DraftEditorPlaceholder-root,
-		{d}public-DraftEditor-content {
+		.public-DraftEditorPlaceholder-root,
+		.public-DraftEditor-content {
 			padding: 0;
 
 			inset: 0;

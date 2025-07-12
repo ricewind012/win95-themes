@@ -1,3 +1,7 @@
+@use 'shared/controls';
+@use 'shared/menu';
+@use 'shared/window';
+
 [role="listbox"][style="width: 320px;"] {
 	border: none;
 
@@ -36,7 +40,7 @@
 	}
 
 	[role="option"] {
-		@extend [role="menu"] [role="menuitem"];
+		@include menu.item;
 
 		font-size: var(--text-ui-size);
 		margin: 0;

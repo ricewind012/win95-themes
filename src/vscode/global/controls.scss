@@ -124,7 +124,7 @@
 
 	// Checkboxes
 	&-checkbox {
-		@include controls.checkbox($checked-sel: '.checked');
+		@include controls.checkbox($checked-sel: '&.checked');
 
 		border: none;
 		margin: 0;
@@ -133,7 +133,7 @@
 	&-custom-toggle:not(&-checkbox) {
 		&.codicon,
 		.codicon {
-			@include controls.button($active-sel: '.checked');
+			@include controls.button($active-sel: '&.checked');
 			@include window.titlebar-button;
 
 			border: none;
@@ -334,7 +334,7 @@
 // !important
 .monaco-workbench .part.editor > .content .gettingStartedContainer .gettingStartedSlide .getting-started-checkbox,
 .settings-editor > .settings-body .settings-tree-container .setting-item-bool .setting-value-checkbox {
-	@include controls.checkbox($checked-sel: '.checked');
+	@include controls.checkbox($checked-sel: '&.checked');
 
 	min-width: unset;
 }

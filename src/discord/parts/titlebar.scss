@@ -1,12 +1,12 @@
+@use 'shared/controls';
+@use 'shared/window';
+@use 'shared++/extends';
+
 .titleBar {
-	@include window.titlebar;
+	@include window.titlebar($focused-sel: '.app-focused &');
 
 	gap: 0;
 	margin: 0;
-
-	{d}app-focused & {
-		@extend :root.focused .titlebar;
-	}
 
 	.wordmark {
 		gap: var(--titlebar-spacing);

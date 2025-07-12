@@ -21,7 +21,7 @@
 				"yes": {
 					"TargetCss": {
 						"affects": [".*"],
-						"src": "dist/green.css"
+						"src": "src/green.css"
 					}
 				}
 			}
@@ -32,12 +32,12 @@
 		{
 			"MatchRegexString": ".DesktopUI",
 			"TargetCss": "dist/steam/steam.css",
-			"TargetJs": "dist/steam/steam.js"
+			"TargetJs": "src/steam/steam.js"
 		},
 		{
 			"MatchRegexString": ".fullheight",
 			"TargetCss": "dist/steam/steam.css",
-			"TargetJs": "dist/steam/steam.js"
+			"TargetJs": "src/steam/steam.js"
 		}
 	]
 }

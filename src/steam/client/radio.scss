@@ -9,7 +9,7 @@
 
 #Button {
 	@include text.input-label;
-	@include controls.radio($checked-sel: '#Active');
+	@include controls.radio($checked-sel: '&#Active');
 
 	font: var(--text-ui);
 	color: var(--color-button-text);

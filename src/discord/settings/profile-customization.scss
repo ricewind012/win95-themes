@@ -1,3 +1,5 @@
+@use 'shared/tabs';
+
 #profile-customization-tab {
 	& > div:not([class]) {
 		@include tabs.content;

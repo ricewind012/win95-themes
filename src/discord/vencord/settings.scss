@@ -1,3 +1,7 @@
+@use 'shared/controls';
+@use 'shared/text';
+@use 'shared++/extends';
+
 $vencord-groupbox-header {
 	&::before {
 		content: var(--header-text);
@@ -35,10 +39,10 @@ $vencord-groupbox-header {
 }
 
 .vc {
-	for i in top bottom {
-		for j in 8 16 20 {
-			&-m-{i}-{j} {
-				margin-{i}: var(--text-spacing);
+	@each $i in top bottom {
+		@each $j in 8 16 20 {
+			&-m-#{$i}-#{$j} {
+				margin-#{$i}: var(--text-spacing);
 			}
 		}
 	}

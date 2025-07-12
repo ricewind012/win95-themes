@@ -1,5 +1,5 @@
-{d}theme-light,
-{d}theme-dark {
+.theme-light,
+.theme-dark {
 	--background-floating: var(--color-button-face);
 	--background-primary: var(--color-window);
 	--background-secondary: var(--color-button-face);
@@ -39,12 +39,12 @@
 	--legacy-elevation-high: none;
 	--legacy-elevation-border: none;
 
-	for i in \
-		border high ledge \
-		low low-active low-hover \
-		medium top-high top-ledge top-low \
-	{
-		--shadow-{i}: none;
+	$shadows:
+		border high ledge
+		low low-active low-hover
+		medium top-high top-ledge top-low;
+	@each $i in $shadows {
+		--shadow-#{i}: none;
 	}
 
 	--custom-button-button-xl-height: unset;

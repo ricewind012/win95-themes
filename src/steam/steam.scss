@@ -84,11 +84,3 @@
 		display: none;
 	}
 }
-
-body {
-	@include window.container;
-}
-
-button {
-	text-align: center;
-}

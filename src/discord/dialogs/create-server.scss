@@ -1,3 +1,5 @@
+@use 'shared++/extends';
+
 .root {
 	.container {
 		margin-bottom: var(--dialog-button-spacing);
