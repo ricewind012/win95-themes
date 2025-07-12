@@ -1,0 +1,26 @@
+@use 'shared/tooltip';
+@use 'shared++/extends';
+
+#AppStatus,
+#AppTitle,
+#PlaytimeDetails {
+	@include extends.text-reset;
+
+	padding: 0;
+	margin: 0;
+}
+
+#AppPortraitHover {
+	@include tooltip.container;
+
+	box-shadow: none;
+}
+
+#AppTitleContainer {
+	padding: 0;
+}
+
+#CapsuleBackgroundContainer {
+	display: none;
+}
+

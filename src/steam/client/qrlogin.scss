@@ -1,0 +1,34 @@
+@use 'shared/window';
+@use 'shared++/icons';
+
+#Box {
+	background-color: transparent;
+
+	& > button {
+		@include window.titlebar-button;
+		@include icons.icon-refresh;
+
+		& > svg {
+			display: none;
+		}
+	}
+}
+
+#Column {
+	box-shadow: var(--border-field);
+	padding: var(--border-size);
+}
+
+#LoginQR {
+	background-color: var(--color-window);
+	border-color: var(--color-window);
+
+	&#Blur {
+		filter: none;
+
+		& > * {
+			display: none;
+		}
+	}
+}
+

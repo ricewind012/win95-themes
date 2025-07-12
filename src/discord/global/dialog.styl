@@ -1,4 +1,4 @@
-$titlebar-description-selector = '> :first-child + [data-text-variant]';
+$titlebar-description-selector: '> :first-child + [data-text-variant]';
 
 .backdrop {
 	background-color: transparent;
@@ -123,7 +123,7 @@ $titlebar-description-selector = '> :first-child + [data-text-variant]';
 			margin: 0;
 		}
 
-		&:has({$titlebar-description-selector}) + .content {
+		&:has(#{$titlebar-description-selector}) + .content {
 			margin-top: calc(var(--text-full) * 2 + var(--dialog-spacing));
 		}
 
@@ -135,7 +135,7 @@ $titlebar-description-selector = '> :first-child + [data-text-variant]';
 		}
 
 		// Description
-		{$titlebar-description-selector} {
+		#{$titlebar-description-selector} {
 			color: var(--color-window-text);
 			font-weight: normal;
 			text-align: start;
@@ -148,8 +148,8 @@ $titlebar-description-selector = '> :first-child + [data-text-variant]';
 
 	[role="dialog"][aria-label] > & > .header:has(
 		> h1:only-child,
-		/> .close,
-		/> .flexChild > h1 + [data-text-variant]
+		> .close,
+		> .flexChild > h1 + [data-text-variant]
 	) {
 		display: none;
 	}

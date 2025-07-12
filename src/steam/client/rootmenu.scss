@@ -1,0 +1,38 @@
+@use 'shared/controls';
+@use 'shared/window';
+
+// It could be a radio button,
+// but there is no indication of that.
+#Icon {
+	background-image: var(--control-img);
+
+	position: absolute;
+	left: 6px;
+	width: 7px;
+	height: 7px;
+
+	:hover > & {
+		filter: invert(1);
+	}
+
+	&:not(:empty) {
+		--control-img: var(--icon-checkmark);
+
+		@include controls.checkbox-radio-checked;
+	}
+
+	& > svg {
+		display: none;
+	}
+}
+
+#RootMenuButton {
+	@include window.menubar-item($selected-sel: '.hack');
+
+	color: var(--color-menubar-text);
+	font-size: var(--text-ui-size);
+
+	svg {
+		display: none;
+	}
+}

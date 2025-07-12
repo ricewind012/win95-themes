@@ -1,0 +1,48 @@
+@use 'shared/tabs';
+
+// Purpose:
+// Emotes popup
+
+#Content {
+	@include tabs.content;
+}
+
+#FilterInputContainer {
+	padding: 0;
+	// TODO: --window-gap is too small
+	margin-bottom: 8px;
+
+	order: -1;
+
+	// !important
+	#FilterInput:hover {
+		background-color: var(--color-window);
+	}
+}
+
+#Picker {
+	margin: var(--dialog-spacing);
+}
+
+#Tab {
+	@include tabs.tab($selected-sel: '&#Active');
+}
+
+#TabContent {
+	opacity: 1;
+	background-color: transparent;
+	color: var(--color-button-text);
+	padding: 0;
+
+	width: var(--icon-size);
+	height: var(--icon-size);
+}
+
+#Tabs {
+	@include tabs.container;
+
+	border: none;
+
+	justify-content: unset;
+}
+

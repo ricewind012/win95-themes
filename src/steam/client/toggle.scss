@@ -1,0 +1,46 @@
+@use 'shared/controls';
+@use 'shared++/extends';
+
+#Label {
+	@include extends.text-reset;
+
+	&#Disabled {
+		opacity: 1;
+		color: var(--color-gray-text);
+	}
+}
+
+#Toggle {
+	width: unset;
+	height: unset;
+
+	&#Disabled {
+		opacity: 1;
+
+		#ToggleSwitch {
+			@include controls.checkbox-radio-inactive;
+		}
+	}
+}
+
+#ToggleRail {
+	display: none;
+}
+
+#ToggleRow {
+	background-color: transparent;
+	gap: var(--label-spacing);
+	padding: 0;
+	margin-bottom: var(--text-spacing);
+
+	flex-direction: row-reverse;
+	justify-content: start;
+}
+
+#ToggleSwitch {
+	@include controls.checkbox($checked-sel: '#On');
+
+	background-image: none;
+	transform: unset;
+}
+

@@ -1,0 +1,63 @@
+@use 'shared/controls';
+@use 'shared/window';
+@use 'shared++/extends';
+@use '../steam';
+
+#PageableContainer {
+	@include controls.groupbox;
+
+	svg {
+		color: inherit;
+	}
+
+	polyline {
+		stroke: var(--color-window-text);
+	}
+}
+
+#PageClickContainer {
+	background-color: var(--color-window);
+	padding-right: 2px;
+
+	position: absolute;
+	top: -7px;
+	right: 8px;
+}
+
+#PageLeft,
+#PageRight {
+	@include steam.pageable-container-button;
+
+	&#Disabled {
+		@include controls.input-disabled;
+		@include window.titlebar-button-disabled;
+	}
+}
+
+#PageLeft {
+	--button-img: var(--icon-arrow-left);
+}
+
+#PageRight {
+	--button-img: var(--icon-arrow-right);
+}
+
+#HeaderPageControls {
+	@include extends.text-reset;
+
+	& > div:not([class]) {
+		@include extends.legend-as-div;
+
+		background-color: var(--color-window);
+
+		top: -7px;
+		right: calc(10px + 16px * 2);
+	}
+}
+
+#Name {
+	@include extends.text-reset;
+	@include extends.legend-as-div;
+
+	background-color: var(--color-window);
+}

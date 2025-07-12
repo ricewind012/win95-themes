@@ -1,0 +1,48 @@
+@use 'shared/window';
+
+.DialogListBuilderInput {
+	&_List {
+		align-items: center;
+	}
+
+	.DialogTextInputBase {
+		background-color: transparent;
+		padding: 0;
+
+		flex-grow: 1;
+	}
+}
+
+.FriendPicker {
+	margin: 0;
+
+	&_ChosenFriend {
+		@include window.statusbar-item;
+
+		background-color: transparent;
+		font: var(--text-ui);
+		margin: 0;
+		margin-right: 2px;
+
+		span {
+			color: var(--color-button-text);
+		}
+
+		svg {
+			display: none;
+		}
+	}
+
+	&FriendList {
+		@include window.content-container;
+	}
+
+	&ScrollPanel {
+		padding: 0;
+	}
+}
+
+.insetShadow {
+	display: none;
+}
+

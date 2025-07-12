@@ -1,0 +1,17 @@
+@use 'shared++/extends';
+
+#HeaderContainer {
+	width: unset;
+}
+
+#InfoExample {
+	@include extends.text-reset;
+}
+
+#InfoExampleHeader {
+	@include extends.text-reset;
+
+	&::after {
+		content: ':';
+	}
+}

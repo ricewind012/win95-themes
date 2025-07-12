@@ -1,0 +1,55 @@
+@use 'shared/controls';
+@use 'shared++/extends';
+
+.AssignCategoriesDialog,
+.ChatRoomNotificationSettingsDialog,
+.FriendNotificationsDialog,
+.NicknameDialog {
+	.DialogBody {
+		box-shadow: none;
+		padding: 0;
+	}
+
+	.friend {
+		color: var(--color-button-text);
+		padding: 0;
+		margin: 0;
+
+		&::before {
+			display: none;
+		}
+	}
+}
+
+.DialogHBar,
+.HBar {
+	@include controls.separator;
+}
+
+.expireLinkInContainer {
+	gap: var(--text-spacing);
+	margin-top: var(--text-spacing);
+
+	justify-content: start;
+}
+
+.inviteLinkContainer .DialogInput_Wrapper {
+	background-color: transparent;
+	gap: var(--dialog-button-spacing);
+	padding: 0;
+
+	flex-grow: 1;
+
+	.displayRow {
+		flex-grow: 0;
+	}
+}
+
+.OrSeparator {
+	margin: 0;
+
+	&Label {
+		@include extends.text-reset;
+	}
+}
+

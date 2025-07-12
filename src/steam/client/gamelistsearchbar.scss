@@ -1,0 +1,100 @@
+@use 'shared/controls';
+@use 'shared/window';
+@use 'shared++/extends';
+
+#AdvancedSearchButton {
+	background: none;
+
+	svg {
+		display: none;
+	}
+}
+
+#AdvancedSearchContainer {
+	@include controls.button;
+
+	height: unset;
+	align-self: start;
+	justify-content: center;
+
+	& > .Focusable > div {
+		cursor: default;
+
+		&::before {
+			content: 'Search...';
+		}
+	}
+}
+
+#AdvancedSearchPane {
+	@include window.container($child: true);
+
+	// Make it an actual window
+	position: fixed;
+	inset: calc(10% - var(--titlebar-height)) 25%;
+
+	&::before {
+		content: 'Advanced Search';
+
+		box-sizing: border-box;
+		position: unset;
+		width: 100%;
+
+		// TODO: make them all focused
+		@include window.titlebar($focused-sel: '&');
+
+		font-weight: bold;
+	}
+}
+
+#Container {
+	background-color: transparent;
+
+	gap: var(--toolbar-spacing);
+	margin: 0;
+}
+
+#FilterTag,
+#SearchByTypePrompt {
+	@include window.statusbar-item;
+
+	background-color: transparent;
+	font: var(--text-ui);
+	margin: 0;
+
+	height: unset;
+}
+
+#SearchInput {
+	font: var(--text-ui);
+
+	min-height: unset;
+
+	.DialogTextInputBase {
+		background-image: none;
+		margin: 0;
+	}
+}
+
+#SearchFilterInput {
+	@include window.statusbar;
+
+	color: var(--color-button-text);
+	padding: 0;
+
+	align-items: center;
+
+	// TODO: unify
+	svg {
+		display: none;
+	}
+}
+
+#SearchFilterInputClear {
+	@include controls.button;
+	@include window.titlebar-button;
+	@include extends.titlebar-button-close;
+
+	inset: 0;
+}
+

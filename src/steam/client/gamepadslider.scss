@@ -1,0 +1,24 @@
+@use 'shared/controls';
+
+#SliderControl {
+	--slider-handle-width: 11px;
+
+	@include controls.slider(
+		$thumb-sel: '#SliderHandle',
+		$track-sel: '#SliderTrack'
+	);
+
+	height: unset;
+}
+
+#SliderHandle {
+	box-shadow: none;
+}
+
+#SliderTrack {
+	background-color: transparent;
+
+	&::before {
+		display: none;
+	}
+}

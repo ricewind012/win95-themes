@@ -1,0 +1,22 @@
+@use 'shared++/extends';
+
+#playerName {
+	@include extends.text-reset;
+
+	font-weight: bold;
+	margin-bottom: -2px;
+}
+
+#richPresenceLabel {
+	@include extends.text-reset;
+
+	color: var(--color-gray-text);
+	margin-top: -2px;
+}
+
+#statusAndName {
+	gap: var(--text-spacing);
+	margin-top: 1px;
+	margin-bottom: 0;
+}
+

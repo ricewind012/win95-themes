@@ -288,7 +288,7 @@
 .action {
 	&-item.disabled &-label {
 		.monaco-action-bar & {
-			//@include window.titlebar-button:disabled;
+			//@include window.titlebar-button-disabled;
 		}
 
 		&,

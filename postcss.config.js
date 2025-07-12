@@ -1,6 +1,10 @@
 import postcssSassPlugin from "@csstools/postcss-sass";
 import postcssFunctions from "postcss-functions";
 import postcssSassParser from "postcss-scss";
+import {
+	appendImportantPlugin,
+	selectorReplacerPlugin,
+} from "steam-theming-utils/postcss-plugins";
 
 import fs from "node:fs";
 import path from "node:path";
@@ -12,36 +16,13 @@ const unquote = (str) => str.replace(/"/g, "");
  *
  * @param {string} name File name without the extension.
  */
-function Icon(name) {
-	name = unquote(name);
-
-	const fileName = `${name}.svg`;
+function icon(name) {
+	const fileName = `${unquote(name)}.svg`;
 	const file = path.join("assets", "icons", fileName);
 	const base64 = fs.readFileSync(file, { encoding: "base64" });
 
 	return `url("data:image/svg+xml;base64,${base64}")`;
 }
-
-const appendImportantPlugin = (opts) => (css) => {
-	const NOT_IMPORTANT_MATCH = / notimportant$/;
-
-	css.walkRules((rule) => {
-		const nodes = rule.nodes.filter(
-			(node) =>
-				node.type !== "comment" &&
-				!opts.filter.some((sel) => node.parent.selectors.includes(sel)),
-		);
-		for (const node of nodes) {
-			if (node.value.match(NOT_IMPORTANT_MATCH)) {
-				node.value = node.value.replace(NOT_IMPORTANT_MATCH, "");
-				continue;
-			}
-
-			node.important = true;
-		}
-	});
-};
-appendImportantPlugin.postcss = true;
 
 /** @type {import("postcss-load-config").Config} */
 export default {
@@ -50,7 +31,7 @@ export default {
 	plugins: [
 		postcssFunctions({
 			functions: {
-				icon: Icon,
+				icon,
 			},
 		}),
 		postcssSassPlugin({
@@ -58,7 +39,8 @@ export default {
 			silenceDeprecations: ["legacy-js-api", "mixed-decls"],
 		}),
 		appendImportantPlugin({
-			filter: [":root"],
+			filter: [/^:root/],
 		}),
+		selectorReplacerPlugin(),
 	],
 };

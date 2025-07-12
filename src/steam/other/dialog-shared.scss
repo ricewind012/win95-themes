@@ -1,0 +1,303 @@
+@use 'shared/controls';
+@use 'shared/listbox';
+@use 'shared/tabs';
+@use 'shared/text';
+@use 'shared/window';
+@use 'shared++/extends';
+@use '../steam';
+
+::placeholder {
+	font: var(--text-ui);
+}
+
+.Modal {
+	&OverlayBackground {
+		display: none;
+	}
+
+	&Position {
+		background-image: none;
+
+		&_Content {
+			@include extends.text-reset;
+
+			box-shadow: none;
+		}
+
+		&_Dismiss {
+			top: 5px;
+			right: 5px;
+
+			.closeButton {
+				@include controls.button;
+				@include window.titlebar-button;
+				@include extends.titlebar-button-close;
+			}
+
+			svg {
+				display: none;
+			}
+		}
+
+		&_TopBar {
+			display: none;
+		}
+	}
+}
+
+.Dialog {
+	&Body {
+		@include tabs.content;
+
+		-webkit-mask-image: none; // client settings
+		font: var(--text-ui);
+		margin: 0;
+		gap: var(--text-spacing);
+
+		overflow: auto;
+
+		&Text {
+			@include extends.text-reset;
+
+			padding: 0;
+			margin-bottom: var(--text-spacing);
+		}
+
+		// "In Game" settings tab
+		& > .DialogSubHeader {
+			position: unset;
+		}
+
+		a {
+			@include extends.link;
+		}
+	}
+
+	&Button {
+		background-image: none;
+
+		&.Disabled {
+			@include controls.input-disabled;
+		}
+
+		&.Primary {
+			min-width: 111px;
+		}
+
+		&::before {
+			opacity: 1;
+			box-shadow: none;
+		}
+	}
+
+	&Checkbox {
+		@include controls.checkbox($checked-sel: '.Active', $disabled-sel: '.Disabled');
+
+		margin: 0;
+
+		flex-shrink: 0;
+
+		&.Disabled {
+			opacity: 1;
+			filter: none;
+		}
+
+		& > svg {
+			display: none;
+		}
+
+		&_Container {
+			@include text.input-label;
+
+			background-color: transparent;
+			box-shadow: none;
+			padding: 0;
+			margin-bottom: var(--text-spacing);
+		}
+	}
+
+	&Content {
+		background: transparent;
+		padding: var(--dialog-spacing);
+		padding-bottom: calc(var(--text-full) + 3px + var(--window-gap) + var(--dialog-spacing));
+
+		&Transition {
+			background: transparent;
+
+			width: unset;
+			max-width: unset;
+		}
+
+		&Transition > & {
+			--dialog-spacing: 0px;
+		}
+	}
+
+	&ControlsSection {
+		@include controls.groupbox;
+
+		gap: var(--text-spacing);
+
+		display: flex;
+		flex-direction: column;
+
+		&Header {
+			@include extends.text-reset;
+			@include extends.legend-as-div;
+		}
+
+		& > .DialogBodyText {
+			@include extends.legend-as-div;
+		}
+	}
+
+	&DropDown {
+		@include controls.combobox;
+
+		display: flex;
+		align-items: center;
+
+		&_Arrow {
+			display: none;
+		}
+
+		&_CurrentDisplay {
+			background-color: transparent;
+			padding: 0;
+		}
+	}
+
+	&Footer {
+		padding-top: var(--dialog-button-spacing);
+	}
+
+	&Header {
+		font-size: var(--text-ui-size);
+		font-weight: bold;
+		text-transform: unset;
+		padding: 0;
+		margin: 0;
+
+		.PopupFullWindow > :last-child & {
+			@include steam.dialog-title;
+		}
+
+		// Only used in "Invite to group chat" dialog
+		&Subtitle {
+			// TODO(port): no reference to this lol what
+			//quotes();
+			color: inherit;
+			letter-spacing: 0;
+			font: inherit;
+			margin-left: var(--text-spacing);
+		}
+
+		// About Steam dialog
+		svg {
+			display: none;
+		}
+	}
+
+	&InnerBody {
+		padding: 0;
+
+		overflow: visible;
+	}
+
+	&Input {
+		// It's an <input>, but overlay browser has type="input"
+		background: var(--color-window);
+		color: var(--color-window-text);
+		box-shadow: none;
+
+		&LabelGroup {
+			margin: 0;
+		}
+
+		&_Wrapper {
+			gap: var(--dialog-button-spacing);
+		}
+	}
+
+	&Label {
+		font: var(--text-ui);
+		color: inherit;
+		text-transform: unset;
+	}
+
+	&MenuPosition ._DialogInputContainer {
+		@include listbox.container;
+
+		font: var(--text-ui);
+		box-shadow: none;
+		padding: 0;
+	}
+
+	&SubHeader {
+		@include extends.text-reset;
+		@include extends.legend-as-div;
+	}
+
+	&TextInputBase {
+		box-shadow: none;
+	}
+
+	&Toggle_Label {
+		font: var(--text-ui);
+		color: var(--color-button-text);
+	}
+}
+
+._Dialog {
+	&ColLayout {
+		gap: var(--dialog-button-spacing);
+
+		justify-content: end;
+	}
+
+	&ColLayout > &Layout {
+		flex: 0;
+	}
+}
+
+// In-client/page dialog
+.FullModalOverlay .Dialog {
+	&Body {
+		box-shadow: none;
+	}
+
+	&Content {
+		@include window.container($child: true);
+	}
+
+	&Header {
+		@include window.titlebar($focused-sel: '&');
+
+		// "Mark as Private" dialog
+		div:not(.DialogHeader) {
+			display: none;
+		}
+	}
+}
+
+.GenericConfirmDialog {
+	padding: 0;
+
+	justify-content: start;
+
+	.DialogBody {
+		box-shadow: none;
+		gap: var(--messagebox-content-spacing);
+		padding: var(--messagebox-spacing);
+
+		&Text {
+			margin-bottom: 0;
+		}
+	}
+}
+
+.SettingsDialogSubHeader {
+	@include extends.text-reset;
+	@include extends.legend-as-div;
+}
+

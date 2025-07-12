@@ -17,8 +17,7 @@
 }
 
 [role="dialog"]:not([aria-label=""]) {
-	@extend .window;
-	@extend .window.child;
+	@include window.container($child: true);
 
 	&[aria-label] {
 		&::before {
@@ -45,8 +44,7 @@
 }
 
 [role="menu"] {
-	@extend .window;
-	@extend .window.child;
+	@include window.container($child: true);
 
 	width: unset;
 	min-width: unset;
@@ -145,11 +143,9 @@
 }
 
 [role="slider"] {
-	@extend input[type="range"];
+	@include controls.slider($thumb-sel: '.grabber', $track-sel: '.bar');
 
 	.bar {
-		@extend input[type="range"]::-webkit-slider-runnable-track;
-
 		top: 20px;
 	}
 
@@ -158,8 +154,6 @@
 	}
 
 	.grabber {
-		@extend input[type="range"]::-webkit-slider-thumb;
-
 		border: none;
 		box-shadow: none;
 

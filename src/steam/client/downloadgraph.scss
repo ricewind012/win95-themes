@@ -1,0 +1,17 @@
+@use 'shared/window';
+@use 'shared++/icons';
+
+#GraphAndStats {
+	height: unset;
+}
+
+#SettingsButton {
+	#Button {
+		@include window.titlebar-button;
+		@include icons.icon-settings;
+
+		svg {
+			display: none;
+		}
+	}
+}

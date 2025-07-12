@@ -1,0 +1,15 @@
+@use '../steam';
+
+#AppName {
+	font-size: var(--text-ui-size);
+}
+
+#EmoticonHover {
+	@include steam.tooltip;
+}
+
+#Name {
+	font-size: var(--text-ui-size);
+	font-weight: bold;
+}
+

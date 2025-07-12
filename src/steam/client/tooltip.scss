@@ -1,0 +1,23 @@
+@use 'shared/tooltip';
+
+#TextToolTip,
+#ToolTipCustom {
+	@include tooltip.container;
+
+	font-size: var(--text-ui-size);
+	box-shadow: none;
+}
+
+#ToolTipCustom {
+	gap: 1em;
+
+	display: flex;
+	flex-direction: column;
+}
+
+#ToolTipTitle,
+#ToolTipInsetContent {
+	color: inherit;
+	margin: 0;
+}
+

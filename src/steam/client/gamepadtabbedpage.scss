@@ -1,0 +1,52 @@
+@use 'shared/tabs';
+@use 'shared++/extends';
+
+#FixCenterAlignScroll {
+	gap: 0;
+	padding: 0;
+
+	overflow: visible;
+}
+
+#Glyphs {
+	display: none;
+}
+
+#Tab {
+	@include tabs.tab($selected-sel: '&#Selected');
+	@include extends.text-reset;
+}
+
+#TabHeaderRowWrapper,
+#TabContents {
+	top: 53px;
+}
+
+#TabContentsScroll {
+	@include tabs.content;
+
+	margin-top: var(--tabs-height);
+
+	overflow: hidden;
+}
+
+#TabHeaderRowWrapper {
+	padding: 0;
+
+	&::before {
+		display: none;
+	}
+}
+
+#TabRowSpacer {
+	display: none;
+}
+
+#TabRowTabs {
+	@include tabs.container;
+}
+
+#TabsRowScroll {
+	-webkit-mask-image: none;
+}
+

@@ -1,0 +1,5 @@
+@use 'shared/controls';
+
+#PostButton {
+	@include controls.button;
+}

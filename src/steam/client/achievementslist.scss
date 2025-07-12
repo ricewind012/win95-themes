@@ -1,0 +1,25 @@
+@use 'shared/controls';
+@use 'shared++/extends';
+
+#AchievementList {
+	padding: 0;
+}
+
+#AchievementListItemBase {
+	background-color: transparent;
+
+	&::after {
+		content: '';
+
+		@include controls.separator;
+	}
+}
+
+#AchievementDescription,
+#AchievementGlobalPercentage,
+#AchievementTitle,
+#HeaderText,
+#UnlockDate {
+	@include extends.text-reset;
+}
+

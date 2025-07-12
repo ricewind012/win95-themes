@@ -1,0 +1,275 @@
+@use 'shared/controls';
+@use 'shared/table';
+@use 'shared/tabs';
+@use 'shared/window';
+@use 'shared++/extends';
+@use 'shared++/icons';
+@use '../steam';
+
+// TODO(port): remove?
+%-use-icon {
+	&::before {
+		content: '';
+
+		position: absolute;
+		inset: 0;
+
+		-webkit-mask: var(--button-img) no-repeat;
+		-webkit-mask-size: var(--button-img-size);
+		-webkit-mask-position: var(--button-img-pos, center);
+		background-color: var(--color-window-text);
+	}
+}
+
+#AddFavoriteButton {
+	&::before {
+		content: attr(title);
+
+		position: unset;
+	}
+}
+
+#BottomControlsRow {
+	gap: var(--dialog-button-spacing);
+	padding-top: var(--dialog-button-spacing);
+
+	position: absolute;
+	right: var(--dialog-spacing);
+	bottom: calc(var(--text-full) + 1px + var(--pos));
+	left: var(--dialog-spacing);
+	height: unset;
+
+	.DialogFooter {
+		gap: var(--dialog-button-spacing);
+		padding: 0;
+	}
+}
+
+#ColumnResizer {
+	--separator-size: 13px;
+
+	opacity: 0;
+	padding: 0;
+
+	width: var(--separator-size);
+	margin-right: calc(var(--separator-size) / -2);
+}
+
+#DialogBody {
+	--combobox-width: 200px;
+	--dialog-body-spacing: calc(var(--dialog-button-spacing) + 22px);
+	--label-gap: 8px;
+	--pos: calc(var(--border-size) + var(--window-spacing) + var(--dialog-spacing));
+
+	box-shadow: none;
+	padding: 0;
+	margin: var(--dialog-body-spacing) 0;
+	gap: 0;
+
+	svg {
+		display: none;
+	}
+}
+
+#DropdownLabel {
+	font: var(--text-ui);
+	margin-bottom: var(--text-spacing);
+
+	display: block;
+}
+
+#FilterOptionsCheckboxesCtr {
+	align-self: start;
+}
+
+#FilterOptionsCtr {
+	padding: 0;
+	padding-top: var(--text-spacing);
+	margin-bottom: var(--tabpanel-spacing);
+
+	&:not(#Collapsed) {
+		gap: var(--label-gap);
+
+		height: unset;
+	}
+
+	&#Collapsed {
+		display: none;
+	}
+
+	& > :not(:last-child) {
+		gap: var(--label-gap);
+
+		display: flex;
+		flex-direction: column;
+	}
+
+	.DialogInput {
+		width: 100%;
+	}
+}
+
+#PasswordColumn,
+#SecureColumn {
+	#ServerRow &:not(:empty) {
+		--button-img: var(--icon-checkmark);
+		--button-img-size: 7px;
+
+		@extend %-use-icon;
+	}
+
+	&::after {
+		display: none;
+	}
+}
+
+#RadioButtonColumn {
+	display: none;
+}
+
+#SearchButton,
+#TopControlsCtr .DialogDropDown {
+	position: fixed;
+	top: var(--dialog-body-spacing);
+}
+
+#SearchButton {
+	@include window.titlebar-button;
+	@include icons.icon-refresh;
+
+	// TODO: weird offset
+	left: calc(var(--pos) + var(--combobox-width) + var(--toolbar-spacing) - 2px);
+
+	&#SearchActive {
+		@include extends.titlebar-button-close;
+	}
+}
+
+// !important below
+#SecureColumn[role] {
+	min-width: calc(7px * 2 + 20px);
+
+	&:not(:empty)::before {
+		content: 'VAC';
+	}
+}
+
+#ServerTabPane {
+	@include tabs.content;
+	@include tabs.content($compact: true);
+}
+
+#ServerList {
+	@include window.content-container;
+
+	border: none;
+	margin: 0;
+
+	[role="rowgroup"] {
+		overflow: auto;
+
+		// No servers
+		& > div {
+			padding: 4px;
+		}
+	}
+}
+
+#ServerListHeaderCtr {
+	background-color: transparent;
+	padding: 0;
+
+	#PasswordColumn {
+		--button-img-pos: 4px 3px;
+
+		@extend %-use-icon;
+		@include icons.icon-lock;
+	}
+}
+
+#ServerListHeaderRow {
+	gap: 0;
+}
+
+#SelectColumnsButton,
+#ServerListHeaderCell {
+	@include controls.button;
+	@include table.button;
+	@include steam.table-button-arrows;
+
+	min-width: unset;
+	height: 17px;
+}
+
+#SwitchTabButton {
+	@include tabs.tab($selected-sel: '&#Selected');
+
+	width: unset;
+
+	// TODO: reuse for more <button> tabs
+	&:active,
+	&:focus {
+		outline: none;
+		color: var(--color-button-text);
+		text-shadow: none;
+		box-shadow:
+			1px 0 var(--color-button-shadow-dark),
+			1px 1px var(--color-tab-border);
+	}
+}
+
+#ServerListHeaderSort {
+	color: inherit;
+	font: var(--text-ui);
+	text-transform: unset;
+
+	justify-content: space-between;
+}
+
+#SelectColumnsButton {
+	text-overflow: unset;
+
+	width: 21px;
+}
+
+#ServerRow {
+	gap: 0;
+
+	&:hover {
+		background-color: transparent;
+	}
+
+	&#SelectedRow {
+		--color-window-text: var(--color-highlight-text);
+		background: var(--color-highlight);
+		color: var(--color-highlight-text);
+	}
+
+	[role="cell"] {
+		// 4px to make #PasswordColumn checkmark visible
+		padding: 4px 7px;
+
+		// Make text overflow work
+		display: block;
+	}
+}
+
+#ToggleShowFilterDetailsButton {
+	min-width: 111px;
+
+	&#Selected {
+		@include controls.button-active;
+		@include controls.button-active;
+	}
+}
+
+#TopControlsCtr {
+	@include tabs.container;
+
+	gap: 0;
+
+	.DialogDropDown {
+		width: var(--combobox-width);
+	}
+}
+

@@ -1,0 +1,17 @@
+@use 'shared++/extends';
+
+#EntryLabel {
+	padding-right: var(--text-spacing);
+}
+
+#EntryValue {
+	@include extends.text-reset;
+}
+
+#SteamGuardIcon {
+	color: red;
+
+	&#Enabled {
+		color: green;
+	}
+}

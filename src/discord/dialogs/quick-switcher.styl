@@ -14,7 +14,7 @@
 
 	& > .scroller {
 		@include window.content-container;
-		@extend $move-scrollbar;
+		@include extends.move-scrollbar;
 
 		margin: 0;
 
@@ -74,7 +74,7 @@
 
 		.note,
 		.username {
-			parentheses();
+			@include extends.parentheses;
 			text-transform: none;
 			margin-left: var(--text-spacing);
 		}

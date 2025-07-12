@@ -1,0 +1,16 @@
+@use 'shared/window';
+@use '../steam';
+
+.PopupFullWindow:not(:only-child) {
+	@include steam.statusbar-alt;
+
+	.ModalPosition {
+		height: calc(100% - var(--text-full) - 6px);
+	}
+}
+
+.window_resize_grip {
+	@include window.resize-handle;
+
+	opacity: 1;
+}

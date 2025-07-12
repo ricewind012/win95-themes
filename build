@@ -10,5 +10,11 @@ npx postcss "$SRC_DIR/$1/**/*.scss" \
 	--base "$SRC_DIR" \
 	--dir "$DIST_DIR" \
 	--ext css
-find "$name" -type f -exec cat {} \; > "$name.css"
-rm -rf "$name"
+:> "$name.css"
+while IFS= read -r file; do
+	cat "$file" >> "$name.css"
+	printf '\n' >> "$name.css"
+done <<-EOF
+$(find "$name" -type f)
+EOF
+#rm -rf "$name"

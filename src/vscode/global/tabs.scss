@@ -200,7 +200,7 @@
 		}
 
 		&-label {
-			@include tabs.tab($selected-sel: '.checked');
+			@include tabs.tab($selected-sel: '&.checked');
 
 			opacity: 1;
 			font-size: var(--text-ui-size);
@@ -230,7 +230,7 @@
 	// !important
 	.extension-editor > .body > .navbar > .monaco-action-bar > &s-container > &-item > &-label {
 		@include extends.text-reset;
-		@include tabs.tab($selected-sel: "[aria-checked='true']");
+		@include tabs.tab($selected-sel: "&[aria-checked='true']");
 
 		&[aria-checked="true"] {
 			margin-top: 1px;

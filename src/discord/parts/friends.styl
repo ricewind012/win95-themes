@@ -16,7 +16,7 @@
 
 [data-list-id="people"] {
 	@include window.content-container;
-	@extend $move-scrollbar;
+	@include extends.move-scrollbar;
 }
 
 .tabBody {
@@ -50,12 +50,12 @@
 			@include extends.text-reset;
 
 			visibility: visible;
-			parentheses();
+			@include extends.parentheses;
 		}
 	}
 
 	[role="tabpanel"] {
-		@extend [role="tabpanel"].compact;
+		@include tabs.content($compact: true);
 	}
 
 	.sectionTitle {

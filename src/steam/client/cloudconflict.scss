@@ -1,0 +1,63 @@
+@use 'shared/controls';
+
+#Popup {
+	.DialogButton {
+		height: unset;
+	}
+}
+
+#ChoiceNote {
+	margin-top: var(--messagebox-content-spacing);
+}
+
+#ConflictChoiceIcon {
+	display: none;
+}
+
+#ConflictChoiceText {
+	gap: var(--text-spacing);
+	margin-left: var(--label-spacing);
+}
+
+#DialogChoiceButton {
+	padding: 0;
+	margin-bottom: var(--text-spacing);
+
+	width: 100%;
+
+	&,
+	&:active,
+	&:focus {
+		color: var(--color-button-text);
+		outline: none;
+		box-shadow: none;
+	}
+}
+
+#DialogChoiceRow {
+	height: unset;
+}
+
+#FooterNote,
+#Title {
+	margin: 0;
+}
+
+#RadioButton {
+	// TODO(port): ?
+	@include controls.radio($checked-sel: '#Active &');
+
+	box-shadow: none;
+
+	align-self: start;
+
+	#DialogChoiceButton:active & {
+		@include controls.checkbox-radio-inactive;
+	}
+}
+
+#TitleWarning {
+	font: var(--text-ui);
+	font-weight: bold;
+}
+

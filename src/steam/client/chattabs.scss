@@ -1,0 +1,45 @@
+@use 'shared/tabs';
+@use 'shared/window';
+@use 'shared++/extends';
+
+#ChatTab {
+	--height: 22px;
+
+	@include tabs.tab($selected-sel: '&#Active');
+
+	width: unset;
+	height: calc(var(--height) + 4px);
+
+	&#Active {
+		height: calc(var(--height) + 7px);
+		z-index: 4;
+	}
+}
+
+#ChatTabContent_ChatRoomName {
+	@include extends.text-reset;
+
+	-webkit-mask: none;
+	// Make it consistent with friends
+	font-weight: bold;
+}
+
+#ChatTabTransitionGroup {
+	@include tabs.container;
+
+	border: none;
+	//padding-left: 3px;
+}
+
+#CloseButton {
+	@include window.titlebar-button;
+	@include extends.titlebar-button-close;
+
+	position: relative;
+
+	// TODO: unify when adding icons
+	svg {
+		display: none;
+	}
+}
+

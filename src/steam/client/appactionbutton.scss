@@ -1,0 +1,23 @@
+@use 'shared/controls';
+@use 'shared++/extends';
+
+#ButtonChild {
+	@include controls.button;
+
+	background-image: none;
+
+	svg {
+		fill: var(--color-button-text);
+
+		width: var(--icon-size);
+		height: var(--icon-size);
+	}
+}
+
+#ButtonText {
+	@include extends.text-reset;
+}
+
+#PlayButtonContainer {
+	height: unset;
+}

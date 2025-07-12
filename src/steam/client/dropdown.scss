@@ -1,0 +1,11 @@
+@use 'shared/listbox';
+
+#DialogDropDownMenu_Item {
+	@include listbox.item($selected-sel: '.hack');
+
+	svg {
+		position: absolute;
+		left: 4px;
+		width: 16px;
+	}
+}

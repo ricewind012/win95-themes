@@ -1,0 +1,22 @@
+@use 'shared/menu';
+@use 'shared/window';
+
+#AppDetailsMain {
+	@include window.content-container;
+
+	border: none;
+}
+
+#ContextMenuAction {
+	@include menu.item-primary;
+
+	background-image: none;
+	text-transform: unset;
+	letter-spacing: 0;
+}
+
+#LibraryWindowDivider {
+	background-color: transparent;
+
+	width: 3px;
+}

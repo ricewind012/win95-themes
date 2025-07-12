@@ -1,0 +1,121 @@
+@use 'shared/controls';
+@use 'shared/window';
+@use 'shared++/extends';
+@use '../steam';
+
+#AddShowcase {
+	@include controls.button;
+
+	opacity: 1;
+	text-transform: unset;
+	margin-bottom: 16px;
+
+	justify-content: center;
+
+	svg {
+		display: none;
+	}
+}
+
+#ChildrenContainer {
+	// PageableContainer
+	& > div {
+		border: none;
+		box-shadow: none;
+		padding: 0;
+		margin: 0;
+	}
+}
+
+#Collapser {
+	@include controls.button;
+	@include window.titlebar-button;
+
+	svg {
+		margin: 0;
+	}
+
+	polyline {
+		stroke: var(--color-button-text);
+	}
+}
+
+// Context menu
+#CollectionDropDownContainer {
+	// !important
+	// TODO(port): fix
+	.DesktopUI & ._DialogInputContainer {
+		@include window.container($child: true);
+	}
+}
+
+#CountDisplay {
+	@include extends.text-reset;
+
+	margin-left: var(--text-spacing);
+}
+
+#DropDownItems {
+	font: var(--text-ui);
+	margin: 0;
+
+	&#OptionsRule {
+		border: none;
+
+		&::before {
+			content: '';
+
+			position: unset;
+			width: calc(100% + 40px);
+			display: block;
+
+			@include controls.separator;
+
+			background-color: var(--color-button-face);
+			margin-left: -20px;
+		}
+	}
+}
+
+#Message {
+	@include extends.text-reset;
+}
+
+#PageButtons {
+	margin: 0;
+}
+
+#PageLeft,
+#PageRight {
+	@include steam.pageable-container-button;
+
+	&#Disabled {
+		@include controls.input-disabled;
+		@include window.titlebar-button-disabled;
+	}
+}
+
+#PageLeft {
+	--button-img: var(--icon-arrow-left);
+}
+
+#PageRight {
+	--button-img: var(--icon-arrow-right);
+}
+
+#Showcase {
+	@include controls.groupbox;
+
+	margin-bottom: 16px;
+}
+
+#ShowcaseHeader {
+	@include extends.legend-as-div;
+
+	background-color: var(--color-window);
+	color: inherit;
+	border: none;
+
+	top: -12px;
+	align-items: center;
+}

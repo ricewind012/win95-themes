@@ -3,7 +3,8 @@
 		"@csstools/postcss-sass": "^5.1.1",
 		"postcss-cli": "^11.0.1",
 		"postcss-functions": "^4.0.2",
-		"postcss-scss": "^4.0.9"
+		"postcss-scss": "^4.0.9",
+		"steam-theming-utils": "^3.3.1"
 	},
 	"devDependencies": {
 		"@biomejs/biome": "^2.1.1"

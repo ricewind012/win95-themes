@@ -2,8 +2,7 @@
 	border: none;
 
 	&:not(:empty) {
-		@extend .window;
-		@extend .window.child;
+		@include window.container($child: true);
 	}
 
 	& > ul {

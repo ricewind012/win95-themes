@@ -1,0 +1,8 @@
+@use 'shared/controls';
+
+#ProgressBar {
+	@include controls.progress-bar($filled-sel: '#Percent');
+
+	background-color: transparent;
+}
+
