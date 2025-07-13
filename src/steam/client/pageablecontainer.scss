@@ -1,7 +1,7 @@
 @use 'shared/controls';
 @use 'shared/window';
 @use 'shared++/extends';
-@use '../steam';
+@use '../shared';
 
 #PageableContainer {
 	@include controls.groupbox;
@@ -26,7 +26,7 @@
 
 #PageLeft,
 #PageRight {
-	@include steam.pageable-container-button;
+	@include shared.pageable-container-button;
 
 	&#Disabled {
 		@include controls.input-disabled;

@@ -1,3 +1,7 @@
+@use 'shared/tabs';
+@use 'shared/window';
+@use 'shared++/extends';
+
 #add_friend-tab > header {
 	border: none;
 	padding: 0;

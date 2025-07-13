@@ -1,5 +1,5 @@
 @use 'shared/tabs';
-@use '../steam';
+@use '../shared';
 
 #PageListSeparator,
 #PageListItem_Icon {
@@ -50,7 +50,7 @@
 }
 
 #PagedSettingsDialog_Title {
-	@include steam.dialog-title;
+	@include shared.dialog-title;
 
 	text-transform: unset;
 	padding: 0;

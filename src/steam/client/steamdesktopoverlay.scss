@@ -2,7 +2,7 @@
 @use 'shared/tooltip';
 @use 'shared/window';
 @use 'shared++/extends';
-@use '../steam';
+@use '../shared';
 
 // GAME OVERVIEW START (here in preparation for beta restructure)
 // TODO: clearly this needs a better icon
@@ -57,7 +57,7 @@
 }
 
 #OverviewTitle {
-	@include steam.dialog-title;
+	@include shared.dialog-title;
 }
 
 #Playtime {

@@ -1,3 +1,6 @@
+@use 'shared/controls';
+@use 'shared/window';
+
 .userPopoutInner,
 .userProfileModalInner {
 	--pos: calc(var(--border-size) + var(--window-spacing) + 8px);

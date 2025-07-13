@@ -1,6 +1,6 @@
 @use 'shared/dialog';
 @use 'shared++/extends';
-@use '../steam';
+@use '../shared';
 
 #AvatarContainer {
 	margin: 0;
@@ -50,7 +50,7 @@
 
 #Title,
 #WhosPlaying {
-	@include steam.dialog-title;
+	@include shared.dialog-title;
 
 	padding: 0;
 }

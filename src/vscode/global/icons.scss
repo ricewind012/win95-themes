@@ -1,6 +1,6 @@
 @use 'shared++/icons';
 @use 'shared++/extends';
-@use '../vscode';
+@use '../shared';
 
 .codicon {
 	// Single icon for multiple classes,
@@ -43,7 +43,7 @@
 	&-folding-collapsed,
 	&-folding-manual-collapsed {
 		--icon-img: var(--icon-arrow-right);
-		@include vscode.replace-icon(""4px", "7px"");
+		@include shared.replace-icon(""4px", "7px"");
 	}
 
 	&-chevron-down,
@@ -66,7 +66,7 @@
 	&-folding-expanded,
 	&-folding-manual-expanded {
 		--icon-img: var(--icon-arrow-bottom);
-		@include vscode.replace-icon(""7px", "4px"");
+		@include shared.replace-icon(""7px", "4px"");
 	}
 
 	&-add,
@@ -89,7 +89,7 @@
 	&-markers-view-icon {
 		@include icons.icon-warning;
 
-		@include vscode.replace-icon("9px");
+		@include shared.replace-icon("9px");
 	}
 
 	&-book,
@@ -146,7 +146,7 @@
 	&-testing-failed-icon {
 		@include icons.icon-error;
 
-		@include vscode.replace-icon("10px");
+		@include shared.replace-icon("10px");
 	}
 
 	&-symbol-reference,
@@ -272,7 +272,7 @@
 		@include icons.icon-bell;
 
 		--icon-img: var(--button-img);
-		@include vscode.replace-icon("9px");
+		@include shared.replace-icon("9px");
 	}
 
 	&-chrome {
@@ -304,7 +304,7 @@
 	&-menu-submenu {
 		--icon-img: var(--icon-arrow-right);
 		--button-img: var(--icon-img);
-		@include vscode.replace-icon(""4px", "7px"");
+		@include shared.replace-icon(""4px", "7px"");
 
 		.action-menu-item:hover > & {
 			--color-button-text: var(--color-highlight-text);

@@ -4,6 +4,18 @@
 $-sel-arrow-back: '> :nth-child(3)';
 $-sel-arrow-forward: '> :nth-child(4)';
 
+%-arrow-disabled {
+	&::before {
+		background-color: var(--color-gray-text);
+	}
+
+	&::after {
+		background-color: var(--color-button-highlight);
+
+		top: var(--icon-disabled-offset);
+	}
+}
+
 #Arrow {
 	@include controls.button;
 	@include controls.icon-button;
@@ -90,24 +102,15 @@ $-sel-arrow-forward: '> :nth-child(4)';
 		}
 	}
 
-	&:has(> #Disabled:nth-child(1)) #{$-sel-arrow-back},
-	&:has(> #Disabled:nth-child(2)) #{$-sel-arrow-forward} {
-		&::before {
-			background-color: var(--color-gray-text);
-		}
-
-		&::after {
-			background-color: var(--color-button-highlight);
-
-			top: var(--icon-disabled-offset);
-		}
-	}
-
 	&:has(> #Disabled:nth-child(1)) #{$-sel-arrow-back}::after {
+		@extend %-arrow-disabled;
+
 		left: calc(var(--icon-offset) + var(--icon-disabled-offset));
 	}
 
 	&:has(> #Disabled:nth-child(2)) #{$-sel-arrow-forward}::after {
+		@extend %-arrow-disabled;
+
 		left: calc(var(--icon-offset) + var(--icon-width) + var(--icon-disabled-offset));
 	}
 }

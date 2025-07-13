@@ -133,7 +133,7 @@
 	&-custom-toggle:not(&-checkbox) {
 		&.codicon,
 		.codicon {
-			@include controls.button($active-sel: '&.checked');
+			@include controls.button($active-sel: '.checked');
 			@include window.titlebar-button;
 
 			border: none;

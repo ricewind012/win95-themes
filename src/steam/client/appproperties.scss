@@ -3,7 +3,7 @@
 @use 'shared/window';
 @use 'shared++/extends';
 @use 'shared++/icons';
-@use '../steam';
+@use '../shared';
 
 #AppProperties {
 	height: calc(100% - var(--text-full) - var(--tabs-height));
@@ -56,7 +56,7 @@
 #DlcGrid {
 	--inset: 88px 25px 65px 25px;
 
-	@include steam.content-container-alt;
+	@include shared.content-container-alt;
 
 	font-size: var(--text-ui-size);
 	border: none;

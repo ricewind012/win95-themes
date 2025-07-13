@@ -3,7 +3,7 @@
 @use 'shared/window';
 @use 'shared++/extends';
 @use 'shared++/icons';
-@use '../steam';
+@use '../shared';
 
 .activeVoiceButtons {
 	padding: 0;
@@ -168,7 +168,7 @@
 	}
 
 	&Message {
-		@include steam.dialog-title;
+		@include shared.dialog-title;
 
 		text-shadow: none;
 	}
@@ -381,7 +381,7 @@
 }
 
 .tabLabel {
-	@include steam.dialog-title;
+	@include shared.dialog-title;
 }
 
 .TabSearchButton {

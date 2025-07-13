@@ -20,7 +20,8 @@
 		gap: 0;
 
 		// !important
-		div&::after {
+		// TODO(port): originally div&::after
+		&::after {
 			display: none;
 		}
 

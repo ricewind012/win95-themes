@@ -1,3 +1,5 @@
+@use 'shared++/extends';
+
 .root {
 	.errorMessage {
 		@include extends.text-reset;

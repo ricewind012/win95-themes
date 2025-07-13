@@ -1,6 +1,6 @@
 @use 'shared/tabs';
 @use 'shared++/extends';
-@use '../steam';
+@use '../shared';
 
 // Purpose:
 // Used in group chat settings (and possibly other older dialogs)
@@ -41,7 +41,7 @@
 }
 
 #NavTitle {
-	@include steam.dialog-title;
+	@include shared.dialog-title;
 
 	text-transform: unset;
 }

@@ -1,3 +1,5 @@
+@use 'shared++/extends';
+
 ::placeholder {
 	font: var(--text-ui);
 }

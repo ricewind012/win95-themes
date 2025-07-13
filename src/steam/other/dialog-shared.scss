@@ -4,7 +4,7 @@
 @use 'shared/text';
 @use 'shared/window';
 @use 'shared++/extends';
-@use '../steam';
+@use '../shared';
 
 ::placeholder {
 	font: var(--text-ui);
@@ -179,7 +179,7 @@
 		margin: 0;
 
 		.PopupFullWindow > :last-child & {
-			@include steam.dialog-title;
+			@include shared.dialog-title;
 		}
 
 		// Only used in "Invite to group chat" dialog

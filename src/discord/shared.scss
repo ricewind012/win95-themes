@@ -1,13 +1,5 @@
 @use 'shared/controls';
 
-// These selectors either:
-// - will cause massive lag if used with attribute selectors;
-// - can not be used with attribute selectors for other reasons.
-$selectors: (
-	checkbox-container: '.container_ed1d57',
-	tags-filter-container: '.container_ae4f46',
-);
-
 // TODO: remove
 // TODO: add position: absolute version
 // An alternative to "@include window.content-container" for special elements

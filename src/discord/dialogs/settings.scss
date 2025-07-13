@@ -1,3 +1,5 @@
+@use 'shared/controls';
+@use 'shared/window';
 @use 'shared++/extends';
 
 .contentColumn {
@@ -86,8 +88,7 @@
 
 			box-sizing: border-box;
 
-			@include window.titlebar;
-			@extend :root.focused .titlebar;
+			@include window.titlebar($focused-sel: '&');
 		}
 
 		[role="tablist"][aria-orientation="vertical"] {

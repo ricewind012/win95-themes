@@ -1,7 +1,7 @@
 @use 'shared/controls';
 @use 'shared/table';
 @use 'shared++/extends';
-@use '../steam';
+@use '../shared';
 
 #AddNonSteamGameDialog {
 	.DialogContent_InnerWidth {
@@ -41,7 +41,7 @@
 #GameList {
 	--inset: 69px 11px 58px 11px;
 
-	@include steam.content-container-alt;
+	@include shared.content-container-alt;
 
 	overflow: auto;
 	border: none;
@@ -71,7 +71,7 @@
 		@include extends.text-reset;
 		@include controls.button;
 		@include table.button;
-		@include steam.table-button-arrows;
+		@include shared.table-button-arrows;
 	}
 
 	svg {

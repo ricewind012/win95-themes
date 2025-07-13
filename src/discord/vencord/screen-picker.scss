@@ -1,4 +1,5 @@
 @use 'shared++/extends';
+@use '../shared';
 
 .vcd-screen-picker {
 	&-card {
@@ -34,7 +35,7 @@
 
 	&-preview {
 		&::after {
-			@extend $pseudo-separator;
+			@include shared.pseudo-separator;
 
 			margin-block: 8px 12px;
 		}

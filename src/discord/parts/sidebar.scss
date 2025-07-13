@@ -1,6 +1,10 @@
 @use 'shared/controls';
+@use 'shared/list';
 @use 'shared/tree';
 @use 'shared/window';
+@use 'shared++/extends';
+@use 'shared++/icons';
+@use '../shared';
 
 .sidebar {
 	margin-right: var(--window-gap);
@@ -67,7 +71,7 @@
 			[role="button"] {
 				@include controls.button;
 				@include controls.icon-button;
-				@extend $icon-more;
+				@include icons.icon-more;
 
 				// TODO
 				&::before {
@@ -94,7 +98,7 @@
 	& > section {
 		.avatarWrapper {
 			@include controls.button;
-			@extend $use-aria-label;
+			@include shared.use-aria-label;
 
 			// TODO: icon
 			height: 22px;
@@ -119,7 +123,7 @@
 			margin-bottom: -8px;
 
 			&::after {
-				@extend $pseudo-separator;
+				@include shared.pseudo-separator;
 			}
 		}
 

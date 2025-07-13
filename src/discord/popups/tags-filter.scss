@@ -1,4 +1,8 @@
-#{$selectors[tags-filter-container]} {
+@use 'shared/controls';
+@use 'shared/menu';
+@use 'shared++/extends';
+
+.container_ae4f46 {
 	width: auto;
 	display: flex;
 	flex-direction: column-reverse;

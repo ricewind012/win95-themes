@@ -2,7 +2,7 @@
 @use 'shared/text';
 @use 'shared++/extends';
 
-$vencord-groupbox-header {
+%-vencord-groupbox-header {
 	&::before {
 		content: var(--header-text);
 
@@ -88,7 +88,7 @@ $vencord-groupbox-header {
 		--header-text: 'Filter';
 
 		@include controls.groupbox;
-		@extend $vencord-groupbox-header;
+		@extend %-vencord-groupbox-header;
 
 		height: unset;
 	}
@@ -97,7 +97,7 @@ $vencord-groupbox-header {
 		--header-text: 'Plugins';
 
 		@include controls.groupbox;
-		@extend $vencord-groupbox-header;
+		@extend %-vencord-groupbox-header;
 
 		gap: var(--text-spacing);
 
@@ -126,7 +126,7 @@ $vencord-groupbox-header {
 		[class*="content_"] > :first-child {
 			& > div {
 				@include controls.groupbox;
-				@extend $vencord-groupbox-header;
+				@extend %-vencord-groupbox-header;
 
 				&:nth-child(2) {
 					--header-text: 'Description';
@@ -203,7 +203,8 @@ $vencord-groupbox-header {
 		@include controls.groupbox;
 
 		// !important in dialogs/settings.scss
-		div& > [class*="sectionTitle_"] {
+		// TODO(port): originally div&
+		& > [class*="sectionTitle_"] {
 			& > h2 {
 				@include extends.text-reset;
 				@include extends.legend-as-div;

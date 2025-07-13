@@ -1,9 +1,9 @@
 @use 'shared/controls-generated';
 @use 'shared/window';
-@use '../steam';
+@use '../shared';
 
 .PopupFullWindow:not(:only-child) {
-	@include steam.statusbar-alt;
+	@include shared.statusbar-alt;
 
 	.ModalPosition {
 		height: calc(100% - var(--text-full) - 6px);

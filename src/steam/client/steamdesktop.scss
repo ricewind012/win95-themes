@@ -1,7 +1,7 @@
 @use 'shared/controls';
 @use 'shared/window';
 @use 'shared++/extends';
-@use '../steam';
+@use '../shared';
 
 // The browser view is above everything else
 #Browser {
@@ -126,7 +126,7 @@
 	&::after {
 		content: 'Steam';
 
-		@include steam.dialog-title;
+		@include shared.dialog-title;
 	}
 }
 

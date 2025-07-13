@@ -1,4 +1,5 @@
 @use 'shared/controls';
+@use 'shared/window';
 @use 'shared++/extends';
 
 .actionButtons > [role="button"] {
@@ -69,7 +70,7 @@ button {
 	}
 
 	// TODO: remove when doing icons
-	/.lottieIcon,
+	@at-root .lottieIcon,
 	svg {
 		width: 16px;
 		height: 16px;
@@ -90,7 +91,7 @@ button {
 	}
 }
 
-#{$selectors[checkbox-container]} {
+.container_ed1d57 {
 	margin-top: var(--text-spacing);
 	margin-bottom: var(--text-spacing);
 

@@ -1,3 +1,6 @@
+@use 'shared/controls';
+@use 'shared++/extends';
+
 // TODO: remove when doing icons
 .attachButtonInner {
 	height: unset;

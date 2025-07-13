@@ -40,7 +40,8 @@
 	}
 
 	[role="option"] {
-		@include menu.item;
+		// TODO(port)
+		@include menu.item($selected-sel: '.hack');
 
 		font-size: var(--text-ui-size);
 		margin: 0;

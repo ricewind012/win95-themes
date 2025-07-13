@@ -1,15 +1,13 @@
 @use 'shared/controls';
+@use 'shared/listbox';
+@use 'shared/menu';
 @use 'shared/window';
 @use 'shared++/extends';
 
 [role="button"][aria-haspopup] {
-	@include controls.combobox;
+	@include controls.combobox($disabled-sel: "[aria-disabled='true']");
 
 	min-width: 73px;
-
-	&[aria-disabled="true"] {
-		@include controls.combobox:disabled;
-	}
 
 	& > .icons {
 		display: none;
@@ -37,9 +35,7 @@
 }
 
 [role="option"] {
-	&[tabindex="0"] {
-		@extend [role="option"]:hover;
-	}
+	@include listbox.item($selected-sel: "[tabindex='0']");
 
 	svg {
 		display: none;
@@ -92,23 +88,14 @@
 }
 
 [role="radio"] {
-	$-radio-selector: '> div > :first-child';
+	@include controls.radio(
+		$checked-sel: '&[aria-checked="true"]',
+		$disabled-sel: '[role="radiogroup"][aria-disabled="true"] > &'
+	);
 
 	opacity: 1;
 	background-color: transparent;
 	margin-bottom: var(--text-spacing);
-
-	[role="radiogroup"][aria-disabled="true"] > & {
-		color: var(--color-gray-text);
-
-		#{$-radio-selector} {
-			@extend controls.checkbox-radio-inactive;
-		}
-	}
-
-	&[aria-checked="true"] #{$-radio-selector} {
-		@extend input[type="radio"]:checked;
-	}
 
 	& > div {
 		border: none;
@@ -116,9 +103,6 @@
 		padding: 0;
 
 		& > :first-child {
-			@extend input;
-			@extend input[type="radio"];
-
 			order: -1;
 			align-self: start;
 		}

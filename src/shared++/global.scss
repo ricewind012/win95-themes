@@ -2,7 +2,6 @@
 @use 'shared/icons';
 @use 'shared/scrollbar';
 @use 'shared/variables';
-@use 'shared/window';
 
 * {
 	outline: none;
@@ -20,8 +19,11 @@
 }
 
 body {
-	// TODO(port): just move document-body here maybe
-	@include window.document-body;
+	font: var(--text-ui);
+	image-rendering: pixelated;
+	margin: 0;
+
+	box-sizing: border-box;
 }
 
 ::-webkit-scrollbar {

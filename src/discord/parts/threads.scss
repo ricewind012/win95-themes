@@ -1,3 +1,6 @@
+@use 'shared/controls';
+@use '../shared';
+
 [data-list-item-id$="forum-channel-header"] {
 	button {
 		height: unset;
@@ -22,7 +25,7 @@
 
 .forumPostFormButton {
 	@include controls.button;
-	@extend $use-aria-label;
+	@include shared.use-aria-label;
 
 	height: unset;
 
@@ -47,8 +50,8 @@
 	height: unset;
 
 	& > button {
-		@extend $select-as-button;
-		@extend $use-aria-label;
+		@include shared.select-as-button;
+		@include shared.use-aria-label;
 
 		text-align: start;
 

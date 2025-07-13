@@ -2,7 +2,7 @@
 @use 'shared/table';
 @use 'shared/window';
 @use 'shared++/extends';
-@use '../steam';
+@use '../shared';
 
 #AvatarAndName {
 	color: inherit;
@@ -50,7 +50,7 @@
 #PlayersListHeaderCell {
 	@include controls.button;
 	@include table.button;
-	@include steam.table-button-arrows;
+	@include shared.table-button-arrows;
 
 	// "Add Friend" column
 	&:last-of-type {

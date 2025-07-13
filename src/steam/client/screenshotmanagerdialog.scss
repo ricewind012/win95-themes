@@ -1,7 +1,7 @@
 @use 'shared/controls';
 @use 'shared/window';
 @use 'shared++/extends';
-@use '../steam';
+@use '../shared';
 
 @mixin -replace-text($token) {
 	&::before {
@@ -225,7 +225,7 @@
 #ScreenshotList {
 	--inset: 91px 11px 60px 11px;
 
-	@include steam.content-container-alt;
+	@include shared.content-container-alt;
 
 	// Fullscreen
 	.PopupFullWindow:only-child & {

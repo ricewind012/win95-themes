@@ -1,3 +1,9 @@
+@use 'shared/controls';
+@use 'shared/table';
+@use 'shared/window';
+@use 'shared++/extends';
+@use 'shared++/icons';
+
 .expressionPickerPositionLayer {
 	--custom-emoji-picker-constants-diversity-emoji-size: 16px;
 
@@ -8,7 +14,7 @@
 		@include controls.button;
 		// TODO: idk
 		@include window.titlebar-button;
-		@extend $icon-big-arrow-left;
+		@include icons.icon-big-arrow-left;
 
 		min-width: 23px;
 		height: 22px;

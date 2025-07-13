@@ -1,7 +1,7 @@
 @use 'shared/controls';
 @use 'shared/window';
 @use 'shared++/extends';
-@use '../steam';
+@use '../shared';
 
 #AddShowcase {
 	@include controls.button;
@@ -43,7 +43,7 @@
 // Context menu
 #CollectionDropDownContainer {
 	// !important
-	// TODO(port): fix
+	// TODO(port): originally &&
 	.DesktopUI & ._DialogInputContainer {
 		@include window.container($child: true);
 	}
@@ -87,7 +87,7 @@
 
 #PageLeft,
 #PageRight {
-	@include steam.pageable-container-button;
+	@include shared.pageable-container-button;
 
 	&#Disabled {
 		@include controls.input-disabled;

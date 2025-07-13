@@ -1,3 +1,5 @@
+@use 'shared/controls';
+
 .actionsBiteSizePopout {
 	gap: var(--dialog-button-spacing);
 
@@ -19,13 +21,9 @@
 	}
 
 	.bar {
-		@extend progress;
+		@include controls.progress-bar($filled-sel: '.barInner');
 
 		background-color: transparent;
-	}
-
-	.barInner {
-		@extend progress::-webkit-progress-value;
 	}
 
 	[role="button"] > * {

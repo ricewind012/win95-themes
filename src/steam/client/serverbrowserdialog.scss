@@ -4,9 +4,8 @@
 @use 'shared/window';
 @use 'shared++/extends';
 @use 'shared++/icons';
-@use '../steam';
+@use '../shared';
 
-// TODO(port): remove?
 %-use-icon {
 	&::before {
 		content: '';
@@ -195,7 +194,7 @@
 #ServerListHeaderCell {
 	@include controls.button;
 	@include table.button;
-	@include steam.table-button-arrows;
+	@include shared.table-button-arrows;
 
 	min-width: unset;
 	height: 17px;
