@@ -4,7 +4,7 @@
 @use 'shared/window';
 @use 'shared++/extends';
 @use 'shared++/icons';
-@use '../shared';
+@use 'discord/shared';
 
 .sidebar {
 	margin-right: var(--window-gap);

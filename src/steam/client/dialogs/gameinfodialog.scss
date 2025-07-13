@@ -1,0 +1,82 @@
+@use 'shared/controls';
+@use 'shared/table';
+@use 'shared++/extends';
+@use 'steam/shared';
+
+#DialogBody {
+	box-shadow: none;
+	gap: 0;
+	padding: 0;
+
+	.DialogBodyText {
+		margin: 0;
+
+		display: flex;
+		flex-direction: column;
+	}
+
+	// TODO: unify;
+	.DialogDropDown {
+		min-width: 129px;
+	}
+
+	.DialogInput_Wrapper .DialogButton {
+		min-width: 75px;
+	}
+
+	[style="--indent-level:0;"] > div {
+		gap: 0;
+
+		// Align with the "IP Address" copy button.
+		height: 22px;
+		display: grid;
+		grid-template-columns: 25% 75%;
+
+		// #FieldDescription in gamepaddialog
+		&:nth-child(2) {
+			margin-left: 0;
+
+			display: block;
+		}
+	}
+
+	// TODO: God knows why this doesn't work
+	svg {
+		display: none;
+	}
+}
+
+#PingFailed {
+	color: darkred;
+}
+
+#PlayersList {
+	--inset: 27px 11px 254px 11px;
+
+	@include shared.content-container-alt;
+
+	margin-top: 0;
+	margin-bottom: var(--text-spacing);
+
+	overflow: auto;
+	height: 415px;
+
+	order: -1;
+}
+
+#Header {
+	@include extends.text-reset;
+	@include controls.button;
+	@include table.header-row;
+
+	text-align: left;
+
+	position: sticky;
+	top: 0;
+}
+
+#Details {
+	@include table.row;
+
+	border: none;
+}

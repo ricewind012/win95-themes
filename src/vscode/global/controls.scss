@@ -1,5 +1,5 @@
 @use 'shared/controls';
-@use 'shared/controls-generated';
+@use 'shared/generated';
 @use 'shared/scrollbar';
 @use 'shared/window';
 @use 'shared++/extends';
@@ -221,25 +221,25 @@
 
 			&-scrollbar-button {
 				&-up {
-					@include controls-generated.scrollbar-button-vertical-decrement;
+					@include generated.scrollbar-button-vertical-decrement;
 
 					top: 0;
 				}
 
 				&-down {
-					@include controls-generated.scrollbar-button-vertical-increment;
+					@include generated.scrollbar-button-vertical-increment;
 
 					bottom: 0;
 				}
 
 				&-left {
-					@include controls-generated.scrollbar-button-horizontal-decrement;
+					@include generated.scrollbar-button-horizontal-decrement;
 
 					left: 0;
 				}
 
 				&-right {
-					@include controls-generated.scrollbar-button-horizontal-increment;
+					@include generated.scrollbar-button-horizontal-increment;
 
 					left: unset;
 					right: 0;

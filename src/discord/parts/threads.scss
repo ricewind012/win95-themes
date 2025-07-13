@@ -1,5 +1,5 @@
 @use 'shared/controls';
-@use '../shared';
+@use 'discord/shared';
 
 [data-list-item-id$="forum-channel-header"] {
 	button {

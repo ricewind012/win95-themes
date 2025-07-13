@@ -1,0 +1,207 @@
+@use 'shared/controls';
+@use 'shared/table';
+@use 'shared/window';
+@use 'shared++/extends';
+@use 'shared++/icons';
+@use 'steam/shared';
+
+#AppProperties {
+	height: calc(100% - var(--text-full) - var(--tabs-height));
+}
+
+#AsyncBackedInputChildren {
+	margin: 0;
+}
+
+#BetaAccessCodeRow {
+	gap: var(--label-spacing);
+	margin: 0;
+}
+
+#BetaLabel {
+	color: inherit;
+}
+
+#BetaLabel {
+	font: var(--text-header);
+}
+
+#BlueHighlight {
+	@include extends.text-reset;
+}
+
+#BuildInfo {
+	@include extends.text-reset;
+}
+
+#Detail {
+	@include extends.text-reset;
+
+	margin: 0;
+}
+
+#SectionTopLine {
+	@include controls.groupbox;
+}
+
+#TopGap {
+	margin-top: var(--text-spacing);
+}
+
+#TopGapSmall {
+	margin: 0;
+}
+
+// DLC
+#DlcGrid {
+	--inset: 88px 25px 65px 25px;
+
+	@include shared.content-container-alt;
+
+	font-size: var(--text-ui-size);
+	border: none;
+	box-shadow: none;
+}
+
+#DlcHeader {
+	@include controls.button;
+	@include table.button;
+
+	text-transform: unset;
+
+	&:has(> #TriangleUp) {
+		@include table.button-arrow-ascending;
+	}
+
+	&:has(> #TriangleDown) {
+		@include table.button-arrow-descending;
+	}
+
+	&:has(> #TriangleHide)::after {
+		display: none;
+	}
+
+	& > div {
+		display: none;
+	}
+}
+
+#DlcTopRow > .DialogInput_Wrapper {
+	margin-left: var(--text-spacing);
+}
+
+#Name {
+	@include extends.text-reset;
+}
+
+// Workshop
+#Controls {
+	& > .DialogButton {
+		@include window.titlebar-button;
+		@include icons.icon-trash;
+
+		svg {
+			display: none;
+		}
+	}
+}
+
+#Details {
+	& > :first-child {
+		width: 88px;
+
+		display: flex;
+		justify-content: center;
+	}
+}
+
+#DragHandle {
+	opacity: 1;
+	color: var(--color-window-text);
+
+	left: 80%;
+}
+
+#LoadOrder,
+#SortedColumn {
+	font: var(--text-ui);
+	color: var(--color-window-text);
+}
+
+#TextDetails {
+	background-color: transparent;
+	color: var(--color-window-text);
+}
+
+#Title {
+	@include extends.text-reset;
+	@include extends.legend-as-div;
+}
+
+#WorkshopItemsRowsScrollable {
+	@include window.content-container;
+
+	font: var(--text-ui);
+	margin: 0;
+}
+
+#WorkshopItemRowsScroll {
+	border: none;
+	box-shadow: none;
+}
+
+#WorkshopItemRow {
+	filter: none;
+	background-color: var(--color-window);
+	box-shadow: none;
+
+	&#IsDragging {
+		background-color: var(--color-highlight);
+		--color-window-text: var(--color-highlight-text);
+	}
+}
+
+#WorkshopItemDependencies,
+#WorkshopItemTagsContainer {
+	background-color: transparent;
+	font: var(--text-ui);
+	color: var(--color-gray-text);
+}
+
+// etc.
+#BrowseDiskRow {
+	gap: var(--text-spacing);
+
+	& > .DialogButton {
+		order: -1;
+	}
+}
+
+#BrowseDiskSize {
+	margin-left: 0;
+}
+
+#SteamCloudSection {
+	gap: var(--text-spacing);
+}
+
+#SteamCloudUsage {
+	align-self: start;
+}
+
+#SteamInputLink {
+	@include extends.link;
+}
+
+#ViewMore {
+	@include extends.link;
+
+	padding: 0;
+
+	flex: 0 0 auto;
+
+	&,
+	&:focus {
+		box-shadow: none;
+	}
+}

@@ -1,0 +1,77 @@
+@use 'shared/controls';
+@use 'shared/table';
+@use 'shared/window';
+@use 'shared++/extends';
+@use 'steam/shared';
+
+#AvatarAndName {
+	color: inherit;
+
+	gap: var(--text-spacing)
+}
+
+#ColumnResizer {
+	--separator-size: 13px;
+
+	opacity: 0;
+	padding: 0;
+
+	width: var(--separator-size);
+	margin-right: calc(var(--separator-size) / -2);
+}
+
+#Empty {
+	@include extends.text-reset;
+}
+
+#OverlayPlayersDialog,
+#PlayersDialog .DialogBody {
+	padding: 0;
+}
+
+#PlayersList {
+	@include window.content-container;
+
+	border: none;
+	margin: 0;
+}
+
+#PlayersListBody {
+	background-color: transparent;
+	padding: 0;
+
+	overflow: auto;
+
+	[role="cell"] {
+		@include extends.text-reset;
+	}
+}
+
+#PlayersListHeaderCell {
+	@include controls.button;
+	@include table.button;
+	@include shared.table-button-arrows;
+
+	// "Add Friend" column
+	&:last-of-type {
+		height: 17px;
+	}
+
+	svg {
+		display: none;
+	}
+}
+
+#PlayersListHeaderColumn {
+	color: inherit;
+	padding: 0;
+
+	display: flex;
+	justify-content: space-between;
+}
+
+#PlayersListHeaderCtr {
+	background-color: transparent;
+	padding: 0;
+}
+
