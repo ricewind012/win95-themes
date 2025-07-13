@@ -1,0 +1,43 @@
+@use 'shared/controls';
+
+.expandedInboxHeader {
+	display: none;
+}
+
+.expandedTabSection {
+	height: unset;
+	flex-direction: column-reverse;
+	align-items: unset;
+
+	[role="button"] {
+		@include controls.button;
+		@include controls.icon-button;
+	}
+}
+
+.recentMentionsPopout {
+	margin: var(--dialog-spacing);
+
+	& > :first-child {
+		padding: 0;
+
+		height: unset;
+		min-height: unset;
+	}
+
+	.channelHeader {
+		display: none;
+	}
+
+	[role="list"] {
+		&::before {
+			content: '';
+
+			position: absolute;
+			inset: 0;
+
+			box-shadow: var(--border-button-raised);
+		}
+	}
+}
+

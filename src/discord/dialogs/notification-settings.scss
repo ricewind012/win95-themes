@@ -1,0 +1,43 @@
+@use 'shared/list';
+@use 'shared/table';
+@use 'shared/window';
+
+.overrideList {
+	@include window.content-container;
+
+	margin-top: var(--text-spacing);
+
+	& > .flex > h2 {
+		@include table.header-row;
+
+		margin: 0;
+	}
+
+	.override {
+		@include list.item;
+
+		background-color: var(--color-window);
+		color: inherit;
+		border: none;
+		padding: 0;
+		margin: 0;
+
+		.channelNameContainer {
+			gap: var(--text-spacing);
+
+			display: flex;
+		}
+
+		.checkboxContainer,
+		.checkboxMute {
+			&::before {
+				display: none;
+			}
+		}
+
+		svg {
+			display: none;
+		}
+	}
+}
+

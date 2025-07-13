@@ -1,0 +1,73 @@
+@use 'shared++/extends';
+@use '../shared';
+
+.vcd-screen-picker {
+	&-card {
+		border: none;
+		padding: 0;
+		margin: 0;
+	}
+
+	&-grid {
+		& > div > :first-child {
+			display: none;
+		}
+
+		div {
+			margin: 0;
+
+			text-align: start;
+			white-space: pre-wrap;
+		}
+
+		input[type="radio"] {
+			flex-shrink: 0;
+		}
+	}
+
+	&-hint-description {
+		@include extends.text-reset;
+
+		p {
+			margin-block: var(--text-spacing);
+		}
+	}
+
+	&-preview {
+		&::after {
+			@include shared.pseudo-separator;
+
+			margin-block: 8px 12px;
+		}
+	}
+
+	&-radio {
+		border: none;
+		padding: 0;
+	}
+
+	&-radios {
+		gap: var(--text-spacing);
+
+		flex-direction: column;
+
+		div {
+			font-weight: normal;
+		}
+
+		input[type="radio"] {
+			order: -1;
+			display: initial;
+		}
+	}
+
+	&-settings-grid {
+		& > :first-child > :first-child {
+			font-weight: bold;
+			margin-top: var(--text-spacing);
+
+			position: initial;
+		}
+	}
+}
+

@@ -1,0 +1,49 @@
+@use 'shared/list';
+
+#Container {
+	overflow: visible;
+	background: none;
+	color: var(--color-window-text);
+	border: none;
+	box-shadow: none;
+	padding: 0 var(--tree-spacing);
+
+	align-items: center;
+}
+
+#SectionHeaderContent {
+	color: inherit;
+	padding: 5px 0;
+
+	align-items: center;
+
+	// This can have *just* the text highlighted,
+	// but better make it consistent with the rest of it.
+	#Selected > & {
+		@include list.item-name-selected;
+	}
+
+	&::before {
+		content: '';
+
+		background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA8AAAANCAMAAABBwMRzAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAASUExURYeIj8DHyP//AP///wAAAAAAAJRqB2kAAAAGdFJOU///////ALO/pL8AAAAJcEhZcwAADsMAAA7DAcdvqGQAAAA1SURBVBhXtYrRFQAQEMOCdv+VHcfDANKvtMVm4AWm1MguSI0ib9AuUHjuM9OPlh/7g7AupA6lNwF/p6NMjAAAAABJRU5ErkJggg==');
+		background-position: center;
+		background-repeat: no-repeat;
+		margin-right: 7px;
+
+		width: var(--icon-size);
+		height: var(--icon-size);
+		z-index: 1;
+	}
+}
+
+#SectionCount,
+#SectionName,
+#SectionRule {
+	all: unset;
+}
+
+#SectionCount {
+	color: var(--color-gray-text);
+	margin-left: var(--text-spacing);
+}

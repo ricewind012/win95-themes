@@ -1,0 +1,60 @@
+@use 'shared/controls-generated';
+@use 'shared/icons';
+@use 'shared/scrollbar';
+@use 'shared/variables';
+
+* {
+	outline: none;
+	border-radius: 0;
+
+	box-sizing: border-box;
+
+	transition: none;
+}
+
+:root {
+	--tree-item-spacing-x: 4px;
+	--text-full: calc(var(--text-ui-size) * var(--text-line));
+	--tabs-height: 20px;
+}
+
+body {
+	font: var(--text-ui);
+	image-rendering: pixelated;
+	margin: 0;
+
+	box-sizing: border-box;
+}
+
+::-webkit-scrollbar {
+	@include scrollbar.container;
+}
+
+::-webkit-scrollbar-button {
+	@include scrollbar.button;
+
+	&:vertical:decrement {
+		@include controls-generated.scrollbar-button-vertical-decrement;
+	}
+
+	&:vertical:increment {
+		@include controls-generated.scrollbar-button-vertical-increment;
+	}
+
+	&:horizontal:decrement {
+		@include controls-generated.scrollbar-button-horizontal-decrement;
+	}
+
+	&:horizontal:increment {
+		@include controls-generated.scrollbar-button-horizontal-increment;
+	}
+}
+
+::-webkit-scrollbar-corner,
+::-webkit-scrollbar-resize {
+	@include scrollbar.corner;
+}
+
+::-webkit-scrollbar-thumb {
+	@include scrollbar.thumb;
+}

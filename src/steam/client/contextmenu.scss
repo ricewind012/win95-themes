@@ -1,0 +1,58 @@
+@use 'shared/controls';
+@use 'shared/menu';
+@use 'shared/window';
+
+#Arrow {
+	display: none;
+}
+
+#contextMenu {
+	@include window.container($child: true);
+
+	background-image: none;
+}
+
+#contextMenuContents {
+	background: var(--color-button-face);
+
+	padding: 0;
+}
+
+#contextMenuItem {
+	@include menu.item($selected-sel: '#active');
+
+	font-size: var(--text-ui-size);
+	color: var(--color-button-text);
+	border: none;
+
+	&:has(.DialogCheckbox.Active, .SVGIcon_Check) {
+		@include menu.item-check;
+	}
+
+	&.disabled {
+		@include menu.item-disabled;
+	}
+
+	&#SubMenu {
+		@include menu.item-parent;
+	}
+
+	.SVGIcon_Button {
+		fill: var(--color-button-text);
+		margin: 0;
+
+		position: absolute;
+		left: 4px;
+		width: var(--text-ui-size);
+		height: var(--text-ui-size);
+	}
+}
+
+#ContextMenuSeparator {
+	@include controls.separator;
+}
+
+// checkbox ?
+#IconContainer {
+	display: none;
+}

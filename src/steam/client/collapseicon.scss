@@ -1,0 +1,23 @@
+@use 'shared/tree';
+
+#Container {
+	--icon: var(--tree-icon-expanded);
+
+	@include tree.item-icon;
+
+	padding: 0;
+	margin-right: 6px;
+
+	&::after {
+		top: -19px;
+		height: 22px;
+	}
+
+	&#Collapsed {
+		--icon: var(--tree-icon-collapsed);
+	}
+
+	svg {
+		display: none;
+	}
+}

@@ -1,0 +1,61 @@
+@use 'shared/controls';
+@use 'shared/menu';
+@use 'shared++/extends';
+
+.container_ae4f46 {
+	width: auto;
+	display: flex;
+	flex-direction: column-reverse;
+
+	// !important
+	// TODO(port): originally &&&::before
+	&::before {
+		display: none;
+	}
+
+	& > button {
+		@include menu.item-check;
+
+		text-align: start;
+		box-shadow: none;
+
+		[data-text-variant] {
+			font-weight: bold;
+		}
+	}
+
+	& > .header {
+		display: none;
+	}
+
+	& > .separator {
+		@include controls.separator;
+	}
+
+	[role="button"] {
+		@include menu.item-check;
+
+		background-color: transparent;
+		border: none;
+
+		width: 100%;
+		height: unset;
+
+		&[aria-pressed="true"] {
+			// TODO(port): what
+			@include menu.item-check;
+		}
+
+		& > div {
+			font-weight: normal;
+		}
+	}
+
+	[role="list"] {
+		gap: 0;
+		padding: 0;
+
+		flex-direction: column;
+	}
+}
+

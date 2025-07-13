@@ -1,0 +1,21 @@
+@use 'shared/controls';
+
+#AppDetailsSection {
+	color: inherit;
+	margin: 0;
+}
+
+// !important
+div#AppDetailsSectionContainer {
+	background: none;
+	color: var(--color-window-text);
+	margin-top: 0;
+}
+
+#Body {
+	padding: 0;
+}
+
+#RightColumnSection {
+	@include controls.groupbox;
+}

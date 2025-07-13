@@ -1,0 +1,48 @@
+@use 'shared/tabs';
+@use 'shared++/extends';
+@use '../shared';
+
+// Purpose:
+// Used in group chat settings (and possibly other older dialogs)
+
+#Container {
+	// for bottom buttons
+	--pos: calc(var(--border-size) + var(--window-spacing) + var(--dialog-spacing));
+
+	margin: var(--dialog-spacing);
+	margin-bottom: calc(var(--dialog-spacing) + var(--dialog-button-spacing) + var(--tabs-height) + 21px);
+
+	width: unset;
+	height: unset; // ?
+	flex-direction: column;
+}
+
+#Content {
+	background: none;
+}
+
+#Nav {
+	@include tabs.container;
+
+	background-color: unset;
+	padding: 0;
+
+	min-width: unset;
+	max-width: unset;
+}
+
+#NavItem {
+	@include tabs.tab($selected-sel: '&#Active');
+	@include extends.text-reset;
+}
+
+#NavItems {
+	flex-direction: row;
+}
+
+#NavTitle {
+	@include shared.dialog-title;
+
+	text-transform: unset;
+}
+

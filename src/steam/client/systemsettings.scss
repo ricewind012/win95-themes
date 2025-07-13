@@ -1,0 +1,31 @@
+@use 'shared/window';
+@use 'shared++/extends';
+
+#SteamRuntimeSystemInfoContainer {
+	@include window.content-container;
+
+	margin-top: var(--text-spacing);
+}
+
+#SteamRuntimeSystemInfoDialogContent {
+	.DialogBody {
+		box-shadow: none;
+		padding: 0;
+
+		&Text {
+			margin-bottom: calc(var(--dialog-button-spacing) + 6px);
+		}
+	}
+}
+
+#Text {
+	@include extends.text-reset;
+
+	font-family: var(--text-font-monospace);
+}
+
+#TextContainer {
+	background-color: transparent;
+	box-shadow: none;
+}
+

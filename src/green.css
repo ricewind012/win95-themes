@@ -1,0 +1,52 @@
+:root {
+	--color-button-face:         #4c5644;
+	--color-button-text:         #fcfefc;
+	--color-button-highlight:    #8c9281;
+	--color-button-light:        #2c2c24;
+	--color-button-shadow:       #2c2e24;
+	--color-button-shadow-dark:  #2c2e24;
+
+	--color-window:              #3c463c;
+	--color-window-text:         #fcfefc;
+
+	--color-active-caption:      transparent;
+	--color-active-caption-text: #fcfefc;
+
+	--color-highlight:           transparent;
+	--color-highlight-text:      #c4b550;
+
+	--color-tooltip:             #ffffe1;
+	--color-tooltip-text:        #000;
+
+	--color-info-background:     #ffffc0;
+	--color-tree-border:         #87888f;
+	--color-scrollbar:           #2c2e24;
+	/* TODO: this has to be some kind of dark green */
+	--color-gray-text:           #808080;
+	--color-link:                #c4b550;
+
+	--border-button-raised:
+		inset -1px -1px var(--color-button-shadow-dark),
+		inset  1px  1px var(--color-button-highlight);
+	--border-button-sunken:
+		inset -1px -1px var(--color-button-highlight),
+		inset  1px  1px var(--color-button-shadow);
+
+	--border-scrollbar-button-raised:
+		inset -1px -1px var(--color-button-shadow-dark),
+		inset  1px  1px var(--color-button-highlight);
+
+	--border-field:
+		inset -1px -1px var(--color-button-highlight),
+		inset  1px  1px var(--color-button-shadow);
+
+	--border-groupbox-border: transparent;
+
+	--border-window:
+		inset -1px -1px var(--color-button-shadow-dark),
+		inset  1px  1px var(--color-button-highlight);
+
+	--tab-border-left: none;
+	--tab-border-right: none;
+}
+

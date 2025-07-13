@@ -1,0 +1,239 @@
+@use 'shared/tabs';
+@use 'shared++/extends';
+
+[role="tab"] {
+	cursor: unset;
+
+	&[aria-selected="true"]:not(.tab) {
+		margin-top: 1px;
+	}
+
+	.action-label {
+		font-size: var(--text-ui-size);
+		font-family: var(--text-ui-font), codicon;
+		color: inherit;
+		padding: 0;
+	}
+
+	.monaco-icon-label {
+		&::before,
+		&-container::after {
+			display: none;
+		}
+	}
+}
+
+// Editor
+.tab {
+	&:not([aria-selected="true"]) {
+		// !important
+		.monaco-workbench .part.editor > .content .editor-group-container[class] > .title &:hover {
+			background-color: var(--color-button-face);
+		}
+	}
+
+	&s {
+		--editor-group-tab-height: inherit;
+
+		background-color: transparent;
+
+		cursor: unset;
+
+		&,
+		&-container,
+		//&-and-actions-container,
+		.monaco-scrollable-element {
+			overflow: visible;
+		}
+
+		&-border-bottom::after {
+			display: none;
+		}
+	}
+
+	&-border {
+		&-top,
+		&-bottom {
+			&-container {
+				display: none;
+			}
+		}
+	}
+
+	&-label {
+		padding: 0;
+
+		a,
+		span {
+			font: var(--text-ui);
+			cursor: unset;
+		}
+	}
+
+	&-actions {
+		margin-left: var(--text-spacing);
+
+		&,
+		.monaco-action-bar,
+		.action-label {
+			width: auto;
+			height: auto;
+		}
+
+		/*
+		 * No borders, since it interferes with
+		 * editor tab height and unsaved file icon.
+		 */
+		.action-label {
+			box-shadow: none;
+		}
+	}
+}
+
+// Top activity bar
+.sidebar {
+	--s: calc(var(--border-size) + 2px);
+	--offset: 1px;
+
+	position: relative;
+
+	.composite.has-composite-bar {
+		overflow: visible;
+
+		.monaco-action-bar {
+			height: unset;
+
+			.action-item {
+				// Allow icon tabs to be small
+				min-width: unset;
+
+				&::before,
+				&::after {
+					display: block;
+
+					opacity: 1;
+					margin: 0;
+				}
+			}
+		}
+
+		& + .title {
+			padding: 0;
+			margin-top: var(--s);
+			margin-left: calc(var(--s) + var(--offset));
+
+			position: absolute;
+			width: calc(100% - var(--s) * 2 - var(--offset) * 2);
+			overflow: visible;
+		}
+
+		& ~ .content {
+			--tabs-compensation: 8px;
+
+			& > .composite {
+				@include tabs.content;
+
+				padding: var(--s);
+				padding-top: calc(var(--s) + 17px);
+
+				.pane-header {
+					margin-bottom: 2px;
+				}
+
+				.actions {
+					display: block;
+				}
+
+				&:not(.extensions-viewlet) .monaco-list {
+					height: calc(100% - 3px);
+				}
+			}
+		}
+	}
+}
+
+// Panel
+.part.panel {
+	.monaco-action-bar {
+		height: 100%;
+
+		.action-item:not(.select-container) {
+			font: var(--text-ui);
+			text-transform: unset;
+
+			cursor: unset;
+
+			&::before,
+			&::after {
+				opacity: 1;
+				background-color: transparent;
+				margin: 0;
+
+				display: block;
+			}
+		}
+	}
+
+	.tabs-container {
+		padding: 0;
+		border: none;
+
+		.monaco-list {
+			width: calc(100% - 64px);
+			height: calc(100% - 2px);
+		}
+
+		.actions {
+			display: block;
+		}
+	}
+}
+
+// Settings
+.settings-tabs-widget {
+	@include tabs.container;
+
+	// !important
+	& > .monaco-action-bar .action {
+		&-item {
+			overflow: visible;
+		}
+
+		&-label {
+			@include tabs.tab($selected-sel: '&.checked');
+
+			opacity: 1;
+			font-size: var(--text-ui-size);
+
+			overflow: visible;
+
+			&.checked {
+				background-color: var(--color-button-face);
+				margin-top: 1px;
+			}
+		}
+	}
+}
+
+// Marketplace
+.navbar {
+	@include tabs.container;
+
+	font: var(--text-ui);
+	border: none;
+	padding: 0;
+
+	height: unset;
+}
+
+.action {
+	// !important
+	.extension-editor > .body > .navbar > .monaco-action-bar > &s-container > &-item > &-label {
+		@include extends.text-reset;
+		@include tabs.tab($selected-sel: "&[aria-checked='true']");
+
+		&[aria-checked="true"] {
+			margin-top: 1px;
+		}
+	}
+}

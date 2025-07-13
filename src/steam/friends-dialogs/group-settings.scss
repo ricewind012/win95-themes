@@ -1,0 +1,160 @@
+@use 'shared/controls';
+@use 'shared/table';
+@use 'shared/tabs';
+@use 'shared/text';
+@use 'shared/window';
+@use 'shared++/extends';
+
+.ChatGroupSettingsChannels_Row {
+	.ChannelDeleteButton {
+		@include controls.button;
+		@include extends.text-reset;
+
+		height: fit-content;
+	}
+
+	._DialogRow {
+		background: none;
+		color: inherit;
+		padding: 0;
+		margin: 0;
+
+		height: unset;
+
+		&Label,
+		&SecondaryLabel {
+			font: var(--text-ui);
+			margin: 0;
+		}
+
+		svg {
+			display: none;
+		}
+	}
+}
+
+.createNewRoleButton {
+	// TODO: mixin
+	position: fixed;
+	right: var(--pos);
+	bottom: var(--pos);
+	height: unset;
+
+	svg {
+		display: none;
+	}
+}
+
+.DialogInnerBody > .displayColumn {
+	@include controls.groupbox;
+
+	gap: var(--text-spacing);
+
+	.DialogHBar {
+		display: none;
+	}
+
+	.DialogLabel {
+		@include extends.legend-as-div;
+	}
+}
+
+.DialogSpanningTable {
+	@include window.content-container;
+
+	td,
+	th {
+		@include extends.text-reset;
+	}
+
+	td {
+		@include table.row;
+	}
+
+	thead th {
+		@include table.header-row;
+	}
+
+	tbody tr {
+		background: none;
+	}
+}
+
+.GeneralChatSettings {
+	@include controls.groupbox;
+
+	& > .Panel {
+		@include text.input-label;
+	}
+}
+
+.PermissionsSectionHeader {
+	@include extends.legend-as-div;
+}
+
+.roleButton {
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+
+	svg {
+		display: none;
+	}
+}
+
+.roleList {
+	@include tabs.content;
+
+	flex-grow: 1;
+
+	.DialogBody {
+		box-shadow: none;
+		padding: 0;
+	}
+}
+
+.rolePriorityButton {
+	@include controls.button;
+	@include window.titlebar-button;
+
+	opacity: 1;
+
+	width: 16px;
+
+	&.Disabled {
+		@include controls.input-disabled;
+		@include window.titlebar-button-disabled;
+
+		pointer-events: none;
+	}
+
+	&.roleUp,
+	&.roleDown {
+		--button-img-size: 7px 4px;
+		--button-img-pos: center;
+	}
+
+	&.roleUp {
+		--button-img: var(--icon-arrow-top);
+	}
+
+	&.roleDown {
+		--button-img: var(--icon-arrow-bottom);
+
+		top: 0;
+	}
+
+	svg {
+		display: none;
+	}
+}
+
+.rolePriorityContainer {
+	width: unset;
+	height: unset;
+}
+
+.roleSubtitle {
+	@include extends.text-reset;
+}
+

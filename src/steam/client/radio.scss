@@ -1,0 +1,45 @@
+@use 'shared/controls';
+@use 'shared/text';
+
+#Group,
+#Button {
+	background-color: transparent;
+	padding: 0;
+}
+
+#Button {
+	@include text.input-label;
+	@include controls.radio($checked-sel: '&#Active');
+
+	font: var(--text-ui);
+	color: var(--color-button-text);
+	text-align: left;
+	text-shadow: none;
+	gap: var(--text-spacing);
+
+	position: relative;
+	width: unset;
+	flex-direction: row;
+	justify-content: left;
+
+	&:not(#Active)::before {
+		display: none;
+	}
+
+	&::before,
+	&::after {
+		content: '';
+	}
+
+	// Use as ::before for label spacing
+	&::after {
+		width: calc(var(--sel-button-size) + var(--label-spacing) - var(--text-spacing));
+		order: -1;
+	}
+}
+
+#Group {
+	box-shadow: none;
+	gap: var(--text-spacing);
+	flex-direction: column;
+}

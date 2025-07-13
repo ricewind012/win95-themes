@@ -1,0 +1,5 @@
+@use 'shared/window';
+
+#Container {
+	@include window.content-container;
+}

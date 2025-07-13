@@ -1,0 +1,84 @@
+@use 'shared/controls';
+
+.actionsBiteSizePopout {
+	gap: var(--dialog-button-spacing);
+
+	display: grid;
+	grid-template-columns: 60% 40%;
+
+	// Icon only buttons
+	& > [aria-label]::before {
+		content: attr(aria-label);
+	}
+}
+
+.activityBiteSizePopout {
+	background-color: transparent;
+	padding: 0;
+
+	& > :first-child {
+		display: none;
+	}
+
+	.bar {
+		@include controls.progress-bar($filled-sel: '.barInner');
+
+		background-color: transparent;
+	}
+
+	[role="button"] > * {
+		font: var(--text-ui);
+	}
+
+	// TODO: unify
+	svg {
+		display: none;
+	}
+}
+
+.activityName {
+	font-weight: bold;
+}
+
+.biteSizeOverlayBackground {
+	background-color: transparent;
+	border: none;
+
+	& > div {
+		padding: 0;
+	}
+}
+
+.nicknameIcons {
+	padding-top: 1px;
+
+	position: absolute;
+	top: var(--pos);
+	right: calc(var(--pos) + 26px * 3);
+}
+
+.userPopoutInner {
+	& > .body {
+		gap: 0;
+		padding: 0 8px;
+
+		overflow: visible;
+		position: unset;
+		z-index: 2;
+	}
+
+	& > footer {
+		padding: 0 8px 8px;
+	}
+
+	& > header {
+		& > .clickable {
+			left: 14px;
+		}
+
+		circle {
+			cx: 54;
+		}
+	}
+}
+

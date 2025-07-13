@@ -1,0 +1,27 @@
+@use 'shared/listbox';
+@use 'shared++/extends';
+
+#LibraryImageBackgroundGlow {
+	display: none;
+}
+
+#SortingDropDownContainer {
+	// ANOTHER fucking context menu, AND it has an !important
+	.DesktopUI & > div {
+		@include listbox.container;
+	}
+}
+
+#SortingDropDownItems {
+	@include extends.text-reset;
+
+	margin: 0;
+}
+
+#SortingDropDownLabel {
+	@include extends.text-reset;
+
+	&::after {
+		content: ': ';
+	}
+}

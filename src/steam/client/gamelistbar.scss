@@ -1,0 +1,27 @@
+@use 'shared/controls';
+
+#Container {
+	background-image: none;
+	gap: var(--window-gap);
+}
+
+#GameListHomeAndSearch {
+	background-color: transparent;
+	box-shadow: none;
+	gap: var(--dialog-button-spacing);
+	padding: 0;
+	padding-bottom: 2px;
+
+	height: unset;
+	z-index: 1;
+
+	a {
+		@include controls.button;
+
+		height: unset;
+
+		&[aria-current] {
+			@include controls.button-active;
+		}
+	}
+}

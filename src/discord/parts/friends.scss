@@ -1,0 +1,75 @@
+@use 'shared/tabs';
+@use 'shared/window';
+@use 'shared++/extends';
+
+#add_friend-tab > header {
+	border: none;
+	padding: 0;
+
+	& > h2 {
+		display: none;
+	}
+}
+
+.addFriendInputWrapper {
+	background-color: transparent;
+	border: none;
+	padding: 0;
+	margin-top: var(--text-spacing);
+}
+
+[data-list-id="people"] {
+	@include window.content-container;
+	@include extends.move-scrollbar;
+}
+
+.tabBody {
+	background-color: var(--color-button-face);
+	padding: var(--dialog-spacing);
+	padding-top: calc(var(--dialog-spacing) + var(--tabs-height));
+
+	[data-list-id="people"] {
+		margin-top: var(--window-gap);
+
+		[role="button"] {
+			display: none;
+		}
+
+		[role="listitem"] {
+			line-height: inherit;
+			border: none;
+			padding: 8px;
+			margin: 0;
+
+			height: unset;
+
+			&:hover {
+				background-color: var(--color-highlight);
+				color: var(--color-highlight-text);
+				--header-primary: var(--color-highlight-text);
+			}
+		}
+
+		.discriminator {
+			@include extends.text-reset;
+
+			visibility: visible;
+			@include extends.parentheses;
+		}
+	}
+
+	[role="tabpanel"] {
+		@include tabs.content($compact: true);
+	}
+
+	.sectionTitle {
+		display: none;
+	}
+}
+
+[role="navigation"] > div > .children > [role="tablist"] {
+	position: fixed;
+	top: 67px;
+	left: 343px;
+}
+

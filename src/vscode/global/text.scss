@@ -1,0 +1,21 @@
+@use 'shared/text';
+@use 'shared++/extends';
+
+.checkbox-action-item {
+	@include text.input-label;
+
+	& > .checkbox-label {
+		font-size: inherit;
+	}
+}
+
+.codicon {
+	font-size: var(--font-ui-size);
+}
+
+.monaco-grid-view .label-description:not(:empty, :has(> :empty)) {
+	opacity: 1;
+	font: var(--text-ui);
+	@include extends.parentheses;
+	margin-left: var(--text-spacing);
+}

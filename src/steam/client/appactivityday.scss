@@ -1,0 +1,64 @@
+@use 'shared/controls';
+@use 'shared++/extends';
+
+#AppActivityDate,
+#PartnerEventFeaturedHeader {
+	@include extends.legend-as-div;
+	@include extends.text-reset;
+
+	background: var(--color-window);
+}
+
+#AppActivityDay,
+#PartnerEvent {
+	@include controls.groupbox;
+
+	background: none;
+}
+
+#EventBody {
+	box-shadow: none;
+	margin: 0;
+}
+
+#PartnerEventMediumImage_Container {
+	background: none;
+}
+
+#PartnerEventMediumImage_Contents {
+	padding: 0;
+}
+
+#PartnerEventMediumImage_Summary {
+	font: var(--text-ui);
+	text-shadow: none;
+	color: inherit;
+}
+
+#PartnerEventMediumImage_TextColumn {
+	text-shadow: none;
+	padding: 0;
+}
+
+#PartnerEventMediumImage_Title {
+	@include extends.text-reset;
+}
+
+#PartnerEventTextOnly_Container {
+	padding: 0;
+}
+
+#PartnerEventTextOnly_Icon {
+	width: 32px;
+	height: 32px;
+}
+
+#PartnerEventTextOnly_Title {
+	@include extends.text-reset;
+}
+
+#PartnerEventType {
+	@include extends.text-reset;
+
+	color: var(--color-gray-text);
+}

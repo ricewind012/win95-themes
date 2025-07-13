@@ -1,0 +1,215 @@
+@use 'shared/controls';
+@use 'shared/text';
+@use 'shared++/extends';
+
+%-vencord-groupbox-header {
+	&::before {
+		content: var(--header-text);
+
+		left: 10px;
+
+		@include extends.legend-as-div;
+	}
+}
+
+[id^="vencord"],
+#vesktop-tab {
+	& > div > h2 {
+		// This eliminates *all* subheaders, they are not needed anyway
+		display: none;
+	}
+}
+
+#vencordthemes-tab {
+	&::before {
+		--pos: calc(var(--tabpanel-spacing) + var(--border-size));
+
+		content: '';
+
+		position: absolute;
+		inset: var(--pos);
+		top: calc(var(--pos) + var(--tabs-height));
+		z-index: 1;
+
+		background-color: transparent;
+		box-shadow: var(--border-button-raised);
+
+		pointer-events: none;
+	}
+}
+
+.vc {
+	@each $i in top bottom {
+		@each $j in 8 16 20 {
+			&-m-#{$i}-#{$j} {
+				margin-#{$i}: var(--text-spacing);
+			}
+		}
+	}
+
+	&-addon-card {
+		opacity: 1;
+		padding: 0;
+
+		.default-colors {
+			opacity: 1;
+			background-color: transparent;
+
+			width: unset;
+			height: unset;
+		}
+
+		.vc-switch-slider {
+			display: none;
+		}
+
+		input[type="checkbox"] {
+			opacity: 1;
+		}
+	}
+
+	&-addon-header {
+		gap: var(--label-spacing);
+		margin-bottom: var(--text-spacing);
+
+		& > div:not([class]) {
+			order: -1;
+		}
+	}
+
+	&-addon-note {
+		color: var(--color-gray-text);
+		margin-left: calc(var(--sel-button-size) + var(--label-spacing));
+
+		height: unset;
+	}
+
+	&-plugins-filter-controls {
+		--header-text: 'Filter';
+
+		@include controls.groupbox;
+		@extend %-vencord-groupbox-header;
+
+		height: unset;
+	}
+
+	&-plugins-grid {
+		--header-text: 'Plugins';
+
+		@include controls.groupbox;
+		@extend %-vencord-groupbox-header;
+
+		gap: var(--text-spacing);
+
+		&:last-child {
+			--header-text: 'Required Plugins';
+		}
+	}
+
+	&-plugins-info-card {
+		@include controls.groupbox;
+
+		height: unset;
+
+		& > h2 {
+			@include extends.text-reset;
+			@include extends.legend-as-div;
+		}
+
+		& > div {
+			@include extends.text-reset;
+		}
+	}
+
+	// Plugin settings
+	[role="dialog"] > &-text-selectable {
+		[class*="content_"] > :first-child {
+			& > div {
+				@include controls.groupbox;
+				@extend %-vencord-groupbox-header;
+
+				&:nth-child(2) {
+					--header-text: 'Description';
+				}
+
+				&:nth-child(4) {
+					--header-text: 'Authors';
+
+					width: 100%;
+
+					& > div {
+						gap: 10px;
+					}
+
+					foreignObject {
+						mask: none;
+					}
+				}
+			}
+
+			& > h2 {
+				display: none;
+			}
+		}
+
+		[style^="gap: 12px"] {
+			gap: 0;
+			margin: 0;
+
+			// TODO: move somewhere to settings/dialog instead
+			& > :has([class*="h5_"]) {
+				@include text.input-label;
+
+				box-shadow: none;
+				padding: 0;
+				margin-bottom: var(--text-spacing);
+
+				& > h2 {
+					position: initial;
+
+					&::after {
+						content: ':';
+					}
+				}
+			}
+		}
+
+		.vc-m-bottom-16 {
+			@include controls.groupbox;
+
+			& > h2 {
+				@include extends.text-reset;
+				@include extends.legend-as-div;
+			}
+		}
+	}
+
+	&-settings-quick-actions-card {
+		gap: var(--dialog-button-spacing);
+
+		justify-content: left;
+	}
+}
+
+.vcd {
+	&-location-btns {
+		gap: var(--dialog-button-spacing);
+		margin-top: var(--text-spacing);
+
+		display: flex;
+	}
+
+	&-settings-section {
+		@include controls.groupbox;
+
+		// !important in dialogs/settings.scss
+		// TODO(port): originally div&
+		& > [class*="sectionTitle_"] {
+			& > h2 {
+				@include extends.text-reset;
+				@include extends.legend-as-div;
+			}
+		}
+	}
+}
+

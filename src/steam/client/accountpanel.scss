@@ -1,0 +1,10 @@
+@use 'shared++/extends';
+
+#FatButton svg,
+#Details {
+	display: none;
+}
+
+#Label {
+	@include extends.text-reset;
+}

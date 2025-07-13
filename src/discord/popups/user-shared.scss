@@ -1,0 +1,60 @@
+@use 'shared/controls';
+@use 'shared/window';
+
+.userPopoutInner,
+.userProfileModalInner {
+	--pos: calc(var(--border-size) + var(--window-spacing) + 8px);
+
+	background-color: transparent;
+	gap: 0;
+	padding: 0;
+
+	[role="list"] {
+		@include window.statusbar;
+	}
+
+	.tags > [role="group"],
+	[role="listitem"] {
+		@include window.statusbar-item;
+
+		background-color: transparent;
+		border: none;
+	}
+
+	.biteSize,
+	.fullSize {
+		button {
+			@include controls.icon-button;
+		}
+	}
+
+	.container {
+		margin: 0;
+	}
+
+	& > .container {
+		margin: 16px;
+	}
+
+	& > .wrapper {
+		gap: 0;
+		padding: 0;
+
+		right: var(--pos);
+	}
+}
+
+.userPopoutInner > .body,
+.fullSizeOverlayBackground .scrollerBase {
+	& > * {
+		&::after {
+			content: '';
+
+			@include controls.separator;
+
+			display: inline-block;
+			width: 100%;
+		}
+	}
+}
+

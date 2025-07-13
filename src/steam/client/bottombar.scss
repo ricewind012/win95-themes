@@ -1,0 +1,71 @@
+@use 'shared++/extends';
+
+// Just use the menubar
+#AddGameButton,
+// ^
+#FriendsButton,
+#Icon,
+#IconBevel,
+// I am not styling your 10th progress bar
+#ProgressBar {
+	display: none;
+}
+
+#BottomBar {
+	--statusbar-height: calc(var(--text-full) + 2px);
+
+	background: transparent;
+	box-shadow: var(--border-statusbar);
+	padding-bottom: calc(var(--statusbar-height) + var(--window-gap));
+
+	flex-basis: unset;
+
+	-webkit-app-region: no-drag;
+}
+
+#DownloadStatusContent {
+	color: var(--color-button-text);
+	padding: 0;
+
+	// Empty div without a class
+	// TODO: not there anymore in beta ?
+	& > :empty {
+		display: none;
+	}
+}
+
+#DetailedDownloadProgress,
+#DownloadStatus {
+	position: fixed;
+	left: 8px;
+	bottom: 5px;
+	width: unset;
+	justify-content: center;
+}
+
+#DetailedDownloadProgress {
+	gap: var(--text-spacing);
+
+	#Icon {
+		box-shadow: none;
+
+		width: var(--icon-size);
+		height: var(--icon-size);
+		display: block;
+	}
+}
+
+#Percentage {
+	@include extends.parentheses;
+}
+
+#StatusLine {
+	color: var(--color-button-text);
+	gap: var(--text-spacing);
+}
+
+#Status,
+#Text,
+#Queue {
+	@include extends.text-reset;
+}

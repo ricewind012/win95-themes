@@ -1,0 +1,12 @@
+@use 'shared++/extends';
+
+#AboutSteamDialog {
+	.DialogContent_InnerWidth {
+		height: 100%;
+	}
+}
+
+#DialogBodyLabel {
+	@include extends.text-reset;
+}
+

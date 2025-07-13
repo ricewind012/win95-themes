@@ -1,0 +1,86 @@
+@use 'shared/controls';
+@use 'shared/table';
+@use 'shared/tooltip';
+@use 'shared/window';
+
+// An alternative to "@include window.content-container" for special elements
+@mixin content-container-alt {
+	background-color: var(--color-window);
+
+	margin: var(--border-size);
+
+	&::before {
+		content: '';
+
+		position: fixed;
+		inset: var(--inset);
+
+		pointer-events: none;
+
+		box-shadow: var(--border-field);
+	}
+}
+
+@mixin dialog-title {
+	--s: calc(1px + var(--border-size) + var(--window-spacing));
+
+	color: var(--color-inactive-caption-text);
+	font: var(--text-ui);
+	font-weight: bold;
+
+	position: fixed;
+	left: calc(var(--s) + var(--icon-size) + var(--titlebar-spacing));
+	top: calc(var(--s) + 2px);
+
+	.WindowFocus & {
+		color: var(--color-active-caption-text);
+	}
+}
+
+@mixin statusbar-alt {
+	&::after {
+		content: '';
+
+		position: fixed;
+		left: 4px;
+		right: 4px;
+		bottom: 4px;
+		height: calc(var(--text-full) + 2px);
+
+		box-shadow: var(--border-statusbar);
+		padding: 1px 15px 1px 2px;
+	}
+}
+
+@mixin table-button-arrows {
+	&:has([d="M17.98 26.54L3.20996 11.77H32.75L17.98 26.54Z"]) {
+		@include table.button-arrow-ascending;
+	}
+
+	&:has([d="M17.98 10.23L3.20996 25H32.75L17.98 10.23Z"]) {
+		@include table.button-arrow-descending;
+	}
+}
+
+@mixin tooltip {
+	@include tooltip.container;
+
+	font-size: var(--text-ui-size);
+	box-shadow: none;
+}
+
+@mixin pageable-container-button {
+	@include controls.button;
+	@include window.titlebar-button;
+
+	--button-img-size: 4px 7px;
+	--button-img-pos: center;
+
+	opacity: 1;
+
+	width: unset;
+
+	svg {
+		display: none;
+	}
+}

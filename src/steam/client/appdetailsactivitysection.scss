@@ -1,0 +1,13 @@
+@use 'shared/controls';
+@use 'shared++/extends';
+
+#AddToFeed {
+	@include controls.groupbox;
+}
+
+#ViewLastNews {
+	@include extends.text-reset;
+
+	background-color: transparent;
+	color: var(--color-link);
+}

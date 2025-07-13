@@ -1,0 +1,9 @@
+@use 'shared++/extends';
+
+#ShowMore {
+	width: 148px;
+}
+
+#SubsectionHeader {
+	@include extends.text-reset;
+}

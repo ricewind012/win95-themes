@@ -1,0 +1,25 @@
+@use 'shared/controls';
+@use 'shared++/extends';
+
+#Container {
+	@include controls.groupbox;
+	@include extends.text-reset;
+
+	background-color: transparent;
+}
+
+#Date,
+#Name,
+#Label {
+	@include extends.text-reset;
+}
+
+#GameDescription {
+	@include extends.text-reset;
+
+	padding: 0;
+}
+
+#InnerContainer {
+	padding: 0;
+}

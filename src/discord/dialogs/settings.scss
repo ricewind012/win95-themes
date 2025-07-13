@@ -1,0 +1,162 @@
+@use 'shared/controls';
+@use 'shared/window';
+@use 'shared++/extends';
+
+.contentColumn {
+	min-width: 100%;
+	max-width: 100%;
+	display: flex;
+	flex-direction: column;
+
+	// Messages preview
+	.card.preview {
+		@include window.content-container;
+
+		border: none;
+		margin: 0;
+
+		& > .previewHeader {
+			padding: 8px;
+		}
+
+		test & {
+			display: none;
+		}
+	}
+
+	.divider:empty {
+		display: none;
+	}
+
+	& > [data-text-variant]:first-child,
+	& > div > div > .sectionTitle:first-child,
+	& > div > :is(.sectionTitle, h2):first-child {
+		background:#f09;
+	}
+	/*
+	& > [data-text-variant]:first-child {
+		display: none;
+	}
+	*/
+
+	.sectionTitle + .children {
+		& > div:not([class]):not(:empty), // Accessibility tab
+		[class^="margin"] {
+			@include controls.groupbox;
+
+			h1:first-child,
+			h2:first-child,
+			h3:first-child,
+			h4:first-child,
+			h5:first-child,
+			h6:first-child {
+				@include extends.text-reset;
+				@include extends.legend-as-div;
+
+				opacity: 1;
+			}
+		}
+	}
+}
+
+.customizationSection {
+	@include controls.groupbox;
+
+	& > :first-child {
+		@include extends.text-reset;
+		@include extends.legend-as-div;
+	}
+}
+
+// Make it a normal dialog
+.layers > .layer {
+	opacity: 1;
+	transform: unset;
+
+	&[aria-hidden="false"]:not(:only-child) {
+		--windows-titlebar-offset: 22px;
+		--dialog-size: 90%;
+		--c: calc(100% - var(--dialog-size));
+
+		@include window.container($child: true);
+
+		inset: var(--c);
+		z-index: 999;
+
+		&::before {
+			content: '';
+
+			box-sizing: border-box;
+
+			@include window.titlebar($focused-sel: '&');
+		}
+
+		[role="tablist"][aria-orientation="vertical"] {
+			&::before {
+				--c2: calc(var(--c) + var(--border-size));
+
+				content: attr(aria-label);
+
+				position: fixed;
+				left: calc(var(--c2) + 3px + var(--window-spacing) + 2px);
+				top: calc(var(--c2) + var(--windows-titlebar-offset) + 1px);
+
+				color: var(--color-active-caption-text);
+				font-weight: bold;
+			}
+		}
+
+		.tools {
+			position: fixed;
+			top: calc(var(--titlebar-height) + var(--border-size) * 2 + var(--window-gap) + 10%);
+			right: calc(var(--border-size) * 2 + 4px + 10%);
+
+			.closeButton {
+				@include controls.button;
+				@include window.titlebar-button;
+				@include extends.titlebar-button-close;
+
+				border: none;
+
+				width: unset;
+				flex: unset;
+
+				& > svg {
+					display: none;
+				}
+			}
+
+			.keybind {
+				display: none;
+			}
+		}
+	}
+}
+
+.settingsBackgroundFlashElement {
+	position: unset;
+}
+
+.standardSidebarView {
+	background-color: var(--color-button-face);
+	padding: var(--dialog-spacing);
+
+	inset: var(--border-size);
+
+	.platform-win & {
+		top: var(--windows-titlebar-offset);
+	}
+
+	.sidebar {
+		padding: 0;
+	}
+
+	// TODO: move somewhere else
+	[role="tablist"] {
+		& > .header,
+		& > .separator {
+			display: none;
+		}
+	}
+}
+

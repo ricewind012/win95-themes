@@ -1,0 +1,38 @@
+@use 'shared/controls';
+@use 'shared/window';
+@use 'shared++/extends';
+@use 'shared++/icons';
+
+#Link {
+	background-color: transparent;
+
+	&:hover {
+		text-decoration: underline;
+	}
+}
+
+#LinkInner {
+	font: var(--text-ui);
+	padding-top: 0;
+	margin-right: 12px;
+}
+
+#Links {
+	height: unset;
+}
+
+#LinksSection {
+	& > div {
+		border: none;
+	}
+}
+
+#MenuButton {
+	@include controls.button;
+	@include window.titlebar-button;
+	@include icons.icon-more;
+}
+
+#Text {
+	@include extends.link;
+}

@@ -1,0 +1,25 @@
+#!/bin/sh -e
+
+DIST_DIR=dist
+SRC_DIR=src
+
+name=$DIST_DIR/${1:?}
+
+mkdir -p "$DIST_DIR"
+npx postcss "$SRC_DIR/$1/**/*.scss" \
+	--base "$SRC_DIR" \
+	--dir "$DIST_DIR" \
+	--ext css
+:> "$name.css"
+while IFS= read -r file; do
+	# TODO(port): for now
+	if [ "${file##*.}" != css ]; then
+		continue
+	fi
+
+	cat "$file" >> "$name.css"
+	printf '\n' >> "$name.css"
+done <<-EOF
+$(find "$name/" -type f)
+EOF
+rm -rf "$name"

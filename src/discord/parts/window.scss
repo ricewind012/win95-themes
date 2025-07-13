@@ -1,0 +1,49 @@
+@use 'shared/window';
+
+:root {
+	--titlebar-pos: 0px;
+	--window-pos: 0px;
+
+	&.platform-win {
+		--titlebar-pos: calc(var(--titlebar-height) + var(--window-gap));
+		--window-pos: calc(var(--border-size) + var(--window-spacing));
+
+		@include window.container
+	}
+}
+
+#app-mount > .appAsidePanelWrapper {
+	margin-bottom: calc(var(--statusbar-height) + var(--window-gap));
+
+	:root.platform-win > body > & {
+		margin-top: var(--window-gap);
+	}
+}
+
+#app-mount {
+	--sidebar-width: calc(72px + var(--scrollbar-size) + 240px + var(--window-gap) * 2 + 4px);
+
+	width: calc(100% - var(--window-pos) * 2);
+	height: calc(100% - var(--window-pos) * 2);
+
+	&::before,
+	&::after {
+		content: '';
+
+		position: fixed;
+		bottom: var(--window-pos);
+		height: var(--statusbar-height);
+
+		box-shadow: var(--border-statusbar);
+	}
+
+	&::before {
+		width: calc(var(--sidebar-width) - var(--window-pos) - var(--window-gap));
+	}
+
+	&::after {
+		left: var(--sidebar-width);
+		width: calc(100% - var(--window-pos) - var(--sidebar-width));
+	}
+}
+

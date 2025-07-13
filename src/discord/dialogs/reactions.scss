@@ -1,0 +1,9 @@
+@use 'shared/window';
+
+// !important
+.root .reactorsContainer {
+	@include window.content-container;
+
+	overflow: visible;
+}
+

@@ -1,0 +1,13 @@
+@use 'shared/window';
+
+div#MenuOpen {
+	@include window.menubar-item-active;
+
+	&:active {
+		--color-button-text: var(--color-highlight-text);
+	}
+}
+
+#Separator {
+	border-bottom: none;
+}

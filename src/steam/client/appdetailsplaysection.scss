@@ -1,0 +1,33 @@
+@use 'shared/controls';
+@use 'shared++/extends';
+
+#DetailsProgressContainer {
+	@include controls.progress-bar($filled-sel: '#DetailsProgressBar');
+}
+
+#DetailsSection {
+	padding: 0;
+}
+
+#PlayBarDetailLabel,
+#LastPlayedInfo {
+	color: var(--color-button-text);
+	font-size: var(--text-ui-size);
+}
+
+#PlayBar {
+	opacity: 1;
+	background-image: none;
+	margin: 0;
+}
+
+#PlayBarLabel {
+	@include extends.text-reset;
+
+	font-weight: bold;
+	margin-bottom: var(--text-spacing);
+}
+
+#StickyHeader:not(#PlayBar) {
+	display: none;
+}

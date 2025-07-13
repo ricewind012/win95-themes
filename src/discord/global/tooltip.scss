@@ -1,0 +1,20 @@
+@use 'shared/tooltip';
+@use 'shared++/extends';
+
+.tooltip {
+	@include tooltip.container;
+	@include extends.text-reset;
+
+	opacity: 1;
+	transform: unset;
+}
+
+.tooltipContent {
+	padding: 0;
+}
+
+.tooltip .flowerStarContainer,
+.tooltipPointer {
+	display: none;
+}
+

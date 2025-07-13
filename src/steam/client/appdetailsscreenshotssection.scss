@@ -1,0 +1,6 @@
+@use 'shared++/extends';
+
+#InstructionText,
+#NoneTaken {
+	@include extends.text-reset;
+}

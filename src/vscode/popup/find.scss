@@ -1,0 +1,27 @@
+@use 'shared/controls';
+@use 'shared/window';
+
+.find-widget {
+	@include window.container($child: true);
+
+	height: auto;
+
+	// Horrible layout, kill yourself
+	.button {
+		@include controls.button;
+		@include window.titlebar-button;
+
+		inset: 0;
+
+		&.codicon-widget-close {
+			left: 16px;
+			top: -39px;
+		}
+	}
+
+	.find-part,
+	.replace-part {
+		font: var(--text-ui);
+		margin: 0;
+	}
+}

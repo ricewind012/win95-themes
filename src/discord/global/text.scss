@@ -1,0 +1,55 @@
+@use 'shared++/extends';
+
+::placeholder {
+	font: var(--text-ui);
+}
+
+.description,
+.eyebrow,
+.size14,
+.text,
+.userTag,
+[data-text-variant] {
+	@include extends.text-reset;
+}
+
+.anchor {
+	@include extends.text-reset;
+	@include extends.link;
+}
+
+.channelMention {
+	@include extends.link;
+
+	background-color: transparent;
+	padding: 0;
+
+	&::before {
+		content: '#';
+	}
+
+	svg {
+		display: none;
+	}
+}
+
+[data-text-variant*="bold"] {
+	font-weight: bold;
+}
+
+.badgedItem,
+.titleWithBeta {
+	gap: var(--text-spacing);
+}
+
+.textBadge {
+	@include extends.text-reset;
+
+	background-color: transparent;
+	@include extends.parentheses;
+	padding: 0;
+
+	height: unset;
+	min-height: unset;
+}
+

@@ -1,0 +1,168 @@
+@use 'shared/controls';
+@use 'shared/listbox';
+@use 'shared/menu';
+@use 'shared/window';
+@use 'shared++/extends';
+
+[role="button"][aria-haspopup] {
+	@include controls.combobox($disabled-sel: "[aria-disabled='true']");
+
+	min-width: 73px;
+
+	& > .icons {
+		display: none;
+	}
+
+	.title {
+		margin: 0;
+	}
+}
+
+[role="dialog"]:not([aria-label=""]) {
+	@include window.container($child: true);
+
+	&[aria-label] {
+		&::before {
+			content: attr(aria-label);
+
+			box-sizing: border-box;
+			flex-shrink: 0;
+
+			@include window.titlebar($focused-sel: '&');
+			@include window.titlebar-name;
+		}
+	}
+}
+
+[role="option"] {
+	@include listbox.item($selected-sel: "[tabindex='0']");
+
+	svg {
+		display: none;
+	}
+}
+
+[role="menu"] {
+	@include window.container($child: true);
+
+	width: unset;
+	min-width: unset;
+
+	& > .scroller {
+		padding: 0;
+
+		overflow: auto;
+	}
+
+	[role="img"],
+	svg {
+		display: none;
+	}
+}
+
+[role^="menuitem"] {
+	@include menu.item($selected-sel: '&.focused');
+
+	opacity: 1;
+	font: var(--text-ui);
+	color: var(--color-button-text);
+	margin: 0;
+
+	.hintContainer {
+		color: var(--color-gray-text);
+	}
+
+	.optionLabel {
+		@include extends.text-reset;
+	}
+
+	.optionName {
+		margin: 0;
+	}
+
+	.subtext,
+	.optionIcon, // Attach button
+	.iconContainer {
+		display: none;
+	}
+}
+
+[role="radio"] {
+	@include controls.radio(
+		$checked-sel: '&[aria-checked="true"]',
+		$disabled-sel: '[role="radiogroup"][aria-disabled="true"] > &'
+	);
+
+	opacity: 1;
+	background-color: transparent;
+	margin-bottom: var(--text-spacing);
+
+	& > div {
+		border: none;
+		gap: var(--label-spacing);
+		padding: 0;
+
+		& > :first-child {
+			order: -1;
+			align-self: start;
+		}
+
+		svg {
+			display: none;
+		}
+	}
+
+	[data-text-variant="text-md/medium"] {}
+
+	[data-text-variant="text-sm/normal"] {
+		color: var(--color-gray-text);
+	}
+}
+
+[role="separator"] {
+	@include controls.separator;
+
+	margin-inline: 0;
+}
+
+[role="slider"] {
+	@include controls.slider($thumb-sel: '.grabber', $track-sel: '.bar');
+
+	.bar {
+		top: 20px;
+	}
+
+	.barFill {
+		display: none;
+	}
+
+	.grabber {
+		border: none;
+		box-shadow: none;
+
+		cursor: initial;
+	}
+}
+
+[role="tab"] {
+	@include extends.text-reset;
+
+	overflow: visible;
+}
+
+[role="tablist"] {
+	border: none;
+	gap: 0;
+	padding: 0;
+	margin-top: 0;
+	margin-bottom: 0;
+}
+
+[role="tabpanel"] {
+	margin: 0;
+}
+
+[role="textbox"] {
+	@include controls.text-field;
+}
+

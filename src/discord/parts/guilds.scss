@@ -1,0 +1,91 @@
+@use 'shared/controls';
+@use 'shared/window';
+
+.guilds {
+	margin-top: calc(var(--toolbar-container-spacing) * 2 + var(--icon-button-height) + var(--window-gap));
+	margin-right: var(--window-gap);
+
+	width: calc(72px + var(--scrollbar-size));
+}
+
+[data-list-id="guildsnav"] {
+	@include window.content-container;
+
+	& > [dir] {
+		padding: 0;
+
+		& > :nth-child(1),
+		& > :nth-last-child(4),
+		& > :nth-last-child(3) {
+			--pos: calc(var(--window-pos) + var(--toolbar-container-spacing));
+
+			position: fixed;
+			top: calc(var(--titlebar-pos) + var(--pos));
+			width: var(--icon-button-width);
+
+			& > div {
+				width: var(--icon-button-width);
+			}
+
+			// TODO: remove when addins icons
+			[role="img"] {
+				width: 16px;
+				height: 16px;
+			}
+
+			[role="treeitem"] {
+				@include controls.button;
+				@include controls.icon-button;
+
+				width: var(--icon-button-width);
+			}
+
+			.listItemWrapper.selected [role="treeitem"] {
+				@include controls.button-active;
+			}
+
+			.pill {
+				display: none;
+			}
+
+			.wrapper {
+				width: var(--icon-button-width);
+			}
+		}
+
+		& > :nth-child(1) {
+			left: var(--pos);
+
+			.childWrapper {
+				background-color: transparent;
+				color: inherit;
+
+				height: unset;
+			}
+		}
+
+		& > :nth-last-child(4) {
+			left: calc(var(--toolbar-container-spacing) + var(--icon-button-width) + var(--window-pos));
+		}
+
+		& > :nth-last-child(5) {
+			left: calc(var(--toolbar-container-spacing) + var(--icon-button-width) * 2 + var(--window-pos));
+			z-index: 1;
+		}
+	}
+
+	& > .footer,
+	mask {
+		display: none;
+	}
+
+	[role="treeitem"] {
+		padding: 0;
+		margin: 0;
+
+		&::before {
+			display: none;
+		}
+	}
+}
+

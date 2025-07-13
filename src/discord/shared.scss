@@ -1,0 +1,52 @@
+@use 'shared/controls';
+
+// TODO: remove
+// TODO: add position: absolute version
+// An alternative to "@include window.content-container" for special elements
+@mixin content-container-alt {
+	background-color: var(--color-window);
+
+	margin: var(--border-size);
+
+	&::before {
+		content: '';
+
+		position: absolute;
+		inset: var(--inset);
+
+		pointer-events: none;
+
+		box-shadow: var(--border-field);
+	}
+}
+
+@mixin pseudo-separator {
+	content: '';
+
+	width: 100%;
+	display: inline-block;
+
+	@include controls.separator;
+}
+
+@mixin select-as-button {
+	@include controls.combobox;
+
+	&:active,
+	&:focus {
+		outline: none;
+		color: var(--color-window-text);
+		text-shadow: none;
+		box-shadow: var(--border-field);
+	}
+}
+
+@mixin use-aria-label {
+	&::before {
+		content: attr(aria-label);
+	}
+
+	& > * {
+		display: none;
+	}
+}

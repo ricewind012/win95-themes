@@ -1,0 +1,283 @@
+@use 'shared/controls';
+@use 'shared/list';
+@use 'shared/tree';
+@use 'shared/window';
+@use 'shared++/extends';
+@use 'shared++/icons';
+@use '../shared';
+
+.sidebar {
+	margin-right: var(--window-gap);
+
+	.guildIconContainer,
+	.guildIconV2Container,
+	.spineBorder {
+		display: none;
+	}
+
+	& > nav {
+		@include window.content-container;
+
+		--pos: calc(var(--toolbar-container-spacing) * 2 + var(--icon-button-height) + var(--window-gap));
+
+		margin-top: var(--pos);
+
+		& > :first-child {
+			box-shadow: var(--border-statusbar);
+			padding: var(--toolbar-container-spacing);
+			margin-left: calc(var(--border-size) * -1);
+
+			position: fixed;
+			top: calc(var(--window-pos) + var(--titlebar-pos));
+			height: 34px;
+			width: 240px;
+			z-index: 0;
+
+			& > button {
+				text-align: center;
+
+				width: calc(100% - var(--icon-button-width) - var(--toolbar-spacing));
+				height: unset;
+			}
+
+			& > div {
+				opacity: .5;
+				margin: 1px;
+
+				transform: none;
+				width: calc(100% - 2px);
+				height: 32px;
+			}
+
+			& > header {
+				// TODO: use modifier-hover for transparent ?
+				background-color: transparent;
+				padding: 0;
+
+				& > div {
+					filter: none;
+
+					height: unset;
+					justify-content: end;
+				}
+			}
+
+			[data-text-variant],
+			// Arrow
+			.headerChildren {
+				display: none;
+			}
+
+			[role="button"] {
+				@include controls.button;
+				@include controls.icon-button;
+				@include icons.icon-more;
+
+				// TODO
+				&::before {
+					background-size: 16px auto;
+					margin-left: -1px;
+				}
+			}
+
+			.bannerImage {
+				transform: none;
+
+				&,
+				& > img {
+					height: inherit;
+				}
+
+				&::before {
+					background-image: none;
+				}
+			}
+		}
+	}
+
+	& > section {
+		.avatarWrapper {
+			@include controls.button;
+			@include shared.use-aria-label;
+
+			// TODO: icon
+			height: 22px;
+			justify-content: center;
+		}
+
+		button {
+			@include controls.icon-button;
+
+			width: unset;
+
+			// TODO: remove when adding icons
+			svg {
+				width: 16px;
+				height: 16px;
+			}
+		}
+
+		& > :first-child > div {
+			border: none;
+			padding-bottom: 0;
+			margin-bottom: -8px;
+
+			&::after {
+				@include shared.pseudo-separator;
+			}
+		}
+
+		& > :nth-child(2) {
+			gap: var(--toolbar-spacing);
+			padding: var(--toolbar-container-spacing);
+
+			height: unset;
+		}
+	}
+
+	.name {
+		@include extends.text-reset;
+	}
+}
+
+#channels {
+	// Banner
+	& > ul > [style="height: 84px;"],
+	& > ul > [style="height: 12px;"],
+	// "Browse Channels"
+	& > ul > li:not([class]),
+	.sectionDivider {
+		display: none;
+	}
+
+	.containerDefault {
+		padding: 0;
+
+		&::before {
+			content: '';
+
+			position: absolute;
+			top: -1px;
+			left: 8px;
+			height: 25px;
+
+			border-left: 1px dotted var(--color-gray-text);
+		}
+
+		.children,
+		.iconContainer,
+		svg {
+			display: none;
+		}
+
+		.link {
+			@include extends.text-reset;
+
+			background-color: var(--color-window);
+		}
+
+		.iconVisibility {
+			--offset: calc(var(--icon-size) + 4px);
+
+			@include tree.item($expanded-sel: '&');
+
+			&::before {
+				top: -14px;
+				height: 100%;
+				z-index: -1;
+			}
+
+			&::after {
+			}
+
+			&.modeSelected {
+				.link {
+					@include list.item-name-selected;
+				}
+			}
+
+			&.typeDefault,
+			&.typeVoice {
+				margin-left: calc(var(--offset) * 2);
+			}
+
+			&.typeThread {
+				margin-left: calc(var(--offset) * 3.25);
+
+				&::after {
+					top: -7px;
+					left: -37px;
+					height: calc(100% - 1px);
+				}
+			}
+		}
+
+		& > .wrapperCommon {
+			margin-left: 0;
+
+			&.collapsed {
+				--icon: var(--tree-icon-collapsed);
+			}
+
+			&::before {
+				display: none;
+			}
+
+			& > .mainContent {
+				@include tree.item-icon;
+
+				&::after {
+					border-left: none;
+				}
+
+				background-color: var(--color-window);
+				padding-left: calc(var(--icon-size) + var(--tree-spacing));
+
+				overflow: visible;
+				width: unset;
+				height: unset;
+
+				& > .name {
+					margin-top: -2px;
+				}
+			}
+		}
+	}
+}
+
+.privateChannels {
+	.interactiveSelected {
+		@include list.item-name-selected;
+	}
+
+	& > .scroller {
+		background-color: transparent;
+	}
+
+	[role="listitem"] {
+		margin: 0;
+	}
+}
+
+// <svg> with same class
+div.privateChannelRecipientsInviteButtonIcon {
+	@include controls.button;
+	@include controls.icon-button;
+
+	// TODO: remove when doing icons
+	padding: 3px;
+
+	position: fixed;
+	top: calc(var(--window-pos) + var(--titlebar-pos) + var(--toolbar-container-spacing));
+	// TODO: scss
+	left: calc(
+		var(--window-pos)
+		+ 72px
+		+ var(--scrollbar-size)
+		+ var(--window-gap)
+		+ 240px
+		- var(--icon-button-width)
+		- var(--toolbar-container-spacing)
+	);
+}
+

@@ -1,0 +1,36 @@
+@use 'shared/controls';
+@use 'shared++/extends';
+@use '../shared';
+
+#AchievementSearchHeader {
+	@include controls.groupbox;
+
+	gap: var(--text-spacing);
+
+	// Move out of content
+	position: fixed;
+	top: -52px;
+	right: 0;
+	left: 0;
+}
+
+#Label {
+	@include extends.text-reset;
+}
+
+#ProgressLabel {
+	@include extends.legend-as-div;
+
+	gap: var(--text-spacing);
+}
+
+#StatsBlock {
+	@include controls.groupbox;
+
+	background-color: transparent;
+}
+
+#Title {
+	@include shared.dialog-title;
+}
+

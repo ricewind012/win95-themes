@@ -1,0 +1,62 @@
+@use 'shared/controls';
+@use 'shared++/extends';
+
+#ActionLabel {
+	text-transform: unset;
+	margin-bottom: var(--text-spacing);
+
+	width: 148px;
+
+	svg {
+		display: none;
+	}
+}
+
+#Description {
+	@include extends.text-reset;
+
+	background-image: none;
+	padding: 0;
+}
+
+#Disabled {
+	& > .DialogButton {
+		@include controls.input-disabled;
+	}
+}
+
+#Option {
+	margin: 0;
+}
+
+#Required {
+	margin-left: var(--text-spacing);
+}
+
+#SaveCollectionContainer {
+	.DialogBody {
+		gap: 12px;
+	}
+
+	.DialogFooter {
+		padding: 0;
+	}
+
+	.DialogLabel {
+		margin-bottom: var(--text-spacing);
+	}
+
+	.DialogTextInputBase {
+		text-transform: unset;
+	}
+}
+
+#SaveSearchDescription {
+	font: var(--text-ui);
+	margin-top: var(--messagebox-content-spacing);
+}
+
+#TwoOptionsContainer {
+	background-color: transparent;
+	gap: 16px;
+}

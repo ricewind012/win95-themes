@@ -1,0 +1,150 @@
+@use 'shared/controls';
+@use 'shared/window';
+
+// TODO: put them in toolbar
+.barBase {
+	opacity: 1;
+	background-color: transparent;
+	padding: 0;
+
+	right: calc(var(--border-size) + var(--scrollbar-size));
+	left: var(--border-size);
+	height: unset;
+	min-height: unset;
+
+	&:first-child {
+		top: var(--border-size);
+	}
+
+	&:last-child {
+		bottom: var(--border-size);
+	}
+
+	button {
+		text-align: center;
+	}
+
+	// TODO: unify
+	svg {
+		display: none;
+	}
+}
+
+.chat {
+	background-color: var(--color-button-face);
+
+	& > .content {
+		gap: var(--window-gap);
+
+		& > .container {
+			@include window.content-container;
+		}
+	}
+}
+
+[data-list-id="chat-messages"] {
+	& > [role="separator"] {
+		margin: 8px 16px;
+	}
+}
+
+.message {
+	min-height: unset;
+
+	&.compact {
+		i {
+			opacity: 1;
+
+			position: unset;
+			display: contents;
+		}
+
+		.timestamp {
+			width: 3.5rem;
+		}
+	}
+
+	&.cozy {
+		.header {
+			line-height: var(--text-line);
+			margin-bottom: var(--text-spacing);
+
+			min-height: unset;
+		}
+	}
+
+	& > .buttonContainer {
+		[role="button"] {
+			@include controls.button;
+			@include controls.icon-button;
+
+			// TODO: remove when doing icons
+			svg {
+				width: 16px;
+				height: 16px;
+			}
+		}
+
+		[role="group"] {
+			background-color: transparent;
+			border: none;
+			padding: 0;
+		}
+	}
+
+	.headerText {
+		margin: 0;
+	}
+
+	.roleDot {
+		margin-right: var(--text-spacing);
+	}
+
+	.markup {
+		font-size: var(--text-ui-size);
+		line-height: 1.5;
+	}
+
+	.username {
+		font: var(--text-ui);
+		font-weight: bold;
+	}
+
+	// server invite ?
+	[id^="message-accessories-"] > .wrapper {
+		background-color: pink;
+	}
+}
+
+#messagesNavigationDescription + div {
+	.buttonIcon,
+	& > .emptyChannelIcon {
+		display: none;
+	}
+
+	button > div > div {
+		justify-content: center;
+	}
+}
+
+.messagesWrapper {
+	@include window.content-container;
+
+	& > .scroller {
+		inset: var(--border-size);
+	}
+}
+
+.repliedTextPreview {
+	& > div {
+		padding: 0;
+		margin: 0;
+	}
+}
+
+.timestamp {
+	font: var(--text-ui);
+
+	height: unset;
+}
+
