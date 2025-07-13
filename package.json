@@ -1,6 +1,9 @@
 {
-	"private": true,
 	"type": "module",
+	"private": true,
+	"scripts": {
+		"build": "./build"
+	},
 	"dependencies": {
 		"@csstools/postcss-sass": "^5.1.1",
 		"postcss-cli": "^11.0.1",
@@ -10,8 +13,5 @@
 	},
 	"devDependencies": {
 		"@biomejs/biome": "^2.1.1"
-	},
-	"scripts": {
-		"build": "./build"
 	}
 }

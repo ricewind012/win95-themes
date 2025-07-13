@@ -3,7 +3,7 @@
 DIST_DIR=dist
 SRC_DIR=src
 
-name=$DIST_DIR/$1
+name=$DIST_DIR/${1:?}
 
 mkdir -p "$DIST_DIR"
 npx postcss "$SRC_DIR/$1/**/*.scss" \
@@ -22,4 +22,4 @@ while IFS= read -r file; do
 done <<-EOF
 $(find "$name/" -type f)
 EOF
-#rm -rf "$name"
+rm -rf "$name"
