@@ -1,9 +1,9 @@
-@use 'shared/controls';
-@use 'shared/tabs';
-@use 'shared++/extends';
+@use "shared/controls";
+@use "shared/tabs";
+@use "shared++/extends";
 
 #BrowserTab {
-	@include tabs.tab($selected-sel: '&#Active');
+	@include tabs.tab($selected-sel: "&#Active");
 
 	gap: var(--text-spacing);
 }
@@ -39,7 +39,7 @@
 
 	&::before,
 	&::after {
-		content: '';
+		content: "";
 
 		position: absolute;
 	}
@@ -98,4 +98,3 @@
 		padding: 0;
 	}
 }
-

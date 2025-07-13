@@ -39,10 +39,8 @@
 	--legacy-elevation-high: none;
 	--legacy-elevation-border: none;
 
-	$shadows:
-		border high ledge
-		low low-active low-hover
-		medium top-high top-ledge top-low;
+	$shadows: border high ledge low low-active low-hover medium top-high top-ledge
+		top-low;
 	@each $i in $shadows {
 		--shadow-#{i}: none;
 	}
@@ -63,4 +61,3 @@
 	--custom-message-meta-space: var(--text-spacing);
 	--custom-message-reply-message-preview-line-height: var(--text-line);
 }
-

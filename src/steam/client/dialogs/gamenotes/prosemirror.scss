@@ -1,4 +1,4 @@
-@use 'shared/controls';
+@use "shared/controls";
 
 #CommandButton {
 	// TODO: icons
@@ -30,4 +30,3 @@
 	margin-top: 0;
 	margin-bottom: var(--toolbar-spacing);
 }
-

@@ -1,5 +1,5 @@
-@use 'shared/controls';
-@use 'shared++/extends';
+@use "shared/controls";
+@use "shared++/extends";
 
 .modalContent {
 	& > .name {
@@ -15,4 +15,3 @@
 		}
 	}
 }
-

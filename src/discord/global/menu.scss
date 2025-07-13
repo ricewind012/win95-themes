@@ -1,4 +1,4 @@
-@use 'shared/controls';
+@use "shared/controls";
 
 .groupLabel {
 	display: none;
@@ -51,16 +51,15 @@
 		}
 
 		& > [aria-label=":thumbsup: :+1: :thumbup: :thumbs_up:"]::before {
-			content: ':+1:';
+			content: ":+1:";
 		}
 	}
 
 	& + div::before {
-		content: '';
+		content: "";
 
 		display: block;
 
 		@include controls.separator;
 	}
 }
-

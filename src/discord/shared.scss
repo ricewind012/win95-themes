@@ -1,4 +1,4 @@
-@use 'shared/controls';
+@use "shared/controls";
 
 // TODO: remove
 // TODO: add position: absolute version
@@ -9,7 +9,7 @@
 	margin: var(--border-size);
 
 	&::before {
-		content: '';
+		content: "";
 
 		position: absolute;
 		inset: var(--inset);
@@ -21,7 +21,7 @@
 }
 
 @mixin pseudo-separator {
-	content: '';
+	content: "";
 
 	width: 100%;
 	display: inline-block;

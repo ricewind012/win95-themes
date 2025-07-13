@@ -1,5 +1,5 @@
-@use 'shared/controls';
-@use 'shared++/extends';
+@use "shared/controls";
+@use "shared++/extends";
 
 #AccountCreationPrompt {
 	margin-right: var(--text-spacing);
@@ -21,7 +21,7 @@
 }
 
 #Checkbox {
-	@include controls.checkbox($checked-sel: '&:not(:empty)');
+	@include controls.checkbox($checked-sel: "&:not(:empty)");
 }
 
 #CheckboxFieldLabel {
@@ -93,4 +93,3 @@
 	font-size: var(--text-ui-size);
 	text-align: start;
 }
-

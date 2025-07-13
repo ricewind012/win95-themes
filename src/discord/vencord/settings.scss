@@ -1,6 +1,6 @@
-@use 'shared/controls';
-@use 'shared/text';
-@use 'shared++/extends';
+@use "shared/controls";
+@use "shared/text";
+@use "shared++/extends";
 
 %-vencord-groupbox-header {
 	&::before {
@@ -24,7 +24,7 @@
 	&::before {
 		--pos: calc(var(--tabpanel-spacing) + var(--border-size));
 
-		content: '';
+		content: "";
 
 		position: absolute;
 		inset: var(--pos);
@@ -85,7 +85,7 @@
 	}
 
 	&-plugins-filter-controls {
-		--header-text: 'Filter';
+		--header-text: "Filter";
 
 		@include controls.groupbox;
 		@extend %-vencord-groupbox-header;
@@ -94,7 +94,7 @@
 	}
 
 	&-plugins-grid {
-		--header-text: 'Plugins';
+		--header-text: "Plugins";
 
 		@include controls.groupbox;
 		@extend %-vencord-groupbox-header;
@@ -102,7 +102,7 @@
 		gap: var(--text-spacing);
 
 		&:last-child {
-			--header-text: 'Required Plugins';
+			--header-text: "Required Plugins";
 		}
 	}
 
@@ -129,11 +129,11 @@
 				@extend %-vencord-groupbox-header;
 
 				&:nth-child(2) {
-					--header-text: 'Description';
+					--header-text: "Description";
 				}
 
 				&:nth-child(4) {
-					--header-text: 'Authors';
+					--header-text: "Authors";
 
 					width: 100%;
 
@@ -168,7 +168,7 @@
 					position: initial;
 
 					&::after {
-						content: ':';
+						content: ":";
 					}
 				}
 			}
@@ -212,4 +212,3 @@
 		}
 	}
 }
-

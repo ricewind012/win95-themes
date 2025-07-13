@@ -1,6 +1,6 @@
-@use 'shared/controls';
-@use 'shared/window';
-@use 'shared++/extends';
+@use "shared/controls";
+@use "shared/window";
+@use "shared++/extends";
 
 .minimizeButton {
 	@include extends.titlebar-button-minimize;
@@ -23,7 +23,7 @@
 }
 
 .title-area {
-	--window-img: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQAQMAAAAlPW0iAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAGUExURQAAAAAAAKVnuc8AAAACdFJOU/8A5bcwSgAAAAlwSFlzAAAOwwAADsMBx2+oZAAAADdJREFUCNdj+CHP8ICd4cBvhoZOhsa1DIwlDIwqDMxzGM5/YPh8gKGWgWEvI8MkRoY7zCBlP+QBgSAPR9M4h8IAAAAASUVORK5CYII=');
+	--window-img: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQAQMAAAAlPW0iAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAGUExURQAAAAAAAKVnuc8AAAACdFJOU/8A5bcwSgAAAAlwSFlzAAAOwwAADsMBx2+oZAAAADdJREFUCNdj+CHP8ICd4cBvhoZOhsa1DIwlDIwqDMxzGM5/YPh8gKGWgWEvI8MkRoY7zCBlP+QBgSAPR9M4h8IAAAAASUVORK5CYII=");
 
 	background-color: var(--color-inactive-caption);
 	padding-right: 2px;
@@ -43,7 +43,7 @@
 	&::before {
 		--s: calc(1px + var(--border-size) + var(--window-spacing));
 
-		content: '';
+		content: "";
 
 		position: fixed;
 		left: var(--s);
@@ -86,4 +86,3 @@
 		display: none;
 	}
 }
-

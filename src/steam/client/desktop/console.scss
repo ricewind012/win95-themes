@@ -1,5 +1,5 @@
-@use 'shared/listbox';
-@use 'steam/shared';
+@use "shared/listbox";
+@use "steam/shared";
 
 #Console {
 	background-color: transparent;
@@ -43,7 +43,7 @@
 // Suggestions
 #Suggestion {
 	// TODO(port)
-	@include listbox.item($selected-sel: '.hack');
+	@include listbox.item($selected-sel: ".hack");
 
 	background-color: transparent;
 
@@ -62,10 +62,10 @@
 
 #Timestamp {
 	&::before {
-		content: '[';
+		content: "[";
 	}
 
 	&::after {
-		content: ']';
+		content: "]";
 	}
 }

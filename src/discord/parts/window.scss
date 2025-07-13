@@ -1,4 +1,4 @@
-@use 'shared/window';
+@use "shared/window";
 
 :root {
 	--titlebar-pos: 0px;
@@ -8,7 +8,7 @@
 		--titlebar-pos: calc(var(--titlebar-height) + var(--window-gap));
 		--window-pos: calc(var(--border-size) + var(--window-spacing));
 
-		@include window.container
+		@include window.container;
 	}
 }
 
@@ -21,14 +21,16 @@
 }
 
 #app-mount {
-	--sidebar-width: calc(72px + var(--scrollbar-size) + 240px + var(--window-gap) * 2 + 4px);
+	--sidebar-width: calc(
+		72px + var(--scrollbar-size) + 240px + var(--window-gap) * 2 + 4px
+	);
 
 	width: calc(100% - var(--window-pos) * 2);
 	height: calc(100% - var(--window-pos) * 2);
 
 	&::before,
 	&::after {
-		content: '';
+		content: "";
 
 		position: fixed;
 		bottom: var(--window-pos);
@@ -46,4 +48,3 @@
 		width: calc(100% - var(--window-pos) - var(--sidebar-width));
 	}
 }
-

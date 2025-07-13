@@ -1,5 +1,5 @@
-@use 'shared/controls';
-@use 'discord/shared';
+@use "shared/controls";
+@use "discord/shared";
 
 [data-list-item-id$="forum-channel-header"] {
 	button {
@@ -45,7 +45,10 @@
 	margin-left: calc(-24px + var(--toolbar-container-spacing));
 
 	position: fixed;
-	top: calc(var(--window-pos) + var(--titlebar-height) + var(--window-gap) + var(--toolbar-container-spacing) + 1px);
+	top: calc(
+		var(--window-pos) + var(--titlebar-height) + var(--window-gap) +
+			var(--toolbar-container-spacing) + 1px
+	);
 	z-index: 100;
 	height: unset;
 
@@ -65,4 +68,3 @@
 		display: none;
 	}
 }
-

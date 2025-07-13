@@ -1,6 +1,6 @@
-@use 'shared/dialog';
-@use 'shared++/extends';
-@use 'steam/shared';
+@use "shared/dialog";
+@use "shared++/extends";
+@use "steam/shared";
 
 #AvatarContainer {
 	margin: 0;
@@ -64,4 +64,3 @@
 	padding: 0;
 	margin: 0;
 }
-

@@ -1,8 +1,8 @@
-@use 'shared/controls';
-@use 'shared/generated';
-@use 'shared/scrollbar';
-@use 'shared/window';
-@use 'shared++/extends';
+@use "shared/controls";
+@use "shared/generated";
+@use "shared/scrollbar";
+@use "shared/window";
+@use "shared++/extends";
 
 .select-container {
 	overflow: visible;
@@ -47,7 +47,10 @@
 	.settings-clear-widget &-action-bar,
 	.terminal-tabs-entry &-action-bar {
 		.action-label {
-			@include controls.button($disabled-sel: '[aria-disabled]', $active-sel: "[aria-expanded='true']");
+			@include controls.button(
+				$disabled-sel: "[aria-disabled]",
+				$active-sel: "[aria-expanded='true']"
+			);
 			@include window.titlebar-button;
 		}
 
@@ -124,7 +127,7 @@
 
 	// Checkboxes
 	&-checkbox {
-		@include controls.checkbox($checked-sel: '&.checked');
+		@include controls.checkbox($checked-sel: "&.checked");
 
 		border: none;
 		margin: 0;
@@ -133,7 +136,7 @@
 	&-custom-toggle:not(&-checkbox) {
 		&.codicon,
 		.codicon {
-			@include controls.button($active-sel: '.checked');
+			@include controls.button($active-sel: ".checked");
 			@include window.titlebar-button;
 
 			border: none;
@@ -274,8 +277,14 @@
 
 			&.selected {
 				--vscode-keybindingLabel-border: var(--color-active-caption-text);
-				--vscode-keybindingLabel-bottomBorder: var(--vscode-keybindingLabel-border);
-				--vscode-widget-shadow: color-mix(in srgb, var(--color-active-caption-text) 50%, transparent)
+				--vscode-keybindingLabel-bottomBorder: var(
+					--vscode-keybindingLabel-border
+				);
+				--vscode-widget-shadow: color-mix(
+					in srgb,
+					var(--color-active-caption-text) 50%,
+					transparent
+				);
 			}
 
 			& > .option-detail {
@@ -332,9 +341,18 @@
 }
 
 // !important
-.monaco-workbench .part.editor > .content .gettingStartedContainer .gettingStartedSlide .getting-started-checkbox,
-.settings-editor > .settings-body .settings-tree-container .setting-item-bool .setting-value-checkbox {
-	@include controls.checkbox($checked-sel: '&.checked');
+.monaco-workbench
+	.part.editor
+	> .content
+	.gettingStartedContainer
+	.gettingStartedSlide
+	.getting-started-checkbox,
+.settings-editor
+	> .settings-body
+	.settings-tree-container
+	.setting-item-bool
+	.setting-value-checkbox {
+	@include controls.checkbox($checked-sel: "&.checked");
 
 	min-width: unset;
 }

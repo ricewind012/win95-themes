@@ -1,5 +1,5 @@
-@use 'shared/text';
-@use 'shared++/extends';
+@use "shared/text";
+@use "shared++/extends";
 
 .checkbox-action-item {
 	@include text.input-label;

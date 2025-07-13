@@ -1,8 +1,8 @@
-@use 'shared/controls';
-@use 'shared/window';
+@use "shared/controls";
+@use "shared/window";
 
 .titlebar {
-	@include window.titlebar($focused-sel: '&:not(.inactive)');
+	@include window.titlebar($focused-sel: "&:not(.inactive)");
 
 	width: 100%;
 

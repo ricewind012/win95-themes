@@ -1,8 +1,8 @@
-@use 'shared/controls';
-@use 'shared++/extends';
+@use "shared/controls";
+@use "shared++/extends";
 
 #DetailsProgressContainer {
-	@include controls.progress-bar($filled-sel: '#DetailsProgressBar');
+	@include controls.progress-bar($filled-sel: "#DetailsProgressBar");
 }
 
 #DetailsSection {

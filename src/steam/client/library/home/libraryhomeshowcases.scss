@@ -1,7 +1,7 @@
-@use 'shared/controls';
-@use 'shared/window';
-@use 'shared++/extends';
-@use 'steam/shared';
+@use "shared/controls";
+@use "shared/window";
+@use "shared++/extends";
+@use "steam/shared";
 
 #AddShowcase {
 	@include controls.button;
@@ -63,7 +63,7 @@
 		border: none;
 
 		&::before {
-			content: '';
+			content: "";
 
 			position: unset;
 			width: calc(100% + 40px);

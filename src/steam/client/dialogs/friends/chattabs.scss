@@ -1,11 +1,11 @@
-@use 'shared/tabs';
-@use 'shared/window';
-@use 'shared++/extends';
+@use "shared/tabs";
+@use "shared/window";
+@use "shared++/extends";
 
 #ChatTab {
 	--height: 22px;
 
-	@include tabs.tab($selected-sel: '&#Active');
+	@include tabs.tab($selected-sel: "&#Active");
 
 	width: unset;
 	height: calc(var(--height) + 4px);
@@ -42,4 +42,3 @@
 		display: none;
 	}
 }
-

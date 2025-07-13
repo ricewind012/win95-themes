@@ -1,4 +1,4 @@
-@use 'shared++/extends';
+@use "shared++/extends";
 
 .channelTextAreaUpload {
 	margin-bottom: 12px;
@@ -24,4 +24,3 @@
 		@include extends.text-reset;
 	}
 }
-

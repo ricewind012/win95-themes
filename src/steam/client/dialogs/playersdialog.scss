@@ -1,13 +1,13 @@
-@use 'shared/controls';
-@use 'shared/table';
-@use 'shared/window';
-@use 'shared++/extends';
-@use 'steam/shared';
+@use "shared/controls";
+@use "shared/table";
+@use "shared/window";
+@use "shared++/extends";
+@use "steam/shared";
 
 #AvatarAndName {
 	color: inherit;
 
-	gap: var(--text-spacing)
+	gap: var(--text-spacing);
 }
 
 #ColumnResizer {
@@ -74,4 +74,3 @@
 	background-color: transparent;
 	padding: 0;
 }
-

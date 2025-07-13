@@ -1,8 +1,8 @@
-@use 'shared/controls';
-@use 'shared/table';
-@use 'shared/tabs';
-@use 'shared/window';
-@use 'shared++/extends';
+@use "shared/controls";
+@use "shared/table";
+@use "shared/tabs";
+@use "shared/window";
+@use "shared++/extends";
 
 .settings {
 	&-toc-wrapper {
@@ -65,7 +65,7 @@
 
 		.monaco-list {
 			@include tabs.content;
-			
+
 			&-row {
 				background-color: transparent;
 				font: var(--text-ui);

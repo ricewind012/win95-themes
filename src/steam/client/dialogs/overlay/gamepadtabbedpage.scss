@@ -1,5 +1,5 @@
-@use 'shared/tabs';
-@use 'shared++/extends';
+@use "shared/tabs";
+@use "shared++/extends";
 
 #FixCenterAlignScroll {
 	gap: 0;
@@ -13,7 +13,7 @@
 }
 
 #Tab {
-	@include tabs.tab($selected-sel: '&#Selected');
+	@include tabs.tab($selected-sel: "&#Selected");
 	@include extends.text-reset;
 }
 
@@ -49,4 +49,3 @@
 #TabsRowScroll {
 	-webkit-mask-image: none;
 }
-

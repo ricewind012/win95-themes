@@ -1,6 +1,6 @@
-@use 'shared/controls';
-@use 'shared++/extends';
-@use 'steam/shared';
+@use "shared/controls";
+@use "shared++/extends";
+@use "steam/shared";
 
 #AchievementSearchHeader {
 	@include controls.groupbox;
@@ -33,4 +33,3 @@
 #Title {
 	@include shared.dialog-title;
 }
-

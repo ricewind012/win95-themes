@@ -1,5 +1,5 @@
-@use 'shared++/extends';
-@use 'steam/shared';
+@use "shared++/extends";
+@use "steam/shared";
 
 #HardwareSurveyDialog {
 	.DialogButton.Primary {
@@ -34,4 +34,3 @@
 		--inset: 73px 11px 39px 11px;
 	}
 }
-

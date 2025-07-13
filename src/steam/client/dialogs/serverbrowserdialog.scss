@@ -1,14 +1,14 @@
-@use 'shared/controls';
-@use 'shared/table';
-@use 'shared/tabs';
-@use 'shared/window';
-@use 'shared++/extends';
-@use 'shared++/icons';
-@use 'steam/shared';
+@use "shared/controls";
+@use "shared/table";
+@use "shared/tabs";
+@use "shared/window";
+@use "shared++/extends";
+@use "shared++/icons";
+@use "steam/shared";
 
 %-use-icon {
 	&::before {
-		content: '';
+		content: "";
 
 		position: absolute;
 		inset: 0;
@@ -58,7 +58,9 @@
 	--combobox-width: 200px;
 	--dialog-body-spacing: calc(var(--dialog-button-spacing) + 22px);
 	--label-gap: 8px;
-	--pos: calc(var(--border-size) + var(--window-spacing) + var(--dialog-spacing));
+	--pos: calc(
+		var(--border-size) + var(--window-spacing) + var(--dialog-spacing)
+	);
 
 	box-shadow: none;
 	padding: 0;
@@ -149,7 +151,7 @@
 	min-width: calc(7px * 2 + 20px);
 
 	&:not(:empty)::before {
-		content: 'VAC';
+		content: "VAC";
 	}
 }
 
@@ -201,7 +203,7 @@
 }
 
 #SwitchTabButton {
-	@include tabs.tab($selected-sel: '&#Selected');
+	@include tabs.tab($selected-sel: "&#Selected");
 
 	width: unset;
 
@@ -271,4 +273,3 @@
 		width: var(--combobox-width);
 	}
 }
-

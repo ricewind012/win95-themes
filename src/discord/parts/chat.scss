@@ -1,5 +1,5 @@
-@use 'shared/controls';
-@use 'shared/window';
+@use "shared/controls";
+@use "shared/window";
 
 // TODO: put them in toolbar
 .barBase {
@@ -147,4 +147,3 @@
 
 	height: unset;
 }
-

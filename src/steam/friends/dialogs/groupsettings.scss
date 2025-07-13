@@ -1,9 +1,9 @@
-@use 'shared/controls';
-@use 'shared/table';
-@use 'shared/tabs';
-@use 'shared/text';
-@use 'shared/window';
-@use 'shared++/extends';
+@use "shared/controls";
+@use "shared/table";
+@use "shared/tabs";
+@use "shared/text";
+@use "shared/window";
+@use "shared++/extends";
 
 .ChatGroupSettingsChannels_Row {
 	.ChannelDeleteButton {
@@ -157,4 +157,3 @@
 .roleSubtitle {
 	@include extends.text-reset;
 }
-

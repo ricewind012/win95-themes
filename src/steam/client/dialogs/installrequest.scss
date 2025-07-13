@@ -1,8 +1,8 @@
-@use 'shared/controls';
-@use 'shared/tooltip';
-@use 'shared/window';
-@use 'shared++/extends';
-@use 'shared++/icons';
+@use "shared/controls";
+@use "shared/tooltip";
+@use "shared/window";
+@use "shared++/extends";
+@use "shared++/icons";
 
 #AppLogo {
 	// x1.5, since I have more space anyway
@@ -19,7 +19,7 @@
 	margin: 0;
 
 	&::after {
-		content: '';
+		content: "";
 
 		@include controls.separator;
 
@@ -117,7 +117,7 @@
 		&::before {
 			--icon-size: 32px;
 
-			content: '';
+			content: "";
 
 			width: var(--icon-size);
 			height: var(--icon-size);
@@ -126,4 +126,3 @@
 		}
 	}
 }
-

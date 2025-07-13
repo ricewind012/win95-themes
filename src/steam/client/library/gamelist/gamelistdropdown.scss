@@ -1,10 +1,9 @@
-@use 'shared/controls';
-@use 'shared/menu';
+@use "shared/controls";
+@use "shared/menu";
 
-$-icons:
-	url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAg0lEQVQ4jaVTWw7AIAgTsvtfuftQJk9ZYpPFgbSUOce4BP2sQ8XrBDwxGOBDEcJLlAQnWyjJSZKHHaOzHMDYJHLPhzqYDqQ1ZFWi+VdWSSYVohxhp+EqaKYoawRLJiMgDHUKsgXEPjXYdq+Iu8R7peXxMMIZjyOIYG3BiXc/0e1d6fEC6iwvBhF890UAAAAASUVORK5CYII=')
-	url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAm0lEQVQ4ja1TyxKEIAxLnP1w+fJ4wAp9wD5me3EMTYhtJOrSAuc7QB+yWWCQ6uZkidPD+h7yALwPkk7IRF7RooIPsmOGk3RujmgdAFrj3Xw+RMPCJ8nsq1/uCzgT1vHBOZAqbWp7lgTI+N5AtvLMJCVUA9z4uAfJ2YEwVhUHNmNxCy4HuzVGsuXgqyBVafxblF3frz/T6sKFRq8LBTNs/ZuU14QAAAAASUVORK5CYII=')
-	url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAlklEQVQ4jY2SUQ6AMAhDy+K9rSefH8hkE2QkRgN9hU0EcfQgJ5FwTSrIQPnmJqZNMBPYDLTWSY4Jza2nYGJGEiSllWLrcEbXohOU3T0sl4wpANQThLCLtoo9UMEAcFRd/+DPBJHwDzYD8ZfogRSm/kYgOULVddK6771l4rtEc17Xsz9G3+ep+TVeJzCTcb6lZu/98+3EDRZ6RZSjgajFAAAAAElFTkSuQmCC');
+$-icons: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAg0lEQVQ4jaVTWw7AIAgTsvtfuftQJk9ZYpPFgbSUOce4BP2sQ8XrBDwxGOBDEcJLlAQnWyjJSZKHHaOzHMDYJHLPhzqYDqQ1ZFWi+VdWSSYVohxhp+EqaKYoawRLJiMgDHUKsgXEPjXYdq+Iu8R7peXxMMIZjyOIYG3BiXc/0e1d6fEC6iwvBhF890UAAAAASUVORK5CYII=")
+	url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAm0lEQVQ4ja1TyxKEIAxLnP1w+fJ4wAp9wD5me3EMTYhtJOrSAuc7QB+yWWCQ6uZkidPD+h7yALwPkk7IRF7RooIPsmOGk3RujmgdAFrj3Xw+RMPCJ8nsq1/uCzgT1vHBOZAqbWp7lgTI+N5AtvLMJCVUA9z4uAfJ2YEwVhUHNmNxCy4HuzVGsuXgqyBVafxblF3frz/T6sKFRq8LBTNs/ZuU14QAAAAASUVORK5CYII=")
+	url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAlklEQVQ4jY2SUQ6AMAhDy+K9rSefH8hkE2QkRgN9hU0EcfQgJ5FwTSrIQPnmJqZNMBPYDLTWSY4Jza2nYGJGEiSllWLrcEbXohOU3T0sl4wpANQThLCLtoo9UMEAcFRd/+DPBJHwDzYD8ZfogRSm/kYgOULVddK6771l4rtEc17Xsz9G3+ep+TVeJzCTcb6lZu/98+3EDRZ6RZSjgajFAAAAAElFTkSuQmCC");
 
 #AppCount {
 	opacity: 1;
@@ -60,7 +59,7 @@ $-icons:
 // !important in ../other/dialog-shared.scss
 div#Row {
 	// TODO(port)
-	@include menu.item('.hack');
+	@include menu.item(".hack");
 
 	margin: 0;
 
@@ -83,4 +82,3 @@ div#Row {
 	margin: 0;
 	margin-left: var(--toolbar-spacing);
 }
-

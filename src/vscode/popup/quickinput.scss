@@ -1,5 +1,5 @@
-@use 'shared/controls';
-@use 'shared/window';
+@use "shared/controls";
+@use "shared/window";
 
 .quick-input {
 	&-widget {
@@ -30,7 +30,7 @@
 			display: block;
 
 			&::before {
-				content: 'Command Palette';
+				content: "Command Palette";
 			}
 		}
 

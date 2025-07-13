@@ -1,6 +1,6 @@
-@use 'shared/controls';
-@use 'shared/menu';
-@use 'shared++/extends';
+@use "shared/controls";
+@use "shared/menu";
+@use "shared++/extends";
 
 .container_ae4f46 {
 	width: auto;
@@ -58,4 +58,3 @@
 		flex-direction: column;
 	}
 }
-

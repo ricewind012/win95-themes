@@ -1,5 +1,5 @@
-@use 'shared/controls';
-@use 'shared/window';
+@use "shared/controls";
+@use "shared/window";
 
 // It could be a radio button,
 // but there is no indication of that.
@@ -27,7 +27,7 @@
 }
 
 #RootMenuButton {
-	@include window.menubar-item($selected-sel: '.hack');
+	@include window.menubar-item($selected-sel: ".hack");
 
 	color: var(--color-menubar-text);
 	font-size: var(--text-ui-size);

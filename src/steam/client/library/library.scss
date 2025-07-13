@@ -1,5 +1,5 @@
-@use 'shared/menu';
-@use 'shared/window';
+@use "shared/menu";
+@use "shared/window";
 
 #AppDetailsMain {
 	@include window.content-container;

@@ -1,4 +1,4 @@
-@use 'shared/controls';
+@use "shared/controls";
 
 #PostButton {
 	@include controls.button;

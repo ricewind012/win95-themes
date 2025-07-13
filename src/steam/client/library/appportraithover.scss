@@ -1,5 +1,5 @@
-@use 'shared/tooltip';
-@use 'shared++/extends';
+@use "shared/tooltip";
+@use "shared++/extends";
 
 #AppStatus,
 #AppTitle,
@@ -23,4 +23,3 @@
 #CapsuleBackgroundContainer {
 	display: none;
 }
-

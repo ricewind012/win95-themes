@@ -1,5 +1,5 @@
-@use 'shared/tabs';
-@use 'shared++/extends';
+@use "shared/tabs";
+@use "shared++/extends";
 
 [role="tab"] {
 	cursor: unset;
@@ -27,7 +27,12 @@
 .tab {
 	&:not([aria-selected="true"]) {
 		// !important
-		.monaco-workbench .part.editor > .content .editor-group-container[class] > .title &:hover {
+		.monaco-workbench
+			.part.editor
+			> .content
+			.editor-group-container[class]
+			> .title
+			&:hover {
 			background-color: var(--color-button-face);
 		}
 	}
@@ -200,7 +205,7 @@
 		}
 
 		&-label {
-			@include tabs.tab($selected-sel: '&.checked');
+			@include tabs.tab($selected-sel: "&.checked");
 
 			opacity: 1;
 			font-size: var(--text-ui-size);
@@ -228,7 +233,13 @@
 
 .action {
 	// !important
-	.extension-editor > .body > .navbar > .monaco-action-bar > &s-container > &-item > &-label {
+	.extension-editor
+		> .body
+		> .navbar
+		> .monaco-action-bar
+		> &s-container
+		> &-item
+		> &-label {
 		@include extends.text-reset;
 		@include tabs.tab($selected-sel: "&[aria-checked='true']");
 

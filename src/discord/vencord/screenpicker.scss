@@ -1,5 +1,5 @@
-@use 'shared++/extends';
-@use 'discord/shared';
+@use "shared++/extends";
+@use "discord/shared";
 
 .vcd-screen-picker {
 	&-card {
@@ -70,4 +70,3 @@
 		}
 	}
 }
-

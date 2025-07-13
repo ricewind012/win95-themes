@@ -1,8 +1,11 @@
-@use 'shared/controls';
-@use 'shared/window';
+@use "shared/controls";
+@use "shared/window";
 
 .guilds {
-	margin-top: calc(var(--toolbar-container-spacing) * 2 + var(--icon-button-height) + var(--window-gap));
+	margin-top: calc(
+		var(--toolbar-container-spacing) * 2 + var(--icon-button-height) +
+			var(--window-gap)
+	);
 	margin-right: var(--window-gap);
 
 	width: calc(72px + var(--scrollbar-size));
@@ -65,11 +68,17 @@
 		}
 
 		& > :nth-last-child(4) {
-			left: calc(var(--toolbar-container-spacing) + var(--icon-button-width) + var(--window-pos));
+			left: calc(
+				var(--toolbar-container-spacing) + var(--icon-button-width) +
+					var(--window-pos)
+			);
 		}
 
 		& > :nth-last-child(5) {
-			left: calc(var(--toolbar-container-spacing) + var(--icon-button-width) * 2 + var(--window-pos));
+			left: calc(
+				var(--toolbar-container-spacing) + var(--icon-button-width) * 2 +
+					var(--window-pos)
+			);
 			z-index: 1;
 		}
 	}
@@ -88,4 +97,3 @@
 		}
 	}
 }
-

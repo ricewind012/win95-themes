@@ -1,9 +1,9 @@
-@use 'shared/list';
-@use 'shared/tree';
-@use 'shared++/extends';
+@use "shared/list";
+@use "shared/tree";
+@use "shared++/extends";
 
 #Container {
-	@include tree.item($expanded-sel: '&');
+	@include tree.item($expanded-sel: "&");
 	@include extends.text-reset;
 
 	overflow: visible;

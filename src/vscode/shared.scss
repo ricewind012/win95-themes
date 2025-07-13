@@ -5,7 +5,7 @@
 
 @mixin replace-icon($w, $h: $w) {
 	&::before {
-		content: '';
+		content: "";
 
 		width: #{$w};
 		height: #{$h};

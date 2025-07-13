@@ -1,7 +1,7 @@
-@use 'shared/controls';
-@use 'shared/window';
-@use 'shared++/extends';
-@use 'shared++/icons';
+@use "shared/controls";
+@use "shared/window";
+@use "shared++/extends";
+@use "shared++/icons";
 
 #AppActionBar {
 	padding: 0;
@@ -112,7 +112,7 @@
 }
 
 #DriveUsageIndicator {
-	@include controls.progress-bar($filled-sel: '#DriveUsageBar');
+	@include controls.progress-bar($filled-sel: "#DriveUsageBar");
 
 	background-color: transparent;
 }
@@ -127,7 +127,7 @@
 	display: flex;
 
 	&::after {
-		content: ':';
+		content: ":";
 	}
 }
 
@@ -181,4 +181,3 @@
 
 	height: 0;
 }
-

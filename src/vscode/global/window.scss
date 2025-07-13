@@ -1,4 +1,4 @@
-@use 'shared/window';
+@use "shared/window";
 
 body {
 	@include window.container;
@@ -36,7 +36,10 @@ body {
 	}
 
 	// !important
-	.monaco-split-view2.separator-border > .monaco-scrollable-element > &-container &-view:not(:first-child)::before {
+	.monaco-split-view2.separator-border
+		> .monaco-scrollable-element
+		> &-container
+		&-view:not(:first-child)::before {
 		background-color: transparent;
 	}
 }

@@ -1,14 +1,13 @@
-@use 'shared++/extends';
+@use "shared++/extends";
 
 #EntryLabel {
 	padding-right: var(--text-spacing);
 
 	&::after {
-		content: ':';
+		content: ":";
 	}
 }
 
 #EntryValue {
 	@include extends.text-reset;
 }
-

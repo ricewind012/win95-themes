@@ -1,5 +1,5 @@
-@use 'shared/controls';
-@use 'shared++/extends';
+@use "shared/controls";
+@use "shared++/extends";
 
 .AssignCategoriesDialog,
 .ChatRoomNotificationSettingsDialog,
@@ -52,4 +52,3 @@
 		@include extends.text-reset;
 	}
 }
-

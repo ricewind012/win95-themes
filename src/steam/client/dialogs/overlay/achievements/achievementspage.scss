@@ -1,5 +1,5 @@
-@use 'shared++/extends';
-@use 'steam/shared';
+@use "shared++/extends";
+@use "steam/shared";
 
 #DragHandle {
 	// Extend the separator to the right
@@ -30,4 +30,3 @@
 #SortableUserAchievementInner {
 	background-color: transparent;
 }
-

@@ -1,6 +1,6 @@
-@use 'shared/tabs';
-@use 'shared/window';
-@use 'shared++/extends';
+@use "shared/tabs";
+@use "shared/window";
+@use "shared++/extends";
 
 #add_friend-tab > header {
 	border: none;
@@ -72,4 +72,3 @@
 	top: 67px;
 	left: 343px;
 }
-

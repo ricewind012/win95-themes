@@ -14,7 +14,7 @@
 	max-height: 400px;
 
 	&:not(.recentMentionsPopout)::before {
-		content: '';
+		content: "";
 
 		position: absolute;
 		inset: 0;
@@ -22,4 +22,3 @@
 		box-shadow: var(--border-field);
 	}
 }
-

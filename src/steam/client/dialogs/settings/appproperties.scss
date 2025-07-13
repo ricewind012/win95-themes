@@ -1,9 +1,9 @@
-@use 'shared/controls';
-@use 'shared/table';
-@use 'shared/window';
-@use 'shared++/extends';
-@use 'shared++/icons';
-@use 'steam/shared';
+@use "shared/controls";
+@use "shared/table";
+@use "shared/window";
+@use "shared++/extends";
+@use "shared++/icons";
+@use "steam/shared";
 
 #AppProperties {
 	height: calc(100% - var(--text-full) - var(--tabs-height));

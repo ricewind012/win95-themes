@@ -1,7 +1,7 @@
-@use 'shared/controls';
-@use 'shared/window';
-@use 'shared++/extends';
-@use 'shared++/icons';
+@use "shared/controls";
+@use "shared/window";
+@use "shared++/extends";
+@use "shared++/icons";
 
 #CachedAccountName,
 #CachedName {
@@ -69,4 +69,3 @@
 #NewLoginIcon {
 	display: none;
 }
-

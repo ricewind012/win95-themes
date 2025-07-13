@@ -1,4 +1,4 @@
-@use 'shared++/extends';
+@use "shared++/extends";
 
 #SettingsDialogBodyText {
 	@include extends.text-reset;
@@ -14,4 +14,3 @@
 #SettingsLink {
 	@include extends.text-reset;
 }
-

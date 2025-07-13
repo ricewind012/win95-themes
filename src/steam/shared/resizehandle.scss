@@ -1,6 +1,6 @@
-@use 'shared/generated';
-@use 'shared/window';
-@use 'steam/shared';
+@use "shared/generated";
+@use "shared/window";
+@use "steam/shared";
 
 .PopupFullWindow:not(:only-child) {
 	@include shared.statusbar-alt;

@@ -1,6 +1,6 @@
-@use 'shared/controls';
-@use 'shared/menu';
-@use 'shared/window';
+@use "shared/controls";
+@use "shared/menu";
+@use "shared/window";
 
 [role="listbox"][style="width: 320px;"] {
 	border: none;
@@ -41,7 +41,7 @@
 
 	[role="option"] {
 		// TODO(port)
-		@include menu.item($selected-sel: '.hack');
+		@include menu.item($selected-sel: ".hack");
 
 		font-size: var(--text-ui-size);
 		margin: 0;
@@ -59,4 +59,3 @@
 		}
 	}
 }
-

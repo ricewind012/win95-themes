@@ -1,5 +1,5 @@
-@use 'shared/controls';
-@use 'shared/window';
+@use "shared/controls";
+@use "shared/window";
 
 [role="menu"] {
 	@include window.container($child: true);

@@ -1,9 +1,9 @@
-@use 'shared/controls';
-@use 'shared/list';
-@use 'shared/tabs';
-@use 'shared/text';
-@use 'shared/window';
-@use 'shared++/extends';
+@use "shared/controls";
+@use "shared/list";
+@use "shared/tabs";
+@use "shared/text";
+@use "shared/window";
+@use "shared++/extends";
 
 // Just right click on the channel list
 .ChannelTypeTitle,
@@ -21,7 +21,9 @@
 
 	background: none;
 	margin: 0 var(--dialog-spacing);
-	margin-bottom: calc(var(--dialog-spacing) + var(--statusbar-height) + var(--window-gap));
+	margin-bottom: calc(
+		var(--dialog-spacing) + var(--statusbar-height) + var(--window-gap)
+	);
 }
 
 .chatEntry {
@@ -65,7 +67,9 @@
 		@include extends.titlebar-button-close;
 
 		top: 0;
-		right: calc(-260px + 16px + 8px + var(--border-size) + var(--window-spacing));
+		right: calc(
+			-260px + 16px + 8px + var(--border-size) + var(--window-spacing)
+		);
 		order: -1;
 
 		svg {
@@ -515,7 +519,7 @@
 	}
 
 	&Title {
-		@include window.titlebar($focused-sel: '&');
+		@include window.titlebar($focused-sel: "&");
 
 		.MinimizeTextChat {
 			@include controls.button;
@@ -545,4 +549,3 @@
 		margin-left: 0;
 	}
 }
-

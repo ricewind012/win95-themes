@@ -1,5 +1,5 @@
-@use 'shared/text';
-@use 'shared++/extends';
+@use "shared/text";
+@use "shared++/extends";
 
 .ChatRoomNotificationSettingsDialog {
 	// wtf
@@ -55,4 +55,3 @@
 		height: unset;
 	}
 }
-

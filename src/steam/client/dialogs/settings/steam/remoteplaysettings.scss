@@ -1,4 +1,4 @@
-@use 'shared++/extends';
+@use "shared++/extends";
 
 #TableHeader {
 	@include extends.text-reset;
@@ -7,4 +7,3 @@
 		@include extends.legend-as-div;
 	}
 }
-

@@ -1,5 +1,5 @@
-@use 'shared/controls';
-@use 'shared/window';
+@use "shared/controls";
+@use "shared/window";
 
 .sidebar {
 	background-color: var(--color-button-face);
@@ -67,12 +67,10 @@
 
 		width: 100%;
 		height: calc(
-			100vh
-			- 39px
-			- var(--tabs-compensation, 0px)
-			- var(--titlebar-height)
-			- var(--menubar-height)
-			- var(--statusbar-height)
+			100vh -
+				39px - var(--tabs-compensation, 0px) - var(--titlebar-height) - var(
+					--menubar-height
+				) - var(--statusbar-height)
 		);
 	}
 }

@@ -1,6 +1,6 @@
-@use 'shared/controls';
-@use 'shared/window';
-@use 'shared++/extends';
+@use "shared/controls";
+@use "shared/window";
+@use "shared++/extends";
 
 #AdvancedSearchButton {
 	background: none;
@@ -21,7 +21,7 @@
 		cursor: default;
 
 		&::before {
-			content: 'Search...';
+			content: "Search...";
 		}
 	}
 }
@@ -34,14 +34,14 @@
 	inset: calc(10% - var(--titlebar-height)) 25%;
 
 	&::before {
-		content: 'Advanced Search';
+		content: "Advanced Search";
 
 		box-sizing: border-box;
 		position: unset;
 		width: 100%;
 
 		// TODO: make them all focused
-		@include window.titlebar($focused-sel: '&');
+		@include window.titlebar($focused-sel: "&");
 
 		font-weight: bold;
 	}
@@ -97,4 +97,3 @@
 
 	inset: 0;
 }
-

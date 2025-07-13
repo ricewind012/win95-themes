@@ -1,10 +1,10 @@
-@use 'shared/controls';
-@use 'shared/listbox';
-@use 'shared/tabs';
-@use 'shared/text';
-@use 'shared/window';
-@use 'shared++/extends';
-@use 'steam/shared';
+@use "shared/controls";
+@use "shared/listbox";
+@use "shared/tabs";
+@use "shared/text";
+@use "shared/window";
+@use "shared++/extends";
+@use "steam/shared";
 
 ::placeholder {
 	font: var(--text-ui);
@@ -91,7 +91,10 @@
 	}
 
 	&Checkbox {
-		@include controls.checkbox($checked-sel: '&.Active', $disabled-sel: '&.Disabled');
+		@include controls.checkbox(
+			$checked-sel: "&.Active",
+			$disabled-sel: "&.Disabled"
+		);
 
 		margin: 0;
 
@@ -119,7 +122,9 @@
 	&Content {
 		background: transparent;
 		padding: var(--dialog-spacing);
-		padding-bottom: calc(var(--text-full) + 3px + var(--window-gap) + var(--dialog-spacing));
+		padding-bottom: calc(
+			var(--text-full) + 3px + var(--window-gap) + var(--dialog-spacing)
+		);
 
 		&Transition {
 			background: transparent;
@@ -271,7 +276,7 @@
 	}
 
 	&Header {
-		@include window.titlebar($focused-sel: '&');
+		@include window.titlebar($focused-sel: "&");
 
 		// "Mark as Private" dialog
 		div:not(.DialogHeader) {
@@ -300,4 +305,3 @@
 	@include extends.text-reset;
 	@include extends.legend-as-div;
 }
-

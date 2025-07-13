@@ -1,8 +1,8 @@
-@use 'shared/controls';
-@use 'shared++/icons';
+@use "shared/controls";
+@use "shared++/icons";
 
-$-sel-arrow-back: '> :nth-child(3)';
-$-sel-arrow-forward: '> :nth-child(4)';
+$-sel-arrow-back: "> :nth-child(3)";
+$-sel-arrow-forward: "> :nth-child(4)";
 
 %-arrow-disabled {
 	&::before {
@@ -63,7 +63,7 @@ $-sel-arrow-forward: '> :nth-child(4)';
 
 		&::before,
 		&::after {
-			content: '';
+			content: "";
 
 			position: absolute;
 			top: 0;
@@ -111,7 +111,9 @@ $-sel-arrow-forward: '> :nth-child(4)';
 	&:has(> #Disabled:nth-child(2)) #{$-sel-arrow-forward}::after {
 		@extend %-arrow-disabled;
 
-		left: calc(var(--icon-offset) + var(--icon-width) + var(--icon-disabled-offset));
+		left: calc(
+			var(--icon-offset) + var(--icon-width) + var(--icon-disabled-offset)
+		);
 	}
 }
 

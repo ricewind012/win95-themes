@@ -1,5 +1,5 @@
-@use 'shared/controls';
-@use 'shared++/extends';
+@use "shared/controls";
+@use "shared++/extends";
 
 #Label {
 	@include extends.text-reset;
@@ -38,9 +38,8 @@
 }
 
 #ToggleSwitch {
-	@include controls.checkbox($checked-sel: '&#On');
+	@include controls.checkbox($checked-sel: "&#On");
 
 	background-image: none;
 	transform: unset;
 }
-

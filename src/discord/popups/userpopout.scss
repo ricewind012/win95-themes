@@ -1,4 +1,4 @@
-@use 'shared/controls';
+@use "shared/controls";
 
 .actionsBiteSizePopout {
 	gap: var(--dialog-button-spacing);
@@ -21,7 +21,7 @@
 	}
 
 	.bar {
-		@include controls.progress-bar($filled-sel: '.barInner');
+		@include controls.progress-bar($filled-sel: ".barInner");
 
 		background-color: transparent;
 	}
@@ -81,4 +81,3 @@
 		}
 	}
 }
-

@@ -1,5 +1,5 @@
-@use 'shared/controls';
-@use 'shared/window';
+@use "shared/controls";
+@use "shared/window";
 
 .userPopoutInner,
 .userProfileModalInner {
@@ -48,7 +48,7 @@
 .fullSizeOverlayBackground .scrollerBase {
 	& > * {
 		&::after {
-			content: '';
+			content: "";
 
 			@include controls.separator;
 
@@ -57,4 +57,3 @@
 		}
 	}
 }
-

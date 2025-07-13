@@ -1,4 +1,4 @@
-@use 'shared/controls';
+@use "shared/controls";
 
 #Popup {
 	.DialogButton {
@@ -45,9 +45,9 @@
 
 #RadioButton {
 	@include controls.radio(
-		$checked-sel: '#Active &',
+		$checked-sel: "#Active &",
 		// TODO(port): Reuse $disabled-sel here
-		$disabled-sel: '#DialogChoiceButton:active &'
+		$disabled-sel: "#DialogChoiceButton:active &"
 	);
 
 	box-shadow: none;
@@ -59,4 +59,3 @@
 	font: var(--text-ui);
 	font-weight: bold;
 }
-

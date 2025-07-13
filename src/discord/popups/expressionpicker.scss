@@ -1,8 +1,8 @@
-@use 'shared/controls';
-@use 'shared/table';
-@use 'shared/window';
-@use 'shared++/extends';
-@use 'shared++/icons';
+@use "shared/controls";
+@use "shared/table";
+@use "shared/window";
+@use "shared++/extends";
+@use "shared++/icons";
 
 .expressionPickerPositionLayer {
 	--custom-emoji-picker-constants-diversity-emoji-size: 16px;
@@ -152,7 +152,7 @@
 			align-items: center;
 
 			&::after {
-				content: '';
+				content: "";
 
 				width: var(--button-img-width);
 				height: var(--button-img-height);
@@ -191,4 +191,3 @@
 		}
 	}
 }
-

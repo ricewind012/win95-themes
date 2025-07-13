@@ -128,6 +128,10 @@
 	// Other
 	--vscode-activityBarTop-activeBorder: transparent;
 	--vscode-focusBorder: transparent;
-	--vscode-textCodeBlock-background: color-mix(in srgb, currentColor 25%, transparent);
+	--vscode-textCodeBlock-background: color-mix(
+		in srgb,
+		currentColor 25%,
+		transparent
+	);
 	--vscode-widget-shadow: transparent;
 }

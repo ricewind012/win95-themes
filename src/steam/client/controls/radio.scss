@@ -1,5 +1,5 @@
-@use 'shared/controls';
-@use 'shared/text';
+@use "shared/controls";
+@use "shared/text";
 
 #Group,
 #Button {
@@ -9,7 +9,7 @@
 
 #Button {
 	@include text.input-label;
-	@include controls.radio($checked-sel: '&#Active');
+	@include controls.radio($checked-sel: "&#Active");
 
 	font: var(--text-ui);
 	color: var(--color-button-text);
@@ -28,12 +28,14 @@
 
 	&::before,
 	&::after {
-		content: '';
+		content: "";
 	}
 
 	// Use as ::before for label spacing
 	&::after {
-		width: calc(var(--sel-button-size) + var(--label-spacing) - var(--text-spacing));
+		width: calc(
+			var(--sel-button-size) + var(--label-spacing) - var(--text-spacing)
+		);
 		order: -1;
 	}
 }

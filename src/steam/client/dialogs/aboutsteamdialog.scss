@@ -1,4 +1,4 @@
-@use 'shared++/extends';
+@use "shared++/extends";
 
 #AboutSteamDialog {
 	.DialogContent_InnerWidth {
@@ -9,4 +9,3 @@
 #DialogBodyLabel {
 	@include extends.text-reset;
 }
-

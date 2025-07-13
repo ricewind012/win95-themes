@@ -1,4 +1,4 @@
-@use 'shared/window';
+@use "shared/window";
 
 .fakeEdges {
 	&::before,
@@ -29,4 +29,3 @@
 .mediaBarWrapperVolume {
 	width: 100%;
 }
-

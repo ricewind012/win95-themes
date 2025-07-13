@@ -1,7 +1,7 @@
-@use 'shared/controls';
-@use 'shared/window';
-@use 'shared++/extends';
-@use 'steam/shared';
+@use "shared/controls";
+@use "shared/window";
+@use "shared++/extends";
+@use "steam/shared";
 
 // The browser view is above everything else
 #Browser {
@@ -12,7 +12,7 @@
 	width: calc(100% - 4px);
 
 	&::before {
-		content: '';
+		content: "";
 
 		position: absolute;
 		inset: -2px -2px -3px -2px;
@@ -66,7 +66,7 @@
 	-webkit-app-region: no-drag;
 
 	&::after {
-		content: '';
+		content: "";
 		display: block;
 
 		@include controls.separator;
@@ -82,7 +82,7 @@
 	-webkit-app-region: unset;
 
 	&::before {
-		content: '';
+		content: "";
 
 		@include controls.separator;
 
@@ -124,7 +124,7 @@
 	-webkit-app-region: drag;
 
 	&::after {
-		content: 'Steam';
+		content: "Steam";
 
 		@include shared.dialog-title;
 	}
@@ -134,4 +134,3 @@
 	background-color: transparent;
 	border: none;
 }
-

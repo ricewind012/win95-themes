@@ -1,5 +1,5 @@
-@use 'shared/controls';
-@use 'shared/window';
+@use "shared/controls";
+@use "shared/window";
 
 .menubar {
 	overflow: visible;
@@ -11,7 +11,7 @@
 	z-index: 2;
 
 	&::after {
-		content: '';
+		content: "";
 
 		position: absolute;
 		top: calc(var(--menubar-height) - 1px);
@@ -36,7 +36,7 @@
 			// Move [role="menubar"] to its child element
 			// for correct context menu positioning
 			// TODO(port)
-			@include window.menubar-item($selected-sel: '.hack');
+			@include window.menubar-item($selected-sel: ".hack");
 
 			&.toolbar-toggle-more {
 				display: none;

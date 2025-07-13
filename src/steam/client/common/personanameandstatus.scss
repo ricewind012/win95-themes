@@ -1,4 +1,4 @@
-@use 'shared++/extends';
+@use "shared++/extends";
 
 #playerName {
 	@include extends.text-reset;
@@ -19,4 +19,3 @@
 	margin-top: 1px;
 	margin-bottom: 0;
 }
-

@@ -1,5 +1,5 @@
-@use 'shared/controls';
-@use 'shared++/extends';
+@use "shared/controls";
+@use "shared++/extends";
 
 #ControlsListChild {
 	max-width: unset;
@@ -28,7 +28,8 @@
 		flex-direction: column;
 	}
 
-	&::after { // lol
+	&::after {
+		// lol
 		display: none;
 	}
 }
@@ -52,7 +53,8 @@
 	font: var(--text-ui);
 	color: var(--color-button-text);
 
-	& > :not([class]) { // has something else
+	& > :not([class]) {
+		// has something else
 		gap: 1ch;
 
 		display: flex;
@@ -69,7 +71,7 @@
 }
 
 #Toggle {
-	@include controls.checkbox($checked-sel: '&#On');
+	@include controls.checkbox($checked-sel: "&#On");
 }
 
 #ToggleRail,

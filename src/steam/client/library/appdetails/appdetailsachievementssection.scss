@@ -1,8 +1,8 @@
-@use 'shared/controls';
-@use 'shared++/extends';
+@use "shared/controls";
+@use "shared++/extends";
 
 #AchievementProgressContainer {
-	@include controls.progress-bar($filled-sel: '#AchievementProgress');
+	@include controls.progress-bar($filled-sel: "#AchievementProgress");
 
 	background-color: transparent;
 }
@@ -32,7 +32,7 @@
 	margin: 0;
 
 	&::before {
-		content: '';
+		content: "";
 
 		display: block;
 

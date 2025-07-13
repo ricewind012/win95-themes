@@ -1,5 +1,5 @@
-@use 'shared/list';
-@use 'shared/tree';
+@use "shared/list";
+@use "shared/tree";
 
 $-max-nest: 10;
 
@@ -25,7 +25,9 @@ $-max-nest: 10;
 
 	.monaco-tl-twistie {
 		padding-left: 0;
-		margin-left: calc(var(--offset) + var(--a) + var(--b) * (var(--level) - var(--multiply)));
+		margin-left: calc(
+			var(--offset) + var(--a) + var(--b) * (var(--level) - var(--multiply))
+		);
 	}
 }
 
@@ -162,7 +164,7 @@ $-max-nest: 10;
 		// Expand button to icon dots
 		&::before,
 		[aria-expanded] &::after {
-			content: '';
+			content: "";
 
 			position: absolute;
 		}
@@ -217,17 +219,17 @@ $-max-nest: 10;
 // Icons
 .show-file-icons [role="treeitem"] {
 	.file-icon::before {
-		content: '';
+		content: "";
 
-		background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA0AAAAQCAMAAAD6fQULAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAPUExURQAAAP///4eIj8DHyAAAAIf7VzIAAAAFdFJOU/////8A+7YOUwAAAAlwSFlzAAAOwwAADsMBx2+oZAAAADZJREFUGFdjYGFhYIRCIBPIYYJCIBtIICCQBwfMWHgMDCBFOOVA0lSVgwEQjxkBGIDuhgMGFgBmBADr9EYr2gAAAABJRU5ErkJggg==');
+		background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA0AAAAQCAMAAAD6fQULAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAPUExURQAAAP///4eIj8DHyAAAAIf7VzIAAAAFdFJOU/////8A+7YOUwAAAAlwSFlzAAAOwwAADsMBx2+oZAAAADZJREFUGFdjYGFhYIRCIBPIYYJCIBtIICCQBwfMWHgMDCBFOOVA0lSVgwEQjxkBGIDuhgMGFgBmBADr9EYr2gAAAABJRU5ErkJggg==");
 		background-size: 13px var(--icon-size);
 		background-position: center;
 	}
 
 	&[aria-expanded] .monaco-icon-label::before {
-		content: '';
+		content: "";
 
-		background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA8AAAANCAMAAABBwMRzAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAASUExURYeIj8DHyP//AP///wAAAAAAAJRqB2kAAAAGdFJOU///////ALO/pL8AAAAJcEhZcwAADsMAAA7DAcdvqGQAAAA1SURBVBhXtYrRFQAQEMOCdv+VHcfDANKvtMVm4AWm1MguSI0ib9AuUHjuM9OPlh/7g7AupA6lNwF/p6NMjAAAAABJRU5ErkJggg==');
+		background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA8AAAANCAMAAABBwMRzAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAASUExURYeIj8DHyP//AP///wAAAAAAAJRqB2kAAAAGdFJOU///////ALO/pL8AAAAJcEhZcwAADsMAAA7DAcdvqGQAAAA1SURBVBhXtYrRFQAQEMOCdv+VHcfDANKvtMVm4AWm1MguSI0ib9AuUHjuM9OPlh/7g7AupA6lNwF/p6NMjAAAAABJRU5ErkJggg==");
 		background-size: 15px;
 	}
 }

@@ -1,6 +1,6 @@
-@use 'shared/table';
-@use 'shared/window';
-@use 'shared++/extends';
+@use "shared/table";
+@use "shared/window";
+@use "shared++/extends";
 
 .FriendsSettingsNotificationRow {
 	background-color: transparent;
@@ -29,4 +29,3 @@
 .FriendNotificationsDialog .SettingsGroup {
 	@include window.content-container;
 }
-

@@ -1,6 +1,6 @@
-@use 'shared/controls';
-@use 'shared++/extends';
-@use 'steam/shared';
+@use "shared/controls";
+@use "shared++/extends";
+@use "steam/shared";
 
 // .DialogLabel in ../other/dialog-shared.scss
 div#AppNameHeader {
@@ -55,4 +55,3 @@ div#AppNameHeader {
 #OptionList {
 	padding: 0;
 }
-

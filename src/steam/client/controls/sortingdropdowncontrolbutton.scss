@@ -1,4 +1,4 @@
-@use 'shared/controls';
+@use "shared/controls";
 
 #SortingDropDownControlButton {
 	@include controls.combobox;
@@ -7,4 +7,3 @@
 		display: none;
 	}
 }
-

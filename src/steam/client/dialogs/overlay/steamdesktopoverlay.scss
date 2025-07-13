@@ -1,8 +1,8 @@
-@use 'shared/controls';
-@use 'shared/tooltip';
-@use 'shared/window';
-@use 'shared++/extends';
-@use 'steam/shared';
+@use "shared/controls";
+@use "shared/tooltip";
+@use "shared/window";
+@use "shared++/extends";
+@use "steam/shared";
 
 // GAME OVERVIEW START (here in preparation for beta restructure)
 // TODO: clearly this needs a better icon
@@ -178,4 +178,3 @@ body:has(> #popup_target > #Wrapper) {
 	gap: 16px;
 	padding: 32px;
 }
-

@@ -1,10 +1,10 @@
-@use 'shared/controls';
-@use 'shared/list';
-@use 'shared/tree';
-@use 'shared/window';
-@use 'shared++/extends';
-@use 'shared++/icons';
-@use 'discord/shared';
+@use "shared/controls";
+@use "shared/list";
+@use "shared/tree";
+@use "shared/window";
+@use "shared++/extends";
+@use "shared++/icons";
+@use "discord/shared";
 
 .sidebar {
 	margin-right: var(--window-gap);
@@ -18,7 +18,10 @@
 	& > nav {
 		@include window.content-container;
 
-		--pos: calc(var(--toolbar-container-spacing) * 2 + var(--icon-button-height) + var(--window-gap));
+		--pos: calc(
+			var(--toolbar-container-spacing) * 2 + var(--icon-button-height) +
+				var(--window-gap)
+		);
 
 		margin-top: var(--pos);
 
@@ -41,7 +44,7 @@
 			}
 
 			& > div {
-				opacity: .5;
+				opacity: 0.5;
 				margin: 1px;
 
 				transform: none;
@@ -154,7 +157,7 @@
 		padding: 0;
 
 		&::before {
-			content: '';
+			content: "";
 
 			position: absolute;
 			top: -1px;
@@ -179,7 +182,7 @@
 		.iconVisibility {
 			--offset: calc(var(--icon-size) + 4px);
 
-			@include tree.item($expanded-sel: '&');
+			@include tree.item($expanded-sel: "&");
 
 			&::before {
 				top: -14px;
@@ -268,16 +271,12 @@ div.privateChannelRecipientsInviteButtonIcon {
 	padding: 3px;
 
 	position: fixed;
-	top: calc(var(--window-pos) + var(--titlebar-pos) + var(--toolbar-container-spacing));
+	top: calc(
+		var(--window-pos) + var(--titlebar-pos) + var(--toolbar-container-spacing)
+	);
 	// TODO: scss
 	left: calc(
-		var(--window-pos)
-		+ 72px
-		+ var(--scrollbar-size)
-		+ var(--window-gap)
-		+ 240px
-		- var(--icon-button-width)
-		- var(--toolbar-container-spacing)
+		var(--window-pos) + 72px + var(--scrollbar-size) + var(--window-gap) +
+			240px - var(--icon-button-width) - var(--toolbar-container-spacing)
 	);
 }
-

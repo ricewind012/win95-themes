@@ -1,16 +1,21 @@
-@use 'shared/tabs';
-@use 'shared++/extends';
-@use 'steam/shared';
+@use "shared/tabs";
+@use "shared++/extends";
+@use "steam/shared";
 
 // Purpose:
 // Used in group chat settings (and possibly other older dialogs)
 
 #Container {
 	// for bottom buttons
-	--pos: calc(var(--border-size) + var(--window-spacing) + var(--dialog-spacing));
+	--pos: calc(
+		var(--border-size) + var(--window-spacing) + var(--dialog-spacing)
+	);
 
 	margin: var(--dialog-spacing);
-	margin-bottom: calc(var(--dialog-spacing) + var(--dialog-button-spacing) + var(--tabs-height) + 21px);
+	margin-bottom: calc(
+		var(--dialog-spacing) + var(--dialog-button-spacing) + var(--tabs-height) +
+			21px
+	);
 
 	width: unset;
 	height: unset; // ?
@@ -32,7 +37,7 @@
 }
 
 #NavItem {
-	@include tabs.tab($selected-sel: '&#Active');
+	@include tabs.tab($selected-sel: "&#Active");
 	@include extends.text-reset;
 }
 
@@ -45,4 +50,3 @@
 
 	text-transform: unset;
 }
-

@@ -1,5 +1,5 @@
-@use 'shared/controls';
-@use 'shared++/extends';
+@use "shared/controls";
+@use "shared++/extends";
 
 #AchievementList {
 	padding: 0;
@@ -9,7 +9,7 @@
 	background-color: transparent;
 
 	&::after {
-		content: '';
+		content: "";
 
 		@include controls.separator;
 	}
@@ -22,4 +22,3 @@
 #UnlockDate {
 	@include extends.text-reset;
 }
-

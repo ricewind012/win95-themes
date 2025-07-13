@@ -1,6 +1,6 @@
-@use 'shared/controls';
-@use 'shared++/extends';
-@use 'steam/shared';
+@use "shared/controls";
+@use "shared++/extends";
+@use "steam/shared";
 
 #MessageReaction {
 	background-color: transparent;
@@ -26,4 +26,3 @@
 #ReactionHover {
 	@include shared.tooltip;
 }
-

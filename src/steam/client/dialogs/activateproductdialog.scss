@@ -1,4 +1,4 @@
-@use 'shared++/extends';
+@use "shared++/extends";
 
 #HeaderContainer {
 	width: unset;
@@ -12,6 +12,6 @@
 	@include extends.text-reset;
 
 	&::after {
-		content: ':';
+		content: ":";
 	}
 }

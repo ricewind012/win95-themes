@@ -1,5 +1,5 @@
-@use 'shared/controls';
-@use 'shared++/extends';
+@use "shared/controls";
+@use "shared++/extends";
 
 // TODO: remove when doing icons
 .attachButtonInner {
@@ -71,7 +71,7 @@ form.form {
 
 			&::before {
 				// TODO: localize
-				content: 'Mention';
+				content: "Mention";
 
 				font-size: var(--text-ui-size);
 				margin-left: calc(var(--sel-button-size) + var(--label-spacing));
@@ -80,7 +80,7 @@ form.form {
 	}
 
 	.closeButton {
-		--button-img: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA0AAAANCAMAAABFNRROAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAGUExURQAAAAAAAKVnuc8AAAACdFJOU/8A5bcwSgAAAAlwSFlzAAAOwwAADsMBx2+oZAAAADlJREFUGFdFjoEJADAIw/T/p9eoYR1o0yKsolaAmJ13yMQMTnSxPWNb9sHvxnpnjhUspG2EiN+orgcmKwBw9dYmLQAAAABJRU5ErkJgggo=');
+		--button-img: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA0AAAANCAMAAABFNRROAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAGUExURQAAAAAAAKVnuc8AAAACdFJOU/8A5bcwSgAAAAlwSFlzAAAOwwAADsMBx2+oZAAAADlJREFUGFdFjoEJADAIw/T/p9eoYR1o0yKsolaAmJ13yMQMTnSxPWNb9sHvxnpnjhUspG2EiN+orgcmKwBw9dYmLQAAAABJRU5ErkJgggo=");
 		--button-img-pos: 5px 4px;
 
 		@include controls.button;
@@ -113,4 +113,3 @@ form.form {
 		display: none;
 	}
 }
-

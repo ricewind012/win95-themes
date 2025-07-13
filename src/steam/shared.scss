@@ -1,7 +1,7 @@
-@use 'shared/controls';
-@use 'shared/table';
-@use 'shared/tooltip';
-@use 'shared/window';
+@use "shared/controls";
+@use "shared/table";
+@use "shared/tooltip";
+@use "shared/window";
 
 // An alternative to "@include window.content-container" for special elements
 @mixin content-container-alt {
@@ -10,7 +10,7 @@
 	margin: var(--border-size);
 
 	&::before {
-		content: '';
+		content: "";
 
 		position: fixed;
 		inset: var(--inset);
@@ -39,7 +39,7 @@
 
 @mixin statusbar-alt {
 	&::after {
-		content: '';
+		content: "";
 
 		position: fixed;
 		left: 4px;

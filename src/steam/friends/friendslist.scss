@@ -1,9 +1,9 @@
-@use 'shared/controls';
-@use 'shared/tree';
-@use 'shared/window';
-@use 'shared++/extends';
-@use 'shared++/icons';
-@use 'steam/shared';
+@use "shared/controls";
+@use "shared/tree";
+@use "shared/window";
+@use "shared++/extends";
+@use "shared++/icons";
+@use "steam/shared";
 
 .activeVoiceButtons {
 	padding: 0;
@@ -93,7 +93,7 @@
 	position: relative;
 
 	&::before {
-		content: '';
+		content: "";
 
 		position: absolute;
 		inset: calc(var(--border-size) * -1);
@@ -240,7 +240,7 @@
 		position: relative;
 
 		&::before {
-			content: '';
+			content: "";
 
 			position: absolute;
 			top: -7px;
@@ -262,7 +262,7 @@
 	}
 
 	.groupName {
-		@include tree.item($expanded-sel: '&:not(.Collapsed)');
+		@include tree.item($expanded-sel: "&:not(.Collapsed)");
 
 		margin: 0;
 
@@ -280,7 +280,7 @@
 	gap: var(--window-gap);
 
 	.friend {
-		@include tree.item($expanded-sel: '&.hack');
+		@include tree.item($expanded-sel: "&.hack");
 
 		margin-top: 4px;
 		margin-bottom: 4px;
@@ -311,7 +311,7 @@
 	min-height: unset;
 
 	&::before {
-		content: '.';
+		content: ".";
 
 		color: transparent;
 	}
@@ -391,4 +391,3 @@
 
 	order: -1;
 }
-

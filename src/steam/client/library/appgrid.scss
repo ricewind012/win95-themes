@@ -1,5 +1,5 @@
-@use 'shared/listbox';
-@use 'shared++/extends';
+@use "shared/listbox";
+@use "shared++/extends";
 
 #LibraryImageBackgroundGlow {
 	display: none;
@@ -22,6 +22,6 @@
 	@include extends.text-reset;
 
 	&::after {
-		content: ': ';
+		content: ": ";
 	}
 }

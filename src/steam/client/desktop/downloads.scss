@@ -1,6 +1,6 @@
-@use 'shared/controls';
-@use 'shared/window';
-@use 'shared++/extends';
+@use "shared/controls";
+@use "shared/window";
+@use "shared++/extends";
 
 #AutoUpdateHours {
 	@include extends.text-reset;
@@ -15,7 +15,7 @@
 	width: 111px;
 
 	&::after {
-		content: '...';
+		content: "...";
 	}
 }
 

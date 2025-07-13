@@ -1,4 +1,4 @@
-@use 'shared++/extends';
+@use "shared++/extends";
 
 ::placeholder {
 	font: var(--text-ui);
@@ -25,7 +25,7 @@
 	padding: 0;
 
 	&::before {
-		content: '#';
+		content: "#";
 	}
 
 	svg {
@@ -52,4 +52,3 @@
 	height: unset;
 	min-height: unset;
 }
-

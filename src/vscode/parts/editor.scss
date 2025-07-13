@@ -1,5 +1,5 @@
-@use 'shared/tabs';
-@use 'shared/window';
+@use "shared/tabs";
+@use "shared/window";
 
 .editor {
 	&-container {
@@ -79,7 +79,9 @@
 
 	&:not(:only-child) {
 		// Split up/down
-		&[style^="top:"][style*="height:"] > .editor-group-container > .editor-container {
+		&[style^="top:"][style*="height:"]
+			> .editor-group-container
+			> .editor-container {
 			height: calc(50% - 35px);
 		}
 
@@ -96,7 +98,10 @@
 
 .monaco {
 	&-scrollable-element,
-	&-split-view2.vertical.separator-border > &-scrollable-element > .split-view-container > .split-view-view {
+	&-split-view2.vertical.separator-border
+		> &-scrollable-element
+		> .split-view-container
+		> .split-view-view {
 		height: 100%;
 	}
 

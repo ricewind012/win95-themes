@@ -1,6 +1,6 @@
-@use 'shared/list';
-@use 'shared/table';
-@use 'shared/window';
+@use "shared/list";
+@use "shared/table";
+@use "shared/window";
 
 .overrideList {
 	@include window.content-container;
@@ -40,4 +40,3 @@
 		}
 	}
 }
-

@@ -1,6 +1,6 @@
-@use 'shared/controls';
-@use 'shared/window';
-@use 'shared++/extends';
+@use "shared/controls";
+@use "shared/window";
+@use "shared++/extends";
 
 .contentColumn {
 	min-width: 100%;
@@ -31,7 +31,7 @@
 	& > [data-text-variant]:first-child,
 	& > div > div > .sectionTitle:first-child,
 	& > div > :is(.sectionTitle, h2):first-child {
-		background:#f09;
+		background: #f09;
 	}
 	/*
 	& > [data-text-variant]:first-child {
@@ -84,11 +84,11 @@
 		z-index: 999;
 
 		&::before {
-			content: '';
+			content: "";
 
 			box-sizing: border-box;
 
-			@include window.titlebar($focused-sel: '&');
+			@include window.titlebar($focused-sel: "&");
 		}
 
 		[role="tablist"][aria-orientation="vertical"] {
@@ -108,7 +108,10 @@
 
 		.tools {
 			position: fixed;
-			top: calc(var(--titlebar-height) + var(--border-size) * 2 + var(--window-gap) + 10%);
+			top: calc(
+				var(--titlebar-height) + var(--border-size) * 2 + var(--window-gap) +
+					10%
+			);
 			right: calc(var(--border-size) * 2 + 4px + 10%);
 
 			.closeButton {
@@ -159,4 +162,3 @@
 		}
 	}
 }
-

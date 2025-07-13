@@ -1,5 +1,5 @@
-@use 'shared/tabs';
-@use 'steam/shared';
+@use "shared/tabs";
+@use "steam/shared";
 
 #PageListSeparator,
 #PageListItem_Icon {
@@ -42,7 +42,7 @@
 }
 
 #PagedSettingsDialog_PageListItem {
-	@include tabs.tab($selected-sel: '&#Active');
+	@include tabs.tab($selected-sel: "&#Active");
 
 	font: var(--text-ui);
 
@@ -55,4 +55,3 @@
 	text-transform: unset;
 	padding: 0;
 }
-

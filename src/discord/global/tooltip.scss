@@ -1,5 +1,5 @@
-@use 'shared/tooltip';
-@use 'shared++/extends';
+@use "shared/tooltip";
+@use "shared++/extends";
 
 .tooltip {
 	@include tooltip.container;
@@ -17,4 +17,3 @@
 .tooltipPointer {
 	display: none;
 }
-

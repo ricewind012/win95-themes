@@ -1,6 +1,6 @@
-@use 'shared/table';
-@use 'shared/window';
-@use 'shared++/extends';
+@use "shared/table";
+@use "shared/window";
+@use "shared++/extends";
 
 .quickswitcher {
 	--icon-size: 20px;

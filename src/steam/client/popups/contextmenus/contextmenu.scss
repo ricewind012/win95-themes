@@ -1,6 +1,6 @@
-@use 'shared/controls';
-@use 'shared/menu';
-@use 'shared/window';
+@use "shared/controls";
+@use "shared/menu";
+@use "shared/window";
 
 #Arrow {
 	display: none;
@@ -19,7 +19,7 @@
 }
 
 #contextMenuItem {
-	@include menu.item($selected-sel: '#active');
+	@include menu.item($selected-sel: "#active");
 
 	font-size: var(--text-ui-size);
 	color: var(--color-button-text);

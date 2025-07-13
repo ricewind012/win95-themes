@@ -1,5 +1,5 @@
-@use 'shared/controls';
-@use 'shared/tooltip';
+@use "shared/controls";
+@use "shared/tooltip";
 
 .workbench-hover,
 .monaco-hover {
@@ -35,7 +35,7 @@
 		border: none;
 
 		&::before {
-			content: '';
+			content: "";
 
 			@include controls.separator;
 		}

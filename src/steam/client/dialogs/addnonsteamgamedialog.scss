@@ -1,7 +1,7 @@
-@use 'shared/controls';
-@use 'shared/table';
-@use 'shared++/extends';
-@use 'steam/shared';
+@use "shared/controls";
+@use "shared/table";
+@use "shared++/extends";
+@use "steam/shared";
 
 #AddNonSteamGameDialog {
 	.DialogContent_InnerWidth {

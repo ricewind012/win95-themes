@@ -1,4 +1,4 @@
-@use 'shared/window';
+@use "shared/window";
 
 .suggest-widget {
 	@include window.container($child: true);

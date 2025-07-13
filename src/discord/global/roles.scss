@@ -1,8 +1,8 @@
-@use 'shared/controls';
-@use 'shared/listbox';
-@use 'shared/menu';
-@use 'shared/window';
-@use 'shared++/extends';
+@use "shared/controls";
+@use "shared/listbox";
+@use "shared/menu";
+@use "shared/window";
+@use "shared++/extends";
 
 [role="button"][aria-haspopup] {
 	@include controls.combobox($disabled-sel: "[aria-disabled='true']");
@@ -28,7 +28,7 @@
 			box-sizing: border-box;
 			flex-shrink: 0;
 
-			@include window.titlebar($focused-sel: '&');
+			@include window.titlebar($focused-sel: "&");
 			@include window.titlebar-name;
 		}
 	}
@@ -61,7 +61,7 @@
 }
 
 [role^="menuitem"] {
-	@include menu.item($selected-sel: '&.focused');
+	@include menu.item($selected-sel: "&.focused");
 
 	opacity: 1;
 	font: var(--text-ui);
@@ -112,7 +112,8 @@
 		}
 	}
 
-	[data-text-variant="text-md/medium"] {}
+	[data-text-variant="text-md/medium"] {
+	}
 
 	[data-text-variant="text-sm/normal"] {
 		color: var(--color-gray-text);
@@ -126,7 +127,7 @@
 }
 
 [role="slider"] {
-	@include controls.slider($thumb-sel: '.grabber', $track-sel: '.bar');
+	@include controls.slider($thumb-sel: ".grabber", $track-sel: ".bar");
 
 	.bar {
 		top: 20px;
@@ -165,4 +166,3 @@
 [role="textbox"] {
 	@include controls.text-field;
 }
-
