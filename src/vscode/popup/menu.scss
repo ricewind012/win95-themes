@@ -17,29 +17,27 @@
 	height: unset;
 }
 
-.monaco {
-	&-menu {
-		font: var(--text-ui);
+.monaco-menu {
+	font: var(--text-ui);
 
-		.action-label,
-		.keybinding {
-			line-height: inherit;
-			padding: 0;
-		}
-
-		.action-label {
-			padding-left: 0;
-		}
-
-		.keybinding {
-			padding-left: 20px;
-			padding-right: 0;
-		}
-	}
-
-	&-action-bar {
+	.action-label,
+	.keybinding {
+		line-height: inherit;
 		padding: 0;
 	}
+
+	.action-label {
+		padding-left: 0;
+	}
+
+	.keybinding {
+		padding-left: 20px;
+		padding-right: 0;
+	}
+}
+
+.monaco-action-bar {
+	padding: 0;
 }
 
 // !important

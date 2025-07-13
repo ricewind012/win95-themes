@@ -1,10 +1,6 @@
 @use "shared/window";
 
 .DialogListBuilderInput {
-	&_List {
-		align-items: center;
-	}
-
 	.DialogTextInputBase {
 		background-color: transparent;
 		padding: 0;
@@ -13,33 +9,37 @@
 	}
 }
 
+.DialogListBuilderInput_List {
+	align-items: center;
+}
+
 .FriendPicker {
 	margin: 0;
+}
 
-	&_ChosenFriend {
-		@include window.statusbar-item;
+.FriendPicker_ChosenFriend {
+	@include window.statusbar-item;
 
-		background-color: transparent;
-		font: var(--text-ui);
-		margin: 0;
-		margin-right: 2px;
+	background-color: transparent;
+	font: var(--text-ui);
+	margin: 0;
+	margin-right: 2px;
 
-		span {
-			color: var(--color-button-text);
-		}
-
-		svg {
-			display: none;
-		}
+	span {
+		color: var(--color-button-text);
 	}
 
-	&FriendList {
-		@include window.content-container;
+	svg {
+		display: none;
 	}
+}
 
-	&ScrollPanel {
-		padding: 0;
-	}
+.FriendPickerFriendList {
+	@include window.content-container;
+}
+
+.FriendPickerScrollPanel {
+	padding: 0;
 }
 
 .insetShadow {

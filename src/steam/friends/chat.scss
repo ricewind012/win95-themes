@@ -60,48 +60,44 @@
 	}
 }
 
-.chatFileUpload {
-	&Cancel {
-		@include controls.button;
-		@include window.titlebar-button;
-		@include extends.titlebar-button-close;
+.chatFileUploadCancel {
+	@include controls.button;
+	@include window.titlebar-button;
+	@include extends.titlebar-button-close;
 
-		top: 0;
-		right: calc(
-			-260px + 16px + 8px + var(--border-size) + var(--window-spacing)
-		);
-		order: -1;
+	top: 0;
+	right: calc(-260px + 16px + 8px + var(--border-size) + var(--window-spacing));
+	order: -1;
 
-		svg {
-			display: none;
-		}
+	svg {
+		display: none;
 	}
+}
 
-	&FileName {
-		font: var(--text-ui);
-		font-weight: bold;
-	}
+.chatFileUploadFileName {
+	font: var(--text-ui);
+	font-weight: bold;
+}
 
-	&Preview {
-		// TODO: images use border-statusbar
-		box-shadow: none;
+.chatFileUploadPreview {
+	// TODO: images use border-statusbar
+	box-shadow: none;
+	padding: 0;
+}
+
+.chatFileUploadPreviewContainer {
+	// TODO: use tooltip ?
+	@include window.container($child: true);
+
+	gap: var(--text-spacing);
+
+	bottom: calc(var(--border-size) + var(--window-spacing) + 21px);
+	align-items: start;
+
+	& > * {
 		padding: 0;
-
-		&Container {
-			// TODO: use tooltip ?
-			@include window.container($child: true);
-
-			gap: var(--text-spacing);
-
-			bottom: calc(var(--border-size) + var(--window-spacing) + 21px);
-			align-items: start;
-
-			& > * {
-				padding: 0;
-				margin: 0;
-				margin-left: 4px;
-			}
-		}
+		margin: 0;
+		margin-left: 4px;
 	}
 }
 
@@ -125,120 +121,115 @@
 	margin-left: 0;
 }
 
-.chatRoom {
-	&Button {
-		@include controls.button;
-		@include controls.icon-button;
+.chatRoomButton {
+	@include controls.button;
+	@include controls.icon-button;
 
-		// TODO: remove when adding icons
-		padding: 2px;
+	// TODO: remove when adding icons
+	padding: 2px;
 
-		width: unset;
+	width: unset;
 
-		&.InviteToGroupChat {
-			margin-right: var(--toolbar-spacing);
+	&.InviteToGroupChat {
+		margin-right: var(--toolbar-spacing);
 
-			order: -1;
-		}
-
-		svg {
-			fill: var(--color-button-text);
-			margin: 0;
-			margin-top: 2px;
-		}
+		order: -1;
 	}
 
-	&ChannelGroups {
-		overflow: auto;
-		height: 100%;
+	svg {
+		fill: var(--color-button-text);
+		margin: 0;
+		margin-top: 2px;
+	}
+}
 
-		&::-webkit-scrollbar {
-			display: initial;
-		}
+.chatRoomChannelGroups {
+	overflow: auto;
+	height: 100%;
+
+	&::-webkit-scrollbar {
+		display: initial;
+	}
+}
+
+.chatRoomChannelsGroup {
+	color: var(--color-window-text);
+}
+
+.chatRoomGroupHeader {
+	border: none;
+	padding: 4px calc(var(--border-size) + 4px);
+}
+
+.chatRoomGroupNavColumn {
+	@include window.content-container;
+
+	margin-right: var(--window-gap);
+}
+
+.chatRoomGroupStats {
+	@include window.statusbar;
+
+	flex-direction: row;
+
+	.statCircle {
+		display: none;
 	}
 
-	&ChannelsGroup {
-		color: var(--color-window-text);
-	}
+	.statMemberStat {
+		@include window.statusbar-item;
+		@include extends.text-reset;
 
-	&Group {
-		// Yes...it's a capital letter.
-		&Header .ChatRoomGroupAvatar,
-		&HeaderNameandTag,
-		// It's broken...not by me !
-		&NavCollapseExpand {
-			display: none;
-		}
+		margin: 0;
 
-		&Header {
-			border: none;
-			padding: 4px calc(var(--border-size) + 4px);
-		}
+		&[title] {
+			font-size: 0;
 
-		&NavColumn {
-			@include window.content-container;
+			&::before {
+				content: attr(title);
 
-			margin-right: var(--window-gap);
-		}
-
-		&Stats {
-			@include window.statusbar;
-
-			flex-direction: row;
-
-			.statCircle {
-				display: none;
-			}
-
-			.statMemberStat {
-				@include window.statusbar-item;
-				@include extends.text-reset;
-
-				margin: 0;
-
-				&[title] {
-					font-size: 0;
-
-					&::before {
-						content: attr(title);
-
-						font-size: var(--text-ui-size);
-					}
-				}
+				font-size: var(--text-ui-size);
 			}
 		}
 	}
+}
 
-	&Members {
-		@include window.content-container;
+// Yes...it's a capital letter.
+.chatRoomGroupHeader .ChatRoomGroupAvatar,
+.chatRoomGroupHeaderNameandTag,
+.chatRoomGroupNavCollapseExpand {
+	display: none;
+}
 
-		border: none;
+.chatRoomMembers {
+	@include window.content-container;
 
-		// TODO: unify with game library
-		.groupName {
-			position: absolute;
-		}
+	border: none;
+
+	// TODO: unify with game library
+	.groupName {
+		position: absolute;
 	}
+}
 
-	&TextChannel {
-		color: inherit;
-		// TODO: .list-item-name padding is too small
-		padding: 4px;
+.chatRoomTextChannel {
+	color: inherit;
+	// TODO: .list-item-name padding is too small
+	padding: 4px;
 
-		&.ActiveTextChannel {
-			@include list.item-name-selected;
-		}
-
-		&Icon {
-			display: none;
-		}
-
-		&Name {
-			@include extends.text-reset;
-
-			margin: 0;
-		}
+	&.ActiveTextChannel {
+		@include list.item-name-selected;
 	}
+}
+
+.chatRoomTextChannelIcon {
+	display: none;
+}
+
+.chatRoomTextChannelName {
+	@include extends.text-reset;
+
+	margin: 0;
 }
 
 .ChatTabContextMenuItem {
@@ -275,12 +266,13 @@
 	padding: 0;
 
 	.HorizontalMiniSlider {
-		&,
-		&Scroll {
-			overflow: visible;
-		}
+		overflow: visible;
+	}
 
-		&Scroll::-webkit-scrollbar {
+	.HorizontalMiniSliderScroll {
+		overflow: visible;
+
+		&::-webkit-scrollbar {
 			display: none;
 		}
 	}
@@ -292,33 +284,31 @@
 	}
 }
 
-.chatTab {
-	&SetContainer {
-		padding-right: 0;
-		margin: var(--dialog-spacing);
-		margin-bottom: 0;
+.chatTabSetContainer {
+	padding-right: 0;
+	margin: var(--dialog-spacing);
+	margin-bottom: 0;
 
-		align-items: center;
-		justify-content: space-between;
-	}
+	align-items: center;
+	justify-content: space-between;
+}
 
-	// TODO: this goes out of bounds with too many tabs
-	&Selector {
-		@include controls.button;
-		@include window.titlebar-button;
+// TODO: this goes out of bounds with too many tabs
+.chatTabSelector {
+	@include controls.button;
+	@include window.titlebar-button;
 
-		// TODO: mixin
-		--button-img: var(--icon-arrow-bottom);
-		--button-img-size: 7px 4px;
+	// TODO: mixin
+	--button-img: var(--icon-arrow-bottom);
+	--button-img-size: 7px 4px;
 
-		background-image: none;
+	background-image: none;
 
-		width: unset;
+	width: unset;
 
-		// TODO: unify
-		svg {
-			display: none;
-		}
+	// TODO: unify
+	svg {
+		display: none;
 	}
 }
 
@@ -366,89 +356,81 @@
 	//display: none;
 }
 
-.inviteURL {
-	&AndCopy {
-		gap: var(--dialog-button-spacing);
-		margin: 0;
-	}
-
-	&Container {
-		@include text.input-label;
-
-		.copyInviteLink {
-			@include controls.button;
-			@include controls.icon-button;
-
-			// TODO: remove when adding icons
-			svg {
-				stroke: var(--color-button-text);
-			}
-		}
-	}
-
-	&Link {
-		width: 100%;
-		min-width: unset;
-		max-width: unset;
-	}
-
-	&LinkDesc {
-		@include extends.text-reset;
-
-		margin: 0;
-
-		align-self: unset;
-	}
+.inviteURLAndCopy {
+	gap: var(--dialog-button-spacing);
+	margin: 0;
 }
 
-.MemberList {
-	&Column {
-		margin-left: var(--window-gap);
-	}
+.inviteURLContainer {
+	@include text.input-label;
 
-	&Option {
+	.copyInviteLink {
 		@include controls.button;
 		@include controls.icon-button;
 
-		opacity: 1;
-
-		&sContainer {
-			margin-bottom: var(--window-gap);
-
-			height: unset;
-
-			.socialInputContainer {
-				margin: 0;
-				margin-left: var(--toolbar-spacing);
-			}
-		}
-
 		// TODO: remove when adding icons
 		svg {
-			margin-top: -2px;
-			margin-left: -2px;
-
-			polyline {
-				stroke: var(--color-button-text);
-			}
+			stroke: var(--color-button-text);
 		}
 	}
+}
 
-	// TODO: looks like shit with current width
-	&ViewCompact {
-		.socialInputContainer {
-			display: none;
+.inviteURLLink {
+	width: 100%;
+	min-width: unset;
+	max-width: unset;
+}
+
+.inviteURLLinkDesc {
+	@include extends.text-reset;
+
+	margin: 0;
+
+	align-self: unset;
+}
+
+.MemberListColumn {
+	margin-left: var(--window-gap);
+}
+
+.MemberListOption {
+	@include controls.button;
+	@include controls.icon-button;
+
+	opacity: 1;
+
+	// TODO: remove when adding icons
+	svg {
+		margin-top: -2px;
+		margin-left: -2px;
+
+		polyline {
+			stroke: var(--color-button-text);
 		}
+	}
+}
+
+.MemberListOptionsContainer {
+	margin-bottom: var(--window-gap);
+
+	height: unset;
+
+	.socialInputContainer {
+		margin: 0;
+		margin-left: var(--toolbar-spacing);
+	}
+}
+
+// TODO: looks like shit with current width
+.MemberListViewCompact {
+	.socialInputContainer {
+		display: none;
 	}
 }
 
 .msg {
 	background-color: transparent;
 	font: var(--text-ui);
-
-	&Text {
-		color: inherit;
-	}
 
 	&.timeDivision {
 		@include extends.text-reset;
@@ -466,6 +448,10 @@
 	}
 }
 
+.msgText {
+	color: inherit;
+}
+
 .RenameChatRoomInline {
 	margin: 0;
 
@@ -475,77 +461,71 @@
 .speaker {
 	color: inherit;
 	font-size: var(--text-ui-size);
-
-	&HoverArea {
-		align-items: center;
-	}
-
-	&Name {
-		color: inherit;
-		font-weight: bold;
-		margin: 0;
-	}
-
-	&TimeStamp {
-		@include extends.text-reset;
-
-		align-self: center;
-	}
 }
 
-.VoiceChatTextChannel {
-	&Desc {
-		@include window.statusbar-item;
-
-		background-image: none;
-		font: var(--text-ui);
-		text-shadow: none;
-		text-align: unset;
-
-		position: unset;
-		height: unset;
-	}
-
-	&Name {
-		@include extends.text-reset;
-
-		font-weight: bold;
-	}
+.speakerHoverArea {
+	align-items: center;
 }
 
-.VoiceRoomChat {
-	&History {
-		background-color: transparent;
-	}
+.speakerName {
+	color: inherit;
+	font-weight: bold;
+	margin: 0;
+}
 
-	&Title {
-		@include window.titlebar($focused-sel: "&");
+.speakerTimeStamp {
+	@include extends.text-reset;
 
-		.MinimizeTextChat {
-			@include controls.button;
-			@include window.titlebar-button;
-			@include extends.titlebar-button-close;
+	align-self: center;
+}
 
-			opacity: 1;
+.VoiceChatTextChannelDesc {
+	@include window.statusbar-item;
 
-			right: 0;
+	background-image: none;
+	font: var(--text-ui);
+	text-shadow: none;
+	text-align: unset;
 
-			svg {
-				display: none;
-			}
+	position: unset;
+	height: unset;
+}
+
+.VoiceChatTextChannelName {
+	@include extends.text-reset;
+
+	font-weight: bold;
+}
+
+.VoiceRoomChatHistory {
+	background-color: transparent;
+}
+
+.VoiceRoomChatTitle {
+	@include window.titlebar($focused-sel: "&");
+
+	.MinimizeTextChat {
+		@include controls.button;
+		@include window.titlebar-button;
+		@include extends.titlebar-button-close;
+
+		opacity: 1;
+
+		right: 0;
+
+		svg {
+			display: none;
 		}
 	}
-
-	&Window {
-		@include window.container($child: true);
-
-		border: none;
-		gap: var(--window-gap);
-	}
 }
 
-.VoiceRoomTitle {
-	&Labels {
-		margin-left: 0;
-	}
+.VoiceRoomChatWindow {
+	@include window.container($child: true);
+
+	border: none;
+	gap: var(--window-gap);
+}
+
+.VoiceRoomTitleLabels {
+	margin-left: 0;
 }

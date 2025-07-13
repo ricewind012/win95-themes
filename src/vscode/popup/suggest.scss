@@ -5,17 +5,15 @@
 
 	border: none;
 
-	.monaco {
-		&-scrollable-element {
-			overflow: hidden;
-		}
+	.monaco-scrollable-element {
+		overflow: hidden;
+	}
 
-		&-list-row {
-			padding-right: var(--scrollbar-size);
+	.monaco-list-row {
+		padding-right: var(--scrollbar-size);
+	}
 
-			&s {
-				margin: 0;
-			}
-		}
+	.monaco-list-rows {
+		margin: 0;
 	}
 }

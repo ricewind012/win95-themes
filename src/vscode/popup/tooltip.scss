@@ -18,18 +18,12 @@
 	}
 }
 
-.workbench-hover {
-	// Arrow
-	&-pointer {
-		display: none;
-	}
+// Arrow
+.workbench-hover-pointer {
+	display: none;
 }
 
 .monaco-hover {
-	&-content {
-		font: var(--text-ui);
-	}
-
 	.hover-row:not(:first-child):not(:empty),
 	.hover-language-status:not(:first-child) {
 		border: none;
@@ -40,6 +34,10 @@
 			@include controls.separator;
 		}
 	}
+}
+
+.monaco-hover-content {
+	font: var(--text-ui);
 }
 
 .monaco-editor-overlaymessage {

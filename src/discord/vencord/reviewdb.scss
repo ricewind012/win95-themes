@@ -1,10 +1,8 @@
-.vc-rdb {
-	&-modal-footer > div,
-	&-modal-reviews {
-		margin: 0;
-	}
+.vc-rdb-modal-footer > div,
+.vc-rdb-modal-reviews {
+	margin: 0;
+}
 
-	&-review-comment {
-		font-size: var(--text-ui-size);
-	}
+.vc-rdb-review-comment {
+	font-size: var(--text-ui-size);
 }

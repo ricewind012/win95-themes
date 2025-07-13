@@ -21,15 +21,15 @@
 
 		height: unset;
 
-		&Label,
-		&SecondaryLabel {
-			font: var(--text-ui);
-			margin: 0;
-		}
-
 		svg {
 			display: none;
 		}
+	}
+
+	._DialogRowLabel,
+	._DialogRowSecondaryLabel {
+		font: var(--text-ui);
+		margin: 0;
 	}
 }
 

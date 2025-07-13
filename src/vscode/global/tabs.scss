@@ -15,11 +15,9 @@
 		padding: 0;
 	}
 
-	.monaco-icon-label {
-		&::before,
-		&-container::after {
-			display: none;
-		}
+	.monaco-icon-label::before,
+	.monaco-icon-label-container::after {
+		display: none;
 	}
 }
 
@@ -36,62 +34,57 @@
 			background-color: var(--color-button-face);
 		}
 	}
+}
 
-	&s {
-		--editor-group-tab-height: inherit;
+.tab-border-top-container,
+.tab-border-bottom-container {
+	display: none;
+}
 
-		background-color: transparent;
+.tab-label {
+	padding: 0;
 
+	a,
+	span {
+		font: var(--text-ui);
 		cursor: unset;
+	}
+}
 
-		&,
-		&-container,
-		//&-and-actions-container,
-		.monaco-scrollable-element {
-			overflow: visible;
-		}
+.tab-actions {
+	margin-left: var(--text-spacing);
 
-		&-border-bottom::after {
-			display: none;
-		}
+	&,
+	.monaco-action-bar,
+	.action-label {
+		width: auto;
+		height: auto;
 	}
 
-	&-border {
-		&-top,
-		&-bottom {
-			&-container {
-				display: none;
-			}
-		}
+	/*
+	 * No borders, since it interferes with
+	 * editor tab height and unsaved file icon.
+	 */
+	.action-label {
+		box-shadow: none;
+	}
+}
+
+.tabs {
+	--editor-group-tab-height: inherit;
+
+	background-color: transparent;
+
+	cursor: unset;
+
+	&,
+	.tabs-container,
+	.monaco-scrollable-element {
+		overflow: visible;
 	}
 
-	&-label {
-		padding: 0;
-
-		a,
-		span {
-			font: var(--text-ui);
-			cursor: unset;
-		}
-	}
-
-	&-actions {
-		margin-left: var(--text-spacing);
-
-		&,
-		.monaco-action-bar,
-		.action-label {
-			width: auto;
-			height: auto;
-		}
-
-		/*
-		 * No borders, since it interferes with
-		 * editor tab height and unsaved file icon.
-		 */
-		.action-label {
-			box-shadow: none;
-		}
+	.tabs-border-bottom::after {
+		display: none;
 	}
 }
 
@@ -199,23 +192,22 @@
 	@include tabs.container;
 
 	// !important
-	& > .monaco-action-bar .action {
-		&-item {
-			overflow: visible;
-		}
+	& > .monaco-action-bar .action-item {
+		overflow: visible;
+	}
 
-		&-label {
-			@include tabs.tab($selected-sel: "&.checked");
+	// !important
+	& > .monaco-action-bar .action-label {
+		@include tabs.tab($selected-sel: "&.checked");
 
-			opacity: 1;
-			font-size: var(--text-ui-size);
+		opacity: 1;
+		font-size: var(--text-ui-size);
 
-			overflow: visible;
+		overflow: visible;
 
-			&.checked {
-				background-color: var(--color-button-face);
-				margin-top: 1px;
-			}
+		&.checked {
+			background-color: var(--color-button-face);
+			margin-top: 1px;
 		}
 	}
 }
@@ -231,20 +223,18 @@
 	height: unset;
 }
 
-.action {
-	// !important
-	.extension-editor
-		> .body
-		> .navbar
-		> .monaco-action-bar
-		> &s-container
-		> &-item
-		> &-label {
-		@include extends.text-reset;
-		@include tabs.tab($selected-sel: "&[aria-checked='true']");
+// !important
+.extension-editor
+	> .body
+	> .navbar
+	> .monaco-action-bar
+	> .actions-container
+	> .action-item
+	> .action-label {
+	@include extends.text-reset;
+	@include tabs.tab($selected-sel: "&[aria-checked='true']");
 
-		&[aria-checked="true"] {
-			margin-top: 1px;
-		}
+	&[aria-checked="true"] {
+		margin-top: 1px;
 	}
 }

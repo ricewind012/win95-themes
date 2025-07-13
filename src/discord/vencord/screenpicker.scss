@@ -1,72 +1,70 @@
 @use "shared++/extends";
 @use "discord/shared";
 
-.vcd-screen-picker {
-	&-card {
-		border: none;
-		padding: 0;
+.vcd-screen-picker-card {
+	border: none;
+	padding: 0;
+	margin: 0;
+}
+
+.vcd-screen-picker-grid {
+	& > div > :first-child {
+		display: none;
+	}
+
+	div {
 		margin: 0;
+
+		text-align: start;
+		white-space: pre-wrap;
 	}
 
-	&-grid {
-		& > div > :first-child {
-			display: none;
-		}
+	input[type="radio"] {
+		flex-shrink: 0;
+	}
+}
 
-		div {
-			margin: 0;
+.vcd-screen-picker-hint-description {
+	@include extends.text-reset;
 
-			text-align: start;
-			white-space: pre-wrap;
-		}
+	p {
+		margin-block: var(--text-spacing);
+	}
+}
 
-		input[type="radio"] {
-			flex-shrink: 0;
-		}
+.vcd-screen-picker-preview {
+	&::after {
+		@include shared.pseudo-separator;
+
+		margin-block: 8px 12px;
+	}
+}
+
+.vcd-screen-picker-radio {
+	border: none;
+	padding: 0;
+}
+
+.vcd-screen-picker-radios {
+	gap: var(--text-spacing);
+
+	flex-direction: column;
+
+	div {
+		font-weight: normal;
 	}
 
-	&-hint-description {
-		@include extends.text-reset;
-
-		p {
-			margin-block: var(--text-spacing);
-		}
+	input[type="radio"] {
+		order: -1;
+		display: initial;
 	}
+}
 
-	&-preview {
-		&::after {
-			@include shared.pseudo-separator;
+.vcd-screen-picker-settings-grid {
+	& > :first-child > :first-child {
+		font-weight: bold;
+		margin-top: var(--text-spacing);
 
-			margin-block: 8px 12px;
-		}
-	}
-
-	&-radio {
-		border: none;
-		padding: 0;
-	}
-
-	&-radios {
-		gap: var(--text-spacing);
-
-		flex-direction: column;
-
-		div {
-			font-weight: normal;
-		}
-
-		input[type="radio"] {
-			order: -1;
-			display: initial;
-		}
-	}
-
-	&-settings-grid {
-		& > :first-child > :first-child {
-			font-weight: bold;
-			margin-top: var(--text-spacing);
-
-			position: initial;
-		}
+		position: initial;
 	}
 }

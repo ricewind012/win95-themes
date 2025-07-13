@@ -3,87 +3,83 @@
 @use "shared/window";
 @use "shared++/extends";
 
-.extension {
-	&-editor {
-		padding: var(--tabpanel-spacing);
+.extension-editor {
+	padding: var(--tabpanel-spacing);
 
+	max-width: unset;
+
+	& > .header {
+		font: var(--text-ui);
+		padding: 0;
+
+		.actions-container {
+			gap: 6px;
+
+			& > .disabled {
+				display: none;
+			}
+		}
+
+		.action-item {
+			overflow: visible;
+		}
+
+		.action-label.codicon:empty {
+			@include controls.button;
+			@include window.titlebar-button;
+
+			height: 22px;
+		}
+
+		.action-dropdown-item-separator {
+			display: none;
+		}
+
+		.status {
+			font: var(--text-ui);
+		}
+
+		.details {
+			overflow: visible;
+		}
+	}
+
+	.subtitle {
+		font: var(--text-ui);
+
+		height: unset;
+	}
+
+	.subtitle-entry:not(:first-child) {
+		border-left: 1px solid var(--color-button-highlight);
+		box-shadow: -1px 0 var(--color-button-shadow);
+		padding-left: 10px;
+		margin-left: 10px;
+	}
+
+	.content {
+		@include tabs.content;
+
+		height: calc(100% - 21px);
+	}
+
+	.feature-contributions {
+		margin: 0;
+	}
+
+	.features-list-wrapper {
+		padding: 0;
+	}
+
+	.readme-container {
 		max-width: unset;
-
-		& > .header {
-			font: var(--text-ui);
-			padding: 0;
-
-			.action {
-				&s-container {
-					gap: 6px;
-
-					& > .disabled {
-						display: none;
-					}
-				}
-
-				&-item {
-					overflow: visible;
-				}
-
-				&-label.codicon:empty {
-					@include controls.button;
-					@include window.titlebar-button;
-
-					height: 22px;
-				}
-
-				&-dropdown-item-separator {
-					display: none;
-				}
-			}
-
-			.status {
-				font: var(--text-ui);
-			}
-
-			.details {
-				overflow: visible;
-			}
-		}
-
-		.subtitle {
-			font: var(--text-ui);
-
-			height: unset;
-
-			&-entry:not(:first-child) {
-				border-left: 1px solid var(--color-button-highlight);
-				box-shadow: -1px 0 var(--color-button-shadow);
-				padding-left: 10px;
-				margin-left: 10px;
-			}
-		}
-
-		.content {
-			@include tabs.content;
-
-			height: calc(100% - 21px);
-		}
-
-		.feature-contributions {
-			margin: 0;
-		}
-
-		.features-list-wrapper {
-			padding: 0;
-		}
-
-		.readme-container {
-			max-width: unset;
-		}
 	}
+}
 
-	&-action:not(.monaco-checkbox) {
-		@include controls.button;
+.extension-action:not(.monaco-checkbox) {
+	@include controls.button;
 
-		justify-content: center;
-	}
+	justify-content: center;
 }
 
 .switch-to-prerelease {
@@ -96,27 +92,25 @@
 }
 
 // Details right sidebar
-.additional-details {
-	&-container {
-		width: 37%;
+.additional-details-container {
+	width: 37%;
 
-		.category {
-			font: var(--text-ui);
-		}
+	.category {
+		font: var(--text-ui);
 	}
+}
 
-	&-content {
-		padding: 14px;
-	}
+.additional-details-content {
+	padding: 14px;
+}
 
-	&-element {
-		@include controls.groupbox;
-	}
+.additional-details-element {
+	@include controls.groupbox;
+}
 
-	&-title {
-		@include extends.text-reset;
-		@include extends.legend-as-div;
-	}
+.additional-details-title {
+	@include extends.text-reset;
+	@include extends.legend-as-div;
 }
 
 .more-info-entry {

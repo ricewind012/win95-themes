@@ -11,80 +11,78 @@
 	background-color: transparent;
 }
 
-.dialog {
-	&-shadow {
-		box-shadow: none;
+.dialog-shadow {
+	box-shadow: none;
+}
+
+.dialog-icon {
+	--a: calc(var(--border-size) + var(--window-spacing));
+	--icon-size: 32px;
+
+	flex: 0 0 var(--icon-size);
+	height: var(--icon-size);
+
+	&::before {
+		content: attr(aria-label);
+
+		position: absolute;
+		left: calc(var(--a) + 2px);
+		top: calc(var(--a) + 3px);
+
+		font: var(--text-ui);
+		font-weight: bold;
 	}
+}
 
-	&-icon {
-		--a: calc(var(--border-size) + var(--window-spacing));
-		--icon-size: 32px;
+.dialog-toolbar-row {
+	// TODO?: vscode also has .titlebar and only there can I get focused state
+	background-color: var(--color-active-caption);
+	color: var(--color-active-caption-text);
+	padding: 0 2px;
 
-		flex: 0 0 var(--icon-size);
-		height: var(--icon-size);
+	height: unset;
 
-		&::before {
-			content: attr(aria-label);
-
-			position: absolute;
-			left: calc(var(--a) + 2px);
-			top: calc(var(--a) + 3px);
-
-			font: var(--text-ui);
-			font-weight: bold;
-		}
+	.actions-container {
+		height: var(--titlebar-height);
 	}
+}
 
-	&-toolbar-row {
-		// TODO?: vscode also has .titlebar and only there can I get focused state
-		background-color: var(--color-active-caption);
-		color: var(--color-active-caption-text);
-		padding: 0 2px;
+.dialog-message {
+	font: var(--text-ui);
+	margin-bottom: var(--messagebox-content-spacing);
 
-		height: unset;
+	min-height: unset;
+}
 
-		.actions-container {
-			height: var(--titlebar-height);
-		}
+.dialog-message-detail {
+	font: var(--text-ui);
+}
+
+.dialog-message-row {
+	padding: var(--messagebox-spacing);
+}
+
+.dialog-message-container {
+	padding-left: var(--messagebox-content-spacing);
+}
+
+.dialog-checkbox-row {
+	@include text.input-label;
+
+	padding-top: var(--messagebox-content-spacing);
+}
+
+.dialog-buttons {
+	gap: var(--dialog-button-spacing);
+
+	overflow: visible;
+
+	// !important
+	.monaco-dialog-box > .dialog-buttons-row > & > .monaco-button {
+		outline-offset: calc(var(--button-spacing) * -1);
 	}
+}
 
-	&-message {
-		margin-bottom: var(--messagebox-content-spacing);
-
-		min-height: unset;
-
-		&,
-		&-detail {
-			font: var(--text-ui);
-		}
-
-		&-row {
-			padding: var(--messagebox-spacing);
-		}
-
-		&-container {
-			padding-left: var(--messagebox-content-spacing);
-		}
-	}
-
-	&-checkbox-row {
-		@include text.input-label;
-
-		padding-top: var(--messagebox-content-spacing);
-	}
-
-	&-buttons {
-		gap: var(--dialog-button-spacing);
-
-		overflow: visible;
-
-		// !important
-		.monaco-dialog-box > &-row > & > .monaco-button {
-			outline-offset: calc(var(--button-spacing) * -1);
-		}
-
-		&-row {
-			padding: var(--messagebox-spacing);
-		}
-	}
+.dialog-buttons-row {
+	padding: var(--messagebox-spacing);
 }

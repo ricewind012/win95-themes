@@ -106,7 +106,7 @@
 }
 
 .ChatRoomListGroupItem {
-	&:hover &_header {
+	&:hover .ChatRoomListGroupItem_header {
 		background-color: var(--color-highlight);
 		color: var(--color-highlight-text);
 	}
@@ -162,20 +162,21 @@
 }
 
 .ConnectionTrouble {
-	&,
-	&Content {
-		height: unset;
-	}
-
-	&Message {
-		@include shared.dialog-title;
-
-		text-shadow: none;
-	}
+	height: unset;
 
 	.title-area {
 		display: none;
 	}
+}
+
+.ConnectionTroubleContent {
+	height: unset;
+}
+
+.ConnectionTroubleMessage {
+	@include shared.dialog-title;
+
+	text-shadow: none;
 }
 
 // This sounds crazy, but you can right click on your friends !

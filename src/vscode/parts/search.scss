@@ -1,47 +1,43 @@
-.search {
-	&-view .query-details.more,
-	&-editor .includes-excludes.expanded {
-		h4 {
-			font: var(--text-ui);
-			padding: 10px 0 4px 0;
+.search-view .query-details.more,
+.search-editor .includes-excludes.expanded {
+	h4 {
+		font: var(--text-ui);
+		padding: 10px 0 4px 0;
 
-			&::first-letter {
-				text-transform: uppercase;
-			}
+		&::first-letter {
+			text-transform: uppercase;
 		}
 	}
+}
 
-	&-editor {
-		height: 100%;
+.search-editor {
+	height: 100%;
 
-		.context-lines-input,
-		.messages {
-			margin: 0;
-		}
-
-		.monaco {
-			&-findInput > .monaco-scrollable-element {
-				overflow: visible;
-			}
-		}
-
-		.includes-excludes {
-			.expand {
-				// TODO(port): wtf
-				//@extend .monaco-toolbar .action-label;
-			}
-
-			.file-types {
-				padding: 0;
-			}
-		}
+	.context-lines-input,
+	.messages {
+		margin: 0;
 	}
 
-	&-view,
-	&-editor {
-		.messages {
-			margin: 0;
+	.monaco-findInput > .monaco-scrollable-element {
+		overflow: visible;
+	}
+
+	.includes-excludes {
+		.expand {
+			// TODO(port): wtf
+			//@extend .monaco-toolbar .action-label;
 		}
+
+		.file-types {
+			padding: 0;
+		}
+	}
+}
+
+.search-view,
+.search-editor {
+	.messages {
+		margin: 0;
 	}
 }
 

@@ -106,112 +106,108 @@ $-max-nest: 10;
 		}
 	}
 
-	.monaco-icon {
-		&-label {
-			gap: 2px;
+	.monaco-icon-container {
+		margin-top: 1px;
+	}
 
-			align-items: center;
+	.monaco-icon-label {
+		gap: 2px;
 
-			&::before {
-				// Fix for source control tab or the extension
-				position: relative;
-				height: var(--icon-size);
-				z-index: 99;
+		align-items: center;
 
-				padding-right: 2px;
-			}
+		&::before {
+			// Fix for source control tab or the extension
+			position: relative;
+			height: var(--icon-size);
+			z-index: 99;
 
-			&::after {
-				width: 12px;
-
-				opacity: 1;
-				font-size: inherit;
-				margin: 0;
-			}
-
-			&-container {
-				margin-top: 1px;
-			}
+			padding-right: 2px;
 		}
 
-		&-name-container {
-			@include list.item-name;
+		&::after {
+			width: 12px;
 
-			.label-separator {
-				opacity: 1;
-				margin: 0;
-			}
+			opacity: 1;
+			font-size: inherit;
+			margin: 0;
+		}
+	}
+
+	.monaco-icon-name-container {
+		@include list.item-name;
+
+		.label-separator {
+			opacity: 1;
+			margin: 0;
 		}
 	}
 }
 
 // Tree dots
-.monaco-tl {
-	&-row {
-		margin-left: -7px;
+.monaco-tl-row {
+	margin-left: -7px;
 
-		overflow: visible;
+	overflow: visible;
+}
+
+.monaco-tl-indent {
+	left: 11px;
+}
+
+.monaco-tl-contents {
+	overflow: visible;
+	position: relative;
+
+	// Expand button to icon dots
+	&::before,
+	[aria-expanded] &::after {
+		content: "";
+
+		position: absolute;
 	}
 
-	&-indent {
-		left: 11px;
+	&::before {
+		left: -6px;
+		top: 50%;
+		width: 7px;
+
+		border-bottom: 1px dotted var(--color-gray-text);
+	}
+}
+
+.monaco-tl-twistie {
+	@include tree.item-icon;
+
+	margin-right: var(--tree-spacing);
+
+	flex-shrink: 0;
+	z-index: 2;
+
+	&::before {
+		border-radius: 0;
+
+		z-index: 1;
+		transform: unset;
 	}
 
-	&-contents {
-		overflow: visible;
-		position: relative;
-
-		// Expand button to icon dots
-		&::before,
-		[aria-expanded] &::after {
-			content: "";
-
-			position: absolute;
-		}
-
-		&::before {
-			left: -6px;
-			top: 50%;
-			width: 7px;
-
-			border-bottom: 1px dotted var(--color-gray-text);
-		}
+	&::after {
+		left: 1px;
+		width: 11px;
 	}
+}
 
-	&-twistie {
-		@include tree.item-icon;
+.monaco-tl-indent {
+	top: -18px;
+	height: calc(100% + 22px);
 
-		margin-right: var(--tree-spacing);
+	& > .indent-guide {
+		border-left: 1px dotted var(--color-gray-text);
 
-		flex-shrink: 0;
-		z-index: 2;
+		width: calc(11px + var(--tree-spacing));
+		height: calc(100% - 1px);
 
-		&::before {
-			border-radius: 0;
-
-			z-index: 1;
-			transform: unset;
-		}
-
-		&::after {
-			left: 1px;
-			width: 11px;
-		}
-	}
-
-	&-indent {
-		top: -18px;
-		height: calc(100% + 22px);
-
-		& > .indent-guide {
-			border-left: 1px dotted var(--color-gray-text);
-
-			width: calc(11px + var(--tree-spacing));
-			height: calc(100% - 1px);
-
-			&:nth-child(even) {
-				--tree-spacing: 7px;
-			}
+		&:nth-child(even) {
+			--tree-spacing: 7px;
 		}
 	}
 }

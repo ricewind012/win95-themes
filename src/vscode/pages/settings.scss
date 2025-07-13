@@ -4,19 +4,17 @@
 @use "shared/window";
 @use "shared++/extends";
 
-.settings {
-	&-toc-wrapper {
-		padding: 0;
-	}
+.settings-toc-wrapper {
+	padding: 0;
+}
 
-	&-editor {
-		padding: var(--tabpanel-spacing);
+.settings-editor {
+	padding: var(--tabpanel-spacing);
 
-		max-width: unset;
-		height: 100%;
-	}
+	max-width: unset;
+	height: 100%;
 
-	&-editor > &-body {
+	& > .settings-body {
 		height: calc(100% - 50px);
 
 		& > .monaco-split-view2 {
@@ -25,144 +23,136 @@
 			height: 100%;
 		}
 	}
+}
 
-	&-header {
-		overflow: visible;
-		background-color: var(--color-button-face);
-		padding: 0;
-		margin: 0;
+.settings-header {
+	overflow: visible;
+	background-color: var(--color-button-face);
+	padding: 0;
+	margin: 0;
 
-		position: relative;
-		max-width: unset;
-		//z-index: 0;
+	position: relative;
+	max-width: unset;
+	//z-index: 0;
+}
 
-		&-controls {
-			border: none;
+.settings-header-controls {
+	border: none;
 
-			height: unset;
+	height: unset;
 
-			.monaco-button {
-				width: unset;
-			}
-		}
-	}
-
-	&-right-controls {
-		margin-top: -6px;
-	}
-
-	&-group-title-label {
-		padding: 0;
-	}
-
-	// !important
-	&-editor > &-body &-tree-container {
-		.monaco-list,
-		.monaco-scrollable-element {
-			overflow: hidden;
-			height: 100%;
-		}
-
-		.monaco-list {
-			@include tabs.content;
-
-			&-row {
-				background-color: transparent;
-				font: var(--text-ui);
-
-				&s {
-					background-color: var(--color-button-face);
-				}
-			}
-		}
-	}
-
-	&-clear-widget {
-		position: unset;
+	.monaco-button {
 		width: unset;
-	}
-
-	// What's the point ?
-	&-count-widget {
-		display: none;
 	}
 }
 
-.setting {
-	&-item {
-		&-contents {
-			@include controls.groupbox;
-		}
+.settings-right-controls {
+	margin-top: -6px;
+}
 
-		&-title {
-			@include extends.legend-as-div;
-		}
+.settings-group-title-label {
+	padding: 0;
+}
 
-		&-label {
-			@include extends.text-reset;
-		}
-
-		&-category {
-			opacity: 1;
-		}
-
-		&-value-description {
-			gap: 7px;
-		}
-
-		&-description {
-			opacity: 1;
-
-			margin: 0;
-		}
-
-		&-modified-indicator {
-			border-color: red;
-
-			left: 3px;
-			top: 0;
-			bottom: 0;
-		}
+// !important
+.settings-editor > .settings-body .settings-tree-container {
+	.monaco-list,
+	.monaco-scrollable-element {
+		overflow: hidden;
+		height: 100%;
 	}
 
-	&-list {
-		&-object {
-			&-widget {
-				@include window.content-container;
-
-				margin-bottom: 9px;
-			}
-
-			&-value-container {
-				//height: unset;
-			}
-		}
-
-		&-object-key,
-		&-object-value {
-			@include table.row;
-
-			line-height: unset;
-			margin: 0;
-
-			min-height: unset;
-		}
-
-		&-row,
-		&-row-header {
-			font-weight: normal;
-			padding: 0;
-		}
-
-		&-row-header &-object-key,
-		&-row-header &-object-value {
-			@include table.header-row;
-		}
+	.monaco-list {
+		@include tabs.content;
 	}
 
-	&-toolbar-container {
-		left: -12px;
+	.monaco-list-row {
+		background-color: transparent;
+		font: var(--text-ui);
 	}
+
+	.monaco-list-rows {
+		background-color: var(--color-button-face);
+	}
+}
+
+.settings-clear-widget {
+	position: unset;
+	width: unset;
+}
+
+// What's the point ?
+.settings-count-widget {
+	display: none;
+}
+
+.setting-item-contents {
+	@include controls.groupbox;
+}
+
+.setting-item-title {
+	@include extends.legend-as-div;
+}
+
+.setting-item-label {
+	@include extends.text-reset;
+}
+
+.setting-item-category {
+	opacity: 1;
+}
+
+.setting-item-value-description {
+	gap: 7px;
+}
+
+.setting-item-description {
+	opacity: 1;
+
+	margin: 0;
+}
+
+.setting-item-modified-indicator {
+	border-color: red;
+
+	left: 3px;
+	top: 0;
+	bottom: 0;
+}
+
+.setting-list-object-widget {
+	@include window.content-container;
+
+	margin-bottom: 9px;
+}
+
+.setting-list-object-value-container {
+	//height: unset;
+}
+
+.setting-list-object-key,
+.setting-list-object-value {
+	@include table.row;
+
+	line-height: unset;
+	margin: 0;
+
+	min-height: unset;
+}
+
+.setting-list-row,
+.setting-list-row-header {
+	font-weight: normal;
+	padding: 0;
+}
+
+.setting-list-row-header .setting-list-object-key,
+.setting-list-row-header .setting-list-object-value {
+	@include table.header-row;
+}
+
+.setting-toolbar-container {
+	left: -12px;
 }
 
 .search-container {

@@ -1,56 +1,48 @@
 @use "shared/tabs";
 @use "shared/window";
 
-.editor {
-	&-container {
-		background-color: transparent;
+.editor-container {
+	background-color: transparent;
 
-		height: calc(100% - 30px);
-	}
+	height: calc(100% - 30px);
 
-	&-container > &-instance {
+	& > .editor-instance {
 		@include tabs.content($compact: true);
 	}
+}
 
-	&-group {
-		&-container {
-			background-color: var(--color-button-face);
-			padding: 9px 12px 5px 7px;
+.editor-group-container {
+	background-color: var(--color-button-face);
+	padding: 9px 12px 5px 7px;
+}
+
+.editor-group-watermark {
+	.shortcuts {
+		dl,
+		dt {
+			opacity: 1;
+			color: inherit;
 		}
 
-		&-watermark {
-			.shortcuts {
-				dl,
-				dt {
-					opacity: 1;
-					color: inherit;
-				}
-
-				dt {
-					font: var(--text-ui);
-					letter-spacing: 0;
-				}
-			}
+		dt {
+			font: var(--text-ui);
+			letter-spacing: 0;
 		}
 	}
+}
 
-	&-actions {
-		padding: 0;
-	}
+.editor-actions {
+	padding: 0;
+}
 
-	& &-scrollable {
+.editor {
+	.editor-scrollable {
 		width: calc(100% - 56px);
 
 		.search-results {
 			width: calc(100% - 38px);
 		}
 	}
-
-	/*
-	&-placeholder-label-container {
-		font: var(--text-ui);
-	}
-	*/
 
 	& > .content {
 		background-color: transparent;
@@ -64,6 +56,12 @@
 		overflow: visible;
 	}
 }
+
+/*
+.editor-placeholder-label-container {
+	font: var(--text-ui);
+}
+*/
 
 .editorPlaceholder {
 	font: var(--text-ui);
@@ -96,55 +94,55 @@
 	}
 }
 
-.monaco {
-	&-scrollable-element,
-	&-split-view2.vertical.separator-border
-		> &-scrollable-element
-		> .split-view-container
-		> .split-view-view {
-		height: 100%;
-	}
+.monaco-scrollable-element,
+.monaco-split-view2.vertical.separator-border
+	> .monaco-scrollable-element
+	> .split-view-container
+	> .split-view-view {
+	height: 100%;
+}
 
-	&-editor {
-		// The actual editor, i.e. not widgets
-		.editor-instance > & {
-			@include window.content-container;
-
-			width: 100%;
-			height: 100%;
-		}
-
-		// Widgets
-		&:not([role="code"]) {
-			@include window.container($child: true);
-		}
-
-		& > .overflow-guard {
-			width: 100%;
-			height: 100%;
-		}
-
-		.lines-content,
-		.view-lines {
-			width: calc(100% - var(--scrollbar-size));
-		}
-
-		.view-overlays {
-			width: 100%;
-		}
-
-		.editor & .current-line {
+.monaco-editor {
+	.editor & {
+		.current-line {
 			border: 1px solid var(--color-highlight);
 
 			width: 100%;
-
-			&-margin-both {
-				border-right: none;
-			}
-
-			&-both {
-				border-left: none;
-			}
 		}
+
+		.current-line-margin-both {
+			border-right: none;
+		}
+
+		.current-line-both {
+			border-left: none;
+		}
+	}
+
+	// The actual editor, i.e. not widgets
+	.editor-instance > & {
+		@include window.content-container;
+
+		width: 100%;
+		height: 100%;
+	}
+
+	// Widgets
+	&:not([role="code"]) {
+		@include window.container($child: true);
+	}
+
+	& > .overflow-guard {
+		width: 100%;
+		height: 100%;
+	}
+
+	.lines-content,
+	.view-lines {
+		width: calc(100% - var(--scrollbar-size));
+	}
+
+	.view-overlays {
+		width: 100%;
 	}
 }

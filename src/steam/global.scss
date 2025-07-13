@@ -1,6 +1,10 @@
 @use "shared/window";
 @use "shared++/global";
 
+::placeholder {
+	font: var(--text-ui);
+}
+
 body {
 	@include window.container;
 }

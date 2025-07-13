@@ -47,8 +47,8 @@
 
 .OrSeparator {
 	margin: 0;
+}
 
-	&Label {
-		@include extends.text-reset;
-	}
+.OrSeparatorLabel {
+	@include extends.text-reset;
 }

@@ -20,10 +20,6 @@
 		overflow: visible;
 		height: unset;
 
-		&-actions {
-			height: unset;
-		}
-
 		.monaco-inputbox,
 		.select-container {
 			margin-bottom: -4px;
@@ -36,6 +32,10 @@
 		.select-container {
 			margin-right: 2px;
 		}
+	}
+
+	.title-actions {
+		height: unset;
 	}
 
 	& > .content {
@@ -51,13 +51,13 @@
 
 	.pane {
 		height: calc(100% - 2px);
+	}
 
-		&-body {
-			margin-left: 2px;
-			margin-top: 2px;
+	.pane-body {
+		margin-left: 2px;
+		margin-top: 2px;
 
-			width: calc(100% - 32px);
-		}
+		width: calc(100% - 32px);
 	}
 
 	.single-terminal-tab {
@@ -79,35 +79,33 @@
 		height: calc(100% + 4px);
 	}
 
-	&-header {
+	.monaco-list {
+		width: calc(100% - 8px);
+		height: calc(100% - 11px);
+
+		.sidebar.left & {
+			width: 100%;
+		}
+	}
+}
+
+.pane-header {
+	font: var(--text-ui);
+	border: none;
+
+	height: unset;
+
+	.title {
 		font: var(--text-ui);
+
+		padding: 0;
+	}
+}
+
+.pane-body {
+	& > .monaco-editor {
 		border: none;
-
-		height: unset;
-
-		.title {
-			font: var(--text-ui);
-
-			padding: 0;
-		}
-	}
-
-	&-body {
-		& > .monaco-editor {
-			border: none;
-			box-shadow: none;
-		}
-	}
-
-	.monaco {
-		&-list {
-			width: calc(100% - 8px);
-			height: calc(100% - 11px);
-
-			.sidebar.left & {
-				width: 100%;
-			}
-		}
+		box-shadow: none;
 	}
 }
 
@@ -129,21 +127,19 @@
 	}
 }
 
-.viewpane-filter {
-	&-container {
-		margin: 1px 8px 2px -1px;
+.viewpane-filter-container {
+	margin: 1px 8px 2px -1px;
 
-		&:empty {
-			display: none;
-		}
+	&:empty {
+		display: none;
 	}
+}
 
-	&-controls {
-		margin-left: var(--toolbar-spacing);
-		margin-bottom: -1px;
+.viewpane-filter-controls {
+	margin-left: var(--toolbar-spacing);
+	margin-bottom: -1px;
 
-		position: unset;
-	}
+	position: unset;
 }
 
 .xterm {

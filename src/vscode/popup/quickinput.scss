@@ -1,80 +1,74 @@
 @use "shared/controls";
 @use "shared/window";
 
-.quick-input {
-	&-widget {
-		@include window.container($child: true);
+.quick-input-widget {
+	@include window.container($child: true);
 
-		margin: 0;
+	margin: 0;
 
-		inset: 12.5% 25%;
-		width: 50%;
-		height: 50%;
+	inset: 12.5% 25%;
+	width: 50%;
+	height: 50%;
 
-		.monaco {
-			&-scrollable-element {
-				padding: 0;
-			}
-		}
-	}
-
-	&-title {
-		@include window.titlebar-name;
-
-		text-align: left;
+	.monaco-scrollable-element {
 		padding: 0;
-		padding-left: 2px;
-
-		// Not even an aria-label !
-		:root:lang(en) &[style="display: none;"] {
-			display: block;
-
-			&::before {
-				content: "Command Palette";
-			}
-		}
-
-		&bar {
-			background-color: var(--color-active-caption);
-			color: var(--color-active-caption-text);
-
-			height: var(--titlebar-height);
-		}
 	}
+}
 
-	&-left-action-bar:has(> .actions-container:empty) {
-		display: none;
-	}
+.quick-input-title {
+	@include window.titlebar-name;
 
-	&-right-action-bar {
-		.action-label {
-			@include controls.button;
-			@include window.titlebar-button;
-		}
-	}
+	text-align: left;
+	padding: 0;
+	padding-left: 2px;
 
-	&-header:not(.hidden-input),
-	&-description,
-	&-list {
-		padding: 0;
-		margin: var(--dialog-spacing);
-	}
+	// Not even an aria-label !
+	:root:lang(en) &[style="display: none;"] {
+		display: block;
 
-	&-list {
-		overflow: hidden;
-		height: calc(100% - 64px);
-
-		&-label {
-			overflow: visible;
+		&::before {
+			content: "Command Palette";
 		}
 	}
 }
 
-.profile {
-	&-edit {
-	}
+.quick-input-titlebar {
+	background-color: var(--color-active-caption);
+	color: var(--color-active-caption-text);
 
-	&-type-select-container {
-		overflow: visible;
+	height: var(--titlebar-height);
+}
+
+.quick-input-left-action-bar:has(> .actions-container:empty) {
+	display: none;
+}
+
+.quick-input-right-action-bar {
+	.action-label {
+		@include controls.button;
+		@include window.titlebar-button;
 	}
+}
+
+.quick-input-header:not(.hidden-input),
+.quick-input-description,
+.quick-input-list {
+	padding: 0;
+	margin: var(--dialog-spacing);
+}
+
+.quick-input-list {
+	overflow: hidden;
+	height: calc(100% - 64px);
+}
+
+.quick-input-list-label {
+	overflow: visible;
+}
+
+.profile-edit {
+}
+
+.profile-type-select-container {
+	overflow: visible;
 }

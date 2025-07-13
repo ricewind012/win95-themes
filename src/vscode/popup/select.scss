@@ -1,32 +1,28 @@
 @use "shared/controls";
 @use "shared/listbox";
 
-.monaco {
-	&-select-box-dropdown-container {
-		@include listbox.container;
+.monaco-select-box-dropdown-container {
+	@include listbox.container;
 
-		font: var(--text-ui);
+	font: var(--text-ui);
 
-		width: 320px;
+	width: 320px;
 
-		// The actual listbox
-		.monaco-list {
-			border: none;
-			box-shadow: none;
-			padding: 0;
-		}
+	// The actual listbox
+	.monaco-list {
+		border: none;
+		box-shadow: none;
+		padding: 0;
+	}
 
-		& > .select-box {
-			&-dropdown-list-container,
-			&-details-pane {
-				padding: 0;
-			}
+	.select-box-dropdown-list-container,
+	.select-box-details-pane {
+		padding: 0;
+	}
 
-			&-details-pane {
-				@include controls.separator;
+	.select-box-details-pane {
+		@include controls.separator;
 
-				margin-inline: 3px 4px;
-			}
-		}
+		margin-inline: 3px 4px;
 	}
 }

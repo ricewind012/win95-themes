@@ -57,32 +57,32 @@
 			filter: invert(1);
 		}
 	}
+}
 
-	// Used only in overlay browser ?
-	&-children {
-		@include window.titlebar-name;
+// Used only in overlay browser ?
+.title-area-children {
+	@include window.titlebar-name;
 
-		font-size: var(--font-ui-size);
-		color: var(--color-inactive-caption-text);
-		padding-left: calc(var(--icon-size) + var(--titlebar-spacing));
+	font-size: var(--font-ui-size);
+	color: var(--color-inactive-caption-text);
+	padding-left: calc(var(--icon-size) + var(--titlebar-spacing));
 
-		.WindowFocus & {
-			color: var(--color-active-caption-text);
-		}
+	.WindowFocus & {
+		color: var(--color-active-caption-text);
 	}
+}
 
-	&-icon {
-		@include controls.button;
-		@include window.titlebar-button;
+.title-area-icon {
+	@include controls.button;
+	@include window.titlebar-button;
 
-		width: unset;
+	width: unset;
+}
 
-		&-inner {
-			display: none;
-		}
-	}
+.title-area-icon-inner {
+	display: none;
+}
 
-	&-highlight {
-		display: none;
-	}
+.title-area-highlight {
+	display: none;
 }

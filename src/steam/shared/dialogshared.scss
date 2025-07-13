@@ -6,276 +6,266 @@
 @use "shared++/extends";
 @use "steam/shared";
 
-::placeholder {
-	font: var(--text-ui);
+.ModalOverlayBackground {
+	display: none;
 }
 
-.Modal {
-	&OverlayBackground {
+.ModalPosition {
+	background-image: none;
+}
+
+.ModalPosition_Content {
+	@include extends.text-reset;
+
+	box-shadow: none;
+}
+
+.ModalPosition_Dismiss {
+	top: 5px;
+	right: 5px;
+
+	.closeButton {
+		@include controls.button;
+		@include window.titlebar-button;
+		@include extends.titlebar-button-close;
+	}
+
+	svg {
 		display: none;
 	}
+}
 
-	&Position {
-		background-image: none;
+.ModalPosition_TopBar {
+	display: none;
+}
 
-		&_Content {
-			@include extends.text-reset;
+.DialogBody {
+	@include tabs.content;
 
-			box-shadow: none;
-		}
+	-webkit-mask-image: none; // client settings
+	font: var(--text-ui);
+	margin: 0;
+	gap: var(--text-spacing);
 
-		&_Dismiss {
-			top: 5px;
-			right: 5px;
+	overflow: auto;
 
-			.closeButton {
-				@include controls.button;
-				@include window.titlebar-button;
-				@include extends.titlebar-button-close;
-			}
+	// "In Game" settings tab
+	& > .DialogSubHeader {
+		position: unset;
+	}
 
-			svg {
-				display: none;
-			}
-		}
-
-		&_TopBar {
-			display: none;
-		}
+	a {
+		@include extends.link;
 	}
 }
 
-.Dialog {
-	&Body {
-		@include tabs.content;
+.DialogBodyText {
+	@include extends.text-reset;
 
-		-webkit-mask-image: none; // client settings
-		font: var(--text-ui);
-		margin: 0;
-		gap: var(--text-spacing);
+	padding: 0;
+	margin-bottom: var(--text-spacing);
+}
 
-		overflow: auto;
+.DialogButton {
+	background-image: none;
 
-		&Text {
-			@include extends.text-reset;
-
-			padding: 0;
-			margin-bottom: var(--text-spacing);
-		}
-
-		// "In Game" settings tab
-		& > .DialogSubHeader {
-			position: unset;
-		}
-
-		a {
-			@include extends.link;
-		}
+	&.Disabled {
+		@include controls.input-disabled;
 	}
 
-	&Button {
-		background-image: none;
-
-		&.Disabled {
-			@include controls.input-disabled;
-		}
-
-		&.Primary {
-			min-width: 111px;
-		}
-
-		&::before {
-			opacity: 1;
-			box-shadow: none;
-		}
+	&.Primary {
+		min-width: 111px;
 	}
 
-	&Checkbox {
-		@include controls.checkbox(
-			$checked-sel: "&.Active",
-			$disabled-sel: "&.Disabled"
-		);
-
-		margin: 0;
-
-		flex-shrink: 0;
-
-		&.Disabled {
-			opacity: 1;
-			filter: none;
-		}
-
-		& > svg {
-			display: none;
-		}
-
-		&_Container {
-			@include text.input-label;
-
-			background-color: transparent;
-			box-shadow: none;
-			padding: 0;
-			margin-bottom: var(--text-spacing);
-		}
-	}
-
-	&Content {
-		background: transparent;
-		padding: var(--dialog-spacing);
-		padding-bottom: calc(
-			var(--text-full) + 3px + var(--window-gap) + var(--dialog-spacing)
-		);
-
-		&Transition {
-			background: transparent;
-
-			width: unset;
-			max-width: unset;
-		}
-
-		&Transition > & {
-			--dialog-spacing: 0px;
-		}
-	}
-
-	&ControlsSection {
-		@include controls.groupbox;
-
-		gap: var(--text-spacing);
-
-		display: flex;
-		flex-direction: column;
-
-		&Header {
-			@include extends.text-reset;
-			@include extends.legend-as-div;
-		}
-
-		& > .DialogBodyText {
-			@include extends.legend-as-div;
-		}
-	}
-
-	&DropDown {
-		@include controls.combobox;
-
-		display: flex;
-		align-items: center;
-
-		&_Arrow {
-			display: none;
-		}
-
-		&_CurrentDisplay {
-			background-color: transparent;
-			padding: 0;
-		}
-	}
-
-	&Footer {
-		padding-top: var(--dialog-button-spacing);
-	}
-
-	&Header {
-		font-size: var(--text-ui-size);
-		font-weight: bold;
-		text-transform: unset;
-		padding: 0;
-		margin: 0;
-
-		.PopupFullWindow > :last-child & {
-			@include shared.dialog-title;
-		}
-
-		// Only used in "Invite to group chat" dialog
-		&Subtitle {
-			// TODO(port): no reference to this lol what
-			//quotes();
-			color: inherit;
-			letter-spacing: 0;
-			font: inherit;
-			margin-left: var(--text-spacing);
-		}
-
-		// About Steam dialog
-		svg {
-			display: none;
-		}
-	}
-
-	&InnerBody {
-		padding: 0;
-
-		overflow: visible;
-	}
-
-	&Input {
-		// It's an <input>, but overlay browser has type="input"
-		background: var(--color-window);
-		color: var(--color-window-text);
+	&::before {
+		opacity: 1;
 		box-shadow: none;
+	}
+}
 
-		&LabelGroup {
-			margin: 0;
-		}
+.DialogCheckbox {
+	@include controls.checkbox(
+		$checked-sel: "&.Active",
+		$disabled-sel: "&.Disabled"
+	);
 
-		&_Wrapper {
-			gap: var(--dialog-button-spacing);
-		}
+	margin: 0;
+
+	flex-shrink: 0;
+
+	&.Disabled {
+		opacity: 1;
+		filter: none;
 	}
 
-	&Label {
-		font: var(--text-ui);
-		color: inherit;
-		text-transform: unset;
+	& > svg {
+		display: none;
 	}
+}
 
-	&MenuPosition ._DialogInputContainer {
-		@include listbox.container;
+.DialogCheckbox_Container {
+	@include text.input-label;
 
-		font: var(--text-ui);
-		box-shadow: none;
-		padding: 0;
+	background-color: transparent;
+	box-shadow: none;
+	padding: 0;
+	margin-bottom: var(--text-spacing);
+}
+
+.DialogContent {
+	background: transparent;
+	padding: var(--dialog-spacing);
+	padding-bottom: calc(
+		var(--text-full) + 3px + var(--window-gap) + var(--dialog-spacing)
+	);
+
+	.DialogContentTransition > & {
+		--dialog-spacing: 0px;
 	}
+}
 
-	&SubHeader {
-		@include extends.text-reset;
+.DialogContentTransition {
+	background: transparent;
+
+	width: unset;
+	max-width: unset;
+}
+
+.DialogControlsSection {
+	@include controls.groupbox;
+
+	gap: var(--text-spacing);
+
+	display: flex;
+	flex-direction: column;
+
+	& > .DialogBodyText {
 		@include extends.legend-as-div;
 	}
+}
 
-	&TextInputBase {
-		box-shadow: none;
+.DialogControlsSectionHeader {
+	@include extends.text-reset;
+	@include extends.legend-as-div;
+}
+
+.DialogDropDown {
+	@include controls.combobox;
+
+	display: flex;
+	align-items: center;
+}
+
+.DialogDropDown_Arrow {
+	display: none;
+}
+
+.DialogDropDown_CurrentDisplay {
+	background-color: transparent;
+	padding: 0;
+}
+
+.DialogFooter {
+	padding-top: var(--dialog-button-spacing);
+}
+
+.DialogHeader {
+	font-size: var(--text-ui-size);
+	font-weight: bold;
+	text-transform: unset;
+	padding: 0;
+	margin: 0;
+
+	.PopupFullWindow > :last-child & {
+		@include shared.dialog-title;
 	}
 
-	&Toggle_Label {
-		font: var(--text-ui);
-		color: var(--color-button-text);
+	// About Steam dialog
+	svg {
+		display: none;
 	}
 }
 
-._Dialog {
-	&ColLayout {
-		gap: var(--dialog-button-spacing);
+// Only used in "Invite to group chat" dialog
+.DialogHeaderSubtitle {
+	// TODO(port): no reference to this lol what
+	//quotes();
+	color: inherit;
+	letter-spacing: 0;
+	font: inherit;
+	margin-left: var(--text-spacing);
+}
 
-		justify-content: end;
-	}
+.DialogInnerBody {
+	padding: 0;
 
-	&ColLayout > &Layout {
+	overflow: visible;
+}
+
+.DialogInput {
+	// It's an <input>, but overlay browser has type="input"
+	background: var(--color-window);
+	color: var(--color-window-text);
+	box-shadow: none;
+}
+
+.DialogInputLabelGroup {
+	margin: 0;
+}
+
+.DialogInput_Wrapper {
+	gap: var(--dialog-button-spacing);
+}
+
+.DialogLabel {
+	font: var(--text-ui);
+	color: inherit;
+	text-transform: unset;
+}
+
+.DialogMenuPosition ._DialogInputContainer {
+	@include listbox.container;
+
+	font: var(--text-ui);
+	box-shadow: none;
+	padding: 0;
+}
+
+.DialogSubHeader {
+	@include extends.text-reset;
+	@include extends.legend-as-div;
+}
+
+.DialogTextInputBase {
+	box-shadow: none;
+}
+
+.DialogToggle_Label {
+	font: var(--text-ui);
+	color: var(--color-button-text);
+}
+
+._DialogColLayout {
+	gap: var(--dialog-button-spacing);
+
+	justify-content: end;
+
+	& > ._DialogLayout {
 		flex: 0;
 	}
 }
 
 // In-client/page dialog
-.FullModalOverlay .Dialog {
-	&Body {
+.FullModalOverlay {
+	.DialogBody {
 		box-shadow: none;
 	}
 
-	&Content {
+	.DialogContent {
 		@include window.container($child: true);
 	}
 
-	&Header {
+	.DialogHeader {
 		@include window.titlebar($focused-sel: "&");
 
 		// "Mark as Private" dialog
@@ -294,10 +284,10 @@
 		box-shadow: none;
 		gap: var(--messagebox-content-spacing);
 		padding: var(--messagebox-spacing);
+	}
 
-		&Text {
-			margin-bottom: 0;
-		}
+	.DialogBodyText {
+		margin-bottom: 0;
 	}
 }
 

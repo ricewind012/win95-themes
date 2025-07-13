@@ -19,29 +19,26 @@
 
 		@include controls.separator;
 	}
+}
 
-	&-menu {
-		// !important
-		// TODO(port): original is &-button
-		&-button {
-			padding: 0;
+// !important
+.menubar-menu-button {
+	padding: 0;
 
-			&.open {
-				background-color: var(--color-highlight);
-				color: var(--color-highlight-text);
-			}
-		}
+	&.open {
+		background-color: var(--color-highlight);
+		color: var(--color-highlight-text);
+	}
+}
 
-		&-title {
-			// Move [role="menubar"] to its child element
-			// for correct context menu positioning
-			// TODO(port)
-			@include window.menubar-item($selected-sel: ".hack");
+.menubar-menu-title {
+	// Move [role="menubar"] to its child element
+	// for correct context menu positioning
+	// TODO(port)
+	@include window.menubar-item($selected-sel: ".hack");
 
-			&.toolbar-toggle-more {
-				display: none;
-			}
-		}
+	&.toolbar-toggle-more {
+		display: none;
 	}
 }
 

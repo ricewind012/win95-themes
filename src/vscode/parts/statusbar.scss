@@ -4,27 +4,27 @@
 
 	height: unset;
 
-	&-item {
-		max-width: unset;
-
-		// TODO: is this safe ?
-		&[aria-label=""] {
-			display: none;
-		}
-
-		&.right.last-visible-item {
-			margin-right: 8px;
-		}
-
-		&-label {
-			font: var(--text-ui);
-			padding: 0;
-			margin: 0;
-		}
-	}
-
 	& > .left-items,
 	& > .right-items {
 		gap: 2px;
 	}
+}
+
+.statusbar-item {
+	max-width: unset;
+
+	// TODO: is this safe ?
+	&[aria-label=""] {
+		display: none;
+	}
+
+	&.right.last-visible-item {
+		margin-right: 8px;
+	}
+}
+
+.statusbar-item-label {
+	font: var(--text-ui);
+	padding: 0;
+	margin: 0;
 }

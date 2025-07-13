@@ -1,10 +1,8 @@
-::-webkit-scrollbar {
-	&-button {
-		display: initial;
-	}
+::-webkit-scrollbar-button {
+	display: initial;
+}
 
-	&-thumb {
-		border: none;
-		border-radius: 0;
-	}
+::-webkit-scrollbar-thumb {
+	border: none;
+	border-radius: 0;
 }

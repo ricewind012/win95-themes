@@ -28,44 +28,42 @@
 		display: inline-block;
 	}
 
-	.action {
-		&-item {
-			background-color: transparent;
-			border: none;
-			box-shadow: none;
-			padding: 0;
-			margin: 0;
+	.action-item {
+		background-color: transparent;
+		border: none;
+		box-shadow: none;
+		padding: 0;
+		margin: 0;
 
-			min-width: unset;
-			height: unset;
+		min-width: unset;
+		height: unset;
 
-			cursor: pointer;
+		cursor: pointer;
 
-			&.checked .action-label {
-				background-color: var(--color-highlight);
-				color: var(--color-highlight-text);
-			}
-
-			.badge-content {
-				position: absolute;
-				top: 0;
-				right: 4px;
-				z-index: 1;
-			}
-
-			&.checked .badge-content {
-				color: var(--color-highlight-text);
-			}
+		&.checked .action-label {
+			background-color: var(--color-highlight);
+			color: var(--color-highlight-text);
 		}
 
-		&-label {
-			background-repeat: no-repeat;
-			background-position: center;
-			color: var(--color-window-text);
-			font-size: 0;
-
-			width: 100%;
+		.badge-content {
+			position: absolute;
+			top: 0;
+			right: 4px;
+			z-index: 1;
 		}
+
+		&.checked .badge-content {
+			color: var(--color-highlight-text);
+		}
+	}
+
+	.action-label {
+		background-repeat: no-repeat;
+		background-position: center;
+		color: var(--color-window-text);
+		font-size: 0;
+
+		width: 100%;
 	}
 
 	.active-item-indicator {

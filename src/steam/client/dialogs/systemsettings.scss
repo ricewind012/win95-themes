@@ -11,10 +11,10 @@
 	.DialogBody {
 		box-shadow: none;
 		padding: 0;
+	}
 
-		&Text {
-			margin-bottom: calc(var(--dialog-button-spacing) + 6px);
-		}
+	.DialogBodyText {
+		margin-bottom: calc(var(--dialog-button-spacing) + 6px);
 	}
 }
 

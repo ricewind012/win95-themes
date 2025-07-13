@@ -1,17 +1,15 @@
-.rename {
-	// !important in global/editor.scss
-	// TODO(port): original is &-box&-box
-	&-box {
-		--window-spacing: 8px; // Child window (1) + dialog (7)
-	}
+// !important in global/editor.scss
+// TODO(port): original is &-box&-box
+.rename-box {
+	--window-spacing: 8px; // Child window (1) + dialog (7)
+}
 
-	&-input {
-		width: 100%;
-	}
+.rename-input {
+	width: 100%;
+}
 
-	&-label {
-		opacity: 1;
-		font: var(--text-ui);
-		margin-top: var(--text-spacing);
-	}
+.rename-label {
+	opacity: 1;
+	font: var(--text-ui);
+	margin-top: var(--text-spacing);
 }

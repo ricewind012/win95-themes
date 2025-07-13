@@ -1,61 +1,57 @@
 @use "shared/window";
 
-.notification {
-	&-toast {
-		opacity: 1;
-		background-color: transparent;
-		border: none;
+.notification-toast {
+	opacity: 1;
+	background-color: transparent;
+	border: none;
+	box-shadow: none;
+
+	transform: none;
+
+	.monaco-list {
 		box-shadow: none;
-
-		transform: none;
-
-		.monaco {
-			&-list {
-				box-shadow: none;
-				padding: 0;
-
-				&-row {
-					background-color: transparent;
-				}
-			}
-		}
+		padding: 0;
 	}
 
-	&-list-item {
-		padding: 5px;
-
-		&-details-row,
-		&-buttons-container {
-			overflow: visible;
-		}
-
-		&-icon {
-			font-size: 0;
-			margin-left: 0;
-			margin-right: var(--messagebox-content-spacing);
-
-			width: 32px;
-			height: 32px;
-			flex: unset;
-
-			&.codicon-error {
-				background-image: var(--icon-dialog-error);
-			}
-
-			&.codicon-warning {
-				background-image: var(--icon-dialog-warning);
-			}
-
-			&::before {
-				display: none;
-			}
-		}
-
-		&-message,
-		&-source {
-			font: var(--text-ui);
-		}
+	.monaco-list-row {
+		background-color: transparent;
 	}
+}
+
+.notification-list-item {
+	padding: 5px;
+}
+
+.notification-list-item-details-row,
+.notification-list-item-buttons-container {
+	overflow: visible;
+}
+
+.notification-list-item-icon {
+	font-size: 0;
+	margin-left: 0;
+	margin-right: var(--messagebox-content-spacing);
+
+	width: 32px;
+	height: 32px;
+	flex: unset;
+
+	&.codicon-error {
+		background-image: var(--icon-dialog-error);
+	}
+
+	&.codicon-warning {
+		background-image: var(--icon-dialog-warning);
+	}
+
+	&::before {
+		display: none;
+	}
+}
+
+.notification-list-item-message,
+.notification-list-item-source {
+	font: var(--text-ui);
 }
 
 .notifications-center {
@@ -63,16 +59,16 @@
 
 	width: auto;
 	height: auto;
+}
 
-	&-header {
-		background-color: transparent;
-		padding: 10px;
+.notifications-center-header {
+	background-color: transparent;
+	padding: 10px;
 
-		height: unset;
+	height: unset;
+}
 
-		&-title {
-			font: var(--text-ui);
-			text-transform: unset;
-		}
-	}
+.notifications-center-header-title {
+	font: var(--text-ui);
+	text-transform: unset;
 }

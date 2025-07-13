@@ -2,6 +2,10 @@
 @use "shared/window";
 @use "shared++/extends";
 
+.FriendNotificationsDialog .SettingsGroup {
+	@include window.content-container;
+}
+
 .FriendsSettingsNotificationRow {
 	background-color: transparent;
 	color: var(--color-window-text);
@@ -10,22 +14,18 @@
 	margin: 0;
 
 	display: flex;
+}
 
-	&_Header {
-		& > div {
-			@include table.header-row;
-		}
-	}
-
-	&_Checkbox,
-	&_Label {
-		@include extends.text-reset;
-
-		text-align: start;
-		padding: 2px 5px;
+.FriendsSettingsNotificationRow_Header {
+	& > div {
+		@include table.header-row;
 	}
 }
 
-.FriendNotificationsDialog .SettingsGroup {
-	@include window.content-container;
+.FriendsSettingsNotificationRow_Checkbox,
+.FriendsSettingsNotificationRow_Label {
+	@include extends.text-reset;
+
+	text-align: start;
+	padding: 2px 5px;
 }
