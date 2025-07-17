@@ -26,6 +26,16 @@ body {
 	box-sizing: border-box;
 }
 
+::placeholder {
+	color: var(--color-gray-text);
+	font: var(--text-ui);
+}
+
+::selection {
+	background-color: var(--color-highlight);
+	color: var(--color-highlight-text);
+}
+
 ::-webkit-scrollbar {
 	@include scrollbar.container;
 }
