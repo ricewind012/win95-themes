@@ -1,0 +1,73 @@
+@mixin -item-check {
+	&::before {
+		content: "";
+
+		position: absolute;
+		top: 5px;
+
+		background-color: var(--color-button-text);
+	}
+}
+
+@mixin item($selected-sel) {
+	line-height: 1.25;
+	padding: 2px 20px;
+
+	position: relative;
+
+	&:is(:hover, #{$selected-sel}) {
+		--color-button-text: var(--color-highlight-text);
+		background-color: var(--color-highlight);
+		color: var(--color-highlight-text);
+	}
+}
+
+@mixin item-parent {
+	&::after {
+		content: "";
+
+		position: absolute;
+		top: 4px;
+		right: 6px;
+		width: 4px;
+		height: 7px;
+
+		mask: var(--icon-arrow-right);
+		background-color: var(--color-button-text);
+	}
+}
+
+@mixin item-primary {
+	font-weight: bold;
+}
+
+@mixin item-check {
+	@include -item-check;
+
+	&::before {
+		left: 6px;
+		width: 7px;
+		height: 7px;
+
+		mask: var(--icon-checkmark);
+	}
+}
+
+@mixin item-disabled {
+	--color-button-text: var(--color-button-shadow);
+	text-shadow: 1px 1px var(--color-button-highlight);
+
+	pointer-events: none;
+}
+
+@mixin item-radio {
+	@include -item-check;
+
+	&::before {
+		left: 7px;
+		width: 6px;
+		height: 6px;
+
+		mask: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2IDYiPjxyZWN0IHg9IjEiIHdpZHRoPSI0IiBoZWlnaHQ9IjEiLz48cmVjdCB5PSIxIiB3aWR0aD0iNiIgaGVpZ2h0PSI0Ii8+PHJlY3QgeD0iMSIgeT0iNSIgd2lkdGg9IjQiIGhlaWdodD0iMSIvPjwvc3ZnPgo=");
+	}
+}

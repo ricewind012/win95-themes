@@ -1,0 +1,15 @@
+@mixin code {
+	font: var(--text-monospace);
+}
+
+// <fieldset> does not use the border property, so this is needed.
+@mixin groupbox-header {
+	background-color: var(--color-button-face);
+}
+
+@mixin input-label {
+	gap: var(--label-spacing);
+
+	display: flex;
+	align-items: center;
+}

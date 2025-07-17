@@ -1,0 +1,40 @@
+@mixin container {
+	background-color: var(--color-window);
+	color: var(--color-window-text);
+	border: 1px solid var(--color-window-text);
+}
+
+@mixin item($selected-sel) {
+	padding: 2px 3px;
+
+	&:is(:hover, #{$selected-sel}) {
+		background-color: var(--color-highlight);
+		color: var(--color-highlight-text);
+	}
+}
+
+// todo: wtf
+/* The *actual* listbox, not a dropdown
+ * that is given a "listbox" role.
+ */
+.listbox {
+	padding-bottom: 10px;
+
+	overflow: auto;
+	height: 100%;
+}
+
+.listbox-item {
+	line-height: 1;
+	border: 1px dotted transparent;
+
+	padding: 0 1px;
+
+	display: flex;
+
+	&[aria-selected="true"] {
+		background-color: var(--color-highlight);
+		color: var(--color-highlight-text);
+		border-color: #ff0;
+	}
+}

@@ -1,0 +1,35 @@
+@mixin buttons {
+	gap: var(--dialog-button-spacing);
+
+	display: flex;
+	justify-content: end;
+}
+
+/// @param {"messagebox"} $type
+@mixin content($type) {
+	gap: var(--dialog-button-spacing);
+	margin: var(--dialog-spacing);
+
+	@if $type == "messagebox" {
+		margin: var(--messagebox-spacing);
+
+		.dialog-body-container {
+			gap: var(--messagebox-content-spacing);
+		}
+
+		.dialog-buttons {
+			justify-content: center;
+		}
+	}
+}
+
+@mixin icon($name) {
+	--icon: var(--icon-dialog-#{$name});
+	--icon-size: 32px;
+
+	background-image: var(--icon);
+	margin-right: var(--dialog-content-spacing);
+
+	width: var(--icon-size);
+	height: var(--icon-size);
+}

@@ -1,0 +1,50 @@
+@mixin -button-arrow {
+	&::after {
+		content: "";
+
+		position: absolute;
+		top: -1px;
+		right: 7px;
+		width: 7px;
+		height: 100%;
+
+		background-color: var(--color-button-text);
+		mask: var(--button-img, none) no-repeat;
+		mask-size: 7px 4px;
+		mask-position: center;
+	}
+}
+
+@mixin button {
+	text-align: left;
+	padding: var(--table-row-spacing);
+
+	&:active {
+		box-shadow: var(--border-button-sunken-alt);
+	}
+}
+
+@mixin button-arrow-ascending {
+	@include -button-arrow;
+
+	--button-img: var(--icon-arrow-bottom);
+}
+
+@mixin button-arrow-descending {
+	@include -button-arrow;
+
+	--button-img: var(--icon-arrow-top);
+}
+
+@mixin header-row {
+	background-color: var(--color-button-face);
+	box-shadow:
+		inset -1px -1px var(--color-button-highlight),
+		inset -2px -2px var(--color-button-shadow);
+	padding: 2px 5px;
+	padding-bottom: 3px;
+}
+
+@mixin row {
+	padding: var(--table-row-spacing);
+}

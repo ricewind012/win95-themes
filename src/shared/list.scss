@@ -1,0 +1,30 @@
+@mixin item {
+	// alternative -webkit-line-clamp
+	height: calc(var(--text-ui-size) * var(--text-line) + 3px);
+	display: flex;
+	align-items: center;
+}
+
+@mixin item-image {
+	background: var(--list-icon) center no-repeat;
+
+	min-width: var(--icon-size);
+	min-height: var(--icon-size);
+}
+
+@mixin item-name-container {
+	display: flex;
+	align-items: center;
+}
+
+@mixin item-name {
+	padding: 1px 5px 0 1px;
+}
+
+@mixin item-name-selected {
+	background-color: var(--color-highlight);
+	color: var(--color-highlight-text);
+
+	// TODO: wtf is this color
+	border: 1px dotted #ff0;
+}

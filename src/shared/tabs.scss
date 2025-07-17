@@ -1,0 +1,79 @@
+@mixin tab($selected-sel) {
+	--color-tab-border: var(--color-button-highlight);
+
+	background-color: var(--color-button-face);
+	color: var(--color-button-text);
+	border: 1px solid;
+	border-bottom: none;
+	border-color: var(--border-tab);
+	box-shadow:
+		1px 0 var(--color-button-shadow-dark),
+		1px 1px var(--color-tab-border);
+	margin: 2px 1px -1px 0;
+	padding: 3px 4px 2px 6px;
+
+	position: relative;
+	min-width: 45px;
+	height: 18px;
+
+	&::before,
+	&::after {
+		content: "";
+
+		position: absolute;
+		top: -1px;
+		width: 3px;
+		height: 2px;
+
+		// Draw the rounding pixel by pixel
+		background-repeat: no-repeat;
+		background-size: 1px 1px;
+		background-position:
+			0 0,
+			1px 0,
+			2px 0,
+			0 1px,
+			1px 1px,
+			2px 1px;
+	}
+
+	&::before {
+		left: -1px;
+
+		background-image: var(--tab-border-left);
+	}
+
+	&::after {
+		right: -2px;
+
+		background-image: var(--tab-border-right);
+	}
+
+	#{$selected-sel} {
+		--color-tab-border: var(--color-button-face);
+
+		margin: 0 -2px -1px -2px;
+		padding: 3px 6px;
+		padding-left: 7px;
+
+		height: 21px;
+		z-index: 1;
+	}
+}
+
+@mixin container {
+	margin-left: 2px;
+
+	display: flex;
+}
+
+@mixin content($compact: false) {
+	background-color: var(--color-button-face);
+	color: var(--color-window-text);
+	box-shadow: var(--border-button-raised);
+	padding: calc(var(--border-size) + var(--tabpanel-spacing));
+
+	@if $compact {
+		--tabpanel-spacing: 2px;
+	}
+}

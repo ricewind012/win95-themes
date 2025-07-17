@@ -1,0 +1,131 @@
+@use "shared/generated";
+
+@mixin content-container {
+	background-color: var(--color-window);
+	box-shadow: var(--border-field);
+	padding: var(--border-size);
+}
+
+@mixin container($child: false) {
+	background-color: var(--color-button-face);
+	color: var(--color-button-text);
+	box-shadow: var(--border-window);
+	padding: calc(var(--border-size) + var(--window-spacing));
+
+	@if $child {
+		--window-spacing: 1px;
+	}
+}
+
+@mixin resize-handle {
+	@include generated.window-resize-handle;
+
+	position: fixed;
+	right: calc(var(--border-size) + var(--window-spacing));
+	bottom: calc(var(--border-size) + var(--window-spacing));
+	width: 14px;
+	height: 14px;
+
+	cursor: se-resize;
+}
+
+@mixin menubar {
+	background-color: var(--color-menubar);
+	color: var(--color-menubar-text);
+	line-height: 1;
+
+	display: flex;
+}
+
+@mixin menubar-item($selected-sel) {
+	padding: 4px 5px 3px 7px;
+
+	&:is(:active, #{$selected-sel}) {
+		@include menubar-item-active;
+	}
+}
+
+@mixin menubar-item-active {
+	background-color: var(--color-highlight);
+	color: var(--color-highlight-text);
+}
+
+@mixin statusbar {
+	gap: 2px;
+
+	display: flex;
+}
+
+@mixin statusbar-item {
+	box-shadow: var(--border-statusbar);
+	padding: 2px 4px 1px 4px;
+}
+
+@mixin titlebar($focused-sel) {
+	background-color: var(--color-inactive-caption);
+	color: var(--color-inactive-caption-text);
+	padding: 1px 2px;
+	gap: var(--titlebar-spacing);
+
+	height: var(--titlebar-height);
+	display: flex;
+	align-items: center;
+
+	#{$focused-sel} {
+		--color-inactive-caption: var(--color-active-caption);
+		--color-inactive-caption-text: var(--color-active-caption-text);
+	}
+}
+
+@mixin titlebar-name {
+	font-weight: bold;
+}
+
+@mixin titlebar-button($disabled-sel: ":disabled") {
+	min-width: 16px;
+	height: 14px;
+
+	&::before,
+	&::after {
+		content: "";
+
+		position: absolute;
+		inset: 0;
+
+		mask: var(--button-img, none) no-repeat;
+		mask-size: var(--button-img-size, auto auto);
+		mask-position: var(--button-img-pos, center);
+	}
+
+	&::before {
+		z-index: 1;
+
+		background-color: var(--color-button-text);
+	}
+
+	&:active {
+		&::before {
+			inset: 1px;
+		}
+	}
+
+	&#{$disabled-sel} {
+		@include titlebar-button-disabled;
+	}
+}
+
+@mixin titlebar-button-disabled {
+	&::after {
+		left: 1px;
+		top: 1px;
+
+		background-color: var(--color-button-highlight);
+	}
+}
+
+@mixin toolbar {
+	gap: var(--toolbar-spacing);
+	margin: 0 var(--toolbar-container-spacing);
+
+	display: flex;
+}

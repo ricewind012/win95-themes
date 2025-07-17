@@ -1,0 +1,34 @@
+@mixin button {
+	--offset: 0px;
+
+	background: var(--arrow);
+	background-color: var(--color-button-face);
+	background-repeat: no-repeat;
+	background-size: 1px 1px;
+	box-shadow: var(--border-scrollbar-button-raised);
+
+	width: var(--scrollbar-size);
+	height: var(--scrollbar-size);
+
+	&:active {
+		--offset: 1px;
+
+		box-shadow: var(--border-button-sunken-alt);
+	}
+}
+
+@mixin container {
+	background: var(--checkerboard);
+
+	width: var(--scrollbar-size);
+	height: var(--scrollbar-size);
+}
+
+@mixin corner {
+	background-color: var(--color-scrollbar);
+}
+
+@mixin thumb {
+	background-color: var(--color-button-face);
+	box-shadow: var(--border-scrollbar-button-raised);
+}

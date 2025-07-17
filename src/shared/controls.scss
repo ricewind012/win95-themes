@@ -1,0 +1,277 @@
+@use "shared/generated";
+
+@mixin -checkbox-radio-common($checked-sel, $disabled-sel: ":disabled") {
+	--color-to-change: var(--color-window);
+
+	position: relative;
+	width: var(--sel-button-size);
+	height: var(--sel-button-size);
+
+	#{$checked-sel} {
+		@include checkbox-radio-checked;
+	}
+
+	&:active,
+	#{$disabled-sel} {
+		@include checkbox-radio-inactive;
+	}
+}
+
+@mixin -input-common {
+	--input-spacing: 2px;
+
+	appearance: none;
+	outline: none;
+	font: var(--text-ui);
+	border: none;
+	margin: 0;
+}
+
+@mixin -input-common-disabled($disabled-sel) {
+	&#{$disabled-sel} {
+		@include input-disabled;
+	}
+}
+
+@mixin -text-field-common($disabled-sel: ":disabled") {
+	@include -input-common-disabled($disabled-sel);
+	@include -input-common;
+
+	background-color: var(--color-window);
+	color: var(--color-window-text);
+	box-shadow: var(--border-field);
+	padding: calc(var(--border-size) + var(--input-spacing));
+
+	height: round(
+		calc(var(--input-spacing) * 2 + var(--border-size) * 2 + var(--text-full)),
+		1px
+	);
+}
+
+@mixin input-disabled {
+	--color-window: var(--color-button-face);
+	--color-window-text: var(--color-gray-text);
+	--color-button-text: var(--color-button-shadow);
+	text-shadow: 1px 1px var(--color-button-highlight);
+}
+
+@mixin button(
+	$disabled-sel: ":disabled",
+	$focus-sel: ":focus",
+	$active-sel: ":active"
+) {
+	@include -input-common-disabled($disabled-sel);
+	@include -input-common;
+
+	--button-spacing: 5px;
+
+	background-color: var(--color-button-face);
+	color: var(--color-button-text);
+	box-shadow: var(--border-button-raised);
+	padding: var(--button-spacing);
+
+	min-width: 75px;
+
+	&#{$focus-sel} {
+		@include button-focus;
+	}
+
+	&#{$active-sel} {
+		@include button-active;
+	}
+}
+
+@mixin button-active {
+	color: transparent;
+	text-shadow: 1px 1px var(--color-button-text);
+	box-shadow: var(--border-button-sunken);
+}
+
+@mixin button-focus {
+	outline: dotted 1px var(--color-button-text);
+	outline-offset: calc(var(--button-spacing) * -1);
+	box-shadow: var(--border-button-focused);
+}
+
+@mixin checkbox($checked-sel, $disabled-sel: ":disabled") {
+	@include -checkbox-radio-common($checked-sel, $disabled-sel);
+
+	background-color: var(--color-to-change);
+	box-shadow: var(--border-field);
+
+	--control-img: var(--icon-checkmark);
+	--control-img-size: 7px 7px;
+	--control-img-pos: 3px 3px;
+}
+
+@mixin checkbox-radio-checked {
+	&::before {
+		content: "";
+
+		position: absolute;
+		inset: 0;
+
+		mask: var(--control-img) no-repeat;
+		mask-size: var(--control-img-size);
+		mask-position: var(--control-img-pos);
+		background-color: var(--color-button-text);
+	}
+}
+
+@mixin checkbox-radio-inactive {
+	--color-to-change: var(--color-button-face);
+}
+
+@mixin combobox($disabled-sel: ":disabled") {
+	@include -text-field-common($disabled-sel);
+	@include generated.combobox;
+
+	--color-arrow-shadow: var(--color-button-face);
+
+	opacity: 1;
+	background: var(--control-img);
+	background-color: var(--color-window);
+	background-repeat: no-repeat;
+	background-size: 1px 1px;
+	padding-right: calc(
+		var(--border-size) + var(--input-spacing) + var(--scrollbar-size)
+	);
+
+	&#{$disabled-sel} {
+		--color-arrow-shadow: var(--color-button-highlight);
+	}
+}
+
+@mixin groupbox($disabled-sel: ":disabled") {
+	@include -input-common-disabled($disabled-sel);
+
+	border: none;
+	box-shadow: var(--border-groupbox);
+	padding: 11px;
+	margin: 0;
+	margin-bottom: 8px;
+
+	// For $legend-as-div
+	position: relative;
+}
+
+// TODO(port): $selected-sel
+@mixin icon-button($selected-sel: ".hack") {
+	min-width: var(--icon-button-width);
+	height: var(--icon-button-height);
+
+	&:is(:active, #{$selected-sel}) {
+		background: var(--checkerboard);
+		box-shadow: var(--border-button-sunken);
+
+		&::before {
+			inset: 1px;
+		}
+	}
+
+	&::before {
+		content: "";
+
+		position: absolute;
+		inset: 0;
+
+		background: var(--button-img) no-repeat;
+		background-position: var(--button-img-pos, center);
+	}
+
+	@media (prefers-color-scheme: dark) {
+		&::before {
+			filter: invert(1);
+		}
+	}
+}
+
+@mixin progress-bar($filled-sel) {
+	appearance: none;
+	background-color: var(--color-button-face);
+	box-shadow: var(--border-statusbar);
+	padding: 1px;
+
+	block-size: 12px;
+
+	#{$filled-sel} {
+		--block-width: 7px;
+
+		background-color: transparent;
+		background-image: repeating-linear-gradient(
+			90deg,
+			var(--color-highlight) 0 var(--block-width),
+			transparent var(--block-width) calc(var(--block-width) + 2px)
+		);
+	}
+}
+
+@mixin radio($checked-sel, $disabled-sel: ":disabled") {
+	@include -checkbox-radio-common($checked-sel);
+	@include generated.radio;
+
+	--control-img: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0IDQiPjxzdHlsZT5yZWN0e2hlaWdodDoxcHh9PC9zdHlsZT48cmVjdCB4PSIxIiB3aWR0aD0iMiIvPjxyZWN0IHk9IjEiIHdpZHRoPSI0Ii8+PHJlY3QgeT0iMiIgd2lkdGg9IjQiLz48cmVjdCB4PSIxIiB5PSIzIiB3aWR0aD0iMiIvPjwvc3ZnPgo=");
+	--control-img-size: 4px 4px;
+	--control-img-pos: 5px 5px;
+}
+
+@mixin separator {
+	border: none;
+	border-top: 1px solid var(--color-button-highlight);
+	box-shadow: 0 -1px var(--color-button-shadow);
+	margin-top: 3px;
+	margin-bottom: 4px;
+}
+
+@mixin slider($disabled-sel: ":disabled", $thumb-sel, $track-sel) {
+	@include -input-common;
+	@include -input-common-disabled($disabled-sel);
+	@include generated.slider;
+
+	--color-to-change: var(--color-button-face);
+
+	background-color: transparent;
+
+	&:active,
+	&:disabled {
+		--color-to-change: var(--color-button-highlight);
+	}
+
+	#{$track-sel} {
+		box-shadow: var(--border-field);
+
+		height: calc(var(--border-size) * 2);
+	}
+
+	#{$thumb-sel} {
+		appearance: none;
+		background: var(--control-img);
+		background-repeat: no-repeat;
+		background-size: 1px 1px;
+		margin-top: calc(var(--border-size) * -2 - 3px);
+
+		width: 11px;
+		height: 21px;
+	}
+}
+
+@mixin text-field($disabled-sel: ":disabled") {
+	@include -text-field-common($disabled-sel);
+}
+
+@mixin text-field-number($disabled-sel: ":disabled") {
+	@include text-field($disabled-sel);
+	@include generated.text-field-number;
+
+	&::-webkit-inner-spin-button {
+		appearance: none;
+		opacity: 1;
+		background: var(--button-img);
+		background-repeat: no-repeat;
+		background-size: 1px 1px;
+		margin-right: calc(var(--border-size) * -1);
+
+		width: 17px;
+		height: 18px;
+	}
+}
