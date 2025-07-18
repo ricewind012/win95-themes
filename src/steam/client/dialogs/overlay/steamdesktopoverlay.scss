@@ -168,7 +168,7 @@
 }
 
 #OverlayPopupBody,
-body:has(> #popup_target > #Wrapper) {
+body:has(> [id="popup_target"] > #Wrapper) {
 	background-color: transparent;
 	box-shadow: none;
 	padding: 0;

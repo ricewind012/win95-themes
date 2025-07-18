@@ -35,6 +35,7 @@
 	padding: 0;
 
 	#Highlight {
+		// TODO: quote
 		@include extends.parentheses;
 		color: inherit;
 	}

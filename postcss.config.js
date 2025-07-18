@@ -38,9 +38,9 @@ export default {
 			includePaths: ["src"],
 			silenceDeprecations: ["legacy-js-api", "mixed-decls"],
 		}),
+		selectorReplacerPlugin(),
 		appendImportantPlugin({
 			filter: [/^:root/],
 		}),
-		selectorReplacerPlugin(),
 	],
 };

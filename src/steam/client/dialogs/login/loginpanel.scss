@@ -1,13 +1,13 @@
 @use "shared/controls";
 @use "shared/window";
-@use "shared++/extends";
 @use "shared++/icons";
 
 #CachedAccountName,
 #CachedName {
-	@include extends.text-reset;
-
 	opacity: 1;
+	color: inherit;
+	font: inherit;
+	text-shadow: inherit;
 	padding: 0;
 
 	position: unset;

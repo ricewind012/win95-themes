@@ -66,12 +66,10 @@
 	margin-bottom: var(--text-spacing);
 }
 
-.DialogButton {
-	background-image: none;
+:where(.DialogButton) {
+	@include controls.button($disabled-sel: ".Disabled");
 
-	&.Disabled {
-		@include controls.input-disabled;
-	}
+	background-image: none;
 
 	&.Primary {
 		min-width: 111px;
@@ -114,6 +112,7 @@
 
 .DialogContent {
 	background: transparent;
+	font: var(--text-ui);
 	padding: var(--dialog-spacing);
 	padding-bottom: calc(
 		var(--text-full) + 3px + var(--window-gap) + var(--dialog-spacing)
@@ -203,10 +202,14 @@
 }
 
 .DialogInput {
+	@include controls.text-field;
+
 	// It's an <input>, but overlay browser has type="input"
+	/* TODO(scss-fix): why is this here lol wtf
 	background: var(--color-window);
 	color: var(--color-window-text);
 	box-shadow: none;
+	*/
 }
 
 .DialogInputLabelGroup {
@@ -234,10 +237,6 @@
 .DialogSubHeader {
 	@include extends.text-reset;
 	@include extends.legend-as-div;
-}
-
-.DialogTextInputBase {
-	box-shadow: none;
 }
 
 .DialogToggle_Label {

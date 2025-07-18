@@ -13,6 +13,8 @@
 #BackArrowContainer {
 	@include controls.button;
 
+	text-align: center;
+
 	height: unset;
 
 	&::before {
@@ -73,6 +75,8 @@
 }
 
 #SubmitButton {
+	@include controls.button;
+
 	background-image: none;
 
 	width: unset;
@@ -80,6 +84,10 @@
 
 #TextField {
 	gap: var(--text-spacing);
+}
+
+#TextInput {
+	@include controls.text-field;
 }
 
 #TextLink {

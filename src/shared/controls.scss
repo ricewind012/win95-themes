@@ -25,6 +25,8 @@
 	font: var(--text-ui);
 	border: none;
 	margin: 0;
+
+	position: relative;
 }
 
 @mixin -input-common-disabled($disabled-sel) {

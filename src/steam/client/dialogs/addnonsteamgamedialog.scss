@@ -78,8 +78,13 @@
 		display: none;
 	}
 
-	@each $btn, $i in 5% 6% 32% {
-		& > :nth-child(#{$i + 1}) {
+	$-btns: (
+		1: 5%,
+		2: 6%,
+		3: 32%,
+	);
+	@each $i, $btn in $-btns {
+		& > :nth-child(#{$i}) {
 			min-width: $btn;
 		}
 	}

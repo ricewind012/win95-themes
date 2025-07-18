@@ -1,3 +1,4 @@
+@use "shared/controls";
 @use "shared/window";
 
 div#MenuOpen {
@@ -9,5 +10,7 @@ div#MenuOpen {
 }
 
 #Separator {
+	@include controls.separator;
+
 	border-bottom: none;
 }

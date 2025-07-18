@@ -1,3 +1,5 @@
+@use "shared/controls";
+
 #chatEntryActionsContainer {
 	margin: 0;
 
@@ -19,7 +21,13 @@
 }
 
 #chatSubmitButton {
+	@include controls.button;
+
 	background-image: none;
+}
+
+#chatTextarea {
+	@include controls.text-field;
 }
 
 #minHeightZero {

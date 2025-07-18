@@ -17,7 +17,7 @@ $-sel-arrow-forward: "> :nth-child(4)";
 }
 
 #Arrow {
-	@include controls.button;
+	@include controls.button($disabled-sel: "#Disabled");
 	@include controls.icon-button;
 
 	transform: none;
@@ -36,6 +36,7 @@ $-sel-arrow-forward: "> :nth-child(4)";
 
 #MenuButton {
 	color: inherit;
+	text-align: center;
 	text-shadow: inherit;
 
 	&::after {
@@ -102,18 +103,22 @@ $-sel-arrow-forward: "> :nth-child(4)";
 		}
 	}
 
-	&:has(> #Disabled:nth-child(1)) #{$-sel-arrow-back}::after {
+	&:has(> #Disabled:nth-child(1)) #{$-sel-arrow-back} {
 		@extend %-arrow-disabled;
 
-		left: calc(var(--icon-offset) + var(--icon-disabled-offset));
+		&::after {
+			left: calc(var(--icon-offset) + var(--icon-disabled-offset));
+		}
 	}
 
-	&:has(> #Disabled:nth-child(2)) #{$-sel-arrow-forward}::after {
+	&:has(> #Disabled:nth-child(2)) #{$-sel-arrow-forward} {
 		@extend %-arrow-disabled;
 
-		left: calc(
-			var(--icon-offset) + var(--icon-width) + var(--icon-disabled-offset)
-		);
+		&::after {
+			left: calc(
+				var(--icon-offset) + var(--icon-width) + var(--icon-disabled-offset)
+			);
+		}
 	}
 }
 

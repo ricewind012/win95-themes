@@ -330,6 +330,8 @@
 }
 
 .friendSearchInput {
+	@include controls.text-field;
+
 	background-image: none;
 
 	&,

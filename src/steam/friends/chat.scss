@@ -191,6 +191,10 @@
 				font-size: var(--text-ui-size);
 			}
 		}
+
+		&:last-child {
+			flex-grow: 1;
+		}
 	}
 }
 
@@ -528,4 +532,8 @@
 
 .VoiceRoomTitleLabels {
 	margin-left: 0;
+}
+
+.VoiceToggle {
+	@include controls.button($disabled-sel: ".Inactive");
 }
