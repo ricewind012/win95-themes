@@ -1,20 +1,41 @@
 @use "shared/controls";
+@use "shared/menu";
 @use "shared/window";
 
+// TODO(port-fix): maybe use it on these:
+// monaco-submenu
+// menubar-menu-items-holder
+// context-view
+// monaco-menu-container
+// OR monaco-menu
 [role="menu"] {
 	@include window.container($child: true);
+
+	[role^="menuitem"] {
+		// TODO(port): wtf is this
+		@include menu.item($selected-sel: ".hack");
+
+		margin: 0;
+
+		height: unset;
+
+		&[aria-disabled] {
+			@include menu.item-disabled;
+		}
+
+		&[aria-haspopup] {
+			@include menu.item-parent;
+		}
+	}
+
+	[role="menuitemcheckbox"][aria-checked="true"] {
+		@include menu.item-check;
+	}
 }
 
 .context-view {
 	animation: none;
 	box-shadow: none;
-}
-
-[role="menuitem"],
-[role="menuitemcheckbox"] {
-	margin: 0;
-
-	height: unset;
 }
 
 .monaco-menu {

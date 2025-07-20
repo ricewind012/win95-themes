@@ -12,6 +12,11 @@
 		width: 40px;
 	}
 
+	// border on default position
+	&::before {
+		display: none;
+	}
+
 	& > .content {
 		font: var(--text-ui);
 
@@ -20,7 +25,8 @@
 	}
 
 	[role="tablist"],
-	[role="tab"][aria-selected]:not(.tab) {
+	[role="tab"][aria-selected="true"] {
+		padding: 0;
 		margin: 0;
 	}
 
@@ -28,7 +34,8 @@
 		display: inline-block;
 	}
 
-	.action-item {
+	// TODO(port-fix): !important for role tab aria selected, just go with :where()
+	.action-item[role="tab"][aria-selected] {
 		background-color: transparent;
 		border: none;
 		box-shadow: none;
@@ -61,9 +68,12 @@
 		background-repeat: no-repeat;
 		background-position: center;
 		color: var(--color-window-text);
-		font-size: 0;
 
 		width: 100%;
+
+		&::before {
+			display: none;
+		}
 	}
 
 	.active-item-indicator {

@@ -10,6 +10,17 @@ $-max-nest: 10;
  * aria-level    | how deep it is
 **/
 
+// Don't use tree.item here, since for some unknown to me fucking reasons the
+// tree items in settings are twice as bigger and nothing indicates that they
+// are. Same height, position, etc.
+[role="treeitem"] {
+	--icon: var(--tree-icon-collapsed);
+
+	&[aria-expanded="true"] {
+		--icon: var(--tree-icon-expanded);
+	}
+}
+
 [aria-level]:not([aria-level="1"]) {
 	--a: 36px;
 	--b: 12px;
@@ -92,8 +103,7 @@ $-max-nest: 10;
 }
 
 .part.sidebar [role="treeitem"] {
-	// Revert for @extend
-	margin: 0;
+	@include tree.item($expanded-sel: "&[aria-expanded='true']", $child-sel: "&");
 
 	position: absolute;
 

@@ -2,6 +2,8 @@
 @use "shared++/extends";
 
 [role="tab"] {
+	@include tabs.tab($selected-sel: "&[aria-selected='true']");
+
 	cursor: unset;
 
 	&[aria-selected="true"]:not(.tab) {
@@ -21,6 +23,10 @@
 	}
 }
 
+[role="tablist"] {
+	@include tabs.container;
+}
+
 // Editor
 .tab {
 	&:not([aria-selected="true"]) {
@@ -28,9 +34,10 @@
 		.monaco-workbench
 			.part.editor
 			> .content
-			.editor-group-container[class]
+			.editor-group-container.active
 			> .title
-			&:hover {
+			.tabs-container
+			> &:hover {
 			background-color: var(--color-button-face);
 		}
 	}

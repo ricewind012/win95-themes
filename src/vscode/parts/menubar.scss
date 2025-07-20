@@ -2,6 +2,8 @@
 @use "shared/window";
 
 .menubar {
+	@include window.menubar;
+
 	overflow: visible;
 	position: absolute;
 	left: 0;
@@ -21,10 +23,7 @@
 	}
 }
 
-// !important
 .menubar-menu-button {
-	padding: 0;
-
 	&.open {
 		background-color: var(--color-highlight);
 		color: var(--color-highlight-text);
@@ -34,8 +33,7 @@
 .menubar-menu-title {
 	// Move [role="menubar"] to its child element
 	// for correct context menu positioning
-	// TODO(port)
-	@include window.menubar-item($selected-sel: ".hack");
+	@include window.menubar-item($selected-sel: ".open");
 
 	&.toolbar-toggle-more {
 		display: none;

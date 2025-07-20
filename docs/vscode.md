@@ -1,5 +1,7 @@
 # Visual Studio Code
 
+Last tested version is [1.92](https://code.visualstudio.com/updates/v1_92)!
+
 ## Usage
 
 1. Install the [Apc Customize UI++](https://marketplace.visualstudio.com/items?itemName=drcika.apc-extension) extension.

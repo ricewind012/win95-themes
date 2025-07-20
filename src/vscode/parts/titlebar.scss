@@ -4,6 +4,9 @@
 .titlebar {
 	@include window.titlebar($focused-sel: "&:not(.inactive)");
 
+	// TODO(port-fix): weird how this appears in 1.92 now, but didn't a year ago
+	border: none;
+
 	width: 100%;
 
 	.global-actions-container,
@@ -11,6 +14,7 @@
 		display: none;
 	}
 
+	// TODO(port-fix): [role="toolbar"] covers this
 	.actions-container {
 		gap: 0;
 	}
@@ -30,6 +34,11 @@
 		& > .codicon {
 			display: none;
 		}
+	}
+
+	// !important in .monaco-action-bar .action-item:not([role=tab])
+	.action-item.command-center-quick-pick[role="presentation"] {
+		margin-inline: var(--titlebar-spacing);
 	}
 
 	.window-appicon {

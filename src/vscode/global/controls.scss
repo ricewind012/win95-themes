@@ -123,6 +123,7 @@
 	color: var(--color-window-text);
 	font: var(--text-ui);
 	border: none;
+	@include controls.text-field;
 
 	overflow: visible;
 	height: unset;
@@ -132,6 +133,13 @@
 
 		display: flex;
 		justify-content: center;
+	}
+
+	& > .ibwrapper > .input {
+		// Fix scrollable content cutting off
+		--spacing: calc(var(--border-size) + var(--input-spacing));
+		padding: var(--spacing);
+		margin: calc(var(--spacing) * -1);
 	}
 }
 
@@ -208,6 +216,10 @@
 	}
 }
 
+.monaco-select-box {
+	@include controls.combobox;
+}
+
 // Scrollbar
 .monaco-scrollable-element > .scrollbar {
 	@include scrollbar.container;
@@ -227,7 +239,7 @@
 	}
 
 	& > .scra {
-		.codicon {
+		&.codicon {
 			@include scrollbar.button;
 
 			font-size: 0;
@@ -235,25 +247,25 @@
 			left: 0;
 		}
 
-		.codicon-scrollbar-button-up {
+		&.codicon-scrollbar-button-up {
 			@include generated.scrollbar-button-vertical-decrement;
 
 			top: 0;
 		}
 
-		.codicon-scrollbar-button-down {
+		&.codicon-scrollbar-button-down {
 			@include generated.scrollbar-button-vertical-increment;
 
 			bottom: 0;
 		}
 
-		.codicon-scrollbar-button-left {
+		&.codicon-scrollbar-button-left {
 			@include generated.scrollbar-button-horizontal-decrement;
 
 			left: 0;
 		}
 
-		.codicon-scrollbar-button-right {
+		&.codicon-scrollbar-button-right {
 			@include generated.scrollbar-button-horizontal-increment;
 
 			left: unset;
@@ -323,7 +335,7 @@
 			&[style*="height: 22px"],
 			&[style*="height: 23px"],
 			&[style*="height: 24px"] {
-				height: calc(var(--text-size) * var(--text-line) + 8px);
+				height: calc(var(--text-ui-size) * var(--text-line) + 8px);
 			}
 		}
 
