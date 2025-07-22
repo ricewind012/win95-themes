@@ -1,0 +1,6 @@
+#!/bin/sh
+
+sed -i \
+    -e 's/ITEM_HEIGHT=22/ITEM_HEIGHT=16/g' \
+    -e 's/getHeight(i){return 22}/getHeight(i){return 16}/g' \
+    /usr/lib/code/out/vs/workbench/workbench.desktop.main.js

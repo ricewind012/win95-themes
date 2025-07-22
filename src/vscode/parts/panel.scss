@@ -2,19 +2,45 @@
 @use "shared/window";
 
 .part.panel {
+	--title-top-margin: calc(var(--window-gap) + 6px);
+
 	background-color: transparent;
-	padding: 0 9px 0 7px;
+	padding: 0 12px 0 7px;
 	border: none;
 
 	overflow: visible;
-	width: calc(100% - 3px);
-	height: calc(100% - 28px);
+	height: calc(100% - var(--title-top-margin) - var(--additional-top-margin));
+
+	&:is(.left, .right) {
+		--additional-top-margin: 36px;
+
+		margin-top: var(--title-top-margin);
+		padding: 0;
+
+		.title {
+			margin-top: var(--title-top-margin);
+		}
+	}
+
+	&.left {
+		padding-left: 5px;
+	}
+
+	&.right {
+		padding-right: 5px;
+	}
+
+	&:is(.bottom, .top) {
+		--additional-top-margin: 20px;
+
+		.title {
+			margin-top: calc(var(--title-top-margin) * -1);
+		}
+	}
 
 	.title {
 		border: none;
 		padding: 0;
-		margin: 0;
-		margin-top: -8px;
 		gap: 2px;
 
 		overflow: visible;

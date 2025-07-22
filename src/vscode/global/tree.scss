@@ -111,8 +111,15 @@ $-max-nest: 10;
 		background-color: var(--color-window);
 		color: var(--color-window-text);
 
+		.monaco-icon-label-container {
+			height: inherit;
+		}
+
 		.monaco-icon-name-container {
 			@include list.item-name-selected;
+
+			position: relative;
+			top: 2px;
 		}
 	}
 
@@ -151,6 +158,12 @@ $-max-nest: 10;
 			margin: 0;
 		}
 	}
+}
+
+.explorer-folders-view .explorer-item {
+	line-height: inherit;
+
+	height: inherit;
 }
 
 // Tree dots
@@ -211,6 +224,7 @@ $-max-nest: 10;
 	height: calc(100% + 22px);
 
 	& > .indent-guide {
+		opacity: 1;
 		border-left: 1px dotted var(--color-gray-text);
 
 		width: calc(11px + var(--tree-spacing));

@@ -393,14 +393,15 @@
 
 /* ... and small icons for tabs. */
 // !important
-.monaco-workbench
+body
+	.monaco-workbench
 	.pane-composite-part
 	> .header-or-footer
 	> .composite-bar-container
 	> .composite-bar
 	> .monaco-action-bar
 	.action-item.icon
-	.action-label.codicon {
+	.action-label.codicon:not(.codicon-more) {
 	background: no-repeat center;
 
 	margin-bottom: -4px;

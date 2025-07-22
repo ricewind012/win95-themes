@@ -1,79 +1,72 @@
 @use "shared/controls";
 @use "shared/window";
+@use "shared++/icons";
 
 .titlebar {
-	@include window.titlebar($focused-sel: "&:not(.inactive)");
-
-	// TODO(port-fix): weird how this appears in 1.92 now, but didn't a year ago
+	background-color: inherit;
+	color: inherit;
 	border: none;
 
-	width: 100%;
+	position: absolute;
+	left: 0;
+	// 5px = separator
+	top: calc(var(--menubar-height) + 5px + var(--window-gap));
+	height: unset;
 
-	.global-actions-container,
-	.search-icon {
+	.search-icon,
+	.search-label {
 		display: none;
 	}
 
-	// TODO(port-fix): [role="toolbar"] covers this
-	.actions-container {
-		gap: 0;
-	}
+	// !important in .monaco-action-bar .action-item:not([role=tab])
+	.action-item.command-center-center:not([role="tab"]) {
+		@include controls.button;
+		@include controls.icon-button;
+		// TODO(icons): file
+		--button-img: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAQCAMAAAARSr4IAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAYUExURYeIj////8DHyAAAAAD//wAA/wAAqAAAAK7w5bgAAAAIdFJOU/////////8A3oO9WQAAAAlwSFlzAAAOwwAADsMBx2+oZAAAAFdJREFUGFdNzksOACEIA9DyUe5/42nFCTYueEAMqMKfYs1nHVf90PAyGBHh3XASlnZNSultUcqhNNOCBMhigf/7WnST/Z1y05njQ10TIZ+rbujYQ27t+gABFgKiBYDaZQAAAABJRU5ErkJggg==");
 
-	.action-item.command-center-center {
-		@include window.titlebar-name;
-
-		background-color: transparent;
-		color: inherit;
-		border: none;
-		margin: 0 var(--titlebar-spacing);
+		margin-right: var(--toolbar-spacing);
 
 		width: unset;
-		height: unset;
 		order: -1;
+	}
 
-		& > .codicon {
-			display: none;
+	// .codicon: !important
+	// TODO(toolbar): make .monaco-toolbar .action-label use
+	// controls.icon-button too
+	.action-label.codicon {
+		--button-img-pos: center;
+
+		// TODO: under mysterious fucking circumstances the svg disappears upon
+		// removing ::before wtf is this shit ? stolen from controls.icon-button
+		min-width: var(--icon-button-width);
+		height: var(--icon-button-height);
+
+		//.action-item.clicked > &,
+		&:active {
+			background: var(--checkerboard);
+			box-shadow: var(--border-button-sunken);
 		}
 	}
 
-	// !important in .monaco-action-bar .action-item:not([role=tab])
-	.action-item.command-center-quick-pick[role="presentation"] {
-		margin-inline: var(--titlebar-spacing);
+	.codicon-arrow-left {
+		@include icons.icon-big-arrow-left;
 	}
 
-	.window-appicon {
-		width: var(--icon-size);
+	.codicon-arrow-right {
+		@include icons.icon-big-arrow-right;
 	}
 
-	.window-controls-container {
-		margin-top: 1px;
-
-		width: unset;
+	.codicon-settings-view-bar-icon::before {
+		height: unset;
 	}
-
-	.window-icon {
-		@include controls.button;
-		@include window.titlebar-button;
-
-		width: unset;
-	}
-}
-
-.titlebar-left {
-	width: var(--icon-size);
-	flex-grow: 0;
 }
 
 .titlebar-center {
-	margin: 0;
-
-	width: unset;
+	margin-inline: var(--toolbar-spacing);
 }
 
-.action-toolbar-container {
-	min-width: unset;
-
-	[role="presentation"] {
-		--button-img-pos: 3px 2px;
-	}
+.titlebar-left {
+	flex-grow: 0;
+	width: 0;
 }

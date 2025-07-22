@@ -70,4 +70,4 @@ const ElementUtils = {
 	},
 };
 
-export default ElementUtils;
+export { ElementUtils };

@@ -1,15 +1,8 @@
 @use "shared/window";
 
-body {
-	@include window.container;
-}
-
 .monaco-workbench {
-	background-color: transparent;
+	background-color: var(--color-button-face);
 	font: var(--text-ui);
-
-	width: 100%;
-	height: calc(100vh - 8px);
 
 	.part > .content {
 		font: var(--text-ui);
@@ -19,12 +12,12 @@ body {
 .split-view-view {
 	// Titlebar
 	&[style^="top: 35px;"] {
-		margin-top: 5px;
+		margin-top: 13px;
 	}
 
 	// Statusbar
 	&[style$="height: 22px;"] {
-		margin-top: calc(var(--window-gap) * -1);
+		margin-top: 6px;
 	}
 
 	// Maximised bottom panel

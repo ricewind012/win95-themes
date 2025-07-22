@@ -4,36 +4,33 @@ Last tested version is [1.92](https://code.visualstudio.com/updates/v1_92)!
 
 ## Usage
 
-1. Install the [Apc Customize UI++](https://marketplace.visualstudio.com/items?itemName=drcika.apc-extension) extension.
-2. Add to `settings.json` (Preferences: Open User Settings (JSON)) the following:
+1. Run the `scripts/patch_vscode` script. Optional, makes the tree items' height smaller.
+2. Install the [Custom UI Style](https://open-vsx.org/vscode/item?itemName=subframe7536.custom-ui-style) extension.
+3. Add to `settings.json` (Preferences: Open User Settings (JSON)) the following:
 
 ```json
-"apc.imports": [
-    "file:///path/to/dist/vscode/vscode.css",
-    "file:///path/to/dist/vscode/vscode.js",
-],
-"apc.iframe.style": "/path/to/dist/vscode/vscode.css",
+	"custom-ui-style.external.imports": [
+		"file:///path/to/win95-themes/dist/vscode.css",
+		"file:///path/to/win95-themes/src/shared++/ElementUtils.js",
+		"file:///path/to/win95-themes/src/vscode/vscode.js",
+	],
 
-"apc.listRow": {
-    "height": 16
-},
-"apc.header": {
-    "height": 63
-},
+	"editor.scrollbar.arrowSize": 16,
+	"editor.scrollbar.vertical": "visible",
+	"editor.scrollbar.verticalHasArrows": true,
+	"editor.scrollbar.horizontalHasArrows": true,
 
-"editor.scrollbar.arrowSize": 16,
-"editor.scrollbar.verticalHasArrows": true,
-"editor.scrollbar.horizontalHasArrows": true,
+	"terminal.integrated.cursorStyle": "underline",
+	"terminal.integrated.fontFamily": "MS Gothic",
+	"terminal.integrated.fontSize": 12,
 
-"terminal.integrated.cursorStyle": "underline",
-"terminal.integrated.fontFamily": "Less Perfect DOS VGA",
-"terminal.integrated.fontSize": 12,
+	"window.titleBarStyle": "native",
+	"window.dialogStyle": "custom",
+	"window.menuStyle": "custom",
 
-"window.titleBarStyle": "custom",
-"window.dialogStyle": "custom",
-
-"workbench.editor.tabSizing": "shrink",
-"workbench.editor.wrapTabs": true,
+	"breadcrumbs.enabled": false,
+	"workbench.editor.tabSizing": "shrink",
+	"workbench.editor.wrapTabs": true,
 ```
 
 ## Caveats

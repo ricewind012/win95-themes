@@ -5,9 +5,8 @@
 	@include window.menubar;
 
 	overflow: visible;
-	position: absolute;
-	left: 0;
-	top: calc(var(--titlebar-height) + var(--window-gap));
+	position: fixed;
+	top: 0;
 	width: 100%;
 	height: var(--menubar-height);
 	z-index: 2;
