@@ -2,59 +2,63 @@
 @use "shared/menu";
 @use "shared++/extends";
 
-.container_ae4f46 {
+.clear__5808f {
+	@include menu.item($selected-sel: ".hack");
+
+	text-align: start;
+	box-shadow: none;
+
+	[data-text-variant] {
+		color: inherit;
+		font-weight: bold;
+	}
+}
+
+.container__5808f {
+	border: none;
+
 	width: auto;
 	display: flex;
 	flex-direction: column-reverse;
 
-	// !important
-	// TODO(port): originally &&&::before
+	// Titlebar
 	&::before {
 		display: none;
 	}
+}
 
-	& > button {
+.header__5808f {
+	display: none;
+}
+
+.separator__5808f {
+	@include controls.separator;
+
+	margin-inline: 0;
+}
+
+.tag__5808f {
+	@include menu.item($selected-sel: ".hack");
+
+	background-color: transparent;
+	color: var(--color-menu-text);
+	border: none;
+
+	width: 100%;
+	height: unset;
+
+	&[aria-pressed="true"] {
 		@include menu.item-check;
-
-		text-align: start;
-		box-shadow: none;
-
-		[data-text-variant] {
-			font-weight: bold;
-		}
 	}
 
-	& > .header {
-		display: none;
+	[data-text-variant] {
+		font-weight: normal;
 	}
+}
 
-	& > .separator {
-		@include controls.separator;
-	}
+.tagContainer__5808f {
+	gap: 0;
+	padding: 0;
 
-	[role="button"] {
-		@include menu.item-check;
-
-		background-color: transparent;
-		border: none;
-
-		width: 100%;
-		height: unset;
-
-		&[aria-pressed="true"] {
-			// TODO(port): what
-			@include menu.item-check;
-		}
-
-		& > div {
-			font-weight: normal;
-		}
-	}
-
-	[role="list"] {
-		gap: 0;
-		padding: 0;
-
-		flex-direction: column;
-	}
+	flex-direction: column;
 }

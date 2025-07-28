@@ -1,7 +1,8 @@
 @use "shared/window";
 
-.reactorsContainer_cc2dff {
+.preview__3e443 {
 	@include window.content-container;
 
-	overflow: visible;
+	border: none;
+	margin: 0;
 }

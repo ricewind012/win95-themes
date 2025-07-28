@@ -1,21 +1,14 @@
-.autocomplete {
+@use "shared/listbox";
+
+.autocomplete__13533 {
+	@include listbox.container;
+
 	left: calc(8px + var(--border-size));
 	right: var(--border-size);
 
-	.base {
+	.base__13533 {
 		background-color: transparent;
 		padding: 0;
-	}
-
-	[role="listbox"] {
-		padding: 0;
-
-		// Header
-		& > .base,
-		// Separator
-		& > [aria-disabled="true"] {
-			display: none;
-		}
 	}
 
 	svg {
@@ -23,7 +16,11 @@
 	}
 }
 
-.autocompleteRowContent {
+.autocompleteRow__13533 {
+	@include listbox.item($selected-sel: "[aria-selected='true']");
+}
+
+.autocompleteRowContent__13533 {
 	color: inherit;
 
 	min-height: unset;
@@ -40,13 +37,24 @@
 	}
 }
 
-.autocompleteRowContentPrimary,
-.autocompleteRowContentSecondary {
+.autocompleteRowContentPrimary__13533,
+.autocompleteRowContentSecondary__13533 {
 	width: 50%;
 }
 
-.autocompleteRowContentPrimary {
+.autocompleteRowContentPrimary__13533 {
 	&:first-child {
 		margin-left: var(--icon-size);
+	}
+}
+
+.scroller__6b0e0 {
+	padding: 0;
+
+	// Header
+	& > .base__13533,
+		// Separator
+		.dividerContainer__13533 {
+		display: none;
 	}
 }

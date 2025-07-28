@@ -1,13 +1,11 @@
 @use "shared/controls";
 
-.expandedInboxHeader {
-	display: none;
-}
+.header_ab6641 {
+	border: none;
+	padding: 0;
 
-.expandedTabSection {
 	height: unset;
-	flex-direction: column-reverse;
-	align-items: unset;
+	min-height: unset;
 
 	[role="button"] {
 		@include controls.button;
@@ -15,21 +13,18 @@
 	}
 }
 
-.recentMentionsPopout {
+.inboxIcon_ab6641 {
+	display: none;
+}
+
+.recentMentionsPopout__95796 {
 	margin: var(--dialog-spacing);
 
-	& > :first-child {
-		padding: 0;
-
-		height: unset;
-		min-height: unset;
-	}
-
-	.channelHeader {
+	.channelHeader__35a7e {
 		display: none;
 	}
 
-	[role="list"] {
+	.scroller__95796 {
 		&::before {
 			content: "";
 

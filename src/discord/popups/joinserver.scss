@@ -1,13 +1,5 @@
 @use "shared++/extends";
 
-.root {
-	.errorMessage {
-		@include extends.text-reset;
-
-		color: darkred;
-	}
-
-	.sampleLink {
-		@include extends.text-reset;
-	}
+.sampleLink__991a0 {
+	@include extends.text-reset;
 }

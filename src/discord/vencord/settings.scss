@@ -12,10 +12,26 @@
 	}
 }
 
-[id^="vencord"],
-#vesktop-tab {
-	& > div > h2 {
-		// This eliminates *all* subheaders, they are not needed anyway
+// Plugin settings
+.content__49fc1.vc-m-bottom-16 > div:not(:last-child) {
+	@include controls.groupbox;
+	@extend %-vencord-groupbox-header;
+
+	&:nth-child(1) {
+		--header-text: "Description";
+	}
+
+	&:nth-child(2) [data-text-variant="heading-lg/semibold"] {
+		@include extends.legend-as-div;
+	}
+}
+
+// Remove all subheaders, as for groupboxes they have to be in the same parent,
+// which they aren't, and vencord has no localization, so very convenient here.
+.contentColumn__23e6b:is([id^="vencord"], #vesktop-tab) {
+	--card-primary-bg: transparent;
+
+	h2 {
 		display: none;
 	}
 }
@@ -47,24 +63,9 @@
 }
 
 .vc-addon-card {
-	opacity: 1;
+	transform: none;
+	border: none;
 	padding: 0;
-
-	.default-colors {
-		opacity: 1;
-		background-color: transparent;
-
-		width: unset;
-		height: unset;
-	}
-
-	.vc-switch-slider {
-		display: none;
-	}
-
-	input[type="checkbox"] {
-		opacity: 1;
-	}
 }
 
 .vc-addon-header {
@@ -105,6 +106,27 @@
 	}
 }
 
+// TODO: .button__67645 in channel text area
+.vc-plugins-info-button {
+	--text: "Settings";
+
+	@include controls.button;
+
+	height: unset;
+
+	&::before {
+		content: var(--text);
+	}
+
+	&:has(> .vc-info-icon) {
+		--text: "Info";
+	}
+
+	.vc-plugins-info-icon {
+		display: none;
+	}
+}
+
 .vc-plugins-info-card {
 	@include controls.groupbox;
 
@@ -117,69 +139,6 @@
 
 	& > div {
 		@include extends.text-reset;
-	}
-}
-
-// Plugin settings
-[role="dialog"] > .vc-text-selectable {
-	[class*="content_"] > :first-child {
-		& > div {
-			@include controls.groupbox;
-			@extend %-vencord-groupbox-header;
-
-			&:nth-child(2) {
-				--header-text: "Description";
-			}
-
-			&:nth-child(4) {
-				--header-text: "Authors";
-
-				width: 100%;
-
-				& > div {
-					gap: 10px;
-				}
-
-				foreignObject {
-					mask: none;
-				}
-			}
-		}
-
-		& > h2 {
-			display: none;
-		}
-	}
-
-	[style^="gap: 12px"] {
-		gap: 0;
-		margin: 0;
-
-		// TODO: move somewhere to settings/dialog instead
-		& > :has([class*="h5_"]) {
-			@include text.input-label;
-
-			box-shadow: none;
-			padding: 0;
-			margin-bottom: var(--text-spacing);
-
-			& > h2 {
-				position: initial;
-
-				&::after {
-					content: ":";
-				}
-			}
-		}
-	}
-
-	.vc-m-bottom-16 {
-		@include controls.groupbox;
-
-		& > h2 {
-			@include extends.text-reset;
-			@include extends.legend-as-div;
-		}
 	}
 }
 
@@ -201,10 +160,8 @@
 
 	// !important in dialogs/settings.scss
 	// TODO(port): originally div&
-	& > [class*="sectionTitle_"] {
-		& > h2 {
-			@include extends.text-reset;
-			@include extends.legend-as-div;
-		}
+	.sectionTitle__7bffb h2 {
+		@include extends.text-reset;
+		@include extends.legend-as-div;
 	}
 }

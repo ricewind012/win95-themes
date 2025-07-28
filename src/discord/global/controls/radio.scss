@@ -1,0 +1,31 @@
+@use "shared/controls";
+
+.item__001a7 {
+	opacity: 1;
+	background-color: transparent;
+	margin-bottom: var(--text-spacing);
+
+	[data-text-variant="text-sm/normal"] {
+		color: var(--color-gray-text);
+	}
+}
+
+.radioBar__001a7 {
+	border: none;
+	gap: var(--label-spacing);
+	padding: 0;
+}
+
+.radioIndicator__001a7 {
+	display: none;
+}
+
+.radioIndicatorGroup__001a7 {
+	@include controls.radio(
+		$checked-sel: '.item__001a7[aria-checked="true"] &',
+		$disabled-sel: '.container__001a7[aria-disabled="true"] &'
+	);
+
+	order: -1;
+	align-self: start;
+}

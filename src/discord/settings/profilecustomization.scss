@@ -1,11 +1,20 @@
+@use "shared/controls";
 @use "shared/tabs";
+@use "shared++/extends";
 
-#profile-customization-tab {
-	& > div:not([class]) {
-		@include tabs.content;
-	}
+.buttonsContainer__28d5e {
+	gap: var(--dialog-button-spacing);
+}
 
-	.buttonsContainer {
-		gap: var(--dialog-button-spacing);
+.customizationSection_ace4f5 {
+	@include controls.groupbox;
+
+	& > :first-child {
+		@include extends.text-reset;
+		@include extends.legend-as-div;
 	}
+}
+
+.profileCustomizationSection__44061 {
+	@include tabs.content;
 }

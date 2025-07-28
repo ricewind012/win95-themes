@@ -2,83 +2,61 @@
 @use "shared/window";
 @use "shared++/extends";
 
-.contentColumn {
+$-groupbox-header-sel: ":is(h1, h2, h3, h4, h5, h6):first-child";
+
+.contentColumn__23e6b {
 	min-width: 100%;
 	max-width: 100%;
 	display: flex;
 	flex-direction: column;
 
-	// Messages preview
-	.card.preview {
-		@include window.content-container;
-
-		border: none;
-		margin: 0;
-
-		& > .previewHeader {
-			padding: 8px;
-		}
-
-		test & {
-			display: none;
-		}
-	}
-
-	.divider:empty {
-		display: none;
-	}
-
 	& > [data-text-variant]:first-child,
-	& > div > div > .sectionTitle:first-child,
-	& > div > :is(.sectionTitle, h2):first-child {
+	& > div > div > .sectionTitle__7bffb:first-child,
+	& > div > :is(.sectionTitle__7bffb, h2):first-child {
 		background: #f09;
 	}
+
+	// TODO(rewrite): lol lmao
 	/*
-	& > [data-text-variant]:first-child {
-		display: none;
-	}
-	*/
+	:has(> #{$-groupbox-header-sel}):not(.sectionTitle__7bffb) {
+		@include controls.groupbox;
 
-	.sectionTitle + .children {
-		& > div:not([class]):not(:empty), // Accessibility tab
-		[class^="margin"] {
-			@include controls.groupbox;
+		#{$-groupbox-header-sel} {
+			@include extends.text-reset;
+			@include extends.legend-as-div;
 
-			h1:first-child,
-			h2:first-child,
-			h3:first-child,
-			h4:first-child,
-			h5:first-child,
-			h6:first-child {
-				@include extends.text-reset;
-				@include extends.legend-as-div;
+			opacity: 1;
 
-				opacity: 1;
+			* {
+				margin: 0;
 			}
 		}
 	}
+		*/
 }
 
-.customizationSection {
-	@include controls.groupbox;
+.contentRegionScroller__23e6b {
+	margin: 0;
+}
 
-	& > :first-child {
-		@include extends.text-reset;
-		@include extends.legend-as-div;
-	}
+.divider__46c3b {
+	display: none;
 }
 
 // Make it a normal dialog
-.layers > .layer {
+.layers__960e4 > .layer__960e4 {
 	opacity: 1;
-	transform: unset;
 
 	&[aria-hidden="false"]:not(:only-child) {
 		--windows-titlebar-offset: 22px;
 		--dialog-size: 90%;
 		--c: calc(100% - var(--dialog-size));
+		--c2: calc(var(--c) + var(--border-size));
 
 		@include window.container($child: true);
+
+		opacity: 1;
+		transform: unset;
 
 		inset: var(--c);
 		z-index: 999;
@@ -91,56 +69,24 @@
 			@include window.titlebar($focused-sel: "&");
 		}
 
-		[role="tablist"][aria-orientation="vertical"] {
-			&::before {
-				--c2: calc(var(--c) + var(--border-size));
+		[role="tablist"][aria-orientation="vertical"]::before {
+			content: attr(aria-label);
 
-				content: attr(aria-label);
-
-				position: fixed;
-				left: calc(var(--c2) + 3px + var(--window-spacing) + 2px);
-				top: calc(var(--c2) + var(--windows-titlebar-offset) + 1px);
-
-				color: var(--color-active-caption-text);
-				font-weight: bold;
-			}
-		}
-
-		.tools {
 			position: fixed;
-			top: calc(
-				var(--titlebar-height) + var(--border-size) * 2 + var(--window-gap) +
-					10%
-			);
-			right: calc(var(--border-size) * 2 + 4px + 10%);
+			left: calc(var(--c2) + 3px + var(--window-spacing) + 2px);
+			top: calc(var(--c2) + 3px + 3px);
 
-			.closeButton {
-				@include controls.button;
-				@include window.titlebar-button;
-				@include extends.titlebar-button-close;
-
-				border: none;
-
-				width: unset;
-				flex: unset;
-
-				& > svg {
-					display: none;
-				}
-			}
-
-			.keybind {
-				display: none;
-			}
+			color: var(--color-active-caption-text);
+			font-weight: bold;
 		}
 	}
 }
 
-.settingsBackgroundFlashElement {
-	position: unset;
+.sidebar__23e6b {
+	padding: 0;
 }
 
-.standardSidebarView {
+.standardSidebarView__23e6b {
 	background-color: var(--color-button-face);
 	padding: var(--dialog-spacing);
 
@@ -150,15 +96,34 @@
 		top: var(--windows-titlebar-offset);
 	}
 
-	.sidebar {
-		padding: 0;
-	}
-
 	// TODO: move somewhere else
-	[role="tablist"] {
-		& > .header,
-		& > .separator {
+	.header_b3f026,
+	.separator_b3f026 {
+		display: none;
+	}
+}
+
+.tools__23e6b {
+	position: fixed;
+	top: calc(var(--c2) + var(--border-size) + 2px + var(--window-gap));
+	right: calc(var(--c2) + var(--border-size) + 2px * 2);
+
+	.closeButton_c2b141 {
+		@include controls.button;
+		@include window.titlebar-button;
+		@include extends.titlebar-button-close;
+
+		border: none;
+
+		width: unset;
+		flex: unset;
+
+		& > svg {
 			display: none;
 		}
+	}
+
+	.keybind_c2b141 {
+		display: none;
 	}
 }

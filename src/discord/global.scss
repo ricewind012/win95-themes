@@ -3,15 +3,3 @@
 img {
 	image-rendering: auto;
 }
-
-.base > .content {
-	gap: var(--window-gap);
-}
-
-// Themes
-#appearance-tab > div > [class*="children_"] > :nth-child(2),
-// Nitro
-#profile-customization-tab > [class*="container_"],
-[class*="premiumFeatureBorder_"] {
-	display: none;
-}

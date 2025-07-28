@@ -1,0 +1,73 @@
+@use "shared/controls";
+@use "shared++/icons";
+
+.animatedContainer_f37cb1 {
+	opacity: 0.5;
+	margin: 1px;
+
+	transform: none;
+	width: calc(100% - 2px);
+}
+
+.bannerImage_f37cb1 {
+	transform: none;
+	height: inherit;
+}
+
+.bannerImg_f37cb1 {
+	height: inherit;
+}
+
+.container_f37cb1 {
+	--custom-guild-banner-height: 32px;
+	--custom-channel-header-height: var(--custom-guild-banner-height);
+
+	box-shadow: var(--border-statusbar);
+	margin-left: calc(var(--border-size) * -1);
+
+	position: fixed;
+	top: 0;
+	height: 34px;
+	width: calc(var(--sidebar-width) - var(--window-gap));
+
+	& > button {
+		text-align: center;
+
+		width: calc(100% - var(--icon-button-width) - var(--toolbar-spacing));
+		height: unset;
+	}
+}
+
+.header_f37cb1 {
+	// TODO: use modifier-hover for transparent ?
+	background-color: transparent;
+	border: none;
+	padding: var(--toolbar-container-spacing);
+}
+
+.headerButton_f37cb1 {
+	@include controls.button;
+	@include controls.icon-button;
+	@include icons.icon-more;
+
+	// TODO
+	&::before {
+		background-size: 16px auto;
+		margin-left: -1px;
+	}
+}
+
+.headerContent_f37cb1 {
+	filter: none;
+
+	height: unset;
+	justify-content: end;
+}
+
+.guildIconV2Container__85d16,
+.headerChildren_f37cb1,
+.headerEllipseForeground_f37cb1,
+.headerGlass_f37cb1,
+.name_f37cb1 {
+	display: none;
+}

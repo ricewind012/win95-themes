@@ -5,25 +5,41 @@
 
 $-titlebar-description-selector: "> :first-child + [data-text-variant]";
 
-.backdrop {
+:where([role="dialog"]:not([aria-label=""])) {
+	@include window.container($child: true);
+
+	&[aria-label] {
+		&::before {
+			content: attr(aria-label);
+
+			box-sizing: border-box;
+			flex-shrink: 0;
+
+			@include window.titlebar($focused-sel: "&");
+			@include window.titlebar-name;
+		}
+	}
+}
+
+.backdrop__78332 {
 	background-color: transparent;
 }
 
-.formGroup {
+[class*="formGroup"] {
 	@include text.input-label;
 
 	margin-bottom: var(--text-spacing);
 
-	& > .sectionTitle {
+	& > [class*="sectionTitle"] {
 		& > .h5 {
 			position: initial;
 		}
 	}
 }
 
-.horizontal {
+[class*="horizontal"] {
 	& > .flex,
-	& > .flexChild {
+	& > [class*="flexChild"] {
 		margin-right: var(--label-spacing);
 
 		flex-grow: 0;
@@ -34,19 +50,57 @@ $-titlebar-description-selector: "> :first-child + [data-text-variant]";
 	}
 }
 
-.root {
+.content__49fc1 {
 	overflow: visible;
 
-	:has(> .h5):not(.sectionTitle) {
-		@include controls.groupbox;
-	}
+	&.scrollerBase__49fc1 {
+		padding: var(--messagebox-spacing);
+		margin: 0;
 
-	.h5 {
-		@include extends.text-reset;
-		@include extends.legend-as-div;
-	}
+		overflow: auto;
 
-	&.small {
+		& > * {
+			@include extends.text-reset;
+
+			text-align: start;
+		}
+	}
+}
+
+.close__49fc1 {
+	@include window.titlebar-button;
+	@include extends.titlebar-button-close;
+
+	opacity: 1;
+	margin: 0;
+	margin-left: auto;
+
+	inset: 0;
+
+	& > * {
+		display: none;
+	}
+}
+
+.footer__49fc1 {
+	background-color: transparent;
+	gap: var(--dialog-button-spacing);
+	padding: var(--messagebox-spacing);
+	box-shadow: none;
+
+	justify-content: end;
+
+	& > div {
+		gap: var(--dialog-button-spacing);
+	}
+}
+
+.root__49fc1 {
+	border: none;
+
+	overflow: visible;
+
+	&.small__49fc1 {
 		min-height: 150px;
 	}
 
@@ -54,80 +108,20 @@ $-titlebar-description-selector: "> :first-child + [data-text-variant]";
 		overflow: auto;
 	}
 
-	// wtf is this bullshit blurring everything ?
-	[style*="translate3d(0px"] {
-		transform: unset;
-
-		top: 0;
-	}
-
-	.content {
-		overflow: visible;
-
-		&.scrollerBase {
-			padding: var(--messagebox-spacing);
-			margin: 0;
-
-			overflow: auto;
-
-			& > * {
-				@include extends.text-reset;
-
-				text-align: start;
-			}
-		}
-
-		& > .searchBox {
-			@include controls.groupbox;
-
-			& > [data-text-variant] {
-				@include extends.legend-as-div;
-			}
-		}
-	}
-
-	.close {
-		@include window.titlebar-button;
-		@include extends.titlebar-button-close;
-
-		opacity: 1;
-		margin: 0;
-		margin-left: auto;
-
-		inset: 0;
-
-		& > * {
-			display: none;
-		}
-	}
-
-	.footer {
-		background-color: transparent;
-		gap: var(--dialog-button-spacing);
-		padding: var(--messagebox-spacing);
-		box-shadow: none;
-
-		justify-content: end;
-
-		& > div {
-			gap: var(--dialog-button-spacing);
-		}
-	}
-
-	[role="dialog"]:not([aria-label]) > & .header.flex {
+	[role="dialog"]:not([aria-label]) > & .header__49fc1.flex__7c0ba {
 		@include window.titlebar($focused-sel: "&");
 
 		overflow: visible;
 		flex-direction: row;
 
-		.title {
+		.title_b717a1 {
 			@include extends.text-reset;
 
 			font-weight: bold;
 			margin: 0;
 		}
 
-		&:has(#{$-titlebar-description-selector}) + .content {
+		&:has(#{$-titlebar-description-selector}) + [class*="content"] {
 			margin-top: calc(var(--text-full) * 2 + var(--dialog-spacing));
 		}
 

@@ -107,6 +107,8 @@
 		"Tahoma", "Arial", "Verdana", "MS Sans Serif", "MS Reference Sans Serif",
 		sans-serif;
 	--text-ui-size: 8pt;
+	// TODO: chromium bug
+	--text-ui-size: 11px;
 	--text-ui: var(--text-ui-size) / var(--text-line) var(--text-ui-font);
 
 	--text-monospace-font:

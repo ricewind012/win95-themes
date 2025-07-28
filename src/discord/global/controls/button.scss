@@ -1,0 +1,22 @@
+@use "shared/controls";
+
+:where(.button__201d5) {
+	@include controls.button;
+
+	height: unset;
+	min-height: unset;
+
+	.contents__201d5 {
+		background-image: none;
+	}
+}
+
+.button__6af3a {
+	@include controls.button;
+
+	.buttonChildrenWrapper__6af3a {
+		padding: 0;
+
+		min-height: unset;
+	}
+}

@@ -2,73 +2,64 @@
 @use "shared/window";
 @use "shared++/extends";
 
-#add_friend-tab > header {
+.container__133bf {
 	border: none;
-	padding: 0;
+}
 
-	& > h2 {
+.peopeColumn__133bf {
+	@include tabs.content($compact: true);
+}
+
+.peopleList__5ec2f {
+	@include window.content-container;
+	@include extends.move-scrollbar;
+
+	margin-top: var(--window-gap);
+
+	.actionButton_f8fa06 {
+		display: none;
+	}
+
+	.discriminator__0a06e {
+		@include extends.parentheses;
+		@include extends.text-reset;
+
+		visibility: visible;
+	}
+
+	.sectionTitle__5ec2f {
 		display: none;
 	}
 }
 
-.addFriendInputWrapper {
-	background-color: transparent;
+.peopleListItem_cc6179 {
+	line-height: inherit;
 	border: none;
-	padding: 0;
-	margin-top: var(--text-spacing);
+	padding: 8px;
+	margin: 0;
+
+	height: unset;
+
+	&:hover {
+		background-color: var(--color-highlight);
+		color: var(--color-highlight-text);
+		--header-primary: var(--color-highlight-text);
+	}
 }
 
-[data-list-id="people"] {
-	@include window.content-container;
-	@include extends.move-scrollbar;
+.searchBar__5ec2f {
+	margin: 0;
 }
 
-.tabBody {
+// Header
+.tabBar__133bf {
+	position: fixed;
+	top: 66px;
+	margin-left: 3px;
+}
+
+.tabBody__133bf {
 	background-color: var(--color-button-face);
 	padding: var(--dialog-spacing);
 	padding-top: calc(var(--dialog-spacing) + var(--tabs-height));
-
-	[data-list-id="people"] {
-		margin-top: var(--window-gap);
-
-		[role="button"] {
-			display: none;
-		}
-
-		[role="listitem"] {
-			line-height: inherit;
-			border: none;
-			padding: 8px;
-			margin: 0;
-
-			height: unset;
-
-			&:hover {
-				background-color: var(--color-highlight);
-				color: var(--color-highlight-text);
-				--header-primary: var(--color-highlight-text);
-			}
-		}
-
-		.discriminator {
-			@include extends.text-reset;
-
-			visibility: visible;
-			@include extends.parentheses;
-		}
-	}
-
-	[role="tabpanel"] {
-		@include tabs.content($compact: true);
-	}
-
-	.sectionTitle {
-		display: none;
-	}
-}
-
-[role="navigation"] > div > .children > [role="tablist"] {
-	position: fixed;
-	top: 67px;
-	left: 343px;
 }

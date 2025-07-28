@@ -1,19 +1,17 @@
 @use "shared/tooltip";
-@use "shared++/extends";
 
-.tooltip {
+.tooltip__382e7 {
 	@include tooltip.container;
-	@include extends.text-reset;
 
 	opacity: 1;
+	font: var(--text-ui);
 	transform: unset;
 }
 
-.tooltipContent {
+.tooltipContent__382e7 {
 	padding: 0;
 }
 
-.tooltip .flowerStarContainer,
-.tooltipPointer {
+.tooltipPointer__382e7 {
 	display: none;
 }

@@ -1,86 +1,86 @@
+@use "shared/controls";
+@use "shared/listbox";
 @use "shared/table";
 @use "shared/window";
 @use "shared++/extends";
 
-.quickswitcher {
+.content__71961 {
+	line-height: inherit;
+	gap: var(--text-spacing);
+	padding: 0;
+
+	height: 100%;
+	align-items: center;
+
+	.result__71961 > & {
+		display: grid;
+		grid-template-columns: var(--icon-size) repeat(2, 1fr);
+	}
+}
+
+.header__71961 {
+	@include table.header-row;
+	@include extends.text-reset;
+
+	line-height: inherit;
+	margin: 0;
+
+	width: 100%;
+}
+
+.input_ac6cb0 {
+	@include controls.text-field;
+}
+
+.miscContainer_ac6cb0 {
+	opacity: 1;
+	color: var(--color-gray-text);
+	font: var(--text-ui);
+}
+
+.protip_ac6cb0 {
+	display: none;
+}
+
+.quickswitcher_ac6cb0 {
 	--icon-size: 20px;
 
+	border: none;
 	box-shadow: none;
 	gap: var(--window-gap);
 	padding: var(--dialog-spacing);
 
 	height: inherit;
+}
 
-	& > .protip,
-	& > .tutorial {
-		display: none;
-	}
+.result__71961 {
+	@include listbox.item($selected-sel: "[aria-selected='true']");
 
-	& > .scroller {
-		@include window.content-container;
-		@include extends.move-scrollbar;
+	font: var(--text-ui);
 
+	height: calc(var(--icon-size) + 2px * 2);
+
+	:where(& *) {
+		color: inherit;
 		margin: 0;
-
-		max-height: unset;
 	}
 
-	[role="listbox"] {
-		border: none;
+	.note__71961,
+	.username__71961 {
+		@include extends.parentheses;
 
-		// Header
-		& > div:not([class]) > div {
-			@include table.header-row;
-
-			line-height: inherit;
-
-			height: unset;
-
-			& > div {
-				@include extends.text-reset;
-
-				margin: 0;
-			}
-		}
-	}
-
-	[role="option"] {
+		opacity: 1;
 		font: var(--text-ui);
-
-		height: calc(var(--icon-size) + 2px * 2);
-
-		* {
-			color: inherit;
-			margin: 0;
-		}
-
-		& > div {
-			line-height: inherit;
-			gap: var(--text-spacing);
-			padding: 0;
-
-			height: 100%;
-			display: grid;
-			grid-template-columns: var(--icon-size) repeat(2, 1fr);
-			align-items: center;
-		}
-
-		.mask {
-			display: initial;
-		}
-
-		.miscContainer,
-		.note,
-		.username {
-			opacity: 1;
-			font: var(--text-ui);
-		}
-
-		.note,
-		.username {
-			@include extends.parentheses;
-			text-transform: none;
-			margin-left: var(--text-spacing);
-		}
+		text-transform: none;
+		margin-left: var(--text-spacing);
 	}
+}
+
+.scroller_ac6cb0 {
+	@include window.content-container;
+	@include extends.move-scrollbar;
+
+	margin: 0;
+
+	max-height: unset;
 }

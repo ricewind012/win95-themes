@@ -1,8 +1,6 @@
-.searchResultsWrap {
-	& > header,
-	& > header > [role="tablist"] {
-		gap: 0;
+.searchHeader_f3b986,
+.searchHeaderTabList_f3b986 {
+	gap: 0;
 
-		flex-direction: row;
-	}
+	flex-direction: row;
 }

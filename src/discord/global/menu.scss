@@ -1,14 +1,76 @@
 @use "shared/controls";
+@use "shared/menu";
+@use "shared/window";
 
-.groupLabel {
+.groupLabel_c1e9c4 {
 	display: none;
 }
 
-.labelContainer {
+.iconContainer_c1e9c4 {
+	//display: none;
+	all: unset;
+
+	svg {
+		display: none;
+	}
+}
+
+.item_c1e9c4 {
+	@include menu.item($selected-sel: "&.focused_c1e9c4");
+
+	font: var(--text-ui);
+
+	&[aria-haspopup] {
+		@include menu.item-parent;
+	}
+
+	&[role="menuitemradio"][aria-checked="true"] {
+		@include menu.item-radio;
+	}
+
+	.checkbox_f525d3 {
+		@include menu.item-check;
+
+		all: unset;
+
+		svg {
+			display: none;
+		}
+	}
+
+	.radioIndicatorGroup__001a7 {
+		display: none;
+	}
+}
+
+.label_c1e9c4 {
+	color: inherit;
+}
+
+.labelContainer_c1e9c4 {
 	min-height: unset;
 }
 
-.statusItem {
+.menu_c1e9c4 {
+	@include window.container($child: true);
+
+	border: none;
+}
+
+.scroller_c1e9c4 {
+	padding: 0;
+
+	overflow: auto;
+}
+
+.separator_c1e9c4 {
+	@include controls.separator;
+
+	margin-inline: 0;
+}
+
+// TODO: move
+.statusItem_c1e9c4 {
 	padding: 0;
 
 	min-height: unset;
@@ -22,33 +84,37 @@
 	}
 }
 
-.submenuPaddingContainer {
+.submenuPaddingContainer_c1e9c4 {
 	padding: 0;
 }
 
 // Emotes
-[role="menu"] > .scroller > [role="group"].wrapper {
+.wrapper_f563df {
+	gap: 0;
 	padding: 0;
 
 	display: flex;
 	flex-direction: column;
 
-	& > [role="menuitem"] {
-		width: 100%;
+	.button_f563df {
+		@include menu.item($selected-sel: "&.focused_f563df");
 
-		& > .button {
-			background-color: transparent;
-			padding: 0;
+		background-color: transparent;
 
-			width: unset;
-			height: unset;
+		width: unset;
+		height: unset;
 
-			&::before {
-				content: attr(aria-label);
+		&::before {
+			content: attr(aria-label);
 
-				flex-grow: 1;
-			}
+			flex-grow: 1;
 		}
+	}
+
+	.customItem_c1e9c4 {
+		font: var(--text-ui);
+
+		width: 100%;
 
 		& > [aria-label=":thumbsup: :+1: :thumbup: :thumbs_up:"]::before {
 			content: ":+1:";

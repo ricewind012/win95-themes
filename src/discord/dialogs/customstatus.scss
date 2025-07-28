@@ -1,12 +1,12 @@
-.inputContainer {
+.emojiButtonContainer_dbc4b7 {
+	margin: 0;
+	margin-left: var(--label-spacing);
+
+	order: 1;
+	position: initial;
+}
+
+.inputContainer_dbc4b7 {
 	display: flex;
 	align-items: center;
-
-	& > .emojiButtonContainer {
-		margin: 0;
-		margin-left: var(--label-spacing);
-
-		order: 1;
-		position: initial;
-	}
 }

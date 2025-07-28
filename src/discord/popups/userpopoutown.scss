@@ -1,37 +1,75 @@
-.accountProfilePopoutWrapper {
+@use "shared/menu";
+
+/* TODO: no other selector for this
+[role="dialog"]:has(.menus_ce8328) {
 	left: 0;
 
-	// !important
-	& > [role="dialog"][aria-modal="true"]::before,
-	.userPopoutInner > :not(:last-child),
-	.userPopoutInner > .body > :not(.menus) {
+	&::before {
 		display: none;
 	}
 
-	.userPopoutInner > .body {
+	.body_ce8328 {
+		padding: 0;
+
+		overflow: auto;
+
+		& > :not(.menus_ce8328) {
+			display: none;
+		}
+	}
+
+	.header__5be3e {
+		display: none;
+	}
+
+	.inner_c0bea0 {
 		padding: 0;
 	}
 
-	.userPopoutOuter {
+	.outer_c0bea0 {
 		width: unset;
 	}
+}
+*/
 
-	.menus {
-		gap: 0;
+.menuDivider_ce8328 {
+	display: none;
+}
 
-		// !important
-		// TODO(port): originally div&::after
-		&::after {
-			display: none;
-		}
+.menuItemColor_ce8328 {
+	all: unset;
 
-		& > div > [role="menu"] {
-			box-shadow: none;
-			padding: 0;
-		}
+	@include menu.item($selected-sel: ".hack");
+
+	&[aria-expanded] {
+		@include menu.item-parent;
 	}
 }
 
-.userMenuUsername {
-	margin: 0;
+.menuItemIcon_ce8328 {
+	display: none;
+}
+
+.menuItemInner_ce8328 {
+	gap: 0;
+	padding: 0;
+
+	svg {
+		display: none;
+	}
+}
+
+.menuOverlay_ce8328 {
+	background-color: var(--color-button-face);
+	border: none;
+	padding: 0;
+
+	& > div {
+		display: flex;
+		flex-direction: column;
+	}
+}
+
+.menus_ce8328 {
+	gap: 0;
 }

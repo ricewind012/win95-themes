@@ -1,0 +1,63 @@
+@use "shared/controls";
+@use "discord/shared";
+
+.panels_c48ade {
+	background-color: transparent;
+	border: none;
+
+	width: var(--sidebar-width);
+	bottom: 0;
+	left: calc(var(--custom-guild-list-width) + var(--scrollbar-size));
+}
+
+.avatarWrapper__37e49 {
+	@include controls.button;
+	@include shared.use-aria-label;
+
+	// TODO: icon
+	height: 22px;
+	justify-content: center;
+}
+
+.button__67645 {
+	@include controls.icon-button;
+
+	width: unset;
+
+	// TODO: remove when adding icons
+	svg {
+		width: 16px;
+		height: 16px;
+	}
+}
+
+.buttons__37e49 {
+	gap: 0;
+
+	// TODO(icons): remove when adding icons
+	.lottieIcon__5eb9b {
+		width: 16px;
+		height: 16px;
+	}
+}
+
+// vc
+.container_e131a9 {
+	border: none;
+	padding: var(--toolbar-container-spacing);
+	padding-bottom: 0;
+
+	&::after {
+		@include shared.pseudo-separator;
+	}
+}
+
+.container__37e49 {
+	gap: var(--toolbar-spacing);
+	padding: var(--toolbar-container-spacing);
+	margin: 0;
+
+	height: unset;
+	// --custom-rtc-account-height
+	min-height: unset;
+}

@@ -1,15 +1,6 @@
 @use "shared++/extends";
 
-.description,
-.eyebrow,
-.size14,
-.text,
-.userTag,
-[data-text-variant] {
-	@include extends.text-reset;
-}
-
-.anchor {
+.anchor_edefb8 {
 	@include extends.text-reset;
 	@include extends.link;
 }
@@ -29,20 +20,19 @@
 	}
 }
 
+[data-text-variant] {
+	font: var(--text-ui);
+}
+
 [data-text-variant*="bold"] {
 	font-weight: bold;
 }
 
-.badgedItem,
-.titleWithBeta {
-	gap: var(--text-spacing);
-}
-
-.textBadge {
+[class*="textBadge"] {
+	@include extends.parentheses;
 	@include extends.text-reset;
 
 	background-color: transparent;
-	@include extends.parentheses;
 	padding: 0;
 
 	height: unset;

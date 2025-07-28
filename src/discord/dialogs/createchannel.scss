@@ -1,17 +1,15 @@
 @use "shared/controls";
 @use "shared++/extends";
 
-.modalContent {
-	& > .name {
-		@include controls.groupbox;
+.name_ac72c6 {
+	@include controls.groupbox;
 
-		& > label {
-			@include extends.text-reset;
-			@include extends.legend-as-div;
-		}
-
-		svg {
-			display: none;
-		}
+	svg {
+		display: none;
 	}
+}
+
+.sectionTitle_ac72c6 {
+	@include extends.text-reset;
+	@include extends.legend-as-div;
 }

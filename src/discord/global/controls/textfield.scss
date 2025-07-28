@@ -1,0 +1,45 @@
+@use "shared/controls";
+@use "shared++/extends";
+
+/*
+[class*="inner"] {
+	padding: 0;
+
+	&[class*="scrollerBase"] {
+		overflow: hidden;
+	}
+}
+
+[class*="inputText"],
+[class*="inputWrapper"] {
+	@include extends.text-reset;
+
+	padding: 0;
+}
+
+[class*="searchBar"],
+[class*="searchBox"] {
+	border: none;
+	margin: 0;
+
+	& > [class*="inner"] {
+		padding: 0;
+
+		overflow: auto;
+
+		// Search icon
+		& > [role="button"] {
+			display: none;
+		}
+	}
+}
+
+[class*="textArea"] {
+	@include extends.text-reset;
+}
+	*/
+
+// NEW
+.input__0ed4f {
+	@include controls.text-field;
+}

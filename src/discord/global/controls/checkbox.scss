@@ -1,0 +1,70 @@
+@use "shared/controls";
+@use "shared++/extends";
+
+.checkboxWrapper_f525d3 {
+	.checkbox_f525d3 {
+		@include controls.checkbox(
+			$checked-sel: "&.checked_f525d3",
+			$disabled-sel: ".checkboxWrapperDisabled_f525d3 &"
+		);
+
+		border: none;
+
+		svg {
+			display: none;
+		}
+	}
+
+	.label_f525d3 {
+		padding-left: var(--label-spacing);
+	}
+}
+
+.container__0d850 {
+	margin-top: var(--text-spacing);
+	margin-bottom: var(--text-spacing);
+
+	&.disabled__0d850 {
+		color: var(--color-gray-text);
+	}
+
+	.description_ddd181 {
+		opacity: 1;
+	}
+
+	.labelRow__0d850 {
+		gap: var(--label-spacing);
+
+		flex-direction: row-reverse;
+	}
+
+	.title__0d850 {
+		@include extends.text-reset;
+
+		opacity: 1;
+	}
+
+	.note__0d850 {
+		color: var(--color-gray-text);
+		margin-top: var(--text-spacing);
+		margin-left: calc(var(--sel-button-size) + var(--label-spacing));
+	}
+
+	svg {
+		display: none;
+	}
+}
+
+.container__87bf1 {
+	@include controls.checkbox(
+		$checked-sel: "&.checked__87bf1",
+		$disabled-sel: "&.disabled__87bf1"
+	);
+
+	opacity: 1;
+	border: none;
+
+	.slider__87bf1 {
+		display: none;
+	}
+}

@@ -12,17 +12,21 @@
 	}
 }
 
-#app-mount > .appAsidePanelWrapper {
+.content_c48ade {
 	margin-bottom: calc(var(--statusbar-height) + var(--window-gap));
 
-	:root.platform-win > body > & {
+	:root.platform-win & {
 		margin-top: var(--window-gap);
 	}
 }
 
 #app-mount {
 	--sidebar-width: calc(
-		72px + var(--scrollbar-size) + 240px + var(--window-gap) * 2 + 4px
+		var(--custom-guild-sidebar-width) - var(--custom-guild-list-width)
+	);
+	// TODO: 1px?
+	--actual-sidebar-width: calc(
+		var(--custom-guild-sidebar-width) + var(--scrollbar-size) + 1px
 	);
 
 	width: calc(100% - var(--window-pos) * 2);
@@ -35,16 +39,23 @@
 		position: fixed;
 		bottom: var(--window-pos);
 		height: var(--statusbar-height);
+		z-index: 1;
 
 		box-shadow: var(--border-statusbar);
+
+		pointer-events: none;
 	}
 
 	&::before {
-		width: calc(var(--sidebar-width) - var(--window-pos) - var(--window-gap));
+		width: var(--actual-sidebar-width);
 	}
 
 	&::after {
-		left: var(--sidebar-width);
-		width: calc(100% - var(--window-pos) - var(--sidebar-width));
+		--pos: calc(
+			var(--actual-sidebar-width) + var(--window-pos) + var(--window-gap)
+		);
+
+		left: var(--pos);
+		width: calc(100% - var(--pos) - var(--window-gap) * 2);
 	}
 }

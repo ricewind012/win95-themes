@@ -1,0 +1,43 @@
+@use "shared/controls";
+@use "shared/list";
+@use "shared/window";
+
+.privateChannels__35e86 {
+	@include window.content-container;
+
+	margin-top: var(--sidebar-top-margin);
+
+	.channel__972a0 {
+		margin: 0;
+	}
+
+	.interactive_bf202d.selected_bf202d {
+		@include list.item-name-selected;
+	}
+
+	.scroller__99e7c {
+		background-color: transparent;
+	}
+
+	.searchBar__35e86 {
+		border: none;
+		padding: var(--toolbar-container-spacing);
+
+		position: fixed;
+		top: 0;
+		height: unset;
+	}
+}
+
+.privateChannelRecipientsInviteButtonIconContainer__99e7c {
+	@include controls.button;
+	@include controls.icon-button;
+
+	// TODO: remove when doing icons
+	padding: 3px;
+
+	display: flex;
+	position: fixed;
+	top: var(--toolbar-container-spacing);
+	right: var(--toolbar-container-spacing);
+}

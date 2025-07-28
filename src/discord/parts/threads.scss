@@ -1,45 +1,56 @@
 @use "shared/controls";
+@use "shared/window";
 @use "discord/shared";
 
-[data-list-item-id$="forum-channel-header"] {
-	button {
-		height: unset;
-	}
+.container_f369db {
+	@include window.content-container;
+}
 
-	svg {
+.divider_f369db,
+.tagList_f369db {
+	display: none;
+}
+
+.formContainer_d9be46 {
+	.prefixElement_d9be46 {
 		display: none;
 	}
 
-	[data-text-variant] {
-		font-weight: normal;
-	}
-
-	.prefixElement {
-		display: none;
-	}
-
-	.titleContainer {
+	.titleContainer_d9be46 {
 		gap: var(--toolbar-spacing);
 	}
 }
 
-.forumPostFormButton {
+.forumPostFormButton_f369db {
 	@include controls.button;
 	@include shared.use-aria-label;
 
 	height: unset;
 
-	&.forumPostFormButtonActive {
+	&.forumPostFormButtonActive_f369db {
 		@include controls.button-active;
 	}
 }
 
-.mainCard {
+.mainCard_f369db {
 	background-color: transparent;
 	border: none;
 }
 
-.headerRow > .tagsContainer {
+.sortDropdown_f369db,
+.tagsButton_f369db {
+	@include shared.select-as-button;
+	@include shared.use-aria-label;
+
+	text-align: start;
+
+	left: 0;
+	min-width: 100px;
+	height: unset;
+	justify-content: start;
+}
+
+.tagsContainer_f369db {
 	gap: var(--toolbar-spacing);
 	padding: 0;
 	margin-left: calc(-24px + var(--toolbar-container-spacing));
@@ -51,20 +62,4 @@
 	);
 	z-index: 100;
 	height: unset;
-
-	& > button {
-		@include shared.select-as-button;
-		@include shared.use-aria-label;
-
-		text-align: start;
-
-		left: 0;
-		min-width: 100px;
-		justify-content: start;
-	}
-
-	& > .divider,
-	& > .tagList {
-		display: none;
-	}
 }

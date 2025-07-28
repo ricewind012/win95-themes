@@ -1,26 +1,35 @@
 @use "shared++/extends";
 
-.channelTextAreaUpload {
+.channelTextAreaUpload_dbca3c {
 	margin-bottom: 12px;
 }
 
-.uploadModal {
+.comment_dbca3c {
+	margin: 0;
+}
+
+.file_dbca3c {
+	display: none;
+}
+
+.footer_dbca3c {
+	background-color: transparent;
+	padding: var(--messagebox-spacing);
+}
+
+.footerRightAlign_dbca3c {
+	gap: var(--dialog-button-spacing);
+}
+
+.inner_dbca3c {
+	margin: var(--dialog-spacing);
+}
+
+.label_dbca3c {
+	@include extends.text-reset;
+}
+
+.uploadModal_dbca3c {
 	width: 400px;
-	min-height: unset;
-
-	& > :first-child {
-		margin: var(--dialog-spacing);
-	}
-
-	.comment {
-		margin: 0;
-	}
-
-	.file {
-		display: none;
-	}
-
-	.label {
-		@include extends.text-reset;
-	}
+	min-height: 183px;
 }

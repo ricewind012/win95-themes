@@ -1,0 +1,19 @@
+@use "shared/controls";
+
+.container_a45028 {
+	border: none;
+
+	height: unset;
+}
+
+.iconLayout_a45028 {
+	display: none;
+}
+
+.inner_a45028 {
+	padding: 0;
+}
+
+.input_a45028 {
+	@include controls.text-field;
+}

@@ -1,0 +1,71 @@
+@use "shared/controls";
+
+.buttonContainer_c19a55 {
+	.button_f7ecac {
+		@include controls.button;
+		@include controls.icon-button;
+
+		// TODO: remove when doing icons
+		svg {
+			width: 16px;
+			height: 16px;
+		}
+	}
+}
+
+.buttons__5126c {
+	background-color: transparent;
+	border: none;
+	padding: 0;
+}
+
+.headerText_c19a55 {
+	margin: 0;
+}
+
+.message_c19a55 {
+	--chat-markup-line-height: 1.5;
+	min-height: unset;
+
+	&.compact_c19a55 {
+		i {
+			opacity: 1;
+
+			position: unset;
+			display: contents;
+		}
+
+		.timestamp {
+			width: 3.5rem;
+		}
+	}
+
+	&.cozy_c19a55 {
+		.header_c19a55 {
+			line-height: var(--text-line);
+			margin-bottom: var(--text-spacing);
+
+			min-height: unset;
+		}
+	}
+}
+
+.messageContent_c19a55 {
+	font-size: var(--text-ui-size);
+}
+
+.repliedTextContent_c19a55 {
+	padding: 0;
+	margin: 0;
+}
+
+.timestamp_c19a55 {
+	font: var(--text-ui);
+
+	height: unset;
+}
+
+.username_c19a55 {
+	font: var(--text-ui);
+	font-weight: bold;
+}

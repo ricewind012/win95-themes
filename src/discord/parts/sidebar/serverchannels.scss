@@ -1,0 +1,140 @@
+@use "shared/controls";
+@use "shared/list";
+@use "shared/tree";
+@use "shared++/extends";
+
+// collapser
+.containerDefault__29444 {
+	padding: 0;
+
+	/*
+	&::before {
+		content: "";
+
+		position: absolute;
+		top: 0;
+		left: 8px;
+		height: 25px;
+
+		border-left: 1px dotted var(--color-gray-text);
+	}
+	*/
+
+	.icon__29444 {
+		display: none;
+	}
+
+	.mainContent__29444 {
+		@include tree.item-icon;
+
+		&::before {
+			display: block;
+		}
+
+		background-color: var(--color-window);
+		padding-left: calc(var(--icon-size) + var(--tree-spacing));
+
+		overflow: visible;
+		width: unset;
+		height: unset;
+	}
+
+	.name__29444 {
+		font: var(--text-ui);
+		margin-top: -2px;
+	}
+
+	.wrapperCommon__29444 {
+		@include tree.item($expanded-sel: "&:not(.collapsed__29444)");
+
+		margin-left: 0;
+
+		&::before {
+			display: none;
+		}
+	}
+}
+
+.content__99f8c {
+	// Banner
+	& > [style="height: 84px;"],
+	// "Browse Channels"
+	&  > [style="height: 12px;"],
+	&  > li:not([class]),
+	.sectionDivider__629e4 {
+		display: none;
+	}
+}
+
+.scrollerBase__99f8c {
+	// Seen in private channels
+	mask: none;
+	padding: 0;
+	margin: 0;
+}
+
+// channel
+.wrapper__2ea32 {
+	--offset: calc(var(--icon-size) + 4px);
+
+	@include tree.item($expanded-sel: "&");
+
+	margin-left: calc(var(--offset) * 2);
+
+	&::before {
+		top: -14px;
+		height: 100%;
+		z-index: -1;
+	}
+
+	&::after {
+		content: "";
+
+		position: absolute;
+		left: calc(var(--offset) * -2 + 8px);
+		top: -7px;
+		height: calc(100% - 1px);
+
+		border-left: 1px dotted var(--color-gray-text);
+	}
+
+	&.modeSelected__2ea32 {
+		.link__2ea32 {
+			@include list.item-name-selected;
+		}
+
+		.name__2ea32 {
+			color: inherit;
+		}
+	}
+
+	&.typeThread__2ea32 {
+		margin-left: calc(var(--offset) * 3.25);
+
+		&::after {
+			top: -7px;
+			left: -37px;
+			height: calc(100% - 1px);
+		}
+	}
+
+	.children__2ea32,
+	.iconContainer__2ea32 {
+		display: none;
+	}
+
+	.link__2ea32 {
+		@include extends.text-reset;
+
+		background-color: var(--color-window);
+	}
+
+	.name__2ea32 {
+		font: var(--text-ui);
+	}
+
+	.spine__5b40b,
+	.spineBorder__5b40b {
+		display: none;
+	}
+}

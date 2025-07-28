@@ -1,89 +1,63 @@
 @use "shared/controls";
 @use "shared/window";
 
-.guilds {
-	margin-top: calc(
-		var(--toolbar-container-spacing) * 2 + var(--icon-button-height) +
-			var(--window-gap)
+%-guilds-top-toolbar-button {
+	--pos: calc(
+		var(--window-pos) + var(--window-gap) + var(--toolbar-container-spacing)
 	);
-	margin-right: var(--window-gap);
 
-	width: calc(72px + var(--scrollbar-size));
+	position: fixed;
+	top: calc(var(--titlebar-pos) + var(--pos));
+	width: var(--icon-button-width);
+
+	.listItem__650eb {
+		width: var(--icon-button-width);
+	}
+
+	.pill__1f388 {
+		display: none;
+	}
+
+	// TODO: remove when addins icons
+	[role="img"] {
+		width: 16px;
+		height: 16px;
+	}
+
+	[role="treeitem"] {
+		@include controls.button;
+		@include controls.icon-button($selected-sel: "[aria-selected='true']");
+
+		width: var(--icon-button-width);
+	}
 }
 
-[data-list-id="guildsnav"] {
-	@include window.content-container;
+.scroller_ef3116 {
+	padding: 0;
 
-	& > [dir] {
-		padding: 0;
+	& > :nth-child(1) {
+		@extend %-guilds-top-toolbar-button;
 
-		& > :nth-child(1),
-		& > :nth-last-child(4),
-		& > :nth-last-child(3) {
-			--pos: calc(var(--window-pos) + var(--toolbar-container-spacing));
+		left: var(--pos);
 
-			position: fixed;
-			top: calc(var(--titlebar-pos) + var(--pos));
-			width: var(--icon-button-width);
+		.childWrapper__6e9f8 {
+			background-color: transparent;
+			color: inherit;
 
-			& > div {
-				width: var(--icon-button-width);
-			}
-
-			// TODO: remove when addins icons
-			[role="img"] {
-				width: 16px;
-				height: 16px;
-			}
-
-			[role="treeitem"] {
-				@include controls.button;
-				@include controls.icon-button;
-
-				width: var(--icon-button-width);
-			}
-
-			.listItemWrapper.selected [role="treeitem"] {
-				@include controls.button-active;
-			}
-
-			.pill {
-				display: none;
-			}
-
-			.wrapper {
-				width: var(--icon-button-width);
-			}
-		}
-
-		& > :nth-child(1) {
-			left: var(--pos);
-
-			.childWrapper {
-				background-color: transparent;
-				color: inherit;
-
-				height: unset;
-			}
-		}
-
-		& > :nth-last-child(4) {
-			left: calc(
-				var(--toolbar-container-spacing) + var(--icon-button-width) +
-					var(--window-pos)
-			);
-		}
-
-		& > :nth-last-child(5) {
-			left: calc(
-				var(--toolbar-container-spacing) + var(--icon-button-width) * 2 +
-					var(--window-pos)
-			);
-			z-index: 1;
+			height: unset;
 		}
 	}
 
-	& > .footer,
+	& > :nth-last-child(3) {
+		@extend %-guilds-top-toolbar-button;
+
+		left: calc(var(--pos) + var(--icon-button-width));
+	}
+}
+
+.tree_ef3116 {
+	@include window.content-container;
+
 	mask {
 		display: none;
 	}
@@ -96,4 +70,16 @@
 			display: none;
 		}
 	}
+}
+
+.wrapper_ef3116 {
+	mask: none;
+	margin: 0;
+	margin-top: calc(
+		var(--toolbar-container-spacing) * 2 + var(--icon-button-height) +
+			var(--window-gap)
+	);
+	margin-right: var(--window-gap);
+
+	width: calc(var(--custom-guild-list-width) + var(--scrollbar-size));
 }

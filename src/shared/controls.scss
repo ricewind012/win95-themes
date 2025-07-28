@@ -1,6 +1,6 @@
 @use "shared/generated";
 
-@mixin -checkbox-radio-common($checked-sel, $disabled-sel: ":disabled") {
+@mixin -checkbox-radio-common($checked-sel, $disabled-sel: "&:disabled") {
 	--color-to-change: var(--color-window);
 
 	position: relative;

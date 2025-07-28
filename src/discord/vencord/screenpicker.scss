@@ -1,27 +1,13 @@
+@use "shared/controls";
+@use "shared/text";
 @use "shared++/extends";
 @use "discord/shared";
 
 .vcd-screen-picker-card {
+	--card-primary-bg: transparent;
 	border: none;
 	padding: 0;
 	margin: 0;
-}
-
-.vcd-screen-picker-grid {
-	& > div > :first-child {
-		display: none;
-	}
-
-	div {
-		margin: 0;
-
-		text-align: start;
-		white-space: pre-wrap;
-	}
-
-	input[type="radio"] {
-		flex-shrink: 0;
-	}
 }
 
 .vcd-screen-picker-hint-description {
@@ -29,6 +15,32 @@
 
 	p {
 		margin-block: var(--text-spacing);
+	}
+}
+
+.vcd-screen-picker-modal {
+	& > div > h2 {
+		display: none;
+	}
+
+	input[type="radio"] {
+		@include controls.radio($checked-sel: "&:checked");
+
+		// TODO(shared): -input-common
+		appearance: none;
+		margin: 0;
+
+		order: -1;
+		display: initial;
+	}
+
+	section {
+		@include controls.groupbox;
+
+		& > h2 {
+			@include extends.legend-as-div;
+			@include extends.text-reset;
+		}
 	}
 }
 
@@ -40,12 +52,24 @@
 	}
 }
 
-.vcd-screen-picker-radio {
-	border: none;
-	padding: 0;
+.vcd-screen-picker-preview-img-linux {
+	border: 1px solid var(--color-button-shadow);
 }
 
-.vcd-screen-picker-radios {
+.vcd-screen-picker-option-radio {
+	@include text.input-label;
+
+	background-color: transparent;
+	border: none;
+	padding: 0;
+
+	// TODO: for some reason :checked here doesn't work
+	&[data-checked="true"] > input[type="radio"] {
+		@include controls.checkbox-radio-checked;
+	}
+}
+
+.vcd-screen-picker-option-radios {
 	gap: var(--text-spacing);
 
 	flex-direction: column;
@@ -53,18 +77,29 @@
 	div {
 		font-weight: normal;
 	}
+}
+
+.vcd-screen-picker-screen-grid {
+	gap: var(--text-spacing);
+
+	display: flex;
+	flex-direction: column;
+}
+
+.vcd-screen-picker-screen-label {
+	@include text.input-label;
+
+	padding: 0;
+
+	img {
+		display: none;
+	}
 
 	input[type="radio"] {
-		order: -1;
-		display: initial;
+		flex-shrink: 0;
 	}
 }
 
-.vcd-screen-picker-settings-grid {
-	& > :first-child > :first-child {
-		font-weight: bold;
-		margin-top: var(--text-spacing);
-
-		position: initial;
-	}
+.vcd-screen-picker-screen-name {
+	margin: 0;
 }

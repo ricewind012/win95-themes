@@ -2,60 +2,59 @@
 @use "shared/menu";
 @use "shared/window";
 
-[role="listbox"][style="width: 320px;"] {
+.container__55c99 {
 	border: none;
 
 	&:not(:empty) {
 		@include window.container($child: true);
 	}
+}
 
-	& > ul {
-		padding: 0;
-		margin: 0;
+.displayedNick__56fec {
+	font-weight: bold;
+	margin: 0 var(--text-spacing);
+}
 
-		&:first-of-type::before {
-			display: none;
-		}
+.header__56fec,
+.plusIcon__56fec,
+.searchClearHistory__56fec,
+.searchLearnMore__56fec {
+	display: none;
+}
 
-		&::before {
-			@include controls.separator;
+.option__56fec {
+	@include menu.item($selected-sel: "[aria-selected='true']");
 
-			top: 0;
+	font-size: var(--text-ui-size);
+	box-shadow: none;
+	margin: 0;
 
-			margin-inline: 0;
-		}
-	}
+	// Align with avatars
+	height: 24px;
 
-	& > [role="option"],
-	.header,
-	.plusIcon,
-	.searchClearHistory,
-	.searchLearnMore {
+	&::before,
+	&::after {
 		display: none;
 	}
 
-	.displayedNick {
-		font-weight: bold;
-		margin: 0 var(--text-spacing);
+	* {
+		color: inherit;
+	}
+}
+
+.resultsGroup__56fec {
+	padding: 0;
+	margin: 0;
+
+	&:first-of-type::before {
+		display: none;
 	}
 
-	[role="option"] {
-		// TODO(port)
-		@include menu.item($selected-sel: ".hack");
+	&::before {
+		@include controls.separator;
 
-		font-size: var(--text-ui-size);
-		margin: 0;
+		top: 0;
 
-		// Align with avatars
-		height: 24px;
-
-		&::before,
-		&::after {
-			display: none;
-		}
-
-		& > span {
-			color: inherit;
-		}
+		margin-inline: 0;
 	}
 }

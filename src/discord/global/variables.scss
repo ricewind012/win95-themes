@@ -1,5 +1,21 @@
 .theme-light,
 .theme-dark {
+	// NEW
+	--background-base-lowest: var(--color-button-face);
+
+	--icon-default: var(--color-button-text);
+	--icon-muted: var(--color-button-text);
+	--icon-primary: var(--color-button-text);
+	--icon-secondary: var(--color-button-text);
+	--icon-tertiary: var(--color-button-text);
+
+	--app-border-frame: #f09;
+	--border-faint: #f09;
+	--border-normal: #f09;
+	--border-strong: #f09;
+	--border-subtle: #f09;
+	// NEW END
+
 	--background-floating: var(--color-button-face);
 	--background-primary: var(--color-window);
 	--background-secondary: var(--color-button-face);
@@ -11,9 +27,9 @@
 	--font-headline: var(--text-ui-font);
 	--font-code: var(--text-monospace-font);
 
-	--header-muted: var(--color-window-text);
+	--header-muted: var(--color-gray-text);
 	--header-primary: var(--color-window-text);
-	--header-secondary: var(--color-window-text);
+	--header-secondary: var(--color-gray-text);
 
 	--interactive-normal: var(--color-window-text);
 	--interactive-active: var(--color-window-text);
@@ -21,6 +37,7 @@
 	--interactive-muted: var(--color-window-text);
 
 	--text-normal: var(--color-button-text);
+	--text-muted: var(--color-gray-text);
 	--text-link: var(--color-link);
 
 	--channeltextarea-background: transparent;
@@ -42,14 +59,16 @@
 	$shadows: border high ledge low low-active low-hover medium top-high top-ledge
 		top-low;
 	@each $i in $shadows {
-		--shadow-#{i}: none;
+		--shadow-#{$i}: none;
 	}
 
-	--custom-button-button-xl-height: unset;
-	--custom-button-button-lg-height: unset;
-	--custom-button-button-md-height: unset;
-	--custom-button-button-sm-height: unset;
-	--custom-button-button-tn-height: unset;
+	--custom-app-top-bar-height: var(--titlebar-height);
+	/*
+	--custom-guild-list-width: calc(
+		var(--guildbar-avatar-size) + var(--custom-guild-list-padding) * 2 +
+			var(--scrollbar-size)
+	);
+	*/
 
 	--custom-margin-margin-x-small: var(--text-spacing);
 	--custom-margin-margin-small: var(--text-spacing);

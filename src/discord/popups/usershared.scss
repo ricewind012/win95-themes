@@ -1,59 +1,41 @@
 @use "shared/controls";
 @use "shared/window";
 
-.userPopoutInner,
-.userProfileModalInner {
+.body__5be3e > * {
+	&::after {
+		content: "";
+
+		@include controls.separator;
+
+		display: inline-block;
+		width: 100%;
+	}
+}
+
+.inner_c0bea0 {
 	--pos: calc(var(--border-size) + var(--window-spacing) + 8px);
 
 	background-color: transparent;
 	gap: 0;
 	padding: 0;
 
-	[role="list"] {
-		@include window.statusbar;
-	}
-
-	.tags > [role="group"],
-	[role="listitem"] {
+	.role_dfa8b6 {
 		@include window.statusbar-item;
 
 		background-color: transparent;
 		border: none;
 	}
 
-	.biteSize,
-	.fullSize {
-		button {
-			@include controls.icon-button;
-		}
-	}
-
-	.container {
-		margin: 0;
-	}
-
-	& > .container {
-		margin: 16px;
-	}
-
-	& > .wrapper {
-		gap: 0;
-		padding: 0;
-
-		right: var(--pos);
+	// Tags list
+	.root_fccfdf {
+		@include window.statusbar;
 	}
 }
 
-.userPopoutInner > .body,
-.fullSizeOverlayBackground .scrollerBase {
-	& > * {
-		&::after {
-			content: "";
+// Action buttons
+.wrapper_da5890 {
+	gap: 0;
+	padding: 0;
 
-			@include controls.separator;
-
-			display: inline-block;
-			width: 100%;
-		}
-	}
+	right: var(--pos);
 }

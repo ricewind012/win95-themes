@@ -1,84 +1,107 @@
 @use "shared/controls";
 @use "shared++/extends";
+@use "discord/shared";
 
-.upperContainer > .children {
+.channelIcon__9293f,
+.divider__9293f,
+.dot__9293f,
+.titleWrapper__9293f {
+	display: none;
+}
+
+.children__9293f {
 	&::after {
 		display: none;
 	}
 
-	[role="img"],
-	& > .divider,
-	& > .iconWrapper,
-	& > .titleWrapper {
-		display: none;
+	.hoverableContainer__754bd {
+		@include controls.button;
+		@include shared.use-aria-label;
+
+		justify-content: center;
+		height: unset;
 	}
 
-	.channelName > .container {
-		align-items: center;
-
-		& > div {
-			display: none;
-		}
-
-		& > input {
-			opacity: 1;
-		}
-	}
-
-	& > .topic {
+	.topic__6ec1a {
 		font: var(--text-ui);
 		margin: 0;
 	}
 }
 
-.subtitleContainer > section,
-section[role="navigation"] {
-	--__header-bar-background: var(--color-button-face);
+.container__9293f {
+	--__header-bar-background: transparent;
+	--custom-channel-header-height: unset;
 
+	border: none;
 	padding: var(--toolbar-container-spacing);
-	padding-bottom: calc(var(--toolbar-container-spacing) + var(--window-gap));
 
+	height: unset;
 	min-height: unset;
 }
 
-.toolbar {
-	[role="button"] {
+// TODO: remove when doing icons
+.icon__9293f {
+	margin-top: -2px;
+
+	width: 16px;
+	height: 16px;
+}
+
+.iconWrapper__9293f {
+	@include controls.button;
+	@include controls.icon-button($selected-sel: ".selected__9293f");
+
+	width: unset;
+
+	&[tabindex="-1"] {
+		// disabled
+		// TODO: lol what? when?
+	}
+}
+
+.search__49676 {
+	order: -1;
+
+	.icon__97492 {
+		--pos: calc(var(--input-spacing) * -1);
+		--size: 18px;
+		--button-img: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABcAAAAXCAMAAADX9CSSAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAbUExURYeIjwAAAAD//////1eoqMDHyAAA/wAAqAAAAOUCGbgAAAAJdFJOU///////////AFNPeBIAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAB5SURBVChTrZDBEoAgCEQXDfP/vzgQAzSPLZfmPdtR0DXQ0PicUQ6UqkPJCMeAOlcIJJyF8MBSNbF3z/EfkGtS0W/nl/s4Vs6BMw8h2Jek+yG6RojYt2f7pBFwZTQTxmfuVkozsfAkVh5i4y52/ooPN3HgKo5cXkP9Aen6CymrBsQ1AAAAAElFTkSuQmCC");
+
 		@include controls.button;
 		@include controls.icon-button;
 
-		&.selected {
-			@include controls.button-active;
+		margin-top: var(--pos);
+		margin-right: var(--pos);
+
+		// Align with the textbox
+		min-width: var(--size);
+		width: var(--size);
+		height: var(--size);
+
+		&:has(> .iconContainer_a45028 > .clear_a45028.visible_a45028) {
+			--button-img: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA0AAAANCAMAAABFNRROAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAGUExURQAAAAAAAKVnuc8AAAACdFJOU/8A5bcwSgAAAAlwSFlzAAAOwwAADsMBx2+oZAAAADlJREFUGFdFjoEJADAIw/T/p9eoYR1o0yKsolaAmJ13yMQMTnSxPWNb9sHvxnpnjhUspG2EiN+orgcmKwBw9dYmLQAAAABJRU5ErkJgggo=");
+			--button-img-pos: 5px 4px;
 		}
 
-		&[tabindex="-1"] {
-			// disabled
-		}
-
-		// TODO: remove when doing icons
-		svg {
-			margin-top: -2px;
-
-			width: 16px;
-			height: 16px;
+		// TODO: lol
+		&::before {
+			background-size: 12px;
 		}
 	}
 
-	& > .search {
-		order: -1;
+	.iconContainer_a45028 {
+		display: none;
 	}
 
-	.searchAnswer,
-	.searchFilter {
-		height: unset;
-	}
-
-	.searchBar {
+	.searchBar__97492 {
 		@include controls.text-field;
 
 		.DraftEditor-root {
 			@include extends.text-reset;
 
 			padding: 0;
+
+			overflow: visible;
 		}
 
 		.public-DraftEditorPlaceholder-root,
@@ -87,36 +110,16 @@ section[role="navigation"] {
 
 			inset: 0;
 		}
-
-		[role="button"] {
-			--pos: calc(var(--input-spacing) * -1);
-			--size: 18px;
-			--button-img: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABcAAAAXCAMAAADX9CSSAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAbUExURYeIjwAAAAD//////1eoqMDHyAAA/wAAqAAAAOUCGbgAAAAJdFJOU///////////AFNPeBIAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAB5SURBVChTrZDBEoAgCEQXDfP/vzgQAzSPLZfmPdtR0DXQ0PicUQ6UqkPJCMeAOlcIJJyF8MBSNbF3z/EfkGtS0W/nl/s4Vs6BMw8h2Jek+yG6RojYt2f7pBFwZTQTxmfuVkozsfAkVh5i4y52/ooPN3HgKo5cXkP9Aen6CymrBsQ1AAAAAElFTkSuQmCC");
-
-			@include controls.button;
-			@include controls.icon-button;
-
-			margin-top: var(--pos);
-			margin-right: var(--pos);
-
-			// Align with the textbox
-			min-width: var(--size);
-			width: var(--size);
-			height: var(--size);
-
-			&.clear {
-				--button-img: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA0AAAANCAMAAABFNRROAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAGUExURQAAAAAAAKVnuc8AAAACdFJOU/8A5bcwSgAAAAlwSFlzAAAOwwAADsMBx2+oZAAAADlJREFUGFdFjoEJADAIw/T/p9eoYR1o0yKsolaAmJ13yMQMTnSxPWNb9sHvxnpnjhUspG2EiN+orgcmKwBw9dYmLQAAAABJRU5ErkJgggo=");
-				--button-img-pos: 5px 4px;
-			}
-
-			// TODO: lol
-			&::before {
-				background-size: 12px;
-			}
-
-			.iconContainer {
-				display: none;
-			}
-		}
 	}
+
+	.searchToken_bd8186 {
+		border: none;
+
+		height: unset;
+	}
+}
+
+.toolbar__9293f {
+	gap: 0;
+	margin-right: var(--icon-button-width);
 }

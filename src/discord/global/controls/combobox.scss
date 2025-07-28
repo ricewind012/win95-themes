@@ -1,0 +1,39 @@
+@use "shared/controls";
+@use "shared/listbox";
+@use "shared++/extends";
+
+.icons__3f413 {
+	display: none;
+}
+
+.option__3f413 {
+	@include listbox.item($selected-sel: "[aria-selected='true']");
+
+	font: var(--text-ui);
+}
+
+.popout__3f413 {
+	@include listbox.container;
+
+	margin: 0;
+}
+
+.searchInput__3f413 {
+	font: var(--text-ui);
+	// Multi select
+	margin: 0;
+}
+
+.select__3f413 {
+	@include controls.combobox($disabled-sel: ".disabled__3f413");
+
+	min-height: unset;
+
+	* {
+		opacity: 1;
+	}
+}
+
+.title__3f413 {
+	margin: 0;
+}
