@@ -12,16 +12,16 @@ import path from "node:path";
 const unquote = (str) => str.replace(/"/g, "");
 
 /**
- * `icon("name")` => `url("data:image/svg+xml;base64,${base64}")`
+ * `icon("name")` => `url("data:image/png;base64,${base64}")`
  *
  * @param {string} name File name without the extension.
  */
 function icon(name) {
-	const fileName = `${unquote(name)}.svg`;
+	const fileName = `${unquote(name)}.png`;
 	const file = path.join("assets", "icons", fileName);
 	const base64 = fs.readFileSync(file, { encoding: "base64" });
 
-	return `url("data:image/svg+xml;base64,${base64}")`;
+	return `url("data:image/png;base64,${base64}")`;
 }
 
 /** @type {import("postcss-load-config").Config} */

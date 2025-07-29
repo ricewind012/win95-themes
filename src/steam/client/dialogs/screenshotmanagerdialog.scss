@@ -48,11 +48,11 @@
 		flex-direction: row-reverse;
 
 		& > :nth-child(1) {
-			--button-img: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA8AAAANCAYAAAB2HjRBAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAABFSURBVDhPY2BgWPEfgnEB3PJMIOL//3AgCVcAomEYDHDJgzUzMq4EUTDAiITBgJD8gADcAQIBuOVHAwwrwC0/UAHGwAgAao9By4PPZU8AAAAASUVORK5CYIIK");
+			--button-img: icon("list");
 		}
 
 		& > :nth-child(2) {
-			--button-img: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAANCAYAAACZ3F9/AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAABcSURBVChTrZCLCsAgCEVdP1mf2F86bsmyZa+tA6EEV/FclIicKwjyN8ZJJWYvnR7S5wmCEp5TBXcwbgRrd34Ck3sy1NbWOm5EY72Kt/UtOdr6X6szDlpfSRrWiW4Icxa56YPnXwAAAABJRU5ErkJgggo=");
+			--button-img: icon("grid");
 		}
 
 		#ButtonBox {

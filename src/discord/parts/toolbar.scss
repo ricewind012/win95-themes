@@ -65,7 +65,7 @@
 	.icon__97492 {
 		--pos: calc(var(--input-spacing) * -1);
 		--size: 18px;
-		--button-img: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABcAAAAXCAMAAADX9CSSAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAbUExURYeIjwAAAAD//////1eoqMDHyAAA/wAAqAAAAOUCGbgAAAAJdFJOU///////////AFNPeBIAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAB5SURBVChTrZDBEoAgCEQXDfP/vzgQAzSPLZfmPdtR0DXQ0PicUQ6UqkPJCMeAOlcIJJyF8MBSNbF3z/EfkGtS0W/nl/s4Vs6BMw8h2Jek+yG6RojYt2f7pBFwZTQTxmfuVkozsfAkVh5i4y52/ooPN3HgKo5cXkP9Aen6CymrBsQ1AAAAAElFTkSuQmCC");
+		--button-img: icon("search-24");
 
 		@include controls.button;
 		@include controls.icon-button;
@@ -79,7 +79,7 @@
 		height: var(--size);
 
 		&:has(> .iconContainer_a45028 > .clear_a45028.visible_a45028) {
-			--button-img: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA0AAAANCAMAAABFNRROAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAGUExURQAAAAAAAKVnuc8AAAACdFJOU/8A5bcwSgAAAAlwSFlzAAAOwwAADsMBx2+oZAAAADlJREFUGFdFjoEJADAIw/T/p9eoYR1o0yKsolaAmJ13yMQMTnSxPWNb9sHvxnpnjhUspG2EiN+orgcmKwBw9dYmLQAAAABJRU5ErkJgggo=");
+			--button-img: icon("clear");
 			--button-img-pos: 5px 4px;
 		}
 

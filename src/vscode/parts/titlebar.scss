@@ -22,8 +22,7 @@
 	.action-item.command-center-center:not([role="tab"]) {
 		@include controls.button;
 		@include controls.icon-button;
-		// TODO(icons): file
-		--button-img: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAQCAMAAAARSr4IAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAYUExURYeIj////8DHyAAAAAD//wAA/wAAqAAAAK7w5bgAAAAIdFJOU/////////8A3oO9WQAAAAlwSFlzAAAOwwAADsMBx2+oZAAAAFdJREFUGFdNzksOACEIA9DyUe5/42nFCTYueEAMqMKfYs1nHVf90PAyGBHh3XASlnZNSultUcqhNNOCBMhigf/7WnST/Z1y05njQ10TIZ+rbujYQ27t+gABFgKiBYDaZQAAAABJRU5ErkJggg==");
+		--button-img: icon("file-search");
 
 		margin-right: var(--toolbar-spacing);
 
