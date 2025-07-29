@@ -24,8 +24,8 @@ const tokens = (() => {
 
 for (const token of tokens) {
 	document.body.style.setProperty(
-		"--" + token,
-		"'" + LocalizationManager.LocalizeString("#" + token) + "'",
+		`--${token}`,
+		`'${LocalizationManager.LocalizeString(`#${token}`)}'`,
 	);
 }
 

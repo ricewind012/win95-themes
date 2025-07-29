@@ -2,17 +2,25 @@
 	"author": "ricewind",
 	"name": "Windows 95",
 	"description": "A Windows 95 look",
-	"source": "",
 	"version": "1.0.0",
-
 	"header_image": "https://raw.githubusercontent.com/ricewind012/win95-themes/master/img/steam/main-window.png",
 	"splash_image": "https://raw.githubusercontent.com/ricewind012/win95-themes/master/img/steam/main-window.png",
-
 	"github": {
 		"owner": "ricewind012",
 		"repo_name": "win95-themes"
 	},
-
+	"Patches": [
+		{
+			"MatchRegexString": ".DesktopUI",
+			"TargetCss": "dist/steam.css",
+			"TargetJs": "src/steam/steam.js"
+		},
+		{
+			"MatchRegexString": ".fullheight",
+			"TargetCss": "dist/steam.css",
+			"TargetJs": "src/steam/steam.js"
+		}
+	],
 	"Conditions": {
 		"Green colorscheme": {
 			"default": "no",
@@ -26,18 +34,5 @@
 				}
 			}
 		}
-	},
-
-	"Patches": [
-		{
-			"MatchRegexString": ".DesktopUI",
-			"TargetCss": "dist/steam/steam.css",
-			"TargetJs": "src/steam/steam.js"
-		},
-		{
-			"MatchRegexString": ".fullheight",
-			"TargetCss": "dist/steam/steam.css",
-			"TargetJs": "src/steam/steam.js"
-		}
-	]
+	}
 }

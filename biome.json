@@ -1,0 +1,40 @@
+{
+	"$schema": "https://biomejs.dev/schemas/2.1.1/schema.json",
+	"assist": {
+		"actions": {
+			"source": {
+				"organizeImports": {
+					"level": "on",
+					"options": {
+						"groups": [
+							":PACKAGE:",
+							":BLANK_LINE:",
+							":ALIAS:",
+							":BLANK_LINE:",
+							":PATH:"
+						]
+					}
+				},
+				"useSortedKeys": "on"
+			}
+		}
+	},
+	"files": {
+		"includes": ["**", "!package.json", "!skin.json"]
+	},
+	"linter": {
+		"rules": {
+			"a11y": "off",
+			"correctness": {
+				"useJsxKeyInIterable": "off"
+			},
+			"style": {
+				"noDescendingSpecificity": "off",
+				"useEnumInitializers": "off"
+			},
+			"suspicious": {
+				"noExplicitAny": "off"
+			}
+		}
+	}
+}

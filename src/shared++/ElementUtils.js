@@ -1,11 +1,25 @@
-const ElementUtils = {
+export const ElementUtils = {
+	/**
+	 * Do something on a DOM mutation event.
+	 *
+	 * @param {Node} el Element to look in.
+	 * @param {MutationCallback} callback The function to be called on DOM mutation.
+	 * @param {MutationObserver} opts
+	 */
+	act(el, callback, opts) {
+		const observer = new MutationObserver(callback);
+		observer.observe(el, opts);
+
+		return observer;
+	},
+
 	/**
 	 * Create an element.
 	 *
-	 * @param tag HTML tag.
-	 * @param attrs Key/value attributes.
-	 * @param parent Element to prepend to.
-	 * @param prepend Prepend the element to its parent?
+	 * @param {string} tag HTML tag.
+	 * @param {Record<string, string>} attrs Key/value attributes.
+	 * @param {Node} parent Element to prepend to.
+	 * @param {boolean} prepend Prepend the element to its parent?
 	 */
 	make(tag, attrs, parent = null, prepend = false) {
 		const el = document.createElement(tag);
@@ -26,24 +40,10 @@ const ElementUtils = {
 	},
 
 	/**
-	 * Do something on a DOM mutation event.
-	 *
-	 * @param el Element to look in.
-	 * @param callback The function to be called on DOM mutation.
-	 * @param opts MutationObserver options.
-	 */
-	act(el, callback, opts) {
-		const observer = new MutationObserver(callback);
-		observer.observe(el, opts);
-
-		return observer;
-	},
-
-	/**
 	 * Wait for an element.
 	 *
-	 * @param selector CSS selector.
-	 * @param parent Element to look in.
+	 * @param {string} selector CSS selector.
+	 * @param {Node} parent Element to look in.
 	 */
 	wait(selector, parent = document) {
 		return new Promise((resolve) => {
@@ -63,11 +63,9 @@ const ElementUtils = {
 			});
 
 			observer.observe(document.body, {
-				subtree: true,
 				childList: true,
+				subtree: true,
 			});
 		});
 	},
 };
-
-export { ElementUtils };

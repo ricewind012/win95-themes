@@ -1,6 +1,6 @@
-// ElementUtils is prepended by the extension, no need to import
-
-/** @typedef {import("../shared++/ElementUtils.js").ElementUtils} ElementUtils */
+/**
+ * @import { ElementUtils } from "../shared++/ElementUtils.js"
+ */
 
 const codiconStylesText = document
 	.getElementById("codiconStyles")
