@@ -12,12 +12,12 @@
 	"Patches": [
 		{
 			"MatchRegexString": ".DesktopUI",
-			"TargetCss": "dist/steam.css",
+			"TargetCss": "dist/steam/steam.css",
 			"TargetJs": "src/steam/steam.js"
 		},
 		{
 			"MatchRegexString": ".fullheight",
-			"TargetCss": "dist/steam.css",
+			"TargetCss": "dist/steam/steam.css",
 			"TargetJs": "src/steam/steam.js"
 		}
 	],
