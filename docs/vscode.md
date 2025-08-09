@@ -29,9 +29,14 @@ Last tested version is [1.92](https://code.visualstudio.com/updates/v1_92)!
 	"window.menuStyle": "custom",
 
 	"breadcrumbs.enabled": false,
+	"explorer.compactFolders": false,
 	"workbench.editor.tabSizing": "shrink",
 	"workbench.editor.wrapTabs": true,
 ```
+
+4. Install the [Fix VSCode Checksums Next](https://marketplace.visualstudio.com/items?itemName=RimuruChan.vscode-fix-checksums-next) extension, then execute the "Fix Checksums: Apply" command.
+
+   Note that it's not available on Open VSX, so install from VSIX here: https://marketplace.visualstudio.com/_apis/public/gallery/publishers/RimuruChan/vsextensions/vscode-fix-checksums-next/1.4.0/vspackage.
 
 ## Caveats
 
