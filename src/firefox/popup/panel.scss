@@ -1,0 +1,70 @@
+@use "shared/controls";
+@use "shared/menu";
+@use "shared/window";
+
+panel {
+	--arrowpanel-menuitem-margin: 0px;
+	--arrowpanel-menuitem-margin-inline: 0px;
+	--menu-panel-width-wide: initial;
+	--panel-subview-body-padding: 0px;
+
+	&::part(content) {
+		@include window.container($child: true);
+
+		border: none;
+		border-radius: 0;
+	}
+
+	toolbarseparator {
+		@include controls.separator;
+
+		padding: 0;
+
+		&::before {
+			display: none;
+		}
+	}
+}
+
+.panel-banner-item:not([hidden]) {
+	background-color: transparent;
+	margin: 0;
+	margin-bottom: 9px;
+
+	// for separator
+	display: block;
+
+	&::after {
+		content: "";
+
+		position: absolute;
+		top: 0;
+		display: block;
+
+		@include controls.separator;
+	}
+
+	& > .toolbarbutton-icon {
+		display: none;
+	}
+}
+
+// .subviewbutton-back is in main menu's child panel views
+.subviewbutton:not(.subviewbutton-back) {
+	@include menu.item($selected-sel: "&:focus-visible");
+
+	min-height: unset;
+
+	&[disabled] {
+		@include menu.item-disabled;
+	}
+}
+
+.subviewbutton-nav {
+	@include menu.item-parent;
+}
+
+// Seen in "Main menu > More tools"
+.subview-subheader {
+	display: none;
+}

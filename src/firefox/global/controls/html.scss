@@ -1,0 +1,68 @@
+@use "shared/controls";
+@use "shared/text";
+
+input:where(
+	[type="email"],
+	[type="tel"],
+	[type="text"],
+	[type="password"],
+	[type="url"],
+	[type="number"]
+),
+textarea {
+	@include controls.text-field;
+
+	min-height: unset;
+}
+
+moz-button {
+	@include controls.button;
+
+	//min-height: unset;
+
+	&[type~="icon"] {
+		--button-size-icon: 0px;
+		--icon-size: 0px;
+
+		@include controls.icon-button($selected-sel: "[aria-pressed='true']");
+
+		padding: 0;
+	}
+
+	&::part(button) {
+		background-color: transparent;
+
+		width: unset;
+	}
+}
+
+moz-toggle {
+	--input-width: var(--sel-button-size);
+	--input-height: var(--sel-button-size);
+	--toggle-dot-margin: 0px;
+	--toggle-dot-transform-x: unset;
+
+	&::part(button) {
+		all: unset;
+
+		// Restore some props
+		// TODO: not centered anyway
+		margin-block: var(--input-margin-block-adjust);
+		margin-inline: var(--input-margin-inline-start-adjust) var(--space-small);
+
+		@include controls.checkbox($checked-sel: ".hack");
+
+		&::before {
+			background-color: transparent;
+			border-radius: 0;
+		}
+	}
+
+	&[pressed]::part(button) {
+		@include controls.checkbox-radio-checked;
+	}
+
+	&:is(:active, [disabled])::part(button) {
+		@include controls.checkbox-radio-inactive;
+	}
+}

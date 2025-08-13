@@ -1,5 +1,6 @@
 @use "shared/window";
 @use "shared++/global";
+@use "shared++/scrollbar";
 
 body {
 	@include window.container;

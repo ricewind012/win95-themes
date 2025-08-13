@@ -1,0 +1,68 @@
+@use "shared/controls";
+@use "shared/menu";
+@use "shared/window";
+
+menupopup {
+	margin: 0;
+
+	&::part(content) {
+		@include window.container($child: true);
+
+		border: none;
+		border-radius: 0;
+	}
+
+	& > menu {
+		@include menu.item($selected-sel: "[_moz-menuactive]");
+		@include menu.item-parent;
+
+		.menu-icon {
+			display: none;
+		}
+	}
+}
+
+:where(menupopup, menu) > menuitem {
+	@include menu.item($selected-sel: "&[_moz-menuactive]");
+
+	// TODO: belongs in shared/menu
+	// TODO pt2: remove var redecl in shared/menu because of this
+	color: var(--color-button-text);
+
+	&[disabled] {
+		@include menu.item-disabled;
+	}
+
+	&[type="checkbox"] {
+		&[checked="true"] {
+			@include menu.item-check;
+		}
+
+		.menu-icon {
+			display: none;
+		}
+	}
+
+	.menu-icon {
+		position: absolute;
+		left: 0;
+
+		#context-navigation & {
+			position: unset;
+		}
+	}
+
+	.menu-text {
+		margin: 0;
+	}
+}
+
+menuseparator {
+	@include controls.separator;
+
+	padding: 0;
+
+	&::before {
+		display: none;
+	}
+}

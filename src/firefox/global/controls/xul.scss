@@ -1,0 +1,22 @@
+@use "shared/controls";
+@use "shared/text";
+@use "shared/window";
+
+checkbox:not([hidden]) {
+	@include text.input-label;
+}
+
+.checkbox-check {
+	@include controls.checkbox(
+		$checked-sel: "&[checked]",
+		$disabled-sel: "&[disabled]"
+	);
+
+	appearance: none;
+	margin: 0;
+
+	&[checked] {
+		list-style-image: var(--icon-checkmark);
+		padding: var(--control-img-pos);
+	}
+}
