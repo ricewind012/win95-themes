@@ -1,0 +1,28 @@
+@use "shared/controls";
+@use "shared/window";
+
+#customization-content-container {
+	@include window.content-container;
+}
+
+#customization-footer {
+	gap: var(--dialog-button-spacing);
+	padding: var(--dialog-spacing);
+	border: none;
+
+	.footer-button {
+		min-height: unset;
+	}
+
+	.footer-button:not([type="menu"]) {
+		@include controls.button;
+	}
+
+	.footer-button[type="menu"] {
+		@include controls.combobox;
+
+		.button-menu-dropmarker {
+			display: none;
+		}
+	}
+}

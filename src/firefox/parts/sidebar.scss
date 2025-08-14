@@ -1,0 +1,62 @@
+@use "shared/controls";
+@use "shared/window";
+
+$-icons: (
+	"viewBookmarksSidebar": "folder",
+	"viewCustomizeSidebar": "settings-24",
+	// TODO: new icons
+	"viewGenaiChatSidebar": "debug-32",
+	"viewHistorySidebar": "clock",
+	// TODO: new icons
+	"viewTabsSidebar": "debug-32",
+);
+
+.actions-list {
+	gap: 0;
+	padding-inline: var(--toolbar-container-spacing);
+	padding-block-end: var(--toolbar-container-spacing);
+
+	order: -1;
+	height: unset;
+
+	& > moz-button {
+		@each $view, $icon in $-icons {
+			&[view="#{$view}"] {
+				--button-img: icon(#{$icon});
+			}
+		}
+	}
+}
+
+#sidebar-launcher-splitter {
+	background-color: var(--color-button-face);
+
+	width: 3px;
+}
+
+#sidebar-main {
+	background-color: var(--color-button-face);
+}
+
+#sidebar-tools-and-extensions-splitter {
+	display: none;
+}
+
+#tabbrowser-arrowscrollbox[orient="vertical"] {
+	@include window.content-container;
+
+	&::part(overflow-start-indicator),
+	&::part(overflow-end-indicator) {
+		display: none;
+	}
+}
+
+#tabbrowser-tabs[orient="vertical"] {
+	&::after {
+		display: none;
+	}
+}
+
+#vertical-tabs-newtab-button {
+	@include controls.button;
+}

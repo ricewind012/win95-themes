@@ -1,0 +1,24 @@
+@use "shared/controls";
+
+:root {
+	--toolbar-start-end-padding: var(--toolbar-content-spacing);
+}
+
+#nav-bar {
+	background-color: var(--color-button-face);
+	color: var(--color-button-text);
+
+	.toolbarbutton-text {
+		display: flex;
+	}
+}
+
+toolbarpaletteitem[place="toolbar"][id^="wrapper-customizableui-special-spring"],
+toolbarspring {
+	border-right: 1px solid var(--color-button-highlight);
+	box-shadow: -1px 0 var(--color-button-shadow);
+	margin-inline: 3px 4px;
+
+	flex: unset;
+	min-width: unset;
+}

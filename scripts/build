@@ -6,6 +6,16 @@ SRC_DIR=src
 name=$DIST_DIR/${1:?}
 
 mkdir -p "$DIST_DIR"
+# TODO: special behavior for now
+# refactor later, although steam WILL require the latter variant...
+if [ "$1" = firefox ]; then
+	npx postcss "$SRC_DIR/$1/index_agent.scss" \
+		--output "$DIST_DIR/firefox_agent.css"
+	npx postcss "$SRC_DIR/$1/index_author.scss" \
+		--output "$DIST_DIR/firefox_author.css"
+	exit
+fi
+
 npx postcss "$SRC_DIR/$1/**/*.scss" \
 	--base "$SRC_DIR" \
 	--dir "$DIST_DIR" \

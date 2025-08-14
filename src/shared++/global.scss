@@ -35,36 +35,3 @@ body {
 	background-color: var(--color-highlight);
 	color: var(--color-highlight-text);
 }
-
-::-webkit-scrollbar {
-	@include scrollbar.container;
-}
-
-::-webkit-scrollbar-button {
-	@include scrollbar.button;
-
-	&:vertical:decrement {
-		@include generated.scrollbar-button-vertical-decrement;
-	}
-
-	&:vertical:increment {
-		@include generated.scrollbar-button-vertical-increment;
-	}
-
-	&:horizontal:decrement {
-		@include generated.scrollbar-button-horizontal-decrement;
-	}
-
-	&:horizontal:increment {
-		@include generated.scrollbar-button-horizontal-increment;
-	}
-}
-
-::-webkit-scrollbar-corner,
-::-webkit-scrollbar-resize {
-	@include scrollbar.corner;
-}
-
-::-webkit-scrollbar-thumb {
-	@include scrollbar.thumb;
-}

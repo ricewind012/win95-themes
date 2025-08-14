@@ -1,0 +1,19 @@
+#main-window {
+	// Design tokens
+	--border-color: #f09;
+	--border-color-card: #f09;
+	--border-color-interactive: #f09;
+
+	--link-color: var(--color-link);
+	--text-color-deemphasized: var(--color-gray-text);
+	--text-color-disabled: var(--color-gray-text);
+
+	--button-opacity-disabled: 1;
+
+	// Browser
+	--tabpanel-background-color: var(--color-window);
+	// TODO: change to 1 when ready
+	--toolbarbutton-disabled-opacity: 0.1;
+	--toolbar-bgcolor: var(--color-button-face);
+	--toolbar-color: var(--color-button-text);
+}

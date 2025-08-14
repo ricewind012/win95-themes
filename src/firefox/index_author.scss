@@ -1,0 +1,18 @@
+@use "global" as *;
+@use "global/controls/html" as *;
+@use "global/controls/xul" as *;
+@use "global/customizemode" as *;
+@use "global/dialog" as *;
+//@use "global/scrollbar" as *;
+@use "global/variables" as *;
+@use "global/window" as *;
+
+@use "parts/navbar" as *;
+@use "parts/sidebar" as *;
+@use "parts/tabs" as *;
+@use "parts/urlbar" as *;
+
+@use "popup/menu" as *;
+@use "popup/panel" as *;
+@use "popup/tabpreview" as *;
+@use "popup/unifiedextensions" as *;

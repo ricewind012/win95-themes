@@ -1,0 +1,123 @@
+@use "shared/controls";
+@use "shared/window";
+
+#browser {
+	margin-top: var(--window-gap);
+}
+
+.browserContainer > findbar {
+	background-color: transparent;
+	border: none;
+
+	.findbar-closebutton {
+		--button-img: icon("clear");
+
+		@include controls.button;
+		@include controls.icon-button;
+	}
+
+	.findbar-container {
+		height: unset;
+	}
+
+	// TODO: icons
+	.findbar-find-next {
+		@include controls.button;
+		@include controls.icon-button;
+	}
+
+	// TODO: icons
+	.findbar-find-previous {
+		@include controls.button;
+		@include controls.icon-button;
+	}
+
+	.findbar-textbox {
+		@include controls.text-field;
+	}
+}
+
+#main-menubar {
+	width: 100%;
+
+	& > menu {
+		@include window.menubar-item($selected-sel: "&[open]");
+
+		// TODO: why doesn't it inherit line-height here ?
+		line-height: 1;
+		border: none;
+	}
+}
+
+// xul sucks
+sidebar-main {
+	padding-bottom: calc(var(--statusbar-height) + var(--window-gap));
+
+	// TODO: use ::after later, dont wanna restart rn
+	position: relative;
+
+	&::before {
+		content: "";
+
+		position: absolute;
+		bottom: 0;
+		width: 100%;
+		height: var(--statusbar-height);
+		box-sizing: border-box;
+
+		@include window.statusbar-item;
+	}
+}
+
+#statuspanel {
+	--width: calc(100% + var(--border-size) * 2);
+
+	@include window.statusbar-item;
+
+	visibility: visible;
+	opacity: 1;
+	margin: calc(var(--border-size) * -1);
+
+	bottom: calc(var(--statusbar-height) * -1 - var(--window-gap));
+	width: var(--width);
+	max-width: var(--width);
+	height: var(--statusbar-height);
+}
+
+#statuspanel-label {
+	border: none;
+	padding: 0;
+	margin: 0;
+
+	#statuspanel[inactive] > & {
+		visibility: hidden;
+	}
+}
+
+:root:not([inFullscreen], [sizemode="maximized"]) {
+	#tabbrowser-tabbox {
+		@include window.content-container;
+
+		margin-bottom: calc(var(--statusbar-height) + var(--window-gap));
+
+		overflow: visible;
+	}
+}
+
+#toolbar-menubar {
+	@include window.menubar;
+
+	flex-direction: column;
+
+	&::after {
+		content: "";
+
+		width: 100%;
+
+		@include controls.separator;
+	}
+}
+
+#toolbar-menubar {
+	padding: 0;
+}

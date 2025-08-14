@@ -36,10 +36,11 @@ export default {
 		}),
 		postcssSassPlugin({
 			includePaths: ["src"],
-			silenceDeprecations: ["legacy-js-api", "mixed-decls"],
+			silenceDeprecations: ["legacy-js-api", "mixed-decls", "moz-document"],
 		}),
 		selectorReplacerPlugin(),
 		appendImportantPlugin({
+			// TODO: kills stuff like ":root[ass] &"
 			filter: [/^:root/],
 		}),
 	],

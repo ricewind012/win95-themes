@@ -1,0 +1,9 @@
+.tab-audio-button {
+	&[soundplaying] {
+		--button-img: icon("sound");
+	}
+
+	&[muted] {
+		--button-img: icon("sound-muted");
+	}
+}

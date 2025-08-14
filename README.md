@@ -4,8 +4,8 @@
 
 Click a link for the installation guide, preview, etc.
 
-- [Chrome DevTools](./docs/chrome-devtools.md)
 - [Discord](./docs/discord.md)
+- [Firefox](./docs/firefox.md)
 - [Steam](./docs/steam-sfp.md)
 - [Visual Studio Code](./docs/vscode.md)
 

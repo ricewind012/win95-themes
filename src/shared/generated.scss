@@ -2,7 +2,7 @@
 // - mask relies on background-color
 // - <select> and ::-webkit-scrollbar can not have pseudo-elements
 
-@mixin combobox {
+%combobox {
 	--control-img:
 		linear-gradient(
 				90deg,
@@ -3272,6 +3272,10 @@
 				)
 				calc(100% - 17px) 18px;
 	}
+}
+
+@mixin combobox {
+	@extend %combobox;
 }
 
 @mixin radio {
