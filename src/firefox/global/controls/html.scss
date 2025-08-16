@@ -1,5 +1,12 @@
 @use "shared/controls";
 @use "shared/text";
+@use "shared++/extends";
+@use "shared++/icons";
+
+$-icons: (
+	//"chrome://global/skin/icons/more.svg": ,
+	"chrome://global/skin/icons/close.svg": "clear"
+);
 
 input:where(
 	[type="email"],
@@ -20,6 +27,17 @@ moz-button {
 
 	//min-height: unset;
 
+	@each $url, $icon in $-icons {
+		&[iconsrc="#{$url}"] {
+			--button-img: icon(#{$icon});
+		}
+	}
+
+	&[iconsrc='chrome://global/skin/icons/more.svg']
+	{
+		@include icons.icon-more;
+	}
+
 	&[type~="icon"] {
 		--button-size-icon: 0px;
 		--icon-size: 0px;
@@ -34,6 +52,22 @@ moz-button {
 
 		width: unset;
 	}
+}
+
+moz-fieldset {
+	@include controls.groupbox;
+
+	&::part(inputs) {
+		all: unset;
+	}
+
+	&::part(label) {
+		@include extends.legend-as-div;
+	}
+}
+
+moz-input-search {
+	@include controls.text-field;
 }
 
 moz-toggle {

@@ -1,6 +1,11 @@
 @use "shared/controls";
 @use "shared/listbox";
 
+$-input-height: round(
+	calc(var(--input-spacing) * 2 + var(--border-size) * 2 + var(--text-full)),
+	1px
+);
+
 // Made obsolete by the browser.urlbar.trimURLs pref
 #identity-box,
 // All of these are available through other means
@@ -11,16 +16,16 @@
 }
 
 #urlbar {
+	--urlbar-height: #{$-input-height};
+	--urlbar-min-height: #{$-input-height};
+
 	font-size: 1rem;
 }
 
 #urlbar-container {
 	--input-spacing: 2px;
 
-	--urlbar-container-height: round(
-		calc(var(--input-spacing) * 2 + var(--border-size) * 2 + var(--text-full)),
-		1px
-	);
+	--urlbar-container-height: #{$-input-height};
 	--urlbar-container-padding: 0px;
 	--urlbar-margin-inline: 0px;
 	--urlbar-padding-block: 0px;
@@ -34,11 +39,21 @@
 	display: none;
 }
 
+.urlbar-input {
+	mask: none;
+}
+
 .urlbar-input-box {
 	@include controls.text-field;
+
+	:root[customizing] & {
+		visibility: visible;
+	}
 }
 
 .urlbar-input-container {
+	border: none;
+
 	height: 100%;
 }
 
@@ -50,11 +65,13 @@
 	--urlbarView-item-inline-padding: 0px;
 	--urlbarView-item-block-padding: 0px;
 
-	@include listbox.container;
-
 	margin: 0;
 
 	width: 100%;
+
+	&:not([noresults]) {
+		@include listbox.container;
+	}
 }
 
 .urlbarView-body-inner {

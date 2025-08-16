@@ -53,7 +53,6 @@
 sidebar-main {
 	padding-bottom: calc(var(--statusbar-height) + var(--window-gap));
 
-	// TODO: use ::after later, dont wanna restart rn
 	position: relative;
 
 	&::before {
@@ -94,8 +93,8 @@ sidebar-main {
 	}
 }
 
-:root:not([inFullscreen], [sizemode="maximized"]) {
-	#tabbrowser-tabbox {
+#tabbrowser-tabbox {
+	#main-window:not([inFullscreen], [sizemode="maximized"]) & {
 		@include window.content-container;
 
 		margin-bottom: calc(var(--statusbar-height) + var(--window-gap));

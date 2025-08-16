@@ -1,3 +1,6 @@
+@use "shared/controls";
+@use "shared++/icons";
+
 .tab-audio-button {
 	&[soundplaying] {
 		--button-img: icon("sound");
@@ -5,5 +8,74 @@
 
 	&[muted] {
 		--button-img: icon("sound-muted");
+	}
+}
+
+.tab-close-button {
+	list-style-image: var(--icon-close);
+	margin: 0;
+
+	width: 8px;
+	height: 7px;
+}
+
+.tab-label-container {
+	height: unset;
+}
+
+#tabbrowser-arrowscrollbox {
+	&::part(overflow-start-indicator),
+	&::part(overflow-end-indicator) {
+		display: none;
+	}
+
+	&::part(scrollbutton-up),
+	&::part(scrollbutton-down) {
+		@include controls.button;
+		@include controls.icon-button;
+	}
+}
+
+// TODO: add to controls as tab-button
+.tabbrowser-tab {
+	&:where([selected], [multiselected]) {
+		.tab-background {
+			background: var(--checkerboard);
+			box-shadow: var(--border-tab-button-sunken);
+		}
+
+		.tab-content {
+			font-weight: bold;
+
+			inset: 1px;
+		}
+	}
+
+	&:not([selected], [multiselected]):hover {
+		.tab-background {
+			box-shadow: var(--border-tab-button-raised);
+		}
+	}
+}
+
+#TabsToolbar {
+	order: 1;
+}
+
+// gg mozilla
+#tabs-newtab-button,
+#vertical-tabs-newtab-button,
+#TabsToolbar #new-tab-button {
+	@include controls.button;
+	@include controls.icon-button;
+	@include icons.icon-plus;
+
+	list-style-image: none;
+	margin-inline-start: calc(var(--tab-overflow-clip-margin) * 2);
+
+	// TODO(icons): fix whatever this is
+	&::before {
+		background-size: 16px !important;
+		--button-img-pos: center;
 	}
 }

@@ -2,6 +2,26 @@
 @use "shared/menu";
 @use "shared/window";
 
+// TODO: unify with ~/discord/shared.scss
+%-menu-item-separator {
+	display: block;
+
+	&::after {
+		content: "";
+
+		--menu-item-padding-x: 20px;
+		position: absolute;
+		inset-inline: calc(var(--menu-item-padding-x) * -1);
+		bottom: -8px;
+		width: calc(100% + var(--menu-item-padding-x) * 2);
+		display: block;
+
+		pointer-events: none;
+
+		@include controls.separator;
+	}
+}
+
 panel {
 	--arrowpanel-menuitem-margin: 0px;
 	--arrowpanel-menuitem-margin-inline: 0px;
@@ -27,29 +47,18 @@ panel {
 }
 
 .panel-banner-item:not([hidden]) {
+	@extend %-menu-item-separator;
+
 	background-color: transparent;
 	margin: 0;
 	margin-bottom: 9px;
-
-	// for separator
-	display: block;
-
-	&::after {
-		content: "";
-
-		position: absolute;
-		top: 0;
-		display: block;
-
-		@include controls.separator;
-	}
 
 	& > .toolbarbutton-icon {
 		display: none;
 	}
 }
 
-// .subviewbutton-back is in main menu's child panel views
+// .subviewbutton-back can be seen in main menu's child panel views
 .subviewbutton:not(.subviewbutton-back) {
 	@include menu.item($selected-sel: "&:focus-visible");
 

@@ -2,13 +2,12 @@
 @use "shared/window";
 
 $-icons: (
-	"viewBookmarksSidebar": "folder",
-	"viewCustomizeSidebar": "settings-24",
-	// TODO: new icons
-	"viewGenaiChatSidebar": "debug-32",
-	"viewHistorySidebar": "clock",
-	// TODO: new icons
-	"viewTabsSidebar": "debug-32",
+	"viewBookmarksSidebar": "favorites",
+	"viewCustomizeSidebar": "settings",
+	// IDK what icon, and I doubt someone's actually using this anyway
+	//"viewGenaiChatSidebar": "debug-32",
+	"viewHistorySidebar": "history",
+	"viewTabsSidebar": "list",
 );
 
 .actions-list {

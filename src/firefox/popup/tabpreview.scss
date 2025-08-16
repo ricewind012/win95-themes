@@ -26,7 +26,7 @@
 	}
 
 	& > canvas {
-		// Distinguish the thumbnail from the tooltip a little bit
+		// Distinguish the thumbnail from the tooltip bg a little bit
 		border: 1px solid color-mix(in srgb, currentColor 25%, transparent);
 	}
 }

@@ -5,7 +5,7 @@ Last tested version is 143.0a1!
 ## Usage
 
 1. Install [fx-autoconfig](https://github.com/MrOtherGuy/fx-autoconfig).
-2. TODO: scripts
+2. TODO: scripts (maybe)
 3. Execute the following in terminal (edit the paths!):
 
 ```sh
@@ -25,6 +25,7 @@ user_pref("widget.non-native-theme.scrollbar.size.override", 16);
 user_pref("widget.non-native-theme.scrollbar.style", 4);
 
 // Optional - may work, but I did not test with these on
+user_pref("browser.tabs.tabMinWidth", 100);
 user_pref("browser.theme.dark-private-windows", false);
 user_pref("browser.urlbar.trimURLs", false);
 user_pref("identity.fxaccounts.enabled", false);
@@ -36,7 +37,7 @@ user_pref("sidebar.revamp", true);
 
 ## Caveats
 
-FUCKING NONE (yet)
+- Made only for vertical tabs
 
 ## Differences
 
