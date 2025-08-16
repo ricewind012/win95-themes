@@ -27,14 +27,13 @@
 	&:where([delegatesanchor]:not([widget-type="button"]))::after {
 		content: "";
 
-		position: relative;
+		top: var(--offset);
+		left: var(--offset);
 		width: 7px;
 		height: 4px;
 
 		background-color: var(--color-button-text);
 		mask: var(--icon-arrow-bottom);
-		top: var(--offset);
-		left: var(--offset);
 	}
 }
 
@@ -77,13 +76,24 @@ $-icons: (
 		left: var(--offset);
 	}
 
-	.toolbarbutton-text {
-		min-height: unset;
-		//display: flex;
-	}
-
 	.toolbaritem-combined-buttons {
 		margin: 0;
+	}
+}
+
+#nav-bar-overflow-button {
+	width: 16px;
+
+	&::after {
+		display: none;
+	}
+
+	& > .toolbarbutton-icon {
+		background-color: var(--color-button-text);
+		mask-image: icon("overflow");
+		mask-size: 8px 5px;
+		mask-position: center 2px;
+		mask-repeat: no-repeat;
 	}
 }
 

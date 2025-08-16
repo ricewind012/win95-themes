@@ -1,18 +1,21 @@
-@use "global" as *;
+@use "shared++/global";
+
 @use "global/controls/html" as *;
 @use "global/controls/xul" as *;
-@use "global/customizemode" as *;
 @use "global/dialog" as *;
 //@use "global/scrollbar" as *;
 @use "global/variables" as *;
-@use "global/window" as *;
 
-@use "parts/navbar" as *;
-@use "parts/sidebar" as *;
-@use "parts/tabs" as *;
-@use "parts/urlbar" as *;
+@use "browser/global/customizemode" as *;
+@use "browser/global/variables" as *;
+@use "browser/global/window" as *;
 
-@use "popup/menu" as *;
-@use "popup/panel" as *;
-@use "popup/tabpreview" as *;
-@use "popup/unifiedextensions" as *;
+@use "browser/parts/navbar" as *;
+@use "browser/parts/sidebar" as *;
+@use "browser/parts/tabs" as *;
+@use "browser/parts/urlbar" as *;
+
+@use "browser/popup/menu" as *;
+@use "browser/popup/panel" as *;
+@use "browser/popup/tabpreview" as *;
+@use "browser/popup/unifiedextensions" as *;

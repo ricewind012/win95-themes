@@ -13,9 +13,7 @@ function AddSheet(wnd) {
 export function InitUserChrome() {
 	// author
 	AddSheet(window);
-	UC_API.Windows.onCreated((wnd) => {
-		AddSheet(wnd);
-	});
+	UC_API.Windows.onCreated(AddSheet);
 
 	// agent
 	sss.loadAndRegisterSheet(

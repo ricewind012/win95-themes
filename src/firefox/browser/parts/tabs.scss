@@ -1,6 +1,21 @@
 @use "shared/controls";
 @use "shared++/icons";
 
+// TODO: actually use it somewhere
+@mixin tab-button($selected-sel) {
+	&:where(#{$selected-sel}) {
+		background: var(--checkerboard);
+		box-shadow: var(--border-tab-button-sunken);
+		font-weight: bold;
+
+		inset: 1px;
+	}
+
+	&:not(#{$selected-sel}):hover {
+		box-shadow: var(--border-tab-button-raised);
+	}
+}
+
 .tab-audio-button {
 	&[soundplaying] {
 		--button-img: icon("sound");
@@ -13,10 +28,15 @@
 
 .tab-close-button {
 	list-style-image: var(--icon-close);
+	padding: 3.5px 4px;
 	margin: 0;
 
-	width: 8px;
-	height: 7px;
+	width: var(--icon-size);
+	height: var(--icon-size);
+
+	#tabbrowser-arrowscrollbox[orient="vertical"] & {
+		display: flex;
+	}
 }
 
 .tab-label-container {
@@ -36,7 +56,6 @@
 	}
 }
 
-// TODO: add to controls as tab-button
 .tabbrowser-tab {
 	&:where([selected], [multiselected]) {
 		.tab-background {

@@ -24,8 +24,8 @@ user_pref("widget.gtk.overlay-scrollbars.enabled", false);
 user_pref("widget.non-native-theme.scrollbar.size.override", 16);
 user_pref("widget.non-native-theme.scrollbar.style", 4);
 
-// Optional - may work, but I did not test with these on
-user_pref("browser.tabs.tabMinWidth", 100);
+// Optional - may work without them, but I did not test with defaults
+user_pref("browser.tabs.tabMinWidth", 120);
 user_pref("browser.theme.dark-private-windows", false);
 user_pref("browser.urlbar.trimURLs", false);
 user_pref("identity.fxaccounts.enabled", false);
