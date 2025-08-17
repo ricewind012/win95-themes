@@ -1,22 +1,25 @@
 # Firefox
 
-Last tested version is 143.0a1!
+Last tested version is 143.0a1! Closest ESR version is 140, so if the theme happens to not receive updates, you can try using that one instead.
 
 ## Usage
 
 1. Install [fx-autoconfig](https://github.com/MrOtherGuy/fx-autoconfig).
-2. TODO: scripts (maybe)
-3. Execute the following in terminal (edit the paths!):
+2. Execute the following in terminal (edit the paths!):
 
 ```sh
 theme_path="/path/to/win95-themes/dist"
 profile_path="/path/to/profile/chrome"
-ln -s "$theme_path/firefox_agent.css "$profile_path/resources/userChrome.ag.css"
+rm "$profile_path/CSS"/*
+ln -s "$theme_path/src/firefox/win95_main.uc.mjs" "$profile_path/JS"
+ln -s "$theme_path/firefox_global.css" "$profile_path/CSS/firefox_global.uc.css"
+ln -s "$theme_path/firefox_agent.css" "$profile_path/CSS/win95_agent.uc.css"
+ln -s "$theme_path/firefox_author.css "$profile_path/CSS/win95_author.uc.css"
 ln -s "$theme_path/firefox_author.css" "$profile_path/userChrome.css"
-ln -s "$theme_path/firefox_author.css "$profile_path/resources/userChrome.au.css"
+ln -s "$theme_path/firefox_content.css" "$profile_path/userContent.css"
 ```
 
-4. Add to `user.js` the following:
+3. Add to `user.js` the following:
 
 ```js
 user_pref("ui.prefersReducedMotion", 1);
@@ -37,12 +40,20 @@ user_pref("sidebar.revamp", true);
 
 ## Caveats
 
-- Made only for vertical tabs
+- FUCKING NONE (yet)
 
 ## Differences
 
 - All URL bar action/status buttons have been removed
-- Zoom in/out in main menu is disabled
+
+## TODO
+
+1. Tabs
+   - Pinned tabs
+   - Tab groups
+
+2. Content
+   Will have to wait for Mozilla to replace XUL elements with their newer ones, so not any time soon.
 
 ## Preview
 

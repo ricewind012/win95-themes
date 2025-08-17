@@ -5,14 +5,19 @@ SRC_DIR=src
 
 name=$DIST_DIR/${1:?}
 
+build_fx() {
+	npx postcss "$SRC_DIR/firefox/index_$1.scss" \
+		--output "$DIST_DIR/firefox_$1.css"
+	printf 'Built %s\n' "$1" >&2
+}
+
 mkdir -p "$DIST_DIR"
 # TODO: special behavior for now
 # refactor later, although steam WILL require the latter variant...
 if [ "$1" = firefox ]; then
-	npx postcss "$SRC_DIR/$1/index_agent.scss" \
-		--output "$DIST_DIR/firefox_agent.css"
-	npx postcss "$SRC_DIR/$1/index_author.scss" \
-		--output "$DIST_DIR/firefox_author.css"
+	for i in ${2:-agent author content global}; do
+		build_fx "$i"
+	done
 	exit
 fi
 

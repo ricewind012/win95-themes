@@ -1,5 +1,13 @@
 @use "shared/controls";
 
+// TODO: go away
+%-overflow-icon {
+	mask-image: icon("overflow");
+	mask-size: 8px 5px;
+	mask-position: center 2px;
+	mask-repeat: no-repeat;
+}
+
 %-toolbar-button {
 	gap: var(--text-spacing);
 	padding: 2px 5px;
@@ -27,6 +35,7 @@
 	&:where([delegatesanchor]:not([widget-type="button"]))::after {
 		content: "";
 
+		position: relative;
 		top: var(--offset);
 		left: var(--offset);
 		width: 7px;
@@ -69,16 +78,6 @@ $-icons: (
 	.toolbarbutton-1 {
 		@extend %-toolbar-button;
 	}
-
-	.toolbarbutton-icon {
-		position: relative;
-		top: var(--offset);
-		left: var(--offset);
-	}
-
-	.toolbaritem-combined-buttons {
-		margin: 0;
-	}
 }
 
 #nav-bar-overflow-button {
@@ -89,18 +88,18 @@ $-icons: (
 	}
 
 	& > .toolbarbutton-icon {
+		@extend %-overflow-icon;
+
 		background-color: var(--color-button-text);
-		mask-image: icon("overflow");
-		mask-size: 8px 5px;
-		mask-position: center 2px;
-		mask-repeat: no-repeat;
+
+		display: flex;
 	}
 }
 
 #navigator-toolbox {
 	background-color: var(--color-button-face);
 
-	&::after {
+	&:not([tabs-hidden])::after {
 		content: "";
 
 		width: 100%;

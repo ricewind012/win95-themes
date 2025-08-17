@@ -1,21 +1,26 @@
-@use "shared++/global";
+/* ==UserScript==
+// @name           Windows 95
+// @description    The main file for the browser CSS.
+// @include        *
+// @stylemode      author_sheet
+// ==/UserScript== */
 
-@use "global/controls/html" as *;
-@use "global/controls/xul" as *;
-@use "global/dialog" as *;
-//@use "global/scrollbar" as *;
-@use "global/variables" as *;
+@use "browser/global/customizemode";
+@use "browser/global/userscript";
+@use "browser/global/variables";
+@use "browser/global/window";
 
-@use "browser/global/customizemode" as *;
-@use "browser/global/variables" as *;
-@use "browser/global/window" as *;
+@use "browser/parts/navbar";
+@use "browser/parts/sidebar";
+@use "browser/parts/tabs";
+@use "browser/parts/urlbar";
 
-@use "browser/parts/navbar" as *;
-@use "browser/parts/sidebar" as *;
-@use "browser/parts/tabs" as *;
-@use "browser/parts/urlbar" as *;
+@use "browser/popup/menu";
+@use "browser/popup/panel";
+@use "browser/popup/tabpreview";
+@use "browser/popup/unifiedextensions";
 
-@use "browser/popup/menu" as *;
-@use "browser/popup/panel" as *;
-@use "browser/popup/tabpreview" as *;
-@use "browser/popup/unifiedextensions" as *;
+// TODO until yep:
+// This is required for userChrome.css... that's also required for shadow DOM
+// elements... ty mozilla
+@import "./CSS/firefox_global.uc.css";

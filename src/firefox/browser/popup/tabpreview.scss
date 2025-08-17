@@ -1,5 +1,6 @@
 @use "shared/controls";
 @use "shared/tooltip";
+@use "shared++/extends";
 
 #tab-preview-panel::part(content) {
 	@include tooltip.container;
@@ -18,15 +19,11 @@
 	height: auto;
 
 	&:not(:empty)::before {
-		content: "";
-
-		@include controls.separator;
-
-		display: block;
+		@include extends.pseudo-separator;
 	}
 
 	& > canvas {
 		// Distinguish the thumbnail from the tooltip bg a little bit
-		border: 1px solid color-mix(in srgb, currentColor 25%, transparent);
+		border: 1px solid var(--color-gray-text);
 	}
 }

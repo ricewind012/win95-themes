@@ -54,6 +54,11 @@ moz-button {
 	}
 }
 
+moz-button-group {
+	// Remove the gap
+	--space-small: 0px;
+}
+
 moz-fieldset {
 	@include controls.groupbox;
 

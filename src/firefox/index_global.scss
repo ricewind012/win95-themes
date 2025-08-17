@@ -1,0 +1,13 @@
+/* ==UserScript==
+// @name           Windows 95
+// @description    The main file for the browser CSS.
+// @include        *
+// @stylemode      author_sheet
+// ==/UserScript== */
+
+@use "shared++/global";
+
+@use "global/controls/html";
+@use "global/controls/xul";
+@use "global/dialog";
+@use "global/variables";

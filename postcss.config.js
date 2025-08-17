@@ -40,7 +40,6 @@ export default {
 		}),
 		selectorReplacerPlugin(),
 		appendImportantPlugin({
-			// TODO: kills stuff like ":root[ass] &"
 			filter: [/^:root/],
 		}),
 	],

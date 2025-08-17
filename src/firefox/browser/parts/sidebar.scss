@@ -27,12 +27,6 @@ $-icons: (
 	}
 }
 
-#sidebar-launcher-splitter {
-	background-color: var(--color-button-face);
-
-	width: 3px;
-}
-
 #sidebar-main {
 	background-color: var(--color-button-face);
 }
@@ -51,6 +45,8 @@ $-icons: (
 }
 
 #tabbrowser-tabs[orient="vertical"] {
+	gap: 0;
+
 	&::after {
 		display: none;
 	}

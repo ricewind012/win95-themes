@@ -1,14 +1,16 @@
 @use "shared/controls";
 @use "shared/window";
+@use "shared++/icons";
 
 #browser {
-	margin-top: var(--window-gap);
+	padding-top: var(--window-gap);
 }
 
 .browserContainer > findbar {
-	background-color: transparent;
+	//background-color: transparent;
 	border: none;
 
+	// TODO(build): optimize
 	.findbar-closebutton {
 		--button-img: icon("clear");
 
@@ -20,16 +22,19 @@
 		height: unset;
 	}
 
-	// TODO: icons
-	.findbar-find-next {
-		@include controls.button;
+	// TODO(build): optimize
+	.findbar-find-next,
+	.findbar-find-previous {
+		@include controls.button($disabled-sel: "[disabled]");
 		@include controls.icon-button;
 	}
 
-	// TODO: icons
+	.findbar-find-next {
+		@include icons.icon-big-arrow-left;
+	}
+
 	.findbar-find-previous {
-		@include controls.button;
-		@include controls.icon-button;
+		@include icons.icon-big-arrow-right;
 	}
 
 	.findbar-textbox {
@@ -37,7 +42,7 @@
 	}
 }
 
-#main-menubar {
+menubar {
 	width: 100%;
 
 	& > menu {
@@ -69,6 +74,7 @@ sidebar-main {
 }
 
 #statuspanel {
+	--inset-bottom: calc(var(--statusbar-height) * -1 - var(--window-gap));
 	--width: calc(100% + var(--border-size) * 2);
 
 	@include window.statusbar-item;
@@ -77,10 +83,15 @@ sidebar-main {
 	opacity: 1;
 	margin: calc(var(--border-size) * -1);
 
-	bottom: calc(var(--statusbar-height) * -1 - var(--window-gap));
+	bottom: var(--inset-bottom);
 	width: var(--width);
 	max-width: var(--width);
 	height: var(--statusbar-height);
+
+	.browserStack:has(+ findbar:not([hidden])) > & {
+		// TODO: for now
+		bottom: calc(var(--inset-bottom) - 34px);
+	}
 }
 
 #statuspanel-label {

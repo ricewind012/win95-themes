@@ -19,7 +19,6 @@ dialog {
 	gap: var(--dialog-button-spacing);
 	margin: var(--messagebox-spacing);
 
-	// TODO(controls): unify
 	& > button {
 		@include controls.button;
 	}

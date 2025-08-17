@@ -1,4 +1,6 @@
-function HandlePointerEvent(el, callback) {
+const RESIZE_HANDLE_SIZE = 14;
+
+function handlePointerEvent(el, callback) {
 	el.addEventListener("pointerdown", () => {
 		function move(ev) {
 			callback(ev);
@@ -7,7 +9,6 @@ function HandlePointerEvent(el, callback) {
 		function up() {
 			removeEventListener("pointermove", move);
 			removeEventListener("pointerup", up);
-			document.documentElement.removeAttribute("style");
 		}
 
 		addEventListener("pointermove", move, { passive: true });
@@ -15,14 +16,18 @@ function HandlePointerEvent(el, callback) {
 	});
 }
 
-export function InitResizer() {
-	const resizer = document.createXULElement("resizer");
-	resizer.setAttribute("dir", "bottomright");
+export function initResizer() {
+	const resizer = document.createElement("div");
+	resizer.id = "window-resize-handle";
 	document.documentElement.appendChild(resizer);
 
 	// The other way is to listen to <html>'s attribute changes, but that hangs
 	// Firefox for whatever reason...
-	HandlePointerEvent(resizer, (ev) => {
-		window.resizeTo(ev.pageX, ev.pageY);
+	handlePointerEvent(resizer, (ev) => {
+		window.resizeTo(
+			ev.pageX + RESIZE_HANDLE_SIZE,
+			// magic number
+			ev.pageY + RESIZE_HANDLE_SIZE * 2.5,
+		);
 	});
 }

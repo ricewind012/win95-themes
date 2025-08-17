@@ -1,18 +1,16 @@
 // ==UserScript==
-// @name         Resizer
-// @description  Adds some functionality provided by the Windows 95 theme.
-// @author       me
-// @include      main
+// @name         Windows 95 userscript
+// @description  Adds some additional functionality for the Windows 95 theme.
+// @author       ricewind
+// @onlyonce
 // ==/UserScript==
 
-import { InitMisc } from "./userscript/misc.js";
-import { InitResizer } from "./userscript/resizer.js";
-import { InitUserChrome } from "./userscript/userchrome.js";
+import { initResizer } from "./userscript/resizer.js";
+import { initStatusbar } from "./userscript/statusbar.js";
 
 function main() {
-	InitMisc();
-	InitUserChrome();
-	InitResizer();
+	initStatusbar();
+	initResizer();
 }
 
 main();

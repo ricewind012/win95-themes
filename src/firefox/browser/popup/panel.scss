@@ -1,24 +1,22 @@
 @use "shared/controls";
 @use "shared/menu";
 @use "shared/window";
+@use "shared++/extends";
 
 // TODO: unify with ~/discord/shared.scss
 %-menu-item-separator {
 	display: block;
 
 	&::after {
-		content: "";
+		@include extends.pseudo-separator;
 
 		--menu-item-padding-x: 20px;
 		position: absolute;
 		inset-inline: calc(var(--menu-item-padding-x) * -1);
 		bottom: -8px;
 		width: calc(100% + var(--menu-item-padding-x) * 2);
-		display: block;
 
 		pointer-events: none;
-
-		@include controls.separator;
 	}
 }
 
@@ -52,10 +50,6 @@ panel {
 	background-color: transparent;
 	margin: 0;
 	margin-bottom: 9px;
-
-	& > .toolbarbutton-icon {
-		display: none;
-	}
 }
 
 // .subviewbutton-back can be seen in main menu's child panel views

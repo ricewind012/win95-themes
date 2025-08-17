@@ -20,3 +20,32 @@ checkbox:not([hidden]) {
 		padding: var(--control-img-pos);
 	}
 }
+
+splitter {
+	background-color: var(--color-button-face);
+
+	&[orient="horizontal"] {
+		width: var(--size);
+	}
+
+	&[orient="vertical"] {
+		height: var(--size);
+	}
+}
+
+toolbarbutton {
+	// TODO(icons): fix whatever this is
+	&::before {
+		background-position: var(--button-img-pos);
+	}
+}
+
+.toolbarbutton-icon {
+	position: relative;
+	top: var(--offset);
+	left: var(--offset);
+}
+
+.toolbaritem-combined-buttons {
+	margin: 0;
+}

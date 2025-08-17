@@ -49,10 +49,21 @@
 		display: none;
 	}
 
+	// TODO(build): optimize
 	&::part(scrollbutton-up),
 	&::part(scrollbutton-down) {
 		@include controls.button;
 		@include controls.icon-button;
+
+		border-radius: 0;
+	}
+
+	&::part(scrollbutton-up) {
+		@include icons.icon-big-arrow-left;
+	}
+
+	&::part(scrollbutton-diwn) {
+		@include icons.icon-big-arrow-right;
 	}
 }
 

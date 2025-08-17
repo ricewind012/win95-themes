@@ -1,0 +1,7 @@
+@mixin pseudo-separator {
+	content: "";
+
+	@include controls.separator;
+
+	display: block;
+}
