@@ -52,8 +52,26 @@ user_pref("sidebar.revamp", true);
    - Pinned tabs
    - Tab groups
 
-2. Content
+2. Content (including sidebar panels)
    Will have to wait for Mozilla to replace XUL elements with their newer ones, so not any time soon.
+
+   Maybe also open about pages in a window and give them a window styling:
+
+   ```js
+   Services.ww.openWindow(
+   	null,
+   	"about:addons",
+   	null,
+   	"chrome,titlebar,width=600,height=800",
+   	null,
+   );
+
+   // also need this for about pages, or... see #3
+   user_pref("userChromeJS.persistent_domcontent_callback", true);
+   ```
+
+3. Patch Firefox (maybe)
+   Actually considering patching `/opt/firefox-nightly/browser/omni.ja` to include my CSS because of the shadow DOM bullshit actively sabotaging my time... Might actually be better than relying on user{Chrome,Content}.css magic.
 
 ## Preview
 

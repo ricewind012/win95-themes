@@ -13,7 +13,7 @@ $-icons: (
 .actions-list {
 	gap: 0;
 	padding-inline: var(--toolbar-container-spacing);
-	padding-block-end: var(--toolbar-container-spacing);
+	padding-block-start: var(--toolbar-container-spacing);
 
 	order: -1;
 	height: unset;
@@ -37,11 +37,6 @@ $-icons: (
 
 #tabbrowser-arrowscrollbox[orient="vertical"] {
 	@include window.content-container;
-
-	&::part(overflow-start-indicator),
-	&::part(overflow-end-indicator) {
-		display: none;
-	}
 }
 
 #tabbrowser-tabs[orient="vertical"] {
@@ -50,8 +45,4 @@ $-icons: (
 	&::after {
 		display: none;
 	}
-}
-
-#vertical-tabs-newtab-button {
-	@include controls.button;
 }

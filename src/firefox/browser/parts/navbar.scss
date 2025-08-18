@@ -78,6 +78,10 @@ $-icons: (
 	.toolbarbutton-1 {
 		@extend %-toolbar-button;
 	}
+
+	.toolbarbutton-icon {
+		display: flex;
+	}
 }
 
 #nav-bar-overflow-button {

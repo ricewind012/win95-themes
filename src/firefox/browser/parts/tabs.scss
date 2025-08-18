@@ -53,7 +53,9 @@
 	&::part(scrollbutton-up),
 	&::part(scrollbutton-down) {
 		@include controls.button;
-		@include controls.icon-button;
+
+		min-width: var(--icon-button-width);
+		height: var(--icon-button-height);
 
 		border-radius: 0;
 	}
@@ -62,8 +64,52 @@
 		@include icons.icon-big-arrow-left;
 	}
 
-	&::part(scrollbutton-diwn) {
+	&::part(scrollbutton-down) {
 		@include icons.icon-big-arrow-right;
+	}
+}
+
+// https://github.com/w3c/csswg-drafts/issues/3431 ?
+#scrollbutton-up,
+#scrollbutton-down {
+	// TODO(shared/controls): unify
+	&::before,
+	&::after {
+		content: "";
+
+		position: absolute;
+		inset: 0;
+
+		mask: var(--button-img, none) no-repeat;
+		mask-size: var(--button-img-size, auto auto);
+		mask-position: var(--button-img-pos, center);
+	}
+
+	&::before {
+		z-index: 1;
+
+		background-color: var(--color-button-text);
+	}
+
+	&:active {
+		&::before {
+			inset: 1px;
+		}
+	}
+
+	&[disabled] {
+		pointer-events: none;
+
+		&::before {
+			background-color: var(--color-gray-text);
+		}
+
+		&::after {
+			left: 1px;
+			top: 1px;
+
+			background-color: var(--color-button-highlight);
+		}
 	}
 }
 

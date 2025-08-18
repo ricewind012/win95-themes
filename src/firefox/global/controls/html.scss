@@ -59,20 +59,33 @@ moz-button-group {
 	--space-small: 0px;
 }
 
-moz-fieldset {
-	@include controls.groupbox;
-
-	&::part(inputs) {
-		all: unset;
-	}
-
-	&::part(label) {
-		@include extends.legend-as-div;
-	}
+moz-checkbox,
+moz-radio {
+	--input-width: var(--sel-button-size);
+	--input-height: var(--sel-button-size);
 }
 
-moz-input-search {
-	@include controls.text-field;
+// moz-input-common
+#input {
+	appearance: none;
+	margin-block: var(--input-margin-block-adjust);
+	margin-inline: var(--input-margin-inline-start-adjust) var(--space-small);
+
+	&[type="checkbox"] {
+		@include controls.checkbox($checked-sel: "&:checked");
+	}
+
+	&[type="radio"] {
+		@include controls.radio($checked-sel: "&:checked");
+	}
+
+	&[type="search"] {
+		@include controls.text-field;
+
+		width: 100%;
+		// TODO(shared/controls): remove height maybe
+		height: unset;
+	}
 }
 
 moz-toggle {
@@ -97,6 +110,7 @@ moz-toggle {
 		}
 	}
 
+	// TODO: doesn't work no matter what I do
 	&[pressed]::part(button) {
 		@include controls.checkbox-radio-checked;
 	}

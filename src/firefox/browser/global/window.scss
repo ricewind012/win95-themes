@@ -60,6 +60,7 @@ sidebar-main {
 
 	position: relative;
 
+	/* TODO: sidebar
 	&::before {
 		content: "";
 
@@ -71,6 +72,7 @@ sidebar-main {
 
 		@include window.statusbar-item;
 	}
+		*/
 }
 
 #statuspanel {

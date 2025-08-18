@@ -15,7 +15,7 @@ mkdir -p "$DIST_DIR"
 # TODO: special behavior for now
 # refactor later, although steam WILL require the latter variant...
 if [ "$1" = firefox ]; then
-	for i in ${2:-agent author content global}; do
+	for i in ${2:-agent author global}; do
 		build_fx "$i"
 	done
 	exit

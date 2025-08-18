@@ -2,6 +2,13 @@
 @use "shared/text";
 @use "shared/window";
 
+arrowscrollbox {
+	&::part(overflow-start-indicator),
+	&::part(overflow-end-indicator) {
+		display: none;
+	}
+}
+
 checkbox:not([hidden]) {
 	@include text.input-label;
 }
@@ -36,11 +43,12 @@ splitter {
 toolbarbutton {
 	// TODO(icons): fix whatever this is
 	&::before {
-		background-position: var(--button-img-pos);
+		background-size: var(--button-img-size);
 	}
 }
 
 .toolbarbutton-icon {
+	display: none;
 	position: relative;
 	top: var(--offset);
 	left: var(--offset);

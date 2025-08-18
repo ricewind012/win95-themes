@@ -20,7 +20,6 @@
 @use "browser/popup/tabpreview";
 @use "browser/popup/unifiedextensions";
 
-// TODO until yep:
 // This is required for userChrome.css... that's also required for shadow DOM
 // elements... ty mozilla
 @import "./CSS/firefox_global.uc.css";
