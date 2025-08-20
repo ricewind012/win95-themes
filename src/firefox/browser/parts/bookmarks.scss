@@ -1,0 +1,39 @@
+@use "firefox/shared";
+
+%-button {
+	@include shared.toolbar-button;
+
+	margin: 0;
+}
+
+// <menuitem> elements have the same class
+toolbarbutton.bookmark-item {
+	@extend %-button;
+
+	& > .toolbarbutton-icon {
+		margin: 0;
+
+		display: flex;
+	}
+}
+
+#PersonalToolbar {
+	// ty mozilla
+	--toolbarbutton-inner-padding: 0px;
+	padding: 0;
+
+	// Oh my God, man, let XUL die already
+	display: grid;
+}
+
+#PlacesChevron {
+	@extend %-button;
+	@include shared.overflow-button;
+}
+
+#PlacesToolbarItems {
+	// TODO(shared/controls): finalize tab-button
+	--tab-button-spacing: 4px;
+	gap: var(--tab-button-spacing);
+	margin-inline-end: var(--tab-button-spacing);
+}

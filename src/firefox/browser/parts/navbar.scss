@@ -1,50 +1,5 @@
 @use "shared/controls";
-
-// TODO: go away
-%-overflow-icon {
-	mask-image: icon("overflow");
-	mask-size: 8px 5px;
-	mask-position: center 2px;
-	mask-repeat: no-repeat;
-}
-
-%-toolbar-button {
-	gap: var(--text-spacing);
-	padding: 2px 5px;
-
-	&[disabled] {
-		color: var(--color-button-shadow);
-		text-shadow: 1px 1px var(--color-button-highlight);
-
-		pointer-events: none;
-	}
-
-	&:where(:hover, :focus-visible) {
-		box-shadow: var(--border-tab-button-raised);
-	}
-
-	&:where(:active, [checked], [open]) {
-		--offset: 1px;
-		color: transparent;
-		text-shadow: 1px 1px var(--color-button-text);
-		box-shadow:
-			inset -1px -1px var(--color-button-highlight),
-			inset 1px 1px var(--color-button-shadow);
-	}
-
-	&:where([delegatesanchor]:not([widget-type="button"]))::after {
-		content: "";
-
-		position: relative;
-		top: var(--offset);
-		left: var(--offset);
-		width: 7px;
-		height: 4px;
-
-		background-color: var(--color-button-text);
-		mask: var(--icon-arrow-bottom);
-	}
-}
+@use "firefox/shared";
 
 // The rest don't make sense for this theme, so no
 $-icons: (
@@ -76,7 +31,20 @@ $-icons: (
 	margin-inline: var(--toolbar-container-spacing);
 
 	.toolbarbutton-1 {
-		@extend %-toolbar-button;
+		@include shared.toolbar-button;
+
+		&[delegatesanchor]:not([widget-type="button"])::after {
+			content: "";
+
+			position: relative;
+			top: var(--offset);
+			left: var(--offset);
+			width: 7px;
+			height: 4px;
+
+			background-color: var(--color-button-text);
+			mask: var(--icon-arrow-bottom);
+		}
 	}
 
 	.toolbarbutton-icon {
@@ -85,31 +53,15 @@ $-icons: (
 }
 
 #nav-bar-overflow-button {
-	width: 16px;
+	@include shared.overflow-button;
 
 	&::after {
 		display: none;
-	}
-
-	& > .toolbarbutton-icon {
-		@extend %-overflow-icon;
-
-		background-color: var(--color-button-text);
-
-		display: flex;
 	}
 }
 
 #navigator-toolbox {
 	background-color: var(--color-button-face);
-
-	&:not([tabs-hidden])::after {
-		content: "";
-
-		width: 100%;
-
-		@include controls.separator;
-	}
 }
 
 #PanelUI-menu-button {

@@ -1,18 +1,22 @@
 @use "shared/controls";
 @use "shared++/icons";
 
-// TODO: actually use it somewhere
-@mixin tab-button($selected-sel) {
-	&:where(#{$selected-sel}) {
-		background: var(--checkerboard);
-		box-shadow: var(--border-tab-button-sunken);
-		font-weight: bold;
+// TODO(icons): unify?
+$-icons: (
+	"chrome://global/skin/icons/settings.svg": "settings",
+	"chrome://mozapps/skin/extensions/extension.svg": "extensions",
+);
 
-		inset: 1px;
-	}
+%-horizontal-tabs-button {
+	// Match the tabs' height (and also width)
+	$-tab-button-height: 24px;
+	--icon-button-width: #{$-tab-button-height};
+	--icon-button-height: #{$-tab-button-height};
 
-	&:not(#{$selected-sel}):hover {
-		box-shadow: var(--border-tab-button-raised);
+	&::before,
+	&::after {
+		margin-top: 2px;
+		margin-left: 1px;
 	}
 }
 
@@ -36,6 +40,14 @@
 
 	#tabbrowser-arrowscrollbox[orient="vertical"] & {
 		display: flex;
+	}
+}
+
+.tab-icon-image {
+	@each $url, $icon in $-icons {
+		&[src="#{$url}"] {
+			content: icon(#{$icon});
+		}
 	}
 }
 
@@ -72,6 +84,8 @@
 // https://github.com/w3c/csswg-drafts/issues/3431 ?
 #scrollbutton-up,
 #scrollbutton-down {
+	@extend %-horizontal-tabs-button;
+
 	// TODO(shared/controls): unify
 	&::before,
 	&::after {
@@ -135,6 +149,7 @@
 }
 
 #TabsToolbar {
+	flex-direction: column;
 	order: 1;
 }
 
@@ -145,13 +160,15 @@
 	@include controls.button;
 	@include controls.icon-button;
 	@include icons.icon-plus;
+	@extend %-horizontal-tabs-button;
 
 	list-style-image: none;
 	margin-inline-start: calc(var(--tab-overflow-clip-margin) * 2);
 
 	// TODO(icons): fix whatever this is
 	&::before {
-		background-size: 16px !important;
+		background-size: 14px;
+		margin: 0;
 		--button-img-pos: center;
 	}
 }

@@ -20,6 +20,13 @@
 	}
 }
 
+// lol
+#appMenu-zoom-controls,
+// Seen in "Main menu > More tools"
+.subview-subheader {
+	display: none;
+}
+
 panel {
 	--arrowpanel-menuitem-margin: 0px;
 	--arrowpanel-menuitem-margin-inline: 0px;
@@ -47,6 +54,7 @@ panel {
 .panel-banner-item:not([hidden]) {
 	@extend %-menu-item-separator;
 
+	--panel-banner-item-update-supported-bgcolor: darkgreen;
 	background-color: transparent;
 	margin: 0;
 	margin-bottom: 9px;
@@ -65,9 +73,4 @@ panel {
 
 .subviewbutton-nav {
 	@include menu.item-parent;
-}
-
-// Seen in "Main menu > More tools"
-.subview-subheader {
-	display: none;
 }

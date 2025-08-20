@@ -25,8 +25,6 @@ textarea {
 moz-button {
 	@include controls.button;
 
-	//min-height: unset;
-
 	@each $url, $icon in $-icons {
 		&[iconsrc="#{$url}"] {
 			--button-img: icon(#{$icon});
@@ -82,8 +80,12 @@ moz-radio {
 	&[type="search"] {
 		@include controls.text-field;
 
+		background-image: none;
+
 		width: 100%;
-		// TODO(shared/controls): remove height maybe
+		// TODO(places): otherwise it's 16px
+		min-width: 150px;
+		// TODO(shared/controls): remove height for text-field maybe
 		height: unset;
 	}
 }

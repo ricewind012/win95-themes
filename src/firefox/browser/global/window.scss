@@ -1,6 +1,7 @@
 @use "shared/controls";
 @use "shared/window";
 @use "shared++/icons";
+@use "firefox/shared";
 
 #browser {
 	padding-top: var(--window-gap);
@@ -42,11 +43,17 @@
 	}
 }
 
+.browser-toolbar {
+	&::before {
+		@include shared.pseudo-separator;
+	}
+}
+
 menubar {
 	width: 100%;
 
 	& > menu {
-		@include window.menubar-item($selected-sel: "&[open]");
+		@include window.menubar-item($selected-sel: "[open]");
 
 		// TODO: why doesn't it inherit line-height here ?
 		line-height: 1;
@@ -75,39 +82,33 @@ sidebar-main {
 		*/
 }
 
-#statuspanel {
-	--inset-bottom: calc(var(--statusbar-height) * -1 - var(--window-gap));
-	--width: calc(100% + var(--border-size) * 2);
+// If fullscreen or maximized, retain the clickable scrollbar on the edge,
+// rather than having that border, as I'd rather have that convenience over the
+// looks at this point.
+#main-window:not([inFullscreen], [sizemode="maximized"]) {
+	#statuspanel {
+		--inset-bottom: calc(var(--statusbar-height) * -1 - var(--window-gap));
+		--width: calc(100% + var(--border-size) * 2);
 
-	@include window.statusbar-item;
+		@include window.statusbar-item;
 
-	visibility: visible;
-	opacity: 1;
-	margin: calc(var(--border-size) * -1);
+		visibility: visible;
+		opacity: 1;
+		margin: calc(var(--border-size) * -1);
 
-	bottom: var(--inset-bottom);
-	width: var(--width);
-	max-width: var(--width);
-	height: var(--statusbar-height);
-
-	.browserStack:has(+ findbar:not([hidden])) > & {
-		// TODO: for now
-		bottom: calc(var(--inset-bottom) - 34px);
+		bottom: var(--inset-bottom);
+		width: var(--width);
+		max-width: var(--width);
+		height: var(--statusbar-height);
 	}
-}
 
-#statuspanel-label {
-	border: none;
-	padding: 0;
-	margin: 0;
-
-	#statuspanel[inactive] > & {
-		visibility: hidden;
+	#statuspanel-label {
+		border: none;
+		padding: 0;
+		margin: 0;
 	}
-}
 
-#tabbrowser-tabbox {
-	#main-window:not([inFullscreen], [sizemode="maximized"]) & {
+	#tabbrowser-tabbox {
 		@include window.content-container;
 
 		margin-bottom: calc(var(--statusbar-height) + var(--window-gap));
@@ -116,20 +117,31 @@ sidebar-main {
 	}
 }
 
-#toolbar-menubar {
-	@include window.menubar;
+#notifications-toolbar {
+	// HELP
+	&:has(
+		> #tab-notification-deck-template,
+		> #tab-notification-deck > [slot="selected"]:empty
+	) {
+		display: none;
+	}
+}
 
-	flex-direction: column;
+#statuspanel {
+	&[inactive] > #statuspanel-label {
+		visibility: hidden;
+	}
 
-	&::after {
-		content: "";
-
-		width: 100%;
-
-		@include controls.separator;
+	.browserStack:has(+ findbar:not([hidden])) > & {
+		// TODO: for now
+		bottom: calc(var(--inset-bottom) - 34px);
 	}
 }
 
 #toolbar-menubar {
+	@include window.menubar;
+
 	padding: 0;
+
+	flex-direction: column-reverse;
 }

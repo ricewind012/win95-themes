@@ -1,4 +1,4 @@
-:root:not(#overqualification-hack) {
+:is(html, window) {
 	// Design tokens
 	--border-color: #f09;
 	--border-color-card: #f09;

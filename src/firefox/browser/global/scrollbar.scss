@@ -5,18 +5,10 @@
 // Wrapped in a @-moz-document because the scrollbar doesn't appear on webpages
 // anymore after overriding scrollbar styles.
 // SCSS sucks and doesn't let me wrap "@use"s in a @-moz-document, so it's here.
-@-moz-document url-prefix("chrome://browser/content/browser.xhtml")
+@-moz-document url-prefix("chrome://browser/content")
 {
 	* {
 		scrollbar-width: initial;
-	}
-
-	#window-resize-handle {
-		@include window.resize-handle;
-
-		// ??? wtf xul
-		right: 0;
-		bottom: 0;
 	}
 
 	slider {

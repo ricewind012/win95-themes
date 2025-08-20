@@ -3,6 +3,7 @@
 @use "shared/window";
 
 menupopup {
+	--menuitem-margin: 0px;
 	margin: 0;
 
 	&::part(content) {

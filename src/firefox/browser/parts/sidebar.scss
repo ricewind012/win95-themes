@@ -42,6 +42,7 @@ $-icons: (
 #tabbrowser-tabs[orient="vertical"] {
 	gap: 0;
 
+	// separator
 	&::after {
 		display: none;
 	}
