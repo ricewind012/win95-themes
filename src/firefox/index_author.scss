@@ -1,5 +1,5 @@
 /* ==UserScript==
-// @name           Windows 95
+// @name           Windows 95 (author)
 // @description    The main file for the browser CSS.
 // @include        *
 // @stylemode      author_sheet
@@ -8,13 +8,13 @@
 @use "browser/global/customizemode";
 @use "browser/global/userscript";
 @use "browser/global/variables";
-@use "browser/global/window";
 
 @use "browser/parts/bookmarks";
 @use "browser/parts/navbar";
 @use "browser/parts/sidebar";
 @use "browser/parts/tabs";
 @use "browser/parts/urlbar";
+@use "browser/parts/window";
 
 @use "browser/popup/menu";
 @use "browser/popup/panel";

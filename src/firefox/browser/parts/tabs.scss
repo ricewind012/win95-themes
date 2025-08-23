@@ -1,12 +1,15 @@
 @use "shared/controls";
+@use "shared/tree";
 @use "shared++/icons";
 
 // TODO(icons): unify?
 $-icons: (
+	"chrome://browser/skin/customize.svg": "window",
 	"chrome://global/skin/icons/settings.svg": "settings",
 	"chrome://mozapps/skin/extensions/extension.svg": "extensions",
 );
 
+// TODO(shared/controls): finalize tab-button
 %-horizontal-tabs-button {
 	// Match the tabs' height (and also width)
 	$-tab-button-height: 24px;
@@ -15,9 +18,13 @@ $-icons: (
 
 	&::before,
 	&::after {
-		margin-top: 2px;
+		margin-top: 1px;
 		margin-left: 1px;
 	}
+}
+
+.private-browsing-indicator-with-label {
+	display: none;
 }
 
 .tab-audio-button {
@@ -43,16 +50,60 @@ $-icons: (
 	}
 }
 
+////////// ok
+
+tab-group {
+	--icon: var(--tree-icon-expanded);
+
+	&[collapsed] {
+		--icon: var(--tree-icon-collapsed);
+	}
+
+	& > .tabbrowser-tab {
+		& > .tab-background {
+			margin: 0;
+		}
+
+		& > .tab-stack {
+			@include tree.item($expanded-sel: ".hack");
+		}
+	}
+}
+
+.tab-group-label {
+	all: unset;
+}
+
+.tab-group-label-container {
+	@include tree.item-icon;
+}
+
+.tab-group-line {
+	display: none;
+}
+
+////////// ok
+
 .tab-icon-image {
 	@each $url, $icon in $-icons {
 		&[src="#{$url}"] {
 			content: icon(#{$icon});
 		}
 	}
+
+	&:not([src]),
+	&:-moz-broken {
+		content: icon("url");
+	}
 }
 
 .tab-label-container {
 	height: unset;
+}
+
+.tab-throbber {
+	opacity: 1;
+	background-image: icon("hourglass");
 }
 
 #tabbrowser-arrowscrollbox {
@@ -81,12 +132,30 @@ $-icons: (
 	}
 }
 
+#tabbrowser-tabs[orient="vertical"] {
+	#pinned-tabs-container[orient="vertical"] {
+		.tab-background {
+			@include controls.button($active-sel: ":is([selected], [multiselected])");
+		}
+
+		.tabbrowser-tab {
+			padding: 0;
+		}
+	}
+
+	.tabbrowser-tab {
+		// TODO(shared/controls): finalize tab-button
+		--tab-button-spacing: 4px;
+		padding-block: calc(var(--tab-button-spacing) / 2);
+	}
+}
+
 // https://github.com/w3c/csswg-drafts/issues/3431 ?
 #scrollbutton-up,
 #scrollbutton-down {
 	@extend %-horizontal-tabs-button;
 
-	// TODO(shared/controls): unify
+	// TODO(shared/controls): unify tab-button
 	&::before,
 	&::after {
 		content: "";

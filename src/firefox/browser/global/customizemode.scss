@@ -3,6 +3,10 @@
 
 #customization-content-container {
 	@include window.content-container;
+
+	.toolbarbutton-icon {
+		display: flex;
+	}
 }
 
 #customization-footer {

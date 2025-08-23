@@ -5,5 +5,12 @@
 #window-resize-handle {
 	@include window.resize-handle;
 
+	// ??? wtf
+	right: 0;
+	bottom: 0;
 	z-index: var(--browser-area-z-index-tabbox);
+
+	:root:is([inFullscreen], [sizemode="maximized"]) & {
+		display: none;
+	}
 }

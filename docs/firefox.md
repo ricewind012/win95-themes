@@ -73,6 +73,14 @@ user_pref("sidebar.revamp", true);
 3. Patch Firefox (maybe)
    Actually considering patching `/opt/firefox-nightly/browser/omni.ja` to include my CSS because of the shadow DOM bullshit actively sabotaging my time... Might actually be better than relying on user{Chrome,Content}.css magic.
 
+4. Places window
+   It will be most likely 2030 when they finally decide to rewrite it or whatever, but I only need `<tree>` removed.
+
+5. Extensions support
+   - Stylus
+   - uBlock Origin
+   - Violentmonkey
+
 ## Preview
 
 ![Main Window](../img/firefox.png)

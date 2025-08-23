@@ -27,6 +27,11 @@ $-icons: (
 	}
 }
 
+// ty mozilla for not including the orient attribute
+#sidebar-launcher-splitter {
+	width: 3px;
+}
+
 #sidebar-main {
 	background-color: var(--color-button-face);
 }

@@ -1,7 +1,6 @@
 #unified-extensions-panel {
 	--uei-icon-size: var(--icon-size);
 
-	// TODO: move elsewhere ?
 	.panel-header,
 	.panel-header + toolbarseparator {
 		display: none;
@@ -15,6 +14,10 @@
 		position: absolute;
 		top: 0;
 		left: 2px;
+	}
+
+	.toolbarbutton-icon {
+		display: flex;
 	}
 
 	// !important

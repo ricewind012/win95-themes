@@ -29,6 +29,8 @@ checkbox:not([hidden]) {
 }
 
 splitter {
+	--size: 3px;
+
 	background-color: var(--color-button-face);
 
 	&[orient="horizontal"] {

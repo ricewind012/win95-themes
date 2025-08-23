@@ -1,13 +1,19 @@
+@use "sass:map";
 @use "shared/controls";
 @use "firefox/shared";
 
 // The rest don't make sense for this theme, so no
 $-icons: (
 	"back": "go-back",
+	"developer": "debug",
 	"downloads": "download",
 	"forward": "go-forward",
-	"reload": "reload",
-	// TODO: redo? idk
+	"home": "home",
+	"reload": (
+		name: "reload",
+		width: 17,
+		height: 19,
+	),
 	"sidebar": "sidebar",
 	"stop": "stop",
 	"unified-extensions": "extensions",
@@ -15,7 +21,9 @@ $-icons: (
 
 @each $id, $icon in $-icons {
 	##{$id}-button {
-		list-style-image: icon(#{$icon});
+		--width: map.get($icon, "width");
+		--height: map.get($icon, "height");
+		list-style-image: icon(#{map.get($icon, "name")});
 	}
 }
 
@@ -48,6 +56,13 @@ $-icons: (
 	}
 
 	.toolbarbutton-icon {
+		--width: 17px;
+		--height: 19px;
+
+		margin: calc((var(--icon-size) - var(--width)) / 2)
+			calc((var(--icon-size) - var(--height)) / 2);
+		width: var(--width);
+		height: var(--height);
 		display: flex;
 	}
 }

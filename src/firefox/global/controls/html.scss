@@ -69,6 +69,11 @@ moz-radio {
 	margin-block: var(--input-margin-block-adjust);
 	margin-inline: var(--input-margin-inline-start-adjust) var(--space-small);
 
+	// moz-toggle
+	&.toggle-button {
+		@include controls.checkbox($checked-sel: "&[aria-pressed='true']");
+	}
+
 	&[type="checkbox"] {
 		@include controls.checkbox($checked-sel: "&:checked");
 	}
@@ -93,31 +98,7 @@ moz-radio {
 moz-toggle {
 	--input-width: var(--sel-button-size);
 	--input-height: var(--sel-button-size);
+	--toggle-border-width: 0px;
 	--toggle-dot-margin: 0px;
 	--toggle-dot-transform-x: unset;
-
-	&::part(button) {
-		all: unset;
-
-		// Restore some props
-		// TODO: not centered anyway
-		margin-block: var(--input-margin-block-adjust);
-		margin-inline: var(--input-margin-inline-start-adjust) var(--space-small);
-
-		@include controls.checkbox($checked-sel: ".hack");
-
-		&::before {
-			background-color: transparent;
-			border-radius: 0;
-		}
-	}
-
-	// TODO: doesn't work no matter what I do
-	&[pressed]::part(button) {
-		@include controls.checkbox-radio-checked;
-	}
-
-	&:is(:active, [disabled])::part(button) {
-		@include controls.checkbox-radio-inactive;
-	}
 }

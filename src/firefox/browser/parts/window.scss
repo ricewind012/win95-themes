@@ -67,7 +67,6 @@ sidebar-main {
 
 	position: relative;
 
-	/* TODO: sidebar
 	&::before {
 		content: "";
 
@@ -79,12 +78,12 @@ sidebar-main {
 
 		@include window.statusbar-item;
 	}
-		*/
 }
 
 // If fullscreen or maximized, retain the clickable scrollbar on the edge,
 // rather than having that border, as I'd rather have that convenience over the
 // looks at this point.
+// #main-window instead of :root for specificity, as :root doesn't do !important
 #main-window:not([inFullscreen], [sizemode="maximized"]) {
 	#statuspanel {
 		--inset-bottom: calc(var(--statusbar-height) * -1 - var(--window-gap));
@@ -121,6 +120,7 @@ sidebar-main {
 	// HELP
 	&:has(
 		> #tab-notification-deck-template,
+		> #tab-notification-deck[selected-view=""],
 		> #tab-notification-deck > [slot="selected"]:empty
 	) {
 		display: none;
