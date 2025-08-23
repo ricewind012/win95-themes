@@ -4,25 +4,62 @@
 
 // The rest don't make sense for this theme, so no
 $-icons: (
-	"back": "go-back",
-	"developer": "debug",
-	"downloads": "download",
-	"forward": "go-forward",
-	"home": "home",
+	"back": (
+		name: "go-back",
+		width: 15,
+		height: 13,
+	),
+	"developer": (
+		name: "debug",
+		width: 16,
+		height: 17,
+	),
+	"downloads": (
+		name: "download",
+		width: 16,
+		height: 16,
+	),
+	"forward": (
+		name: "go-forward",
+		width: 15,
+		height: 13,
+	),
+	"home": (
+		name: "home",
+		width: 16,
+		height: 16,
+	),
 	"reload": (
 		name: "reload",
 		width: 17,
 		height: 19,
 	),
-	"sidebar": "sidebar",
-	"stop": "stop",
-	"unified-extensions": "extensions",
+	"sidebar": (
+		name: "sidebar",
+		width: 16,
+		height: 16,
+	),
+	"stop": (
+		name: "stop",
+		width: 19,
+		height: 19,
+	),
+	"unified-extensions": (
+		name: "extensions",
+		width: 16,
+		height: 16,
+	),
 );
 
 @each $id, $icon in $-icons {
 	##{$id}-button {
-		--width: map.get($icon, "width");
-		--height: map.get($icon, "height");
+		$-width: map.get($icon, "width");
+		$-height: map.get($icon, "height");
+		@if $-width != 16 and $-height != 16 {
+			--width: #{$-width}px;
+			--height: #{$-height}px;
+		}
+
 		list-style-image: icon(#{map.get($icon, "name")});
 	}
 }
@@ -56,13 +93,13 @@ $-icons: (
 	}
 
 	.toolbarbutton-icon {
-		--width: 17px;
-		--height: 19px;
+		--w: var(--width, var(--icon-size));
+		--h: var(--height, var(--icon-size));
 
-		margin: calc((var(--icon-size) - var(--width)) / 2)
-			calc((var(--icon-size) - var(--height)) / 2);
-		width: var(--width);
-		height: var(--height);
+		margin: calc((var(--icon-size) - var(--h)) / 2)
+			calc((var(--icon-size) - var(--w)) / 2);
+		width: var(--w);
+		height: var(--h);
 		display: flex;
 	}
 }
