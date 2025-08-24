@@ -40,15 +40,8 @@ $-icons: (
 	display: none;
 }
 
-#tabbrowser-arrowscrollbox[orient="vertical"] {
-	@include window.content-container;
-}
+#vertical-pinned-tabs-splitter {
+	@include controls.separator;
 
-#tabbrowser-tabs[orient="vertical"] {
-	gap: 0;
-
-	// separator
-	&::after {
-		display: none;
-	}
+	margin: 0;
 }

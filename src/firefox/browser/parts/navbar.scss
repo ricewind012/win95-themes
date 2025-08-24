@@ -2,7 +2,7 @@
 @use "shared/controls";
 @use "firefox/shared";
 
-// The rest don't make sense for this theme, so no
+/// Map of Firefox button IDs & the icons' info
 $-icons: (
 	"back": (
 		name: "go-back",
@@ -23,11 +23,6 @@ $-icons: (
 		name: "go-forward",
 		width: 15,
 		height: 13,
-	),
-	"home": (
-		name: "home",
-		width: 16,
-		height: 16,
 	),
 	"reload": (
 		name: "reload",
@@ -51,12 +46,15 @@ $-icons: (
 	),
 );
 
+// Most don't even make sense for this theme, use the menu bar.
 @each $id, $icon in $-icons {
 	##{$id}-button {
 		$-width: map.get($icon, "width");
 		$-height: map.get($icon, "height");
-		@if $-width != 16 and $-height != 16 {
+		@if $-width != 16 {
 			--width: #{$-width}px;
+		}
+		@if $-height != 16 {
 			--height: #{$-height}px;
 		}
 
@@ -69,13 +67,20 @@ $-icons: (
 	list-style-image: inherit;
 }
 
+// ty mozilla
+#history-panelmenu {
+	--width: 16px;
+	--height: 16px;
+	list-style-image: icon("history");
+}
+
 #nav-bar {
 	background-color: var(--color-button-face);
 	color: var(--color-button-text);
 	border: none;
 	margin-inline: var(--toolbar-container-spacing);
 
-	.toolbarbutton-1 {
+	:where(&, #customization-palette) :where(.toolbarbutton-1) {
 		@include shared.toolbar-button;
 
 		&[delegatesanchor]:not([widget-type="button"])::after {
@@ -90,17 +95,22 @@ $-icons: (
 			background-color: var(--color-button-text);
 			mask: var(--icon-arrow-bottom);
 		}
+
+		.toolbarbutton-icon {
+			--w: var(--width, var(--icon-size));
+			--h: var(--height, var(--icon-size));
+
+			margin: calc((var(--icon-size) - var(--h)) / 2)
+				calc((var(--icon-size) - var(--w)) / 2);
+			width: var(--w);
+			height: var(--h);
+			display: flex;
+		}
 	}
 
-	.toolbarbutton-icon {
-		--w: var(--width, var(--icon-size));
-		--h: var(--height, var(--icon-size));
-
-		margin: calc((var(--icon-size) - var(--h)) / 2)
-			calc((var(--icon-size) - var(--w)) / 2);
-		width: var(--w);
-		height: var(--h);
+	:root[win95-active-prefs~="win95.navbar-buttons-text"] & .toolbarbutton-text {
 		display: flex;
+		min-height: unset;
 	}
 }
 
@@ -108,6 +118,12 @@ $-icons: (
 	@include shared.overflow-button;
 
 	&::after {
+		display: none;
+	}
+
+	:root[win95-active-prefs~="win95.navbar-buttons-text"]
+		&
+		> .toolbarbutton-text {
 		display: none;
 	}
 }

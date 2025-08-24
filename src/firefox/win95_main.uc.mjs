@@ -5,12 +5,12 @@
 // @onlyonce
 // ==/UserScript==
 
+import { initThemePrefs } from "./userscript/prefs.js";
 import { initResizer } from "./userscript/resizer.js";
-import { initStatusbar } from "./userscript/statusbar.js";
 
 function main() {
-	initStatusbar();
 	initResizer();
+	initThemePrefs();
 }
 
 main();

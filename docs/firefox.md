@@ -38,6 +38,16 @@ user_pref("identity.fxaccounts.enabled", false);
 user_pref("sidebar.revamp", true);
 ```
 
+### Preferences
+
+TODO PLSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS do this
+
+- win95.customize-mode-as-window
+  Will not work if window size is <= 830px.
+
+- win95.navbar-buttons-text
+  Will display buttons' text in nav bar.
+
 ## Caveats
 
 - FUCKING NONE (yet)
@@ -45,12 +55,13 @@ user_pref("sidebar.revamp", true);
 ## Differences
 
 - All URL bar action/status buttons have been removed
+- "Expand on hover" sidebar option is not yet supported (will revert automatically if set)
 
 ## TODO
 
 1. Tabs
-   - Pinned tabs
-   - Tab groups
+   - Tree tab groups
+   - Sidebar expand on hover ?
 
 2. Content (including sidebar panels)
    Will have to wait for Mozilla to replace XUL elements with their newer ones, so not any time soon.

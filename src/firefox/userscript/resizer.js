@@ -1,5 +1,11 @@
 const RESIZE_HANDLE_SIZE = 14;
 
+/**
+ * Registers a pointer event with an automatic canceling on `pointerup`.
+ *
+ * @param {Element} el
+ * @param {PointerEvent} callback
+ */
 function handlePointerEvent(el, callback) {
 	el.addEventListener("pointerdown", () => {
 		function move(ev) {
@@ -21,8 +27,8 @@ export function initResizer() {
 	resizer.id = "window-resize-handle";
 	document.documentElement.appendChild(resizer);
 
-	// The other way is to listen to <html>'s attribute changes, but that hangs
-	// Firefox for whatever reason...
+	// The other way is to listen to <html>'s "style" attribute changes, but
+	// that hangs Firefox for whatever reason...
 	handlePointerEvent(resizer, (ev) => {
 		window.resizeTo(
 			ev.pageX + RESIZE_HANDLE_SIZE,

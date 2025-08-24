@@ -61,23 +61,8 @@ menubar {
 	}
 }
 
-// xul sucks
-sidebar-main {
-	padding-bottom: calc(var(--statusbar-height) + var(--window-gap));
-
-	position: relative;
-
-	&::before {
-		content: "";
-
-		position: absolute;
-		bottom: 0;
-		width: 100%;
-		height: var(--statusbar-height);
-		box-sizing: border-box;
-
-		@include window.statusbar-item;
-	}
+.private-browsing-indicator-with-label {
+	display: none;
 }
 
 // If fullscreen or maximized, retain the clickable scrollbar on the edge,
@@ -124,6 +109,25 @@ sidebar-main {
 		> #tab-notification-deck > [slot="selected"]:empty
 	) {
 		display: none;
+	}
+}
+
+// XUL sucks
+sidebar-main {
+	padding-bottom: calc(var(--statusbar-height) + var(--window-gap));
+
+	position: relative;
+
+	&::before {
+		content: "";
+
+		position: absolute;
+		bottom: 0;
+		width: 100%;
+		height: var(--statusbar-height);
+		box-sizing: border-box;
+
+		@include window.statusbar-item;
 	}
 }
 

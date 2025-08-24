@@ -2,7 +2,7 @@
 @use "shared/window";
 
 #customization-content-container {
-	@include window.content-container;
+	margin-top: var(--window-gap);
 
 	.toolbarbutton-icon {
 		display: flex;
@@ -18,8 +18,11 @@
 		min-height: unset;
 	}
 
+	.customization-link,
 	.footer-button:not([type="menu"]) {
 		@include controls.button;
+
+		text-decoration: none;
 	}
 
 	.footer-button[type="menu"] {
@@ -27,6 +30,74 @@
 
 		.button-menu-dropmarker {
 			display: none;
+		}
+	}
+}
+
+#customization-palette {
+	margin: 0;
+
+	.toolbarbutton-1 {
+		align-items: center;
+		flex-direction: row;
+	}
+
+	.toolbarbutton-combined-buttons-dropmarker {
+		display: none;
+	}
+
+	.toolbarbutton-icon {
+		margin: 0;
+	}
+}
+
+#customization-palette-container {
+	@include window.content-container;
+}
+
+#customization-panel-container {
+	// arrow height
+	margin-top: -10px;
+}
+
+:root[win95-active-prefs~="win95.customize-mode-as-window"] {
+	@media (width >= 830px) {
+		&[customizing] #browser {
+			display: flex;
+		}
+
+		#customization-container {
+			@include window.container($child: true);
+
+			// TODO: why the 1px lol
+			padding-top: calc(var(--titlebar-height) + var(--window-gap) + 1px);
+
+			position: fixed;
+			inset: 10% 20%;
+			z-index: var(--browser-area-z-index-sidebar-splitter);
+		}
+
+		#customization-header {
+			@include window.titlebar($focused-sel: "&");
+			@include window.titlebar-name;
+
+			font-size: inherit;
+			margin: 0;
+
+			position: absolute;
+			inset: calc(var(--border-size) + var(--window-spacing));
+			bottom: unset;
+		}
+
+		#customization-panel-container {
+			position: fixed;
+			right: 0;
+		}
+
+		#customization-panelWrapper {
+			& > .panel-arrowcontent {
+				max-width: 23em;
+			}
 		}
 	}
 }

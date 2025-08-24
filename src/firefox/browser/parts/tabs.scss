@@ -1,5 +1,5 @@
 @use "shared/controls";
-@use "shared/tree";
+@use "shared/window";
 @use "shared++/icons";
 
 // TODO(icons): unify?
@@ -23,8 +23,27 @@ $-icons: (
 	}
 }
 
-.private-browsing-indicator-with-label {
-	display: none;
+#pinned-tabs-container[orient="vertical"] {
+	margin-top: var(--toolbar-container-spacing);
+
+	// Undo the scrolling
+	height: unset;
+
+	&::part(scrollbox) {
+		padding-bottom: var(--border-size);
+
+		overflow: hidden;
+	}
+
+	.tab-background {
+		@include controls.button($active-sel: ":is([selected], [multiselected])");
+
+		min-width: unset;
+	}
+
+	.tabbrowser-tab {
+		padding: 0;
+	}
 }
 
 .tab-audio-button {
@@ -50,40 +69,6 @@ $-icons: (
 	}
 }
 
-////////// ok
-
-tab-group {
-	--icon: var(--tree-icon-expanded);
-
-	&[collapsed] {
-		--icon: var(--tree-icon-collapsed);
-	}
-
-	& > .tabbrowser-tab {
-		& > .tab-background {
-			margin: 0;
-		}
-
-		& > .tab-stack {
-			@include tree.item($expanded-sel: ".hack");
-		}
-	}
-}
-
-.tab-group-label {
-	all: unset;
-}
-
-.tab-group-label-container {
-	@include tree.item-icon;
-}
-
-.tab-group-line {
-	display: none;
-}
-
-////////// ok
-
 .tab-icon-image {
 	@each $url, $icon in $-icons {
 		&[src="#{$url}"] {
@@ -107,6 +92,10 @@ tab-group {
 }
 
 #tabbrowser-arrowscrollbox {
+	&[orient="vertical"] {
+		@include window.content-container;
+	}
+
 	&::part(overflow-start-indicator),
 	&::part(overflow-end-indicator) {
 		display: none;
@@ -133,14 +122,11 @@ tab-group {
 }
 
 #tabbrowser-tabs[orient="vertical"] {
-	#pinned-tabs-container[orient="vertical"] {
-		.tab-background {
-			@include controls.button($active-sel: ":is([selected], [multiselected])");
-		}
+	gap: var(--toolbar-container-spacing);
 
-		.tabbrowser-tab {
-			padding: 0;
-		}
+	// separator
+	&::after {
+		display: none;
 	}
 
 	.tabbrowser-tab {

@@ -27,6 +27,7 @@
 	@include controls.separator;
 }
 
+// TODO(shared/controls): finalize tab-button
 @mixin tab-button($selected-sel) {
 	&:where(#{$selected-sel}) {
 		background: var(--checkerboard);

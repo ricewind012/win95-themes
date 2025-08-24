@@ -66,6 +66,14 @@ panel {
 
 	min-height: unset;
 
+	&[checked] {
+		@include menu.item-check;
+
+		.toolbarbutton-text {
+			padding: 0;
+		}
+	}
+
 	&[disabled] {
 		@include menu.item-disabled;
 	}
@@ -73,4 +81,8 @@ panel {
 
 .subviewbutton-nav {
 	@include menu.item-parent;
+}
+
+#widget-overflow .toolbarbutton-icon {
+	display: flex;
 }

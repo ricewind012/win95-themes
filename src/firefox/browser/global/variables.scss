@@ -1,4 +1,5 @@
 #main-window {
+	// Browser
 	--tabpanel-background-color: var(--color-window);
 
 	--toolbarbutton-disabled-opacity: 1;
@@ -8,15 +9,20 @@
 
 	--toolbar-bgcolor: var(--color-button-face);
 	--toolbar-color: var(--color-button-text);
-}
 
-#tabbrowser-tabs {
+	// Tabs
 	--tab-block-margin: 0px;
 	--tab-close-button-padding: 0px;
+	--tab-height-with-margin-padding: calc(
+		var(--tab-min-height) + 2 * var(--tab-block-margin)
+	);
 	--tab-hover-background-color: transparent;
 	--tab-icon-end-margin: var(--text-spacing);
 	--tab-label-line-height: var(--text-line);
 	--tab-min-height: 24px;
+	--tab-pinned-container-margin-inline-expanded: var(
+		--toolbar-container-spacing
+	);
 
 	&[orient="horizontal"] {
 		--tab-inline-padding: calc(var(--text-spacing) * 2);
