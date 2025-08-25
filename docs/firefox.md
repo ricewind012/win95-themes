@@ -33,20 +33,23 @@ user_pref("browser.theme.dark-private-windows", false);
 user_pref("browser.urlbar.trimURLs", false);
 user_pref("identity.fxaccounts.enabled", false);
 
-// These also have to be enabled, as they are very likely to be removed sooner
-// or later
+// These have to be enabled, as they are likely to be removed sooner or later
 user_pref("sidebar.revamp", true);
 ```
 
 ### Preferences
 
-TODO PLSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS do this
-
 - win95.customize-mode-as-window
-  Will not work if window size is <= 830px.
 
-- win95.navbar-buttons-text
-  Will display buttons' text in nav bar.
+  Turn customize mode into a window. Will not work if window size is <= 830px.
+
+  ![Preview](../assets/preview/firefox/customize-mode-as-window.png)
+
+- win95.navbar-button-labels
+
+  Display button labels in nav bar.
+
+  ![Preview](../assets/preview/firefox/nav-bar-text.png)
 
 ## Caveats
 
@@ -59,11 +62,12 @@ TODO PLSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS do this
 
 ## TODO
 
-1. Tabs
+1. Tabs (maybe)
    - Tree tab groups
-   - Sidebar expand on hover ?
+   - Sidebar expand on hover
 
 2. Content (including sidebar panels)
+
    Will have to wait for Mozilla to replace XUL elements with their newer ones, so not any time soon.
 
    Maybe also open about pages in a window and give them a window styling:
@@ -82,9 +86,11 @@ TODO PLSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS do this
    ```
 
 3. Patch Firefox (maybe)
+
    Actually considering patching `/opt/firefox-nightly/browser/omni.ja` to include my CSS because of the shadow DOM bullshit actively sabotaging my time... Might actually be better than relying on user{Chrome,Content}.css magic.
 
 4. Places window
+
    It will be most likely 2030 when they finally decide to rewrite it or whatever, but I only need `<tree>` removed.
 
 5. Extensions support
@@ -94,4 +100,4 @@ TODO PLSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS do this
 
 ## Preview
 
-![Main Window](../img/firefox.png)
+![Main Window](../assets/preview/firefox/window.png)

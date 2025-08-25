@@ -12,11 +12,7 @@ $-icons: (
 
 .actions-list {
 	gap: 0;
-	padding-inline: var(--toolbar-container-spacing);
-	padding-block-start: var(--toolbar-container-spacing);
-
-	order: -1;
-	height: unset;
+	padding: var(--toolbar-container-spacing);
 
 	& > moz-button {
 		@each $view, $icon in $-icons {

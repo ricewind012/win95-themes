@@ -5,7 +5,7 @@ const SIDEBAR_PREF = "sidebar.visibility";
  */
 const THEME_PREFS = [
 	"win95.customize-mode-as-window",
-	"win95.navbar-buttons-text",
+	"win95.navbar-button-labels",
 ];
 
 /**

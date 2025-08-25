@@ -47,6 +47,7 @@ moz-button {
 
 	&::part(button) {
 		background-color: transparent;
+		border: none;
 
 		width: unset;
 	}

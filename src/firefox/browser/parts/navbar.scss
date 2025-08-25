@@ -2,6 +2,8 @@
 @use "shared/controls";
 @use "firefox/shared";
 
+$-button-labels-pref-sel: ':root[win95-active-prefs~="win95.navbar-button-labels"] & .toolbarbutton-text';
+
 /// Map of Firefox button IDs & the icons' info
 $-icons: (
 	"back": (
@@ -108,7 +110,7 @@ $-icons: (
 		}
 	}
 
-	:root[win95-active-prefs~="win95.navbar-buttons-text"] & .toolbarbutton-text {
+	#{$-button-labels-pref-sel} {
 		display: flex;
 		min-height: unset;
 	}
@@ -121,9 +123,7 @@ $-icons: (
 		display: none;
 	}
 
-	:root[win95-active-prefs~="win95.navbar-buttons-text"]
-		&
-		> .toolbarbutton-text {
+	#{$-button-labels-pref-sel} {
 		display: none;
 	}
 }

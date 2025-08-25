@@ -218,7 +218,7 @@ $-icons: (
 	@extend %-horizontal-tabs-button;
 
 	list-style-image: none;
-	margin-inline-start: calc(var(--tab-overflow-clip-margin) * 2);
+	margin-inline: var(--toolbar-container-spacing);
 
 	// TODO(icons): fix whatever this is
 	&::before {
