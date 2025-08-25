@@ -1,0 +1,113 @@
+@use "shared/controls";
+@use "shared/listbox";
+
+$-input-height: round(
+	calc(var(--input-spacing) * 2 + var(--border-size) * 2 + var(--text-full)),
+	1px
+);
+
+// Made obsolete by the browser.urlbar.trimURLs pref
+#identity-box,
+// All of these are available through other means
+#page-action-buttons,
+// You use ublock origin, right ?
+#tracking-protection-icon-container {
+	display: none;
+}
+
+#urlbar {
+	--urlbar-height: #{$-input-height};
+	--urlbar-min-height: #{$-input-height};
+
+	font-size: 1rem;
+}
+
+#urlbar-container {
+	--input-spacing: 2px;
+
+	--urlbar-container-height: #{$-input-height};
+	--urlbar-container-padding: 0px;
+	--urlbar-margin-inline: 0px;
+	--urlbar-padding-block: 0px;
+}
+
+#urlbar-searchmode-switcher {
+	display: none;
+}
+
+.urlbar-background {
+	display: none;
+}
+
+.urlbar-input {
+	mask: none;
+}
+
+.urlbar-input-box {
+	@include controls.text-field;
+
+	:root[customizing] & {
+		visibility: visible;
+	}
+}
+
+.urlbar-input-container {
+	border: none;
+
+	height: 100%;
+}
+
+.urlbarView {
+	--urlbarView-small-font-size: 1em;
+
+	--urlbarView-results-padding: 0px;
+	--urlbarView-row-gutter: 0px;
+	--urlbarView-item-inline-padding: 0px;
+	--urlbarView-item-block-padding: 0px;
+
+	margin: 0;
+
+	width: 100%;
+
+	&:not([noresults]) {
+		@include listbox.container;
+	}
+}
+
+.urlbarView-body-inner {
+	border: none;
+}
+
+.urlbarView-group-aria-label {
+	display: none;
+}
+
+.urlbarView-row {
+	@include listbox.item($selected-sel: "[selected]");
+
+	min-height: unset;
+
+	&[selected] {
+		--link-color: inherit;
+	}
+}
+
+.urlbarView-row-inner {
+	display: grid;
+	grid-template-columns: repeat(2, 50%);
+	min-height: unset;
+
+	.urlbarView-row[has-url]:not([type$="tab"]) > & > .urlbarView-no-wrap {
+		max-width: unset;
+	}
+}
+
+.urlbarView-title {
+	mask: none;
+
+	text-overflow: ellipsis;
+}
+
+.urlbarView-title-separator {
+	display: none;
+}

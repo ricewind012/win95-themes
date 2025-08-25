@@ -1,0 +1,15 @@
+:is(html, window) {
+	// Design tokens
+	--border-color: #f09;
+	--border-color-card: #f09;
+	--border-color-interactive: #f09;
+
+	--link-color: var(--color-link);
+	--text-color-deemphasized: var(--color-gray-text);
+	--text-color-disabled: var(--color-gray-text);
+
+	--button-min-height: unset;
+	--button-opacity-disabled: 1;
+
+	--space-xsmall: 2px;
+}

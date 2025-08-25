@@ -1,0 +1,151 @@
+@use "shared/controls";
+@use "shared/window";
+@use "shared++/icons";
+@use "firefox/shared";
+
+#browser {
+	padding-top: var(--window-gap);
+}
+
+.browserContainer > findbar {
+	//background-color: transparent;
+	border: none;
+
+	// TODO(build): optimize
+	.findbar-closebutton {
+		--button-img: icon("clear");
+
+		@include controls.button;
+		@include controls.icon-button;
+	}
+
+	.findbar-container {
+		height: unset;
+	}
+
+	// TODO(build): optimize
+	.findbar-find-next,
+	.findbar-find-previous {
+		@include controls.button($disabled-sel: "[disabled]");
+		@include controls.icon-button;
+	}
+
+	.findbar-find-next {
+		@include icons.icon-big-arrow-left;
+	}
+
+	.findbar-find-previous {
+		@include icons.icon-big-arrow-right;
+	}
+
+	.findbar-textbox {
+		@include controls.text-field;
+	}
+}
+
+.browser-toolbar {
+	&::before {
+		@include shared.pseudo-separator;
+	}
+}
+
+menubar {
+	width: 100%;
+
+	& > menu {
+		@include window.menubar-item($selected-sel: "[open]");
+
+		// TODO: why doesn't it inherit line-height here ?
+		line-height: 1;
+		border: none;
+	}
+}
+
+.private-browsing-indicator-with-label {
+	display: none;
+}
+
+// If fullscreen or maximized, retain the clickable scrollbar on the edge,
+// rather than having that border, as I'd rather have that convenience over the
+// looks at this point.
+// #main-window instead of :root for specificity, as :root doesn't do !important
+#main-window:not([inFullscreen], [sizemode="maximized"]) {
+	#statuspanel {
+		--inset-bottom: calc(var(--statusbar-height) * -1 - var(--window-gap));
+		--width: calc(100% + var(--border-size) * 2);
+
+		@include window.statusbar-item;
+
+		visibility: visible;
+		opacity: 1;
+		margin: calc(var(--border-size) * -1);
+
+		bottom: var(--inset-bottom);
+		width: var(--width);
+		max-width: var(--width);
+		height: var(--statusbar-height);
+	}
+
+	#statuspanel-label {
+		border: none;
+		padding: 0;
+		margin: 0;
+	}
+
+	#tabbrowser-tabbox {
+		@include window.content-container;
+
+		margin-bottom: calc(var(--statusbar-height) + var(--window-gap));
+
+		overflow: visible;
+	}
+}
+
+#notifications-toolbar {
+	// HELP
+	&:has(
+		> #tab-notification-deck-template,
+		> #tab-notification-deck:where([selected-view=""], :not([selected-view])),
+		> #tab-notification-deck > [slot="selected"]:empty
+	) {
+		display: none;
+	}
+}
+
+// XUL sucks
+sidebar-main {
+	padding-bottom: calc(var(--statusbar-height) + var(--window-gap));
+
+	position: relative;
+
+	&::before {
+		content: "";
+
+		position: absolute;
+		bottom: 0;
+		width: 100%;
+		height: var(--statusbar-height);
+		box-sizing: border-box;
+
+		@include window.statusbar-item;
+	}
+}
+
+#statuspanel {
+	&[inactive] > #statuspanel-label {
+		visibility: hidden;
+	}
+
+	.browserStack:has(+ findbar:not([hidden])) > & {
+		// TODO: for now
+		bottom: calc(var(--inset-bottom) - 34px);
+	}
+}
+
+#toolbar-menubar {
+	@include window.menubar;
+
+	padding: 0;
+
+	flex-direction: column-reverse;
+}

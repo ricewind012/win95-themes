@@ -1,0 +1,29 @@
+@use "shared/controls";
+@use "shared/tooltip";
+@use "shared++/extends";
+
+#tab-preview-panel::part(content) {
+	@include tooltip.container;
+
+	box-shadow: none;
+}
+
+.tab-preview-text-container {
+	padding: 0;
+}
+
+.tab-preview-thumbnail-container {
+	border: none;
+
+	width: auto;
+	height: auto;
+
+	&:not(:empty)::before {
+		@include extends.pseudo-separator;
+	}
+
+	& > canvas {
+		// Distinguish the thumbnail from the tooltip bg a little bit
+		border: 1px solid var(--color-gray-text);
+	}
+}

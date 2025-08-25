@@ -1,0 +1,105 @@
+@use "shared/controls";
+@use "shared/text";
+@use "shared++/extends";
+@use "shared++/icons";
+
+$-icons: (
+	//"chrome://global/skin/icons/more.svg": ,
+	"chrome://global/skin/icons/close.svg": "clear"
+);
+
+input:where(
+	[type="email"],
+	[type="tel"],
+	[type="text"],
+	[type="password"],
+	[type="url"],
+	[type="number"]
+),
+textarea {
+	@include controls.text-field;
+
+	min-height: unset;
+}
+
+moz-button {
+	@include controls.button;
+
+	@each $url, $icon in $-icons {
+		&[iconsrc="#{$url}"] {
+			--button-img: icon(#{$icon});
+		}
+	}
+
+	&[iconsrc='chrome://global/skin/icons/more.svg']
+	{
+		@include icons.icon-more;
+	}
+
+	&[type~="icon"] {
+		--button-size-icon: 0px;
+		--icon-size: 0px;
+
+		@include controls.icon-button($selected-sel: "[aria-pressed='true']");
+
+		padding: 0;
+	}
+
+	&::part(button) {
+		background-color: transparent;
+		border: none;
+
+		width: unset;
+	}
+}
+
+moz-button-group {
+	// Remove the gap
+	--space-small: 0px;
+}
+
+moz-checkbox,
+moz-radio {
+	--input-width: var(--sel-button-size);
+	--input-height: var(--sel-button-size);
+}
+
+// moz-input-common
+#input {
+	appearance: none;
+	margin-block: var(--input-margin-block-adjust);
+	margin-inline: var(--input-margin-inline-start-adjust) var(--space-small);
+
+	// moz-toggle
+	&.toggle-button {
+		@include controls.checkbox($checked-sel: "&[aria-pressed='true']");
+	}
+
+	&[type="checkbox"] {
+		@include controls.checkbox($checked-sel: "&:checked");
+	}
+
+	&[type="radio"] {
+		@include controls.radio($checked-sel: "&:checked");
+	}
+
+	&[type="search"] {
+		@include controls.text-field;
+
+		background-image: none;
+
+		width: 100%;
+		// TODO(places): otherwise it's 16px
+		min-width: 150px;
+		// TODO(shared/controls): remove height for text-field maybe
+		height: unset;
+	}
+}
+
+moz-toggle {
+	--input-width: var(--sel-button-size);
+	--input-height: var(--sel-button-size);
+	--toggle-border-width: 0px;
+	--toggle-dot-margin: 0px;
+	--toggle-dot-transform-x: unset;
+}

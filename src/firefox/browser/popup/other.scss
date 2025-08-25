@@ -1,0 +1,9 @@
+@use "shared/listbox";
+
+#ContentSelectDropdownPopup {
+	@include listbox.container;
+
+	& > menuitem {
+		@include listbox.item($selected-sel: "[_moz-menuactive]");
+	}
+}

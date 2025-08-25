@@ -1,0 +1,151 @@
+@use "sass:map";
+@use "shared/controls";
+@use "firefox/shared";
+
+$-button-labels-pref-sel: ':root[win95-active-prefs~="win95.navbar-button-labels"] & .toolbarbutton-text';
+
+/// Map of Firefox button IDs & the icons' info
+$-icons: (
+	"back": (
+		name: "go-back",
+		width: 15,
+		height: 13,
+	),
+	"developer": (
+		name: "debug",
+		width: 16,
+		height: 17,
+	),
+	"downloads": (
+		name: "download",
+		width: 16,
+		height: 16,
+	),
+	"forward": (
+		name: "go-forward",
+		width: 15,
+		height: 13,
+	),
+	"reload": (
+		name: "reload",
+		width: 17,
+		height: 19,
+	),
+	"sidebar": (
+		name: "sidebar",
+		width: 16,
+		height: 16,
+	),
+	"stop": (
+		name: "stop",
+		width: 19,
+		height: 19,
+	),
+	"unified-extensions": (
+		name: "extensions",
+		width: 16,
+		height: 16,
+	),
+);
+
+// Most don't even make sense for this theme, use the menu bar.
+@each $id, $icon in $-icons {
+	##{$id}-button {
+		$-width: map.get($icon, "width");
+		$-height: map.get($icon, "height");
+		@if $-width != 16 {
+			--width: #{$-width}px;
+		}
+		@if $-height != 16 {
+			--height: #{$-height}px;
+		}
+
+		list-style-image: icon(#{map.get($icon, "name")});
+	}
+}
+
+// what is this
+#downloads-indicator-anchor {
+	list-style-image: inherit;
+}
+
+// ty mozilla
+#history-panelmenu {
+	--width: 16px;
+	--height: 16px;
+	list-style-image: icon("history");
+}
+
+#nav-bar {
+	background-color: var(--color-button-face);
+	color: var(--color-button-text);
+	border: none;
+	margin-inline: var(--toolbar-container-spacing);
+
+	:where(&, #customization-palette) :where(.toolbarbutton-1) {
+		@include shared.toolbar-button;
+
+		&[delegatesanchor]:not([widget-type="button"])::after {
+			content: "";
+
+			position: relative;
+			top: var(--offset);
+			left: var(--offset);
+			width: 7px;
+			height: 4px;
+
+			background-color: var(--color-button-text);
+			mask: var(--icon-arrow-bottom);
+		}
+
+		.toolbarbutton-icon {
+			--w: var(--width, var(--icon-size));
+			--h: var(--height, var(--icon-size));
+
+			margin: calc((var(--icon-size) - var(--h)) / 2)
+				calc((var(--icon-size) - var(--w)) / 2);
+			width: var(--w);
+			height: var(--h);
+			display: flex;
+		}
+	}
+
+	#{$-button-labels-pref-sel} {
+		display: flex;
+		min-height: unset;
+	}
+}
+
+#nav-bar-overflow-button {
+	@include shared.overflow-button;
+
+	&::after {
+		display: none;
+	}
+
+	#{$-button-labels-pref-sel} {
+		display: none;
+	}
+}
+
+#navigator-toolbox {
+	background-color: var(--color-button-face);
+}
+
+#PanelUI-menu-button {
+	list-style-image: url("chrome://branding/content/about-logo.svg");
+}
+
+toolbarpaletteitem {
+	&[removable="false"] {
+		opacity: 1;
+	}
+}
+
+toolbarpaletteitem[place="toolbar"][id^="wrapper-customizableui-special-spring"],
+toolbarspring {
+	margin-inline: var(--toolbar-spacing);
+
+	flex: unset;
+	min-width: unset;
+}

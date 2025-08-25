@@ -1,0 +1,44 @@
+@use "shared/controls";
+@use "shared/window";
+
+$-icons: (
+	"viewBookmarksSidebar": "favorites",
+	"viewCPMSidebar": "padlock",
+	"viewCustomizeSidebar": "settings",
+	// IDK what icon, and I doubt someone's actually using this anyway
+	//"viewGenaiChatSidebar": "debug-32",
+	"viewHistorySidebar": "history",
+	"viewTabsSidebar": "list",
+);
+
+.actions-list {
+	gap: 0;
+	padding: var(--toolbar-container-spacing);
+
+	& > moz-button {
+		@each $view, $icon in $-icons {
+			&[view="#{$view}"] {
+				--button-img: icon(#{$icon});
+			}
+		}
+	}
+}
+
+// ty mozilla for not including the orient attribute
+#sidebar-launcher-splitter {
+	width: 3px;
+}
+
+#sidebar-main {
+	background-color: var(--color-button-face);
+}
+
+#sidebar-tools-and-extensions-splitter {
+	display: none;
+}
+
+#vertical-pinned-tabs-splitter {
+	@include controls.separator;
+
+	margin: 0;
+}

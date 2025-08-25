@@ -1,0 +1,40 @@
+@use "shared/controls";
+@use "shared/window";
+
+dialog {
+	window[subdialog] & {
+		@include window.container($child: true);
+	}
+
+	#titleContainer {
+		@include window.titlebar($focused-sel: "&");
+
+		margin: 0;
+
+		max-width: unset;
+	}
+}
+
+.dialog-button-box {
+	gap: var(--dialog-button-spacing);
+	margin: var(--messagebox-spacing);
+
+	& > button {
+		@include controls.button;
+	}
+}
+
+.dialogBox {
+	box-shadow: none;
+	margin-block-start: calc(50vh - var(--subdialog-inner-height) / 2);
+}
+
+.dialogRow {
+	margin: var(--messagebox-spacing) 0;
+}
+
+#window-modal-dialog {
+	&::backdrop {
+		background-color: transparent;
+	}
+}

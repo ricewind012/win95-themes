@@ -1,0 +1,69 @@
+@use "shared/controls";
+
+// TODO: go away
+@mixin -overflow-icon {
+	mask-image: icon("overflow");
+	mask-size: 8px 5px;
+	mask-position: center 2px;
+	mask-repeat: no-repeat;
+}
+
+@mixin overflow-button {
+	width: 16px;
+
+	& > .toolbarbutton-icon {
+		@include -overflow-icon;
+
+		background-color: var(--color-button-text);
+
+		display: flex;
+	}
+}
+
+// TODO: unify with ~/discord/shared.scss
+@mixin pseudo-separator {
+	content: "";
+
+	@include controls.separator;
+}
+
+// TODO(shared/controls): finalize tab-button
+@mixin tab-button($selected-sel) {
+	&:where(#{$selected-sel}) {
+		background: var(--checkerboard);
+		box-shadow: var(--border-tab-button-sunken);
+		font-weight: bold;
+
+		inset: 1px;
+	}
+
+	&:not(#{$selected-sel}):hover {
+		box-shadow: var(--border-tab-button-raised);
+	}
+}
+
+// TODO(shared/controls): finalize tab-button
+@mixin toolbar-button {
+	gap: var(--text-spacing);
+	padding: 2px 5px;
+
+	&[disabled] {
+		color: var(--color-button-shadow);
+		text-shadow: 1px 1px var(--color-button-highlight);
+
+		pointer-events: none;
+	}
+
+	&:where(:hover, :focus-visible) {
+		box-shadow: var(--border-tab-button-raised);
+	}
+
+	&:where(:active, [checked], [open]) {
+		--offset: 1px;
+		color: transparent;
+		text-shadow: 1px 1px var(--color-button-text);
+		box-shadow:
+			inset -1px -1px var(--color-button-highlight),
+			inset 1px 1px var(--color-button-shadow);
+	}
+}

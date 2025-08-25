@@ -1,0 +1,46 @@
+#unified-extensions-panel {
+	--uei-icon-size: var(--icon-size);
+
+	.panel-header,
+	.panel-header + toolbarseparator {
+		display: none;
+	}
+
+	.toolbarbutton-badge {
+		display: none;
+	}
+
+	.toolbarbutton-badge-stack {
+		position: absolute;
+		top: 0;
+		left: 2px;
+	}
+
+	.toolbarbutton-icon {
+		display: flex;
+	}
+
+	// !important
+	.unified-extensions-item {
+		margin: 0;
+	}
+
+	// same selector in #nav-bar
+	.unified-extensions-item-action-button {
+		gap: var(--text-spacing);
+
+		justify-content: space-between;
+
+		&::after {
+			content: attr(badge);
+
+			color: var(--color-gray-text);
+		}
+	}
+}
+
+// useless duplicate info
+.unified-extensions-item-menu-button,
+.unified-extensions-item-message-deck {
+	display: none;
+}

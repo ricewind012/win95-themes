@@ -1,0 +1,88 @@
+@use "shared/controls";
+@use "shared/menu";
+@use "shared/window";
+@use "shared++/extends";
+
+// TODO: unify with ~/discord/shared.scss
+%-menu-item-separator {
+	display: block;
+
+	&::after {
+		@include extends.pseudo-separator;
+
+		--menu-item-padding-x: 20px;
+		position: absolute;
+		inset-inline: calc(var(--menu-item-padding-x) * -1);
+		bottom: -8px;
+		width: calc(100% + var(--menu-item-padding-x) * 2);
+
+		pointer-events: none;
+	}
+}
+
+// lol
+#appMenu-zoom-controls,
+// Seen in "Main menu > More tools"
+.subview-subheader {
+	display: none;
+}
+
+panel {
+	--arrowpanel-menuitem-margin: 0px;
+	--arrowpanel-menuitem-margin-inline: 0px;
+	--menu-panel-width-wide: initial;
+	--panel-subview-body-padding: 0px;
+
+	&::part(content) {
+		@include window.container($child: true);
+
+		border: none;
+		border-radius: 0;
+	}
+
+	toolbarseparator {
+		@include controls.separator;
+
+		padding: 0;
+
+		&::before {
+			display: none;
+		}
+	}
+}
+
+.panel-banner-item:not([hidden]) {
+	@extend %-menu-item-separator;
+
+	--panel-banner-item-update-supported-bgcolor: darkgreen;
+	background-color: transparent;
+	margin: 0;
+	margin-bottom: 9px;
+}
+
+// .subviewbutton-back can be seen in main menu's child panel views
+.subviewbutton:not(.subviewbutton-back) {
+	@include menu.item($selected-sel: "&:focus-visible");
+
+	min-height: unset;
+
+	&[checked] {
+		@include menu.item-check;
+
+		.toolbarbutton-text {
+			padding: 0;
+		}
+	}
+
+	&[disabled] {
+		@include menu.item-disabled;
+	}
+}
+
+.subviewbutton-nav {
+	@include menu.item-parent;
+}
+
+#widget-overflow .toolbarbutton-icon {
+	display: flex;
+}

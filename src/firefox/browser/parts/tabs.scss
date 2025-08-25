@@ -1,0 +1,229 @@
+@use "shared/controls";
+@use "shared/window";
+@use "shared++/icons";
+
+// TODO(icons): unify?
+$-icons: (
+	"chrome://browser/skin/customize.svg": "window",
+	"chrome://global/skin/icons/settings.svg": "settings",
+	"chrome://mozapps/skin/extensions/extension.svg": "extensions",
+);
+
+// TODO(shared/controls): finalize tab-button
+%-horizontal-tabs-button {
+	// Match the tabs' height (and also width)
+	$-tab-button-height: 24px;
+	--icon-button-width: #{$-tab-button-height};
+	--icon-button-height: #{$-tab-button-height};
+
+	&::before,
+	&::after {
+		margin-top: 1px;
+		margin-left: 1px;
+	}
+}
+
+#pinned-tabs-container[orient="vertical"] {
+	margin-top: var(--toolbar-container-spacing);
+
+	// Undo the scrolling
+	height: unset;
+
+	&::part(scrollbox) {
+		padding-bottom: var(--border-size);
+
+		overflow: hidden;
+	}
+
+	.tab-background {
+		@include controls.button($active-sel: ":is([selected], [multiselected])");
+
+		min-width: unset;
+	}
+
+	.tabbrowser-tab {
+		padding: 0;
+	}
+}
+
+.tab-audio-button {
+	&[soundplaying] {
+		--button-img: icon("sound");
+	}
+
+	&[muted] {
+		--button-img: icon("sound-muted");
+	}
+}
+
+.tab-close-button {
+	list-style-image: var(--icon-close);
+	padding: 3.5px 4px;
+	margin: 0;
+
+	width: var(--icon-size);
+	height: var(--icon-size);
+
+	#tabbrowser-arrowscrollbox[orient="vertical"] & {
+		display: flex;
+	}
+}
+
+.tab-icon-image {
+	@each $url, $icon in $-icons {
+		&[src="#{$url}"] {
+			content: icon(#{$icon});
+		}
+	}
+
+	&:not([src]),
+	&:-moz-broken {
+		content: icon("url");
+	}
+}
+
+.tab-label-container {
+	height: unset;
+}
+
+.tab-throbber {
+	opacity: 1;
+	background-image: icon("hourglass");
+}
+
+#tabbrowser-arrowscrollbox {
+	&[orient="vertical"] {
+		@include window.content-container;
+	}
+
+	&::part(overflow-start-indicator),
+	&::part(overflow-end-indicator) {
+		display: none;
+	}
+
+	// TODO(build): optimize
+	&::part(scrollbutton-up),
+	&::part(scrollbutton-down) {
+		@include controls.button;
+
+		min-width: var(--icon-button-width);
+		height: var(--icon-button-height);
+
+		border-radius: 0;
+	}
+
+	&::part(scrollbutton-up) {
+		@include icons.icon-big-arrow-left;
+	}
+
+	&::part(scrollbutton-down) {
+		@include icons.icon-big-arrow-right;
+	}
+}
+
+#tabbrowser-tabs[orient="vertical"] {
+	gap: var(--toolbar-container-spacing);
+
+	// separator
+	&::after {
+		display: none;
+	}
+
+	.tabbrowser-tab {
+		// TODO(shared/controls): finalize tab-button
+		--tab-button-spacing: 4px;
+		padding-block: calc(var(--tab-button-spacing) / 2);
+	}
+}
+
+// https://github.com/w3c/csswg-drafts/issues/3431 ?
+#scrollbutton-up,
+#scrollbutton-down {
+	@extend %-horizontal-tabs-button;
+
+	// TODO(shared/controls): unify tab-button
+	&::before,
+	&::after {
+		content: "";
+
+		position: absolute;
+		inset: 0;
+
+		mask: var(--button-img, none) no-repeat;
+		mask-size: var(--button-img-size, auto auto);
+		mask-position: var(--button-img-pos, center);
+	}
+
+	&::before {
+		z-index: 1;
+
+		background-color: var(--color-button-text);
+	}
+
+	&:active {
+		&::before {
+			inset: 1px;
+		}
+	}
+
+	&[disabled] {
+		pointer-events: none;
+
+		&::before {
+			background-color: var(--color-gray-text);
+		}
+
+		&::after {
+			left: 1px;
+			top: 1px;
+
+			background-color: var(--color-button-highlight);
+		}
+	}
+}
+
+.tabbrowser-tab {
+	&:where([selected], [multiselected]) {
+		.tab-background {
+			background: var(--checkerboard);
+			box-shadow: var(--border-tab-button-sunken);
+		}
+
+		.tab-content {
+			font-weight: bold;
+
+			inset: 1px;
+		}
+	}
+
+	&:not([selected], [multiselected]):hover {
+		.tab-background {
+			box-shadow: var(--border-tab-button-raised);
+		}
+	}
+}
+
+#TabsToolbar {
+	flex-direction: column;
+	order: 1;
+}
+
+// gg mozilla
+#tabs-newtab-button,
+#vertical-tabs-newtab-button,
+#TabsToolbar #new-tab-button {
+	@include controls.button;
+	@include controls.icon-button;
+	@include icons.icon-plus;
+	@extend %-horizontal-tabs-button;
+
+	list-style-image: none;
+	margin-inline: var(--toolbar-container-spacing);
+
+	// TODO(icons): fix whatever this is
+	&::before {
+		background-size: 14px;
+		margin: 0;
+		--button-img-pos: center;
+	}
+}

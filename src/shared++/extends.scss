@@ -1,3 +1,4 @@
+@use "shared/controls";
 @use "shared/text";
 
 @mixin text-reset {
@@ -40,6 +41,14 @@
 	&::after {
 		content: ")";
 	}
+}
+
+@mixin pseudo-separator {
+	content: "";
+
+	@include controls.separator;
+
+	display: block;
 }
 
 // buttons

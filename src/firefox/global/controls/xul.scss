@@ -1,0 +1,66 @@
+@use "shared/controls";
+@use "shared/text";
+@use "shared/window";
+
+arrowscrollbox {
+	&::part(overflow-start-indicator),
+	&::part(overflow-end-indicator) {
+		display: none;
+	}
+}
+
+checkbox:not([hidden]) {
+	@include text.input-label;
+}
+
+.checkbox-check {
+	@include controls.checkbox(
+		$checked-sel: "&[checked]",
+		$disabled-sel: "&[disabled]"
+	);
+
+	appearance: none;
+	margin: 0;
+
+	&[checked] {
+		list-style-image: var(--icon-checkmark);
+		padding: var(--control-img-pos);
+	}
+}
+
+splitter {
+	--size: 3px;
+
+	background-color: var(--color-button-face);
+
+	&[orient="horizontal"] {
+		width: var(--size);
+	}
+
+	&[orient="vertical"] {
+		height: var(--size);
+	}
+}
+
+toolbarbutton {
+	// TODO(icons): fix whatever this is
+	&::before {
+		background-size: var(--button-img-size);
+	}
+}
+
+.toolbarbutton-badge {
+	position: relative;
+	top: var(--offset);
+	left: var(--offset);
+}
+
+.toolbarbutton-icon {
+	@extend .toolbarbutton-badge;
+
+	display: none;
+}
+
+.toolbaritem-combined-buttons {
+	margin: 0;
+}

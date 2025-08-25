@@ -1,0 +1,53 @@
+@use "shared/generated";
+@use "shared/scrollbar";
+@use "shared/window";
+
+// Wrapped in a @-moz-document because the scrollbar doesn't appear on webpages
+// anymore after overriding scrollbar styles.
+// SCSS sucks and doesn't let me wrap "@use"s in a @-moz-document, so it's here.
+@-moz-document url-prefix("chrome://browser/content")
+{
+	* {
+		scrollbar-width: initial;
+	}
+
+	slider {
+		@include scrollbar.container;
+
+		appearance: none;
+	}
+
+	scrollbarbutton {
+		@include scrollbar.button;
+
+		appearance: none;
+
+		&[type="decrement"] {
+			@include generated.scrollbar-button-horizontal-decrement;
+		}
+
+		&[type="increment"] {
+			@include generated.scrollbar-button-horizontal-increment;
+		}
+
+		scrollbar[vertical] > &[type="decrement"] {
+			@include generated.scrollbar-button-vertical-decrement;
+		}
+
+		scrollbar[vertical] > &[type="increment"] {
+			@include generated.scrollbar-button-vertical-increment;
+		}
+	}
+
+	scrollbarcorner {
+		@include scrollbar.corner;
+
+		appearance: none;
+	}
+
+	thumb {
+		@include scrollbar.thumb;
+
+		appearance: none;
+	}
+}
