@@ -1,7 +1,6 @@
 @use "shared/controls";
 @use "shared/text";
 @use "shared++/extends";
-@use "discord/shared";
 
 .vcd-screen-picker-card {
 	--card-primary-bg: transparent;
@@ -46,7 +45,7 @@
 
 .vcd-screen-picker-preview {
 	&::after {
-		@include shared.pseudo-separator;
+		@include extends.pseudo-separator;
 
 		margin-block: 8px 12px;
 	}

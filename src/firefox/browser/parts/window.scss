@@ -1,7 +1,7 @@
 @use "shared/controls";
 @use "shared/window";
+@use "shared++/extends";
 @use "shared++/icons";
-@use "firefox/shared";
 
 #browser {
 	padding-top: var(--window-gap);
@@ -45,7 +45,7 @@
 
 .browser-toolbar {
 	&::before {
-		@include shared.pseudo-separator;
+		@include extends.pseudo-separator;
 	}
 }
 

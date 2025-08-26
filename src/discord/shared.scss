@@ -20,16 +20,6 @@
 	}
 }
 
-// TODO: remove in favor of shared++/extends
-@mixin pseudo-separator {
-	content: "";
-
-	width: 100%;
-	display: inline-block;
-
-	@include controls.separator;
-}
-
 // TODO: what is this
 @mixin select-as-button {
 	@include controls.combobox;
