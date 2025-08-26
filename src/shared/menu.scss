@@ -10,13 +10,13 @@
 }
 
 @mixin item($selected-sel) {
+	color: var(--color-button-text);
 	line-height: 1.25;
 	padding: 2px 20px;
 
 	position: relative;
 
 	&:is(:hover, #{$selected-sel}) {
-		--color-button-text: var(--color-highlight-text);
 		background-color: var(--color-highlight);
 		color: var(--color-highlight-text);
 	}

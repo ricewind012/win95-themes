@@ -26,10 +26,6 @@ menupopup {
 :where(menupopup, menu) > menuitem {
 	@include menu.item($selected-sel: "&[_moz-menuactive]");
 
-	// TODO: belongs in shared/menu
-	// TODO pt2: remove var redecl in shared/menu because of this
-	color: var(--color-button-text);
-
 	&[disabled] {
 		@include menu.item-disabled;
 	}

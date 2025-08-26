@@ -62,7 +62,7 @@ panel {
 
 // .subviewbutton-back can be seen in main menu's child panel views
 .subviewbutton:not(.subviewbutton-back) {
-	@include menu.item($selected-sel: "&:focus-visible");
+	@include menu.item($selected-sel: ":focus-visible");
 
 	min-height: unset;
 
