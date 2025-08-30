@@ -4,6 +4,32 @@
 $-sel-arrow-back: "> :nth-child(3)";
 $-sel-arrow-forward: "> :nth-child(4)";
 
+%-arrow {
+	position: initial;
+
+	&::before,
+	&::after {
+		content: "";
+
+		position: absolute;
+		top: 0;
+		width: var(--icon-width);
+		height: var(--icon-height);
+
+		-webkit-mask: var(--button-img) no-repeat;
+		-webkit-mask-size: var(--button-img-size);
+		-webkit-mask-position: var(--button-img-pos, center);
+
+		pointer-events: none;
+	}
+
+	&::before {
+		background-color: var(--color-button-text);
+
+		z-index: 1;
+	}
+}
+
 %-arrow-disabled {
 	&::before {
 		background-color: var(--color-gray-text);
@@ -44,7 +70,6 @@ $-sel-arrow-forward: "> :nth-child(4)";
 	}
 }
 
-// TODO(port): simplify
 #SuperNav {
 	--icon-width: 25px;
 	--icon-height: 23px;
@@ -58,34 +83,8 @@ $-sel-arrow-forward: "> :nth-child(4)";
 	position: relative;
 
 	// Use other buttons as icons, as svgs can not have pseudo-elements
-	#{$-sel-arrow-back},
-	#{$-sel-arrow-forward} {
-		position: initial;
-
-		&::before,
-		&::after {
-			content: "";
-
-			position: absolute;
-			top: 0;
-			width: var(--icon-width);
-			height: var(--icon-height);
-
-			-webkit-mask: var(--button-img) no-repeat;
-			-webkit-mask-size: var(--button-img-size);
-			-webkit-mask-position: var(--button-img-pos, center);
-
-			pointer-events: none;
-		}
-
-		&::before {
-			background-color: var(--color-button-text);
-
-			z-index: 1;
-		}
-	}
-
 	#{$-sel-arrow-back} {
+		@extend %-arrow;
 		@include icons.icon-big-arrow-left;
 
 		&::before,
@@ -95,6 +94,7 @@ $-sel-arrow-forward: "> :nth-child(4)";
 	}
 
 	#{$-sel-arrow-forward} {
+		@extend %-arrow;
 		@include icons.icon-big-arrow-right;
 
 		&::before,

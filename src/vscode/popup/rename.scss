@@ -1,7 +1,5 @@
-// !important in global/editor.scss
-// TODO(port): original is &-box&-box
 .rename-box {
-	--window-spacing: 8px; // Child window (1) + dialog (7)
+	--window-spacing: calc(1px + var(--dialog-spacing));
 }
 
 .rename-input {

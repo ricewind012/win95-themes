@@ -41,9 +41,8 @@
 }
 
 // Context menu
-#CollectionDropDownContainer {
-	// !important
-	// TODO(port): originally &&
+// !important
+#CollectionDropDownContainer#CollectionDropDownContainer {
 	.DesktopUI & ._DialogInputContainer {
 		@include window.container($child: true);
 	}

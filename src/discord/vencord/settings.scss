@@ -155,13 +155,11 @@
 	display: flex;
 }
 
-.vcd-settings-section {
+.vcd-settings-category {
 	@include controls.groupbox;
+}
 
-	// !important in dialogs/settings.scss
-	// TODO(port): originally div&
-	.sectionTitle__7bffb h2 {
-		@include extends.text-reset;
-		@include extends.legend-as-div;
-	}
+.vcd-settings-category-title {
+	@include extends.text-reset;
+	@include extends.legend-as-div;
 }

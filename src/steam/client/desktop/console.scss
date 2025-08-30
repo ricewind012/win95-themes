@@ -42,7 +42,6 @@
 
 // Suggestions
 #Suggestion {
-	// TODO(port)
 	@include listbox.item($selected-sel: ".hack");
 
 	background-color: transparent;

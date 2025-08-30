@@ -187,12 +187,18 @@
 
 // Only used in "Invite to group chat" dialog
 .DialogHeaderSubtitle {
-	// TODO(port): no reference to this lol what
-	//quotes();
 	color: inherit;
 	letter-spacing: 0;
 	font: inherit;
 	margin-left: var(--text-spacing);
+
+	&::before {
+		content: open-quote;
+	}
+
+	&::after {
+		content: close-quote;
+	}
 }
 
 .DialogInnerBody {

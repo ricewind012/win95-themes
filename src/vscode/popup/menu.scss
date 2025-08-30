@@ -2,18 +2,13 @@
 @use "shared/menu";
 @use "shared/window";
 
-// TODO(port-fix): maybe use it on these:
-// monaco-submenu
-// menubar-menu-items-holder
-// context-view
-// monaco-menu-container
-// OR monaco-menu
 [role="menu"] {
 	@include window.container($child: true);
 
 	[role^="menuitem"] {
-		// TODO(port): wtf is this
-		@include menu.item($selected-sel: ".hack");
+		// Not actually needed, as vscode does it already, but $selected-sel is
+		// required
+		@include menu.item($selected-sel: "[style*='selection']");
 
 		margin: 0;
 

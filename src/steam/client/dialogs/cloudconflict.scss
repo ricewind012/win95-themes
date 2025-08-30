@@ -46,7 +46,6 @@
 #RadioButton {
 	@include controls.radio(
 		$checked-sel: "#Active &",
-		// TODO(port): Reuse $disabled-sel here
 		$disabled-sel: "#DialogChoiceButton:active &"
 	);
 

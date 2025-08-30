@@ -128,7 +128,7 @@
 	}
 
 	// Widgets
-	&:not([role="code"]) {
+	&:where(:not([role="code"])) {
 		@include window.container($child: true);
 	}
 

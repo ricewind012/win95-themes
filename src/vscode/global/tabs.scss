@@ -1,7 +1,7 @@
 @use "shared/tabs";
 @use "shared++/extends";
 
-[role="tab"] {
+:where([role="tab"]) {
 	@include tabs.tab($selected-sel: "&[aria-selected='true']");
 
 	cursor: unset;

@@ -239,7 +239,7 @@
 .ChatTabContextMenuItem {
 	min-height: unset;
 
-	// TODO(port): fix selector
+	// TODO(port): fix selector, but where do I even find this lmao
 	// !important in ../imports/chattabs.scss
 	#popup_target & > div {
 		background-color: unset;

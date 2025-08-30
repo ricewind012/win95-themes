@@ -24,18 +24,13 @@
 		height: 100%;
 	}
 
-	[role="tablist"],
-	[role="tab"][aria-selected="true"] {
-		padding: 0;
+	.actions-container {
 		margin: 0;
-	}
 
-	[role="tablist"] {
 		display: inline-block;
 	}
 
-	// TODO(port-fix): !important for role tab aria selected, just go with :where()
-	.action-item[role="tab"][aria-selected] {
+	.action-item {
 		background-color: transparent;
 		border: none;
 		box-shadow: none;
@@ -45,11 +40,18 @@
 		min-width: unset;
 		height: unset;
 
-		cursor: pointer;
+		&.checked {
+			padding: 0;
+			margin: 0;
 
-		&.checked .action-label {
-			background-color: var(--color-highlight);
-			color: var(--color-highlight-text);
+			.action-label {
+				background-color: var(--color-highlight);
+				color: var(--color-highlight-text);
+			}
+
+			.badge-content {
+				color: var(--color-highlight-text);
+			}
 		}
 
 		.badge-content {
@@ -57,10 +59,6 @@
 			top: 0;
 			right: 4px;
 			z-index: 1;
-		}
-
-		&.checked .badge-content {
-			color: var(--color-highlight-text);
 		}
 	}
 
