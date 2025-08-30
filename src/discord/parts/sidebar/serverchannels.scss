@@ -1,7 +1,7 @@
 @use "shared/controls";
 @use "shared/list";
 @use "shared/tree";
-@use "shared++/extends";
+@use "shared++/utils";
 
 // collapser
 .containerDefault__29444 {
@@ -124,7 +124,7 @@
 	}
 
 	.link__2ea32 {
-		@include extends.text-reset;
+		@include utils.text-reset;
 
 		background-color: var(--color-window);
 	}

@@ -2,7 +2,7 @@
 @use "shared/generated";
 @use "shared/scrollbar";
 @use "shared/window";
-@use "shared++/extends";
+@use "shared++/utils";
 
 %-toolbar-maybe {
 	.action-label {
@@ -34,7 +34,7 @@
 	background-color: transparent;
 	color: inherit;
 	font: var(--text-ui);
-	@include extends.parentheses;
+	@include utils.parentheses;
 	padding: 0;
 
 	position: unset;
@@ -189,7 +189,7 @@
 	background-color: transparent;
 	color: inherit;
 	font: var(--text-ui);
-	@include extends.parentheses;
+	@include utils.parentheses;
 	padding: 0;
 
 	min-width: unset;

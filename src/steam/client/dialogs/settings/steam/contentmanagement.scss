@@ -1,6 +1,6 @@
 @use "shared/controls";
 @use "shared/window";
-@use "shared++/extends";
+@use "shared++/utils";
 @use "shared++/icons";
 
 #AppActionBar {
@@ -15,7 +15,7 @@
 }
 
 #AppActionSelected {
-	@include extends.text-reset;
+	@include utils.text-reset;
 
 	position: fixed;
 	left: 8px;
@@ -37,29 +37,29 @@
 }
 
 #AppHeader {
-	@include extends.text-reset;
+	@include utils.text-reset;
 
 	padding: 0;
 }
 
 #AppHeaderContainer {
-	@include extends.legend-as-div;
+	@include utils.legend-as-div;
 
 	top: -9px;
 }
 
 #AppHeaderValue {
-	@include extends.text-reset;
+	@include utils.text-reset;
 
 	margin-left: var(--text-spacing);
 
 	display: flex;
 
-	@include extends.parentheses;
+	@include utils.parentheses;
 }
 
 #AppInfoItem {
-	@include extends.text-reset;
+	@include utils.text-reset;
 
 	gap: var(--text-spacing);
 }
@@ -69,7 +69,7 @@
 }
 
 #AppName {
-	@include extends.text-reset;
+	@include utils.text-reset;
 }
 
 #AppsGrid {
@@ -80,12 +80,12 @@
 }
 
 #AppSize {
-	@include extends.text-reset;
+	@include utils.text-reset;
 }
 
 #AppUsageText,
 #AppUsageValue {
-	@include extends.text-reset;
+	@include utils.text-reset;
 
 	margin: 0;
 }
@@ -119,7 +119,7 @@
 
 #DriveUsageNumber,
 #DriveUsageText {
-	@include extends.text-reset;
+	@include utils.text-reset;
 }
 
 #AppUsageText,
@@ -152,7 +152,7 @@
 	svg,
 	#DriveName,
 	#DriveSize {
-		@include extends.text-reset;
+		@include utils.text-reset;
 	}
 }
 

@@ -1,4 +1,4 @@
-@use "shared++/extends";
+@use "shared++/utils";
 
 #EntryLabel {
 	padding-right: var(--text-spacing);
@@ -9,5 +9,5 @@
 }
 
 #EntryValue {
-	@include extends.text-reset;
+	@include utils.text-reset;
 }

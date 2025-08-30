@@ -1,4 +1,4 @@
-@use "shared++/extends";
+@use "shared++/utils";
 @use "steam/shared";
 
 #HardwareSurveyDialog {
@@ -10,7 +10,7 @@
 #HardwareSurveySection {
 	&,
 	h3 {
-		@include extends.text-reset;
+		@include utils.text-reset;
 	}
 
 	h3 {

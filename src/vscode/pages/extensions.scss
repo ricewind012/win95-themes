@@ -1,7 +1,7 @@
 @use "shared/controls";
 @use "shared/tabs";
 @use "shared/window";
-@use "shared++/extends";
+@use "shared++/utils";
 
 .extension-editor {
 	padding: var(--tabpanel-spacing);
@@ -109,8 +109,8 @@
 }
 
 .additional-details-title {
-	@include extends.text-reset;
-	@include extends.legend-as-div;
+	@include utils.text-reset;
+	@include utils.legend-as-div;
 }
 
 .more-info-entry {

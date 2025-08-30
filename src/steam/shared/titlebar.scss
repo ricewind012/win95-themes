@@ -1,21 +1,21 @@
 @use "shared/controls";
 @use "shared/window";
-@use "shared++/extends";
+@use "shared++/utils";
 
 .minimizeButton {
-	@include extends.titlebar-button-minimize;
+	@include utils.titlebar-button-minimize;
 }
 
 .maximizeButton {
-	@include extends.titlebar-button-maximize;
+	@include utils.titlebar-button-maximize;
 }
 
 .restoreButton {
-	@include extends.titlebar-button-restore;
+	@include utils.titlebar-button-restore;
 }
 
 .closeButton {
-	@include extends.titlebar-button-close;
+	@include utils.titlebar-button-close;
 }
 
 .singleWindowFocusBar {

@@ -1,6 +1,6 @@
 @use "shared/controls";
 @use "shared/window";
-@use "shared++/extends";
+@use "shared++/utils";
 
 #Buttons {
 	margin: 0;
@@ -52,7 +52,7 @@
 }
 
 #FilterBucketLabel {
-	@include extends.legend-as-div;
+	@include utils.legend-as-div;
 
 	font: var(--text-ui);
 	color: var(--color-button-text);

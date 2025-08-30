@@ -1,5 +1,5 @@
 @use "shared/controls";
-@use "shared++/extends";
+@use "shared++/utils";
 
 .attachWrapper__0923f {
 	padding: 0;
@@ -88,7 +88,7 @@
 	}
 
 	.replyLabel__841c8 {
-		@include extends.link;
+		@include utils.link;
 	}
 
 	.separator__841c8 {

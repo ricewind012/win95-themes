@@ -1,5 +1,5 @@
 @use "shared/controls";
-@use "shared++/extends";
+@use "shared++/utils";
 @use "discord/shared";
 
 .channelIcon__9293f,
@@ -97,7 +97,7 @@
 		@include controls.text-field;
 
 		.DraftEditor-root {
-			@include extends.text-reset;
+			@include utils.text-reset;
 
 			padding: 0;
 

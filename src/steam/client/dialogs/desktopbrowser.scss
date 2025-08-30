@@ -1,6 +1,6 @@
 @use "shared/controls";
 @use "shared/tabs";
-@use "shared++/extends";
+@use "shared++/utils";
 
 #BrowserTab {
 	@include tabs.tab($selected-sel: "&#Active");
@@ -74,7 +74,7 @@
 }
 
 #TabTitle {
-	@include extends.text-reset;
+	@include utils.text-reset;
 }
 
 // TODO: please fucking kill me that looks like total shit !

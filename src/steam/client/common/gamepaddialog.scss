@@ -1,5 +1,5 @@
 @use "shared/controls";
-@use "shared++/extends";
+@use "shared++/utils";
 
 #ControlsListChild {
 	max-width: unset;
@@ -35,7 +35,7 @@
 }
 
 #FieldDescription {
-	@include extends.text-reset;
+	@include utils.text-reset;
 
 	margin-top: var(--text-spacing);
 

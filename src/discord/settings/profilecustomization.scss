@@ -1,6 +1,6 @@
 @use "shared/controls";
 @use "shared/tabs";
-@use "shared++/extends";
+@use "shared++/utils";
 
 .buttonsContainer__28d5e {
 	gap: var(--dialog-button-spacing);
@@ -10,8 +10,8 @@
 	@include controls.groupbox;
 
 	& > :first-child {
-		@include extends.text-reset;
-		@include extends.legend-as-div;
+		@include utils.text-reset;
+		@include utils.legend-as-div;
 	}
 }
 

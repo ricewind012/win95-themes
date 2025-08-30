@@ -1,7 +1,7 @@
 @use "shared/controls";
 @use "shared/table";
 @use "shared/window";
-@use "shared++/extends";
+@use "shared++/utils";
 @use "steam/shared";
 
 #AvatarAndName {
@@ -21,7 +21,7 @@
 }
 
 #Empty {
-	@include extends.text-reset;
+	@include utils.text-reset;
 }
 
 #OverlayPlayersDialog,
@@ -43,7 +43,7 @@
 	overflow: auto;
 
 	[role="cell"] {
-		@include extends.text-reset;
+		@include utils.text-reset;
 	}
 }
 

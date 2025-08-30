@@ -1,5 +1,5 @@
 @use "shared/controls";
-@use "shared++/extends";
+@use "shared++/utils";
 
 #Back,
 #LeaveButton {
@@ -26,7 +26,7 @@
 	@include controls.groupbox;
 
 	.DialogLabel {
-		@include extends.legend-as-div;
+		@include utils.legend-as-div;
 	}
 }
 

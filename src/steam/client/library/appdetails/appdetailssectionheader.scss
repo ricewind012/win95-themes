@@ -1,8 +1,8 @@
-@use "shared++/extends";
+@use "shared++/utils";
 
 #SectionHeader {
-	@include extends.legend-as-div;
-	@include extends.text-reset;
+	@include utils.legend-as-div;
+	@include utils.text-reset;
 
 	background-color: var(--color-window);
 	margin-left: 21px;

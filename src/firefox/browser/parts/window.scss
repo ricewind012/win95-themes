@@ -1,6 +1,6 @@
 @use "shared/controls";
 @use "shared/window";
-@use "shared++/extends";
+@use "shared++/utils";
 @use "shared++/icons";
 
 #browser {
@@ -45,7 +45,7 @@
 
 .browser-toolbar {
 	&::before {
-		@include extends.pseudo-separator;
+		@include utils.pseudo-separator;
 	}
 }
 

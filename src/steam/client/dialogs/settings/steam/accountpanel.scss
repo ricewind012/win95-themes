@@ -1,4 +1,4 @@
-@use "shared++/extends";
+@use "shared++/utils";
 
 #FatButton svg,
 #Details {
@@ -6,5 +6,5 @@
 }
 
 #Label {
-	@include extends.text-reset;
+	@include utils.text-reset;
 }

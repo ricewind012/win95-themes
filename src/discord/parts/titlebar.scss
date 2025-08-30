@@ -1,6 +1,6 @@
 @use "shared/controls";
 @use "shared/window";
-@use "shared++/extends";
+@use "shared++/utils";
 @use "shared++/icons";
 
 .bar_c38106 {
@@ -74,14 +74,14 @@
 }
 
 .winButtonMinMax_c38106 {
-	@include extends.titlebar-button-minimize;
+	@include utils.titlebar-button-minimize;
 
 	// No restore button. Nice app, lol
 	&:nth-child(2) {
-		@include extends.titlebar-button-maximize;
+		@include utils.titlebar-button-maximize;
 	}
 }
 
 .winButtonClose_c38106 {
-	@include extends.titlebar-button-close;
+	@include utils.titlebar-button-close;
 }

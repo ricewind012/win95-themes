@@ -1,6 +1,6 @@
 @use "shared/controls";
 @use "shared/text";
-@use "shared++/extends";
+@use "shared++/utils";
 
 %-vencord-groupbox-header {
 	&::before {
@@ -8,7 +8,7 @@
 
 		left: 10px;
 
-		@include extends.legend-as-div;
+		@include utils.legend-as-div;
 	}
 }
 
@@ -22,7 +22,7 @@
 	}
 
 	&:nth-child(2) [data-text-variant="heading-lg/semibold"] {
-		@include extends.legend-as-div;
+		@include utils.legend-as-div;
 	}
 }
 
@@ -133,12 +133,12 @@
 	height: unset;
 
 	& > h2 {
-		@include extends.text-reset;
-		@include extends.legend-as-div;
+		@include utils.text-reset;
+		@include utils.legend-as-div;
 	}
 
 	& > div {
-		@include extends.text-reset;
+		@include utils.text-reset;
 	}
 }
 
@@ -160,6 +160,6 @@
 }
 
 .vcd-settings-category-title {
-	@include extends.text-reset;
-	@include extends.legend-as-div;
+	@include utils.text-reset;
+	@include utils.legend-as-div;
 }

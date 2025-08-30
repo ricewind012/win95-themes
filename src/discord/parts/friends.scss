@@ -1,6 +1,6 @@
 @use "shared/tabs";
 @use "shared/window";
-@use "shared++/extends";
+@use "shared++/utils";
 
 .container__133bf {
 	border: none;
@@ -12,7 +12,7 @@
 
 .peopleList__5ec2f {
 	@include window.content-container;
-	@include extends.move-scrollbar;
+	@include utils.move-scrollbar;
 
 	margin-top: var(--window-gap);
 
@@ -21,8 +21,8 @@
 	}
 
 	.discriminator__0a06e {
-		@include extends.parentheses;
-		@include extends.text-reset;
+		@include utils.parentheses;
+		@include utils.text-reset;
 
 		visibility: visible;
 	}

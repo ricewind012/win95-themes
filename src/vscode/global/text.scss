@@ -1,5 +1,5 @@
 @use "shared/text";
-@use "shared++/extends";
+@use "shared++/utils";
 
 .checkbox-action-item {
 	@include text.input-label;
@@ -16,6 +16,6 @@
 .monaco-grid-view .label-description:not(:empty, :has(> :empty)) {
 	opacity: 1;
 	font: var(--text-ui);
-	@include extends.parentheses;
+	@include utils.parentheses;
 	margin-left: var(--text-spacing);
 }

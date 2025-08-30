@@ -1,5 +1,5 @@
 @use "shared/window";
-@use "shared++/extends";
+@use "shared++/utils";
 
 .peekview-widget {
 	@include window.container($child: true);
@@ -62,7 +62,7 @@
 	}
 
 	.dirname:not(:empty) {
-		@include extends.parentheses;
+		@include utils.parentheses;
 	}
 }
 

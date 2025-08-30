@@ -1,5 +1,5 @@
 @use "shared/controls";
-@use "shared++/extends";
+@use "shared++/utils";
 
 /*
 [class*="inner"] {
@@ -12,7 +12,7 @@
 
 [class*="inputText"],
 [class*="inputWrapper"] {
-	@include extends.text-reset;
+	@include utils.text-reset;
 
 	padding: 0;
 }
@@ -35,7 +35,7 @@
 }
 
 [class*="textArea"] {
-	@include extends.text-reset;
+	@include utils.text-reset;
 }
 	*/
 

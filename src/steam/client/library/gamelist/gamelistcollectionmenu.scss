@@ -1,4 +1,4 @@
-@use "shared++/extends";
+@use "shared++/utils";
 
 #CollectionDelete {
 	display: none;
@@ -7,7 +7,7 @@
 #CollectionDeleteContainer {
 	.DialogBodyText {
 		span {
-			@include extends.text-reset;
+			@include utils.text-reset;
 		}
 	}
 }

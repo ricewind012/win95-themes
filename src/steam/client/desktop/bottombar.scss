@@ -1,4 +1,4 @@
-@use "shared++/extends";
+@use "shared++/utils";
 
 // Just use the menubar
 #AddGameButton,
@@ -56,7 +56,7 @@
 }
 
 #Percentage {
-	@include extends.parentheses;
+	@include utils.parentheses;
 }
 
 #StatusLine {
@@ -67,5 +67,5 @@
 #Status,
 #Text,
 #Queue {
-	@include extends.text-reset;
+	@include utils.text-reset;
 }

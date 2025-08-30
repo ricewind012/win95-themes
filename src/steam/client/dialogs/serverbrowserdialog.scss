@@ -2,7 +2,7 @@
 @use "shared/table";
 @use "shared/tabs";
 @use "shared/window";
-@use "shared++/extends";
+@use "shared++/utils";
 @use "shared++/icons";
 @use "steam/shared";
 
@@ -142,7 +142,7 @@
 	left: calc(var(--pos) + var(--combobox-width) + var(--toolbar-spacing) - 2px);
 
 	&#SearchActive {
-		@include extends.titlebar-button-close;
+		@include utils.titlebar-button-close;
 	}
 }
 

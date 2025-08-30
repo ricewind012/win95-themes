@@ -1,14 +1,14 @@
 @use "shared/controls";
 @use "shared/menu";
 @use "shared/window";
-@use "shared++/extends";
+@use "shared++/utils";
 
 // TODO: unify with ~/discord/shared.scss
 %-menu-item-separator {
 	display: block;
 
 	&::after {
-		@include extends.pseudo-separator;
+		@include utils.pseudo-separator;
 
 		--menu-item-padding-x: 20px;
 		position: absolute;

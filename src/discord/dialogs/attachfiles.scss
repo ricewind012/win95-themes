@@ -1,4 +1,4 @@
-@use "shared++/extends";
+@use "shared++/utils";
 
 .channelTextAreaUpload_dbca3c {
 	margin-bottom: 12px;
@@ -26,7 +26,7 @@
 }
 
 .label_dbca3c {
-	@include extends.text-reset;
+	@include utils.text-reset;
 }
 
 .uploadModal_dbca3c {

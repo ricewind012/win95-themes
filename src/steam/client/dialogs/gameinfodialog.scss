@@ -1,6 +1,6 @@
 @use "shared/controls";
 @use "shared/table";
-@use "shared++/extends";
+@use "shared++/utils";
 @use "steam/shared";
 
 #DialogBody {
@@ -65,7 +65,7 @@
 }
 
 #Header {
-	@include extends.text-reset;
+	@include utils.text-reset;
 	@include controls.button;
 	@include table.header-row;
 

@@ -1,6 +1,6 @@
 @use "shared/controls";
 @use "shared/window";
-@use "shared++/extends";
+@use "shared++/utils";
 
 $-groupbox-header-sel: ":is(h1, h2, h3, h4, h5, h6):first-child";
 
@@ -22,8 +22,8 @@ $-groupbox-header-sel: ":is(h1, h2, h3, h4, h5, h6):first-child";
 		@include controls.groupbox;
 
 		#{$-groupbox-header-sel} {
-			@include extends.text-reset;
-			@include extends.legend-as-div;
+			@include utils.text-reset;
+			@include utils.legend-as-div;
 
 			opacity: 1;
 
@@ -111,7 +111,7 @@ $-groupbox-header-sel: ":is(h1, h2, h3, h4, h5, h6):first-child";
 	.closeButton_c2b141 {
 		@include controls.button;
 		@include window.titlebar-button;
-		@include extends.titlebar-button-close;
+		@include utils.titlebar-button-close;
 
 		border: none;
 

@@ -1,5 +1,5 @@
 @use "shared/controls";
-@use "shared++/extends";
+@use "shared++/utils";
 
 .AssignCategoriesDialog,
 .ChatRoomNotificationSettingsDialog,
@@ -50,5 +50,5 @@
 }
 
 .OrSeparatorLabel {
-	@include extends.text-reset;
+	@include utils.text-reset;
 }

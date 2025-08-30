@@ -2,7 +2,7 @@
 @use "shared/listbox";
 @use "shared/table";
 @use "shared/window";
-@use "shared++/extends";
+@use "shared++/utils";
 
 .content__71961 {
 	line-height: inherit;
@@ -20,7 +20,7 @@
 
 .header__71961 {
 	@include table.header-row;
-	@include extends.text-reset;
+	@include utils.text-reset;
 
 	line-height: inherit;
 	margin: 0;
@@ -67,7 +67,7 @@
 
 	.note__71961,
 	.username__71961 {
-		@include extends.parentheses;
+		@include utils.parentheses;
 
 		opacity: 1;
 		font: var(--text-ui);
@@ -78,7 +78,7 @@
 
 .scroller_ac6cb0 {
 	@include window.content-container;
-	@include extends.move-scrollbar;
+	@include utils.move-scrollbar;
 
 	margin: 0;
 

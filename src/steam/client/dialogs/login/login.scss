@@ -1,5 +1,5 @@
 @use "shared/dialog";
-@use "shared++/extends";
+@use "shared++/utils";
 @use "steam/shared";
 
 #AvatarContainer {
@@ -36,7 +36,7 @@
 
 	#Highlight {
 		// TODO: quote
-		@include extends.parentheses;
+		@include utils.parentheses;
 		color: inherit;
 	}
 }

@@ -1,4 +1,4 @@
-@use "shared++/extends";
+@use "shared++/utils";
 
 #EventDaySeparator {
 	// TODO: vertical separators
@@ -6,12 +6,12 @@
 }
 
 #EventHeaderBlock {
-	@include extends.text-reset;
+	@include utils.text-reset;
 }
 
 #GamePlaySummaryHeader {
-	@include extends.legend-as-div;
-	@include extends.text-reset;
+	@include utils.legend-as-div;
+	@include utils.text-reset;
 
 	background-color: var(--color-window);
 }

@@ -1,6 +1,6 @@
 @use "shared/controls";
 @use "shared/table";
-@use "shared++/extends";
+@use "shared++/utils";
 @use "steam/shared";
 
 #AddNonSteamGameDialog {
@@ -21,7 +21,7 @@
 #IconContainer,
 #AppName,
 #ExePath {
-	@include extends.text-reset;
+	@include utils.text-reset;
 
 	opacity: 1;
 	// Seems like V*lve forgot about this one
@@ -68,7 +68,7 @@
 	margin-top: var(--text-spacing);
 
 	& > div {
-		@include extends.text-reset;
+		@include utils.text-reset;
 		@include controls.button;
 		@include table.button;
 		@include shared.table-button-arrows;

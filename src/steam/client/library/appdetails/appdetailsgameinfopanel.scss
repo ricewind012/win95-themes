@@ -1,9 +1,9 @@
 @use "shared/controls";
-@use "shared++/extends";
+@use "shared++/utils";
 
 #Container {
 	@include controls.groupbox;
-	@include extends.text-reset;
+	@include utils.text-reset;
 
 	background-color: transparent;
 }
@@ -11,11 +11,11 @@
 #Date,
 #Name,
 #Label {
-	@include extends.text-reset;
+	@include utils.text-reset;
 }
 
 #GameDescription {
-	@include extends.text-reset;
+	@include utils.text-reset;
 
 	padding: 0;
 }

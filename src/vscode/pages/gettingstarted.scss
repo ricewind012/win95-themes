@@ -1,5 +1,5 @@
 @use "shared/controls";
-@use "shared++/extends";
+@use "shared++/utils";
 
 .gettingStartedContainer {
 	font: var(--text-ui);
@@ -14,7 +14,7 @@
 		min-height: unset;
 
 		& > h2 {
-			@include extends.legend-as-div;
+			@include utils.legend-as-div;
 		}
 	}
 

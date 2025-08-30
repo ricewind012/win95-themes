@@ -1,5 +1,5 @@
 @use "shared/controls";
-@use "shared++/extends";
+@use "shared++/utils";
 
 #AccountCreationPrompt {
 	margin-right: var(--text-spacing);
@@ -27,7 +27,7 @@
 }
 
 #CheckboxFieldLabel {
-	@include extends.text-reset;
+	@include utils.text-reset;
 
 	padding-left: var(--label-spacing);
 }
@@ -37,13 +37,13 @@
 }
 
 #EmbeddedRootFooter {
-	@include extends.text-reset;
+	@include utils.text-reset;
 
 	padding: 0;
 }
 
 #FieldLabel {
-	@include extends.text-reset;
+	@include utils.text-reset;
 }
 
 #FormError {
@@ -91,7 +91,7 @@
 }
 
 #TextLink {
-	@include extends.link;
+	@include utils.link;
 
 	font-size: var(--text-ui-size);
 }

@@ -1,15 +1,15 @@
-@use "shared++/extends";
+@use "shared++/utils";
 
 #HeaderContainer {
 	width: unset;
 }
 
 #InfoExample {
-	@include extends.text-reset;
+	@include utils.text-reset;
 }
 
 #InfoExampleHeader {
-	@include extends.text-reset;
+	@include utils.text-reset;
 
 	&::after {
 		content: ":";

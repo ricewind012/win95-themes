@@ -1,4 +1,4 @@
-@use "shared++/extends";
+@use "shared++/utils";
 @use "steam/shared";
 
 #DragHandle {
@@ -12,7 +12,7 @@
 }
 
 #Label {
-	@include extends.text-reset;
+	@include utils.text-reset;
 }
 
 #List {

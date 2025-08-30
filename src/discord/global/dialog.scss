@@ -1,7 +1,7 @@
 @use "shared/controls";
 @use "shared/text";
 @use "shared/window";
-@use "shared++/extends";
+@use "shared++/utils";
 
 $-titlebar-description-selector: "> :first-child + [data-text-variant]";
 
@@ -45,7 +45,7 @@ $-titlebar-description-selector: "> :first-child + [data-text-variant]";
 		flex-grow: 0;
 
 		& > * {
-			@include extends.text-reset;
+			@include utils.text-reset;
 		}
 	}
 }
@@ -60,7 +60,7 @@ $-titlebar-description-selector: "> :first-child + [data-text-variant]";
 		overflow: auto;
 
 		& > * {
-			@include extends.text-reset;
+			@include utils.text-reset;
 
 			text-align: start;
 		}
@@ -69,7 +69,7 @@ $-titlebar-description-selector: "> :first-child + [data-text-variant]";
 
 .close__49fc1 {
 	@include window.titlebar-button;
-	@include extends.titlebar-button-close;
+	@include utils.titlebar-button-close;
 
 	opacity: 1;
 	margin: 0;
@@ -115,7 +115,7 @@ $-titlebar-description-selector: "> :first-child + [data-text-variant]";
 		flex-direction: row;
 
 		.title_b717a1 {
-			@include extends.text-reset;
+			@include utils.text-reset;
 
 			font-weight: bold;
 			margin: 0;
@@ -126,7 +126,7 @@ $-titlebar-description-selector: "> :first-child + [data-text-variant]";
 		}
 
 		& > [data-text-variant] {
-			@include extends.text-reset;
+			@include utils.text-reset;
 
 			font-weight: bold;
 			margin: 0;

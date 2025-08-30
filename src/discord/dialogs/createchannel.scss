@@ -1,5 +1,5 @@
 @use "shared/controls";
-@use "shared++/extends";
+@use "shared++/utils";
 
 .name_ac72c6 {
 	@include controls.groupbox;
@@ -10,6 +10,6 @@
 }
 
 .sectionTitle_ac72c6 {
-	@include extends.text-reset;
-	@include extends.legend-as-div;
+	@include utils.text-reset;
+	@include utils.legend-as-div;
 }

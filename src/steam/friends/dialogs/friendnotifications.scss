@@ -1,6 +1,6 @@
 @use "shared/table";
 @use "shared/window";
-@use "shared++/extends";
+@use "shared++/utils";
 
 .FriendNotificationsDialog .SettingsGroup {
 	@include window.content-container;
@@ -24,7 +24,7 @@
 
 .FriendsSettingsNotificationRow_Checkbox,
 .FriendsSettingsNotificationRow_Label {
-	@include extends.text-reset;
+	@include utils.text-reset;
 
 	text-align: start;
 	padding: 2px 5px;

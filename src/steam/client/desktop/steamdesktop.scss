@@ -1,6 +1,6 @@
 @use "shared/controls";
 @use "shared/window";
-@use "shared++/extends";
+@use "shared++/utils";
 @use "steam/shared";
 
 // The browser view is above everything else
@@ -31,7 +31,7 @@
 }
 
 #LockIcon {
-	@include extends.text-reset;
+	@include utils.text-reset;
 
 	padding-bottom: 1px;
 }
@@ -98,7 +98,7 @@
 }
 
 #URL {
-	@include extends.text-reset;
+	@include utils.text-reset;
 }
 
 #URLBar {

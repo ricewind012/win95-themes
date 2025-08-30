@@ -1,12 +1,12 @@
-@use "shared++/extends";
+@use "shared++/utils";
 
 .anchor_edefb8 {
-	@include extends.text-reset;
-	@include extends.link;
+	@include utils.text-reset;
+	@include utils.link;
 }
 
 .channelMention {
-	@include extends.link;
+	@include utils.link;
 
 	background-color: transparent;
 	padding: 0;
@@ -29,8 +29,8 @@
 }
 
 [class*="textBadge"] {
-	@include extends.parentheses;
-	@include extends.text-reset;
+	@include utils.parentheses;
+	@include utils.text-reset;
 
 	background-color: transparent;
 	padding: 0;

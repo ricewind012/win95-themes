@@ -1,7 +1,7 @@
 @use "shared/controls";
 @use "shared/tooltip";
 @use "shared/window";
-@use "shared++/extends";
+@use "shared++/utils";
 @use "steam/shared";
 
 // GAME OVERVIEW START (here in preparation for beta restructure)
@@ -29,8 +29,8 @@
 }
 
 #GameOverviewSectionHeader {
-	@include extends.text-reset;
-	@include extends.legend-as-div;
+	@include utils.text-reset;
+	@include utils.legend-as-div;
 
 	background-color: transparent;
 
@@ -52,8 +52,8 @@
 }
 
 #GuideTitle {
-	@include extends.text-reset;
-	@include extends.link;
+	@include utils.text-reset;
+	@include utils.link;
 }
 
 #OverviewTitle {
@@ -61,7 +61,7 @@
 }
 
 #Playtime {
-	@include extends.text-reset;
+	@include utils.text-reset;
 
 	gap: var(--text-spacing);
 }
@@ -73,7 +73,7 @@
 
 #BackToGameBtn {
 	@include window.titlebar-button;
-	@include extends.titlebar-button-close;
+	@include utils.titlebar-button-close;
 
 	width: unset;
 
@@ -147,7 +147,7 @@
 }
 
 #ToolbarToolTip {
-	@include extends.text-reset;
+	@include utils.text-reset;
 
 	text-align: start;
 	padding: 0;

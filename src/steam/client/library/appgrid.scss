@@ -1,5 +1,5 @@
 @use "shared/listbox";
-@use "shared++/extends";
+@use "shared++/utils";
 
 #LibraryImageBackgroundGlow {
 	display: none;
@@ -13,13 +13,13 @@
 }
 
 #SortingDropDownItems {
-	@include extends.text-reset;
+	@include utils.text-reset;
 
 	margin: 0;
 }
 
 #SortingDropDownLabel {
-	@include extends.text-reset;
+	@include utils.text-reset;
 
 	&::after {
 		content: ": ";

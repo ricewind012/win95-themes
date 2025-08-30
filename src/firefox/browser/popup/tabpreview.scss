@@ -1,6 +1,6 @@
 @use "shared/controls";
 @use "shared/tooltip";
-@use "shared++/extends";
+@use "shared++/utils";
 
 #tab-preview-panel::part(content) {
 	@include tooltip.container;
@@ -19,7 +19,7 @@
 	height: auto;
 
 	&:not(:empty)::before {
-		@include extends.pseudo-separator;
+		@include utils.pseudo-separator;
 	}
 
 	& > canvas {

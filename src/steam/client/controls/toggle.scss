@@ -1,8 +1,8 @@
 @use "shared/controls";
-@use "shared++/extends";
+@use "shared++/utils";
 
 #Label {
-	@include extends.text-reset;
+	@include utils.text-reset;
 
 	&#Disabled {
 		opacity: 1;

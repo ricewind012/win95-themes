@@ -1,4 +1,4 @@
-@use "shared++/extends";
+@use "shared++/utils";
 
 #ActionSection {
 	gap: var(--dialog-button-spacing);
@@ -7,6 +7,6 @@
 }
 
 #DescriptionText {
-	@include extends.text-reset;
-	@include extends.legend-as-div;
+	@include utils.text-reset;
+	@include utils.legend-as-div;
 }

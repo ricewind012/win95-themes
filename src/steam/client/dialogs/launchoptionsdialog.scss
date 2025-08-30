@@ -1,5 +1,5 @@
 @use "shared/controls";
-@use "shared++/extends";
+@use "shared++/utils";
 @use "steam/shared";
 
 // .DialogLabel in ../other/dialog-shared.scss
@@ -36,7 +36,7 @@ div#AppNameHeader {
 
 // Actually .DialogBodyText
 #ListHeader {
-	@include extends.text-reset;
+	@include utils.text-reset;
 
 	margin-bottom: var(--text-spacing);
 }

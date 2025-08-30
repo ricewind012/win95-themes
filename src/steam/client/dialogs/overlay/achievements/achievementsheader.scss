@@ -1,5 +1,5 @@
 @use "shared/controls";
-@use "shared++/extends";
+@use "shared++/utils";
 @use "steam/shared";
 
 #AchievementSearchHeader {
@@ -15,11 +15,11 @@
 }
 
 #Label {
-	@include extends.text-reset;
+	@include utils.text-reset;
 }
 
 #ProgressLabel {
-	@include extends.legend-as-div;
+	@include utils.legend-as-div;
 
 	gap: var(--text-spacing);
 }

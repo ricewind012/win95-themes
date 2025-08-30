@@ -1,10 +1,10 @@
 @use "shared/controls";
-@use "shared++/extends";
+@use "shared++/utils";
 
 #AppActivityDate,
 #PartnerEventFeaturedHeader {
-	@include extends.legend-as-div;
-	@include extends.text-reset;
+	@include utils.legend-as-div;
+	@include utils.text-reset;
 
 	background: var(--color-window);
 }
@@ -41,7 +41,7 @@
 }
 
 #PartnerEventMediumImage_Title {
-	@include extends.text-reset;
+	@include utils.text-reset;
 }
 
 #PartnerEventTextOnly_Container {
@@ -54,11 +54,11 @@
 }
 
 #PartnerEventTextOnly_Title {
-	@include extends.text-reset;
+	@include utils.text-reset;
 }
 
 #PartnerEventType {
-	@include extends.text-reset;
+	@include utils.text-reset;
 
 	color: var(--color-gray-text);
 }

@@ -1,9 +1,9 @@
 @use "shared/controls";
-@use "shared++/extends";
+@use "shared++/utils";
 
 #ReviewContainer {
 	@include controls.groupbox;
-	@include extends.text-reset;
+	@include utils.text-reset;
 
 	background-color: transparent;
 }

@@ -1,16 +1,16 @@
-@use "shared++/extends";
+@use "shared++/utils";
 
 #SettingsDialogBodyText {
-	@include extends.text-reset;
-	@include extends.legend-as-div;
+	@include utils.text-reset;
+	@include utils.legend-as-div;
 }
 
 #SettingsDialogDescriptionText {
-	@include extends.text-reset;
+	@include utils.text-reset;
 
 	margin: 0;
 }
 
 #SettingsLink {
-	@include extends.text-reset;
+	@include utils.text-reset;
 }

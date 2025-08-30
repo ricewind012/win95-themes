@@ -1,6 +1,6 @@
 @use "shared/controls";
 @use "shared/text";
-@use "shared++/extends";
+@use "shared++/utils";
 
 .vcd-screen-picker-card {
 	--card-primary-bg: transparent;
@@ -10,7 +10,7 @@
 }
 
 .vcd-screen-picker-hint-description {
-	@include extends.text-reset;
+	@include utils.text-reset;
 
 	p {
 		margin-block: var(--text-spacing);
@@ -37,15 +37,15 @@
 		@include controls.groupbox;
 
 		& > h2 {
-			@include extends.legend-as-div;
-			@include extends.text-reset;
+			@include utils.legend-as-div;
+			@include utils.text-reset;
 		}
 	}
 }
 
 .vcd-screen-picker-preview {
 	&::after {
-		@include extends.pseudo-separator;
+		@include utils.pseudo-separator;
 
 		margin-block: 8px 12px;
 	}

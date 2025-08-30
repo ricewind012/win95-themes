@@ -1,6 +1,6 @@
 @use "shared/controls";
 @use "shared/menu";
-@use "shared++/extends";
+@use "shared++/utils";
 
 .clear__5808f {
 	@include menu.item($selected-sel: ".hack");

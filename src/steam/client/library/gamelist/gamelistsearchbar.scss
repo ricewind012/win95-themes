@@ -1,6 +1,6 @@
 @use "shared/controls";
 @use "shared/window";
-@use "shared++/extends";
+@use "shared++/utils";
 
 #AdvancedSearchButton {
 	background: none;
@@ -92,7 +92,7 @@
 #SearchFilterInputClear {
 	@include controls.button;
 	@include window.titlebar-button;
-	@include extends.titlebar-button-close;
+	@include utils.titlebar-button-close;
 
 	inset: 0;
 }

@@ -1,5 +1,5 @@
 @use "shared/text";
-@use "shared++/extends";
+@use "shared++/utils";
 
 .ChatRoomNotificationSettingsDialog {
 	// wtf
@@ -40,7 +40,7 @@
 	}
 
 	.NotificationChannelName {
-		@include extends.text-reset;
+		@include utils.text-reset;
 
 		background-color: transparent;
 		padding: 0;

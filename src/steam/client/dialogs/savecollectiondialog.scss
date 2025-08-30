@@ -1,5 +1,5 @@
 @use "shared/controls";
-@use "shared++/extends";
+@use "shared++/utils";
 
 #ActionLabel {
 	text-transform: unset;
@@ -13,7 +13,7 @@
 }
 
 #Description {
-	@include extends.text-reset;
+	@include utils.text-reset;
 
 	background-image: none;
 	padding: 0;

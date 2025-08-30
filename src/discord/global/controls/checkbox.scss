@@ -1,5 +1,5 @@
 @use "shared/controls";
-@use "shared++/extends";
+@use "shared++/utils";
 
 .checkboxWrapper_f525d3 {
 	.checkbox_f525d3 {
@@ -39,7 +39,7 @@
 	}
 
 	.title__0d850 {
-		@include extends.text-reset;
+		@include utils.text-reset;
 
 		opacity: 1;
 	}

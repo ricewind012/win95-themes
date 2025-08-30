@@ -1,5 +1,5 @@
 @use "shared/controls";
-@use "shared++/extends";
+@use "shared++/utils";
 
 #ButtonChild {
 	@include controls.button;
@@ -15,7 +15,7 @@
 }
 
 #ButtonText {
-	@include extends.text-reset;
+	@include utils.text-reset;
 }
 
 #PlayButtonContainer {

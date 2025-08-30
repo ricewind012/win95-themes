@@ -1,5 +1,5 @@
 @use "shared/tabs";
-@use "shared++/extends";
+@use "shared++/utils";
 
 :where([role="tab"]) {
 	@include tabs.tab($selected-sel: "&[aria-selected='true']");
@@ -238,7 +238,7 @@
 	> .actions-container
 	> .action-item
 	> .action-label {
-	@include extends.text-reset;
+	@include utils.text-reset;
 	@include tabs.tab($selected-sel: "&[aria-checked='true']");
 
 	&[aria-checked="true"] {

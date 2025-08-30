@@ -1,7 +1,7 @@
 @use "shared/controls";
 @use "shared/tooltip";
 @use "shared/window";
-@use "shared++/extends";
+@use "shared++/utils";
 @use "shared++/icons";
 
 #AppLogo {
@@ -11,7 +11,7 @@
 }
 
 #AppName {
-	@include extends.text-reset;
+	@include utils.text-reset;
 }
 
 #AppsToInstall {
@@ -47,7 +47,7 @@
 }
 
 #DiskSpace {
-	@include extends.text-reset;
+	@include utils.text-reset;
 }
 
 // TODO: maybe DO display icons there for warnings
@@ -66,7 +66,7 @@
 
 // TODO: .list-entry
 #FolderOption {
-	@include extends.text-reset;
+	@include utils.text-reset;
 
 	background-color: transparent;
 	color: var(--color-window-text);
@@ -100,15 +100,15 @@
 }
 
 #Header {
-	@include extends.legend-as-div;
-	@include extends.text-reset;
+	@include utils.legend-as-div;
+	@include utils.text-reset;
 }
 
 #NoticeInstallFolder {
 	gap: var(--messagebox-content-spacing);
 
 	&:not(:has(> :empty)) {
-		@include extends.text-reset;
+		@include utils.text-reset;
 		@include tooltip.container;
 
 		align-items: center;

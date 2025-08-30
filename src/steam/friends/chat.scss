@@ -3,7 +3,7 @@
 @use "shared/tabs";
 @use "shared/text";
 @use "shared/window";
-@use "shared++/extends";
+@use "shared++/utils";
 
 // Just right click on the channel list
 .ChannelTypeTitle,
@@ -63,7 +63,7 @@
 .chatFileUploadCancel {
 	@include controls.button;
 	@include window.titlebar-button;
-	@include extends.titlebar-button-close;
+	@include utils.titlebar-button-close;
 
 	top: 0;
 	right: calc(-260px + 16px + 8px + var(--border-size) + var(--window-spacing));
@@ -178,7 +178,7 @@
 
 	.statMemberStat {
 		@include window.statusbar-item;
-		@include extends.text-reset;
+		@include utils.text-reset;
 
 		margin: 0;
 
@@ -231,7 +231,7 @@
 }
 
 .chatRoomTextChannelName {
-	@include extends.text-reset;
+	@include utils.text-reset;
 
 	margin: 0;
 }
@@ -386,7 +386,7 @@
 }
 
 .inviteURLLinkDesc {
-	@include extends.text-reset;
+	@include utils.text-reset;
 
 	margin: 0;
 
@@ -437,7 +437,7 @@
 	font: var(--text-ui);
 
 	&.timeDivision {
-		@include extends.text-reset;
+		@include utils.text-reset;
 
 		height: unset;
 		align-items: center;
@@ -478,7 +478,7 @@
 }
 
 .speakerTimeStamp {
-	@include extends.text-reset;
+	@include utils.text-reset;
 
 	align-self: center;
 }
@@ -496,7 +496,7 @@
 }
 
 .VoiceChatTextChannelName {
-	@include extends.text-reset;
+	@include utils.text-reset;
 
 	font-weight: bold;
 }
@@ -511,7 +511,7 @@
 	.MinimizeTextChat {
 		@include controls.button;
 		@include window.titlebar-button;
-		@include extends.titlebar-button-close;
+		@include utils.titlebar-button-close;
 
 		opacity: 1;
 
