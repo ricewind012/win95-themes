@@ -1,7 +1,6 @@
 @use "shared/controls";
 @use "shared/window";
 @use "shared++/utils";
-@use "shared++/icons";
 
 .bar_c38106 {
 	@include window.titlebar($focused-sel: ".app-focused &");
@@ -15,9 +14,8 @@
 
 	// Move titlebar buttons to chat toolbar
 	.button__85643 {
+		--button-img: icon("newspaper");
 		--pos: calc(var(--window-pos) + var(--toolbar-container-spacing));
-
-		@include icons.icon-newspaper;
 
 		position: fixed;
 		top: calc(var(--pos) + var(--window-gap) + var(--titlebar-height));

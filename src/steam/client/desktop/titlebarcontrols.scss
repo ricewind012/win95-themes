@@ -1,10 +1,10 @@
 @use "shared/controls";
 @use "shared/window";
-@use "shared++/icons";
 
 #AccountMenu {
 	@include controls.combobox;
 
+	// TODO: unify
 	.avatar {
 		border: none;
 		box-shadow: none;
@@ -21,14 +21,15 @@
 }
 
 #AnnouncementsButton {
-	@include icons.icon-newspaper;
+	--button-img: icon("newspaper");
 }
 
 #Button {
-	@include controls.button;
-	@include window.titlebar-button;
+	// Align with the left side
+	--icon-buton-height: 23px;
 
-	--button-img-pos: 3px 2px;
+	@include controls.button;
+	@include controls.icon-button;
 
 	width: unset;
 	min-height: unset;
@@ -37,36 +38,33 @@
 }
 
 #GamepadUIToggle {
-	@include icons.icon-computer;
+	--button-img: icon("computer");
 }
 
 #NotificationButtonContainer {
-	@include icons.icon-bell;
+	margin-right: var(--toolbar-spacing);
+}
+
+#NotificationsButton {
+	--button-img: icon("mail-read");
+
+	&#HasNew {
+		--button-img: icon("mail");
+	}
 }
 
 #TitleBarControls {
-	position: absolute;
-	top: 1px;
-	right: 46px;
+	margin: 0;
+
+	position: fixed;
+	position-anchor: --supernavbar;
+	top: anchor(top);
+	right: calc(anchor(right) + var(--toolbar-container-spacing));
 	z-index: 1;
 
-	& > :nth-child(3) > div {
-		--pos: calc(var(--border-size) + var(--window-spacing));
-
-		margin: 0;
-
-		position: fixed;
-		top: calc(
-			var(--pos) + var(--titlebar-height) + var(--menubar-height) +
-				var(--window-gap) * 2 + 8px
-		);
-		right: calc(var(--pos) + var(--toolbar-container-spacing));
-		display: flex;
-		align-items: center;
-	}
-
+	// Big Picture Mode
 	& > :nth-child(4) {
-		margin-right: 2px;
+		margin-right: var(--toolbar-spacing);
 
 		order: -1;
 	}
