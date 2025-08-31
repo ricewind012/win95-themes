@@ -9,34 +9,35 @@ Last tested version is [1.92](https://code.visualstudio.com/updates/v1_92)!
 3. Add to `settings.json` (Preferences: Open User Settings (JSON)) the following:
 
 ```json
-	"custom-ui-style.external.imports": [
-		"file:///path/to/win95-themes/dist/vscode.css",
-		"file:///path/to/win95-themes/src/shared++/ElementUtils.js",
-		"file:///path/to/win95-themes/src/vscode/vscode.js",
-	],
+"custom-ui-style.external.imports": [
+	"file:///path/to/win95-themes/dist/vscode.css",
+	"file:///path/to/win95-themes/src/shared++/ElementUtils.js",
+	"file:///path/to/win95-themes/src/vscode/vscode.js",
+],
 
-	"editor.scrollbar.arrowSize": 16,
-	"editor.scrollbar.vertical": "visible",
-	"editor.scrollbar.verticalHasArrows": true,
-	"editor.scrollbar.horizontalHasArrows": true,
+"editor.scrollbar.arrowSize": 16,
+"editor.scrollbar.vertical": "visible",
+"editor.scrollbar.verticalHasArrows": true,
+"editor.scrollbar.horizontalHasArrows": true,
 
-	"terminal.integrated.cursorStyle": "underline",
-	"terminal.integrated.fontFamily": "MS Gothic",
-	"terminal.integrated.fontSize": 12,
+"terminal.integrated.cursorStyle": "underline",
+"terminal.integrated.fontFamily": "MS Gothic",
+"terminal.integrated.fontSize": 12,
 
-	"window.titleBarStyle": "native",
-	"window.dialogStyle": "custom",
-	"window.menuStyle": "custom",
+"window.titleBarStyle": "native",
+"window.dialogStyle": "custom",
+"window.menuStyle": "custom",
 
-	"breadcrumbs.enabled": false,
-	"explorer.compactFolders": false,
-	"workbench.editor.tabSizing": "shrink",
-	"workbench.editor.wrapTabs": true,
+"breadcrumbs.enabled": false,
+"explorer.compactFolders": false,
+"editor.roundedSelection": false,
+"workbench.editor.tabSizing": "shrink",
+"workbench.editor.wrapTabs": true,
 ```
 
 4. Install the [Fix VSCode Checksums Next](https://marketplace.visualstudio.com/items?itemName=RimuruChan.vscode-fix-checksums-next) extension, then execute the "Fix Checksums: Apply" command.
 
-   Note that it's not available on Open VSX, so install from VSIX here: https://marketplace.visualstudio.com/_apis/public/gallery/publishers/RimuruChan/vsextensions/vscode-fix-checksums-next/1.4.0/vspackage.
+   Not available on Open VSX, install from VSIX here: https://marketplace.visualstudio.com/_apis/public/gallery/publishers/RimuruChan/vsextensions/vscode-fix-checksums-next/latest/vspackage.
 
 ## Caveats
 

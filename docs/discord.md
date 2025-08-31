@@ -13,7 +13,7 @@ https://raw.githubusercontent.com/ricewind012/win95-themes/master/dist/discord/d
 ## Caveats
 
 - No icons (yet).
-- Some parts of the theme are locked behind the "English (US)" locale (change in Settings > Language).
+- Some parts (mostly icons) of the theme are locked behind the "English (US)" locale (change in Settings > Language).
 - Sidebar list items are huge due to rendering issues with lazy-loading.
 
 ## Preview

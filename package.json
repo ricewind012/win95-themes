@@ -2,7 +2,7 @@
 	"type": "module",
 	"private": true,
 	"scripts": {
-		"build": "./build"
+		"build": "./scripts/build"
 	},
 	"dependencies": {
 		"@csstools/postcss-sass": "^5.1.1",

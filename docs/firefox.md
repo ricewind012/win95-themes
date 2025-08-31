@@ -1,6 +1,6 @@
 # Firefox
 
-Last tested version is 143.0a1! Closest ESR version is 140, so if the theme happens to not receive updates, you can try using that one instead.
+Last tested version is 143.0a1! Closest ESR version is 140, so if the theme happens to not receive updates, you can try using that version instead.
 
 ## Usage
 
@@ -37,7 +37,7 @@ user_pref("identity.fxaccounts.enabled", false);
 user_pref("sidebar.revamp", true);
 ```
 
-### Preferences
+## Preferences
 
 - win95.customize-mode-as-window
 
@@ -81,7 +81,7 @@ user_pref("sidebar.revamp", true);
    	null,
    );
 
-   // also need this for about pages, or... see #3
+   // Also need this for about pages, or... see below.
    user_pref("userChromeJS.persistent_domcontent_callback", true);
    ```
 
