@@ -1,0 +1,42 @@
+@use "shared/table";
+@use "shared/window";
+
+#AutoExplainer {
+	color: inherit;
+	font: inherit;
+	margin: 0;
+}
+
+#BitrateOption,
+#Emphasis {
+	color: inherit;
+	font: inherit;
+}
+
+#BitRateTable {
+	all: unset;
+
+	display: table;
+
+	@include window.content-container;
+
+	td {
+		@include table.row;
+	}
+
+	th {
+		@include table.header-row;
+
+		color: inherit;
+	}
+}
+
+#DropDownRow {
+	margin: 0;
+}
+
+// TODO: .DialogHeader !important
+div#Header {
+	margin: calc(var(--dialog-spacing) * -1);
+	margin-bottom: var(--dialog-spacing);
+}

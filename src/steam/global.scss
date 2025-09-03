@@ -2,6 +2,10 @@
 @use "shared++/global";
 @use "shared++/scrollbar";
 
+b {
+	font-family: var(--text-ui-font);
+}
+
 body {
 	@include window.container;
 }

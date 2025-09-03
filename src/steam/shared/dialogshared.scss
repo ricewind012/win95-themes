@@ -240,6 +240,21 @@
 	padding: 0;
 }
 
+.DialogRoundCheckboxField {
+	margin-right: var(--label-spacing);
+
+	width: unset;
+	height: unset;
+}
+
+.DialogRoundCheckboxField_Control {
+	@include controls.radio($checked-sel: "&.Active");
+}
+
+.DialogRoundCheckboxField_OuterCircle {
+	display: none;
+}
+
 .DialogSubHeader {
 	@include utils.text-reset;
 	@include utils.legend-as-div;

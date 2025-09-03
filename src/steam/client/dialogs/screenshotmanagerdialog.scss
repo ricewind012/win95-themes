@@ -83,6 +83,16 @@
 
 #ComboboxSelector {
 	padding: 0;
+
+	#Option {
+		position: absolute;
+	}
+
+	#SearchBar {
+		all: unset;
+
+		margin: 2px;
+	}
 }
 
 #ComboboxSelectorContextMenu {

@@ -1,0 +1,55 @@
+@use "shared/controls";
+
+// TODO: .DialogHeader !important
+div#Header {
+	margin: calc(var(--dialog-spacing) * -1);
+	margin-bottom: var(--dialog-spacing);
+}
+
+#KeyCaptureBottomRow {
+	gap: var(--dialog-button-spacing);
+
+	align-self: end;
+	width: max-content;
+}
+
+#KeyCaptureCenter {
+	align-items: start;
+	width: 100%;
+
+	#Explainer {
+		color: inherit;
+		font: inherit;
+		margin-bottom: var(--text-spacing);
+	}
+}
+
+#KeyCaptureContainer {
+	gap: var(--toolbar-spacing);
+	padding: 0;
+}
+
+#KeyCaptureModal {
+	margin: var(--dialog-spacing);
+
+	align-items: end;
+	min-width: 240px;
+	min-height: 180px;
+}
+
+#Subhead {
+	color: inherit;
+	font: inherit;
+}
+
+#UnbindButton {
+	//position: unset;
+	--button-img: icon("clear");
+
+	@include controls.button;
+	@include controls.icon-button;
+
+	svg {
+		display: none;
+	}
+}

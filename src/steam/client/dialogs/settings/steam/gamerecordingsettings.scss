@@ -1,0 +1,152 @@
+@use "shared/controls";
+@use "shared++/utils";
+
+#BackgroundDiskSpace #DiskSpace {
+	color: unset;
+	font: unset;
+
+	display: flex;
+	height: unset;
+
+	#Icon {
+		background-image: icon("question");
+		background-position: center;
+		background-repeat: no-repeat;
+
+		// Align with the operators
+		width: 20px;
+
+		path {
+			display: none;
+		}
+	}
+}
+
+#BackgroundDurationSetting #DurationUnits {
+	font: inherit;
+}
+
+#BackgroundSetting {
+	all: unset;
+
+	#Header {
+		color: inherit;
+		font: inherit;
+		letter-spacing: 0;
+		text-transform: unset;
+		margin-bottom: var(--text-spacing);
+	}
+}
+
+#BackgroundSettingOperator {
+	all: unset;
+
+	line-height: 1;
+	margin-top: calc(1lh + var(--text-spacing));
+
+	display: flex;
+	align-items: center;
+
+	&#Multiply {
+		&::before {
+			content: "x";
+		}
+
+		svg {
+			display: none;
+		}
+	}
+}
+
+#BackgroundSettingRow {
+	color: inherit;
+	font: inherit;
+	border: none;
+	padding: 0;
+	margin: 0;
+
+	&:not(#AddPerGameRow)::after {
+		@include utils.pseudo-separator;
+	}
+}
+
+#BackgroundSettingSecondRow {
+	gap: var(--text-spacing);
+	padding-bottom: var(--text-spacing);
+}
+
+#FolderLink {
+	color: inherit;
+}
+
+#GameIconAndName {
+	gap: var(--text-spacing);
+
+	img,
+	svg {
+		width: var(--icon-size);
+		height: var(--icon-size);
+	}
+
+	span {
+		color: inherit;
+		font: inherit;
+		font-weight: bold;
+	}
+}
+
+#HeaderContent {
+	display: none;
+}
+
+#InstantClipDurationRow {
+	gap: var(--text-spacing);
+}
+
+#ModeDescriptionText {
+	padding: 0;
+}
+
+#Pip {
+	@include controls.radio(
+		$checked-sel: "&#ActivePip",
+		$disabled-sel: "#RecordingModeOption:active &"
+	);
+
+	border: none;
+	margin: 0;
+}
+
+#RecordingMode {
+	gap: var(--text-spacing);
+
+	#Body {
+		color: var(--color-gray-text);
+		font: inherit;
+		gap: var(--text-spacing);
+		margin-top: var(--text-spacing);
+	}
+
+	#Header {
+		all: unset;
+	}
+}
+
+#RecordingModeOption {
+	background-color: transparent;
+	border: none;
+	box-shadow: none;
+	gap: var(--label-spacing);
+	padding: 0;
+}
+
+#TrashButton {
+	--button-img: icon("clear");
+
+	@include controls.button;
+	@include controls.icon-button;
+
+	svg {
+		display: none;
+	}
+}
