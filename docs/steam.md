@@ -4,6 +4,10 @@
 
 ## Options
 
+### Green colorscheme
+
+Use the green colors used in older Steam.
+
 ### Reduced game list entry height
 
 Makes the game list entries' height smaller.

@@ -8,7 +8,7 @@ Click a link for the installation guide, preview, etc.
 
 - [Discord](./docs/discord.md)
 - [Firefox](./docs/firefox.md)
-- [Steam](./docs/steam-sfp.md)
+- [Steam](./docs/steam.md)
 - [Visual Studio Code](./docs/vscode.md)
 
 ## Building
