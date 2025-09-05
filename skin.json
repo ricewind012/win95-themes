@@ -33,6 +33,18 @@
 					}
 				}
 			}
+		},
+		"Reduced game list entry height": {
+			"default": "no",
+			"description": "Makes the game list entries' height smaller, only use this if you patched Steam (see the README)!",
+			"values": {
+				"yes": {
+					"TargetCss": {
+						"affects": [".*"],
+						"src": "src/steam/options/reduceditemheight.css"
+					}
+				}
+			}
 		}
 	}
 }

@@ -1,0 +1,5 @@
+:root {
+	--gamelistentry_container-padding: 0 4px;
+	--gamelistentry_container-container-padding-block: 0px;
+	--gamelistentry_tree-border-inset-top: -15px;
+}

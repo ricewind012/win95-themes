@@ -2,6 +2,12 @@
 @use "shared/tree";
 @use "shared++/utils";
 
+:root {
+	--gamelistentry_container-padding: 3px 0;
+	--gamelistentry_container-container-padding-block: 2px;
+	--gamelistentry_tree-border-inset-top: -11px;
+}
+
 #Container {
 	@include tree.item($expanded-sel: "&");
 	@include utils.text-reset;
@@ -10,11 +16,11 @@
 	background-color: transparent;
 	box-shadow: none;
 
-	padding: 3px 0;
+	padding: var(--gamelistentry_container-padding);
 
 	&::before {
 		left: 12px;
-		top: -11px;
+		top: var(--gamelistentry_tree-border-inset-top);
 		width: 18px;
 		height: 24px;
 	}
@@ -29,6 +35,7 @@
 		@include list.item-name-selected;
 
 		--color-gray-text: var(--color-highlight-text);
+		border: none;
 	}
 
 	* {
@@ -61,6 +68,7 @@
 
 #GameListEntryContainer {
 	background-color: transparent;
+	padding-block: var(--gamelistentry_container-container-padding-block);
 
 	align-items: center;
 

@@ -1,0 +1,57 @@
+#!/usr/bin/env node
+
+import fs from "node:fs";
+import path from "node:path";
+import process from "node:process";
+
+const THEME_ITEM_HEIGHT = 16;
+const VSCODE_ITEM_HEIGHT = 22;
+
+const prog = process.argv[2];
+let file = "";
+let patches = [];
+switch (prog) {
+	case "vscode":
+		file = "/usr/lib/code/out/vs/workbench/workbench.desktop.main.js";
+		patches = [
+			[`(ITEM_HEIGHT=)${VSCODE_ITEM_HEIGHT}`, `$1${THEME_ITEM_HEIGHT}`],
+			[
+				`(getHeight\(i\){return )${VSCODE_ITEM_HEIGHT}`,
+				`$1${THEME_ITEM_HEIGHT}`,
+			],
+		];
+		break;
+
+	// All patches here MUST match the original string's size or else Steam will
+	// revert them!
+	case "steam": {
+		const fill = (n) => Array(n.length).fill("0").join("");
+
+		file = path.join(
+			process.env.HOME,
+			".steam",
+			"steam",
+			"steamui",
+			"chunk~2dcc5aaf7.js",
+		);
+		patches = [
+			// Library sidebar
+			[/(bIsCollection,)26/, `$1${THEME_ITEM_HEIGHT}`],
+			// Screenshot manager dialog
+			[
+				/(gridGapPx:")(\d+)(px",desktopTopPadding:")(\d+)/,
+				(_, s1, s2, s3, s4) => `${s1}${fill(s2)}${s3}${fill(s4)}`,
+			],
+			// Server browser (context - "estimateSize")
+			[/34\),\[34\]/, `${THEME_ITEM_HEIGHT}),[${THEME_ITEM_HEIGHT}]`],
+		];
+		break;
+	}
+}
+
+let content = fs.readFileSync(file).toString();
+fs.writeFileSync(`${file}.bak`, content);
+for (const [a, b] of patches) {
+	content = content.replace(a, b);
+}
+fs.writeFileSync(file, content);
