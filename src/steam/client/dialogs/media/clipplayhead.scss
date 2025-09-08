@@ -1,0 +1,18 @@
+@use "shared/controls";
+@use "shared/generated";
+
+#PlayHead {
+	display: none;
+}
+
+#PlayHeadContainer {
+	--color-to-change: var(--color-button-face);
+	bottom: 12px;
+}
+
+#PlayHeadContent {
+	@include generated.slider;
+	@include controls.slider-thumb;
+
+	filter: none;
+}

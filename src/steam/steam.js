@@ -5,14 +5,9 @@ const tokens = (() => {
 		case LocalizationManager.LocalizeString("#SignIn_Title"):
 			return ["NavigateBack"];
 
-		case LocalizationManager.LocalizeString("#ScreenshotUploader_Heading"):
+		case LocalizationManager.LocalizeString("#MediaManager_Dialog_Header"):
 		case "ScreenshotManager": // Overlay
-			return [
-				"Generic_Delete",
-				"ScreenshotUploader_CopyURL",
-				"ScreenshotUploader_Settings",
-				"ScreenshotUploader_ShowOnDisk",
-			];
+			return ["Clip_Delete_Tooltip"];
 
 		default:
 			return [];

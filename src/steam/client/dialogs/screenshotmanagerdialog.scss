@@ -1,301 +1,40 @@
 @use "shared/controls";
-@use "shared/window";
-@use "shared++/utils";
-@use "steam/shared";
 
-@mixin -replace-text($token) {
-	&::before {
-		content: var(--#{$token});
-	}
-
-	svg {
-		display: none;
-	}
-}
-
-#Bullet {
-	@include utils.text-reset;
-}
-
-#ButtonBox:not(#Combobox, #Dropdown) {
-	@include controls.button;
-
-	opacity: 1;
-
-	&#Disabled {
-		@include controls.input-disabled;
-	}
-}
-
-#ButtonGroup {
-	gap: var(--dialog-button-spacing);
-
-	#ButtonBox {
-		margin: 0;
-	}
-
-	// Top
-	&:first-child {
-		& > #ButtonBox {
-			max-width: unset;
-		}
-	}
-
-	// List/grid buttons
-	&:last-child {
-		gap: 0;
-
-		flex-direction: row-reverse;
-
-		& > :nth-child(1) {
-			--button-img: icon("list");
-		}
-
-		& > :nth-child(2) {
-			--button-img: icon("grid");
-		}
-
-		#ButtonBox {
-			@include controls.icon-button;
-
-			&:has(> #Active) {
-				@include controls.button-active;
-			}
-
-			svg {
-				display: none;
-			}
-		}
-	}
-}
+// Screenshot share dialog, in the same CSS module...
 
 #CaptionField {
-	margin: 0;
-
-	height: calc(
-		var(--text-full) * 3 + var(--border-size) * 2 + var(--input-spacing) * 2
-	);
+	@include controls.text-field;
 }
 
 #CloudStorageImpact {
-	@include utils.text-reset;
-}
-
-#ComboboxSelector {
-	padding: 0;
-
-	#Option {
-		position: absolute;
-	}
-
-	#SearchBar {
-		all: unset;
-
-		margin: 2px;
-	}
-}
-
-#ComboboxSelectorContextMenu {
-	@include window.container($child: true);
-}
-
-#Combobox,
-#Dropdown {
-	@include controls.combobox;
-
-	svg {
-		display: none;
-	}
-}
-
-#Explainer,
-#Details > div {
 	color: inherit;
-	text-align: start;
-	gap: var(--text-spacing);
-	padding: 4px;
+	font: inherit;
+	font-weight: bold;
+}
+
+#ScreenshotShareDialog {
+	gap: var(--dialog-spacing);
+	margin: var(--dialog-spacing);
+
+	.DialogHeader {
+		margin: calc(var(--dialog-spacing) * -1);
+		margin-bottom: 0;
+	}
+}
+
+#ShareDialogRow {
+	gap: var(--dialog-spacing);
 
 	align-items: start;
-}
-
-#ExplainerBox,
-#FocusedScreenshots {
-	@include window.content-container;
-
-	height: 100%;
-
-	#ButtonBox {
-		width: 148px;
-	}
-}
-
-#Details {
-	flex: unset;
-	align-items: start;
-}
-
-#FocusedContainer {
-	overflow: auto;
-}
-
-#Header {
-	@include utils.text-reset;
-}
-
-#HeaderPaddingTop {
-	transform: unset;
-}
-
-#IconButton {
-	#ButtonGroup:nth-child(2) & {
-		@include -replace-text("ScreenshotUploader_Settings");
-	}
-
-	#ButtonGroup:nth-child(1) &,
-	#ScreenshotFormActions > :nth-last-child(3) > & {
-		@include -replace-text("ScreenshotUploader_ShowOnDisk");
-	}
-
-	#ScreenshotFormActions > :nth-last-child(2):first-child > & {
-		@include -replace-text("ScreenshotUploader_CopyURL");
-	}
-
-	#FocusedScreenshots #ScreenshotFormActions > :first-child > &,
-	&:has(
-		[d="M4.66675 9.33325H19.3334L18.0001 21.3333H6.00008L4.66675 9.33325ZM16.0001 3.99992L14.6667 1.33325H9.33342L8.00008 3.99992H2.66675V6.66659H21.3334V3.99992H16.0001Z"]
-	) {
-		@include -replace-text("Generic_Delete");
-	}
-}
-
-#KeyboardKey {
-	@include utils.text-reset;
-
-	border: none;
-	padding: 0;
-	margin: 0;
-
-	&::before {
-		content: open-quote;
-	}
-
-	&::after {
-		content: close-quote;
-	}
-}
-
-#Label {
-	@include utils.text-reset;
-}
-
-#Line {
-	@include controls.separator;
-
-	background-color: transparent;
-
-	height: unset;
-}
-
-#Metadata {
-	@include utils.text-reset;
-
-	margin-top: var(--text-spacing);
-}
-
-#Option {
-	margin: 0;
-}
-
-#OverlayScreenshotManagerContainer {
-	padding: 0;
-
-	height: calc(100% - 17px);
-	flex-grow: 1;
-}
-
-#ScreenshotForm {
-	gap: var(--text-spacing);
-
-	align-items: start;
-}
-
-#ScreenshotFormActions {
-	gap: 0;
-
-	// "Copy link to screenshot"
-	& > :nth-last-child(2):first-child > #IconButton {
-		width: 148px;
-	}
-}
-
-#ScreenshotFormRow {
-	gap: var(--text-spacing);
-
-	width: 100%;
 	flex-direction: column;
-	align-items: start;
-}
 
-#ScreenshotList {
-	--inset: 91px 11px 60px 11px;
-
-	@include shared.content-container-alt;
-
-	// Fullscreen
-	.PopupFullWindow:only-child & {
-		--pos-bottom: 50px;
+	#Label {
+		color: inherit;
+		font: inherit;
 	}
-
-	&::before {
-		width: 300px;
-	}
-}
-
-#ScreenshotListItem {
-	&#Selected,
-	&:hover {
-		filter: none;
-		border-color: var(--color-highlight);
-		box-shadow: none;
-
-		transform: none;
-	}
-}
-
-#ScreenshotListItemRow {
-	gap: 0;
-}
-
-#ScreenshotStack {
-	display: none;
-}
-
-#SectionHeading {
-	@include utils.text-reset;
-
-	padding: 0 4px;
-}
-
-#Text {
-	color: inherit;
 }
 
 #SpoilerField,
 #VisibilityField {
-	gap: var(--text-spacing);
-}
-
-#SpoilerField {
-	flex-direction: row-reverse;
-}
-
-#Warning {
-	font-weight: bold;
-}
-
-#Narrow {
-	display: none;
-}
-#Wide {
-	display: flex;
+	gap: var(--label-spacing);
 }

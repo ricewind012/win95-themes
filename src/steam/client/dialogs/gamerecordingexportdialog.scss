@@ -1,0 +1,98 @@
+@use "shared/controls";
+@use "shared++/utils";
+
+%-text-normal {
+	color: inherit;
+	font: inherit;
+}
+
+#Content {
+	@extend %-text-normal;
+	margin: var(--dialog-spacing);
+
+	min-height: 440px;
+
+	hr {
+		@include controls.separator;
+	}
+}
+
+#DetailBlock {
+	@include controls.groupbox;
+
+	font: inherit;
+
+	min-width: 100px;
+
+	#Header {
+		@extend %-text-normal;
+		letter-spacing: 0;
+		text-transform: none;
+
+		@include utils.legend-as-div;
+	}
+
+	#Primary {
+		@extend %-text-normal;
+		font-weight: bold;
+		margin-bottom: var(--text-spacing);
+	}
+}
+
+#Details {
+	gap: var(--dialog-spacing);
+}
+
+#ExportFieldsContainer {
+	flex: 1 1 auto;
+}
+
+#ExportPreview {
+	gap: calc(var(--dialog-spacing) * 2);
+	padding-top: var(--dialog-spacing);
+}
+
+#PathRow {
+	font: inherit;
+
+	#DiskIcon {
+		display: none;
+	}
+
+	#File {
+		@extend %-text-normal;
+		font-weight: bold;
+	}
+
+	#Path {
+		@extend %-text-normal;
+	}
+
+	.DialogButton {
+		--button-img: icon("folder");
+		@include controls.icon-button;
+
+		width: unset;
+	}
+}
+
+#SettingRow {
+	@extend %-text-normal;
+}
+
+#Slider {
+	#ResolutionNotchLabel {
+		color: inherit;
+		font: inherit;
+		letter-spacing: 0;
+		padding-top: var(--text-spacing);
+	}
+
+	#ResolutionNotchTick {
+		@include controls.slider-tick;
+	}
+}
+
+#SliderHeader {
+	@extend %-text-normal;
+}

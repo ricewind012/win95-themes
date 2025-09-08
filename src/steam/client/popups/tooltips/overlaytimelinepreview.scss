@@ -1,0 +1,68 @@
+@use "shared/controls";
+@use "shared/tooltip";
+@use "shared++/utils";
+
+#Button {
+	@include controls.button;
+	@include controls.icon-button;
+
+	svg {
+		all: unset;
+	}
+}
+
+#ImageContainer {
+	box-shadow: none;
+
+	position: unset;
+	height: var(--image-height);
+}
+
+#StateDescription {
+	all: unset;
+
+	&::after {
+		@include utils.pseudo-separator;
+	}
+}
+
+#ThumbnailContents {
+	box-shadow: none;
+}
+
+#ThumbnailTooltip {
+	@include tooltip.container;
+
+	--image-height: 175px;
+	margin-top: calc(var(--image-height) * -1 - 12px);
+}
+
+#TimeDisplayContainer {
+	color: inherit;
+	font: var(--text-monospace);
+	font-weight: bold;
+	padding: 0;
+	margin: 0;
+
+	position: unset;
+}
+
+#TooltipButtons {
+	all: unset;
+
+	display: flex;
+}
+
+#TooltipChildren {
+	background-color: transparent;
+	margin-inline: var(--toolbar-container-spacing);
+	margin-top: var(--text-spacing);
+
+	flex-direction: row;
+	width: unset;
+}
+
+#TooltipInteractionRegion {
+	justify-content: space-between;
+	width: 100%;
+}

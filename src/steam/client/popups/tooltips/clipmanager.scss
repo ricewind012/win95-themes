@@ -1,0 +1,35 @@
+@use "shared/tooltip";
+
+#GameIcon {
+	width: var(--icon-size);
+	height: var(--icon-size);
+}
+
+#ListItemTooltipBase {
+	@include tooltip.container;
+
+	box-shadow: none;
+}
+
+#ListItemTooltipDetail {
+	color: inherit;
+	font: inherit;
+}
+
+#ListItemTooltipDetailSection {
+	--spacing: 6px;
+	margin-inline: var(--spacing);
+
+	&:last-child {
+		margin-block-end: var(--spacing);
+	}
+}
+
+#Title {
+	color: inherit;
+	font-size: inherit;
+}
+
+#TitleRow {
+	gap: var(--text-spacing);
+}

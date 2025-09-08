@@ -1,0 +1,88 @@
+@use "shared/controls";
+
+// TODO(icons): add icons
+
+#AddMarkerCtn {
+	@include controls.button;
+	@include controls.icon-button;
+}
+
+#AddMarkerIcon {
+	color: inherit;
+
+	width: var(--icon-size);
+}
+
+#ClipControlsCtn {
+	gap: 0;
+	margin: 0;
+}
+
+#LeftControls {
+	gap: 0;
+}
+
+#PlaybackButton {
+	@include controls.button;
+	@include controls.icon-button;
+
+	transform: none;
+
+	width: unset;
+}
+
+#PlaybackControls {
+	// x1.5
+	--icon-button-width: 35px;
+	--icon-button-height: 33px;
+
+	height: calc(
+		var(--icon-button-height) + var(--toolbar-container-spacing) * 2
+	);
+}
+
+#RightButtons {
+	gap: 0;
+
+	position: absolute;
+	top: 0;
+	right: var(--toolbar-container-spacing);
+
+	#DeleteButton {
+		&::after {
+			content: var(--Clip_Delete_Tooltip);
+		}
+	}
+
+	.DialogButton {
+		justify-content: center;
+		height: unset;
+	}
+
+	svg {
+		display: none;
+	}
+}
+
+#TimeBar {
+	color: inherit;
+	font: var(--text-monospace);
+	font-weight: bold;
+
+	&#RangeSelection {
+		color: var(--gamerecordingdesktopdialog_clip-color-text);
+	}
+
+	#TimeDash,
+	#TimeTotal {
+		color: inherit;
+	}
+}
+
+#VolumeControls {
+	padding: 0;
+
+	.SliderControl {
+		min-width: 75px;
+	}
+}

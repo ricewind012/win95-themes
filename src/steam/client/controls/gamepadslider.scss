@@ -11,12 +11,24 @@
 	height: unset;
 }
 
+#SliderControlAndNotches {
+	&:not([style*="--slider-extra-notch-padding: 0px;"]) {
+		--slider-extra-notch-padding: 16px;
+	}
+}
+
 #SliderHandle {
 	box-shadow: none;
 }
 
+#SliderNotchContainer {
+	margin-top: 11px;
+}
+
 #SliderTrack {
 	background-color: transparent;
+
+	width: 100%;
 
 	&::before {
 		display: none;

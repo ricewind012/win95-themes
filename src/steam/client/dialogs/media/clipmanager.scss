@@ -1,0 +1,128 @@
+@use "shared/controls";
+@use "shared++/icons";
+@use "shared++/utils";
+
+#AppNameHeader,
+#BackgroundImageGlow,
+#Check {
+	display: none;
+}
+
+#BackLabel {
+	all: initial;
+
+	@include controls.button;
+
+	text-align: center;
+
+	svg {
+		display: none;
+	}
+}
+
+#ChangeItem {
+	background-color: transparent;
+	box-shadow: none;
+
+	// wtf
+	& > div {
+		height: inherit;
+	}
+
+	&#Left {
+		@include icons.icon-big-arrow-left;
+	}
+
+	&#Right {
+		@include icons.icon-big-arrow-right;
+	}
+}
+
+#ChangeItemLabel {
+	@include controls.button;
+	@include controls.icon-button;
+
+	width: inherit;
+	height: inherit;
+
+	// TODO(icons):
+	&::before {
+		background-size: 20px 36px;
+	}
+
+	svg {
+		display: none;
+	}
+}
+
+#CheckboxContainer {
+	@include controls.checkbox($checked-sel: "&:not(:empty)");
+
+	position: absolute;
+}
+
+#ContentPadding {
+	padding: 0;
+}
+
+#DurationText {
+	font: var(--text-monospace);
+	font-weight: bold;
+}
+
+// Undo the genius V*lve decision of not using .FullModalOverlay for this dialog
+#FocusedClip {
+	// !important
+	body .PopupFullWindow & .DialogHeader {
+		position: unset;
+	}
+}
+
+#ListItem {
+	width: 100%;
+	height: 100%;
+
+	&:hover,
+	&#Selected {
+		filter: none;
+		transform: none;
+		border-color: var(--color-highlight);
+		box-shadow: none;
+	}
+}
+
+#ListItemThumbnailImg {
+	filter: none;
+}
+
+#OpenedItemContainer {
+	position: relative;
+
+	// lmao
+	& > #FullHeight > #FullHeight {
+		&::before {
+			@include utils.pseudo-separator;
+
+			//width: 100%;
+		}
+	}
+}
+
+#OpenedItemHeaderControls {
+	gap: 0;
+	padding: 0;
+	margin-inline: var(--toolbar-container-spacing);
+
+	align-items: start;
+	flex-direction: column;
+}
+
+// Restore the window title (#screenshotmanagerdialog_TopList)
+#PinnedBehind {
+	visibility: visible;
+
+	// ..but not the toolbar separator.
+	&::before {
+		display: none;
+	}
+}

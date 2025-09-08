@@ -1,0 +1,9 @@
+// Slider track
+#RecordingDecorator {
+	background: #0172ac;
+	box-shadow: var(--border-field);
+
+	&#Clip {
+		background: #c6a750;
+	}
+}

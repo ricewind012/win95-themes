@@ -44,6 +44,15 @@ switch (prog) {
 			],
 			// Server browser (context - "estimateSize")
 			[/34\),\[34\]/, `${THEME_ITEM_HEIGHT}),[${THEME_ITEM_HEIGHT}]`],
+
+			// GAME RECORDING
+			// Align file size for Math.round() (safe - prop used only once)
+			[/globalOffsetPX/g, "OffsetPX"],
+			// Fix blurred ticks in game recording dialog
+			[
+				/(\w+=)(\w+\+\w+\*\w+)(,\w+=`\${\w+\+\w+\*\w+}`;\w+\.push\({key:\w+,offsetPX:\w+)/g,
+				(_, s1, s2, s3) => `${s1}Math.round(${s2})${s3}`,
+			],
 		];
 		break;
 	}

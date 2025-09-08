@@ -1,0 +1,27 @@
+@use "shared++/utils";
+
+#Content {
+	gap: var(--dialog-spacing);
+	margin: var(--messagebox-spacing);
+
+	min-height: unset;
+}
+
+#Description,
+#DescriptionSmall,
+#DescriptionWarning,
+#Error {
+	color: inherit;
+	font: inherit;
+	padding: 0;
+}
+
+#MobileLink {
+	@include utils.link;
+}
+
+#SendClipDialog {
+	.DialogFooter {
+		margin: var(--messagebox-spacing);
+	}
+}

@@ -1,0 +1,8 @@
+@use "shared/tooltip";
+
+#AddMarkerTooltip {
+	@include tooltip.container;
+
+	font: inherit;
+	box-shadow: none;
+}

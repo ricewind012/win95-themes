@@ -1,0 +1,15 @@
+@use "shared/controls";
+
+#TickLine {
+	@include controls.slider-tick;
+
+	margin-top: 6px;
+
+	&#Major {
+		height: 6px;
+	}
+}
+
+#TimelineBacking {
+	background: color-mix(in srgb, light-dark(#000, #fff) 20%, transparent);
+}

@@ -1,0 +1,48 @@
+@use "shared/controls";
+@use "shared++/utils";
+
+#GameRecordingPlayer {
+	box-shadow: none;
+
+	inset: var(--border-size);
+
+	&#PlayingClippedRegion {
+		border: 2px dashed var(--gamerecordingdesktopdialog-clip-color-border);
+		margin: 0;
+	}
+}
+
+#PlayerError {
+	background: #000c;
+	color: #fff;
+	font-size: var(--text-header-size);
+
+	#Button {
+		@include controls.button;
+
+		letter-spacing: 0;
+		text-transform: none;
+	}
+
+	#Buttons {
+		gap: var(--dialog-button-spacing);
+	}
+
+	#Description {
+		all: unset;
+
+		font-size: var(--text-ui-size);
+		margin-block: 1em;
+
+		max-width: 500px;
+
+		a {
+			color: var(--gamerecordingdesktopdialog_clip-color-text);
+			text-decoration: underline;
+		}
+	}
+
+	#Title {
+		all: unset;
+	}
+}

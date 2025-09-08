@@ -1,0 +1,69 @@
+@use "shared/controls";
+
+#AllChatsMenu {
+	overflow-y: auto;
+	height: unset;
+
+	input {
+		@include controls.text-field;
+
+		margin-bottom: 2px;
+	}
+}
+
+#AllChatsIcon,
+#ChatLabel,
+#SectionTitle,
+#ShareMenuButton svg {
+	display: none;
+}
+
+#AllChats,
+#Chat {
+	gap: 0;
+
+	flex-direction: row;
+	max-width: unset;
+
+	// "Share -> All chats" divider
+	&::before {
+		display: none;
+	}
+
+	// TODO: unify
+	.avatar {
+		width: var(--steamavatar_size);
+		height: var(--steamavatar_size);
+	}
+
+	.avatarHolder {
+		--steamavatar_size: 16px;
+		transform: none;
+
+		position: absolute;
+		top: 0;
+		left: 0;
+	}
+
+	#Name {
+		font: inherit;
+		text-align: start;
+		padding: 0;
+	}
+}
+
+#ChatDivider {
+	@include controls.separator;
+
+	margin-inline: 0;
+}
+
+#ChatRow {
+	margin: 0;
+
+	flex-direction: column;
+}
+
+#ShareMenuLabel {
+	margin: 0;
+}

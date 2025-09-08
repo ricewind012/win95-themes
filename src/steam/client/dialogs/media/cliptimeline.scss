@@ -1,0 +1,9 @@
+@use "shared/window";
+
+#TimelineContainer {
+	padding: 0;
+}
+
+#VideoPlayerContainer {
+	@include window.content-container;
+}

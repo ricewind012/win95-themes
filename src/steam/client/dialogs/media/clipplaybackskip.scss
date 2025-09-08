@@ -1,0 +1,19 @@
+@use "shared/controls";
+
+#ArrowButton {
+	@include controls.button;
+	@include controls.icon-button;
+
+	&#Disabled {
+		opacity: 1;
+	}
+
+	// TODO(icons): remove when adding icons
+	svg {
+		all: unset;
+	}
+}
+
+#SkipperCtn {
+	height: unset;
+}

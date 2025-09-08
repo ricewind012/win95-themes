@@ -1,0 +1,9 @@
+@use "shared/controls";
+
+#InputFilter {
+	all: unset;
+
+	input {
+		@include controls.text-field;
+	}
+}

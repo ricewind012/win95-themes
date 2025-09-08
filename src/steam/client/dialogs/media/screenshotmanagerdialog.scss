@@ -1,0 +1,189 @@
+@use "shared/controls";
+@use "shared/window";
+@use "shared++/utils";
+@use "steam/shared";
+
+#ButtonBox {
+	opacity: 1;
+
+	&:not(#Combobox) {
+		@include controls.button($disabled-sel: "#Disabled");
+	}
+
+	&#Combobox {
+		@include controls.combobox;
+	}
+
+	&#IconButton {
+		@include controls.icon-button($selected-sel: "#Active");
+	}
+
+	#IconButtonIcon {
+		display: none;
+	}
+
+	#Text {
+		color: inherit;
+	}
+}
+
+#ComboboxSelector {
+	padding: 0;
+
+	#Option {
+		margin: 0;
+	}
+
+	#SearchBar {
+		all: unset;
+
+		margin: 2px;
+	}
+}
+
+#ComboboxSelectorContextMenu {
+	@include window.container($child: true);
+}
+
+#DesktopBottomGlass {
+	display: none;
+}
+
+#FocusedScreenshotContainer {
+	&::after {
+		@include utils.pseudo-separator;
+	}
+}
+
+#FocusedScreenshotImageContainer {
+	@include window.content-container;
+
+	margin-bottom: 0;
+}
+
+#Metadata {
+	color: inherit;
+	font: inherit;
+	font-weight: bold;
+
+	order: 1;
+	align-self: unset;
+
+	#Link {
+		@include utils.link;
+	}
+}
+
+#ScreenshotForm {
+	padding: 0;
+	margin-inline: var(--toolbar-container-spacing);
+
+	order: 1;
+}
+
+#ScreenshotFormActions {
+	gap: var(--toolbar-spacing);
+
+	& > :nth-child(1) {
+		--button-img: icon("clear");
+	}
+}
+
+#ScreenshotFormRow {
+	gap: var(--toolbar-spacing);
+}
+
+#ScreenshotList {
+	--inset: 61px 11px 30px 11px;
+
+	@include shared.content-container-alt;
+
+	padding: 0;
+}
+
+#ScreenshotListInner {
+	margin: 0;
+}
+
+#ScreenshotListItemRow {
+	gap: 0;
+}
+
+#StickyHeader {
+	all: unset;
+
+	order: -1;
+}
+
+:where(#TopList) {
+	padding: 0;
+
+	&::before {
+		@include utils.pseudo-separator;
+	}
+}
+
+#TopListButtonGroup {
+	gap: var(--toolbar-spacing);
+	margin-inline: var(--toolbar-container-spacing);
+
+	// left
+	&:nth-child(1) > :nth-child(1) {
+		--button-img: icon("grid");
+	}
+
+	&:nth-child(1) > :nth-child(2) {
+		--button-img: icon("list");
+		margin-left: calc(var(--toolbar-spacing) * -1);
+	}
+
+	// right
+	&:nth-child(2) {
+		gap: 0;
+
+		& > :first-child {
+			--button-img: icon("download");
+		}
+
+		& > :nth-child(2) {
+			--button-img: icon("clear");
+		}
+
+		& > #ButtonBox {
+			margin-right: var(--toolbar-spacing);
+
+			order: -1;
+		}
+
+		& > :last-child {
+			--button-img: icon("settings");
+		}
+	}
+
+	svg {
+		display: none;
+	}
+}
+
+#TopListButtonRow {
+	margin: 0;
+
+	justify-content: space-between;
+}
+
+#TopListTitle {
+	@include shared.dialog-title;
+
+	text-transform: none;
+	padding: 0;
+}
+
+#UGCMetadata {
+}
+
+#UploadedIcon {
+	color: inherit;
+
+	width: var(--icon-size);
+	height: var(--icon-size);
+}

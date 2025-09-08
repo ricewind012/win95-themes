@@ -1,0 +1,25 @@
+@use "shared/window";
+
+#ClipProgressDialog {
+	padding: 0;
+
+	display: block;
+
+	.DialogButton {
+		margin: var(--messagebox-spacing);
+		margin-inline-start: auto;
+
+		width: min-content;
+	}
+}
+
+#Error {
+	color: inherit;
+	margin: var(--messagebox-spacing);
+}
+
+#Title {
+	@include window.titlebar($focused-sel: "&");
+
+	font-size: inherit;
+}

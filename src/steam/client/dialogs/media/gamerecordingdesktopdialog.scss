@@ -1,0 +1,9 @@
+#GameRecordingDesktopDialog {
+	--gamerecordingdesktopdialog-clip-color-border: #00299f;
+	--gamerecordingdesktopdialog_clip-color-text: #2c4795;
+
+	@media (prefers-color-scheme: dark) {
+		--gamerecordingdesktopdialog-clip-color-border: #ffd55f;
+		--gamerecordingdesktopdialog_clip-color-text: #d2b76a;
+	}
+}

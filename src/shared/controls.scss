@@ -246,15 +246,26 @@
 	}
 
 	#{$thumb-sel} {
-		appearance: none;
-		background: var(--control-img);
-		background-repeat: no-repeat;
-		background-size: 1px 1px;
-		margin-top: calc(var(--border-size) * -2 - 3px);
-
-		width: 11px;
-		height: 21px;
+		@include slider-thumb;
 	}
+}
+
+@mixin slider-thumb {
+	appearance: none;
+	background: var(--control-img);
+	background-repeat: no-repeat;
+	background-size: 1px 1px;
+	margin-top: calc(var(--border-size) * -2 - 3px);
+
+	width: 11px;
+	height: 21px;
+}
+
+@mixin slider-tick {
+	background-color: var(--color-button-text);
+
+	width: 1px;
+	height: 3px;
 }
 
 @mixin text-field($disabled-sel: ":disabled") {

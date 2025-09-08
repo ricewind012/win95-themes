@@ -1,0 +1,45 @@
+@use "shared/window";
+
+#ButtonRow {
+	gap: var(--dialog-button-spacing);
+	margin: var(--dialog-spacing);
+
+	justify-content: end;
+
+	#ActionButton,
+	#CancelButton {
+		flex: unset;
+	}
+}
+
+#DialogCarrot {
+	display: none;
+}
+
+#DialogInner {
+	padding: 0;
+}
+
+#ExplainerText {
+	color: inherit;
+	font: inherit;
+	margin: var(--dialog-spacing);
+}
+
+#MultiSelectActionDialogContainer {
+	@include window.container($child: true);
+
+	font: inherit;
+	margin: auto;
+
+	position: fixed;
+	inset: 0;
+}
+
+#Title {
+	@include window.titlebar($focused-sel: "&");
+
+	font: inherit;
+	font-weight: bold;
+	margin: 0;
+}
