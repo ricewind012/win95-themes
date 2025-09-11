@@ -30,21 +30,6 @@
 		display: none;
 	}
 
-	// TODO: unify
-	.avatar {
-		width: var(--steamavatar_size);
-		height: var(--steamavatar_size);
-	}
-
-	.avatarHolder {
-		--steamavatar_size: 16px;
-		transform: none;
-
-		position: absolute;
-		top: 0;
-		left: 0;
-	}
-
 	#Name {
 		font: inherit;
 		text-align: start;

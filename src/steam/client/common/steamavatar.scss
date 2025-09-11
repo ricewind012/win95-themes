@@ -1,4 +1,18 @@
 #avatar {
 	border: none;
 	box-shadow: none;
+
+	width: 100%;
+	height: 100%;
+}
+
+#avatarHolder {
+	--steamavatar_size: 16px;
+	transform: none;
+
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: var(--steamavatar_size);
+	height: var(--steamavatar_size);
 }
