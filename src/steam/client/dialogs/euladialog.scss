@@ -1,0 +1,29 @@
+@use "steam/shared";
+
+#EULAContent {
+	background-color: transparent;
+	line-height: 1.5;
+}
+
+#EulaDialogContent {
+	color: inherit;
+	font: inherit;
+}
+
+#EulaModalDialog {
+	flex: 0;
+	min-height: calc(100% - var(--titlebar-height));
+}
+
+#EULAScrolling {
+	// If scrollpanel is seen again, unify.
+	--inset: 75px 14px 44px 14px;
+	@include shared.content-container-alt;
+
+	border: none;
+	box-shadow: none;
+}
+
+#LanguageFieldContainer {
+	margin-block: var(--text-spacing);
+}
