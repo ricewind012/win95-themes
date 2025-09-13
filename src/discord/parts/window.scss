@@ -8,7 +8,7 @@
 		--titlebar-pos: calc(var(--titlebar-height) + var(--window-gap));
 		--window-pos: calc(var(--border-size) + var(--window-spacing));
 
-		@include window.container;
+		@include window.container($parent: true);
 	}
 }
 

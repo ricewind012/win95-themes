@@ -2,7 +2,7 @@
 @use "shared++/utils";
 
 .peekview-widget {
-	@include window.container($child: true);
+	@include window.container;
 
 	border: none;
 

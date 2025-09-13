@@ -74,7 +74,7 @@
 }
 
 #EmptyNotificationsCtn {
-	@include window.container($child: true);
+	@include window.container;
 }
 
 #LogoutButton {

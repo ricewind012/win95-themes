@@ -88,7 +88,7 @@
 
 .chatFileUploadPreviewContainer {
 	// TODO: use tooltip ?
-	@include window.container($child: true);
+	@include window.container;
 
 	gap: var(--text-spacing);
 
@@ -524,7 +524,7 @@
 }
 
 .VoiceRoomChatWindow {
-	@include window.container($child: true);
+	@include window.container;
 
 	border: none;
 	gap: var(--window-gap);

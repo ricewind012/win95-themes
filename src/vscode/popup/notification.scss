@@ -55,7 +55,7 @@
 }
 
 .notifications-center {
-	@include window.container($child: true);
+	@include window.container;
 
 	width: auto;
 	height: auto;

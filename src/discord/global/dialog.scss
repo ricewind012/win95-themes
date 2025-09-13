@@ -6,7 +6,7 @@
 $-titlebar-description-selector: "> :first-child + [data-text-variant]";
 
 :where([role="dialog"]:not([aria-label=""])) {
-	@include window.container($child: true);
+	@include window.container;
 
 	&[aria-label] {
 		&::before {

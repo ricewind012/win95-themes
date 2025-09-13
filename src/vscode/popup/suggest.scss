@@ -1,7 +1,7 @@
 @use "shared/window";
 
 .suggest-widget {
-	@include window.container($child: true);
+	@include window.container;
 
 	border: none;
 

@@ -6,14 +6,14 @@
 	padding: var(--border-size);
 }
 
-@mixin container($child: false) {
+@mixin container($parent: false) {
 	background-color: var(--color-button-face);
 	color: var(--color-button-text);
 	box-shadow: var(--border-window);
 	padding: calc(var(--border-size) + var(--window-spacing));
 
-	@if $child {
-		--window-spacing: 1px;
+	@if $parent {
+		--window-spacing: 2px;
 	}
 }
 

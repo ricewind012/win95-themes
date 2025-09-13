@@ -7,5 +7,5 @@ b {
 }
 
 body {
-	@include window.container;
+	@include window.container($parent: true);
 }

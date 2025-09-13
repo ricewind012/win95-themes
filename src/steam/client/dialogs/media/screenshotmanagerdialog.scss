@@ -42,7 +42,7 @@
 }
 
 #ComboboxSelectorContextMenu {
-	@include window.container($child: true);
+	@include window.container;
 }
 
 #DesktopBottomGlass {

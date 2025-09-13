@@ -3,7 +3,7 @@
 @use "shared/window";
 
 [role="menu"] {
-	@include window.container($child: true);
+	@include window.container;
 
 	[role^="menuitem"] {
 		// Not actually needed, as vscode does it already, but $selected-sel is

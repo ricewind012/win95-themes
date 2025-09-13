@@ -3,7 +3,7 @@
 
 dialog {
 	window[subdialog] & {
-		@include window.container($child: true);
+		@include window.container;
 	}
 
 	#titleContainer {

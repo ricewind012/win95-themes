@@ -129,7 +129,7 @@
 
 	// Widgets
 	&:where(:not([role="code"])) {
-		@include window.container($child: true);
+		@include window.container;
 	}
 
 	& > .overflow-guard {

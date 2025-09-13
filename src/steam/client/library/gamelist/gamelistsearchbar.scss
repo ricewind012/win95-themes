@@ -27,7 +27,7 @@
 }
 
 #AdvancedSearchPane {
-	@include window.container($child: true);
+	@include window.container;
 
 	// Make it an actual window
 	position: fixed;

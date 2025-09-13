@@ -7,7 +7,7 @@ menupopup {
 	margin: 0;
 
 	&::part(content) {
-		@include window.container($child: true);
+		@include window.container;
 
 		border: none;
 		border-radius: 0;

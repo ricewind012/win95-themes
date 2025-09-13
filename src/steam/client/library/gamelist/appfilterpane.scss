@@ -43,7 +43,7 @@
 	padding: 0;
 
 	#SearchResultsBox & {
-		@include window.container($child: true);
+		@include window.container;
 
 		svg {
 			display: none;

@@ -6,7 +6,7 @@
 	border: none;
 
 	&:not(:empty) {
-		@include window.container($child: true);
+		@include window.container;
 	}
 }
 

@@ -34,7 +34,7 @@ panel {
 	--panel-subview-body-padding: 0px;
 
 	&::part(content) {
-		@include window.container($child: true);
+		@include window.container;
 
 		border: none;
 		border-radius: 0;

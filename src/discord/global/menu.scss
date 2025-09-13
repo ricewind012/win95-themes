@@ -52,7 +52,7 @@
 }
 
 .menu_c1e9c4 {
-	@include window.container($child: true);
+	@include window.container;
 
 	border: none;
 }

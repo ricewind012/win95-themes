@@ -27,7 +27,7 @@
 }
 
 #MultiSelectActionDialogContainer {
-	@include window.container($child: true);
+	@include window.container;
 
 	font: inherit;
 	margin: auto;

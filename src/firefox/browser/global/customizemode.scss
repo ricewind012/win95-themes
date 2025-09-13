@@ -67,7 +67,7 @@
 		}
 
 		#customization-container {
-			@include window.container($child: true);
+			@include window.container;
 
 			// TODO: why the 1px lol
 			padding-top: calc(var(--titlebar-height) + var(--window-gap) + 1px);
