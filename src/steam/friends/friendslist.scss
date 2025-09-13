@@ -190,6 +190,10 @@
 	border: none;
 	margin-top: var(--window-gap);
 
+	.avatarHolder {
+		--steamavatar_size: 40px;
+	}
+
 	.labelHolder {
 		margin-top: 0;
 		margin-right: 0;

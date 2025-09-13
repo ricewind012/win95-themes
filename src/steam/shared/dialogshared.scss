@@ -44,7 +44,7 @@
 	display: none;
 }
 
-.DialogBody {
+:where(.DialogBody) {
 	@include tabs.content;
 
 	-webkit-mask-image: none; // client settings
@@ -268,7 +268,7 @@
 
 .DialogToggle_Label {
 	font: var(--text-ui);
-	color: var(--color-button-text);
+	color: inherit;
 }
 
 ._DialogColLayout {

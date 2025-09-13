@@ -9,6 +9,7 @@ $-icons: (
 
 #AppCount {
 	opacity: 1;
+	color: var(--color-gray-text);
 	padding-left: var(--text-spacing);
 }
 
@@ -33,11 +34,7 @@ $-icons: (
 	--button-img-pos: 3px 2px;
 
 	@include controls.button;
-	@include controls.icon-button;
-
-	&#Active {
-		@include controls.button-active;
-	}
+	@include controls.icon-button($selected-sel: "#Active");
 
 	@each $i, $img in $-icons {
 		&:nth-child(#{$i}) {

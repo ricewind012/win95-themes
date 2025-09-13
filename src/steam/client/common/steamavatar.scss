@@ -7,12 +7,17 @@
 }
 
 #avatarHolder {
-	--steamavatar_size: 16px;
+	--steamavatar_size: 32px;
 	transform: none;
 
-	position: absolute;
-	top: 0;
-	left: 0;
 	width: var(--steamavatar_size);
 	height: var(--steamavatar_size);
+
+	&.X-Small {
+		--steamavatar_size: 16px;
+	}
+
+	&.Medium {
+		--steamavatar_size: 24px;
+	}
 }

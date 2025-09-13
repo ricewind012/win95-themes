@@ -22,15 +22,18 @@
 }
 
 @mixin dialog-title {
-	--s: calc(1px + var(--border-size) + var(--window-spacing));
+	--offset: calc(var(--border-size) + var(--window-spacing));
 
 	color: var(--color-inactive-caption-text);
 	font: var(--text-ui);
 	font-weight: bold;
 
+	display: flex;
+	align-items: center;
 	position: fixed;
-	left: calc(var(--s) + var(--icon-size) + var(--titlebar-spacing));
-	top: calc(var(--s) + 2px);
+	left: calc(var(--offset) + var(--icon-size) + var(--titlebar-spacing));
+	top: var(--offset);
+	height: var(--titlebar-height);
 
 	.WindowFocus & {
 		color: var(--color-active-caption-text);

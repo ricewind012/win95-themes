@@ -72,6 +72,8 @@
 
 #Toggle {
 	@include controls.checkbox($checked-sel: "&#On");
+
+	margin: 0;
 }
 
 #ToggleRail,
