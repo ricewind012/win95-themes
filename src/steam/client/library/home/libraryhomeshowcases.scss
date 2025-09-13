@@ -1,5 +1,6 @@
 @use "shared/controls";
 @use "shared/window";
+@use "shared++/icons";
 @use "shared++/utils";
 @use "steam/shared";
 
@@ -29,14 +30,25 @@
 
 #Collapser {
 	@include controls.button;
-	@include window.titlebar-button;
+	@include controls.icon-button;
+
+	width: unset;
 
 	svg {
+		@include icons.icon-big-arrow-left;
+
+		// TODO(utils): unify
+		background: var(--button-img) no-repeat;
+		background-size: var(--button-img-size);
+		background-position: var(--button-img-pos);
 		margin: 0;
+
+		width: var(--icon-size);
+		height: var(--icon-size);
 	}
 
 	polyline {
-		stroke: var(--color-button-text);
+		display: none;
 	}
 }
 
@@ -84,22 +96,18 @@
 	margin: 0;
 }
 
+// TODO(build): optimize with private @extend
 #PageLeft,
 #PageRight {
 	@include shared.pageable-container-button;
-
-	&#Disabled {
-		@include controls.input-disabled;
-		@include window.titlebar-button-disabled;
-	}
 }
 
 #PageLeft {
-	--button-img: var(--icon-arrow-left);
+	@include icons.icon-big-arrow-left;
 }
 
 #PageRight {
-	--button-img: var(--icon-arrow-right);
+	@include icons.icon-big-arrow-right;
 }
 
 #Showcase {

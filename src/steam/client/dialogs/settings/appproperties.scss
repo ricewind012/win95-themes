@@ -97,8 +97,10 @@
 // Workshop
 #Controls {
 	& > .DialogButton {
-		@include window.titlebar-button;
-		@include icons.icon-trash;
+		--button-img: icon("clear");
+		@include controls.icon-button;
+
+		width: unset;
 
 		svg {
 			display: none;

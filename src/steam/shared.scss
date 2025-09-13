@@ -1,7 +1,6 @@
 @use "shared/controls";
 @use "shared/table";
 @use "shared/tooltip";
-@use "shared/window";
 
 // An alternative to "@include window.content-container" for special elements
 @mixin content-container-alt {
@@ -73,15 +72,46 @@
 }
 
 @mixin pageable-container-button {
-	@include controls.button;
-	@include window.titlebar-button;
-
-	--button-img-size: 4px 7px;
-	--button-img-pos: center;
+	--button-img-size: 5px 9px;
+	--button-img-pos: 7px 6px;
+	@include controls.button($disabled-sel: "#Disabled");
+	@include controls.icon-button;
 
 	opacity: 1;
 
-	width: unset;
+	// TODO(shared/window): unify when I can afford to make these icons
+
+	&::before {
+		z-index: 1;
+
+		// TODO(icons): fix this shit already
+		background-size: var(--button-img-size);
+	}
+
+	&#Disabled {
+		pointer-events: none;
+
+		&::before {
+			background: var(--color-button-text);
+			mask: var(--button-img, none) no-repeat;
+			mask-size: var(--button-img-size, auto auto);
+			mask-position: var(--button-img-pos, center);
+		}
+	}
+
+	&::after {
+		content: "";
+
+		position: absolute;
+		inset: 0;
+		left: 1px;
+		top: 1px;
+
+		background-color: var(--color-button-highlight);
+		mask: var(--button-img, none) no-repeat;
+		mask-size: var(--button-img-size, auto auto);
+		mask-position: var(--button-img-pos, center);
+	}
 
 	svg {
 		display: none;

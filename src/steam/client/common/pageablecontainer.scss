@@ -1,5 +1,5 @@
 @use "shared/controls";
-@use "shared/window";
+@use "shared++/icons";
 @use "shared++/utils";
 @use "steam/shared";
 
@@ -24,22 +24,18 @@
 	right: 8px;
 }
 
+// TODO(build): optimize with private @extend
 #PageLeft,
 #PageRight {
 	@include shared.pageable-container-button;
-
-	&#Disabled {
-		@include controls.input-disabled;
-		@include window.titlebar-button-disabled;
-	}
 }
 
 #PageLeft {
-	--button-img: var(--icon-arrow-left);
+	@include icons.icon-big-arrow-left;
 }
 
 #PageRight {
-	--button-img: var(--icon-arrow-right);
+	@include icons.icon-big-arrow-right;
 }
 
 #HeaderPageControls {
@@ -51,7 +47,7 @@
 		background-color: var(--color-window);
 
 		top: -7px;
-		right: calc(10px + 16px * 2);
+		right: calc(var(--icon-button-width) * 2 + 6px + 2px);
 	}
 }
 

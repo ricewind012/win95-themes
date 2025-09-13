@@ -31,7 +31,7 @@
 	padding: 0;
 	margin-top: var(--window-gap);
 
-	button {
+	& > :not(.chatUploadContainer) button {
 		@include controls.icon-button;
 
 		width: unset;
@@ -77,6 +77,7 @@
 .chatFileUploadFileName {
 	font: var(--text-ui);
 	font-weight: bold;
+	padding: 0;
 }
 
 .chatFileUploadPreview {
@@ -95,7 +96,6 @@
 	align-items: start;
 
 	& > * {
-		padding: 0;
 		margin: 0;
 		margin-left: 4px;
 	}
@@ -302,7 +302,7 @@
 	@include controls.button;
 	@include window.titlebar-button;
 
-	// TODO: mixin
+	// TODO(icons): mixin
 	--button-img: var(--icon-arrow-bottom);
 	--button-img-size: 7px 4px;
 
@@ -509,9 +509,9 @@
 	@include window.titlebar($focused-sel: "&");
 
 	.MinimizeTextChat {
+		--button-img: icon("clear");
 		@include controls.button;
-		@include window.titlebar-button;
-		@include utils.titlebar-button-close;
+		@include controls.icon-button;
 
 		opacity: 1;
 

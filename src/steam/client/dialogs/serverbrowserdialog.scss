@@ -2,8 +2,8 @@
 @use "shared/table";
 @use "shared/tabs";
 @use "shared/window";
-@use "shared++/utils";
 @use "shared++/icons";
+@use "shared++/utils";
 @use "steam/shared";
 
 %-use-icon {
@@ -128,21 +128,18 @@
 	display: none;
 }
 
-#SearchButton,
-#TopControlsCtr .DialogDropDown {
-	position: fixed;
-	top: var(--dialog-body-spacing);
-}
-
 #SearchButton {
-	@include window.titlebar-button;
-	@include icons.icon-refresh;
+	--button-img: icon("reload");
+	@include controls.button;
+	@include controls.icon-button;
 
-	// TODO: weird offset
-	left: calc(var(--pos) + var(--combobox-width) + var(--toolbar-spacing) - 2px);
+	position: fixed;
+	position-anchor: --dropdown;
+	top: anchor(top);
+	left: calc(anchor(right) + var(--toolbar-spacing));
 
 	&#SearchActive {
-		@include utils.titlebar-button-close;
+		--button-img: icon("clear");
 	}
 }
 
@@ -270,6 +267,9 @@
 	gap: 0;
 
 	.DialogDropDown {
+		position: fixed;
+		anchor-name: --dropdown;
+		top: var(--dialog-body-spacing);
 		width: var(--combobox-width);
 	}
 }

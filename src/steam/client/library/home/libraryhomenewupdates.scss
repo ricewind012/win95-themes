@@ -66,13 +66,9 @@
 }
 
 #SettingsButton {
+	--button-img: icon("settings");
 	@include controls.button;
-	@include window.titlebar-button;
-	@include icons.icon-settings;
-
-	&::before {
-		height: 13px;
-	}
+	@include controls.icon-button;
 
 	svg {
 		display: none;

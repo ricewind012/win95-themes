@@ -1,12 +1,11 @@
-@use "shared/window";
-@use "shared++/icons";
+@use "shared/controls";
 
 #Box {
 	background-color: transparent;
 
 	& > button {
-		@include window.titlebar-button;
-		@include icons.icon-refresh;
+		--button-img: icon("reload");
+		@include controls.icon-button;
 
 		& > svg {
 			display: none;

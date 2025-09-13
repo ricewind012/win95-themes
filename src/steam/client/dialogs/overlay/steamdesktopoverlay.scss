@@ -1,6 +1,5 @@
 @use "shared/controls";
 @use "shared/tooltip";
-@use "shared/window";
 @use "shared++/utils";
 @use "steam/shared";
 
@@ -72,8 +71,9 @@
 }
 
 #BackToGameBtn {
-	@include window.titlebar-button;
-	@include utils.titlebar-button-close;
+	--button-img: icon("clear");
+	@include controls.button;
+	@include controls.icon-button;
 
 	width: unset;
 

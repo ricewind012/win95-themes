@@ -97,7 +97,7 @@
 
 		position: absolute;
 		inset: calc(var(--border-size) * -1);
-		top: 20px;
+		top: 28px;
 
 		pointer-events: none;
 
@@ -128,7 +128,12 @@
 	.createChatRoomButton,
 	.ToggleGroupChatList {
 		@include controls.button;
-		@include window.titlebar-button;
+		@include controls.icon-button;
+
+		// TODO(icons): fix this
+		&::before {
+			background-size: var(--button-img-size);
+		}
 
 		svg {
 			display: none;
@@ -137,6 +142,7 @@
 
 	.createChatRoomButton {
 		@include icons.icon-plus;
+		--button-img-pos: center;
 	}
 
 	.groupChatSectionTitle {

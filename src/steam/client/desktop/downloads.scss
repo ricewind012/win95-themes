@@ -1,5 +1,4 @@
 @use "shared/controls";
-@use "shared/window";
 @use "shared++/utils";
 
 #AutoUpdateHours {
@@ -17,6 +16,11 @@
 	&::after {
 		content: "...";
 	}
+}
+
+#Button {
+	// Assume download as this doesn't have a distinguishing class name lol
+	--button-img: icon("download");
 }
 
 #ButtonWrapper {
@@ -57,8 +61,8 @@
 }
 
 #RemoveFromQueue {
-	@include window.titlebar-button;
-	@include utils.titlebar-button-close;
+	--button-img: icon("clear");
+	@include controls.icon-button;
 
 	opacity: 1;
 

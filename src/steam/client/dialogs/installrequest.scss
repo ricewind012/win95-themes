@@ -94,6 +94,8 @@
 	@include window.titlebar-button;
 	@include icons.icon-more;
 
+	width: unset;
+
 	svg {
 		display: none;
 	}

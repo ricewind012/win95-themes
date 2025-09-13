@@ -10,7 +10,10 @@
 		@include controls.button;
 		@include utils.text-reset;
 
-		height: fit-content;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		height: 28px;
 	}
 
 	._DialogRow {

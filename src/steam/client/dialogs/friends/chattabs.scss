@@ -32,6 +32,7 @@
 }
 
 #CloseButton {
+	// TODO(utils): replace with an arrow mixin
 	@include window.titlebar-button;
 	@include utils.titlebar-button-close;
 

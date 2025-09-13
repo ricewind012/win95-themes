@@ -90,9 +90,9 @@
 }
 
 #SearchFilterInputClear {
+	--button-img: icon("clear");
 	@include controls.button;
-	@include window.titlebar-button;
-	@include utils.titlebar-button-close;
+	@include controls.icon-button;
 
 	inset: 0;
 }

@@ -1,5 +1,4 @@
-@use "shared/window";
-@use "shared++/icons";
+@use "shared/controls";
 
 #GraphAndStats {
 	height: unset;
@@ -7,8 +6,9 @@
 
 #SettingsButton {
 	#Button {
-		@include window.titlebar-button;
-		@include icons.icon-settings;
+		--button-img: icon("settings");
+		@include controls.button;
+		@include controls.icon-button;
 
 		svg {
 			display: none;
