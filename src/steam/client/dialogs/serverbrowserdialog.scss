@@ -6,20 +6,6 @@
 @use "shared++/utils";
 @use "steam/shared";
 
-%-use-icon {
-	&::before {
-		content: "";
-
-		position: absolute;
-		inset: 0;
-
-		-webkit-mask: var(--button-img) no-repeat;
-		-webkit-mask-size: var(--button-img-size);
-		-webkit-mask-position: var(--button-img-pos, center);
-		background-color: var(--color-window-text);
-	}
-}
-
 #AddFavoriteButton {
 	&::before {
 		content: attr(title);
@@ -116,7 +102,9 @@
 		--button-img: var(--icon-checkmark);
 		--button-img-size: 7px;
 
-		@extend %-use-icon;
+		&::before {
+			@include utils.pseudo-icon;
+		}
 	}
 
 	&::after {
@@ -179,9 +167,11 @@
 
 	#PasswordColumn {
 		--button-img-pos: 4px 3px;
-
-		@extend %-use-icon;
 		@include icons.icon-lock;
+
+		&::before {
+			@include utils.pseudo-icon;
+		}
 	}
 }
 

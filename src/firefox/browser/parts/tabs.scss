@@ -1,6 +1,7 @@
 @use "shared/controls";
 @use "shared/window";
 @use "shared++/icons";
+@use "shared++/utils";
 
 // TODO(icons): unify?
 $-icons: (
@@ -144,14 +145,7 @@ $-icons: (
 	// TODO(shared/controls): unify tab-button
 	&::before,
 	&::after {
-		content: "";
-
-		position: absolute;
-		inset: 0;
-
-		mask: var(--button-img, none) no-repeat;
-		mask-size: var(--button-img-size, auto auto);
-		mask-position: var(--button-img-pos, center);
+		@include utils.pseudo-icon;
 	}
 
 	&::before {

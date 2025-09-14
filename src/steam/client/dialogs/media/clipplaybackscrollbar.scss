@@ -1,16 +1,8 @@
 @use "shared/scrollbar";
-
-// TODO: unify
-@mixin -arrow($direction) {
-	background-color: currentColor;
-	mask: var(--icon-arrow-#{$direction});
-
-	width: 7px;
-	height: 4px;
-}
+@use "shared++/utils";
 
 #PlayHeadAnnotation {
-	@include -arrow("bottom");
+	@include utils.arrow("bottom");
 
 	svg {
 		display: none;

@@ -1,5 +1,6 @@
 @use "shared/controls";
 @use "shared++/icons";
+@use "shared++/utils";
 
 $-sel-arrow-back: "> :nth-child(3)";
 $-sel-arrow-forward: "> :nth-child(4)";
@@ -9,16 +10,12 @@ $-sel-arrow-forward: "> :nth-child(4)";
 
 	&::before,
 	&::after {
-		content: "";
+		@include utils.pseudo-icon;
 
-		position: absolute;
+		inset: unset;
 		top: 0;
 		width: var(--icon-width);
 		height: var(--icon-height);
-
-		-webkit-mask: var(--button-img) no-repeat;
-		-webkit-mask-size: var(--button-img-size);
-		-webkit-mask-position: var(--button-img-pos, center);
 
 		pointer-events: none;
 	}

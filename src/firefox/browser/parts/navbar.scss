@@ -1,5 +1,6 @@
 @use "sass:map";
 @use "shared/controls";
+@use "shared++/utils";
 @use "firefox/shared";
 
 $-button-labels-pref-sel: ':root[win95-active-prefs~="win95.navbar-button-labels"] & .toolbarbutton-text';
@@ -91,11 +92,8 @@ $-icons: (
 			position: relative;
 			top: var(--offset);
 			left: var(--offset);
-			width: 7px;
-			height: 4px;
 
-			background-color: var(--color-button-text);
-			mask: var(--icon-arrow-bottom);
+			@include utils.arrow("bottom");
 		}
 
 		.toolbarbutton-icon {

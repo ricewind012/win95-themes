@@ -1,6 +1,19 @@
 @use "shared/controls";
 @use "shared/text";
 
+/// @param {"top" | "right" | "bottom" | "left"} $direction
+@mixin arrow($direction) {
+	$cond: $direction == "top" or $direction == "bottom";
+	$w: $cond and 7px or 4px;
+	$h: $cond and 4px or 7px;
+
+	background-color: currentColor;
+	mask: var(--icon-arrow-#{$direction});
+
+	width: $w;
+	height: $h;
+}
+
 @mixin text-reset {
 	color: inherit;
 	font: var(--text-ui);
@@ -41,6 +54,17 @@
 	&::after {
 		content: ")";
 	}
+}
+
+@mixin pseudo-icon {
+	content: "";
+
+	position: absolute;
+	inset: 0;
+
+	mask: var(--button-img, none) no-repeat;
+	mask-size: var(--button-img-size, auto auto);
+	mask-position: var(--button-img-pos, center);
 }
 
 @mixin pseudo-separator {

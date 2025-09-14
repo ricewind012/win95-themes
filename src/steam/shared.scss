@@ -1,6 +1,7 @@
 @use "shared/controls";
 @use "shared/table";
 @use "shared/tooltip";
+@use "shared++/utils";
 
 // An alternative to "@include window.content-container" for special elements
 @mixin content-container-alt {
@@ -100,17 +101,12 @@
 	}
 
 	&::after {
-		content: "";
+		@include utils.pseudo-icon;
 
-		position: absolute;
-		inset: 0;
 		left: 1px;
 		top: 1px;
 
 		background-color: var(--color-button-highlight);
-		mask: var(--button-img, none) no-repeat;
-		mask-size: var(--button-img-size, auto auto);
-		mask-position: var(--button-img-pos, center);
 	}
 
 	svg {
