@@ -27,24 +27,6 @@
 	}
 }
 
-#ComboboxSelector {
-	padding: 0;
-
-	#Option {
-		margin: 0;
-	}
-
-	#SearchBar {
-		all: unset;
-
-		margin: 2px;
-	}
-}
-
-#ComboboxSelectorContextMenu {
-	@include window.container($child: true);
-}
-
 #DesktopBottomGlass {
 	display: none;
 }

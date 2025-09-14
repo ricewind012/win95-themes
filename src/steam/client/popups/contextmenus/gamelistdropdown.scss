@@ -1,0 +1,29 @@
+@use "shared/controls";
+@use "shared/menu";
+
+#AppCount {
+	opacity: 1;
+	color: var(--color-gray-text);
+	padding-left: var(--text-spacing);
+}
+
+// !important in ../other/dialog-shared.scss
+div#Row {
+	@include menu.item(".hack");
+
+	margin: 0;
+
+	&:has(> .DialogCheckbox.Active) {
+		@include menu.item-check;
+	}
+
+	.DialogCheckbox {
+		display: none;
+	}
+}
+
+#Rule {
+	@include controls.separator;
+
+	margin-inline: 0;
+}

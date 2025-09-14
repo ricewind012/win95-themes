@@ -1,5 +1,4 @@
 @use "shared/controls";
-@use "shared/window";
 @use "shared++/icons";
 @use "shared++/utils";
 @use "steam/shared";
@@ -49,40 +48,10 @@
 	}
 }
 
-// Context menu
-// !important
-#CollectionDropDownContainer#CollectionDropDownContainer {
-	.DesktopUI & ._DialogInputContainer {
-		@include window.container($child: true);
-	}
-}
-
 #CountDisplay {
 	@include utils.text-reset;
 
 	margin-left: var(--text-spacing);
-}
-
-#DropDownItems {
-	font: var(--text-ui);
-	margin: 0;
-
-	&#OptionsRule {
-		border: none;
-
-		&::before {
-			content: "";
-
-			position: unset;
-			width: calc(100% + 40px);
-			display: block;
-
-			@include controls.separator;
-
-			background-color: var(--color-button-face);
-			margin-left: -20px;
-		}
-	}
 }
 
 #Message {

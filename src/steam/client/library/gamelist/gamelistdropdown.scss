@@ -1,17 +1,10 @@
 @use "shared/controls";
-@use "shared/menu";
 
 $-icons: (
 	1: "windows",
 	2: "clock",
 	3: "checkmark",
 );
-
-#AppCount {
-	opacity: 1;
-	color: var(--color-gray-text);
-	padding-left: var(--text-spacing);
-}
 
 #Arrow,
 #ScrollToTop {
@@ -53,27 +46,6 @@ $-icons: (
 	margin: 0;
 
 	cursor: default;
-}
-
-// !important in ../other/dialog-shared.scss
-div#Row {
-	@include menu.item(".hack");
-
-	margin: 0;
-
-	&:has(> .DialogCheckbox.Active) {
-		@include menu.item-check;
-	}
-
-	.DialogCheckbox {
-		display: none;
-	}
-}
-
-#Rule {
-	@include controls.separator;
-
-	margin-inline: 0;
 }
 
 #ViewFiltersBar {

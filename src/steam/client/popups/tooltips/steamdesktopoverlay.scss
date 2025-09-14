@@ -1,0 +1,16 @@
+@use "shared/tooltip";
+@use "shared++/utils";
+
+#ToolbarToolTip {
+	@include utils.text-reset;
+
+	text-align: start;
+	padding: 0;
+
+	flex-grow: 1;
+
+	// The *actual* tooltip
+	body > div > & {
+		@include tooltip.container;
+	}
+}

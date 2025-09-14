@@ -1,0 +1,31 @@
+@use "shared/controls";
+@use "shared/window";
+
+// !important
+#CollectionDropDownContainer#CollectionDropDownContainer {
+	.DesktopUI & ._DialogInputContainer {
+		@include window.container($child: true);
+	}
+}
+
+#DropDownItems {
+	font: var(--text-ui);
+	margin: 0;
+
+	&#OptionsRule {
+		border: none;
+
+		&::before {
+			content: "";
+
+			position: unset;
+			width: calc(100% + 40px);
+			display: block;
+
+			@include controls.separator;
+
+			background-color: var(--color-button-face);
+			margin-left: -20px;
+		}
+	}
+}

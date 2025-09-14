@@ -1,5 +1,4 @@
 @use "shared/controls";
-@use "shared/tooltip";
 @use "shared++/utils";
 @use "steam/shared";
 
@@ -143,20 +142,6 @@
 			width: calc(16px + var(--button-spacing) * 2);
 			min-width: var(--icon-size);
 		}
-	}
-}
-
-#ToolbarToolTip {
-	@include utils.text-reset;
-
-	text-align: start;
-	padding: 0;
-
-	flex-grow: 1;
-
-	// The *actual* tooltip
-	body > div > & {
-		@include tooltip.container;
 	}
 }
 

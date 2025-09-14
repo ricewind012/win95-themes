@@ -1,0 +1,19 @@
+@use "shared/window";
+
+#ComboboxSelector {
+	padding: 0;
+}
+
+#ComboboxSelectorContextMenu {
+	@include window.container($child: true);
+}
+
+#Option {
+	margin: 0;
+}
+
+#SearchBar {
+	all: unset;
+
+	margin: 2px;
+}
