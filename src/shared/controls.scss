@@ -179,12 +179,7 @@
 
 		background: var(--button-img) no-repeat;
 		background-position: var(--button-img-pos, center);
-	}
-
-	@media (prefers-color-scheme: dark) {
-		&::before {
-			filter: invert(1);
-		}
+		background-size: var(--button-img-size, auto);
 	}
 }
 

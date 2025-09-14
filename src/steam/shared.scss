@@ -84,9 +84,6 @@
 
 	&::before {
 		z-index: 1;
-
-		// TODO(icons): fix this shit already
-		background-size: var(--button-img-size);
 	}
 
 	&#Disabled {

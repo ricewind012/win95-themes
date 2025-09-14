@@ -130,11 +130,6 @@
 		@include controls.button;
 		@include controls.icon-button;
 
-		// TODO(icons): fix this
-		&::before {
-			background-size: var(--button-img-size);
-		}
-
 		svg {
 			display: none;
 		}

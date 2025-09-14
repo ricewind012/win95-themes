@@ -31,23 +31,20 @@
 #Collapser {
 	@include controls.button;
 	@include controls.icon-button;
+	@include icons.icon-big-arrow-left;
 
 	width: unset;
 
-	svg {
-		@include icons.icon-big-arrow-left;
-
-		// TODO(utils): unify
-		background: var(--button-img) no-repeat;
-		background-size: var(--button-img-size);
-		background-position: var(--button-img-pos);
-		margin: 0;
-
-		width: var(--icon-size);
-		height: var(--icon-size);
+	&:has(> [style="transform: rotate(270deg);"]) {
+		@include icons.icon-big-arrow-right;
 	}
 
-	polyline {
+	// TODO(icons): add top/bottom big arrows
+	&::before {
+		transform: rotate(90deg);
+	}
+
+	svg {
 		display: none;
 	}
 }

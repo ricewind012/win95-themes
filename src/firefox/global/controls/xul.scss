@@ -42,13 +42,6 @@ splitter {
 	}
 }
 
-toolbarbutton {
-	// TODO(icons): fix whatever this is
-	&::before {
-		background-size: var(--button-img-size);
-	}
-}
-
 .toolbarbutton-badge {
 	position: relative;
 	top: var(--offset);

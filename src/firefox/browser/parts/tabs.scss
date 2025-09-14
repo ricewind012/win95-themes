@@ -16,12 +16,6 @@ $-icons: (
 	$-tab-button-height: 24px;
 	--icon-button-width: #{$-tab-button-height};
 	--icon-button-height: #{$-tab-button-height};
-
-	&::before,
-	&::after {
-		margin-top: 1px;
-		margin-left: 1px;
-	}
 }
 
 #pinned-tabs-container[orient="vertical"] {
@@ -146,6 +140,9 @@ $-icons: (
 	&::before,
 	&::after {
 		@include utils.pseudo-icon;
+
+		margin-top: 1px;
+		margin-left: 1px;
 	}
 
 	&::before {
@@ -210,14 +207,9 @@ $-icons: (
 	@include controls.icon-button;
 	@include icons.icon-plus;
 	@extend %-horizontal-tabs-button;
+	--button-img-pos: center;
+	--button-img-size: 14px;
 
 	list-style-image: none;
 	margin-inline: var(--toolbar-container-spacing);
-
-	// TODO(icons): fix whatever this is
-	&::before {
-		background-size: 14px;
-		margin: 0;
-		--button-img-pos: center;
-	}
 }
