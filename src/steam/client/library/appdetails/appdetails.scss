@@ -1,7 +1,17 @@
+#AppDetailsOverviewPanel,
+#InnerContainer {
+	// for toolbar... ty valve
+	transform-style: unset;
+}
+
 #PlayBar {
-	width: calc(100% - 16px);
+	top: calc(var(--library_toolbar-top-offset) * -1);
+	left: 0;
+	width: 100%;
 }
 
 #ScrollContainer {
+	// for toolbar... ty valve
+	transform: none;
 	background: none;
 }

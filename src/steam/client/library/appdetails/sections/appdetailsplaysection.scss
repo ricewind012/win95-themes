@@ -1,33 +1,158 @@
 @use "shared/controls";
+@use "shared++/icons";
 @use "shared++/utils";
 
+#ActionSection {
+	margin-right: var(--toolbar-spacing);
+
+	height: unset;
+}
+
+#Container {
+	position: fixed;
+	position-anchor: --librarymainpanel;
+	top: anchor(top);
+	right: anchor(right);
+	left: anchor(left);
+	width: unset;
+
+	// Undo all sticky header shit
+	&#StickyHeader {
+		#GameStatsSection {
+			opacity: 1;
+			transform: none;
+		}
+
+		#PlayBarIconAndGame {
+			display: none;
+		}
+	}
+}
+
 #DetailsProgressContainer {
-	@include controls.progress-bar($filled-sel: "#DetailsProgressBar");
+	display: none;
 }
 
 #DetailsSection {
 	padding: 0;
+	margin: 0;
+
+	order: -1;
+	display: flex;
 }
 
-#PlayBarDetailLabel,
-#LastPlayedInfo {
-	color: var(--color-button-text);
-	font-size: var(--text-ui-size);
+#GameStat {
+	padding: 0;
+	margin: 0;
+
+	display: flex;
+	height: 100%;
+
+	&:not(#MiniAchievements)::after {
+		content: "";
+
+		@include controls.separator-horizontal;
+	}
+}
+
+#GameStatIcon,
+#GameStatIconForced {
+	display: none;
+}
+
+#GameStatRight {
+	padding: 0;
+
+	display: flex;
+	justify-content: center;
+}
+
+#InnerContainer {
+	padding: 0 var(--toolbar-container-spacing);
+}
+
+#MenuButton {
+	width: unset;
+
+	&:not([aria-label]) {
+		// Looks like a notebook... close enough
+		--button-img: icon("file");
+		@include controls.button;
+		@include controls.icon-button($selected-sel: "#MenuActive");
+	}
+
+	// "Manage" combobox
+	#MenuButtonContainer > & {
+		@include controls.combobox;
+
+		margin-right: var(--toolbar-spacing);
+
+		&::before {
+			content: attr(aria-label);
+		}
+	}
+
+	// "Scroll to top" button
+	#Container#StickyHeader &:has(> #DotDotDot) {
+		@include icons.icon-big-arrow-top;
+	}
+
+	&#FavoriteButton {
+		display: none;
+	}
+
+	svg {
+		display: none;
+	}
 }
 
 #PlayBar {
-	opacity: 1;
-	background-image: none;
-	margin: 0;
+	all: unset;
+
+	&:not(#Glassy) {
+		display: none;
+	}
+}
+
+#PlayBarCloudStatusContainer {
+	// fix some bullshit css behavior to get it to use 100% height
+	display: flex;
+}
+
+#PlayBarDetailLabel {
+	color: inherit;
+	font: inherit;
+	line-height: 1;
 }
 
 #PlayBarLabel {
-	@include utils.text-reset;
-
+	color: inherit;
+	font-size: var(--text-ui-size);
 	font-weight: bold;
-	margin-bottom: var(--text-spacing);
+	letter-spacing: 0;
+	line-height: 1;
+	text-transform: none;
 }
 
-#StickyHeader:not(#PlayBar) {
+#StatusAndStats,
+#StatusNameContainer {
+	height: unset;
+}
+
+#StatusNameContainer {
+	&:not(:only-child)::before {
+		content: "";
+
+		height: 100%;
+
+		@include controls.separator-horizontal;
+	}
+}
+
+#StickyHeaderShadow {
+	display: none;
+}
+
+#SuperimposedGridItems:not(#Visible) {
 	display: none;
 }

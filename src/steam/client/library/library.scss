@@ -4,10 +4,21 @@
 	@include window.content-container;
 
 	border: none;
+
+	// for toolbar
+	top: calc(var(--icon-button-height) + var(--text-spacing));
+}
+
+#AppDetailsTransitionGroup {
+	background-color: transparent;
 }
 
 #LibraryWindowDivider {
 	background-color: transparent;
 
 	width: 3px;
+}
+
+#MainPanel {
+	anchor-name: --librarymainpanel;
 }

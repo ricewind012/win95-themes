@@ -1,5 +1,6 @@
 @use "shared/controls";
 @use "shared++/utils";
+@use "shared++/icons";
 
 #ButtonChild {
 	@include controls.button;
@@ -7,10 +8,7 @@
 	background-image: none;
 
 	svg {
-		fill: var(--color-button-text);
-
-		width: var(--icon-size);
-		height: var(--icon-size);
+		display: none;
 	}
 }
 
@@ -19,5 +17,12 @@
 }
 
 #PlayButtonContainer {
+	min-width: unset;
 	height: unset;
+}
+
+#StreamingSelector {
+	--icon-button-height: 24px;
+	@include controls.icon-button;
+	@include icons.icon-big-arrow-bottom;
 }

@@ -2,6 +2,11 @@
 	display: none;
 }
 
+#Container {
+	// for toolbar... ty valve
+	transform-style: unset;
+}
+
 // Fix position: relative from <fieldset>
 #RightColumn {
 	position: relative;

@@ -1,0 +1,20 @@
+@use "shared/menu";
+
+#CheckContainer {
+	@include menu.item-check;
+
+	width: 0;
+	height: 0;
+
+	svg {
+		display: none;
+	}
+}
+
+#RemotePlayAnywhereDescription {
+	color: var(--color-gray-text);
+}
+
+#StreamingTargetLabel {
+	margin: 0;
+}
