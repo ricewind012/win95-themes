@@ -1,0 +1,5 @@
+@use "steam/shared";
+
+#ScrollPanel {
+	@include shared.content-container-alt;
+}

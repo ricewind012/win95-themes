@@ -1,0 +1,124 @@
+@use "shared/window";
+@use "shared++/utils";
+
+#Button {
+	border: none;
+
+	&:hover,
+	&#Selected {
+		background-color: var(--color-highlight);
+		color: var(--color-highlight-text);
+	}
+
+	#Label {
+		color: inherit;
+		font-weight: bold;
+		letter-spacing: 0;
+	}
+
+	#Points {
+		font: inherit;
+		letter-spacing: 0;
+	}
+
+	#PointsAmountIcon {
+		padding-right: var(--text-spacing);
+	}
+}
+
+#ButtonContainer {
+	--x: calc(var(--border-size) + var(--window-spacing) + var(--dialog-spacing));
+	--inset: 49px var(--x) 41px var(--x);
+
+	gap: 0;
+
+	// Display a little more on each row, smallest window size can handle this
+	grid-template-columns: repeat(5, 1fr);
+}
+
+#Description {
+	color: inherit;
+	font: inherit;
+}
+
+#Divider {
+	display: none;
+}
+
+#Footer {
+	align-items: center;
+
+	#Action {
+		padding-left: var(--text-spacing);
+	}
+
+	#Left {
+		#BalanceAmount {
+			font-size: inherit;
+			font-weight: bold;
+			letter-spacing: 0;
+		}
+
+		#BalanceDetails {
+			font: inherit;
+			gap: var(--text-spacing);
+
+			flex-direction: row;
+		}
+
+		#BalanceIcon {
+			display: none;
+		}
+
+		#BalanceLabel {
+			all: unset;
+		}
+	}
+
+	#Right {
+		gap: var(--text-spacing);
+
+		align-items: center;
+		flex-direction: row-reverse;
+
+		// steam client bug
+		a {
+			text-decoration: none;
+		}
+	}
+}
+
+#FooterLink {
+	@include utils.link;
+
+	font: inherit;
+	padding: 0;
+}
+
+#GrantAwardModal {
+	// Restrict "position: fixed" to this dialog
+	transform-style: preserve-3d;
+
+	.DialogContent_InnerWidth {
+		gap: var(--dialog-spacing);
+		margin: var(--dialog-spacing);
+
+		overflow: visible;
+	}
+}
+
+#NotEnoughPoints {
+	opacity: 1;
+	font: inherit;
+}
+
+#Title {
+	@include window.titlebar($focused-sel: "&");
+
+	font-size: inherit;
+	font-weight: bold;
+	letter-spacing: 0;
+	text-transform: none;
+	margin: calc(var(--dialog-spacing) * -1);
+	margin-bottom: var(--dialog-spacing);
+}

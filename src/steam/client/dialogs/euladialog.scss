@@ -16,9 +16,7 @@
 }
 
 #EULAScrolling {
-	// If scrollpanel is seen again, unify.
 	--inset: 75px 14px 44px 14px;
-	@include shared.content-container-alt;
 
 	border: none;
 	box-shadow: none;
