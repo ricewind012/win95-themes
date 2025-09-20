@@ -1,0 +1,13 @@
+@use "shared/controls";
+
+#Description,
+#Description2,
+#DMCA {
+	color: inherit;
+	font: inherit;
+	margin-block: var(--messagebox-spacing);
+}
+
+#InputBox {
+	@include controls.text-field;
+}
