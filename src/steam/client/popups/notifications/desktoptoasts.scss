@@ -1,0 +1,11 @@
+// Revert everything to the original look
+#DesktopToastContainer {
+	background-color: transparent;
+	color: #969696;
+	box-shadow: none;
+	padding: 0;
+
+	* {
+		box-sizing: content-box;
+	}
+}
