@@ -152,14 +152,13 @@
 	height: unset;
 }
 
-#OverlayPopupBody,
-body:has(> [id="popup_target"] > #Wrapper) {
-	background-color: transparent;
-	box-shadow: none;
-	padding: 0;
-}
-
 #Wrapper {
 	gap: 16px;
 	padding: 32px;
+
+	body:has(> [id="popup_target"] > :where(&, .OverlayTimeline)) {
+		background-color: transparent;
+		box-shadow: none;
+		padding: 0;
+	}
 }

@@ -9,3 +9,27 @@ b {
 body {
 	@include window.container;
 }
+
+// Revert everything in mini profile tooltip, since it will look like absolute
+// ass on light theme anyway
+.miniProfileHover {
+	box-shadow: none;
+	padding: 0;
+
+	* {
+		box-sizing: content-box;
+	}
+
+	.avatar {
+		width: calc(100% - 2px);
+		height: calc(100% - 2px);
+	}
+
+	.avatarHolder {
+		--steamavatar_size: 92px;
+	}
+
+	.friendPlayerLevel {
+		border-radius: 50%;
+	}
+}
