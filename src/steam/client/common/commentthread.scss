@@ -8,6 +8,11 @@
 	stroke: inherit;
 }
 
+#ActivityCommentThreadMinimized {
+	opacity: 1;
+	padding-top: var(--dialog-button-spacing);
+}
+
 #ButtonSpacer {
 	display: none;
 }
@@ -16,6 +21,8 @@
 #CommentButton,
 #Reactions {
 	@include controls.button;
+
+	gap: var(--text-spacing);
 }
 
 #LikeCount,
@@ -41,4 +48,5 @@
 #RatingBar {
 	opacity: 1;
 	font: var(--text-ui);
+	gap: var(--dialog-button-spacing);
 }

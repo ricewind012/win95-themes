@@ -1,0 +1,102 @@
+@use "shared/tooltip";
+@use "shared++/utils";
+
+%-header {
+	color: inherit;
+	font: inherit;
+	font-weight: bold;
+	text-transform: none;
+	margin-bottom: var(--text-spacing);
+}
+
+#AppStatus {
+	display: none;
+}
+
+#AppTitle {
+	@include utils.text-reset;
+
+	padding: 0;
+	margin: 0;
+}
+
+#AppPortraitHover {
+	@include tooltip.container;
+
+	box-shadow: none;
+}
+
+#AppTitleContainer {
+	padding: 0;
+}
+
+#CapsuleBackgroundContainer {
+	display: none;
+}
+
+#Content {
+	gap: var(--text-spacing);
+
+	& > :not(:first-child, :empty)::before {
+		@include utils.pseudo-separator;
+	}
+}
+
+#DownloadContainer {
+	gap: var(--text-spacing);
+}
+
+#DownloadStatus {
+	all: unset;
+	width: 100%;
+}
+
+#DownloadStatusDetails {
+	color: inherit;
+	font: inherit;
+	margin: 0;
+}
+
+#DownloadStatusTitle {
+	@extend %-header;
+
+	margin: 0;
+}
+
+#FriendsCircle {
+	display: none;
+}
+
+#FriendsContainer {
+	background-color: transparent;
+	padding: 0;
+}
+
+#FriendsHeader {
+	margin: 0;
+}
+
+#FriendsLabel {
+	@extend %-header;
+}
+
+#PlaytimeDetails {
+	@include utils.text-reset;
+
+	padding: 0;
+	margin: 0;
+
+	// 3px = tooltip spacing, 2px = border
+	width: calc(220px - 3px * 2 - 2px);
+
+	#Header {
+		@extend %-header;
+	}
+}
+
+#ScreenshotCrossfade {
+	background-color: transparent;
+	mask: none;
+
+	flex-direction: column;
+}

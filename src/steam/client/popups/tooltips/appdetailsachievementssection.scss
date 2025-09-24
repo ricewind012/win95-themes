@@ -1,0 +1,66 @@
+@use "shared/controls";
+@use "shared++/utils";
+
+#Hover {
+	#TopSectionAchievementIcon {
+		--size: 48px;
+		margin: 0;
+
+		width: var(--size);
+		height: var(--size);
+	}
+}
+
+#SingleAchievementProgressBar {
+	@include controls.progress-bar($filled-sel: "#AchievementProgress");
+
+	// Align with text
+	margin-top: 1px;
+
+	flex-grow: 1;
+}
+
+#SingleAchievementProgressContainer {
+	gap: var(--text-spacing);
+	margin-top: var(--text-spacing);
+
+	display: flex;
+	flex-direction: row-reverse;
+
+	#ProgressLabel {
+		@include utils.parentheses;
+
+		color: inherit;
+		font: inherit;
+	}
+}
+
+#TextSection {
+	color: inherit;
+	font: inherit;
+	padding: 0;
+	margin-left: var(--text-spacing);
+
+	#Name {
+		color: inherit;
+		font: inherit;
+		font-weight: bold;
+		margin: 0;
+	}
+}
+
+#Unlocked {
+	background: none;
+	color: inherit;
+	font: inherit;
+	padding: 0;
+
+	&::before {
+		@include utils.pseudo-separator;
+	}
+
+	#RareLabel {
+		color: inherit;
+		font-weight: bold;
+	}
+}

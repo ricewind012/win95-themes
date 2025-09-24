@@ -30,7 +30,12 @@
 }
 
 #DetailsProgressContainer {
-	display: none;
+	@include controls.progress-bar($filled-sel: "&#DetailsProgressBar");
+
+	// Also seen in appportraithover
+	#Container & {
+		display: none;
+	}
 }
 
 #DetailsSection {

@@ -5,11 +5,11 @@
 	margin: 0;
 }
 
-// !important
-div#AppDetailsSectionContainer {
+#AppDetailsSectionContainer {
 	background: none;
 	color: var(--color-window-text);
-	margin-top: 0;
+	margin: 0;
+	margin-top: var(--text-spacing);
 }
 
 #Body {

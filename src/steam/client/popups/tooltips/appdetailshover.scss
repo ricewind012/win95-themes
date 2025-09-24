@@ -1,0 +1,11 @@
+@use "shared/tooltip";
+
+#AppDetailsHover {
+	@include tooltip.container;
+
+	box-shadow: none;
+}
+
+#Background {
+	display: none;
+}
