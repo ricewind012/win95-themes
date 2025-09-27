@@ -1,0 +1,13 @@
+@use "shared/controls";
+
+#CommunityContentContainer {
+}
+
+#HeaderStyles {
+	background-image: none;
+	margin: 0;
+}
+
+#LoadContentButton {
+	@include controls.button;
+}

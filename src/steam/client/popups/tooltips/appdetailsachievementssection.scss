@@ -1,16 +1,6 @@
 @use "shared/controls";
 @use "shared++/utils";
 
-#Hover {
-	#TopSectionAchievementIcon {
-		--size: 48px;
-		margin: 0;
-
-		width: var(--size);
-		height: var(--size);
-	}
-}
-
 #SingleAchievementProgressBar {
 	@include controls.progress-bar($filled-sel: "#AchievementProgress");
 
@@ -32,20 +22,6 @@
 
 		color: inherit;
 		font: inherit;
-	}
-}
-
-#TextSection {
-	color: inherit;
-	font: inherit;
-	padding: 0;
-	margin-left: var(--text-spacing);
-
-	#Name {
-		color: inherit;
-		font: inherit;
-		font-weight: bold;
-		margin: 0;
 	}
 }
 

@@ -4,11 +4,9 @@
 @use "steam/shared";
 
 #AddShowcase {
-	@include controls.button;
+	@include controls.button($disabled-sel: "#Disabled");
 
 	opacity: 1;
-	text-transform: unset;
-	margin-bottom: 16px;
 
 	justify-content: center;
 
@@ -17,30 +15,31 @@
 	}
 }
 
+#AddShowcaseRow,
+#DoneReorderingRow {
+	margin-inline: var(--toolbar-container-spacing);
+
+	position: fixed;
+	position-anchor: --librarymainpanel;
+	top: anchor(top);
+	left: anchor(left);
+}
+
 #ChildrenContainer {
-	// PageableContainer
-	& > div {
-		border: none;
-		box-shadow: none;
-		padding: 0;
-		margin: 0;
-	}
+	--library_section-display: block;
+	margin: var(--appdetails_container-spacing-y)
+		var(--appdetails_container-spacing-x);
 }
 
 #Collapser {
 	@include controls.button;
 	@include controls.icon-button;
-	@include icons.icon-big-arrow-left;
+	@include icons.icon-big-arrow-bottom;
 
 	width: unset;
 
 	&:has(> [style="transform: rotate(270deg);"]) {
-		@include icons.icon-big-arrow-right;
-	}
-
-	// TODO(icons): add top/bottom big arrows
-	&::before {
-		transform: rotate(90deg);
+		@include icons.icon-big-arrow-top;
 	}
 
 	svg {
@@ -54,8 +53,16 @@
 	margin-left: var(--text-spacing);
 }
 
-#Message {
-	@include utils.text-reset;
+#DeleteButton {
+	--button-img: icon("clear");
+	@include controls.button;
+	@include controls.icon-button;
+
+	opacity: 1;
+
+	svg {
+		display: none;
+	}
 }
 
 #PageButtons {
@@ -77,18 +84,64 @@
 }
 
 #Showcase {
-	@include controls.groupbox;
+	border: none;
+	padding: 0;
 
-	margin-bottom: 16px;
+	// breaks
+	&:not(:has(> .CSSGrid_Measure)) {
+		@include shared.library-section;
+	}
+
+	&#EmptyShowcase {
+		#EmptyMessage ~ * {
+			display: none;
+		}
+
+		#Message {
+			font: inherit;
+			margin: auto;
+
+			position: unset;
+		}
+
+		#ShowcaseArrow {
+			display: none;
+		}
+	}
 }
 
 #ShowcaseHeader {
-	@include utils.legend-as-div;
+	@include shared.library-section-header;
 
-	background-color: var(--color-window);
 	color: inherit;
+	font: inherit;
+	gap: var(--text-spacing);
 	border: none;
 
-	top: -12px;
-	align-items: center;
+	flex-direction: column;
+	align-items: start;
+	height: 100%;
+
+	#Rule {
+		@include controls.drag-handle;
+
+		position: absolute;
+		left: 3px;
+		height: calc(100% - var(--appdetails_container-spacing-y) * 2);
+
+		&::before {
+			content: "";
+
+			position: absolute;
+			inset: calc(var(--appdetails_container-spacing-y) * -1);
+		}
+	}
+
+	#DragHandle {
+		display: none;
+	}
+}
+
+#SortingDropDown {
+	margin: 0;
 }

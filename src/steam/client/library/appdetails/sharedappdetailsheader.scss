@@ -1,3 +1,22 @@
-#ImgBlurBackdrop {
-	display: none;
+#BoxSizerContainer {
+	inset: 32px;
+}
+
+#ImgContainer {
+	height: 100%;
+}
+
+#ImgSrc {
+	&#ImgBlur {
+		height: 100%;
+	}
+
+	&#ImgBlurBackdrop {
+		display: none;
+	}
+
+	#ImgContainer & {
+		mask-size: 85% 90%;
+		mask-position: center 0;
+	}
 }

@@ -1,47 +1,117 @@
 @use "shared/controls";
 @use "shared++/utils";
 
-#AppActivityDate,
-#PartnerEventFeaturedHeader {
+#AppActivityDate {
 	@include utils.legend-as-div;
 	@include utils.text-reset;
 
 	background: var(--color-window);
 }
 
-#AppActivityDay,
-#PartnerEvent {
+#AppActivityDay {
 	@include controls.groupbox;
 
 	background: none;
 }
 
+#Event {
+	font: inherit;
+
+	&:not(:first-child)::before {
+		@include utils.pseudo-separator;
+	}
+}
+
+#EventActorAvatar {
+	height: unset;
+}
+
 #EventBody {
+	background: none;
 	box-shadow: none;
 	margin: 0;
 }
 
-#PartnerEventMediumImage_Container {
-	background: none;
-}
-
-#PartnerEventMediumImage_Contents {
-	padding: 0;
-}
-
-#PartnerEventMediumImage_Summary {
-	font: var(--text-ui);
-	text-shadow: none;
+#EventHeadline {
 	color: inherit;
+	font: inherit;
+	padding-block: var(--text-spacing);
+
+	#SpanEvent {
+		margin-inline: var(--text-spacing);
+	}
 }
 
-#PartnerEventMediumImage_TextColumn {
-	text-shadow: none;
-	padding: 0;
+#LeftSideMajorUpdateBar {
+	display: none;
 }
 
-#PartnerEventMediumImage_Title {
-	@include utils.text-reset;
+#MediumImageContainer {
+	margin-right: var(--library_section-spacing);
+}
+
+#PartnerEvent {
+	background: none;
+	border: none;
+	box-shadow: none;
+}
+
+// lmao v*lve
+#PartnerEventTextOnly,
+#PartnerEventLargeImage,
+#PartnerEventMediumImage {
+	&_Container {
+		background: none;
+	}
+
+	&_Summary {
+		color: inherit;
+		font: var(--text-ui);
+		text-shadow: none;
+		padding: 0;
+	}
+
+	&_TextColumn {
+		text-shadow: none;
+		gap: var(--text-spacing);
+		padding: 0;
+		// LargeImage
+		margin: 0;
+	}
+
+	&_Title {
+		color: inherit;
+		font: inherit;
+		font-weight: bold;
+		// LargeImage
+		text-shadow: none;
+	}
+}
+
+#PartnerEventLargeImage,
+#PartnerEventMediumImage {
+	&_Contents {
+		padding: 0;
+
+		flex-direction: row;
+	}
+}
+
+#PartnerEventLargeImage {
+	&_Image#Blur {
+		display: none;
+	}
+
+	&_TextColumn {
+		display: flex;
+		flex-direction: column;
+	}
+}
+
+#PartnerEventLargeUpdate {
+	background: none;
+	border: none;
+	box-shadow: none;
 }
 
 #PartnerEventTextOnly_Container {
@@ -49,16 +119,92 @@
 }
 
 #PartnerEventTextOnly_Icon {
-	width: 32px;
-	height: 32px;
-}
+	--size: 32px;
 
-#PartnerEventTextOnly_Title {
-	@include utils.text-reset;
+	margin: 0;
+	margin-right: var(--library_section-spacing);
+
+	width: var(--size);
+	height: var(--size);
 }
 
 #PartnerEventType {
-	@include utils.text-reset;
-
 	color: var(--color-gray-text);
+	font: inherit;
+
+	&#PartnerEventTypeUpdate {
+		text-shadow: none;
+	}
+}
+
+#ReviewMetadata {
+	#CommentsContainer {
+		@include utils.link;
+	}
+
+	#CommentCount {
+		color: inherit;
+		font: inherit;
+	}
+
+	#CommentIcon,
+	#UpVotesIcon {
+		display: none;
+	}
+
+	#CommentsLabel {
+		color: inherit;
+		font: inherit;
+		font-weight: bold;
+	}
+
+	#PlayedForTime {
+		color: inherit;
+		font: inherit;
+		padding: 0;
+	}
+}
+
+#ReviewDescriptionRecommended {
+	color: inherit;
+	font: inherit;
+	font-weight: bold;
+	padding: 0;
+}
+
+#ReviewText {
+	color: inherit;
+	font: inherit;
+}
+
+#ScreenshotCarousel {
+	#CarouselThumb {
+		opacity: 1;
+		transform: none;
+		background-color: transparent;
+		border: 2px solid transparent;
+		margin: 0;
+
+		&:hover,
+		&#Active {
+			border-color: var(--color-highlight);
+		}
+	}
+
+	#CarouselThumbs {
+		// Give it at least something to distinguish it better
+		border: 1px solid var(--color-button-shadow);
+
+		// Make a better use of this space
+		overflow: auto;
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+	}
+
+	#TimeStamp {
+		color: inherit;
+		font: inherit;
+		margin: 0;
+		margin-top: var(--text-spacing);
+	}
 }

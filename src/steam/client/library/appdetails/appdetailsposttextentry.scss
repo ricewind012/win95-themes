@@ -1,5 +1,42 @@
 @use "shared/controls";
 
+#Controls {
+	gap: var(--dialog-button-spacing);
+
+	max-height: unset;
+}
+
+#EmoticonButton {
+	min-width: 111px;
+	height: unset;
+
+	// TODO: use use-aria-label from discord
+	&::before {
+		content: attr(title);
+
+		color: inherit;
+		text-shadow: inherit;
+	}
+
+	svg {
+		display: none;
+	}
+}
+
 #PostButton {
 	@include controls.button;
+
+	width: unset;
+
+	#Label {
+		color: inherit;
+	}
+}
+
+#PostTextEntryArea {
+	@include controls.text-field;
+
+	width: 100%;
+	// TODO(shared/controls): remove height for text-field maybe
+	height: unset;
 }

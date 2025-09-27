@@ -1,5 +1,13 @@
 @use "shared/window";
 
+:root {
+	--library_section-display: grid;
+	--library_section-header-width: 200px;
+	--library_section-rows: var(--library_section-header-width)
+		calc(100% - var(--library_section-header-width));
+	--library_section-spacing: 8px;
+}
+
 #AppDetailsMain {
 	@include window.content-container;
 

@@ -5,21 +5,25 @@
 	margin: 0;
 }
 
+#CompactThumbButton {
+	@include controls.button;
+
+	margin-left: var(--dialog-button-spacing);
+}
+
 #DescribeGame,
 #OptionsContainer {
-	margin-top: 16px;
-	margin-bottom: var(--text-spacing);
-
-	position: relative;
+	margin-block: var(--text-spacing);
 
 	&::before {
-		content: "";
+		@include utils.pseudo-separator;
+	}
+}
 
-		position: absolute;
-		top: -10px;
-		width: 100%;
-
-		@include controls.separator;
+#FreeCheckbox {
+	// #partnereventshared_HelperTooltip
+	.HelperTooltip {
+		display: none;
 	}
 }
 
@@ -67,9 +71,17 @@
 	background-color: transparent;
 	padding: 0;
 	margin: var(--text-spacing) 0;
+
+	align-items: center;
+}
+
+#ReviewTextArea {
+	@include controls.text-field;
 }
 
 #ReviewThumbButton {
+	@include controls.button;
+
 	background-image: none;
 
 	&#Selected {

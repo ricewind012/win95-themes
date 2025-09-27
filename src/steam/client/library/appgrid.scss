@@ -5,6 +5,10 @@
 	display: none;
 }
 
+#SortingDropDown {
+	gap: var(--text-spacing);
+}
+
 #SortingDropDownContainer {
 	// ANOTHER fucking context menu, AND it has an !important
 	.DesktopUI & > div {
@@ -20,6 +24,8 @@
 
 #SortingDropDownLabel {
 	@include utils.text-reset;
+
+	margin: 0;
 
 	&::after {
 		content: ": ";

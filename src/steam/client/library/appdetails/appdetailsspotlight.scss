@@ -1,9 +1,14 @@
-@use "shared/controls";
-@use "shared++/utils";
+@use "shared/tooltip";
 
 #ReviewContainer {
-	@include controls.groupbox;
-	@include utils.text-reset;
+	@include tooltip.container;
 
-	background-color: transparent;
+	// Couldn't think of any other way, so let it be
+	margin: var(--library_section-spacing);
+
+	width: auto;
+
+	#Inner {
+		width: auto;
+	}
 }

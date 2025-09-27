@@ -12,7 +12,10 @@
 	position: fixed;
 	position-anchor: --librarymainpanel;
 	top: anchor(top);
-	right: anchor(right);
+	// Give space to the links section overflow button
+	right: calc(
+		anchor(right) + var(--icon-button-width) + var(--toolbar-container-spacing)
+	);
 	left: anchor(left);
 	width: unset;
 

@@ -1,0 +1,53 @@
+@use "shared++/utils";
+
+#ButtonContainer {
+	gap: var(--dialog-button-spacing);
+
+	justify-content: start;
+}
+
+#FeaturedItem {
+	align-items: start;
+}
+
+#FeaturedItemDesc {
+	color: inherit;
+	font: inherit;
+}
+
+#FeaturedItemDetailsContainer {
+	gap: var(--text-spacing);
+
+	display: flex;
+	flex-direction: column;
+}
+
+#FeaturedItemHeader {
+	color: var(--color-gray-text);
+	font: inherit;
+	text-transform: uppercase;
+}
+
+#FeaturedItemImage {
+	margin-right: var(--text-spacing);
+
+	width: var(--appdetails_highlight-img-size);
+}
+
+#FeaturedItemLink {
+	@include utils.link;
+
+	font-size: inherit;
+	padding: 0;
+}
+
+#FeaturedItemName {
+	color: inherit;
+	font: inherit;
+	font-weight: bold;
+	margin: 0;
+}
+
+#WorkshopContainer {
+	background: none;
+}

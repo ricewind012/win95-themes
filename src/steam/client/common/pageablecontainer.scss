@@ -1,33 +1,39 @@
-@use "shared/controls";
 @use "shared++/icons";
-@use "shared++/utils";
 @use "steam/shared";
 
+#HeaderPageControls {
+	@include shared.library-section-header;
+
+	color: inherit;
+	font: inherit;
+	gap: var(--text-spacing);
+
+	flex-direction: column;
+}
+
+#Name {
+	font: inherit;
+}
+
 #PageableContainer {
-	@include controls.groupbox;
-
-	svg {
-		color: inherit;
-	}
-
-	polyline {
-		stroke: var(--color-window-text);
-	}
+	@include shared.library-section;
 }
 
 #PageClickContainer {
-	background-color: var(--color-window);
-	padding-right: 2px;
-
-	position: absolute;
-	top: -7px;
-	right: 8px;
+	margin: 0;
 }
 
 // TODO(build): optimize with private @extend
+#PageableCloseButton,
 #PageLeft,
 #PageRight {
 	@include shared.pageable-container-button;
+}
+
+#PageableCloseButton {
+	--button-img: icon("clear");
+	--button-img-size: auto;
+	--button-img-pos: center;
 }
 
 #PageLeft {
@@ -36,24 +42,4 @@
 
 #PageRight {
 	@include icons.icon-big-arrow-right;
-}
-
-#HeaderPageControls {
-	@include utils.text-reset;
-
-	& > div:not([class]) {
-		@include utils.legend-as-div;
-
-		background-color: var(--color-window);
-
-		top: -7px;
-		right: calc(var(--icon-button-width) * 2 + 6px + 2px);
-	}
-}
-
-#Name {
-	@include utils.text-reset;
-	@include utils.legend-as-div;
-
-	background-color: var(--color-window);
 }

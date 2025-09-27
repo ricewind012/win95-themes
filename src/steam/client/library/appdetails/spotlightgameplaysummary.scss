@@ -9,16 +9,17 @@
 	@include utils.text-reset;
 }
 
-#GamePlaySummaryHeader {
-	@include utils.legend-as-div;
-	@include utils.text-reset;
+#GamePlaySummaryContainer {
+	margin: 0;
+}
 
-	background-color: var(--color-window);
+#GamePlaySummaryHeader {
+	@include utils.text-reset;
 }
 
 #SummaryCarouselContainer {
 	background: none;
-	padding: 0;
+	padding: var(--library_section-spacing);
 
 	&::after {
 		display: none;
@@ -31,4 +32,8 @@
 
 #SummaryScreenshot {
 	box-shadow: none;
+}
+
+#TypeSeparator {
+	width: 0;
 }

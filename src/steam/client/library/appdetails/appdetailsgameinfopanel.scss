@@ -1,16 +1,50 @@
 @use "shared/controls";
+@use "shared/tooltip";
 @use "shared++/utils";
 
 #Container {
-	@include controls.groupbox;
+	@include tooltip.container;
 	@include utils.text-reset;
 
 	background-color: transparent;
 }
 
+#DeckVerifiedInfo {
+	background-color: transparent;
+	color: inherit;
+	gap: var(--text-spacing);
+	padding: 0;
+	margin-bottom: var(--text-spacing);
+
+	&::before {
+		@include utils.pseudo-separator;
+	}
+
+	#CompatLabel {
+		font: inherit;
+	}
+
+	#CompatToolContainer {
+		margin-left: var(--text-spacing);
+	}
+
+	#Details {
+		@include controls.button;
+
+		text-align: center;
+	}
+
+	#Title {
+		font: inherit;
+	}
+
+	svg {
+		display: none;
+	}
+}
+
 #Date,
-#Name,
-#Label {
+#Name {
 	@include utils.text-reset;
 }
 
@@ -22,4 +56,10 @@
 
 #InnerContainer {
 	padding: 0;
+}
+
+#Label {
+	@include utils.text-reset;
+
+	font-weight: bold;
 }

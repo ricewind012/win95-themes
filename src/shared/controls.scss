@@ -144,6 +144,14 @@
 	}
 }
 
+@mixin drag-handle {
+	// TODO: bruh just rename that shit
+	box-shadow: var(--border-tab-button-raised);
+
+	width: 3px;
+	height: 100%;
+}
+
 @mixin groupbox($disabled-sel: ":disabled") {
 	@include -input-common-disabled($disabled-sel);
 

@@ -1,21 +1,37 @@
 @use "shared/controls";
+@use "shared/tooltip";
+@use "steam/shared";
 
 #AppDetailsSection {
+	@include shared.library-section;
+
 	color: inherit;
+	font: var(--text-ui);
 	margin: 0;
 }
 
 #AppDetailsSectionContainer {
 	background: none;
 	color: var(--color-window-text);
-	margin: 0;
-	margin-top: var(--text-spacing);
+	margin: var(--appdetails_container-spacing-y)
+		var(--appdetails_container-spacing-x);
 }
 
 #Body {
+	gap: var(--text-spacing);
 	padding: 0;
 }
 
+#Highlight {
+	@include tooltip.container;
+
+	background-image: none;
+	font: inherit;
+	box-shadow: none;
+	margin-bottom: var(--library_section-spacing);
+}
+
 #RightColumnSection {
-	@include controls.groupbox;
+	border: none;
+	box-shadow: none;
 }

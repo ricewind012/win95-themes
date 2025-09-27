@@ -1,38 +1,22 @@
 @use "shared/controls";
-@use "shared/window";
-@use "shared++/utils";
-@use "shared++/icons";
-
-#Link {
-	background-color: transparent;
-
-	&:hover {
-		text-decoration: underline;
-	}
-}
-
-#LinkInner {
-	font: var(--text-ui);
-	padding-top: 0;
-	margin-right: 12px;
-}
-
-#Links {
-	height: unset;
-}
 
 #LinksSection {
-	& > div {
-		border: none;
-	}
+	display: block;
+	// Force everyone to move into the overflow button
+	width: 0;
+	height: 0;
 }
 
 #MenuButton {
+	--button-img: icon("url");
 	@include controls.button;
-	@include window.titlebar-button;
-	@include icons.icon-more;
-}
+	@include controls.icon-button;
 
-#Text {
-	@include utils.link;
+	// ..and move said button into the toolbar !
+	position: fixed;
+	position-anchor: --librarymainpanel;
+	// TODO: wat
+	top: calc(anchor(top) + 1px);
+	right: calc(anchor(right) + var(--toolbar-container-spacing));
+	width: unset;
 }

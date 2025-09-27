@@ -1,3 +1,14 @@
+@use "shared++/utils";
+
 #NoteLink {
+	@include utils.link;
+
 	font: var(--text-ui);
+	margin-inline-start: 20px;
+
+	display: list-item;
+
+	&::marker {
+		color: var(--color-window-text);
+	}
 }

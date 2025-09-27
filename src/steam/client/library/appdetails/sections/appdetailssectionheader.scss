@@ -1,10 +1,15 @@
-@use "shared++/utils";
+@use "steam/shared";
 
 #SectionHeader {
-	@include utils.legend-as-div;
-	@include utils.text-reset;
+	@include shared.library-section-header;
 
-	background-color: var(--color-window);
+	color: inherit;
+	font: var(--text-ui);
+	letter-spacing: 0;
+	text-transform: none;
 
-	z-index: 1;
+	align-items: start;
+	position: sticky;
+	top: 0;
+	max-height: 100vh;
 }

@@ -40,6 +40,19 @@
 	}
 }
 
+@mixin library-section {
+	display: var(--library_section-display);
+	grid-template-columns: var(--library_section-rows);
+}
+
+@mixin library-section-header {
+	@include table.header-row;
+
+	// A bit more spacing to account for the huge amounts of content there is
+	padding: var(--appdetails_container-spacing-y)
+		var(--appdetails_container-spacing-x);
+}
+
 @mixin statusbar-alt {
 	&::after {
 		content: "";
@@ -95,15 +108,15 @@
 			mask-size: var(--button-img-size, auto auto);
 			mask-position: var(--button-img-pos, center);
 		}
-	}
 
-	&::after {
-		@include utils.pseudo-icon;
+		&::after {
+			@include utils.pseudo-icon;
 
-		left: 1px;
-		top: 1px;
+			left: 1px;
+			top: 1px;
 
-		background-color: var(--color-button-highlight);
+			background-color: var(--color-button-highlight);
+		}
 	}
 
 	svg {

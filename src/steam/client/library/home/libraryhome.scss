@@ -2,15 +2,16 @@
 	background: transparent;
 }
 
+#InnerContainer {
+	// for toolbar... ty valve
+	transform: unset;
+}
+
 #LibraryHome,
 #UpdatesContainer {
 	background: none;
 	color: var(--color-window-text);
-	padding: 8px 8px 0;
+	padding: 0;
 
 	height: unset;
-}
-
-#LibraryHome {
-	position: relative;
 }

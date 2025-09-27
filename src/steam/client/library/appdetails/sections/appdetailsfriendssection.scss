@@ -1,9 +1,29 @@
+@use "shared/controls";
 @use "shared++/utils";
 
+#AvatarAndLabel {
+	height: unset;
+
+	#LabelHolder {
+		padding: 0;
+	}
+}
+
 #ShowMore {
-	width: 148px;
+	@include controls.button;
+}
+
+#Subsection {
+	padding: 0;
+	margin: 0;
+
+	&::after {
+		@include utils.pseudo-separator;
+	}
 }
 
 #SubsectionHeader {
 	@include utils.text-reset;
+
+	padding-bottom: var(--text-spacing);
 }

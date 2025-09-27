@@ -1,13 +1,17 @@
-@use "shared/controls";
 @use "shared++/utils";
 
-#AddToFeed {
-	@include controls.groupbox;
+#ActivityFeedContainer {
+	max-width: unset;
 }
 
 #ViewLastNews {
-	@include utils.text-reset;
+	@include utils.link;
 
 	background-color: transparent;
-	color: var(--color-link);
+	font: inherit;
+	padding: 0;
+
+	position: absolute;
+	top: calc(1lh + var(--appdetails_container-spacing-y) + var(--text-spacing));
+	left: var(--appdetails_container-spacing-x);
 }

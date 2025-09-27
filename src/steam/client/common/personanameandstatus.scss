@@ -1,8 +1,7 @@
 @use "shared++/utils";
 
 #playerName {
-	@include utils.text-reset;
-
+	font: var(--text-ui);
 	font-weight: bold;
 	margin-bottom: -2px;
 }

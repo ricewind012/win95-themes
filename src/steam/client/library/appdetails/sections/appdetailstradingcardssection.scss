@@ -1,0 +1,31 @@
+#Badge {
+	margin: 0;
+
+	width: var(--appdetails_highlight-img-size);
+	height: var(--appdetails_highlight-img-size);
+}
+
+#BadgeLevel {
+	color: inherit;
+	font: inherit;
+}
+
+#BadgeMaxed {
+	color: inherit;
+	font: inherit;
+	margin: 0;
+}
+
+#BadgeName {
+	color: inherit;
+	font: inherit;
+	font-weight: bold;
+}
+
+#BadgeSection {
+	gap: var(--text-spacing);
+}
+
+#CardsSection {
+	margin: 0;
+}
