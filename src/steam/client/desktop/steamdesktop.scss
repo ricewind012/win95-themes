@@ -31,24 +31,17 @@
 }
 
 #LockIcon {
-	@include utils.text-reset;
+	background-image: icon("url");
+	margin-right: var(--text-spacing);
 
-	padding-bottom: 1px;
-}
-
-#OuterFrame {
-	gap: var(--window-gap);
+	width: var(--icon-size);
+	height: var(--icon-size);
 }
 
 #ReloadButton {
+	--button-img: icon("reload");
 	@include controls.button;
-
-	min-width: 21px;
-	height: 21px;
-
-	svg {
-		padding: 0;
-	}
+	@include controls.icon-button;
 }
 
 #RootMenuBar {
@@ -67,12 +60,7 @@
 	-webkit-app-region: no-drag;
 
 	&::after {
-		content: "";
-		display: block;
-
-		@include controls.separator;
-
-		margin-bottom: 0;
+		@include utils.pseudo-separator;
 	}
 }
 
@@ -83,13 +71,9 @@
 	-webkit-app-region: unset;
 
 	&::before {
-		content: "";
+		@include utils.pseudo-separator;
 
-		@include controls.separator;
-
-		margin-top: 2px;
-
-		width: 100%;
+		margin-top: var(--window-gap);
 	}
 }
 
@@ -105,12 +89,17 @@
 #URLBar {
 	background-color: transparent;
 	box-shadow: none;
-	padding: 0;
-	margin-bottom: 3px;
+	gap: var(--toolbar-spacing);
+	padding: 0 var(--toolbar-container-spacing);
+	margin-bottom: var(--window-gap);
+
+	svg {
+		display: none;
+	}
 }
 
 #URLBarText {
-	@include controls.combobox;
+	@include controls.text-field;
 
 	width: 100%;
 }
