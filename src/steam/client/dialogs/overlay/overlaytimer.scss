@@ -1,0 +1,74 @@
+@use "shared/controls";
+@use "shared++/utils";
+
+#CurrentTime {
+	color: inherit;
+}
+
+#CurrentTimeContainer {
+	flex-direction: column;
+}
+
+#OverlayClock {
+	gap: var(--text-spacing);
+
+	&::before {
+		@include utils.pseudo-separator;
+	}
+}
+
+#TabTimer {
+	#ControlButtons {
+		gap: var(--dialog-button-spacing);
+		margin: 0;
+	}
+
+	#Colon {
+		font-size: var(--text-header-size);
+		margin-block: 5px; // --button-spacing
+		margin-inline: 2px;
+	}
+
+	#Remaining {
+		color: inherit;
+		margin: 0;
+
+		-webkit-app-drag: none;
+	}
+
+	#TimePart {
+		font: var(--text-header);
+		font-weight: bold;
+
+		:where(&:not(#Running)) {
+			@include controls.button;
+		}
+	}
+
+	#TimePartEdit {
+		@include controls.text-field;
+
+		font: var(--text-header);
+		font-weight: bold;
+		// align with buttons
+		margin-block: 1px;
+
+		width: 100%;
+		height: unset;
+	}
+
+	#TimePartLabel {
+		margin-top: var(--text-spacing);
+		font: var(--text-ui);
+	}
+
+	#TimePartSegment {
+		width: 100%;
+	}
+}
+
+#Tabs {
+	padding: 0;
+
+	order: -1;
+}

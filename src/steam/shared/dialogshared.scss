@@ -261,6 +261,19 @@
 	display: none;
 }
 
+.DialogSlider_Grabber {
+	box-shadow: none;
+}
+
+.DialogSlider_Slider {
+	@include controls.slider(
+		$thumb-sel: ".DialogSlider_Grabber",
+		$track-sel: ".DialogSlider_Value"
+	);
+
+	box-shadow: none;
+}
+
 .DialogSubHeader {
 	@include utils.text-reset;
 	@include utils.legend-as-div;
