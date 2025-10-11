@@ -3,33 +3,44 @@
 @use "steam/shared";
 
 #AchievementSearchHeader {
-	@include controls.groupbox;
-
 	gap: var(--text-spacing);
 
 	// Move out of content
 	position: fixed;
-	top: -52px;
+	top: calc((var(--steamavatar_size) + var(--text-spacing)) * -1);
 	right: 0;
 	left: 0;
+}
+
+#GameIcon {
+	margin-right: var(--text-spacing);
+
+	width: var(--icon-size);
+	height: var(--icon-size);
 }
 
 #Label {
 	@include utils.text-reset;
 }
 
-#ProgressLabel {
-	@include utils.legend-as-div;
-
-	gap: var(--text-spacing);
+#Progress {
+	margin-top: var(--text-spacing);
 }
 
 #StatsBlock {
-	@include controls.groupbox;
-
 	background-color: transparent;
+	padding: 0;
+	margin-bottom: var(--text-spacing);
 }
 
 #Title {
 	@include shared.dialog-title;
+
+	z-index: 2;
+
+	body:not(.ModalDialogBody) & {
+		color: var(--color-active-caption-text);
+
+		left: calc(var(--offset) + 2px);
+	}
 }

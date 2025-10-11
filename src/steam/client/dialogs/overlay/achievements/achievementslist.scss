@@ -9,16 +9,68 @@
 	background-color: transparent;
 
 	&::after {
-		content: "";
+		@include utils.pseudo-separator;
 
-		@include controls.separator;
+		margin-inline: 8px;
 	}
+}
+
+#AchievementTitle {
+	color: inherit;
+	font: inherit;
+	font-weight: bold;
+	margin-bottom: var(--text-spacing);
 }
 
 #AchievementDescription,
 #AchievementGlobalPercentage,
-#AchievementTitle,
 #HeaderText,
 #UnlockDate {
 	@include utils.text-reset;
+}
+
+#GlobalAchievementListItem {
+	@extend #AchievementListItemBase;
+
+	#Description {
+		@include utils.text-reset;
+	}
+
+	#Info {
+		padding-inline-start: var(--text-spacing);
+	}
+
+	#Percent {
+		color: inherit;
+		font: inherit;
+		font-weight: bold;
+	}
+
+	#Title {
+		@extend #AchievementTitle;
+	}
+}
+
+#ListTitle {
+	opacity: 1;
+	color: inherit;
+	letter-spacing: 0;
+	margin-inline: 8px;
+}
+
+#SpoilerWarning {
+	font-weight: bold;
+	margin-inline-start: var(--text-spacing);
+
+	justify-content: start;
+}
+
+#UnlockContainer {
+	&:not(:empty) {
+		background-color: currentColor;
+		mask: var(--icon-checkmark);
+		mask-size: 7px;
+		mask-repeat: no-repeat;
+		mask-position: right;
+	}
 }

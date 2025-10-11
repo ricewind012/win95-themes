@@ -1,9 +1,12 @@
 @use "shared/tabs";
 @use "shared++/utils";
+@use "steam/shared";
 
 #FixCenterAlignScroll {
+	background-color: transparent;
 	gap: 0;
 	padding: 0;
+	margin: 0;
 
 	overflow: visible;
 }
@@ -19,15 +22,29 @@
 
 #TabHeaderRowWrapper,
 #TabContents {
-	top: 53px;
+	top: calc(var(--steamavatar_size) + var(--text-spacing));
 }
 
 #TabContentsScroll {
-	@include tabs.content;
+	@include tabs.content($compact: true);
 
+	margin: 0;
 	margin-top: var(--tabs-height);
 
-	overflow: hidden;
+	// different classes but same outcome
+	& > div {
+		--spacing: 4px;
+		--inset: calc(var(--tabs-height) + var(--spacing)) var(--spacing)
+			var(--spacing) var(--spacing);
+
+		@include shared.content-container-alt;
+
+		// This has no effect anyway !
+		gap: 0;
+
+		overflow: auto;
+		height: calc(100% - var(--spacing));
+	}
 }
 
 #TabHeaderRowWrapper {

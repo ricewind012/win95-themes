@@ -1,0 +1,5 @@
+// wtf is this doing in "library" lol ?
+#ExitGameDialog {
+	width: auto;
+	max-height: calc(100% - var(--titlebar-height));
+}

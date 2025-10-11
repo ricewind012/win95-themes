@@ -1,5 +1,5 @@
 @use "steam/shared";
 
-#ScrollPanel {
+:where(#ScrollPanel) {
 	@include shared.content-container-alt;
 }

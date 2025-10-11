@@ -1,4 +1,6 @@
+@use "shared/controls";
 @use "shared/window";
+@use "shared++/utils";
 
 :root {
 	--library_section-display: grid;
@@ -8,6 +10,10 @@
 	--library_section-spacing: 8px;
 }
 
+#AchievementsPageContainer {
+	margin-block: 5%;
+}
+
 #AppDetailsMain {
 	@include window.content-container;
 
@@ -15,6 +21,28 @@
 
 	// for toolbar
 	top: calc(var(--icon-button-height) + var(--text-spacing));
+}
+
+#AppDetailsOverlayTransitionGroup {
+	#CloseButton {
+		--offset: calc(var(--border-size) + var(--window-spacing) + 1px);
+
+		@include controls.button;
+		@include window.titlebar-button;
+		@include utils.titlebar-button-close;
+
+		background-image: none;
+
+		position: absolute;
+		top: var(--offset);
+		right: var(--offset);
+		width: unset;
+	}
+
+	& > div {
+		background-color: transparent;
+		backdrop-filter: none;
+	}
 }
 
 #AppDetailsTransitionGroup {

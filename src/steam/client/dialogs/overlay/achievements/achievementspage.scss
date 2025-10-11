@@ -1,6 +1,14 @@
 @use "shared++/utils";
 @use "steam/shared";
 
+#Background {
+	display: none;
+}
+
+#Container {
+	padding: var(--dialog-spacing);
+}
+
 #DragHandle {
 	// Extend the separator to the right
 	position: absolute;
@@ -15,16 +23,24 @@
 	@include utils.text-reset;
 }
 
-#List {
-	--inset: 34px 14px 10px 14px;
+// HOW is this a scrollpanel ???
+#Page {
+	background-color: transparent;
+	margin: 0;
+	margin-top: var(--titlebar-height);
 
-	@include shared.content-container-alt;
+	overflow: visible;
 
-	// This has no effect anyway !
-	gap: 0;
+	&::after {
+		content: "";
 
-	overflow: auto;
-	height: 100%;
+		position: absolute;
+		top: calc(var(--titlebar-height) * -1);
+		width: 100%;
+		height: var(--titlebar-height);
+
+		background-color: var(--color-active-caption);
+	}
 }
 
 #SortableUserAchievementInner {

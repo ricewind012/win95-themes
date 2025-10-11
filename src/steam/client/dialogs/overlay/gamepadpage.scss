@@ -1,0 +1,11 @@
+@use "shared/window";
+
+#GamepadPage {
+	@include window.container($child: true);
+
+	background-image: none;
+	border: none;
+
+	// Restrict fixed position elements to this place
+	transform-style: preserve-3d;
+}

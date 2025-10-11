@@ -7,6 +7,16 @@
 	height: var(--achievementiconbase_size);
 }
 
+#HiddenLabel {
+	margin: 0;
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: var(--achievementiconbase_size);
+	height: var(--achievementiconbase_size);
+}
+
 #Icon {
 	box-shadow: none;
 }
