@@ -115,7 +115,7 @@
 	margin-bottom: var(--text-spacing);
 }
 
-.DialogContent {
+:where(.DialogContent) {
 	background: transparent;
 	font: var(--text-ui);
 	padding: var(--dialog-spacing);
@@ -170,7 +170,7 @@
 	padding: 0;
 }
 
-.DialogFooter {
+:where(.DialogFooter) {
 	padding-top: var(--dialog-button-spacing);
 }
 
@@ -259,6 +259,10 @@
 
 .DialogRoundCheckboxField_OuterCircle {
 	display: none;
+}
+
+.DialogSlider_Container {
+	background-color: transparent;
 }
 
 .DialogSlider_Grabber {

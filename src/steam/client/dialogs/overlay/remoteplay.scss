@@ -1,0 +1,177 @@
+@use "shared/controls";
+@use "shared++/utils";
+
+#BoxButton {
+	@include controls.button;
+
+	letter-spacing: 0;
+	text-transform: none;
+}
+
+#ContentBox {
+	background-color: transparent;
+	padding: 0;
+
+	#Bottom {
+		font-size: inherit;
+
+		flex: 0;
+	}
+
+	#Content {
+		justify-content: center;
+	}
+
+	#Top {
+		padding-block: 0 var(--text-spacing);
+	}
+}
+
+#ContentForm {
+	padding: 0;
+	margin-top: 32px;
+
+	// "Host" groupbox title
+	.DialogBody,
+	.DialogContent_InnerWidth {
+		overflow: visible;
+	}
+}
+
+#ControlEnabled {
+	color: inherit;
+}
+
+#ControllerDropSlots {
+	#DropSlotNumber {
+		border-radius: 50%;
+	}
+
+	#HowToHint {
+		background: icon("question");
+
+		top: calc((40px - var(--icon-size)) / 2);
+		right: calc(var(--icon-size) * -1 - var(--text-spacing));
+		width: var(--icon-size);
+		height: var(--icon-size);
+	}
+}
+
+#DialogHeader {
+	z-index: 2;
+
+	#HeaderActions {
+		position: absolute;
+		top: calc(var(--titlebar-height) + var(--dialog-spacing));
+		left: calc(var(--icon-size) * -1);
+	}
+
+	#StreamPausedNote {
+		color: var(--color-button-text);
+		font: var(--text-ui);
+		letter-spacing: 0;
+		text-transform: none;
+		margin: 0;
+
+		// TODO: statusbar text mixin
+		--pos: calc(var(--border-size) + var(--window-spacing) + 2px);
+
+		position: fixed;
+		left: var(--pos);
+		bottom: var(--pos);
+		width: calc(100% - var(--pos) * 2);
+	}
+}
+
+#Footer {
+	padding: 0;
+	margin: 0;
+}
+
+#InvitedGuestBox {
+	#LinkContainer {
+		@include controls.text-field($disabled-sel: "");
+	}
+}
+
+#MediaBoxBody {
+	background-color: transparent;
+	box-shadow: none;
+	gap: 0;
+	padding: 0;
+
+	flex: 0 0 auto;
+}
+
+#MediaBoxTitle {
+	color: inherit;
+	font-size: inherit;
+
+	#TitleStatusDivider {
+		@include controls.separator-horizontal;
+
+		margin-inline: var(--text-spacing);
+
+		&::after {
+			content: "";
+		}
+	}
+}
+
+#MediaButton {
+	@include controls.button;
+
+	align-items: center;
+	justify-content: center;
+
+	#ButtonContent {
+		background-color: transparent;
+	}
+
+	svg,
+	#MediaButtonLabel {
+		all: unset;
+	}
+
+	path {
+		fill: currentColor;
+	}
+}
+
+#Section {
+	@include controls.groupbox;
+}
+
+#SectionItemMargin {
+	margin-top: 8px;
+
+	&::before {
+		@include utils.pseudo-separator;
+	}
+
+	#ContentBox {
+		margin-top: 8px;
+	}
+}
+
+#SectionTitle {
+	@include utils.legend-as-div;
+	@include utils.text-reset;
+}
+
+#SliderContainer {
+	background-color: transparent;
+	padding: 0;
+}
+
+#SliderIcon {
+	display: none;
+}
+
+#SliderIconContainer {
+	background: icon("sound");
+	padding: 0;
+
+	width: var(--icon-size);
+	height: var(--icon-size);
+}
