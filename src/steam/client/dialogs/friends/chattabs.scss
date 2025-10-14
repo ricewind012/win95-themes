@@ -19,7 +19,7 @@
 #ChatTabContent_ChatRoomName {
 	@include utils.text-reset;
 
-	-webkit-mask: none;
+	mask: none;
 	// Make it consistent with friends
 	font-weight: bold;
 }
