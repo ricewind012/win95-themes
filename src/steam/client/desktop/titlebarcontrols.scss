@@ -1,5 +1,6 @@
 @use "shared/controls";
 @use "shared/window";
+@use "shared++/utils";
 
 #AccountMenu {
 	@include controls.combobox;
@@ -59,9 +60,16 @@
 	}
 }
 
-// Notifications / menu
-#AccountName,
 #WalletBalance {
+	@include utils.parentheses;
+
+	#TitleBarControls & {
+		color: var(--color-gray-text);
+	}
+}
+
+// Notifications / menu
+#AccountName {
 	color: inherit;
 }
 

@@ -88,7 +88,7 @@
 	padding: 0;
 
 	// breaks
-	&:not(:has(> .CSSGrid_Measure)) {
+	&:not(:has(> .CSSGrid_Measure, > #ChildrenContainer, #Draggable:only-child)) {
 		@include shared.library-section;
 	}
 
@@ -125,8 +125,10 @@
 	#Rule {
 		@include controls.drag-handle;
 
+		opacity: 1;
+
 		position: absolute;
-		left: 3px;
+		left: calc(var(--appdetails_container-spacing-x) / 2 - 2px);
 		height: calc(100% - var(--appdetails_container-spacing-y) * 2);
 
 		&::before {

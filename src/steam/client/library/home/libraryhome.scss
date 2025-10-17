@@ -7,11 +7,16 @@
 	transform: unset;
 }
 
-#LibraryHome,
-#UpdatesContainer {
+#LibraryHome {
 	background: none;
 	color: var(--color-window-text);
 	padding: 0;
 
 	height: unset;
+}
+
+#UpdatesContainer {
+	--library_section-rows: 1fr;
+
+	@extend #LibraryHome;
 }

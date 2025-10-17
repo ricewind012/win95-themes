@@ -1,10 +1,12 @@
 @use "shared/controls";
-@use "shared/window";
+@use "shared/listbox";
 
 // !important
 #CollectionDropDownContainer#CollectionDropDownContainer {
 	.DesktopUI & ._DialogInputContainer {
-		@include window.container($child: true);
+		@include listbox.container;
+
+		box-shadow: none;
 	}
 }
 
@@ -13,19 +15,6 @@
 	margin: 0;
 
 	&#OptionsRule {
-		border: none;
-
-		&::before {
-			content: "";
-
-			position: unset;
-			width: calc(100% + 40px);
-			display: block;
-
-			@include controls.separator;
-
-			background-color: var(--color-button-face);
-			margin-left: -20px;
-		}
+		border-color: var(--color-window-text);
 	}
 }

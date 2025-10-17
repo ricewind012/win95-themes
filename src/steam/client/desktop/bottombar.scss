@@ -23,6 +23,10 @@
 	-webkit-app-region: no-drag;
 }
 
+#BottomBarContainer {
+	margin-top: var(--window-gap);
+}
+
 #DownloadStatusContent {
 	color: var(--color-button-text);
 	padding: 0;
@@ -36,9 +40,11 @@
 
 #DetailedDownloadProgress,
 #DownloadStatus {
+	--offset: calc(var(--border-size) + var(--window-spacing));
+
 	position: fixed;
-	left: 8px;
-	bottom: 5px;
+	left: calc(var(--offset) + 4px);
+	bottom: calc(var(--offset) + 2px);
 	width: unset;
 	justify-content: center;
 }
