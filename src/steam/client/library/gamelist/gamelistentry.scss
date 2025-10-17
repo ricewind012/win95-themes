@@ -2,12 +2,6 @@
 @use "shared/tree";
 @use "shared++/utils";
 
-:root {
-	--gamelistentry_container-padding: 3px 0;
-	--gamelistentry_container-container-padding-block: 2px;
-	--gamelistentry_tree-border-inset-top: -11px;
-}
-
 #Container {
 	@include tree.item($expanded-sel: "&");
 	@include utils.text-reset;

@@ -2,6 +2,26 @@
 @use "shared++/global";
 @use "shared++/scrollbar";
 
+:root {
+	--appdetails_container-spacing-x: 10px;
+	--appdetails_container-spacing-y: 4px;
+	--appdetails_highlight-img-size: 80px;
+
+	--gamelistentry_container-padding: 3px 0;
+	--gamelistentry_container-container-padding-block: 2px;
+	--gamelistentry_tree-border-inset-top: -11px;
+
+	--library_section-display: grid;
+	--library_section-header-width: 200px;
+	--library_section-rows: var(--library_section-header-width)
+		calc(100% - var(--library_section-header-width));
+	--library_section-spacing: 8px;
+
+	// other
+	--achievementiconbase_size: 48px;
+	--steamavatar_size: 32px;
+}
+
 b {
 	font-family: var(--text-ui-font);
 }
