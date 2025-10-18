@@ -1,19 +1,22 @@
 @use "shared/controls";
 
-.container_a45028 {
-	border: none;
-
-	height: unset;
-}
-
-.iconLayout_a45028 {
+.icon__0f084 {
 	display: none;
 }
 
-.inner_a45028 {
-	padding: 0;
+.input__0f084 {
+	@include controls.text-field;
+
+	.wrapper__3412a:is([data-disabled="true"], [data-read-only="true"]) > & {
+		@include controls.input-disabled;
+
+		opacity: 1;
+	}
 }
 
-.input_a45028 {
-	@include controls.text-field;
+.wrapper__3412a {
+	border: none;
+	padding: 0;
+
+	min-height: unset;
 }

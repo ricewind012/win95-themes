@@ -1,0 +1,9 @@
+@use "shared/tooltip";
+
+.caret__5bc6a {
+	display: none;
+}
+
+.tooltip__4e35b {
+	@include tooltip.container;
+}

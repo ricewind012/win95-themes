@@ -1,0 +1,78 @@
+@use "shared/window";
+
+[aria-modal][data-dialog] {
+	--name: attr(aria-label);
+}
+
+.actionBar__8a031 {
+	padding: var(--dialog-spacing);
+
+	.stack_dbd263 {
+		gap: var(--dialog-button-spacing);
+
+		justify-content: end;
+	}
+
+	button {
+		flex: unset;
+		width: unset;
+	}
+}
+
+.body__8a031 {
+	overflow: auto;
+}
+
+.bodyInner__8a031 {
+	padding: var(--dialog-spacing);
+}
+
+// ???
+.bodySpacerBottom__8a031,
+.bodySpacerTop__8a031 {
+	display: none;
+}
+
+.container__8a031 {
+	@include window.container($child: true);
+
+	border: none;
+
+	&::before {
+		content: var(--name);
+
+		box-sizing: border-box;
+
+		@include window.titlebar($focused-sel: "&");
+		@include window.titlebar-name;
+	}
+}
+
+.header__8a031 {
+	all: unset;
+
+	& > .stack_dbd263 {
+		gap: var(--dialog-spacing);
+	}
+}
+
+.headerLayout__8a031 {
+	@include window.titlebar($focused-sel: "&");
+}
+
+.headerSubtitle__8a031 {
+	color: inherit;
+	margin-inline: var(--dialog-spacing);
+}
+
+.headerTitle__8a031 {
+	color: inherit;
+}
+
+.headerTrailing__8a031 {
+	margin: 0;
+
+	button {
+		@include window.titlebar-button;
+	}
+}

@@ -5,7 +5,8 @@
 
 $-titlebar-description-selector: "> :first-child + [data-text-variant]";
 
-:where([role="dialog"]:not([aria-label=""])) {
+// [data-dialog] for mana modals
+:where([role="dialog"]:not([aria-label=""], [data-dialog])) {
 	@include window.container($child: true);
 
 	&[aria-label] {
@@ -19,10 +20,6 @@ $-titlebar-description-selector: "> :first-child + [data-text-variant]";
 			@include window.titlebar-name;
 		}
 	}
-}
-
-.backdrop__78332 {
-	background-color: transparent;
 }
 
 [class*="formGroup"] {
@@ -153,4 +150,8 @@ $-titlebar-description-selector: "> :first-child + [data-text-variant]";
 		) {
 		display: none;
 	}
+}
+
+.scrim__40128 {
+	background-color: transparent;
 }

@@ -14,9 +14,14 @@
 .button_a22cb0 {
 	@include controls.button;
 
+	&.icon-only_a22cb0 .buttonChildrenWrapper_a22cb0 {
+		display: none;
+	}
+
 	.buttonChildrenWrapper_a22cb0 {
 		padding: 0;
 
+		min-width: unset;
 		min-height: unset;
 	}
 }
