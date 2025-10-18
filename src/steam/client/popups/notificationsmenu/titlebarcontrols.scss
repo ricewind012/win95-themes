@@ -1,0 +1,60 @@
+@use "shared/controls";
+@use "steam/shared";
+
+#AccountName {
+	color: inherit;
+}
+
+#AllNotificationsButton {
+	@include controls.button;
+}
+
+#AllNotificationsTitle {
+	font: var(--text-ui);
+	font-weight: bold;
+}
+
+#EmptyNotificationsBody {
+	color: inherit;
+	padding-top: var(--text-spacing);
+}
+
+#EmptyNotificationsCtn {
+	font: var(--text-ui);
+	padding: 8px;
+}
+
+#EmptyNotificationsTitle {
+	font-weight: bold;
+}
+
+#LogoutButton {
+	white-space: pre;
+	gap: 0;
+}
+
+#NotificationHeader {
+	padding: 8px;
+}
+
+#NotificationMenuItem {
+	background-color: transparent;
+}
+
+#NotificationsMenu {
+	color: var(--color-button-text);
+	border: none;
+	box-shadow: none;
+}
+
+#NotificationsMenuEntriesContainer {
+	gap: 0;
+	margin: 0;
+}
+
+#NotificationsMenuScrollable {
+	--offset: calc(var(--border-size) + var(--window-spacing));
+	--inset: calc(var(--offset) + 39px) var(--offset) var(--offset) var(--offset);
+
+	@include shared.content-container-alt;
+}

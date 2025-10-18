@@ -1,0 +1,8 @@
+@use "shared++/utils";
+
+#TimestampDesktop {
+	@include utils.parentheses;
+
+	color: var(--color-gray-text);
+	font: var(--text-ui);
+}

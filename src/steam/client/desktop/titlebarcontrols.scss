@@ -1,5 +1,4 @@
 @use "shared/controls";
-@use "shared/window";
 @use "shared++/utils";
 
 #AccountMenu {
@@ -66,38 +65,4 @@
 	#TitleBarControls & {
 		color: var(--color-gray-text);
 	}
-}
-
-// Notifications / menu
-#AccountName {
-	color: inherit;
-}
-
-#AllNotificationsTitle {
-	font: var(--text-ui);
-}
-
-#EmptyNotificationsBody {
-	color: inherit;
-}
-
-#EmptyNotificationsCtn {
-	@include window.container($child: true);
-}
-
-#LogoutButton {
-	white-space: pre;
-	gap: 0;
-}
-
-#NotificationHeader {
-	padding: 8px;
-}
-
-#NotificationsMenu {
-	color: var(--color-button-text);
-	border: none;
-	box-shadow: none;
-
-	width: unset;
 }

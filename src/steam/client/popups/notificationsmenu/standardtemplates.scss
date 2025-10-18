@@ -1,0 +1,48 @@
+@use "shared/menu";
+
+// summary ?
+#PinnedTemplateDesktop {
+	display: none;
+}
+
+#StandardTemplateDesktop {
+	background-color: transparent;
+	padding: 4px;
+
+	height: unset;
+
+	&:hover {
+		background-color: var(--color-highlight);
+		color: var(--color-highlight-text);
+	}
+
+	#Content {
+		gap: var(--text-spacing);
+		margin-inline-start: 8px;
+	}
+
+	#Header {
+		text-transform: uppercase;
+
+		#Icon {
+			display: none;
+		}
+
+		#Title {
+			color: var(--color-gray-text);
+			font: var(--text-ui);
+			margin-inline-end: var(--text-spacing);
+		}
+	}
+
+	#StandardNotificationDescription {
+		color: inherit;
+		font: var(--text-ui);
+		font-weight: bold;
+	}
+
+	#StandardNotificationSubText {
+		color: inherit;
+		font: var(--text-ui);
+	}
+}
