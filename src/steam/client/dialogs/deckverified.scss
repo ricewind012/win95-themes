@@ -1,0 +1,116 @@
+@use "shared/window";
+
+.DeckVerifiedModalDialogClient {
+	.DialogContent {
+		border: none;
+	}
+
+	.ModalPosition_Content {
+		width: unset;
+	}
+
+	.ModalPosition_Dismiss .closeButton {
+		width: unset;
+	}
+}
+
+#AppTitleCategory {
+	display: none;
+}
+
+#CompatibilityDetailsContainerDesktop {
+	gap: var(--messagebox-spacing);
+}
+
+#CompatibilityDetailRatingSummary {
+	color: inherit;
+	font: inherit;
+	padding: 0;
+	margin-inline: var(--messagebox-spacing);
+
+	// unknown compat
+	&:last-child {
+		margin-block: var(--messagebox-spacing);
+	}
+
+	// lol
+	& > & {
+		margin: 0;
+	}
+
+	#Compatible {
+		color: var(--deckverified_color-compatible);
+	}
+
+	#Playable {
+		color: var(--deckverified_color-playable);
+	}
+
+	#Unsupported {
+		color: var(--deckverified_color-unsupported);
+	}
+
+	#Verified {
+		color: var(--deckverified_color-verified);
+	}
+}
+
+#CompatibilityDetailsInterior_NoScroll {
+	padding: 8px;
+
+	// TODO: unify
+	--inset: 0px;
+	transform-style: preserve-3d;
+}
+
+#CompatibilityDetailsNoteRow {
+	color: inherit;
+	font: inherit;
+	padding-inline-start: calc(var(--icon-size) + 1em);
+
+	&:last-child {
+		padding-bottom: 0;
+	}
+}
+
+#CompatibilityDetailsResultIcon {
+	padding: 0;
+	margin-inline-end: 1em;
+}
+
+#CompatibilityDetailsRow {
+	color: inherit;
+	font: inherit;
+	padding-bottom: 1em;
+
+	align-items: center;
+
+	&:last-child {
+		padding-bottom: 0;
+	}
+}
+
+#CompatibilityDetailsSeparator {
+	display: none;
+}
+
+#CompatibilityNotes {
+	border-top: 1px solid var(--color-window-text);
+	padding-block: 1em 0;
+}
+
+#DeveloperBlockLinkDesktop {
+	padding-inline-start: var(--text-spacing);
+}
+
+#DialogHeader {
+	@include window.titlebar($focused-sel: "&");
+
+	margin-bottom: 10px;
+}
+
+#DialogTitle {
+	@include window.titlebar-name;
+
+	color: inherit;
+}

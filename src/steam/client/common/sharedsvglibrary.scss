@@ -1,0 +1,21 @@
+#SteamDeckCompatIcon {
+	width: var(--icon-size);
+	height: var(--icon-size);
+
+	&#SteamDeckCompatPlayable {
+		color: var(--deckverified_color-playable);
+	}
+
+	&#SteamDeckCompatUnknown,
+	&#SteamDeckCompatUnsupported {
+		color: var(--deckverified_color-unsupported);
+	}
+
+	&#SteamDeckCompatVerified {
+		color: var(--deckverified_color-verified);
+	}
+
+	&#SteamOSCompatCompatible {
+		color: var(--deckverified_color-compatible);
+	}
+}

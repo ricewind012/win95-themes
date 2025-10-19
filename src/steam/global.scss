@@ -7,6 +7,11 @@
 	--appdetails_container-spacing-y: 4px;
 	--appdetails_highlight-img-size: 80px;
 
+	--deckverified_color-compatible: light-dark(blue, lightblue);
+	--deckverified_color-playable: light-dark(#880, yellow);
+	--deckverified_color-unsupported: var(--color-gray-text);
+	--deckverified_color-verified: light-dark(green, lightgreen);
+
 	--gamelistentry_container-padding: 3px 0;
 	--gamelistentry_container-container-padding-block: 2px;
 	--gamelistentry_tree-border-inset-top: -11px;
