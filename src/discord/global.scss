@@ -1,6 +1,10 @@
 @use "shared++/global";
 @use "shared++/scrollbar";
 
+html {
+	font: var(--text-ui);
+}
+
 img {
 	image-rendering: auto;
 }

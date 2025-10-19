@@ -9,16 +9,24 @@
 	margin: 0;
 }
 
+.vcd-screen-picker-header {
+	& > h2 {
+		all: unset;
+
+		font-weight: bold;
+	}
+}
+
 .vcd-screen-picker-hint-description {
 	@include utils.text-reset;
 
 	p {
-		margin-block: var(--text-spacing);
+		margin-block: var(--text-spacing) 0;
 	}
 }
 
 .vcd-screen-picker-modal {
-	& > div > h2 {
+	& > div > h5 {
 		display: none;
 	}
 
@@ -36,7 +44,7 @@
 	section {
 		@include controls.groupbox;
 
-		& > h2 {
+		& > h5 {
 			@include utils.legend-as-div;
 			@include utils.text-reset;
 		}
@@ -53,6 +61,7 @@
 
 .vcd-screen-picker-preview-img-linux {
 	border: 1px solid var(--color-button-shadow);
+	margin-bottom: var(--text-spacing);
 }
 
 .vcd-screen-picker-option-radio {
@@ -100,5 +109,6 @@
 }
 
 .vcd-screen-picker-screen-name {
+	font-weight: normal;
 	margin: 0;
 }

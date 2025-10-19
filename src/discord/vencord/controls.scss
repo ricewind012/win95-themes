@@ -1,0 +1,59 @@
+@use "shared/controls";
+
+.vc-btn-base {
+	@include controls.button;
+
+	opacity: 1;
+
+	min-height: unset;
+}
+
+.vc-divider {
+	display: none;
+}
+
+.vc-form-switch {
+	opacity: 1;
+	gap: var(--label-spacing);
+
+	flex-direction: row-reverse;
+	justify-content: start;
+
+	> :last-child {
+		margin: 0;
+	}
+}
+
+.vc-form-switch-text {
+	gap: var(--text-spacing);
+
+	.vc-text-sm {
+		color: var(--color-gray-text);
+		font: var(--text-ui);
+	}
+}
+
+.vc-form-switch-wrapper {
+	margin-bottom: var(--text-spacing);
+
+	// <label>
+	display: block;
+}
+
+.vc-switch-container {
+	@include controls.checkbox(
+		$checked-sel: "&.vc-switch-checked",
+		$disabled-sel: "&.vc-switch-disabled"
+	);
+
+	opacity: 1;
+	border: none;
+}
+
+.vc-switch-slider {
+	display: none;
+}
+
+.vc-text-base {
+	font: var(--text-ui);
+}

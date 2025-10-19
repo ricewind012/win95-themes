@@ -1,5 +1,6 @@
 @use "shared/controls";
 @use "shared/text";
+@use "shared/tooltip";
 @use "shared++/utils";
 
 %-vencord-groupbox-header {
@@ -13,7 +14,7 @@
 }
 
 // Plugin settings
-.content__49fc1.vc-m-bottom-16 > div:not(:last-child) {
+.content__49fc1.vc-margin-bottom-16 > :not(:last-child) {
 	@include controls.groupbox;
 	@extend %-vencord-groupbox-header;
 
@@ -21,7 +22,7 @@
 		--header-text: "Description";
 	}
 
-	&:nth-child(2) [data-text-variant="heading-lg/semibold"] {
+	&:nth-child(2) > .vc-text-base {
 		@include utils.legend-as-div;
 	}
 }
@@ -31,7 +32,7 @@
 .contentColumn__23e6b:is([id^="vencord"], #vesktop-tab) {
 	--card-primary-bg: transparent;
 
-	h2 {
+	& > section > :is(h1, h2, h3, h4, h5) {
 		display: none;
 	}
 }
@@ -52,11 +53,28 @@
 
 		pointer-events: none;
 	}
+
+	& > section > section {
+		--header-text: "Local themes";
+
+		@include controls.groupbox;
+		@extend %-vencord-groupbox-header;
+
+		margin: calc(var(--border-size) + var(--tabpanel-spacing));
+
+		& > h5 {
+			display: none;
+		}
+	}
+
+	textarea {
+		height: unset;
+	}
 }
 
 @each $i in top bottom {
 	@each $j in 8 16 20 {
-		.vc-m-#{$i}-#{$j} {
+		.vc-margin-#{$i}-#{$j} {
 			margin-#{$i}: var(--text-spacing);
 		}
 	}
@@ -68,9 +86,18 @@
 	padding: 0;
 }
 
+.vc-addon-card-disabled {
+	opacity: 1;
+
+	.vc-plugins-info-button {
+		@include controls.input-disabled;
+	}
+}
+
 .vc-addon-header {
 	gap: var(--label-spacing);
-	margin-bottom: var(--text-spacing);
+
+	align-items: start;
 
 	& > div:not([class]) {
 		order: -1;
@@ -106,7 +133,6 @@
 	}
 }
 
-// TODO: .button__67645 in channel text area
 .vc-plugins-info-button {
 	--text: "Settings";
 
@@ -130,24 +156,36 @@
 .vc-plugins-info-card {
 	@include controls.groupbox;
 
-	height: unset;
+	gap: var(--text-spacing);
 
-	& > h2 {
+	& > h4 {
 		@include utils.text-reset;
 		@include utils.legend-as-div;
 	}
-
-	& > div {
-		@include utils.text-reset;
-	}
 }
 
+.vc-plugins-setting-inline {
+	flex-direction: row-reverse;
+	align-items: start;
+	justify-content: start;
+}
+
+.vc-plugins-setting-label {
+	gap: var(--text-spacing);
+}
+
+.vc-plugins-settings {
+	gap: var(--text-spacing);
+}
+
+// TODO
 .vc-settings-quick-actions-card {
 	gap: var(--dialog-button-spacing);
 
 	justify-content: left;
 }
 
+// TODO
 .vcd-location-btns {
 	gap: var(--dialog-button-spacing);
 	margin-top: var(--text-spacing);
@@ -155,11 +193,49 @@
 	display: flex;
 }
 
+.vc-settings-card {
+	@include controls.groupbox;
+
+	margin: calc(var(--border-size) + var(--tabpanel-spacing));
+
+	& > h5 {
+		@include utils.text-reset;
+		@include utils.legend-as-div;
+	}
+}
+
 .vcd-settings-category {
 	@include controls.groupbox;
+}
+
+.vcd-settings-category-content {
+	gap: var(--text-spacing);
 }
 
 .vcd-settings-category-title {
 	@include utils.text-reset;
 	@include utils.legend-as-div;
+}
+
+.vc-settings-quickActions-card {
+	background-color: transparent;
+	border: none;
+	padding: 0;
+}
+
+.vc-settings-quickActions-pill {
+	@include controls.button;
+
+	transform: none;
+}
+
+.vc-settings-theme-grid {
+	gap: var(--text-spacing);
+	margin-bottom: var(--text-spacing);
+}
+
+.vc-warning-card {
+	@include tooltip.container;
+
+	margin: calc(var(--border-size) + var(--tabpanel-spacing));
 }
