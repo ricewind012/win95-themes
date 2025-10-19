@@ -7,6 +7,13 @@
 
 	overflow: visible;
 	min-height: unset;
+
+	&::after {
+		left: unset;
+
+		border-radius: 0;
+		margin: 0;
+	}
 }
 
 [role="tablist"] {

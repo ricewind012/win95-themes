@@ -3,7 +3,10 @@
 .item__88a69 {
 	opacity: 1;
 	background-color: transparent;
-	margin-bottom: var(--text-spacing);
+
+	&:not(:last-of-type) {
+		margin-bottom: var(--text-spacing);
+	}
 
 	[data-text-variant="text-sm/normal"] {
 		color: var(--color-gray-text);
