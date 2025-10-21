@@ -1,0 +1,36 @@
+// Actually this is for remote play together lmaoooooooo
+// weird dialog overall and so it looks weird, not my problem
+
+#ButtonRow {
+	// --label-spacing for the gamepaddialog negative margin
+	margin-inline: calc(var(--dialog-spacing) + var(--label-spacing));
+}
+
+#ConfiguratorInterstitialContainer {
+	all: initial;
+
+	display: flex;
+	flex-direction: column;
+	height: calc(100% - 13px - var(--dialog-spacing));
+
+	.DialogBody {
+		box-shadow: none;
+		padding: var(--dialog-spacing);
+	}
+
+	svg * {
+		mask: none;
+	}
+}
+
+#DescLabel {
+	margin: 0;
+}
+
+#DialogBody {
+	color: inherit;
+}
+
+#DialogHeader {
+	all: unset;
+}
