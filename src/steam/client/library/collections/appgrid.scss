@@ -1,12 +1,27 @@
+@use "shared/controls";
 @use "shared/listbox";
 @use "shared++/utils";
+@use "steam/shared";
+
+#AppGridSectionHeader {
+	display: none;
+}
+
+#CollectionOptions {
+	padding: 0;
+}
 
 #LibraryImageBackgroundGlow {
 	display: none;
 }
 
 #SortingDropDown {
+	@include shared.library-in-toolbar;
+
 	gap: var(--text-spacing);
+
+	align-items: center;
+	right: anchor(right);
 }
 
 #SortingDropDownContainer {

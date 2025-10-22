@@ -1,0 +1,59 @@
+@use "steam/shared";
+
+#Collection {
+	&#NewCollection {
+		border: 2px dotted var(--color-gray-text);
+
+		&:hover {
+			border-color: var(--color-window-text);
+		}
+
+		#BigPlus {
+			transform: none;
+			color: inherit;
+		}
+
+		#CollectionLabel {
+			color: inherit;
+		}
+	}
+
+	#CollectionLabel {
+		font: var(--text-ui);
+		font-weight: bold;
+		letter-spacing: 0;
+		text-shadow: none;
+		text-transform: none;
+
+		width: 100%;
+	}
+
+	#CollectionLabelCount {
+		font: var(--text-ui);
+	}
+}
+
+#Header {
+	@include shared.library-in-toolbar;
+
+	color: inherit;
+	margin-block: 4px;
+
+	// Give space to the snapshot button
+	right: anchor(right);
+	left: anchor(left);
+
+	#Label {
+		font-weight: bold;
+		letter-spacing: 0;
+		text-transform: none;
+	}
+}
+
+#Rule {
+	display: none;
+}
+
+#ScrollContainer {
+	background: none;
+}

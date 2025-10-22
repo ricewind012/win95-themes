@@ -1,0 +1,113 @@
+@use "shared/controls";
+@use "steam/shared";
+
+#CollectionName {
+	font: inherit;
+	font-weight: bold;
+	letter-spacing: 0;
+	text-transform: none;
+}
+
+#Container {
+	color: inherit;
+}
+
+#DynamicCollectionLabel {
+	all: unset;
+
+	margin-block-start: calc(var(--offset) * -1);
+
+	svg {
+		display: none;
+	}
+}
+
+#DynamicCollectionLabelAndButton {
+	@include controls.button;
+
+	// oh my god bruh
+	--offset: 2px;
+	padding-block: calc(var(--button-spacing) - var(--offset));
+
+	order: 1;
+
+	// different oh my god bruh
+	#Header:has(+ div #FreezeButton) & {
+		// TODO(controls): icon-button-active
+		background: var(--checkerboard);
+		color: transparent;
+		box-shadow: var(--border-button-sunken);
+		text-shadow: 1px 1px var(--color-button-text);
+	}
+
+	&::after {
+		content: "";
+
+		width: var(--icon-size);
+		height: var(--icon-size);
+
+		background-image: icon("settings");
+		margin-inline-start: var(--text-spacing);
+	}
+
+	#EditButton {
+		display: none;
+	}
+}
+
+#EditButton {
+	--button-img: icon("edit");
+	@include controls.button;
+	@include controls.icon-button($selected-sel: "#Close");
+}
+
+#Header {
+	@include shared.library-in-toolbar;
+
+	text-transform: none;
+	gap: var(--toolbar-spacing);
+
+	// Give space to the snapshot button
+	right: calc(anchor(right) + var(--icon-button-width));
+	left: anchor(left);
+	height: unset;
+
+	.DialogInput_Wrapper {
+		margin: 0;
+
+		width: 200px;
+	}
+
+	& > #EditButton,
+	& > .tool-tip-source {
+		order: 1;
+	}
+}
+
+#OuterContainer {
+	background: none;
+}
+
+#RightSideButtons {
+	@include shared.library-in-toolbar;
+
+	padding: 0;
+
+	right: anchor(right);
+
+	#FreezeButton {
+		@include controls.button;
+
+		text-align: center;
+		text-transform: none;
+	}
+}
+
+#Rule {
+	display: none;
+}
+
+#SectionCount {
+	color: var(--color-gray-text);
+	margin: 0;
+}

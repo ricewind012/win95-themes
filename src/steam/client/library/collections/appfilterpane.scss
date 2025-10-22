@@ -7,6 +7,12 @@
 	gap: var(--dialog-button-spacing);
 }
 
+#Checkbox {
+	&:hover {
+		color: inherit;
+	}
+}
+
 #CompatDropDown {
 	padding: 0;
 

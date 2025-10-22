@@ -40,6 +40,14 @@
 	}
 }
 
+@mixin library-in-toolbar {
+	margin-inline: var(--toolbar-container-spacing);
+
+	position: fixed;
+	position-anchor: --librarymainpanel;
+	top: anchor(top);
+}
+
 @mixin library-section {
 	display: var(--library_section-display);
 	grid-template-columns: var(--library_section-rows);
