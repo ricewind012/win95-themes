@@ -11,10 +11,9 @@
 }
 
 #AppDetailsSectionContainer {
+	@include shared.library-section-content;
+
 	background: none;
-	color: var(--color-window-text);
-	margin: var(--appdetails_container-spacing-y)
-		var(--appdetails_container-spacing-x);
 }
 
 #Body {

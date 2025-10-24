@@ -1,10 +1,9 @@
 @use "shared/controls";
 @use "shared++/utils";
+@use "steam/shared";
 
 #AutoUpdateHours {
 	@include utils.text-reset;
-
-	@include utils.parentheses;
 }
 
 #AutoUpdateSettings {
@@ -19,8 +18,33 @@
 }
 
 #Button {
+	@include controls.icon-button;
+
 	// Assume download as this doesn't have a distinguishing class name lol
 	--button-img: icon("download");
+
+	&#RemoveFromQueue {
+		--button-img: icon("clear");
+		@include controls.icon-button;
+
+		opacity: 1;
+
+		&::after {
+			background-color: var(--color-button-text);
+		}
+	}
+
+	#Bottom & {
+		--button-img: icon("clear");
+	}
+
+	svg {
+		display: none;
+	}
+}
+
+#Buttons {
+	gap: var(--toolbar-spacing);
 }
 
 #ButtonWrapper {
@@ -30,61 +54,99 @@
 	height: unset;
 }
 
+#ContentTypes {
+	background-image: icon("question");
+
+	width: var(--icon-size);
+	height: var(--icon-size);
+
+	#Icon {
+		display: none;
+	}
+}
+
 #Count {
 	@include utils.text-reset;
 
+	color: var(--color-gray-text);
 	margin: 0;
+}
+
+#DetailsAndType {
+	height: unset;
+
+	#ProgressDetails {
+		@include utils.text-reset;
+	}
 }
 
 #DownloadsPage {
 	background: none;
 }
 
+#DownloadTimeRemaining {
+	color: inherit;
+	font: inherit;
+}
+
+#DragHandle {
+	@include shared.library-drag-handle;
+}
+
 #EmptyTransfers {
 	padding: 0;
 }
 
-#ItemLists {
-	padding: calc(var(--border-size) + var(--tabpanel-spacing));
+#InProgress {
+	color: inherit;
+}
 
+#ItemLists {
 	overflow: auto;
 }
 
-#Name {
-	@include utils.text-reset;
+#LabelRow {
+	gap: var(--text-spacing);
+	margin-bottom: var(--text-spacing);
 
+	#Progress {
+		@include utils.parentheses;
+
+		color: var(--color-gray-text);
+
+		flex-grow: 0;
+	}
+}
+
+#Name {
+	color: inherit;
+	font: inherit;
+	font-weight: bold;
 	margin-bottom: var(--text-spacing);
 }
 
-#ProgressDetails {
-	@include utils.text-reset;
-}
-
-#RemoveFromQueue {
-	--button-img: icon("clear");
-	@include controls.icon-button;
-
-	opacity: 1;
-
-	&::after {
-		background-color: var(--color-button-text);
-	}
-
-	svg {
-		display: none;
-	}
-}
-
 #Rule {
-	margin: 0 var(--text-spacing);
-
-	height: 0;
+	display: none;
 }
 
 #Section {
-	@include controls.groupbox;
+	padding: 0;
+	margin: 0;
 
-	margin-bottom: 16px;
+	&:not(#Active) {
+		@include shared.library-section;
+	}
+
+	&#Active {
+		#DragHandle {
+			top: var(--appdetails_container-spacing-y);
+			left: calc(var(--appdetails_container-spacing-x) + 55%);
+		}
+
+		#SectionList {
+			padding: 0;
+		}
+	}
 }
 
 #SectionItem {
@@ -110,24 +172,52 @@
 }
 
 #SectionList {
+	@include shared.library-section-content;
+
 	border: none;
-	gap: 8px;
-	padding: 0;
 	margin: 0;
 
 	display: flex;
 	flex-direction: column;
+	position: relative;
 }
 
 #SectionTitle {
 	@include utils.text-reset;
-	@include utils.legend-as-div;
+	@include shared.library-section-header;
 
-	background-color: var(--color-window);
+	gap: var(--text-spacing);
 
-	// Adjust for "Clear all" button
-	&:has(.DialogButton) {
-		top: -12px;
+	align-items: start;
+	flex-direction: column;
+}
+
+#Status {
+	gap: var(--text-spacing);
+	margin-bottom: var(--text-spacing);
+
+	#Label {
+		color: inherit;
+
+		flex-grow: 0;
+	}
+
+	#ProgressDetails {
+		@include utils.parentheses;
+		@include utils.text-reset;
+
+		color: var(--color-gray-text);
+
+		// #Icon parent lmao
+		#Label {
+			display: none;
+		}
+	}
+
+	& > :not([class]) {
+		@include utils.parentheses;
+
+		color: var(--color-gray-text);
 	}
 }
 
@@ -137,6 +227,14 @@
 
 #Title {
 	color: inherit;
+}
+
+#Throttle {
+	@include utils.text-reset;
+}
+
+#ThrottleValue {
+	color: var(--color-gray-text);
 }
 
 #TopBar {

@@ -1,10 +1,24 @@
 @use "shared/controls";
+@use "shared++/utils";
+@use "steam/shared";
 
-#GraphAndStats {
-	height: unset;
+#DownloadGraphStats {
+	padding-block-end: var(--text-spacing);
+}
+
+#DownloadGraphStatsWrapper {
+	width: 100%;
+
+	&::after {
+		@include utils.pseudo-separator;
+	}
 }
 
 #SettingsButton {
+	@include shared.library-in-toolbar;
+
+	right: anchor(right);
+
 	#Button {
 		--button-img: icon("settings");
 		@include controls.button;
@@ -13,5 +27,18 @@
 		svg {
 			display: none;
 		}
+	}
+}
+
+#SingleStat {
+	#Figure,
+	#Stat {
+		@include utils.text-reset;
+	}
+
+	#LegendText {
+		@include utils.text-reset;
+
+		font-weight: bold;
 	}
 }

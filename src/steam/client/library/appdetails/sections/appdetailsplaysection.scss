@@ -33,7 +33,7 @@
 }
 
 #DetailsProgressContainer {
-	@include controls.progress-bar($filled-sel: "&#DetailsProgressBar");
+	@include controls.progress-bar($filled-sel: "#DetailsProgressBar");
 
 	// Also seen in appportraithover
 	#Container & {
