@@ -12,5 +12,7 @@
 }
 
 #SettingsLink {
-	@include utils.text-reset;
+	@include utils.link;
+
+	font: var(--text-ui);
 }

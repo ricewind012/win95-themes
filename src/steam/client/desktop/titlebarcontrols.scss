@@ -62,7 +62,5 @@
 #WalletBalance {
 	@include utils.parentheses;
 
-	#TitleBarControls & {
-		color: var(--color-gray-text);
-	}
+	color: var(--color-gray-text);
 }

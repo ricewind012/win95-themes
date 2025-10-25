@@ -147,6 +147,10 @@
 			padding: 0;
 		}
 	}
+
+	&#Empty {
+		background-color: light-dark(#bbe5f3, #001e33);
+	}
 }
 
 #SectionItem {

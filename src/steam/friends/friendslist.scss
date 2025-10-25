@@ -191,6 +191,8 @@
 	border: none;
 	margin-top: var(--window-gap);
 
+	position: relative;
+
 	.avatarHolder {
 		--steamavatar_size: 40px;
 	}
@@ -198,6 +200,10 @@
 	.labelHolder {
 		margin-top: 0;
 		margin-right: 0;
+	}
+
+	.statusHeaderGlow {
+		height: 100%;
 	}
 }
 

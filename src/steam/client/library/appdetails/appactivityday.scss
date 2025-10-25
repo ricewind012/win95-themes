@@ -131,6 +131,7 @@
 #PartnerEventType {
 	color: var(--color-gray-text);
 	font: inherit;
+	margin-block-start: var(--text-spacing);
 
 	&#PartnerEventTypeUpdate {
 		text-shadow: none;

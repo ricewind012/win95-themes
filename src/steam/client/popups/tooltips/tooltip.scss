@@ -4,7 +4,9 @@
 #ToolTipCustom {
 	@include tooltip.container;
 
-	font-size: var(--text-ui-size);
+	background-image: none;
+	font: var(--text-ui);
+	text-shadow: none;
 	box-shadow: none;
 }
 

@@ -18,7 +18,8 @@
 	}
 
 	.DialogHeader {
-		display: none;
+		// !important (lol)
+		--titlebar-spacing: 5000px;
 	}
 }
 

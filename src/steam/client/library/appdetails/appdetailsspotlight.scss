@@ -1,12 +1,39 @@
-@use "shared/tooltip";
+@use "shared/table";
+@use "steam/shared";
+
+#AppDetailsSpotlightDemo {
+	@include table.header-row;
+	@include shared.library-section-content;
+
+	font: var(--text-ui);
+	font-weight: bold;
+
+	#Buttons {
+		padding-top: var(--text-spacing);
+	}
+
+	#Info {
+		font: var(--text-ui);
+		padding-inline: var(--library_section-spacing);
+	}
+
+	#Title {
+		color: inherit;
+		font: inherit;
+		font-weight: normal;
+		margin-top: var(--text-spacing);
+	}
+
+	#VisitButton {
+		margin-top: var(--text-spacing);
+
+		height: unset;
+	}
+}
 
 #ReviewContainer {
-	@include tooltip.container;
-
-	// Couldn't think of any other way, so let it be
-	margin: var(--library_section-spacing);
-
-	width: auto;
+	@include table.header-row;
+	@include shared.library-section-content;
 
 	#Inner {
 		width: auto;

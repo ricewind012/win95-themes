@@ -7,12 +7,12 @@
 	color: inherit;
 	font: inherit;
 	gap: var(--text-spacing);
-
-	flex-direction: column;
 }
 
 #Name {
 	font: inherit;
+
+	margin-block: 4px;
 }
 
 #PageableContainer {

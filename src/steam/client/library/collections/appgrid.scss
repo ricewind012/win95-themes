@@ -16,12 +16,15 @@
 }
 
 #SortingDropDown {
-	@include shared.library-in-toolbar;
-
 	gap: var(--text-spacing);
 
 	align-items: center;
-	right: anchor(right);
+
+	#CollectionOptions {
+		@include shared.library-in-toolbar;
+
+		right: anchor(right);
+	}
 }
 
 #SortingDropDownContainer {

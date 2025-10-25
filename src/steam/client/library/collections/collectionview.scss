@@ -15,7 +15,7 @@
 #DynamicCollectionLabel {
 	all: unset;
 
-	margin-block-start: calc(var(--offset) * -1);
+	margin-block-start: calc(var(--text-offset) * -1);
 
 	svg {
 		display: none;
@@ -26,23 +26,31 @@
 	@include controls.button;
 
 	// oh my god bruh
-	--offset: 2px;
-	padding-block: calc(var(--button-spacing) - var(--offset));
+	--text-offset: 2px;
+	padding-block: calc(var(--button-spacing) - var(--text-offset));
 
 	order: 1;
 
 	// different oh my god bruh
 	#Header:has(+ div #FreezeButton) & {
 		// TODO(controls): icon-button-active
+		--offset: 1px;
 		background: var(--checkerboard);
 		color: transparent;
 		box-shadow: var(--border-button-sunken);
 		text-shadow: 1px 1px var(--color-button-text);
 	}
 
+	&:active {
+		--offset: 1px;
+	}
+
 	&::after {
 		content: "";
 
+		position: relative;
+		top: var(--offset);
+		left: var(--offset);
 		width: var(--icon-size);
 		height: var(--icon-size);
 

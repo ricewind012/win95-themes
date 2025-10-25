@@ -48,6 +48,12 @@
 	}
 }
 
+#LoginStatus {
+	color: var(--color-button-text);
+	font: var(--text-ui);
+	font-weight: bold;
+}
+
 #MoreMenuButton {
 	@include window.titlebar-button;
 	@include icons.icon-more;
@@ -68,4 +74,13 @@
 
 #NewLoginIcon {
 	display: none;
+}
+
+#UserContainer {
+	gap: var(--text-spacing);
+
+	#PersonaName {
+		color: var(--color-button-text);
+		font: var(--text-ui);
+	}
 }

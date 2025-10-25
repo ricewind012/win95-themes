@@ -22,6 +22,25 @@
 	flex-direction: column;
 }
 
+#FeaturedItemHideButton {
+	@include utils.titlebar-button-close;
+
+	// TODO: utils.icon
+	background-color: currentColor;
+	mask: var(--button-img) no-repeat;
+	mask-size: var(--button-img-size);
+	mask-position: var(--button-img-pos);
+
+	top: 4px;
+	right: 4px;
+	width: var(--icon-size);
+	height: var(--icon-size);
+
+	svg {
+		display: none;
+	}
+}
+
 #FeaturedItemHeader {
 	color: var(--color-gray-text);
 	font: inherit;

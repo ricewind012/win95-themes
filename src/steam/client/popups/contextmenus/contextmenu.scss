@@ -22,6 +22,8 @@
 	@include menu.item($selected-sel: "#active");
 
 	font-size: var(--text-ui-size);
+	// #UpperCase
+	text-transform: none;
 	border: none;
 
 	&:has(.DialogCheckbox.Active, .SVGIcon_Check) {
