@@ -1,0 +1,18 @@
+#CurrentTrackContainer {
+	gap: 0;
+
+	#Details {
+		gap: var(--text-spacing);
+	}
+}
+
+#SoundtrackName {
+	font: var(--text-ui);
+	font-weight: bold;
+}
+
+#TrackName {
+	opacity: 1;
+	color: var(--color-gray-text);
+	font: var(--text-ui);
+}

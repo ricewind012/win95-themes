@@ -1,0 +1,102 @@
+@use "shared/controls";
+@use "steam/shared";
+
+#ControlBlock {
+	gap: var(--toolbar-spacing);
+	padding: 0;
+
+	flex-direction: row;
+
+	svg {
+		display: none;
+	}
+}
+
+#Controls {
+	transform: unset;
+	gap: 0;
+
+	position: unset;
+	min-width: unset;
+}
+
+#ControlsAndVolume {
+	gap: var(--toolbar-spacing);
+
+	flex-direction: row;
+	height: unset;
+}
+
+// !important
+button#IconButton {
+	@include shared.icon-mono-button($disabled-sel: "&:not(#Active)");
+
+	flex: unset;
+
+	// TODO(controls): rework icon(), etc.
+	--icon-next: icon("mono-next");
+	--icon-pause: icon("mono-pause");
+	--icon-play: icon("mono-play");
+	--icon-previous: icon("mono-previous");
+	--icon-repeat: icon("mono-next");
+	--icon-shuffle: icon("mono-shuffle");
+
+	&:nth-child(1) {
+		--button-img: var(--icon-shuffle);
+	}
+
+	&:nth-child(2) {
+		--button-img: var(--icon-previous);
+	}
+
+	&:nth-child(3) {
+		--button-img: var(--icon-play);
+
+		&:has([d$="25Z"]) {
+			--button-img: var(--icon-pause);
+		}
+	}
+
+	&:nth-child(4) {
+		--button-img: var(--icon-next);
+	}
+
+	&:nth-child(5) {
+		--button-img: var(--icon-repeat);
+	}
+}
+
+#Progress {
+	gap: var(--text-spacing);
+}
+
+#Text {
+	font: var(--text-ui);
+}
+
+#VolumeControl {
+	--button-img: icon("sound");
+
+	gap: var(--text-spacing);
+
+	flex-direction: row;
+	align-items: center;
+	position: unset;
+
+	&:has(rect) {
+		--button-img: icon("sound-muted");
+	}
+
+	&::before {
+		content: "";
+
+		// TODO: utils.icon
+		background-color: currentColor;
+		background: var(--button-img) no-repeat;
+		background-size: var(--button-img-size);
+		background-position: var(--button-img-pos);
+
+		width: var(--icon-size);
+		height: var(--icon-size);
+	}
+}

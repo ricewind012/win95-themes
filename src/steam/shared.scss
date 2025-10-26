@@ -40,6 +40,44 @@
 	}
 }
 
+@mixin icon-mono-button($disabled-sel: "&:disabled") {
+	--offset-click: 0;
+	min-width: var(--icon-button-width);
+	height: var(--icon-button-height);
+
+	&:active {
+		--offset-click: 1px;
+		background: var(--checkerboard);
+		box-shadow: var(--border-button-sunken);
+	}
+
+	#{$disabled-sel} {
+		&::before {
+			background-color: var(--color-gray-text);
+		}
+
+		&::after {
+			@include utils.pseudo-icon;
+
+			--offset-disabled: 1px;
+			top: var(--offset-disabled);
+			left: var(--offset-disabled);
+
+			background-color: var(--color-button-highlight);
+		}
+	}
+
+	&::before {
+		@include utils.pseudo-icon;
+
+		top: var(--offset-click);
+		left: var(--offset-click);
+		z-index: 1;
+
+		background-color: var(--color-button-text);
+	}
+}
+
 @mixin library-drag-handle {
 	@include controls.drag-handle;
 

@@ -7,12 +7,17 @@
 }
 
 #AppDetailsMain {
-	@include window.content-container;
-
+	background-color: var(--color-window);
 	border: none;
 
 	// for toolbar
 	top: calc(var(--icon-button-height) + var(--text-spacing));
+
+	// for soundtrack
+	:where(& > :not(:empty)) {
+		box-shadow: var(--border-field);
+		padding: var(--border-size);
+	}
 }
 
 #AppDetailsOverlayTransitionGroup {

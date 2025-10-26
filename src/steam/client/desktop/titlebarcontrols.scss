@@ -38,6 +38,10 @@
 	}
 }
 
+#SoundtrackControls {
+	--button-img: icon("sound");
+}
+
 #TitleBarControls {
 	margin: 0;
 
@@ -47,8 +51,7 @@
 	right: calc(anchor(right) + var(--toolbar-container-spacing));
 	z-index: 1;
 
-	// Big Picture Mode
-	& > :nth-child(4) {
+	& > :has(#AccountMenu) {
 		margin-right: var(--toolbar-spacing);
 
 		order: -1;

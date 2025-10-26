@@ -1,0 +1,162 @@
+@use "shared/table";
+@use "shared/window";
+@use "shared++/utils";
+@use "steam/shared";
+
+%-column {
+	mask: none;
+	margin: 0;
+
+	overflow: auto;
+}
+
+#BackgroundContainer {
+	display: none;
+}
+
+#Columns {
+	gap: var(--window-gap);
+}
+
+#Content {
+	gap: 0;
+}
+
+#DesktopControls {
+	transform: unset;
+	background-color: unset;
+	padding: var(--toolbar-container-spacing);
+
+	position: unset;
+	height: unset;
+
+	// no way
+	#CurrentTrackContainer {
+		display: none;
+	}
+}
+
+#LeftColumn {
+	@extend %-column;
+
+	padding: 8px;
+
+	#AlbumArtAndTitle {
+		gap: 0;
+	}
+
+	#AlbumArt {
+		filter: none;
+		box-shadow: var(--border-statusbar);
+		padding: 1px;
+		margin-bottom: var(--text-spacing);
+	}
+
+	#AlbumName {
+		color: inherit;
+		font: inherit;
+	}
+
+	#AlbumStats {
+		@include utils.text-reset;
+	}
+
+	#AlbumStatsContainer {
+		@include utils.text-reset;
+
+		gap: var(--text-spacing);
+
+		flex-direction: row;
+	}
+
+	#ArtistName {
+		color: inherit;
+		font: inherit;
+		font-weight: bold;
+		margin: 0;
+
+		order: -1;
+	}
+
+	// "Soundtrack for <game>"... no way
+	#ParentGameLinkContainer {
+		display: none;
+	}
+
+	#StatsAndParent {
+		gap: var(--text-spacing);
+		margin-top: var(--text-spacing);
+
+		flex-direction: column;
+
+		&::before {
+			@include utils.pseudo-separator;
+		}
+	}
+
+	#TitleAndArtist {
+		gap: var(--text-spacing);
+	}
+}
+
+#PlayButton {
+	@include shared.library-in-toolbar;
+
+	left: anchor(left);
+	width: auto;
+}
+
+#RightColumn {
+	@extend %-column;
+	@include window.content-container;
+
+	border: none;
+}
+
+#SoundtrackContainer {
+	padding: 0;
+}
+
+#SoundtrackPanel {
+	background: var(--color-button-face);
+	box-shadow: none;
+	padding: 0;
+
+	overflow: hidden;
+	perspective: unset;
+}
+
+#TrackListContainer {
+	padding: 0;
+
+	overflow: auto;
+
+	#Disc {
+		@include table.header-row;
+
+		color: inherit;
+		font: inherit;
+	}
+}
+
+#TrackLength,
+#TrackNumber {
+	color: var(--color-gray-text);
+	font: inherit;
+	padding: 0;
+}
+
+#TrackListing {
+	@include table.row;
+
+	color: var(--color-window-text);
+
+	&#Playing {
+		background-color: var(--color-highlight);
+		color: var(--color-highlight-text);
+	}
+}
+
+#TrackName {
+	font: inherit;
+}
