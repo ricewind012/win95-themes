@@ -1,4 +1,4 @@
-@use "shared/tooltip";
+@use "shared/controls";
 
 #GameIcon {
 	width: var(--icon-size);
@@ -6,7 +6,7 @@
 }
 
 #ListItemTooltipBase {
-	@include tooltip.container;
+	@include controls.tooltip;
 
 	box-shadow: none;
 }

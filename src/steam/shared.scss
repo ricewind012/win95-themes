@@ -1,6 +1,5 @@
 @use "shared/controls";
 @use "shared/table";
-@use "shared/tooltip";
 @use "shared++/utils";
 
 // An alternative to "@include window.content-container" for special elements
@@ -145,13 +144,6 @@
 	&:has([d="M17.98 10.23L3.20996 25H32.75L17.98 10.23Z"]) {
 		@include table.button-arrow-descending;
 	}
-}
-
-@mixin tooltip {
-	@include tooltip.container;
-
-	font-size: var(--text-ui-size);
-	box-shadow: none;
 }
 
 @mixin pageable-container-button {

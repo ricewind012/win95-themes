@@ -1,11 +1,14 @@
-@use "steam/shared";
+@use "shared/controls";
 
 #AppName {
 	font-size: var(--text-ui-size);
 }
 
 #EmoticonHover {
-	@include shared.tooltip;
+	@include controls.tooltip;
+
+	font-size: var(--text-ui-size);
+	box-shadow: none;
 }
 
 #Name {

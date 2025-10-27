@@ -1,5 +1,4 @@
 @use "shared/controls";
-@use "shared/tooltip";
 @use "shared++/utils";
 
 #Button {
@@ -31,7 +30,7 @@
 }
 
 #ThumbnailTooltip {
-	@include tooltip.container;
+	@include controls.tooltip;
 
 	--image-height: 175px;
 	margin-top: calc(var(--image-height) * -1 - 12px);

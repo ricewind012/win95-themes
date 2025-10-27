@@ -1,7 +1,7 @@
-@use "shared/tooltip";
+@use "shared/controls";
 
 .tooltip_c36707 {
-	@include tooltip.container;
+	@include controls.tooltip;
 
 	opacity: 1;
 	font: var(--text-ui);

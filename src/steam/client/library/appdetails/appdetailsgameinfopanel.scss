@@ -1,9 +1,8 @@
 @use "shared/controls";
-@use "shared/tooltip";
 @use "shared++/utils";
 
 #Container {
-	@include tooltip.container;
+	@include controls.tooltip;
 	@include utils.text-reset;
 
 	background-color: transparent;

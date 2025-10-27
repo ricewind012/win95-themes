@@ -1,5 +1,4 @@
 @use "shared/controls";
-@use "shared/tooltip";
 @use "shared/window";
 @use "shared++/utils";
 @use "shared++/icons";
@@ -111,7 +110,7 @@
 
 	&:not(:has(> :empty)) {
 		@include utils.text-reset;
-		@include tooltip.container;
+		@include controls.tooltip;
 
 		align-items: center;
 		justify-content: start;

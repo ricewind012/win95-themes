@@ -1,7 +1,7 @@
-@use "shared/tooltip";
+@use "shared/controls";
 
 #AddMarkerTooltip {
-	@include tooltip.container;
+	@include controls.tooltip;
 
 	font: inherit;
 	box-shadow: none;

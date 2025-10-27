@@ -1,9 +1,9 @@
-@use "shared/tooltip";
+@use "shared/controls";
 
 .caret__5bc6a {
 	display: none;
 }
 
 .tooltip__4e35b {
-	@include tooltip.container;
+	@include controls.tooltip;
 }

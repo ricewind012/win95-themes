@@ -1,9 +1,8 @@
 @use "shared/controls";
-@use "shared/tooltip";
 @use "shared++/utils";
 
 #tab-preview-panel::part(content) {
-	@include tooltip.container;
+	@include controls.tooltip;
 
 	box-shadow: none;
 }

@@ -1,4 +1,4 @@
-@use "shared/tooltip";
+@use "shared/controls";
 @use "shared++/utils";
 
 %-header {
@@ -21,7 +21,7 @@
 }
 
 #AppPortraitHover {
-	@include tooltip.container;
+	@include controls.tooltip;
 
 	box-shadow: none;
 }

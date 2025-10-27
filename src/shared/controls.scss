@@ -297,3 +297,10 @@
 		height: 18px;
 	}
 }
+
+@mixin tooltip {
+	background-color: var(--color-tooltip);
+	color: var(--color-tooltip-text);
+	border: 1px solid var(--color-button-shadow-dark);
+	padding: 3px;
+}

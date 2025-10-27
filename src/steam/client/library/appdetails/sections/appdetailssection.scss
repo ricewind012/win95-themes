@@ -1,5 +1,4 @@
 @use "shared/controls";
-@use "shared/tooltip";
 @use "steam/shared";
 
 #AppDetailsSection {
@@ -24,7 +23,7 @@ div#AppDetailsSectionContainer {
 }
 
 #Highlight {
-	@include tooltip.container;
+	@include controls.tooltip;
 
 	background-image: none;
 	font: inherit;

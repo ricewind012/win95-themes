@@ -1,4 +1,4 @@
-@use "shared/tooltip";
+@use "shared/controls";
 @use "shared++/utils";
 
 #ToolbarToolTip {
@@ -11,6 +11,6 @@
 
 	// The *actual* tooltip
 	body > div > & {
-		@include tooltip.container;
+		@include controls.tooltip;
 	}
 }

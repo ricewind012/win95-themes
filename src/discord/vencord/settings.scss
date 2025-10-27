@@ -1,6 +1,5 @@
 @use "shared/controls";
 @use "shared/text";
-@use "shared/tooltip";
 @use "shared++/utils";
 
 %-vencord-groupbox-header {
@@ -235,7 +234,7 @@
 }
 
 .vc-warning-card {
-	@include tooltip.container;
+	@include controls.tooltip;
 
 	margin: calc(var(--border-size) + var(--tabpanel-spacing));
 }

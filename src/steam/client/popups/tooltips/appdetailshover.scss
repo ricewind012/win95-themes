@@ -1,7 +1,7 @@
-@use "shared/tooltip";
+@use "shared/controls";
 
 #AppDetailsHover {
-	@include tooltip.container;
+	@include controls.tooltip;
 
 	box-shadow: none;
 }

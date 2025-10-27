@@ -1,8 +1,8 @@
-@use "shared/tooltip";
+@use "shared/controls";
 
 #TextToolTip,
 #ToolTipCustom {
-	@include tooltip.container;
+	@include controls.tooltip;
 
 	background-image: none;
 	font: var(--text-ui);
