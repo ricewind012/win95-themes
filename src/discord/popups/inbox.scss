@@ -1,37 +1,56 @@
 @use "shared/controls";
+@use "shared/tabs";
+
+.container_fc561d {
+	background-color: transparent;
+}
+
+.controls_ab6641 {
+	gap: 0;
+}
 
 .header_ab6641 {
+	background-color: transparent;
 	border: none;
 	padding: 0;
+	margin: var(--dialog-spacing);
+	margin-bottom: 0;
 
-	height: unset;
-	min-height: unset;
-
-	[role="button"] {
+	span > [role="button"] {
 		@include controls.button;
 		@include controls.icon-button;
 	}
 }
 
-.inboxIcon_ab6641 {
+.headerTabs_ab6641 {
+	margin: 0;
+}
+
+.inboxIcon_ab6641,
+.inboxTitle_ab6641 {
 	display: none;
 }
 
 .recentMentionsPopout__95796 {
-	margin: var(--dialog-spacing);
+	width: calc(100% - var(--dialog-spacing) * 2);
+	min-width: unset;
 
-	.channelHeader__35a7e {
-		display: none;
-	}
+	&.messagesPopoutWrap__45690 {
+		@include tabs.content($compact: true);
 
-	.scroller__95796 {
+		margin-top: 0;
+
 		&::before {
 			content: "";
 
 			position: absolute;
-			inset: 0;
+			inset: calc(var(--border-size) + var(--tabpanel-spacing));
 
-			box-shadow: var(--border-button-raised);
+			box-shadow: var(--border-field);
 		}
+	}
+
+	.channelHeader__35a7e {
+		display: none;
 	}
 }

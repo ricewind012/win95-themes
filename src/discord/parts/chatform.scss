@@ -3,6 +3,7 @@
 
 .attachWrapper__0923f {
 	padding: 0;
+	margin-inline-end: var(--toolbar-spacing);
 
 	.attachButtonInner__0923f {
 		padding: 0;
@@ -107,6 +108,11 @@
 		display: none;
 	}
 
+	.button__24af7 {
+		@include controls.button;
+		@include controls.icon-button;
+	}
+
 	// TODO(icons): unify first selector & remove second when adding icons
 	.emojiButtonNormal__04eed,
 	.contents__201d5 {
@@ -126,8 +132,8 @@
 
 	position: fixed;
 	top: unset;
-	right: calc(var(--window-pos) + 2px);
-	bottom: calc(var(--window-pos) + 2px);
+	right: var(--window-pos);
+	bottom: calc(var(--window-pos) + 1px);
 	left: calc(
 		var(--window-pos) + var(--window-gap) + var(--actual-sidebar-width)
 	);

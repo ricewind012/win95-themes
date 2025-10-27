@@ -60,25 +60,26 @@
 }
 
 .search__49676 {
+	margin-inline: var(--toolbar-spacing);
+
 	order: -1;
 
 	.icon__97492 {
-		--pos: calc(var(--input-spacing) * -1);
-		--size: 18px;
+		--size: 17px;
 		--button-img: icon("search-24");
 
 		@include controls.button;
 		@include controls.icon-button;
 
-		margin-top: var(--pos);
-		margin-right: var(--pos);
+		margin-top: 0;
+		margin-right: calc(var(--input-spacing) * -1);
 
 		// Align with the textbox
 		min-width: var(--size);
 		width: var(--size);
 		height: var(--size);
 
-		&:has(> .iconContainer_a45028 > .clear_a45028.visible_a45028) {
+		&:has(> .iconContainer__0c4c4 > .clear__0c4c4.visible__0c4c4) {
 			--button-img: icon("clear");
 			--button-img-pos: 5px 4px;
 		}
@@ -89,12 +90,14 @@
 		}
 	}
 
-	.iconContainer_a45028 {
+	.iconContainer__0c4c4 {
 		display: none;
 	}
 
 	.searchBar__97492 {
 		@include controls.text-field;
+
+		width: 200px;
 
 		.DraftEditor-root {
 			@include utils.text-reset;

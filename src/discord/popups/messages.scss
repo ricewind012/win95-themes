@@ -8,17 +8,9 @@
 	margin: var(--border-size);
 }
 
+// :not(.recentMentionsPopout__95796)
 .messagesPopoutWrap__45690 {
 	margin: var(--dialog-spacing);
 
 	max-height: 400px;
-
-	&:not(.recentMentionsPopout__95796)::before {
-		content: "";
-
-		position: absolute;
-		inset: 0;
-
-		box-shadow: var(--border-field);
-	}
 }

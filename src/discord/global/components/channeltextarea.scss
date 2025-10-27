@@ -1,10 +1,14 @@
 @use "shared/controls";
-@use "shared/window";
 @use "shared++/utils";
+
+.button__74017 {
+	@include controls.button;
+	@include controls.icon-button;
+}
 
 .buttons__74017 {
 	gap: 0;
-	margin: 0;
+	margin-inline: var(--toolbar-spacing) 0;
 
 	height: unset;
 }
@@ -12,22 +16,15 @@
 .channelTextArea__74017 {
 	background-color: transparent;
 	border: none;
-
-	button {
-		@include controls.icon-button;
-	}
 }
 
 .inner__74017 {
-	@include window.toolbar;
-
 	padding: 0;
+	margin-inline: var(--toolbar-container-spacing);
 }
 
 .scrollableContainer__74017 {
-	opacity: 1;
 	background: transparent;
-	margin-left: calc(var(--toolbar-container-spacing) * -1);
 
 	overflow: hidden;
 }

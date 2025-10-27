@@ -20,12 +20,22 @@
 
 	font: var(--text-ui);
 
+	&.disabled_c1e9c4 {
+		@include menu.item-disabled;
+
+		opacity: 1;
+	}
+
 	&[aria-haspopup] {
 		@include menu.item-parent;
 	}
 
 	&[role="menuitemradio"][aria-checked="true"] {
 		@include menu.item-radio;
+
+		.iconContainer_c1e9c4 {
+			display: none;
+		}
 	}
 
 	.checkbox__09aca {
@@ -55,6 +65,8 @@
 	@include window.container($child: true);
 
 	border: none;
+
+	width: unset;
 }
 
 .scroller_c1e9c4 {
@@ -70,7 +82,7 @@
 }
 
 // TODO: move
-.statusItem_c1e9c4 {
+.statusItem_ce8328 {
 	padding: 0;
 
 	min-height: unset;
@@ -78,14 +90,18 @@
 	flex-direction: column;
 	align-items: start;
 
-	.description {
-		color: var(--color-gray-text);
-		margin: 0;
+	.description_ce8328,
+	.icon_ce8328 {
+		display: none;
 	}
 }
 
 .submenuPaddingContainer_c1e9c4 {
 	padding: 0;
+}
+
+.subtext_c1e9c4 {
+	display: none;
 }
 
 // Emotes
