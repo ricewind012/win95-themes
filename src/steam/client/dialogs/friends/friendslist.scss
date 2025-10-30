@@ -1,12 +1,12 @@
-/*
-#detailText {
-	@include utils.text-reset;
+@use "shared/controls";
 
+#detailText {
+	font: inherit;
 	margin: 0;
 }
 
 #OfflineContainer {
-	@include window.content-container;
+	background-color: transparent;
 }
 
 #OfflineMessage {
@@ -14,19 +14,19 @@
 }
 
 #retryButton {
-	background-image: none;
-	text-transform: unset;
+	@include controls.button;
 
-	width: unset;
+	background-image: none;
+	text-transform: none;
+
+	width: 100%;
 	height: unset;
 }
 
 #summaryText {
-	// TODO: header & paragraph spacing ?
 	font: var(--text-ui);
 	font-weight: bold;
-	color: var(--color-window-text);
+	color: inherit;
 	text-align: start;
 	margin: 0;
 }
-*/
