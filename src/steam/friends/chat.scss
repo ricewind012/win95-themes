@@ -15,7 +15,7 @@
 }
 
 .chatDialogs {
-	--statusbar-height: calc(var(--text-full) + 3px);
+	--statusbar-height: calc(1lh + 3px);
 
 	@include tabs.content($compact: true);
 

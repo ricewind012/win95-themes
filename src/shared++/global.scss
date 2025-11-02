@@ -12,12 +12,6 @@
 	transition: none;
 }
 
-:root {
-	--tree-item-spacing-x: 4px;
-	--text-full: calc(var(--text-ui-size) * var(--text-line));
-	--tabs-height: 20px;
-}
-
 body {
 	font: var(--text-ui);
 	image-rendering: pixelated;

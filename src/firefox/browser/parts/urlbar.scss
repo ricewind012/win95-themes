@@ -2,7 +2,7 @@
 @use "shared/listbox";
 
 $-input-height: round(
-	calc(var(--input-spacing) * 2 + var(--border-size) * 2 + var(--text-full)),
+	calc(var(--input-spacing) * 2 + var(--border-size) * 2 + 1lh),
 	1px
 );
 

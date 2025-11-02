@@ -6,7 +6,7 @@
 @use "steam/shared";
 
 #AppProperties {
-	height: calc(100% - var(--text-full) - var(--tabs-height));
+	height: calc(100% - 1lh - var(--tabs-height));
 }
 
 #AsyncBackedInputChildren {

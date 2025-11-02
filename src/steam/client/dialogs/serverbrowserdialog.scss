@@ -20,7 +20,7 @@
 
 	position: absolute;
 	right: var(--dialog-spacing);
-	bottom: calc(var(--text-full) + 1px + var(--pos));
+	bottom: calc(1lh + 1px + var(--pos));
 	left: var(--dialog-spacing);
 	height: unset;
 

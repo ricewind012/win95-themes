@@ -119,9 +119,7 @@
 	background: transparent;
 	font: var(--text-ui);
 	padding: var(--dialog-spacing);
-	padding-bottom: calc(
-		var(--text-full) + 3px + var(--window-gap) + var(--dialog-spacing)
-	);
+	padding-bottom: calc(1lh + 3px + var(--window-gap) + var(--dialog-spacing));
 
 	.DialogContentTransition > & {
 		--dialog-spacing: 0px;

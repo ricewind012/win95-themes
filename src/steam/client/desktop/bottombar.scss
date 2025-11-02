@@ -12,7 +12,7 @@
 }
 
 #BottomBar {
-	--statusbar-height: calc(var(--text-full) + 2px);
+	--statusbar-height: calc(1lh + 2px);
 
 	background: transparent;
 	box-shadow: var(--border-statusbar);

@@ -6,7 +6,7 @@
 	@include shared.statusbar-alt;
 
 	.ModalPosition {
-		height: calc(100% - var(--text-full) - 6px);
+		height: calc(100% - 1lh - 6px);
 	}
 }
 

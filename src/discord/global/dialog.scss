@@ -119,7 +119,7 @@ $-titlebar-description-selector: "> :first-child + [data-text-variant]";
 		}
 
 		&:has(#{$-titlebar-description-selector}) + [class*="content"] {
-			margin-top: calc(var(--text-full) * 2 + var(--dialog-spacing));
+			margin-top: calc(1lh * 2 + var(--dialog-spacing));
 		}
 
 		& > [data-text-variant] {
