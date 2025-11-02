@@ -37,11 +37,11 @@
 	flex: unset;
 
 	&.codicon-error {
-		background-image: var(--icon-dialog-error);
+		background-image: icon("error-32");
 	}
 
 	&.codicon-warning {
-		background-image: var(--icon-dialog-warning);
+		background-image: icon("warning-32");
 	}
 
 	&::before {

@@ -33,36 +33,28 @@ button#IconButton {
 
 	flex: unset;
 
-	// TODO(controls): rework icon(), etc.
-	--icon-next: icon("mono-next");
-	--icon-pause: icon("mono-pause");
-	--icon-play: icon("mono-play");
-	--icon-previous: icon("mono-previous");
-	--icon-repeat: icon("mono-next");
-	--icon-shuffle: icon("mono-shuffle");
-
 	&:nth-child(1) {
-		--button-img: var(--icon-shuffle);
+		--button-img: icon("shuffle", "mono");
 	}
 
 	&:nth-child(2) {
-		--button-img: var(--icon-previous);
+		--button-img: icon("previous", "mono");
 	}
 
 	&:nth-child(3) {
-		--button-img: var(--icon-play);
+		--button-img: icon("play", "mono");
 
 		&:has([d$="25Z"]) {
-			--button-img: var(--icon-pause);
+			--button-img: icon("pause", "mono");
 		}
 	}
 
 	&:nth-child(4) {
-		--button-img: var(--icon-next);
+		--button-img: icon("next", "mono");
 	}
 
 	&:nth-child(5) {
-		--button-img: var(--icon-repeat);
+		--button-img: icon("repeat", "mono");
 	}
 }
 

@@ -1,0 +1,14 @@
+#!/bin/sh
+
+printf ':root {\n'
+for dir in assets/icons/*; do
+	for file in "$dir/"*; do
+		type=${dir##*/}
+		icon=${file##*/}
+		icon=${icon%.*}
+
+		printf '\t--icon-%s-%s: file("%s", "%s");\n' \
+			"$type" "$icon" "$icon" "$type"
+	done
+done
+printf '}\n'

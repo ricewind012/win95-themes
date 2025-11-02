@@ -1,4 +1,4 @@
-@use "shared/generated";
+@use "shared/generatedassets";
 
 @mixin -checkbox-radio-common($checked-sel, $disabled-sel: "&:disabled") {
 	--color-to-change: var(--color-window);
@@ -101,7 +101,7 @@
 	background-color: var(--color-to-change);
 	box-shadow: var(--border-field);
 
-	--control-img: var(--icon-checkmark);
+	--control-img: icon("checkmark", "mono");
 	--control-img-size: 7px 7px;
 	--control-img-pos: 3px 3px;
 }
@@ -126,7 +126,7 @@
 
 @mixin combobox($disabled-sel: ":disabled") {
 	@include -text-field-common($disabled-sel);
-	@include generated.combobox;
+	@include generatedassets.combobox;
 
 	--color-arrow-shadow: var(--color-button-face);
 
@@ -213,7 +213,7 @@
 
 @mixin radio($checked-sel, $disabled-sel: ":disabled") {
 	@include -checkbox-radio-common($checked-sel);
-	@include generated.radio;
+	@include generatedassets.radio;
 
 	--control-img: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0IDQiPjxzdHlsZT5yZWN0e2hlaWdodDoxcHh9PC9zdHlsZT48cmVjdCB4PSIxIiB3aWR0aD0iMiIvPjxyZWN0IHk9IjEiIHdpZHRoPSI0Ii8+PHJlY3QgeT0iMiIgd2lkdGg9IjQiLz48cmVjdCB4PSIxIiB5PSIzIiB3aWR0aD0iMiIvPjwvc3ZnPgo=");
 	--control-img-size: 4px 4px;
@@ -237,7 +237,7 @@
 @mixin slider($disabled-sel: ":disabled", $thumb-sel, $track-sel) {
 	@include -input-common;
 	@include -input-common-disabled($disabled-sel);
-	@include generated.slider;
+	@include generatedassets.slider;
 
 	--color-to-change: var(--color-button-face);
 
@@ -283,7 +283,7 @@
 
 @mixin text-field-number($disabled-sel: ":disabled") {
 	@include text-field($disabled-sel);
-	@include generated.text-field-number;
+	@include generatedassets.text-field-number;
 
 	&::-webkit-inner-spin-button {
 		appearance: none;

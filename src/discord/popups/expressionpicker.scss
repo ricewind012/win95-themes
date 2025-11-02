@@ -140,7 +140,7 @@
 	}
 
 	.header__08434 {
-		--button-img: var(--icon-arrow-bottom);
+		--button-img: icon("arrow-bottom", "mono");
 		--button-img-width: 7px;
 		--button-img-height: 4px;
 
@@ -151,7 +151,7 @@
 		padding: 0;
 
 		&[aria-expanded="false"] {
-			--button-img: var(--icon-arrow-right);
+			--button-img: icon("arrow-right", "mono");
 			--button-img-width: 4px;
 			--button-img-height: 7px;
 		}

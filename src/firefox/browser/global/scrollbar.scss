@@ -1,4 +1,4 @@
-@use "shared/generated";
+@use "shared/generatedassets";
 @use "shared/scrollbar";
 @use "shared/window";
 
@@ -23,19 +23,19 @@
 		appearance: none;
 
 		&[type="decrement"] {
-			@include generated.scrollbar-button-horizontal-decrement;
+			@include generatedassets.scrollbar-button-horizontal-decrement;
 		}
 
 		&[type="increment"] {
-			@include generated.scrollbar-button-horizontal-increment;
+			@include generatedassets.scrollbar-button-horizontal-increment;
 		}
 
 		scrollbar[vertical] > &[type="decrement"] {
-			@include generated.scrollbar-button-vertical-decrement;
+			@include generatedassets.scrollbar-button-vertical-decrement;
 		}
 
 		scrollbar[vertical] > &[type="increment"] {
-			@include generated.scrollbar-button-vertical-increment;
+			@include generatedassets.scrollbar-button-vertical-increment;
 		}
 	}
 

@@ -99,7 +99,7 @@
 #PasswordColumn,
 #SecureColumn {
 	#ServerRow &:not(:empty) {
-		--button-img: var(--icon-checkmark);
+		--button-img: icon("checkmark", "mono");
 		--button-img-size: 7px;
 
 		&::before {

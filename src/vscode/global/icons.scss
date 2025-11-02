@@ -7,7 +7,7 @@
 // TODO(scss): use a map, hell yeah
 .codicon-chevron-left,
 .codicon-inline-suggestion-hints-previous {
-	--icon-img: var(--icon-arrow-left);
+	--icon-img: icon("arrow-left", "mono");
 	--button-img: var(--icon-img);
 	--button-img-size: 4px 7px;
 	--button-img-pos: 4px center;
@@ -19,7 +19,7 @@
 .codicon-review-comment-collapse,
 .codicon-markers-view-multi-line-expanded,
 .codicon-panel-maximize {
-	--icon-img: var(--icon-arrow-top);
+	--icon-img: icon("arrow-top", "mono");
 	--button-img: var(--icon-img);
 	--button-img-size: 7px 4px;
 	--button-img-pos: 4px center;
@@ -35,14 +35,14 @@
 .codicon-search-hide-replace,
 .codicon-view-pane-container-collapsed,
 .codicon-breadcrumb-separator {
-	--icon-img: var(--icon-arrow-right);
+	--icon-img: icon("arrow-right", "mono");
 	--button-img: var(--icon-img);
 	--button-img-size: 4px 7px;
 	--button-img-pos: 4px center;
 }
 .codicon-folding-collapsed,
 .codicon-folding-manual-collapsed {
-	--icon-img: var(--icon-arrow-right);
+	--icon-img: icon("arrow-right", "mono");
 	@include shared.replace-icon("" 4px ", " 7px "");
 }
 
@@ -58,14 +58,14 @@
 .codicon-markers-view-multi-line-collapsed,
 .codicon-view-pane-container-expanded,
 .codicon-panel-restore {
-	--icon-img: var(--icon-arrow-bottom);
+	--icon-img: icon("arrow-bottom", "mono");
 	--button-img: var(--icon-img);
 	--button-img-size: 7px 4px;
 	--button-img-pos: 4px center;
 }
 .codicon-folding-expanded,
 .codicon-folding-manual-expanded {
-	--icon-img: var(--icon-arrow-bottom);
+	--icon-img: icon("arrow-bottom", "mono");
 	@include shared.replace-icon("" 7px ", " 4px "");
 }
 
@@ -233,11 +233,11 @@
 .codicon-info,
 .codicon-shield,
 .codicon-dialog-warning {
-	background-image: var(--icon-dialog-warning);
+	background-image: icon("warning-32");
 }
 
 .codicon-dialog-info {
-	background-image: var(--icon-dialog-question);
+	background-image: icon("question-32");
 }
 /* end */
 
@@ -248,11 +248,11 @@
 }
 
 .codicon-arrow-left {
-	--button-img: var(--icon-arrow-left);
+	--button-img: icon("arrow-left", "mono");
 }
 
 .codicon-arrow-right {
-	--button-img: var(--icon-arrow-right);
+	--button-img: icon("arrow-right", "mono");
 }
 
 .codicon-auxiliarybar-right-layout-icon {
@@ -295,7 +295,7 @@
 }
 
 .codicon-menu-submenu {
-	--icon-img: var(--icon-arrow-right);
+	--icon-img: icon("arrow-right", "mono");
 	--button-img: var(--icon-img);
 	@include shared.replace-icon("" 4px ", " 7px "");
 
@@ -337,11 +337,11 @@
 }
 
 .codicon-panel-maximize {
-	--button-img: var(--icon-arrow-top);
+	--button-img: icon("arrow-top", "mono");
 }
 
 .codicon-panel-restore {
-	--button-img: var(--icon-arrow-bottom);
+	--button-img: icon("arrow-bottom", "mono");
 }
 
 .codicon-preserve-case {

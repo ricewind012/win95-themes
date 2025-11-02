@@ -52,7 +52,7 @@ $-icons: (
 }
 
 .tab-close-button {
-	list-style-image: var(--icon-close);
+	list-style-image: icon("close", "mono");
 	padding: 3.5px 4px;
 	margin: 0;
 

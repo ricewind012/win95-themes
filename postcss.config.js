@@ -12,16 +12,31 @@ import path from "node:path";
 const unquote = (str) => str.replace(/"/g, "");
 
 /**
- * `icon("name")` => `url("data:image/png;base64,${base64}")`
+ * @typedef {"mono" | "normal"} IconType
+ */
+
+/**
+ * Output: `file("name"[, "type"])` => `url("data:image/png;base64,${base64}")`
  *
  * @param {string} name File name without the extension.
+ * @param {IconType} type
  */
-function icon(name) {
+function file(name, type = "normal") {
 	const fileName = `${unquote(name)}.png`;
-	const file = path.join("assets", "icons", fileName);
+	const file = path.join("assets", "icons", unquote(type), fileName);
 	const base64 = fs.readFileSync(file, { encoding: "base64" });
 
 	return `url("data:image/png;base64,${base64}")`;
+}
+
+/**
+ * Output: `icon("name"[, "type"])` => `var(--icon-${type}-${name})`
+ *
+ * @param {string} name File name without the extension.
+ * @param {IconType} type
+ */
+function icon(name, type = "normal") {
+	return `var(--icon-${unquote(type)}-${unquote(name)})`;
 }
 
 /** @type {import("postcss-load-config").Config} */
@@ -31,6 +46,7 @@ export default {
 	plugins: [
 		postcssFunctions({
 			functions: {
+				file,
 				icon,
 			},
 		}),

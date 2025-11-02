@@ -138,11 +138,11 @@
 	}
 
 	&.roleUp {
-		--button-img: var(--icon-arrow-top);
+		--button-img: icon("arrow-top", "mono");
 	}
 
 	&.roleDown {
-		--button-img: var(--icon-arrow-bottom);
+		--button-img: icon("arrow-bottom", "mono");
 
 		top: 0;
 	}

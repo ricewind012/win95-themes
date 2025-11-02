@@ -27,13 +27,13 @@
 @mixin button-arrow-ascending {
 	@include -button-arrow;
 
-	--button-img: var(--icon-arrow-bottom);
+	--button-img: icon("arrow-bottom", "mono");
 }
 
 @mixin button-arrow-descending {
 	@include -button-arrow;
 
-	--button-img: var(--icon-arrow-top);
+	--button-img: icon("arrow-top", "mono");
 }
 
 @mixin header-row {

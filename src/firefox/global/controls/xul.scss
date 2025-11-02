@@ -23,7 +23,7 @@ checkbox:not([hidden]) {
 	margin: 0;
 
 	&[checked] {
-		list-style-image: var(--icon-checkmark);
+		list-style-image: icon("checkmark", "mono");
 		padding: var(--control-img-pos);
 	}
 }

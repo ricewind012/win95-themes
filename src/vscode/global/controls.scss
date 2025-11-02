@@ -1,5 +1,5 @@
 @use "shared/controls";
-@use "shared/generated";
+@use "shared/generatedassets";
 @use "shared/scrollbar";
 @use "shared/window";
 @use "shared++/utils";
@@ -248,25 +248,25 @@
 		}
 
 		&.codicon-scrollbar-button-up {
-			@include generated.scrollbar-button-vertical-decrement;
+			@include generatedassets.scrollbar-button-vertical-decrement;
 
 			top: 0;
 		}
 
 		&.codicon-scrollbar-button-down {
-			@include generated.scrollbar-button-vertical-increment;
+			@include generatedassets.scrollbar-button-vertical-increment;
 
 			bottom: 0;
 		}
 
 		&.codicon-scrollbar-button-left {
-			@include generated.scrollbar-button-horizontal-decrement;
+			@include generatedassets.scrollbar-button-horizontal-decrement;
 
 			left: 0;
 		}
 
 		&.codicon-scrollbar-button-right {
-			@include generated.scrollbar-button-horizontal-increment;
+			@include generatedassets.scrollbar-button-horizontal-increment;
 
 			left: unset;
 			right: 0;

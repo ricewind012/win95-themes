@@ -148,12 +148,12 @@
 	}
 
 	.ToggleGroupChatList {
-		--button-img: var(--icon-arrow-bottom);
+		--button-img: icon("arrow-bottom", "mono");
 		--button-img-size: 7px 4px;
 		--button-img-pos: center;
 
 		.Collapsed & {
-			--button-img: var(--icon-arrow-top);
+			--button-img: icon("arrow-top", "mono");
 		}
 	}
 

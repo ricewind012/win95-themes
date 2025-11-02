@@ -1,4 +1,4 @@
-@use "shared/generated";
+@use "shared/generatedassets";
 @use "shared/scrollbar";
 
 ::-webkit-scrollbar {
@@ -9,19 +9,19 @@
 	@include scrollbar.button;
 
 	&:vertical:decrement {
-		@include generated.scrollbar-button-vertical-decrement;
+		@include generatedassets.scrollbar-button-vertical-decrement;
 	}
 
 	&:vertical:increment {
-		@include generated.scrollbar-button-vertical-increment;
+		@include generatedassets.scrollbar-button-vertical-increment;
 	}
 
 	&:horizontal:decrement {
-		@include generated.scrollbar-button-horizontal-decrement;
+		@include generatedassets.scrollbar-button-horizontal-decrement;
 	}
 
 	&:horizontal:increment {
-		@include generated.scrollbar-button-horizontal-increment;
+		@include generatedassets.scrollbar-button-horizontal-increment;
 	}
 }
 

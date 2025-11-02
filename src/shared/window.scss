@@ -1,4 +1,4 @@
-@use "shared/generated";
+@use "shared/generatedassets";
 @use "shared++/utils";
 
 @mixin content-container {
@@ -19,7 +19,7 @@
 }
 
 @mixin resize-handle {
-	@include generated.window-resize-handle;
+	@include generatedassets.window-resize-handle;
 
 	position: fixed;
 	right: calc(var(--border-size) + var(--window-spacing));

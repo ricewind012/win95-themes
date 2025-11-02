@@ -68,7 +68,7 @@
 #UnlockContainer {
 	&:not(:empty) {
 		background-color: currentColor;
-		mask: var(--icon-checkmark);
+		mask: icon("checkmark", "mono");
 		mask-size: 7px;
 		mask-repeat: no-repeat;
 		mask-position: right;

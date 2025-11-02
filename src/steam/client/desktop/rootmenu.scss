@@ -16,7 +16,7 @@
 	}
 
 	&:not(:empty) {
-		--control-img: var(--icon-checkmark);
+		--control-img: icon("checkmark", "mono");
 
 		@include controls.checkbox-radio-checked;
 	}

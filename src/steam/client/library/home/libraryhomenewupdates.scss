@@ -14,7 +14,7 @@
 		@include controls.button;
 		@include window.titlebar-button;
 
-		--button-img: var(--icon-arrow-bottom);
+		--button-img: icon("arrow-bottom", "mono");
 		--button-img-size: 7px 4px;
 		--button-img-pos: 4px center;
 

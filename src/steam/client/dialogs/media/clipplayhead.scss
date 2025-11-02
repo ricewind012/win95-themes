@@ -1,5 +1,5 @@
 @use "shared/controls";
-@use "shared/generated";
+@use "shared/generatedassets";
 
 #PlayHead {
 	display: none;
@@ -11,7 +11,7 @@
 }
 
 #PlayHeadContent {
-	@include generated.slider;
+	@include generatedassets.slider;
 	@include controls.slider-thumb;
 
 	filter: none;

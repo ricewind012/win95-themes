@@ -2,7 +2,8 @@
 	"type": "module",
 	"private": true,
 	"scripts": {
-		"build": "./scripts/build"
+		"build": "./scripts/build",
+		"generate-icons": "./scripts/generate_icons > src/shared/generatedicons.scss"
 	},
 	"dependencies": {
 		"@csstools/postcss-sass": "^5.1.1",
