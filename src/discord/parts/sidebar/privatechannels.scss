@@ -2,7 +2,7 @@
 @use "shared/list";
 @use "shared/window";
 
-.privateChannels__35e86 {
+.privateChannels_e6b769 {
 	@include window.content-container;
 
 	margin-top: var(--sidebar-top-margin);
@@ -19,7 +19,7 @@
 		background-color: transparent;
 	}
 
-	.searchBar__35e86 {
+	.searchBar_e6b769 {
 		border: none;
 		padding: var(--toolbar-container-spacing);
 

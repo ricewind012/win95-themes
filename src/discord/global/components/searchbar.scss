@@ -4,19 +4,20 @@
 	display: none;
 }
 
-.input__0f084 {
-	@include controls.text-field;
-
-	.wrapper__3412a:is([data-disabled="true"], [data-read-only="true"]) > & {
-		@include controls.input-disabled;
-
-		opacity: 1;
-	}
-}
-
-.wrapper__3412a {
+.wrapper__72c38 {
 	border: none;
 	padding: 0;
 
 	min-height: unset;
+
+	&:is([data-disabled="true"], [data-read-only="true"]) > :is(input, texarea) {
+		@include controls.input-disabled;
+
+		opacity: 1;
+	}
+
+	input,
+	textarea {
+		@include controls.text-field;
+	}
 }
