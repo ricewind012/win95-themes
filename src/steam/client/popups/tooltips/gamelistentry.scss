@@ -1,0 +1,16 @@
+@use "shared/controls";
+
+#FriendStatusHover {
+	@include controls.tooltip;
+
+	box-shadow: none;
+}
+
+#FriendStatusHoverRow {
+	margin-block: var(--text-spacing);
+
+	// #steamavatar_avatarHolder
+	.avatarHolder {
+		--steamavatar_size: 32px;
+	}
+}
