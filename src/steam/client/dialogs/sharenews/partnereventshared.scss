@@ -1,0 +1,18 @@
+@use "shared/controls";
+
+#Button {
+	@include controls.button;
+
+	&#Icon {
+		@include controls.icon-button;
+	}
+
+	// LMAO, what the hell ? maybe one day they will redo this ASS
+	&:where(img) {
+		min-width: 32px;
+	}
+}
+
+#Divider {
+	@include controls.separator;
+}

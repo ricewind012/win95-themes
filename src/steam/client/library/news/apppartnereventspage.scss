@@ -1,0 +1,82 @@
+@use "shared/controls";
+@use "shared++/icons";
+@use "shared++/utils";
+@use "steam/shared";
+
+#AppPartnerEventsContainer {
+	padding: 0;
+	margin: 0;
+}
+
+#AppPartnerEventsPage {
+	background-color: var(--color-window);
+
+	inset: var(--border-size);
+}
+
+#ControlSection {
+	@include shared.library-in-toolbar;
+
+	background-color: var(--color-button-face);
+
+	right: anchor(right);
+	left: anchor(left);
+	width: unset;
+	height: 24px;
+
+	pointer-events: all;
+}
+
+#ControlSectionRightSide {
+	flex-direction: row-reverse;
+
+	& > div {
+		@include controls.button;
+		@include controls.icon-button;
+
+		width: unset;
+
+		&#CloseButton {
+			--button-img: icon("clear");
+		}
+
+		&#ScrollButton#Down {
+			@include icons.icon-big-arrow-bottom;
+		}
+
+		&#ScrollButton#Up {
+			@include icons.icon-big-arrow-top;
+		}
+	}
+
+	#GameArt {
+		display: none;
+	}
+
+	svg {
+		display: none;
+	}
+}
+
+#PartnerEvent {
+	@include shared.library-section;
+
+	background: none;
+	border: none;
+	box-shadow: none;
+	margin: 0;
+
+	#EventType {
+		color: var(--color-gray-text);
+		font: var(--text-ui);
+	}
+
+	#TimeandPostedBy {
+		color: var(--color-gray-text);
+		gap: var(--text-spacing);
+		margin: 0;
+
+		flex-direction: column;
+		align-items: start;
+	}
+}

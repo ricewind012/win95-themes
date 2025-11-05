@@ -1,0 +1,112 @@
+@use "shared/controls";
+@use "shared++/utils";
+
+%-section-container {
+	background-color: transparent;
+	gap: var(--text-spacing);
+	padding: 0;
+
+	flex-direction: column;
+}
+
+#Container {
+	background: none;
+	gap: var(--text-spacing);
+	padding: 0;
+
+	flex-direction: column;
+	position: absolute;
+	inset-inline: var(--appdetails_container-spacing-x);
+	inset-block-end: var(--appdetails_container-spacing-y);
+	width: var(--library_section-header-width);
+
+	#DiscussContainer {
+		@extend %-section-container;
+
+		width: calc(100% - var(--appdetails_container-spacing-x));
+	}
+
+	#ShareContainer {
+		@extend %-section-container;
+
+		align-items: unset;
+		width: calc(100% - var(--appdetails_container-spacing-x) * 2);
+	}
+
+	#VoteContainer {
+		@extend %-section-container;
+
+		&::after {
+			@include utils.pseudo-separator;
+		}
+	}
+
+	#DiscussionCount,
+	#VoteCount {
+		color: inherit;
+		font: inherit;
+		font-weight: bold;
+		gap: var(--text-spacing);
+		padding: 0;
+		margin: 0;
+
+		align-items: center;
+		height: unset;
+	}
+
+	#DiscussionCount > svg {
+		fill: var(--color-button-text);
+		margin: 0;
+
+		width: var(--icon-size);
+		height: var(--icon-size);
+	}
+
+	#VoteUpStaticIcon {
+		--offset: 4px;
+		--size: calc(var(--icon-size) + var(--offset) * 2);
+
+		fill: var(--color-button-text);
+		margin: calc(var(--offset) * -1);
+
+		width: var(--size);
+		height: var(--size);
+	}
+}
+
+#DiscussionButton {
+	@include controls.button;
+
+	justify-content: center;
+
+	&#VoteButtonSelected {
+		@include controls.button-active;
+	}
+
+	&[aria-label]::after {
+		content: attr(aria-label);
+	}
+
+	#ShareIcon,
+	#VoteDownIcon,
+	#VoteDownSelectedIcon,
+	#VoteUpIcon,
+	#VoteUpSelectedIcon {
+		display: none;
+	}
+}
+
+#DiscussionButtonText {
+	font: inherit;
+}
+
+#InnerContainer {
+	gap: var(--text-spacing);
+
+	width: calc(100% - var(--appdetails_container-spacing-x));
+	flex-direction: column;
+
+	&::after {
+		@include utils.pseudo-separator;
+	}
+}

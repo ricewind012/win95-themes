@@ -1,0 +1,59 @@
+@use "shared/controls";
+
+#linkField {
+	gap: var(--text-spacing);
+	margin: 0;
+
+	#LinkButton {
+		--button-img: icon("link");
+
+		#ClipboardIcon {
+			display: none;
+		}
+	}
+
+	#LinkInput {
+		// TODO(controls): unify selector args
+		@include controls.text-field;
+		@include controls.input-disabled;
+	}
+
+	#LinkInputLabel {
+		font: var(--text-ui);
+		padding-inline: 0 var(--text-spacing);
+	}
+}
+
+#ShareButtonContainer {
+	gap: var(--text-spacing);
+
+	justify-content: start;
+}
+
+#share_controls_ctn {
+	background-color: transparent;
+	gap: var(--text-spacing);
+	padding: 0;
+	margin: 0;
+}
+
+#ShareLanguagePicker {
+	padding: 0;
+
+	#LanguageLabel {
+		padding-inline: 0 var(--text-spacing);
+	}
+
+	select {
+		@include controls.combobox;
+	}
+}
+
+#ShareSteamBtn {
+	display: flex;
+	align-items: center;
+
+	#SteamIcon {
+		margin-left: 0;
+	}
+}

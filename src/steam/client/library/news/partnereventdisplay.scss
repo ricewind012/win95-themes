@@ -1,0 +1,34 @@
+@use "shared++/utils";
+@use "steam/shared";
+
+#EventDetailsBody {
+	color: inherit;
+	font: inherit;
+
+	a {
+		@include utils.link;
+	}
+}
+
+#EventDetailTitle {
+	color: inherit;
+	font: inherit;
+	font-weight: bold;
+
+	&::before {
+		@include utils.pseudo-separator;
+	}
+}
+
+#EventDetailTitleContainer {
+	background: none;
+	padding: 0;
+}
+
+#LibraryEventBodyContainer {
+	@include shared.library-section-content;
+}
+
+#LibraryEventTitleContainer {
+	@include shared.library-section-header;
+}
