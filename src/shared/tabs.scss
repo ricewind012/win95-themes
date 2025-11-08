@@ -61,8 +61,76 @@
 	}
 }
 
+@mixin tab-vertical($selected-sel) {
+	--color-tab-border: var(--color-button-highlight);
+
+	background-color: var(--color-button-face);
+	color: var(--color-button-text);
+	border: 1px solid;
+	border-right: none;
+	border-color: var(--border-tab);
+	box-shadow:
+		0 1px var(--color-button-shadow-dark),
+		1px 1px var(--color-tab-border);
+	margin: -1px 0 0 0;
+	padding: 3px 6px 2px 6px;
+
+	position: relative;
+	height: 18px;
+
+	&::before,
+	&::after {
+		content: "";
+
+		position: absolute;
+		left: -1px;
+		width: 2px;
+		height: 3px;
+
+		// Draw the rounding pixel by pixel
+		background-repeat: no-repeat;
+		background-size: 1px 1px;
+		background-position:
+			0 0,
+			1px 0,
+			0 1px,
+			1px 1px,
+			0 2px,
+			1px 2px;
+	}
+
+	&::before {
+		top: -1px;
+
+		background-image: var(--tab-vertical-border-top);
+	}
+
+	&::after {
+		bottom: -2px;
+
+		background-image: var(--tab-vertical-border-bottom);
+	}
+
+	#{$selected-sel} {
+		--color-tab-border: var(--color-button-face);
+
+		margin: -2px 0 -1px -2px;
+		padding: 6px 3px;
+		padding-left: 5px;
+
+		height: 21px;
+		z-index: 1;
+	}
+}
+
 @mixin container {
 	margin-left: 2px;
+
+	display: flex;
+}
+
+@mixin container-vertical {
+	margin-top: 2px;
 
 	display: flex;
 }

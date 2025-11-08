@@ -139,6 +139,18 @@ $-groupbox-header-sel: ":is(h1, h2, h3, h4, h5, h6):first-child";
 
 .sidebar__23e6b {
 	padding: 0;
+	margin-inline-start: 6px;
+
+	direction: ltr;
+
+	.searchBar_c7e907 {
+		margin-inline-end: 4px;
+	}
+}
+
+// Move scrollbar to the left
+.sidebarRegionScroller__23e6b {
+	direction: rtl;
 }
 
 .standardSidebarView__23e6b {

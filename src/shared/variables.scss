@@ -222,155 +222,59 @@
 // Actually belongs in generatedassets.scss, but it outputs every time it
 // gets imported, unlike this file.
 :root {
+	// prettier-ignore
 	--tab-border-left:
-		linear-gradient(
-			90deg,
-			var(--color-button-face) 1px,
-			var(--color-button-face)
-		),
-		linear-gradient(
-			90deg,
-			var(--color-button-face) 1px,
-			var(--color-button-face)
-		),
-		linear-gradient(
-			90deg,
-			var(--color-button-highlight) 1px,
-			var(--color-button-highlight)
-		),
-		linear-gradient(
-			90deg,
-			var(--color-button-face) 1px,
-			var(--color-button-face)
-		),
-		linear-gradient(
-			90deg,
-			var(--color-button-highlight) 1px,
-			var(--color-button-highlight)
-		),
-		linear-gradient(
-			90deg,
-			var(--color-button-face) 1px,
-			var(--color-button-face)
-		);
+		linear-gradient(90deg, var(--color-button-face)        1px, var(--color-button-face)),
+		linear-gradient(90deg, var(--color-button-face)        1px, var(--color-button-face)),
+		linear-gradient(90deg, var(--color-button-highlight)   1px, var(--color-button-highlight)),
+		linear-gradient(90deg, var(--color-button-face)        1px, var(--color-button-face)),
+		linear-gradient(90deg, var(--color-button-highlight)   1px, var(--color-button-highlight)),
+		linear-gradient(90deg, var(--color-button-face)        1px, var(--color-button-face));
 
+	// prettier-ignore
 	--tab-border-right:
-		linear-gradient(
-			90deg,
-			var(--color-button-shadow) 1px,
-			var(--color-button-shadow)
-		),
-		linear-gradient(
-			90deg,
-			var(--color-button-face) 1px,
-			var(--color-button-face)
-		),
-		linear-gradient(
-			90deg,
-			var(--color-button-face) 1px,
-			var(--color-button-face)
-		),
-		linear-gradient(
-			90deg,
-			var(--color-button-face) 1px,
-			var(--color-button-face)
-		),
-		linear-gradient(
-			90deg,
-			var(--color-button-shadow-dark) 1px,
-			var(--color-button-shadow-dark)
-		),
-		linear-gradient(
-			90deg,
-			var(--color-button-face) 1px,
-			var(--color-button-face)
-		);
+		linear-gradient(90deg, var(--color-button-shadow)      1px, var(--color-button-shadow)),
+		linear-gradient(90deg, var(--color-button-face)        1px, var(--color-button-face)),
+		linear-gradient(90deg, var(--color-button-face)        1px, var(--color-button-face)),
+		linear-gradient(90deg, var(--color-button-face)        1px, var(--color-button-face)),
+		linear-gradient(90deg, var(--color-button-shadow-dark) 1px, var(--color-button-shadow-dark)),
+		linear-gradient(90deg, var(--color-button-face)        1px, var(--color-button-face));
 
+	// prettier-ignore
+	--tab-vertical-border-top:
+		linear-gradient(90deg, var(--color-button-face)        1px, var(--color-button-face)),
+		linear-gradient(90deg, var(--color-button-face)        1px, var(--color-button-face)),
+		linear-gradient(90deg, var(--color-button-face)        1px, var(--color-button-face)),
+		linear-gradient(90deg, var(--color-button-highlight)   1px, var(--color-button-highlight)),
+		linear-gradient(90deg, var(--color-button-highlight)   1px, var(--color-button-highlight)),
+		linear-gradient(90deg, var(--color-button-face)        1px, var(--color-button-face));
+
+	// prettier-ignore
+	--tab-vertical-border-bottom:
+		linear-gradient(90deg, var(--color-button-shadow)      1px, var(--color-button-shadow)),
+		linear-gradient(90deg, var(--color-button-face)        1px, var(--color-button-face)),
+		linear-gradient(90deg, var(--color-button-face)        1px, var(--color-button-face)),
+		linear-gradient(90deg, var(--color-button-shadow-dark) 1px, var(--color-button-shadow-dark)),
+		linear-gradient(90deg, var(--color-button-face)        1px, var(--color-button-face)),
+		linear-gradient(90deg, var(--color-button-face)        1px, var(--color-button-face));
+
+	// prettier-ignore
 	--tree-icon-collapsed:
-		linear-gradient(
-				90deg,
-				var(--color-button-text) 1px,
-				var(--color-button-text)
-			)
-			3px 1px,
-		linear-gradient(
-				90deg,
-				var(--color-button-text) 1px,
-				var(--color-button-text)
-			)
-			3px 2px,
-		linear-gradient(
-				90deg,
-				var(--color-button-text) 1px,
-				var(--color-button-text)
-			)
-			3px 3px,
-		linear-gradient(
-				90deg,
-				var(--color-button-text) 1px,
-				var(--color-button-text)
-			)
-			3px 4px,
-		linear-gradient(
-				90deg,
-				var(--color-button-text) 1px,
-				var(--color-button-text)
-			)
-			3px 5px,
-		linear-gradient(
-				90deg,
-				var(--color-button-text) 1px,
-				var(--color-button-text)
-			)
-			1px 3px,
-		linear-gradient(
-				90deg,
-				var(--color-button-text) 1px,
-				var(--color-button-text)
-			)
-			2px 3px,
-		linear-gradient(
-				90deg,
-				var(--color-button-text) 1px,
-				var(--color-button-text)
-			)
-			4px 3px,
-		linear-gradient(
-				90deg,
-				var(--color-button-text) 1px,
-				var(--color-button-text)
-			)
-			5px 3px;
+		linear-gradient(90deg, var(--color-button-text) 1px, var(--color-button-text)) 3px 1px,
+		linear-gradient(90deg, var(--color-button-text) 1px, var(--color-button-text)) 3px 2px,
+		linear-gradient(90deg, var(--color-button-text) 1px, var(--color-button-text)) 3px 3px,
+		linear-gradient(90deg, var(--color-button-text) 1px, var(--color-button-text)) 3px 4px,
+		linear-gradient(90deg, var(--color-button-text) 1px, var(--color-button-text)) 3px 5px,
+		linear-gradient(90deg, var(--color-button-text) 1px, var(--color-button-text)) 1px 3px,
+		linear-gradient(90deg, var(--color-button-text) 1px, var(--color-button-text)) 2px 3px,
+		linear-gradient(90deg, var(--color-button-text) 1px, var(--color-button-text)) 4px 3px,
+		linear-gradient(90deg, var(--color-button-text) 1px, var(--color-button-text)) 5px 3px;
 
+	// prettier-ignore
 	--tree-icon-expanded:
-		linear-gradient(
-				90deg,
-				var(--color-button-text) 1px,
-				var(--color-button-text)
-			)
-			1px 3px,
-		linear-gradient(
-				90deg,
-				var(--color-button-text) 1px,
-				var(--color-button-text)
-			)
-			2px 3px,
-		linear-gradient(
-				90deg,
-				var(--color-button-text) 1px,
-				var(--color-button-text)
-			)
-			3px 3px,
-		linear-gradient(
-				90deg,
-				var(--color-button-text) 1px,
-				var(--color-button-text)
-			)
-			4px 3px,
-		linear-gradient(
-				90deg,
-				var(--color-button-text) 1px,
-				var(--color-button-text)
-			)
-			5px 3px;
+		linear-gradient(90deg, var(--color-button-text) 1px, var(--color-button-text)) 1px 3px,
+		linear-gradient(90deg, var(--color-button-text) 1px, var(--color-button-text)) 2px 3px,
+		linear-gradient(90deg, var(--color-button-text) 1px, var(--color-button-text)) 3px 3px,
+		linear-gradient(90deg, var(--color-button-text) 1px, var(--color-button-text)) 4px 3px,
+		linear-gradient(90deg, var(--color-button-text) 1px, var(--color-button-text)) 5px 3px;
 }
