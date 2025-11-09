@@ -31,32 +31,8 @@
 	padding: 0;
 	margin-top: var(--window-gap);
 
-	& > :not(.chatUploadContainer) button {
-		@include controls.icon-button;
-
-		width: unset;
-		min-height: unset;
-
-		&.Disabled {
-			pointer-events: none;
-		}
-
-		// TODO: remove when adding icons
-		svg {
-			color: inherit;
-			margin: 0;
-
-			width: 16px;
-			height: 16px;
-		}
-
-		path {
-			fill: var(--color-button-text);
-		}
-
-		.SVGIcon_Submit {
-			margin-top: -2px;
-		}
+	svg {
+		display: none;
 	}
 }
 
@@ -125,21 +101,25 @@
 	@include controls.button;
 	@include controls.icon-button;
 
-	// TODO: remove when adding icons
-	padding: 2px;
-
 	width: unset;
 
+	&.GroupChatSettings {
+		--button-img: icon("settings");
+	}
+
 	&.InviteToGroupChat {
+		--button-img: icon("room-invite");
 		margin-right: var(--toolbar-spacing);
 
 		order: -1;
 	}
 
+	&.ManageNotifications {
+		--button-img: icon("newspaper");
+	}
+
 	svg {
-		fill: var(--color-button-text);
-		margin: 0;
-		margin-top: 2px;
+		display: none;
 	}
 }
 
@@ -369,13 +349,13 @@
 	@include text.input-label;
 
 	.copyInviteLink {
+		--button-img: icon("link");
 		@include controls.button;
 		@include controls.icon-button;
+	}
 
-		// TODO: remove when adding icons
-		svg {
-			stroke: var(--color-button-text);
-		}
+	svg {
+		display: none;
 	}
 }
 
@@ -398,19 +378,14 @@
 }
 
 .MemberListOption {
+	--button-img: icon("user-list");
 	@include controls.button;
 	@include controls.icon-button;
 
 	opacity: 1;
 
-	// TODO: remove when adding icons
 	svg {
-		margin-top: -2px;
-		margin-left: -2px;
-
-		polyline {
-			stroke: var(--color-button-text);
-		}
+		display: none;
 	}
 }
 
@@ -535,5 +510,7 @@
 }
 
 .VoiceToggle {
+	--button-img: icon("speaker-alt");
 	@include controls.button($disabled-sel: ".Inactive");
+	@include controls.icon-button;
 }

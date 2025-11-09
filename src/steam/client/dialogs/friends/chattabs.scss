@@ -29,17 +29,15 @@
 
 	border: none;
 	//padding-left: 3px;
+
+	svg {
+		display: none;
+	}
 }
 
 #CloseButton {
-	// TODO(utils): replace with an arrow mixin
 	@include window.titlebar-button;
 	@include utils.titlebar-button-close;
 
 	position: relative;
-
-	// TODO: unify when adding icons
-	svg {
-		display: none;
-	}
 }

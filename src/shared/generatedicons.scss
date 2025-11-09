@@ -14,6 +14,8 @@
 	--icon-mono-repeat: file("repeat", "mono");
 	--icon-mono-restore: file("restore", "mono");
 	--icon-mono-shuffle: file("shuffle", "mono");
+	--icon-normal-chat-bubble-alt: file("chat-bubble-alt", "normal");
+	--icon-normal-chat-bubble: file("chat-bubble", "normal");
 	--icon-normal-checkmark: file("checkmark", "normal");
 	--icon-normal-clear: file("clear", "normal");
 	--icon-normal-clock: file("clock", "normal");
@@ -23,6 +25,7 @@
 	--icon-normal-download: file("download", "normal");
 	--icon-normal-earth: file("earth", "normal");
 	--icon-normal-edit: file("edit", "normal");
+	--icon-normal-emoji: file("emoji", "normal");
 	--icon-normal-error-32: file("error-32", "normal");
 	--icon-normal-extensions-32: file("extensions-32", "normal");
 	--icon-normal-extensions: file("extensions", "normal");
@@ -41,11 +44,16 @@
 	--icon-normal-list: file("list", "normal");
 	--icon-normal-mail: file("mail", "normal");
 	--icon-normal-mail-read: file("mail-read", "normal");
+	--icon-normal-microphone-muted: file("microphone-muted", "normal");
+	--icon-normal-microphone: file("microphone", "normal");
 	--icon-normal-newspaper: file("newspaper", "normal");
 	--icon-normal-overflow: file("overflow", "normal");
 	--icon-normal-padlock: file("padlock", "normal");
 	--icon-normal-question-32: file("question-32", "normal");
 	--icon-normal-reload: file("reload", "normal");
+	--icon-normal-room-create: file("room-create", "normal");
+	--icon-normal-room-invite: file("room-invite", "normal");
+	--icon-normal-room-leave: file("room-leave", "normal");
 	--icon-normal-search-24: file("search-24", "normal");
 	--icon-normal-settings-24: file("settings-24", "normal");
 	--icon-normal-settings: file("settings", "normal");
@@ -54,9 +62,11 @@
 	--icon-normal-sound: file("sound", "normal");
 	--icon-normal-source-control-32: file("source-control-32", "normal");
 	--icon-normal-source-control: file("source-control", "normal");
+	--icon-normal-speaker-alt: file("speaker-alt", "normal");
 	--icon-normal-steam: file("steam", "normal");
 	--icon-normal-stop: file("stop", "normal");
 	--icon-normal-url: file("url", "normal");
+	--icon-normal-user-list: file("user-list", "normal");
 	--icon-normal-warning-32: file("warning-32", "normal");
 	--icon-normal-window: file("window", "normal");
 	--icon-normal-windows: file("windows", "normal");

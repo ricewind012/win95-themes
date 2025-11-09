@@ -1,8 +1,9 @@
 @use "shared++/utils";
 
 #Icon {
-	// TODO: icons
-	filter: invert(1);
+	@media (prefers-color-scheme: light) {
+		filter: invert(1);
+	}
 }
 
 #Label {

@@ -21,9 +21,22 @@
 }
 
 #chatSubmitButton {
+	--button-img: icon("chat-bubble-alt");
 	@include controls.button;
+	@include controls.icon-button;
 
 	background-image: none;
+
+	width: unset;
+	min-height: unset;
+
+	&#EmbedButton {
+		--button-img: icon("file");
+	}
+
+	&#EmoticonPickerButton {
+		--button-img: icon("emoji");
+	}
 }
 
 #chatTextarea {

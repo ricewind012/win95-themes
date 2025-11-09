@@ -8,8 +8,7 @@
 	gap: var(--text-spacing);
 }
 
-#BrowserTabIcon,
-#CloseTabButton {
+#BrowserTabIcon {
 	padding: 0;
 }
 
@@ -63,13 +62,49 @@
 	}
 }
 
+#CloseTabButton {
+	mask: icon("close", "mono") no-repeat center;
+	background-color: currentColor;
+	padding: 0;
+
+	width: var(--icon-size);
+	height: var(--icon-size);
+
+	path {
+		display: none;
+	}
+}
+
 #NavigationButton {
-	// TODO: icons
 	@include controls.button;
 	@include controls.icon-button;
 
 	&#Disabled {
 		@include controls.input-disabled;
+	}
+
+	&:nth-child(1) {
+		--button-img: icon("go-back");
+	}
+
+	&:nth-child(2) {
+		--button-img: icon("go-forward");
+	}
+
+	&:nth-child(3) {
+		--button-img: icon("reload");
+	}
+
+	&:nth-child(4) {
+		--button-img: icon("favorites");
+	}
+
+	&:nth-child(5) {
+		--button-img: icon("home");
+	}
+
+	svg {
+		display: none;
 	}
 }
 

@@ -1,8 +1,8 @@
 @use "shared/controls";
 @use "shared/tree";
 @use "shared/window";
-@use "shared++/utils";
 @use "shared++/icons";
+@use "shared++/utils";
 @use "steam/shared";
 
 .activeVoiceButtons {
@@ -18,6 +18,7 @@
 .activeVoiceControls {
 	background-color: transparent;
 	border: none;
+	margin-top: var(--window-gap);
 
 	height: var(--icon-button-height);
 
@@ -26,12 +27,31 @@
 	}
 
 	button {
+		@include controls.button;
 		@include controls.icon-button;
 
-		// TODO: remove with icons
-		padding: 0;
-
 		min-height: unset;
+
+		&.chatEndVoiceChat {
+			--button-img: icon("room-leave");
+		}
+
+		&.ToggleMicrophoneButton {
+			--button-img: icon("microphone");
+
+			&.NoMicrophone,
+			&.disabled {
+				--button-img: icon("microphone-muted");
+			}
+		}
+
+		&.ToggleVoiceOutputButton {
+			--button-img: icon("sound");
+
+			&.disabled {
+				--button-img: icon("sound-muted");
+			}
+		}
 	}
 }
 
@@ -56,21 +76,11 @@
 	padding: 0;
 }
 
-.addFriendButton,
-.friendRequestButton {
+.addFriendButton {
+	@include icons.icon-plus;
+	--button-img-pos: center;
 	@include controls.button;
 	@include controls.icon-button;
-
-	// TODO: icons
-	padding: 2px;
-
-	svg {
-		margin: 0;
-
-		* {
-			fill: var(--color-button-text);
-		}
-	}
 }
 
 .AvatarAndUser {
@@ -136,8 +146,7 @@
 	}
 
 	.createChatRoomButton {
-		@include icons.icon-plus;
-		--button-img-pos: center;
+		--button-img: icon("room-create");
 	}
 
 	.groupChatSectionTitle {
@@ -203,6 +212,7 @@
 	}
 
 	.statusHeaderGlow {
+		display: initial;
 		height: 100%;
 	}
 }
@@ -302,6 +312,10 @@
 			height: 24px;
 		}
 	}
+
+	:where(& svg) {
+		display: none;
+	}
 }
 
 .friendsListContainer {
@@ -334,6 +348,36 @@
 	box-shadow: none;
 
 	min-height: unset;
+}
+
+.friendRequestButton {
+	--button-img: icon("user-list");
+	@include controls.button;
+	@include controls.icon-button($selected-sel: ".friendRequestViewActive");
+
+	gap: var(--text-spacing);
+
+	display: flex;
+	align-items: center;
+	width: unset;
+
+	&.friendRequestViewActive {
+		@include controls.button-active;
+	}
+
+	// TODO(controls): maybe stop using position: absolute for this
+	&::before {
+		display: block;
+		position: unset;
+		width: var(--icon-size);
+		height: var(--icon-size);
+	}
+
+	.requestsNumber {
+		@include utils.parentheses;
+
+		all: unset;
+	}
 }
 
 .friendSearchClear {

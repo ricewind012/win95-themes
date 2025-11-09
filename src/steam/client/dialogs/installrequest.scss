@@ -49,11 +49,6 @@
 	@include utils.text-reset;
 }
 
-// TODO: maybe DO display icons there for warnings
-#FolderFlag {
-	display: none;
-}
-
 #FolderFlagStar {
 	margin: 0;
 	margin-top: -2px;
@@ -114,16 +109,18 @@
 
 		align-items: center;
 		justify-content: start;
+	}
 
-		&::before {
-			--icon-size: 32px;
+	#FolderFlag {
+		--icon-size: 32px;
 
-			content: "";
+		background-image: icon("warning-32");
 
-			width: var(--icon-size);
-			height: var(--icon-size);
+		width: var(--icon-size);
+		height: var(--icon-size);
 
-			background-image: icon("warning-32");
+		svg {
+			display: none;
 		}
 	}
 }
