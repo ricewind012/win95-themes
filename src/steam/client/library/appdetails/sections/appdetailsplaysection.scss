@@ -91,12 +91,32 @@
 
 	// "Manage" combobox
 	#MenuButtonContainer > & {
-		@include controls.combobox;
+		@include controls.combobox-button;
 
 		margin-right: var(--toolbar-spacing);
 
 		&::before {
 			content: attr(aria-label);
+
+			border: none;
+			box-shadow: none;
+		}
+
+		svg {
+			@include controls.separator-horizontal;
+
+			order: 1;
+			display: initial;
+			top: var(--offset-click);
+			left: var(--offset-click);
+			width: 0;
+			height: calc(var(--combobox-button-height) - var(--button-spacing) * 2);
+
+			margin: 0;
+		}
+
+		path {
+			display: none;
 		}
 	}
 

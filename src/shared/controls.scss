@@ -144,6 +144,47 @@
 	}
 }
 
+@mixin combobox-button {
+	--combobox-button-height: 24px;
+	@include button;
+
+	gap: var(--text-spacing);
+
+	display: flex;
+	height: var(--combobox-button-height);
+
+	&:active {
+		--offset-click: 1px;
+	}
+
+	&::before,
+	&::after {
+		content: "";
+
+		order: 1;
+		position: relative;
+		top: var(--offset-click);
+		left: var(--offset-click);
+	}
+
+	&::before {
+		height: calc(var(--combobox-button-height) - var(--button-spacing) * 2);
+
+		@include separator-horizontal;
+
+		margin: 0;
+	}
+
+	&::after {
+		width: 7px;
+		height: 4px;
+
+		mask: icon("arrow-bottom", "mono");
+		background-color: var(--color-button-text);
+		margin-inline-end: calc(var(--button-spacing) / 2);
+	}
+}
+
 @mixin drag-handle {
 	// TODO: bruh just rename that shit
 	box-shadow: var(--border-tab-button-raised);

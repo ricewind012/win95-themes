@@ -2,7 +2,7 @@
 @use "shared++/utils";
 
 #AccountMenu {
-	@include controls.combobox;
+	@include controls.combobox-button;
 }
 
 #AnnouncementsButton {

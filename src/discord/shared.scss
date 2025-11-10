@@ -20,19 +20,6 @@
 	}
 }
 
-// TODO: what is this
-@mixin select-as-button {
-	@include controls.combobox;
-
-	&:active,
-	&:focus {
-		outline: none;
-		color: var(--color-window-text);
-		text-shadow: none;
-		box-shadow: var(--border-field);
-	}
-}
-
 @mixin use-aria-label {
 	&::before {
 		content: attr(aria-label);

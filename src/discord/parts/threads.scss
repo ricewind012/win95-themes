@@ -39,15 +39,23 @@
 
 .sortDropdown_f369db,
 .tagsButton_f369db {
-	@include shared.select-as-button;
-	@include shared.use-aria-label;
+	@include controls.combobox-button;
 
 	text-align: start;
 
 	left: 0;
-	min-width: 100px;
-	height: unset;
-	justify-content: start;
+
+	svg {
+		display: none;
+	}
+}
+
+.sortDropdownInner_f369db,
+.tagsButtonInner_f369db {
+	color: inherit;
+	padding: 0;
+
+	justify-content: center;
 }
 
 .tagsContainer_f369db {
