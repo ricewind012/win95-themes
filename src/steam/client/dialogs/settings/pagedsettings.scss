@@ -13,7 +13,7 @@
 	min-height: unset;
 
 	.DialogDropDown {
-		min-width: 75px;
+		min-width: var(--button-min-width);
 	}
 
 	.DialogHeader {

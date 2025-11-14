@@ -16,7 +16,7 @@
 	}
 
 	.DialogInput_Wrapper .DialogButton {
-		min-width: 75px;
+		min-width: var(--button-min-width);
 	}
 
 	[style="--indent-level:0;"] > div {

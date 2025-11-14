@@ -10,14 +10,12 @@
 }
 
 #Button {
-	// Align with the left side
-	--icon-buton-height: 23px;
-
 	@include controls.button;
 	@include controls.icon-button;
 
-	width: unset;
-	min-height: unset;
+	// Align with the left side
+	width: var(--steamdesktop_icon-button-size);
+	min-height: var(--steamdesktop_icon-button-size);
 
 	cursor: default;
 }

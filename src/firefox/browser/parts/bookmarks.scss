@@ -32,8 +32,6 @@ toolbarbutton.bookmark-item {
 }
 
 #PlacesToolbarItems {
-	// TODO(shared/controls): finalize tab-button
-	--tab-button-spacing: 4px;
 	gap: var(--tab-button-spacing);
 	margin-inline-end: var(--tab-button-spacing);
 }

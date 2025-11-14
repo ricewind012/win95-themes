@@ -20,22 +20,6 @@
 	}
 }
 
-// TODO(shared/controls): finalize tab-button
-@mixin tab-button($selected-sel) {
-	&:where(#{$selected-sel}) {
-		background: var(--checkerboard);
-		box-shadow: var(--border-tab-button-sunken);
-		font-weight: bold;
-
-		inset: 1px;
-	}
-
-	&:not(#{$selected-sel}):hover {
-		box-shadow: var(--border-tab-button-raised);
-	}
-}
-
-// TODO(shared/controls): finalize tab-button
 @mixin toolbar-button {
 	gap: var(--text-spacing);
 	padding: 2px 5px;

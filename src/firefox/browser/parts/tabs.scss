@@ -10,12 +10,10 @@ $-icons: (
 	"chrome://mozapps/skin/extensions/extension.svg": "extensions",
 );
 
-// TODO(shared/controls): finalize tab-button
 %-horizontal-tabs-button {
 	// Match the tabs' height (and also width)
-	$-tab-button-height: 24px;
-	--icon-button-width: #{$-tab-button-height};
-	--icon-button-height: #{$-tab-button-height};
+	--icon-button-width: var(--tab-button-height);
+	--icon-button-height: var(--tab-button-height);
 }
 
 #pinned-tabs-container[orient="vertical"] {
@@ -30,14 +28,14 @@ $-icons: (
 		overflow: hidden;
 	}
 
-	.tab-background {
-		@include controls.button($active-sel: ":is([selected], [multiselected])");
+	.tabbrowser-tab {
+		@include controls.button(
+			$active-sel: ":where([selected], [multiselected])"
+		);
+
+		padding: 0;
 
 		min-width: unset;
-	}
-
-	.tabbrowser-tab {
-		padding: 0;
 	}
 }
 
@@ -51,6 +49,11 @@ $-icons: (
 	}
 }
 
+.tab-background {
+	background: inherit;
+	box-shadow: inherit;
+}
+
 .tab-close-button {
 	list-style-image: icon("close", "mono");
 	padding: 3.5px 4px;
@@ -61,6 +64,12 @@ $-icons: (
 
 	#tabbrowser-arrowscrollbox[orient="vertical"] & {
 		display: flex;
+	}
+}
+
+.tab-content {
+	&[pinned] {
+		padding-inline: var(--tab-button-spacing);
 	}
 }
 
@@ -96,6 +105,15 @@ $-icons: (
 		display: none;
 	}
 
+	&::part(scrollbox) {
+		padding-inline: var(--tab-button-spacing-x05);
+	}
+
+	&[orient="vertical"]::part(scrollbox) {
+		padding-block: var(--tab-button-spacing-x05);
+		padding-inline: var(--tab-button-spacing);
+	}
+
 	// TODO(build): optimize
 	&::part(scrollbutton-up),
 	&::part(scrollbutton-down) {
@@ -116,18 +134,33 @@ $-icons: (
 	}
 }
 
-#tabbrowser-tabs[orient="vertical"] {
-	gap: var(--toolbar-container-spacing);
+#tabbrowser-tabs {
+	--tab-inline-padding: var(--tab-button-spacing);
+	// own
+	--tab-button-spacing-x05: calc(var(--tab-button-spacing) / 2);
 
-	// separator
-	&::after {
-		display: none;
-	}
+	&[orient="vertical"] {
+		gap: var(--toolbar-container-spacing);
 
-	.tabbrowser-tab {
-		// TODO(shared/controls): finalize tab-button
-		--tab-button-spacing: 4px;
-		padding-block: calc(var(--tab-button-spacing) / 2);
+		&[expanded] tab-group {
+			& > .tab-group-label-container,
+			& > .tab-group-overflow-count-container {
+				margin-inline-start: 0;
+			}
+
+			.tab-group-line {
+				margin-inline-start: calc(var(--space-medium) * -1);
+			}
+
+			.tabbrowser-tab {
+				overflow: visible;
+			}
+		}
+
+		// separator
+		&::after {
+			display: none;
+		}
 	}
 }
 
@@ -136,7 +169,6 @@ $-icons: (
 #scrollbutton-down {
 	@extend %-horizontal-tabs-button;
 
-	// TODO(shared/controls): unify tab-button
 	&::before,
 	&::after {
 		@include utils.pseudo-icon;
@@ -174,23 +206,29 @@ $-icons: (
 }
 
 .tabbrowser-tab {
-	&:where([selected], [multiselected]) {
-		.tab-background {
-			background: var(--checkerboard);
-			box-shadow: var(--border-tab-button-sunken);
-		}
+	@include controls.tab-button(
+		$selected-sel: ":where([selected], [multiselected])"
+	);
 
-		.tab-content {
-			font-weight: bold;
+	padding: 0;
 
-			inset: 1px;
+	inset: 0;
+
+	#tabbrowser-tabs[orient="horizontal"] & {
+		margin-inline: var(--tab-button-spacing-x05);
+
+		&:not([pinned]) {
+			top: 1px;
+
+			// Restore the original value
+			&[fadein] {
+				min-width: var(--tab-min-width-pref, var(--tab-min-width));
+			}
 		}
 	}
 
-	&:not([selected], [multiselected]):hover {
-		.tab-background {
-			box-shadow: var(--border-tab-button-raised);
-		}
+	#tabbrowser-tabs[orient="vertical"] & {
+		margin-block: var(--tab-button-spacing-x05);
 	}
 }
 

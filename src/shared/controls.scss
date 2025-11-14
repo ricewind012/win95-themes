@@ -72,7 +72,7 @@
 	box-shadow: var(--border-button-raised);
 	padding: var(--button-spacing);
 
-	min-width: 75px;
+	min-width: var(--button-min-width);
 
 	&#{$focus-sel} {
 		@include button-focus;
@@ -145,13 +145,11 @@
 }
 
 @mixin combobox-button {
-	--combobox-button-height: 24px;
 	@include button;
 
 	gap: var(--text-spacing);
 
 	display: flex;
-	height: var(--combobox-button-height);
 
 	&:active {
 		--offset-click: 1px;
@@ -316,6 +314,33 @@
 
 	width: 1px;
 	height: 3px;
+}
+
+@mixin tab-button($selected-sel) {
+	color: var(--color-button-text);
+	padding: var(--tab-button-spacing);
+
+	min-width: var(--button-min-width);
+	height: var(--tab-button-height);
+
+	&#{$selected-sel},
+	&:active {
+		--offset-click: 1px;
+
+		background: var(--checkerboard);
+		font-weight: bold;
+		box-shadow: var(--border-tab-button-sunken);
+
+		& > * {
+			position: relative;
+			top: var(--offset-click);
+			left: var(--offset-click);
+		}
+	}
+
+	&:not(#{$selected-sel}):hover {
+		box-shadow: var(--border-tab-button-raised);
+	}
 }
 
 @mixin text-field($disabled-sel: ":disabled") {

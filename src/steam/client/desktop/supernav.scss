@@ -12,8 +12,7 @@ $-sel-arrow-forward: "> :nth-child(4)";
 	&::after {
 		@include utils.pseudo-icon;
 
-		inset: unset;
-		top: 0;
+		top: var(--icon-offset);
 		width: var(--icon-width);
 		height: var(--icon-height);
 
@@ -35,7 +34,7 @@ $-sel-arrow-forward: "> :nth-child(4)";
 	&::after {
 		background-color: var(--color-button-highlight);
 
-		top: var(--icon-disabled-offset);
+		top: calc(var(--icon-offset) + var(--icon-disabled-offset));
 	}
 }
 
@@ -59,6 +58,7 @@ $-sel-arrow-forward: "> :nth-child(4)";
 
 #MenuButton {
 	color: inherit;
+	font: inherit;
 	text-align: center;
 	text-shadow: inherit;
 
@@ -68,10 +68,10 @@ $-sel-arrow-forward: "> :nth-child(4)";
 }
 
 #SuperNav {
-	--icon-width: 25px;
-	--icon-height: 23px;
+	--icon-width: var(--steamdesktop_icon-button-size);
+	--icon-height: var(--steamdesktop_icon-button-size);
 	// The buttons are bigger, hence the offset
-	--icon-offset: 2px;
+	--icon-offset: 1px;
 	--icon-disabled-offset: 1px;
 
 	padding-bottom: 2px;
@@ -124,12 +124,15 @@ $-sel-arrow-forward: "> :nth-child(4)";
 
 	text-transform: unset;
 
-	&#Selected {
-		@include controls.button-active;
+	height: var(--combobox-button-height);
 
-		&:hover:not(:active) {
-			color: var(--color-button-text);
-		}
+	&#Selected {
+		// controls.button-active + active tab-button state
+		background: var(--checkerboard);
+		color: transparent;
+		font-weight: bold;
+		text-shadow: 1px 1px var(--color-button-text);
+		box-shadow: var(--border-tab-button-sunken);
 	}
 
 	&:nth-of-type(1),
