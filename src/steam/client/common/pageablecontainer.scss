@@ -2,7 +2,7 @@
 @use "steam/shared";
 
 #HeaderPageControls {
-	@include shared.library-section-header;
+	@include shared.library_section-header;
 
 	color: inherit;
 	font: inherit;
@@ -16,7 +16,7 @@
 }
 
 #PageableContainer {
-	@include shared.library-section;
+	@include shared.library_section;
 }
 
 #PageClickContainer {

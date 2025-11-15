@@ -1,3 +1,4 @@
+@use "shared/text";
 @use "shared++/utils";
 
 #ButtonsGroup {
@@ -5,7 +6,7 @@
 }
 
 #CommentsContainer {
-	@include utils.link;
+	@include text.link;
 
 	font: inherit;
 

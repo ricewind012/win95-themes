@@ -1,6 +1,5 @@
 @use "shared/controls";
 @use "shared++/utils";
-@use "discord/shared";
 
 .channelIcon__9293f,
 .divider__9293f,
@@ -16,7 +15,7 @@
 
 	.hoverableContainer__754bd {
 		@include controls.button;
-		@include shared.use-aria-label;
+		@include utils.use-attr-text("aria-label");
 
 		justify-content: center;
 		height: unset;

@@ -14,17 +14,30 @@
 	height: $h;
 }
 
+/// An alternative to `@include window.content-container` as a pseudo element
+/// for special elements.
+@mixin content-container-alt {
+	background-color: var(--color-window);
+	margin: var(--border-size);
+
+	&::before {
+		content: "";
+
+		position: fixed;
+		inset: var(--inset);
+
+		pointer-events: none;
+
+		box-shadow: var(--border-field);
+	}
+}
+
 @mixin text-reset {
 	color: inherit;
 	font: var(--text-ui);
 	letter-spacing: 0;
 	text-shadow: none;
 	text-transform: unset;
-}
-
-@mixin link {
-	color: var(--color-link);
-	text-decoration: underline;
 }
 
 @mixin legend-as-div {
@@ -75,29 +88,14 @@
 	display: block;
 }
 
-// buttons
-@mixin titlebar-button-minimize {
-	--button-img: icon("minimize", "mono");
-	--button-img-size: 6px 2px;
-	--button-img-pos: 4px 9px;
-}
+/// Removes content from an element and uses and HTML attribute for its text.
+/// @param {String} $name - HTML attribute of whose value to use as text.
+@mixin use-attr-text($name) {
+	&::before {
+		content: attr(#{$name});
+	}
 
-@mixin titlebar-button-maximize {
-	--button-img: icon("maximize", "mono");
-	--button-img-size: 9px;
-	--button-img-pos: 3px 2px;
-}
-
-@mixin titlebar-button-restore {
-	--button-img: icon("restore", "mono");
-	--button-img-size: 10px 9px;
-	--button-img-pos: 2px 2px;
-}
-
-@mixin titlebar-button-close {
-	--button-img: icon("close", "mono");
-	--button-img-size: 8px 7px;
-	--button-img-pos: 4px 3px;
-
-	margin-left: 2px;
+	& > * {
+		display: none;
+	}
 }

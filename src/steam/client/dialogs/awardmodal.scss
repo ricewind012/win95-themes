@@ -1,5 +1,5 @@
+@use "shared/text";
 @use "shared/window";
-@use "shared++/utils";
 
 #Button {
 	border: none;
@@ -89,7 +89,7 @@
 }
 
 #FooterLink {
-	@include utils.link;
+	@include text.link;
 
 	font: inherit;
 	padding: 0;

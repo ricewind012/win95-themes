@@ -15,7 +15,7 @@
 }
 
 #SettingsButton {
-	@include shared.library-in-toolbar;
+	@include shared.library_in-toolbar;
 
 	right: anchor(right);
 

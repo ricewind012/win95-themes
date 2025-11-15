@@ -1,12 +1,13 @@
+@use "shared/text";
 @use "shared++/utils";
 
 .anchor_edefb8 {
 	@include utils.text-reset;
-	@include utils.link;
+	@include text.link;
 }
 
 .channelMention {
-	@include utils.link;
+	@include text.link;
 
 	background-color: transparent;
 	padding: 0;

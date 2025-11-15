@@ -70,7 +70,7 @@
 }
 
 #Header {
-	@include shared.library-in-toolbar;
+	@include shared.library_in-toolbar;
 
 	text-transform: none;
 	gap: var(--toolbar-spacing);
@@ -97,7 +97,7 @@
 }
 
 #RightSideButtons {
-	@include shared.library-in-toolbar;
+	@include shared.library_in-toolbar;
 
 	padding: 0;
 

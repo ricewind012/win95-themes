@@ -1,5 +1,5 @@
+@use "shared/window";
 @use "shared++/icons";
-@use "shared++/utils";
 @use "vscode/shared";
 
 // Single icon for multiple classes,
@@ -128,7 +128,7 @@
 .codicon-workspace-trust-editor-cross,
 .codicon-workspace-trust-editor-remove-folder,
 .codicon-x {
-	@include utils.titlebar-button-close;
+	@include window.titlebar-button-close;
 }
 
 .codicon-collapse-all,
@@ -271,15 +271,15 @@
 }
 
 .codicon-chrome-maximize {
-	@include utils.titlebar-button-maximize;
+	@include window.titlebar-button-maximize;
 }
 
 .codicon-chrome-minimize {
-	@include utils.titlebar-button-minimize;
+	@include window.titlebar-button-minimize;
 }
 
 .codicon-chrome-restore {
-	@include utils.titlebar-button-restore;
+	@include window.titlebar-button-restore;
 }
 
 .codicon-configure-layout-icon {

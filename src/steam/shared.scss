@@ -2,24 +2,6 @@
 @use "shared/table";
 @use "shared++/utils";
 
-// An alternative to "@include window.content-container" for special elements
-@mixin content-container-alt {
-	background-color: var(--color-window);
-
-	margin: var(--border-size);
-
-	&::before {
-		content: "";
-
-		position: fixed;
-		inset: var(--inset);
-
-		pointer-events: none;
-
-		box-shadow: var(--border-field);
-	}
-}
-
 @mixin dialog-title {
 	--offset: calc(var(--border-size) + var(--window-spacing));
 
@@ -77,7 +59,7 @@
 	}
 }
 
-@mixin library-drag-handle {
+@mixin library_drag-handle {
 	@include controls.drag-handle;
 
 	opacity: 1;
@@ -94,7 +76,7 @@
 	}
 }
 
-@mixin library-in-toolbar {
+@mixin library_in-toolbar {
 	margin-inline: var(--toolbar-container-spacing);
 
 	position: fixed;
@@ -102,18 +84,18 @@
 	top: anchor(top);
 }
 
-@mixin library-section {
+@mixin library_section {
 	display: var(--library_section-display);
 	grid-template-columns: var(--library_section-rows);
 }
 
-@mixin library-section-content {
+@mixin library_section-content {
 	color: var(--color-window-text);
 	padding: var(--appdetails_container-spacing-y)
 		var(--appdetails_container-spacing-x);
 }
 
-@mixin library-section-header {
+@mixin library_section-header {
 	@include table.header-row;
 
 	// A bit more spacing to account for the huge amounts of content there is

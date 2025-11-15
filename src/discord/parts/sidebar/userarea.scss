@@ -1,6 +1,5 @@
 @use "shared/controls";
 @use "shared++/utils";
-@use "discord/shared";
 
 .panels__5e434 {
 	background-color: transparent;
@@ -13,7 +12,7 @@
 
 .avatarWrapper__37e49 {
 	@include controls.button;
-	@include shared.use-aria-label;
+	@include utils.use-attr-text("aria-label");
 
 	// TODO: icon
 	height: 22px;

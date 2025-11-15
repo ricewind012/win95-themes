@@ -1,9 +1,9 @@
 @use "shared/controls";
 @use "shared/table";
+@use "shared/text";
 @use "shared/window";
 @use "shared++/utils";
 @use "shared++/icons";
-@use "steam/shared";
 
 #AppProperties {
 	height: calc(100% - 1lh - var(--tabs-height));
@@ -56,7 +56,7 @@
 #DlcGrid {
 	--inset: 88px 25px 65px 25px;
 
-	@include shared.content-container-alt;
+	@include utils.content-container-alt;
 
 	font-size: var(--text-ui-size);
 	border: none;
@@ -192,11 +192,11 @@
 }
 
 #SteamInputLink {
-	@include utils.link;
+	@include text.link;
 }
 
 #ViewMore {
-	@include utils.link;
+	@include text.link;
 
 	padding: 0;
 

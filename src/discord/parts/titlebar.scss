@@ -1,6 +1,5 @@
 @use "shared/controls";
 @use "shared/window";
-@use "shared++/utils";
 
 .bar_c38106 {
 	@include window.titlebar($focused-sel: ".app-focused &");
@@ -83,14 +82,14 @@
 }
 
 .winButtonMinMax_c38106 {
-	@include utils.titlebar-button-minimize;
+	@include window.titlebar-button-minimize;
 
 	// No restore button. Nice app, lol
 	&:nth-child(2) {
-		@include utils.titlebar-button-maximize;
+		@include window.titlebar-button-maximize;
 	}
 }
 
 .winButtonClose_c38106 {
-	@include utils.titlebar-button-close;
+	@include window.titlebar-button-close;
 }

@@ -1,5 +1,5 @@
 @use "shared/listbox";
-@use "steam/shared";
+@use "shared++/utils";
 
 #Console {
 	background-color: transparent;
@@ -23,7 +23,7 @@
 #ConsoleInner {
 	--inset: 84px 4px 46px 4px;
 
-	@include shared.content-container-alt;
+	@include utils.content-container-alt;
 }
 
 // Console colors

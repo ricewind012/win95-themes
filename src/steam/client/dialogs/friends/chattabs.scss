@@ -37,7 +37,7 @@
 
 #CloseButton {
 	@include window.titlebar-button;
-	@include utils.titlebar-button-close;
+	@include window.titlebar-button-close;
 
 	position: relative;
 }

@@ -34,7 +34,7 @@
 }
 
 #Header {
-	@include shared.library-in-toolbar;
+	@include shared.library_in-toolbar;
 
 	color: inherit;
 	margin-block: 4px;

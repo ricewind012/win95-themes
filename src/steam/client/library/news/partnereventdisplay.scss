@@ -1,3 +1,4 @@
+@use "shared/text";
 @use "shared++/utils";
 @use "steam/shared";
 
@@ -6,7 +7,7 @@
 	font: inherit;
 
 	a {
-		@include utils.link;
+		@include text.link;
 	}
 }
 
@@ -26,9 +27,9 @@
 }
 
 #LibraryEventBodyContainer {
-	@include shared.library-section-content;
+	@include shared.library_section-content;
 }
 
 #LibraryEventTitleContainer {
-	@include shared.library-section-header;
+	@include shared.library_section-header;
 }

@@ -15,7 +15,7 @@
 }
 
 #ControlSection {
-	@include shared.library-in-toolbar;
+	@include shared.library_in-toolbar;
 
 	background-color: var(--color-button-face);
 
@@ -59,7 +59,7 @@
 }
 
 #PartnerEvent {
-	@include shared.library-section;
+	@include shared.library_section;
 
 	background: none;
 	border: none;

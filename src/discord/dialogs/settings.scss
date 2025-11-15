@@ -178,7 +178,7 @@ $-groupbox-header-sel: ":is(h1, h2, h3, h4, h5, h6):first-child";
 	.closeButton_c2b141 {
 		@include controls.button;
 		@include window.titlebar-button;
-		@include utils.titlebar-button-close;
+		@include window.titlebar-button-close;
 
 		border: none;
 

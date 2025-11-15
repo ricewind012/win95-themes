@@ -90,7 +90,7 @@
 }
 
 #DragHandle {
-	@include shared.library-drag-handle;
+	@include shared.library_drag-handle;
 }
 
 #EmptyTransfers {
@@ -134,7 +134,7 @@
 	margin: 0;
 
 	&:not(#Active) {
-		@include shared.library-section;
+		@include shared.library_section;
 	}
 
 	&#Active {
@@ -176,7 +176,7 @@
 }
 
 #SectionList {
-	@include shared.library-section-content;
+	@include shared.library_section-content;
 
 	border: none;
 	margin: 0;
@@ -188,7 +188,7 @@
 
 #SectionTitle {
 	@include utils.text-reset;
-	@include shared.library-section-header;
+	@include shared.library_section-header;
 
 	gap: var(--text-spacing);
 

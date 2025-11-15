@@ -1,6 +1,5 @@
 @use "shared/tabs";
 @use "shared++/utils";
-@use "steam/shared";
 
 #FixCenterAlignScroll {
 	background-color: transparent;
@@ -37,7 +36,7 @@
 		--inset: calc(var(--tabs-height) + var(--spacing)) var(--spacing)
 			var(--spacing) var(--spacing);
 
-		@include shared.content-container-alt;
+		@include utils.content-container-alt;
 
 		// This has no effect anyway !
 		gap: 0;

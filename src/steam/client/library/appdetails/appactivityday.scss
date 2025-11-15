@@ -1,4 +1,5 @@
 @use "shared/controls";
+@use "shared/text";
 @use "shared++/utils";
 
 #AppActivityDate {
@@ -140,7 +141,7 @@
 
 #ReviewMetadata {
 	#CommentsContainer {
-		@include utils.link;
+		@include text.link;
 	}
 
 	#CommentCount {

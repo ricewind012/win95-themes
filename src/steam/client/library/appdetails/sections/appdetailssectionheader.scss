@@ -1,7 +1,7 @@
 @use "steam/shared";
 
 #SectionHeader {
-	@include shared.library-section-header;
+	@include shared.library_section-header;
 
 	color: inherit;
 	font: var(--text-ui);

@@ -100,7 +100,7 @@
 }
 
 #PlayButton {
-	@include shared.library-in-toolbar;
+	@include shared.library_in-toolbar;
 
 	left: anchor(left);
 	width: auto;

@@ -1,3 +1,4 @@
+@use "shared/text";
 @use "shared++/utils";
 
 #SettingsDialogBodyText {
@@ -12,7 +13,7 @@
 }
 
 #SettingsLink {
-	@include utils.link;
+	@include text.link;
 
 	font: var(--text-ui);
 }

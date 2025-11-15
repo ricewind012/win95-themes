@@ -1,6 +1,6 @@
 @use "shared/controls";
 @use "shared/window";
-@use "discord/shared";
+@use "shared++/utils";
 
 .container_f369db {
 	@include window.content-container;
@@ -23,7 +23,7 @@
 
 .forumPostFormButton_f369db {
 	@include controls.button;
-	@include shared.use-aria-label;
+	@include utils.use-attr-text("aria-label");
 
 	height: unset;
 

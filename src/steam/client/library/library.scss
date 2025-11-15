@@ -1,6 +1,5 @@
 @use "shared/controls";
 @use "shared/window";
-@use "shared++/utils";
 
 #AchievementsPageContainer {
 	margin-block: 5%;
@@ -26,7 +25,7 @@
 
 		@include controls.button;
 		@include window.titlebar-button;
-		@include utils.titlebar-button-close;
+		@include window.titlebar-button-close;
 
 		background-image: none;
 

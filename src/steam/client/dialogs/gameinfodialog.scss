@@ -1,7 +1,6 @@
 @use "shared/controls";
 @use "shared/table";
 @use "shared++/utils";
-@use "steam/shared";
 
 #DialogBody {
 	box-shadow: none;
@@ -48,7 +47,7 @@
 #PlayersList {
 	--inset: 27px 11px 254px 11px;
 
-	@include shared.content-container-alt;
+	@include utils.content-container-alt;
 
 	margin-top: 0;
 	margin-bottom: var(--text-spacing);

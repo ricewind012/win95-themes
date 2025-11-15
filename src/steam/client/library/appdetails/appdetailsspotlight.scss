@@ -3,7 +3,7 @@
 
 #AppDetailsSpotlightDemo {
 	@include table.header-row;
-	@include shared.library-section-content;
+	@include shared.library_section-content;
 
 	font: var(--text-ui);
 	font-weight: bold;
@@ -33,7 +33,7 @@
 
 #ReviewContainer {
 	@include table.header-row;
-	@include shared.library-section-content;
+	@include shared.library_section-content;
 
 	#Inner {
 		width: auto;

@@ -93,7 +93,7 @@
 
 	// breaks
 	&:not(:has(> .CSSGrid_Measure, > #ChildrenContainer, #Draggable:only-child)) {
-		@include shared.library-section;
+		@include shared.library_section;
 	}
 
 	&#EmptyShowcase {
@@ -115,7 +115,7 @@
 }
 
 #ShowcaseHeader {
-	@include shared.library-section-header;
+	@include shared.library_section-header;
 
 	color: inherit;
 	font: inherit;
@@ -126,7 +126,7 @@
 	height: 100%;
 
 	#Rule {
-		@include shared.library-drag-handle;
+		@include shared.library_drag-handle;
 	}
 
 	#DragHandle {

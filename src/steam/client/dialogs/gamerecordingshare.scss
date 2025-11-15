@@ -1,4 +1,4 @@
-@use "shared++/utils";
+@use "shared/text";
 
 #Content {
 	gap: var(--dialog-spacing);
@@ -17,7 +17,7 @@
 }
 
 #MobileLink {
-	@include utils.link;
+	@include text.link;
 }
 
 #SendClipDialog {

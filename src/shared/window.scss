@@ -117,6 +117,32 @@
 	}
 }
 
+@mixin titlebar-button-minimize {
+	--button-img: icon("minimize", "mono");
+	--button-img-size: 6px 2px;
+	--button-img-pos: 4px 9px;
+}
+
+@mixin titlebar-button-maximize {
+	--button-img: icon("maximize", "mono");
+	--button-img-size: 9px;
+	--button-img-pos: 3px 2px;
+}
+
+@mixin titlebar-button-restore {
+	--button-img: icon("restore", "mono");
+	--button-img-size: 10px 9px;
+	--button-img-pos: 2px 2px;
+}
+
+@mixin titlebar-button-close {
+	--button-img: icon("close", "mono");
+	--button-img-size: 8px 7px;
+	--button-img-pos: 4px 3px;
+
+	margin-left: 2px;
+}
+
 @mixin toolbar {
 	gap: var(--toolbar-spacing);
 	margin: 0 var(--toolbar-container-spacing);

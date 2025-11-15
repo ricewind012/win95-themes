@@ -96,7 +96,6 @@
 }
 
 // Making .chatRoomListContainer use .content-container breaks resizing.
-// TODO: another steam.content-container-alt using position: absolute ?
 .ChatRoomListContainerParent:not(.Collapsed) {
 	margin: var(--border-size);
 

@@ -13,3 +13,8 @@
 	display: flex;
 	align-items: center;
 }
+
+@mixin link {
+	color: var(--color-link);
+	text-decoration: underline;
+}

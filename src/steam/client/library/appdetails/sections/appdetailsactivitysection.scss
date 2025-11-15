@@ -1,11 +1,11 @@
-@use "shared++/utils";
+@use "shared/text";
 
 #ActivityFeedContainer {
 	max-width: unset;
 }
 
 #ViewLastNews {
-	@include utils.link;
+	@include text.link;
 
 	background-color: transparent;
 	font: inherit;

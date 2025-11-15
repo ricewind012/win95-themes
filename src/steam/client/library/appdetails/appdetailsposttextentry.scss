@@ -1,4 +1,5 @@
 @use "shared/controls";
+@use "shared++/utils";
 
 #Controls {
 	gap: var(--dialog-button-spacing);
@@ -7,13 +8,12 @@
 }
 
 #EmoticonButton {
+	@include utils.use-attr-text("title");
+
 	min-width: 111px;
 	height: unset;
 
-	// TODO: use use-aria-label from discord
 	&::before {
-		content: attr(title);
-
 		color: inherit;
 		text-shadow: inherit;
 	}

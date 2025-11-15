@@ -1,7 +1,7 @@
-@use "shared++/utils";
+@use "shared/text";
 
 #NoteLink {
-	@include utils.link;
+	@include text.link;
 
 	font: var(--text-ui);
 	margin-inline-start: 20px;

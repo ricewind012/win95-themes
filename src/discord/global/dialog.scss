@@ -66,7 +66,7 @@ $-titlebar-description-selector: "> :first-child + [data-text-variant]";
 
 .close__49fc1 {
 	@include window.titlebar-button;
-	@include utils.titlebar-button-close;
+	@include window.titlebar-button-close;
 
 	opacity: 1;
 	margin: 0;

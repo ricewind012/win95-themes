@@ -1,4 +1,5 @@
 @use "shared/controls";
+@use "shared/text";
 @use "shared++/utils";
 @use "steam/shared";
 
@@ -51,7 +52,7 @@
 
 #GuideTitle {
 	@include utils.text-reset;
-	@include utils.link;
+	@include text.link;
 }
 
 #OverviewTitle {

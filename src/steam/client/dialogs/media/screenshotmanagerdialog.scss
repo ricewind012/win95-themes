@@ -1,4 +1,5 @@
 @use "shared/controls";
+@use "shared/text";
 @use "shared/window";
 @use "shared++/utils";
 @use "steam/shared";
@@ -52,7 +53,7 @@
 	align-self: unset;
 
 	#Link {
-		@include utils.link;
+		@include text.link;
 	}
 }
 
@@ -78,7 +79,7 @@
 #ScreenshotList {
 	--inset: 61px 11px 30px 11px;
 
-	@include shared.content-container-alt;
+	@include utils.content-container-alt;
 
 	padding: 0;
 }

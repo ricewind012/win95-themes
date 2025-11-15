@@ -1,5 +1,5 @@
-@use "steam/shared";
+@use "shared++/utils";
 
 :where(#ScrollPanel) {
-	@include shared.content-container-alt;
+	@include utils.content-container-alt;
 }

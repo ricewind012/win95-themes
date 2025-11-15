@@ -1,5 +1,5 @@
 @use "shared/controls";
-@use "steam/shared";
+@use "shared++/utils";
 
 #AccountName {
 	color: inherit;
@@ -56,5 +56,5 @@
 	--offset: calc(var(--border-size) + var(--window-spacing));
 	--inset: calc(var(--offset) + 39px) var(--offset) var(--offset) var(--offset);
 
-	@include shared.content-container-alt;
+	@include utils.content-container-alt;
 }

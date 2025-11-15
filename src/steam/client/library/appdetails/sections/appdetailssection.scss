@@ -2,7 +2,7 @@
 @use "steam/shared";
 
 #AppDetailsSection {
-	@include shared.library-section;
+	@include shared.library_section;
 
 	color: inherit;
 	font: var(--text-ui);
@@ -11,7 +11,7 @@
 
 // !important for #appdetailsprimarylinkssection_LinksSection
 div#AppDetailsSectionContainer {
-	@include shared.library-section-content;
+	@include shared.library_section-content;
 
 	background: none;
 	margin: 0;
