@@ -1,7 +1,7 @@
 @use "shared/listbox";
 
 #DialogDropDownMenu_Item {
-	@include listbox.item($selected-sel: "[aria-selected='true']");
+	@include listbox.item($selected-sel: "&[aria-selected='true']");
 
 	svg {
 		position: absolute;

@@ -17,7 +17,7 @@
 }
 
 .autocompleteRow__13533 {
-	@include listbox.item($selected-sel: "[aria-selected='true']");
+	@include listbox.item($selected-sel: "&[aria-selected='true']");
 }
 
 .autocompleteRowContent__13533 {

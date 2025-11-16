@@ -42,7 +42,7 @@
 
 // Suggestions
 #Suggestion {
-	@include listbox.item($selected-sel: ".hack");
+	@include listbox.item($selected-sel: "&.hack");
 
 	background-color: transparent;
 

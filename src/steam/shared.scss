@@ -131,7 +131,7 @@
 @mixin pageable-container-button {
 	--button-img-size: 5px 9px;
 	--button-img-pos: 7px 6px;
-	@include controls.button($disabled-sel: "#Disabled");
+	@include controls.button($disabled-sel: "&#Disabled");
 	@include controls.icon-button;
 
 	opacity: 1;

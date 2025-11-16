@@ -352,7 +352,7 @@
 .friendRequestButton {
 	--button-img: icon("user-list");
 	@include controls.button;
-	@include controls.icon-button($selected-sel: ".friendRequestViewActive");
+	@include controls.icon-button($selected-sel: "&.friendRequestViewActive");
 
 	gap: var(--text-spacing);
 

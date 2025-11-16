@@ -32,7 +32,7 @@
 .menubar-menu-title {
 	// Move [role="menubar"] to its child element
 	// for correct context menu positioning
-	@include window.menubar-item($selected-sel: ".open");
+	@include window.menubar-item($selected-sel: "&.open");
 
 	&.toolbar-toggle-more {
 		display: none;

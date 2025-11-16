@@ -39,7 +39,7 @@ $-sel-arrow-forward: "> :nth-child(4)";
 }
 
 #Arrow {
-	@include controls.button($disabled-sel: "#Disabled");
+	@include controls.button($disabled-sel: "&#Disabled");
 	@include controls.icon-button;
 
 	transform: none;

@@ -83,7 +83,7 @@ $-input-height: round(
 }
 
 .urlbarView-row {
-	@include listbox.item($selected-sel: "[selected]");
+	@include listbox.item($selected-sel: "&[selected]");
 
 	min-height: unset;
 

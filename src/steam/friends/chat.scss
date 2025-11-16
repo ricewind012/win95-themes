@@ -511,6 +511,6 @@
 
 .VoiceToggle {
 	--button-img: icon("speaker-alt");
-	@include controls.button($disabled-sel: ".Inactive");
+	@include controls.button($disabled-sel: "&.Inactive");
 	@include controls.icon-button;
 }

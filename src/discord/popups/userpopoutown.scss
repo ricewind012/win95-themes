@@ -39,7 +39,7 @@
 .menuItemColor_ce8328 {
 	all: unset;
 
-	@include menu.item($selected-sel: ".hack");
+	@include menu.item($selected-sel: "&.hack");
 
 	&[aria-expanded] {
 		@include menu.item-parent;

@@ -7,7 +7,7 @@
 }
 
 .option__3f413 {
-	@include listbox.item($selected-sel: "[aria-selected='true']");
+	@include listbox.item($selected-sel: "&[aria-selected='true']");
 
 	font: var(--text-ui);
 }
@@ -25,7 +25,7 @@
 }
 
 .select__3f413 {
-	@include controls.combobox($disabled-sel: ".disabled__3f413");
+	@include controls.combobox($disabled-sel: "&.disabled__3f413");
 
 	min-height: unset;
 

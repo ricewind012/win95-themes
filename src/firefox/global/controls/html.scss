@@ -40,7 +40,7 @@ moz-button {
 		--button-size-icon: 0px;
 		--icon-size: 0px;
 
-		@include controls.icon-button($selected-sel: "[aria-pressed='true']");
+		@include controls.icon-button($selected-sel: "&[aria-pressed='true']");
 
 		padding: 0;
 	}

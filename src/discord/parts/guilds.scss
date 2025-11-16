@@ -26,7 +26,7 @@
 
 	[role="treeitem"] {
 		@include controls.button;
-		@include controls.icon-button($selected-sel: "[aria-selected='true']");
+		@include controls.icon-button($selected-sel: "&[aria-selected='true']");
 
 		width: var(--icon-button-width);
 	}

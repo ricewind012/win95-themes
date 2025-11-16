@@ -8,7 +8,7 @@
 	[role^="menuitem"] {
 		// Not actually needed, as vscode does it already, but $selected-sel is
 		// required
-		@include menu.item($selected-sel: "[style*='selection']");
+		@include menu.item($selected-sel: "&[style*='selection']");
 
 		margin: 0;
 

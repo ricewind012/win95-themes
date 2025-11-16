@@ -8,7 +8,7 @@
 	opacity: 1;
 
 	&:not(#Combobox) {
-		@include controls.button($disabled-sel: "#Disabled");
+		@include controls.button($disabled-sel: "&#Disabled");
 	}
 
 	&#Combobox {
@@ -16,7 +16,7 @@
 	}
 
 	&#IconButton {
-		@include controls.icon-button($selected-sel: "#Active");
+		@include controls.icon-button($selected-sel: "&#Active");
 	}
 
 	#IconButtonIcon {

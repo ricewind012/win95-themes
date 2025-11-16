@@ -54,7 +54,7 @@
 }
 
 .result__71961 {
-	@include listbox.item($selected-sel: "[aria-selected='true']");
+	@include listbox.item($selected-sel: "&[aria-selected='true']");
 
 	font: var(--text-ui);
 

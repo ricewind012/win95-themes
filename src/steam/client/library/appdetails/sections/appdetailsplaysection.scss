@@ -86,7 +86,7 @@
 		// Looks like a notebook... close enough
 		--button-img: icon("file");
 		@include controls.button;
-		@include controls.icon-button($selected-sel: "#MenuActive");
+		@include controls.icon-button($selected-sel: "&#MenuActive");
 	}
 
 	// "Manage" combobox

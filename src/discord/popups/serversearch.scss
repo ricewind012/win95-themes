@@ -23,7 +23,7 @@
 }
 
 .option__56fec {
-	@include menu.item($selected-sel: "[aria-selected='true']");
+	@include menu.item($selected-sel: "&[aria-selected='true']");
 
 	font-size: var(--text-ui-size);
 	box-shadow: none;

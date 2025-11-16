@@ -4,7 +4,7 @@
 @use "shared++/icons";
 
 %-findbar-button {
-	@include controls.button($disabled-sel: "[disabled]");
+	@include controls.button($disabled-sel: "&[disabled]");
 	@include controls.icon-button;
 }
 
@@ -50,7 +50,7 @@ menubar {
 	width: 100%;
 
 	& > menu {
-		@include window.menubar-item($selected-sel: "[open]");
+		@include window.menubar-item($selected-sel: "&[open]");
 
 		// TODO: why doesn't it inherit line-height here ?
 		line-height: 1;

@@ -14,7 +14,7 @@ menupopup {
 	}
 
 	& > menu {
-		@include menu.item($selected-sel: "[_moz-menuactive]");
+		@include menu.item($selected-sel: "&[_moz-menuactive]");
 		@include menu.item-parent;
 
 		.menu-icon {

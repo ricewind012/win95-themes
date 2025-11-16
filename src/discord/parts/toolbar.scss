@@ -48,7 +48,7 @@
 
 .iconWrapper__9293f {
 	@include controls.button;
-	@include controls.icon-button($selected-sel: ".selected__9293f");
+	@include controls.icon-button($selected-sel: "&.selected__9293f");
 
 	width: unset;
 

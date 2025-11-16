@@ -72,7 +72,7 @@
 }
 
 :where(.DialogButton) {
-	@include controls.button($disabled-sel: ".Disabled");
+	@include controls.button($disabled-sel: "&.Disabled");
 
 	background-image: none;
 

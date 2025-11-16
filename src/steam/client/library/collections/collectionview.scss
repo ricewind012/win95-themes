@@ -66,7 +66,7 @@
 #EditButton {
 	--button-img: icon("edit");
 	@include controls.button;
-	@include controls.icon-button($selected-sel: "#Close");
+	@include controls.icon-button($selected-sel: "&#Close");
 }
 
 #Header {

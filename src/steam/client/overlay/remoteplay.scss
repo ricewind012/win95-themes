@@ -90,7 +90,7 @@
 
 #InvitedGuestBox {
 	#LinkContainer {
-		@include controls.text-field($disabled-sel: "");
+		@include controls.text-field($disabled-sel: "&");
 	}
 }
 

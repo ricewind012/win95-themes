@@ -9,7 +9,7 @@
 
 // !important in ../other/dialog-shared.scss
 div#Row {
-	@include menu.item(".hack");
+	@include menu.item($selected-sel: "&.hack");
 
 	margin: 0;
 

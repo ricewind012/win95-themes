@@ -7,8 +7,8 @@
 %-toolbar-maybe {
 	.action-label {
 		@include controls.button(
-			$disabled-sel: "[aria-disabled]",
-			$active-sel: "[aria-expanded='true']"
+			$disabled-sel: "&[aria-disabled]",
+			$active-sel: "&[aria-expanded='true']"
 		);
 		@include window.titlebar-button;
 	}
@@ -174,7 +174,7 @@
 	.monaco-custom-toggle:not(&) {
 		&.codicon,
 		.codicon {
-			@include controls.button($active-sel: ".checked");
+			@include controls.button($active-sel: "&.checked");
 			@include window.titlebar-button;
 
 			border: none;
@@ -310,10 +310,6 @@
 }
 
 .action-item.disabled .action-label {
-	.monaco-action-bar & {
-		//@include window.titlebar-button-disabled;
-	}
-
 	&,
 	&::before {
 		opacity: 1;

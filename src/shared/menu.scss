@@ -16,7 +16,8 @@
 
 	position: relative;
 
-	&:is(:hover, #{$selected-sel}) {
+	#{$selected-sel},
+	&:hover {
 		background-color: var(--color-highlight);
 		color: var(--color-highlight-text);
 	}

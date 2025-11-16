@@ -27,7 +27,7 @@
 }
 
 #RootMenuButton {
-	@include window.menubar-item($selected-sel: ".hack");
+	@include window.menubar-item($selected-sel: "&.hack");
 
 	color: var(--color-menubar-text);
 	font-size: var(--text-ui-size);

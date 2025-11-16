@@ -4,6 +4,6 @@
 	@include listbox.container;
 
 	& > menuitem {
-		@include listbox.item($selected-sel: "[_moz-menuactive]");
+		@include listbox.item($selected-sel: "&[_moz-menuactive]");
 	}
 }

@@ -41,14 +41,11 @@
 @mixin menubar-item($selected-sel) {
 	padding: 4px 5px 3px 7px;
 
-	&:is(:active, #{$selected-sel}) {
-		@include menubar-item-active;
+	#{$selected-sel},
+	&:active {
+		background-color: var(--color-highlight);
+		color: var(--color-highlight-text);
 	}
-}
-
-@mixin menubar-item-active {
-	background-color: var(--color-highlight);
-	color: var(--color-highlight-text);
 }
 
 @mixin statusbar {
@@ -82,7 +79,7 @@
 	font-weight: bold;
 }
 
-@mixin titlebar-button($disabled-sel: ":disabled") {
+@mixin titlebar-button($disabled-sel: "&:disabled") {
 	min-width: 16px;
 	height: 14px;
 
@@ -103,17 +100,13 @@
 		}
 	}
 
-	&#{$disabled-sel} {
-		@include titlebar-button-disabled;
-	}
-}
+	#{$disabled-sel} {
+		&::after {
+			left: 1px;
+			top: 1px;
 
-@mixin titlebar-button-disabled {
-	&::after {
-		left: 1px;
-		top: 1px;
-
-		background-color: var(--color-button-highlight);
+			background-color: var(--color-button-highlight);
+		}
 	}
 }
 

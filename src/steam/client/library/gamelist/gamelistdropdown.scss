@@ -27,7 +27,7 @@ $-icons: (
 	--button-img-pos: 3px 2px;
 
 	@include controls.button;
-	@include controls.icon-button($selected-sel: "#Active");
+	@include controls.icon-button($selected-sel: "&#Active");
 
 	@each $i, $img in $-icons {
 		&:nth-child(#{$i}) {

@@ -3,7 +3,7 @@
 @use "shared++/utils";
 
 .clear__5808f {
-	@include menu.item($selected-sel: ".hack");
+	@include menu.item($selected-sel: "&.hack");
 
 	text-align: start;
 	box-shadow: none;
@@ -38,7 +38,7 @@
 }
 
 .tag__5808f {
-	@include menu.item($selected-sel: ".hack");
+	@include menu.item($selected-sel: "&.hack");
 
 	background-color: transparent;
 	color: var(--color-menu-text);

@@ -117,17 +117,14 @@
 }
 
 .rolePriorityButton {
-	@include controls.button;
-	@include window.titlebar-button;
+	@include controls.button($disabled-sel: "&.Disabled");
+	@include window.titlebar-button($disabled-sel: "&.Disabled");
 
 	opacity: 1;
 
 	width: 16px;
 
 	&.Disabled {
-		@include controls.input-disabled;
-		@include window.titlebar-button-disabled;
-
 		pointer-events: none;
 	}
 

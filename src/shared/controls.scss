@@ -11,8 +11,8 @@
 		@include checkbox-radio-checked;
 	}
 
-	&:active,
-	#{$disabled-sel} {
+	#{$disabled-sel},
+	&:active {
 		@include checkbox-radio-inactive;
 	}
 }
@@ -30,7 +30,7 @@
 }
 
 @mixin -input-common-disabled($disabled-sel) {
-	&#{$disabled-sel} {
+	#{$disabled-sel} {
 		@include input-disabled;
 	}
 }
@@ -58,9 +58,9 @@
 }
 
 @mixin button(
-	$disabled-sel: ":disabled",
-	$focus-sel: ":focus",
-	$active-sel: ":active"
+	$disabled-sel: "&:disabled",
+	$focus-sel: "&:focus",
+	$active-sel: "&:active"
 ) {
 	@include -input-common-disabled($disabled-sel);
 	@include -input-common;
@@ -74,11 +74,11 @@
 
 	min-width: var(--button-min-width);
 
-	&#{$focus-sel} {
+	#{$focus-sel} {
 		@include button-focus;
 	}
 
-	&#{$active-sel} {
+	#{$active-sel} {
 		@include button-active;
 	}
 }
@@ -124,7 +124,7 @@
 	--color-to-change: var(--color-button-face);
 }
 
-@mixin combobox($disabled-sel: ":disabled") {
+@mixin combobox($disabled-sel: "&:disabled") {
 	@include -text-field-common($disabled-sel);
 	@include generatedassets.combobox;
 
@@ -139,7 +139,7 @@
 		var(--border-size) + var(--input-spacing) + var(--scrollbar-size)
 	);
 
-	&#{$disabled-sel} {
+	#{$disabled-sel} {
 		--color-arrow-shadow: var(--color-button-highlight);
 	}
 }
@@ -191,7 +191,7 @@
 	height: 100%;
 }
 
-@mixin groupbox($disabled-sel: ":disabled") {
+@mixin groupbox($disabled-sel: "&:disabled") {
 	@include -input-common-disabled($disabled-sel);
 
 	border: none;
@@ -205,11 +205,12 @@
 }
 
 // TODO(port): $selected-sel
-@mixin icon-button($selected-sel: ".hack") {
+@mixin icon-button($selected-sel: "&.hack") {
 	min-width: var(--icon-button-width);
 	height: var(--icon-button-height);
 
-	&:is(:active, #{$selected-sel}) {
+	#{$selected-sel},
+	&:active {
 		background: var(--checkerboard);
 		box-shadow: var(--border-button-sunken);
 
@@ -250,7 +251,7 @@
 	}
 }
 
-@mixin radio($checked-sel, $disabled-sel: ":disabled") {
+@mixin radio($checked-sel, $disabled-sel: "&:disabled") {
 	@include -checkbox-radio-common($checked-sel);
 	@include generatedassets.radio;
 
@@ -273,7 +274,7 @@
 	margin-inline: var(--toolbar-spacing);
 }
 
-@mixin slider($disabled-sel: ":disabled", $thumb-sel, $track-sel) {
+@mixin slider($disabled-sel: "&:disabled", $thumb-sel, $track-sel) {
 	@include -input-common;
 	@include -input-common-disabled($disabled-sel);
 	@include generatedassets.slider;
@@ -323,7 +324,11 @@
 	min-width: var(--button-min-width);
 	height: var(--tab-button-height);
 
-	&#{$selected-sel},
+	&:hover {
+		box-shadow: var(--border-tab-button-raised);
+	}
+
+	#{$selected-sel},
 	&:active {
 		--offset-click: 1px;
 
@@ -337,17 +342,13 @@
 			left: var(--offset-click);
 		}
 	}
-
-	&:not(#{$selected-sel}):hover {
-		box-shadow: var(--border-tab-button-raised);
-	}
 }
 
-@mixin text-field($disabled-sel: ":disabled") {
+@mixin text-field($disabled-sel: "&:disabled") {
 	@include -text-field-common($disabled-sel);
 }
 
-@mixin text-field-number($disabled-sel: ":disabled") {
+@mixin text-field-number($disabled-sel: "&:disabled") {
 	@include text-field($disabled-sel);
 	@include generatedassets.text-field-number;
 

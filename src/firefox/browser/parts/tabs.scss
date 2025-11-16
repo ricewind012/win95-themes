@@ -207,7 +207,7 @@ $-icons: (
 
 .tabbrowser-tab {
 	@include controls.tab-button(
-		$selected-sel: ":where([selected], [multiselected])"
+		$selected-sel: "&:where([selected], [multiselected])"
 	);
 
 	padding: 0;
