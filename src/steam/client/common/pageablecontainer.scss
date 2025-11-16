@@ -1,6 +1,10 @@
 @use "shared++/icons";
 @use "steam/shared";
 
+%-button {
+	@include shared.pageable-container-button;
+}
+
 #HeaderPageControls {
 	@include shared.library_section-header;
 
@@ -23,23 +27,19 @@
 	margin: 0;
 }
 
-// TODO(build): optimize with private @extend
-#PageableCloseButton,
-#PageLeft,
-#PageRight {
-	@include shared.pageable-container-button;
-}
-
 #PageableCloseButton {
+	@extend %-button;
 	--button-img: icon("clear");
 	--button-img-size: auto;
 	--button-img-pos: center;
 }
 
 #PageLeft {
+	@extend %-button;
 	@include icons.icon-big-arrow-left;
 }
 
 #PageRight {
+	@extend %-button;
 	@include icons.icon-big-arrow-right;
 }

@@ -8,6 +8,8 @@
 	"dependencies": {
 		"@csstools/postcss-sass": "^5.1.1",
 		"postcss-cli": "^11.0.1",
+		"postcss-discard-comments": "^7.0.5",
+		"postcss-discard-empty": "^7.0.1",
 		"postcss-functions": "^4.0.2",
 		"postcss-scss": "^4.0.9",
 		"steam-theming-utils": "^3.3.1"

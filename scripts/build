@@ -3,38 +3,47 @@
 DIST_DIR=dist
 SRC_DIR=src
 
-name=$DIST_DIR/${1:?}
+generate_index() {
+	for dir in $(find "$SRC_DIR/$1" -type d); do
+		for file in "$dir/"*.scss; do
+			case $file in "$dir/*.scss"|*/index.scss)
+				break
+			esac
 
-build_fx() {
-	npx postcss "$SRC_DIR/firefox/index_$1.scss" \
-		--output "$DIST_DIR/firefox_$1.css"
-	printf 'Built %s\n' "$1" >&2
+			file=${file#"$SRC_DIR/$1/"}
+			file=${file%.scss}
+			mod=$(printf '%s' "$file" | tr '[:punct:]' '-')
+			printf '@use "%s" as %s;\n' "$file" "$mod"
+		done
+		printf '\n'
+	done
 }
 
-mkdir -p "$DIST_DIR"
-# TODO: special behavior for now
-# refactor later, although steam WILL require the latter variant...
-if [ "$1" = firefox ]; then
-	for i in ${2:-agent author global}; do
-		build_fx "$i"
-	done
+# Special behavior because steam-theming-utils requires the file names of each
+# named React component to be available, and IDK how to do that with @use
+if [ "$1" = steam ]; then
+	dir=$DIST_DIR/$1
+
+	# .5s shaven off
+	npx postcss "$SRC_DIR/$1/index_shared.scss" --output "$dir.css"
+	npx postcss "$SRC_DIR/$1/client/**/*.scss" \
+		--base "$SRC_DIR" \
+		--dir "$DIST_DIR" \
+		--ext css
+	find "$dir" -type f | xargs cat >> "$dir.css"
+	rm -rf "$dir"
 	exit
 fi
 
-npx postcss "$SRC_DIR/$1/**/*.scss" \
-	--base "$SRC_DIR" \
-	--dir "$DIST_DIR" \
-	--ext css
-:> "$name.css"
-while IFS= read -r file; do
-	# TODO(port): for now
-	if [ "${file##*.}" != css ]; then
-		continue
-	fi
+mkdir -p "$DIST_DIR"
+# Firefox has its separate index file for the browser UI and web content already
+if [ "$1" = firefox ]; then
+	npx postcss "$SRC_DIR/firefox/index_$2.scss" \
+		--output "$DIST_DIR/firefox_$2.css"
+else
+	index=$SRC_DIR/$1/index.scss
 
-	cat "$file" >> "$name.css"
-	printf '\n' >> "$name.css"
-done <<-EOF
-$(find "$name/" -type f)
-EOF
-rm -rf "$name"
+	generate_index "$1" > "$index"
+	npx prettier -w "$index" > /dev/null
+	npx postcss "$index" --output "$DIST_DIR/$1.css"
+fi

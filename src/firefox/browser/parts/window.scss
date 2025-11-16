@@ -3,6 +3,11 @@
 @use "shared++/utils";
 @use "shared++/icons";
 
+%-findbar-button {
+	@include controls.button($disabled-sel: "[disabled]");
+	@include controls.icon-button;
+}
+
 #browser {
 	padding-top: var(--window-gap);
 }
@@ -11,31 +16,23 @@
 	//background-color: transparent;
 	border: none;
 
-	// TODO(build): optimize
 	.findbar-closebutton {
 		--button-img: icon("clear");
-
-		@include controls.button;
-		@include controls.icon-button;
+		@extend %-findbar-button;
 	}
 
 	.findbar-container {
 		height: unset;
 	}
 
-	// TODO(build): optimize
-	.findbar-find-next,
-	.findbar-find-previous {
-		@include controls.button($disabled-sel: "[disabled]");
-		@include controls.icon-button;
-	}
-
 	.findbar-find-next {
 		@include icons.icon-big-arrow-left;
+		@extend %-findbar-button;
 	}
 
 	.findbar-find-previous {
 		@include icons.icon-big-arrow-right;
+		@extend %-findbar-button;
 	}
 
 	.findbar-textbox {

@@ -1,2 +1,3 @@
 dist/*/*.css linguist-generated
+src/*/index.scss linguist-generated
 src/shared/generatedicons.scss linguist-generated

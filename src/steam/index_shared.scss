@@ -1,0 +1,21 @@
+@use "global" as *;
+
+@use "friends/chat" as *;
+@use "friends/friendslist" as *;
+@use "friends/global" as *;
+
+@use "friends/dialogs/assigncategories" as *;
+@use "friends/dialogs/channelnotifications" as *;
+@use "friends/dialogs/createcategory" as *;
+@use "friends/dialogs/createchannel" as *;
+@use "friends/dialogs/editnickname" as *;
+@use "friends/dialogs/friendnotifications" as *;
+@use "friends/dialogs/global" as *;
+@use "friends/dialogs/groupinvite" as *;
+@use "friends/dialogs/groupsettings" as *;
+
+@use "shared/dialogshared" as *;
+@use "shared/resizehandle" as *;
+@use "shared/scrollbar" as *;
+@use "shared/throbber" as *;
+@use "shared/titlebar" as *;

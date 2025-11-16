@@ -3,6 +3,10 @@
 @use "shared++/utils";
 @use "steam/shared";
 
+%-pageablecontainer-button {
+	@include shared.pageable-container-button;
+}
+
 #AddShowcase {
 	@include controls.button($disabled-sel: "#Disabled");
 
@@ -73,17 +77,13 @@
 	margin: 0;
 }
 
-// TODO(build): optimize with private @extend
-#PageLeft,
-#PageRight {
-	@include shared.pageable-container-button;
-}
-
 #PageLeft {
+	@extend %-pageablecontainer-button;
 	@include icons.icon-big-arrow-left;
 }
 
 #PageRight {
+	@extend %-pageablecontainer-button;
 	@include icons.icon-big-arrow-right;
 }
 
