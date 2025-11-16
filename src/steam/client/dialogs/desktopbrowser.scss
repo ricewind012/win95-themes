@@ -1,11 +1,28 @@
 @use "shared/controls";
-@use "shared/tabs";
+@use "shared++/icons";
 @use "shared++/utils";
 
 #BrowserTab {
-	@include tabs.tab($selected-sel: "&#Active");
+	@include controls.tab-button($selected-sel: "&#Active");
 
-	gap: var(--text-spacing);
+	background-color: transparent;
+	gap: var(--tab-button-spacing);
+	border: none;
+
+	// New tab button
+	#BrowserTabs > & {
+		@include controls.button;
+		@include controls.icon-button;
+		@include icons.icon-plus;
+		--button-img-pos: center;
+
+		min-width: var(--tab-button-height);
+		height: var(--tab-button-height);
+
+		svg {
+			display: none;
+		}
+	}
 }
 
 #BrowserTabIcon {
@@ -13,50 +30,30 @@
 }
 
 #BrowserTabs {
-	@include tabs.container;
+	gap: var(--tab-button-spacing);
 
-	overflow: visible;
-
-	// New tab button
-	& > #BrowserTab {
-		min-width: auto;
+	&::after {
+		@include utils.pseudo-separator;
 	}
 }
 
 #BrowserViewHost {
 	// Draw the border ...
-	--offset: 2px;
-
 	background: var(--color-window);
-	margin: calc(var(--border-size) + var(--offset));
+	margin: var(--border-size);
 
 	position: relative;
-	top: var(--offset);
-	left: var(--offset);
-	width: calc(100% - var(--offset) * 6);
-	height: calc(100% - var(--offset) * 6);
+	width: calc(100% - var(--border-size) * 2);
+	height: calc(100% - var(--border-size) * 2);
 
-	&::before,
-	&::after {
+	&::before {
 		content: "";
 
 		position: absolute;
-	}
-
-	&::before {
-		top: calc(var(--offset) * -3);
-		left: calc(var(--offset) * -3);
-		width: calc(100% + var(--offset) * 6);
-		height: calc(100% + var(--offset) * 6);
-
-		box-shadow: var(--border-button-raised);
-	}
-
-	&::after {
-		top: calc(var(--offset) * -1);
-		left: calc(var(--offset) * -1);
-		width: calc(100% + var(--offset) * 2);
-		height: calc(100% + var(--offset) * 2);
+		top: calc(var(--border-size) * -1);
+		left: calc(var(--border-size) * -1);
+		width: calc(100% + var(--border-size) * 2);
+		height: calc(100% + var(--border-size) * 2);
 
 		box-shadow: var(--border-field);
 	}
@@ -112,24 +109,20 @@
 	@include utils.text-reset;
 }
 
-// TODO: please fucking kill me that looks like total shit !
 #URLBar {
 	background-color: transparent;
-	padding: 4px;
-	margin-bottom: var(--window-gap);
-	box-shadow: var(--border-button-raised);
+	padding: 0;
 }
 
 #URLBarText {
-	@include controls.text-field;
-
+	padding: 0;
 	margin-left: var(--toolbar-spacing);
 
-	&::before {
+	&::after {
 		display: none;
 	}
 
-	input {
-		padding: 0;
+	#StatusIcon {
+		display: none;
 	}
 }

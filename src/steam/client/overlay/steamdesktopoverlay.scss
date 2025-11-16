@@ -103,6 +103,12 @@
 	padding: var(--dialog-spacing);
 
 	height: calc(100% - 19px);
+
+	&.TabbedPopupBrowser {
+		--dialog-spacing: 0px;
+
+		gap: var(--window-gap);
+	}
 }
 
 #TextContainer {
