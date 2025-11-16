@@ -1,11 +1,17 @@
-@use "shared/controls";
 @use "shared/window";
+@use "shared++/utils";
 
-.body__5be3e > * {
-	&::after {
-		content: "";
+.profileBody__9c3be,
+.body__5be3e {
+	gap: 0;
+	padding: 0 8px;
 
-		@include controls.separator;
+	overflow: visible;
+	position: unset;
+	z-index: 2;
+
+	& > ::after {
+		@include utils.pseudo-separator;
 
 		display: inline-block;
 		width: 100%;
@@ -32,10 +38,11 @@
 	}
 }
 
-// Action buttons
-.wrapper_cdf8a9 {
-	gap: 0;
-	padding: 0;
+.profile__9c3be,
+.outer_c0bea0 {
+	background-color: var(--color-button-face);
+}
 
-	right: var(--pos);
+.userTag__63ed3 {
+	font: var(--text-ui);
 }

@@ -1,7 +1,7 @@
 @use "shared/menu";
+@use "shared++/utils";
 
-/* TODO: no other selector for this
-[role="dialog"]:has(.menus_ce8328) {
+.popoutContainer_ce8328:has(> .user-profile-popout) {
 	left: 0;
 
 	&::before {
@@ -22,23 +22,18 @@
 		display: none;
 	}
 
-	.inner_c0bea0 {
-		padding: 0;
-	}
-
 	.outer_c0bea0 {
 		width: unset;
 	}
 }
-*/
 
-.menuDivider_ce8328 {
-	display: none;
+.menuItem_ce8328 {
+	&::after {
+		display: none;
+	}
 }
 
-.menuItemColor_ce8328 {
-	all: unset;
-
+.menuItemContent_ce8328 {
 	@include menu.item($selected-sel: "&.hack");
 
 	&[aria-expanded] {
@@ -51,12 +46,7 @@
 }
 
 .menuItemInner_ce8328 {
-	gap: 0;
 	padding: 0;
-
-	svg {
-		display: none;
-	}
 }
 
 .menuOverlay_ce8328 {
@@ -64,12 +54,19 @@
 	border: none;
 	padding: 0;
 
-	& > div {
-		display: flex;
-		flex-direction: column;
+	&:not(:last-child)::after {
+		@include utils.pseudo-separator;
 	}
 }
 
 .menus_ce8328 {
 	gap: 0;
+}
+
+.submenuIconWrapper_ce8328 {
+	display: none;
+}
+
+.submenuPaddingContainer_ce8328 {
+	padding: 0;
 }

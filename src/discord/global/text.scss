@@ -39,3 +39,8 @@
 	height: unset;
 	min-height: unset;
 }
+
+// mana text button
+.text__7a01b {
+	@include text.link;
+}

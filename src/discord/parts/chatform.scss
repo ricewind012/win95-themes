@@ -13,23 +13,6 @@
 .channelTextArea_f75fb0 {
 	margin-bottom: var(--toolbar-container-spacing);
 
-	.editor__1b31f {
-		@include controls.text-field;
-
-		// TODO(controls): not needed anymore?
-		height: unset;
-		min-height: unset;
-	}
-
-	.placeholder__1b31f {
-		font: var(--text-ui);
-		padding: 0;
-
-		// 2px = --input-spacing
-		inset: calc(var(--border-size) + 2px);
-		z-index: 1;
-	}
-
 	.spriteContainer__04eed {
 		--custom-emoji-sprite-size: 16px;
 	}

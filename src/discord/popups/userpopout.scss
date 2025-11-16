@@ -1,14 +1,5 @@
 @use "shared/controls";
 
-.body__5be3e {
-	gap: 0;
-	padding: 0 8px;
-
-	overflow: visible;
-	position: unset;
-	z-index: 2;
-}
-
 .footer__5be3e {
 	padding: 0 8px 8px;
 }
@@ -20,5 +11,16 @@
 
 	circle {
 		cx: 54;
+	}
+}
+
+// top right buttons
+.wrapper_da5890 {
+	gap: var(--toolbar-spacing);
+
+	.button_fb7f94,
+	.bannerButton_de8008 {
+		@include controls.button;
+		@include controls.icon-button;
 	}
 }
