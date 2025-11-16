@@ -72,8 +72,7 @@
 
 // Undo the genius V*lve decision of not using .FullModalOverlay for this dialog
 #FocusedClip {
-	// !important
-	body .PopupFullWindow & .DialogHeader {
+	.DialogHeader {
 		position: unset;
 	}
 }

@@ -22,8 +22,7 @@
 	}
 }
 
-// TODO: .DialogHeader !important
-div#Header {
+#Header {
 	margin: calc(var(--dialog-spacing) * -1);
 	margin-bottom: var(--dialog-spacing);
 }

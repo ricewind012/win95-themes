@@ -27,8 +27,7 @@
 	height: unset;
 }
 
-// !important
-button#IconButton {
+#IconButton {
 	@include shared.icon-mono-button($disabled-sel: "&:not(#Active)");
 
 	flex: unset;

@@ -131,8 +131,7 @@
 	}
 }
 
-// !important below
-#SecureColumn[role] {
+#SecureColumn {
 	min-width: calc(7px * 2 + 20px);
 
 	&:not(:empty)::before {
@@ -180,7 +179,7 @@
 }
 
 #SelectColumnsButton,
-#ServerListHeaderCell {
+:where(#ServerListHeaderCell) {
 	@include controls.button;
 	@include table.button;
 	@include shared.table-button-arrows;

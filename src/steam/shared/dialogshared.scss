@@ -172,7 +172,7 @@
 	padding-top: var(--dialog-button-spacing);
 }
 
-.DialogHeader {
+:where(.DialogHeader) {
 	font-size: var(--text-ui-size);
 	font-weight: bold;
 	text-transform: unset;
