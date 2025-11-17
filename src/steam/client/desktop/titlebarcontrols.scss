@@ -5,10 +5,6 @@
 	@include controls.combobox-button;
 }
 
-#AnnouncementsButton {
-	--button-img: icon("newspaper");
-}
-
 #Button {
 	@include controls.button;
 	@include controls.icon-button;
@@ -18,26 +14,30 @@
 	min-height: var(--steamdesktop_icon-button-size);
 
 	cursor: default;
-}
 
-#GamepadUIToggle {
-	--button-img: icon("computer");
+	&#AnnouncementsButton {
+		--button-img: icon("newspaper");
+	}
+
+	&#GamepadUIToggle {
+		--button-img: icon("computer");
+	}
+
+	&#NotificationsButton {
+		--button-img: icon("mail-read");
+
+		&#HasNew {
+			--button-img: icon("mail");
+		}
+	}
+
+	&#SoundtrackControls {
+		--button-img: icon("sound");
+	}
 }
 
 #NotificationButtonContainer {
 	margin-right: var(--toolbar-spacing);
-}
-
-#NotificationsButton {
-	--button-img: icon("mail-read");
-
-	&#HasNew {
-		--button-img: icon("mail");
-	}
-}
-
-#SoundtrackControls {
-	--button-img: icon("sound");
 }
 
 #TitleBarControls {

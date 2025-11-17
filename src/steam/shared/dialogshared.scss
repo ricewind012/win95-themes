@@ -213,13 +213,6 @@
 
 .DialogInput {
 	@include controls.text-field;
-
-	// It's an <input>, but overlay browser has type="input"
-	/* TODO(scss-fix): why is this here lol wtf
-	background: var(--color-window);
-	color: var(--color-window-text);
-	box-shadow: none;
-	*/
 }
 
 .DialogInputLabelGroup {

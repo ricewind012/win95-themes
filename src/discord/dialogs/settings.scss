@@ -54,24 +54,6 @@ $-groupbox-header-sel: ":is(h1, h2, h3, h4, h5, h6):first-child";
 	& > div > :is(.sectionTitle__7bffb, h2):first-child {
 		background: #f09;
 	}
-
-	// TODO(rewrite): lol lmao
-	/*
-	:has(> #{$-groupbox-header-sel}):not(.sectionTitle__7bffb) {
-		@include controls.groupbox;
-
-		#{$-groupbox-header-sel} {
-			@include utils.text-reset;
-			@include utils.legend-as-div;
-
-			opacity: 1;
-
-			* {
-				margin: 0;
-			}
-		}
-	}
-		*/
 }
 
 .contentRegionScroller__23e6b {
