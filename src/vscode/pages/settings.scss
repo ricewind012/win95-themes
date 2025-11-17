@@ -103,7 +103,9 @@
 }
 
 .setting-item-value-description {
-	gap: 7px;
+	gap: var(--label-spacing);
+
+	display: flex;
 }
 
 .setting-item-description {

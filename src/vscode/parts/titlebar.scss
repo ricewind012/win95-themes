@@ -2,6 +2,10 @@
 @use "shared/window";
 @use "shared++/icons";
 
+.command-center {
+	visibility: visible;
+}
+
 .titlebar {
 	background-color: inherit;
 	color: inherit;
@@ -30,10 +34,10 @@
 		order: -1;
 	}
 
-	// .codicon: !important
+	// .codicon:not(.separator): !important (in vscode and theme respectively)
 	// TODO(toolbar): make .monaco-toolbar .action-label use
 	// controls.icon-button too
-	.action-label.codicon {
+	.action-label.codicon:not(.separator) {
 		--button-img-pos: center;
 
 		// TODO: under mysterious fucking circumstances the svg disappears upon
@@ -41,8 +45,8 @@
 		min-width: var(--icon-button-width);
 		height: var(--icon-button-height);
 
-		//.action-item.clicked > &,
-		&:active {
+		@at-root .action-item.clicked > &,
+			&:active {
 			background: var(--checkerboard);
 			box-shadow: var(--border-button-sunken);
 		}

@@ -6,17 +6,26 @@
 
 %-toolbar-maybe {
 	.action-label {
-		@include controls.button(
-			$disabled-sel: "&[aria-disabled]",
-			$active-sel: "&[aria-expanded='true']"
-		);
-		@include window.titlebar-button;
+		&:not(.separator) {
+			@include controls.button(
+				$disabled-sel: "&[aria-disabled]",
+				$active-sel: "&[aria-expanded='true']"
+			);
+			@include window.titlebar-button;
+		}
 	}
 
 	.action-item {
 		// Titlebar
 		&.clicked > .action-label {
 			@include controls.button-active;
+		}
+
+		// !important
+		.action-label.disabled.separator {
+			@include controls.separator-horizontal;
+
+			margin-block: 0;
 		}
 	}
 }
@@ -356,7 +365,8 @@
 	.gettingStartedContainer
 	.gettingStartedSlide
 	.getting-started-checkbox,
-.settings-editor
+.monaco-workbench
+	.settings-editor
 	> .settings-body
 	.settings-tree-container
 	.setting-item-bool

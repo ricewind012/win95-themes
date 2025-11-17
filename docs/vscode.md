@@ -1,10 +1,10 @@
 # Visual Studio Code
 
-Last tested version is [1.92](https://code.visualstudio.com/updates/v1_92)!
+Last tested version is [1.106](https://code.visualstudio.com/updates/v1_106)!
 
 ## Usage
 
-1. Run the `scripts/patch_vscode` script. Optional, makes the tree items' height smaller.
+1. Run the `scripts/patch vscode` script. Optional, makes the tree items' height smaller.
 2. Install the [Custom UI Style](https://open-vsx.org/vscode/item?itemName=subframe7536.custom-ui-style) extension.
 3. Add to `settings.json` (Preferences: Open User Settings (JSON)) the following:
 

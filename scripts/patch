@@ -14,9 +14,12 @@ switch (prog) {
 	case "vscode":
 		file = "/usr/lib/code/out/vs/workbench/workbench.desktop.main.js";
 		patches = [
-			[`(ITEM_HEIGHT=)${VSCODE_ITEM_HEIGHT}`, `$1${THEME_ITEM_HEIGHT}`],
 			[
-				`(getHeight\(i\){return )${VSCODE_ITEM_HEIGHT}`,
+				new RegExp(`(ITEM_HEIGHT=)${VSCODE_ITEM_HEIGHT}`),
+				`$1${THEME_ITEM_HEIGHT}`,
+			],
+			[
+				new RegExp(`(getHeight\(i?\){return )${VSCODE_ITEM_HEIGHT}`),
 				`$1${THEME_ITEM_HEIGHT}`,
 			],
 		];
