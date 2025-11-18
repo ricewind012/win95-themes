@@ -1,0 +1,79 @@
+.codicon-more,
+.codicon-ellipsis,
+.codicon-kebab-horizontal,
+.codicon-menubar-more,
+.codicon-toolbar-more,
+.codicon-search-details {
+	--button-img: icon("overflow", "mono");
+}
+
+.codicon-close,
+.codicon-remove-close,
+.codicon-x,
+.codicon-dialog-close,
+.codicon-tree-filter-clear,
+.codicon-widget-close,
+.codicon-diff-review-close,
+.codicon-panel-close,
+.codicon-auxiliarybar-close,
+.codicon-ports-stop-forward-icon,
+.codicon-settings-remove,
+.codicon-watch-expression-remove,
+.codicon-search-remove,
+.codicon-terminal-command-history-remove,
+.codicon-tasks-remove,
+.codicon-profiles-editor-remove-folder,
+.codicon-workspace-trust-editor-cross,
+.codicon-workspace-trust-editor-remove-folder,
+.codicon-notifications-clear {
+	--button-img: icon("close", "mono");
+}
+
+.codicon-trash,
+.codicon-trashcan,
+.codicon-notebook-delete-cell,
+.codicon-debug-remove-config,
+.codicon-terminal-kill {
+	--button-img: icon("clear", "normal");
+}
+
+.codicon-clear-all,
+.codicon-preferences-clear-input,
+.codicon-notebook-clear,
+.codicon-extensions-clear-search-results,
+.codicon-debug-console-clear-all,
+.codicon-search-clear-results,
+.codicon-notifications-clear-all {
+	--button-img: icon("clear", "normal");
+}
+
+.codicon-gear,
+.codicon-settings-more-action,
+.codicon-extensions-manage,
+.codicon-debug-configure,
+.codicon-testing-update-profiles,
+.codicon-terminal-configure-profile,
+.codicon-tasks-list-configure,
+.codicon-theme-selection-manage-extension,
+.codicon-notifications-configure {
+	--button-img: icon("settings", "normal");
+}
+
+.codicon-refresh,
+.codicon-rerun-task,
+.codicon-extensions-refresh,
+.codicon-search-refresh,
+.codicon-testing-refresh-tests,
+.codicon-timeline-refresh {
+	--button-img: icon("reload", "normal");
+}
+
+.codicon-settings-gear,
+.codicon-settings-view-bar-icon {
+	--button-img: icon("settings", "normal");
+}
+
+.codicon-list-flat,
+.codicon-search-list {
+	--button-img: icon("list", "normal");
+}

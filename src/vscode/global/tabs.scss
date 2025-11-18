@@ -139,7 +139,7 @@
 				@include tabs.content;
 
 				padding: var(--s);
-				padding-top: calc(var(--s) + 17px);
+				padding-top: calc(var(--s) + var(--icon-button-height) + 4px);
 
 				.pane-header {
 					margin-bottom: 2px;
@@ -150,7 +150,7 @@
 				}
 
 				&:not(.extensions-viewlet) .monaco-list {
-					height: calc(100% - 3px);
+					height: calc(100% - 12px);
 				}
 			}
 		}

@@ -98,39 +98,6 @@
 	@include icons.icon-book;
 }
 
-.codicon-clear-all,
-.codicon-debug-console-clear-all,
-.codicon-extensions-clear-search-results,
-.codicon-notebook-clear,
-.codicon-notifications-clear-all,
-.codicon-preferences-clear-input,
-.codicon-search-clear-results {
-	@include icons.icon-clear;
-}
-
-.codicon-notifications-hide,
-.codicon-notifications-collapse,
-.codicon-close,
-.titlebar .codicon-chrome-close,
-.codicon-dialog-close,
-.codicon-diff-review-close,
-.codicon-notifications-clear,
-.codicon-panel-close,
-.codicon-ports-stop-forward-icon,
-.codicon-remove-close,
-.codicon-search-remove,
-.codicon-settings-remove,
-.codicon-tasks-remove,
-.codicon-terminal-command-history-remove,
-.codicon-tree-filter-clear,
-.codicon-watch-expression-remove,
-.codicon-widget-close,
-.codicon-workspace-trust-editor-cross,
-.codicon-workspace-trust-editor-remove-folder,
-.codicon-x {
-	@include window.titlebar-button-close;
-}
-
 .codicon-collapse-all,
 .codicon-debug-collapse-all,
 .codicon-search-collapse-results {
@@ -172,61 +139,6 @@
 	@include icons.icon-lock;
 }
 
-// Everything, except the last one, are different, but look similiar
-.codicon-list-selection,
-.codicon-selection,
-.codicon-tree-filter-on-type-off,
-.codicon-find-selection,
-.codicon-search-show-context,
-.codicon-list-flat {
-	@include icons.icon-list;
-}
-
-.codicon-refresh,
-.codicon-extensions-refresh,
-.codicon-search-refresh,
-.codicon-testing-rerun-icon,
-.codicon-testing-refresh-tests,
-.codicon-timeline-refresh {
-	@include icons.icon-refresh;
-}
-
-.codicon-gear,
-.codicon-notifications-configure,
-.codicon-debug-configure,
-.codicon-extensions-manage,
-.codicon-settings-gear,
-.codicon-settings-view-bar-icon,
-.codicon-settings-more-action,
-.codicon-terminal-rename,
-.codicon-terminal-configure-profile,
-.codicon-testing-update-profiles,
-.codicon-tasks-list-configure,
-.codicon-theme-selection-manage-extension {
-	@include icons.icon-settings;
-
-	&::before {
-		height: 13px;
-	}
-}
-
-.codicon-discard,
-.codicon-trash,
-.codicon-trashcan,
-.codicon-debug-remove-config,
-.codicon-notebook-delete-cell,
-.codicon-terminal-kill {
-	@include icons.icon-trash;
-}
-
-.codicon-more,
-.codicon-ellipsis,
-.codicon-kebab-horizontal,
-.codicon-menubar-more,
-.codicon-toolbar-more,
-.codicon-search-details {
-	@include icons.icon-more;
-}
 /* end */
 
 /* Dialogs */
@@ -241,18 +153,12 @@
 }
 /* end */
 
-.codicon-arrow-left,
-.codicon-arrow-right {
-	--button-img-size: 4px 7px;
-	--button-img-pos: 5px 3px;
-}
-
 .codicon-arrow-left {
-	--button-img: icon("arrow-left", "mono");
+	@include icons.icon-big-arrow-left;
 }
 
 .codicon-arrow-right {
-	--button-img: icon("arrow-right", "mono");
+	@include icons.icon-big-arrow-right;
 }
 
 .codicon-auxiliarybar-right-layout-icon {
@@ -268,18 +174,6 @@
 
 	--icon-img: var(--button-img);
 	@include shared.replace-icon("9px");
-}
-
-.codicon-chrome-maximize {
-	@include window.titlebar-button-maximize;
-}
-
-.codicon-chrome-minimize {
-	@include window.titlebar-button-minimize;
-}
-
-.codicon-chrome-restore {
-	@include window.titlebar-button-restore;
 }
 
 .codicon-configure-layout-icon {
@@ -330,30 +224,28 @@
 	@include icons.icon-panel-left-off;
 }
 
-.codicon-panel-maximize,
-.codicon-panel-restore {
-	--button-img-size: 7px 4px;
-	--button-img-pos: 4px center;
-}
-
 .codicon-panel-maximize {
-	--button-img: icon("arrow-top", "mono");
+	@include icons.icon-big-arrow-top;
 }
 
 .codicon-panel-restore {
-	--button-img: icon("arrow-bottom", "mono");
+	@include icons.icon-big-arrow-bottom;
 }
 
 .codicon-preserve-case {
 	@include icons.icon-match-case;
 }
 
-.codicon-regex {
-	@include icons.icon-regex;
+.monaco-workbench .part.basepanel.right {
+	.codicon-split-horizontal:before,
+	.codicon-panel-maximize:before,
+	.codicon-panel-restore:before {
+		transform: none;
+	}
 }
 
-.codicon-search-list {
-	@include icons.icon-list;
+.codicon-regex {
+	@include icons.icon-regex;
 }
 
 .codicon-split-horizontal {

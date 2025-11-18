@@ -1,5 +1,6 @@
 @use "shared/tabs";
 @use "shared/window";
+@use "vscode/shared";
 
 .part.panel {
 	--title-top-margin: calc(var(--window-gap) + 6px);
@@ -45,21 +46,15 @@
 		overflow: visible;
 		height: unset;
 
-		.monaco-inputbox,
 		.select-container {
-			margin-bottom: -4px;
-
-			position: relative;
-			bottom: 4px;
-			height: unset;
-		}
-
-		.select-container {
-			margin-right: 2px;
+			margin-right: var(--toolbar-spacing);
 		}
 	}
 
+	.global-actions,
 	.title-actions {
+		@include shared.title-toolbar;
+
 		height: unset;
 	}
 

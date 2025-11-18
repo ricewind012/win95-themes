@@ -4,29 +4,24 @@
 @use "shared/window";
 @use "shared++/utils";
 
-%-toolbar-maybe {
-	.action-label {
-		&:not(.separator) {
-			@include controls.button(
-				$disabled-sel: "&[aria-disabled]",
-				$active-sel: "&[aria-expanded='true']"
-			);
-			@include window.titlebar-button;
-		}
-	}
+// holy fucking cancer
+%-toolbar-combobox {
+	@include controls.combobox-button;
 
-	.action-item {
-		// Titlebar
-		&.clicked > .action-label {
-			@include controls.button-active;
-		}
+	background-image: var(--button-img);
+	background-position-x: calc(var(--offset-click) + var(--button-spacing));
+	background-position-y: calc(var(--offset-click) + var(--button-spacing) / 2);
+	background-repeat: no-repeat;
+	background-size: var(--button-img-size);
 
-		// !important
-		.action-label.disabled.separator {
-			@include controls.separator-horizontal;
+	min-width: calc(
+		var(--button-spacing) * 2 + var(--text-spacing) * 2 + var(--icon-size) +
+			10px
+	);
+	min-height: var(--icon-button-height);
 
-			margin-block: 0;
-		}
+	&::before {
+		margin-inline-start: calc(var(--icon-size) + var(--text-spacing));
 	}
 }
 
@@ -91,25 +86,6 @@
 .monaco-description-buttons > .monaco-button {
 	overflow: visible;
 	width: 148px;
-}
-
-.monaco-action-bar {
-	.peekview-widget &,
-	.dialog-toolbar-row &,
-	.notifications-center &,
-	.notification-toast &,
-	.settings-clear-widget &,
-	.terminal-tabs-entry & {
-		@extend %-toolbar-maybe;
-	}
-
-	.action-item {
-		cursor: unset;
-
-		&:not([role="tab"]) {
-			margin: 0;
-		}
-	}
 }
 
 .monaco-dropdown {
@@ -284,7 +260,48 @@
 }
 
 .monaco-toolbar {
-	@extend %-toolbar-maybe;
+	.action-item {
+		cursor: unset;
+
+		&:not([role="tab"]) {
+			margin: 0;
+		}
+	}
+
+	.action-item:not([aria-haspopup])
+		> .action-label:where(:not(.separator), [aria-expanded]) {
+		@include controls.button($disabled-sel: "&[aria-disabled]");
+		@include controls.icon-button;
+	}
+
+	.action-item[aria-haspopup] {
+		& > .action-label {
+			@extend %-toolbar-combobox;
+		}
+
+		&.clicked > .action-label {
+			--offset-click: 1px;
+			@include controls.button-active;
+		}
+	}
+
+	.monaco-dropdown .action-label {
+		@extend %-toolbar-combobox;
+
+		&[aria-expanded="true"] {
+			--offset-click: 1px;
+			@include controls.button-active;
+		}
+	}
+
+	.action-item {
+		// !important
+		.action-label.disabled.separator {
+			@include controls.separator-horizontal;
+
+			margin-block: 0;
+		}
+	}
 }
 
 // Item list

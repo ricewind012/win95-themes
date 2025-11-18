@@ -1,5 +1,4 @@
 @use "shared/controls";
-@use "shared/window";
 @use "shared++/icons";
 
 .command-center {
@@ -32,24 +31,6 @@
 
 		width: unset;
 		order: -1;
-	}
-
-	// .codicon:not(.separator): !important (in vscode and theme respectively)
-	// TODO(toolbar): make .monaco-toolbar .action-label use
-	// controls.icon-button too
-	.action-label.codicon:not(.separator) {
-		--button-img-pos: center;
-
-		// TODO: under mysterious fucking circumstances the svg disappears upon
-		// removing ::before wtf is this shit ? stolen from controls.icon-button
-		min-width: var(--icon-button-width);
-		height: var(--icon-button-height);
-
-		@at-root .action-item.clicked > &,
-			&:active {
-			background: var(--checkerboard);
-			box-shadow: var(--border-button-sunken);
-		}
 	}
 
 	.codicon-arrow-left {
