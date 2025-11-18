@@ -12,31 +12,35 @@
 	padding-top: var(--window-gap);
 }
 
-.browserContainer > findbar {
-	//background-color: transparent;
-	border: none;
+.browserContainer {
+	overflow: visible;
 
-	.findbar-closebutton {
-		--button-img: icon("clear");
-		@extend %-findbar-button;
-	}
+	& > findbar {
+		//background-color: transparent;
+		border: none;
 
-	.findbar-container {
-		height: unset;
-	}
+		.findbar-closebutton {
+			--button-img: icon("clear");
+			@extend %-findbar-button;
+		}
 
-	.findbar-find-next {
-		@include icons.icon-big-arrow-left;
-		@extend %-findbar-button;
-	}
+		.findbar-container {
+			height: unset;
+		}
 
-	.findbar-find-previous {
-		@include icons.icon-big-arrow-right;
-		@extend %-findbar-button;
-	}
+		.findbar-find-next {
+			@include icons.icon-big-arrow-left;
+			@extend %-findbar-button;
+		}
 
-	.findbar-textbox {
-		@include controls.text-field;
+		.findbar-find-previous {
+			@include icons.icon-big-arrow-right;
+			@extend %-findbar-button;
+		}
+
+		.findbar-textbox {
+			@include controls.text-field;
+		}
 	}
 }
 

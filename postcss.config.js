@@ -1,5 +1,4 @@
 import postcssSassPlugin from "@csstools/postcss-sass";
-import removeComments from "postcss-discard-comments";
 import removeEmpty from "postcss-discard-empty";
 import postcssFunctions from "postcss-functions";
 import postcssSassParser from "postcss-scss";
@@ -48,8 +47,6 @@ export default {
 	map: false,
 	parser: postcssSassParser,
 	plugins: [
-		removeComments(),
-		removeEmpty(),
 		postcssFunctions({ functions }),
 		postcssSassPlugin({
 			includePaths: ["src"],
@@ -59,5 +56,6 @@ export default {
 		appendImportantPlugin({
 			filter: [/^:root/],
 		}),
+		removeEmpty(),
 	],
 };
