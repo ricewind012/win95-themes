@@ -41,8 +41,8 @@
 		@include icons.icon-big-arrow-right;
 	}
 
-	.codicon-settings-view-bar-icon::before {
-		height: unset;
+	.codicon-settings-view-bar-icon {
+		margin-inline-start: var(--toolbar-spacing);
 	}
 }
 

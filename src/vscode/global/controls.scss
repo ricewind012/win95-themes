@@ -157,15 +157,10 @@
 	margin: 0;
 
 	.monaco-custom-toggle:not(&) {
-		&.codicon,
-		.codicon {
-			@include controls.button($active-sel: "&.checked");
-			@include window.titlebar-button;
+		@include controls.button;
+		@include controls.icon-button($selected-sel: "&.checked");
 
-			border: none;
-
-			width: unset;
-		}
+		border: none;
 	}
 }
 

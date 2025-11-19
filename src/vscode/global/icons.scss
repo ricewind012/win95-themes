@@ -92,12 +92,6 @@
 	@include shared.replace-icon("9px");
 }
 
-.codicon-book,
-.codicon-remote-explorer-documentation,
-.codicon-open-editors-view-icon {
-	@include icons.icon-book;
-}
-
 .codicon-collapse-all,
 .codicon-debug-collapse-all,
 .codicon-search-collapse-results {
@@ -182,10 +176,6 @@
 
 .codicon-case-sensitive {
 	@include icons.icon-case-sensitive;
-}
-
-.codicon-list-tree {
-	@include icons.icon-tree;
 }
 
 .codicon-menu-submenu {

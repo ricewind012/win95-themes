@@ -7,6 +7,12 @@
 	--button-img: icon("overflow", "mono");
 }
 
+.codicon-new-file,
+.codicon-file-add,
+.codicon-search-new-editor {
+	--button-img: icon("file-open", "normal");
+}
+
 .codicon-close,
 .codicon-remove-close,
 .codicon-x,
@@ -35,6 +41,12 @@
 .codicon-debug-remove-config,
 .codicon-terminal-kill {
 	--button-img: icon("clear", "normal");
+}
+
+.codicon-book,
+.codicon-remote-explorer-documentation,
+.codicon-open-editors-view-icon {
+	--button-img: icon("book", "normal");
 }
 
 .codicon-clear-all,
@@ -76,4 +88,10 @@
 .codicon-list-flat,
 .codicon-search-list {
 	--button-img: icon("list", "normal");
+}
+
+.codicon-list-tree,
+.codicon-search-tree,
+.codicon-testing-show-as-list-icon {
+	--button-img: icon("tree", "normal");
 }

@@ -3,16 +3,19 @@
  */
 
 // Icon generation
-const codicons = codiconStyles.innerText.split("\n");
+const codicons = document.getElementById("codiconStyles").innerText.split("\n");
 const iconMap = {
 	ea7c: ["overflow", "mono"],
+	ea7f: ["file-open", "normal"],
 	ea76: ["close", "mono"],
 	ea81: ["clear", "normal"],
+	eaa4: ["book", "normal"],
 	eabf: ["clear", "normal"],
 	eaf8: ["settings", "normal"],
 	eb37: ["reload", "normal"],
 	eb51: ["settings", "normal"],
 	eb84: ["list", "normal"],
+	eb86: ["tree", "normal"],
 };
 
 window.icon = (s) => {
@@ -23,6 +26,8 @@ window.icon = (s) => {
 		.join(",\n");
 };
 
+// Currently no way other than copy pasting the output into
+// global/icons_generated.scss for now.
 window.generateCodiconMap = () => {
 	return Object.entries(iconMap)
 		.map(
