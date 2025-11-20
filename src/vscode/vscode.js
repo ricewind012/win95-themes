@@ -9,13 +9,16 @@ const iconMap = {
 	ea7f: ["file-open", "normal"],
 	ea76: ["close", "mono"],
 	ea81: ["clear", "normal"],
+	ea94: ["file-preview", "normal"],
 	eaa4: ["book", "normal"],
 	eabf: ["clear", "normal"],
 	eaf8: ["settings", "normal"],
+	eafd: ["file-preview", "normal"],
 	eb37: ["reload", "normal"],
 	eb51: ["settings", "normal"],
+	eb56: ["sidebar", "normal"],
 	eb84: ["list", "normal"],
-	eb86: ["tree", "normal"],
+	ebeb: ["window-edit", "normal"],
 };
 
 window.icon = (s) => {

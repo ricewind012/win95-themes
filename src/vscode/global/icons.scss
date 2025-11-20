@@ -109,13 +109,6 @@
 	@include shared.replace-icon("10px");
 }
 
-.codicon-symbol-reference,
-.codicon-go-to-file,
-.codicon-preferences-open-settings,
-.codicon-search-open-in-file {
-	@include icons.icon-go-to-file;
-}
-
 .codicon-filter,
 .codicon-extensions-filter,
 .codicon-find-filter,
@@ -170,10 +163,6 @@
 	@include shared.replace-icon("9px");
 }
 
-.codicon-configure-layout-icon {
-	@include icons.icon-layout;
-}
-
 .codicon-case-sensitive {
 	@include icons.icon-case-sensitive;
 }
@@ -186,12 +175,6 @@
 	.action-menu-item:hover > & {
 		--color-button-text: var(--color-highlight-text);
 	}
-}
-
-.codicon-new-file,
-.codicon-file-add,
-.codicon-search-new-editor {
-	@include icons.icon-new-file;
 }
 
 .codicon-new-folder {
@@ -236,10 +219,6 @@
 
 .codicon-regex {
 	@include icons.icon-regex;
-}
-
-.codicon-split-horizontal {
-	@include icons.icon-split-horizontal;
 }
 
 .codicon-whole-word {

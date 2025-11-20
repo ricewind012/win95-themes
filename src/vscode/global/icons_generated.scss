@@ -43,6 +43,14 @@
 	--button-img: icon("clear", "normal");
 }
 
+.codicon-symbol-reference,
+.codicon-go-to-file,
+.codicon-preferences-open-settings,
+.codicon-search-open-in-file,
+.codicon-terminal-command-history-open-file {
+	--button-img: icon("file-preview", "normal");
+}
+
 .codicon-book,
 .codicon-remote-explorer-documentation,
 .codicon-open-editors-view-icon {
@@ -71,6 +79,11 @@
 	--button-img: icon("settings", "normal");
 }
 
+.codicon-git-compare,
+.codicon-compare-changes {
+	--button-img: icon("file-preview", "normal");
+}
+
 .codicon-refresh,
 .codicon-rerun-task,
 .codicon-extensions-refresh,
@@ -85,13 +98,16 @@
 	--button-img: icon("settings", "normal");
 }
 
+.codicon-split-horizontal {
+	--button-img: icon("sidebar", "normal");
+}
+
 .codicon-list-flat,
 .codicon-search-list {
 	--button-img: icon("list", "normal");
 }
 
-.codicon-list-tree,
-.codicon-search-tree,
-.codicon-testing-show-as-list-icon {
-	--button-img: icon("tree", "normal");
+.codicon-layout,
+.codicon-configure-layout-icon {
+	--button-img: icon("window-edit", "normal");
 }
