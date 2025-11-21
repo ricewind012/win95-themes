@@ -144,13 +144,16 @@
 	}
 }
 
-@mixin combobox-button {
-	@include button;
+@mixin combobox-button($active-sel: "&:active") {
+	--offset-click: 0px;
+
+	@include button($active-sel: $active-sel);
 
 	gap: var(--text-spacing);
 
 	display: flex;
 
+	#{$active-sel},
 	&:active {
 		--offset-click: 1px;
 	}

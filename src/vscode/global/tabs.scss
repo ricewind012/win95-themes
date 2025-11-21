@@ -11,8 +11,7 @@
 	}
 
 	.action-label {
-		font-size: var(--text-ui-size);
-		font-family: var(--text-ui-font), codicon;
+		font: var(--text-ui);
 		color: inherit;
 		padding: 0;
 	}
@@ -139,7 +138,7 @@
 				@include tabs.content;
 
 				padding: var(--s);
-				padding-top: calc(var(--s) + 17px);
+				padding-top: calc(var(--s) + var(--icon-button-height) + 4px);
 
 				.pane-header {
 					margin-bottom: 2px;
@@ -150,7 +149,7 @@
 				}
 
 				&:not(.extensions-viewlet) .monaco-list {
-					height: calc(100% - 3px);
+					height: calc(100% - 12px);
 				}
 			}
 		}

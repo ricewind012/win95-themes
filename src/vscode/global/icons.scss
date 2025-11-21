@@ -4,70 +4,6 @@
 
 // Single icon for multiple classes,
 // not alphabetically sorted.
-// TODO(scss): use a map, hell yeah
-.codicon-chevron-left,
-.codicon-inline-suggestion-hints-previous {
-	--icon-img: icon("arrow-left", "mono");
-	--button-img: var(--icon-img);
-	--button-img-size: 4px 7px;
-	--button-img-pos: 4px center;
-}
-
-.codicon-chevron-up,
-.codicon-parameter-hints-previous,
-.codicon-notifications-expand,
-.codicon-review-comment-collapse,
-.codicon-markers-view-multi-line-expanded,
-.codicon-panel-maximize {
-	--icon-img: icon("arrow-top", "mono");
-	--button-img: var(--icon-img);
-	--button-img-size: 7px 4px;
-	--button-img-pos: 4px center;
-}
-
-.codicon-chevron-right,
-.codicon-menu-submenu,
-.codicon-suggest-more-info,
-.codicon-find-collapsed,
-.codicon-inline-suggestion-hints-next,
-.codicon-debug-console-evaluation-prompt,
-.codicon-notebook-collapsed,
-.codicon-search-hide-replace,
-.codicon-view-pane-container-collapsed,
-.codicon-breadcrumb-separator {
-	--icon-img: icon("arrow-right", "mono");
-	--button-img: var(--icon-img);
-	--button-img-size: 4px 7px;
-	--button-img-pos: 4px center;
-}
-.codicon-folding-collapsed,
-.codicon-folding-manual-collapsed {
-	--icon-img: icon("arrow-right", "mono");
-	@include shared.replace-icon("" 4px ", " 7px "");
-}
-
-.codicon-chevron-down,
-.codicon-drop-down-button,
-.codicon-tree-item-expanded,
-.codicon-parameter-hints-next,
-.codicon-find-expanded,
-.codicon-notifications-hide,
-.codicon-notifications-collapse,
-.codicon-notebook-expanded,
-.codicon-search-show-replace,
-.codicon-markers-view-multi-line-collapsed,
-.codicon-view-pane-container-expanded,
-.codicon-panel-restore {
-	--icon-img: icon("arrow-bottom", "mono");
-	--button-img: var(--icon-img);
-	--button-img-size: 7px 4px;
-	--button-img-pos: 4px center;
-}
-.codicon-folding-expanded,
-.codicon-folding-manual-expanded {
-	--icon-img: icon("arrow-bottom", "mono");
-	@include shared.replace-icon("" 7px ", " 4px "");
-}
 
 .codicon-add,
 .codicon-plus,
@@ -92,45 +28,6 @@
 	@include shared.replace-icon("9px");
 }
 
-.codicon-book,
-.codicon-remote-explorer-documentation,
-.codicon-open-editors-view-icon {
-	@include icons.icon-book;
-}
-
-.codicon-clear-all,
-.codicon-debug-console-clear-all,
-.codicon-extensions-clear-search-results,
-.codicon-notebook-clear,
-.codicon-notifications-clear-all,
-.codicon-preferences-clear-input,
-.codicon-search-clear-results {
-	@include icons.icon-clear;
-}
-
-.codicon-notifications-hide,
-.codicon-notifications-collapse,
-.codicon-close,
-.titlebar .codicon-chrome-close,
-.codicon-dialog-close,
-.codicon-diff-review-close,
-.codicon-notifications-clear,
-.codicon-panel-close,
-.codicon-ports-stop-forward-icon,
-.codicon-remove-close,
-.codicon-search-remove,
-.codicon-settings-remove,
-.codicon-tasks-remove,
-.codicon-terminal-command-history-remove,
-.codicon-tree-filter-clear,
-.codicon-watch-expression-remove,
-.codicon-widget-close,
-.codicon-workspace-trust-editor-cross,
-.codicon-workspace-trust-editor-remove-folder,
-.codicon-x {
-	@include window.titlebar-button-close;
-}
-
 .codicon-collapse-all,
 .codicon-debug-collapse-all,
 .codicon-search-collapse-results {
@@ -146,13 +43,6 @@
 	@include icons.icon-error;
 
 	@include shared.replace-icon("10px");
-}
-
-.codicon-symbol-reference,
-.codicon-go-to-file,
-.codicon-preferences-open-settings,
-.codicon-search-open-in-file {
-	@include icons.icon-go-to-file;
 }
 
 .codicon-filter,
@@ -172,87 +62,12 @@
 	@include icons.icon-lock;
 }
 
-// Everything, except the last one, are different, but look similiar
-.codicon-list-selection,
-.codicon-selection,
-.codicon-tree-filter-on-type-off,
-.codicon-find-selection,
-.codicon-search-show-context,
-.codicon-list-flat {
-	@include icons.icon-list;
-}
-
-.codicon-refresh,
-.codicon-extensions-refresh,
-.codicon-search-refresh,
-.codicon-testing-rerun-icon,
-.codicon-testing-refresh-tests,
-.codicon-timeline-refresh {
-	@include icons.icon-refresh;
-}
-
-.codicon-gear,
-.codicon-notifications-configure,
-.codicon-debug-configure,
-.codicon-extensions-manage,
-.codicon-settings-gear,
-.codicon-settings-view-bar-icon,
-.codicon-settings-more-action,
-.codicon-terminal-rename,
-.codicon-terminal-configure-profile,
-.codicon-testing-update-profiles,
-.codicon-tasks-list-configure,
-.codicon-theme-selection-manage-extension {
-	@include icons.icon-settings;
-
-	&::before {
-		height: 13px;
-	}
-}
-
-.codicon-discard,
-.codicon-trash,
-.codicon-trashcan,
-.codicon-debug-remove-config,
-.codicon-notebook-delete-cell,
-.codicon-terminal-kill {
-	@include icons.icon-trash;
-}
-
-.codicon-more,
-.codicon-ellipsis,
-.codicon-kebab-horizontal,
-.codicon-menubar-more,
-.codicon-toolbar-more,
-.codicon-search-details {
-	@include icons.icon-more;
-}
-/* end */
-
-/* Dialogs */
-.codicon-info,
-.codicon-shield,
-.codicon-dialog-warning {
-	background-image: icon("warning-32");
-}
-
-.codicon-dialog-info {
-	background-image: icon("question-32");
-}
-/* end */
-
-.codicon-arrow-left,
-.codicon-arrow-right {
-	--button-img-size: 4px 7px;
-	--button-img-pos: 5px 3px;
-}
-
 .codicon-arrow-left {
-	--button-img: icon("arrow-left", "mono");
+	@include icons.icon-big-arrow-left;
 }
 
 .codicon-arrow-right {
-	--button-img: icon("arrow-right", "mono");
+	@include icons.icon-big-arrow-right;
 }
 
 .codicon-auxiliarybar-right-layout-icon {
@@ -270,48 +85,8 @@
 	@include shared.replace-icon("9px");
 }
 
-.codicon-chrome-maximize {
-	@include window.titlebar-button-maximize;
-}
-
-.codicon-chrome-minimize {
-	@include window.titlebar-button-minimize;
-}
-
-.codicon-chrome-restore {
-	@include window.titlebar-button-restore;
-}
-
-.codicon-configure-layout-icon {
-	@include icons.icon-layout;
-}
-
 .codicon-case-sensitive {
 	@include icons.icon-case-sensitive;
-}
-
-.codicon-list-tree {
-	@include icons.icon-tree;
-}
-
-.codicon-menu-submenu {
-	--icon-img: icon("arrow-right", "mono");
-	--button-img: var(--icon-img);
-	@include shared.replace-icon("" 4px ", " 7px "");
-
-	.action-menu-item:hover > & {
-		--color-button-text: var(--color-highlight-text);
-	}
-}
-
-.codicon-new-file,
-.codicon-file-add,
-.codicon-search-new-editor {
-	@include icons.icon-new-file;
-}
-
-.codicon-new-folder {
-	@include icons.icon-new-folder;
 }
 
 .codicon-panel-layout-icon {
@@ -330,18 +105,12 @@
 	@include icons.icon-panel-left-off;
 }
 
-.codicon-panel-maximize,
-.codicon-panel-restore {
-	--button-img-size: 7px 4px;
-	--button-img-pos: 4px center;
-}
-
 .codicon-panel-maximize {
-	--button-img: icon("arrow-top", "mono");
+	@include icons.icon-big-arrow-top;
 }
 
 .codicon-panel-restore {
-	--button-img: icon("arrow-bottom", "mono");
+	@include icons.icon-big-arrow-bottom;
 }
 
 .codicon-preserve-case {
@@ -352,16 +121,27 @@
 	@include icons.icon-regex;
 }
 
-.codicon-search-list {
-	@include icons.icon-list;
-}
-
-.codicon-split-horizontal {
-	@include icons.icon-split-horizontal;
-}
-
 .codicon-whole-word {
 	@include icons.icon-whole-word;
+}
+
+.monaco-workbench .part.basepanel.right {
+	.codicon-split-horizontal:before,
+	.codicon-panel-maximize:before,
+	.codicon-panel-restore:before {
+		transform: none;
+	}
+}
+
+// Override for ea7c in vscode.js
+.codicon-more,
+.codicon-ellipsis,
+.codicon-kebab-horizontal,
+.codicon-menubar-more,
+.codicon-toolbar-more,
+.codicon-search-details {
+	--button-img-pos-x: 4px;
+	--button-img-pos-y: 5px;
 }
 
 // Large icons on the side ...

@@ -8,12 +8,14 @@
 	--icon-mono-maximize: file("maximize", "mono");
 	--icon-mono-minimize: file("minimize", "mono");
 	--icon-mono-next: file("next", "mono");
+	--icon-mono-overflow: file("overflow", "mono");
 	--icon-mono-pause: file("pause", "mono");
 	--icon-mono-play: file("play", "mono");
 	--icon-mono-previous: file("previous", "mono");
 	--icon-mono-repeat: file("repeat", "mono");
 	--icon-mono-restore: file("restore", "mono");
 	--icon-mono-shuffle: file("shuffle", "mono");
+	--icon-normal-book: file("book", "normal");
 	--icon-normal-chat-bubble-alt: file("chat-bubble-alt", "normal");
 	--icon-normal-chat-bubble: file("chat-bubble", "normal");
 	--icon-normal-checkmark: file("checkmark", "normal");
@@ -30,7 +32,9 @@
 	--icon-normal-extensions-32: file("extensions-32", "normal");
 	--icon-normal-extensions: file("extensions", "normal");
 	--icon-normal-favorites: file("favorites", "normal");
+	--icon-normal-file-open: file("file-open", "normal");
 	--icon-normal-file: file("file", "normal");
+	--icon-normal-file-preview: file("file-preview", "normal");
 	--icon-normal-file-search: file("file-search", "normal");
 	--icon-normal-folder-32: file("folder-32", "normal");
 	--icon-normal-folder: file("folder", "normal");
@@ -47,7 +51,6 @@
 	--icon-normal-microphone-muted: file("microphone-muted", "normal");
 	--icon-normal-microphone: file("microphone", "normal");
 	--icon-normal-newspaper: file("newspaper", "normal");
-	--icon-normal-overflow: file("overflow", "normal");
 	--icon-normal-padlock: file("padlock", "normal");
 	--icon-normal-question-32: file("question-32", "normal");
 	--icon-normal-reload: file("reload", "normal");
@@ -65,9 +68,11 @@
 	--icon-normal-speaker-alt: file("speaker-alt", "normal");
 	--icon-normal-steam: file("steam", "normal");
 	--icon-normal-stop: file("stop", "normal");
+	--icon-normal-tree: file("tree", "normal");
 	--icon-normal-url: file("url", "normal");
 	--icon-normal-user-list: file("user-list", "normal");
 	--icon-normal-warning-32: file("warning-32", "normal");
+	--icon-normal-window-edit: file("window-edit", "normal");
 	--icon-normal-window: file("window", "normal");
 	--icon-normal-windows: file("windows", "normal");
 }

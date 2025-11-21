@@ -1,7 +1,7 @@
 @use "shared/controls";
 @use "shared/tabs";
-@use "shared/window";
 @use "shared++/utils";
+@use "vscode/shared";
 
 .extension-editor {
 	padding: var(--tabpanel-spacing);
@@ -24,11 +24,27 @@
 			overflow: visible;
 		}
 
-		.action-label.codicon:empty {
-			@include controls.button;
-			@include window.titlebar-button;
+		.action-label:not(.icon) {
+			@include controls.button(
+				$active-sel: "&:is(:active, [aria-expanded='true'])"
+			);
 
-			height: 22px;
+			&:empty {
+				--button-min-width: calc(7px + var(--button-spacing) * 2);
+
+				&::before {
+					// Retain the button size
+					mask: icon("arrow-bottom", "mono") no-repeat;
+					mask-size: 7px 4px;
+					mask-position: center;
+					background-color: var(--color-button-text);
+					color: transparent;
+				}
+			}
+		}
+
+		.action-label.icon {
+			@include shared.toolbar-combobox;
 		}
 
 		.action-dropdown-item-separator {

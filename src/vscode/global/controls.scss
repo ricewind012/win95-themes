@@ -3,32 +3,7 @@
 @use "shared/scrollbar";
 @use "shared/window";
 @use "shared++/utils";
-
-%-toolbar-maybe {
-	.action-label {
-		&:not(.separator) {
-			@include controls.button(
-				$disabled-sel: "&[aria-disabled]",
-				$active-sel: "&[aria-expanded='true']"
-			);
-			@include window.titlebar-button;
-		}
-	}
-
-	.action-item {
-		// Titlebar
-		&.clicked > .action-label {
-			@include controls.button-active;
-		}
-
-		// !important
-		.action-label.disabled.separator {
-			@include controls.separator-horizontal;
-
-			margin-block: 0;
-		}
-	}
-}
+@use "vscode/shared";
 
 .badge {
 	margin-left: var(--text-spacing);
@@ -91,25 +66,6 @@
 .monaco-description-buttons > .monaco-button {
 	overflow: visible;
 	width: 148px;
-}
-
-.monaco-action-bar {
-	.peekview-widget &,
-	.dialog-toolbar-row &,
-	.notifications-center &,
-	.notification-toast &,
-	.settings-clear-widget &,
-	.terminal-tabs-entry & {
-		@extend %-toolbar-maybe;
-	}
-
-	.action-item {
-		cursor: unset;
-
-		&:not([role="tab"]) {
-			margin: 0;
-		}
-	}
 }
 
 .monaco-dropdown {
@@ -181,15 +137,10 @@
 	margin: 0;
 
 	.monaco-custom-toggle:not(&) {
-		&.codicon,
-		.codicon {
-			@include controls.button($active-sel: "&.checked");
-			@include window.titlebar-button;
+		@include controls.button;
+		@include controls.icon-button($selected-sel: "&.checked");
 
-			border: none;
-
-			width: unset;
-		}
+		border: none;
 	}
 }
 
@@ -284,7 +235,48 @@
 }
 
 .monaco-toolbar {
-	@extend %-toolbar-maybe;
+	.action-item {
+		cursor: unset;
+
+		&:not([role="tab"]) {
+			margin: 0;
+		}
+	}
+
+	.action-item:not([aria-haspopup])
+		> .action-label:where(:not(.separator), [aria-expanded]) {
+		@include controls.button($disabled-sel: "&[aria-disabled]");
+		@include controls.icon-button;
+	}
+
+	.action-item[aria-haspopup] {
+		& > .action-label {
+			@include shared.toolbar-combobox;
+		}
+
+		&.clicked > .action-label {
+			--offset-click: 1px;
+			@include controls.button-active;
+		}
+	}
+
+	.monaco-dropdown .action-label {
+		@include shared.toolbar-combobox;
+
+		&[aria-expanded="true"] {
+			--offset-click: 1px;
+			@include controls.button-active;
+		}
+	}
+
+	.action-item {
+		// !important
+		.action-label.disabled.separator {
+			@include controls.separator-horizontal;
+
+			margin-block: 0;
+		}
+	}
 }
 
 // Item list

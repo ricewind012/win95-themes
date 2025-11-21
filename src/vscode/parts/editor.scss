@@ -1,5 +1,6 @@
 @use "shared/tabs";
 @use "shared/window";
+@use "vscode/shared";
 
 .editor-container {
 	background-color: transparent;
@@ -32,7 +33,7 @@
 }
 
 .editor-actions {
-	padding: 0;
+	@include shared.title-toolbar;
 }
 
 .editor {
