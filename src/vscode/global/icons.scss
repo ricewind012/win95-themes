@@ -4,70 +4,6 @@
 
 // Single icon for multiple classes,
 // not alphabetically sorted.
-// TODO(scss): use a map, hell yeah
-.codicon-chevron-left,
-.codicon-inline-suggestion-hints-previous {
-	--icon-img: icon("arrow-left", "mono");
-	--button-img: var(--icon-img);
-	--button-img-size: 4px 7px;
-	--button-img-pos: 4px center;
-}
-
-.codicon-chevron-up,
-.codicon-parameter-hints-previous,
-.codicon-notifications-expand,
-.codicon-review-comment-collapse,
-.codicon-markers-view-multi-line-expanded,
-.codicon-panel-maximize {
-	--icon-img: icon("arrow-top", "mono");
-	--button-img: var(--icon-img);
-	--button-img-size: 7px 4px;
-	--button-img-pos: 4px center;
-}
-
-.codicon-chevron-right,
-.codicon-menu-submenu,
-.codicon-suggest-more-info,
-.codicon-find-collapsed,
-.codicon-inline-suggestion-hints-next,
-.codicon-debug-console-evaluation-prompt,
-.codicon-notebook-collapsed,
-.codicon-search-hide-replace,
-.codicon-view-pane-container-collapsed,
-.codicon-breadcrumb-separator {
-	--icon-img: icon("arrow-right", "mono");
-	--button-img: var(--icon-img);
-	--button-img-size: 4px 7px;
-	--button-img-pos: 4px center;
-}
-.codicon-folding-collapsed,
-.codicon-folding-manual-collapsed {
-	--icon-img: icon("arrow-right", "mono");
-	@include shared.replace-icon("" 4px ", " 7px "");
-}
-
-.codicon-chevron-down,
-.codicon-drop-down-button,
-.codicon-tree-item-expanded,
-.codicon-parameter-hints-next,
-.codicon-find-expanded,
-.codicon-notifications-hide,
-.codicon-notifications-collapse,
-.codicon-notebook-expanded,
-.codicon-search-show-replace,
-.codicon-markers-view-multi-line-collapsed,
-.codicon-view-pane-container-expanded,
-.codicon-panel-restore {
-	--icon-img: icon("arrow-bottom", "mono");
-	--button-img: var(--icon-img);
-	--button-img-size: 7px 4px;
-	--button-img-pos: 4px center;
-}
-.codicon-folding-expanded,
-.codicon-folding-manual-expanded {
-	--icon-img: icon("arrow-bottom", "mono");
-	@include shared.replace-icon("" 7px ", " 4px "");
-}
 
 .codicon-add,
 .codicon-plus,
@@ -126,20 +62,6 @@
 	@include icons.icon-lock;
 }
 
-/* end */
-
-/* Dialogs */
-.codicon-info,
-.codicon-shield,
-.codicon-dialog-warning {
-	background-image: icon("warning-32");
-}
-
-.codicon-dialog-info {
-	background-image: icon("question-32");
-}
-/* end */
-
 .codicon-arrow-left {
 	@include icons.icon-big-arrow-left;
 }
@@ -165,20 +87,6 @@
 
 .codicon-case-sensitive {
 	@include icons.icon-case-sensitive;
-}
-
-.codicon-menu-submenu {
-	--icon-img: icon("arrow-right", "mono");
-	--button-img: var(--icon-img);
-	@include shared.replace-icon("" 4px ", " 7px "");
-
-	.action-menu-item:hover > & {
-		--color-button-text: var(--color-highlight-text);
-	}
-}
-
-.codicon-new-folder {
-	@include icons.icon-new-folder;
 }
 
 .codicon-panel-layout-icon {
@@ -209,6 +117,14 @@
 	@include icons.icon-match-case;
 }
 
+.codicon-regex {
+	@include icons.icon-regex;
+}
+
+.codicon-whole-word {
+	@include icons.icon-whole-word;
+}
+
 .monaco-workbench .part.basepanel.right {
 	.codicon-split-horizontal:before,
 	.codicon-panel-maximize:before,
@@ -217,12 +133,15 @@
 	}
 }
 
-.codicon-regex {
-	@include icons.icon-regex;
-}
-
-.codicon-whole-word {
-	@include icons.icon-whole-word;
+// Override for ea7c in vscode.js
+.codicon-more,
+.codicon-ellipsis,
+.codicon-kebab-horizontal,
+.codicon-menubar-more,
+.codicon-toolbar-more,
+.codicon-search-details {
+	--button-img-pos-x: 4px;
+	--button-img-pos-y: 5px;
 }
 
 // Large icons on the side ...

@@ -1,3 +1,11 @@
+.codicon-alert,
+.codicon-warning,
+.codicon-dialog-warning,
+.codicon-extensions-warning-message,
+.codicon-markers-view-icon {
+	--button-img: icon("warning-32", "normal");
+}
+
 .codicon-more,
 .codicon-ellipsis,
 .codicon-kebab-horizontal,
@@ -11,6 +19,23 @@
 .codicon-file-add,
 .codicon-search-new-editor {
 	--button-img: icon("file-open", "normal");
+}
+
+.codicon-arrow-down,
+.codicon-goto-next-location,
+.codicon-find-next-match,
+.codicon-marker-navigation-next,
+.codicon-diff-editor-next-change,
+.codicon-notebook-move-down,
+.codicon-notebook-diff-editor-next-change {
+	--button-img: icon("arrow-bottom", "mono");
+}
+
+.codicon-info,
+.codicon-issue-opened,
+.codicon-dialog-info,
+.codicon-extensions-info-message {
+	--button-img: icon("question-32", "normal");
 }
 
 .codicon-close,
@@ -51,10 +76,57 @@
 	--button-img: icon("file-preview", "normal");
 }
 
+.codicon-arrow-up,
+.codicon-goto-previous-location,
+.codicon-find-previous-match,
+.codicon-marker-navigation-previous,
+.codicon-quickInputAlignmentTop,
+.codicon-diff-editor-previous-change,
+.codicon-notebook-move-up,
+.codicon-notebook-diff-editor-previous-change {
+	--button-img: icon("arrow-top", "mono");
+}
+
 .codicon-book,
 .codicon-remote-explorer-documentation,
 .codicon-open-editors-view-icon {
 	--button-img: icon("book", "normal");
+}
+
+.codicon-chevron-down,
+.codicon-tree-item-expanded,
+.codicon-drop-down-button,
+.codicon-find-expanded,
+.codicon-folding-expanded,
+.codicon-folding-manual-expanded,
+.codicon-parameter-hints-next,
+.codicon-view-pane-container-expanded,
+.codicon-notebook-expanded,
+.codicon-search-show-replace,
+.codicon-markers-view-multi-line-collapsed,
+.codicon-notifications-hide,
+.codicon-notifications-collapse {
+	--button-img: icon("arrow-bottom", "mono");
+}
+
+.codicon-chevron-left,
+.codicon-inline-suggestion-hints-previous {
+	--button-img: icon("arrow-left", "mono");
+}
+
+.codicon-chevron-right,
+.codicon-menu-submenu,
+.codicon-inline-suggestion-hints-next,
+.codicon-find-collapsed,
+.codicon-folding-collapsed,
+.codicon-folding-manual-collapsed,
+.codicon-suggest-more-info,
+.codicon-view-pane-container-collapsed,
+.codicon-breadcrumb-separator,
+.codicon-notebook-collapsed,
+.codicon-debug-console-evaluation-prompt,
+.codicon-search-hide-replace {
+	--button-img: icon("arrow-right", "mono");
 }
 
 .codicon-clear-all,
@@ -82,6 +154,13 @@
 .codicon-git-compare,
 .codicon-compare-changes {
 	--button-img: icon("file-preview", "normal");
+}
+
+.codicon-screen-full,
+.codicon-panel-maximize,
+.codicon-auxiliarybar-maximize,
+.codicon-fullscreen {
+	--button-img: icon("arrow-top", "mono");
 }
 
 .codicon-refresh,

@@ -11,8 +11,7 @@
 	}
 
 	.action-label {
-		font-size: var(--text-ui-size);
-		font-family: var(--text-ui-font), codicon;
+		font: var(--text-ui);
 		color: inherit;
 		padding: 0;
 	}

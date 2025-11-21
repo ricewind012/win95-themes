@@ -3,27 +3,7 @@
 @use "shared/scrollbar";
 @use "shared/window";
 @use "shared++/utils";
-
-// holy fucking cancer
-%-toolbar-combobox {
-	@include controls.combobox-button;
-
-	background-image: var(--button-img);
-	background-position-x: calc(var(--offset-click) + var(--button-spacing));
-	background-position-y: calc(var(--offset-click) + var(--button-spacing) / 2);
-	background-repeat: no-repeat;
-	background-size: var(--button-img-size);
-
-	min-width: calc(
-		var(--button-spacing) * 2 + var(--text-spacing) * 2 + var(--icon-size) +
-			10px
-	);
-	min-height: var(--icon-button-height);
-
-	&::before {
-		margin-inline-start: calc(var(--icon-size) + var(--text-spacing));
-	}
-}
+@use "vscode/shared";
 
 .badge {
 	margin-left: var(--text-spacing);
@@ -271,7 +251,7 @@
 
 	.action-item[aria-haspopup] {
 		& > .action-label {
-			@extend %-toolbar-combobox;
+			@include shared.toolbar-combobox;
 		}
 
 		&.clicked > .action-label {
@@ -281,7 +261,7 @@
 	}
 
 	.monaco-dropdown .action-label {
-		@extend %-toolbar-combobox;
+		@include shared.toolbar-combobox;
 
 		&[aria-expanded="true"] {
 			--offset-click: 1px;

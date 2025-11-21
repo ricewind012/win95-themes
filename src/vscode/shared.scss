@@ -1,3 +1,6 @@
+@use "shared/controls";
+
+// TODO: remove with new toolbar
 @mixin replace-icon($w, $h: $w) {
 	&::before {
 		content: "";
@@ -21,4 +24,30 @@
 
 	position: relative;
 	bottom: var(--offset);
+}
+
+// holy fucking cancer
+@mixin toolbar-combobox {
+	@include controls.combobox-button;
+
+	background-image: var(--button-img);
+	background-position-x: calc(
+		var(--button-img-pos-x, 0px) + var(--offset-click) + var(--button-spacing)
+	);
+	background-position-y: calc(
+		var(--button-img-pos-y, 0px) + var(--offset-click) + var(--button-spacing) /
+			2
+	);
+	background-repeat: no-repeat;
+	background-size: var(--button-img-size);
+
+	min-width: calc(
+		var(--button-spacing) * 2 + var(--text-spacing) * 2 + var(--icon-size) +
+			10px
+	);
+	min-height: var(--icon-button-height);
+
+	&::before {
+		margin-inline-start: calc(var(--icon-size) + var(--text-spacing));
+	}
 }

@@ -69,12 +69,6 @@
 	--button-img-size: 8px auto;
 }
 
-@mixin icon-new-folder {
-	--button-img: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMSAxMCI+PHJlY3Qgd2lkdGg9IjEiIGhlaWdodD0iNyIgeT0iMSIvPjxyZWN0IHdpZHRoPSIzIiBoZWlnaHQ9IjEiIHg9IjEiLz48cmVjdCB3aWR0aD0iNiIgaGVpZ2h0PSIxIiB4PSI0IiB5PSIxIi8+PHJlY3Qgd2lkdGg9IjEiIGhlaWdodD0iNCIgeD0iMTAiIHk9IjIiLz48cmVjdCB3aWR0aD0iMyIgaGVpZ2h0PSIxIiB4PSIxIiB5PSI0Ii8+PHJlY3Qgd2lkdGg9IjYiIGhlaWdodD0iMSIgeD0iNCIgeT0iMyIvPjxyZWN0IHdpZHRoPSI0IiBoZWlnaHQ9IjEiIHk9IjgiLz48cmVjdCB3aWR0aD0iNSIgaGVpZ2h0PSIxIiB4PSI1IiB5PSI3Ii8+PHJlY3Qgd2lkdGg9IjEiIGhlaWdodD0iNSIgeD0iNyIgeT0iNSIvPjwvc3ZnPg==");
-	--button-img-size: 11px 10px;
-	--button-img-pos: 2px 2px;
-}
-
 @mixin icon-panel-on {
 	--button-img: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA5IDkiPjxyZWN0IHdpZHRoPSI3IiBoZWlnaHQ9IjEiIHg9IjEiIHk9IjUiLz48cmVjdCB3aWR0aD0iNyIgaGVpZ2h0PSIyIiB4PSIxIiB5PSI2Ii8+PHJlY3Qgd2lkdGg9IjkiIGhlaWdodD0iMSIvPjxyZWN0IHdpZHRoPSI5IiBoZWlnaHQ9IjEiIHk9IjgiLz48cmVjdCB3aWR0aD0iMSIgaGVpZ2h0PSI3IiB5PSIxIi8+PHJlY3Qgd2lkdGg9IjEiIGhlaWdodD0iNyIgeD0iOCIgeT0iMSIvPjwvc3ZnPg==");
 	--button-img-size: 9px;

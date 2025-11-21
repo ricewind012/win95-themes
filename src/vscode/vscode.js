@@ -4,16 +4,26 @@
 
 // Icon generation
 const codicons = document.getElementById("codiconStyles").innerText.split("\n");
+/** @type {Record<string, [string, "mono" | "normal"]} */
 const iconMap = {
+	ea6c: ["warning-32", "normal"],
 	ea7c: ["overflow", "mono"],
 	ea7f: ["file-open", "normal"],
+	ea9a: ["arrow-bottom", "mono"],
+	ea74: ["question-32", "normal"],
 	ea76: ["close", "mono"],
+	ea80: ["folder-add", "normal"],
 	ea81: ["clear", "normal"],
 	ea94: ["file-preview", "normal"],
+	eaa1: ["arrow-top", "mono"],
 	eaa4: ["book", "normal"],
+	eab4: ["arrow-bottom", "mono"],
+	eab5: ["arrow-left", "mono"],
+	eab6: ["arrow-right", "mono"],
 	eabf: ["clear", "normal"],
 	eaf8: ["settings", "normal"],
 	eafd: ["file-preview", "normal"],
+	eb4c: ["arrow-top", "mono"],
 	eb37: ["reload", "normal"],
 	eb51: ["settings", "normal"],
 	eb56: ["sidebar", "normal"],
