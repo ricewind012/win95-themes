@@ -1,23 +1,8 @@
-@use "shared/window";
 @use "shared++/icons";
 @use "vscode/shared";
 
 // Single icon for multiple classes,
 // not alphabetically sorted.
-
-.codicon-add,
-.codicon-plus,
-.codicon-gist-new,
-.codicon-repo-create,
-.codicon-diff-review-insert,
-.codicon-diff-insert,
-.codicon-watch-expressions-add,
-.codicon-watch-expressions-add-function-breakpoint,
-.codicon-keybindings-add,
-.codicon-ports-forward-icon,
-.codicon-terminal-new {
-	@include icons.icon-plus;
-}
 
 .codicon-alert,
 .codicon-warning,
@@ -26,12 +11,6 @@
 	@include icons.icon-warning;
 
 	@include shared.replace-icon("9px");
-}
-
-.codicon-collapse-all,
-.codicon-debug-collapse-all,
-.codicon-search-collapse-results {
-	@include icons.icon-collapse;
 }
 
 .codicon-error,
@@ -52,14 +31,6 @@
 .codicon-testing-filter,
 .codicon-timeline-filter {
 	@include icons.icon-filter;
-}
-
-.codicon-gist-private,
-.codicon-git-fork-private,
-.codicon-lock,
-.codicon-mirror-private,
-.codicon-private-ports-view-icon {
-	@include icons.icon-lock;
 }
 
 .codicon-arrow-left {
@@ -131,6 +102,15 @@
 	.codicon-panel-restore:before {
 		transform: none;
 	}
+}
+
+// Override for eac5 in vscode.js
+.codicon-collapse-all,
+.codicon-debug-collapse-all,
+.codicon-search-collapse-results {
+	--button-img: icon("minimize", "mono");
+	--button-img-size: 6px 2px;
+	--button-img-pos: 4px 16px;
 }
 
 // Override for ea7c in vscode.js

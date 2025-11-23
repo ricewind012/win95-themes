@@ -241,12 +241,10 @@ $-icons: (
 #tabs-newtab-button,
 #vertical-tabs-newtab-button,
 #TabsToolbar #new-tab-button {
+	--button-img: icon("plus", "mono");
 	@include controls.button;
 	@include controls.icon-button;
-	@include icons.icon-plus;
 	@extend %-horizontal-tabs-button;
-	--button-img-pos: center;
-	--button-img-size: 14px;
 
 	list-style-image: none;
 	margin-inline: var(--toolbar-container-spacing);

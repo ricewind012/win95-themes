@@ -31,11 +31,35 @@
 	--button-img: icon("arrow-bottom", "mono");
 }
 
+.codicon-add,
+.codicon-plus,
+.codicon-gist-new,
+.codicon-repo-create,
+.codicon-diff-review-insert,
+.codicon-diff-insert,
+.codicon-hover-increase-verbosity,
+.codicon-ports-forward-icon,
+.codicon-keybindings-add,
+.codicon-watch-expressions-add,
+.codicon-watch-expressions-add-function-breakpoint,
+.codicon-terminal-new {
+	--button-img: icon("plus", "mono");
+}
+
 .codicon-info,
 .codicon-issue-opened,
 .codicon-dialog-info,
 .codicon-extensions-info-message {
 	--button-img: icon("question-32", "normal");
+}
+
+.codicon-gist-private,
+.codicon-git-fork-private,
+.codicon-lock,
+.codicon-mirror-private,
+.codicon-private-ports-view-icon,
+.codicon-extensions-private {
+	--button-img: icon("padlock", "normal");
 }
 
 .codicon-close,
@@ -58,6 +82,11 @@
 .codicon-workspace-trust-editor-remove-folder,
 .codicon-notifications-clear {
 	--button-img: icon("close", "mono");
+}
+
+.codicon-new-folder,
+.codicon-file-directory-create {
+	--button-img: icon("folder-add", "normal");
 }
 
 .codicon-trash,

@@ -1,4 +1,5 @@
 @use "shared/tabs";
+@use "shared/window";
 @use "shared++/utils";
 
 :where([role="tab"]) {
@@ -40,6 +41,39 @@
 			background-color: var(--color-button-face);
 		}
 	}
+
+	&.dirty:hover,
+	&:not(.dirty) {
+		.codicon-close::before {
+			content: "";
+
+			width: 8px;
+			height: 7px;
+
+			background-color: currentColor;
+			mask: icon("close", "mono");
+		}
+	}
+}
+
+.monaco-workbench
+	.part.editor
+	> .content
+	.editor-group-container.active
+	> .title
+	.tabs-container
+	> .tab.dirty
+	> .tab-actions
+	.action-label:not(:hover):before,
+.monaco-workbench
+	.part.editor
+	> .content
+	.editor-group-container
+	> .title
+	.tabs-container
+	> .tab.dirty
+	> .tab-actions
+	.action-label:not(:hover):before {
 }
 
 .tab-border-top-container,

@@ -6,7 +6,7 @@
 	background-color: var(--color-button-face);
 	color: var(--color-button-text);
 
-	height: unset;
+	height: var(--statusbar-height);
 
 	// border
 	&::after {
