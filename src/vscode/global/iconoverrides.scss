@@ -1,0 +1,120 @@
+@use "shared++/icons";
+
+// Single icon for multiple classes,
+// not alphabetically sorted.
+
+.codicon-arrow-left {
+	@include icons.icon-big-arrow-left;
+}
+
+.codicon-arrow-right {
+	@include icons.icon-big-arrow-right;
+}
+
+.codicon-panel-maximize {
+	@include icons.icon-big-arrow-top;
+}
+
+.codicon-panel-restore {
+	@include icons.icon-big-arrow-bottom;
+}
+
+.monaco-workbench .part.basepanel.right {
+	.codicon-split-horizontal:before,
+	.codicon-panel-maximize:before,
+	.codicon-panel-restore:before {
+		transform: none;
+	}
+}
+
+// Override for eac5 in vscode.js
+.codicon-collapse-all,
+.codicon-debug-collapse-all,
+.codicon-search-collapse-results {
+	--button-img: icon("minimize", "mono");
+	--button-img-size: 6px 2px;
+	--button-img-pos: 4px 16px;
+}
+
+// Override for ea7c in vscode.js
+.codicon-more,
+.codicon-ellipsis,
+.codicon-kebab-horizontal,
+.codicon-menubar-more,
+.codicon-toolbar-more,
+.codicon-search-details {
+	--button-img-pos-x: 4px;
+	--button-img-pos-y: 5px;
+}
+
+// Large icons on the side ...
+.activitybar .codicon {
+	&.codicon-explorer-view-icon {
+		background-image: icon("folder-32");
+	}
+
+	&.codicon-search-view-icon {
+		background-image: icon("search-24");
+	}
+
+	&.codicon-source-control-view-icon {
+		background-image: icon("source-control-32");
+	}
+
+	&.codicon-run-view-icon {
+		background-image: icon("debug-32");
+	}
+
+	&.codicon-extensions-view-icon {
+		background-image: icon("extensions-32");
+	}
+
+	&.codicon-settings-view-bar-icon {
+		background-image: icon("settings-24");
+	}
+}
+
+/* ... and small icons for tabs. */
+// !important
+body
+	.monaco-workbench
+	.pane-composite-part
+	> .header-or-footer
+	> .composite-bar-container
+	> .composite-bar
+	> .monaco-action-bar
+	.action-item.icon
+	.action-label.codicon:not(.codicon-more) {
+	background: no-repeat center;
+
+	margin-bottom: -4px;
+
+	position: relative;
+	width: 16px;
+	height: 17px;
+	top: -3px;
+
+	&::before {
+		visibility: hidden;
+	}
+
+	&.codicon-explorer-view-icon {
+		background-image: icon("folder");
+	}
+
+	&.codicon-search-view-icon {
+		background-image: icon("file-search");
+	}
+
+	&.codicon-source-control-view-icon {
+		background-image: icon("source-control");
+	}
+
+	&.codicon-run-view-icon {
+		background-image: icon("debug");
+	}
+
+	&.codicon-extensions-view-icon {
+		background-image: icon("extensions");
+	}
+}

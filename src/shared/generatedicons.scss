@@ -3,6 +3,8 @@
 	--icon-mono-arrow-left: file("arrow-left", "mono");
 	--icon-mono-arrow-right: file("arrow-right", "mono");
 	--icon-mono-arrow-top: file("arrow-top", "mono");
+	--icon-mono-case-preserve: file("case-preserve", "mono");
+	--icon-mono-case-sensitive: file("case-sensitive", "mono");
 	--icon-mono-checkmark: file("checkmark", "mono");
 	--icon-mono-close: file("close", "mono");
 	--icon-mono-maximize: file("maximize", "mono");
@@ -13,9 +15,18 @@
 	--icon-mono-play: file("play", "mono");
 	--icon-mono-plus: file("plus", "mono");
 	--icon-mono-previous: file("previous", "mono");
+	--icon-mono-regex: file("regex", "mono");
 	--icon-mono-repeat: file("repeat", "mono");
+	--icon-mono-replace-all: file("replace-all", "mono");
 	--icon-mono-restore: file("restore", "mono");
 	--icon-mono-shuffle: file("shuffle", "mono");
+	--icon-mono-vscode-panel-bottom-off: file("vscode-panel-bottom-off", "mono");
+	--icon-mono-vscode-panel-bottom-on: file("vscode-panel-bottom-on", "mono");
+	--icon-mono-vscode-panel-left-off: file("vscode-panel-left-off", "mono");
+	--icon-mono-vscode-panel-left-on: file("vscode-panel-left-on", "mono");
+	--icon-mono-vscode-panel-right-off: file("vscode-panel-right-off", "mono");
+	--icon-mono-vscode-panel-right-on: file("vscode-panel-right-on", "mono");
+	--icon-mono-whole-word: file("whole-word", "mono");
 	--icon-normal-book: file("book", "normal");
 	--icon-normal-chat-bubble-alt: file("chat-bubble-alt", "normal");
 	--icon-normal-chat-bubble: file("chat-bubble", "normal");
@@ -60,6 +71,7 @@
 	--icon-normal-room-invite: file("room-invite", "normal");
 	--icon-normal-room-leave: file("room-leave", "normal");
 	--icon-normal-search-24: file("search-24", "normal");
+	--icon-normal-search: file("search", "normal");
 	--icon-normal-settings-24: file("settings-24", "normal");
 	--icon-normal-settings: file("settings", "normal");
 	--icon-normal-sidebar: file("sidebar", "normal");

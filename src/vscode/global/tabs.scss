@@ -56,26 +56,6 @@
 	}
 }
 
-.monaco-workbench
-	.part.editor
-	> .content
-	.editor-group-container.active
-	> .title
-	.tabs-container
-	> .tab.dirty
-	> .tab-actions
-	.action-label:not(:hover):before,
-.monaco-workbench
-	.part.editor
-	> .content
-	.editor-group-container
-	> .title
-	.tabs-container
-	> .tab.dirty
-	> .tab-actions
-	.action-label:not(:hover):before {
-}
-
 .tab-border-top-container,
 .tab-border-bottom-container {
 	display: none;

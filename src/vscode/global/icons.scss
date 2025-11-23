@@ -1,197 +1,287 @@
-@use "shared++/icons";
-@use "vscode/shared";
-
-// Single icon for multiple classes,
-// not alphabetically sorted.
-
 .codicon-alert,
 .codicon-warning,
+.codicon-dialog-warning,
 .codicon-extensions-warning-message,
 .codicon-markers-view-icon {
-	@include icons.icon-warning;
-
-	@include shared.replace-icon("9px");
+	--button-img: icon("warning-32", "normal");
 }
 
-.codicon-error,
-.codicon-stop,
-.codicon-extensions-error-message,
-.codicon-notebook-state-error,
-.codicon-testing-cancel-refresh-tests,
-.codicon-testing-failed-icon {
-	@include icons.icon-error;
-
-	@include shared.replace-icon("10px");
-}
-
-.codicon-filter,
-.codicon-extensions-filter,
-.codicon-find-filter,
-.codicon-preferences-filter,
-.codicon-testing-filter,
-.codicon-timeline-filter {
-	@include icons.icon-filter;
-}
-
-.codicon-arrow-left {
-	@include icons.icon-big-arrow-left;
-}
-
-.codicon-arrow-right {
-	@include icons.icon-big-arrow-right;
-}
-
-.codicon-auxiliarybar-right-layout-icon {
-	@include icons.icon-sidebar-right-on;
-}
-
-.codicon-auxiliarybar-right-off-layout-icon {
-	@include icons.icon-sidebar-right-off;
-}
-
-.codicon-bell {
-	@include icons.icon-bell;
-
-	--icon-img: var(--button-img);
-	@include shared.replace-icon("9px");
-}
-
-.codicon-case-sensitive {
-	@include icons.icon-case-sensitive;
-}
-
-.codicon-panel-layout-icon {
-	@include icons.icon-panel-on;
-}
-
-.codicon-panel-layout-off {
-	@include icons.icon-panel-off;
-}
-
-.codicon-panel-left {
-	@include icons.icon-panel-left-on;
-}
-
-.codicon-panel-left-off {
-	@include icons.icon-panel-left-off;
-}
-
-.codicon-panel-maximize {
-	@include icons.icon-big-arrow-top;
-}
-
-.codicon-panel-restore {
-	@include icons.icon-big-arrow-bottom;
-}
-
-.codicon-preserve-case {
-	@include icons.icon-match-case;
-}
-
-.codicon-regex {
-	@include icons.icon-regex;
-}
-
-.codicon-whole-word {
-	@include icons.icon-whole-word;
-}
-
-.monaco-workbench .part.basepanel.right {
-	.codicon-split-horizontal:before,
-	.codicon-panel-maximize:before,
-	.codicon-panel-restore:before {
-		transform: none;
-	}
-}
-
-// Override for eac5 in vscode.js
-.codicon-collapse-all,
-.codicon-debug-collapse-all,
-.codicon-search-collapse-results {
-	--button-img: icon("minimize", "mono");
-	--button-img-size: 6px 2px;
-	--button-img-pos: 4px 16px;
-}
-
-// Override for ea7c in vscode.js
 .codicon-more,
 .codicon-ellipsis,
 .codicon-kebab-horizontal,
 .codicon-menubar-more,
 .codicon-toolbar-more,
 .codicon-search-details {
-	--button-img-pos-x: 4px;
-	--button-img-pos-y: 5px;
+	--button-img: icon("overflow", "mono");
 }
 
-// Large icons on the side ...
-.activitybar .codicon {
-	&.codicon-explorer-view-icon {
-		background-image: icon("folder-32");
-	}
-
-	&.codicon-search-view-icon {
-		background-image: icon("search-24");
-	}
-
-	&.codicon-source-control-view-icon {
-		background-image: icon("source-control-32");
-	}
-
-	&.codicon-run-view-icon {
-		background-image: icon("debug-32");
-	}
-
-	&.codicon-extensions-view-icon {
-		background-image: icon("extensions-32");
-	}
-
-	&.codicon-settings-view-bar-icon {
-		background-image: icon("settings-24");
-	}
+.codicon-new-file,
+.codicon-file-add,
+.codicon-search-new-editor {
+	--button-img: icon("file-open", "normal");
 }
 
-/* ... and small icons for tabs. */
-// !important
-body
-	.monaco-workbench
-	.pane-composite-part
-	> .header-or-footer
-	> .composite-bar-container
-	> .composite-bar
-	> .monaco-action-bar
-	.action-item.icon
-	.action-label.codicon:not(.codicon-more) {
-	background: no-repeat center;
+.codicon-arrow-down,
+.codicon-goto-next-location,
+.codicon-find-next-match,
+.codicon-marker-navigation-next,
+.codicon-diff-editor-next-change,
+.codicon-notebook-move-down,
+.codicon-notebook-diff-editor-next-change {
+	--button-img: icon("arrow-bottom", "mono");
+}
 
-	margin-bottom: -4px;
+.codicon-add,
+.codicon-plus,
+.codicon-gist-new,
+.codicon-repo-create,
+.codicon-diff-review-insert,
+.codicon-diff-insert,
+.codicon-hover-increase-verbosity,
+.codicon-ports-forward-icon,
+.codicon-keybindings-add,
+.codicon-watch-expressions-add,
+.codicon-watch-expressions-add-function-breakpoint,
+.codicon-terminal-new {
+	--button-img: icon("plus", "mono");
+}
 
-	position: relative;
-	width: 16px;
-	height: 17px;
-	top: -3px;
+.codicon-info,
+.codicon-issue-opened,
+.codicon-dialog-info,
+.codicon-extensions-info-message {
+	--button-img: icon("question-32", "normal");
+}
 
-	&::before {
-		visibility: hidden;
-	}
+.codicon-gist-private,
+.codicon-git-fork-private,
+.codicon-lock,
+.codicon-mirror-private,
+.codicon-private-ports-view-icon,
+.codicon-extensions-private {
+	--button-img: icon("padlock", "normal");
+}
 
-	&.codicon-explorer-view-icon {
-		background-image: icon("folder");
-	}
+.codicon-close,
+.codicon-remove-close,
+.codicon-x,
+.codicon-dialog-close,
+.codicon-tree-filter-clear,
+.codicon-widget-close,
+.codicon-diff-review-close,
+.codicon-panel-close,
+.codicon-auxiliarybar-close,
+.codicon-ports-stop-forward-icon,
+.codicon-settings-remove,
+.codicon-watch-expression-remove,
+.codicon-search-remove,
+.codicon-terminal-command-history-remove,
+.codicon-tasks-remove,
+.codicon-profiles-editor-remove-folder,
+.codicon-workspace-trust-editor-cross,
+.codicon-workspace-trust-editor-remove-folder,
+.codicon-notifications-clear {
+	--button-img: icon("close", "mono");
+}
 
-	&.codicon-search-view-icon {
-		background-image: icon("file-search");
-	}
+.codicon-new-folder,
+.codicon-file-directory-create {
+	--button-img: icon("folder-add", "normal");
+}
 
-	&.codicon-source-control-view-icon {
-		background-image: icon("source-control");
-	}
+.codicon-trash,
+.codicon-trashcan,
+.codicon-notebook-delete-cell,
+.codicon-debug-remove-config,
+.codicon-terminal-kill {
+	--button-img: icon("clear", "normal");
+}
 
-	&.codicon-run-view-icon {
-		background-image: icon("debug");
-	}
+.codicon-symbol-reference,
+.codicon-go-to-file,
+.codicon-preferences-open-settings,
+.codicon-search-open-in-file,
+.codicon-terminal-command-history-open-file {
+	--button-img: icon("file-preview", "normal");
+}
 
-	&.codicon-extensions-view-icon {
-		background-image: icon("extensions");
-	}
+.codicon-arrow-up,
+.codicon-goto-previous-location,
+.codicon-find-previous-match,
+.codicon-marker-navigation-previous,
+.codicon-quickInputAlignmentTop,
+.codicon-diff-editor-previous-change,
+.codicon-notebook-move-up,
+.codicon-notebook-diff-editor-previous-change {
+	--button-img: icon("arrow-top", "mono");
+}
+
+.codicon-book,
+.codicon-remote-explorer-documentation,
+.codicon-open-editors-view-icon {
+	--button-img: icon("book", "normal");
+}
+
+.codicon-case-sensitive {
+	--button-img: icon("case-sensitive", "mono");
+}
+
+.codicon-chevron-down,
+.codicon-tree-item-expanded,
+.codicon-drop-down-button,
+.codicon-find-expanded,
+.codicon-folding-expanded,
+.codicon-folding-manual-expanded,
+.codicon-parameter-hints-next,
+.codicon-view-pane-container-expanded,
+.codicon-notebook-expanded,
+.codicon-search-show-replace,
+.codicon-markers-view-multi-line-collapsed,
+.codicon-notifications-hide,
+.codicon-notifications-collapse {
+	--button-img: icon("arrow-bottom", "mono");
+}
+
+.codicon-chevron-left,
+.codicon-inline-suggestion-hints-previous {
+	--button-img: icon("arrow-left", "mono");
+}
+
+.codicon-chevron-right,
+.codicon-menu-submenu,
+.codicon-inline-suggestion-hints-next,
+.codicon-find-collapsed,
+.codicon-folding-collapsed,
+.codicon-folding-manual-collapsed,
+.codicon-suggest-more-info,
+.codicon-view-pane-container-collapsed,
+.codicon-breadcrumb-separator,
+.codicon-notebook-collapsed,
+.codicon-debug-console-evaluation-prompt,
+.codicon-search-hide-replace {
+	--button-img: icon("arrow-right", "mono");
+}
+
+.codicon-clear-all,
+.codicon-preferences-clear-input,
+.codicon-notebook-clear,
+.codicon-extensions-clear-search-results,
+.codicon-debug-console-clear-all,
+.codicon-search-clear-results,
+.codicon-notifications-clear-all {
+	--button-img: icon("clear", "normal");
+}
+
+.codicon-filter,
+.codicon-preferences-filter,
+.codicon-extensions-filter,
+.codicon-find-filter,
+.codicon-testing-filter,
+.codicon-timeline-filter {
+	--button-img: icon("search", "normal");
+}
+
+.codicon-gear,
+.codicon-settings-more-action,
+.codicon-extensions-manage,
+.codicon-debug-configure,
+.codicon-testing-update-profiles,
+.codicon-terminal-configure-profile,
+.codicon-tasks-list-configure,
+.codicon-theme-selection-manage-extension,
+.codicon-notifications-configure {
+	--button-img: icon("settings", "normal");
+}
+
+.codicon-git-compare,
+.codicon-compare-changes {
+	--button-img: icon("file-preview", "normal");
+}
+
+.codicon-preserve-case {
+	--button-img: icon("case-preserve", "mono");
+}
+
+.codicon-replace-all,
+.codicon-find-replace-all,
+.codicon-search-replace-all {
+	--button-img: icon("replace-all", "mono");
+}
+
+.codicon-screen-full,
+.codicon-panel-maximize,
+.codicon-auxiliarybar-maximize,
+.codicon-fullscreen {
+	--button-img: icon("arrow-top", "mono");
+}
+
+.codicon-whole-word {
+	--button-img: icon("whole-word", "mono");
+}
+
+.codicon-refresh,
+.codicon-rerun-task,
+.codicon-extensions-refresh,
+.codicon-search-refresh,
+.codicon-testing-refresh-tests,
+.codicon-timeline-refresh {
+	--button-img: icon("reload", "normal");
+}
+
+.codicon-regex {
+	--button-img: icon("regex", "mono");
+}
+
+.codicon-settings-gear,
+.codicon-settings-view-bar-icon {
+	--button-img: icon("settings", "normal");
+}
+
+.codicon-split-horizontal {
+	--button-img: icon("sidebar", "normal");
+}
+
+.codicon-list-flat,
+.codicon-search-list {
+	--button-img: icon("list", "normal");
+}
+
+.codicon-layout,
+.codicon-configure-layout-icon {
+	--button-img: icon("window-edit", "normal");
+}
+
+.codicon-layout-panel,
+.codicon-panel-layout-icon,
+.codicon-panel-bottom {
+	--button-img: icon("vscode-panel-bottom-on", "mono");
+}
+
+.codicon-layout-sidebar-left,
+.codicon-auxiliarybar-left-layout-icon,
+.codicon-panel-left {
+	--button-img: icon("vscode-panel-left-on", "mono");
+}
+
+.codicon-layout-sidebar-right,
+.codicon-auxiliarybar-right-layout-icon,
+.codicon-panel-right {
+	--button-img: icon("vscode-panel-right-on", "mono");
+}
+
+.codicon-layout-sidebar-right-off,
+.codicon-auxiliarybar-right-off-layout-icon,
+.codicon-panel-right-off {
+	--button-img: icon("vscode-panel-right-off", "mono");
+}
+
+.codicon-layout-panel-off,
+.codicon-panel-layout-icon-off {
+	--button-img: icon("vscode-panel-bottom-off", "mono");
+}
+
+.codicon-layout-sidebar-left-off,
+.codicon-auxiliarybar-left-off-layout-icon,
+.codicon-panel-left-off {
+	--button-img: icon("vscode-panel-left-off", "mono");
 }
