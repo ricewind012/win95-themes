@@ -1,7 +1,6 @@
 @use "shared/controls";
 @use "shared/tree";
 @use "shared/window";
-@use "shared++/icons";
 @use "shared++/utils";
 @use "steam/shared";
 
@@ -77,8 +76,7 @@
 }
 
 .addFriendButton {
-	@include icons.icon-plus;
-	--button-img-pos: center;
+	--button-img: icon("plus", "mono");
 	@include controls.button;
 	@include controls.icon-button;
 }

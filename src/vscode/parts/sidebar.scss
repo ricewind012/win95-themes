@@ -102,7 +102,7 @@
 
 			.action-label {
 				@include controls.button;
-				@include window.titlebar-button;
+				@include controls.icon-button;
 			}
 		}
 	}

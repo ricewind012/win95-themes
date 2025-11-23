@@ -1,222 +1,9 @@
-@use "shared/window";
-@use "shared++/icons";
-@use "vscode/shared";
-
-// Single icon for multiple classes,
-// not alphabetically sorted.
-// TODO(scss): use a map, hell yeah
-.codicon-chevron-left,
-.codicon-inline-suggestion-hints-previous {
-	--icon-img: icon("arrow-left", "mono");
-	--button-img: var(--icon-img);
-	--button-img-size: 4px 7px;
-	--button-img-pos: 4px center;
-}
-
-.codicon-chevron-up,
-.codicon-parameter-hints-previous,
-.codicon-notifications-expand,
-.codicon-review-comment-collapse,
-.codicon-markers-view-multi-line-expanded,
-.codicon-panel-maximize {
-	--icon-img: icon("arrow-top", "mono");
-	--button-img: var(--icon-img);
-	--button-img-size: 7px 4px;
-	--button-img-pos: 4px center;
-}
-
-.codicon-chevron-right,
-.codicon-menu-submenu,
-.codicon-suggest-more-info,
-.codicon-find-collapsed,
-.codicon-inline-suggestion-hints-next,
-.codicon-debug-console-evaluation-prompt,
-.codicon-notebook-collapsed,
-.codicon-search-hide-replace,
-.codicon-view-pane-container-collapsed,
-.codicon-breadcrumb-separator {
-	--icon-img: icon("arrow-right", "mono");
-	--button-img: var(--icon-img);
-	--button-img-size: 4px 7px;
-	--button-img-pos: 4px center;
-}
-.codicon-folding-collapsed,
-.codicon-folding-manual-collapsed {
-	--icon-img: icon("arrow-right", "mono");
-	@include shared.replace-icon("" 4px ", " 7px "");
-}
-
-.codicon-chevron-down,
-.codicon-drop-down-button,
-.codicon-tree-item-expanded,
-.codicon-parameter-hints-next,
-.codicon-find-expanded,
-.codicon-notifications-hide,
-.codicon-notifications-collapse,
-.codicon-notebook-expanded,
-.codicon-search-show-replace,
-.codicon-markers-view-multi-line-collapsed,
-.codicon-view-pane-container-expanded,
-.codicon-panel-restore {
-	--icon-img: icon("arrow-bottom", "mono");
-	--button-img: var(--icon-img);
-	--button-img-size: 7px 4px;
-	--button-img-pos: 4px center;
-}
-.codicon-folding-expanded,
-.codicon-folding-manual-expanded {
-	--icon-img: icon("arrow-bottom", "mono");
-	@include shared.replace-icon("" 7px ", " 4px "");
-}
-
-.codicon-add,
-.codicon-plus,
-.codicon-gist-new,
-.codicon-repo-create,
-.codicon-diff-review-insert,
-.codicon-diff-insert,
-.codicon-watch-expressions-add,
-.codicon-watch-expressions-add-function-breakpoint,
-.codicon-keybindings-add,
-.codicon-ports-forward-icon,
-.codicon-terminal-new {
-	@include icons.icon-plus;
-}
-
 .codicon-alert,
 .codicon-warning,
+.codicon-dialog-warning,
 .codicon-extensions-warning-message,
 .codicon-markers-view-icon {
-	@include icons.icon-warning;
-
-	@include shared.replace-icon("9px");
-}
-
-.codicon-book,
-.codicon-remote-explorer-documentation,
-.codicon-open-editors-view-icon {
-	@include icons.icon-book;
-}
-
-.codicon-clear-all,
-.codicon-debug-console-clear-all,
-.codicon-extensions-clear-search-results,
-.codicon-notebook-clear,
-.codicon-notifications-clear-all,
-.codicon-preferences-clear-input,
-.codicon-search-clear-results {
-	@include icons.icon-clear;
-}
-
-.codicon-notifications-hide,
-.codicon-notifications-collapse,
-.codicon-close,
-.titlebar .codicon-chrome-close,
-.codicon-dialog-close,
-.codicon-diff-review-close,
-.codicon-notifications-clear,
-.codicon-panel-close,
-.codicon-ports-stop-forward-icon,
-.codicon-remove-close,
-.codicon-search-remove,
-.codicon-settings-remove,
-.codicon-tasks-remove,
-.codicon-terminal-command-history-remove,
-.codicon-tree-filter-clear,
-.codicon-watch-expression-remove,
-.codicon-widget-close,
-.codicon-workspace-trust-editor-cross,
-.codicon-workspace-trust-editor-remove-folder,
-.codicon-x {
-	@include window.titlebar-button-close;
-}
-
-.codicon-collapse-all,
-.codicon-debug-collapse-all,
-.codicon-search-collapse-results {
-	@include icons.icon-collapse;
-}
-
-.codicon-error,
-.codicon-stop,
-.codicon-extensions-error-message,
-.codicon-notebook-state-error,
-.codicon-testing-cancel-refresh-tests,
-.codicon-testing-failed-icon {
-	@include icons.icon-error;
-
-	@include shared.replace-icon("10px");
-}
-
-.codicon-symbol-reference,
-.codicon-go-to-file,
-.codicon-preferences-open-settings,
-.codicon-search-open-in-file {
-	@include icons.icon-go-to-file;
-}
-
-.codicon-filter,
-.codicon-extensions-filter,
-.codicon-find-filter,
-.codicon-preferences-filter,
-.codicon-testing-filter,
-.codicon-timeline-filter {
-	@include icons.icon-filter;
-}
-
-.codicon-gist-private,
-.codicon-git-fork-private,
-.codicon-lock,
-.codicon-mirror-private,
-.codicon-private-ports-view-icon {
-	@include icons.icon-lock;
-}
-
-// Everything, except the last one, are different, but look similiar
-.codicon-list-selection,
-.codicon-selection,
-.codicon-tree-filter-on-type-off,
-.codicon-find-selection,
-.codicon-search-show-context,
-.codicon-list-flat {
-	@include icons.icon-list;
-}
-
-.codicon-refresh,
-.codicon-extensions-refresh,
-.codicon-search-refresh,
-.codicon-testing-rerun-icon,
-.codicon-testing-refresh-tests,
-.codicon-timeline-refresh {
-	@include icons.icon-refresh;
-}
-
-.codicon-gear,
-.codicon-notifications-configure,
-.codicon-debug-configure,
-.codicon-extensions-manage,
-.codicon-settings-gear,
-.codicon-settings-view-bar-icon,
-.codicon-settings-more-action,
-.codicon-terminal-rename,
-.codicon-terminal-configure-profile,
-.codicon-testing-update-profiles,
-.codicon-tasks-list-configure,
-.codicon-theme-selection-manage-extension {
-	@include icons.icon-settings;
-
-	&::before {
-		height: 13px;
-	}
-}
-
-.codicon-discard,
-.codicon-trash,
-.codicon-trashcan,
-.codicon-debug-remove-config,
-.codicon-notebook-delete-cell,
-.codicon-terminal-kill {
-	@include icons.icon-trash;
+	--button-img: icon("warning-32", "normal");
 }
 
 .codicon-more,
@@ -225,213 +12,276 @@
 .codicon-menubar-more,
 .codicon-toolbar-more,
 .codicon-search-details {
-	@include icons.icon-more;
-}
-/* end */
-
-/* Dialogs */
-.codicon-info,
-.codicon-shield,
-.codicon-dialog-warning {
-	background-image: icon("warning-32");
-}
-
-.codicon-dialog-info {
-	background-image: icon("question-32");
-}
-/* end */
-
-.codicon-arrow-left,
-.codicon-arrow-right {
-	--button-img-size: 4px 7px;
-	--button-img-pos: 5px 3px;
-}
-
-.codicon-arrow-left {
-	--button-img: icon("arrow-left", "mono");
-}
-
-.codicon-arrow-right {
-	--button-img: icon("arrow-right", "mono");
-}
-
-.codicon-auxiliarybar-right-layout-icon {
-	@include icons.icon-sidebar-right-on;
-}
-
-.codicon-auxiliarybar-right-off-layout-icon {
-	@include icons.icon-sidebar-right-off;
-}
-
-.codicon-bell {
-	@include icons.icon-bell;
-
-	--icon-img: var(--button-img);
-	@include shared.replace-icon("9px");
-}
-
-.codicon-chrome-maximize {
-	@include window.titlebar-button-maximize;
-}
-
-.codicon-chrome-minimize {
-	@include window.titlebar-button-minimize;
-}
-
-.codicon-chrome-restore {
-	@include window.titlebar-button-restore;
-}
-
-.codicon-configure-layout-icon {
-	@include icons.icon-layout;
-}
-
-.codicon-case-sensitive {
-	@include icons.icon-case-sensitive;
-}
-
-.codicon-list-tree {
-	@include icons.icon-tree;
-}
-
-.codicon-menu-submenu {
-	--icon-img: icon("arrow-right", "mono");
-	--button-img: var(--icon-img);
-	@include shared.replace-icon("" 4px ", " 7px "");
-
-	.action-menu-item:hover > & {
-		--color-button-text: var(--color-highlight-text);
-	}
+	--button-img: icon("overflow", "mono");
 }
 
 .codicon-new-file,
 .codicon-file-add,
 .codicon-search-new-editor {
-	@include icons.icon-new-file;
+	--button-img: icon("file-open", "normal");
 }
 
-.codicon-new-folder {
-	@include icons.icon-new-folder;
-}
-
-.codicon-panel-layout-icon {
-	@include icons.icon-panel-on;
-}
-
-.codicon-panel-layout-off {
-	@include icons.icon-panel-off;
-}
-
-.codicon-panel-left {
-	@include icons.icon-panel-left-on;
-}
-
-.codicon-panel-left-off {
-	@include icons.icon-panel-left-off;
-}
-
-.codicon-panel-maximize,
-.codicon-panel-restore {
-	--button-img-size: 7px 4px;
-	--button-img-pos: 4px center;
-}
-
-.codicon-panel-maximize {
-	--button-img: icon("arrow-top", "mono");
-}
-
-.codicon-panel-restore {
+.codicon-arrow-down,
+.codicon-goto-next-location,
+.codicon-find-next-match,
+.codicon-marker-navigation-next,
+.codicon-diff-editor-next-change,
+.codicon-notebook-move-down,
+.codicon-notebook-diff-editor-next-change {
 	--button-img: icon("arrow-bottom", "mono");
 }
 
+.codicon-add,
+.codicon-plus,
+.codicon-gist-new,
+.codicon-repo-create,
+.codicon-diff-review-insert,
+.codicon-diff-insert,
+.codicon-hover-increase-verbosity,
+.codicon-ports-forward-icon,
+.codicon-keybindings-add,
+.codicon-watch-expressions-add,
+.codicon-watch-expressions-add-function-breakpoint,
+.codicon-terminal-new {
+	--button-img: icon("plus", "mono");
+}
+
+.codicon-info,
+.codicon-issue-opened,
+.codicon-dialog-info,
+.codicon-extensions-info-message {
+	--button-img: icon("question-32", "normal");
+}
+
+.codicon-gist-private,
+.codicon-git-fork-private,
+.codicon-lock,
+.codicon-mirror-private,
+.codicon-private-ports-view-icon,
+.codicon-extensions-private {
+	--button-img: icon("padlock", "normal");
+}
+
+.codicon-close,
+.codicon-remove-close,
+.codicon-x,
+.codicon-dialog-close,
+.codicon-tree-filter-clear,
+.codicon-widget-close,
+.codicon-diff-review-close,
+.codicon-panel-close,
+.codicon-auxiliarybar-close,
+.codicon-ports-stop-forward-icon,
+.codicon-settings-remove,
+.codicon-watch-expression-remove,
+.codicon-search-remove,
+.codicon-terminal-command-history-remove,
+.codicon-tasks-remove,
+.codicon-profiles-editor-remove-folder,
+.codicon-workspace-trust-editor-cross,
+.codicon-workspace-trust-editor-remove-folder,
+.codicon-notifications-clear {
+	--button-img: icon("close", "mono");
+}
+
+.codicon-new-folder,
+.codicon-file-directory-create {
+	--button-img: icon("folder-add", "normal");
+}
+
+.codicon-trash,
+.codicon-trashcan,
+.codicon-notebook-delete-cell,
+.codicon-debug-remove-config,
+.codicon-terminal-kill {
+	--button-img: icon("clear", "normal");
+}
+
+.codicon-symbol-reference,
+.codicon-go-to-file,
+.codicon-preferences-open-settings,
+.codicon-search-open-in-file,
+.codicon-terminal-command-history-open-file {
+	--button-img: icon("file-preview", "normal");
+}
+
+.codicon-arrow-up,
+.codicon-goto-previous-location,
+.codicon-find-previous-match,
+.codicon-marker-navigation-previous,
+.codicon-quickInputAlignmentTop,
+.codicon-diff-editor-previous-change,
+.codicon-notebook-move-up,
+.codicon-notebook-diff-editor-previous-change {
+	--button-img: icon("arrow-top", "mono");
+}
+
+.codicon-book,
+.codicon-remote-explorer-documentation,
+.codicon-open-editors-view-icon {
+	--button-img: icon("book", "normal");
+}
+
+.codicon-case-sensitive {
+	--button-img: icon("case-sensitive", "mono");
+}
+
+.codicon-chevron-down,
+.codicon-tree-item-expanded,
+.codicon-drop-down-button,
+.codicon-find-expanded,
+.codicon-folding-expanded,
+.codicon-folding-manual-expanded,
+.codicon-parameter-hints-next,
+.codicon-view-pane-container-expanded,
+.codicon-notebook-expanded,
+.codicon-search-show-replace,
+.codicon-markers-view-multi-line-collapsed,
+.codicon-notifications-hide,
+.codicon-notifications-collapse {
+	--button-img: icon("arrow-bottom", "mono");
+}
+
+.codicon-chevron-left,
+.codicon-inline-suggestion-hints-previous {
+	--button-img: icon("arrow-left", "mono");
+}
+
+.codicon-chevron-right,
+.codicon-menu-submenu,
+.codicon-inline-suggestion-hints-next,
+.codicon-find-collapsed,
+.codicon-folding-collapsed,
+.codicon-folding-manual-collapsed,
+.codicon-suggest-more-info,
+.codicon-view-pane-container-collapsed,
+.codicon-breadcrumb-separator,
+.codicon-notebook-collapsed,
+.codicon-debug-console-evaluation-prompt,
+.codicon-search-hide-replace {
+	--button-img: icon("arrow-right", "mono");
+}
+
+.codicon-clear-all,
+.codicon-preferences-clear-input,
+.codicon-notebook-clear,
+.codicon-extensions-clear-search-results,
+.codicon-debug-console-clear-all,
+.codicon-search-clear-results,
+.codicon-notifications-clear-all {
+	--button-img: icon("clear", "normal");
+}
+
+.codicon-filter,
+.codicon-preferences-filter,
+.codicon-extensions-filter,
+.codicon-find-filter,
+.codicon-testing-filter,
+.codicon-timeline-filter {
+	--button-img: icon("search", "normal");
+}
+
+.codicon-gear,
+.codicon-settings-more-action,
+.codicon-extensions-manage,
+.codicon-debug-configure,
+.codicon-testing-update-profiles,
+.codicon-terminal-configure-profile,
+.codicon-tasks-list-configure,
+.codicon-theme-selection-manage-extension,
+.codicon-notifications-configure {
+	--button-img: icon("settings", "normal");
+}
+
+.codicon-git-compare,
+.codicon-compare-changes {
+	--button-img: icon("file-preview", "normal");
+}
+
 .codicon-preserve-case {
-	@include icons.icon-match-case;
+	--button-img: icon("case-preserve", "mono");
 }
 
-.codicon-regex {
-	@include icons.icon-regex;
+.codicon-replace-all,
+.codicon-find-replace-all,
+.codicon-search-replace-all {
+	--button-img: icon("replace-all", "mono");
 }
 
-.codicon-search-list {
-	@include icons.icon-list;
-}
-
-.codicon-split-horizontal {
-	@include icons.icon-split-horizontal;
+.codicon-screen-full,
+.codicon-panel-maximize,
+.codicon-auxiliarybar-maximize,
+.codicon-fullscreen {
+	--button-img: icon("arrow-top", "mono");
 }
 
 .codicon-whole-word {
-	@include icons.icon-whole-word;
+	--button-img: icon("whole-word", "mono");
 }
 
-// Large icons on the side ...
-.activitybar .codicon {
-	&.codicon-explorer-view-icon {
-		background-image: icon("folder-32");
-	}
-
-	&.codicon-search-view-icon {
-		background-image: icon("search-24");
-	}
-
-	&.codicon-source-control-view-icon {
-		background-image: icon("source-control-32");
-	}
-
-	&.codicon-run-view-icon {
-		background-image: icon("debug-32");
-	}
-
-	&.codicon-extensions-view-icon {
-		background-image: icon("extensions-32");
-	}
-
-	&.codicon-settings-view-bar-icon {
-		background-image: icon("settings-24");
-	}
+.codicon-refresh,
+.codicon-rerun-task,
+.codicon-extensions-refresh,
+.codicon-search-refresh,
+.codicon-testing-refresh-tests,
+.codicon-timeline-refresh {
+	--button-img: icon("reload", "normal");
 }
 
-/* ... and small icons for tabs. */
-// !important
-body
-	.monaco-workbench
-	.pane-composite-part
-	> .header-or-footer
-	> .composite-bar-container
-	> .composite-bar
-	> .monaco-action-bar
-	.action-item.icon
-	.action-label.codicon:not(.codicon-more) {
-	background: no-repeat center;
+.codicon-regex {
+	--button-img: icon("regex", "mono");
+}
 
-	margin-bottom: -4px;
+.codicon-settings-gear,
+.codicon-settings-view-bar-icon {
+	--button-img: icon("settings", "normal");
+}
 
-	position: relative;
-	width: 16px;
-	height: 17px;
-	top: -3px;
+.codicon-split-horizontal {
+	--button-img: icon("sidebar", "normal");
+}
 
-	&::before {
-		visibility: hidden;
-	}
+.codicon-list-flat,
+.codicon-search-list {
+	--button-img: icon("list", "normal");
+}
 
-	&.codicon-explorer-view-icon {
-		background-image: icon("folder");
-	}
+.codicon-layout,
+.codicon-configure-layout-icon {
+	--button-img: icon("window-edit", "normal");
+}
 
-	&.codicon-search-view-icon {
-		background-image: icon("file-search");
-	}
+.codicon-layout-panel,
+.codicon-panel-layout-icon,
+.codicon-panel-bottom {
+	--button-img: icon("vscode-panel-bottom-on", "mono");
+}
 
-	&.codicon-source-control-view-icon {
-		background-image: icon("source-control");
-	}
+.codicon-layout-sidebar-left,
+.codicon-auxiliarybar-left-layout-icon,
+.codicon-panel-left {
+	--button-img: icon("vscode-panel-left-on", "mono");
+}
 
-	&.codicon-run-view-icon {
-		background-image: icon("debug");
-	}
+.codicon-layout-sidebar-right,
+.codicon-auxiliarybar-right-layout-icon,
+.codicon-panel-right {
+	--button-img: icon("vscode-panel-right-on", "mono");
+}
 
-	&.codicon-extensions-view-icon {
-		background-image: icon("extensions");
-	}
+.codicon-layout-sidebar-right-off,
+.codicon-auxiliarybar-right-off-layout-icon,
+.codicon-panel-right-off {
+	--button-img: icon("vscode-panel-right-off", "mono");
+}
+
+.codicon-layout-panel-off,
+.codicon-panel-layout-icon-off {
+	--button-img: icon("vscode-panel-bottom-off", "mono");
+}
+
+.codicon-layout-sidebar-left-off,
+.codicon-auxiliarybar-left-off-layout-icon,
+.codicon-panel-left-off {
+	--button-img: icon("vscode-panel-left-off", "mono");
 }

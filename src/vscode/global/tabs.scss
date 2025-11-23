@@ -1,4 +1,5 @@
 @use "shared/tabs";
+@use "shared/window";
 @use "shared++/utils";
 
 :where([role="tab"]) {
@@ -11,8 +12,7 @@
 	}
 
 	.action-label {
-		font-size: var(--text-ui-size);
-		font-family: var(--text-ui-font), codicon;
+		font: var(--text-ui);
 		color: inherit;
 		padding: 0;
 	}
@@ -39,6 +39,19 @@
 			.tabs-container
 			> &:hover {
 			background-color: var(--color-button-face);
+		}
+	}
+
+	&.dirty:hover,
+	&:not(.dirty) {
+		.codicon-close::before {
+			content: "";
+
+			width: 8px;
+			height: 7px;
+
+			background-color: currentColor;
+			mask: icon("close", "mono");
 		}
 	}
 }
@@ -139,7 +152,7 @@
 				@include tabs.content;
 
 				padding: var(--s);
-				padding-top: calc(var(--s) + 17px);
+				padding-top: calc(var(--s) + var(--icon-button-height) + 4px);
 
 				.pane-header {
 					margin-bottom: 2px;
@@ -150,7 +163,7 @@
 				}
 
 				&:not(.extensions-viewlet) .monaco-list {
-					height: calc(100% - 3px);
+					height: calc(100% - 12px);
 				}
 			}
 		}

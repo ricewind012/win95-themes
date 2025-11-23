@@ -2,7 +2,7 @@
 
 // TODO: go away
 @mixin -overflow-icon {
-	mask-image: icon("overflow");
+	mask-image: icon("overflow", "mono");
 	mask-size: 8px 5px;
 	mask-position: center 2px;
 	mask-repeat: no-repeat;

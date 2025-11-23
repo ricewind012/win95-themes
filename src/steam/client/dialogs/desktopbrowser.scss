@@ -1,5 +1,4 @@
 @use "shared/controls";
-@use "shared++/icons";
 @use "shared++/utils";
 
 #BrowserTab {
@@ -11,10 +10,9 @@
 
 	// New tab button
 	#BrowserTabs > & {
+		--button-img: icon("plus", "mono");
 		@include controls.button;
 		@include controls.icon-button;
-		@include icons.icon-plus;
-		--button-img-pos: center;
 
 		min-width: var(--tab-button-height);
 		height: var(--tab-button-height);
