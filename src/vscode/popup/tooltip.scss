@@ -2,19 +2,7 @@
 
 .workbench-hover,
 .monaco-hover {
-	// TODO
-	--tooltip-spacing: 3px;
-	--vscode-editorHoverWidget-border: var(--color-button-shadow-dark);
-
-	@include controls.tooltip;
-
 	animation: none;
-
-	// Text
-	.hover-language-status,
-	.hover-contents {
-		padding: var(--tooltip-spacing);
-	}
 }
 
 // Arrow
@@ -51,6 +39,11 @@
 	}
 }
 
+.monaco-resizable-hover {
+	// for the border
+	box-sizing: content-box;
+}
+
 .parameter-hints-widget {
 	@extend .monaco-hover;
 
@@ -75,4 +68,9 @@
 	.docs {
 		padding: 0 var(--tooltip-spacing);
 	}
+}
+
+// Fix the plus codicon (wtf)
+.verbosity-actions {
+	box-sizing: content-box;
 }

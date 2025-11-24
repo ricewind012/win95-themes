@@ -91,8 +91,8 @@
 	--vscode-extensionButton-prominentForeground: var(--color-button-text);
 
 	// Tooltip
-	--vscode-editorHoverWidget-background: var(--color-info-background);
-	--vscode-editorHoverWidget-foreground: var(--color-button-text);
+	--vscode-editorHoverWidget-background: var(--color-tooltip);
+	--vscode-editorHoverWidget-foreground: var(--color-tooltip-text);
 	--vscode-editorHoverWidget-border: var(--color-button-shadow-dark);
 
 	// Menu
