@@ -1,6 +1,4 @@
 @use "shared/controls";
-@use "shared/window";
-@use "shared++/icons";
 
 #CachedAccountName,
 #CachedName {
@@ -55,8 +53,8 @@
 }
 
 #MoreMenuButton {
-	@include window.titlebar-button;
-	@include icons.icon-more;
+	--button-img: icon("overflow" . "mono");
+	@include controls.icon-button;
 
 	opacity: 1;
 

@@ -1,5 +1,4 @@
 @use "shared/controls";
-@use "shared++/icons";
 @use "shared++/utils";
 
 $-sel-arrow-back: "> :nth-child(3)";
@@ -12,7 +11,7 @@ $-sel-arrow-forward: "> :nth-child(4)";
 	&::after {
 		@include utils.pseudo-icon;
 
-		top: var(--icon-offset);
+		top: 0;
 		width: var(--icon-width);
 		height: var(--icon-height);
 
@@ -34,7 +33,7 @@ $-sel-arrow-forward: "> :nth-child(4)";
 	&::after {
 		background-color: var(--color-button-highlight);
 
-		top: calc(var(--icon-offset) + var(--icon-disabled-offset));
+		top: var(--icon-disabled-offset);
 	}
 }
 
@@ -70,8 +69,6 @@ $-sel-arrow-forward: "> :nth-child(4)";
 #SuperNav {
 	--icon-width: var(--steamdesktop_icon-button-size);
 	--icon-height: var(--steamdesktop_icon-button-size);
-	// The buttons are bigger, hence the offset
-	--icon-offset: 1px;
 	--icon-disabled-offset: 1px;
 
 	padding-bottom: 2px;
@@ -82,21 +79,21 @@ $-sel-arrow-forward: "> :nth-child(4)";
 	// Use other buttons as icons, as svgs can not have pseudo-elements
 	#{$-sel-arrow-back} {
 		@extend %-arrow;
-		@include icons.icon-big-arrow-left;
+		--button-img: icon("arrow-big-left", "mono");
 
 		&::before,
 		&::after {
-			left: var(--icon-offset);
+			left: 0;
 		}
 	}
 
 	#{$-sel-arrow-forward} {
 		@extend %-arrow;
-		@include icons.icon-big-arrow-right;
+		--button-img: icon("arrow-big-right", "mono");
 
 		&::before,
 		&::after {
-			left: calc(var(--icon-offset) + var(--icon-width));
+			left: var(--icon-width);
 		}
 	}
 
@@ -104,7 +101,7 @@ $-sel-arrow-forward: "> :nth-child(4)";
 		@extend %-arrow-disabled;
 
 		&::after {
-			left: calc(var(--icon-offset) + var(--icon-disabled-offset));
+			left: var(--icon-disabled-offset);
 		}
 	}
 
@@ -112,9 +109,7 @@ $-sel-arrow-forward: "> :nth-child(4)";
 		@extend %-arrow-disabled;
 
 		&::after {
-			left: calc(
-				var(--icon-offset) + var(--icon-width) + var(--icon-disabled-offset)
-			);
+			left: calc(var(--icon-width) + var(--icon-disabled-offset));
 		}
 	}
 }

@@ -1,5 +1,4 @@
 @use "shared/controls";
-@use "shared++/icons";
 @use "shared++/utils";
 @use "steam/shared";
 
@@ -41,11 +40,11 @@
 		}
 
 		&#ScrollButton#Down {
-			@include icons.icon-big-arrow-bottom;
+			--button-img: icon("arrow-big-lebottomft", "mono");
 		}
 
 		&#ScrollButton#Up {
-			@include icons.icon-big-arrow-top;
+			--button-img: icon("arrow-big-top", "mono");
 		}
 	}
 

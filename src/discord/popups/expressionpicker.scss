@@ -2,17 +2,16 @@
 @use "shared/table";
 @use "shared/window";
 @use "shared++/utils";
-@use "shared++/icons";
 
 // GIF picker
 .container_fed6d3 {
 	--offset: 6px;
 
 	.backButton_fed6d3 {
+		--button-img: icon("arrow-big-left", "mono");
 		@include controls.button;
 		// TODO: idk
 		@include window.titlebar-button;
-		@include icons.icon-big-arrow-left;
 
 		min-width: 23px;
 		height: 22px;

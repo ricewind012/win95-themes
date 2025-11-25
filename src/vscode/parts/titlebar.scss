@@ -1,5 +1,4 @@
 @use "shared/controls";
-@use "shared++/icons";
 
 .command-center {
 	visibility: visible;
@@ -34,11 +33,11 @@
 	}
 
 	.codicon-arrow-left {
-		@include icons.icon-big-arrow-left;
+		--button-img: icon("arrow-big-left", "mono");
 	}
 
 	.codicon-arrow-right {
-		@include icons.icon-big-arrow-right;
+		--button-img: icon("arrow-big-right", "mono");
 	}
 
 	.codicon-settings-view-bar-icon {

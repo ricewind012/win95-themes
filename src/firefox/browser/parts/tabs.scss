@@ -1,6 +1,5 @@
 @use "shared/controls";
 @use "shared/window";
-@use "shared++/icons";
 @use "shared++/utils";
 
 // TODO(icons): unify?
@@ -125,12 +124,12 @@ $-icons: (
 
 	&::part(scrollbutton-up) {
 		@extend %-arrowscrollbox-button;
-		@include icons.icon-big-arrow-left;
+		--button-img: icon("arrow-big-left", "mono");
 	}
 
 	&::part(scrollbutton-down) {
 		@extend %-arrowscrollbox-button;
-		@include icons.icon-big-arrow-right;
+		--button-img: icon("arrow-big-right", "mono");
 	}
 }
 

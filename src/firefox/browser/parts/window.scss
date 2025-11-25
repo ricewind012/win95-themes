@@ -1,7 +1,6 @@
 @use "shared/controls";
 @use "shared/window";
 @use "shared++/utils";
-@use "shared++/icons";
 
 %-findbar-button {
 	@include controls.button($disabled-sel: "&[disabled]");
@@ -29,12 +28,12 @@
 		}
 
 		.findbar-find-next {
-			@include icons.icon-big-arrow-left;
+			--button-img: icon("arrow-big-left", "mono");
 			@extend %-findbar-button;
 		}
 
 		.findbar-find-previous {
-			@include icons.icon-big-arrow-right;
+			--button-img: icon("arrow-big-right", "mono");
 			@extend %-findbar-button;
 		}
 

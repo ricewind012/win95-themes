@@ -2,7 +2,6 @@
 @use "shared/table";
 @use "shared/tabs";
 @use "shared/window";
-@use "shared++/icons";
 @use "shared++/utils";
 @use "steam/shared";
 
@@ -96,24 +95,35 @@
 	}
 }
 
+#RadioButtonColumn {
+	display: none;
+}
+
 #PasswordColumn,
 #SecureColumn {
-	#ServerRow &:not(:empty) {
-		--button-img: icon("checkmark", "mono");
-		--button-img-size: 7px;
+	min-width: calc(7px * 2 + 20px);
+
+	&:not(:empty) {
+		#ServerRow &::before {
+			--button-img: icon("checkmark", "mono");
+			--button-img-size: 7px;
+			@include utils.pseudo-icon;
+
+			background-color: currentColor;
+		}
 
 		&::before {
-			@include utils.pseudo-icon;
+			content: var(--text);
 		}
-	}
-
-	&::after {
-		display: none;
 	}
 }
 
-#RadioButtonColumn {
-	display: none;
+#PasswordColumn {
+	--text: "P/W";
+}
+
+#SecureColumn {
+	--text: "VAC";
 }
 
 #SearchButton {
@@ -128,14 +138,6 @@
 
 	&#SearchActive {
 		--button-img: icon("clear");
-	}
-}
-
-#SecureColumn {
-	min-width: calc(7px * 2 + 20px);
-
-	&:not(:empty)::before {
-		content: "VAC";
 	}
 }
 
@@ -163,15 +165,6 @@
 #ServerListHeaderCtr {
 	background-color: transparent;
 	padding: 0;
-
-	#PasswordColumn {
-		--button-img-pos: 4px 3px;
-		@include icons.icon-lock;
-
-		&::before {
-			@include utils.pseudo-icon;
-		}
-	}
 }
 
 #ServerListHeaderRow {

@@ -1,4 +1,3 @@
-@use "shared++/icons";
 @use "steam/shared";
 
 %-button {
@@ -36,10 +35,10 @@
 
 #PageLeft {
 	@extend %-button;
-	@include icons.icon-big-arrow-left;
+	--button-img: icon("arrow-big-left", "mono");
 }
 
 #PageRight {
 	@extend %-button;
-	@include icons.icon-big-arrow-right;
+	--button-img: icon("arrow-big-right", "mono");
 }

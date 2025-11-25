@@ -1,22 +1,17 @@
-@use "shared++/icons";
-
-// Single icon for multiple classes,
-// not alphabetically sorted.
-
 .codicon-arrow-left {
-	@include icons.icon-big-arrow-left;
+	--button-img: icon("arrow-big-left", "mono");
 }
 
 .codicon-arrow-right {
-	@include icons.icon-big-arrow-right;
+	--button-img: icon("arrow-big-right", "mono");
 }
 
 .codicon-panel-maximize {
-	@include icons.icon-big-arrow-top;
+	--button-img: icon("arrow-big-top", "mono");
 }
 
 .codicon-panel-restore {
-	@include icons.icon-big-arrow-bottom;
+	--button-img: icon("arrow-big-bottom", "mono");
 }
 
 .monaco-workbench .part.basepanel.right {

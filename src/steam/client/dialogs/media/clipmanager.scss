@@ -1,5 +1,4 @@
 @use "shared/controls";
-@use "shared++/icons";
 @use "shared++/utils";
 
 #AppNameHeader,
@@ -30,11 +29,11 @@
 	}
 
 	&#Left {
-		@include icons.icon-big-arrow-left;
+		--button-img: icon("arrow-big-left", "mono");
 	}
 
 	&#Right {
-		@include icons.icon-big-arrow-right;
+		--button-img: icon("arrow-big-right", "mono");
 	}
 }
 

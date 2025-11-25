@@ -1,5 +1,4 @@
 @use "shared/controls";
-@use "shared++/icons";
 @use "shared++/utils";
 @use "steam/shared";
 
@@ -36,14 +35,14 @@
 }
 
 #Collapser {
+	--button-img: icon("arrow-big-bottom", "mono");
 	@include controls.button;
 	@include controls.icon-button;
-	@include icons.icon-big-arrow-bottom;
 
 	width: unset;
 
 	&:has(> [style="transform: rotate(270deg);"]) {
-		@include icons.icon-big-arrow-top;
+		--button-img: icon("arrow-big-top", "mono");
 	}
 
 	svg {
@@ -78,13 +77,13 @@
 }
 
 #PageLeft {
+	--button-img: icon("arrow-big-left", "mono");
 	@extend %-pageablecontainer-button;
-	@include icons.icon-big-arrow-left;
 }
 
 #PageRight {
+	--button-img: icon("arrow-big-right", "mono");
 	@extend %-pageablecontainer-button;
-	@include icons.icon-big-arrow-right;
 }
 
 #Showcase {

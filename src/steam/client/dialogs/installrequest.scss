@@ -1,7 +1,6 @@
 @use "shared/controls";
 @use "shared/window";
 @use "shared++/utils";
-@use "shared++/icons";
 
 #AppLogo {
 	// x1.5, since I have more space anyway
@@ -85,8 +84,8 @@
 }
 
 #FolderSettings {
-	@include window.titlebar-button;
-	@include icons.icon-more;
+	--button-img: icon("overflow" . "mono");
+	@include controls.icon-button;
 
 	width: unset;
 

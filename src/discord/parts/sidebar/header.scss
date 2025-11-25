@@ -1,5 +1,4 @@
 @use "shared/controls";
-@use "shared++/icons";
 
 .animatedContainer_f37cb1 {
 	opacity: 0.5;
@@ -46,15 +45,9 @@
 }
 
 .headerButton_f37cb1 {
+	--button-img: icon("overflow", "mono");
 	@include controls.button;
 	@include controls.icon-button;
-	@include icons.icon-more;
-
-	// TODO
-	&::before {
-		background-size: 16px auto;
-		margin-left: -1px;
-	}
 }
 
 .headerContent_f37cb1 {

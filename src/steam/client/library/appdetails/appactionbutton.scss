@@ -1,6 +1,5 @@
 @use "shared/controls";
 @use "shared++/utils";
-@use "shared++/icons";
 
 #ButtonChild {
 	@include controls.button;
@@ -22,7 +21,7 @@
 }
 
 #StreamingSelector {
+	--button-img: icon("arrow-big-bottom", "mono");
 	--icon-button-height: 24px;
 	@include controls.icon-button;
-	@include icons.icon-big-arrow-bottom;
 }

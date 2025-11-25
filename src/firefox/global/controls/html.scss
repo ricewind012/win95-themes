@@ -33,7 +33,7 @@ moz-button {
 
 	&[iconsrc='chrome://global/skin/icons/more.svg']
 	{
-		@include icons.icon-more;
+		--button-img: icon("overflow" . "mono");
 	}
 
 	&[type~="icon"] {

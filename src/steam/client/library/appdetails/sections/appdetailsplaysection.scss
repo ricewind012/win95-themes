@@ -1,5 +1,4 @@
 @use "shared/controls";
-@use "shared++/icons";
 @use "shared++/utils";
 
 #ActionSection {
@@ -122,7 +121,7 @@
 
 	// "Scroll to top" button
 	#Container#StickyHeader &:has(> #DotDotDot) {
-		@include icons.icon-big-arrow-top;
+		--button-img: icon("arrow-big-top", "mono");
 	}
 
 	&#FavoriteButton {

@@ -3,7 +3,6 @@
 @use "shared/text";
 @use "shared/window";
 @use "shared++/utils";
-@use "shared++/icons";
 
 #AppProperties {
 	height: calc(100% - 1lh - var(--tabs-height));

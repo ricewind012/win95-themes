@@ -1,7 +1,5 @@
 @use "shared/controls";
-@use "shared/window";
 @use "shared++/utils";
-@use "shared++/icons";
 
 #FriendsDescription,
 #Subheader {
@@ -51,15 +49,11 @@
 }
 
 #PrefDetailsToggle {
+	--button-img: icon("overflow", "mono");
 	@include controls.button;
-	@include window.titlebar-button;
-	@include icons.icon-more;
+	@include controls.icon-button($selected-sel: "&#Selected");
 
 	width: unset;
-
-	&#Selected {
-		@include controls.button-active;
-	}
 
 	svg {
 		display: none;
