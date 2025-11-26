@@ -1,6 +1,3 @@
-@use "shared/controls";
-@use "shared/window";
-
 .sidebar {
 	background-color: var(--color-button-face);
 	color: var(--color-window-text);
@@ -45,6 +42,7 @@
 
 		h2 {
 			font: var(--text-ui);
+			font-weight: bold;
 			color: inherit;
 			text-transform: unset;
 		}
@@ -72,109 +70,5 @@
 					--menubar-height
 				) - var(--statusbar-height)
 		);
-	}
-}
-
-// Search
-.search-widget {
-	margin-bottom: var(--text-spacing);
-}
-
-.search-widgets-container {
-	padding: 0;
-	margin: 0;
-}
-
-.search-view {
-	.search-container,
-	.query-details {
-		margin: 0;
-	}
-
-	.replace-container {
-		margin-left: 0;
-		margin-top: 10px;
-
-		.monaco-action-bar {
-			margin-left: 2px;
-
-			height: unset;
-
-			.action-label {
-				@include controls.button;
-				@include controls.icon-button;
-			}
-		}
-	}
-
-	.more.codicon {
-		@include controls.button;
-		@include window.titlebar-button;
-
-		margin-bottom: var(--text-spacing);
-	}
-
-	.message {
-		padding: 0;
-		padding-bottom: var(--text-spacing);
-	}
-}
-
-// Source control
-.scm-overflow-widgets-container {
-	width: 0;
-	height: 0;
-}
-
-.scm-view {
-	.action-label {
-		@include controls.button;
-		@include window.titlebar-button;
-	}
-
-	.monaco-editor {
-		&,
-		.monaco-background,
-		.margin {
-			background-color: transparent;
-		}
-	}
-
-	.monaco-icon-label-container {
-		height: unset;
-	}
-
-	.monaco-list {
-		height: calc(100% - 7px);
-	}
-
-	.monaco-tl-contents {
-		margin-top: -3px;
-
-		overflow: visible;
-	}
-
-	.monaco-button {
-		.monaco-button-dropdown {
-			overflow: visible;
-		}
-
-		.codicon-check,
-		.monaco-button-dropdown-separator {
-			display: none;
-		}
-	}
-}
-
-// Extensions
-.extensions-viewlet > .header {
-	padding: 0;
-
-	height: unset;
-}
-
-.extensions-list {
-	.monaco-list {
-		height: 100%;
 	}
 }

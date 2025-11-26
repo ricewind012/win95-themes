@@ -1,0 +1,14 @@
+.scm-overflow-widgets-container {
+	box-shadow: none;
+	padding: 0;
+}
+
+.scm-view {
+	.monaco-icon-label-container {
+		height: unset;
+	}
+
+	.monaco-tl-contents {
+		overflow: hidden;
+	}
+}

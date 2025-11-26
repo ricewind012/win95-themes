@@ -10,6 +10,10 @@
 @use "parts/titlebar" as parts-titlebar;
 @use "parts/toolbar" as parts-toolbar;
 
+@use "parts/sidebar/extensions" as parts-sidebar-extensions;
+@use "parts/sidebar/search" as parts-sidebar-search;
+@use "parts/sidebar/sourcecontrol" as parts-sidebar-sourcecontrol;
+
 @use "extensions/shalldie.background" as extensions-shalldie-background;
 
 @use "popup/dialog" as popup-dialog;

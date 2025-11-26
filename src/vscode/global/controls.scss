@@ -52,6 +52,10 @@
 	.monaco-button-dropdown.disabled > &.disabled:focus {
 		opacity: 1;
 	}
+
+	.codicon {
+		display: none;
+	}
 }
 
 .monaco-button-description {
@@ -76,10 +80,14 @@
 
 .monaco-dropdown-button {
 	@include controls.button;
-	@include window.titlebar-button;
+	@include controls.icon-button($selected-sel: "&[aria-expanded='true']");
 
-	width: 16px;
-	height: 23px;
+	min-width: 16px;
+	height: 24px;
+}
+
+.monaco-button-dropdown-separator {
+	display: none;
 }
 
 // Text input
@@ -320,6 +328,7 @@
 .scm-editor,
 .suggest-input {
 	&-container {
+		--vscode-input-background: transparent;
 		@include controls.text-field;
 
 		border: none;
@@ -332,6 +341,7 @@
 			&[style*="height: 22px"],
 			&[style*="height: 23px"],
 			&[style*="height: 24px"] {
+				// TODO(controls): remove text-field height prop
 				height: calc(var(--text-ui-size) * var(--text-line) + 8px);
 			}
 		}

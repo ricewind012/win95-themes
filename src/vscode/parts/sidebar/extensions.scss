@@ -1,0 +1,35 @@
+@use "vscode/shared";
+
+.extensions-viewlet {
+	& > .header {
+		padding: 0;
+
+		height: unset;
+	}
+
+	.count-badge-wrapper {
+		// Align with the arrow spacing
+		margin-inline-end: var(--text-spacing);
+	}
+}
+
+.extensions-list {
+	.extension-action {
+		&.codicon-extensions-manage {
+			--button-min-width: 0;
+			@include shared.toolbar-combobox;
+		}
+	}
+
+	.monaco-list {
+		height: 100%;
+	}
+}
+
+.extensions-search-actions-container {
+	position: unset;
+}
+
+.extensions-search-container {
+	display: flex;
+}

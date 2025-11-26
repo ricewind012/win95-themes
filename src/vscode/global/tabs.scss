@@ -142,6 +142,7 @@
 
 			position: absolute;
 			width: calc(100% - var(--s) * 2 - var(--offset) * 2);
+			z-index: 1;
 			overflow: visible;
 		}
 
@@ -152,18 +153,24 @@
 				@include tabs.content;
 
 				padding: var(--s);
-				padding-top: calc(var(--s) + var(--icon-button-height) + 4px);
+				padding-top: calc(var(--s) + var(--icon-button-height));
 
-				.pane-header {
-					margin-bottom: 2px;
+				& > div::before {
+					@include utils.pseudo-separator;
+				}
+
+				.pane-header[aria-expanded="true"] {
+					margin-bottom: var(--text-spacing);
 				}
 
 				.actions {
+					margin-right: 0;
+
 					display: block;
 				}
 
 				&:not(.extensions-viewlet) .monaco-list {
-					height: calc(100% - 12px);
+					height: calc(100% - 16px);
 				}
 			}
 		}

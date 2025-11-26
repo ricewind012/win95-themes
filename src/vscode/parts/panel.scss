@@ -112,6 +112,7 @@
 .pane-header {
 	font: var(--text-ui);
 	border: none;
+	gap: var(--text-spacing);
 
 	height: unset;
 
@@ -119,6 +120,21 @@
 		font: var(--text-ui);
 
 		padding: 0;
+	}
+
+	.twisty-container {
+		background-color: currentColor;
+		mask: var(--button-img) no-repeat;
+		mask-position: center;
+		margin: 0;
+
+		&.codicon-view-pane-container-expanded {
+			--button-img: icon("arrow-big-bottom", "mono");
+		}
+
+		&.codicon-view-pane-container-collapsed {
+			--button-img: icon("arrow-big-top", "mono");
+		}
 	}
 }
 

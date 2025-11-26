@@ -1,0 +1,64 @@
+@use "shared/controls";
+@use "shared/window";
+
+.search-widget {
+	margin-bottom: var(--text-spacing);
+}
+
+.search-widgets-container {
+	padding: 0;
+	margin: 0;
+}
+
+.search-view {
+	.query-details {
+		margin: 0;
+	}
+
+	.replace-container {
+		margin-top: 10px;
+
+		.monaco-action-bar {
+			margin: 0;
+
+			height: unset;
+
+			.action-label {
+				@include controls.button;
+				@include controls.icon-button;
+			}
+		}
+	}
+
+	a.toggle-replace-button {
+		all: unset;
+
+		background-color: currentColor;
+		mask: var(--button-img) no-repeat;
+		mask-position: center;
+
+		position: absolute;
+		height: 100%;
+
+		&.codicon-search-show-replace {
+			--button-img: icon("arrow-big-bottom", "mono");
+		}
+
+		&.codicon-search-hide-replace {
+			--button-img: icon("arrow-big-top", "mono");
+		}
+	}
+
+	.more.codicon {
+		@include controls.button;
+		@include window.titlebar-button;
+
+		position: absolute;
+		right: 0;
+	}
+
+	.message {
+		padding: 0;
+		padding-bottom: var(--text-spacing);
+	}
+}

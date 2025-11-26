@@ -24,6 +24,7 @@ const iconMap = {
 	eab5: ["arrow-left", "mono"],
 	eab6: ["arrow-right", "mono"],
 	eabf: ["clear", "normal"],
+	eae2: ["clear", "normal"],
 	eaf1: ["search", "normal"],
 	eaf8: ["settings", "normal"],
 	eafd: ["file-preview", "normal"],

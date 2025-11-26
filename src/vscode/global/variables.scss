@@ -7,8 +7,8 @@
 	// Text
 	--vscode-foreground: var(--color-window-text);
 	--vscode-disabledForeground: var(--color-gray-text);
-	--vscode-descriptionForeground: var(--color-window-text);
-	--vscode-icon-foreground: var(--color-window-text);
+	--vscode-descriptionForeground: inherit;
+	--vscode-icon-foreground: inherit;
 	--vscode-search-resultsInfoForeground: var(--color-button-text);
 
 	--vscode-textPreformat-foreground: var(--color-button-text);
@@ -59,6 +59,9 @@
 
 	// Sidebar
 	--vscode-list-focusAndSelectionOutline: transparent;
+
+	--vscode-list-hoverBackground: var(--color-highlight);
+	--vscode-list-hoverForeground: var(--color-highlight-text);
 
 	--vscode-list-activeSelectionBackground: var(--color-highlight);
 	--vscode-list-activeSelectionIconForeground: var(--color-highlight-text);

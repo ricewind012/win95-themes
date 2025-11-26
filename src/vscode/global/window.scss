@@ -16,7 +16,12 @@
 	}
 
 	// Statusbar
-	&[style$="height: 22px;"] {
+	// INSANE selector to select *only* the statusbar
+	.monaco-grid-branch-node
+		> .monaco-split-view2
+		> .monaco-scrollable-element
+		> .split-view-container
+		> &[style$="height: 22px;"] {
 		margin-top: 4px;
 	}
 
