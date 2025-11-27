@@ -1,8 +1,43 @@
 @use "shared/controls";
+@use "shared/text";
 @use "shared++/utils";
+
+.gettingStartedCategoriesContainer {
+	& > * {
+		overflow: visible;
+	}
+}
 
 .gettingStartedContainer {
 	font: var(--text-ui);
+
+	.button-link {
+		@include text.link;
+
+		margin: 0;
+	}
+
+	.codicon:not(.monaco-custom-toggle) {
+		display: none;
+	}
+
+	.getting-started-category {
+		@include text.link;
+
+		background-color: transparent;
+		padding: 0;
+		margin: 0;
+
+		.category-title {
+			font: inherit;
+			margin: 0;
+		}
+
+		.description-content,
+		.featured {
+			display: none;
+		}
+	}
 
 	.header {
 		align-self: unset;
@@ -11,94 +46,18 @@
 	.index-list {
 		@include controls.groupbox;
 
-		min-height: unset;
+		&.recently-opened li {
+			display: grid;
+			grid-template-columns: repeat(2, 1fr);
+		}
 
 		& > h2 {
 			@include utils.legend-as-div;
+			@include utils.text-reset;
 		}
-	}
-
-	.start-container {
-		ul {
-			display: flex;
-		}
-
-		li {
-			margin: 0;
-		}
-
-		button {
-			width: 85px;
-		}
-	}
-
-	.getting-started {
-		ul {
-			gap: 2px;
-
-			display: flex;
-			flex-direction: column;
-			align-items: center;
-		}
-
-		button {
-			width: 100%;
-
-			.featured {
-				display: none;
-			}
-		}
-
-		.category-title {
-			margin: 0;
-		}
-
-		.description-content {
-			margin-left: 0;
-			margin-bottom: 10px;
-
-			&:empty {
-				display: none;
-			}
-		}
-	}
-
-	.category-title {
-		font: var(--text-ui);
-	}
-}
-
-.gettingStartedCategoriesContainer {
-	display: flex;
-	flex-direction: column;
-
-	& > * {
-		overflow: visible;
-	}
-}
-
-.gettingStartedSlideCategories {
-	ul,
-	li {
-		font: var(--text-ui);
-
-		overflow: visible;
-	}
-
-	li {
-		margin-top: 2px;
-
-		display: flex;
-		align-items: center;
 	}
 
 	button {
-		.codicon {
-			display: none;
-		}
-	}
-
-	.path {
-		padding: 0;
+		font: inherit;
 	}
 }

@@ -375,5 +375,7 @@
 	.setting-value-checkbox {
 	@include controls.checkbox($checked-sel: "&.checked");
 
+	background-image: none;
+
 	min-width: unset;
 }

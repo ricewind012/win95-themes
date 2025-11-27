@@ -216,15 +216,13 @@
 
 // Settings
 .settings-tabs-widget {
-	@include tabs.container;
-
 	// !important
 	& > .monaco-action-bar .action-item {
 		overflow: visible;
 	}
 
 	// !important
-	& > .monaco-action-bar .action-label {
+	& > .monaco-action-bar .action-item .action-label {
 		@include tabs.tab($selected-sel: "&.checked");
 
 		opacity: 1;
