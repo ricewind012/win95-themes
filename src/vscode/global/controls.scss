@@ -180,7 +180,7 @@
 	}
 
 	&.horizontal {
-		margin-top: -12px;
+		margin-top: -16px;
 	}
 }
 
@@ -361,12 +361,6 @@
 }
 
 // !important
-.monaco-workbench
-	.part.editor
-	> .content
-	.gettingStartedContainer
-	.gettingStartedSlide
-	.getting-started-checkbox,
 .monaco-workbench
 	.settings-editor
 	> .settings-body

@@ -6,14 +6,14 @@
 	--title-top-margin: calc(var(--window-gap) + 6px);
 
 	background-color: transparent;
-	padding: 0 12px 0 7px;
+	padding: 0 5px 0 7px;
 	border: none;
 
 	overflow: visible;
 	height: calc(100% - var(--title-top-margin) - var(--additional-top-margin));
 
 	&:is(.left, .right) {
-		--additional-top-margin: 36px;
+		--additional-top-margin: 40px;
 
 		margin-top: var(--title-top-margin);
 		padding: 0;
@@ -32,7 +32,7 @@
 	}
 
 	&:is(.bottom, .top) {
-		--additional-top-margin: 20px;
+		--additional-top-margin: 24px;
 
 		.title {
 			margin-top: calc(var(--title-top-margin) * -1);
@@ -180,4 +180,8 @@
 
 .xterm {
 	inset: 0 11px 0 -20px;
+
+	canvas {
+		top: -11px;
+	}
 }

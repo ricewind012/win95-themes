@@ -64,11 +64,15 @@
 		font: var(--text-ui);
 
 		width: 100%;
+		// prettier-ignore
 		height: calc(
-			100vh -
-				39px - var(--tabs-compensation, 0px) - var(--titlebar-height) - var(
-					--menubar-height
-				) - var(--statusbar-height)
+			100vh
+			- 21px
+			- var(--tabs-compensation, 0px)
+			- var(--icon-button-height)
+			- var(--titlebar-height)
+			- var(--menubar-height)
+			- var(--statusbar-height)
 		);
 	}
 }

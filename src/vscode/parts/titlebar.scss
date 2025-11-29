@@ -1,4 +1,5 @@
 @use "shared/controls";
+@use "shared++/utils";
 
 .command-center {
 	visibility: visible;
@@ -9,11 +10,18 @@
 	color: inherit;
 	border: none;
 
+	flex-direction: column;
 	position: absolute;
 	left: 0;
 	// 5px = separator
 	top: calc(var(--menubar-height) + 5px + var(--window-gap));
 	height: unset;
+
+	&::after {
+		@include utils.pseudo-separator;
+
+		width: 100%;
+	}
 
 	.search-icon,
 	.search-label {

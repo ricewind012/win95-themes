@@ -5,7 +5,7 @@
 .editor-container {
 	background-color: transparent;
 
-	height: calc(100% - 30px);
+	height: calc(100% - var(--editor-container-offset));
 
 	& > .editor-instance {
 		@include tabs.content($compact: true);
@@ -14,7 +14,12 @@
 
 .editor-group-container {
 	background-color: var(--color-button-face);
-	padding: 9px 12px 5px 7px;
+	padding: 9px 5px 5px 7px;
+
+	// In split view scrollbars appear above other editors. Anything above 0
+	// will make it paint above all the surrounding panels due to the background
+	position: relative;
+	z-index: 0;
 }
 
 .editor-group-watermark {
@@ -71,30 +76,36 @@
 	}
 
 	&:not(:only-child) {
-		// Split up/down
-		&[style^="top:"][style*="height:"]
-			> .editor-group-container
-			> .editor-container {
-			height: calc(50% - 35px);
+		--editor-container-offset: 34px;
+
+		// Split up/down & left/right
+		&[style^="top:"][style*="height:"],
+		&[style^="left:"][style*="width:"] {
+			& > .editor-group-container > .editor-container {
+				height: calc(50% - var(--editor-container-offset));
+			}
 		}
 
 		// Split left/right
 		&:first-child > .editor-group-container {
 			width: 100%;
-
-			& > .editor-container {
-				height: calc(100% - 31px);
-			}
 		}
 	}
 }
 
-.monaco-scrollable-element,
+.monaco-scrollable-element {
+	height: 100%;
+}
+
 .monaco-split-view2.vertical.separator-border
 	> .monaco-scrollable-element
 	> .split-view-container
 	> .split-view-view {
 	height: 100%;
+
+	&:nth-child(2):has(> .editor-group-container) {
+		margin-top: -7px;
+	}
 }
 
 .monaco-editor {
