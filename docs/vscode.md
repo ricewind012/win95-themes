@@ -42,7 +42,7 @@ Last tested version is [1.106](https://code.visualstudio.com/updates/v1_106)!
 ## Caveats
 
 - [Scrollbars arrows](https://github.com/microsoft/vscode/issues/130616#issuecomment-1076061821) are undocumented and may be removed at any time.
-- Editor and scrollbars may move out of bounds.
+- Scrollbars move out of bounds when scrolling to the bottom.
 - Some icons are absent.
 
 ## Preview

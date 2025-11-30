@@ -14,6 +14,7 @@ switch (prog) {
 	case "vscode":
 		file = "/usr/lib/code/out/vs/workbench/workbench.desktop.main.js";
 		patches = [
+			// I. List item height
 			[
 				new RegExp(`(ITEM_HEIGHT=)${VSCODE_ITEM_HEIGHT}`),
 				`$1${THEME_ITEM_HEIGHT}`,
@@ -22,6 +23,16 @@ switch (prog) {
 				new RegExp(`(getHeight\(i?\){return )${VSCODE_ITEM_HEIGHT}`),
 				`$1${THEME_ITEM_HEIGHT}`,
 			],
+
+			// II. Scrollbar arrows
+			// I can't tell if it's intentionally applied only to the editor, or
+			// if it's just a bug... No point in making an issue, as the
+			// scrollbar arrows are undocumented anyway.
+			[/(arrowSize:)\d+/, "$1 16"],
+			[/\w\.verticalHasArrows/, "true"],
+			[/(verticalHasArrows:)!1/, "$1 true"],
+			[/\w\.horizontalHasArrows/, "true"],
+			[/(horizontalHasArrows:)!1/, "$1 true"],
 		];
 		break;
 
@@ -38,17 +49,17 @@ switch (prog) {
 			"chunk~2dcc5aaf7.js",
 		);
 		patches = [
-			// Library sidebar
+			// I. Library sidebar
 			[/(bIsCollection,)26/, `$1${THEME_ITEM_HEIGHT}`],
-			// Screenshot manager dialog
+			// II. Screenshot manager dialog
 			[
 				/(gridGapPx:")(\d+)(px",desktopTopPadding:")(\d+)/,
 				(_, s1, s2, s3, s4) => `${s1}${fill(s2)}${s3}${fill(s4)}`,
 			],
-			// Server browser (context - "estimateSize")
+			// III. Server browser (context - "estimateSize")
 			[/34\),\[34\]/, `${THEME_ITEM_HEIGHT}),[${THEME_ITEM_HEIGHT}]`],
 
-			// GAME RECORDING
+			// IV. GAME RECORDING
 			// Align file size for Math.round() (safe - prop used only once)
 			[/globalOffsetPX/g, "OffsetPX"],
 			// Fix blurred ticks in game recording dialog

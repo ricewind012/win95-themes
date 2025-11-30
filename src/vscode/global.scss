@@ -1,1 +1,12 @@
 @use "shared++/global";
+
+// Make the scrollbars always visible, as there is no option for this.
+// .fade is for visible-on-hover scrollbars. The :has() is used because the
+// scrollbar divs are always there, just hidden.
+.monaco-scrollable-element:has(> .scrollbar:where(.invisible.fade, .visible)) {
+	padding-inline-end: var(--scrollbar-size);
+
+	& > .scrollbar:where(.invisible.fade, .visible) {
+		opacity: 1;
+	}
+}
