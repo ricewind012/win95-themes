@@ -22,19 +22,6 @@
 	}
 }
 
-.menubar-menu-button {
-	&.open {
-		background-color: var(--color-highlight);
-		color: var(--color-highlight-text);
-	}
-}
-
 .menubar-menu-title {
-	// Move [role="menubar"] to its child element
-	// for correct context menu positioning
-	@include window.menubar-item($selected-sel: "&.open");
-
-	&.toolbar-toggle-more {
-		display: none;
-	}
+	@include window.menubar-item($selected-sel: ".menubar-menu-button.open > &");
 }

@@ -268,6 +268,11 @@
 		}
 	}
 
+	.actions-container {
+		gap: 0;
+		margin: 0;
+	}
+
 	.monaco-dropdown .action-label {
 		@include shared.toolbar-combobox;
 
@@ -290,13 +295,6 @@
 // Item list
 .monaco-list {
 	@include window.content-container;
-
-	width: 100%;
-	height: calc(100% - 10px);
-
-	&:focus::before {
-		display: none;
-	}
 }
 
 .monaco-list-row {

@@ -54,10 +54,16 @@
 }
 
 .titlebar-center {
-	margin-inline: var(--toolbar-spacing);
+	margin-inline: var(--toolbar-container-spacing);
 }
 
 .titlebar-left {
 	flex-grow: 0;
 	width: 0;
+}
+
+.titlebar-right {
+	.action-toolbar-container {
+		padding-right: var(--toolbar-container-spacing);
+	}
 }

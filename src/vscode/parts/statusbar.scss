@@ -24,11 +24,6 @@
 
 	max-width: unset;
 
-	// TODO: is this safe ?
-	&[aria-label=""] {
-		display: none;
-	}
-
 	&.left.last-visible-item {
 		flex-grow: 1;
 	}

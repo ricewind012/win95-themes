@@ -1,39 +1,62 @@
+@use "shared/tabs";
+@use "shared++/utils";
+
 .sidebar {
+	--s: calc(var(--border-size) + 2px);
+	--offset: 1px;
+
 	background-color: var(--color-button-face);
 	color: var(--color-window-text);
 	border: none;
 	margin-top: 8px;
+	margin-left: 6px;
 
-	&:has(> .has-composite-bar) {
-		margin-left: 6px;
+	position: relative;
 
-		&.right {
-			margin-left: 0;
-			margin-right: 8px;
-
-			.monaco-list {
-				width: 100%;
-			}
-		}
+	&.right {
+		margin-left: 0;
+		margin-right: 8px;
 	}
 
-	& > .header {
+	.actions {
+		margin-right: 0;
+
+		display: block;
+	}
+
+	.header {
 		border: none;
 		padding: 0;
 
+		overflow: visible;
 		height: unset;
-
-		.monaco-action-bar {
-			height: unset;
-		}
 	}
 
-	.title {
-		padding: 3px 0 8px;
-		margin: 0;
+	.monaco-list {
+		height: calc(100% - 16px);
+	}
 
-		height: unset;
+	.pane-header[aria-expanded="true"] {
+		margin-bottom: var(--text-spacing);
+	}
+
+	div.title {
+		padding: 0;
+		margin-top: var(--s);
+		margin-left: calc(var(--s) + var(--offset));
+
 		align-items: center;
+		position: absolute;
+		width: calc(100% - var(--s) * 2 - var(--offset) * 2);
+		height: unset;
+		z-index: 1;
+		overflow: visible;
+	}
+
+	h3.title {
+		text-transform: unset;
+		padding: 0;
+		padding-bottom: 1px;
 	}
 
 	.title-label {
@@ -54,12 +77,6 @@
 		height: unset;
 	}
 
-	h3.title {
-		text-transform: unset;
-		padding: 0;
-		padding-bottom: 1px;
-	}
-
 	& > .content {
 		font: var(--text-ui);
 
@@ -67,12 +84,22 @@
 		// prettier-ignore
 		height: calc(
 			100vh
-			- 21px
-			- var(--tabs-compensation, 0px)
+			- 29px
 			- var(--icon-button-height)
 			- var(--titlebar-height)
 			- var(--menubar-height)
 			- var(--statusbar-height)
 		);
+
+		& > .composite {
+			@include tabs.content;
+
+			padding: var(--s);
+			padding-top: calc(var(--s) + var(--icon-button-height));
+
+			& > div::before {
+				@include utils.pseudo-separator;
+			}
+		}
 	}
 }

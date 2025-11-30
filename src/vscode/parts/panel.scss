@@ -69,10 +69,6 @@
 		}
 	}
 
-	.pane {
-		height: calc(100% - 2px);
-	}
-
 	.pane-body {
 		margin-left: 2px;
 		margin-top: 2px;
@@ -90,21 +86,6 @@
 
 		.codicon {
 			display: none;
-		}
-	}
-}
-
-.pane {
-	&.vertical {
-		height: calc(100% + 4px);
-	}
-
-	.monaco-list {
-		width: calc(100% - 8px);
-		height: calc(100% - 11px);
-
-		.sidebar.left & {
-			width: 100%;
 		}
 	}
 }
@@ -149,8 +130,6 @@
 	.monaco-list {
 		border: none;
 		box-shadow: none;
-
-		height: calc(100% - 3px);
 	}
 
 	.marker-code,

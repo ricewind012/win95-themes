@@ -1,6 +1,5 @@
 @use "global" as global;
 
-@use "parts/activitybar" as parts-activitybar;
 @use "parts/editor" as parts-editor;
 @use "parts/menubar" as parts-menubar;
 @use "parts/panel" as parts-panel;
@@ -8,7 +7,6 @@
 @use "parts/sidebar" as parts-sidebar;
 @use "parts/statusbar" as parts-statusbar;
 @use "parts/titlebar" as parts-titlebar;
-@use "parts/toolbar" as parts-toolbar;
 
 @use "parts/sidebar/extensions" as parts-sidebar-extensions;
 @use "parts/sidebar/search" as parts-sidebar-search;

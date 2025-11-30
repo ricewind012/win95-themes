@@ -3,8 +3,6 @@
 @use "vscode/shared";
 
 .editor-container {
-	background-color: transparent;
-
 	height: calc(100% - var(--editor-container-offset));
 
 	& > .editor-instance {
@@ -41,25 +39,12 @@
 	@include shared.title-toolbar;
 }
 
-.editor {
-	.editor-scrollable {
-		width: calc(100% - 59px);
+.editor-scrollable {
+	width: calc(100% - 59px);
+	height: 100%;
 
-		.search-results {
-			width: calc(100% - 38px);
-		}
-	}
-
-	& > .content {
-		background-color: transparent;
-	}
-
-	&,
-	.split-view-container,
-	.monaco-scrollable-element,
-	.monaco-grid-view,
-	.content {
-		overflow: visible;
+	.search-results {
+		width: calc(100% - 38px);
 	}
 }
 
@@ -78,31 +63,19 @@
 	&:not(:only-child) {
 		--editor-container-offset: 34px;
 
-		// Split up/down & left/right
-		&[style^="top:"][style*="height:"],
-		&[style^="left:"][style*="width:"] {
+		// Split up/down
+		&[style^="top:"][style*="height:"] {
 			& > .editor-group-container > .editor-container {
 				height: calc(50% - var(--editor-container-offset));
 			}
 		}
-
-		// Split left/right
-		&:first-child > .editor-group-container {
-			width: 100%;
-		}
 	}
-}
-
-.monaco-scrollable-element {
-	height: 100%;
 }
 
 .monaco-split-view2.vertical.separator-border
 	> .monaco-scrollable-element
 	> .split-view-container
 	> .split-view-view {
-	height: 100%;
-
 	&:nth-child(2):has(> .editor-group-container) {
 		margin-top: -7px;
 	}
@@ -131,11 +104,6 @@
 
 		width: 100%;
 		height: 100%;
-	}
-
-	// Widgets
-	&:where(:not([role="code"])) {
-		@include window.container($child: true);
 	}
 
 	& > .overflow-guard {

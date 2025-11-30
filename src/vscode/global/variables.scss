@@ -47,9 +47,6 @@
 	--vscode-peekViewEditorGutter-background: var(--color-window);
 	--vscode-peekViewEditorStickyScroll-background: var(--color-window);
 
-	// Activity bar
-	--vscode-activityBar-foreground: var(--color-button-text);
-
 	// Panel
 	--vscode-panelTitle-activeForeground: var(--color-button-text);
 	--vscode-panelTitle-inactiveForeground: var(--color-button-text);
@@ -129,7 +126,6 @@
 	--vscode-notifications-foreground: var(--color-button-text);
 
 	// Other
-	--vscode-activityBarTop-activeBorder: transparent;
 	--vscode-focusBorder: transparent;
 	--vscode-textCodeBlock-background: color-mix(
 		in srgb,
