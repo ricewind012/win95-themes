@@ -2,6 +2,8 @@
 @use "shared/text";
 
 .attachWrapper__0923f {
+	--button-img: icon("plus", "mono");
+
 	padding: 0;
 	margin-inline-end: var(--toolbar-spacing);
 
@@ -12,10 +14,6 @@
 
 .channelTextArea_f75fb0 {
 	margin-bottom: var(--toolbar-container-spacing);
-
-	.spriteContainer__04eed {
-		--custom-emoji-sprite-size: 16px;
-	}
 
 	.stackedBars__74017 {
 		background-color: transparent;
@@ -34,8 +32,6 @@
 
 	.closeButton_e876a8 {
 		--button-img: icon("clear");
-		--button-img-pos: 5px 4px;
-
 		@include controls.button;
 		@include controls.icon-button;
 	}
@@ -64,11 +60,6 @@
 
 	.replyBar__841c8 {
 		width: 100%;
-
-		// TODO: unify
-		svg {
-			display: none;
-		}
 	}
 
 	.replyLabel__841c8 {
@@ -94,13 +85,38 @@
 	.button__24af7 {
 		@include controls.button;
 		@include controls.icon-button;
+
+		min-height: unset;
+
+		&.disabled__24af7 {
+			opacity: 1;
+		}
+
+		.buttonWrapper__24af7 {
+			display: none;
+		}
 	}
 
-	// TODO(icons): unify first selector & remove second when adding icons
-	.emojiButtonNormal__04eed,
-	.contents__201d5 {
-		min-width: var(--icon-size);
-		min-height: var(--icon-size);
+	.button_e6e74f {
+		--button-img: icon("list");
+		@include controls.button;
+		@include controls.icon-button;
+
+		min-height: unset;
+	}
+
+	.buttonContainer_aa63ab {
+		--button-img: icon("chat-bubble-alt");
+
+		margin-inline-start: var(--toolbar-spacing);
+	}
+
+	.emojiButton__04eed {
+		--button-img: icon("emoji");
+
+		.spriteContainer__04eed {
+			display: none;
+		}
 	}
 
 	.separator_aa63ab {

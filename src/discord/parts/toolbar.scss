@@ -38,12 +38,9 @@
 	min-height: unset;
 }
 
-// TODO: remove when doing icons
-.icon__9293f {
-	margin-top: -2px;
-
-	width: 16px;
-	height: 16px;
+.icon__9293f,
+.iconBadge__9293f {
+	display: none;
 }
 
 .iconWrapper__9293f {
@@ -52,9 +49,8 @@
 
 	width: unset;
 
-	&[tabindex="-1"] {
-		// disabled
-		// TODO: lol what? when?
+	&.iconDisabled__9293f {
+		opacity: 1;
 	}
 }
 
@@ -64,28 +60,12 @@
 	order: -1;
 
 	.icon__97492 {
-		--size: 17px;
-		--button-img: icon("search-24");
-
+		--button-img: icon("search");
 		@include controls.button;
 		@include controls.icon-button;
 
-		margin-top: 0;
-		margin-right: calc(var(--input-spacing) * -1);
-
-		// Align with the textbox
-		min-width: var(--size);
-		width: var(--size);
-		height: var(--size);
-
 		&:has(> .iconContainer__0c4c4 > .clear__0c4c4.visible__0c4c4) {
 			--button-img: icon("clear");
-			--button-img-pos: 5px 4px;
-		}
-
-		// TODO: lol
-		&::before {
-			background-size: 12px;
 		}
 	}
 
@@ -94,14 +74,14 @@
 	}
 
 	.searchBar__97492 {
-		@include controls.text-field;
+		background-color: transparent;
+		border: none;
 
 		width: 200px;
+		height: unset;
 
 		.DraftEditor-root {
-			@include utils.text-reset;
-
-			padding: 0;
+			@include controls.text-field;
 
 			overflow: visible;
 		}
@@ -109,8 +89,6 @@
 		.public-DraftEditorPlaceholder-root,
 		.public-DraftEditor-content {
 			padding: 0;
-
-			inset: 0;
 		}
 	}
 

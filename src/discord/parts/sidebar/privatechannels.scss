@@ -30,14 +30,15 @@
 }
 
 .privateChannelRecipientsInviteButtonIconContainer__99e7c {
+	--button-img: icon("room-create");
 	@include controls.button;
 	@include controls.icon-button;
 
-	// TODO: remove when doing icons
-	padding: 3px;
-
-	display: flex;
 	position: fixed;
 	top: var(--toolbar-container-spacing);
 	right: var(--toolbar-container-spacing);
+}
+
+.privateChannelRecipientsInviteButtonIcon__99e7c {
+	display: none;
 }

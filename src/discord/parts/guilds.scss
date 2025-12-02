@@ -18,12 +18,6 @@
 		display: none;
 	}
 
-	// TODO: remove when addins icons
-	[role="img"] {
-		width: 16px;
-		height: 16px;
-	}
-
 	[role="treeitem"] {
 		@include controls.button;
 		@include controls.icon-button($selected-sel: "&[aria-selected='true']");
@@ -36,22 +30,25 @@
 	padding: 0;
 
 	& > :nth-child(1) {
+		--button-img: icon("home");
 		@extend %-guilds-top-toolbar-button;
 
 		left: var(--pos);
 
 		.childWrapper__6e9f8 {
-			background-color: transparent;
-			color: inherit;
-
-			height: unset;
+			display: none;
 		}
 	}
 
 	& > :nth-last-child(3) {
+		--button-img: icon("room-enter");
 		@extend %-guilds-top-toolbar-button;
 
 		left: calc(var(--pos) + var(--icon-button-width));
+
+		.circleIcon__5bc7e {
+			display: none;
+		}
 	}
 }
 
@@ -65,10 +62,6 @@
 	[role="treeitem"] {
 		padding: 0;
 		margin: 0;
-
-		&::before {
-			display: none;
-		}
 	}
 }
 

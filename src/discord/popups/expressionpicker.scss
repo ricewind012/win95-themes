@@ -194,13 +194,14 @@
 	}
 
 	.unicodeShortcut_b9ee0c {
+		--button-img: icon("emoji");
 		@include controls.button;
+		@include controls.icon-button;
 
 		margin: var(--border-size);
 
-		// TODO: icon
 		position: absolute;
-		width: 48px;
+		width: calc(48px - var(--border-size) * 2);
 		min-width: unset;
 		height: 32px;
 	}

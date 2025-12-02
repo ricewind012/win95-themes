@@ -23,21 +23,40 @@
 	@include controls.icon-button;
 
 	width: unset;
+}
 
-	// TODO: remove when adding icons
-	svg {
-		width: 16px;
-		height: 16px;
-	}
+.buttonChevron__37e49 {
+	--button-img: icon("arrow-bottom", "mono");
+	margin-inline-end: var(--toolbar-spacing);
+
+	min-width: 16px;
+}
+
+.buttonChevronIcon__37e49 {
+	display: none;
 }
 
 .buttons__37e49 {
 	gap: 0;
 
-	// TODO(icons): remove when adding icons
 	.lottieIcon__5eb9b {
-		width: 16px;
-		height: 16px;
+		display: none;
+	}
+
+	[aria-label="Deafen"] {
+		--button-img: icon("sound");
+
+		&[aria-checked="true"] {
+			--button-img: icon("sound-muted");
+		}
+	}
+
+	[aria-label="Mute"] {
+		--button-img: icon("microphone");
+
+		&[aria-checked="true"] {
+			--button-img: icon("microphone-muted");
+		}
 	}
 }
 

@@ -1,0 +1,83 @@
+@mixin -gen-icons($attr, $map) {
+	@each $id, $icon in $map {
+		[#{$attr}="#{$id}"] {
+			--button-img: icon(#{$icon});
+		}
+	}
+}
+
+// Common
+[aria-label="Close"] {
+	--button-img: icon("clear");
+}
+
+[aria-label="More"] {
+	--button-img: icon("overflow", "mono");
+}
+
+// Chat toolbar
+@include -gen-icons(
+	"aria-label",
+	(
+		"Add Friends to DM": "room-create",
+		// VC (not a mistake, actually D*scord; "Show Chat" is the same)
+		"Hide chat": "chat-bubble-alt",
+		"Hide Chat": "chat-bubble-alt",
+		"Hide Member List": "user-list",
+		"Hide User Profile": "user-info",
+		"Notification Settings": "mail-read",
+		"Pinned Messages": "pin",
+		"Show chat": "chat-bubble-alt",
+		"Show Chat": "chat-bubble-alt",
+		"Show Member List": "user-list",
+		"Show User Profile": "user-info",
+		"Show User Profile (Unavailable)": "user-info",
+		"Start Video Call": "camera",
+		"Start Voice Call": "telephone",
+		"Threads": "chat-room-list",
+	)
+);
+
+// User panel
+// NOTE: others are located in src/discord/parts/sidebar/userarea.scss
+@include -gen-icons(
+	"aria-label",
+	(
+		"User Settings": "settings",
+	)
+);
+
+// Message actions
+@include -gen-icons(
+	"aria-label",
+	(
+		"Add Reaction": "emoji",
+		"Copy Link": "link",
+		"Create Thread": "chat-room-list",
+		"Delete": "clear",
+		"Edit": "edit",
+		"Forward": "go-forward",
+		"Mark Unread": "clock",
+		"Pin Message": "pin",
+		"Reply": "go-back",
+	)
+);
+
+// Message form
+@include -gen-icons(
+	"aria-label",
+	(
+		"Open GIF picker": "url",
+		"Open sticker picker": "file",
+	)
+);
+
+// Group chat
+@include -gen-icons(
+	"aria-label",
+	(
+		"Dismiss": "clear",
+		"Join Call": "telephone",
+		"Join Video Call": "camera",
+	)
+);

@@ -4,6 +4,8 @@
 .button__74017 {
 	@include controls.button;
 	@include controls.icon-button;
+
+	min-height: unset;
 }
 
 .buttons__74017 {
@@ -32,6 +34,10 @@
 		// 2px = --input-spacing
 		inset: calc(var(--border-size) + 2px);
 		z-index: 1;
+	}
+
+	svg {
+		display: none;
 	}
 }
 

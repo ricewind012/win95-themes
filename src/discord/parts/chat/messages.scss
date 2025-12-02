@@ -1,14 +1,12 @@
 @use "shared/controls";
 
 .buttonContainer_c19a55 {
-	.button_f7ecac {
+	.hoverBarButton_f84418 {
 		@include controls.button;
 		@include controls.icon-button;
 
-		// TODO: remove when doing icons
-		svg {
-			width: 16px;
-			height: 16px;
+		.icon_f84418:not(.buttonContent_f84418) {
+			display: none;
 		}
 	}
 }
