@@ -11,15 +11,28 @@
 }
 
 .avatarWrapper__37e49 {
-	@include controls.button;
-	@include utils.use-attr-text("aria-label");
+	// ::before is used by the separator, so move it to the avatar element
+	--text: attr(aria-label);
 
-	// TODO: icon
-	height: 22px;
-	justify-content: center;
+	@include controls.combobox-button($active-sel: "&[aria-expanded='true']");
+
+	.avatar__37e49 {
+		display: none;
+	}
+
+	.nameTag__37e49 {
+		&::before {
+			content: var(--text);
+		}
+
+		& > * {
+			display: none;
+		}
+	}
 }
 
 .button__67645 {
+	--icon-button-height: var(--combobox-button-height);
 	@include controls.icon-button;
 
 	width: unset;
@@ -38,10 +51,6 @@
 
 .buttons__37e49 {
 	gap: 0;
-
-	.lottieIcon__5eb9b {
-		display: none;
-	}
 
 	[aria-label="Deafen"] {
 		--button-img: icon("sound");

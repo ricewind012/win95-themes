@@ -95,11 +95,8 @@
 }
 
 #DriveSettingsButton {
-	--button-img: icon("overflow" . "mono");
-	@include controls.button;
-	@include controls.icon-button;
-
-	width: unset;
+	--button-img: icon("settings");
+	@include controls.combobox-icon-button;
 
 	svg {
 		display: none;

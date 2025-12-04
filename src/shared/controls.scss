@@ -147,7 +147,8 @@
 @mixin combobox-button($active-sel: "&:active") {
 	--offset-click: 0px;
 
-	@include button($active-sel: $active-sel);
+	// TODO: unify how it works with icon-button
+	@include button($active-sel: "&:active, #{$active-sel}");
 
 	gap: var(--text-spacing);
 
@@ -183,6 +184,32 @@
 		mask: icon("arrow-bottom", "mono");
 		background-color: var(--color-button-text);
 		margin-inline-end: calc(var(--button-spacing) / 2);
+	}
+}
+
+/// An icon button connected to a dropdown.
+@mixin combobox-icon-button($active-sel: "&:active") {
+	@include combobox-button($active-sel);
+
+	background-image: var(--button-img);
+	background-position-x: calc(
+		var(--button-img-pos-x, 0px) + var(--offset-click) + var(--button-spacing)
+	);
+	background-position-y: calc(
+		var(--button-img-pos-y, 0px) + var(--offset-click) + var(--button-spacing) /
+			2
+	);
+	background-repeat: no-repeat;
+	background-size: var(--button-img-size);
+
+	min-width: calc(
+		var(--button-spacing) * 2 + var(--text-spacing) * 2 + var(--icon-size) +
+			10px
+	);
+	min-height: var(--icon-button-height);
+
+	&::before {
+		margin-inline-start: calc(var(--icon-size) + var(--text-spacing));
 	}
 }
 

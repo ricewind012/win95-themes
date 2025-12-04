@@ -44,20 +44,37 @@
 }
 
 .iconWrapper__9293f {
-	@include controls.button;
-	@include controls.icon-button($selected-sel: "&.selected__9293f");
-
 	width: unset;
+	height: unset;
 
 	&.iconDisabled__9293f {
 		opacity: 1;
+	}
+
+	&:not([aria-expanded]) {
+		--icon-button-height: var(--combobox-button-height);
+		@include controls.button;
+		@include controls.icon-button($selected-sel: "&.selected__9293f");
+	}
+
+	&[aria-expanded] {
+		@include controls.combobox-icon-button(
+			$active-sel: "&[aria-expanded='true']"
+		);
+
+		order: -1;
+
+		// last of selector
+		&:where(:nth-last-child(-n + 1 of &)) {
+			margin-inline-end: var(--toolbar-spacing);
+		}
 	}
 }
 
 .search__49676 {
 	margin-inline: var(--toolbar-spacing);
 
-	order: -1;
+	order: -2;
 
 	.icon__97492 {
 		--button-img: icon("search");
@@ -76,6 +93,7 @@
 	.searchBar__97492 {
 		background-color: transparent;
 		border: none;
+		padding: 0;
 
 		width: 200px;
 		height: unset;

@@ -2,17 +2,19 @@
 @use "shared/text";
 
 .attachWrapper__0923f {
-	--button-img: icon("plus", "mono");
-
 	padding: 0;
 	margin-inline-end: var(--toolbar-spacing);
 
-	.attachButtonInner__0923f {
-		padding: 0;
+	.attachButton__0923f {
+		--button-img: icon("plus", "mono");
+		@include controls.button;
+		@include controls.icon-button;
 	}
 }
 
 .channelTextArea_f75fb0 {
+	--icon-button-height: var(--combobox-button-height);
+
 	margin-bottom: var(--toolbar-container-spacing);
 
 	.stackedBars__74017 {
@@ -83,11 +85,6 @@
 	}
 
 	.button__24af7 {
-		@include controls.button;
-		@include controls.icon-button;
-
-		min-height: unset;
-
 		&.disabled__24af7 {
 			opacity: 1;
 		}
@@ -99,8 +96,6 @@
 
 	.button_e6e74f {
 		--button-img: icon("list");
-		@include controls.button;
-		@include controls.icon-button;
 
 		min-height: unset;
 	}
@@ -109,14 +104,6 @@
 		--button-img: icon("chat-bubble-alt");
 
 		margin-inline-start: var(--toolbar-spacing);
-	}
-
-	.emojiButton__04eed {
-		--button-img: icon("emoji");
-
-		.spriteContainer__04eed {
-			display: none;
-		}
 	}
 
 	.separator_aa63ab {

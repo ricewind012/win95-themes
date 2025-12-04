@@ -28,6 +28,10 @@
 	--actual-sidebar-width: calc(
 		var(--custom-guild-sidebar-width) + var(--scrollbar-size) + 1px
 	);
+	--toolbar-top-margin: calc(
+		var(--toolbar-container-spacing) * 2 + var(--combobox-button-height) +
+			var(--window-gap)
+	);
 
 	width: calc(100% - var(--window-pos) * 2);
 	height: calc(100% - var(--window-pos) * 2);

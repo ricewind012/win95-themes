@@ -3,7 +3,6 @@
 @use "shared/scrollbar";
 @use "shared/window";
 @use "shared++/utils";
-@use "vscode/shared";
 
 .badge {
 	margin-left: var(--text-spacing);
@@ -259,12 +258,9 @@
 
 	.action-item[aria-haspopup] {
 		& > .action-label {
-			@include shared.toolbar-combobox;
-		}
-
-		&.clicked > .action-label {
-			--offset-click: 1px;
-			@include controls.button-active;
+			@include controls.combobox-icon-button(
+				$active-sel: "&.clicked > .action-label"
+			);
 		}
 	}
 
@@ -274,12 +270,9 @@
 	}
 
 	.monaco-dropdown .action-label {
-		@include shared.toolbar-combobox;
-
-		&[aria-expanded="true"] {
-			--offset-click: 1px;
-			@include controls.button-active;
-		}
+		@include controls.combobox-icon-button(
+			$active-sel: "&[aria-expanded='true']"
+		);
 	}
 
 	.action-item {

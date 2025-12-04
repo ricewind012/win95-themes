@@ -6,6 +6,8 @@
 
 	background-image: none;
 
+	height: var(--combobox-button-height);
+
 	svg {
 		display: none;
 	}
@@ -22,6 +24,9 @@
 
 #StreamingSelector {
 	--button-img: icon("arrow-big-bottom", "mono");
-	--icon-button-height: 24px;
+	--icon-button-width: 16px;
+	--icon-button-height: var(--combobox-button-height);
 	@include controls.icon-button;
+
+	width: unset;
 }

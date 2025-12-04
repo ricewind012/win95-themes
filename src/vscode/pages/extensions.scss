@@ -1,7 +1,6 @@
 @use "shared/controls";
 @use "shared/tabs";
 @use "shared++/utils";
-@use "vscode/shared";
 
 .extension-editor {
 	padding: var(--tabpanel-spacing);
@@ -44,7 +43,7 @@
 		}
 
 		.action-label.icon {
-			@include shared.toolbar-combobox;
+			@include controls.combobox-icon-button;
 		}
 
 		.action-dropdown-item-separator {

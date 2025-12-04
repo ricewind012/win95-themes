@@ -1,4 +1,4 @@
-@use "vscode/shared";
+@use "shared/controls";
 
 .extensions-viewlet {
 	& > .header {
@@ -17,7 +17,7 @@
 	.extension-action {
 		&.codicon-extensions-manage {
 			--button-min-width: 0;
-			@include shared.toolbar-combobox;
+			@include controls.combobox-icon-button;
 		}
 	}
 }

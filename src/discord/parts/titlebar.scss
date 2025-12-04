@@ -16,6 +16,7 @@
 	// Move titlebar buttons to chat toolbar
 	.clickable_c99c29 {
 		--button-img: icon("newspaper");
+		--icon-button-height: var(--combobox-button-height);
 		--pos: calc(var(--window-pos) + var(--toolbar-container-spacing));
 
 		@include controls.button;

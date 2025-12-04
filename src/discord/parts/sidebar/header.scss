@@ -18,7 +18,9 @@
 }
 
 .container_f37cb1 {
-	--custom-guild-banner-height: 32px;
+	--custom-guild-banner-height: calc(
+		var(--toolbar-top-margin) - var(--window-gap) - 2px
+	);
 	--custom-channel-header-height: var(--custom-guild-banner-height);
 
 	box-shadow: var(--border-statusbar);
@@ -26,7 +28,7 @@
 
 	position: fixed;
 	top: 0;
-	height: 34px;
+	height: calc(var(--toolbar-top-margin) - var(--window-gap));
 	width: calc(var(--sidebar-width) - var(--window-gap));
 
 	& > button {

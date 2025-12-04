@@ -3,7 +3,10 @@
 @use "shared++/utils";
 
 #AdvancedSearchButton {
-	background: none;
+	--button-img: icon("search");
+	@include controls.combobox-icon-button(
+		$active-sel: "#AdvancedSearchContainer#Extended &"
+	);
 
 	svg {
 		display: none;
@@ -11,19 +14,7 @@
 }
 
 #AdvancedSearchContainer {
-	@include controls.button;
-
-	height: unset;
-	align-self: start;
-	justify-content: center;
-
-	& > .Focusable > div {
-		cursor: default;
-
-		&::before {
-			content: "Search...";
-		}
-	}
+	all: unset;
 }
 
 #AdvancedSearchPane {
@@ -34,6 +25,7 @@
 	inset: calc(10% - var(--titlebar-height)) 25%;
 
 	&::before {
+		// TODO: localize
 		content: "Advanced Search";
 
 		box-sizing: border-box;
@@ -43,13 +35,13 @@
 		// TODO: make them all focused
 		@include window.titlebar($focused-sel: "&");
 
+		font: var(--text-ui);
 		font-weight: bold;
 	}
 }
 
 #Container {
 	background-color: transparent;
-
 	gap: var(--toolbar-spacing);
 	margin: 0;
 }

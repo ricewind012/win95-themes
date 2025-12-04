@@ -1,18 +1,32 @@
 @use "shared/controls";
 @use "shared++/utils";
 
-.button__74017 {
-	@include controls.button;
-	@include controls.icon-button;
-
-	min-height: unset;
-}
-
 .buttons__74017 {
 	gap: 0;
 	margin-inline: var(--toolbar-spacing) 0;
 
 	height: unset;
+
+	[role="button"]:not([aria-expanded]) {
+		@include controls.button;
+		@include controls.icon-button;
+
+		min-height: unset;
+	}
+
+	[role="button"][aria-expanded] {
+		@include controls.combobox-icon-button(
+			$active-sel: "&[aria-expanded='true']"
+		);
+	}
+
+	.emojiButton__04eed {
+		--button-img: icon("emoji");
+
+		.spriteContainer__04eed {
+			display: none;
+		}
+	}
 }
 
 .channelTextArea__74017 {

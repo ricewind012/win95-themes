@@ -8,12 +8,19 @@
 }
 
 #Container {
+	// TODO(controls): make --button-spacing public
+	--combobox-icon-button-width: calc(
+		var(--button-spacing, 5px) * 2 + var(--text-spacing) * 2 +
+			var(--icon-size) + 10px
+	);
+
 	position: fixed;
 	position-anchor: --librarymainpanel;
 	top: anchor(top);
 	// Give space to the links section overflow button
 	right: calc(
-		anchor(right) + var(--icon-button-width) + var(--toolbar-container-spacing)
+		anchor(right) + var(--combobox-icon-button-width) +
+			var(--toolbar-container-spacing)
 	);
 	left: anchor(left);
 	width: unset;
@@ -75,7 +82,8 @@
 }
 
 #InnerContainer {
-	padding: 0 var(--toolbar-container-spacing);
+	padding: 0;
+	padding-inline-start: var(--toolbar-container-spacing);
 }
 
 #MenuButton {
@@ -84,18 +92,26 @@
 	&:not([aria-label]) {
 		// Looks like a notebook... close enough
 		--button-img: icon("file");
+		--icon-button-height: var(--combobox-button-height);
 		@include controls.button;
 		@include controls.icon-button($selected-sel: "&#MenuActive");
+
+		order: -1;
 	}
 
 	// "Manage" combobox
 	#MenuButtonContainer > & {
 		@include controls.combobox-button;
 
-		margin-right: var(--toolbar-spacing);
+		margin-inline-start: var(--toolbar-spacing);
+
+		height: unset;
+		justify-content: start;
 
 		&::before {
 			content: attr(aria-label);
+
+			flex-grow: 1;
 
 			border: none;
 			box-shadow: none;
@@ -106,6 +122,7 @@
 
 			order: 1;
 			display: initial;
+			position: relative;
 			top: var(--offset-click);
 			left: var(--offset-click);
 			width: 0;

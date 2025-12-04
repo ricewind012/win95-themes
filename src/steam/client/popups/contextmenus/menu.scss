@@ -3,6 +3,16 @@
 
 #MenuWrapper {
 	@include window.menubar-item($selected-sel: "&#MenuOpen");
+
+	.tool-tip-source > & {
+		padding: 0;
+
+		// #titlebarcontrols_Button
+		&#MenuOpen > div[class=""] > div {
+			--offset-click: 1px;
+			@include controls.button-active;
+		}
+	}
 }
 
 #Separator {

@@ -9,14 +9,16 @@
 
 #MenuButton {
 	--button-img: icon("url");
-	@include controls.button;
-	@include controls.icon-button;
+	@include controls.combobox-icon-button;
 
 	// ..and move said button into the toolbar !
 	position: fixed;
 	position-anchor: --librarymainpanel;
-	// TODO: wat
-	top: calc(anchor(top) + 1px);
+	top: anchor(top);
 	right: calc(anchor(right) + var(--toolbar-container-spacing));
 	width: unset;
+
+	svg {
+		display: none;
+	}
 }

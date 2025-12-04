@@ -25,6 +25,9 @@
 
 	&#NotificationsButton {
 		--button-img: icon("mail-read");
+		@include controls.combobox-icon-button;
+
+		height: var(--steamdesktop_icon-button-size);
 
 		&#HasNew {
 			--button-img: icon("mail");
@@ -37,7 +40,7 @@
 }
 
 #NotificationButtonContainer {
-	margin-right: var(--toolbar-spacing);
+	margin: 0;
 }
 
 #TitleBarControls {
@@ -50,9 +53,13 @@
 	z-index: 1;
 
 	& > :has(#AccountMenu) {
-		margin-right: var(--toolbar-spacing);
+		margin-inline-end: var(--toolbar-spacing);
 
 		order: -1;
+	}
+
+	& > :has(#NotificationsButton) {
+		order: -2;
 	}
 
 	svg {
