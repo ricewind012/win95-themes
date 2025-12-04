@@ -1,7 +1,7 @@
 @use "shared/menu";
 @use "shared++/utils";
 
-.popoutContainer_ce8328:has(> .user-profile-popout) {
+.popoutContainer_ce8328 {
 	left: 0;
 
 	&::before {
