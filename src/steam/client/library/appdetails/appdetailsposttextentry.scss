@@ -37,6 +37,4 @@
 	@include controls.text-field;
 
 	width: 100%;
-	// TODO(shared/controls): remove height for text-field maybe
-	height: unset;
 }

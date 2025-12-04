@@ -195,14 +195,14 @@
 
 	.unicodeShortcut_b9ee0c {
 		--button-img: icon("emoji");
+		--icon-button-width: calc(48px - var(--border-size) * 2);
+		--icon-button-height: 32px;
 		@include controls.button;
 		@include controls.icon-button;
 
 		margin: var(--border-size);
 
 		position: absolute;
-		width: calc(48px - var(--border-size) * 2);
-		min-width: unset;
-		height: 32px;
+		width: var(--icon-button-width);
 	}
 }

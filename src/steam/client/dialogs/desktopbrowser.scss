@@ -11,11 +11,10 @@
 	// New tab button
 	#BrowserTabs > & {
 		--button-img: icon("plus", "mono");
+		--icon-button-width: var(--tab-button-height);
+		--icon-button-height: var(--tab-button-height);
 		@include controls.button;
 		@include controls.icon-button;
-
-		min-width: var(--tab-button-height);
-		height: var(--tab-button-height);
 
 		svg {
 			display: none;

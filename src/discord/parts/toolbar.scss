@@ -98,6 +98,10 @@
 		width: 200px;
 		height: unset;
 
+		.DraftEditor-editorContainer {
+			height: unset;
+		}
+
 		.DraftEditor-root {
 			@include controls.text-field;
 

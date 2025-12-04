@@ -419,8 +419,7 @@
 .socialListTab {
 	@include utils.text-reset;
 
-	// 2px = --input-spacing
-	--spacing: calc(var(--border-size) + 2px);
+	--spacing: calc(var(--border-size) + var(--input-spacing));
 
 	background-color: transparent;
 	box-shadow: none;

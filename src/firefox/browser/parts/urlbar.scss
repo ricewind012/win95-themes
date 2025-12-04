@@ -23,8 +23,6 @@ $-input-height: round(
 }
 
 #urlbar-container {
-	--input-spacing: 2px;
-
 	--urlbar-container-height: #{$-input-height};
 	--urlbar-container-padding: 0px;
 	--urlbar-margin-inline: 0px;

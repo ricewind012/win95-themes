@@ -15,7 +15,7 @@
 		content: "";
 
 		position: absolute;
-		top: calc(var(--menubar-height) - 1px);
+		top: var(--menubar-height);
 		width: 100%;
 
 		@include controls.separator;

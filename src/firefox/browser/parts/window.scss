@@ -55,8 +55,6 @@ menubar {
 	& > menu {
 		@include window.menubar-item($selected-sel: "&[open]");
 
-		// TODO: why doesn't it inherit line-height here ?
-		line-height: 1;
 		border: none;
 	}
 }

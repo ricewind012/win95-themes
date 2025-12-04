@@ -38,13 +38,12 @@ $-sel-arrow-forward: "> :nth-child(4)";
 }
 
 #Arrow {
+	--icon-button-width: var(--icon-width);
+	--icon-button-height: var(--icon-height);
 	@include controls.button($disabled-sel: "&#Disabled");
 	@include controls.icon-button;
 
 	transform: none;
-
-	min-width: var(--icon-width);
-	height: var(--icon-height);
 
 	&#Disabled {
 		pointer-events: none;

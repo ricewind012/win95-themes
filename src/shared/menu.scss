@@ -1,12 +1,10 @@
 @mixin -item-check {
-	&::before {
-		content: "";
+	content: "";
 
-		position: absolute;
-		top: 5px;
+	position: absolute;
+	top: 5px;
 
-		background-color: var(--color-button-text);
-	}
+	background-color: currentColor;
 }
 
 @mixin item($selected-sel) {
@@ -34,7 +32,7 @@
 		height: 7px;
 
 		mask: icon("arrow-right", "mono");
-		background-color: var(--color-button-text);
+		background-color: currentColor;
 	}
 }
 
@@ -43,9 +41,9 @@
 }
 
 @mixin item-check {
-	@include -item-check;
-
 	&::before {
+		@include -item-check;
+
 		left: 6px;
 		width: 7px;
 		height: 7px;
@@ -62,13 +60,13 @@
 }
 
 @mixin item-radio {
-	@include -item-check;
-
 	&::before {
+		@include -item-check;
+
 		left: 7px;
 		width: 6px;
 		height: 6px;
 
-		mask: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2IDYiPjxyZWN0IHg9IjEiIHdpZHRoPSI0IiBoZWlnaHQ9IjEiLz48cmVjdCB5PSIxIiB3aWR0aD0iNiIgaGVpZ2h0PSI0Ii8+PHJlY3QgeD0iMSIgeT0iNSIgd2lkdGg9IjQiIGhlaWdodD0iMSIvPjwvc3ZnPgo=");
+		mask: icon("radio", "mono");
 	}
 }

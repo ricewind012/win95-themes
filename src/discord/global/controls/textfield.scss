@@ -3,4 +3,6 @@
 
 .input__0ed4f {
 	@include controls.text-field;
+
+	height: unset;
 }

@@ -30,9 +30,9 @@
 
 	// !important in .monaco-action-bar .action-item:not([role=tab])
 	.action-item.command-center-center:not([role="tab"]) {
+		--button-img: icon("file-search");
 		@include controls.button;
 		@include controls.icon-button;
-		--button-img: icon("file-search");
 
 		margin-right: var(--toolbar-spacing);
 

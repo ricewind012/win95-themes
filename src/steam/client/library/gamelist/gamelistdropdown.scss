@@ -24,8 +24,6 @@ $-icons: (
 }
 
 #CheckboxWithImage {
-	--button-img-pos: 3px 2px;
-
 	@include controls.button;
 	@include controls.icon-button($selected-sel: "&#Active");
 

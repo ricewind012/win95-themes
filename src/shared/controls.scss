@@ -18,8 +18,6 @@
 }
 
 @mixin -input-common {
-	--input-spacing: 2px;
-
 	appearance: none;
 	outline: none;
 	font: var(--text-ui);
@@ -43,11 +41,6 @@
 	color: var(--color-window-text);
 	box-shadow: var(--border-field);
 	padding: calc(var(--border-size) + var(--input-spacing));
-
-	height: round(
-		calc(var(--input-spacing) * 2 + var(--border-size) * 2 + 1lh),
-		1px
-	);
 }
 
 @mixin input-disabled {
@@ -64,8 +57,6 @@
 ) {
 	@include -input-common-disabled($disabled-sel);
 	@include -input-common;
-
-	--button-spacing: 5px;
 
 	background-color: var(--color-button-face);
 	color: var(--color-button-text);
@@ -236,24 +227,27 @@
 
 // TODO(port): $selected-sel
 @mixin icon-button($selected-sel: "&.hack") {
+	--offset-click: 0px;
+
 	min-width: var(--icon-button-width);
 	height: var(--icon-button-height);
 
 	#{$selected-sel},
 	&:active {
+		--offset-click: 1px;
+
 		background: var(--checkerboard);
 		box-shadow: var(--border-button-sunken);
-
-		&::before {
-			inset: 1px;
-		}
 	}
 
 	&::before {
 		content: "";
 
 		position: absolute;
-		inset: 0;
+		top: var(--offset-click);
+		right: 0;
+		bottom: 0;
+		left: var(--offset-click);
 
 		background: var(--button-img) no-repeat;
 		background-position: var(--button-img-pos, center);

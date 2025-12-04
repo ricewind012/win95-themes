@@ -36,8 +36,6 @@
 	.editor__1b31f {
 		@include controls.text-field;
 
-		// TODO(controls): not needed anymore?
-		height: unset;
 		min-height: unset;
 	}
 
@@ -45,8 +43,7 @@
 		font: var(--text-ui);
 		padding: 0;
 
-		// 2px = --input-spacing
-		inset: calc(var(--border-size) + 2px);
+		inset: calc(var(--border-size) + var(--input-spacing));
 		z-index: 1;
 	}
 

@@ -45,8 +45,14 @@
 }
 
 #RootMenuBar {
+	@include window.menubar;
+
 	gap: 0;
 	padding: 0;
+	margin-top: var(--window-gap);
+
+	flex: initial;
+	max-width: 100%;
 }
 
 #SuperNavBar {
@@ -104,13 +110,10 @@
 	width: 100%;
 }
 
-#RootMenuBar,
 #WindowControls {
 	flex: initial;
 	cursor: default;
-}
 
-#WindowControls {
 	-webkit-app-region: drag;
 
 	&::after {

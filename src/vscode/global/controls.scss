@@ -78,11 +78,10 @@
 }
 
 .monaco-dropdown-button {
+	--icon-button-width: 16px;
+	--icon-button-height: 24px;
 	@include controls.button;
 	@include controls.icon-button($selected-sel: "&[aria-expanded='true']");
-
-	min-width: 16px;
-	height: 24px;
 }
 
 .monaco-button-dropdown-separator {
@@ -98,7 +97,6 @@
 	@include controls.text-field;
 
 	overflow: visible;
-	height: unset;
 
 	.action-label {
 		padding: 0;
@@ -325,17 +323,6 @@
 		border: none;
 
 		flex-grow: 1;
-
-		.monaco-editor {
-			&[style*="height: 20px"],
-			&[style*="height: 21px"],
-			&[style*="height: 22px"],
-			&[style*="height: 23px"],
-			&[style*="height: 24px"] {
-				// TODO(controls): remove text-field height prop
-				height: calc(var(--text-ui-size) * var(--text-line) + 8px);
-			}
-		}
 
 		.view-lines {
 			font: var(--text-ui);

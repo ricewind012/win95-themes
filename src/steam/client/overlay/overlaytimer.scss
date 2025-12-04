@@ -25,7 +25,7 @@
 
 	#Colon {
 		font-size: var(--text-header-size);
-		margin-block: 5px; // --button-spacing
+		margin-block: var(--button-spacing);
 		margin-inline: 2px;
 	}
 
@@ -54,7 +54,6 @@
 		margin-block: 1px;
 
 		width: 100%;
-		height: unset;
 	}
 
 	#TimePartLabel {

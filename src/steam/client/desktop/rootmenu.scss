@@ -29,7 +29,7 @@
 #RootMenuButton {
 	@include window.menubar-item($selected-sel: "&.hack");
 
-	color: var(--color-menubar-text);
+	color: inherit;
 	font-size: var(--text-ui-size);
 
 	svg {
