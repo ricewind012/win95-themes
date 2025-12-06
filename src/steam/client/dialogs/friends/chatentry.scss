@@ -6,7 +6,19 @@
 	height: unset;
 }
 
-#chatEntryActionsGroup,
+#chatEntryActionsGroup {
+	@extend #chatEntryControls;
+
+	#chatSubmitButton {
+		@include controls.combobox-icon-button;
+	}
+
+	// lol valve
+	.tool-tip-source {
+		display: none;
+	}
+}
+
 #chatEntryControls {
 	background-color: transparent;
 	box-shadow: none;

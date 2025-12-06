@@ -118,8 +118,9 @@ $-sel-arrow-forward: "> :nth-child(4)";
 
 	text-transform: unset;
 
-	height: var(--combobox-button-height);
+	height: var(--steamdesktop_icon-button-size);
 
+	&:active,
 	&#Selected {
 		// controls.button-active + active tab-button state
 		background: var(--checkerboard);
@@ -129,8 +130,8 @@ $-sel-arrow-forward: "> :nth-child(4)";
 		box-shadow: var(--border-tab-button-sunken);
 	}
 
-	&:nth-of-type(1),
-	&:nth-of-type(5) {
+	&:where(:nth-child(-n + 1 of &)),
+	&:where(:nth-last-child(-n + 1 of &)) {
 		margin-left: var(--toolbar-spacing);
 	}
 }

@@ -2,6 +2,8 @@
 
 #HardwareSurveyDialog {
 	.DialogButton.Primary {
+		// Undo ._DialogColLayout > ._DialogLayout
+		flex: unset;
 		width: 148px;
 	}
 }

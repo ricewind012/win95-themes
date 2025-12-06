@@ -229,8 +229,8 @@
 	margin: 0;
 	margin-right: var(--tree-spacing);
 
-	svg {
-		visibility: hidden;
+	&::before {
+		inset-inline-start: 0;
 	}
 }
 
@@ -270,20 +270,34 @@
 		}
 	}
 
-	.groupCount,
-	.groupName {
+	.groupCount {
 		@include utils.text-reset;
 	}
 
-	.gameGroupContainer,
+	.gameGroupContainer {
+		align-items: center;
+		width: calc(9px + var(--tree-spacing) + var(--icon-size));
+		height: var(--icon-size);
+	}
+
 	.groupName {
 		align-items: center;
 	}
 
+	.groupIcon {
+		margin: 0;
+
+		width: var(--icon-size);
+		height: var(--icon-size);
+	}
+
 	.groupName {
 		@include tree.item($expanded-sel: "&:not(.Collapsed)");
+		@include utils.text-reset;
 
 		margin: 0;
+
+		z-index: 1;
 
 		&::before {
 			display: none;
@@ -299,14 +313,35 @@
 	gap: var(--window-gap);
 
 	.friend {
+		--avatar-size: 32px;
+
 		@include tree.item($expanded-sel: "&.hack");
 
-		margin-top: 4px;
-		margin-bottom: 4px;
+		padding: 0;
+		margin-inline-start: 20px;
+		margin-block: 4px;
+
+		height: var(--avatar-size);
+
+		&:hover {
+			background-color: color-mix(
+				in srgb,
+				var(--status-color) 20%,
+				transparent
+			);
+		}
 
 		&::before {
-			top: -13px;
-			height: 24px;
+			top: calc(var(--avatar-size) / -2);
+			height: calc(var(--avatar-size) + 2px);
+		}
+
+		.avatarHolder {
+			--steamavatar_size: var(--avatar-size);
+		}
+
+		.labelHolder {
+			height: unset;
 		}
 	}
 
@@ -364,8 +399,7 @@
 
 	// TODO(controls): maybe stop using position: absolute for this
 	&::before {
-		display: block;
-		position: unset;
+		position: relative;
 		width: var(--icon-size);
 		height: var(--icon-size);
 	}
@@ -431,6 +465,26 @@
 	.inputContainer {
 		margin: calc(var(--spacing) * -1);
 	}
+}
+
+.SteamPlayerGroupFooter {
+	color: light-dark(green, lightgreen);
+}
+
+.SteamPlayerGroupFooterCount {
+	.count {
+		color: inherit;
+		font: var(--text-ui);
+	}
+}
+
+.SteamPlayerGroupFooterLabel {
+	color: inherit;
+	font: var(--text-ui);
+}
+
+.SteamPlayerGroupLines {
+	display: none;
 }
 
 .tabLabel {

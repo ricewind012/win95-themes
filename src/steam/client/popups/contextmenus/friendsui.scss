@@ -1,4 +1,4 @@
-@use "shared/controls";
+@use "shared++/utils";
 @use "shared/menu";
 
 // Context menu window
@@ -7,21 +7,18 @@
 	padding: 0;
 }
 
-// "Do Not Disturb"
 .contextMenuSectionContent {
-	&:last-child::before,
-	&:not(:last-child)::after {
-		content: "";
+	&::after {
+		@include utils.pseudo-separator;
+	}
 
-		@include controls.separator;
+	.menuChecked {
+		@include menu.item-radio;
 	}
 }
 
-.personaContextMenuItem {
-	&.menuChecked {
-		@include menu.item-radio;
-	}
-
+// "Do Not Disturb"
+.friendsContextMenu {
 	.DialogCheckbox {
 		display: none;
 	}
@@ -36,7 +33,6 @@
 	font: var(--text-ui);
 	color: var(--color-gray-text);
 	padding: 0;
-	margin-top: 2px;
 }
 
 // Friend

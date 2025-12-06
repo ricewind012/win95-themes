@@ -25,8 +25,7 @@
 	inset: calc(10% - var(--titlebar-height)) 25%;
 
 	&::before {
-		// TODO: localize
-		content: "Advanced Search";
+		content: var(--FilterEdit_SearchModeHeader);
 
 		box-sizing: border-box;
 		position: unset;

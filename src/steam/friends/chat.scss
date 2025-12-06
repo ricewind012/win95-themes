@@ -94,7 +94,9 @@
 	border: none;
 	box-shadow: none;
 	padding: 0;
-	margin-left: 0;
+	margin-inline: 0 var(--toolbar-spacing);
+
+	order: -1;
 }
 
 .chatRoomButton {
@@ -410,6 +412,7 @@
 .msg {
 	background-color: transparent;
 	font: var(--text-ui);
+	padding-left: calc(var(--steamavatar_size) + 8px + 2px);
 
 	&.timeDivision {
 		@include utils.text-reset;
@@ -450,6 +453,10 @@
 	color: inherit;
 	font-weight: bold;
 	margin: 0;
+}
+
+.speakerStatus {
+	height: var(--steamavatar_size);
 }
 
 .speakerTimeStamp {

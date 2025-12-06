@@ -93,10 +93,6 @@
 	@include shared.library_drag-handle;
 }
 
-#EmptyTransfers {
-	padding: 0;
-}
-
 #InProgress {
 	color: inherit;
 }
@@ -135,9 +131,18 @@
 
 	&:not(#Active) {
 		@include shared.library_section;
+
+		#EmptyTransfers {
+			padding: var(--appdetails_container-spacing-y)
+				var(--appdetails_container-spacing-x);
+		}
 	}
 
 	&#Active {
+		&#Empty {
+			background-color: light-dark(#bbe5f3, #001e33);
+		}
+
 		#DragHandle {
 			top: var(--appdetails_container-spacing-y);
 			left: calc(var(--appdetails_container-spacing-x) + 55%);
@@ -147,16 +152,15 @@
 			padding: 0;
 		}
 	}
-
-	&#Empty {
-		background-color: light-dark(#bbe5f3, #001e33);
-	}
 }
 
 #SectionItem {
 	background-color: transparent;
+	padding: var(--appdetails_container-spacing-y)
+		var(--appdetails_container-spacing-x);
 
-	padding: 0;
+	// A constant scrollbar appears for an OOB #DragHandle
+	overflow: hidden;
 }
 
 #SectionItemCenter,
@@ -179,6 +183,7 @@
 	@include shared.library_section-content;
 
 	border: none;
+	padding: 0;
 	margin: 0;
 
 	display: flex;

@@ -13,15 +13,24 @@
 	width: var(--steamavatar_size);
 	height: var(--steamavatar_size);
 
-	&.X-Small {
+	&:where(.X-Small) {
 		--steamavatar_size: 16px;
 	}
 
-	&.Medium {
+	&:where(.Medium) {
 		--steamavatar_size: 24px;
 	}
 
-	&.X-Large {
+	&:where(.X-Large) {
 		--steamavatar_size: 64px;
+	}
+}
+
+#avatarStatus {
+	background: var(--status-color);
+
+	// for mask
+	.awayOrSnooze & {
+		opacity: 1;
 	}
 }

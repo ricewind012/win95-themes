@@ -1,6 +1,19 @@
 @use "shared/controls";
 @use "shared++/utils";
 
+%-separator {
+	padding-block: 0 8px;
+
+	&::after {
+		@include utils.pseudo-separator;
+
+		position: absolute;
+		inset-inline: 0;
+		inset-block-end: -2px;
+		width: 100%;
+	}
+}
+
 #BrowserTab {
 	@include controls.tab-button($selected-sel: "&#Active");
 
@@ -27,11 +40,11 @@
 }
 
 #BrowserTabs {
+	@extend %-separator;
+
 	gap: var(--tab-button-spacing);
 
-	&::after {
-		@include utils.pseudo-separator;
-	}
+	position: relative;
 }
 
 #BrowserViewHost {
@@ -107,8 +120,10 @@
 }
 
 #URLBar {
+	@extend %-separator;
+
 	background-color: transparent;
-	padding: 0;
+	padding-inline: var(--toolbar-container-spacing);
 }
 
 #URLBarText {

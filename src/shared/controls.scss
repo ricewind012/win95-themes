@@ -3,7 +3,8 @@
 @mixin -checkbox-radio-common($checked-sel, $disabled-sel: "&:disabled") {
 	--color-to-change: var(--color-window);
 
-	position: relative;
+	@include -input-common;
+
 	width: var(--sel-button-size);
 	height: var(--sel-button-size);
 

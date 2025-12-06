@@ -28,8 +28,8 @@
 	&#Selected {
 		@include list.item-name-selected;
 
-		--color-gray-text: var(--color-highlight-text);
-		border: none;
+		// for border
+		margin-block-start: -1px;
 	}
 
 	* {

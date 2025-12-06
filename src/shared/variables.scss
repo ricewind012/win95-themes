@@ -224,6 +224,9 @@
 			var(--color-scrollbar) 0% 50%
 		)
 		0% 0% / 2px 2px;
+
+	// Automatic light/dark color support
+	color-scheme: light dark;
 }
 
 // Actually belongs in generatedassets.scss, but it outputs every time it

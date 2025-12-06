@@ -1,5 +1,4 @@
 @use "shared/controls";
-@use "shared++/utils";
 
 #Controls {
 	gap: var(--dialog-button-spacing);
@@ -8,16 +7,6 @@
 }
 
 #EmoticonButton {
-	@include utils.use-attr-text("title");
-
-	min-width: 111px;
-	height: unset;
-
-	&::before {
-		color: inherit;
-		text-shadow: inherit;
-	}
-
 	svg {
 		display: none;
 	}
@@ -27,6 +16,7 @@
 	@include controls.button;
 
 	width: unset;
+	height: var(--icon-buttin-height);
 
 	#Label {
 		color: inherit;

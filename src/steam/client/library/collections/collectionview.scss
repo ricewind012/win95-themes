@@ -80,6 +80,11 @@
 	left: anchor(left);
 	height: unset;
 
+	// No buttons
+	&:not(:has(> .tool-tip-source)) {
+		margin-block: 4px;
+	}
+
 	.DialogInput_Wrapper {
 		margin: 0;
 

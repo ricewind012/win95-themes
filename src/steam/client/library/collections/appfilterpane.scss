@@ -14,7 +14,7 @@
 }
 
 #CompatDropDown {
-	padding: 0;
+	padding-bottom: var(--text-spacing);
 
 	.DialogDropDown_CurrentDisplay {
 		width: unset;

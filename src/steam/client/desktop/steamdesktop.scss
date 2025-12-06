@@ -5,24 +5,28 @@
 
 // The browser view is above everything else
 #Browser {
-	margin-left: 2px;
-	margin-top: 2px;
+	margin-left: var(--border-size);
+	margin-top: var(--border-size);
 
 	position: relative;
-	width: calc(100% - 4px);
+	width: calc(100% - var(--border-size) * 2);
 
 	&::before {
 		content: "";
 
 		position: absolute;
-		inset: -2px -2px -3px -2px;
+		inset: calc(var(--border-size) * -1);
 
 		@include window.content-container;
 	}
 }
 
 #BrowserWrapper {
-	height: calc(100% - 3px);
+	height: calc(100% - var(--border-size));
+}
+
+#ContentFrame {
+	margin-bottom: var(--window-gap);
 }
 
 #FocusBar,

@@ -3,8 +3,6 @@
 }
 
 #BackupAppsDialog {
-	margin: var(--dialog-spacing);
-
 	min-width: 400px;
 
 	.DialogBody {
@@ -13,7 +11,6 @@
 	}
 
 	.DialogHeader {
-		margin: calc(var(--dialog-spacing) * -1);
 		margin-bottom: var(--dialog-spacing);
 	}
 }

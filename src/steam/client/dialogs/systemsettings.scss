@@ -9,19 +9,20 @@
 
 #SteamRuntimeSystemInfoDialogContent {
 	.DialogBody {
-		box-shadow: none;
-		padding: 0;
+		gap: 0;
+		// Stolen from src/steam/shared/dialogshared.scss
+		padding-bottom: calc(1lh + 3px + var(--window-gap) + var(--dialog-spacing));
 	}
 
 	.DialogBodyText {
-		margin-bottom: calc(var(--dialog-button-spacing) + 6px);
+		margin-bottom: calc(12px + var(--dialog-button-spacing));
 	}
 }
 
 #Text {
 	@include utils.text-reset;
 
-	font-family: var(--text-font-monospace);
+	font: var(--text-monospace);
 }
 
 #TextContainer {

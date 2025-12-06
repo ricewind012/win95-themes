@@ -36,6 +36,19 @@ body {
 	@include window.container;
 }
 
+// Many components for friend stuff use these classes
+$-status-colors: (
+	ingame: green,
+	offline: gray,
+	online: blue,
+);
+
+@each $k, $v in $-status-colors {
+	.#{$k} {
+		--status-color: light-dark(#{$v}, light#{$v});
+	}
+}
+
 // Revert everything in mini profile tooltip, since it will look like absolute
 // ass on light theme anyway
 .miniProfileHover {

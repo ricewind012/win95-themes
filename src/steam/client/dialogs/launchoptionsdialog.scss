@@ -46,6 +46,10 @@ div#AppNameHeader {
 	padding: 0;
 	margin: 0;
 
+	input[type="radio"] {
+		@include controls.radio($checked-sel: "&:checked");
+	}
+
 	label {
 		font: var(--text-ui);
 		padding-left: var(--label-spacing);

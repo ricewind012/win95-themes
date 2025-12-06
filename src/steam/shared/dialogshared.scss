@@ -213,6 +213,8 @@
 
 .DialogInput {
 	@include controls.text-field;
+
+	height: unset;
 }
 
 .DialogInputLabelGroup {
@@ -223,10 +225,11 @@
 	gap: var(--dialog-button-spacing);
 }
 
-.DialogLabel {
+:where(.DialogLabel) {
 	font: var(--text-ui);
 	color: inherit;
 	text-transform: unset;
+	margin: 0;
 }
 
 .DialogMenuPosition ._DialogInputContainer {

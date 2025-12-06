@@ -1,20 +1,23 @@
 @use "shared++/utils";
 
 #playerName {
+	// Declared in src/steam/global.scss
+	color: var(--status-color);
 	font: var(--text-ui);
 	font-weight: bold;
-	margin-bottom: -2px;
+	padding: 0;
+	margin: 0;
 }
 
 #richPresenceLabel {
 	@include utils.text-reset;
 
 	color: var(--color-gray-text);
+	// Make it fit for 32px avatars
 	margin-top: -2px;
 }
 
 #statusAndName {
 	gap: var(--text-spacing);
-	margin-top: 1px;
-	margin-bottom: 0;
+	margin: 0;
 }

@@ -1,6 +1,16 @@
 @use "shared/controls";
 @use "shared++/utils";
 
+@mixin -combobox-button {
+	// TODO: for some reason it's not aligned like in vs code, maybe it got
+	// fixed in later chromium ?
+	--button-img-pos-y: 1px;
+
+	@include controls.combobox-icon-button;
+
+	height: var(--steamdesktop_icon-button-size);
+}
+
 #AccountMenu {
 	@include controls.combobox-button;
 }
@@ -25,9 +35,7 @@
 
 	&#NotificationsButton {
 		--button-img: icon("mail-read");
-		@include controls.combobox-icon-button;
-
-		height: var(--steamdesktop_icon-button-size);
+		@include -combobox-button;
 
 		&#HasNew {
 			--button-img: icon("mail");
@@ -36,6 +44,11 @@
 
 	&#SoundtrackControls {
 		--button-img: icon("sound");
+		@include -combobox-button;
+	}
+
+	&::after {
+		flex-shrink: 0;
 	}
 }
 
@@ -58,7 +71,7 @@
 		order: -1;
 	}
 
-	& > :has(#NotificationsButton) {
+	& > :has(#NotificationsButton, #SoundtrackControls) {
 		order: -2;
 	}
 

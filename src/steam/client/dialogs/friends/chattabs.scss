@@ -20,8 +20,8 @@
 	@include utils.text-reset;
 
 	mask: none;
-	// Make it consistent with friends
 	font-weight: bold;
+	margin-inline-start: var(--text-spacing);
 }
 
 #ChatTabTransitionGroup {
@@ -29,6 +29,12 @@
 
 	border: none;
 	//padding-left: 3px;
+
+	.avatarHolder {
+		--steamavatar_size: 24px;
+
+		margin-inline-end: var(--text-spacing);
+	}
 
 	svg {
 		display: none;

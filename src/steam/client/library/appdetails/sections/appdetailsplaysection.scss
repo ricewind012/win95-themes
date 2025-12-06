@@ -26,6 +26,10 @@
 
 	// Undo all sticky header shit
 	&#StickyHeader {
+		// :where(#library_AppDetailsMain > :not(:empty))
+		box-shadow: none;
+		padding: 0;
+
 		#GameStatsSection {
 			opacity: 1;
 			transform: none;

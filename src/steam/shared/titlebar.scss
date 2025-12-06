@@ -71,7 +71,7 @@
 	}
 }
 
-.title-area-icon {
+:where(.title-area-icon) {
 	@include controls.button;
 	@include window.titlebar-button;
 
