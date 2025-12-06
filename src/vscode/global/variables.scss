@@ -40,12 +40,18 @@
 	--vscode-scrollbar-shadow: transparent;
 
 	--vscode-editorStickyScroll-background: var(--color-window);
-	--vscode-editorStickyScroll-border: var(--color-window-text);
+	--vscode-editorStickyScroll-border: var(--color-gray-text);
 	--vscode-editorStickyScroll-shadow: transparent;
 
 	--vscode-peekViewEditor-background: var(--color-window);
 	--vscode-peekViewEditorGutter-background: var(--color-window);
 	--vscode-peekViewEditorStickyScroll-background: var(--color-window);
+
+	--vscode-editorSuggestWidget-selectedForeground: var(--color-highlight-text);
+	--vscode-editorSuggestWidget-selectedIconForeground: var(
+		--color-highlight-text
+	);
+	--vscode-editorSuggestWidget-selectedBackground: var(--color-highlight);
 
 	// Panel
 	--vscode-panelTitle-activeForeground: var(--color-button-text);
@@ -72,9 +78,15 @@
 	--vscode-list-invalidItemForeground: yellow;
 
 	--vscode-sideBar-background: var(--color-window);
+	--vscode-sideBarSectionHeader-background: var(--color-button-face);
+	--vscode-sideBarSectionHeader-foreground: var(--color-button-text);
 	--vscode-sideBarTitle-background: transparent;
 	--vscode-sideBarTitle-foreground: var(--color-button-text);
 	--vscode-gitDecoration-ignoredResourceForeground: var(--color-gray-text);
+
+	--vscode-sideBarStickyScroll-background: var(--color-window);
+	--vscode-sideBarStickyScroll-border: var(--color-gray-text);
+	--vscode-sideBarStickyScroll-shadow: transparent;
 
 	// Settings
 	--vscode-settings-focusedRowBackground: transparent;

@@ -11,6 +11,10 @@
 }
 
 .search-view {
+	.monaco-count-badge {
+		margin-right: var(--text-spacing);
+	}
+
 	.query-details {
 		margin: 0;
 	}

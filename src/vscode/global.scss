@@ -8,5 +8,8 @@
 
 	& > .scrollbar:where(.invisible.fade, .visible) {
 		opacity: 1;
+
+		// Appears above the context menu otherwise.
+		z-index: auto;
 	}
 }

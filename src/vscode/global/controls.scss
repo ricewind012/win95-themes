@@ -152,7 +152,7 @@
 // Badges
 .monaco-count-badge {
 	background-color: transparent;
-	color: inherit;
+	color: var(--color-gray-text);
 	font: var(--text-ui);
 	@include utils.parentheses;
 	padding: 0;
@@ -189,18 +189,26 @@
 .monaco-scrollable-element > .scrollbar {
 	@include scrollbar.container;
 
-	top: 0px;
-	height: 100%;
-
 	&.horizontal {
 		width: 100%;
 		height: var(--scrollbar-size);
+
+		& > .slider {
+			height: var(--scrollbar-size);
+		}
+	}
+
+	&.vertical {
+		width: var(--scrollbar-size);
+		height: 100%;
+
+		& > .slider {
+			width: var(--scrollbar-size);
+		}
 	}
 
 	& > .slider {
 		@include scrollbar.thumb;
-
-		width: var(--scrollbar-size);
 	}
 
 	& > .scra {

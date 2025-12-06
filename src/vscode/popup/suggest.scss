@@ -1,19 +1,11 @@
-@use "shared/window";
+@use "shared/listbox";
 
 .suggest-widget {
-	@include window.container($child: true);
+	@include listbox.container;
 
-	border: none;
-
-	.monaco-scrollable-element {
-		overflow: hidden;
-	}
-
-	.monaco-list-row {
-		padding-right: var(--scrollbar-size);
-	}
-
-	.monaco-list-rows {
-		margin: 0;
+	.monaco-list {
+		background-color: transparent;
+		box-shadow: none;
+		padding: 0;
 	}
 }

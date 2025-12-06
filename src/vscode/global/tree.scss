@@ -98,7 +98,7 @@ $-max-nest: 10;
 	--offset: 0px;
 
 	&:not([aria-expanded]) {
-		--offset: -10px;
+		--offset: -11px;
 	}
 }
 
@@ -217,6 +217,13 @@ $-max-nest: 10;
 		left: 1px;
 		width: 11px;
 	}
+
+	.pane-body
+		> :not(.explorer-folders-view)
+		[role="treeitem"]:not([aria-level="1"])
+		& {
+		visibility: hidden;
+	}
 }
 
 .monaco-tl-indent {
@@ -234,6 +241,21 @@ $-max-nest: 10;
 			--tree-spacing: 7px;
 		}
 	}
+}
+
+// Sticky
+.monaco-tree-sticky-container {
+	width: calc(100% - var(--scrollbar-size));
+
+	.monaco-tl-contents::before,
+	.monaco-tl-twistie {
+		visibility: hidden;
+	}
+}
+
+.monaco-tree-sticky-row {
+	// fix border not appearing
+	background-color: transparent;
 }
 
 // Icons

@@ -21,6 +21,10 @@
 			@include controls.separator;
 		}
 	}
+
+	.hover-contents {
+		padding: 3px;
+	}
 }
 
 .monaco-hover-content {
