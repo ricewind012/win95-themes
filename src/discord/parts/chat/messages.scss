@@ -1,5 +1,9 @@
 @use "shared/controls";
 
+.avatar_c19a55 {
+	margin: 0;
+}
+
 .buttonContainer_c19a55 {
 	.hoverBarButton_f84418 {
 		@include controls.button;
@@ -21,7 +25,27 @@
 	margin: 0;
 }
 
-.message_c19a55 {
+.messageContent_c19a55 {
+	font-size: var(--text-ui-size);
+}
+
+.repliedTextContent_c19a55 {
+	padding: 0;
+	margin: 0;
+}
+
+.timestamp_c19a55 {
+	font: var(--text-ui);
+
+	height: unset;
+}
+
+.username_c19a55 {
+	font: var(--text-ui);
+	font-weight: bold;
+}
+
+.wrapper_c19a55 {
 	--chat-markup-line-height: 1.5;
 	min-height: unset;
 
@@ -46,24 +70,4 @@
 			min-height: unset;
 		}
 	}
-}
-
-.messageContent_c19a55 {
-	font-size: var(--text-ui-size);
-}
-
-.repliedTextContent_c19a55 {
-	padding: 0;
-	margin: 0;
-}
-
-.timestamp_c19a55 {
-	font: var(--text-ui);
-
-	height: unset;
-}
-
-.username_c19a55 {
-	font: var(--text-ui);
-	font-weight: bold;
 }

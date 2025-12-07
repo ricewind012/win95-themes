@@ -5,7 +5,7 @@
 .privateChannels_e6b769 {
 	@include window.content-container;
 
-	margin-top: var(--sidebar-top-margin);
+	margin-top: var(--toolbar-top-margin);
 
 	.channel__972a0 {
 		margin: 0;
@@ -17,6 +17,7 @@
 
 	.scroller__99e7c {
 		background-color: transparent;
+		margin: 0;
 	}
 
 	.searchBar_e6b769 {

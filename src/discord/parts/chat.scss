@@ -3,8 +3,8 @@
 
 // TODO: put them in toolbar
 .barBase__0f481 {
-	opacity: 1;
 	background-color: transparent;
+	border: none;
 	padding: 0;
 
 	right: calc(var(--border-size) + var(--scrollbar-size));
@@ -20,14 +20,16 @@
 		bottom: var(--border-size);
 	}
 
-	button {
-		text-align: center;
-	}
-
 	// TODO: unify
 	svg {
 		display: none;
 	}
+}
+
+.barButtonBase__0f481 {
+	@include controls.button;
+
+	text-align: center;
 }
 
 .chat_f75fb0 {

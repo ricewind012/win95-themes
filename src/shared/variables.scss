@@ -205,6 +205,10 @@
 
 	--button-min-width: 75px;
 	--combobox-button-height: 24px;
+	--combobox-icon-button-width: calc(
+		var(--button-spacing) * 2 + var(--text-spacing) * 2 + var(--icon-size) +
+			10px
+	);
 	--tab-button-spacing: 4px;
 	--tab-button-height: 24px;
 

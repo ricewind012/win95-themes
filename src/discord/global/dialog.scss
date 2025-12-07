@@ -5,23 +5,6 @@
 
 $-titlebar-description-selector: "> :first-child + [data-text-variant]";
 
-// [data-dialog] for mana modals
-:where([role="dialog"]:not([aria-label=""], [data-dialog])) {
-	@include window.container($child: true);
-
-	&[aria-label] {
-		&::before {
-			content: attr(aria-label);
-
-			box-sizing: border-box;
-			flex-shrink: 0;
-
-			@include window.titlebar($focused-sel: "&");
-			@include window.titlebar-name;
-		}
-	}
-}
-
 [class*="formGroup"] {
 	@include text.input-label;
 
@@ -93,6 +76,8 @@ $-titlebar-description-selector: "> :first-child + [data-text-variant]";
 }
 
 .root__49fc1 {
+	@include window.container($child: true);
+
 	border: none;
 
 	overflow: visible;

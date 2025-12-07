@@ -95,7 +95,7 @@
 	.categoryList_c0e32c {
 		@include window.content-container;
 
-		top: calc(21px + var(--window-gap));
+		top: calc(var(--combobox-button-height) + var(--window-gap));
 		left: 0;
 		width: calc(48px + var(--scrollbar-size));
 	}
@@ -107,7 +107,15 @@
 	}
 
 	[role="button"][aria-haspopup] {
-		@include controls.combobox;
+		@include controls.combobox-icon-button(
+			$active-sel: "&[aria-expanded='true']"
+		);
+
+		height: var(--combobox-button-height);
+
+		&::before {
+			margin: 0;
+		}
 	}
 
 	[role="none presentation"] {
@@ -204,5 +212,9 @@
 
 		position: absolute;
 		width: var(--icon-button-width);
+
+		svg {
+			display: none;
+		}
 	}
 }

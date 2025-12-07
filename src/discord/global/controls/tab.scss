@@ -1,6 +1,6 @@
 @use "shared/tabs";
 
-[role="tab"] {
+:where([role="tab"]) {
 	font: var(--text-ui);
 
 	overflow: visible;
@@ -14,24 +14,24 @@
 	}
 }
 
-[role="tablist"] {
+:where([role="tablist"]) {
 	border: none;
 	gap: 0;
 	padding: 0;
 	margin: 0;
 
-	&[aria-orientation="horizontal"] {
+	:where(&[aria-orientation="horizontal"]) {
 		@include tabs.container;
 
-		[role="tab"] {
+		:where([role="tab"]) {
 			@include tabs.tab($selected-sel: "&[aria-selected='true']");
 		}
 	}
 
-	&[aria-orientation="vertical"] {
+	:where(&[aria-orientation="vertical"]) {
 		@include tabs.container-vertical;
 
-		[role="tab"] {
+		:where([role="tab"]) {
 			@include tabs.tab-vertical($selected-sel: "&[aria-selected='true']");
 
 			display: flex;
@@ -40,7 +40,7 @@
 	}
 }
 
-[role="tabpanel"] {
+:where([role="tabpanel"]) {
 	@include tabs.content;
 
 	margin: 0;

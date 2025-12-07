@@ -8,11 +8,6 @@
 }
 
 #Container {
-	--combobox-icon-button-width: calc(
-		var(--button-spacing) * 2 + var(--text-spacing) * 2 + var(--icon-size) +
-			10px
-	);
-
 	position: fixed;
 	position-anchor: --librarymainpanel;
 	top: anchor(top);

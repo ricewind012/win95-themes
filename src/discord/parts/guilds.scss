@@ -18,6 +18,12 @@
 		display: none;
 	}
 
+	.wrapper_cc5dd2,
+	.wrapper_cc5dd2 > foreignObject {
+		width: var(--icon-button-width);
+		height: var(--icon-button-height);
+	}
+
 	[role="treeitem"] {
 		@include controls.button;
 		@include controls.icon-button($selected-sel: "&[aria-selected='true']");
@@ -40,15 +46,39 @@
 		}
 	}
 
+	& > :nth-last-child(2) {
+		--button-img: icon("chat-room-list");
+		@extend %-guilds-top-toolbar-button;
+
+		left: calc(var(--pos) + var(--icon-button-width) * 2);
+	}
+
 	& > :nth-last-child(3) {
 		--button-img: icon("room-enter");
 		@extend %-guilds-top-toolbar-button;
 
 		left: calc(var(--pos) + var(--icon-button-width));
+	}
 
-		.circleIcon__5bc7e {
-			display: none;
+	.blobContainer_e5445c.selected_e5445c {
+		&::before {
+			content: "";
+
+			position: absolute;
+			inset-inline: 0;
+			inset-block: calc(var(--space-xs) / -2);
+
+			background-color: var(--color-highlight);
 		}
+	}
+
+	// discovery/join server
+	.circleIcon__5bc7e {
+		display: none;
+	}
+
+	.guildSeparator__252b6 {
+		display: none;
 	}
 }
 
@@ -57,11 +87,6 @@
 
 	mask {
 		display: none;
-	}
-
-	[role="treeitem"] {
-		padding: 0;
-		margin: 0;
 	}
 }
 

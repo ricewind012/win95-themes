@@ -43,7 +43,7 @@
 	display: none;
 }
 
-.iconWrapper__9293f {
+.iconWrapper__9293f.clickable__9293f {
 	width: unset;
 	height: unset;
 
@@ -55,12 +55,6 @@
 		--icon-button-height: var(--combobox-button-height);
 		@include controls.button;
 		@include controls.icon-button($selected-sel: "&.selected__9293f");
-	}
-
-	&[aria-expanded] {
-		@include controls.combobox-icon-button(
-			$active-sel: "&[aria-expanded='true']"
-		);
 
 		order: -1;
 
@@ -68,6 +62,12 @@
 		&:where(:nth-last-child(-n + 1 of &)) {
 			margin-inline-end: var(--toolbar-spacing);
 		}
+	}
+
+	&[aria-expanded] {
+		@include controls.combobox-icon-button(
+			$active-sel: "&[aria-expanded='true']"
+		);
 	}
 }
 
@@ -123,5 +123,5 @@
 
 .toolbar__9293f {
 	gap: 0;
-	margin-right: var(--icon-button-width);
+	margin-right: var(--combobox-icon-button-width);
 }

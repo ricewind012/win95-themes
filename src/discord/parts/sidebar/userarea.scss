@@ -32,6 +32,7 @@
 }
 
 .button__67645 {
+	--icon-button-width: var(--combobox-button-height);
 	--icon-button-height: var(--combobox-button-height);
 	@include controls.icon-button;
 

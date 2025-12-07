@@ -61,5 +61,6 @@
 .tabBody__133bf {
 	background-color: var(--color-button-face);
 	padding: var(--dialog-spacing);
-	padding-top: calc(var(--dialog-spacing) + var(--tabs-height));
+	// 9px = offset for default 32px icon size
+	padding-top: calc(var(--dialog-spacing) + var(--tabs-height) - 9px);
 }

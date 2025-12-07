@@ -39,6 +39,18 @@
 	}
 }
 
+.guildDropdown_f37cb1 {
+	--button-img: icon("overflow", "mono");
+	--button-img-pos-x: 4px;
+	--button-img-pos-y: 8px;
+	@include controls.button;
+	@include controls.combobox-icon-button(
+		$active-sel: "&[aria-expanded='true']"
+	);
+
+	height: unset;
+}
+
 .header_f37cb1 {
 	// TODO: use modifier-hover for transparent ?
 	background-color: transparent;
@@ -46,23 +58,21 @@
 	padding: var(--toolbar-container-spacing);
 }
 
-.headerButton_f37cb1 {
-	--button-img: icon("overflow", "mono");
-	@include controls.button;
-	@include controls.icon-button;
-}
-
 .headerContent_f37cb1 {
 	filter: none;
+	gap: 0;
+	// TODO: ?
+	margin-top: 1px;
 
-	height: unset;
 	justify-content: end;
 }
 
+.guildBadgeAndName_f37cb1,
 .guildIconV2Container__85d16,
 .headerChildren_f37cb1,
 .headerEllipseForeground_f37cb1,
 .headerGlass_f37cb1,
+.inviteButton_f37cb1,
 .name_f37cb1 {
 	display: none;
 }
