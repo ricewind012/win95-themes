@@ -1,0 +1,116 @@
+/* ==UserScript==
+// @name           Windows 95 (agent)
+// @description    Only used for scrollbars.
+// @stylemode      agent_sheet
+// ==/UserScript== */
+@-moz-document url-prefix("chrome://browser/content") {
+  * {
+    scrollbar-width: initial !important;
+  }
+  slider {
+    background: var(--checkerboard) !important;
+    width: var(--scrollbar-size) !important;
+    height: var(--scrollbar-size) !important;
+    appearance: none !important;
+  }
+  scrollbarbutton {
+    --offset: 0px !important;
+    background: var(--arrow) !important;
+    background-color: var(--color-button-face) !important;
+    background-repeat: no-repeat !important;
+    background-size: 1px 1px !important;
+    box-shadow: var(--border-scrollbar-button-raised) !important;
+    width: var(--scrollbar-size) !important;
+    height: var(--scrollbar-size) !important;
+    appearance: none !important;
+  }
+  scrollbarbutton:active {
+    --offset: 1px !important;
+    box-shadow: var(--border-button-sunken-alt) !important;
+  }
+  scrollbarbutton[type=decrement] {
+    --arrow:
+    	linear-gradient(90deg, var(--color-button-text) 1px, var(--color-button-text)) calc(var(--offset) + 8px) calc(var(--offset) + 4px),
+    	linear-gradient(90deg, var(--color-button-text) 1px, var(--color-button-text)) calc(var(--offset) + 7px) calc(var(--offset) + 5px),
+    	linear-gradient(90deg, var(--color-button-text) 1px, var(--color-button-text)) calc(var(--offset) + 8px) calc(var(--offset) + 5px),
+    	linear-gradient(90deg, var(--color-button-text) 1px, var(--color-button-text)) calc(var(--offset) + 6px) calc(var(--offset) + 6px),
+    	linear-gradient(90deg, var(--color-button-text) 1px, var(--color-button-text)) calc(var(--offset) + 7px) calc(var(--offset) + 6px),
+    	linear-gradient(90deg, var(--color-button-text) 1px, var(--color-button-text)) calc(var(--offset) + 8px) calc(var(--offset) + 6px),
+    	linear-gradient(90deg, var(--color-button-text) 1px, var(--color-button-text)) calc(var(--offset) + 5px) calc(var(--offset) + 7px),
+    	linear-gradient(90deg, var(--color-button-text) 1px, var(--color-button-text)) calc(var(--offset) + 6px) calc(var(--offset) + 7px),
+    	linear-gradient(90deg, var(--color-button-text) 1px, var(--color-button-text)) calc(var(--offset) + 7px) calc(var(--offset) + 7px),
+    	linear-gradient(90deg, var(--color-button-text) 1px, var(--color-button-text)) calc(var(--offset) + 8px) calc(var(--offset) + 7px),
+    	linear-gradient(90deg, var(--color-button-text) 1px, var(--color-button-text)) calc(var(--offset) + 6px) calc(var(--offset) + 8px),
+    	linear-gradient(90deg, var(--color-button-text) 1px, var(--color-button-text)) calc(var(--offset) + 7px) calc(var(--offset) + 8px),
+    	linear-gradient(90deg, var(--color-button-text) 1px, var(--color-button-text)) calc(var(--offset) + 8px) calc(var(--offset) + 8px),
+    	linear-gradient(90deg, var(--color-button-text) 1px, var(--color-button-text)) calc(var(--offset) + 7px) calc(var(--offset) + 9px),
+    	linear-gradient(90deg, var(--color-button-text) 1px, var(--color-button-text)) calc(var(--offset) + 8px) calc(var(--offset) + 9px),
+    	linear-gradient(90deg, var(--color-button-text) 1px, var(--color-button-text)) calc(var(--offset) + 8px) calc(var(--offset) + 10px) !important;
+  }
+  scrollbarbutton[type=increment] {
+    --arrow:
+    	linear-gradient(90deg, var(--color-button-text) 1px, var(--color-button-text)) calc(var(--offset) + 6px) calc(var(--offset) + 4px),
+    	linear-gradient(90deg, var(--color-button-text) 1px, var(--color-button-text)) calc(var(--offset) + 6px) calc(var(--offset) + 5px),
+    	linear-gradient(90deg, var(--color-button-text) 1px, var(--color-button-text)) calc(var(--offset) + 7px) calc(var(--offset) + 5px),
+    	linear-gradient(90deg, var(--color-button-text) 1px, var(--color-button-text)) calc(var(--offset) + 6px) calc(var(--offset) + 6px),
+    	linear-gradient(90deg, var(--color-button-text) 1px, var(--color-button-text)) calc(var(--offset) + 7px) calc(var(--offset) + 6px),
+    	linear-gradient(90deg, var(--color-button-text) 1px, var(--color-button-text)) calc(var(--offset) + 8px) calc(var(--offset) + 6px),
+    	linear-gradient(90deg, var(--color-button-text) 1px, var(--color-button-text)) calc(var(--offset) + 6px) calc(var(--offset) + 7px),
+    	linear-gradient(90deg, var(--color-button-text) 1px, var(--color-button-text)) calc(var(--offset) + 7px) calc(var(--offset) + 7px),
+    	linear-gradient(90deg, var(--color-button-text) 1px, var(--color-button-text)) calc(var(--offset) + 8px) calc(var(--offset) + 7px),
+    	linear-gradient(90deg, var(--color-button-text) 1px, var(--color-button-text)) calc(var(--offset) + 9px) calc(var(--offset) + 7px),
+    	linear-gradient(90deg, var(--color-button-text) 1px, var(--color-button-text)) calc(var(--offset) + 6px) calc(var(--offset) + 8px),
+    	linear-gradient(90deg, var(--color-button-text) 1px, var(--color-button-text)) calc(var(--offset) + 7px) calc(var(--offset) + 8px),
+    	linear-gradient(90deg, var(--color-button-text) 1px, var(--color-button-text)) calc(var(--offset) + 8px) calc(var(--offset) + 8px),
+    	linear-gradient(90deg, var(--color-button-text) 1px, var(--color-button-text)) calc(var(--offset) + 6px) calc(var(--offset) + 9px),
+    	linear-gradient(90deg, var(--color-button-text) 1px, var(--color-button-text)) calc(var(--offset) + 7px) calc(var(--offset) + 9px),
+    	linear-gradient(90deg, var(--color-button-text) 1px, var(--color-button-text)) calc(var(--offset) + 6px) calc(var(--offset) + 10px) !important;
+  }
+  scrollbar[vertical] > scrollbarbutton[type=decrement] {
+    --arrow:
+    	linear-gradient(90deg, var(--color-button-text) 1px, var(--color-button-text)) calc(var(--offset) + 7px) calc(var(--offset) + 6px),
+    	linear-gradient(90deg, var(--color-button-text) 1px, var(--color-button-text)) calc(var(--offset) + 6px) calc(var(--offset) + 7px),
+    	linear-gradient(90deg, var(--color-button-text) 1px, var(--color-button-text)) calc(var(--offset) + 7px) calc(var(--offset) + 7px),
+    	linear-gradient(90deg, var(--color-button-text) 1px, var(--color-button-text)) calc(var(--offset) + 8px) calc(var(--offset) + 7px),
+    	linear-gradient(90deg, var(--color-button-text) 1px, var(--color-button-text)) calc(var(--offset) + 5px) calc(var(--offset) + 8px),
+    	linear-gradient(90deg, var(--color-button-text) 1px, var(--color-button-text)) calc(var(--offset) + 6px) calc(var(--offset) + 8px),
+    	linear-gradient(90deg, var(--color-button-text) 1px, var(--color-button-text)) calc(var(--offset) + 7px) calc(var(--offset) + 8px),
+    	linear-gradient(90deg, var(--color-button-text) 1px, var(--color-button-text)) calc(var(--offset) + 8px) calc(var(--offset) + 8px),
+    	linear-gradient(90deg, var(--color-button-text) 1px, var(--color-button-text)) calc(var(--offset) + 9px) calc(var(--offset) + 8px),
+    	linear-gradient(90deg, var(--color-button-text) 1px, var(--color-button-text)) calc(var(--offset) + 4px) calc(var(--offset) + 9px),
+    	linear-gradient(90deg, var(--color-button-text) 1px, var(--color-button-text)) calc(var(--offset) + 5px) calc(var(--offset) + 9px),
+    	linear-gradient(90deg, var(--color-button-text) 1px, var(--color-button-text)) calc(var(--offset) + 6px) calc(var(--offset) + 9px),
+    	linear-gradient(90deg, var(--color-button-text) 1px, var(--color-button-text)) calc(var(--offset) + 7px) calc(var(--offset) + 9px),
+    	linear-gradient(90deg, var(--color-button-text) 1px, var(--color-button-text)) calc(var(--offset) + 8px) calc(var(--offset) + 9px),
+    	linear-gradient(90deg, var(--color-button-text) 1px, var(--color-button-text)) calc(var(--offset) + 9px) calc(var(--offset) + 9px),
+    	linear-gradient(90deg, var(--color-button-text) 1px, var(--color-button-text)) calc(var(--offset) + 10px) calc(var(--offset) + 9px) !important;
+  }
+  scrollbar[vertical] > scrollbarbutton[type=increment] {
+    --arrow:
+    	linear-gradient(90deg, var(--color-button-text) 1px, var(--color-button-text)) calc(var(--offset) + 4px) calc(var(--offset) + 6px),
+    	linear-gradient(90deg, var(--color-button-text) 1px, var(--color-button-text)) calc(var(--offset) + 5px) calc(var(--offset) + 6px),
+    	linear-gradient(90deg, var(--color-button-text) 1px, var(--color-button-text)) calc(var(--offset) + 6px) calc(var(--offset) + 6px),
+    	linear-gradient(90deg, var(--color-button-text) 1px, var(--color-button-text)) calc(var(--offset) + 7px) calc(var(--offset) + 6px),
+    	linear-gradient(90deg, var(--color-button-text) 1px, var(--color-button-text)) calc(var(--offset) + 8px) calc(var(--offset) + 6px),
+    	linear-gradient(90deg, var(--color-button-text) 1px, var(--color-button-text)) calc(var(--offset) + 9px) calc(var(--offset) + 6px),
+    	linear-gradient(90deg, var(--color-button-text) 1px, var(--color-button-text)) calc(var(--offset) + 10px) calc(var(--offset) + 6px),
+    	linear-gradient(90deg, var(--color-button-text) 1px, var(--color-button-text)) calc(var(--offset) + 5px) calc(var(--offset) + 7px),
+    	linear-gradient(90deg, var(--color-button-text) 1px, var(--color-button-text)) calc(var(--offset) + 6px) calc(var(--offset) + 7px),
+    	linear-gradient(90deg, var(--color-button-text) 1px, var(--color-button-text)) calc(var(--offset) + 7px) calc(var(--offset) + 7px),
+    	linear-gradient(90deg, var(--color-button-text) 1px, var(--color-button-text)) calc(var(--offset) + 8px) calc(var(--offset) + 7px),
+    	linear-gradient(90deg, var(--color-button-text) 1px, var(--color-button-text)) calc(var(--offset) + 9px) calc(var(--offset) + 7px),
+    	linear-gradient(90deg, var(--color-button-text) 1px, var(--color-button-text)) calc(var(--offset) + 6px) calc(var(--offset) + 8px),
+    	linear-gradient(90deg, var(--color-button-text) 1px, var(--color-button-text)) calc(var(--offset) + 7px) calc(var(--offset) + 8px),
+    	linear-gradient(90deg, var(--color-button-text) 1px, var(--color-button-text)) calc(var(--offset) + 8px) calc(var(--offset) + 8px),
+    	linear-gradient(90deg, var(--color-button-text) 1px, var(--color-button-text)) calc(var(--offset) + 7px) calc(var(--offset) + 9px) !important;
+  }
+  scrollbarcorner {
+    background-color: var(--color-scrollbar) !important;
+    appearance: none !important;
+  }
+  thumb {
+    background-color: var(--color-button-face) !important;
+    box-shadow: var(--border-scrollbar-button-raised) !important;
+    appearance: none !important;
+  }
+}
