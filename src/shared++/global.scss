@@ -29,3 +29,9 @@ body {
 	background-color: var(--color-highlight);
 	color: var(--color-highlight-text);
 }
+
+// TODO: happens in Discord and Steam for some reason
+::-webkit-scrollbar-button:start:increment,
+::-webkit-scrollbar-button:end:decrement {
+	display: none;
+}

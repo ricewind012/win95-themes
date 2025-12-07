@@ -124,8 +124,8 @@
 
 @mixin titlebar-button-restore {
 	--button-img: icon("restore", "mono");
-	--button-img-size: 10px 9px;
-	--button-img-pos: 2px 2px;
+	--button-img-size: 8px 9px;
+	--button-img-pos: 3px 2px;
 }
 
 @mixin titlebar-button-close {

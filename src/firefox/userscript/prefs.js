@@ -10,6 +10,8 @@ const THEME_PREFS = [
 
 /**
  * Prefs that are currently set to `true`.
+ *
+ * @type {Set<string>}
  */
 const activePrefs = new Set();
 

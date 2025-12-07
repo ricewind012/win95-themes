@@ -1,6 +1,6 @@
 # Firefox
 
-Last tested version is 143.0a1! Closest ESR version is 140, so if the theme happens to not receive updates, you can try using that version instead.
+Last tested version is 147.0a1! Closest ESR version is 140, so if the theme happens to not receive updates, you can try using that version instead.
 
 ## Usage
 
@@ -14,7 +14,7 @@ rm "$profile_path/CSS"/*
 ln -s "$theme_path/src/firefox/win95_main.uc.mjs" "$profile_path/JS"
 ln -s "$theme_path/firefox_global.css" "$profile_path/CSS/firefox_global.uc.css"
 ln -s "$theme_path/firefox_agent.css" "$profile_path/CSS/win95_agent.uc.css"
-ln -s "$theme_path/firefox_author.css "$profile_path/CSS/win95_author.uc.css"
+ln -s "$theme_path/firefox_author.css" "$profile_path/CSS/win95_author.uc.css"
 ln -s "$theme_path/firefox_author.css" "$profile_path/userChrome.css"
 ln -s "$theme_path/firefox_content.css" "$profile_path/userContent.css"
 ```

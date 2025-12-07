@@ -19,6 +19,11 @@
 			"MatchRegexString": ".fullheight",
 			"TargetCss": "dist/steam/steam.css",
 			"TargetJs": "src/steam/steam.js"
+		},
+		{
+			"MatchRegexString": ".friendsui-container",
+			"TargetCss": "dist/steam/steam.css",
+			"TargetJs": "src/steam/steam.js"
 		}
 	],
 	"Conditions": {

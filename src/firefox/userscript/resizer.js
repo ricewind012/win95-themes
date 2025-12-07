@@ -4,7 +4,7 @@ const RESIZE_HANDLE_SIZE = 14;
  * Registers a pointer event with an automatic canceling on `pointerup`.
  *
  * @param {Element} el
- * @param {PointerEvent} callback
+ * @param {(ev: PointerEvent) => void} callback
  */
 function handlePointerEvent(el, callback) {
 	el.addEventListener("pointerdown", () => {

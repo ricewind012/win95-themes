@@ -1,5 +1,6 @@
 #!/bin/sh
 
+printf '// DO NOT EDIT! Generated with "npm run generate-icons".\n\n'
 printf ':root {\n'
 for dir in assets/icons/*; do
 	for file in "$dir/"*; do

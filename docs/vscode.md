@@ -4,9 +4,8 @@ Last tested version is [1.106](https://code.visualstudio.com/updates/v1_106)!
 
 ## Usage
 
-1. Run the `scripts/patch vscode` script. Optional, makes the tree items' height smaller.
-2. Install the [Custom UI Style](https://open-vsx.org/vscode/item?itemName=subframe7536.custom-ui-style) extension.
-3. Add to `settings.json` (Preferences: Open User Settings (JSON)) the following:
+1. Install the [Custom UI Style](https://open-vsx.org/vscode/item?itemName=subframe7536.custom-ui-style) extension.
+2. Add to `settings.json` (Preferences: Open User Settings (JSON)) the following:
 
 ```json
 "custom-ui-style.external.imports": [
@@ -28,12 +27,17 @@ Last tested version is [1.106](https://code.visualstudio.com/updates/v1_106)!
 "window.dialogStyle": "custom",
 "window.menuStyle": "custom",
 
+"workbench.activityBar.location": "top",
+"workbench.editor.tabSizing": "shrink",
+"workbench.editor.wrapTabs": true,
+//"workbench.list.horizontalScrolling": true,
+
 "breadcrumbs.enabled": false,
 "explorer.compactFolders": false,
 "editor.roundedSelection": false,
-"workbench.editor.tabSizing": "shrink",
-"workbench.editor.wrapTabs": true,
 ```
+
+3. Run the `scripts/patch vscode` script. Optional, makes the tree items' height smaller.
 
 4. Install the [Fix VSCode Checksums Next](https://marketplace.visualstudio.com/items?itemName=RimuruChan.vscode-fix-checksums-next) extension, then execute the "Fix Checksums: Apply" command.
 
