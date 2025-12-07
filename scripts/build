@@ -4,6 +4,7 @@ DIST_DIR=dist
 SRC_DIR=src
 
 generate_index() {
+	printf '// DO NOT EDIT! Generated with "npm run build".\n\n'
 	for dir in $(find "$SRC_DIR/$1" -type d); do
 		for file in "$dir/"*.scss; do
 			case $file in "$dir/*.scss"|*/index.scss)
@@ -24,6 +25,8 @@ generate_index() {
 if [ "$1" = steam ]; then
 	dir=$DIST_DIR/$1
 
+	# Remove if file already exists for the "release" script
+	[ -f "$file" ] && rm "$file"
 	# .5s shaven off
 	npx postcss "$SRC_DIR/$1/index_shared.scss" --output "$dir.css"
 	npx postcss "$SRC_DIR/$1/client/**/*.scss" \

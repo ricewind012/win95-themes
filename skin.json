@@ -2,9 +2,9 @@
 	"author": "ricewind",
 	"name": "Windows 95",
 	"description": "A Windows 95 look",
-	"version": "1.0.0",
-	"header_image": "https://raw.githubusercontent.com/ricewind012/win95-themes/master/img/steam/main-window.png",
-	"splash_image": "https://raw.githubusercontent.com/ricewind012/win95-themes/master/img/steam/main-window.png",
+	"version": "0.9.9",
+	"header_image": "https://raw.githubusercontent.com/ricewind012/win95-themes/master/assets/preview/steam/main-window.png",
+	"splash_image": "https://raw.githubusercontent.com/ricewind012/win95-themes/master/assets/preview/steam/main-window.png",
 	"github": {
 		"owner": "ricewind012",
 		"repo_name": "win95-themes"
@@ -12,17 +12,17 @@
 	"Patches": [
 		{
 			"MatchRegexString": ".DesktopUI",
-			"TargetCss": "dist/steam/steam.css",
+			"TargetCss": "steam_import.css",
 			"TargetJs": "src/steam/steam.js"
 		},
 		{
 			"MatchRegexString": ".fullheight",
-			"TargetCss": "dist/steam/steam.css",
+			"TargetCss": "steam_import.css",
 			"TargetJs": "src/steam/steam.js"
 		},
 		{
 			"MatchRegexString": ".friendsui-container",
-			"TargetCss": "dist/steam/steam.css",
+			"TargetCss": "steam_import.css",
 			"TargetJs": "src/steam/steam.js"
 		}
 	],

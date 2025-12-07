@@ -51,4 +51,4 @@ Last tested version is [1.106](https://code.visualstudio.com/updates/v1_106)!
 
 ## Preview
 
-![Main Window](../img/vscode.png)
+![Main Window](../assets/preview/vscode/window.png)

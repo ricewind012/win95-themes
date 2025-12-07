@@ -1,6 +1,8 @@
 {
-	"type": "module",
+	"name": "win95-themes",
 	"private": true,
+	"version": "0.9.9",
+	"type": "module",
 	"scripts": {
 		"build": "./scripts/build",
 		"generate-icons": "./scripts/generate_icons > src/shared/generatedicons.scss"
@@ -14,6 +16,7 @@
 		"steam-theming-utils": "^3.3.1"
 	},
 	"devDependencies": {
-		"@biomejs/biome": "^2.1.1"
+		"@biomejs/biome": "^2.3.8",
+		"semantic-release": "^24.2.9"
 	}
 }

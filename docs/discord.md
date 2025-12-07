@@ -17,4 +17,4 @@ https://raw.githubusercontent.com/ricewind012/win95-themes/master/dist/discord/d
 
 ## Preview
 
-![Preview](../img/discord.png)
+![Preview](../assets/preview/discord/chat.png)

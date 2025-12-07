@@ -1,6 +1,6 @@
 # Preview
 
-![Main Window](https://github.com/ricewind012/win95-themes/raw/master/img/steam/main-window.png)
+![Main Window](https://github.com/ricewind012/win95-themes/raw/master/assets/preview/steam/main-window.png)
 
 ## Options
 

@@ -1,0 +1,92 @@
+#!/bin/sh -e
+
+# Reason this is a separate script is that CI is *not* going to download Steam,
+# run it, generate a class map, etc. It already takes ages with npm packages...
+
+: "${TMPDIR:=/tmp}"
+export GH_TOKEN=$(gh auth token)
+
+DIST_BRANCH=dist
+DIST_DIR=dist
+JASONS='package.json skin.json'
+STEAM_IMPORT_FILE=steam_import.css
+
+log() {
+	printf '\033[32;0;1m%s\033[m\n' "$1" >&2
+}
+
+git_branch_exists() {
+	git show-ref --verify --quiet "refs/heads/$1"
+}
+
+git_commit_as_ci() {
+	git \
+		-c "user.name=github-actions[bot]" \
+		-c "user.email=41898282+github-actions[bot]@users.noreply.github.com" \
+		commit -m "$1"
+}
+
+while IFS= read -r line; do case $line in
+	*'The next release version'*)
+		next=${line##*is }
+		break
+	;;
+
+	*'There are no relevant changes'*)
+		log 'nothing to release!'
+		exit 1
+	;;
+esac; done <<-EOF
+$(npx semantic-release --dry-run --no-ci 2>/dev/null)
+EOF
+commit_msg="chore(release): ${next:=1.0.0}" # for first run
+
+# Compile again in case I forget.
+for i in discord steam vscode; do
+	npm run build "$i"
+done
+for i in agent author global; do
+	npm run build firefox "$i"
+done
+
+# I don't know git, so in case it fucks up...
+set -x
+
+# Commit dist to... the dist branch.
+rm -rf "$TMPDIR/$DIST_DIR"
+mv "$DIST_DIR" "$TMPDIR"
+git_branch_exists "$DIST_BRANCH" || checkout_opts='--orphan' # for first run
+git checkout $checkout_opts "$DIST_BRANCH"
+git rm -rf .
+mkdir -p "$DIST_DIR"
+mv "$TMPDIR/$DIST_DIR/"* "$DIST_DIR"
+git add "$DIST_DIR"
+# No files to commit if failed, no reason to cry over this...
+git_commit_as_ci "$commit_msg" || :
+# As Millennium is currently only able to download the default branch, the
+# Steam theme will be using githack, as GitHub doesn't serve the proper
+# "Content-Type" header. This needs a commit hash instead of a branch because
+# "Files are cached permanently based on the URL". The caveat is that the
+# default theme will flash for a bit...
+last_dist_commit=$(git rev-parse HEAD)
+git push -u origin "$DIST_BRANCH"
+
+# Bump the version, then push said version.
+git checkout master
+
+repo_url=$(git remote get-url origin)
+repo_url=${repo_url#'https://github.com/'}
+printf '@import url("https://rawcdn.githack.com/%s/%s/%s/steam.css);\n' \
+	"$repo_url" "$last_dist_commit" "$DIST_DIR" > "$STEAM_IMPORT_FILE"
+
+for file in $JASONS; do
+	sed -i "s/\"version\": \".*\"/\"version\": \"$next\"/" "$file"
+done
+
+git add $JASONS "$STEAM_IMPORT_FILE"
+git_commit_as_ci "$commit_msg"
+git push
+
+set +x
+
+log 'success!'
