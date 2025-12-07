@@ -2,6 +2,14 @@
 
 ![Main Window](https://github.com/ricewind012/win95-themes/raw/master/assets/preview/steam/main-window.png)
 
+## Other Themes
+
+Check these out for the same style!
+
+- [Discord](https://github.com/ricewind012/win95-themes/blob/master/docs/discord.md)
+- [Firefox](https://github.com/ricewind012/win95-themes/blob/master/docs/firefox.md)
+- [Visual Studio Code](https://github.com/ricewind012/win95-themes/blob/master/docs/vscode.md)
+
 ## Options
 
 ### Green colorscheme

@@ -76,7 +76,7 @@ git checkout master
 
 repo_url=$(git remote get-url origin)
 repo_url=${repo_url#'https://github.com/'}
-printf '@import url("https://rawcdn.githack.com/%s/%s/%s/steam.css);\n' \
+printf '@import url("https://rawcdn.githack.com/%s/%s/%s/steam.css");\n' \
 	"$repo_url" "$last_dist_commit" "$DIST_DIR" > "$STEAM_IMPORT_FILE"
 
 for file in $JASONS; do
