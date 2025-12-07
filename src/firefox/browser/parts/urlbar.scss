@@ -85,8 +85,10 @@ $-input-height: round(
 
 	min-height: unset;
 
-	&[selected] {
-		--link-color: inherit;
+	&:hover {
+		.urlbarView-url {
+			color: inherit;
+		}
 	}
 }
 

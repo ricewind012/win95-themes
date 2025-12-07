@@ -145,6 +145,7 @@
 	gap: var(--text-spacing);
 
 	display: flex;
+	align-items: center;
 
 	#{$active-sel},
 	&:active {

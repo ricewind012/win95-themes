@@ -1,4 +1,5 @@
 @use "shared/controls";
+@use "shared/text";
 @use "shared/window";
 
 #customization-content-container {
@@ -18,15 +19,16 @@
 		min-height: unset;
 	}
 
-	.customization-link,
+	.customization-link {
+		@include text.link;
+	}
+
 	.footer-button:not([type="menu"]) {
 		@include controls.button;
-
-		text-decoration: none;
 	}
 
 	.footer-button[type="menu"] {
-		@include controls.combobox;
+		@include controls.combobox-button($active-sel: "&[open]");
 
 		.button-menu-dropmarker {
 			display: none;

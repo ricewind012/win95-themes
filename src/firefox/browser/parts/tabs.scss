@@ -9,13 +9,12 @@ $-icons: (
 	"chrome://mozapps/skin/extensions/extension.svg": "extensions",
 );
 
-%-arrowscrollbox-button {
+/// An icon-button replacement because of the shadow DOM usage, ty mozilla
+@mixin -arrowscrollbox-button {
 	@include controls.button;
 
-	min-width: var(--icon-button-width);
-	height: var(--icon-button-height);
-
-	border-radius: 0;
+	min-width: var(--tab-button-height);
+	height: var(--tab-button-height);
 }
 
 %-horizontal-tabs-button {
@@ -64,7 +63,7 @@ $-icons: (
 
 .tab-close-button {
 	list-style-image: icon("close", "mono");
-	padding: 3.5px 4px;
+	padding: 4.5px 4px;
 	margin: 0;
 
 	width: var(--icon-size);
@@ -123,12 +122,12 @@ $-icons: (
 	}
 
 	&::part(scrollbutton-up) {
-		@extend %-arrowscrollbox-button;
+		@include -arrowscrollbox-button;
 		--button-img: icon("arrow-big-left", "mono");
 	}
 
 	&::part(scrollbutton-down) {
-		@extend %-arrowscrollbox-button;
+		@include -arrowscrollbox-button;
 		--button-img: icon("arrow-big-right", "mono");
 	}
 }
@@ -168,6 +167,8 @@ $-icons: (
 #scrollbutton-down {
 	@extend %-horizontal-tabs-button;
 
+	// The following rules are stolen from controls.icon-button because of
+	// shadow DOM usage, ty mozilla
 	&::before,
 	&::after {
 		@include utils.pseudo-icon;
@@ -183,8 +184,12 @@ $-icons: (
 	}
 
 	&:active {
+		background: var(--checkerboard);
+		box-shadow: var(--border-button-sunken);
+
 		&::before {
-			inset: 1px;
+			top: 1px;
+			left: 1px;
 		}
 	}
 
@@ -196,8 +201,8 @@ $-icons: (
 		}
 
 		&::after {
-			left: 1px;
 			top: 1px;
+			left: 1px;
 
 			background-color: var(--color-button-highlight);
 		}
@@ -206,7 +211,7 @@ $-icons: (
 
 .tabbrowser-tab {
 	@include controls.tab-button(
-		$selected-sel: "&:where([selected], [multiselected])"
+		$selected-sel: "&:is([selected], [multiselected])"
 	);
 
 	padding: 0;
@@ -246,5 +251,5 @@ $-icons: (
 	@extend %-horizontal-tabs-button;
 
 	list-style-image: none;
-	margin-inline: var(--toolbar-container-spacing);
+	margin-inline: var(--tab-button-spacing);
 }

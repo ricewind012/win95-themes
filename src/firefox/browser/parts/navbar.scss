@@ -94,6 +94,8 @@ $-icons: (
 			left: var(--offset);
 
 			@include utils.arrow("bottom");
+
+			background-color: var(--color-button-text);
 		}
 
 		.toolbarbutton-icon {
