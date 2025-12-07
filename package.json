@@ -1,7 +1,7 @@
 {
 	"name": "win95-themes",
 	"private": true,
-	"version": "0.9.9",
+	"version": "1.0.0",
 	"type": "module",
 	"scripts": {
 		"build": "./scripts/build",
