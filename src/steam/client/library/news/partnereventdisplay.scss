@@ -2,6 +2,10 @@
 @use "shared++/utils";
 @use "steam/shared";
 
+#EventBackgroundBlur {
+	display: none;
+}
+
 #EventDetailsBody {
 	color: inherit;
 	font: inherit;
