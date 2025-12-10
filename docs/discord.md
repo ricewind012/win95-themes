@@ -7,7 +7,7 @@
 2. Copy & paste the following into the text box:
 
 ```
-https://raw.githubusercontent.com/ricewind012/win95-themes/master/dist/discord/discord.css
+https://raw.githubusercontent.com/ricewind012/win95-themes/refs/heads/dist/dist/discord.css
 ```
 
 ## Caveats

@@ -7,7 +7,7 @@ Last tested version is [1.106](https://code.visualstudio.com/updates/v1_106)!
 1. Install the [Custom UI Style](https://open-vsx.org/vscode/item?itemName=subframe7536.custom-ui-style) extension.
 2. Add to `settings.json` (Preferences: Open User Settings (JSON)) the following:
 
-```json
+```jsonc
 "custom-ui-style.external.imports": [
 	"file:///path/to/win95-themes/dist/vscode.css",
 	"file:///path/to/win95-themes/src/shared++/ElementUtils.js",
@@ -39,9 +39,9 @@ Last tested version is [1.106](https://code.visualstudio.com/updates/v1_106)!
 
 3. Run the `scripts/patch vscode` script. Optional, makes the tree items' height smaller.
 
-4. Install the [Fix VSCode Checksums Next](https://marketplace.visualstudio.com/items?itemName=RimuruChan.vscode-fix-checksums-next) extension, then execute the "Fix Checksums: Apply" command.
+4. If you did step 3, install the [Fix VSCode Checksums Next](https://marketplace.visualstudio.com/items?itemName=RimuruChan.vscode-fix-checksums-next) extension, then execute the "Fix Checksums: Apply" command.
 
-   Not available on Open VSX, install from VSIX here: https://marketplace.visualstudio.com/_apis/public/gallery/publishers/RimuruChan/vsextensions/vscode-fix-checksums-next/latest/vspackage.
+   The extension is not available on Open VSX, so install it from VSIX here: https://marketplace.visualstudio.com/_apis/public/gallery/publishers/RimuruChan/vsextensions/vscode-fix-checksums-next/latest/vspackage.
 
 ## Caveats
 
