@@ -60,7 +60,11 @@
 }
 
 @mixin titlebar($focused-sel) {
-	background-color: var(--color-inactive-caption);
+	background-image: linear-gradient(
+		90deg,
+		var(--color-inactive-caption-bg-start),
+		var(--color-inactive-caption-bg-end)
+	);
 	color: var(--color-inactive-caption-text);
 	padding: 1px 2px;
 	gap: var(--titlebar-spacing);
@@ -70,7 +74,8 @@
 	align-items: center;
 
 	#{$focused-sel} {
-		--color-inactive-caption: var(--color-active-caption);
+		--color-inactive-caption-bg-start: var(--color-active-caption-bg-start);
+		--color-inactive-caption-bg-end: var(--color-active-caption-bg-end);
 		--color-inactive-caption-text: var(--color-active-caption-text);
 	}
 }

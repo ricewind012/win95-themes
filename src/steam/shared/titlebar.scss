@@ -24,7 +24,11 @@
 .title-area {
 	--window-img: icon("steam");
 
-	background-color: var(--color-inactive-caption);
+	background-image: linear-gradient(
+		90deg,
+		var(--color-inactive-caption-bg-start),
+		var(--color-inactive-caption-bg-end)
+	);
 	padding-right: 2px;
 
 	position: unset;
@@ -36,7 +40,9 @@
 	justify-content: space-between;
 
 	.WindowFocus & {
-		background-color: var(--color-active-caption);
+		--color-inactive-caption-bg-start: var(--color-active-caption-bg-start);
+		--color-inactive-caption-bg-end: var(--color-active-caption-bg-end);
+		--color-inactive-caption-text: var(--color-active-caption-text);
 	}
 
 	&::before {

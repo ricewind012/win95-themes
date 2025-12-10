@@ -216,7 +216,9 @@
 
 // Make the titlebar background red if disconnected
 .errorDisconnected {
-	--color-active-caption: #800;
+	// TODO(shared): for 98 it's #6a0a0a & #f0a6a6
+	--color-active-caption-bg-start: #800;
+	--color-active-caption-bg-end: #800;
 
 	.tabLabel {
 		display: none;

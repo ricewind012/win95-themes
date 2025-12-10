@@ -35,8 +35,11 @@
 }
 
 .dialog-toolbar-row {
-	// TODO?: vscode also has .titlebar and only there can I get focused state
-	background-color: var(--color-active-caption);
+	background-image: linear-gradient(
+		90deg,
+		var(--color-active-caption-bg-start),
+		var(--color-active-caption-bg-end)
+	);
 	color: var(--color-active-caption-text);
 	padding: 0 2px;
 

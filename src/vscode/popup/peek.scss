@@ -9,7 +9,11 @@
 	width: calc(100% - 50px);
 
 	& > .head {
-		background-color: var(--color-active-caption);
+		background-image: linear-gradient(
+			90deg,
+			var(--color-active-caption-bg-start),
+			var(--color-active-caption-bg-end)
+		);
 		color: var(--color-active-caption-text);
 		font: var(--text-ui);
 

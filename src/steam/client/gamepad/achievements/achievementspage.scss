@@ -39,7 +39,11 @@
 		width: 100%;
 		height: var(--titlebar-height);
 
-		background-color: var(--color-active-caption);
+		background-image: linear-gradient(
+			90deg,
+			var(--color-active-caption-bg-start),
+			var(--color-active-caption-bg-end)
+		);
 	}
 }
 

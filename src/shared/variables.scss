@@ -4,7 +4,8 @@
 	 *
 	 * Naming reference: https://learn.microsoft.com/en-us/windows/win32/controls/themesfileformat-overview#control-panelcolors-section
 	**/
-	--color-inactive-caption: var(--color-gray-text);
+	--color-inactive-caption-bg-start: var(--color-gray-text);
+	--color-inactive-caption-bg-end: var(--color-gray-text);
 	--color-inactive-caption-text: var(--color-button-face);
 
 	--color-menubar: var(--color-button-face);
@@ -21,7 +22,8 @@
 		--color-window: #fff;
 		--color-window-text: #000;
 
-		--color-active-caption: #000080;
+		--color-active-caption-bg-start: #000080;
+		--color-active-caption-bg-end: #000080;
 		--color-active-caption-text: #fff;
 
 		--color-highlight: #000080;
@@ -47,7 +49,8 @@
 		--color-window: #121212;
 		--color-window-text: #ccc;
 
-		--color-active-caption: #ccc;
+		--color-active-caption-bg-start: #ccc;
+		--color-active-caption-bg-end: #ccc;
 		--color-active-caption-text: #252525;
 
 		--color-highlight: #ccc;
@@ -73,7 +76,8 @@
 		--color-window: ButtonFace;
 		--color-window-text: ButtonText;
 
-		--color-active-caption: Highlight;
+		--color-active-caption-bg-start: Highlight;
+		--color-active-caption-bg-end: Highlight;
 		--color-active-caption-text: HighlightText;
 
 		--color-highlight: Highlight;

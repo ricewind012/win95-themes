@@ -9,7 +9,8 @@
 	--color-window:              #3c463c;
 	--color-window-text:         #fcfefc;
 
-	--color-active-caption:      transparent;
+	--color-active-caption-bg-start:      transparent;
+	--color-active-caption-bg-end:        transparent;
 	--color-active-caption-text: #fcfefc;
 
 	--color-highlight:           transparent;
