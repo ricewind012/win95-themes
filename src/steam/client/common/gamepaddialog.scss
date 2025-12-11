@@ -37,6 +37,12 @@
 	}
 }
 
+#FieldChildrenInner {
+	.MillenniumThemes_AccentColorField[data-default-color="false"] & {
+		flex-direction: row-reverse;
+	}
+}
+
 #FieldDescription {
 	@include utils.text-reset;
 

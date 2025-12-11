@@ -52,4 +52,8 @@
 
 	text-transform: unset;
 	padding: 0;
+
+	.MillenniumSettings & {
+		display: none;
+	}
 }
