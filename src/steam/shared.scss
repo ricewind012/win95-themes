@@ -12,7 +12,7 @@
 	display: flex;
 	align-items: center;
 	position: fixed;
-	left: calc(var(--offset) + var(--icon-size) + var(--titlebar-spacing));
+	left: calc(var(--offset) + var(--icon-size) + var(--titlebar-spacing) + 2px);
 	top: var(--offset);
 	height: var(--titlebar-height);
 

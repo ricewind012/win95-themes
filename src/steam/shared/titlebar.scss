@@ -22,22 +22,12 @@
 }
 
 .title-area {
-	--window-img: icon("steam");
+	@include window.titlebar($focused-sel: ".WindowFocus &");
 
-	background-image: linear-gradient(
-		90deg,
-		var(--color-inactive-caption-bg-start),
-		var(--color-inactive-caption-bg-end)
-	);
-	padding-right: 2px;
-
+	//justify-content: space-between;
 	position: unset;
 	min-height: var(--titlebar-height);
 	max-height: var(--titlebar-height);
-
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
 
 	.WindowFocus & {
 		--color-inactive-caption-bg-start: var(--color-active-caption-bg-start);
@@ -46,35 +36,25 @@
 	}
 
 	&::before {
-		--s: calc(1px + var(--border-size) + var(--window-spacing));
-
 		content: "";
 
-		position: fixed;
-		left: var(--s);
-		top: var(--s);
 		width: var(--icon-size);
 		height: var(--icon-size);
 
-		background-image: var(--window-img);
-
-		.WindowFocus & {
-			filter: invert(1);
-		}
+		background-color: currentColor;
+		mask: icon("steam");
 	}
 }
 
-// Used only in overlay browser ?
+// Used only in overlay browser ? (in theme also used in main window)
 .title-area-children {
 	@include window.titlebar-name;
 
-	font-size: var(--font-ui-size);
+	font-size: var(--text-ui-size);
 	color: var(--color-inactive-caption-text);
-	padding-left: calc(var(--icon-size) + var(--titlebar-spacing));
-
-	.WindowFocus & {
-		color: var(--color-active-caption-text);
-	}
+	text-align: start;
+	// Overlay browser
+	padding: 0;
 }
 
 :where(.title-area-icon) {

@@ -1,7 +1,6 @@
 @use "shared/controls";
 @use "shared/window";
 @use "shared++/utils";
-@use "steam/shared";
 
 // The browser view is above everything else
 #Browser {
@@ -120,10 +119,8 @@
 
 	-webkit-app-region: drag;
 
-	&::after {
+	.title-area-children::after {
 		content: "Steam";
-
-		@include shared.dialog-title;
 	}
 }
 
