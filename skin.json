@@ -27,14 +27,21 @@
 		}
 	],
 	"Conditions": {
-		"Green colorscheme": {
-			"default": "no",
-			"description": "Use the green colors used in older Steam",
+		"Colors": {
+			"description": "[b]Only default[/b] will respect system's light/dark/high contrast theme preference.",
+			"default": "Default",
 			"values": {
-				"yes": {
+				"Default": {},
+				"VGUI": {
 					"TargetCss": {
 						"affects": [".*"],
-						"src": "src/green.css"
+						"src": "src/shared/colors/vgui.css"
+					}
+				},
+				"Windows 2000": {
+					"TargetCss": {
+						"affects": [".*"],
+						"src": "src/shared/colors/win2000.css"
 					}
 				}
 			}

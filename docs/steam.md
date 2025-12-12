@@ -12,9 +12,14 @@ Check these out for the same style!
 
 ## Options
 
-### Green colorscheme
+### Colors
 
-Use the green colors used in older Steam.
+Available options:
+
+- VGUI (military green previously used in Steam)
+- Windows 2000
+
+Note that only the default option respects the system's light/dark/high contrast theme preference.
 
 ### Reduced game list entry height
 

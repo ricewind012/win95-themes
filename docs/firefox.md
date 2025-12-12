@@ -8,15 +8,16 @@ Last tested version is 147.0a1! Closest ESR version is 140, so if the theme happ
 2. Execute the following in terminal (edit the paths!):
 
 ```sh
-theme_path="/path/to/win95-themes/dist"
+theme_path="/path/to/win95-themes"
 profile_path="/path/to/profile/chrome"
 rm "$profile_path/CSS"/*
+ln -s "$theme_path/src/shared/colors" "$profile_path"
 ln -s "$theme_path/src/firefox/win95_main.uc.mjs" "$profile_path/JS"
-ln -s "$theme_path/firefox_global.css" "$profile_path/CSS/firefox_global.uc.css"
-ln -s "$theme_path/firefox_agent.css" "$profile_path/CSS/win95_agent.uc.css"
-ln -s "$theme_path/firefox_author.css" "$profile_path/CSS/win95_author.uc.css"
-ln -s "$theme_path/firefox_author.css" "$profile_path/userChrome.css"
-ln -s "$theme_path/firefox_content.css" "$profile_path/userContent.css"
+ln -s "$theme_path/dist/firefox_global.css" "$profile_path/CSS/firefox_global.uc.css"
+ln -s "$theme_path/dist/firefox_agent.css" "$profile_path/CSS/win95_agent.uc.css"
+ln -s "$theme_path/dist/firefox_author.css" "$profile_path/CSS/win95_author.uc.css"
+ln -s "$theme_path/dist/firefox_author.css" "$profile_path/userChrome.css"
+ln -s "$theme_path/dist/firefox_content.css" "$profile_path/userContent.css"
 ```
 
 3. Add to `user.js` the following:
@@ -38,6 +39,10 @@ user_pref("sidebar.revamp", true);
 ```
 
 ## Preferences
+
+- win95.colors
+
+  Possible values: `vgui` and `win2000`.
 
 - win95.customize-mode-as-window
 

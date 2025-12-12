@@ -38,9 +38,12 @@
 	}
 }
 
-.profile__9c3be,
-.outer_c0bea0 {
+.profile__9c3be {
 	background-color: var(--color-button-face);
+}
+
+.outer_c0bea0 {
+	@include window.container($child: true);
 }
 
 .userTag__63ed3 {

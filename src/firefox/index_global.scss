@@ -11,3 +11,6 @@
 @use "global/controls/xul";
 @use "global/dialog";
 @use "global/variables";
+
+@import "colors/vgui.css" -moz-pref("win95.colors", "vgui");
+@import "colors/win2000.css" -moz-pref("win95.colors", "win2000");

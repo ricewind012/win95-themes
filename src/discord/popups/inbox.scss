@@ -1,8 +1,9 @@
 @use "shared/controls";
 @use "shared/tabs";
+@use "shared/window";
 
 .container_fc561d {
-	background-color: transparent;
+	@include window.container($child: true);
 }
 
 .controls_ab6641 {

@@ -120,6 +120,8 @@
 	@include -text-field-common($disabled-sel);
 	@include generatedassets.combobox;
 
+	// generatedassets.combobox doesn't change depending on its value
+	--border-size: 2px;
 	--color-arrow-shadow: var(--color-button-face);
 
 	opacity: 1;

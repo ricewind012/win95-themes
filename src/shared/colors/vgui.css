@@ -1,0 +1,53 @@
+:root {
+	--color-button-face: #4c5644;
+	--color-button-text: #fcfefc;
+	--color-button-highlight: #8c9281;
+	--color-button-light: #2c2c24;
+	--color-button-shadow: #2c2e24;
+	--color-button-shadow-dark: #2c2e24;
+
+	--color-window: #3c463c;
+	--color-window-text: #fcfefc;
+
+	--color-active-caption-bg-start: transparent;
+	--color-active-caption-bg-end: transparent;
+	--color-active-caption-text: #fcfefc;
+
+	--color-highlight: transparent;
+	--color-highlight-border: #3b4aaf;
+	--color-highlight-text: #c4b550;
+
+	--color-tooltip: #c4b550;
+	--color-tooltip-text: #2c2c24;
+
+	--color-gray-text: #878f80;
+	--color-link: #c4b550;
+
+	--border-button-raised:
+		inset -1px -1px var(--color-button-shadow-dark),
+		inset 1px 1px var(--color-button-highlight);
+	--border-button-sunken:
+		inset -1px -1px var(--color-button-highlight),
+		inset 1px 1px var(--color-button-shadow);
+	--border-tab-button-raised:
+		inset -1px -1px var(--color-button-shadow),
+		inset 1px 1px var(--color-button-highlight);
+	--border-tab-button-sunken:
+		var(--border-button-sunken), inset 0 2px var(--color-button-highlight);
+	--border-scrollbar-button-raised:
+		inset -1px -1px var(--color-button-shadow-dark),
+		inset 1px 1px var(--color-button-highlight);
+	--border-field:
+		inset -1px -1px var(--color-button-highlight),
+		inset 1px 1px var(--color-button-shadow);
+	--border-window:
+		inset -1px -1px var(--color-button-shadow-dark),
+		inset 1px 1px var(--color-button-highlight);
+
+	--border-size: 1px;
+
+	--tab-border-left: none;
+	--tab-border-right: none;
+	--tab-vertical-border-top: none;
+	--tab-vertical-border-bottom: none;
+}

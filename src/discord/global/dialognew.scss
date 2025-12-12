@@ -1,9 +1,5 @@
 @use "shared/window";
 
-[aria-modal][data-dialog] {
-	--name: attr(aria-label);
-}
-
 .actionBar__8a031 {
 	padding: var(--dialog-spacing);
 
@@ -37,15 +33,6 @@
 	@include window.container($child: true);
 
 	border: none;
-
-	&::before {
-		content: var(--name);
-
-		box-sizing: border-box;
-
-		@include window.titlebar($focused-sel: "&");
-		@include window.titlebar-name;
-	}
 }
 
 .header__8a031 {

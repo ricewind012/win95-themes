@@ -1,0 +1,27 @@
+:root {
+	--color-button-face: #d4d0c8;
+	--color-button-text: #000;
+	--color-button-highlight: #fff;
+	--color-button-light: #d4d0c8;
+	--color-button-shadow: #808080;
+	--color-button-shadow-dark: #404040;
+
+	--color-window: #fff;
+	--color-window-text: #000;
+
+	--color-active-caption-bg-start: #0a246a;
+	--color-active-caption-bg-end: #a6caf0;
+	--color-active-caption-text: #fff;
+	--color-inactive-caption-bg-start: #808080;
+	--color-inactive-caption-bg-end: #c0c0c0;
+
+	--color-highlight: #0a246a;
+	--color-highlight-border: #f5db95;
+	--color-highlight-text: #fff;
+
+	--color-tooltip: #ffffe1;
+	--color-tooltip-text: #000;
+
+	--color-gray-text: #808080;
+	--color-link: #00f;
+}

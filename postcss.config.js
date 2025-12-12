@@ -54,7 +54,7 @@ export default {
 		}),
 		selectorReplacerPlugin(),
 		appendImportantPlugin({
-			filter: [/^:root/],
+			filter: [/^(:where\()?:root/],
 		}),
 		removeEmpty(),
 	],
