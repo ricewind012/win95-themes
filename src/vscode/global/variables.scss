@@ -27,6 +27,7 @@
 	--vscode-menubar-selectionForeground: var(--color-button-text);
 
 	// Status bar
+	--vscode-statusBarItem-hoverBackground: transparent;
 	--vscode-statusBarItem-hoverForeground: var(--color-button-text);
 
 	--vscode-statusBarItem-errorBackground: red;
@@ -42,6 +43,8 @@
 	--vscode-editorStickyScroll-background: var(--color-window);
 	--vscode-editorStickyScroll-border: var(--color-gray-text);
 	--vscode-editorStickyScroll-shadow: transparent;
+	--vscode-editorStickyScrollGutter-background: var(--color-window);
+	--vscode-editorStickyScrollHover-background: var(--color-window);
 
 	--vscode-peekViewEditor-background: var(--color-window);
 	--vscode-peekViewEditorGutter-background: var(--color-window);

@@ -31,7 +31,7 @@
 .tab {
 	&:not([aria-selected="true"]) {
 		// !important
-		.monaco-workbench
+		div.monaco-workbench
 			.part.editor
 			> .content
 			.editor-group-container.active
@@ -115,6 +115,8 @@
 	}
 
 	.action-item {
+		// Tab borders
+		--insert-border-color: transparent;
 		// Allow icon tabs to be small
 		min-width: unset;
 
