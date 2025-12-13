@@ -1,6 +1,7 @@
 @use "shared/controls";
 @use "shared/text";
 @use "shared++/utils";
+@use "steam/shared";
 
 #AppActivityDate {
 	@include utils.legend-as-div;
@@ -55,6 +56,23 @@
 	background: none;
 	border: none;
 	box-shadow: none;
+
+	&#PartnerEventFeatured {
+		@include shared.library_section;
+
+		margin-block-start: 1px;
+
+		& > [role="button"] {
+			@include shared.library_section-content;
+		}
+	}
+}
+
+#PartnerEventFeaturedHeader {
+	@include shared.library_section-header;
+	@include utils.text-reset;
+
+	background-image: none;
 }
 
 // lmao v*lve

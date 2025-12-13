@@ -87,6 +87,8 @@
 	font: var(--text-ui);
 	gap: var(--dialog-button-spacing);
 	margin-top: var(--dialog-button-spacing);
+
+	display: var(--commentthread_display);
 }
 
 #RatingDetails {

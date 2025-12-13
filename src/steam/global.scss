@@ -24,7 +24,8 @@
 
 	// other
 	--achievementiconbase_size: 48px;
-	--steamavatar_size: 32px;
+	--commentthread_display: flex;
+	--steamavatar_size: max(32px, 2rlh);
 	--steamdesktop_icon-button-size: var(--combobox-button-height);
 }
 

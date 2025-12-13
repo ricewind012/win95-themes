@@ -59,7 +59,13 @@
 #SearchInput {
 	font: var(--text-ui);
 
+	overflow: visible;
 	min-height: unset;
+
+	.DialogInput_Wrapper {
+		position: unset;
+		width: 100%;
+	}
 
 	.DialogTextInputBase {
 		background-image: none;
