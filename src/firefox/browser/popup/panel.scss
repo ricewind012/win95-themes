@@ -32,6 +32,7 @@ panel {
 	--arrowpanel-menuitem-margin-inline: 0px;
 	--menu-panel-width-wide: initial;
 	--panel-subview-body-padding: 0px;
+	font: var(--text-ui);
 
 	&::part(content) {
 		@include window.container($child: true);

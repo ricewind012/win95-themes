@@ -4,6 +4,7 @@
 
 menupopup {
 	--menuitem-margin: 0px;
+	font: var(--text-ui);
 	margin: 0;
 
 	&::part(content) {

@@ -50,6 +50,8 @@
 }
 
 menubar {
+	font: var(--text-ui);
+
 	width: 100%;
 
 	& > menu {
