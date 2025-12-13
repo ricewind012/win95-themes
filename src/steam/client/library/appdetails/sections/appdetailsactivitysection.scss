@@ -2,6 +2,18 @@
 
 #ActivityFeedContainer {
 	max-width: unset;
+
+	// Featured event
+	&#Rollup {
+		all: unset;
+
+		--commentthread_display: none;
+
+		// #appdetailssection_AppDetailsSectionContainer
+		& > div {
+			padding: 0;
+		}
+	}
 }
 
 #ViewLastNews {
