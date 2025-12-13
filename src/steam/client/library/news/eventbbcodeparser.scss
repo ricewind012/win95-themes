@@ -1,0 +1,10 @@
+@use "shared/text";
+
+#LinkButton {
+	@include text.link;
+
+	background-color: transparent;
+	font: var(--text-ui);
+	padding: 0;
+	margin: 0;
+}
