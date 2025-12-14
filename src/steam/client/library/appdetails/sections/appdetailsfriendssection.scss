@@ -19,6 +19,10 @@
 	padding: 0;
 	margin: 0;
 
+	&:not(#Recent) {
+		--steamavatar_size: 32px;
+	}
+
 	&::after {
 		@include utils.pseudo-separator;
 	}

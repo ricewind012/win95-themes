@@ -77,7 +77,7 @@
 }
 
 #ScreenshotList {
-	--inset: 61px 11px 30px 11px;
+	--inset: calc(1lh + 42px) 11px calc(1lh + 23px) 11px;
 
 	@include utils.content-container-alt;
 

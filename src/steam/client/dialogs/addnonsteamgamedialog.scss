@@ -34,7 +34,7 @@
 	padding-top: var(--dialog-button-spacing);
 
 	& > .DialogButton.Primary {
-		width: 148px;
+		min-width: 148px;
 	}
 }
 

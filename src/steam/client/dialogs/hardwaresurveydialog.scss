@@ -4,7 +4,7 @@
 	.DialogButton.Primary {
 		// Undo ._DialogColLayout > ._DialogLayout
 		flex: unset;
-		width: 148px;
+		min-width: 148px;
 	}
 }
 
@@ -20,7 +20,9 @@
 }
 
 #HardwareSurveySections {
-	--inset: 46px 11px 58px 11px;
+	--inset-inline: calc(var(--border-size) + 9px);
+	--inset: calc(1lh + 32px) var(--inset-inline)
+		calc(2lh + var(--border-size) * 2 + 37px) var(--inset-inline);
 
 	@include utils.content-container-alt;
 
