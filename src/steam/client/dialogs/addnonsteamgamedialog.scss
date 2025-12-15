@@ -4,9 +4,7 @@
 @use "steam/shared";
 
 #AddNonSteamGameDialog {
-	.DialogContent_InnerWidth {
-		overflow: hidden;
-	}
+	min-width: unset;
 }
 
 #AppName {
@@ -39,7 +37,24 @@
 }
 
 #GameList {
-	--inset: 69px 11px 58px 11px;
+	--dialog-offset: calc(
+		var(--window-spacing) + var(--border-size) + var(--dialog-spacing)
+	);
+	--text-field-height: calc(
+		1rlh + var(--input-spacing) * 2 + var(--border-size) * 2
+	);
+
+	--inset-inline: var(--dialog-offset);
+	--inset-block-start: calc(
+		var(--dialog-offset) + var(--titlebar-height) + 1lh +
+			var(--text-field-height) + var(--text-spacing) * 2
+	);
+	--inset-block-end: calc(
+		var(--dialog-offset) + var(--statusbar-height) + var(--window-gap) * 2 +
+			1lh + var(--button-spacing) * 2 + var(--dialog-button-spacing)
+	);
+	--inset: var(--inset-block-start) var(--inset-inline) var(--inset-block-end)
+		var(--inset-inline);
 
 	@include utils.content-container-alt;
 
@@ -49,11 +64,6 @@
 
 	// For #Header
 	margin-top: 0;
-
-	// Fullscreen
-	.PopupFullWindow:only-child & {
-		--inset: 69px 11px 39px 11px;
-	}
 }
 
 #GameRow {
@@ -65,7 +75,7 @@
 	border: none;
 	padding: 0;
 	margin: 0 var(--border-size);
-	margin-top: var(--text-spacing);
+	margin-top: calc(var(--text-spacing) + var(--border-size));
 
 	& > div {
 		@include utils.text-reset;

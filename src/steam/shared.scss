@@ -1,5 +1,6 @@
 @use "shared/controls";
 @use "shared/table";
+@use "shared/window";
 @use "shared++/utils";
 
 @mixin dialog-title {
@@ -19,6 +20,24 @@
 	.WindowFocus & {
 		color: var(--color-active-caption-text);
 	}
+}
+
+/// An `--inset` value for generic dialogs for usage with
+/// `utils.content-container-alt`.
+@mixin generic-dialog-content-container-offset {
+	--dialog-offset: calc(
+		var(--window-spacing) + var(--border-size) + var(--dialog-spacing)
+	);
+	--inset-inline: var(--dialog-offset);
+	--inset-block-start: calc(
+		var(--dialog-offset) + var(--titlebar-height) + 1lh + var(--text-spacing)
+	);
+	--inset-block-end: calc(
+		var(--dialog-offset) + var(--statusbar-height) + var(--window-gap) * 2 +
+			1lh + var(--button-spacing) * 2 + var(--dialog-button-spacing)
+	);
+	--inset: var(--inset-block-start) var(--inset-inline) var(--inset-block-end)
+		var(--inset-inline);
 }
 
 @mixin icon-mono-button($disabled-sel: "&:disabled") {
@@ -113,8 +132,7 @@
 		bottom: 4px;
 		height: calc(1lh + 2px);
 
-		box-shadow: var(--border-statusbar);
-		padding: 1px 15px 1px 2px;
+		@include window.statusbar-item;
 	}
 }
 

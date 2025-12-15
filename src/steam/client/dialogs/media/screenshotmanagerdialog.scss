@@ -77,7 +77,15 @@
 }
 
 #ScreenshotList {
-	--inset: calc(1lh + 42px) 11px calc(1lh + 23px) 11px;
+	// TODO
+	--dialog-offset: calc(var(--window-spacing) + var(--border-size) * 2);
+	--text-field-height: calc(
+		1rlh + var(--input-spacing) * 2 + var(--border-size) * 2
+	);
+
+	--inset-inline: var(--dialog-offset);
+	--inset: calc(1lh + 42px) var(--inset-inline) calc(1lh + 23px)
+		var(--inset-inline);
 
 	@include utils.content-container-alt;
 
