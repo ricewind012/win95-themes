@@ -21,8 +21,6 @@
 }
 
 #ConsoleInner {
-	// TODO: for now
-	--statusbar-height: calc(1rlh + 2px);
 	--text-field-height: calc(
 		1rlh + var(--input-spacing) * 2 + var(--border-size) * 2
 	);

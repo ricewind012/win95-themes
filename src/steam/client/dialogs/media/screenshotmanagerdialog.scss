@@ -77,14 +77,20 @@
 }
 
 #ScreenshotList {
-	// TODO
-	--dialog-offset: calc(var(--window-spacing) + var(--border-size) * 2);
-	--text-field-height: calc(
-		1rlh + var(--input-spacing) * 2 + var(--border-size) * 2
+	--dialog-offset: calc(
+		var(--window-spacing) + var(--border-size) + var(--dialog-spacing)
 	);
 
 	--inset-inline: var(--dialog-offset);
-	--inset: calc(1lh + 42px) var(--inset-inline) calc(1lh + 23px)
+	// 8px = separator with margin
+	--inset-block-start: calc(
+		var(--dialog-offset) + var(--titlebar-height) + var(--icon-button-height) +
+			var(--window-gap) + 8px
+	);
+	--inset-block-end: calc(
+		var(--dialog-offset) + var(--statusbar-height) + var(--window-gap) * 2
+	);
+	--inset: var(--inset-block-start) var(--inset-inline) var(--inset-block-end)
 		var(--inset-inline);
 
 	@include utils.content-container-alt;

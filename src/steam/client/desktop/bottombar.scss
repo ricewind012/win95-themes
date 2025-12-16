@@ -12,8 +12,6 @@
 }
 
 #BottomBar {
-	--statusbar-height: calc(1lh + 2px);
-
 	background: transparent;
 	box-shadow: var(--border-statusbar);
 	padding-bottom: calc(var(--statusbar-height) + var(--window-gap));

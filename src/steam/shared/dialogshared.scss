@@ -17,6 +17,10 @@
 
 .ModalPosition {
 	background-image: none;
+
+	.PopupFullWindow > & {
+		height: calc(100% - var(--titlebar-height));
+	}
 }
 
 .ModalPosition_Content {
