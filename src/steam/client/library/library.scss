@@ -9,8 +9,9 @@
 	background-color: var(--color-window);
 	border: none;
 
-	// for toolbar
-	top: calc(var(--icon-button-height) + var(--text-spacing));
+	// for toolbar; 2rlh is good enough by default (12px * 1.2 * 2 = ~29px),
+	// as it fits --icon-button-height and a bit of spacing under the toolbar.
+	top: 2rlh;
 
 	// for soundtrack
 	:where(& > :not(:empty)) {

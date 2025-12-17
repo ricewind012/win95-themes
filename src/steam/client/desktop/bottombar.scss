@@ -34,7 +34,8 @@
 
 #DetailedDownloadProgress,
 #DownloadStatus {
-	--offset: calc(var(--border-size) + var(--window-spacing));
+	// 1px = statusbar border
+	--offset: calc(var(--border-size) + var(--window-spacing) + 1px);
 
 	position: fixed;
 	left: calc(var(--offset) + 4px);
