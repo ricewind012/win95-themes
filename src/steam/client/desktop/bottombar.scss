@@ -14,7 +14,7 @@
 #BottomBar {
 	background: transparent;
 	box-shadow: var(--border-statusbar);
-	padding-bottom: calc(var(--statusbar-height) + var(--window-gap));
+	padding-bottom: var(--statusbar-height);
 
 	flex-basis: unset;
 

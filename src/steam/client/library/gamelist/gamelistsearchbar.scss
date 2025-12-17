@@ -20,9 +20,10 @@
 #AdvancedSearchPane {
 	@include window.container($child: true);
 
-	// Make it an actual window
+	overflow: auto;
+	// Make it an actual window, 17.5% fits 16px text size
 	position: fixed;
-	inset: calc(10% - var(--titlebar-height)) 25%;
+	inset: calc(10% - var(--titlebar-height)) 17.5%;
 
 	&::before {
 		content: var(--FilterEdit_SearchModeHeader);
@@ -34,6 +35,7 @@
 		// TODO: make them all focused
 		@include window.titlebar($focused-sel: "&");
 
+		background-color: transparent;
 		font: var(--text-ui);
 		font-weight: bold;
 	}

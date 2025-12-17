@@ -13,12 +13,11 @@
 
 	margin: var(--dialog-spacing);
 	margin-bottom: calc(
-		var(--dialog-spacing) + var(--dialog-button-spacing) + var(--tabs-height) +
-			21px
+		var(--dialog-spacing) + var(--dialog-button-spacing) + 1lh +
+			var(--button-spacing) * 2
 	);
 
 	width: unset;
-	height: unset; // ?
 	flex-direction: column;
 }
 
