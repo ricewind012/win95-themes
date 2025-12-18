@@ -1,10 +1,11 @@
 @use "shared++/utils";
+@use "steam/shared";
 
 #HardwareSurveyDialog {
 	.DialogButton.Primary {
 		// Undo ._DialogColLayout > ._DialogLayout
 		flex: unset;
-		width: 148px;
+		min-width: 148px;
 	}
 }
 
@@ -15,23 +16,17 @@
 	}
 
 	h3 {
-		font-size: var(--text-size-header);
+		font-size: var(--text-header-size);
 	}
 }
 
 #HardwareSurveySections {
-	--inset: 46px 11px 58px 11px;
-
 	@include utils.content-container-alt;
+	@include shared.generic-dialog-content-container-offset;
 
 	padding: 2px 10px;
 	border: none;
 	box-shadow: none;
 
 	overflow: auto;
-
-	// Fullscreen
-	.PopupFullWindow:only-child & {
-		--inset: 73px 11px 39px 11px;
-	}
 }

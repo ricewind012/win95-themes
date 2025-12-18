@@ -17,6 +17,10 @@
 	}
 }
 
+#Bottom {
+	overflow: visible;
+}
+
 #Button {
 	@include controls.icon-button;
 
@@ -171,12 +175,14 @@
 #SectionItemColumn {
 	// Progress
 	&:first-child {
-		flex-basis: 75%;
+		flex-basis: 67%;
 	}
 }
 
 #SectionItemStatus {
 	@include utils.text-reset;
+
+	flex-basis: 33%;
 }
 
 #SectionList {

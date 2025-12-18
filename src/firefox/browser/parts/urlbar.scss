@@ -19,7 +19,7 @@ $-input-height: round(
 	--urlbar-height: #{$-input-height};
 	--urlbar-min-height: #{$-input-height};
 
-	font-size: 1rem;
+	font-size: var(--text-ui-size);
 }
 
 #urlbar-container {

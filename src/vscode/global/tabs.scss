@@ -5,6 +5,8 @@
 :where([role="tab"]) {
 	@include tabs.tab($selected-sel: "&[aria-selected='true']");
 
+	font: var(--text-ui);
+
 	cursor: unset;
 
 	&[aria-selected="true"]:not(.tab) {

@@ -17,6 +17,10 @@
 
 .ModalPosition {
 	background-image: none;
+
+	.PopupFullWindow > & {
+		height: calc(100% - var(--titlebar-height));
+	}
 }
 
 .ModalPosition_Content {
@@ -119,7 +123,9 @@
 	background: transparent;
 	font: var(--text-ui);
 	padding: var(--dialog-spacing);
-	padding-bottom: calc(1lh + 3px + var(--window-gap) + var(--dialog-spacing));
+	padding-bottom: calc(
+		var(--statusbar-height) + var(--window-gap) + var(--dialog-spacing)
+	);
 
 	.DialogContentTransition > & {
 		--dialog-spacing: 0px;

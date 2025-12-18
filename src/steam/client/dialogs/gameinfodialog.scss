@@ -1,6 +1,7 @@
 @use "shared/controls";
 @use "shared/table";
 @use "shared++/utils";
+@use "steam/shared";
 
 #DialogBody {
 	box-shadow: none;
@@ -22,7 +23,7 @@
 		gap: 0;
 
 		// Align with the "IP Address" copy button.
-		height: 22px;
+		height: calc(1lh + var(--button-spacing) * 2);
 		display: grid;
 		grid-template-columns: 25% 75%;
 
@@ -45,17 +46,25 @@
 }
 
 #PlayersList {
-	--inset: 27px 11px 254px 11px;
-
+	// vars at the bottom to override the shared mixin
+	@include shared.generic-dialog-content-container-offset;
 	@include utils.content-container-alt;
 
-	margin-top: 0;
+	// fits 16px text size
+	--list-height: 386px;
+	--inset-block-start: calc(var(--dialog-offset) + var(--titlebar-height));
+
+	margin-top: var(--border-size);
 	margin-bottom: var(--text-spacing);
 
 	overflow: auto;
-	height: 415px;
+	height: var(--list-height);
 
 	order: -1;
+
+	&::before {
+		height: calc(var(--list-height) + var(--border-size) * 2);
+	}
 }
 
 #Header {

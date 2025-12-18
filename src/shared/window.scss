@@ -33,13 +33,12 @@
 @mixin menubar {
 	background-color: var(--color-menubar);
 	color: var(--color-menubar-text);
-	line-height: 1;
 
 	display: flex;
 }
 
 @mixin menubar-item($selected-sel) {
-	padding: 4px 5px 3px 7px;
+	padding: 3px 5px 2px 7px;
 
 	#{$selected-sel},
 	&:active {
@@ -56,7 +55,7 @@
 
 @mixin statusbar-item {
 	box-shadow: var(--border-statusbar);
-	padding: 2px 4px 1px 4px;
+	padding: 3px 4px 2px 4px;
 }
 
 @mixin titlebar($focused-sel) {

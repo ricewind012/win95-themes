@@ -8,18 +8,43 @@
 #EulaDialogContent {
 	color: inherit;
 	font: inherit;
+
+	.DialogBodyText {
+		// TODO(shared): caused by .GenericConfirmDialog, see above
+		margin-block-end: var(--text-spacing);
+
+		min-height: 2lh;
+	}
 }
 
 #EulaModalDialog {
 	flex: 0;
-	min-height: calc(100% - var(--titlebar-height));
+	min-height: 100%;
 }
 
 #EULAScrolling {
-	--inset: 75px 14px 44px 14px;
+	--dialog-offset: calc(
+		var(--window-spacing) + var(--border-size) + var(--dialog-spacing)
+	);
+
+	--inset-inline: var(--dialog-offset);
+	--inset-block-start: calc(
+		var(--dialog-offset) + var(--titlebar-height) + 2lh + var(--text-spacing)
+	);
+	--inset-block-end: calc(
+		var(--dialog-offset) + var(--statusbar-height) + 1lh +
+			var(--button-spacing) * 2 + var(--dialog-button-spacing)
+	);
+	--inset: var(--inset-block-start) var(--inset-inline) var(--inset-block-end)
+		var(--inset-inline);
 
 	border: none;
 	box-shadow: none;
+
+	&::before {
+		// TODO(shared): drop messagebox vars ? only fucking brings me headaches
+		margin: 4px 3px;
+	}
 }
 
 #LanguageFieldContainer {

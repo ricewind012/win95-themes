@@ -12,11 +12,9 @@
 }
 
 #BottomBar {
-	--statusbar-height: calc(1lh + 2px);
-
 	background: transparent;
 	box-shadow: var(--border-statusbar);
-	padding-bottom: calc(var(--statusbar-height) + var(--window-gap));
+	padding-bottom: var(--statusbar-height);
 
 	flex-basis: unset;
 
@@ -36,7 +34,8 @@
 
 #DetailedDownloadProgress,
 #DownloadStatus {
-	--offset: calc(var(--border-size) + var(--window-spacing));
+	// 1px = statusbar border
+	--offset: calc(var(--border-size) + var(--window-spacing) + 1px);
 
 	position: fixed;
 	left: calc(var(--offset) + 4px);

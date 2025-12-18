@@ -77,7 +77,21 @@
 }
 
 #ScreenshotList {
-	--inset: 61px 11px 30px 11px;
+	--dialog-offset: calc(
+		var(--window-spacing) + var(--border-size) + var(--dialog-spacing)
+	);
+
+	--inset-inline: var(--dialog-offset);
+	// 8px = separator with margin
+	--inset-block-start: calc(
+		var(--dialog-offset) + var(--titlebar-height) + var(--icon-button-height) +
+			var(--window-gap) + 8px
+	);
+	--inset-block-end: calc(
+		var(--dialog-offset) + var(--statusbar-height) + var(--window-gap) * 2
+	);
+	--inset: var(--inset-block-start) var(--inset-inline) var(--inset-block-end)
+		var(--inset-inline);
 
 	@include utils.content-container-alt;
 

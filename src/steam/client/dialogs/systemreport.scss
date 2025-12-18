@@ -1,4 +1,26 @@
+@use "steam/shared";
+
+#SystemReportContainer {
+	margin-block-start: calc(var(--text-spacing) + var(--border-size));
+}
+
+#SystemReportDialog {
+	.DialogBody {
+		// Restore .DialogContent padding
+		padding: var(--dialog-spacing);
+		padding-bottom: calc(
+			var(--statusbar-height) + var(--window-gap) + var(--dialog-spacing)
+		);
+	}
+}
+
+#Text {
+	color: inherit;
+	font: var(--text-monospace);
+}
+
 #TextContainer {
-	--inset: 54px 14px 37px 14px;
+	@include shared.generic-dialog-content-container-offset;
+
 	box-shadow: none;
 }

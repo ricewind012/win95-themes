@@ -5,7 +5,10 @@
 @use "shared++/utils";
 
 #AppProperties {
-	height: calc(100% - 1lh - var(--tabs-height));
+	height: calc(
+		100% - var(--titlebar-height) - var(--dialog-spacing) *
+			2 - var(--window-gap)
+	);
 }
 
 #AsyncBackedInputChildren {
@@ -53,7 +56,27 @@
 
 // DLC
 #DlcGrid {
-	--inset: 88px 25px 65px 25px;
+	// 7px = --dialog-spacing, but .DialogContentTransition > .DialogContent
+	// sets it to 0px
+	--dialog-offset: calc(
+		var(--window-spacing) + var(--border-size) * 2 + var(--tabpanel-spacing) +
+			7px
+	);
+	--text-field-height: calc(
+		1rlh + var(--input-spacing) * 2 + var(--border-size) * 2
+	);
+
+	--inset-inline: var(--dialog-offset);
+	--inset-block-start: calc(
+		var(--dialog-offset) + var(--titlebar-height) + var(--text-field-height) +
+			var(--text-spacing)
+	);
+	--inset-block-end: calc(
+		var(--dialog-offset) + var(--statusbar-height) + var(--window-gap) * 2
+	);
+	// 160px = min-width of #pagedsettings_PagedSettingsDialog_PageListColumn
+	--inset: var(--inset-block-start) var(--inset-inline) var(--inset-block-end)
+		calc(var(--inset-inline) + 160px);
 
 	@include utils.content-container-alt;
 

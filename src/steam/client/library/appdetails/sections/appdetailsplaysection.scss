@@ -176,9 +176,14 @@
 	text-transform: none;
 }
 
+#RightControls {
+	justify-content: start;
+}
+
 #StatusAndStats,
 #StatusNameContainer {
 	height: unset;
+	max-height: unset;
 }
 
 #StatusNameContainer {

@@ -43,11 +43,11 @@
 @mixin legend-as-div {
 	@include text.groupbox-header;
 
-	padding: 0 2px;
+	padding: 0 0.2rem;
 	margin: 0;
 
 	position: absolute;
-	top: -5px;
+	top: calc(-0.5rlh + 1px);
 }
 
 @mixin move-scrollbar {

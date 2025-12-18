@@ -1,5 +1,6 @@
 @use "shared/text";
 @use "shared/window";
+@use "steam/shared";
 
 #Button {
 	border: none;
@@ -27,8 +28,9 @@
 }
 
 #ButtonContainer {
-	--x: calc(var(--border-size) + var(--window-spacing) + var(--dialog-spacing));
-	--inset: 49px var(--x) 41px var(--x);
+	--statusbar-height: 0px;
+	--window-gap: 0px;
+	@include shared.generic-dialog-content-container-offset;
 
 	gap: 0;
 
@@ -39,6 +41,7 @@
 #Description {
 	color: inherit;
 	font: inherit;
+	margin-block-end: var(--text-spacing);
 }
 
 #Divider {
@@ -46,6 +49,8 @@
 }
 
 #Footer {
+	margin-block-start: var(--dialog-button-spacing);
+
 	align-items: center;
 
 	#Action {
@@ -100,7 +105,6 @@
 	transform-style: preserve-3d;
 
 	.DialogContent_InnerWidth {
-		gap: var(--dialog-spacing);
 		margin: var(--dialog-spacing);
 
 		overflow: visible;

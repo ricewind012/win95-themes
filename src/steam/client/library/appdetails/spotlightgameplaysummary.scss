@@ -11,6 +11,11 @@
 
 #GamePlaySummaryContainer {
 	margin: 0;
+
+	// #pageablecontainer_HeaderPageControls
+	& > div > div {
+		align-items: start;
+	}
 }
 
 #GamePlaySummaryHeader {

@@ -21,7 +21,12 @@
 
 #EmptyNotificationsCtn {
 	font: var(--text-ui);
-	padding: 8px;
+	padding: var(--header-spacing);
+
+	// never displayed, is this a bug or what ???
+	#NotificationsMenuEntriesContainer:empty + & {
+		display: block;
+	}
 }
 
 #EmptyNotificationsTitle {
@@ -34,7 +39,7 @@
 }
 
 #NotificationHeader {
-	padding: 8px;
+	padding: var(--header-spacing);
 }
 
 #NotificationMenuItem {
@@ -42,6 +47,8 @@
 }
 
 #NotificationsMenu {
+	--header-spacing: 8px;
+
 	color: var(--color-button-text);
 	border: none;
 	box-shadow: none;
@@ -54,7 +61,10 @@
 
 #NotificationsMenuScrollable {
 	--offset: calc(var(--border-size) + var(--window-spacing));
-	--inset: calc(var(--offset) + 39px) var(--offset) var(--offset) var(--offset);
+	--inset-block-start: calc(
+		var(--offset) + var(--header-spacing) * 2 + 1rlh + var(--button-spacing) * 2
+	);
+	--inset: var(--inset-block-start) var(--offset) var(--offset) var(--offset);
 
 	@include utils.content-container-alt;
 }

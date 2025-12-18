@@ -67,7 +67,7 @@
 	padding: 0 3px;
 	margin: 0;
 
-	height: 13px;
+	height: var(--text-ui-size);
 
 	&#Active {
 		background-color: var(--color-highlight);

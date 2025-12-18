@@ -21,7 +21,24 @@
 }
 
 #ConsoleInner {
-	--inset: 84px 4px 46px 4px;
+	--text-field-height: calc(
+		1rlh + var(--input-spacing) * 2 + var(--border-size) * 2
+	);
+	--window-offset: calc(var(--window-spacing) + var(--border-size));
+
+	--inset-inline: var(--window-offset);
+	// 13px = separators with their margins
+	--inset-block-start: calc(
+		var(--window-offset) + var(--titlebar-height) + var(--menubar-height) +
+			var(--window-gap) * 2 + var(--combobox-button-height) +
+			var(--border-size) + 13px
+	);
+	--inset-block-end: calc(
+		var(--window-offset) + var(--statusbar-height) + var(--text-field-height) +
+			var(--window-gap) * 2 + 2px
+	);
+	--inset: var(--inset-block-start) var(--inset-inline) var(--inset-block-end)
+		var(--inset-inline);
 
 	@include utils.content-container-alt;
 }

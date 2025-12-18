@@ -18,7 +18,8 @@
 	}
 
 	&:where(.Medium) {
-		--steamavatar_size: 24px;
+		// Usually accompanied by text
+		--steamavatar_size: max(24px, 2rlh);
 	}
 
 	&:where(.X-Large) {

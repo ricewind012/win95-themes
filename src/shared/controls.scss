@@ -41,6 +41,9 @@
 	background-color: var(--color-window);
 	color: var(--color-window-text);
 	box-shadow: var(--border-field);
+	// TODO: "padding-block: 0" if --text-ui-size > 11px
+	// not there yet, see https://github.com/w3c/csswg-drafts/issues/8376
+	// if it *is* there, have to wait for all apps to update to newest chromium
 	padding: calc(var(--border-size) + var(--input-spacing));
 }
 
@@ -222,8 +225,9 @@
 	border: none;
 	box-shadow: var(--border-groupbox);
 	padding: 11px;
+	padding-block-start: calc(1rem - 1px);
 	margin: 0;
-	margin-bottom: 8px;
+	margin-bottom: 0.67rem;
 
 	// For $legend-as-div
 	position: relative;

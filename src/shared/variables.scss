@@ -180,10 +180,11 @@
 	--scrollbar-size: 16px;
 	--sel-button-size: 13px;
 
-	--tabs-height: 20px;
+	--tabs-height: calc(1rlh + 7px);
+	// This stays hardcoded because idk looks good enough lolol
 	--titlebar-height: 18px;
-	--menubar-height: 18px;
-	--statusbar-height: 18px;
+	--menubar-height: calc(1rlh + 5px);
+	--statusbar-height: calc(1rlh + 5px);
 
 	--messagebox-spacing: 11px 10px;
 	--messagebox-content-spacing: 17px;
@@ -225,6 +226,8 @@
 
 	// Automatic light/dark color support
 	color-scheme: light dark;
+	// rlh calculations support
+	font: var(--text-ui);
 }
 
 // Actually belongs in generatedassets.scss, but it outputs every time it

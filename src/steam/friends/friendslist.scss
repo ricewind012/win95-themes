@@ -315,7 +315,7 @@
 	gap: var(--window-gap);
 
 	.friend {
-		--avatar-size: 32px;
+		--avatar-size: max(32px, 2rlh);
 
 		@include tree.item($expanded-sel: "&.hack");
 
