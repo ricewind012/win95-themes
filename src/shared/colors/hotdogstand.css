@@ -1,0 +1,31 @@
+:root {
+	--color-button-face: #f00;
+	--color-button-text: #fff;
+	--color-button-highlight: #000;
+	--color-button-light: #000;
+	--color-button-shadow: #000;
+	--color-button-shadow-dark: #000;
+
+	--color-menubar: #fff;
+	--color-menubar-text: #000;
+
+	--color-window: #ff0;
+	--color-window-text: #000;
+
+	--color-inactive-caption-bg-start: transparent;
+	--color-inactive-caption-bg-end: transparent;
+	--color-inactive-caption-text: #fff;
+	--color-active-caption-bg-start: #000;
+	--color-active-caption-bg-end: #000;
+	--color-active-caption-text: #fff;
+
+	--color-highlight: #000;
+	--color-highlight-border: transparent;
+	--color-highlight-text: #fff;
+
+	--color-tooltip: #000;
+	--color-tooltip-text: #fff;
+
+	--color-gray-text: #808080;
+	--color-link: #00f;
+}

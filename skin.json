@@ -32,6 +32,12 @@
 			"default": "Default",
 			"values": {
 				"Default": {},
+				"Hotdog Stand": {
+					"TargetCss": {
+						"affects": [".*"],
+						"src": "src/shared/colors/hotdogstand.css"
+					}
+				},
 				"VGUI": {
 					"TargetCss": {
 						"affects": [".*"],
