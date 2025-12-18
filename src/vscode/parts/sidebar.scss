@@ -30,6 +30,10 @@
 
 		overflow: visible;
 		height: unset;
+
+		.monaco-action-bar {
+			line-height: inherit;
+		}
 	}
 
 	.monaco-list {

@@ -12,7 +12,7 @@
 .split-view-view {
 	// Content
 	&[style^="top: 35px;"] {
-		margin-top: 16px;
+		margin-top: calc(1lh + 3px);
 	}
 
 	// Statusbar
@@ -27,7 +27,7 @@
 
 	// Maximised bottom panel
 	&[style="top: 0px; height: 0px;"] + & > .part.panel {
-		margin-top: 16px;
+		margin-top: calc(1lh + 3px);
 
 		height: calc(100% - 44px);
 	}

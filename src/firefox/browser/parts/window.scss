@@ -74,10 +74,9 @@ menubar {
 		--inset-bottom: calc(var(--statusbar-height) * -1 - var(--window-gap));
 		--width: calc(100% + var(--border-size) * 2);
 
-		@include window.statusbar-item;
-
 		visibility: visible;
 		opacity: 1;
+		padding: 0;
 		margin: calc(var(--border-size) * -1);
 
 		bottom: var(--inset-bottom);
@@ -87,9 +86,10 @@ menubar {
 	}
 
 	#statuspanel-label {
+		@include window.statusbar-item;
+
 		background-color: transparent;
 		border: none;
-		padding: 0;
 		margin: 0;
 	}
 
@@ -134,7 +134,7 @@ sidebar-main {
 
 #statuspanel {
 	&[inactive] > #statuspanel-label {
-		visibility: hidden;
+		color: transparent;
 	}
 
 	.browserStack:has(+ findbar:not([hidden])) > & {

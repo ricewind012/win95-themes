@@ -1,6 +1,5 @@
 @mixin item {
-	// alternative -webkit-line-clamp
-	height: calc(var(--text-ui-size) * var(--text-line) + 3px);
+	height: calc(1rlh + 3px);
 	display: flex;
 	align-items: center;
 }
