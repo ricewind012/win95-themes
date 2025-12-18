@@ -6,7 +6,8 @@
 }
 
 #EventHeaderBlock {
-	@include utils.text-reset;
+	color: var(--color-window-text);
+	font: var(--text-ui);
 }
 
 #GamePlaySummaryContainer {

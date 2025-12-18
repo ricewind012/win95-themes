@@ -91,6 +91,7 @@
 
 .chatRoomListContainer {
 	background: none var(--color-window);
+	color: var(--color-window-text);
 }
 
 // Making .chatRoomListContainer use .content-container breaks resizing.

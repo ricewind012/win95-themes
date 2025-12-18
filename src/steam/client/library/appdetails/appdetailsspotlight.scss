@@ -1,9 +1,7 @@
-@use "shared/table";
 @use "steam/shared";
 
 #AppDetailsSpotlightDemo {
-	@include table.header-row;
-	@include shared.library_section-content;
+	@include shared.library_section-header;
 
 	font: var(--text-ui);
 	font-weight: bold;
@@ -32,8 +30,7 @@
 }
 
 #ReviewContainer {
-	@include table.header-row;
-	@include shared.library_section-content;
+	@include shared.library_section-header;
 
 	#Inner {
 		width: auto;

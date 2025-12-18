@@ -116,7 +116,7 @@
 #ShowcaseHeader {
 	@include shared.library_section-header;
 
-	color: inherit;
+	color: var(--color-button-text);
 	font: inherit;
 	gap: var(--text-spacing);
 	border: none;

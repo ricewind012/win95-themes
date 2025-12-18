@@ -232,6 +232,7 @@ $-icons: (
 	}
 
 	#tabbrowser-tabs[orient="vertical"] & {
+		color: var(--color-window-text);
 		margin-block: var(--tab-button-spacing-x05);
 	}
 }

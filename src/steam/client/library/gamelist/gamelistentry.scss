@@ -1,13 +1,13 @@
 @use "shared/list";
 @use "shared/tree";
-@use "shared++/utils";
 
 #Container {
 	@include tree.item($expanded-sel: "&");
-	@include utils.text-reset;
 
 	overflow: visible;
 	background-color: transparent;
+	color: var(--color-window-text);
+	font: var(--text-ui);
 	box-shadow: none;
 
 	padding: var(--gamelistentry_container-padding);

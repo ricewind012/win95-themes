@@ -50,6 +50,8 @@
 }
 
 menubar {
+	@include window.menubar;
+
 	font: var(--text-ui);
 
 	width: 100%;
@@ -144,8 +146,6 @@ sidebar-main {
 }
 
 #toolbar-menubar {
-	@include window.menubar;
-
 	padding: 0;
 
 	flex-direction: column-reverse;

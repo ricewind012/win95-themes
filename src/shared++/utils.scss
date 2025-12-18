@@ -18,6 +18,7 @@
 /// for special elements.
 @mixin content-container-alt {
 	background-color: var(--color-window);
+	color: var(--color-window-text);
 	margin: var(--border-size);
 
 	&::before {

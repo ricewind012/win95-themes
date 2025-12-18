@@ -271,21 +271,21 @@
 
 	// prettier-ignore
 	--tree-icon-collapsed:
-		linear-gradient(90deg, var(--color-button-text) 1px, var(--color-button-text)) 3px 1px,
-		linear-gradient(90deg, var(--color-button-text) 1px, var(--color-button-text)) 3px 2px,
-		linear-gradient(90deg, var(--color-button-text) 1px, var(--color-button-text)) 3px 3px,
-		linear-gradient(90deg, var(--color-button-text) 1px, var(--color-button-text)) 3px 4px,
-		linear-gradient(90deg, var(--color-button-text) 1px, var(--color-button-text)) 3px 5px,
-		linear-gradient(90deg, var(--color-button-text) 1px, var(--color-button-text)) 1px 3px,
-		linear-gradient(90deg, var(--color-button-text) 1px, var(--color-button-text)) 2px 3px,
-		linear-gradient(90deg, var(--color-button-text) 1px, var(--color-button-text)) 4px 3px,
-		linear-gradient(90deg, var(--color-button-text) 1px, var(--color-button-text)) 5px 3px;
+		linear-gradient(90deg, var(--color-window-text) 1px, var(--color-window-text)) 3px 1px,
+		linear-gradient(90deg, var(--color-window-text) 1px, var(--color-window-text)) 3px 2px,
+		linear-gradient(90deg, var(--color-window-text) 1px, var(--color-window-text)) 3px 3px,
+		linear-gradient(90deg, var(--color-window-text) 1px, var(--color-window-text)) 3px 4px,
+		linear-gradient(90deg, var(--color-window-text) 1px, var(--color-window-text)) 3px 5px,
+		linear-gradient(90deg, var(--color-window-text) 1px, var(--color-window-text)) 1px 3px,
+		linear-gradient(90deg, var(--color-window-text) 1px, var(--color-window-text)) 2px 3px,
+		linear-gradient(90deg, var(--color-window-text) 1px, var(--color-window-text)) 4px 3px,
+		linear-gradient(90deg, var(--color-window-text) 1px, var(--color-window-text)) 5px 3px;
 
 	// prettier-ignore
 	--tree-icon-expanded:
-		linear-gradient(90deg, var(--color-button-text) 1px, var(--color-button-text)) 1px 3px,
-		linear-gradient(90deg, var(--color-button-text) 1px, var(--color-button-text)) 2px 3px,
-		linear-gradient(90deg, var(--color-button-text) 1px, var(--color-button-text)) 3px 3px,
-		linear-gradient(90deg, var(--color-button-text) 1px, var(--color-button-text)) 4px 3px,
-		linear-gradient(90deg, var(--color-button-text) 1px, var(--color-button-text)) 5px 3px;
+		linear-gradient(90deg, var(--color-window-text) 1px, var(--color-window-text)) 1px 3px,
+		linear-gradient(90deg, var(--color-window-text) 1px, var(--color-window-text)) 2px 3px,
+		linear-gradient(90deg, var(--color-window-text) 1px, var(--color-window-text)) 3px 3px,
+		linear-gradient(90deg, var(--color-window-text) 1px, var(--color-window-text)) 4px 3px,
+		linear-gradient(90deg, var(--color-window-text) 1px, var(--color-window-text)) 5px 3px;
 }

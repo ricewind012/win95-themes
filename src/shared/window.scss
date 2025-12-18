@@ -3,6 +3,7 @@
 
 @mixin content-container {
 	background-color: var(--color-window);
+	color: var(--color-window-text);
 	box-shadow: var(--border-field);
 	padding: var(--border-size);
 }
