@@ -1,7 +1,7 @@
 @use "shared/controls";
 @use "shared++/utils";
 
-.panels__5e434 {
+._5e434347c823b592-panels {
 	background-color: transparent;
 	border: none;
 
@@ -10,17 +10,17 @@
 	left: calc(var(--custom-guild-list-width) + var(--scrollbar-size));
 }
 
-.avatarWrapper__37e49 {
+._37e49614b9f110a9-avatarWrapper {
 	// ::before is used by the separator, so move it to the avatar element
 	--text: attr(aria-label);
 
 	@include controls.combobox-button($active-sel: "&[aria-expanded='true']");
 
-	.avatar__37e49 {
+	._37e49614b9f110a9-avatar {
 		display: none;
 	}
 
-	.nameTag__37e49 {
+	._37e49614b9f110a9-nameTag {
 		&::before {
 			content: var(--text);
 		}
@@ -31,7 +31,7 @@
 	}
 }
 
-.button__67645 {
+._67645e1530f1195d-button {
 	--icon-button-width: var(--combobox-button-height);
 	--icon-button-height: var(--combobox-button-height);
 	@include controls.icon-button;
@@ -39,18 +39,18 @@
 	width: unset;
 }
 
-.buttonChevron__37e49 {
+._37e49614b9f110a9-buttonChevron {
 	--button-img: icon("arrow-bottom", "mono");
 	--icon-button-width: 16px;
 
 	margin-inline-end: var(--toolbar-spacing);
 }
 
-.buttonChevronIcon__37e49 {
+._37e49614b9f110a9-buttonChevronIcon {
 	display: none;
 }
 
-.buttons__37e49 {
+._37e49614b9f110a9-buttons {
 	gap: 0;
 
 	[aria-label="Deafen"] {
@@ -71,7 +71,7 @@
 }
 
 // vc
-.container_e131a9 {
+.e131a99484292a19-container {
 	border: none;
 	padding: var(--toolbar-container-spacing);
 	padding-bottom: 0;
@@ -81,7 +81,7 @@
 	}
 }
 
-.container__37e49 {
+._37e49614b9f110a9-container {
 	gap: var(--toolbar-spacing);
 	padding: var(--toolbar-container-spacing);
 	margin: 0;

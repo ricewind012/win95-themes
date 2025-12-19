@@ -4,26 +4,26 @@
 @use "shared/window";
 @use "shared++/utils";
 
-.container__2637a {
+._2637a2609f343032-container {
 	@include window.content-container;
 
 	mask: none;
 	margin-top: var(--toolbar-top-margin);
 	margin-left: 0;
 
-	.scroller__629e4 {
+	._629e4c86564a4ee7-scroller {
 		padding: 0;
 		margin: 0;
 	}
 }
 
-.sidebar__5e434 {
+._5e434347c823b592-sidebar {
 	&::after {
 		display: none;
 	}
 }
 
-.sidebarList__5e434 {
+._5e434347c823b592-sidebarList {
 	border: none;
 	margin-right: var(--window-gap);
 	margin-bottom: var(--custom-app-panels-height, 0);

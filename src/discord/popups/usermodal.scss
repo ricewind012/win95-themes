@@ -1,11 +1,11 @@
 // right side
-.container__37bfc {
+._37bfcf3d457db7a9-container {
 	padding: 0;
 	margin: 8px;
 
 	height: calc(100% - var(--tabs-height) - 8px);
 
-	.tabListScroller__37bfc {
+	._37bfcf3d457db7a9-tabListScroller {
 		padding: 0;
 		margin: 0;
 		// invisible scroller component element
@@ -15,12 +15,12 @@
 	}
 }
 
-.profileButtons__9c3be {
+._9c3bea41fd465666-profileButtons {
 	&::after {
 		display: none;
 	}
 }
 
-.profileNote__9c3be {
+._9c3bea41fd465666-profileNote {
 	margin: 0;
 }

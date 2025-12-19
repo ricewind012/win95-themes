@@ -1,6 +1,6 @@
 @use "shared/controls";
 
-.animatedContainer_f37cb1 {
+.f37cb1984c371ee5-animatedContainer {
 	opacity: 0.5;
 	margin: 1px;
 
@@ -8,16 +8,16 @@
 	width: calc(100% - 2px);
 }
 
-.bannerImage_f37cb1 {
+.f37cb1984c371ee5-bannerImage {
 	transform: none;
 	height: inherit;
 }
 
-.bannerImg_f37cb1 {
+.f37cb1984c371ee5-bannerImg {
 	height: inherit;
 }
 
-.container_f37cb1 {
+.f37cb1984c371ee5-container {
 	--custom-guild-banner-height: calc(
 		var(--toolbar-top-margin) - var(--window-gap) - 2px
 	);
@@ -39,7 +39,7 @@
 	}
 }
 
-.guildDropdown_f37cb1 {
+.f37cb1984c371ee5-guildDropdown {
 	--button-img: icon("overflow", "mono");
 	--button-img-pos-x: 4px;
 	--button-img-pos-y: 8px;
@@ -51,14 +51,14 @@
 	height: unset;
 }
 
-.header_f37cb1 {
+.f37cb1984c371ee5-header {
 	// TODO: use modifier-hover for transparent ?
 	background-color: transparent;
 	border: none;
 	padding: var(--toolbar-container-spacing);
 }
 
-.headerContent_f37cb1 {
+.f37cb1984c371ee5-headerContent {
 	filter: none;
 	gap: 0;
 	// TODO: ?
@@ -67,12 +67,12 @@
 	justify-content: end;
 }
 
-.guildBadgeAndName_f37cb1,
-.guildIconV2Container__85d16,
-.headerChildren_f37cb1,
-.headerEllipseForeground_f37cb1,
-.headerGlass_f37cb1,
-.inviteButton_f37cb1,
-.name_f37cb1 {
+.f37cb1984c371ee5-guildBadgeAndName,
+._85d1663d6a9fc7f6-guildIconV2Container,
+.f37cb1984c371ee5-headerChildren,
+.f37cb1984c371ee5-headerEllipseForeground,
+.f37cb1984c371ee5-headerGlass,
+.f37cb1984c371ee5-inviteButton,
+.f37cb1984c371ee5-name {
 	display: none;
 }

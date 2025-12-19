@@ -4,10 +4,10 @@
 @use "shared++/utils";
 
 // GIF picker
-.container_fed6d3 {
+.fed6d32841cc2da2-container {
 	--offset: 6px;
 
-	.backButton_fed6d3 {
+	.fed6d32841cc2da2-backButton {
 		--button-img: icon("arrow-big-left", "mono");
 		@include controls.button;
 		// TODO: idk
@@ -22,7 +22,7 @@
 		}
 	}
 
-	.content_fed6d3 {
+	.fed6d32841cc2da2-content {
 		@include window.content-container;
 
 		& > div {
@@ -31,13 +31,13 @@
 		}
 	}
 
-	.header_fed6d3 {
+	.fed6d32841cc2da2-header {
 		background-color: transparent;
 		border: none;
 		padding: 0;
 	}
 
-	.result__2dc39 {
+	._2dc39186a9b98da4-result {
 		&:hover::after {
 			inset: calc(var(--offset) * -1);
 			z-index: -1;
@@ -50,18 +50,18 @@
 		}
 	}
 
-	.searchHeader_fed6d3 {
+	.fed6d32841cc2da2-searchHeader {
 		@include utils.text-reset;
 	}
 }
 
 // TODO: it's supposed to be resizable or something. Not my problem !
-.drawerSizingWrapper__08434 {
+._084343c4f11eaaab-drawerSizingWrapper {
 	position: unset;
 	width: 100%;
 	height: calc(100% - var(--titlebar-height) - var(--window-gap));
 
-	.contentWrapper__08434 {
+	._084343c4f11eaaab-contentWrapper {
 		background-color: transparent;
 		border: none;
 		gap: 0;
@@ -70,17 +70,17 @@
 		grid-template-rows: auto;
 	}
 
-	.nav__08434 {
+	._084343c4f11eaaab-nav {
 		display: none;
 	}
 
 	// Not needed anymore
-	.resizeHandle__08434 {
+	._084343c4f11eaaab-resizeHandle {
 		display: none;
 	}
 }
 
-.expressionPickerPositionLayer__74017 {
+._740174f3d6a2c8fe-expressionPickerPositionLayer {
 	--custom-emoji-picker-constants-diversity-emoji-size: 16px;
 
 	left: unset;
@@ -88,11 +88,11 @@
 }
 
 // Emoji picker
-.wrapper_c0e32c {
+.c0e32c5cffed3d9f-wrapper {
 	box-shadow: none;
 	padding: 0;
 
-	.categoryList_c0e32c {
+	.c0e32c5cffed3d9f-categoryList {
 		@include window.content-container;
 
 		top: calc(var(--combobox-button-height) + var(--window-gap));
@@ -101,7 +101,7 @@
 	}
 
 	// TODO: content
-	.emojiItem_fc7141 {
+	.fc7141859aaa98b7-emojiItem {
 		min-width: var(--custom-emoji-picker-constants-emoji-size-large);
 		height: 56px;
 	}
@@ -122,14 +122,14 @@
 		inset: 0;
 	}
 
-	.emojiPicker_c0e32c {
+	.c0e32c5cffed3d9f-emojiPicker {
 		gap: var(--window-gap);
 
 		flex-grow: 1;
 		grid-template-columns: calc(48px + var(--scrollbar-size)) auto;
 	}
 
-	.emojiPickerListWrapper_c0e32c {
+	.c0e32c5cffed3d9f-emojiPickerListWrapper {
 		@include window.content-container;
 
 		& > div {
@@ -141,7 +141,7 @@
 		}
 	}
 
-	.header_c0e32c {
+	.c0e32c5cffed3d9f-header {
 		border: none;
 		padding: 0;
 	}
@@ -164,19 +164,19 @@
 		}
 	}
 
-	.header_c656ac,
-	.packHeader_e94b8c {
+	.c656aca9a3db31a9-header,
+	.e94b8cb2ff7b5c8d-packHeader {
 		@include table.header-row;
 
 		height: unset;
 	}
 
-	.headerCollapseIcon__14245,
-	.headerIcon__14245 {
+	._14245bb948377a25-headerCollapseIcon,
+	._14245bb948377a25-headerIcon {
 		display: none;
 	}
 
-	.headerLabel__14245 {
+	._14245bb948377a25-headerLabel {
 		text-transform: none;
 		gap: var(--text-spacing);
 		margin: 0;
@@ -195,13 +195,13 @@
 		}
 	}
 
-	.inspector_c0e32c {
+	.c0e32c5cffed3d9f-inspector {
 		@include window.content-container;
 
 		border: none;
 	}
 
-	.unicodeShortcut_b9ee0c {
+	.b9ee0c229bc0b6bb-unicodeShortcut {
 		--button-img: icon("emoji");
 		--icon-button-width: calc(48px - var(--border-size) * 2);
 		--icon-button-height: 32px;

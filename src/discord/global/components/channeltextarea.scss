@@ -1,7 +1,7 @@
 @use "shared/controls";
 @use "shared++/utils";
 
-.buttons__74017 {
+._740174f3d6a2c8fe-buttons {
 	gap: 0;
 	margin-inline: var(--toolbar-spacing) 0;
 
@@ -20,26 +20,26 @@
 		);
 	}
 
-	.emojiButton__04eed {
+	._04eede68d145ae81-emojiButton {
 		--button-img: icon("emoji");
 
-		.spriteContainer__04eed {
+		._04eede68d145ae81-spriteContainer {
 			display: none;
 		}
 	}
 }
 
-.channelTextArea__74017 {
+._740174f3d6a2c8fe-channelTextArea {
 	background-color: transparent;
 	border: none;
 
-	.editor__1b31f {
+	._1b31f471f0bb10ab-editor {
 		@include controls.text-field;
 
 		min-height: unset;
 	}
 
-	.placeholder__1b31f {
+	._1b31f471f0bb10ab-placeholder {
 		font: var(--text-ui);
 		padding: 0;
 
@@ -52,17 +52,17 @@
 	}
 }
 
-.inner__74017 {
+._740174f3d6a2c8fe-inner {
 	padding: 0;
 	margin-inline: var(--toolbar-container-spacing);
 }
 
-.scrollableContainer__74017 {
+._740174f3d6a2c8fe-scrollableContainer {
 	background: transparent;
 
 	overflow: hidden;
 }
 
-.textArea__74017 {
+._740174f3d6a2c8fe-textArea {
 	min-height: unset;
 }

@@ -1,26 +1,26 @@
 @use "shared/controls";
 
-:where(.button__201d5) {
+:where(._201d5e8a3c09670a-button) {
 	@include controls.button;
 
 	height: unset;
 	min-height: unset;
 
-	.contents__201d5 {
+	._201d5e8a3c09670a-contents {
 		background-image: none;
 	}
 }
 
-.button_a22cb0 {
+.a22cb0c66246f5d3-button {
 	@include controls.button;
 
 	opacity: 1;
 
-	&.icon-only_a22cb0 .buttonChildrenWrapper_a22cb0 {
+	&.a22cb0c66246f5d3-icon-only .a22cb0c66246f5d3-buttonChildrenWrapper {
 		display: none;
 	}
 
-	.buttonChildrenWrapper_a22cb0 {
+	.a22cb0c66246f5d3-buttonChildrenWrapper {
 		padding: 0;
 
 		min-width: unset;
@@ -29,6 +29,6 @@
 }
 
 // Seen in user area and ChannelTextArea component
-.lottieIcon__5eb9b {
+._5eb9b3cc7c2b1ce8-lottieIcon {
 	display: none;
 }

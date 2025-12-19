@@ -1,12 +1,12 @@
 @use "shared/listbox";
 
-.autocomplete__13533 {
+._13533e3c5791980f-autocomplete {
 	@include listbox.container;
 
 	left: calc(8px + var(--border-size));
 	right: var(--border-size);
 
-	.base__13533 {
+	._13533e3c5791980f-base {
 		background-color: transparent;
 		padding: 0;
 	}
@@ -16,11 +16,11 @@
 	}
 }
 
-.autocompleteRow__13533 {
+._13533e3c5791980f-autocompleteRow {
 	@include listbox.item($selected-sel: "&[aria-selected='true']");
 }
 
-.autocompleteRowContent__13533 {
+._13533e3c5791980f-autocompleteRowContent {
 	color: inherit;
 
 	min-height: unset;
@@ -30,31 +30,31 @@
 		margin: 0;
 	}
 
-	.avatar__44b0c,
-	.wrapper__44b0c {
+	._44b0c28be7879b7b-avatar,
+	._44b0c28be7879b7b-wrapper {
 		width: var(--icon-size);
 		height: var(--icon-size);
 	}
 }
 
-.autocompleteRowContentPrimary__13533,
-.autocompleteRowContentSecondary__13533 {
+._13533e3c5791980f-autocompleteRowContentPrimary,
+._13533e3c5791980f-autocompleteRowContentSecondary {
 	width: 50%;
 }
 
-.autocompleteRowContentPrimary__13533 {
+._13533e3c5791980f-autocompleteRowContentPrimary {
 	&:first-child {
 		margin-left: var(--icon-size);
 	}
 }
 
-.scroller__6b0e0 {
+._6b0e07cbaf13ec4e-scroller {
 	padding: 0;
 
 	// Header
-	& > .base__13533,
+	& > ._13533e3c5791980f-base,
 		// Separator
-		.dividerContainer__13533 {
+		._13533e3c5791980f-dividerContainer {
 		display: none;
 	}
 }

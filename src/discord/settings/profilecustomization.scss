@@ -2,11 +2,11 @@
 @use "shared/tabs";
 @use "shared++/utils";
 
-.buttonsContainer__28d5e {
+._28d5e0a2d38ee49c-buttonsContainer {
 	gap: var(--dialog-button-spacing);
 }
 
-.customizationSection_ace4f5 {
+.ace4f5a2d9b7fc28-customizationSection {
 	@include controls.groupbox;
 
 	& > :first-child {
@@ -15,6 +15,6 @@
 	}
 }
 
-.profileCustomizationSection__44061 {
+._44061dfca5514945-profileCustomizationSection {
 	@include tabs.content;
 }

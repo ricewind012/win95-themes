@@ -4,14 +4,14 @@
 @use "shared++/utils";
 
 // collapser
-.containerDefault__29444 {
+._29444ba32c7fbeab-containerDefault {
 	padding: 0;
 
-	.icon__29444 {
+	._29444ba32c7fbeab-icon {
 		display: none;
 	}
 
-	.mainContent__29444 {
+	._29444ba32c7fbeab-mainContent {
 		@include tree.item-icon;
 
 		&::before {
@@ -26,13 +26,13 @@
 		height: unset;
 	}
 
-	.name__29444 {
+	._29444ba32c7fbeab-name {
 		font: var(--text-ui);
 		margin-top: -2px;
 	}
 
-	.wrapperCommon__29444 {
-		@include tree.item($expanded-sel: "&:not(.collapsed__29444)");
+	._29444ba32c7fbeab-wrapperCommon {
+		@include tree.item($expanded-sel: "&:not(._29444ba32c7fbeab-collapsed)");
 
 		margin-left: 0;
 
@@ -42,18 +42,18 @@
 	}
 }
 
-.content__99f8c {
+._99f8cc7ad4790ce9-content {
 	// Banner
 	& > [style="height: 84px;"],
 	// "Browse Channels"
 	&  > [style="height: 12px;"],
 	&  > li:not([class]),
-	.sectionDivider__629e4 {
+	._629e4c86564a4ee7-sectionDivider {
 		display: none;
 	}
 }
 
-.scrollerBase__99f8c {
+._99f8cc7ad4790ce9-scrollerBase {
 	// Seen in private channels
 	mask: none;
 	padding: 0;
@@ -61,7 +61,7 @@
 }
 
 // channel
-.wrapper__2ea32 {
+._2ea32c412048f708-wrapper {
 	--offset: calc(var(--icon-size) + 4px);
 
 	@include tree.item($expanded-sel: "&");
@@ -85,17 +85,17 @@
 		border-left: 1px dotted var(--color-gray-text);
 	}
 
-	&.modeSelected__2ea32 {
-		.link__2ea32 {
+	&._2ea32c412048f708-modeSelected {
+		._2ea32c412048f708-link {
 			@include list.item-name-selected;
 		}
 
-		.name__2ea32 {
+		._2ea32c412048f708-name {
 			color: inherit;
 		}
 	}
 
-	&.typeThread__2ea32 {
+	&._2ea32c412048f708-typeThread {
 		margin-left: calc(var(--offset) * 3.25);
 
 		&::after {
@@ -105,23 +105,23 @@
 		}
 	}
 
-	.children__2ea32,
-	.iconContainer__2ea32 {
+	._2ea32c412048f708-children,
+	._2ea32c412048f708-iconContainer {
 		display: none;
 	}
 
-	.link__2ea32 {
+	._2ea32c412048f708-link {
 		@include utils.text-reset;
 
 		background-color: var(--color-window);
 	}
 
-	.name__2ea32 {
+	._2ea32c412048f708-name {
 		font: var(--text-ui);
 	}
 
-	.spine__5b40b,
-	.spineBorder__5b40b {
+	._5b40bdd67543ba35-spine,
+	._5b40bdd67543ba35-spineBorder {
 		display: none;
 	}
 }

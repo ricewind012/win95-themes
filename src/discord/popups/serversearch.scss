@@ -2,7 +2,7 @@
 @use "shared/menu";
 @use "shared/window";
 
-.container__55c99 {
+._55c999adcf6db265-container {
 	border: none;
 
 	&:not(:empty) {
@@ -10,19 +10,19 @@
 	}
 }
 
-.displayedNick__56fec {
+._56fec8e8b8048fe0-displayedNick {
 	font-weight: bold;
 	margin: 0 var(--text-spacing);
 }
 
-.header__56fec,
-.plusIcon__56fec,
-.searchClearHistory__56fec,
-.searchLearnMore__56fec {
+._56fec8e8b8048fe0-header,
+._56fec8e8b8048fe0-plusIcon,
+._56fec8e8b8048fe0-searchClearHistory,
+._56fec8e8b8048fe0-searchLearnMore {
 	display: none;
 }
 
-.option__56fec {
+._56fec8e8b8048fe0-option {
 	@include menu.item($selected-sel: "&[aria-selected='true']");
 
 	font-size: var(--text-ui-size);
@@ -42,7 +42,7 @@
 	}
 }
 
-.resultsGroup__56fec {
+._56fec8e8b8048fe0-resultsGroup {
 	padding: 0;
 	margin: 0;
 

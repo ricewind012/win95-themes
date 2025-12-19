@@ -14,7 +14,7 @@
 	}
 }
 
-.container__5808f {
+._5808f3d86030cee1-container {
 	border: none;
 
 	width: auto;
@@ -27,17 +27,17 @@
 	}
 }
 
-.header__5808f {
+._5808f3d86030cee1-header {
 	display: none;
 }
 
-.separator__5808f {
+._5808f3d86030cee1-separator {
 	@include controls.separator;
 
 	margin-inline: 0;
 }
 
-.tag__5808f {
+._5808f3d86030cee1-tag {
 	@include menu.item($selected-sel: "&.hack");
 
 	background-color: transparent;
@@ -55,7 +55,7 @@
 	}
 }
 
-.tagContainer__5808f {
+._5808f3d86030cee1-tagContainer {
 	gap: 0;
 	padding: 0;
 

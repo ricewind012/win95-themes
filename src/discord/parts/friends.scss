@@ -2,7 +2,7 @@
 @use "shared/window";
 @use "shared++/utils";
 
-.container__133bf {
+._133bf5eea8e33a34-container {
 	border: none;
 }
 
@@ -10,29 +10,29 @@
 	@include tabs.content($compact: true);
 }
 
-.peopleList__5ec2f {
+._5ec2fb8b5de26b21-peopleList {
 	@include window.content-container;
 	@include utils.move-scrollbar;
 
 	margin-top: var(--window-gap);
 
-	.actionButton_f8fa06 {
+	.f8fa068db52f043f-actionButton {
 		display: none;
 	}
 
-	.discriminator__0a06e {
+	._0a06ed6ea040aa1b-discriminator {
 		@include utils.parentheses;
 		@include utils.text-reset;
 
 		visibility: visible;
 	}
 
-	.sectionTitle__5ec2f {
+	._5ec2fb8b5de26b21-sectionTitle {
 		display: none;
 	}
 }
 
-.peopleListItem_cc6179 {
+.cc61794aab086a2e-peopleListItem {
 	line-height: inherit;
 	border: none;
 	padding: 8px;
@@ -47,18 +47,18 @@
 	}
 }
 
-.searchBar__5ec2f {
+._5ec2fb8b5de26b21-searchBar {
 	margin: 0;
 }
 
 // Header
-.tabBar__133bf {
+._133bf5eea8e33a34-tabBar {
 	position: fixed;
 	top: 66px;
 	margin-left: 3px;
 }
 
-.tabBody__133bf {
+._133bf5eea8e33a34-tabBody {
 	background-color: var(--color-button-face);
 	padding: var(--dialog-spacing);
 	// 9px = offset for default 32px icon size

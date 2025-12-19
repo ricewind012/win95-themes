@@ -1,7 +1,7 @@
 @use "shared/controls";
 @use "shared/window";
 
-.bar_c38106 {
+.c38106a3f0c3ca76-bar {
 	@include window.titlebar($focused-sel: ".app-focused &");
 
 	gap: 0;
@@ -9,12 +9,12 @@
 
 	z-index: 9999;
 
-	&.fixed_c38106 {
+	&.c38106a3f0c3ca76-fixed {
 		display: none;
 	}
 
 	// Move titlebar buttons to chat toolbar
-	.clickable_c99c29 {
+	.c99c29809d200a61-clickable {
 		--button-img: icon("newspaper");
 		--pos: calc(var(--window-pos) + var(--toolbar-container-spacing));
 
@@ -28,7 +28,7 @@
 		right: var(--pos);
 	}
 
-	.anchor_edefb8 {
+	.edefb8e22d63c542-anchor {
 		display: none;
 	}
 
@@ -37,23 +37,23 @@
 	}
 }
 
-.guildIcon_edbb22 {
+.edbb22df99c39831-guildIcon {
 	width: var(--icon-size);
 	height: var(--icon-size);
 
 	background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAAIGNIUk0AAHomAACAhAAA+gAAAIDoAAB1MAAA6mAAADqYAAAXcJy6UTwAAAJAUExURf///1RUVGtraz8/P0tLS0hISDw8PGNjY3p6egAAAJycnD09PR8fH29vb2lpaaSkpHd3d4ODgykpKXZ2dhAREmZmZjQyMBAODAoJCBkZGQ4ODmJPUAkHBxgYGA8PD2NOUQkIBxMTE0NCQgsICgUEBAYFBAYFBQICAj8vNSYeHw4MC++xyUw4QGhNV2lPWGpRWGtTWGVQUzsvMEY4OkVFRVRUVDY2NjQ0NFNTU1BQUGFhYUhISAAAAIODg8bGxlZWVlFRUcbGxoSEhHNzc21tbWBgYI2NjVpaWlRUVJKSklxcXIODg4iIiHFxcY2NjVpaWlRUVJCQkKmpqcvLzIODgwAAAFdXV1VWVnt2dcC8unl3djw5N4uLi35+fkxNTbynl0U9NwAAAHBwcNvb297e3n5+fkdHR4BrbYp0b4NvaKaPhLqjk3RmW39/f93d3eLi4sDAwNWsrUo8PGhZU7GZjbWej3RmW4CAgNXV1cHBwa+MlNSprlRERQgHBggHBwAAAE1NTTg3N6mBjNOlrlRCRQkHBwkHBwkIBwAAAKyBkNKhrkk5PGdUVLCQjrOVkHNgXAYEBYRib7+Pn4locYJla6KBhbWVknFeWwAAAG9SXb6XnEM2NwAAAD4uNE46QU87Qk89QlA+Qk09PzQpK97e3t3d3d3e3tbW19zc3MC+vrSysaWjoefn54+CgdSwqtu7sc+1qc61pcaio+G4te7PvLmYnvXDyPO+x/G6x/K3ydumtui8vcyYqs2cqs2eqdKkrJiIX8sAAACkdFJOUwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAoUhISUDc7CQGa/VNT+7p+Si+kW1urKGOENaNaWrer9KUFWVnn+OAhpHx7+2cHW/DvZWTtxqXh8IBj8Pf1/luA5OWBY+75+/5aCx4CQmPk/loKHBwc4v5bf+LjgBS498Si4PGBFaf6aAgoXFtbXFQR5txAFQAAAAFiS0dEAIgFHUgAAAAHdElNRQfoBBcJJgjMWcowAAAA2ElEQVQYGQXBPysEcBzH8c/79/ud75/hulK3YDFKkhmTyZWyWGzSPQNPwSO4snsOuk0WCzmbogiTwXB120W8XggAfjrMTZJarsGDrQNMVH/VtoAkALbv5lJRDL3++amZ2a6Hihyvctz92PaKmlRt7laNQxYo3aZus9nM2hHQYTBGJwAMuIL9MaMSL5mZB+06L+ImU6X39hgRt2QuZYYtl2n9dHfHvbmHt6bv3iVDMD4MeC/S9Av3500fxYa7akdS936nLfb7/ddaJ4SkFTgDgHMISdIqAMDTP0Q/KIHDKmwCAAAAJXRFWHRkYXRlOmNyZWF0ZQAyMDI0LTA0LTIxVDA4OjI0OjE1KzAwOjAwVhccqQAAACV0RVh0ZGF0ZTptb2RpZnkAMjAyNC0wNC0yMVQwODoyNDoxNSswMDowMCdKpBUAAAAodEVYdGRhdGU6dGltZXN0YW1wADIwMjQtMDQtMjNUMDk6Mzg6MDgrMDA6MDBcpic8AAAAAElFTkSuQmCC");
 }
 
-.leading_c38106 {
+.c38106a3f0c3ca76-leading {
 	&:empty {
 		display: none;
 	}
 }
 
-.title_c38106 {
+.c38106a3f0c3ca76-title {
 	position: unset;
 
-	.title_edbb22 {
+	.edbb22df99c39831-title {
 		gap: var(--titlebar-spacing);
 	}
 
@@ -68,14 +68,14 @@
 	}
 }
 
-.winButton_c38106 {
+.c38106a3f0c3ca76-winButton {
 	@include controls.button;
 	@include window.titlebar-button;
 
 	width: unset;
 }
 
-.winButtons_c38106 {
+.c38106a3f0c3ca76-winButtons {
 	gap: 0;
 
 	&::before {
@@ -83,7 +83,7 @@
 	}
 }
 
-.winButtonMinMax_c38106 {
+.c38106a3f0c3ca76-winButtonMinMax {
 	@include window.titlebar-button-minimize;
 
 	// No restore button. Nice app, lol
@@ -92,6 +92,6 @@
 	}
 }
 
-.winButtonClose_c38106 {
+.c38106a3f0c3ca76-winButtonClose {
 	@include window.titlebar-button-close;
 }

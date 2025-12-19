@@ -1,11 +1,11 @@
 @use "shared/controls";
 @use "shared++/utils";
 
-.checkboxWrapper__09aca {
-	.checkbox__09aca {
+._09aca73e6d4b214b-checkboxWrapper {
+	._09aca73e6d4b214b-checkbox {
 		@include controls.checkbox(
-			$checked-sel: "&.checked__09aca",
-			$disabled-sel: ".checkboxWrapperDisabled__09aca &"
+			$checked-sel: "&._09aca73e6d4b214b-checked",
+			$disabled-sel: "._09aca73e6d4b214b-checkboxWrapperDisabled &"
 		);
 
 		border: none;
@@ -15,7 +15,7 @@
 		}
 	}
 
-	.label__09aca {
+	._09aca73e6d4b214b-label {
 		padding-left: var(--label-spacing);
 	}
 }
@@ -28,7 +28,7 @@
 		color: var(--color-gray-text);
 	}
 
-	.description_ddd181 {
+	.ddd1814f7cd3e6fd-description {
 		opacity: 1;
 	}
 
@@ -55,16 +55,16 @@
 	}
 }
 
-.container__3f21e {
+._3f21e80f8677ec40-container {
 	@include controls.checkbox(
-		$checked-sel: "&.checked__3f21e",
-		$disabled-sel: "&.disabled__3f21e"
+		$checked-sel: "&._3f21e80f8677ec40-checked",
+		$disabled-sel: "&._3f21e80f8677ec40-disabled"
 	);
 
 	opacity: 1;
 	border: none;
 
-	.slider__3f21e {
+	._3f21e80f8677ec40-slider {
 		display: none;
 	}
 }

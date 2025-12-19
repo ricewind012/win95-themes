@@ -2,7 +2,7 @@
 @use "shared/window";
 
 // TODO: put them in toolbar
-.barBase__0f481 {
+._0f481cbbd7530492-barBase {
 	background-color: transparent;
 	border: none;
 	padding: 0;
@@ -26,13 +26,13 @@
 	}
 }
 
-.barButtonBase__0f481 {
+._0f481cbbd7530492-barButtonBase {
 	@include controls.button;
 
 	text-align: center;
 }
 
-.chat_f75fb0 {
+.f75fb00fb7356cbe-chat {
 	gap: var(--window-gap);
 	border: none;
 }
@@ -43,20 +43,20 @@
 	}
 }
 
-.chatGradientBase__36d07 {
+._36d072eab2b2e737-chatGradientBase {
 	display: none;
 }
 
-.messagesWrapper__36d07 {
+._36d072eab2b2e737-messagesWrapper {
 	@include window.content-container;
 
 	mask: none;
 
-	.scroller__36d07 {
+	._36d072eab2b2e737-scroller {
 		inset: var(--border-size);
 	}
 }
 
-.scrollerSpacer__36d07 {
+._36d072eab2b2e737-scrollerSpacer {
 	height: var(--space-16);
 }

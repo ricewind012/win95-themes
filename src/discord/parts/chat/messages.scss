@@ -1,55 +1,55 @@
 @use "shared/controls";
 
-.avatar_c19a55 {
+.c19a557985eb7793-avatar {
 	margin: 0;
 }
 
-.buttonContainer_c19a55 {
-	.hoverBarButton_f84418 {
+.c19a557985eb7793-buttonContainer {
+	.f84418acfdbdfe54-hoverBarButton {
 		@include controls.button;
 		@include controls.icon-button;
 
-		.icon_f84418:not(.buttonContent_f84418) {
+		.f84418acfdbdfe54-icon:not(.f84418acfdbdfe54-buttonContent) {
 			display: none;
 		}
 	}
 }
 
-.buttons__5126c {
+._5126c0cd07f243a0-buttons {
 	background-color: transparent;
 	border: none;
 	padding: 0;
 }
 
-.headerText_c19a55 {
+.c19a557985eb7793-headerText {
 	margin: 0;
 }
 
-.messageContent_c19a55 {
+.c19a557985eb7793-messageContent {
 	font-size: var(--text-ui-size);
 }
 
-.repliedTextContent_c19a55 {
+.c19a557985eb7793-repliedTextContent {
 	padding: 0;
 	margin: 0;
 }
 
-.timestamp_c19a55 {
+.c19a557985eb7793-timestamp {
 	font: var(--text-ui);
 
 	height: unset;
 }
 
-.username_c19a55 {
+.c19a557985eb7793-username {
 	font: var(--text-ui);
 	font-weight: bold;
 }
 
-.wrapper_c19a55 {
+.c19a557985eb7793-wrapper {
 	--chat-markup-line-height: 1.5;
 	min-height: unset;
 
-	&.compact_c19a55 {
+	&.c19a557985eb7793-compact {
 		i {
 			opacity: 1;
 
@@ -62,8 +62,8 @@
 		}
 	}
 
-	&.cozy_c19a55 {
-		.header_c19a55 {
+	&.c19a557985eb7793-cozy {
+		.c19a557985eb7793-header {
 			line-height: var(--text-line);
 			margin-bottom: var(--text-spacing);
 

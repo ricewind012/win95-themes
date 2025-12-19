@@ -2,21 +2,21 @@
 @use "shared/window";
 @use "shared++/utils";
 
-.container_f369db {
+.f369dba7416c67f0-container {
 	@include window.content-container;
 }
 
-.divider_f369db,
-.tagList_f369db {
+.f369dba7416c67f0-divider,
+.f369dba7416c67f0-tagList {
 	display: none;
 }
 
-.formContainer_d9be46 {
-	.prefixElement_d9be46 {
+.d9be463a3c35b91e-formContainer {
+	.d9be463a3c35b91e-prefixElement {
 		display: none;
 	}
 
-	.titleContainer_d9be46 {
+	.d9be463a3c35b91e-titleContainer {
 		gap: var(--toolbar-spacing);
 	}
 }
@@ -32,13 +32,13 @@
 	}
 }
 
-.mainCard_f369db {
+.f369dba7416c67f0-mainCard {
 	background-color: transparent;
 	border: none;
 }
 
-.sortDropdown_f369db,
-.tagsButton_f369db {
+.f369dba7416c67f0-sortDropdown,
+.f369dba7416c67f0-tagsButton {
 	@include controls.combobox-button;
 
 	text-align: start;
@@ -50,15 +50,15 @@
 	}
 }
 
-.sortDropdownInner_f369db,
-.tagsButtonInner_f369db {
+.f369dba7416c67f0-sortDropdownInner,
+.f369dba7416c67f0-tagsButtonInner {
 	color: inherit;
 	padding: 0;
 
 	justify-content: center;
 }
 
-.tagsContainer_f369db {
+.f369dba7416c67f0-tagsContainer {
 	gap: var(--toolbar-spacing);
 	padding: 0;
 	margin-left: calc(-24px + var(--toolbar-container-spacing));

@@ -1,20 +1,20 @@
 @use "shared/list";
 @use "shared/table";
 
-.channelNameContainer__856b5 {
+._856b54641773282a-channelNameContainer {
 	gap: var(--text-spacing);
 
 	display: flex;
 }
 
-.checkboxContainer__856b5,
-.checkboxMute__856b5 {
+._856b54641773282a-checkboxContainer,
+._856b54641773282a-checkboxMute {
 	&::before {
 		display: none;
 	}
 }
 
-.header__856b5 {
+._856b54641773282a-header {
 	@include table.header-row;
 
 	letter-spacing: 0;
@@ -22,7 +22,7 @@
 	margin: 0;
 }
 
-.override__856b5 {
+._856b54641773282a-override {
 	@include list.item;
 
 	background-color: var(--color-window);

@@ -1,23 +1,23 @@
 @use "shared/controls";
 
-.bar_a562c8 {
+.a562c840daab72a7-bar {
 	top: 20px;
 }
 
-.barFill_a562c8 {
+.a562c840daab72a7-barFill {
 	display: none;
 }
 
-.grabber_a562c8 {
+.a562c840daab72a7-grabber {
 	border: none;
 	box-shadow: none;
 
 	cursor: initial;
 }
 
-.slider_a562c8 {
+.a562c840daab72a7-slider {
 	@include controls.slider(
-		$thumb-sel: ".grabber_a562c8",
-		$track-sel: ".bar_a562c8"
+		$thumb-sel: ".a562c840daab72a7-grabber",
+		$track-sel: ".a562c840daab72a7-bar"
 	);
 }

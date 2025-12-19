@@ -1,19 +1,19 @@
 @use "shared/controls";
 @use "shared++/utils";
 
-.channelIcon__9293f,
+._9293f6b2fc12398a-channelIcon,
 .divider__9293f,
-.dot__9293f,
-.titleWrapper__9293f {
+._9293f6b2fc12398a-dot,
+._9293f6b2fc12398a-titleWrapper {
 	display: none;
 }
 
-.children__9293f {
+._9293f6b2fc12398a-children {
 	&::after {
 		display: none;
 	}
 
-	.hoverableContainer__754bd {
+	._754bde0f294a39cb-hoverableContainer {
 		@include controls.button;
 		@include utils.use-attr-text("aria-label");
 
@@ -21,13 +21,13 @@
 		height: unset;
 	}
 
-	.topic__6ec1a {
+	._6ec1a06139ec3b27-topic {
 		font: var(--text-ui);
 		margin: 0;
 	}
 }
 
-.container__9293f {
+._9293f6b2fc12398a-container {
 	--__header-bar-background: transparent;
 	--custom-channel-header-height: unset;
 
@@ -38,23 +38,23 @@
 	min-height: unset;
 }
 
-.icon__9293f,
-.iconBadge__9293f {
+._9293f6b2fc12398a-icon,
+._9293f6b2fc12398a-iconBadge {
 	display: none;
 }
 
-.iconWrapper__9293f.clickable__9293f {
+._9293f6b2fc12398a-iconWrapper._9293f6b2fc12398a-clickable {
 	width: unset;
 	height: unset;
 
-	&.iconDisabled__9293f {
+	&._9293f6b2fc12398a-iconDisabled {
 		opacity: 1;
 	}
 
 	&:not([aria-expanded]) {
 		--icon-button-height: var(--combobox-button-height);
 		@include controls.button;
-		@include controls.icon-button($selected-sel: "&.selected__9293f");
+		@include controls.icon-button($selected-sel: "&._9293f6b2fc12398a-selected");
 
 		order: -1;
 
@@ -71,26 +71,26 @@
 	}
 }
 
-.search__49676 {
+._496769951eb140fe-search {
 	margin-inline: var(--toolbar-spacing);
 
 	order: -2;
 
-	.icon__97492 {
+	._974928fe84ca9647-icon {
 		--button-img: icon("search");
 		@include controls.button;
 		@include controls.icon-button;
 
-		&:has(> .iconContainer__0c4c4 > .clear__0c4c4.visible__0c4c4) {
+		&:has(> ._0c4c409e1915aba4-iconContainer > ._0c4c409e1915aba4-clear._0c4c409e1915aba4-visible) {
 			--button-img: icon("clear");
 		}
 	}
 
-	.iconContainer__0c4c4 {
+	._0c4c409e1915aba4-iconContainer {
 		display: none;
 	}
 
-	.searchBar__97492 {
+	._974928fe84ca9647-searchBar {
 		background-color: transparent;
 		border: none;
 		padding: 0;
@@ -114,14 +114,14 @@
 		}
 	}
 
-	.searchToken_bd8186 {
+	.bd818628221af7aa-searchToken {
 		border: none;
 
 		height: unset;
 	}
 }
 
-.toolbar__9293f {
+._9293f6b2fc12398a-toolbar {
 	gap: 0;
 	margin-right: var(--combobox-icon-button-width);
 }
