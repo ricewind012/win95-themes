@@ -2,7 +2,7 @@
 @use "shared++/global";
 @use "shared++/scrollbar";
 
-:root {
+:where(:root) {
 	--appdetails_container-spacing-x: 10px;
 	--appdetails_container-spacing-y: 4px;
 	--appdetails_highlight-img-size: 80px;
