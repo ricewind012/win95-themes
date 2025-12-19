@@ -1,39 +1,5 @@
 @use "shared++/utils";
 
-.channelTextAreaUpload_b78547 {
-	margin-bottom: 12px;
-}
-
-.comment_b78547 {
-	margin: 0;
-}
-
-.file_b78547 {
+.b7854763c4a57c63-fileIcon {
 	display: none;
-}
-
-.footer_b78547 {
-	background-color: transparent;
-	padding: var(--messagebox-spacing);
-}
-
-.footerRightAlign_b78547 {
-	gap: var(--dialog-button-spacing);
-}
-
-.form_b78547 {
-	padding: 0;
-}
-
-.b7854763c4a57c63-inner {
-	margin: var(--dialog-spacing);
-}
-
-.label_b78547 {
-	@include utils.text-reset;
-}
-
-.uploadModal_b78547 {
-	width: 400px;
-	min-height: 183px;
 }

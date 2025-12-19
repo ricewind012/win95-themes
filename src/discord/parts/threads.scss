@@ -19,16 +19,10 @@
 	.d9be463a3c35b91e-titleContainer {
 		gap: var(--toolbar-spacing);
 	}
-}
 
-.forumPostFormButton_f369db {
-	@include controls.button;
-	@include utils.use-attr-text("aria-label");
-
-	height: unset;
-
-	&.forumPostFormButtonActive_f369db {
-		@include controls.button-active;
+	.a22cb0c66246f5d3-button:not(.a22cb0c66246f5d3-hasText) {
+		@include controls.button;
+		@include utils.use-attr-text("aria-label");
 	}
 }
 

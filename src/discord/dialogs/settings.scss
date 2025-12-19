@@ -23,6 +23,12 @@ $-groupbox-header-sel: ":is(h1, h2, h3, h4, h5, h6):first-child";
 		}
 	}
 
+	&[data-layout="vertical"] {
+		._5a8382cf5c9d77df-labelContainer {
+			margin-block-end: var(--text-spacing);
+		}
+	}
+
 	// Restrict to settings, looks weird everywhere else
 	._23e6b439306f125a-contentColumn &[data-layout="vertical"] {
 		@include controls.groupbox;
@@ -48,12 +54,6 @@ $-groupbox-header-sel: ":is(h1, h2, h3, h4, h5, h6):first-child";
 	max-width: 100%;
 	display: flex;
 	flex-direction: column;
-
-	& > [data-text-variant]:first-child,
-	& > div > div > .sectionTitle__7bffb:first-child,
-	& > div > :is(.sectionTitle__7bffb, h2):first-child {
-		background: #f09;
-	}
 }
 
 ._23e6b439306f125a-contentRegionScroller {

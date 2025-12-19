@@ -2,7 +2,6 @@
 @use "shared++/utils";
 
 ._9293f6b2fc12398a-channelIcon,
-.divider__9293f,
 ._9293f6b2fc12398a-dot,
 ._9293f6b2fc12398a-titleWrapper {
 	display: none;
@@ -54,7 +53,9 @@
 	&:not([aria-expanded]) {
 		--icon-button-height: var(--combobox-button-height);
 		@include controls.button;
-		@include controls.icon-button($selected-sel: "&._9293f6b2fc12398a-selected");
+		@include controls.icon-button(
+			$selected-sel: "&._9293f6b2fc12398a-selected"
+		);
 
 		order: -1;
 
@@ -81,7 +82,10 @@
 		@include controls.button;
 		@include controls.icon-button;
 
-		&:has(> ._0c4c409e1915aba4-iconContainer > ._0c4c409e1915aba4-clear._0c4c409e1915aba4-visible) {
+		&:has(
+			> ._0c4c409e1915aba4-iconContainer
+				> ._0c4c409e1915aba4-clear._0c4c409e1915aba4-visible
+		) {
 			--button-img: icon("clear");
 		}
 	}

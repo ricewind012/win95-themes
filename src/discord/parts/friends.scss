@@ -6,10 +6,6 @@
 	border: none;
 }
 
-.peopeColumn__133bf {
-	@include tabs.content($compact: true);
-}
-
 ._5ec2fb8b5de26b21-peopleList {
 	@include window.content-container;
 	@include utils.move-scrollbar;

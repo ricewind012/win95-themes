@@ -1,29 +1,27 @@
 @use "shared/controls";
 @use "shared/menu";
+@use "shared/window";
 @use "shared++/utils";
 
-.clear__5808f {
-	@include menu.item($selected-sel: "&.hack");
-
-	text-align: start;
-	box-shadow: none;
-
-	[data-text-variant] {
-		color: inherit;
-		font-weight: bold;
-	}
-}
-
 ._5808f3d86030cee1-container {
+	@include window.container($child: true);
+
 	border: none;
 
 	width: auto;
 	display: flex;
 	flex-direction: column-reverse;
 
-	// Titlebar
-	&::before {
-		display: none;
+	._7a01bdafdcb0e727-textButton {
+		@include menu.item($selected-sel: "&.hack");
+
+		width: 100%;
+
+		[data-text-variant] {
+			color: inherit;
+			font-weight: bold;
+			text-decoration: none;
+		}
 	}
 }
 
