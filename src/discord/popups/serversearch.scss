@@ -1,40 +1,62 @@
-@use "shared/controls";
-@use "shared/menu";
-@use "shared/window";
+@use "shared/listbox";
 
-._55c999adcf6db265-container {
-	border: none;
+.f1c5c9823fbd3ef8-container {
+	@include listbox.container;
 
-	&:not(:empty) {
-		@include window.container($child: true);
+	padding: 0;
+
+	overflow: auto;
+
+	._44b0c28be7879b7b-wrapper {
+		position: absolute;
+		inset-inline-start: 0;
+	}
+
+	[data-text-variant] {
+		overflow: hidden;
+		text-overflow: ellipsis;
+		white-space: nowrap;
 	}
 }
 
-._56fec8e8b8048fe0-displayedNick {
-	font-weight: bold;
-	margin: 0 var(--text-spacing);
-}
-
-._56fec8e8b8048fe0-header,
-._56fec8e8b8048fe0-plusIcon,
-._56fec8e8b8048fe0-searchClearHistory,
-._56fec8e8b8048fe0-searchLearnMore {
+._1bb324526a52affb-channelNameIcon,
+._1bb324526a52affb-groupHeader,
+._1bb324526a52affb-itemIcon:where(svg) {
 	display: none;
 }
 
-._56fec8e8b8048fe0-option {
-	@include menu.item($selected-sel: "&[aria-selected='true']");
-
-	font-size: var(--text-ui-size);
-	box-shadow: none;
+._1bb324526a52affb-divider {
+	--border-subtle: currentColor;
 	margin: 0;
+}
 
-	// Align with avatars
-	height: 24px;
+._1bb324526a52affb-filterSublabelTextContainer,
+._1bb324526a52affb-labelWithElements {
+	flex-grow: 1;
+}
 
-	&::before,
-	&::after {
-		display: none;
+._1bb324526a52affb-groupWrapper {
+	gap: 0;
+}
+
+._1bb324526a52affb-item {
+	--avatar-size: 20px;
+
+	padding: 0;
+	padding-inline-start: calc(var(--avatar-size) + var(--text-spacing));
+
+	// for avatars
+	position: relative;
+	min-height: var(--avatar-size);
+
+	& > ._1bb324526a52affb-labelWithElements,
+	& > :not([class]) {
+		gap: var(--text-spacing);
+
+		flex-grow: 1;
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		width: 100%;
 	}
 
 	* {
@@ -42,19 +64,6 @@
 	}
 }
 
-._56fec8e8b8048fe0-resultsGroup {
-	padding: 0;
-	margin: 0;
-
-	&:first-of-type::before {
-		display: none;
-	}
-
-	&::before {
-		@include controls.separator;
-
-		top: 0;
-
-		margin-inline: 0;
-	}
+._1bb324526a52affb-itemContainer {
+	@include listbox.item($selected-sel: "&:active, &[aria-selected='true']");
 }
