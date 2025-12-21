@@ -1,9 +1,15 @@
+@use "shared/controls";
 @use "shared/tabs";
 @use "shared/window";
 @use "shared++/utils";
 
 ._133bf5eea8e33a34-container {
 	border: none;
+
+	._133bf5eea8e33a34-peopleColumn {
+		box-shadow: none;
+		padding: 0;
+	}
 }
 
 ._5ec2fb8b5de26b21-peopleList {
@@ -49,14 +55,26 @@
 
 // Header
 ._133bf5eea8e33a34-tabBar {
-	position: fixed;
-	top: 66px;
-	margin-left: 3px;
+	gap: var(--tab-button-spacing);
+	margin: 0;
+
+	._133bf5eea8e33a34-item {
+		all: unset;
+		box-sizing: border-box;
+
+		@include controls.tab-button($selected-sel: "&[aria-selected='true']");
+
+		font: var(--text-ui);
+		text-align: center;
+
+		&::before,
+		&::after {
+			display: none;
+		}
+	}
 }
 
 ._133bf5eea8e33a34-tabBody {
 	background-color: var(--color-button-face);
 	padding: var(--dialog-spacing);
-	// 9px = offset for default 32px icon size
-	padding-top: calc(var(--dialog-spacing) + var(--tabs-height) - 9px);
 }

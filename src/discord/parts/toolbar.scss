@@ -42,9 +42,13 @@
 	display: none;
 }
 
-._9293f6b2fc12398a-iconWrapper._9293f6b2fc12398a-clickable {
+._9293f6b2fc12398a-iconWrapper {
 	width: unset;
 	height: unset;
+
+	&:not(._9293f6b2fc12398a-clickable) {
+		display: none;
+	}
 
 	&._9293f6b2fc12398a-iconDisabled {
 		opacity: 1;
