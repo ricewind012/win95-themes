@@ -1,0 +1,127 @@
+@use "shared/controls";
+@use "shared/tabs";
+@use "shared/window";
+@use "shared++/utils";
+
+.e9e3ed8b8badfe05-content {
+	background-color: var(--color-button-face);
+
+	position: unset;
+
+	.e9e3ed8b8badfe05-contentHeader {
+		@include window.titlebar($focused-sel: "&");
+
+		border: none;
+
+		position: absolute;
+		inset: 0;
+		inset-block-start: calc(var(--titlebar-height) * -1);
+
+		[data-text-variant] {
+			@include window.titlebar-name;
+
+			color: inherit;
+		}
+
+		button {
+			@include window.titlebar-button;
+			@include window.titlebar-button-close;
+		}
+	}
+}
+
+.caf372efc4d47562-itemContainer {
+	background-color: transparent;
+
+	.caf372efc4d47562-icon {
+		display: none;
+	}
+}
+
+.e4491282b6a5364a-modal {
+	--size: calc(100% - var(--custom-viewport-padding) * 2);
+
+	width: var(--size);
+	height: var(--size);
+
+	.e4491282b6a5364a-modalContent {
+		border: none;
+		padding-block-start: var(--titlebar-height);
+	}
+}
+
+._6131ab3dbe0affed-scroller {
+	@include tabs.content;
+
+	margin: var(--dialog-spacing);
+	margin-inline-start: 0;
+
+	height: calc(100% - var(--dialog-spacing) * 2);
+
+	._6131ab3dbe0affed-panel {
+		padding: 0;
+		margin: 0;
+	}
+}
+
+._409aa1aeee28d5f7-sidebar {
+	border: none;
+	padding: 0;
+	margin-inline-end: -1px;
+
+	&::before {
+		@include utils.pseudo-separator;
+
+		margin-inline: 4px;
+	}
+
+	._409aa1aeee28d5f7-fixedContent {
+		padding: 8px;
+
+		order: -1;
+
+		&::after {
+			display: none;
+		}
+
+		.caf372efc4d47562-item {
+			--tab-button-height: calc(48px + var(--tab-button-spacing) * 2);
+			@include controls.tab-button($selected-sel: "&.caf372efc4d47562-active");
+		}
+	}
+
+	._409aa1aeee28d5f7-label {
+		color: inherit;
+		font-weight: bold;
+		margin-inline-start: 6px;
+		margin-block-start: 0;
+	}
+
+	._409aa1aeee28d5f7-nav {
+		direction: ltr;
+
+		& + div {
+			margin-block-start: auto;
+
+			direction: ltr;
+		}
+	}
+
+	._409aa1aeee28d5f7-navScroller {
+		padding: 8px;
+		padding-inline-start: 0;
+		margin: 0;
+
+		overflow: auto;
+		direction: rtl;
+
+		.caf372efc4d47562-item {
+			@include tabs.tab-vertical($selected-sel: "&.caf372efc4d47562-active");
+		}
+	}
+
+	._409aa1aeee28d5f7-section {
+		border: none;
+		gap: 0;
+	}
+}
