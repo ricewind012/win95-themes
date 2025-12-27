@@ -9,7 +9,7 @@
 	margin-bottom: 0;
 }
 
-// TODO: this is an <svg>, so I can't do anything here...
+// This is an <svg>, so I can't do anything here...
 #OpenPickerButton {
 	@include controls.button;
 	@include controls.icon-button;

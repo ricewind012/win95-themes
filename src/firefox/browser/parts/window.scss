@@ -85,6 +85,14 @@ menubar {
 		width: var(--width);
 		max-width: var(--width);
 		height: var(--statusbar-height);
+
+		&[inactive] > #statuspanel-label {
+			color: transparent;
+		}
+	}
+
+	.browserStack:has(+ findbar:not([hidden])) > #statuspanel {
+		bottom: calc(var(--inset-bottom) - 34px);
 	}
 
 	#statuspanel-label {
@@ -131,17 +139,6 @@ sidebar-main {
 		box-sizing: border-box;
 
 		@include window.statusbar-item;
-	}
-}
-
-#statuspanel {
-	&[inactive] > #statuspanel-label {
-		color: transparent;
-	}
-
-	.browserStack:has(+ findbar:not([hidden])) > & {
-		// TODO: for now
-		bottom: calc(var(--inset-bottom) - 34px);
 	}
 }
 

@@ -55,13 +55,11 @@
 }
 
 .chatFileUploadPreview {
-	// TODO: images use border-statusbar
-	box-shadow: none;
-	padding: 0;
+	box-shadow: var(--border-statusbar);
+	padding: 1px;
 }
 
 .chatFileUploadPreviewContainer {
-	// TODO: use tooltip ?
 	@include window.container($child: true);
 
 	gap: var(--text-spacing);
@@ -198,7 +196,6 @@
 
 .chatRoomTextChannel {
 	color: inherit;
-	// TODO: .list-item-name padding is too small
 	padding: 4px;
 
 	&.ActiveTextChannel {
@@ -279,12 +276,9 @@
 
 // TODO: this goes out of bounds with too many tabs
 .chatTabSelector {
-	@include controls.button;
-	@include window.titlebar-button;
-
-	// TODO(icons): mixin
 	--button-img: icon("arrow-bottom", "mono");
-	--button-img-size: 7px 4px;
+	@include controls.button;
+	@include controls.icon-button;
 
 	background-image: none;
 

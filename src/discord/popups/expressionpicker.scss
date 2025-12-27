@@ -10,11 +10,7 @@
 	.fed6d32841cc2da2-backButton {
 		--button-img: icon("arrow-big-left", "mono");
 		@include controls.button;
-		// TODO: idk
-		@include window.titlebar-button;
-
-		min-width: 23px;
-		height: 22px;
+		@include controls.icon-button;
 
 		// TODO: unify
 		svg {
@@ -98,12 +94,6 @@
 		top: calc(var(--combobox-button-height) + var(--window-gap));
 		left: 0;
 		width: calc(48px + var(--scrollbar-size));
-	}
-
-	// TODO: content
-	.fc7141859aaa98b7-emojiItem {
-		min-width: var(--custom-emoji-picker-constants-emoji-size-large);
-		height: 56px;
 	}
 
 	[role="button"][aria-haspopup] {

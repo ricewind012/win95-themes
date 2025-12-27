@@ -38,7 +38,6 @@
 		width: calc(100% - 58px);
 	}
 
-	// TODO: scrollbar is out of bounds
 	.monaco-editor {
 		@include window.content-container;
 

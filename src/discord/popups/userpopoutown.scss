@@ -63,6 +63,20 @@
 	gap: 0;
 }
 
+.ce832809562bf737-statusItem {
+	padding: 0;
+
+	min-height: unset;
+	display: flex;
+	flex-direction: column;
+	align-items: start;
+
+	.ce832809562bf737-description,
+	.ce832809562bf737-icon {
+		display: none;
+	}
+}
+
 .ce832809562bf737-submenuIconWrapper {
 	display: none;
 }

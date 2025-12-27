@@ -13,9 +13,7 @@
 	}
 
 	#LinkInput {
-		// TODO(controls): unify selector args
-		@include controls.text-field;
-		@include controls.input-disabled;
+		@include controls.text-field($disabled-sel: "&");
 	}
 
 	#LinkInputLabel {

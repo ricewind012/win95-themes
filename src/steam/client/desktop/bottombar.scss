@@ -24,12 +24,6 @@
 #DownloadStatusContent {
 	color: var(--color-button-text);
 	padding: 0;
-
-	// Empty div without a class
-	// TODO: not there anymore in beta ?
-	& > :empty {
-		display: none;
-	}
 }
 
 #DetailedDownloadProgress,

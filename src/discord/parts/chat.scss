@@ -1,7 +1,6 @@
 @use "shared/controls";
 @use "shared/window";
 
-// TODO: put them in toolbar
 ._0f481cbbd7530492-barBase {
 	background-color: transparent;
 	border: none;
@@ -20,7 +19,6 @@
 		bottom: var(--border-size);
 	}
 
-	// TODO: unify
 	svg {
 		display: none;
 	}

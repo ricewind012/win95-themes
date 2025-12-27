@@ -10,8 +10,7 @@ div#AppNameHeader {
 #ButtonContainer {
 	gap: var(--dialog-button-spacing);
 	margin-top: var(--dialog-button-spacing);
-	// TODO: weird as hell - goes out of bounds for no reason
-	margin-bottom: calc(8px + var(--dialog-spacing));
+	margin-inline-end: 0;
 
 	& > div {
 		@include controls.button;

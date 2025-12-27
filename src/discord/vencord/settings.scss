@@ -177,21 +177,6 @@
 	gap: var(--text-spacing);
 }
 
-// TODO
-.vc-settings-quick-actions-card {
-	gap: var(--dialog-button-spacing);
-
-	justify-content: left;
-}
-
-// TODO
-.vcd-location-btns {
-	gap: var(--dialog-button-spacing);
-	margin-top: var(--text-spacing);
-
-	display: flex;
-}
-
 .vc-settings-card {
 	@include controls.groupbox;
 

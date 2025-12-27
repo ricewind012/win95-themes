@@ -39,12 +39,14 @@ $-icons: (
 }
 
 #MenuHeader {
+	--text-field-height: calc(
+		1rlh + var(--input-spacing) * 2 + var(--border-size) * 2
+	);
 	@include controls.combobox;
 
 	margin: 0;
 
-	// TODO: weird shit
-	height: 21px;
+	height: var(--text-field-height);
 
 	cursor: default;
 }

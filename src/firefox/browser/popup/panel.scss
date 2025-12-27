@@ -3,23 +3,6 @@
 @use "shared/window";
 @use "shared++/utils";
 
-// TODO: unify with ~/discord/shared.scss
-%-menu-item-separator {
-	display: block;
-
-	&::after {
-		@include utils.pseudo-separator;
-
-		--menu-item-padding-x: 20px;
-		position: absolute;
-		inset-inline: calc(var(--menu-item-padding-x) * -1);
-		bottom: -8px;
-		width: calc(100% + var(--menu-item-padding-x) * 2);
-
-		pointer-events: none;
-	}
-}
-
 // lol
 #appMenu-zoom-controls,
 // Seen in "Main menu > More tools"
@@ -53,12 +36,24 @@ panel {
 }
 
 .panel-banner-item:not([hidden]) {
-	@extend %-menu-item-separator;
-
 	--panel-banner-item-update-supported-bgcolor: darkgreen;
 	background-color: transparent;
 	margin: 0;
 	margin-bottom: 9px;
+
+	display: block;
+
+	&::after {
+		@include utils.pseudo-separator;
+
+		--menu-item-padding-x: 20px;
+		position: absolute;
+		inset-inline: calc(var(--menu-item-padding-x) * -1);
+		bottom: -8px;
+		width: calc(100% + var(--menu-item-padding-x) * 2);
+
+		pointer-events: none;
+	}
 }
 
 // .subviewbutton-back can be seen in main menu's child panel views

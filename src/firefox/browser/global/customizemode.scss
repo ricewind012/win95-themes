@@ -71,8 +71,7 @@
 		#customization-container {
 			@include window.container($child: true);
 
-			// TODO: why the 1px lol
-			padding-top: calc(var(--titlebar-height) + var(--window-gap) + 1px);
+			padding-top: calc(var(--titlebar-height) + var(--window-gap));
 
 			position: fixed;
 			inset: 10% 20%;

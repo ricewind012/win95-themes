@@ -32,7 +32,6 @@
 		position: unset;
 		width: 100%;
 
-		// TODO: make them all focused
 		@include window.titlebar($focused-sel: "&");
 
 		background-color: transparent;

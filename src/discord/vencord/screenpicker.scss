@@ -33,10 +33,6 @@
 	input[type="radio"] {
 		@include controls.radio($checked-sel: "&:checked");
 
-		// TODO(shared): -input-common
-		appearance: none;
-		margin: 0;
-
 		order: -1;
 		display: initial;
 	}
@@ -71,7 +67,7 @@
 	border: none;
 	padding: 0;
 
-	// TODO: for some reason :checked here doesn't work
+	// TODO: vesktop uses :checked incorrectly ?
 	&[data-checked="true"] > input[type="radio"] {
 		@include controls.checkbox-radio-checked;
 	}
