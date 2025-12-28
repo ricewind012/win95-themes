@@ -13,6 +13,16 @@
 
 #AccountMenu {
 	@include controls.combobox-button;
+
+	// small avatars are 16px, making the button 26px
+	& > div:not(.avatarHolder) {
+		margin-block-start: -1px;
+	}
+
+	.avatarHolder {
+		top: var(--offset-click);
+		left: var(--offset-click);
+	}
 }
 
 #Button {
