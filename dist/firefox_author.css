@@ -132,6 +132,7 @@
 
 #customization-palette-container {
   background-color: var(--color-window) !important;
+  color: var(--color-window-text) !important;
   box-shadow: var(--border-field) !important;
   padding: var(--border-size) !important;
 }
@@ -150,13 +151,13 @@
     box-shadow: var(--border-window);
     padding: calc(var(--border-size) + var(--window-spacing));
     --window-spacing: 1px;
-    padding-top: calc(var(--titlebar-height) + var(--window-gap) + 1px);
+    padding-top: calc(var(--titlebar-height) + var(--window-gap));
     position: fixed;
     inset: 10% 20%;
     z-index: var(--browser-area-z-index-sidebar-splitter);
   }
   :root[win95-active-prefs~="win95.customize-mode-as-window"] #customization-header {
-    background-color: var(--color-inactive-caption);
+    background-image: linear-gradient(90deg, var(--color-inactive-caption-bg-start), var(--color-inactive-caption-bg-end));
     color: var(--color-inactive-caption-text);
     padding: 1px 2px;
     gap: var(--titlebar-spacing);
@@ -171,7 +172,8 @@
     bottom: unset;
   }
   :root[win95-active-prefs~="win95.customize-mode-as-window"] #customization-header {
-    --color-inactive-caption: var(--color-active-caption);
+    --color-inactive-caption-bg-start: var(--color-active-caption-bg-start);
+    --color-inactive-caption-bg-end: var(--color-active-caption-bg-end);
     --color-inactive-caption-text: var(--color-active-caption-text);
   }
   :root[win95-active-prefs~="win95.customize-mode-as-window"] #customization-panel-container {
@@ -209,6 +211,10 @@
   --toolbarbutton-inner-padding: 0px !important;
   --toolbar-bgcolor: var(--color-button-face) !important;
   --toolbar-color: var(--color-button-text) !important;
+  --toolbox-bgcolor: var(--color-button-face) !important;
+  --toolbox-textcolor: var(--color-button-text) !important;
+  --toolbox-bgcolor-inactive: var(--color-button-face) !important;
+  --toolbox-textcolor-inactive: var(--color-button-text) !important;
   --tab-block-margin: 0px !important;
   --tab-close-button-padding: 0px !important;
   --tab-height-with-margin-padding: calc(
@@ -391,10 +397,6 @@ toolbarbutton.bookmark-item > .toolbarbutton-icon {
   display: none;
 }
 
-#navigator-toolbox {
-  background-color: var(--color-button-face) !important;
-}
-
 #PanelUI-menu-button {
   list-style-image: url("chrome://branding/content/about-logo.svg") !important;
 }
@@ -550,6 +552,7 @@ toolbarspring {
 
 #tabbrowser-arrowscrollbox[orient=vertical] {
   background-color: var(--color-window) !important;
+  color: var(--color-window-text) !important;
   box-shadow: var(--border-field) !important;
   padding: var(--border-size) !important;
 }
@@ -722,6 +725,7 @@ toolbarspring {
   min-width: var(--tab-min-width-pref, var(--tab-min-width)) !important;
 }
 #tabbrowser-tabs[orient=vertical] .tabbrowser-tab {
+  color: var(--color-window-text) !important;
   margin-block: var(--tab-button-spacing-x05) !important;
 }
 
@@ -814,7 +818,7 @@ toolbarspring {
 .listbox-item[aria-selected=true] {
   background-color: var(--color-highlight) !important;
   color: var(--color-highlight-text) !important;
-  border-color: #ff0 !important;
+  border-color: var(--color-highlight-border) !important;
 }
 
 #identity-box,
@@ -826,7 +830,7 @@ toolbarspring {
 #urlbar {
   --urlbar-height: round(var(--input-spacing) * 2 + var(--border-size) * 2 + 1lh, 1px) !important;
   --urlbar-min-height: round(var(--input-spacing) * 2 + var(--border-size) * 2 + 1lh, 1px) !important;
-  font-size: 1rem !important;
+  font-size: var(--text-ui-size) !important;
 }
 
 #urlbar-container {
@@ -1029,10 +1033,14 @@ toolbarspring {
 }
 
 menubar {
+  background-color: var(--color-menubar) !important;
+  color: var(--color-menubar-text) !important;
+  display: flex !important;
+  font: var(--text-ui) !important;
   width: 100% !important;
 }
 menubar > menu {
-  padding: 4px 5px 3px 7px !important;
+  padding: 3px 5px 2px 7px !important;
   border: none !important;
 }
 menubar > menu[open], menubar > menu:active {
@@ -1047,23 +1055,31 @@ menubar > menu[open], menubar > menu:active {
 #main-window:not([inFullscreen], [sizemode=maximized]) #statuspanel {
   --inset-bottom: calc(var(--statusbar-height) * -1 - var(--window-gap)) !important;
   --width: calc(100% + var(--border-size) * 2) !important;
-  box-shadow: var(--border-statusbar) !important;
-  padding: 2px 4px 1px 4px !important;
   visibility: visible !important;
   opacity: 1 !important;
+  padding: 0 !important;
   margin: calc(var(--border-size) * -1) !important;
   bottom: var(--inset-bottom) !important;
   width: var(--width) !important;
   max-width: var(--width) !important;
   height: var(--statusbar-height) !important;
 }
+#main-window:not([inFullscreen], [sizemode=maximized]) #statuspanel[inactive] > #statuspanel-label {
+  color: transparent !important;
+}
+#main-window:not([inFullscreen], [sizemode=maximized]) .browserStack:has(+ findbar:not([hidden])) > #statuspanel {
+  bottom: calc(var(--inset-bottom) - 34px) !important;
+}
 #main-window:not([inFullscreen], [sizemode=maximized]) #statuspanel-label {
+  box-shadow: var(--border-statusbar) !important;
+  padding: 3px 4px 2px 4px !important;
+  background-color: transparent !important;
   border: none !important;
-  padding: 0 !important;
   margin: 0 !important;
 }
 #main-window:not([inFullscreen], [sizemode=maximized]) #tabbrowser-tabbox {
   background-color: var(--color-window) !important;
+  color: var(--color-window-text) !important;
   box-shadow: var(--border-field) !important;
   padding: var(--border-size) !important;
   margin-bottom: calc(var(--statusbar-height) + var(--window-gap)) !important;
@@ -1088,21 +1104,10 @@ sidebar-main::before {
   height: var(--statusbar-height) !important;
   box-sizing: border-box !important;
   box-shadow: var(--border-statusbar) !important;
-  padding: 2px 4px 1px 4px !important;
-}
-
-#statuspanel[inactive] > #statuspanel-label {
-  visibility: hidden !important;
-}
-.browserStack:has(+ findbar:not([hidden])) > #statuspanel {
-  bottom: calc(var(--inset-bottom) - 34px) !important;
+  padding: 3px 4px 2px 4px !important;
 }
 
 #toolbar-menubar {
-  background-color: var(--color-menubar) !important;
-  color: var(--color-menubar-text) !important;
-  line-height: 1 !important;
-  display: flex !important;
   padding: 0 !important;
   flex-direction: column-reverse !important;
 }
@@ -1144,6 +1149,7 @@ sidebar-main::before {
 
 menupopup {
   --menuitem-margin: 0px !important;
+  font: var(--text-ui) !important;
   margin: 0 !important;
 }
 menupopup::part(content) {
@@ -1243,25 +1249,6 @@ menuseparator::before {
   color: var(--color-highlight-text) !important;
 }
 
-.panel-banner-item:not([hidden]) {
-  display: block !important;
-}
-.panel-banner-item:not([hidden])::after {
-  content: "" !important;
-  border: none !important;
-  border-top: 1px solid var(--color-button-highlight) !important;
-  box-shadow: 0 -1px var(--color-button-shadow) !important;
-  margin-top: 3px !important;
-  margin-bottom: 4px !important;
-  display: block !important;
-  --menu-item-padding-x: 20px !important;
-  position: absolute !important;
-  inset-inline: calc(var(--menu-item-padding-x) * -1) !important;
-  bottom: -8px !important;
-  width: calc(100% + var(--menu-item-padding-x) * 2) !important;
-  pointer-events: none !important;
-}
-
 #appMenu-zoom-controls,
 .subview-subheader {
   display: none !important;
@@ -1272,6 +1259,7 @@ panel {
   --arrowpanel-menuitem-margin-inline: 0px !important;
   --menu-panel-width-wide: initial !important;
   --panel-subview-body-padding: 0px !important;
+  font: var(--text-ui) !important;
 }
 panel::part(content) {
   background-color: var(--color-button-face) !important;
@@ -1299,6 +1287,22 @@ panel toolbarseparator::before {
   background-color: transparent !important;
   margin: 0 !important;
   margin-bottom: 9px !important;
+  display: block !important;
+}
+.panel-banner-item:not([hidden])::after {
+  content: "" !important;
+  border: none !important;
+  border-top: 1px solid var(--color-button-highlight) !important;
+  box-shadow: 0 -1px var(--color-button-shadow) !important;
+  margin-top: 3px !important;
+  margin-bottom: 4px !important;
+  display: block !important;
+  --menu-item-padding-x: 20px !important;
+  position: absolute !important;
+  inset-inline: calc(var(--menu-item-padding-x) * -1) !important;
+  bottom: -8px !important;
+  width: calc(100% + var(--menu-item-padding-x) * 2) !important;
+  pointer-events: none !important;
 }
 
 .subviewbutton:not(.subviewbutton-back) {

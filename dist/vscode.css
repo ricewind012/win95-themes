@@ -655,13 +655,14 @@
   --icon-normal-windows: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAg0lEQVQ4jaVTWw7AIAgTsvtfuftQJk9ZYpPFgbSUOce4BP2sQ8XrBDwxGOBDEcJLlAQnWyjJSZKHHaOzHMDYJHLPhzqYDqQ1ZFWi+VdWSSYVohxhp+EqaKYoawRLJiMgDHUKsgXEPjXYdq+Iu8R7peXxMMIZjyOIYG3BiXc/0e1d6fEC6iwvBhF890UAAAAASUVORK5CYII=");
 }
 
-:root {
+:where(:root) {
   /**
    * Colors
    *
    * Naming reference: https://learn.microsoft.com/en-us/windows/win32/controls/themesfileformat-overview#control-panelcolors-section
   **/
-  --color-inactive-caption: var(--color-gray-text);
+  --color-inactive-caption-bg-start: var(--color-gray-text);
+  --color-inactive-caption-bg-end: var(--color-gray-text);
   --color-inactive-caption-text: var(--color-button-face);
   --color-menubar: var(--color-button-face);
   --color-menubar-text: var(--color-button-text);
@@ -748,10 +749,10 @@
   --input-spacing: 2px;
   --scrollbar-size: 16px;
   --sel-button-size: 13px;
-  --tabs-height: 20px;
+  --tabs-height: calc(1rlh + 7px);
   --titlebar-height: 18px;
-  --menubar-height: 18px;
-  --statusbar-height: 18px;
+  --menubar-height: calc(1rlh + 5px);
+  --statusbar-height: calc(1rlh + 5px);
   --messagebox-spacing: 11px 10px;
   --messagebox-content-spacing: 17px;
   --dialog-spacing: 7px;
@@ -780,13 +781,14 @@
   **/
   --checkerboard: repeating-conic-gradient(
   		var(--color-window) 0% 25%,
-  		var(--color-scrollbar) 0% 50%
+  		var(--color-button-face) 0% 50%
   	)
   	0% 0% / 2px 2px;
   color-scheme: light dark;
+  font: var(--text-ui);
 }
 @media (prefers-color-scheme: light) {
-  :root {
+  :where(:root) {
     --color-button-face: #c0c0c0;
     --color-button-text: #000;
     --color-button-highlight: #fff;
@@ -795,20 +797,20 @@
     --color-button-shadow-dark: #000;
     --color-window: #fff;
     --color-window-text: #000;
-    --color-active-caption: #000080;
+    --color-active-caption-bg-start: #000080;
+    --color-active-caption-bg-end: #000080;
     --color-active-caption-text: #fff;
     --color-highlight: #000080;
+    --color-highlight-border: #ff0;
     --color-highlight-text: #fff;
     --color-tooltip: #ffffe1;
     --color-tooltip-text: #000;
-    --color-info-background: #ffffc0;
-    --color-scrollbar: #dbdbdb;
     --color-gray-text: #87888f;
     --color-link: #00f;
   }
 }
 @media (prefers-color-scheme: dark) {
-  :root {
+  :where(:root) {
     --color-button-face: #252525;
     --color-button-text: #ccc;
     --color-button-highlight: #808080;
@@ -817,20 +819,20 @@
     --color-button-shadow-dark: #000;
     --color-window: #121212;
     --color-window-text: #ccc;
-    --color-active-caption: #ccc;
+    --color-active-caption-bg-start: #ccc;
+    --color-active-caption-bg-end: #ccc;
     --color-active-caption-text: #252525;
     --color-highlight: #ccc;
+    --color-highlight-border: #7f7f00;
     --color-highlight-text: #252525;
     --color-tooltip: #252525;
     --color-tooltip-text: #ccc;
-    --color-info-background: #ffffc0;
-    --color-scrollbar: #505050;
     --color-gray-text: #808080;
     --color-link: #8080ff;
   }
 }
 @media (forced-colors: active) {
-  :root {
+  :where(:root) {
     --color-button-face: ButtonFace;
     --color-button-text: ButtonText;
     --color-button-highlight: ButtonText;
@@ -839,20 +841,20 @@
     --color-button-shadow-dark: ButtonText;
     --color-window: ButtonFace;
     --color-window-text: ButtonText;
-    --color-active-caption: Highlight;
+    --color-active-caption-bg-start: Highlight;
+    --color-active-caption-bg-end: Highlight;
     --color-active-caption-text: HighlightText;
     --color-highlight: Highlight;
+    --color-highlight-border: Highlight;
     --color-highlight-text: HighlightText;
     --color-tooltip: Canvas;
     --color-tooltip-text: CanvasText;
-    --color-info-background: #ffffc0;
-    --color-scrollbar: ButtonText;
     --color-gray-text: GrayText;
     --color-link: LinkText;
   }
 }
 
-:root {
+:where(:root) {
   --tab-border-left:
   	linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)),
   	linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)),
@@ -882,21 +884,21 @@
   	linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)),
   	linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face));
   --tree-icon-collapsed:
-  	linear-gradient(90deg, var(--color-button-text) 1px, var(--color-button-text)) 3px 1px,
-  	linear-gradient(90deg, var(--color-button-text) 1px, var(--color-button-text)) 3px 2px,
-  	linear-gradient(90deg, var(--color-button-text) 1px, var(--color-button-text)) 3px 3px,
-  	linear-gradient(90deg, var(--color-button-text) 1px, var(--color-button-text)) 3px 4px,
-  	linear-gradient(90deg, var(--color-button-text) 1px, var(--color-button-text)) 3px 5px,
-  	linear-gradient(90deg, var(--color-button-text) 1px, var(--color-button-text)) 1px 3px,
-  	linear-gradient(90deg, var(--color-button-text) 1px, var(--color-button-text)) 2px 3px,
-  	linear-gradient(90deg, var(--color-button-text) 1px, var(--color-button-text)) 4px 3px,
-  	linear-gradient(90deg, var(--color-button-text) 1px, var(--color-button-text)) 5px 3px;
+  	linear-gradient(90deg, var(--color-window-text) 1px, var(--color-window-text)) 3px 1px,
+  	linear-gradient(90deg, var(--color-window-text) 1px, var(--color-window-text)) 3px 2px,
+  	linear-gradient(90deg, var(--color-window-text) 1px, var(--color-window-text)) 3px 3px,
+  	linear-gradient(90deg, var(--color-window-text) 1px, var(--color-window-text)) 3px 4px,
+  	linear-gradient(90deg, var(--color-window-text) 1px, var(--color-window-text)) 3px 5px,
+  	linear-gradient(90deg, var(--color-window-text) 1px, var(--color-window-text)) 1px 3px,
+  	linear-gradient(90deg, var(--color-window-text) 1px, var(--color-window-text)) 2px 3px,
+  	linear-gradient(90deg, var(--color-window-text) 1px, var(--color-window-text)) 4px 3px,
+  	linear-gradient(90deg, var(--color-window-text) 1px, var(--color-window-text)) 5px 3px;
   --tree-icon-expanded:
-  	linear-gradient(90deg, var(--color-button-text) 1px, var(--color-button-text)) 1px 3px,
-  	linear-gradient(90deg, var(--color-button-text) 1px, var(--color-button-text)) 2px 3px,
-  	linear-gradient(90deg, var(--color-button-text) 1px, var(--color-button-text)) 3px 3px,
-  	linear-gradient(90deg, var(--color-button-text) 1px, var(--color-button-text)) 4px 3px,
-  	linear-gradient(90deg, var(--color-button-text) 1px, var(--color-button-text)) 5px 3px;
+  	linear-gradient(90deg, var(--color-window-text) 1px, var(--color-window-text)) 1px 3px,
+  	linear-gradient(90deg, var(--color-window-text) 1px, var(--color-window-text)) 2px 3px,
+  	linear-gradient(90deg, var(--color-window-text) 1px, var(--color-window-text)) 3px 3px,
+  	linear-gradient(90deg, var(--color-window-text) 1px, var(--color-window-text)) 4px 3px,
+  	linear-gradient(90deg, var(--color-window-text) 1px, var(--color-window-text)) 5px 3px;
 }
 
 * {
@@ -950,8 +952,6 @@ body {
 .editor-group-container {
   background-color: var(--color-button-face) !important;
   padding: 9px 5px 5px 7px !important;
-  position: relative !important;
-  z-index: 0 !important;
 }
 
 .editor-group-watermark .shortcuts dl,
@@ -1012,6 +1012,7 @@ body {
 }
 .editor-instance > .monaco-editor {
   background-color: var(--color-window) !important;
+  color: var(--color-window-text) !important;
   box-shadow: var(--border-field) !important;
   padding: var(--border-size) !important;
   width: 100% !important;
@@ -1035,7 +1036,6 @@ body {
 .menubar {
   background-color: var(--color-menubar) !important;
   color: var(--color-menubar-text) !important;
-  line-height: 1 !important;
   display: flex !important;
   overflow: visible !important;
   position: fixed !important;
@@ -1057,7 +1057,7 @@ body {
 }
 
 .menubar-menu-title {
-  padding: 4px 5px 3px 7px !important;
+  padding: 3px 5px 2px 7px !important;
 }
 .menubar-menu-button.open > .menubar-menu-title, .menubar-menu-title:active {
   background-color: var(--color-highlight) !important;
@@ -1121,6 +1121,7 @@ body {
 }
 .part.panel > .content > .composite {
   background-color: var(--color-window) !important;
+  color: var(--color-window-text) !important;
   box-shadow: var(--border-field) !important;
   padding: var(--border-size) !important;
 }
@@ -1260,6 +1261,9 @@ body {
   overflow: visible !important;
   height: unset !important;
 }
+.sidebar .header .monaco-action-bar {
+  line-height: inherit !important;
+}
 .sidebar .monaco-list {
   height: calc(100% - 16px) !important;
 }
@@ -1335,7 +1339,7 @@ body {
 
 .statusbar-item {
   box-shadow: var(--border-statusbar) !important;
-  padding: 2px 4px 1px 4px !important;
+  padding: 3px 4px 2px 4px !important;
   max-width: unset !important;
 }
 .statusbar-item.left.last-visible-item {
@@ -1736,7 +1740,7 @@ body {
 }
 
 .dialog-toolbar-row {
-  background-color: var(--color-active-caption) !important;
+  background-image: linear-gradient(90deg, var(--color-active-caption-bg-start), var(--color-active-caption-bg-end)) !important;
   color: var(--color-active-caption-text) !important;
   padding: 0 2px !important;
   height: unset !important;
@@ -2011,7 +2015,7 @@ div.monaco-menu .monaco-action-bar.vertical .action-label.separator {
   width: calc(100% - 50px) !important;
 }
 .peekview-widget > .head {
-  background-color: var(--color-active-caption) !important;
+  background-image: linear-gradient(90deg, var(--color-active-caption-bg-start), var(--color-active-caption-bg-end)) !important;
   color: var(--color-active-caption-text) !important;
   font: var(--text-ui) !important;
   height: var(--titlebar-height) !important;
@@ -2032,6 +2036,7 @@ div.monaco-menu .monaco-action-bar.vertical .action-label.separator {
 }
 .peekview-widget .monaco-editor {
   background-color: var(--color-window) !important;
+  color: var(--color-window-text) !important;
   box-shadow: var(--border-field) !important;
   padding: var(--border-size) !important;
   width: 100% !important;
@@ -2091,7 +2096,7 @@ div.monaco-menu .monaco-action-bar.vertical .action-label.separator {
 }
 
 .quick-input-titlebar {
-  background-color: var(--color-active-caption) !important;
+  background-image: linear-gradient(90deg, var(--color-active-caption-bg-start), var(--color-active-caption-bg-end)) !important;
   color: var(--color-active-caption-text) !important;
   height: var(--titlebar-height) !important;
 }
@@ -2204,7 +2209,7 @@ div.monaco-menu .monaco-action-bar.vertical .action-label.separator {
 .listbox-item[aria-selected=true] {
   background-color: var(--color-highlight) !important;
   color: var(--color-highlight-text) !important;
-  border-color: #ff0 !important;
+  border-color: var(--color-highlight-border) !important;
 }
 
 .monaco-select-box-dropdown-container {
@@ -2483,8 +2488,9 @@ div.monaco-menu .monaco-action-bar.vertical .action-label.separator {
   border: none !important;
   box-shadow: var(--border-groupbox) !important;
   padding: 11px !important;
+  padding-block-start: calc(1rem - 1px) !important;
   margin: 0 !important;
-  margin-bottom: 8px !important;
+  margin-bottom: 0.67rem !important;
   position: relative !important;
 }
 .additional-details-element:disabled {
@@ -2501,10 +2507,10 @@ div.monaco-menu .monaco-action-bar.vertical .action-label.separator {
   text-shadow: none !important;
   text-transform: unset !important;
   background-color: var(--color-button-face) !important;
-  padding: 0 2px !important;
+  padding: 0 0.2rem !important;
   margin: 0 !important;
   position: absolute !important;
-  top: -5px !important;
+  top: calc(-0.5rlh + 1px) !important;
 }
 
 .more-info-entry {
@@ -2554,8 +2560,9 @@ div.monaco-menu .monaco-action-bar.vertical .action-label.separator {
   border: none !important;
   box-shadow: var(--border-groupbox) !important;
   padding: 11px !important;
+  padding-block-start: calc(1rem - 1px) !important;
   margin: 0 !important;
-  margin-bottom: 8px !important;
+  margin-bottom: 0.67rem !important;
   position: relative !important;
 }
 .gettingStartedContainer .index-list:disabled {
@@ -2570,10 +2577,10 @@ div.monaco-menu .monaco-action-bar.vertical .action-label.separator {
 }
 .gettingStartedContainer .index-list > h2 {
   background-color: var(--color-button-face) !important;
-  padding: 0 2px !important;
+  padding: 0 0.2rem !important;
   margin: 0 !important;
   position: absolute !important;
-  top: -5px !important;
+  top: calc(-0.5rlh + 1px) !important;
   color: inherit !important;
   font: var(--text-ui) !important;
   letter-spacing: 0 !important;
@@ -2657,8 +2664,9 @@ div.monaco-menu .monaco-action-bar.vertical .action-label.separator {
   border: none !important;
   box-shadow: var(--border-groupbox) !important;
   padding: 11px !important;
+  padding-block-start: calc(1rem - 1px) !important;
   margin: 0 !important;
-  margin-bottom: 8px !important;
+  margin-bottom: 0.67rem !important;
   position: relative !important;
 }
 .setting-item-contents:disabled {
@@ -2670,10 +2678,10 @@ div.monaco-menu .monaco-action-bar.vertical .action-label.separator {
 
 .setting-item-title {
   background-color: var(--color-button-face) !important;
-  padding: 0 2px !important;
+  padding: 0 0.2rem !important;
   margin: 0 !important;
   position: absolute !important;
-  top: -5px !important;
+  top: calc(-0.5rlh + 1px) !important;
 }
 
 .setting-item-label {
@@ -2707,6 +2715,7 @@ div.monaco-menu .monaco-action-bar.vertical .action-label.separator {
 
 .setting-list-object-widget {
   background-color: var(--color-window) !important;
+  color: var(--color-window-text) !important;
   box-shadow: var(--border-field) !important;
   padding: var(--border-size) !important;
   margin-bottom: 9px !important;
@@ -2967,7 +2976,7 @@ div.monaco-menu .monaco-action-bar.vertical .action-label.separator {
   mask: var(--control-img) no-repeat !important;
   mask-size: var(--control-img-size) !important;
   mask-position: var(--control-img-pos) !important;
-  background-color: var(--color-button-text) !important;
+  background-color: var(--color-window-text) !important;
 }
 .monaco-checkbox :disabled, .monaco-checkbox:active {
   --color-to-change: var(--color-button-face) !important;
@@ -3064,6 +3073,7 @@ div.monaco-menu .monaco-action-bar.vertical .action-label.separator {
   color: var(--color-window-text) !important;
   box-shadow: var(--border-field) !important;
   padding: calc(var(--border-size) + var(--input-spacing)) !important;
+  --border-size: 2px !important;
   --color-arrow-shadow: var(--color-button-face) !important;
   opacity: 1 !important;
   background: var(--control-img) !important;
@@ -3404,6 +3414,7 @@ div.monaco-menu .monaco-action-bar.vertical .action-label.separator {
 
 .monaco-list {
   background-color: var(--color-window) !important;
+  color: var(--color-window-text) !important;
   box-shadow: var(--border-field) !important;
   padding: var(--border-size) !important;
 }
@@ -3489,7 +3500,7 @@ div.monaco-menu .monaco-action-bar.vertical .action-label.separator {
   mask: var(--control-img) no-repeat !important;
   mask-size: var(--control-img-size) !important;
   mask-position: var(--control-img-pos) !important;
-  background-color: var(--color-button-text) !important;
+  background-color: var(--color-window-text) !important;
 }
 .monaco-workbench .settings-editor > .settings-body .settings-tree-container .setting-item-bool .setting-value-checkbox :disabled, .monaco-workbench .settings-editor > .settings-body .settings-tree-container .setting-item-bool .setting-value-checkbox:active {
   --color-to-change: var(--color-button-face) !important;
@@ -3865,7 +3876,8 @@ body .monaco-workbench .pane-composite-part > .header-or-footer > .composite-bar
   padding: 3px 4px 2px 6px !important;
   position: relative !important;
   min-width: 45px !important;
-  height: 18px !important;
+  height: calc(1lh + 5px) !important;
+  font: var(--text-ui) !important;
   cursor: unset !important;
 }
 :where([role=tab])::before, :where([role=tab])::after {
@@ -3891,7 +3903,7 @@ body .monaco-workbench .pane-composite-part > .header-or-footer > .composite-bar
   margin: 0 -2px -1px -2px !important;
   padding: 3px 6px !important;
   padding-left: 7px !important;
-  height: 21px !important;
+  height: calc(1lh + 8px) !important;
   z-index: 1 !important;
 }
 :where([role=tab])[aria-selected=true]:not(.tab) {
@@ -3912,7 +3924,7 @@ body .monaco-workbench .pane-composite-part > .header-or-footer > .composite-bar
   display: flex !important;
 }
 
-.monaco-workbench .part.editor > .content .editor-group-container.active > .title .tabs-container > .tab:not([aria-selected=true]):hover {
+div.monaco-workbench .part.editor > .content .editor-group-container.active > .title .tabs-container > .tab:not([aria-selected=true]):hover {
   background-color: var(--color-button-face) !important;
 }
 .tab.dirty:hover .codicon-close::before, .tab:not(.dirty) .codicon-close::before {
@@ -3972,6 +3984,7 @@ body .monaco-workbench .pane-composite-part > .header-or-footer > .composite-bar
   display: none !important;
 }
 .sidebar .action-item {
+  --insert-border-color: transparent !important;
   min-width: unset !important;
 }
 .sidebar .action-item::before, .sidebar .action-item::after {
@@ -4021,7 +4034,7 @@ body .monaco-workbench .pane-composite-part > .header-or-footer > .composite-bar
   padding: 3px 4px 2px 6px !important;
   position: relative !important;
   min-width: 45px !important;
-  height: 18px !important;
+  height: calc(1lh + 5px) !important;
   opacity: 1 !important;
   font-size: var(--text-ui-size) !important;
   overflow: visible !important;
@@ -4049,7 +4062,7 @@ body .monaco-workbench .pane-composite-part > .header-or-footer > .composite-bar
   margin: 0 -2px -1px -2px !important;
   padding: 3px 6px !important;
   padding-left: 7px !important;
-  height: 21px !important;
+  height: calc(1lh + 8px) !important;
   z-index: 1 !important;
 }
 .settings-tabs-widget > .monaco-action-bar .action-item .action-label.checked {
@@ -4083,7 +4096,7 @@ body .monaco-workbench .pane-composite-part > .header-or-footer > .composite-bar
   padding: 3px 4px 2px 6px !important;
   position: relative !important;
   min-width: 45px !important;
-  height: 18px !important;
+  height: calc(1lh + 5px) !important;
 }
 .extension-editor > .body > .navbar > .monaco-action-bar > .actions-container > .action-item > .action-label::before, .extension-editor > .body > .navbar > .monaco-action-bar > .actions-container > .action-item > .action-label::after {
   content: "" !important;
@@ -4108,7 +4121,7 @@ body .monaco-workbench .pane-composite-part > .header-or-footer > .composite-bar
   margin: 0 -2px -1px -2px !important;
   padding: 3px 6px !important;
   padding-left: 7px !important;
-  height: 21px !important;
+  height: calc(1lh + 8px) !important;
   z-index: 1 !important;
 }
 .extension-editor > .body > .navbar > .monaco-action-bar > .actions-container > .action-item > .action-label[aria-checked=true] {
@@ -4329,7 +4342,7 @@ body .monaco-workbench .pane-composite-part > .header-or-footer > .composite-bar
 .part.sidebar [role=treeitem][aria-selected=true] .monaco-icon-name-container {
   background-color: var(--color-highlight) !important;
   color: var(--color-highlight-text) !important;
-  border: 1px dotted #ff0 !important;
+  border: 1px dotted var(--color-highlight-border) !important;
   position: relative !important;
   top: 2px !important;
 }
@@ -4519,10 +4532,11 @@ body .monaco-workbench .pane-composite-part > .header-or-footer > .composite-bar
   --vscode-textLink-activeForeground: var(--color-link) !important;
   --vscode-input-foreground: var(--color-window-text) !important;
   --vscode-input-placeholderForeground: var(--color-gray-text) !important;
-  --vscode-titleBar-activeForeground: var(--color-button-text) !important;
-  --vscode-titleBar-inactiveForeground: var(--color-button-text) !important;
+  --vscode-titleBar-activeForeground: var(--color-menubar-text) !important;
+  --vscode-titleBar-inactiveForeground: var(--color-menubar-text) !important;
   --vscode-menubar-selectionBackground: inherit !important;
   --vscode-menubar-selectionForeground: var(--color-button-text) !important;
+  --vscode-statusBarItem-hoverBackground: transparent !important;
   --vscode-statusBarItem-hoverForeground: var(--color-button-text) !important;
   --vscode-statusBarItem-errorBackground: red !important;
   --vscode-statusBarItem-errorForeground: #fff !important;
@@ -4534,6 +4548,8 @@ body .monaco-workbench .pane-composite-part > .header-or-footer > .composite-bar
   --vscode-editorStickyScroll-background: var(--color-window) !important;
   --vscode-editorStickyScroll-border: var(--color-gray-text) !important;
   --vscode-editorStickyScroll-shadow: transparent !important;
+  --vscode-editorStickyScrollGutter-background: var(--color-window) !important;
+  --vscode-editorStickyScrollHover-background: var(--color-window) !important;
   --vscode-peekViewEditor-background: var(--color-window) !important;
   --vscode-peekViewEditorGutter-background: var(--color-window) !important;
   --vscode-peekViewEditorStickyScroll-background: var(--color-window) !important;
@@ -4617,13 +4633,13 @@ body .monaco-workbench .pane-composite-part > .header-or-footer > .composite-bar
 }
 
 .split-view-view[style^="top: 35px;"] {
-  margin-top: 16px !important;
+  margin-top: calc(1lh + 3px) !important;
 }
 .monaco-grid-branch-node > .monaco-split-view2 > .monaco-scrollable-element > .split-view-container > .split-view-view[style$="height: 22px;"] {
   margin-top: 4px !important;
 }
 .split-view-view[style="top: 0px; height: 0px;"] + .split-view-view > .part.panel {
-  margin-top: 16px !important;
+  margin-top: calc(1lh + 3px) !important;
   height: calc(100% - 44px) !important;
 }
 

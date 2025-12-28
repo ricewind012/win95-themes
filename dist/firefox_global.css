@@ -4,6 +4,8 @@
 // @include        *
 // @stylemode      author_sheet
 // ==/UserScript== */
+@import "colors/vgui.css" -moz-pref("win95.colors", "vgui");
+@import "colors/win2000.css" -moz-pref("win95.colors", "win2000");
 :root {
   --icon-mono-arrow-big-bottom: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAFCAYAAACXU8ZrAAAABHNCSVQICAgIfAhkiAAAAClJREFUCJljZGBg+M9AADBCaXwKGRmRONgUMiKbhE0huhxOhQwMDAwMAPDMBQOrrWuZAAAAAElFTkSuQmCC");
   --icon-mono-arrow-big-left: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAJCAYAAAD6reaeAAAABHNCSVQICAgIfAhkiAAAAChJREFUCJljYMAE/xnRBRgYGBgY0QWQBf8jK2dEF8CrEqeZGBIY7gQAPYwI/w7dbEsAAAAASUVORK5CYII=");
@@ -109,13 +111,14 @@
   --icon-normal-windows: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAg0lEQVQ4jaVTWw7AIAgTsvtfuftQJk9ZYpPFgbSUOce4BP2sQ8XrBDwxGOBDEcJLlAQnWyjJSZKHHaOzHMDYJHLPhzqYDqQ1ZFWi+VdWSSYVohxhp+EqaKYoawRLJiMgDHUKsgXEPjXYdq+Iu8R7peXxMMIZjyOIYG3BiXc/0e1d6fEC6iwvBhF890UAAAAASUVORK5CYII=");
 }
 
-:root {
+:where(:root) {
   /**
    * Colors
    *
    * Naming reference: https://learn.microsoft.com/en-us/windows/win32/controls/themesfileformat-overview#control-panelcolors-section
   **/
-  --color-inactive-caption: var(--color-gray-text);
+  --color-inactive-caption-bg-start: var(--color-gray-text);
+  --color-inactive-caption-bg-end: var(--color-gray-text);
   --color-inactive-caption-text: var(--color-button-face);
   --color-menubar: var(--color-button-face);
   --color-menubar-text: var(--color-button-text);
@@ -202,10 +205,10 @@
   --input-spacing: 2px;
   --scrollbar-size: 16px;
   --sel-button-size: 13px;
-  --tabs-height: 20px;
+  --tabs-height: calc(1rlh + 7px);
   --titlebar-height: 18px;
-  --menubar-height: 18px;
-  --statusbar-height: 18px;
+  --menubar-height: calc(1rlh + 5px);
+  --statusbar-height: calc(1rlh + 5px);
   --messagebox-spacing: 11px 10px;
   --messagebox-content-spacing: 17px;
   --dialog-spacing: 7px;
@@ -234,13 +237,14 @@
   **/
   --checkerboard: repeating-conic-gradient(
   		var(--color-window) 0% 25%,
-  		var(--color-scrollbar) 0% 50%
+  		var(--color-button-face) 0% 50%
   	)
   	0% 0% / 2px 2px;
   color-scheme: light dark;
+  font: var(--text-ui);
 }
 @media (prefers-color-scheme: light) {
-  :root {
+  :where(:root) {
     --color-button-face: #c0c0c0;
     --color-button-text: #000;
     --color-button-highlight: #fff;
@@ -249,20 +253,20 @@
     --color-button-shadow-dark: #000;
     --color-window: #fff;
     --color-window-text: #000;
-    --color-active-caption: #000080;
+    --color-active-caption-bg-start: #000080;
+    --color-active-caption-bg-end: #000080;
     --color-active-caption-text: #fff;
     --color-highlight: #000080;
+    --color-highlight-border: #ff0;
     --color-highlight-text: #fff;
     --color-tooltip: #ffffe1;
     --color-tooltip-text: #000;
-    --color-info-background: #ffffc0;
-    --color-scrollbar: #dbdbdb;
     --color-gray-text: #87888f;
     --color-link: #00f;
   }
 }
 @media (prefers-color-scheme: dark) {
-  :root {
+  :where(:root) {
     --color-button-face: #252525;
     --color-button-text: #ccc;
     --color-button-highlight: #808080;
@@ -271,20 +275,20 @@
     --color-button-shadow-dark: #000;
     --color-window: #121212;
     --color-window-text: #ccc;
-    --color-active-caption: #ccc;
+    --color-active-caption-bg-start: #ccc;
+    --color-active-caption-bg-end: #ccc;
     --color-active-caption-text: #252525;
     --color-highlight: #ccc;
+    --color-highlight-border: #7f7f00;
     --color-highlight-text: #252525;
     --color-tooltip: #252525;
     --color-tooltip-text: #ccc;
-    --color-info-background: #ffffc0;
-    --color-scrollbar: #505050;
     --color-gray-text: #808080;
     --color-link: #8080ff;
   }
 }
 @media (forced-colors: active) {
-  :root {
+  :where(:root) {
     --color-button-face: ButtonFace;
     --color-button-text: ButtonText;
     --color-button-highlight: ButtonText;
@@ -293,20 +297,20 @@
     --color-button-shadow-dark: ButtonText;
     --color-window: ButtonFace;
     --color-window-text: ButtonText;
-    --color-active-caption: Highlight;
+    --color-active-caption-bg-start: Highlight;
+    --color-active-caption-bg-end: Highlight;
     --color-active-caption-text: HighlightText;
     --color-highlight: Highlight;
+    --color-highlight-border: Highlight;
     --color-highlight-text: HighlightText;
     --color-tooltip: Canvas;
     --color-tooltip-text: CanvasText;
-    --color-info-background: #ffffc0;
-    --color-scrollbar: ButtonText;
     --color-gray-text: GrayText;
     --color-link: LinkText;
   }
 }
 
-:root {
+:where(:root) {
   --tab-border-left:
   	linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)),
   	linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)),
@@ -336,21 +340,21 @@
   	linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face)),
   	linear-gradient(90deg, var(--color-button-face) 1px, var(--color-button-face));
   --tree-icon-collapsed:
-  	linear-gradient(90deg, var(--color-button-text) 1px, var(--color-button-text)) 3px 1px,
-  	linear-gradient(90deg, var(--color-button-text) 1px, var(--color-button-text)) 3px 2px,
-  	linear-gradient(90deg, var(--color-button-text) 1px, var(--color-button-text)) 3px 3px,
-  	linear-gradient(90deg, var(--color-button-text) 1px, var(--color-button-text)) 3px 4px,
-  	linear-gradient(90deg, var(--color-button-text) 1px, var(--color-button-text)) 3px 5px,
-  	linear-gradient(90deg, var(--color-button-text) 1px, var(--color-button-text)) 1px 3px,
-  	linear-gradient(90deg, var(--color-button-text) 1px, var(--color-button-text)) 2px 3px,
-  	linear-gradient(90deg, var(--color-button-text) 1px, var(--color-button-text)) 4px 3px,
-  	linear-gradient(90deg, var(--color-button-text) 1px, var(--color-button-text)) 5px 3px;
+  	linear-gradient(90deg, var(--color-window-text) 1px, var(--color-window-text)) 3px 1px,
+  	linear-gradient(90deg, var(--color-window-text) 1px, var(--color-window-text)) 3px 2px,
+  	linear-gradient(90deg, var(--color-window-text) 1px, var(--color-window-text)) 3px 3px,
+  	linear-gradient(90deg, var(--color-window-text) 1px, var(--color-window-text)) 3px 4px,
+  	linear-gradient(90deg, var(--color-window-text) 1px, var(--color-window-text)) 3px 5px,
+  	linear-gradient(90deg, var(--color-window-text) 1px, var(--color-window-text)) 1px 3px,
+  	linear-gradient(90deg, var(--color-window-text) 1px, var(--color-window-text)) 2px 3px,
+  	linear-gradient(90deg, var(--color-window-text) 1px, var(--color-window-text)) 4px 3px,
+  	linear-gradient(90deg, var(--color-window-text) 1px, var(--color-window-text)) 5px 3px;
   --tree-icon-expanded:
-  	linear-gradient(90deg, var(--color-button-text) 1px, var(--color-button-text)) 1px 3px,
-  	linear-gradient(90deg, var(--color-button-text) 1px, var(--color-button-text)) 2px 3px,
-  	linear-gradient(90deg, var(--color-button-text) 1px, var(--color-button-text)) 3px 3px,
-  	linear-gradient(90deg, var(--color-button-text) 1px, var(--color-button-text)) 4px 3px,
-  	linear-gradient(90deg, var(--color-button-text) 1px, var(--color-button-text)) 5px 3px;
+  	linear-gradient(90deg, var(--color-window-text) 1px, var(--color-window-text)) 1px 3px,
+  	linear-gradient(90deg, var(--color-window-text) 1px, var(--color-window-text)) 2px 3px,
+  	linear-gradient(90deg, var(--color-window-text) 1px, var(--color-window-text)) 3px 3px,
+  	linear-gradient(90deg, var(--color-window-text) 1px, var(--color-window-text)) 4px 3px,
+  	linear-gradient(90deg, var(--color-window-text) 1px, var(--color-window-text)) 5px 3px;
 }
 
 * {
@@ -517,7 +521,7 @@ moz-radio {
   mask: var(--control-img) no-repeat !important;
   mask-size: var(--control-img-size) !important;
   mask-position: var(--control-img-pos) !important;
-  background-color: var(--color-button-text) !important;
+  background-color: var(--color-window-text) !important;
 }
 #input.toggle-button :disabled, #input.toggle-button:active {
   --color-to-change: var(--color-button-face) !important;
@@ -545,7 +549,7 @@ moz-radio {
   mask: var(--control-img) no-repeat !important;
   mask-size: var(--control-img-size) !important;
   mask-position: var(--control-img-pos) !important;
-  background-color: var(--color-button-text) !important;
+  background-color: var(--color-window-text) !important;
 }
 #input[type=checkbox] :disabled, #input[type=checkbox]:active {
   --color-to-change: var(--color-button-face) !important;
@@ -574,7 +578,7 @@ moz-radio {
   mask: var(--control-img) no-repeat !important;
   mask-size: var(--control-img-size) !important;
   mask-position: var(--control-img-pos) !important;
-  background-color: var(--color-button-text) !important;
+  background-color: var(--color-window-text) !important;
 }
 #input[type=radio]:disabled, #input[type=radio]:active {
   --color-to-change: var(--color-button-face) !important;
@@ -591,7 +595,6 @@ moz-radio {
   box-shadow: var(--border-field) !important;
   padding: calc(var(--border-size) + var(--input-spacing)) !important;
   background-image: none !important;
-  width: 100% !important;
   min-width: 150px !important;
 }
 #input[type=search]:disabled {
@@ -644,7 +647,7 @@ checkbox:not([hidden]) {
   mask: var(--control-img) no-repeat !important;
   mask-size: var(--control-img-size) !important;
   mask-position: var(--control-img-pos) !important;
-  background-color: var(--color-button-text) !important;
+  background-color: var(--color-window-text) !important;
 }
 .checkbox-check[disabled], .checkbox-check:active {
   --color-to-change: var(--color-button-face) !important;
@@ -687,7 +690,7 @@ window[subdialog] dialog {
   --window-spacing: 1px !important;
 }
 dialog #titleContainer {
-  background-color: var(--color-inactive-caption) !important;
+  background-image: linear-gradient(90deg, var(--color-inactive-caption-bg-start), var(--color-inactive-caption-bg-end)) !important;
   color: var(--color-inactive-caption-text) !important;
   padding: 1px 2px !important;
   gap: var(--titlebar-spacing) !important;
@@ -698,7 +701,8 @@ dialog #titleContainer {
   max-width: unset !important;
 }
 dialog #titleContainer {
-  --color-inactive-caption: var(--color-active-caption) !important;
+  --color-inactive-caption-bg-start: var(--color-active-caption-bg-start) !important;
+  --color-inactive-caption-bg-end: var(--color-active-caption-bg-end) !important;
   --color-inactive-caption-text: var(--color-active-caption-text) !important;
 }
 

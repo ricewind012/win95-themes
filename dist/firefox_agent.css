@@ -105,7 +105,7 @@
     	linear-gradient(90deg, var(--color-button-text) 1px, var(--color-button-text)) calc(var(--offset) + 7px) calc(var(--offset) + 9px) !important;
   }
   scrollbarcorner {
-    background-color: var(--color-scrollbar) !important;
+    background-color: var(--color-button-face) !important;
     appearance: none !important;
   }
   thumb {
