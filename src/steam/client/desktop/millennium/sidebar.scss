@@ -1,0 +1,62 @@
+@use "shared/controls";
+@use "shared/window";
+
+.MillenniumDesktopSidebar {
+	@include window.container($child: true);
+
+	margin: auto;
+
+	inset: 0;
+	height: max(60%, 400px);
+}
+
+.MillenniumDesktopSidebar_Content {
+	.MillenniumDesktopSidebar:not([data-focused-item-type]) & {
+		padding: var(--dialog-spacing);
+
+		// #quickaccesscontrols_PanelSection
+		& > * {
+			gap: 0;
+		}
+	}
+}
+
+.MillenniumDesktopSidebar_EditorContent {
+	padding: var(--dialog-spacing);
+}
+
+.MillenniumDesktopSidebar_EditorHeader {
+	box-shadow: none;
+	padding: 0;
+	margin: 0 var(--dialog-spacing);
+}
+
+button.MillenniumDesktopSidebar_LibraryItemButton {
+	@include controls.button;
+
+	svg {
+		display: none;
+	}
+}
+
+.MillenniumDesktopSidebar_Overlay {
+	opacity: 0;
+}
+
+.MillenniumDesktopSidebar_Title {
+	all: unset;
+
+	display: flex;
+	flex-direction: column;
+
+	& > :first-child {
+		@include window.titlebar($focused-sel: "&");
+
+		font: var(--text-ui);
+		font-weight: bold;
+	}
+}
+
+.MillenniumDesktopSidebar_TitleButtons {
+	margin: var(--dialog-spacing);
+}

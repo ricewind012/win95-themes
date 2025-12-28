@@ -21,6 +21,9 @@
 
 	background-color: transparent;
 	padding: 0;
+	padding-inline-start: calc(
+		(var(--sel-button-size) + var(--label-spacing)) * var(--indent-level)
+	);
 
 	div:not([class]) > & {
 		@include controls.groupbox;

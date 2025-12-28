@@ -1,0 +1,31 @@
+.MillenniumButtonsSection {
+	flex-direction: row;
+	flex-wrap: nowrap;
+}
+
+.MillenniumColorPicker {
+	--size: var(--sel-button-size);
+
+	box-shadow: var(--border-field);
+	padding: var(--border-size);
+	// Align with reset button
+	margin-block: var(--button-spacing);
+}
+
+.MillenniumLogs_Icons {
+	gap: 0;
+}
+
+.MillenniumLogs_Text {
+	height: 100%;
+
+	code {
+		font: var(--text-monospace);
+	}
+}
+
+.MillenniumSettings {
+	border: none;
+
+	position: unset;
+}
