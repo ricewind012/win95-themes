@@ -1,11 +1,6 @@
 @use "shared/menu";
 
-// summary ?
-#PinnedTemplateDesktop {
-	display: none;
-}
-
-#StandardTemplateDesktop {
+%-notification-base {
 	background-color: transparent;
 	padding: 4px;
 
@@ -21,12 +16,27 @@
 		margin-inline-start: 8px;
 	}
 
+	#Icon {
+		display: none;
+	}
+}
+
+#PinnedTemplateDesktop {
+	@extend %-notification-base;
+
+	margin: 0;
+
+	#PinnedBody {
+		color: inherit;
+		font: var(--text-ui);
+	}
+}
+
+#StandardTemplateDesktop {
+	@extend %-notification-base;
+
 	#Header {
 		text-transform: uppercase;
-
-		#Icon {
-			display: none;
-		}
 
 		#Title {
 			color: var(--color-gray-text);

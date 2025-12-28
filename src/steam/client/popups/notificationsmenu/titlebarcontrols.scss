@@ -23,7 +23,7 @@
 	font: var(--text-ui);
 	padding: var(--header-spacing);
 
-	// never displayed, is this a bug or what ???
+	// never displayed, steam bug
 	#NotificationsMenuEntriesContainer:empty + & {
 		display: block;
 	}
