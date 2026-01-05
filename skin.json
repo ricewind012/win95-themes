@@ -54,7 +54,7 @@
 		},
 		"Reduced game list entry height": {
 			"default": "no",
-			"description": "Makes the game list entries' height smaller, only use this if you patched Steam (see the README)!",
+			"description": "Makes the game list entries' height smaller. \n Only use this if you patched Steam! Run [c]./scripts/patch steam[/c] in the repo's directory to apply the patches (Linux only).",
 			"values": {
 				"yes": {
 					"TargetCss": {

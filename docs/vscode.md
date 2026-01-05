@@ -14,6 +14,7 @@ Last tested version is [1.106](https://code.visualstudio.com/updates/v1_106)!
 	"file:///path/to/win95-themes/src/vscode/vscode.js",
 
 	// If you wish to use other colors, uncomment one of the lines below:
+	//"file:///path/to/win95-themes/src/shared/colors/hotdogstand.css",
 	//"file:///path/to/win95-themes/src/shared/colors/vgui.css",
 	//"file:///path/to/win95-themes/src/shared/colors/win2000.css",
 ],

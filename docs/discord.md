@@ -13,6 +13,7 @@
    If you wish to use other colors, paste one of these links into the text box:
 
    ```
+   https://raw.githubusercontent.com/ricewind012/win95-themes/refs/heads/master/src/shared/colors/hotdogstand.css
    https://raw.githubusercontent.com/ricewind012/win95-themes/refs/heads/master/src/shared/colors/vgui.css
    https://raw.githubusercontent.com/ricewind012/win95-themes/refs/heads/master/src/shared/colors/win2000.css
    ```

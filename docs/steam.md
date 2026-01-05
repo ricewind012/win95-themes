@@ -16,6 +16,7 @@ Check these out for the same style!
 
 Available options:
 
+- Hotdog Stand
 - VGUI (military green previously used in Steam)
 - Windows 2000
 

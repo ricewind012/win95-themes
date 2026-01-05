@@ -42,7 +42,7 @@ user_pref("sidebar.revamp", true);
 
 - win95.colors
 
-  Possible values: `vgui` and `win2000`.
+  Possible values: `hotdogstand`, `vgui` and `win2000`.
 
 - win95.customize-mode-as-window
 
