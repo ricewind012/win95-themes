@@ -40,7 +40,7 @@
 	@include window.titlebar-button-close;
 
 	top: 0;
-	right: calc(-260px + 16px + 8px + var(--border-size) + var(--window-spacing));
+	right: calc(-260px + 16px + 8px + var(--main-window-border-spacing));
 	order: -1;
 
 	svg {
@@ -64,7 +64,7 @@
 
 	gap: var(--text-spacing);
 
-	bottom: calc(var(--border-size) + var(--window-spacing) + 21px);
+	bottom: calc(var(--main-window-border-spacing) + 21px);
 	align-items: start;
 
 	& > * {
@@ -304,7 +304,7 @@
 
 .chatRoomGroupStats,
 .FriendChatTypingNotification {
-	--pos: calc(var(--border-size) + var(--window-spacing));
+	--pos: var(--main-window-border-spacing);
 
 	position: fixed;
 	left: var(--pos);

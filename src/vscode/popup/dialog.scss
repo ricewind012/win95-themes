@@ -16,7 +16,6 @@
 }
 
 .dialog-icon {
-	--a: calc(var(--border-size) + var(--window-spacing));
 	--icon-size: 32px;
 
 	flex: 0 0 var(--icon-size);
@@ -26,8 +25,8 @@
 		content: attr(aria-label);
 
 		position: absolute;
-		left: calc(var(--a) + 2px);
-		top: calc(var(--a) + 3px);
+		left: calc(var(--border-size) + var(--window-spacing) + 2px);
+		top: calc(var(--border-size) + var(--window-spacing) + 3px);
 
 		font: var(--text-ui);
 		font-weight: bold;

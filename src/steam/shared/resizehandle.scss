@@ -5,10 +5,6 @@
 .PopupFullWindow {
 	&:not(:only-child) {
 		@include shared.statusbar-alt;
-
-		.ModalPosition {
-			height: calc(100% - var(--titlebar-height) - var(--window-gap));
-		}
 	}
 
 	&:only-child {

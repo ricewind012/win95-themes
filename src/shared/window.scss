@@ -12,10 +12,13 @@
 	background-color: var(--color-button-face);
 	color: var(--color-button-text);
 	box-shadow: var(--border-window);
-	padding: calc(var(--border-size) + var(--window-spacing));
 
 	@if $child {
 		--window-spacing: 1px;
+
+		padding: calc(var(--border-size) + var(--window-spacing));
+	} @else {
+		padding: var(--main-window-border-spacing);
 	}
 }
 
@@ -23,8 +26,8 @@
 	@include generatedassets.window-resize-handle;
 
 	position: fixed;
-	right: calc(var(--border-size) + var(--window-spacing));
-	bottom: calc(var(--border-size) + var(--window-spacing));
+	right: var(--main-window-border-spacing);
+	bottom: var(--main-window-border-spacing);
 	width: 14px;
 	height: 14px;
 

@@ -4,7 +4,7 @@
 @use "shared++/utils";
 
 @mixin dialog-title {
-	--offset: calc(var(--border-size) + var(--window-spacing));
+	--offset: var(--main-window-border-spacing);
 
 	color: var(--color-inactive-caption-text);
 	font: var(--text-ui);
@@ -15,7 +15,7 @@
 	position: fixed;
 	left: calc(var(--offset) + var(--icon-size) + var(--titlebar-spacing) + 2px);
 	top: var(--offset);
-	height: var(--titlebar-height);
+	height: var(--main-window-titlebar-height);
 
 	.WindowFocus & {
 		color: var(--color-active-caption-text);
@@ -26,11 +26,12 @@
 /// `utils.content-container-alt`.
 @mixin generic-dialog-content-container-offset {
 	--dialog-offset: calc(
-		var(--window-spacing) + var(--border-size) + var(--dialog-spacing)
+		var(--main-window-border-spacing) + var(--dialog-spacing)
 	);
 	--inset-inline: var(--dialog-offset);
 	--inset-block-start: calc(
-		var(--dialog-offset) + var(--titlebar-height) + 1lh + var(--text-spacing)
+		var(--dialog-offset) + var(--main-window-titlebar-height) + 1lh +
+			var(--text-spacing)
 	);
 	--inset-block-end: calc(
 		var(--dialog-offset) + var(--statusbar-height) + var(--window-gap) * 2 +
@@ -126,10 +127,10 @@
 	&::after {
 		content: "";
 
+		--offset: var(--main-window-border-spacing);
 		position: fixed;
-		left: 4px;
-		right: 4px;
-		bottom: 4px;
+		inset: var(--offset);
+		top: unset;
 		height: calc(1lh + 2px);
 
 		@include window.statusbar-item;

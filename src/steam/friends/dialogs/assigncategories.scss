@@ -5,9 +5,7 @@
 }
 
 .AssignCategoriesDialog_AddNewButton {
-	--pos: calc(
-		var(--border-size) + var(--window-spacing) + var(--dialog-spacing)
-	);
+	--pos: calc(var(--main-window-border-spacing) + var(--dialog-spacing));
 
 	position: fixed;
 	width: min-content;

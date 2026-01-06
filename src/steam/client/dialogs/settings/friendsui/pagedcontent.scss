@@ -7,9 +7,7 @@
 
 #Container {
 	// for bottom buttons
-	--pos: calc(
-		var(--border-size) + var(--window-spacing) + var(--dialog-spacing)
-	);
+	--pos: calc(var(--main-window-border-spacing) + var(--dialog-spacing));
 
 	margin: var(--dialog-spacing);
 	margin-bottom: calc(

@@ -11,7 +11,9 @@
 	.DialogBody {
 		gap: 0;
 		// Stolen from src/steam/shared/dialogshared.scss
-		padding-bottom: calc(1lh + 3px + var(--window-gap) + var(--dialog-spacing));
+		padding-bottom: calc(
+			var(--statusbar-height) + var(--window-gap) + var(--dialog-spacing)
+		);
 	}
 
 	.DialogBodyText {

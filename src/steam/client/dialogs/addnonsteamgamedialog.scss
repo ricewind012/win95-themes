@@ -38,7 +38,7 @@
 
 #GameList {
 	--dialog-offset: calc(
-		var(--window-spacing) + var(--border-size) + var(--dialog-spacing)
+		var(--main-window-border-spacing) + var(--dialog-spacing)
 	);
 	--text-field-height: calc(
 		1rlh + var(--input-spacing) * 2 + var(--border-size) * 2
@@ -46,7 +46,7 @@
 
 	--inset-inline: var(--dialog-offset);
 	--inset-block-start: calc(
-		var(--dialog-offset) + var(--titlebar-height) + 1lh +
+		var(--dialog-offset) + var(--main-window-titlebar-height) + 1lh +
 			var(--text-field-height) + var(--text-spacing) * 2
 	);
 	--inset-block-end: calc(

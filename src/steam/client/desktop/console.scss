@@ -24,18 +24,18 @@
 	--text-field-height: calc(
 		1rlh + var(--input-spacing) * 2 + var(--border-size) * 2
 	);
-	--window-offset: calc(var(--window-spacing) + var(--border-size));
+	--window-offset: var(--main-window-border-spacing);
 
 	--inset-inline: var(--window-offset);
-	// 13px = separators with their margins
+	// 15px = separators with their margins
 	--inset-block-start: calc(
-		var(--window-offset) + var(--titlebar-height) + var(--menubar-height) +
-			var(--window-gap) * 2 + var(--combobox-button-height) +
-			var(--border-size) + 13px
+		var(--window-offset) + var(--main-window-titlebar-height) +
+			var(--menubar-height) + var(--window-gap) * 2 +
+			var(--combobox-button-height) + 15px
 	);
 	--inset-block-end: calc(
 		var(--window-offset) + var(--statusbar-height) + var(--text-field-height) +
-			var(--window-gap) * 2 + 2px
+			var(--window-gap) * 2
 	);
 	--inset: var(--inset-block-start) var(--inset-inline) var(--inset-block-end)
 		var(--inset-inline);

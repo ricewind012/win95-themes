@@ -59,8 +59,8 @@
 
 	position: fixed;
 	top: calc(
-		var(--window-pos) + var(--titlebar-height) + var(--window-gap) +
-			var(--toolbar-container-spacing) + 1px
+		var(--main-window-border-spacing) + var(--main-window-titlebar-height) +
+			var(--window-gap) + var(--toolbar-container-spacing) + 1px
 	);
 	z-index: 100;
 	height: unset;

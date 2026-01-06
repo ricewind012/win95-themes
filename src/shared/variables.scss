@@ -215,6 +215,11 @@
 	--tree-spacing: 6px;
 	--window-spacing: 2px;
 
+	--main-window-titlebar-height: 18px;
+	--main-window-border-spacing: calc(
+		var(--border-size) + var(--window-spacing)
+	);
+
 	/**
 	 * Other
 	**/

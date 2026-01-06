@@ -43,9 +43,7 @@
 	--combobox-width: 200px;
 	--dialog-body-spacing: calc(var(--dialog-button-spacing) + 22px);
 	--label-gap: 8px;
-	--pos: calc(
-		var(--border-size) + var(--window-spacing) + var(--dialog-spacing)
-	);
+	--pos: calc(var(--main-window-border-spacing) + var(--dialog-spacing));
 
 	box-shadow: none;
 	padding: 0;

@@ -52,7 +52,7 @@
 
 	gap: 0;
 	padding: 0;
-	margin-top: var(--window-gap);
+	margin: 0;
 
 	flex: initial;
 	max-width: 100%;
@@ -114,10 +114,16 @@
 }
 
 #WindowControls {
+	margin-block-end: var(--window-gap);
+
 	flex: initial;
 	cursor: default;
 
 	-webkit-app-region: drag;
+
+	html[browsertype="DirectHWND"] & {
+		display: none;
+	}
 
 	.title-area-children::after {
 		content: "Steam";

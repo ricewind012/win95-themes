@@ -24,12 +24,13 @@
 
 #EULAScrolling {
 	--dialog-offset: calc(
-		var(--window-spacing) + var(--border-size) + var(--dialog-spacing)
+		var(--main-window-border-spacing) + var(--dialog-spacing)
 	);
 
 	--inset-inline: var(--dialog-offset);
 	--inset-block-start: calc(
-		var(--dialog-offset) + var(--titlebar-height) + 2lh + var(--text-spacing)
+		var(--dialog-offset) + var(--main-window-titlebar-height) + 2lh +
+			var(--text-spacing)
 	);
 	--inset-block-end: calc(
 		var(--dialog-offset) + var(--statusbar-height) + 1lh +

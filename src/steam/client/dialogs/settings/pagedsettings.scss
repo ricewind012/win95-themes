@@ -53,7 +53,8 @@
 	text-transform: unset;
 	padding: 0;
 
-	.MillenniumSettings & {
+	.MillenniumSettings &,
+	html[browsertype="DirectHWND"] & {
 		display: none;
 	}
 }

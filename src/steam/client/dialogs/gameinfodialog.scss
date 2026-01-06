@@ -52,7 +52,9 @@
 
 	// fits 16px text size
 	--list-height: 386px;
-	--inset-block-start: calc(var(--dialog-offset) + var(--titlebar-height));
+	--inset-block-start: calc(
+		var(--dialog-offset) + var(--main-window-titlebar-height)
+	);
 
 	margin-top: var(--border-size);
 	margin-bottom: var(--text-spacing);

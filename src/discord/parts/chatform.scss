@@ -119,10 +119,11 @@
 
 	position: fixed;
 	top: unset;
-	right: var(--window-pos);
-	bottom: calc(var(--window-pos) + 1px);
+	right: var(--main-window-border-spacing);
+	bottom: calc(var(--main-window-border-spacing) + 1px);
 	left: calc(
-		var(--window-pos) + var(--window-gap) + var(--actual-sidebar-width)
+		var(--main-window-border-spacing) + var(--window-gap) +
+			var(--actual-sidebar-width)
 	);
 	height: unset;
 

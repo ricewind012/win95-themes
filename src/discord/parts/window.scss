@@ -2,11 +2,15 @@
 
 :root {
 	--titlebar-pos: 0px;
-	--window-pos: 0px;
+	--main-window-border-spacing: 0px;
 
 	&.platform-win {
-		--titlebar-pos: calc(var(--titlebar-height) + var(--window-gap));
-		--window-pos: calc(var(--border-size) + var(--window-spacing));
+		--titlebar-pos: calc(
+			var(--main-window-titlebar-height) + var(--window-gap)
+		);
+		--main-window-border-spacing: calc(
+			var(--border-size) + var(--window-spacing)
+		);
 
 		@include window.container;
 	}
@@ -33,15 +37,15 @@
 			var(--window-gap)
 	);
 
-	width: calc(100% - var(--window-pos) * 2);
-	height: calc(100% - var(--window-pos) * 2);
+	width: calc(100% - var(--main-window-border-spacing) * 2);
+	height: calc(100% - var(--main-window-border-spacing) * 2);
 
 	&::before,
 	&::after {
 		content: "";
 
 		position: fixed;
-		bottom: var(--window-pos);
+		bottom: var(--main-window-border-spacing);
 		height: var(--statusbar-height);
 		z-index: 1;
 
@@ -56,7 +60,8 @@
 
 	&::after {
 		--pos: calc(
-			var(--actual-sidebar-width) + var(--window-pos) + var(--window-gap)
+			var(--actual-sidebar-width) + var(--main-window-border-spacing) +
+				var(--window-gap)
 		);
 
 		left: var(--pos);

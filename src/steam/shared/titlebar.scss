@@ -24,10 +24,13 @@
 .title-area {
 	@include window.titlebar($focused-sel: ".WindowFocus &");
 
-	//justify-content: space-between;
 	position: unset;
-	min-height: var(--titlebar-height);
-	max-height: var(--titlebar-height);
+	min-height: var(--main-window-titlebar-height);
+	max-height: var(--main-window-titlebar-height);
+
+	html[browsertype="DirectHWND"] & {
+		display: none;
+	}
 
 	.WindowFocus & {
 		--color-inactive-caption-bg-start: var(--color-active-caption-bg-start);

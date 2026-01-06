@@ -19,7 +19,7 @@
 	background-image: none;
 
 	.PopupFullWindow > & {
-		height: calc(100% - var(--titlebar-height));
+		height: calc(100% - var(--main-window-titlebar-height) - var(--window-gap));
 	}
 }
 
@@ -30,8 +30,8 @@
 }
 
 .ModalPosition_Dismiss {
-	top: 5px;
-	right: 5px;
+	top: calc(var(--border-size) + var(--window-spacing) + 1px);
+	right: calc(var(--border-size) + var(--window-spacing) + 1px);
 
 	.closeButton {
 		@include controls.button;
@@ -187,6 +187,10 @@
 
 	.PopupFullWindow > :last-child & {
 		@include shared.dialog-title;
+
+		html[browsertype="DirectHWND"] & {
+			display: none;
+		}
 	}
 
 	// About Steam dialog

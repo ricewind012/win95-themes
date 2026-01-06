@@ -9,6 +9,10 @@
 
 	z-index: 9999;
 
+	html:not(.platform-win) & {
+		margin-block-start: calc(var(--titlebar-height) * -1);
+	}
+
 	&.c38106a3f0c3ca76-fixed {
 		display: none;
 	}
@@ -16,7 +20,9 @@
 	// Move titlebar buttons to chat toolbar
 	.c99c29809d200a61-clickable {
 		--button-img: icon("newspaper");
-		--pos: calc(var(--window-pos) + var(--toolbar-container-spacing));
+		--pos: calc(
+			var(--main-window-border-spacing) + var(--toolbar-container-spacing)
+		);
 
 		@include controls.button;
 		@include controls.combobox-icon-button(
@@ -24,7 +30,7 @@
 		);
 
 		position: fixed;
-		top: calc(var(--pos) + var(--window-gap) + var(--titlebar-height));
+		top: calc(var(--pos) + var(--titlebar-pos));
 		right: var(--pos);
 	}
 

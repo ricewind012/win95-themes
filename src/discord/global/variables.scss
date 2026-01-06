@@ -65,7 +65,7 @@
 		--shadow-#{$i}: none;
 	}
 
-	--custom-app-top-bar-height: var(--titlebar-height);
+	--custom-app-top-bar-height: 0px;
 
 	--custom-margin-margin-x-small: var(--text-spacing);
 	--custom-margin-margin-small: var(--text-spacing);
@@ -78,4 +78,8 @@
 	--custom-message-margin-compact-indent: 4.75rem;
 	--custom-message-meta-space: var(--text-spacing);
 	--custom-message-reply-message-preview-line-height: var(--text-line);
+
+	&.platform-win:where(html) {
+		--custom-app-top-bar-height: var(--main-window-titlebar-height);
+	}
 }

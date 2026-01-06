@@ -196,9 +196,12 @@
 	@include window.content-container;
 
 	border: none;
-	margin-top: var(--window-gap);
 
 	position: relative;
+
+	html:not([browsertype="DirectHWND"]) & {
+		margin-block-start: var(--window-gap);
+	}
 
 	.avatarHolder {
 		--steamavatar_size: 40px;
@@ -492,6 +495,10 @@
 
 .tabLabel {
 	@include shared.dialog-title;
+
+	html[browsertype="DirectHWND"] & {
+		display: none;
+	}
 }
 
 .TabSearchButton {

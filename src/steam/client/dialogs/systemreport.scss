@@ -6,6 +6,10 @@
 
 #SystemReportDialog {
 	.DialogBody {
+		gap: calc(
+			6px + var(--dialog-button-spacing) + var(--dialog-spacing) +
+				var(--window-gap)
+		);
 		// Restore .DialogContent padding
 		padding: var(--dialog-spacing);
 		padding-bottom: calc(

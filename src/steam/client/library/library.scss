@@ -22,7 +22,7 @@
 
 #AppDetailsOverlayTransitionGroup {
 	#CloseButton {
-		--offset: calc(var(--border-size) + var(--window-spacing) + 1px);
+		--offset: calc(var(--border-size) + var(--window-spacing) + 2px);
 
 		@include controls.button;
 		@include window.titlebar-button;

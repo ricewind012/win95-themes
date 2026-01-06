@@ -27,6 +27,11 @@
 	--commentthread_display: flex;
 	--steamavatar_size: max(32px, 2rlh);
 	--steamdesktop_icon-button-size: var(--combobox-button-height);
+
+	&[browsertype="DirectHWND"] {
+		--main-window-titlebar-height: 0px;
+		--main-window-border-spacing: 0px;
+	}
 }
 
 b {
@@ -35,6 +40,10 @@ b {
 
 body {
 	@include window.container;
+
+	html[browsertype="DirectHWND"] & {
+		box-shadow: none;
+	}
 }
 
 // Many components for friend stuff use these classes

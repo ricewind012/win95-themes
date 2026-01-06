@@ -60,7 +60,7 @@
 }
 
 #NotificationsMenuScrollable {
-	--offset: calc(var(--border-size) + var(--window-spacing));
+	--offset: var(--main-window-border-spacing);
 	--inset-block-start: calc(
 		var(--offset) + var(--header-spacing) * 2 + 1rlh + var(--button-spacing) * 2
 	);

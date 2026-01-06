@@ -62,19 +62,18 @@
 
 	#HeaderActions {
 		position: absolute;
-		top: calc(var(--titlebar-height) + var(--dialog-spacing));
+		top: calc(var(--main-window-titlebar-height) + var(--dialog-spacing));
 		left: calc(var(--icon-size) * -1);
 	}
 
 	#StreamPausedNote {
+		--pos: calc(var(--main-window-border-spacing) + 2px);
+
 		color: var(--color-button-text);
 		font: var(--text-ui);
 		letter-spacing: 0;
 		text-transform: none;
 		margin: 0;
-
-		// TODO: statusbar text mixin
-		--pos: calc(var(--border-size) + var(--window-spacing) + 2px);
 
 		position: fixed;
 		left: var(--pos);

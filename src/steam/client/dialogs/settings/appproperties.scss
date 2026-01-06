@@ -6,7 +6,7 @@
 
 #AppProperties {
 	height: calc(
-		100% - var(--titlebar-height) - var(--dialog-spacing) *
+		100% - var(--main-window-titlebar-height) - var(--dialog-spacing) *
 			2 - var(--window-gap)
 	);
 }
@@ -59,8 +59,8 @@
 	// 7px = --dialog-spacing, but .DialogContentTransition > .DialogContent
 	// sets it to 0px
 	--dialog-offset: calc(
-		var(--window-spacing) + var(--border-size) * 2 + var(--tabpanel-spacing) +
-			7px
+		var(--main-window-border-spacing) + var(--border-size) +
+			var(--tabpanel-spacing) + 7px
 	);
 	--text-field-height: calc(
 		1rlh + var(--input-spacing) * 2 + var(--border-size) * 2
@@ -68,8 +68,8 @@
 
 	--inset-inline: var(--dialog-offset);
 	--inset-block-start: calc(
-		var(--dialog-offset) + var(--titlebar-height) + var(--text-field-height) +
-			var(--text-spacing)
+		var(--dialog-offset) + var(--main-window-titlebar-height) +
+			var(--text-field-height) + var(--text-spacing)
 	);
 	--inset-block-end: calc(
 		var(--dialog-offset) + var(--statusbar-height) + var(--window-gap) * 2
