@@ -192,6 +192,10 @@
 	display: none;
 }
 
+.currentUserAvatar {
+	all: unset;
+}
+
 .currentUserContainer {
 	@include window.content-container;
 
@@ -204,7 +208,7 @@
 	}
 
 	.avatarHolder {
-		--steamavatar_size: 40px;
+		--steamavatar_size: 48px;
 	}
 
 	.labelHolder {
