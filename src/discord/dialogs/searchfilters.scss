@@ -1,0 +1,43 @@
+@use "shared/controls";
+@use "shared++/utils";
+
+._95e0a5926ce413d6-dateFilter {
+	display: flex;
+}
+
+._95e0a5926ce413d6-filterSection {
+	padding: 0;
+
+	&:not(:last-child)::after {
+		@include utils.pseudo-separator;
+
+		margin-block-start: 6px;
+	}
+
+	.cfee8f19fcd7f4a6-tag {
+		background-color: transparent;
+		border: none;
+		box-shadow: var(--border-statusbar);
+
+		min-height: unset;
+	}
+}
+
+// Only used for "Date"
+._95e0a5926ce413d6-labelContainer {
+	margin-block-end: var(--text-spacing);
+
+	& > :first-child {
+		margin-block-end: var(--text-spacing);
+	}
+}
+
+._95e0a5926ce413d6-removeDateFilterButton {
+	--button-img: icon("clear");
+	@include controls.button;
+	@include controls.icon-button;
+}
+
+._95e0a5926ce413d6-trashIcon {
+	display: none;
+}

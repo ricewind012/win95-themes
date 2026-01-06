@@ -1,6 +1,15 @@
 @use "shared/controls";
 @use "shared++/utils";
 
+// date
+._9bb02e82f9a1c59d-container {
+	@include controls.text-field;
+
+	svg {
+		display: none;
+	}
+}
+
 ._0ed4fc708cdbac0d-input {
 	@include controls.text-field;
 

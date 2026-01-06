@@ -1,0 +1,43 @@
+@use "shared/listbox";
+
+._2e223b71e11aa968-listBox {
+	padding: 0;
+}
+
+._2e223b71e11aa968-listBoxItemContent {
+	@include listbox.item($selected-sel: "&:focus:not([aria-disabled])");
+
+	color: inherit;
+
+	min-height: unset;
+
+	// what? why?
+	&._2e223b71e11aa968-inInput {
+		padding: 0;
+	}
+
+	.ec77f26815e2ac33-iconAccessory,
+	.ec77f26815e2ac33-leading {
+		padding: 0;
+		margin: 0;
+
+		width: unset;
+		height: unset;
+	}
+}
+
+._5fa2fb5c4d963128-selectDropdown {
+	@include listbox.container;
+
+	box-shadow: none;
+	margin-top: -4px;
+
+	.d125d22cdfd32cfe-content,
+	.d125d22cdfd32cfe-scrollerBase {
+		height: unset;
+	}
+}
+
+._2e223b71e11aa968-selectedIcon {
+	display: none;
+}

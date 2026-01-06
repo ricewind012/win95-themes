@@ -1,0 +1,24 @@
+@use "shared/controls";
+
+._5fa2fb5c4d963128-chevronButton {
+	display: none;
+}
+
+._5fa2fb5c4d963128-comboBoxInputContainer {
+	padding: 0;
+}
+
+._5fa2fb5c4d963128-comboBoxInput {
+	max-height: unset;
+	min-height: unset;
+}
+
+._5fa2fb5c4d963128-placeholder {
+	padding: 0;
+}
+
+._5fa2fb5c4d963128-selectButton {
+	@include controls.text-field;
+
+	min-height: unset;
+}
