@@ -89,9 +89,21 @@
 	margin: 0;
 }
 
-// Redundant with the top <select>
-#DriveUsage > #DriveName {
-	display: none;
+#DriveDropdownControl {
+	margin: 0;
+
+	svg {
+		display: none;
+	}
+}
+
+#DriveName {
+	text-decoration: none;
+
+	// Redundant with the top combobox
+	#DriveUsage > & {
+		display: none;
+	}
 }
 
 #DriveSettingsButton {
@@ -110,7 +122,7 @@
 #DriveUsageIndicator {
 	@include controls.progress-bar($filled-sel: "#DriveUsageBar");
 
-	background-color: transparent;
+	background-image: none;
 }
 
 #DriveUsageNumber,
@@ -127,25 +139,31 @@
 	}
 }
 
-// Not alphabetical to sort colors
-// Stylus also bails out with hex colors here, wtf lol
-#DriveUsageWorkshop {
-	--color-highlight: darkorange;
+$-colors: (
+	Games: blue,
+	Media: green,
+	Other: yellow,
+	Shader: magenta,
+	Workshop: orange,
+);
+
+@each $k, $v in $-colors {
+	#DriveUsage#{$k} {
+		--color-highlight: #{$v};
+	}
 }
-#DriveUsageShader {
-	--color-highlight: darkmagenta;
-}
-#DriveUsageOther {
-	--color-highlight: var(--color-gray-text);
-}
+
 #DriveUsageFreeSpace {
 	--color-highlight: transparent;
+}
+
+#DriveUsageOtherDot {
+	--color-highlight: yellow;
 }
 
 #InstallDropdownOption {
 	color: inherit;
 
-	svg,
 	#DriveName,
 	#DriveSize {
 		@include utils.text-reset;
@@ -170,6 +188,8 @@
 
 #LibraryInventory {
 	@include window.content-container;
+
+	margin-top: 4px;
 }
 
 #Rule {

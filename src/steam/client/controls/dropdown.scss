@@ -4,8 +4,11 @@
 	@include listbox.item($selected-sel: "&[aria-selected='true']");
 
 	svg {
-		position: absolute;
-		left: 4px;
-		width: 16px;
+		color: inherit;
+		margin-inline: 0 var(--text-spacing);
+
+		flex-shrink: 0;
+		width: var(--icon-size);
+		height: var(--icon-size);
 	}
 }
