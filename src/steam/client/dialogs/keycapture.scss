@@ -42,7 +42,6 @@
 }
 
 #UnbindButton {
-	//position: unset;
 	--button-img: icon("clear");
 
 	@include controls.button;

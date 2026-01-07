@@ -100,8 +100,6 @@
 	& > #FullHeight > #FullHeight {
 		&::before {
 			@include utils.pseudo-separator;
-
-			//width: 100%;
 		}
 	}
 }
