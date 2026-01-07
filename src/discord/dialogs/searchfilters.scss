@@ -1,11 +1,11 @@
 @use "shared/controls";
 @use "shared++/utils";
 
-._95e0a5926ce413d6-dateFilter {
+.e4772e0881c0c30f-dateFilter {
 	display: flex;
 }
 
-._95e0a5926ce413d6-filterSection {
+.e4772e0881c0c30f-filterSection {
 	padding: 0;
 
 	&:not(:last-child)::after {
@@ -24,7 +24,7 @@
 }
 
 // Only used for "Date"
-._95e0a5926ce413d6-labelContainer {
+.e4772e0881c0c30f-labelContainer {
 	margin-block-end: var(--text-spacing);
 
 	& > :first-child {
@@ -32,12 +32,12 @@
 	}
 }
 
-._95e0a5926ce413d6-removeDateFilterButton {
+.e4772e0881c0c30f-removeDateFilterButton {
 	--button-img: icon("clear");
 	@include controls.button;
 	@include controls.icon-button;
 }
 
-._95e0a5926ce413d6-trashIcon {
+.e4772e0881c0c30f-trashIcon {
 	display: none;
 }

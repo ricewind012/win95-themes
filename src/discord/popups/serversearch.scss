@@ -1,6 +1,6 @@
 @use "shared/listbox";
 
-.f1c5c9823fbd3ef8-container {
+.b6544fb09f373e60-container {
 	@include listbox.container;
 
 	padding: 0;
@@ -19,27 +19,27 @@
 	}
 }
 
-._1bb324526a52affb-channelNameIcon,
-._1bb324526a52affb-groupHeader,
-._1bb324526a52affb-itemIcon:where(svg) {
+._8de16516b8d9f538-channelNameIcon,
+._8de16516b8d9f538-groupHeader,
+._8de16516b8d9f538-itemIcon:where(svg) {
 	display: none;
 }
 
-._1bb324526a52affb-divider {
+._8de16516b8d9f538-divider {
 	--border-subtle: currentColor;
 	margin: 0;
 }
 
-._1bb324526a52affb-filterSublabelTextContainer,
-._1bb324526a52affb-labelWithElements {
+._8de16516b8d9f538-filterSublabelTextContainer,
+._8de16516b8d9f538-labelWithElements {
 	flex-grow: 1;
 }
 
-._1bb324526a52affb-groupWrapper {
+._8de16516b8d9f538-groupWrapper {
 	gap: 0;
 }
 
-._1bb324526a52affb-item {
+._8de16516b8d9f538-item {
 	--avatar-size: 20px;
 
 	padding: 0;
@@ -49,7 +49,7 @@
 	position: relative;
 	min-height: var(--avatar-size);
 
-	& > ._1bb324526a52affb-labelWithElements,
+	& > ._8de16516b8d9f538-labelWithElements,
 	& > :not([class]) {
 		gap: var(--text-spacing);
 
@@ -64,6 +64,6 @@
 	}
 }
 
-._1bb324526a52affb-itemContainer {
+._8de16516b8d9f538-itemContainer {
 	@include listbox.item($selected-sel: "&:active, &[aria-selected='true']");
 }
