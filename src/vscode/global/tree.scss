@@ -49,7 +49,8 @@ $-max-nest: 10;
 		--offset: calc(2px * (#{$i} - 6));
 
 		&:not([aria-expanded]) {
-			--offset: calc(-14px * (#{$i} - 3));
+			$magic: $i >= 6 and -16px or -14px;
+			--offset: calc(#{$magic} * (#{$i} - 3));
 		}
 	}
 }
@@ -95,11 +96,23 @@ $-max-nest: 10;
 }
 
 [aria-level="4"] {
-	--offset: 0px;
+	--offset: -1px;
 
 	&:not([aria-expanded]) {
 		--offset: -11px;
 	}
+}
+
+[aria-level="5"] {
+	--offset: -1px;
+
+	&:not([aria-expanded]) {
+		--offset: -29px;
+	}
+}
+
+[aria-level="6"] {
+	--offset: -2px;
 }
 
 .part.sidebar [role="treeitem"] {
