@@ -1,6 +1,72 @@
-.ae7890a1b8e75804-searchHeader,
-.ae7890a1b8e75804-searchHeaderTabList {
-	gap: 0;
+@use "shared/controls";
+@use "shared/window";
+@use "shared++/utils";
 
-	flex-direction: row;
+.a7e67f4ddd7c6bb2-searchResultGroup {
+	margin-block-end: 16px;
+
+	.a7e67f4ddd7c6bb2-channelNameContainer {
+		gap: var(--text-spacing);
+		margin-block-end: var(--text-spacing);
+	}
+
+	.a7e67f4ddd7c6bb2-channelNameIcon,
+	.a7e67f4ddd7c6bb2-parentChannelNameIcon {
+		display: none;
+	}
+
+	.a7e67f4ddd7c6bb2-channelNameText {
+		color: var(--color-button-text);
+		font: inherit;
+		font-weight: bold;
+		text-decoration: underline;
+	}
+
+	.a7e67f4ddd7c6bb2-parentChannelNameText {
+		@include utils.parentheses;
+	}
+}
+
+.c1521037ef09de7e-pageControlContainer {
+	&::before {
+		@include utils.pseudo-separator;
+	}
+
+	.c1521037ef09de7e-pageButton {
+		@include controls.button;
+		@include controls.icon-button($selected-sel: "&[aria-current='page']");
+
+		&.c1521037ef09de7e-endButton {
+			margin-inline: 4px;
+		}
+	}
+}
+
+.ae7890a1b8e75804-searchHeader {
+	border: none;
+}
+
+.ae7890a1b8e75804-searchModeAndFiltersContainer {
+	gap: 0;
+}
+
+._80bf8435713f6adb-container {
+	._80bf8435713f6adb-button {
+		@include controls.button;
+	}
+
+	._80bf8435713f6adb-searchResult {
+		@include window.content-container;
+
+		border: none;
+		margin-block-end: 2px;
+	}
+}
+
+.a98f3b020416ad54-searchResultsWrap {
+	border: none;
+
+	.a98f3b020416ad54-scroller {
+		padding: 16px;
+	}
 }

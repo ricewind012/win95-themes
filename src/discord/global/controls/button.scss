@@ -6,6 +6,10 @@
 	height: unset;
 	min-height: unset;
 
+	&:disabled {
+		opacity: 1;
+	}
+
 	._201d5e8a3c09670a-contents {
 		background-image: none;
 	}
@@ -19,7 +23,19 @@
 	width: unset;
 	max-height: unset;
 
+	&[aria-expanded] {
+		@include controls.combobox-button($active-sel: "&[aria-expanded='true']");
+
+		&::after {
+			flex-shrink: 0;
+		}
+	}
+
 	&.a22cb0c66246f5d3-icon-only .a22cb0c66246f5d3-buttonChildrenWrapper {
+		display: none;
+	}
+
+	&.a22cb0c66246f5d3-hasText .a22cb0c66246f5d3-icon {
 		display: none;
 	}
 
