@@ -3,6 +3,25 @@
 @use "shared/window";
 @use "shared++/utils";
 
+/// The browser view is above everything else. Used for single element browser
+/// views.
+@mixin browser-view-host {
+	margin-left: var(--border-size);
+	margin-top: var(--border-size);
+
+	position: relative;
+	width: calc(100% - var(--border-size) * 2);
+
+	&::before {
+		content: "";
+
+		position: absolute;
+		inset: calc(var(--border-size) * -1);
+
+		@include window.content-container;
+	}
+}
+
 @mixin dialog-title {
 	--offset: var(--main-window-border-spacing);
 

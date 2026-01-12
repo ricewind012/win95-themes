@@ -1,0 +1,5 @@
+@use "steam/shared";
+
+#BrowserViewHost {
+	@include shared.browser-view-host;
+}

@@ -1,23 +1,10 @@
 @use "shared/controls";
 @use "shared/window";
 @use "shared++/utils";
+@use "steam/shared";
 
-// The browser view is above everything else
 #Browser {
-	margin-left: var(--border-size);
-	margin-top: var(--border-size);
-
-	position: relative;
-	width: calc(100% - var(--border-size) * 2);
-
-	&::before {
-		content: "";
-
-		position: absolute;
-		inset: calc(var(--border-size) * -1);
-
-		@include window.content-container;
-	}
+	@include shared.browser-view-host;
 }
 
 #BrowserWrapper {
