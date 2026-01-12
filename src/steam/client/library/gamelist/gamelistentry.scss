@@ -25,6 +25,10 @@
 		height: calc(100% - 1px);
 	}
 
+	&:not(#Installed, #Running) {
+		color: var(--color-gray-text);
+	}
+
 	&#Selected {
 		@include list.item-name-selected;
 
