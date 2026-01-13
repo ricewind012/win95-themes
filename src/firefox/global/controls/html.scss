@@ -21,6 +21,27 @@ textarea {
 	min-height: unset;
 }
 
+moz-box-button {
+	@include controls.button;
+}
+
+// moz-box-button
+[href="chrome://global/content/elements/moz-box-button.css"] ~ .button
+{
+	all: unset;
+
+	width: 100%;
+
+	.icon {
+		display: none;
+	}
+
+	.text-content {
+		display: flex;
+		justify-content: center;
+	}
+}
+
 moz-button {
 	@include controls.button;
 
@@ -45,10 +66,7 @@ moz-button {
 	}
 
 	&::part(button) {
-		background-color: transparent;
-		border: none;
-
-		width: unset;
+		all: unset;
 	}
 }
 

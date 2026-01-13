@@ -1,6 +1,23 @@
 @use "shared/controls";
 @use "shared++/utils";
 
+#tab-note-text {
+	// original
+	min-height: 3lh;
+}
+
+.tab-preview-add-note {
+	margin: 0;
+}
+
+.tab-preview-note-container {
+	margin: 0;
+
+	&::before {
+		@include utils.pseudo-separator;
+	}
+}
+
 #tab-preview-panel::part(content) {
 	@include controls.tooltip;
 

@@ -11,6 +11,8 @@ $-input-height: round(
 // All of these are available through other means
 #page-action-buttons,
 // You use ublock origin, right ?
+#trust-icon-container,
+// TODO: made obsolete with the above ?
 #tracking-protection-icon-container {
 	display: none;
 }

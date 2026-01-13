@@ -96,6 +96,12 @@ $-icons: (
 	height: unset;
 }
 
+.tab-note-icon {
+	list-style-image: icon("file");
+	padding-block: 2px;
+	margin: 0;
+}
+
 .tab-throbber {
 	opacity: 1;
 	background-image: icon("hourglass");

@@ -1,6 +1,6 @@
 # Firefox
 
-Last tested version is 147.0a1! Closest ESR version is 140, so if the theme happens to not receive updates, you can try using that version instead.
+Last tested version is 149.0a1! Closest ESR version is 140, so if the theme happens to not receive updates, you can try using that version instead.
 
 ## Usage
 
