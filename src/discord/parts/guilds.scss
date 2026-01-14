@@ -3,8 +3,7 @@
 
 %-guilds-top-toolbar-button {
 	--pos: calc(
-		var(--main-window-border-spacing) + var(--window-gap) +
-			var(--toolbar-container-spacing)
+		var(--main-window-border-spacing) + var(--toolbar-container-spacing)
 	);
 
 	position: fixed;
