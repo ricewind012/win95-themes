@@ -64,4 +64,9 @@
 	font: var(--text-ui);
 	color: var(--color-button-text);
 	text-transform: unset;
+
+	// In collection view
+	#FilterArea#WideFormat & {
+		background-color: var(--color-window);
+	}
 }

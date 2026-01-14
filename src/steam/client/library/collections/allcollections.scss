@@ -37,11 +37,12 @@
 	@include shared.library_in-toolbar;
 
 	color: inherit;
-	margin-block: 4px;
 
+	align-items: center;
 	// Give space to the snapshot button
 	right: anchor(right);
 	left: anchor(left);
+	height: calc(2rlh - 2px);
 
 	#Label {
 		font-weight: bold;

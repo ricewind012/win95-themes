@@ -67,6 +67,8 @@
 	--button-img: icon("edit");
 	@include controls.button;
 	@include controls.icon-button($selected-sel: "&#Close");
+
+	align-self: unset;
 }
 
 #Header {
@@ -78,12 +80,7 @@
 	// Give space to the snapshot button
 	right: calc(anchor(right) + var(--icon-button-width));
 	left: anchor(left);
-	height: unset;
-
-	// No buttons
-	&:not(:has(> .tool-tip-source)) {
-		margin-block: 4px;
-	}
+	height: calc(2rlh - 2px);
 
 	.DialogInput_Wrapper {
 		margin: 0;
@@ -106,7 +103,10 @@
 
 	padding: 0;
 
+	display: flex;
+	align-items: center;
 	right: anchor(right);
+	height: calc(2rlh - 2px);
 
 	#FreezeButton {
 		@include controls.button;
