@@ -4,6 +4,7 @@
 // @include        *
 // @stylemode      author_sheet
 // ==/UserScript== */
+@import "colors/hotdogstand.css" -moz-pref("win95.colors", "hotdogstand");
 @import "colors/vgui.css" -moz-pref("win95.colors", "vgui");
 @import "colors/win2000.css" -moz-pref("win95.colors", "win2000");
 :root {
@@ -232,6 +233,10 @@
   --titlebar-spacing: 4px;
   --tree-spacing: 6px;
   --window-spacing: 2px;
+  --main-window-titlebar-height: 18px;
+  --main-window-border-spacing: calc(
+  	var(--border-size) + var(--window-spacing)
+  );
   /**
    * Other
   **/
@@ -418,6 +423,48 @@ textarea:disabled {
   text-shadow: 1px 1px var(--color-button-highlight) !important;
 }
 
+moz-box-button {
+  appearance: none !important;
+  outline: none !important;
+  font: var(--text-ui) !important;
+  border: none !important;
+  margin: 0 !important;
+  position: relative !important;
+  background-color: var(--color-button-face) !important;
+  color: var(--color-button-text) !important;
+  box-shadow: var(--border-button-raised) !important;
+  padding: var(--button-spacing) !important;
+  min-width: var(--button-min-width) !important;
+}
+moz-box-button:disabled {
+  --color-window: var(--color-button-face) !important;
+  --color-window-text: var(--color-gray-text) !important;
+  --color-button-text: var(--color-button-shadow) !important;
+  text-shadow: 1px 1px var(--color-button-highlight) !important;
+}
+moz-box-button:focus {
+  outline: dotted 1px var(--color-button-text) !important;
+  outline-offset: calc(var(--button-spacing) * -1) !important;
+  box-shadow: var(--border-button-focused) !important;
+}
+moz-box-button:active {
+  color: transparent !important;
+  text-shadow: 1px 1px var(--color-button-text) !important;
+  box-shadow: var(--border-button-sunken) !important;
+}
+
+[href="chrome://global/content/elements/moz-box-button.css"] ~ .button {
+  all: unset !important;
+  width: 100% !important;
+}
+[href="chrome://global/content/elements/moz-box-button.css"] ~ .button .icon {
+  display: none !important;
+}
+[href="chrome://global/content/elements/moz-box-button.css"] ~ .button .text-content {
+  display: flex !important;
+  justify-content: center !important;
+}
+
 moz-button {
   appearance: none !important;
   outline: none !important;
@@ -478,9 +525,7 @@ moz-button[type~=icon]::before {
   background-size: var(--button-img-size, auto) !important;
 }
 moz-button::part(button) {
-  background-color: transparent !important;
-  border: none !important;
-  width: unset !important;
+  all: unset !important;
 }
 
 moz-button-group {
@@ -686,8 +731,8 @@ window[subdialog] dialog {
   background-color: var(--color-button-face) !important;
   color: var(--color-button-text) !important;
   box-shadow: var(--border-window) !important;
-  padding: calc(var(--border-size) + var(--window-spacing)) !important;
   --window-spacing: 1px !important;
+  padding: calc(var(--border-size) + var(--window-spacing)) !important;
 }
 dialog #titleContainer {
   background-image: linear-gradient(90deg, var(--color-inactive-caption-bg-start), var(--color-inactive-caption-bg-end)) !important;

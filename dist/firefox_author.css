@@ -149,8 +149,8 @@
     background-color: var(--color-button-face);
     color: var(--color-button-text);
     box-shadow: var(--border-window);
-    padding: calc(var(--border-size) + var(--window-spacing));
     --window-spacing: 1px;
+    padding: calc(var(--border-size) + var(--window-spacing));
     padding-top: calc(var(--titlebar-height) + var(--window-gap));
     position: fixed;
     inset: 10% 20%;
@@ -190,8 +190,8 @@
   background-repeat: no-repeat !important;
   background-size: 1px 1px !important;
   position: fixed !important;
-  right: calc(var(--border-size) + var(--window-spacing)) !important;
-  bottom: calc(var(--border-size) + var(--window-spacing)) !important;
+  right: var(--main-window-border-spacing) !important;
+  bottom: var(--main-window-border-spacing) !important;
   width: 14px !important;
   height: 14px !important;
   cursor: se-resize !important;
@@ -545,6 +545,12 @@ toolbarspring {
   height: unset !important;
 }
 
+.tab-note-icon {
+  list-style-image: var(--icon-normal-file) !important;
+  padding-block: 2px !important;
+  margin: 0 !important;
+}
+
 .tab-throbber {
   opacity: 1 !important;
   background-image: var(--icon-normal-hourglass) !important;
@@ -823,6 +829,7 @@ toolbarspring {
 
 #identity-box,
 #page-action-buttons,
+#trust-icon-container,
 #tracking-protection-icon-container {
   display: none !important;
 }
@@ -1156,8 +1163,8 @@ menupopup::part(content) {
   background-color: var(--color-button-face) !important;
   color: var(--color-button-text) !important;
   box-shadow: var(--border-window) !important;
-  padding: calc(var(--border-size) + var(--window-spacing)) !important;
   --window-spacing: 1px !important;
+  padding: calc(var(--border-size) + var(--window-spacing)) !important;
   border: none !important;
   border-radius: 0 !important;
 }
@@ -1265,8 +1272,8 @@ panel::part(content) {
   background-color: var(--color-button-face) !important;
   color: var(--color-button-text) !important;
   box-shadow: var(--border-window) !important;
-  padding: calc(var(--border-size) + var(--window-spacing)) !important;
   --window-spacing: 1px !important;
+  padding: calc(var(--border-size) + var(--window-spacing)) !important;
   border: none !important;
   border-radius: 0 !important;
 }
@@ -1348,6 +1355,27 @@ panel toolbarseparator::before {
 
 #widget-overflow .toolbarbutton-icon {
   display: flex !important;
+}
+
+#tab-note-text {
+  min-height: 3lh !important;
+}
+
+.tab-preview-add-note {
+  margin: 0 !important;
+}
+
+.tab-preview-note-container {
+  margin: 0 !important;
+}
+.tab-preview-note-container::before {
+  content: "" !important;
+  border: none !important;
+  border-top: 1px solid var(--color-button-highlight) !important;
+  box-shadow: 0 -1px var(--color-button-shadow) !important;
+  margin-top: 3px !important;
+  margin-bottom: 4px !important;
+  display: block !important;
 }
 
 #tab-preview-panel::part(content) {

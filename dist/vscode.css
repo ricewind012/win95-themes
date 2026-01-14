@@ -776,6 +776,10 @@
   --titlebar-spacing: 4px;
   --tree-spacing: 6px;
   --window-spacing: 2px;
+  --main-window-titlebar-height: 18px;
+  --main-window-border-spacing: calc(
+  	var(--border-size) + var(--window-spacing)
+  );
   /**
    * Other
   **/
@@ -1711,8 +1715,8 @@ body {
   background-color: var(--color-button-face) !important;
   color: var(--color-button-text) !important;
   box-shadow: var(--border-window) !important;
-  padding: calc(var(--border-size) + var(--window-spacing)) !important;
   --window-spacing: 1px !important;
+  padding: calc(var(--border-size) + var(--window-spacing)) !important;
   min-width: 300px !important;
 }
 
@@ -1725,7 +1729,6 @@ body {
 }
 
 .dialog-icon {
-  --a: calc(var(--border-size) + var(--window-spacing)) !important;
   --icon-size: 32px !important;
   flex: 0 0 var(--icon-size) !important;
   height: var(--icon-size) !important;
@@ -1733,8 +1736,8 @@ body {
 .dialog-icon::before {
   content: attr(aria-label) !important;
   position: absolute !important;
-  left: calc(var(--a) + 2px) !important;
-  top: calc(var(--a) + 3px) !important;
+  left: calc(var(--border-size) + var(--window-spacing) + 2px) !important;
+  top: calc(var(--border-size) + var(--window-spacing) + 3px) !important;
   font: var(--text-ui) !important;
   font-weight: bold !important;
 }
@@ -1790,8 +1793,8 @@ body {
   background-color: var(--color-button-face) !important;
   color: var(--color-button-text) !important;
   box-shadow: var(--border-window) !important;
-  padding: calc(var(--border-size) + var(--window-spacing)) !important;
   --window-spacing: 1px !important;
+  padding: calc(var(--border-size) + var(--window-spacing)) !important;
   height: auto !important;
 }
 .find-widget .button {
@@ -1857,8 +1860,8 @@ body {
   background-color: var(--color-button-face) !important;
   color: var(--color-button-text) !important;
   box-shadow: var(--border-window) !important;
-  padding: calc(var(--border-size) + var(--window-spacing)) !important;
   --window-spacing: 1px !important;
+  padding: calc(var(--border-size) + var(--window-spacing)) !important;
 }
 [role=menu] [role^=menuitem] {
   color: var(--color-button-text) !important;
@@ -1988,8 +1991,8 @@ div.monaco-menu .monaco-action-bar.vertical .action-label.separator {
   background-color: var(--color-button-face) !important;
   color: var(--color-button-text) !important;
   box-shadow: var(--border-window) !important;
-  padding: calc(var(--border-size) + var(--window-spacing)) !important;
   --window-spacing: 1px !important;
+  padding: calc(var(--border-size) + var(--window-spacing)) !important;
   width: auto !important;
   height: auto !important;
 }
@@ -2009,8 +2012,8 @@ div.monaco-menu .monaco-action-bar.vertical .action-label.separator {
   background-color: var(--color-button-face) !important;
   color: var(--color-button-text) !important;
   box-shadow: var(--border-window) !important;
-  padding: calc(var(--border-size) + var(--window-spacing)) !important;
   --window-spacing: 1px !important;
+  padding: calc(var(--border-size) + var(--window-spacing)) !important;
   border: none !important;
   width: calc(100% - 50px) !important;
 }
@@ -2071,8 +2074,8 @@ div.monaco-menu .monaco-action-bar.vertical .action-label.separator {
   background-color: var(--color-button-face) !important;
   color: var(--color-button-text) !important;
   box-shadow: var(--border-window) !important;
-  padding: calc(var(--border-size) + var(--window-spacing)) !important;
   --window-spacing: 1px !important;
+  padding: calc(var(--border-size) + var(--window-spacing)) !important;
   margin: 0 !important;
   inset: 12.5% 25% !important;
   width: 50% !important;
@@ -4220,7 +4223,7 @@ div.monaco-workbench .part.editor > .content .editor-group-container.active > .t
   --offset: calc(2px * (6 - 6)) !important;
 }
 [aria-level="6"]:not([aria-expanded]) {
-  --offset: calc(-14px * (6 - 3)) !important;
+  --offset: calc(-16px * (6 - 3)) !important;
 }
 
 [aria-level="7"] {
@@ -4229,7 +4232,7 @@ div.monaco-workbench .part.editor > .content .editor-group-container.active > .t
   --offset: calc(2px * (7 - 6)) !important;
 }
 [aria-level="7"]:not([aria-expanded]) {
-  --offset: calc(-14px * (7 - 3)) !important;
+  --offset: calc(-16px * (7 - 3)) !important;
 }
 
 [aria-level="8"] {
@@ -4238,7 +4241,7 @@ div.monaco-workbench .part.editor > .content .editor-group-container.active > .t
   --offset: calc(2px * (8 - 6)) !important;
 }
 [aria-level="8"]:not([aria-expanded]) {
-  --offset: calc(-14px * (8 - 3)) !important;
+  --offset: calc(-16px * (8 - 3)) !important;
 }
 
 [aria-level="9"] {
@@ -4247,7 +4250,7 @@ div.monaco-workbench .part.editor > .content .editor-group-container.active > .t
   --offset: calc(2px * (9 - 6)) !important;
 }
 [aria-level="9"]:not([aria-expanded]) {
-  --offset: calc(-14px * (9 - 3)) !important;
+  --offset: calc(-16px * (9 - 3)) !important;
 }
 
 [aria-level="10"] {
@@ -4256,7 +4259,7 @@ div.monaco-workbench .part.editor > .content .editor-group-container.active > .t
   --offset: calc(2px * (10 - 6)) !important;
 }
 [aria-level="10"]:not([aria-expanded]) {
-  --offset: calc(-14px * (10 - 3)) !important;
+  --offset: calc(-16px * (10 - 3)) !important;
 }
 
 .part.sidebar div[aria-level="1"]:not([aria-expanded]) {
@@ -4292,10 +4295,21 @@ div.monaco-workbench .part.editor > .content .editor-group-container.active > .t
 }
 
 [aria-level="4"] {
-  --offset: 0px !important;
+  --offset: -1px !important;
 }
 [aria-level="4"]:not([aria-expanded]) {
   --offset: -11px !important;
+}
+
+[aria-level="5"] {
+  --offset: -1px !important;
+}
+[aria-level="5"]:not([aria-expanded]) {
+  --offset: -29px !important;
+}
+
+[aria-level="6"] {
+  --offset: -2px !important;
 }
 
 .part.sidebar [role=treeitem] {
