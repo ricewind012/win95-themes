@@ -81,3 +81,12 @@
 		"Join Video Call": "camera",
 	)
 );
+
+// Image carousel
+@include -gen-icons(
+	"aria-label",
+	(
+		"Open in Browser": "url",
+		"Zoom In": "search",
+	)
+);

@@ -1,6 +1,29 @@
 @use "shared/controls";
 @use "shared++/utils";
 
+.e131a99484292a19-container {
+	.e131a99484292a19-actionButtons {
+		gap: 0;
+
+		justify-content: end;
+	}
+
+	.e131a99484292a19-voiceButtonsContainer {
+		gap: 0;
+	}
+
+	._5eb9b3cc7c2b1ce8-lottieIcon {
+		display: initial;
+	}
+
+	button {
+		@include controls.button;
+		@include controls.icon-button;
+
+		width: unset;
+	}
+}
+
 ._5e434347c823b592-panels {
 	background-color: transparent;
 	border: none;

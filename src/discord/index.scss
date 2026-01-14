@@ -14,6 +14,7 @@
 @use "parts/window" as parts-window;
 
 @use "parts/chat/messages" as parts-chat-messages;
+@use "parts/chat/vc" as parts-chat-vc;
 
 @use "parts/sidebar/header" as parts-sidebar-header;
 @use "parts/sidebar/privatechannels" as parts-sidebar-privatechannels;
@@ -22,6 +23,7 @@
 
 @use "dialogs/attachfiles" as dialogs-attachfiles;
 @use "dialogs/customstatus" as dialogs-customstatus;
+@use "dialogs/imagecarousel" as dialogs-imagecarousel;
 @use "dialogs/linkcallout" as dialogs-linkcallout;
 @use "dialogs/notificationsettings" as dialogs-notificationsettings;
 @use "dialogs/quickswitcher" as dialogs-quickswitcher;
