@@ -4,14 +4,14 @@
 @use "shared++/utils";
 
 // collapser
-._29444ba32c7fbeab-containerDefault {
+.containerDefault__29444 {
 	padding: 0;
 
-	._29444ba32c7fbeab-icon {
+	.icon__29444 {
 		display: none;
 	}
 
-	._29444ba32c7fbeab-mainContent {
+	.mainContent__29444 {
 		@include tree.item-icon;
 
 		&::before {
@@ -26,13 +26,13 @@
 		height: unset;
 	}
 
-	._29444ba32c7fbeab-name {
+	.name__29444 {
 		font: var(--text-ui);
 		margin-top: -2px;
 	}
 
-	._29444ba32c7fbeab-wrapperCommon {
-		@include tree.item($expanded-sel: "&:not(._29444ba32c7fbeab-collapsed)");
+	.wrapperCommon__29444 {
+		@include tree.item($expanded-sel: "&:not(.collapsed__29444)");
 
 		margin-left: 0;
 
@@ -42,18 +42,18 @@
 	}
 }
 
-._99f8cc7ad4790ce9-content {
+.content__99f8c {
 	// Banner
 	& > [style="height: 84px;"],
 	// "Browse Channels"
 	&  > [style="height: 12px;"],
 	&  > li:not([class]),
-	._629e4c86564a4ee7-sectionDivider {
+	.sectionDivider__629e4 {
 		display: none;
 	}
 }
 
-._99f8cc7ad4790ce9-scrollerBase {
+.scrollerBase__99f8c {
 	// Seen in private channels
 	mask: none;
 	padding: 0;
@@ -61,7 +61,7 @@
 }
 
 // channel
-._2ea32c412048f708-wrapper {
+.wrapper__2ea32 {
 	--offset: calc(var(--icon-size) + 4px);
 
 	@include tree.item($expanded-sel: "&");
@@ -85,17 +85,17 @@
 		border-left: 1px dotted var(--color-gray-text);
 	}
 
-	&._2ea32c412048f708-modeSelected {
-		._2ea32c412048f708-link {
+	&.modeSelected__2ea32 {
+		.link__2ea32 {
 			@include list.item-name-selected;
 		}
 
-		._2ea32c412048f708-name {
+		.name__2ea32 {
 			color: inherit;
 		}
 	}
 
-	&._2ea32c412048f708-typeThread {
+	&.typeThread__2ea32 {
 		margin-left: calc(var(--offset) * 3.25);
 
 		&::after {
@@ -105,23 +105,23 @@
 		}
 	}
 
-	._2ea32c412048f708-children,
-	._2ea32c412048f708-iconContainer {
+	.children__2ea32,
+	.iconContainer__2ea32 {
 		display: none;
 	}
 
-	._2ea32c412048f708-link {
+	.link__2ea32 {
 		@include utils.text-reset;
 
 		background-color: var(--color-window);
 	}
 
-	._2ea32c412048f708-name {
+	.name__2ea32 {
 		font: var(--text-ui);
 	}
 
-	._5b40bdd67543ba35-spine,
-	._5b40bdd67543ba35-spineBorder {
+	.spine__5b40b,
+	.spineBorder__5b40b {
 		display: none;
 	}
 }

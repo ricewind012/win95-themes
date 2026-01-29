@@ -1,11 +1,11 @@
 @use "shared/controls";
 @use "shared++/utils";
 
-._09aca73e6d4b214b-checkboxWrapper {
-	._09aca73e6d4b214b-checkbox {
+.checkboxWrapper__09aca {
+	.checkbox__09aca {
 		@include controls.checkbox(
-			$checked-sel: "&._09aca73e6d4b214b-checked",
-			$disabled-sel: "._09aca73e6d4b214b-checkboxWrapperDisabled &"
+			$checked-sel: "&.checked__09aca",
+			$disabled-sel: ".checkboxWrapperDisabled__09aca &"
 		);
 
 		border: none;
@@ -15,21 +15,21 @@
 		}
 	}
 
-	._09aca73e6d4b214b-label {
+	.label__09aca {
 		padding-left: var(--label-spacing);
 	}
 }
 
-._3f21e80f8677ec40-container {
+.container__3f21e {
 	@include controls.checkbox(
-		$checked-sel: "&._3f21e80f8677ec40-checked",
-		$disabled-sel: "&._3f21e80f8677ec40-disabled"
+		$checked-sel: "&.checked__3f21e",
+		$disabled-sel: "&.disabled__3f21e"
 	);
 
 	opacity: 1;
 	border: none;
 
-	._3f21e80f8677ec40-slider {
+	.slider__3f21e {
 		display: none;
 	}
 }

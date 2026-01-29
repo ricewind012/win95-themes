@@ -1,6 +1,6 @@
 @use "shared/controls";
 
-._88a69141dd70013a-item {
+.item__88a69 {
 	opacity: 1;
 	background-color: transparent;
 
@@ -13,20 +13,20 @@
 	}
 }
 
-._88a69141dd70013a-radioBar {
+.radioBar__88a69 {
 	border: none;
 	gap: var(--label-spacing);
 	padding: 0;
 }
 
-._88a69141dd70013a-radioIndicator {
+.radioIndicator__88a69 {
 	display: none;
 }
 
-._88a69141dd70013a-radioIndicatorGroup {
+.radioIndicatorGroup__88a69 {
 	@include controls.radio(
-		$checked-sel: '._88a69141dd70013a-item[aria-checked="true"] &',
-		$disabled-sel: '._88a69141dd70013a-container[aria-disabled="true"] &'
+		$checked-sel: '.item__88a69[aria-checked="true"] &',
+		$disabled-sel: '.container__88a69[aria-disabled="true"] &'
 	);
 
 	order: -1;

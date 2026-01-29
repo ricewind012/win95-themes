@@ -2,11 +2,11 @@
 @use "shared/menu";
 @use "shared/window";
 
-.c1e9c47c23f12ca3-groupLabel {
+.groupLabel_c1e9c4 {
 	display: none;
 }
 
-.c1e9c47c23f12ca3-iconContainer {
+.iconContainer_c1e9c4 {
 	all: unset;
 
 	svg {
@@ -14,12 +14,12 @@
 	}
 }
 
-.c1e9c47c23f12ca3-item {
-	@include menu.item($selected-sel: "&.c1e9c47c23f12ca3-focused");
+.item_c1e9c4 {
+	@include menu.item($selected-sel: "&.focused_c1e9c4");
 
 	font: var(--text-ui);
 
-	&.c1e9c47c23f12ca3-disabled {
+	&.disabled_c1e9c4 {
 		@include menu.item-disabled;
 
 		opacity: 1;
@@ -32,12 +32,12 @@
 	&[role="menuitemradio"][aria-checked="true"] {
 		@include menu.item-radio;
 
-		.c1e9c47c23f12ca3-iconContainer {
+		.iconContainer_c1e9c4 {
 			display: none;
 		}
 	}
 
-	._09aca73e6d4b214b-checkbox {
+	.checkbox__09aca {
 		@include menu.item-check;
 
 		all: unset;
@@ -47,20 +47,20 @@
 		}
 	}
 
-	._88a69141dd70013a-radioIndicatorGroup {
+	.radioIndicatorGroup__88a69 {
 		display: none;
 	}
 }
 
-.c1e9c47c23f12ca3-label {
+.label_c1e9c4 {
 	color: inherit;
 }
 
-.c1e9c47c23f12ca3-labelContainer {
+.labelContainer_c1e9c4 {
 	min-height: unset;
 }
 
-.c1e9c47c23f12ca3-menu {
+.menu_c1e9c4 {
 	@include window.container($child: true);
 
 	border: none;
@@ -68,36 +68,36 @@
 	width: unset;
 }
 
-.c1e9c47c23f12ca3-scroller {
+.scroller_c1e9c4 {
 	padding: 0;
 
 	overflow: auto;
 }
 
-.c1e9c47c23f12ca3-separator {
+.separator_c1e9c4 {
 	@include controls.separator;
 
 	margin-inline: 0;
 }
 
-.c1e9c47c23f12ca3-submenuPaddingContainer {
+.submenuPaddingContainer_c1e9c4 {
 	padding: 0;
 }
 
-.c1e9c47c23f12ca3-subtext {
+.subtext_c1e9c4 {
 	display: none;
 }
 
 // Emotes
-.f563df886a7377be-wrapper {
+.wrapper_f563df {
 	gap: 0;
 	padding: 0;
 
 	display: flex;
 	flex-direction: column;
 
-	.f563df886a7377be-button {
-		@include menu.item($selected-sel: "&.f563df886a7377be-focused");
+	.button_f563df {
+		@include menu.item($selected-sel: "&.focused_f563df");
 
 		background-color: transparent;
 
@@ -111,7 +111,7 @@
 		}
 	}
 
-	.c1e9c47c23f12ca3-customItem {
+	.customItem_c1e9c4 {
 		font: var(--text-ui);
 
 		width: 100%;

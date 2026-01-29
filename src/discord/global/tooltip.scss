@@ -1,6 +1,6 @@
 @use "shared/controls";
 
-.c36707910f687430-tooltip {
+.tooltip_c36707 {
 	@include controls.tooltip;
 
 	opacity: 1;
@@ -8,10 +8,10 @@
 	transform: unset;
 }
 
-.c36707910f687430-tooltipContent {
+.tooltipContent_c36707 {
 	padding: 0;
 }
 
-.c36707910f687430-tooltipPointer {
+.tooltipPointer_c36707 {
 	display: none;
 }

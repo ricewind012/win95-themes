@@ -2,29 +2,29 @@
 @use "shared/listbox";
 @use "shared++/utils";
 
-.a16aea1526925c2c-icons {
+.icons_a16aea {
 	display: none;
 }
 
-.a16aea1526925c2c-option {
+.option_a16aea {
 	@include listbox.item($selected-sel: "&[aria-selected='true']");
 
 	font: var(--text-ui);
 }
 
-.a16aea1526925c2c-popout {
+.popout_a16aea {
 	@include listbox.container;
 
 	margin: 0;
 }
 
-.a16aea1526925c2c-searchInput {
+.searchInput_a16aea {
 	font: var(--text-ui);
 	// Multi select
 	margin: 0;
 }
 
-.a16aea1526925c2c-select {
+.select_a16aea {
 	@include controls.combobox($disabled-sel: "&[data-disabled='true']");
 
 	* {

@@ -3,38 +3,38 @@
 @use "shared/window";
 @use "shared++/utils";
 
-._133bf5eea8e33a34-container {
+.container__133bf {
 	border: none;
 
-	._133bf5eea8e33a34-peopleColumn {
+	.peopleColumn__133bf {
 		box-shadow: none;
 		padding: 0;
 	}
 }
 
-._5ec2fb8b5de26b21-peopleList {
+.peopleList__5ec2f {
 	@include window.content-container;
 	@include utils.move-scrollbar;
 
 	margin-top: var(--window-gap);
 
-	.f8fa068db52f043f-actionButton {
+	.actionButton_f8fa06 {
 		display: none;
 	}
 
-	._0a06ed6ea040aa1b-discriminator {
+	.discriminator__0a06e {
 		@include utils.parentheses;
 		@include utils.text-reset;
 
 		visibility: visible;
 	}
 
-	._5ec2fb8b5de26b21-sectionTitle {
+	.sectionTitle__5ec2f {
 		display: none;
 	}
 }
 
-.cc61794aab086a2e-peopleListItem {
+.peopleListItem_cc6179 {
 	line-height: inherit;
 	border: none;
 	padding: 8px;
@@ -49,16 +49,16 @@
 	}
 }
 
-._5ec2fb8b5de26b21-searchBar {
+.searchBar__5ec2f {
 	margin: 0;
 }
 
 // Header
-._133bf5eea8e33a34-tabBar {
+.tabBar__133bf {
 	gap: var(--tab-button-spacing);
 	margin: 0;
 
-	._133bf5eea8e33a34-item {
+	.item__133bf {
 		all: unset;
 		box-sizing: border-box;
 
@@ -74,7 +74,7 @@
 	}
 }
 
-._133bf5eea8e33a34-tabBody {
+.tabBody__133bf {
 	background-color: var(--color-button-face);
 	padding: var(--dialog-spacing);
 }

@@ -1,8 +1,8 @@
 @use "shared/window";
 @use "shared++/utils";
 
-._9c3bea41fd465666-profileBody,
-._5be3ef42f92174b2-body {
+.profileBody__9c3be,
+.body__5be3e {
 	gap: 0;
 	padding: 0 8px;
 
@@ -18,14 +18,14 @@
 	}
 }
 
-.c0bea05627c5dc35-inner {
+.inner_c0bea0 {
 	--pos: calc(var(--border-size) + var(--window-spacing) + 8px);
 
 	background-color: transparent;
 	gap: 0;
 	padding: 0;
 
-	.dfa8b6b94cddb191-role {
+	.role_dfa8b6 {
 		@include window.statusbar-item;
 
 		background-color: transparent;
@@ -33,19 +33,19 @@
 	}
 
 	// Tags list
-	.fccfdf3cfff21921-root {
+	.root_fccfdf {
 		@include window.statusbar;
 	}
 }
 
-._9c3bea41fd465666-profile {
+.profile__9c3be {
 	background-color: var(--color-button-face);
 }
 
-.c0bea05627c5dc35-outer {
+.outer_c0bea0 {
 	@include window.container($child: true);
 }
 
-._63ed30c16c7151f2-userTag {
+.userTag__63ed3 {
 	font: var(--text-ui);
 }

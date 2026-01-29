@@ -2,15 +2,15 @@
 @use "shared/tabs";
 @use "shared/window";
 
-.fc561d3c125f6a2f-container {
+.container_fc561d {
 	@include window.container($child: true);
 }
 
-.ab66419eae73260f-controls {
+.controls_ab6641 {
 	gap: 0;
 }
 
-.ab66419eae73260f-header {
+.header_ab6641 {
 	background-color: transparent;
 	border: none;
 	padding: 0;
@@ -23,20 +23,20 @@
 	}
 }
 
-.ab66419eae73260f-headerTabs {
+.headerTabs_ab6641 {
 	margin: 0;
 }
 
-.ab66419eae73260f-inboxIcon,
-.ab66419eae73260f-inboxTitle {
+.inboxIcon_ab6641,
+.inboxTitle_ab6641 {
 	display: none;
 }
 
-._957962c2bd49881b-recentMentionsPopout {
+.recentMentionsPopout__95796 {
 	width: calc(100% - var(--dialog-spacing) * 2);
 	min-width: unset;
 
-	&.e8b59c4b335dd2fc-messagesPopoutWrap {
+	&.messagesPopoutWrap_e8b59c {
 		@include tabs.content($compact: true);
 
 		margin-top: 0;
@@ -51,7 +51,7 @@
 		}
 	}
 
-	._35a7ecf3aba351b2-channelHeader {
+	.channelHeader__35a7e {
 		display: none;
 	}
 }

@@ -1,6 +1,6 @@
 @use "shared/controls";
 
-.cc1819cb49c2d109-actionButtons {
+.actionButtons_cc1819 {
 	background-color: transparent;
 	border: none;
 	gap: 0;
@@ -11,24 +11,24 @@
 	}
 }
 
-.d3a6f0de39ff36e9-carouselModal {
-	// unset ._49fc18ba07c5025f-root > div
-	.e035781d3e5b07da-mediaArea {
+.carouselModal_d3a6f0 {
+	// unset .root__49fc1 > div
+	.mediaArea_e03578 {
 		overflow: unset;
 	}
 }
 
-._6088c3df6d10c76d-topBar {
+.topBar__6088c {
 	gap: var(--toolbar-spacing);
 
-	._6088c3df6d10c76d-closeButton {
+	.closeButton__6088c {
 		--button-img: icon("clear");
 		@include controls.button;
 		@include controls.icon-button;
 
 		width: unset;
 
-		.aec7abc73c126bc0-buttonInner {
+		.buttonInner_aec7ab {
 			display: none;
 		}
 	}

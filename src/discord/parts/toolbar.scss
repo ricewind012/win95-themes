@@ -1,18 +1,18 @@
 @use "shared/controls";
 @use "shared++/utils";
 
-._9293f6b2fc12398a-channelIcon,
-._9293f6b2fc12398a-dot,
-._9293f6b2fc12398a-titleWrapper {
+.channelIcon__9293f,
+.dot__9293f,
+.titleWrapper__9293f {
 	display: none;
 }
 
-._9293f6b2fc12398a-children {
+.children__9293f {
 	&::after {
 		display: none;
 	}
 
-	._754bde0f294a39cb-hoverableContainer {
+	.hoverableContainer__754bd {
 		@include controls.button;
 		@include utils.use-attr-text("aria-label");
 
@@ -20,13 +20,13 @@
 		height: unset;
 	}
 
-	._6ec1a06139ec3b27-topic {
+	.topic__6ec1a {
 		font: var(--text-ui);
 		margin: 0;
 	}
 }
 
-._9293f6b2fc12398a-container {
+.container__9293f {
 	--__header-bar-background: transparent;
 	--custom-channel-header-height: unset;
 
@@ -37,29 +37,27 @@
 	min-height: unset;
 }
 
-._9293f6b2fc12398a-icon,
-._9293f6b2fc12398a-iconBadge {
+.icon__9293f,
+.iconBadge__9293f {
 	display: none;
 }
 
-._9293f6b2fc12398a-iconWrapper {
+.iconWrapper__9293f {
 	width: unset;
 	height: unset;
 
-	&:not(._9293f6b2fc12398a-clickable) {
+	&:not(.clickable__9293f) {
 		display: none;
 	}
 
-	&._9293f6b2fc12398a-iconDisabled {
+	&.iconDisabled__9293f {
 		opacity: 1;
 	}
 
 	&:not([aria-expanded]) {
 		--icon-button-height: var(--combobox-button-height);
 		@include controls.button;
-		@include controls.icon-button(
-			$selected-sel: "&._9293f6b2fc12398a-selected"
-		);
+		@include controls.icon-button($selected-sel: "&.selected__9293f");
 
 		order: -1;
 
@@ -76,29 +74,26 @@
 	}
 }
 
-._496769951eb140fe-search {
+.search__49676 {
 	margin-inline: var(--toolbar-spacing);
 
 	order: -2;
 
-	.c322aadb96ff59c9-icon {
+	.icon_c322aa {
 		--button-img: icon("search");
 		@include controls.button;
 		@include controls.icon-button;
 
-		&:has(
-			> ._0c4c409e1915aba4-iconContainer
-				> ._0c4c409e1915aba4-clear._0c4c409e1915aba4-visible
-		) {
+		&:has(> .iconContainer__0c4c4 > .clear__0c4c4.visible__0c4c4) {
 			--button-img: icon("clear");
 		}
 	}
 
-	._0c4c409e1915aba4-iconContainer {
+	.iconContainer__0c4c4 {
 		display: none;
 	}
 
-	.c322aadb96ff59c9-searchBar {
+	.searchBar_c322aa {
 		background-color: transparent;
 		border: none;
 		padding: 0;
@@ -122,14 +117,14 @@
 		}
 	}
 
-	.bd818628221af7aa-searchToken {
+	.searchToken_bd8186 {
 		border: none;
 
 		height: unset;
 	}
 }
 
-._9293f6b2fc12398a-toolbar {
+.toolbar__9293f {
 	gap: 0;
 	margin-right: var(--combobox-icon-button-width);
 }

@@ -1,18 +1,18 @@
 @use "shared/controls";
 @use "shared++/utils";
 
-.e131a99484292a19-container {
-	.e131a99484292a19-actionButtons {
+.container_e131a9 {
+	.actionButtons_e131a9 {
 		gap: 0;
 
 		justify-content: end;
 	}
 
-	.e131a99484292a19-voiceButtonsContainer {
+	.voiceButtonsContainer_e131a9 {
 		gap: 0;
 	}
 
-	._5eb9b3cc7c2b1ce8-lottieIcon {
+	.lottieIcon__5eb9b {
 		display: initial;
 	}
 
@@ -24,7 +24,7 @@
 	}
 }
 
-._5e434347c823b592-panels {
+.panels__5e434 {
 	background-color: transparent;
 	border: none;
 
@@ -33,17 +33,17 @@
 	left: calc(var(--custom-guild-list-width) + var(--scrollbar-size));
 }
 
-._37e49614b9f110a9-avatarWrapper {
+.avatarWrapper__37e49 {
 	// ::before is used by the separator, so move it to the avatar element
 	--text: attr(aria-label);
 
 	@include controls.combobox-button($active-sel: "&[aria-expanded='true']");
 
-	._37e49614b9f110a9-avatar {
+	.avatar__37e49 {
 		display: none;
 	}
 
-	._37e49614b9f110a9-nameTag {
+	.nameTag__37e49 {
 		&::before {
 			content: var(--text);
 		}
@@ -54,7 +54,7 @@
 	}
 }
 
-._67645e1530f1195d-button {
+.button__67645 {
 	--icon-button-width: var(--combobox-button-height);
 	--icon-button-height: var(--combobox-button-height);
 	@include controls.icon-button;
@@ -62,18 +62,18 @@
 	width: unset;
 }
 
-._37e49614b9f110a9-buttonChevron {
+.buttonChevron__37e49 {
 	--button-img: icon("arrow-bottom", "mono");
 	--icon-button-width: 16px;
 
 	margin-inline-end: var(--toolbar-spacing);
 }
 
-._37e49614b9f110a9-buttonChevronIcon {
+.buttonChevronIcon__37e49 {
 	display: none;
 }
 
-._37e49614b9f110a9-buttons {
+.buttons__37e49 {
 	gap: 0;
 
 	[aria-label="Deafen"] {
@@ -94,7 +94,7 @@
 }
 
 // vc
-.e131a99484292a19-container {
+.container_e131a9 {
 	border: none;
 	padding: var(--toolbar-container-spacing);
 	padding-bottom: 0;
@@ -104,7 +104,7 @@
 	}
 }
 
-._37e49614b9f110a9-container {
+.container__37e49 {
 	gap: var(--toolbar-spacing);
 	padding: var(--toolbar-container-spacing);
 	margin: 0;

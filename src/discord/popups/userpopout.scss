@@ -1,11 +1,11 @@
 @use "shared/controls";
 
-._5be3ef42f92174b2-footer {
+.footer__5be3e {
 	padding: 0 8px 8px;
 }
 
-._5be3ef42f92174b2-header {
-	._75742e4cc9019aeb-avatar {
+.header__5be3e {
+	.avatar__75742 {
 		left: 14px;
 	}
 
@@ -15,10 +15,10 @@
 }
 
 // top right buttons
-._4106ae7c1472c1de-wrapper {
+.wrapper__4106a {
 	gap: var(--toolbar-spacing);
 
-	.fb7f9476ada049c8-bannerButton {
+	.bannerButton_fb7f94 {
 		@include controls.button;
 		@include controls.icon-button;
 	}

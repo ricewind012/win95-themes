@@ -1,31 +1,31 @@
 @use "shared/controls";
 @use "shared/text";
 
-._0923f156a0410684-attachWrapper {
+.attachWrapper__0923f {
 	padding: 0;
 	margin-inline-end: var(--toolbar-spacing);
 
-	._0923f156a0410684-attachButton {
+	.attachButton__0923f {
 		--button-img: icon("plus", "mono");
 		@include controls.button;
 		@include controls.icon-button;
 	}
 }
 
-.f75fb00fb7356cbe-channelTextArea {
+.channelTextArea_f75fb0 {
 	--icon-button-width: var(--combobox-button-height);
 	--icon-button-height: var(--combobox-button-height);
 
 	margin-bottom: var(--toolbar-container-spacing);
 
-	._740174f3d6a2c8fe-stackedBars {
+	.stackedBars__74017 {
 		background-color: transparent;
 		border: none;
 	}
 }
 
 // Reply
-._841c8f861f7b2704-container {
+.container__841c8 {
 	gap: var(--toolbar-spacing);
 	margin-right: var(--toolbar-container-spacing);
 	margin-bottom: var(--toolbar-spacing);
@@ -33,13 +33,13 @@
 	flex-direction: row;
 	align-items: center;
 
-	.e876a81258d10c05-closeButton {
+	.closeButton_e876a8 {
 		--button-img: icon("clear");
 		@include controls.button;
 		@include controls.icon-button;
 	}
 
-	._841c8f861f7b2704-mentionButton {
+	.mentionButton__841c8 {
 		@include controls.checkbox($checked-sel: "&[aria-checked='true']");
 
 		font-size: 0;
@@ -57,24 +57,24 @@
 		}
 	}
 
-	._841c8f861f7b2704-name {
+	.name__841c8 {
 		color: inherit;
 	}
 
-	._841c8f861f7b2704-replyBar {
+	.replyBar__841c8 {
 		width: 100%;
 	}
 
-	._841c8f861f7b2704-replyLabel {
+	.replyLabel__841c8 {
 		@include text.link;
 	}
 
-	._841c8f861f7b2704-separator {
+	.separator__841c8 {
 		display: none;
 	}
 }
 
-.f75fb00fb7356cbe-form {
+.form_f75fb0 {
 	background-color: var(--color-button-face);
 	padding: 0;
 	padding-top: var(--toolbar-container-spacing);
@@ -85,34 +85,34 @@
 		display: none;
 	}
 
-	._24af7f4d0326ba4f-button {
-		&._24af7f4d0326ba4f-disabled {
+	.button__24af7 {
+		&.disabled__24af7 {
 			opacity: 1;
 		}
 
-		._24af7f4d0326ba4f-buttonWrapper {
+		.buttonWrapper__24af7 {
 			display: none;
 		}
 	}
 
-	.e6e74fd4d1221f53-button {
+	.button_e6e74f {
 		--button-img: icon("list");
 
 		min-height: unset;
 	}
 
-	.aa63abf63dbd9cce-buttonContainer {
+	.buttonContainer_aa63ab {
 		--button-img: icon("chat-bubble-alt");
 
 		margin-inline-start: var(--toolbar-spacing);
 	}
 
-	.aa63abf63dbd9cce-separator {
+	.separator_aa63ab {
 		display: none;
 	}
 }
 
-.b8880176888cc928-typing {
+.typing_b88801 {
 	color: var(--color-button-text);
 	font: var(--text-ui);
 	padding: 0;
@@ -127,16 +127,16 @@
 	);
 	height: unset;
 
-	.b216994de061a9e2-cooldownWrapper {
+	.cooldownWrapper_b21699 {
 		padding: 0;
 	}
 
-	.b8880176888cc928-ellipsis {
+	.ellipsis_b88801 {
 		display: none;
 	}
 
-	.b8880176888cc928-text,
-	.b8880176888cc928-typingDots {
+	.text_b88801,
+	.typingDots_b88801 {
 		margin: 0;
 	}
 }

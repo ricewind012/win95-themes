@@ -1,23 +1,23 @@
 @use "shared/controls";
 
-._5fa2fb5c4d963128-chevronButton {
+.chevronButton__5fa2f {
 	display: none;
 }
 
-._5fa2fb5c4d963128-comboBoxInputContainer {
+.comboBoxInputContainer__5fa2f {
 	padding: 0;
 }
 
-._5fa2fb5c4d963128-comboBoxInput {
+.comboBoxInput__5fa2f {
 	max-height: unset;
 	min-height: unset;
 }
 
-._5fa2fb5c4d963128-placeholder {
+.placeholder__5fa2f {
 	padding: 0;
 }
 
-._5fa2fb5c4d963128-selectButton {
+.selectButton__5fa2f {
 	@include controls.text-field;
 
 	min-height: unset;

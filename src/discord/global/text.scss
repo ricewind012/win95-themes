@@ -1,7 +1,7 @@
 @use "shared/text";
 @use "shared++/utils";
 
-.edefb8e22d63c542-anchor {
+.anchor_edefb8 {
 	@include utils.text-reset;
 	@include text.link;
 }
@@ -42,6 +42,6 @@
 }
 
 // mana text button
-._7a01bdafdcb0e727-text {
+.text__7a01b {
 	@include text.link;
 }

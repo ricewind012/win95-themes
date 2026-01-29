@@ -1,9 +1,9 @@
 @use "shared/controls";
 
-._5bc6a0adc149eda0-caret {
+.caret__5bc6a {
 	display: none;
 }
 
-._4e35b986167c457d-tooltip {
+.tooltip__4e35b {
 	@include controls.tooltip;
 }

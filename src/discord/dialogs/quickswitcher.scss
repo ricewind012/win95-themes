@@ -4,7 +4,7 @@
 @use "shared/window";
 @use "shared++/utils";
 
-._71961da99d37ac57-content {
+.content__71961 {
 	line-height: inherit;
 	gap: var(--text-spacing);
 	padding: 0;
@@ -12,13 +12,13 @@
 	height: 100%;
 	align-items: center;
 
-	._71961da99d37ac57-result > & {
+	.result__71961 > & {
 		display: grid;
 		grid-template-columns: var(--icon-size) repeat(2, 1fr);
 	}
 }
 
-._71961da99d37ac57-header {
+.header__71961 {
 	@include table.header-row;
 	@include utils.text-reset;
 
@@ -28,21 +28,21 @@
 	width: 100%;
 }
 
-.ac6cb02cd15b4b3b-input {
+.input_ac6cb0 {
 	@include controls.text-field;
 }
 
-.ac6cb02cd15b4b3b-miscContainer {
+.miscContainer_ac6cb0 {
 	opacity: 1;
 	color: var(--color-gray-text);
 	font: var(--text-ui);
 }
 
-.ac6cb02cd15b4b3b-protip {
+.protip_ac6cb0 {
 	display: none;
 }
 
-.ac6cb02cd15b4b3b-quickswitcher {
+.quickswitcher_ac6cb0 {
 	--icon-size: 20px;
 
 	border: none;
@@ -53,7 +53,7 @@
 	height: inherit;
 }
 
-._71961da99d37ac57-result {
+.result__71961 {
 	@include listbox.item($selected-sel: "&[aria-selected='true']");
 
 	font: var(--text-ui);
@@ -65,8 +65,8 @@
 		margin: 0;
 	}
 
-	._71961da99d37ac57-note,
-	._71961da99d37ac57-username {
+	.note__71961,
+	.username__71961 {
 		@include utils.parentheses;
 
 		opacity: 1;
@@ -76,7 +76,7 @@
 	}
 }
 
-.ac6cb02cd15b4b3b-scroller {
+.scroller_ac6cb0 {
 	@include window.content-container;
 	@include utils.move-scrollbar;
 

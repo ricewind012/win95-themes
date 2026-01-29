@@ -2,37 +2,37 @@
 @use "shared/window";
 @use "shared++/utils";
 
-.f369dba7416c67f0-container {
+.container_f369db {
 	@include window.content-container;
 }
 
-.f369dba7416c67f0-divider,
-.f369dba7416c67f0-tagList {
+.divider_f369db,
+.tagList_f369db {
 	display: none;
 }
 
-.d9be463a3c35b91e-formContainer {
-	.d9be463a3c35b91e-prefixElement {
+.formContainer_d9be46 {
+	.prefixElement_d9be46 {
 		display: none;
 	}
 
-	.d9be463a3c35b91e-titleContainer {
+	.titleContainer_d9be46 {
 		gap: var(--toolbar-spacing);
 	}
 
-	.a22cb0c66246f5d3-button:not(.a22cb0c66246f5d3-hasText) {
+	.button_a22cb0:not(.hasText_a22cb0) {
 		@include controls.button;
 		@include utils.use-attr-text("aria-label");
 	}
 }
 
-.f369dba7416c67f0-mainCard {
+.mainCard_f369db {
 	background-color: transparent;
 	border: none;
 }
 
-.f369dba7416c67f0-sortDropdown,
-.f369dba7416c67f0-tagsButton {
+.sortDropdown_f369db,
+.tagsButton_f369db {
 	@include controls.combobox-button;
 
 	text-align: start;
@@ -44,15 +44,15 @@
 	}
 }
 
-.f369dba7416c67f0-sortDropdownInner,
-.f369dba7416c67f0-tagsButtonInner {
+.sortDropdownInner_f369db,
+.tagsButtonInner_f369db {
 	color: inherit;
 	padding: 0;
 
 	justify-content: center;
 }
 
-.f369dba7416c67f0-tagsContainer {
+.tagsContainer_f369db {
 	gap: var(--toolbar-spacing);
 	padding: 0;
 	margin-left: calc(-24px + var(--toolbar-container-spacing));

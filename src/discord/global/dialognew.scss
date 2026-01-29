@@ -1,9 +1,9 @@
 @use "shared/window";
 
-._8a031a135bfcb9ba-actionBar {
+.actionBar__8a031 {
 	padding: var(--dialog-spacing);
 
-	.dbd2630aec71879b-stack {
+	.stack_dbd263 {
 		gap: var(--dialog-button-spacing);
 
 		justify-content: end;
@@ -15,48 +15,48 @@
 	}
 }
 
-._8a031a135bfcb9ba-body {
+.body__8a031 {
 	overflow: auto;
 }
 
-._8a031a135bfcb9ba-bodyInner {
+.bodyInner__8a031 {
 	padding: var(--dialog-spacing);
 }
 
 // ???
-._8a031a135bfcb9ba-bodySpacerBottom,
-._8a031a135bfcb9ba-bodySpacerTop {
+.bodySpacerBottom__8a031,
+.bodySpacerTop__8a031 {
 	display: none;
 }
 
-._8a031a135bfcb9ba-container {
+.container__8a031 {
 	@include window.container($child: true);
 
 	border: none;
 }
 
-._8a031a135bfcb9ba-header {
+.header__8a031 {
 	all: unset;
 
-	& > .dbd2630aec71879b-stack {
+	& > .stack_dbd263 {
 		gap: var(--dialog-spacing);
 	}
 }
 
-._8a031a135bfcb9ba-headerLayout {
+.headerLayout__8a031 {
 	@include window.titlebar($focused-sel: "&");
 }
 
-._8a031a135bfcb9ba-headerSubtitle {
+.headerSubtitle__8a031 {
 	color: inherit;
 	margin-inline: var(--dialog-spacing);
 }
 
-._8a031a135bfcb9ba-headerTitle {
+.headerTitle__8a031 {
 	color: inherit;
 }
 
-._8a031a135bfcb9ba-headerTrailing {
+.headerTrailing__8a031 {
 	margin: 0;
 
 	button {

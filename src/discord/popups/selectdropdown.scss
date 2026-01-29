@@ -1,10 +1,10 @@
 @use "shared/listbox";
 
-._2e223b71e11aa968-listBox {
+.listBox__2e223 {
 	padding: 0;
 }
 
-._2e223b71e11aa968-listBoxItemContent {
+.listBoxItemContent__2e223 {
 	@include listbox.item($selected-sel: "&:focus:not([aria-disabled])");
 
 	color: inherit;
@@ -12,12 +12,12 @@
 	min-height: unset;
 
 	// what? why?
-	&._2e223b71e11aa968-inInput {
+	&.inInput__2e223 {
 		padding: 0;
 	}
 
-	.ec77f26815e2ac33-iconAccessory,
-	.ec77f26815e2ac33-leading {
+	.iconAccessory_ec77f2,
+	.leading_ec77f2 {
 		padding: 0;
 		margin: 0;
 
@@ -26,18 +26,18 @@
 	}
 }
 
-._5fa2fb5c4d963128-selectDropdown {
+.selectDropdown__5fa2f {
 	@include listbox.container;
 
 	box-shadow: none;
 	margin-top: -4px;
 
-	.d125d22cdfd32cfe-content,
-	.d125d22cdfd32cfe-scrollerBase {
+	.content_d125d2,
+	.scrollerBase_d125d2 {
 		height: unset;
 	}
 }
 
-._2e223b71e11aa968-selectedIcon {
+.selectedIcon__2e223 {
 	display: none;
 }

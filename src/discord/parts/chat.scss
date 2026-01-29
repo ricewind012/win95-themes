@@ -1,7 +1,7 @@
 @use "shared/controls";
 @use "shared/window";
 
-._0f481cbbd7530492-barBase {
+.barBase__0f481 {
 	background-color: transparent;
 	border: none;
 	padding: 0;
@@ -24,13 +24,13 @@
 	}
 }
 
-._0f481cbbd7530492-barButtonBase {
+.barButtonBase__0f481 {
 	@include controls.button;
 
 	text-align: center;
 }
 
-.f75fb00fb7356cbe-chat {
+.chat_f75fb0 {
 	gap: var(--window-gap);
 	border: none;
 }
@@ -41,20 +41,20 @@
 	}
 }
 
-._36d072eab2b2e737-chatGradientBase {
+.chatGradientBase__36d07 {
 	display: none;
 }
 
-._36d072eab2b2e737-messagesWrapper {
+.messagesWrapper__36d07 {
 	@include window.content-container;
 
 	mask: none;
 
-	._36d072eab2b2e737-scroller {
+	.scroller__36d07 {
 		inset: var(--border-size);
 	}
 }
 
-._36d072eab2b2e737-scrollerSpacer {
+.scrollerSpacer__36d07 {
 	height: var(--space-16);
 }

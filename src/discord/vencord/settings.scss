@@ -13,7 +13,7 @@
 }
 
 // Plugin settings
-._49fc18ba07c5025f-content.vc-margin-bottom-16 > :not(:last-child) {
+.content__49fc1.vc-margin-bottom-16 > :not(:last-child) {
 	@include controls.groupbox;
 	@extend %-vencord-groupbox-header;
 
@@ -28,7 +28,7 @@
 
 // Remove all subheaders, as for groupboxes they have to be in the same parent,
 // which they aren't, and vencord has no localization, so very convenient here.
-._23e6b439306f125a-contentColumn:is([id^="vencord"], #vesktop-tab) {
+.contentColumn__23e6b:is([id^="vencord"], #vesktop-tab) {
 	--card-primary-bg: transparent;
 
 	& > section > :is(h1, h2, h3, h4, h5) {

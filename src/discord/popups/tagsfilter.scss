@@ -3,7 +3,7 @@
 @use "shared/window";
 @use "shared++/utils";
 
-._5808f3d86030cee1-container {
+.container__5808f {
 	@include window.container($child: true);
 
 	border: none;
@@ -12,7 +12,7 @@
 	display: flex;
 	flex-direction: column-reverse;
 
-	._7a01bdafdcb0e727-textButton {
+	.textButton__7a01b {
 		@include menu.item($selected-sel: "&.hack");
 
 		width: 100%;
@@ -25,17 +25,17 @@
 	}
 }
 
-._5808f3d86030cee1-header {
+.header__5808f {
 	display: none;
 }
 
-._5808f3d86030cee1-separator {
+.separator__5808f {
 	@include controls.separator;
 
 	margin-inline: 0;
 }
 
-._5808f3d86030cee1-tag {
+.tag__5808f {
 	@include menu.item($selected-sel: "&.hack");
 
 	background-color: transparent;
@@ -53,7 +53,7 @@
 	}
 }
 
-._5808f3d86030cee1-tagContainer {
+.tagContainer__5808f {
 	gap: 0;
 	padding: 0;
 

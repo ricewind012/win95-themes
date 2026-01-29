@@ -2,60 +2,60 @@
 @use "shared/window";
 @use "shared++/utils";
 
-.a7e67f4ddd7c6bb2-searchResultGroup {
+.searchResultGroup_a7e67f {
 	margin-block-end: 16px;
 
-	.a7e67f4ddd7c6bb2-channelNameContainer {
+	.channelNameContainer_a7e67f {
 		gap: var(--text-spacing);
 		margin-block-end: var(--text-spacing);
 	}
 
-	.a7e67f4ddd7c6bb2-channelNameIcon,
-	.a7e67f4ddd7c6bb2-parentChannelNameIcon {
+	.channelNameIcon_a7e67f,
+	.parentChannelNameIcon_a7e67f {
 		display: none;
 	}
 
-	.a7e67f4ddd7c6bb2-channelNameText {
+	.channelNameText_a7e67f {
 		color: var(--color-button-text);
 		font: inherit;
 		font-weight: bold;
 		text-decoration: underline;
 	}
 
-	.a7e67f4ddd7c6bb2-parentChannelNameText {
+	.parentChannelNameText_a7e67f {
 		@include utils.parentheses;
 	}
 }
 
-.c1521037ef09de7e-pageControlContainer {
+.pageControlContainer_c15210 {
 	&::before {
 		@include utils.pseudo-separator;
 	}
 
-	.c1521037ef09de7e-pageButton {
+	.pageButton_c15210 {
 		@include controls.button;
 		@include controls.icon-button($selected-sel: "&[aria-current='page']");
 
-		&.c1521037ef09de7e-endButton {
+		&.endButton_c15210 {
 			margin-inline: 4px;
 		}
 	}
 }
 
-.ae7890a1b8e75804-searchHeader {
+.searchHeader_ae7890 {
 	border: none;
 }
 
-.ae7890a1b8e75804-searchModeAndFiltersContainer {
+.searchModeAndFiltersContainer_ae7890 {
 	gap: 0;
 }
 
-._80bf8435713f6adb-container {
-	._80bf8435713f6adb-button {
+.container__80bf8 {
+	.button__80bf8 {
 		@include controls.button;
 	}
 
-	._80bf8435713f6adb-searchResult {
+	.searchResult__80bf8 {
 		@include window.content-container;
 
 		border: none;
@@ -63,10 +63,10 @@
 	}
 }
 
-.a98f3b020416ad54-searchResultsWrap {
+.searchResultsWrap_a98f3b {
 	border: none;
 
-	.a98f3b020416ad54-scroller {
+	.scroller_a98f3b {
 		padding: 16px;
 	}
 }

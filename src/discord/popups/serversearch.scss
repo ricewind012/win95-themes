@@ -1,13 +1,13 @@
 @use "shared/listbox";
 
-.b6544fb09f373e60-container {
+.container__16eb0 {
 	@include listbox.container;
 
 	padding: 0;
 
 	overflow: auto;
 
-	._44b0c28be7879b7b-wrapper {
+	.wrapper__44b0c {
 		position: absolute;
 		inset-inline-start: 0;
 	}
@@ -19,27 +19,27 @@
 	}
 }
 
-._8de16516b8d9f538-channelNameIcon,
-._8de16516b8d9f538-groupHeader,
-._8de16516b8d9f538-itemIcon:where(svg) {
+.channelNameIcon__971b5,
+.groupHeader__971b5,
+.itemIcon__971b5:where(svg) {
 	display: none;
 }
 
-._8de16516b8d9f538-divider {
+.divider__971b5 {
 	--border-subtle: currentColor;
 	margin: 0;
 }
 
-._8de16516b8d9f538-filterSublabelTextContainer,
-._8de16516b8d9f538-labelWithElements {
+.filterSublabelTextContainer__971b5,
+.labelWithElements__971b5 {
 	flex-grow: 1;
 }
 
-._8de16516b8d9f538-groupWrapper {
+.groupWrapper__971b5 {
 	gap: 0;
 }
 
-._8de16516b8d9f538-item {
+.item__971b5 {
 	--avatar-size: 20px;
 
 	padding: 0;
@@ -49,7 +49,7 @@
 	position: relative;
 	min-height: var(--avatar-size);
 
-	& > ._8de16516b8d9f538-labelWithElements,
+	& > .labelWithElements__971b5,
 	& > :not([class]) {
 		gap: var(--text-spacing);
 
@@ -64,6 +64,6 @@
 	}
 }
 
-._8de16516b8d9f538-itemContainer {
+.itemContainer__971b5 {
 	@include listbox.item($selected-sel: "&:active, &[aria-selected='true']");
 }
