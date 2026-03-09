@@ -1,52 +1,11 @@
 @use "shared/controls";
+@use "shared/generatedassets";
 @use "shared/listbox";
 @use "shared/tabs";
 @use "shared/text";
 @use "shared/window";
 @use "shared++/utils";
 @use "steam/shared";
-
-.ModalOverlayBackground {
-	display: none;
-}
-
-.ModalDialogPopup {
-	position: fixed;
-	inset: 0;
-}
-
-.ModalPosition {
-	background-image: none;
-
-	.PopupFullWindow > & {
-		height: calc(100% - var(--main-window-titlebar-height) - var(--window-gap));
-	}
-}
-
-.ModalPosition_Content {
-	@include utils.text-reset;
-
-	box-shadow: none;
-}
-
-.ModalPosition_Dismiss {
-	top: calc(var(--border-size) + var(--window-spacing) + 1px);
-	right: calc(var(--border-size) + var(--window-spacing) + 1px);
-
-	.closeButton {
-		@include controls.button;
-		@include window.titlebar-button;
-		@include window.titlebar-button-close;
-	}
-
-	svg {
-		display: none;
-	}
-}
-
-.ModalPosition_TopBar {
-	display: none;
-}
 
 :where(.DialogBody) {
 	@include tabs.content;
@@ -335,7 +294,140 @@
 	}
 }
 
+.ModalOverlayBackground {
+	display: none;
+}
+
+.ModalDialogPopup {
+	position: fixed;
+	inset: 0;
+}
+
+.ModalPosition {
+	background-image: none;
+
+	.PopupFullWindow > & {
+		height: calc(100% - var(--main-window-titlebar-height) - var(--window-gap));
+	}
+}
+
+.ModalPosition_Content {
+	@include utils.text-reset;
+
+	box-shadow: none;
+}
+
+.ModalPosition_Dismiss {
+	top: calc(var(--border-size) + var(--window-spacing) + 1px);
+	right: calc(var(--border-size) + var(--window-spacing) + 1px);
+
+	.closeButton {
+		@include controls.button;
+		@include window.titlebar-button;
+		@include window.titlebar-button-close;
+	}
+
+	svg {
+		display: none;
+	}
+}
+
+.ModalPosition_TopBar {
+	display: none;
+}
+
+.PopupFullWindow {
+	&:not(:only-child) {
+		@include shared.statusbar-alt;
+	}
+
+	&:only-child {
+		--statusbar-height: 0px;
+	}
+}
+
 .SettingsDialogSubHeader {
 	@include utils.text-reset;
 	@include utils.legend-as-div;
+}
+
+// Friends list
+.singleWindowFocusBar {
+	display: none;
+}
+
+.title-area {
+	@include window.titlebar($focused-sel: ".WindowFocus &");
+
+	position: unset;
+	min-height: var(--main-window-titlebar-height);
+	max-height: var(--main-window-titlebar-height);
+
+	html[browsertype="DirectHWND"] & {
+		display: none;
+	}
+
+	.WindowFocus & {
+		--color-inactive-caption-bg-start: var(--color-active-caption-bg-start);
+		--color-inactive-caption-bg-end: var(--color-active-caption-bg-end);
+		--color-inactive-caption-text: var(--color-active-caption-text);
+	}
+
+	&::before {
+		content: "";
+
+		width: var(--icon-size);
+		height: var(--icon-size);
+
+		background-color: currentColor;
+		mask: icon("steam");
+	}
+}
+
+// Used only in overlay browser ? (in theme also used in main window)
+.title-area-children {
+	@include window.titlebar-name;
+
+	font-size: var(--text-ui-size);
+	color: var(--color-inactive-caption-text);
+	text-align: start;
+	// Overlay browser
+	padding: 0;
+}
+
+:where(.title-area-icon) {
+	@include controls.button;
+	@include window.titlebar-button;
+
+	width: unset;
+
+	&.minimizeButton {
+		@include window.titlebar-button-minimize;
+	}
+
+	&.maximizeButton {
+		@include window.titlebar-button-maximize;
+	}
+
+	&.restoreButton {
+		@include window.titlebar-button-restore;
+	}
+
+	&.closeButton {
+		@include window.titlebar-button-close;
+	}
+}
+
+.title-area-icon-inner {
+	display: none;
+}
+
+.title-area-highlight {
+	display: none;
+}
+
+.window_resize_grip {
+	@include window.resize-handle;
+
+	opacity: 1;
 }

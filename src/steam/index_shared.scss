@@ -1,4 +1,5 @@
 @use "global" as *;
+@use "shared_dialog" as *;
 
 @use "friends/chat" as *;
 @use "friends/friendslist" as *;
@@ -13,9 +14,3 @@
 @use "friends/dialogs/global" as *;
 @use "friends/dialogs/groupinvite" as *;
 @use "friends/dialogs/groupsettings" as *;
-
-@use "shared/dialogshared" as *;
-@use "shared/resizehandle" as *;
-@use "shared/scrollbar" as *;
-@use "shared/throbber" as *;
-@use "shared/titlebar" as *;
