@@ -15,17 +15,68 @@
 	margin: 0;
 }
 
-#BetaAccessCodeRow {
-	gap: var(--label-spacing);
+#BetaHeaderRow {
+	@extend #BetaRow;
+
+	color: var(--color-gray-text);
+	font: var(--text-ui);
+	text-transform: none;
+	padding: 0;
 	margin: 0;
+	margin-block-start: 8px;
+
+	#BetaName {
+		color: inherit;
+	}
 }
 
 #BetaLabel {
-	color: inherit;
+	color: var(--color-button-text);
+	font-weight: bold;
 }
 
-#BetaLabel {
-	font: var(--text-header);
+#BetaLastUpdated {
+	margin: 0;
+
+	align-items: start;
+	justify-content: start;
+}
+
+#BetaName {
+	color: var(--color-button-text);
+	font: var(--text-ui);
+	margin: 0;
+
+	#DescText {
+		color: var(--color-gray-text);
+	}
+}
+
+#BetaRadioButton {
+	border: none;
+
+	align-items: start;
+	width: var(--sel-button-size);
+
+	input[type="radio"] {
+		@include controls.radio($checked-sel: "&:checked");
+	}
+}
+
+#BetaRow {
+	background: none;
+	gap: var(--label-spacing);
+
+	display: grid;
+	grid-template-columns: var(--sel-button-size) repeat(2, 1fr);
+}
+
+#BetasTable {
+	background: none;
+	font: var(--text-ui);
+	border: none;
+	box-shadow: none;
+	gap: var(--text-spacing);
 }
 
 #BlueHighlight {
