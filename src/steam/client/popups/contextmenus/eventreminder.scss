@@ -1,0 +1,56 @@
+@use "shared/controls";
+@use "shared/menu";
+@use "shared/window";
+
+#ReminderBackground {
+	@include window.container;
+}
+
+#ReminderCalendarOptions {
+	padding: 0;
+
+	flex-direction: column;
+
+	&::before {
+		content: "";
+
+		@include controls.separator;
+	}
+
+	#ReminderOption {
+		text-decoration: none;
+
+		text-align: start;
+	}
+}
+
+#ReminderDialog {
+	box-shadow: none;
+	padding: 0;
+}
+
+#ReminderOption {
+	@include menu.item($selected-sel: "&.hack");
+
+	background: transparent;
+	font: var(--text-ui);
+	margin: 0;
+
+	&:has(> #CheckboxWrapper > .DialogCheckbox_Container[aria-checked="true"]) {
+		@include menu.item-check;
+	}
+
+	.DialogCheckbox {
+		display: none;
+	}
+
+	.DialogCheckbox_Container,
+	.DialogToggle_Label {
+		margin: 0;
+	}
+}
+
+#ReminderOpennedOptions,
+#ReminderOptionsHeader {
+	display: none;
+}

@@ -1,0 +1,7 @@
+@use "shared/controls";
+
+#ImageBlocked {
+	@include controls.tooltip;
+
+	margin: 0;
+}

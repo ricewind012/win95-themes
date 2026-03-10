@@ -1,0 +1,17 @@
+@use "shared/controls";
+
+#ReminderCheckBox {
+	@include controls.combobox-button;
+
+	background-image: none;
+
+	#ReminderDefault {
+		all: unset;
+
+		flex-grow: 1;
+	}
+
+	#ReminderOptions {
+		display: none;
+	}
+}

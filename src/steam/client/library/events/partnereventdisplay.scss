@@ -24,7 +24,7 @@
 	color: inherit;
 	font: inherit;
 
-	a {
+	:where(& a) {
 		@include text.link;
 	}
 }

@@ -59,6 +59,23 @@
 	}
 }
 
+#EventTypeAndTimeRow {
+	flex-direction: column;
+	align-items: start;
+
+	&#WithReminder {
+		background: none;
+		gap: var(--text-spacing);
+		padding: 0;
+
+		#ReminderContainer {
+			margin: 0;
+
+			width: 100%;
+		}
+	}
+}
+
 #PartnerEvent {
 	@include shared.library_section;
 

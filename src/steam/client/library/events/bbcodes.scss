@@ -1,0 +1,20 @@
+#BlockQuote {
+	font: var(--text-ui);
+	border: 1px solid var(--color-gray-text);
+	margin: 0;
+}
+
+#Header1,
+#Header2,
+#Header3 {
+	color: inherit;
+}
+
+#Table {
+	font: var(--text-ui);
+}
+
+#TableCell,
+#TableRow {
+	border-color: var(--color-gray-text);
+}

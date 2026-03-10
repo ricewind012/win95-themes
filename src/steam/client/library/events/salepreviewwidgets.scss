@@ -1,0 +1,136 @@
+@use "shared/controls";
+
+#AppTag {
+	background: none;
+	font: var(--text-ui);
+	padding: 0;
+	margin: 0;
+
+	&:not(:last-child)::after {
+		content: ", ";
+
+		display: inline-block;
+
+		color: var(--color-gray-text);
+		text-decoration: none;
+		white-space: break-spaces;
+	}
+}
+
+#Banner {
+	box-shadow: none;
+}
+
+#BundleContentPreview {
+	#BundleTag {
+		background: lightblue;
+		color: black;
+	}
+
+	#ContentsCount {
+		font: var(--text-ui);
+		text-transform: none;
+		margin-block-end: var(--text-spacing);
+	}
+
+	#PreviewCtn {
+		background: none;
+		padding: 0;
+	}
+
+	#PreviewItem {
+		box-shadow: none;
+	}
+}
+
+#CapsulePlatform {
+	gap: var(--text-spacing);
+
+	height: var(--icon-size);
+
+	svg {
+		color: var(--color-button-text);
+	}
+}
+
+#StoreOriginalPrice {
+	color: var(--text-color-a33);
+	font: var(--text-ui);
+	letter-spacing: 0;
+	margin: 0;
+
+	&::before {
+		border-block-end: 2px solid currentColor;
+		box-shadow: none;
+	}
+}
+
+#StoreSaleDiscountBox {
+	background: var(--text-color);
+	color: white;
+}
+
+#StoreSalePriceBox {
+	color: inherit;
+	font: var(--text-ui);
+	text-shadow: none;
+}
+
+#StoreSalePriceWidgetContainer {
+	color: var(--text-color);
+
+	&#Discounted {
+		--text-color: light-dark(darkgreen, green);
+		--text-color-a33: color-mix(in srgb, currentColor 33%, transparent);
+
+		background: var(--text-color-a33);
+	}
+}
+
+#StoreSaleWidgetBgTint {
+	display: none;
+}
+
+#StoreSaleWidgetContainer {
+	background: var(--color-button-face);
+	box-shadow: none;
+}
+
+#StoreSaleWidgetRelease {
+	color: var(--color-gray-text);
+	font: var(--text-ui);
+	text-transform: none;
+}
+
+#StoreSaleWidgetTags {
+	margin-block: var(--text-spacing);
+
+	position: relative;
+	height: calc(2lh + 2px + 6px);
+
+	&::before {
+		content: "";
+
+		position: absolute;
+		inset-block-end: 0;
+		inset-inline: 0;
+
+		@include controls.separator;
+
+		margin: 0;
+	}
+}
+
+#StoreSaleWidgetTitle {
+	color: inherit;
+	font: var(--text-header);
+	margin: 0;
+}
+
+#TitleCtn {
+	display: block;
+}
+
+#WidgetReleaseDateAndPlatformCtn {
+	width: 100%;
+}

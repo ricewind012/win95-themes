@@ -1,0 +1,21 @@
+@use "shared/controls";
+
+#WishlistButton {
+	@include controls.button;
+
+	background-image: none;
+
+	display: flex;
+	position: absolute;
+	inset: unset;
+	inset-block-end: 12px;
+	inset-inline-start: 12px;
+
+	svg {
+		display: none;
+	}
+}
+
+#WishlistButtonText {
+	all: unset;
+}

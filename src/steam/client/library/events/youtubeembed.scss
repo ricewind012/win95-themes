@@ -1,0 +1,44 @@
+@use "shared/text";
+
+#DynamicLink_Author {
+	color: var(--color-gray-text);
+	font: var(--text-ui);
+}
+
+#DynamicLink_AuthorName {
+	color: var(--color-button-text);
+}
+
+// BRAIN
+#Dynamiclink_Content,
+#DynamicLink_Content {
+	color: var(--color-button-text);
+	font: var(--text-ui);
+	text-shadow: none;
+	margin-block: 6px;
+}
+
+#DynamicLink_Description {
+	color: var(--color-button-text);
+	padding: 0;
+}
+
+#DynamicLink_Name {
+	@include text.link;
+
+	font: var(--text-ui);
+	border: none;
+	margin-block-end: var(--text-spacing);
+}
+
+#DynamicLink_YoutubeViews {
+	color: var(--color-button-text);
+	padding: 0;
+}
+
+#DynamicLinkBox {
+	background: var(--color-button-face);
+	text-decoration: none;
+	padding: 0;
+	margin: 0;
+}
