@@ -1,0 +1,43 @@
+@use "shared/controls";
+
+#Body {
+	color: inherit;
+	font: var(--text-ui);
+	margin: 0;
+}
+
+#Heading {
+	font: var(--text-ui);
+	font-weight: bold;
+}
+
+#Icon {
+	--size: 32px;
+
+	background: var(--icon);
+	margin: 0;
+
+	width: var(--size);
+	height: var(--size);
+
+	* {
+		display: none;
+	}
+}
+
+#WarningBox {
+	@include controls.tooltip;
+
+	background-image: none;
+	gap: var(--messagebox-content-spacing);
+	margin-block: 12px 0;
+
+	&#Error {
+		--icon: icon("error-32");
+	}
+
+	&#Info,
+	&#Warning {
+		--icon: icon("warning-32");
+	}
+}

@@ -75,6 +75,26 @@
 	padding-bottom: var(--text-spacing);
 }
 
+// In gamerecordingwarning
+#ClearDiskSpaceButton {
+	padding-block-start: var(--text-spacing);
+}
+
+#ClearDiskSpaceRightColumn {
+	#Label {
+		color: inherit;
+		font: var(--text-ui);
+		font-weight: bold;
+		letter-spacing: 0;
+		text-transform: none;
+	}
+
+	#Value {
+		color: inherit;
+		font: var(--text-ui);
+	}
+}
+
 #FolderLink {
 	color: inherit;
 }
