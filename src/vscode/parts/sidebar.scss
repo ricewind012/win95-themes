@@ -105,5 +105,9 @@
 				@include utils.pseudo-separator;
 			}
 		}
+
+		& > .composite.debug-viewlet > .monaco-pane-view > .monaco-split-view2 {
+			height: calc(100% - var(--icon-button-height));
+		}
 	}
 }
