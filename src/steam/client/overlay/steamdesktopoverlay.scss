@@ -104,6 +104,18 @@
 
 	height: calc(100% - 19px);
 
+	&#FitToContent {
+		width: fit-content;
+		height: fit-content;
+	}
+
+	&.Settings {
+		.ModalPosition_Content > div {
+			margin-left: 0;
+			margin-top: 0;
+		}
+	}
+
 	&.TabbedPopupBrowser {
 		--dialog-spacing: 0px;
 
@@ -156,6 +168,7 @@
 	margin: calc(var(--dialog-spacing) * -1);
 	margin-bottom: var(--dialog-spacing);
 
+	width: calc(100% + var(--dialog-spacing));
 	height: unset;
 }
 
