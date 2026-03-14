@@ -60,24 +60,8 @@ $-groupbox-header-sel: ":is(h1, h2, h3, h4, h5, h6):first-child";
 	margin: 0;
 }
 
-.divider__44f7f {
+.divider__6131a {
 	display: none;
-}
-
-.fieldset__7fb92 {
-	@include controls.groupbox;
-
-	.description__7fb92 {
-		margin: 0;
-	}
-
-	.legend__7fb92 {
-		@include utils.legend-as-div;
-	}
-
-	.stack_dbd263 {
-		gap: var(--text-spacing);
-	}
 }
 
 // Make it a normal dialog

@@ -20,16 +20,16 @@
 	}
 }
 
-.container__3f21e {
+.switchIndicator_a28278 {
 	@include controls.checkbox(
-		$checked-sel: "&.checked__3f21e",
-		$disabled-sel: "&.disabled__3f21e"
+		$checked-sel:
+			"&:where([style*='rgb(88, 101, 242);'], [style*='rgb(68, 82, 187);'])",
+		$disabled-sel: "&[style*='opacity: 0.5;']"
 	);
 
 	opacity: 1;
-	border: none;
+}
 
-	.slider__3f21e {
-		display: none;
-	}
+.thumb_a28278 {
+	display: none;
 }

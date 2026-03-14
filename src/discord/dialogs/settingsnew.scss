@@ -3,6 +3,25 @@
 @use "shared/window";
 @use "shared++/utils";
 
+// Category
+.container__75920 {
+	padding: 0;
+	margin: 0;
+
+	.categories__6131a > & {
+		@include controls.groupbox;
+	}
+
+	.stack_dbd263 {
+		gap: var(--text-spacing);
+		padding: 0;
+	}
+
+	h1 {
+		@include utils.legend-as-div;
+	}
+}
+
 .content_e9e3ed {
 	background-color: var(--color-button-face);
 

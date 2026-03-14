@@ -1,34 +1,45 @@
 @use "shared/controls";
+@use "shared/text";
 
-.item__88a69 {
-	opacity: 1;
-	background-color: transparent;
-
-	&:not(:last-of-type) {
-		margin-bottom: var(--text-spacing);
-	}
-
-	[data-text-variant="text-sm/normal"] {
-		color: var(--color-gray-text);
-	}
-}
-
-.radioBar__88a69 {
-	border: none;
-	gap: var(--label-spacing);
+.group__64e61 {
+	gap: var(--text-spacing);
 	padding: 0;
 }
 
-.radioIndicator__88a69 {
-	display: none;
+.radioGroupOption__64e61 {
+	@include controls.radio(
+		$checked-sel: "&[data-selected='true']",
+		$disabled-sel: "&[data-disabled='true']"
+	);
+	@include text.input-label;
+
+	opacity: 1;
+
+	width: unset;
+	height: unset;
+
+	&:not([data-selected="true"])::before {
+		display: none;
+	}
+
+	&::before,
+	&::after {
+		content: "";
+	}
+
+	// Use as ::before for label spacing
+	&::after {
+		width: calc(
+			var(--sel-button-size) + var(--label-spacing) - var(--text-spacing)
+		);
+		order: -1;
+	}
+
+	& > .stack_dbd263 {
+		gap: inherit;
+	}
 }
 
-.radioIndicatorGroup__88a69 {
-	@include controls.radio(
-		$checked-sel: '.item__88a69[aria-checked="true"] &',
-		$disabled-sel: '.container__88a69[aria-disabled="true"] &'
-	);
-
-	order: -1;
-	align-self: start;
+.radioIndicator__64e61 {
+	display: none;
 }

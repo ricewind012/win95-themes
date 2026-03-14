@@ -284,7 +284,7 @@
 }
 
 @mixin radio($checked-sel, $disabled-sel: "&:disabled") {
-	@include -checkbox-radio-common($checked-sel);
+	@include -checkbox-radio-common($checked-sel, $disabled-sel);
 	@include generatedassets.radio;
 
 	--control-img: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0IDQiPjxzdHlsZT5yZWN0e2hlaWdodDoxcHh9PC9zdHlsZT48cmVjdCB4PSIxIiB3aWR0aD0iMiIvPjxyZWN0IHk9IjEiIHdpZHRoPSI0Ii8+PHJlY3QgeT0iMiIgd2lkdGg9IjQiLz48cmVjdCB4PSIxIiB5PSIzIiB3aWR0aD0iMiIvPjwvc3ZnPgo=");
