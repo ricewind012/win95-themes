@@ -11,6 +11,8 @@
 }
 
 #ImgSrc {
+	image-rendering: auto;
+
 	&#ImgBlur {
 		height: 100%;
 	}
@@ -22,4 +24,8 @@
 	#ImgContainer & {
 		mask: none;
 	}
+}
+
+#TitleLogo {
+	image-rendering: auto;
 }
