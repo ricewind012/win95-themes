@@ -13,10 +13,10 @@
 		"postcss-discard-empty": "^7.0.1",
 		"postcss-functions": "^4.0.2",
 		"postcss-scss": "^4.0.9",
-		"steam-theming-utils": "^3.3.1"
+		"steam-theming-utils": "^3.5.0"
 	},
 	"devDependencies": {
-		"@biomejs/biome": "^2.3.8",
+		"@biomejs/biome": "^2.4.7",
 		"semantic-release": "^24.2.9"
 	}
 }
