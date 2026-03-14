@@ -1,4 +1,5 @@
 @use "shared/controls";
+@use "shared++/utils";
 
 .vc-btn-base {
 	@include controls.button;
@@ -6,6 +7,18 @@
 	opacity: 1;
 
 	min-height: unset;
+}
+
+.vc-card-base {
+	@include controls.groupbox;
+
+	background: none;
+	gap: var(--text-spacing);
+
+	& > :where(h4, h5) {
+		@include utils.text-reset;
+		@include utils.legend-as-div;
+	}
 }
 
 .vc-divider {
@@ -55,5 +68,6 @@
 }
 
 .vc-text-base {
-	font: var(--text-ui);
+	color: inherit;
+	font: inherit;
 }

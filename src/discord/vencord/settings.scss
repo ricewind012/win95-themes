@@ -1,4 +1,5 @@
 @use "shared/controls";
+@use "shared/tabs";
 @use "shared/text";
 @use "shared++/utils";
 
@@ -12,62 +13,46 @@
 	}
 }
 
-// Plugin settings
-.content__49fc1.vc-margin-bottom-16 > :not(:last-child) {
-	@include controls.groupbox;
-	@extend %-vencord-groupbox-header;
-
-	&:nth-child(1) {
-		--header-text: "Description";
-	}
-
-	&:nth-child(2) > .vc-text-base {
-		@include utils.legend-as-div;
-	}
+.header__49fc1.vc-margin-bottom-8 {
+	font-weight: bold;
+	margin: 0;
 }
 
-// Remove all subheaders, as for groupboxes they have to be in the same parent,
-// which they aren't, and vencord has no localization, so very convenient here.
-.contentColumn__23e6b:is([id^="vencord"], #vesktop-tab) {
-	--card-primary-bg: transparent;
+.container__75920 {
+	&[data-nav-anchor-key^="vencord"] {
+		.categories__6131a > & {
+			box-shadow: none;
+			padding: 0;
+		}
 
-	& > section > :is(h1, h2, h3, h4, h5) {
-		display: none;
-	}
-}
+		// The next 2 first selectors are specials for the "Themes" tab
 
-#vencordthemes-tab {
-	&::before {
-		--pos: calc(var(--tabpanel-spacing) + var(--border-size));
+		// Remove all subheaders, as for groupboxes they have to be in the same
+		// parent, which they aren't, and vencord has no localization, so very
+		// convenient here.
+		.vc-settings-tab > [style] > section > :where(h4, h5),
+		.vc-settings-tab > section > :where(h4, h5) {
+			@include utils.legend-as-div;
+			@include utils.text-reset;
+		}
 
-		content: "";
-
-		position: absolute;
-		inset: var(--pos);
-		top: calc(var(--pos) + var(--tabs-height));
-		z-index: 1;
-
-		background-color: transparent;
-		box-shadow: var(--border-button-raised);
-
-		pointer-events: none;
-	}
-
-	& > section > section {
-		--header-text: "Local themes";
-
-		@include controls.groupbox;
-		@extend %-vencord-groupbox-header;
-
-		margin: calc(var(--border-size) + var(--tabpanel-spacing));
-
-		& > h5 {
+		// Headers outside of groupboxes
+		.vc-settings-tab > [style] > :where(h4, h5),
+		.vc-settings-tab > :where(h4, h5) {
 			display: none;
 		}
 	}
 
-	textarea {
-		height: unset;
+	&[data-nav-anchor-key="vencord_themes_custom"] {
+		.vc-settings-tab-bar + div > section {
+			&:has(> .vc-settings-theme-grid) {
+				--header-text: "Local themes";
+			}
+		}
+
+		textarea {
+			height: unset;
+		}
 	}
 }
 
@@ -81,6 +66,7 @@
 
 .vc-addon-card {
 	transform: none;
+	background: none;
 	border: none;
 	padding: 0;
 }
@@ -110,6 +96,10 @@
 	height: unset;
 }
 
+.vc-plugin-modal-description {
+	@extend %-vencord-groupbox-header;
+}
+
 .vc-plugins-filter-controls {
 	--header-text: "Filter";
 
@@ -125,7 +115,7 @@
 	@include controls.groupbox;
 	@extend %-vencord-groupbox-header;
 
-	gap: var(--text-spacing);
+	gap: 1rem;
 
 	&:last-child {
 		--header-text: "Required Plugins";
@@ -153,14 +143,11 @@
 }
 
 .vc-plugins-info-card {
-	@include controls.groupbox;
+	height: unset;
+}
 
-	gap: var(--text-spacing);
-
-	& > h4 {
-		@include utils.text-reset;
-		@include utils.legend-as-div;
-	}
+.vc-plugins-setting-description {
+	color: var(--color-gray-text);
 }
 
 .vc-plugins-setting-inline {
@@ -177,23 +164,12 @@
 	gap: var(--text-spacing);
 }
 
-.vc-settings-card {
-	@include controls.groupbox;
-
-	margin: calc(var(--border-size) + var(--tabpanel-spacing));
-
-	& > h5 {
-		@include utils.text-reset;
-		@include utils.legend-as-div;
-	}
-}
-
 .vcd-settings-category {
 	@include controls.groupbox;
 }
 
 .vcd-settings-category-content {
-	gap: var(--text-spacing);
+	gap: 0;
 }
 
 .vcd-settings-category-title {
@@ -201,10 +177,38 @@
 	@include utils.legend-as-div;
 }
 
+.vc-settings-modal-content {
+	& > section {
+		@include controls.groupbox;
+		@extend %-vencord-groupbox-header;
+
+		&:nth-child(1) {
+			--header-text: "Description";
+		}
+
+		&:nth-child(2) > .vc-text-base {
+			@include utils.legend-as-div;
+		}
+	}
+}
+
 .vc-settings-quickActions-card {
-	background-color: transparent;
-	border: none;
+	box-shadow: none;
+	gap: 0;
 	padding: 0;
+	margin: 0;
+
+	display: flex;
+	flex-direction: column;
+	width: 50%;
+
+	&:not(:nth-child(2):last-child)::after {
+		content: "";
+
+		@include controls.separator;
+
+		margin-block: 8px;
+	}
 }
 
 .vc-settings-quickActions-pill {
@@ -213,13 +217,24 @@
 	transform: none;
 }
 
+.vc-settings-tab {
+	& > section,
+	& > div > section {
+		@include controls.groupbox;
+		@extend %-vencord-groupbox-header;
+	}
+}
+
+.vc-settings-tab-bar + div {
+	@include tabs.content;
+}
+
 .vc-settings-theme-grid {
 	gap: var(--text-spacing);
 	margin-bottom: var(--text-spacing);
 }
 
-.vc-warning-card {
-	@include controls.tooltip;
-
-	margin: calc(var(--border-size) + var(--tabpanel-spacing));
+.vc-special-title {
+	@include utils.legend-as-div;
+	@include utils.text-reset;
 }

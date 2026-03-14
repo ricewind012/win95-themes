@@ -117,6 +117,7 @@
 
 @mixin checkbox-radio-inactive {
 	--color-to-change: var(--color-button-face);
+	--color-window-text: var(--color-gray-text);
 }
 
 @mixin combobox($disabled-sel: "&:disabled") {
