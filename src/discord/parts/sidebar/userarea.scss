@@ -25,6 +25,9 @@
 }
 
 .panels__5e434 {
+	// ::before is used by the separator, so move it to the avatar element
+	--text: attr(aria-label);
+
 	background-color: transparent;
 	border: none;
 
@@ -33,10 +36,7 @@
 	left: calc(var(--custom-guild-list-width) + var(--scrollbar-size));
 }
 
-.avatarWrapper__37e49 {
-	// ::before is used by the separator, so move it to the avatar element
-	--text: attr(aria-label);
-
+.accountPopoutButtonWrapper__37e49 {
 	@include controls.combobox-button($active-sel: "&[aria-expanded='true']");
 
 	.avatar__37e49 {
@@ -59,17 +59,19 @@
 	--icon-button-height: var(--combobox-button-height);
 	@include controls.icon-button;
 
-	width: unset;
+	&:not(.buttonChevron__5e764) {
+		width: unset;
+	}
 }
 
-.buttonChevron__37e49 {
+.buttonChevron__5e764 {
 	--button-img: icon("arrow-bottom", "mono");
 	--icon-button-width: 16px;
 
 	margin-inline-end: var(--toolbar-spacing);
 }
 
-.buttonChevronIcon__37e49 {
+.buttonChevronIcon__5e764 {
 	display: none;
 }
 
