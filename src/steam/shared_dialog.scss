@@ -243,9 +243,30 @@
 	@include utils.legend-as-div;
 }
 
+:where(.DialogToggle_Description) {
+	color: var(--color-gray-text);
+	font: var(--text-ui);
+	padding-block-start: var(--text-spacing);
+}
+
 .DialogToggle_Label {
 	font: var(--text-ui);
 	color: inherit;
+}
+
+:where(.DialogToggleField) {
+	background: none;
+	color: inherit;
+	gap: var(--label-spacing);
+	padding: 0;
+
+	flex-direction: row-reverse;
+	align-items: start;
+	justify-content: start;
+}
+
+:where(.DialogToggleField_NewUIContainer) {
+	height: unset;
 }
 
 ._DialogColLayout {

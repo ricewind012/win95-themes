@@ -1,0 +1,75 @@
+@use "shared/controls";
+
+#DialogLabelSoft {
+	color: var(--color-button-text);
+	font: var(--text-ui);
+	margin: 0;
+
+	&#WhatsNewHeaderText::after,
+	&:not(#WhatsNewHeaderText)::before {
+		content: "";
+
+		display: block;
+
+		@include controls.separator;
+	}
+}
+
+#WhatsNewGameListRow {
+	margin-block-end: var(--text-spacing);
+
+	align-items: center;
+
+	.DialogToggle_Description {
+		color: inherit;
+		padding: 0;
+		margin-inline-start: var(--text-spacing);
+	}
+}
+
+#WhatsNewGameListSection {
+	padding: 0;
+
+	overflow: auto;
+}
+
+#WhatsNewPriorityContainer {
+	background: none;
+	color: var(--color-button-text);
+	padding: 0;
+}
+
+#WhatsNewSettings {
+	overflow: auto;
+
+	// This has to be written in 2018 or so lol
+	& > [class="_DialogInputContainer"] {
+		@include controls.tooltip;
+	}
+
+	& > .DialogLabel:not(#WhatsNewHeaderText) {
+		font-weight: bold;
+		margin-block-end: var(--text-spacing);
+	}
+}
+
+#WhatsNewSettingsContainer {
+	background: none;
+}
+
+#WhatsNewSettingsContent {
+	padding: var(--dialog-spacing);
+}
+
+#WhatsNewSettingsUndoButton {
+	--button-img: icon("clear");
+
+	@include controls.button;
+	@include controls.icon-button;
+
+	order: -1;
+
+	svg {
+		display: none;
+	}
+}
