@@ -37,14 +37,12 @@
 		}
 	}
 
-	.checkbox__09aca {
+	.checkboxIndicator__714a9 {
+		display: none;
+	}
+
+	.checkboxOption__714a9[data-selected="true"] {
 		@include menu.item-check;
-
-		all: unset;
-
-		svg {
-			display: none;
-		}
 	}
 
 	.radioIndicatorGroup__88a69 {
