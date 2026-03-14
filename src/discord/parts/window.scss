@@ -65,6 +65,6 @@
 		);
 
 		left: var(--pos);
-		width: calc(100% - var(--pos) - var(--window-gap) * 2);
+		width: calc(100% - var(--pos));
 	}
 }

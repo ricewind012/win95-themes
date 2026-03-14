@@ -35,6 +35,14 @@
 	border: none;
 }
 
+// Member list
+.container_c8ffbb {
+	@include window.content-container;
+
+	border: none;
+	margin-inline-start: var(--window-gap);
+}
+
 [data-list-id="chat-messages"] {
 	& > [role="separator"] {
 		margin: 8px 16px;
