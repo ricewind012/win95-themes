@@ -25,6 +25,10 @@
 	gap: 0;
 	padding: 0;
 
+	.note_eb110a {
+		margin: 0;
+	}
+
 	.role_dfa8b6 {
 		@include window.statusbar-item;
 
@@ -43,7 +47,12 @@
 }
 
 .outer_c0bea0 {
-	@include window.container($child: true);
+	background: none;
+	border: none;
+
+	&:where(.user-profile-popout) {
+		@include window.container($child: true);
+	}
 }
 
 .userTag__63ed3 {
