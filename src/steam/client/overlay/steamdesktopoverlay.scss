@@ -1,70 +1,8 @@
 @use "shared/controls";
 @use "shared/text";
+@use "shared/window";
 @use "shared++/utils";
 @use "steam/shared";
-
-// GAME OVERVIEW START (here in preparation for beta restructure)
-// TODO: clearly this needs a better icon
-#DragHandle {
-	padding: 0;
-}
-
-#GameOverview {
-	background: none;
-	padding: 0;
-
-	// TODO: does this ever need scrolling ?
-	overflow: visible;
-}
-
-#GameOverviewSection {
-	@include controls.groupbox;
-
-	background-color: transparent;
-}
-
-#GameOverviewSectionChildren {
-	padding: 0;
-}
-
-#GameOverviewSectionHeader {
-	@include utils.text-reset;
-	@include utils.legend-as-div;
-
-	background-color: transparent;
-
-	svg {
-		color: inherit;
-		margin: 0;
-	}
-}
-
-#GameOverviewSectionTitle {
-	gap: var(--text-spacing);
-}
-
-#GuideListItem {
-	background-color: transparent;
-	color: inherit;
-	padding: 0;
-	margin-top: var(--text-spacing);
-}
-
-#GuideTitle {
-	@include utils.text-reset;
-	@include text.link;
-}
-
-#OverviewTitle {
-	@include shared.dialog-title;
-}
-
-#Playtime {
-	@include utils.text-reset;
-
-	gap: var(--text-spacing);
-}
-// END
 
 #BackToGame {
 	gap: var(--text-spacing);
@@ -102,11 +40,15 @@
 	background: none;
 	padding: var(--dialog-spacing);
 
-	height: calc(100% - 19px);
+	height: calc(100% - var(--titlebar-height));
 
 	&#FitToContent {
 		width: fit-content;
 		height: fit-content;
+
+		#WindowControls {
+			width: calc(100% + var(--dialog-spacing));
+		}
 	}
 
 	&.Settings {
@@ -168,7 +110,6 @@
 	margin: calc(var(--dialog-spacing) * -1);
 	margin-bottom: var(--dialog-spacing);
 
-	width: calc(100% + var(--dialog-spacing));
 	height: unset;
 }
 
@@ -182,3 +123,96 @@
 		padding: 0;
 	}
 }
+
+// #region Game Overview
+#GameOverview {
+	--dialog-offset: calc(
+		var(--main-window-border-spacing) + var(--dialog-spacing)
+	);
+	--inset-inline: var(--dialog-offset);
+	--inset-block-start: calc(
+		var(--dialog-offset) + var(--main-window-titlebar-height)
+	);
+	--inset-block-end: calc(var(--dialog-offset) + var(--statusbar-height));
+	--inset: var(--inset-block-start) var(--inset-inline) var(--inset-block-end)
+		var(--inset-inline);
+
+	@include utils.content-container-alt;
+
+	background-image: none;
+	padding: 0;
+
+	#GuideListItem {
+		background-color: transparent;
+		color: inherit;
+		padding: 0;
+		margin-block-start: var(--text-spacing);
+	}
+
+	#GuideTitle {
+		@include utils.text-reset;
+		@include text.link;
+	}
+
+	#Playtime {
+		@include utils.text-reset;
+
+		gap: var(--text-spacing);
+		padding: 0;
+		margin: 0;
+	}
+
+	#RecentNewsItem {
+		background: none;
+		color: var(--color-window-text);
+		font: var(--text-ui);
+		padding: 0;
+		margin-block-start: var(--text-spacing);
+
+		#EventDetailTitle {
+			@include text.link;
+		}
+	}
+
+	#Screenshot {
+		margin: 0;
+	}
+}
+
+#GameOverviewSection {
+	@include shared.library_section;
+
+	background: none;
+	margin: 0;
+
+	position: relative;
+}
+
+#GameOverviewSectionChildren {
+	@include shared.library_section-content;
+}
+
+#GameOverviewSectionHeader {
+	@include shared.library_section-header;
+	@include utils.text-reset;
+
+	#DragHandle {
+		@include shared.library_drag-handle;
+
+		padding: 0;
+		margin: 0;
+	}
+
+	& > svg {
+		display: none;
+	}
+}
+
+#OverviewTitle {
+	@include shared.dialog-title;
+
+	margin: 0;
+
+	z-index: 2;
+}
+// #endregion
