@@ -94,4 +94,9 @@
 	@include utils.parentheses;
 
 	color: var(--color-gray-text);
+
+	#AccountMenu:active & {
+		color: transparent;
+		text-shadow: 1px 1px var(--color-gray-text);
+	}
 }
