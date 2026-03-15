@@ -570,6 +570,7 @@ moz-radio {
 }
 #input.toggle-button :disabled, #input.toggle-button:active {
   --color-to-change: var(--color-button-face) !important;
+  --color-window-text: var(--color-gray-text) !important;
 }
 #input[type=checkbox] {
   --color-to-change: var(--color-window) !important;
@@ -598,6 +599,7 @@ moz-radio {
 }
 #input[type=checkbox] :disabled, #input[type=checkbox]:active {
   --color-to-change: var(--color-button-face) !important;
+  --color-window-text: var(--color-gray-text) !important;
 }
 #input[type=radio] {
   --color-to-change: var(--color-window) !important;
@@ -627,6 +629,7 @@ moz-radio {
 }
 #input[type=radio]:disabled, #input[type=radio]:active {
   --color-to-change: var(--color-button-face) !important;
+  --color-window-text: var(--color-gray-text) !important;
 }
 #input[type=search] {
   appearance: none !important;
@@ -696,6 +699,7 @@ checkbox:not([hidden]) {
 }
 .checkbox-check[disabled], .checkbox-check:active {
   --color-to-change: var(--color-button-face) !important;
+  --color-window-text: var(--color-gray-text) !important;
 }
 .checkbox-check[checked] {
   list-style-image: var(--icon-mono-checkmark) !important;

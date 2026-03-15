@@ -1326,6 +1326,9 @@ body {
   margin-bottom: 4px !important;
   display: block !important;
 }
+.sidebar > .content > .composite.debug-viewlet > .monaco-pane-view > .monaco-split-view2 {
+  height: calc(100% - var(--icon-button-height)) !important;
+}
 
 .statusbar {
   gap: 2px !important;
@@ -2983,6 +2986,7 @@ div.monaco-menu .monaco-action-bar.vertical .action-label.separator {
 }
 .monaco-checkbox :disabled, .monaco-checkbox:active {
   --color-to-change: var(--color-button-face) !important;
+  --color-window-text: var(--color-gray-text) !important;
 }
 .monaco-custom-toggle:not(.monaco-checkbox) {
   appearance: none !important;
@@ -3507,6 +3511,7 @@ div.monaco-menu .monaco-action-bar.vertical .action-label.separator {
 }
 .monaco-workbench .settings-editor > .settings-body .settings-tree-container .setting-item-bool .setting-value-checkbox :disabled, .monaco-workbench .settings-editor > .settings-body .settings-tree-container .setting-item-bool .setting-value-checkbox:active {
   --color-to-change: var(--color-button-face) !important;
+  --color-window-text: var(--color-gray-text) !important;
 }
 
 .codicon-arrow-left {

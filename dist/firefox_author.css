@@ -495,7 +495,7 @@ toolbarspring {
   outline-offset: calc(var(--button-spacing) * -1) !important;
   box-shadow: var(--border-button-focused) !important;
 }
-#pinned-tabs-container[orient=vertical] .tabbrowser-tab :where([selected], [multiselected]) {
+#pinned-tabs-container[orient=vertical] .tabbrowser-tab:where([selected], [multiselected]) {
   color: transparent !important;
   text-shadow: 1px 1px var(--color-button-text) !important;
   box-shadow: var(--border-button-sunken) !important;
@@ -804,6 +804,10 @@ toolbarspring {
   background: var(--button-img) no-repeat !important;
   background-position: var(--button-img-pos, center) !important;
   background-size: var(--button-img-size, auto) !important;
+}
+
+#tabbrowser-tabs:not([overflow]) #vertical-tabs-newtab-button {
+  margin: 0 !important;
 }
 
 /* The *actual* listbox, not a dropdown
@@ -1365,6 +1369,10 @@ panel toolbarseparator::before {
   margin: 0 !important;
 }
 
+.tab-preview-content-main {
+  padding: 0 !important;
+}
+
 .tab-preview-note-container {
   margin: 0 !important;
 }
@@ -1387,7 +1395,7 @@ panel toolbarseparator::before {
 }
 
 .tab-preview-text-container {
-  padding: 0 !important;
+  margin: 0 !important;
 }
 
 .tab-preview-thumbnail-container {
