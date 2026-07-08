@@ -28,8 +28,8 @@ if [ "$1" = steam ]; then
 	# Remove if file already exists for the "release" script
 	[ -f "$file" ] && rm "$file"
 	# .5s shaven off
-	npx postcss "$SRC_DIR/$1/index_shared.scss" --output "$dir.css"
-	npx postcss "$SRC_DIR/$1/client/**/*.scss" \
+	bunx postcss "$SRC_DIR/$1/index_shared.scss" --output "$dir.css"
+	bunx postcss "$SRC_DIR/$1/client/**/*.scss" \
 		--base "$SRC_DIR" \
 		--dir "$DIST_DIR" \
 		--ext css
@@ -41,12 +41,12 @@ fi
 mkdir -p "$DIST_DIR"
 # Firefox has its separate index file for the browser UI and web content already
 if [ "$1" = firefox ]; then
-	npx postcss "$SRC_DIR/firefox/index_$2.scss" \
+	bunx postcss "$SRC_DIR/firefox/index_$2.scss" \
 		--output "$DIST_DIR/firefox_$2.css"
 else
 	index=$SRC_DIR/$1/index.scss
 
 	generate_index "$1" > "$index"
-	npx prettier -w "$index" > /dev/null
-	npx postcss "$index" --output "$DIST_DIR/$1.css"
+	bunx prettier -w "$index" > /dev/null
+	bunx postcss "$index" --output "$DIST_DIR/$1.css"
 fi

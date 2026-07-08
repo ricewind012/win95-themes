@@ -14,8 +14,8 @@ Click a link for the installation guide, preview, etc.
 ## Building
 
 ```sh
-$ npm i
-$ npm run build steam # discord/steam/vscode
+$ bun i
+$ bun run build steam # discord/steam/vscode
 # for firefox specifically:
-$ npm run build firefox agent/author/global
+$ bun run build firefox agent/author/global
 ```
