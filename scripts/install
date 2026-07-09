@@ -1,0 +1,130 @@
+#!/bin/sh -e
+
+install_discord() {
+	ln -s "$theme_path/dist/discord.css" "$XDG_CONFIG_HOME/vesktop/themes"
+}
+
+install_firefox() {
+	prompt 'Path to Firefox profile'
+	chrome_path=$REPLY/chrome
+
+	mkdir -p "$chrome_path"
+	rm "$chrome_path/CSS/"*
+	ln -s "$theme_path/src/firefox/win95_main.uc.mjs" "$chrome_path/JS"
+	ln -s "$theme_path/dist/firefox_global.css" "$chrome_path/CSS/firefox_global.uc.css"
+	ln -s "$theme_path/dist/firefox_agent.css" "$chrome_path/CSS/win95_agent.uc.css"
+	ln -s "$theme_path/dist/firefox_author.css" "$chrome_path/CSS/win95_author.uc.css"
+	ln -s "$theme_path/dist/firefox_author.css" "$chrome_path/userChrome.css"
+	ln -s "$theme_path/dist/firefox_content.css" "$chrome_path/userContent.css"
+}
+
+install_steam() {
+	printf 'Install Millennium for Steam and install the theme like usual.\n'
+	exit
+}
+
+install_vscode() {
+	# TODO: Microsoft build doesn't use "Code - OSS"
+	vscode_path=${VSCODE_PORTABLE:-$XDG_CONFIG_HOME/Code - OSS}
+	settings_path=$vscode_path/user-data/User/settings.json
+
+	# TODO: Download the VSIX in case of not using the proprietary build
+	# actually, curl doesn't work XDDDD
+	code --install-extension RimuruChan.vscode-fix-checksums-next
+	code --install-extension subframe7536.custom-ui-style
+
+	yn n "Overwrite ${settings_path##*/} with the theme's settings"
+	if [ "$REPLY" = y ]; then
+		cat <<EOF > "$settings_path"
+{
+	"custom-ui-style.external.imports": [
+		"file://$theme_path/dist/vscode.css",
+		"file://$theme_path/src/shared++/ElementUtils.js",
+		"file://$theme_path/src/vscode/vscode.js",
+	],
+
+	"editor.scrollbar.arrowSize": 16,
+	"editor.scrollbar.vertical": "visible",
+	"editor.scrollbar.verticalHasArrows": true,
+	"editor.scrollbar.horizontalHasArrows": true,
+
+	"terminal.integrated.cursorStyle": "underline",
+	"terminal.integrated.fontFamily": "MS Gothic",
+	"terminal.integrated.fontSize": 12,
+
+	"window.titleBarStyle": "native",
+	"window.dialogStyle": "custom",
+	"window.menuStyle": "custom",
+
+	"breadcrumbs.enabled": false,
+	"explorer.compactFolders": false,
+	"editor.roundedSelection": false,
+	"workbench.editor.tabSizing": "shrink",
+	"workbench.editor.wrapTabs": true,
+}
+EOF
+	fi
+}
+
+prompt() {
+	while [ -z "$REPLY" ]; do
+		printf '%s: ' "$1"
+		read -r REPLY
+	done
+}
+
+yn() {
+	case $1 in
+		y) yn='[Y/n]' ;;
+		n) yn='[y/N]' ;;
+	esac
+
+	printf '%s? %s ' "$2" "$yn"
+	stty -icanon
+	REPLY=$(dd ibs=1 count=1 2>/dev/null)
+	: "${REPLY:=$1}"
+	stty icanon
+	printf '\n'
+}
+
+log() {
+	printf "$@" >&2
+}
+
+die() {
+	log '%s\n' "$1"
+	exit 1
+}
+
+help() {
+	log 'Usage: %s [%s] PROGRAM
+
+Where "%s":
+  -h Display this message
+  -p Apply patches to the program if any
+' "${0##*/}" "$prog_opts" "$prog_opts"
+	exit 2
+}
+
+main() {
+	cd -P -- "${0%/*}"
+
+	: "${XDG_CONFIG_HOME:=$HOME/.config}"
+	prog_opts=hp
+	theme_path=${PWD%/*}
+
+	[ "$#" -eq 0 ] && help
+	while getopts "$prog_opts" opt; do case $opt in
+		p) patch=1 ;;
+		[h?]) help ;;
+	esac; done
+	shift "$(( OPTIND - 1 ))"
+
+	[ "$patch" ] && ./patch "$1"
+	if install_$1; then
+		log 'Theme for %s is installed.\n' "$1"
+		log 'Some things may still require doing it manually, see docs/%s.md\n' "$1"
+	fi
+}
+
+main "$@"
