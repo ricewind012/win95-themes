@@ -6,14 +6,14 @@ $-input-height: round(
 	1px
 );
 
+// why
+.searchmode-switcher,
 // Made obsolete by the browser.urlbar.trimURLs pref
 #identity-box,
 // All of these are available through other means
 #page-action-buttons,
 // You use ublock origin, right ?
-#trust-icon-container,
-// TODO: made obsolete with the above ?
-#tracking-protection-icon-container {
+#trust-icon-container {
 	display: none;
 }
 
@@ -26,7 +26,7 @@ $-input-height: round(
 
 #urlbar-container {
 	--urlbar-container-height: #{$-input-height};
-	--urlbar-container-padding: 0px;
+	--urlbar-container-padding-block: 0px;
 	--urlbar-margin-inline: 0px;
 	--urlbar-padding-block: 0px;
 }
@@ -40,6 +40,7 @@ $-input-height: round(
 }
 
 .urlbar-input {
+	line-height: 1;
 	mask: none;
 }
 
@@ -62,8 +63,8 @@ $-input-height: round(
 
 	--urlbarView-results-padding: 0px;
 	--urlbarView-row-gutter: 0px;
-	--urlbarView-item-inline-padding: 0px;
-	--urlbarView-item-block-padding: 0px;
+	--urlbarview-row-padding-block: 0px;
+	--urlbarView-row-padding-inline: 0px;
 
 	margin: 0;
 
@@ -74,12 +75,17 @@ $-input-height: round(
 	}
 }
 
+.urlbarView-background,
+.urlbarView-group-aria-label {
+	display: none;
+}
+
 .urlbarView-body-inner {
 	border: none;
 }
 
-.urlbarView-group-aria-label {
-	display: none;
+.urlbarView-results {
+	border: none;
 }
 
 .urlbarView-row {
