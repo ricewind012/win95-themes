@@ -1,0 +1,58 @@
+@use "shared/window";
+
+.modal-editor-action-container {
+	margin-inline-start: auto;
+}
+
+.modal-editor-action-separator {
+	inline-size: 0;
+	margin-inline: calc(var(--titlebar-spacing) / 2);
+}
+
+.modal-editor-header {
+	@include window.titlebar($focused-sel: "&");
+
+	border: none;
+	min-block-size: unset;
+
+	// !important (theme)
+	.action-item:not([aria-haspopup])
+		> .action-label:where(:not(.separator), [aria-expanded]) {
+		@include window.titlebar-button;
+
+		&.codicon-open-in-product {
+			display: none;
+		}
+	}
+
+	.monaco-icon-label {
+		@include window.titlebar-name;
+
+		&::before {
+			display: none;
+		}
+	}
+}
+
+.modal-editor-part {
+	border: none;
+}
+
+.modal-editor-title {
+	color: inherit;
+	font: inherit;
+}
+
+.monaco-modal-editor-block {
+	background: none;
+
+	.content {
+		width: 100%;
+		height: 100%;
+	}
+
+	.editor-container {
+		width: 100%;
+		height: 100%;
+	}
+}

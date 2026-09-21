@@ -140,6 +140,15 @@
 	--vscode-notifications-background: var(--color-button-face);
 	--vscode-notifications-foreground: var(--color-button-text);
 
+	// Shadows
+	--vscode-shadow-sm: 0 0 0 0 transparent;
+	--vscode-shadow-md: 0 0 0 0 transparent;
+	--vscode-shadow-lg: 0 0 0 0 transparent;
+	--vscode-shadow-xl: 0 0 0 0 transparent;
+	--vscode-shadow-active-tab: 0 0 0 0 transparent;
+	--vscode-shadow-depth-x: 0 0 0 0 transparent;
+	--vscode-shadow-depth-y: 0 0 0 0 transparent;
+
 	// Other
 	--vscode-focusBorder: transparent;
 	--vscode-textCodeBlock-background: color-mix(

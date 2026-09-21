@@ -13,3 +13,10 @@
 		z-index: auto;
 	}
 }
+
+.part.editor {
+	// Shadows
+	&::after {
+		display: none;
+	}
+}

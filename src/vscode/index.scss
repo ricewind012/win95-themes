@@ -2,31 +2,6 @@
 
 @use "global" as global;
 
-@use "parts/editor" as parts-editor;
-@use "parts/menubar" as parts-menubar;
-@use "parts/panel" as parts-panel;
-@use "parts/search" as parts-search;
-@use "parts/sidebar" as parts-sidebar;
-@use "parts/statusbar" as parts-statusbar;
-@use "parts/titlebar" as parts-titlebar;
-
-@use "parts/sidebar/extensions" as parts-sidebar-extensions;
-@use "parts/sidebar/search" as parts-sidebar-search;
-@use "parts/sidebar/sourcecontrol" as parts-sidebar-sourcecontrol;
-
-@use "extensions/shalldie.background" as extensions-shalldie-background;
-
-@use "popup/dialog" as popup-dialog;
-@use "popup/find" as popup-find;
-@use "popup/menu" as popup-menu;
-@use "popup/notification" as popup-notification;
-@use "popup/peek" as popup-peek;
-@use "popup/quickinput" as popup-quickinput;
-@use "popup/rename" as popup-rename;
-@use "popup/select" as popup-select;
-@use "popup/suggest" as popup-suggest;
-@use "popup/tooltip" as popup-tooltip;
-
 @use "pages/extensions" as pages-extensions;
 @use "pages/gettingstarted" as pages-gettingstarted;
 @use "pages/settings" as pages-settings;
@@ -39,3 +14,29 @@
 @use "global/tree" as global-tree;
 @use "global/variables" as global-variables;
 @use "global/window" as global-window;
+
+@use "popup/dialog" as popup-dialog;
+@use "popup/find" as popup-find;
+@use "popup/menu" as popup-menu;
+@use "popup/modaleditor" as popup-modaleditor;
+@use "popup/notification" as popup-notification;
+@use "popup/peek" as popup-peek;
+@use "popup/quickinput" as popup-quickinput;
+@use "popup/rename" as popup-rename;
+@use "popup/select" as popup-select;
+@use "popup/suggest" as popup-suggest;
+@use "popup/tooltip" as popup-tooltip;
+
+@use "extensions/shalldie.background" as extensions-shalldie-background;
+
+@use "parts/editor" as parts-editor;
+@use "parts/menubar" as parts-menubar;
+@use "parts/panel" as parts-panel;
+@use "parts/search" as parts-search;
+@use "parts/sidebar" as parts-sidebar;
+@use "parts/statusbar" as parts-statusbar;
+@use "parts/titlebar" as parts-titlebar;
+
+@use "parts/sidebar/extensions" as parts-sidebar-extensions;
+@use "parts/sidebar/search" as parts-sidebar-search;
+@use "parts/sidebar/sourcecontrol" as parts-sidebar-sourcecontrol;
