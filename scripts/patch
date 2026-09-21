@@ -7,12 +7,17 @@ import process from "node:process";
 const THEME_ITEM_HEIGHT = 16;
 const VSCODE_ITEM_HEIGHT = 22;
 
+const vscodeDir = [
+	"/usr/lib/code", // OSS
+	"/usr/share/code/resources/app", // Proprietary
+].find((e) => fs.existsSync(e));
+
 const prog = process.argv[2];
 let file = "";
 let patches = [];
 switch (prog) {
 	case "vscode":
-		file = "/usr/lib/code/out/vs/workbench/workbench.desktop.main.js";
+		file = path.join(vscodeDir, "out/vs/workbench/workbench.desktop.main.js");
 		patches = [
 			// I. List item height
 			[
