@@ -36,7 +36,7 @@
 		div.monaco-workbench
 			.part.editor
 			> .content
-			.editor-group-container.active
+			.editor-group-container:is(.active, .inactive)
 			> .title
 			.tabs-container
 			> &:hover {
@@ -46,7 +46,7 @@
 
 	&.dirty:hover,
 	&:not(.dirty) {
-		.codicon-close::before {
+		.codicon-close-small::before {
 			content: "";
 
 			width: 8px;

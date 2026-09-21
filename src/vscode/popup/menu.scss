@@ -3,8 +3,6 @@
 @use "shared/window";
 
 [role="menu"] {
-	@include window.container($child: true);
-
 	[role^="menuitem"] {
 		// Not actually needed, as vscode does it already, but $selected-sel is
 		// required
@@ -34,6 +32,9 @@
 }
 
 .monaco-menu {
+	@include window.container($child: true);
+
+	border: none;
 	font: var(--text-ui);
 
 	.action-label,

@@ -17,6 +17,10 @@
 	top: calc(var(--menubar-height) + 5px + var(--window-gap));
 	height: unset;
 
+	&.inactive > * {
+		opacity: 1;
+	}
+
 	&::after {
 		@include utils.pseudo-separator;
 

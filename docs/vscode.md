@@ -1,6 +1,6 @@
 # Visual Studio Code
 
-Last tested version is [1.106](https://code.visualstudio.com/updates/v1_106)!
+Last tested version is [1.138](https://code.visualstudio.com/updates/v1_106)!
 
 ## Usage
 
