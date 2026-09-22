@@ -60,12 +60,16 @@ $-input-height: round(
 }
 
 .urlbarView {
-	--urlbarView-small-font-size: 1em;
-
+	--urlbarView-icon-margin-start: 0px;
+	--urlbarView-icon-margin-end: 8px;
+	--urlbarView-padding: 0px;
 	--urlbarView-results-padding: 0px;
 	--urlbarView-row-gutter: 0px;
-	--urlbarview-row-padding-block: 0px;
 	--urlbarView-row-padding-inline: 0px;
+	--urlbarView-small-font-size: 1em;
+
+	// tokens
+	--urlbarview-row-padding-block: 0px;
 
 	margin: 0;
 
@@ -90,24 +94,20 @@ $-input-height: round(
 }
 
 .urlbarView-row {
+	min-height: unset;
+}
+
+.urlbarView-row-inner {
 	@include listbox.item($selected-sel: "&[selected]");
 
 	min-height: unset;
 
-	&:hover {
-		.urlbarView-url {
-			color: inherit;
-		}
-	}
-}
-
-.urlbarView-row-inner {
-	display: grid;
-	grid-template-columns: repeat(2, 50%);
-	min-height: unset;
-
 	.urlbarView-row[has-url]:not([type$="tab"]) > & > .urlbarView-no-wrap {
 		max-width: unset;
+	}
+
+	&:hover {
+		--link-color: currentColor;
 	}
 }
 
