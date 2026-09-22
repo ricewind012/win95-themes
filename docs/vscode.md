@@ -9,6 +9,35 @@ Last tested version is [1.138](https://code.visualstudio.com/updates/v1_106)!
 
 ```jsonc
 "custom-ui-style.external.imports": [
+	// Remote (updates automatically):
+	{
+		"type": "css",
+		"url": "https://raw.githubusercontent.com/ricewind012/win95-themes/refs/heads/dist/dist/vscode.css",
+	},
+	{
+		"type": "js-module",
+		"url": "https://raw.githubusercontent.com/ricewind012/win95-themes/refs/heads/master/src/shared%2B%2B/ElementUtils.js",
+	},
+	{
+		"type": "js-module",
+		"url": "https://raw.githubusercontent.com/ricewind012/win95-themes/refs/heads/master/src/vscode/vscode.js",
+	},
+
+	// If you wish to use other colors, uncomment one of these below:
+	// {
+	// 	"type": "css",
+	// 	"url": "https://raw.githubusercontent.com/ricewind012/win95-themes/refs/heads/master/src/shared/colors/hotdogstand.css",
+	// },
+	// {
+	// 	"type": "css",
+	// 	"url": "https://raw.githubusercontent.com/ricewind012/win95-themes/refs/heads/master/src/shared/colors/vgui.css",
+	// },
+	// {
+	// 	"type": "css",
+	// 	"url": "https://raw.githubusercontent.com/ricewind012/win95-themes/refs/heads/master/src/shared/colors/win2000.css",
+	// },
+
+	// Local:
 	"file:///path/to/win95-themes/dist/vscode.css",
 	"file:///path/to/win95-themes/src/shared++/ElementUtils.js",
 	"file:///path/to/win95-themes/src/vscode/vscode.js",
@@ -44,7 +73,9 @@ Last tested version is [1.138](https://code.visualstudio.com/updates/v1_106)!
 "editor.roundedSelection": false,
 ```
 
-3. Run the `scripts/patch vscode` script. Optional, makes the tree items' height smaller.
+3. Run the `scripts/patch vscode` script. May take a few tries to get it working. Optional, does the following:
+   - makes the tree items' height smaller
+   - adds scrollbar arrows to places it's not enabled in
 
 4. If you did step 3, install the [Fix VSCode Checksums Next](https://marketplace.visualstudio.com/items?itemName=RimuruChan.vscode-fix-checksums-next) extension, then execute the "Fix Checksums: Apply" command.
 
