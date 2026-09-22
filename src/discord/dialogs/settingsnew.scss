@@ -3,6 +3,16 @@
 @use "shared/window";
 @use "shared++/utils";
 
+.baseControlItem_dbfbe0.clickable_dbfbe0 {
+	@include controls.button;
+
+	min-block-size: unset;
+}
+
+.baseSettingWrapper__32428 {
+	min-block-size: unset;
+}
+
 // Category
 .container__75920 {
 	padding: 0;
@@ -17,7 +27,7 @@
 		padding: 0;
 	}
 
-	h1 {
+	h2[data-text-variant="heading-xl/normal"] {
 		@include utils.legend-as-div;
 	}
 }
@@ -112,8 +122,8 @@
 	.label__409aa {
 		color: inherit;
 		font-weight: bold;
+		margin-block: 4px;
 		margin-inline-start: 6px;
-		margin-block-start: 0;
 	}
 
 	.nav__409aa {
@@ -141,6 +151,16 @@
 
 	.section__409aa {
 		border: none;
+		gap: 0;
+		padding: 0;
+	}
+
+	.sectionList__409aa {
+		gap: 0;
+	}
+
+	.sublist__409aa {
+		direction: ltr;
 		gap: 0;
 	}
 }

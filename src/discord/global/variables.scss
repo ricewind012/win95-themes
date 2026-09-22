@@ -1,6 +1,7 @@
 .theme-light,
 .theme-dark {
 	// NEW
+	--background-base-lower: var(--color-button-face);
 	--background-base-lowest: var(--color-button-face);
 
 	--text-default: var(--color-button-text);
