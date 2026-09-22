@@ -42,13 +42,13 @@
 	}
 }
 
-.content__99f8c {
+.scroller__629e4 > .content_d125d2 {
 	// Banner
 	& > [style="height: 84px;"],
 	// "Browse Channels"
 	&  > [style="height: 12px;"],
 	&  > li:not([class]),
-	.sectionDivider__629e4 {
+	& > .sectionDivider__629e4 {
 		display: none;
 	}
 }

@@ -12,6 +12,10 @@
 	}
 }
 
+.divider_cc6179 {
+	display: none;
+}
+
 .peopleList__5ec2f {
 	@include window.content-container;
 	@include utils.move-scrollbar;
@@ -31,6 +35,12 @@
 
 	.sectionTitle__5ec2f {
 		display: none;
+	}
+
+	.username__0a06e {
+		color: inherit;
+		font: var(--text-ui);
+		font-weight: bold;
 	}
 }
 

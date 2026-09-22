@@ -98,21 +98,14 @@
 		border: none;
 		padding: 0;
 
-		width: 200px;
 		height: unset;
 
-		.DraftEditor-editorContainer {
-			height: unset;
-		}
-
-		.DraftEditor-root {
+		.editor__25bec {
 			@include controls.text-field;
-
-			overflow: visible;
 		}
 
-		.public-DraftEditorPlaceholder-root,
-		.public-DraftEditor-content {
+		[data-slate-placeholder] {
+			margin-block-start: 1px;
 			padding: 0;
 		}
 	}

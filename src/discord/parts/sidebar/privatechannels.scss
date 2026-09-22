@@ -25,7 +25,7 @@
 		padding: var(--toolbar-container-spacing);
 
 		position: fixed;
-		top: 0;
+		top: calc(var(--main-window-border-spacing) + var(--titlebar-pos));
 		height: unset;
 	}
 }
