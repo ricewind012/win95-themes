@@ -149,6 +149,12 @@
 	--vscode-shadow-depth-x: 0 0 0 0 transparent;
 	--vscode-shadow-depth-y: 0 0 0 0 transparent;
 
+	// Modern UI redesign
+	--modern-ui-floating-card-margin: 0px;
+	--modern-ui-floating-card-inner-margin: 0px;
+	--modern-ui-floating-card-outer-margin: 0px;
+	--modern-ui-floating-card-statusbar-margin: 0px;
+
 	// Other
 	--vscode-focusBorder: transparent;
 	--vscode-textCodeBlock-background: color-mix(

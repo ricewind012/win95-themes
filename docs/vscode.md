@@ -29,6 +29,7 @@ Last tested version is [1.138](https://code.visualstudio.com/updates/v1_106)!
 "terminal.integrated.fontSize": 12,
 
 "window.titleBarStyle": "native",
+"window.density.layout": "compact",
 "window.dialogStyle": "custom",
 "window.menuStyle": "custom",
 
@@ -38,6 +39,7 @@ Last tested version is [1.138](https://code.visualstudio.com/updates/v1_106)!
 //"workbench.list.horizontalScrolling": true,
 
 "breadcrumbs.enabled": false,
+"chat.disableAIFeatures": true,
 "explorer.compactFolders": false,
 "editor.roundedSelection": false,
 ```

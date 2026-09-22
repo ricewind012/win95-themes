@@ -9,8 +9,13 @@
 
 	cursor: unset;
 
+	// TODO(modernui): remove
 	&[aria-selected="true"]:not(.tab) {
 		margin-top: 1px;
+
+		.monaco-workbench.modern-ui & {
+			margin-top: 0;
+		}
 	}
 
 	.action-label {
