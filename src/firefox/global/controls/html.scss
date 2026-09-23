@@ -1,6 +1,11 @@
 @use "shared/controls";
+@use "shared/menu";
 @use "shared/text";
+@use "shared/window";
 @use "shared++/utils";
+
+// This file works mostly with shadow DOM, so border-radius, etc. is normal
+// here, ty mozilla
 
 $-icons: (
 	//"chrome://global/skin/icons/more.svg": ,
@@ -114,4 +119,49 @@ moz-toggle {
 	--toggle-border-width: 0px;
 	--toggle-dot-margin: 0px;
 	--toggle-dot-transform-x: unset;
+}
+
+panel-list {
+	@include window.container($child: true);
+
+	border: none;
+
+	// For whatever reason, ::slotted() is below "panel-list hr", but still
+	// takes priority over anything else, so redo the separator with a
+	// box-shadow and variables
+	hr {
+		--border-width: 0px;
+		--panel-separator-padding: 3px 0 4px 0;
+		block-size: 1px;
+		box-shadow:
+			inset 0 1px var(--color-button-highlight),
+			0 -1px var(--color-button-shadow);
+	}
+}
+
+panel-item {
+	--panel-item-button-border-radius: 0px;
+	--panel-item-button-margin: 0px;
+
+	position: relative;
+
+	&::part(button) {
+		@include menu.item($selected-sel: "&:focus-visible");
+
+		background-image: none;
+		font: var(--text-ui);
+
+		&:disabled {
+			@include menu.item-disabled;
+		}
+	}
+
+	// TODO: these 2 don't work ?
+	&[checked] {
+		@include menu.item-check;
+	}
+
+	&[submenu] {
+		@include menu.item-parent;
+	}
 }
