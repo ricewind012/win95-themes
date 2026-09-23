@@ -84,10 +84,20 @@
 }
 
 #FolderSettings {
-	--button-img: icon("overflow" . "mono");
+	--button-img: icon("settings");
 	@include controls.icon-button;
 
-	width: unset;
+	inline-size: unset;
+	// The parent also has absolute position...
+	inset-block-start: calc(-100% - 10px);
+	// See dialog's min-width
+	inset-inline-end: -408px;
+	position: absolute;
+
+	& > .tool-tip-source {
+		position: absolute;
+		inset: 0;
+	}
 
 	svg {
 		display: none;
