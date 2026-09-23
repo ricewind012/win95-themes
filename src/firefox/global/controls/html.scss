@@ -26,8 +26,7 @@ moz-box-button {
 }
 
 // moz-box-button
-[href="chrome://global/content/elements/moz-box-button.css"] ~ .button
-{
+[href="chrome://global/content/elements/moz-box-button.css"] ~ .button {
 	all: unset;
 
 	width: 100%;
@@ -51,8 +50,7 @@ moz-button {
 		}
 	}
 
-	&[iconsrc='chrome://global/skin/icons/more.svg']
-	{
+	&[iconsrc="chrome://global/skin/icons/more.svg"] {
 		--button-img: icon("overflow" . "mono");
 	}
 
