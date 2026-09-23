@@ -3,12 +3,11 @@
 
 #Console {
 	background-color: transparent;
-	font-family: var(--text-monospace-font);
+	font: var(--text-monospace);
 
 	pre {
-		// Its height is 17px anyway
-		font-size: 12pt;
 		color: var(--color-window-text);
+		font: var(--text-monospace);
 	}
 }
 
