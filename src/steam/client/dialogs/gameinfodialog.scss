@@ -3,6 +3,11 @@
 @use "shared++/utils";
 @use "steam/shared";
 
+%-row {
+	block-size: min-content;
+	inline-size: calc(100% / 3);
+}
+
 #DialogBody {
 	box-shadow: none;
 	gap: 0;
@@ -19,30 +24,22 @@
 		min-width: var(--button-min-width);
 	}
 
-	[style="--indent-level: 0;"] > div {
-		gap: 0;
-
-		// Align with the "IP Address" copy button.
-		height: calc(1lh + var(--button-spacing) * 2);
+	[style="--indent-level: 0;"] {
+		align-items: center;
+		// Align with the "IP Address" button
+		block-size: calc(1lh + var(--button-spacing) * 2);
 		display: grid;
 		grid-template-columns: 25% 75%;
 
-		// #FieldDescription in gamepaddialog
-		&:nth-child(2) {
-			margin-left: 0;
-
-			display: block;
+		// #gamepaddialog_FieldLabel
+		& > :first-child > div > div {
+			font-weight: bold;
 		}
-	}
-
-	// TODO: God knows why this doesn't work
-	svg {
-		display: none;
 	}
 }
 
 #PingFailed {
-	color: darkred;
+	color: light-dark(darkred, red);
 }
 
 #PlayersList {
@@ -59,6 +56,9 @@
 	margin-top: var(--border-size);
 	margin-bottom: var(--text-spacing);
 
+	align-content: start;
+	display: flex;
+	flex-wrap: wrap;
 	overflow: auto;
 	height: var(--list-height);
 
@@ -70,17 +70,17 @@
 }
 
 #Header {
+	@extend %-row;
 	@include utils.text-reset;
 	@include controls.button;
 	@include table.header-row;
-
-	text-align: left;
 
 	position: sticky;
 	top: 0;
 }
 
 #Details {
+	@extend %-row;
 	@include table.row;
 
 	border: none;
