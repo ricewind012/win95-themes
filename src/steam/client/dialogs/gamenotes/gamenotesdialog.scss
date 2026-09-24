@@ -1,4 +1,5 @@
 @use "shared/controls";
+@use "shared/tabs";
 
 #CloseWindowButton {
 	height: unset;
@@ -11,6 +12,18 @@
 		padding: 0;
 
 		overflow: auto;
+	}
+}
+
+#NewNoteButton {
+	--button-img: icon("edit");
+	@include controls.icon-button;
+
+	inline-size: unset;
+	margin-inline-start: var(--icon-button-width);
+
+	svg {
+		display: none;
 	}
 }
 
@@ -33,6 +46,10 @@
 
 #NoteEditorArea {
 	margin: 0;
+}
+
+#NotePage {
+	@include tabs.content;
 }
 
 #Toolbar {

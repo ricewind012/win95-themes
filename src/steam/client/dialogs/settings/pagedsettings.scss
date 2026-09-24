@@ -1,5 +1,26 @@
+@use "shared/controls";
 @use "shared/tabs";
 @use "steam/shared";
+
+#HidePageListButton {
+	--button-img: icon("overflow", "mono");
+	--pos: calc(
+		var(--border-size) + var(--window-spacing) + var(--dialog-spacing) * 2
+	);
+
+	@include controls.button;
+	@include controls.icon-button;
+
+	position: fixed;
+	inline-size: unset;
+	inset-inline-start: calc(var(--pos));
+	inset-block-start: unset;
+	inset-block-end: calc(var(--pos) + var(--statusbar-height));
+
+	svg {
+		display: none;
+	}
+}
 
 #PageListSeparator,
 #PageListItem_Icon {
@@ -37,6 +58,7 @@
 	max-width: unset;
 	min-height: unset;
 	flex-grow: 0;
+	justify-content: space-between;
 }
 
 #PagedSettingsDialog_PageListItem {
