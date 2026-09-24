@@ -11,7 +11,7 @@
 		margin: 0;
 	}
 
-	.interactive_bf202d.selected_bf202d {
+	.interactive_f88cfd.selected_f88cfd {
 		@include list.item-name-selected;
 	}
 
@@ -25,7 +25,7 @@
 		padding: var(--toolbar-container-spacing);
 
 		position: fixed;
-		top: 0;
+		top: calc(var(--main-window-border-spacing) + var(--titlebar-pos));
 		height: unset;
 	}
 }

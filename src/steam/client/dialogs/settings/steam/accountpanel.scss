@@ -5,6 +5,10 @@
 	display: none;
 }
 
+#FatButtonRow {
+	justify-content: start;
+}
+
 #Label {
 	@include utils.text-reset;
 }

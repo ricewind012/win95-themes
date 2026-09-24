@@ -36,8 +36,13 @@
 		}
 	}
 
-	.monaco-list {
+	// TODO(modernui): remove rule & selector below
+	.monaco-workbench:not(.modern-ui) & .monaco-list {
 		height: calc(100% - 16px);
+	}
+
+	.monaco-workbench.modern-ui & .pane {
+		height: calc(100% - 12px);
 	}
 
 	.pane-header[aria-expanded="true"] {

@@ -1,6 +1,6 @@
 .theme-light,
 .theme-dark {
-	// NEW
+	--background-base-lower: var(--color-button-face);
 	--background-base-lowest: var(--color-button-face);
 
 	--text-default: var(--color-button-text);
@@ -8,47 +8,28 @@
 
 	--icon-default: var(--color-button-text);
 	--icon-muted: var(--color-button-text);
-	--icon-primary: var(--color-button-text);
-	--icon-secondary: var(--color-button-text);
-	--icon-tertiary: var(--color-button-text);
+	--icon-strong: var(--color-button-text);
+	--icon-subtle: var(--color-button-text);
 
 	--app-border-frame: #f09;
 	--border-faint: #f09;
 	--border-normal: #f09;
 	--border-strong: #f09;
 	--border-subtle: #f09;
-	// NEW END
-
-	--background-floating: var(--color-button-face);
-	--background-primary: var(--color-window);
-	--background-secondary: var(--color-button-face);
-	--background-secondary-alt: var(--color-button-face);
-	--background-tertiary: var(--color-button-face);
 
 	--font-primary: var(--text-ui-font);
 	--font-display: var(--text-ui-font);
 	--font-headline: var(--text-ui-font);
 	--font-code: var(--text-monospace-font);
 
-	--header-muted: var(--color-gray-text);
-	--header-primary: var(--color-window-text);
-	--header-secondary: var(--color-gray-text);
-
-	--interactive-normal: var(--color-window-text);
-	--interactive-active: var(--color-window-text);
-	--interactive-hover: var(--color-window-text);
 	--interactive-muted: var(--color-window-text);
 
-	--text-normal: var(--color-button-text);
 	--text-muted: var(--color-gray-text);
 	--text-link: var(--color-link);
 
-	--channeltextarea-background: transparent;
-	--modal-background: transparent;
-	--modal-footer-background: transparent;
-
 	--channels-default: var(--color-window-text);
 	--channel-text-area-placeholder: var(--color-gray-text);
+	--input-placeholder-text-default: var(--color-gray-text);
 
 	--elevation-stroke: none;
 	--elevation-low: none;
@@ -66,12 +47,6 @@
 	}
 
 	--custom-app-top-bar-height: 0px;
-
-	--custom-margin-margin-x-small: var(--text-spacing);
-	--custom-margin-margin-small: var(--text-spacing);
-	--custom-margin-margin-medium: var(--text-spacing);
-	--custom-margin-margin-large: var(--text-spacing);
-	--custom-margin-margin-x-large: var(--text-spacing);
 
 	--chat-avatar-size: 32px;
 	--custom-message-avatar-size: var(--chat-avatar-size);

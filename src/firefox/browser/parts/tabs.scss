@@ -94,6 +94,12 @@ $-icons: (
 
 .tab-label-container {
 	height: unset;
+
+	#tabbrowser-tabs[orient="vertical"] &[textoverflow] {
+		// Masking makes the font blurry after containing the arrowscrollbox to
+		// 100% height
+		mask: none;
+	}
 }
 
 .tab-note-icon {
@@ -110,6 +116,10 @@ $-icons: (
 #tabbrowser-arrowscrollbox {
 	&[orient="vertical"] {
 		@include window.content-container;
+
+		// Lets the arrowscrollbox be able to overflow
+		block-size: 100%;
+		inline-size: calc(100% - var(--border-size) * 2);
 	}
 
 	&::part(overflow-start-indicator),

@@ -30,6 +30,8 @@
 
 .input_ac6cb0 {
 	@include controls.text-field;
+
+	block-size: unset;
 }
 
 .miscContainer_ac6cb0 {

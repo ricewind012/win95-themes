@@ -6,14 +6,14 @@ $-input-height: round(
 	1px
 );
 
+// why
+.searchmode-switcher,
 // Made obsolete by the browser.urlbar.trimURLs pref
 #identity-box,
 // All of these are available through other means
 #page-action-buttons,
 // You use ublock origin, right ?
-#trust-icon-container,
-// TODO: made obsolete with the above ?
-#tracking-protection-icon-container {
+#trust-icon-container {
 	display: none;
 }
 
@@ -26,7 +26,8 @@ $-input-height: round(
 
 #urlbar-container {
 	--urlbar-container-height: #{$-input-height};
-	--urlbar-container-padding: 0px;
+	--urlbar-container-padding-block: 0px;
+	--urlbar-input-container-padding: 0px;
 	--urlbar-margin-inline: 0px;
 	--urlbar-padding-block: 0px;
 }
@@ -40,6 +41,7 @@ $-input-height: round(
 }
 
 .urlbar-input {
+	line-height: 1;
 	mask: none;
 }
 
@@ -58,12 +60,16 @@ $-input-height: round(
 }
 
 .urlbarView {
-	--urlbarView-small-font-size: 1em;
-
+	--urlbarView-icon-margin-start: 0px;
+	--urlbarView-icon-margin-end: 8px;
+	--urlbarView-padding: 0px;
 	--urlbarView-results-padding: 0px;
 	--urlbarView-row-gutter: 0px;
-	--urlbarView-item-inline-padding: 0px;
-	--urlbarView-item-block-padding: 0px;
+	--urlbarView-row-padding-inline: 0px;
+	--urlbarView-small-font-size: 1em;
+
+	// tokens
+	--urlbarview-row-padding-block: 0px;
 
 	margin: 0;
 
@@ -74,33 +80,34 @@ $-input-height: round(
 	}
 }
 
-.urlbarView-body-inner {
-	border: none;
-}
-
+.urlbarView-background,
 .urlbarView-group-aria-label {
 	display: none;
 }
 
+.urlbarView-body-inner {
+	border: none;
+}
+
+.urlbarView-results {
+	border: none;
+}
+
 .urlbarView-row {
+	min-height: unset;
+}
+
+.urlbarView-row-inner {
 	@include listbox.item($selected-sel: "&[selected]");
 
 	min-height: unset;
 
-	&:hover {
-		.urlbarView-url {
-			color: inherit;
-		}
-	}
-}
-
-.urlbarView-row-inner {
-	display: grid;
-	grid-template-columns: repeat(2, 50%);
-	min-height: unset;
-
 	.urlbarView-row[has-url]:not([type$="tab"]) > & > .urlbarView-no-wrap {
 		max-width: unset;
+	}
+
+	&:hover {
+		--link-color: currentColor;
 	}
 }
 

@@ -25,9 +25,6 @@
 }
 
 .panels__5e434 {
-	// ::before is used by the separator, so move it to the avatar element
-	--text: attr(aria-label);
-
 	background-color: transparent;
 	border: none;
 
@@ -45,7 +42,8 @@
 
 	.nameTag__37e49 {
 		&::before {
-			content: var(--text);
+			// Could use the container's aria-label, but the text is too long
+			content: "User status";
 		}
 
 		& > * {

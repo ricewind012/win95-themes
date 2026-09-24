@@ -1,3 +1,5 @@
+@use "shared/controls";
+@use "shared/window";
 @use "shared++/global";
 
 // Make the scrollbars always visible, as there is no option for this.
@@ -11,5 +13,21 @@
 
 		// Appears above the context menu otherwise.
 		z-index: auto;
+	}
+}
+
+.dialog-toolbar,
+.peekview-actions {
+	// TODO: simplify? why isn't this applied lol
+	.action-label {
+		@include controls.button($disabled-sel: "&[aria-disabled]");
+		@include window.titlebar-button;
+	}
+}
+
+.part.editor {
+	// Shadows
+	&::after {
+		display: none;
 	}
 }

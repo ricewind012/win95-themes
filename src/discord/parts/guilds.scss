@@ -33,6 +33,7 @@
 }
 
 .scroller_ef3116 {
+	block-size: 100%;
 	padding: 0;
 
 	& > :nth-child(1) {
@@ -46,14 +47,14 @@
 		}
 	}
 
-	& > :nth-last-child(2) {
+	& > :nth-last-child(1) {
 		--button-img: icon("chat-room-list");
 		@extend %-guilds-top-toolbar-button;
 
 		left: calc(var(--pos) + var(--icon-button-width) * 2);
 	}
 
-	& > :nth-last-child(3) {
+	& > :nth-last-child(2) {
 		--button-img: icon("room-enter");
 		@extend %-guilds-top-toolbar-button;
 

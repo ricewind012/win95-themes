@@ -4,6 +4,7 @@
 .quick-input-widget {
 	@include window.container($child: true);
 
+	border: none;
 	margin: 0;
 
 	inset: 12.5% 25%;

@@ -48,6 +48,10 @@
 	display: none;
 }
 
+#MajorUpdateContentContainer {
+	@include shared.library_section-content;
+}
+
 #MediumImageContainer {
 	margin-right: var(--library_section-spacing);
 }
@@ -56,15 +60,15 @@
 	background: none;
 	border: none;
 	box-shadow: none;
+}
 
-	&#PartnerEventFeatured {
-		@include shared.library_section;
+#PartnerEventFeatured {
+	@include shared.library_section;
 
-		margin-block-start: 1px;
+	margin-block-start: 1px;
 
-		& > [role="button"] {
-			@include shared.library_section-content;
-		}
+	& > [role="button"] {
+		@include shared.library_section-content;
 	}
 }
 
@@ -100,7 +104,7 @@
 
 	&_Title {
 		color: inherit;
-		font: inherit;
+		font: var(--text-ui);
 		font-weight: bold;
 		// LargeImage
 		text-shadow: none;
@@ -154,6 +158,11 @@
 
 	&#PartnerEventTypeUpdate {
 		text-shadow: none;
+	}
+
+	div {
+		color: var(--color-gray-text);
+		font: var(--text-ui);
 	}
 }
 

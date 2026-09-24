@@ -132,6 +132,11 @@
 
 :where(.DialogFooter) {
 	padding-top: var(--dialog-button-spacing);
+
+	// Spinner in game info dialog
+	.DialogButton > span > svg {
+		display: none;
+	}
 }
 
 :where(.DialogHeader) {

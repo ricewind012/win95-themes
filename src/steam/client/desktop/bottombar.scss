@@ -33,8 +33,8 @@
 	--offset: calc(var(--main-window-border-spacing) + 1px);
 
 	position: fixed;
-	left: calc(var(--offset) + 4px);
-	bottom: calc(var(--offset) + 2px);
+	left: calc(var(--offset) + 2px);
+	bottom: calc(var(--offset) + 0px);
 	width: unset;
 	justify-content: center;
 }

@@ -1,6 +1,6 @@
 @use "shared/controls";
 
-.icon__0f084 {
+.icon__75098 {
 	display: none;
 }
 
@@ -10,10 +10,14 @@
 
 	min-height: unset;
 
-	&:is([data-disabled="true"], [data-read-only="true"]) > :is(input, texarea) {
-		@include controls.input-disabled;
-
+	&[data-disabled="true"],
+	&[data-read-only="true"] {
 		opacity: 1;
+
+		input,
+		texarea {
+			@include controls.input-disabled;
+		}
 	}
 
 	input,

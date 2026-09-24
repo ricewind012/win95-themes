@@ -77,6 +77,10 @@ $-icons: (
 	list-style-image: icon("history");
 }
 
+#navigator-toolbox {
+	border-block-end: 1px solid transparent;
+}
+
 #nav-bar {
 	background-color: var(--color-button-face);
 	color: var(--color-button-text);
@@ -129,6 +133,7 @@ $-icons: (
 }
 
 #PanelUI-menu-button {
+	--panel-banner-item-update-supported-bgcolor: darkgreen;
 	list-style-image: url("chrome://branding/content/about-logo.svg");
 }
 

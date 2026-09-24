@@ -3,6 +3,7 @@
 @use "vscode/shared";
 
 .editor-container {
+	width: 100%;
 	height: calc(100% - var(--editor-container-offset));
 
 	& > .editor-instance {
@@ -35,7 +36,7 @@
 }
 
 .editor-scrollable {
-	width: calc(100% - 59px);
+	width: calc(100% - 66px);
 	height: 100%;
 
 	.search-results {
