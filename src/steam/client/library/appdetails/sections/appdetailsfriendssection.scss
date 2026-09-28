@@ -2,6 +2,7 @@
 @use "shared++/utils";
 
 #AvatarAndLabel {
+	flex: unset;
 	height: unset;
 
 	#LabelHolder {
