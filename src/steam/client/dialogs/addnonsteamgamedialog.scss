@@ -15,10 +15,10 @@
 	}
 }
 
-#Checkbox,
-#IconContainer,
 #AppName,
-#ExePath {
+#Checkbox,
+#ExePath,
+#IconContainer {
 	@include utils.text-reset;
 
 	opacity: 1;

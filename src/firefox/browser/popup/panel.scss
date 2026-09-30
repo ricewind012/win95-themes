@@ -3,6 +3,7 @@
 @use "shared/window";
 @use "shared++/utils";
 
+#appMenu-update-banner-description,
 // lol
 #appMenu-zoom-controls,
 // Seen in "Main menu > More tools"
@@ -14,6 +15,8 @@ panel {
 	--arrowpanel-menuitem-margin: 0px;
 	--arrowpanel-menuitem-margin-inline: 0px;
 	--menu-panel-width-wide: initial;
+	--panel-menuitem-margin: 0px;
+	--panel-menuitem-margin-inline: 0px;
 	--panel-subview-body-padding: 0px;
 	font: var(--text-ui);
 
@@ -35,24 +38,34 @@ panel {
 	}
 }
 
+.appMenu-update-banner-text {
+	padding: 0;
+}
+
+#appMenu-update-banner-title {
+	margin: 0;
+}
+
 .panel-banner-item:not([hidden]) {
-	--panel-banner-item-update-supported-bgcolor: darkgreen;
 	background-color: transparent;
+	border: none;
 	margin: 0;
 	margin-bottom: 9px;
-
-	display: block;
 
 	&::after {
 		@include utils.pseudo-separator;
 
-		--menu-item-padding-x: 20px;
 		position: absolute;
-		inset-inline: calc(var(--menu-item-padding-x) * -1);
+		inset-inline: 0;
 		bottom: -8px;
-		width: calc(100% + var(--menu-item-padding-x) * 2);
 
 		pointer-events: none;
+	}
+}
+
+.subviewbutton {
+	.toolbarbutton-text {
+		padding: 0;
 	}
 }
 
@@ -64,10 +77,6 @@ panel {
 
 	&[checked] {
 		@include menu.item-check;
-
-		.toolbarbutton-text {
-			padding: 0;
-		}
 	}
 
 	&[disabled] {

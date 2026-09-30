@@ -19,23 +19,15 @@
 #AdvancedSearchPane {
 	@include window.container($child: true);
 
-	overflow: auto;
+	overflow: hidden;
 	// Make it an actual window, 17.5% fits 16px text size
 	position: fixed;
 	inset: calc(10% - var(--titlebar-height)) 17.5%;
+}
 
+#AdvancedSearchPaneContainer {
 	&::before {
-		content: var(--FilterEdit_SearchModeHeader);
-
-		box-sizing: border-box;
-		position: unset;
-		width: 100%;
-
-		@include window.titlebar($focused-sel: "&");
-
-		background-color: transparent;
-		font: var(--text-ui);
-		font-weight: bold;
+		display: none;
 	}
 }
 

@@ -2,38 +2,14 @@
 @use "shared/text";
 @use "shared++/utils";
 
-.vcd-screen-picker-card {
-	--card-primary-bg: transparent;
-	border: none;
-	padding: 0;
-	margin: 0;
-}
-
-.vcd-screen-picker-header {
-	& > h2 {
-		all: unset;
-
-		font-weight: bold;
-	}
-}
-
-.vcd-screen-picker-hint-description {
-	@include utils.text-reset;
-
-	p {
-		margin-block: var(--text-spacing) 0;
-	}
-}
-
-.vcd-screen-picker-modal {
-	& > div > h5 {
+[role="dialog"][aria-label="Screen Share Picker"] {
+	h4 {
 		display: none;
 	}
 
 	input[type="radio"] {
 		@include controls.radio($checked-sel: "&:checked");
 
-		order: -1;
 		display: initial;
 	}
 
@@ -47,15 +23,22 @@
 	}
 }
 
+.vcd-screen-picker-card {
+	box-shadow: none;
+	padding: 0;
+}
+
 .vcd-screen-picker-preview {
 	&::after {
 		@include utils.pseudo-separator;
 
+		inline-size: 100%;
 		margin-block: 8px 12px;
 	}
 }
 
 .vcd-screen-picker-preview-img-linux {
+	// A bit of contrast in case the colors overlap
 	border: 1px solid var(--color-button-shadow);
 	margin-bottom: var(--text-spacing);
 }
@@ -65,24 +48,12 @@
 
 	background-color: transparent;
 	border: none;
+	flex-direction: row-reverse;
+	justify-content: start;
 	padding: 0;
-
-	// TODO: vesktop uses :checked incorrectly ?
-	&[data-checked="true"] > input[type="radio"] {
-		@include controls.checkbox-radio-checked;
-	}
 }
 
-.vcd-screen-picker-option-radios {
-	gap: var(--text-spacing);
-
-	flex-direction: column;
-
-	div {
-		font-weight: normal;
-	}
-}
-
+.vcd-screen-picker-option-radios,
 .vcd-screen-picker-screen-grid {
 	gap: var(--text-spacing);
 

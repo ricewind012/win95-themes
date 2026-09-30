@@ -1,6 +1,6 @@
 # Firefox
 
-Last tested version is 149.0a1! Closest ESR version is 140, so if the theme happens to not receive updates, you can try using that version instead.
+Last tested version is 158.0a1! Closest ESR version is 153, so if the theme happens break and not receive updates, you can try using that version instead.
 
 ## Usage
 
@@ -13,6 +13,7 @@ profile_path="/path/to/profile/chrome"
 rm "$profile_path/CSS"/*
 ln -s "$theme_path/src/shared/colors" "$profile_path"
 ln -s "$theme_path/src/firefox/win95_main.uc.mjs" "$profile_path/JS"
+ln -s "$theme_path/src/userscript" "$profile_path/JS"
 ln -s "$theme_path/dist/firefox_global.css" "$profile_path/CSS/firefox_global.uc.css"
 ln -s "$theme_path/dist/firefox_agent.css" "$profile_path/CSS/win95_agent.uc.css"
 ln -s "$theme_path/dist/firefox_author.css" "$profile_path/CSS/win95_author.uc.css"
@@ -35,6 +36,7 @@ user_pref("browser.urlbar.trimURLs", false);
 user_pref("identity.fxaccounts.enabled", false);
 
 // These have to be enabled, as they are likely to be removed sooner or later
+user_pref("browser.urlbar.trustPanel.featureGate", true);
 user_pref("sidebar.revamp", true);
 ```
 

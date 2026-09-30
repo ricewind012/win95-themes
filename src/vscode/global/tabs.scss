@@ -9,8 +9,13 @@
 
 	cursor: unset;
 
+	// TODO(modernui): remove
 	&[aria-selected="true"]:not(.tab) {
 		margin-top: 1px;
+
+		.monaco-workbench.modern-ui & {
+			margin-top: 0;
+		}
 	}
 
 	.action-label {
@@ -36,7 +41,7 @@
 		div.monaco-workbench
 			.part.editor
 			> .content
-			.editor-group-container.active
+			.editor-group-container:is(.active, .inactive)
 			> .title
 			.tabs-container
 			> &:hover {
@@ -44,9 +49,9 @@
 		}
 	}
 
-	&.dirty:hover,
-	&:not(.dirty) {
-		.codicon-close::before {
+	&:not(.dirty),
+	&.dirty:hover {
+		.codicon-close-small::before {
 			content: "";
 
 			width: 8px;
@@ -58,8 +63,8 @@
 	}
 }
 
-.tab-border-top-container,
-.tab-border-bottom-container {
+.tab-border-bottom-container,
+.tab-border-top-container {
 	display: none;
 }
 
@@ -77,8 +82,8 @@
 	margin-left: var(--text-spacing);
 
 	&,
-	.monaco-action-bar,
-	.action-label {
+	.action-label,
+	.monaco-action-bar {
 		width: auto;
 		height: auto;
 	}

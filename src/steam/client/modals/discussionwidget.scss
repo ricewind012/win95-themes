@@ -14,6 +14,8 @@
 
 	#LinkInput {
 		@include controls.text-field($disabled-sel: "&");
+
+		block-size: unset;
 	}
 
 	#LinkInputLabel {

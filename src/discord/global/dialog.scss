@@ -1,34 +1,7 @@
-@use "shared/controls";
-@use "shared/text";
 @use "shared/window";
 @use "shared++/utils";
 
 $-titlebar-description-selector: "> :first-child + [data-text-variant]";
-
-[class*="formGroup"] {
-	@include text.input-label;
-
-	margin-bottom: var(--text-spacing);
-
-	& > [class*="sectionTitle"] {
-		& > .h5 {
-			position: initial;
-		}
-	}
-}
-
-[class*="horizontal"] {
-	& > .flex,
-	& > [class*="flexChild"] {
-		margin-right: var(--label-spacing);
-
-		flex-grow: 0;
-
-		& > * {
-			@include utils.text-reset;
-		}
-	}
-}
 
 .content__49fc1 {
 	padding: var(--messagebox-spacing);

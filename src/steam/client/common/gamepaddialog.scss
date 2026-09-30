@@ -17,9 +17,10 @@
 }
 
 #Field {
-	--field-row-children-spacing: var(--label-spacing);
-
 	background-color: transparent;
+	flex-direction: row-reverse;
+	gap: var(--label-spacing);
+	margin: 0;
 	padding: 0;
 	padding-inline-start: calc(
 		(var(--sel-button-size) + var(--label-spacing)) * var(--indent-level)
@@ -49,12 +50,8 @@
 #FieldDescription {
 	@include utils.text-reset;
 
+	color: var(--color-gray-text);
 	margin-top: var(--text-spacing);
-
-	#WithDescription > div + & {
-		color: var(--color-gray-text);
-		margin-left: calc(var(--sel-button-size) + var(--label-spacing));
-	}
 }
 
 #FieldIcon {
@@ -74,8 +71,8 @@
 	}
 }
 
-#FieldLabelRow {
-	flex-direction: row-reverse;
+#LabelFieldValue {
+	color: inherit;
 }
 
 #StandaloneFieldSeparator {

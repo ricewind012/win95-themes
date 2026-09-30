@@ -53,22 +53,22 @@
 	display: none;
 }
 
-#LikeButton,
 #CommentButton,
+#LikeButton,
 #Reactions {
 	@include controls.button;
 
 	gap: var(--text-spacing);
 }
 
-#LikeCount,
 #CommentCount,
+#LikeCount,
 #ReactionCount {
 	@include utils.text-reset;
 }
 
-#LikeIcon,
 #CommentIcon,
+#LikeIcon,
 #RatingIcon,
 #ReactionIcon {
 	@extend %-reset-icon-color;

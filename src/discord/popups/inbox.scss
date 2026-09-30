@@ -2,7 +2,7 @@
 @use "shared/tabs";
 @use "shared/window";
 
-.container_fc561d {
+.container__9497c {
 	@include window.container($child: true);
 }
 
@@ -36,7 +36,7 @@
 	width: calc(100% - var(--dialog-spacing) * 2);
 	min-width: unset;
 
-	&.messagesPopoutWrap_e8b59c {
+	&.messagesPopoutWrap__432f4 {
 		@include tabs.content($compact: true);
 
 		margin-top: 0;

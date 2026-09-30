@@ -27,7 +27,7 @@
 	margin-left: calc(var(--border-size) * -1);
 
 	position: fixed;
-	top: 0;
+	top: calc(var(--main-window-border-spacing) + var(--titlebar-pos));
 	height: calc(var(--toolbar-top-margin) - var(--window-gap));
 	width: calc(var(--sidebar-width) - var(--window-gap));
 

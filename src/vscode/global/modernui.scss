@@ -1,0 +1,189 @@
+@use "shared/tabs";
+
+// TODO:
+// Every selector comment is whatever is responsible for the rule, so in the
+// future this file should be replaced with these selectors, once the old UI
+// will be gone.
+
+// Replace with one of:
+// --modern-ui-shell-background
+// --vscode-modernUI-shellBackground
+// --vscode-titleBar-activeBackground
+.monaco-workbench.floating-panels,
+.monaco-workbench.floating-panels > .monaco-grid-view {
+	background: var(--color-button-face);
+}
+
+body {
+	.monaco-workbench.floating-panels.modern-ui-compact
+		.part:is(.activitybar, .sidebar, .panel, .auxiliarybar, .editor) {
+		background: none;
+		border: none;
+	}
+
+	// .sidebar
+	.modern-ui :is(.part.sidebar, .part.auxiliarybar) .monaco-pane-view .pane,
+	.modern-ui.floating-panels :is(.part.sidebar, .part.auxiliarybar) {
+		background: var(--color-button-face);
+		border: none;
+	}
+
+	// [role="tab"]
+
+	.modern-ui.modern-ui-tabs
+		.pane-composite-part
+		> :is(.title, .header-or-footer)
+		> .composite-bar-container
+		> .composite-bar
+		> .monaco-action-bar
+		.action-item {
+		background-color: var(--color-button-face);
+		flex: unset;
+		max-height: unset;
+		min-height: unset;
+		max-width: unset;
+	}
+
+	.modern-ui-tabs.monaco-workbench
+		.part.editor
+		> .content
+		.editor-group-container
+		> .title.tabs {
+		// doesn't even apply anyway lol
+		--editor-group-tab-height: 24px;
+
+		.tab-fill {
+			display: none;
+		}
+	}
+
+	.modern-ui-tabs .part.editor .tabs-and-actions-container {
+		padding: 0;
+	}
+
+	// .tabs-container
+
+	.monaco-workbench
+		.part.editor
+		> .content
+		.editor-group-container
+		> .title
+		.tabs-container {
+		height: unset;
+		min-height: unset;
+
+		// .tab
+		& > .tab {
+			font: var(--text-ui);
+			min-height: unset;
+		}
+
+		// TODO: remove & a, & span from .tab-label later ?
+		.tab-label {
+			font: var(--text-ui);
+		}
+	}
+
+	// .tab-actions
+	.modern-ui-tabs.monaco-workbench
+		.part.editor
+		> .content
+		.editor-group-container
+		> .title
+		.tabs-container
+		> .tab
+		> .tab-actions {
+		background: none;
+		border: none;
+		display: flex;
+		flex: unset;
+		margin: 0;
+		position: unset;
+	}
+
+	// .tab-actions .action-label
+	.modern-ui-tabs
+		.part.editor
+		> .content
+		.editor-group-container.active
+		> .title
+		.tabs-container
+		> .tab:hover:not(.selected):not(.active)
+		.tab-label:not(.monaco-decoration-itemColor),
+	.modern-ui-tabs
+		.part.editor
+		> .content
+		.editor-group-container.active
+		> .title
+		.tabs-container
+		> .tab:hover:not(.selected):not(.active)
+		> .tab-actions
+		.action-label {
+		background: none;
+		color: inherit;
+	}
+
+	// [role="tab"]
+	.modern-ui-tabs
+		.part.editor
+		.tabs-container
+		> .tab:not(#hack):not(#hack):not(#hack),
+	.modern-ui-tabs .modern-ui-editor-tab {
+		@include tabs.tab($selected-sel: "&[aria-selected='true']");
+
+		&:not([aria-selected="true"]) {
+			margin-top: 1px;
+		}
+	}
+
+	// .part.sidebar [role="treeitem"]
+	.modern-ui .monaco-pane-view .pane-body:not(.chat-viewpane) .monaco-list-row {
+		inset-inline: 0;
+	}
+
+	// .statusbar
+	.modern-ui.monaco-workbench.floating-panels .part.statusbar {
+		box-shadow: none;
+		padding: 0;
+	}
+
+	// .pane-header
+	.modern-ui
+		:is(.part.sidebar, .part.auxiliarybar)
+		.monaco-pane-view
+		.pane
+		> .pane-header {
+		background: none;
+		margin-inline: 0;
+		padding: 0;
+
+		// --vscode-sideBarSectionHeader-border
+		// --vscode-surface-border
+		// --vscode-strokeThickness
+		&::before {
+			display: none;
+		}
+	}
+
+	// .part.editor
+	.modern-ui .monaco-grid-view .part.editor:not(.modal-editor-part) {
+		background: none;
+		border: none;
+
+		& > .content {
+			width: 100%;
+		}
+	}
+
+	// .active-item-indicator
+	.modern-ui-tabs
+		.pane-composite-part
+		> :is(.title, .header-or-footer)
+		> .composite-bar-container
+		> .composite-bar
+		> .monaco-action-bar
+		.action-item:not(.icon).checked
+		> .active-item-indicator {
+		display: none;
+	}
+}

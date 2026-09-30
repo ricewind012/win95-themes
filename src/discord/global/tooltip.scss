@@ -1,17 +1,9 @@
 @use "shared/controls";
 
-.tooltip_c36707 {
-	@include controls.tooltip;
-
-	opacity: 1;
-	font: var(--text-ui);
-	transform: unset;
-}
-
-.tooltipContent_c36707 {
-	padding: 0;
-}
-
-.tooltipPointer_c36707 {
+.caret__0b5f9 {
 	display: none;
+}
+
+.tooltip_fa450d {
+	@include controls.tooltip;
 }

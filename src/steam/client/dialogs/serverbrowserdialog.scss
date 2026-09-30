@@ -5,6 +5,17 @@
 @use "shared++/utils";
 @use "steam/shared";
 
+.OverlayServerBrowser {
+	#ServerBrowserDialog {
+		margin: 0;
+		padding: 0;
+	}
+
+	#SpacerNoAppSelect {
+		display: none;
+	}
+}
+
 #AddFavoriteButton {
 	&::before {
 		content: attr(title);
@@ -131,8 +142,8 @@
 
 	position: fixed;
 	position-anchor: --dropdown;
-	top: anchor(top);
-	left: calc(anchor(right) + var(--toolbar-spacing));
+	top: anchor(top, var(--dialog-body-spacing));
+	left: calc(anchor(right, var(--dialog-spacing)) + var(--toolbar-spacing));
 
 	&#SearchActive {
 		--button-img: icon("clear");

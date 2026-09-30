@@ -2,10 +2,11 @@
 @use "shared++/utils";
 
 #Container {
-	@include controls.tooltip;
+	@include controls.groupbox;
 	@include utils.text-reset;
 
 	background-color: transparent;
+	margin: 0;
 }
 
 #DeckVerifiedInfo {

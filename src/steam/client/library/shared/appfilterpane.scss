@@ -22,8 +22,10 @@
 }
 
 #Container {
+	block-size: calc(100% - var(--titlebar-height));
+	margin-block-start: var(--titlebar-height);
+	overflow: auto;
 	padding: var(--dialog-spacing);
-	margin-block-start: var(--window-gap);
 }
 
 #DropDownContainer {
@@ -34,12 +36,15 @@
 	font: var(--text-ui);
 }
 
-#FilterArea {
+#FilterArea,
+#Filters {
 	gap: 4px 8px;
 }
 
 #FilterBucket {
-	@include controls.groupbox;
+	&:not(#LanguageAndGenre) {
+		@include controls.groupbox;
+	}
 
 	.DialogInput_Wrapper {
 		margin: 0;
@@ -69,4 +74,12 @@
 	#FilterArea#WideFormat & {
 		background-color: var(--color-window);
 	}
+}
+
+#Header {
+	@include window.titlebar($focused-sel: "&");
+	@include window.titlebar-name;
+
+	inset: calc(var(--border-size) + var(--window-spacing));
+	position: absolute;
 }

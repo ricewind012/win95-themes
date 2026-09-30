@@ -53,8 +53,8 @@
 .peekview-title {
 	margin-left: 2px;
 
-	.filename,
 	.dirname:not(:empty),
+	.filename,
 	.meta {
 		@include window.titlebar-name;
 

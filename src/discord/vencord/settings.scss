@@ -1,6 +1,7 @@
 @use "shared/controls";
 @use "shared/tabs";
 @use "shared/text";
+@use "shared/window";
 @use "shared++/utils";
 
 %-vencord-groupbox-header {
@@ -11,11 +12,6 @@
 
 		@include utils.legend-as-div;
 	}
-}
-
-.header__49fc1.vc-margin-bottom-8 {
-	font-weight: bold;
-	margin: 0;
 }
 
 .container__75920 {
@@ -146,6 +142,10 @@
 	height: unset;
 }
 
+.vc-plugins-setting-content {
+	gap: var(--text-spacing);
+}
+
 .vc-plugins-setting-description {
 	color: var(--color-gray-text);
 }
@@ -190,6 +190,46 @@
 			@include utils.legend-as-div;
 		}
 	}
+}
+
+.vc-settings-modal-link-icon {
+	display: none;
+}
+
+.vc-settings-modal-links {
+	gap: 0;
+	position: absolute;
+	inset-block-start: calc(var(--titlebar-height) + var(--dialog-spacing));
+	inset-inline-end: calc(var(--dialog-spacing));
+
+	& > * {
+		@include controls.button;
+		@include controls.icon-button;
+
+		&.vc-settings-modal-favorite-button {
+			--button-img: icon("book");
+		}
+
+		&[aria-label="View more info"] {
+			--button-img: icon("question");
+		}
+
+		&[aria-label="View source code"] {
+			--button-img: icon("url");
+		}
+	}
+}
+
+.vc-plugin-modal-tag {
+	@include window.statusbar-item;
+
+	border: none;
+}
+
+.vc-plugin-modal-tags {
+	@include window.statusbar;
+
+	margin-block: var(--text-spacing);
 }
 
 .vc-settings-quickActions-card {

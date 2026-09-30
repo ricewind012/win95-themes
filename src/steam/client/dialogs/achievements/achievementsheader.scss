@@ -36,8 +36,6 @@
 #Title {
 	@include shared.dialog-title;
 
-	z-index: 2;
-
 	body:not(.ModalDialogBody) & {
 		color: var(--color-active-caption-text);
 

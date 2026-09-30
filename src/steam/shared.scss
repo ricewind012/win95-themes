@@ -35,6 +35,7 @@
 	left: calc(var(--offset) + var(--icon-size) + var(--titlebar-spacing) + 2px);
 	top: var(--offset);
 	height: var(--main-window-titlebar-height);
+	z-index: 2;
 
 	.WindowFocus & {
 		color: var(--color-active-caption-text);

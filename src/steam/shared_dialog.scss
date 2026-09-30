@@ -27,7 +27,7 @@
 	}
 }
 
-.DialogBodyText {
+:where(.DialogBodyText) {
 	@include utils.text-reset;
 
 	padding: 0;
@@ -49,7 +49,7 @@
 	}
 }
 
-.DialogCheckbox {
+:where(.DialogCheckbox) {
 	@include controls.checkbox(
 		$checked-sel: "&.Active",
 		$disabled-sel: "&.Disabled"
@@ -69,7 +69,7 @@
 	}
 }
 
-.DialogCheckbox_Container {
+:where(.DialogCheckbox_Container) {
 	@include text.input-label;
 
 	background-color: transparent;
@@ -91,11 +91,11 @@
 	}
 }
 
-.DialogContentTransition {
+:where(.DialogContentTransition) {
 	background: transparent;
 }
 
-.DialogControlsSection {
+:where(.DialogControlsSection) {
 	@include controls.groupbox;
 
 	gap: var(--text-spacing);
@@ -108,12 +108,12 @@
 	}
 }
 
-.DialogControlsSectionHeader {
+:where(.DialogControlsSectionHeader) {
 	@include utils.text-reset;
 	@include utils.legend-as-div;
 }
 
-.DialogDropDown {
+:where(.DialogDropDown) {
 	@include controls.combobox;
 
 	display: flex;
@@ -121,17 +121,22 @@
 	min-width: 129px;
 }
 
-.DialogDropDown_Arrow {
+:where(.DialogDropDown_Arrow) {
 	display: none;
 }
 
-.DialogDropDown_CurrentDisplay {
+:where(.DialogDropDown_CurrentDisplay) {
 	background-color: transparent;
 	padding: 0;
 }
 
 :where(.DialogFooter) {
 	padding-top: var(--dialog-button-spacing);
+
+	// Spinner in game info dialog
+	.DialogButton > span > svg {
+		display: none;
+	}
 }
 
 :where(.DialogHeader) {
@@ -156,7 +161,7 @@
 }
 
 // Only used in "Invite to group chat" dialog
-.DialogHeaderSubtitle {
+:where(.DialogHeaderSubtitle) {
 	color: inherit;
 	letter-spacing: 0;
 	font: inherit;
@@ -171,23 +176,23 @@
 	}
 }
 
-.DialogInnerBody {
+:where(.DialogInnerBody) {
 	padding: 0;
 
 	overflow: visible;
 }
 
-.DialogInput {
+:where(.DialogInput) {
 	@include controls.text-field;
 
 	height: unset;
 }
 
-.DialogInputLabelGroup {
+:where(.DialogInputLabelGroup) {
 	margin: 0;
 }
 
-.DialogInput_Wrapper {
+:where(.DialogInput_Wrapper) {
 	gap: var(--dialog-button-spacing);
 }
 
@@ -198,7 +203,7 @@
 	margin: 0;
 }
 
-.DialogMenuPosition ._DialogInputContainer {
+:where(.DialogMenuPosition ._DialogInputContainer) {
 	@include listbox.container;
 
 	font: var(--text-ui);
@@ -206,30 +211,30 @@
 	padding: 0;
 }
 
-.DialogRoundCheckboxField {
+:where(.DialogRoundCheckboxField) {
 	margin-right: var(--label-spacing);
 
 	width: unset;
 	height: unset;
 }
 
-.DialogRoundCheckboxField_Control {
+:where(.DialogRoundCheckboxField_Control) {
 	@include controls.radio($checked-sel: "&.Active");
 }
 
-.DialogRoundCheckboxField_OuterCircle {
+:where(.DialogRoundCheckboxField_OuterCircle) {
 	display: none;
 }
 
-.DialogSlider_Container {
+:where(.DialogSlider_Container) {
 	background-color: transparent;
 }
 
-.DialogSlider_Grabber {
+:where(.DialogSlider_Grabber) {
 	box-shadow: none;
 }
 
-.DialogSlider_Slider {
+:where(.DialogSlider_Slider) {
 	@include controls.slider(
 		$thumb-sel: ".DialogSlider_Grabber",
 		$track-sel: ".DialogSlider_Value"
@@ -238,7 +243,7 @@
 	box-shadow: none;
 }
 
-.DialogSubHeader {
+:where(.DialogSubHeader) {
 	@include utils.text-reset;
 	@include utils.legend-as-div;
 }
@@ -249,7 +254,7 @@
 	padding-block-start: var(--text-spacing);
 }
 
-.DialogToggle_Label {
+:where(.DialogToggle_Label) {
 	font: var(--text-ui);
 	color: inherit;
 }
@@ -269,7 +274,7 @@
 	height: unset;
 }
 
-._DialogColLayout {
+:where(._DialogColLayout) {
 	gap: var(--dialog-button-spacing);
 
 	justify-content: end;
@@ -367,7 +372,7 @@
 	}
 }
 
-.SettingsDialogSubHeader {
+:where(.SettingsDialogSubHeader) {
 	@include utils.text-reset;
 	@include utils.legend-as-div;
 }

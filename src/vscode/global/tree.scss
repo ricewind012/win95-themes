@@ -131,8 +131,9 @@ $-max-nest: 10;
 		.monaco-icon-name-container {
 			@include list.item-name-selected;
 
+			block-size: 16px;
+			display: block;
 			position: relative;
-			top: 2px;
 		}
 	}
 
