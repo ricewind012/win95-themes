@@ -46,9 +46,9 @@
 	@include controls.button;
 
 	// !important
-	.monaco-button-dropdown.disabled > .monaco-button-dropdown-separator,
 	.monaco-button-dropdown.disabled > &.disabled,
-	.monaco-button-dropdown.disabled > &.disabled:focus {
+	.monaco-button-dropdown.disabled > &.disabled:focus,
+	.monaco-button-dropdown.disabled > .monaco-button-dropdown-separator {
 		opacity: 1;
 	}
 
@@ -65,8 +65,8 @@
 	height: unset;
 }
 
-.monaco-text-button-with-short-label,
-.monaco-description-buttons > .monaco-button {
+.monaco-description-buttons > .monaco-button,
+.monaco-text-button-with-short-label {
 	overflow: visible;
 	width: 148px;
 }

@@ -49,8 +49,8 @@
 		}
 	}
 
-	&.dirty:hover,
-	&:not(.dirty) {
+	&:not(.dirty),
+	&.dirty:hover {
 		.codicon-close-small::before {
 			content: "";
 
@@ -63,8 +63,8 @@
 	}
 }
 
-.tab-border-top-container,
-.tab-border-bottom-container {
+.tab-border-bottom-container,
+.tab-border-top-container {
 	display: none;
 }
 
@@ -82,8 +82,8 @@
 	margin-left: var(--text-spacing);
 
 	&,
-	.monaco-action-bar,
-	.action-label {
+	.action-label,
+	.monaco-action-bar {
 		width: auto;
 		height: auto;
 	}

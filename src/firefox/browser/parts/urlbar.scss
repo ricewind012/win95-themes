@@ -6,14 +6,14 @@ $-input-height: round(
 	1px
 );
 
-// why
-.searchmode-switcher,
 // Made obsolete by the browser.urlbar.trimURLs pref
 #identity-box,
 // All of these are available through other means
 #page-action-buttons,
 // You use ublock origin, right ?
-#trust-icon-container {
+#trust-icon-container,
+// why
+.searchmode-switcher {
 	display: none;
 }
 
