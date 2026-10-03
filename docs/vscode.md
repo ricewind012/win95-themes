@@ -2,6 +2,8 @@
 
 Last tested version is [1.138](https://code.visualstudio.com/updates/v1_106)!
 
+![Main Window](../assets/preview/vscode/window.png)
+
 ## Usage
 
 1. Install the [Custom UI Style](https://open-vsx.org/vscode/item?itemName=subframe7536.custom-ui-style) extension.
@@ -9,7 +11,6 @@ Last tested version is [1.138](https://code.visualstudio.com/updates/v1_106)!
 
 ```jsonc
 "custom-ui-style.external.imports": [
-	// Remote (updates automatically):
 	{
 		"type": "css",
 		"url": "https://raw.githubusercontent.com/ricewind012/win95-themes/refs/heads/dist/dist/vscode.css",
@@ -36,16 +37,6 @@ Last tested version is [1.138](https://code.visualstudio.com/updates/v1_106)!
 	// 	"type": "css",
 	// 	"url": "https://raw.githubusercontent.com/ricewind012/win95-themes/refs/heads/master/src/shared/colors/win2000.css",
 	// },
-
-	// Local:
-	"file:///path/to/win95-themes/dist/vscode.css",
-	"file:///path/to/win95-themes/src/shared++/ElementUtils.js",
-	"file:///path/to/win95-themes/src/vscode/vscode.js",
-
-	// If you wish to use other colors, uncomment one of the lines below:
-	//"file:///path/to/win95-themes/src/shared/colors/hotdogstand.css",
-	//"file:///path/to/win95-themes/src/shared/colors/vgui.css",
-	//"file:///path/to/win95-themes/src/shared/colors/win2000.css",
 ],
 
 "editor.scrollbar.arrowSize": 16,
@@ -86,7 +77,3 @@ Last tested version is [1.138](https://code.visualstudio.com/updates/v1_106)!
 - [Scrollbars arrows](https://github.com/microsoft/vscode/issues/130616#issuecomment-1076061821) are undocumented and may be removed at any time.
 - Scrollbars move out of bounds when scrolling to the bottom.
 - Some icons are absent.
-
-## Preview
-
-![Main Window](../assets/preview/vscode/window.png)

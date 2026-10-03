@@ -1,5 +1,7 @@
 # Discord
 
+![Preview](../assets/preview/discord/chat.png)
+
 ## Usage
 
 0. Install Vencord/Vesktop.
@@ -22,7 +24,3 @@
 
 - Icons are locked behind the "English (US)" locale (change in Settings > Language).
 - Sidebar list items are huge due to rendering issues with lazy-loading.
-
-## Preview
-
-![Preview](../assets/preview/discord/chat.png)

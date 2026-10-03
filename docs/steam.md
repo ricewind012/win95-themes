@@ -10,6 +10,12 @@ Check these out for the same style!
 - [Firefox](https://github.com/ricewind012/win95-themes/blob/master/docs/firefox.md)
 - [Visual Studio Code](https://github.com/ricewind012/win95-themes/blob/master/docs/vscode.md)
 
+## Plugin Support
+
+This theme currently supports the following plugins:
+
+- Change Window Params (only system titlebar)
+
 ## Options
 
 ### Colors

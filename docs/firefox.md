@@ -1,6 +1,8 @@
 # Firefox
 
-Last tested version is 158.0a1! Closest ESR version is 153, so if the theme happens break and not receive updates, you can try using that version instead.
+Last tested version is 158 (on Nightly)!
+
+![Main Window](../assets/preview/firefox/window.png)
 
 ## Usage
 
@@ -69,13 +71,13 @@ user_pref("sidebar.revamp", true);
 
 ## TODO
 
-1. Tabs (maybe)
-   - Tree tab groups
-   - Sidebar expand on hover
+1. Sidebar expand on hover (maybe)
 
 2. Content (including sidebar panels)
 
-   Will have to wait for Mozilla to replace XUL elements with their newer ones, so not any time soon.
+   ~~Will have to wait for Mozilla to replace XUL elements with their newer
+   ones, so not any time soon.~~ Update for settings redesign: wait until the
+   old one is gone
 
    Maybe also open about pages in a window and give them a window styling:
 
@@ -104,7 +106,3 @@ user_pref("sidebar.revamp", true);
    - Stylus
    - uBlock Origin
    - Violentmonkey
-
-## Preview
-
-![Main Window](../assets/preview/firefox/window.png)
