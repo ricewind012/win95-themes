@@ -4,12 +4,20 @@ A collection of Windows 95-styled themes. Note that they do _not_ try to recreat
 
 ## Current themes
 
-Click a link for the installation guide, preview, etc.
+Click a link for the manual installation guide, preview, etc.
 
 - [Discord](./docs/discord.md)
 - [Firefox](./docs/firefox.md)
 - [Steam](./docs/steam.md)
 - [Visual Studio Code](./docs/vscode.md)
+
+## Installing
+
+```sh
+curl -fsSL https://raw.githubusercontent.com/ricewind012/win95-themes/refs/heads/master/scripts/install | sh -s -- discord # firefox/steam/vscode
+```
+
+Pass `-p` after `--` to apply patches to the app, if any.
 
 ## Building
 
