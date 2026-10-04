@@ -13,7 +13,9 @@
 	);
 	@include text.input-label;
 
+	min-block-size: unset;
 	opacity: 1;
+	padding: 0;
 
 	width: unset;
 	height: unset;
