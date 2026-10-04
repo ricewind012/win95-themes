@@ -87,6 +87,14 @@
 
 	height: calc(100% - var(--dialog-spacing) * 2);
 
+	.decorationWrapper__6131a.sticky__6131a {
+		position: unset;
+
+		&::before {
+			display: none;
+		}
+	}
+
 	.panel__6131a {
 		padding: 0;
 		margin: 0;
