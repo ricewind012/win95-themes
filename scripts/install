@@ -1,0 +1,186 @@
+#!/bin/sh -e
+
+install_discord() {
+	sed -i "s/\"themeLinks\": []/\"themeLinks\": [\"$IMPORT_PART/dist/dist/discord.css\"]/" \
+		"$XDG_CONFIG_HOME/vesktop/settings/settings.json"
+}
+
+install_firefox() {
+	prompt 'Path to Firefox profile'
+	chrome_path=$REPLY/chrome
+
+	rm -rf "$chrome_path/CSS" "$chrome_path/JS"
+	mkdir -p "$chrome_path/CSS" "$chrome_path/JS"
+	cp -r "$repo_path/src/shared/colors" "$profile_path"
+	cp "$repo_path/src/firefox/win95_main.uc.mjs" "$profile_path/JS"
+	cp -r "$repo_path/src/userscript" "$profile_path/JS"
+	git switch dist
+	cp "$repo_path/dist/firefox_global.css" "$profile_path/CSS/firefox_global.uc.css"
+	cp "$repo_path/dist/firefox_agent.css" "$profile_path/CSS/win95_agent.uc.css"
+	cp "$repo_path/dist/firefox_author.css" "$profile_path/CSS/win95_author.uc.css"
+	cp "$repo_path/dist/firefox_author.css" "$profile_path/userChrome.css"
+	cp "$repo_path/dist/firefox_content.css" "$profile_path/userContent.css"
+	git switch master
+}
+
+install_steam() {
+	cp -r "$repo_path" "$XDG_DATA_HOME/Steam/millennium/themes/win95-themes"
+}
+
+install_vscode() {
+	for variant in Code 'Code - OSS' ''; do
+		[ -d "$XDG_CONFIG_HOME/$variant" ] && break
+	done
+	case $variant in
+		'')
+			die 'No VS Code config directory?'
+		;;
+
+		Code)
+			code --install-extension RimuruChan.vscode-fix-checksums-next
+		;;
+
+		'Code - OSS')
+			log 'You will have to download the Fix VSCode Checksums extension yourself, see docs/vscode.md'
+		;;
+	esac
+
+	code --install-extension subframe7536.custom-ui-style
+
+	settings_path=${VSCODE_PORTABLE:-$XDG_CONFIG_HOME/$variant}/User/settings.json
+	yn n "Overwrite ${settings_path##*/} with the theme's settings"
+	if [ "$REPLY" = y ]; then
+		cat <<EOF > "$settings_path"
+{
+	"custom-ui-style.external.imports": [
+		{
+			"type": "css",
+			"url": "$IMPORT_PART/dist/dist/vscode.css",
+		},
+		{
+			"type": "js-module",
+			"url": "$IMPORT_PART/master/src/shared%2B%2B/ElementUtils.js",
+		},
+		{
+			"type": "js-module",
+			"url": "$IMPORT_PART/master/src/vscode/vscode.js",
+		},
+
+		// If you wish to use other colors, uncomment one of these below:
+		//{
+		//	"type": "css",
+		//	"url": "$IMPORT_PART/master/src/shared/colors/hotdogstand.css",
+		//},
+		//{
+		//	"type": "css",
+		//	"url": "$IMPORT_PART/master/src/shared/colors/vgui.css",
+		//},
+		//{
+		//	"type": "css",
+		//	"url": "$IMPORT_PART/master/src/shared/colors/win2000.css",
+		//},
+	],
+
+	"editor.scrollbar.arrowSize": 16,
+	"editor.scrollbar.vertical": "visible",
+	"editor.scrollbar.verticalHasArrows": true,
+	"editor.scrollbar.horizontalHasArrows": true,
+
+	"terminal.integrated.cursorStyle": "underline",
+	"terminal.integrated.fontFamily": "MS Gothic",
+	"terminal.integrated.fontSize": 12,
+
+	"window.titleBarStyle": "native",
+	"window.density.layout": "compact",
+	"window.dialogStyle": "custom",
+	"window.menuStyle": "custom",
+
+	"workbench.activityBar.location": "top",
+	"workbench.editor.tabSizing": "shrink",
+	"workbench.editor.wrapTabs": true,
+	//"workbench.list.horizontalScrolling": true,
+
+	"breadcrumbs.enabled": false,
+	"chat.disableAIFeatures": true,
+	"explorer.compactFolders": false,
+	"editor.roundedSelection": false,
+}
+EOF
+	fi
+}
+
+prompt() {
+	while [ -z "$REPLY" ]; do
+		printf '%s: ' "$1"
+		read -r REPLY
+	done
+}
+
+yn() {
+	case $1 in
+		y) yn='[Y/n]' ;;
+		n) yn='[y/N]' ;;
+	esac
+
+	printf '%s? %s ' "$2" "$yn"
+	stty -icanon
+	REPLY=$(dd ibs=1 count=1 2>/dev/null)
+	: "${REPLY:=$1}"
+	stty icanon
+	printf '\n'
+}
+
+log() {
+	printf "$@" >&2
+}
+
+die() {
+	log '%s\n' "$1"
+	exit 1
+}
+
+help() {
+	log 'Usage: %s [%s] PROGRAM
+
+Where "%s":
+  -h Display this message
+  -p Apply patches to the program if any
+' "${0##*/}" "$prog_opts" "$prog_opts"
+	exit 2
+}
+
+main() {
+	: "${TMPDIR:=/tmp}"
+	: "${XDG_CONFIG_HOME:=$HOME/.config}"
+	IMPORT_PART=https://raw.githubusercontent.com/ricewind012/win95-themes/refs/heads
+	REPO_URL=https://github.com/ricewind012/win95-themes
+
+	yn n 'This will overwrite some settings, continue'
+	[ "$REPLY" = n ] && exit
+
+	if [ "${0##*/}" = sh ]; then
+		repo_path=$TMPDIR/${REPO_URL##*/}
+		git clone --depth 1 "$REPO_URL" "$repo_path"
+		cd -- "$repo_path"
+		git switch dist
+	else
+		repo_path=${PWD%/*}
+		cd -P -- "${0%/*}"
+	fi
+
+	prog_opts=hp
+	[ "$#" -eq 0 ] && help
+	while getopts "$prog_opts" opt; do case $opt in
+		p) patch=1 ;;
+		[h?]) help ;;
+	esac; done
+	shift "$(( OPTIND - 1 ))"
+
+	[ "$patch" ] && ./patch "$1"
+	if install_$1; then
+		log 'Theme for %s is installed.\n' "$1"
+		log 'Some things may still require doing it manually, see docs/%s.md\n' "$1"
+	fi
+}
+
+main "$@"
