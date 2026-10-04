@@ -25,7 +25,7 @@ switch (prog) {
 				`$1${THEME_ITEM_HEIGHT}`,
 			],
 			[
-				new RegExp(`(getHeight\(i?\){return )${VSCODE_ITEM_HEIGHT}`),
+				new RegExp(`(getHeight(i?){return )${VSCODE_ITEM_HEIGHT}`),
 				`$1${THEME_ITEM_HEIGHT}`,
 			],
 

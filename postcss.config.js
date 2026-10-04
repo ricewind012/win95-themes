@@ -1,3 +1,5 @@
+import fs from "node:fs";
+import path from "node:path";
 import postcssSassPlugin from "@csstools/postcss-sass";
 import removeEmpty from "postcss-discard-empty";
 import postcssFunctions from "postcss-functions";
@@ -6,9 +8,6 @@ import {
 	appendImportantPlugin,
 	selectorReplacerPlugin,
 } from "steam-theming-utils/postcss-plugins";
-
-import fs from "node:fs";
-import path from "node:path";
 
 const unquote = (str) => str.replace(/"/g, "");
 
