@@ -4,7 +4,7 @@ Last tested version is 158 (on Nightly)!
 
 ![Main Window](../assets/preview/firefox/window.png)
 
-## Usage
+## Installing
 
 1. Install [fx-autoconfig](https://github.com/MrOtherGuy/fx-autoconfig).
 2. Execute the following in terminal (edit the paths!):
@@ -31,7 +31,7 @@ user_pref("widget.gtk.overlay-scrollbars.enabled", false);
 user_pref("widget.non-native-theme.scrollbar.size.override", 16);
 user_pref("widget.non-native-theme.scrollbar.style", 4);
 
-// Optional - may work without them, but I did not test with defaults
+// Optional - may work without them, but they were not tested with defaults
 user_pref("browser.tabs.tabMinWidth", 120);
 user_pref("browser.theme.dark-private-windows", false);
 user_pref("browser.urlbar.trimURLs", false);

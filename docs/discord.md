@@ -2,11 +2,11 @@
 
 ![Preview](../assets/preview/discord/chat.png)
 
-## Usage
+## Installing
 
-0. Install Vencord/Vesktop.
-1. Open the Settings > Themes > "Online Themes" tab.
-2. Copy & paste the following into the text box:
+1. Install [Vencord](https://vencord.dev) or [Vesktop](https://vesktop.dev).
+2. Open Settings > Themes > Online Themes.
+3. Paste this URL into the theme box:
 
    ```
    https://raw.githubusercontent.com/ricewind012/win95-themes/refs/heads/dist/dist/discord.css

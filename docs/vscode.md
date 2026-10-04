@@ -4,7 +4,7 @@ Last tested version is [1.138](https://code.visualstudio.com/updates/v1_106)!
 
 ![Main Window](../assets/preview/vscode/window.png)
 
-## Usage
+## Installing
 
 1. Install the [Custom UI Style](https://open-vsx.org/vscode/item?itemName=subframe7536.custom-ui-style) extension.
 2. Add to `settings.json` (Preferences: Open User Settings (JSON)) the following:
