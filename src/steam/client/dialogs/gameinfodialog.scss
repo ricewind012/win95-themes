@@ -4,8 +4,8 @@
 @use "steam/shared";
 
 %-row {
-	block-size: min-content;
-	inline-size: calc(100% / 3);
+	height: min-content;
+	width: calc(100% / 3);
 }
 
 #DialogBody {
@@ -26,10 +26,10 @@
 
 	[style="--indent-level: 0;"] {
 		align-items: center;
-		// Align with the "IP Address" button
-		block-size: calc(1lh + var(--button-spacing) * 2);
 		display: grid;
 		grid-template-columns: 25% 75%;
+		// Align with the "IP Address" button
+		height: calc(1lh + var(--button-spacing) * 2);
 
 		// #gamepaddialog_FieldLabel
 		& > :first-child > div > div {
@@ -53,16 +53,14 @@
 		var(--dialog-offset) + var(--main-window-titlebar-height)
 	);
 
-	margin-top: var(--border-size);
-	margin-bottom: var(--text-spacing);
-
 	align-content: start;
 	display: flex;
 	flex-wrap: wrap;
-	overflow: auto;
 	height: var(--list-height);
-
+	margin-block-start: var(--border-size);
+	margin-block-end: var(--text-spacing);
 	order: -1;
+	overflow: auto;
 
 	&::before {
 		height: calc(var(--list-height) + var(--border-size) * 2);
@@ -75,8 +73,8 @@
 	@include controls.button;
 	@include table.header-row;
 
+	inset-block-start: 0;
 	position: sticky;
-	top: 0;
 }
 
 #Details {

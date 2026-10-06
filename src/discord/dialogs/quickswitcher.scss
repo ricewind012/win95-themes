@@ -5,12 +5,11 @@
 @use "shared++/utils";
 
 .content__71961 {
-	line-height: inherit;
-	gap: var(--text-spacing);
-	padding: 0;
-
-	height: 100%;
 	align-items: center;
+	gap: var(--text-spacing);
+	height: 100%;
+	line-height: inherit;
+	padding: 0;
 
 	.result__71961 > & {
 		display: grid;
@@ -24,14 +23,13 @@
 
 	line-height: inherit;
 	margin: 0;
-
 	width: 100%;
 }
 
 .input_ac6cb0 {
 	@include controls.text-field;
 
-	block-size: unset;
+	height: unset;
 }
 
 .miscContainer_ac6cb0 {
@@ -50,16 +48,14 @@
 	border: none;
 	box-shadow: none;
 	gap: var(--window-gap);
-	padding: var(--dialog-spacing);
-
 	height: inherit;
+	padding: var(--dialog-spacing);
 }
 
 .result__71961 {
 	@include listbox.item($selected-sel: "&[aria-selected='true']");
 
 	font: var(--text-ui);
-
 	height: calc(var(--icon-size) + 2px * 2);
 
 	:where(& *) {
@@ -71,10 +67,10 @@
 	.username__71961 {
 		@include utils.parentheses;
 
-		opacity: 1;
 		font: var(--text-ui);
+		margin-inline-start: var(--text-spacing);
+		opacity: 1;
 		text-transform: none;
-		margin-left: var(--text-spacing);
 	}
 }
 
@@ -83,6 +79,5 @@
 	@include utils.move-scrollbar;
 
 	margin: 0;
-
 	max-height: unset;
 }

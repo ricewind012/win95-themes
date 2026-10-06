@@ -4,24 +4,23 @@
 #Container {
 	@include tree.item($expanded-sel: "&");
 
-	overflow: visible;
 	background-color: transparent;
+	box-shadow: none;
 	color: var(--color-window-text);
 	font: var(--text-ui);
-	box-shadow: none;
-
+	overflow: visible;
 	padding: var(--gamelistentry_container-padding);
 
 	&::before {
-		left: 12px;
-		top: var(--gamelistentry_tree-border-inset-top);
-		width: 18px;
 		height: 24px;
+		inset-inline-start: 12px;
+		inset-block-start: var(--gamelistentry_tree-border-inset-top);
+		width: 18px;
 	}
 
 	&::after {
-		left: -7px;
-		top: -10px;
+		inset-inline-start: -7px;
+		inset-block-start: -10px;
 		height: calc(100% - 1px);
 	}
 
@@ -51,29 +50,27 @@
 }
 
 #FriendIsPlaying {
-	left: unset;
-	right: 0;
+	inset-inline-start: unset;
+	inset-inline-end: 0;
 }
 
 #AppIconDownloading,
 #GameIcon {
 	filter: none;
-	margin-right: 7px;
-
-	width: var(--icon-size);
 	height: var(--icon-size);
+	margin-inline-end: 7px;
+	width: var(--icon-size);
 }
 
 #GameListEntryContainer {
+	align-items: center;
 	background-color: transparent;
 	padding-block: var(--gamelistentry_container-container-padding-block);
 
-	align-items: center;
-
 	&::before {
-		left: 7px;
-		top: -14px;
-		width: 8px;
 		height: 24px;
+		inset-inline-start: 7px;
+		inset-block-start: -14px;
+		width: 8px;
 	}
 }

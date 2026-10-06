@@ -8,7 +8,6 @@
 	@include listbox.item($selected-sel: "&:focus:not([aria-disabled])");
 
 	color: inherit;
-
 	min-height: unset;
 
 	// what? why?
@@ -18,11 +17,10 @@
 
 	.iconAccessory__56a50,
 	.leading__56a50 {
-		padding: 0;
-		margin: 0;
-
-		width: unset;
 		height: unset;
+		margin: 0;
+		padding: 0;
+		width: unset;
 	}
 }
 
@@ -30,7 +28,7 @@
 	@include listbox.container;
 
 	box-shadow: none;
-	margin-top: -4px;
+	margin-block-start: -4px;
 
 	.content_d125d2,
 	.scrollerBase_d125d2 {

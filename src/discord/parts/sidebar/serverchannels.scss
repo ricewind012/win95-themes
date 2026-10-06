@@ -19,22 +19,21 @@
 		}
 
 		background-color: var(--color-window);
-		padding-left: calc(var(--icon-size) + var(--tree-spacing));
-
-		overflow: visible;
-		width: unset;
 		height: unset;
+		overflow: visible;
+		padding-inline-start: calc(var(--icon-size) + var(--tree-spacing));
+		width: unset;
 	}
 
 	.name__29444 {
 		font: var(--text-ui);
-		margin-top: -2px;
+		margin-block-start: -2px;
 	}
 
 	.wrapperCommon__29444 {
 		@include tree.item($expanded-sel: "&:not(.collapsed__29444)");
 
-		margin-left: 0;
+		margin-inline-start: 0;
 
 		&::before {
 			display: none;
@@ -56,8 +55,8 @@
 .scrollerBase__99f8c {
 	// Seen in private channels
 	mask: none;
-	padding: 0;
 	margin: 0;
+	padding: 0;
 }
 
 // channel
@@ -66,23 +65,21 @@
 
 	@include tree.item($expanded-sel: "&");
 
-	margin-left: calc(var(--offset) * 2);
+	margin-inline-start: calc(var(--offset) * 2);
 
 	&::before {
-		top: -14px;
 		height: 100%;
+		inset-block-start: -14px;
 		z-index: -1;
 	}
 
 	&::after {
+		border-inline-start: 1px dotted var(--color-gray-text);
 		content: "";
-
-		position: absolute;
-		left: calc(var(--offset) * -2 + 8px);
-		top: -7px;
 		height: calc(100% - 1px);
-
-		border-left: 1px dotted var(--color-gray-text);
+		inset-block-start: -7px;
+		inset-inline-start: calc(var(--offset) * -2 + 8px);
+		position: absolute;
 	}
 
 	&.modeSelected__2ea32 {
@@ -96,12 +93,12 @@
 	}
 
 	&.typeThread__2ea32 {
-		margin-left: calc(var(--offset) * 3.25);
+		margin-inline-start: calc(var(--offset) * 3.25);
 
 		&::after {
-			top: -7px;
-			left: -37px;
 			height: calc(100% - 1px);
+			inset-block-start: -7px;
+			inset-inline-start: -37px;
 		}
 	}
 

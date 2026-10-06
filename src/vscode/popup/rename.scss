@@ -7,7 +7,7 @@
 }
 
 .rename-label {
-	opacity: 1;
 	font: var(--text-ui);
-	margin-top: var(--text-spacing);
+	opacity: 1;
+	margin-block-start: var(--text-spacing);
 }

@@ -1,23 +1,21 @@
 @mixin -button-arrow {
 	&::after {
-		content: "";
-
-		position: absolute;
-		top: -1px;
-		right: 7px;
-		width: 7px;
-		height: 100%;
-
 		background-color: var(--color-button-text);
+		content: "";
+		height: 100%;
+		inset-block-start: -1px;
+		inset-inline-end: 7px;
 		mask: var(--button-img, none) no-repeat;
-		mask-size: 7px 4px;
 		mask-position: center;
+		mask-size: 7px 4px;
+		position: absolute;
+		width: 7px;
 	}
 }
 
 @mixin button {
-	text-align: left;
 	padding: var(--table-row-spacing);
+	text-align: start;
 
 	&:active {
 		box-shadow: var(--border-button-sunken-alt);
@@ -42,7 +40,7 @@
 		inset -1px -1px var(--color-button-highlight),
 		inset -2px -2px var(--color-button-shadow);
 	padding: 2px 5px;
-	padding-bottom: 3px;
+	padding-block-end: 3px;
 }
 
 @mixin row {

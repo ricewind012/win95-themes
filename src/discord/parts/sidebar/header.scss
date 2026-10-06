@@ -3,14 +3,13 @@
 .animatedContainer_f37cb1 {
 	opacity: 0.5;
 	margin: 1px;
-
 	transform: none;
 	width: calc(100% - 2px);
 }
 
 .bannerImage_f37cb1 {
-	transform: none;
 	height: inherit;
+	transform: none;
 }
 
 .bannerImg_f37cb1 {
@@ -18,24 +17,24 @@
 }
 
 .container_f37cb1 {
+	--custom-channel-header-height: var(--custom-guild-banner-height);
 	--custom-guild-banner-height: calc(
 		var(--toolbar-top-margin) - var(--window-gap) - 2px
 	);
-	--custom-channel-header-height: var(--custom-guild-banner-height);
 
 	box-shadow: var(--border-statusbar);
-	margin-left: calc(var(--border-size) * -1);
-
-	position: fixed;
-	top: calc(var(--main-window-border-spacing) + var(--titlebar-pos));
 	height: calc(var(--toolbar-top-margin) - var(--window-gap));
+	inset-block-start: calc(
+		var(--main-window-border-spacing) + var(--titlebar-pos)
+	);
+	margin-inline-start: calc(var(--border-size) * -1);
+	position: fixed;
 	width: calc(var(--sidebar-width) - var(--window-gap));
 
 	& > button {
-		text-align: center;
-
-		width: calc(100% - var(--icon-button-width) - var(--toolbar-spacing));
 		height: unset;
+		text-align: center;
+		width: calc(100% - var(--icon-button-width) - var(--toolbar-spacing));
 	}
 }
 
@@ -60,10 +59,9 @@
 .headerContent_f37cb1 {
 	filter: none;
 	gap: 0;
-	// TODO: ?
-	margin-top: 1px;
-
 	justify-content: end;
+	// TODO: ?
+	margin-block-start: 1px;
 }
 
 .guildBadgeAndName_f37cb1,

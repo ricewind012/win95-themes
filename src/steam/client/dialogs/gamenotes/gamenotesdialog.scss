@@ -9,9 +9,8 @@
 	@include controls.text-field;
 
 	& > .ProseMirror {
-		padding: 0;
-
 		overflow: auto;
+		padding: 0;
 	}
 }
 
@@ -19,8 +18,8 @@
 	--button-img: icon("edit");
 	@include controls.icon-button;
 
-	inline-size: unset;
 	margin-inline-start: var(--icon-button-width);
+	width: unset;
 
 	svg {
 		display: none;
@@ -29,18 +28,17 @@
 
 #NoteActions {
 	gap: var(--dialog-button-spacing);
-	margin-top: var(--dialog-button-spacing);
-
+	justify-content: end;
+	margin-block-start: var(--dialog-button-spacing);
 	position: unset;
-	justify-content: right;
 
 	.DialogButton {
 		opacity: 1;
 	}
 
 	svg {
-		width: var(--icon-size);
 		height: var(--icon-size);
+		width: var(--icon-size);
 	}
 }
 

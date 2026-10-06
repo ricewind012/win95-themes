@@ -5,16 +5,15 @@
 	@include controls.tooltip;
 
 	background-image: none;
+	box-shadow: none;
 	font: var(--text-ui);
 	text-shadow: none;
-	box-shadow: none;
 }
 
 #ToolTipCustom {
-	gap: 1em;
-
 	display: flex;
 	flex-direction: column;
+	gap: 1em;
 }
 
 #ToolTipTitle,

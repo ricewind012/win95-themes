@@ -4,21 +4,20 @@
 .menubar {
 	@include window.menubar;
 
+	height: var(--menubar-height);
+	inset-block-start: 0;
 	overflow: visible;
 	position: fixed;
-	top: 0;
 	width: 100%;
-	height: var(--menubar-height);
 	z-index: 2;
 
 	&::after {
-		content: "";
-
-		position: absolute;
-		top: var(--menubar-height);
-		width: 100%;
-
 		@include controls.separator;
+
+		content: "";
+		inset-block-start: var(--menubar-height);
+		position: absolute;
+		width: 100%;
 	}
 }
 

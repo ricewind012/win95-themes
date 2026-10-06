@@ -3,10 +3,9 @@
 }
 
 #ColumnContainer {
-	padding: 0;
-
 	display: flex;
 	flex-direction: column;
+	padding: 0;
 }
 
 #Container {
@@ -16,7 +15,6 @@
 
 #RightColumn {
 	margin: 0;
-
 	width: 100%;
 }
 
@@ -26,7 +24,6 @@
 
 #Spotlights {
 	padding: 0;
-
 	width: 100%;
 
 	& > div {

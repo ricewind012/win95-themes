@@ -1,9 +1,8 @@
 @mixin title-toolbar {
 	--offset: calc(var(--icon-button-height) - var(--tabs-height));
 
+	inset-block-end: var(--offset);
+	margin-block-start: calc(var(--offset) * -1);
 	padding: 0;
-	margin-top: calc(var(--offset) * -1);
-
 	position: relative;
-	bottom: var(--offset);
 }

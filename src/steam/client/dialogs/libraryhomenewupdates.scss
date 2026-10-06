@@ -7,30 +7,27 @@
 
 	&#WhatsNewHeaderText::after,
 	&:not(#WhatsNewHeaderText)::before {
-		content: "";
-
-		display: block;
-
 		@include controls.separator;
+
+		content: "";
+		display: block;
 	}
 }
 
 #WhatsNewGameListRow {
-	margin-block-end: var(--text-spacing);
-
 	align-items: center;
+	margin-block-end: var(--text-spacing);
 
 	.DialogToggle_Description {
 		color: inherit;
-		padding: 0;
 		margin-inline-start: var(--text-spacing);
+		padding: 0;
 	}
 }
 
 #WhatsNewGameListSection {
-	padding: 0;
-
 	overflow: auto;
+	padding: 0;
 }
 
 #WhatsNewPriorityContainer {

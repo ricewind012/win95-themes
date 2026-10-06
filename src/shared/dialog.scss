@@ -1,7 +1,6 @@
 @mixin buttons {
-	gap: var(--dialog-button-spacing);
-
 	display: flex;
+	gap: var(--dialog-button-spacing);
 	justify-content: end;
 }
 
@@ -28,8 +27,7 @@
 	--icon-size: 32px;
 
 	background-image: var(--icon);
-	margin-right: var(--dialog-content-spacing);
-
-	width: var(--icon-size);
 	height: var(--icon-size);
+	margin-inline-end: var(--dialog-content-spacing);
+	width: var(--icon-size);
 }

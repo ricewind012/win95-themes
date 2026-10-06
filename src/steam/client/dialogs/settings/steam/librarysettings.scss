@@ -1,9 +1,8 @@
 @use "shared++/utils";
 
 #ActionSection {
-	gap: var(--dialog-button-spacing);
-
 	flex-direction: row;
+	gap: var(--dialog-button-spacing);
 }
 
 #DescriptionText {

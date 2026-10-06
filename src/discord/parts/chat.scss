@@ -4,19 +4,18 @@
 .barBase__0f481 {
 	background-color: transparent;
 	border: none;
+	height: unset;
+	inset-inline-end: calc(var(--border-size) + var(--scrollbar-size));
+	inset-inline-start: var(--border-size);
+	min-height: unset;
 	padding: 0;
 
-	right: calc(var(--border-size) + var(--scrollbar-size));
-	left: var(--border-size);
-	height: unset;
-	min-height: unset;
-
 	&:first-child {
-		top: var(--border-size);
+		inset-block-start: var(--border-size);
 	}
 
 	&:last-child {
-		bottom: var(--border-size);
+		inset-block-end: var(--border-size);
 	}
 
 	svg {
@@ -31,8 +30,8 @@
 }
 
 .chat_f75fb0 {
-	gap: var(--window-gap);
 	border: none;
+	gap: var(--window-gap);
 }
 
 // Member list

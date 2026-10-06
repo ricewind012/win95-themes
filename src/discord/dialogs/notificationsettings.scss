@@ -2,9 +2,8 @@
 @use "shared/table";
 
 .channelNameContainer__856b5 {
-	gap: var(--text-spacing);
-
 	display: flex;
+	gap: var(--text-spacing);
 }
 
 .largeSpacing__856b5,
@@ -21,18 +20,18 @@
 	@include table.header-row;
 
 	letter-spacing: 0;
-	text-transform: none;
 	margin: 0;
+	text-transform: none;
 }
 
 .override__856b5 {
 	@include list.item;
 
 	background-color: var(--color-window);
-	color: inherit;
 	border: none;
-	padding: 0;
+	color: inherit;
 	margin: 0;
+	padding: 0;
 
 	svg {
 		display: none;

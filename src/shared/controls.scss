@@ -5,8 +5,8 @@
 
 	@include -input-common;
 
-	width: var(--sel-button-size);
 	height: var(--sel-button-size);
+	width: var(--sel-button-size);
 
 	#{$checked-sel} {
 		@include checkbox-radio-checked;
@@ -20,11 +20,10 @@
 
 @mixin -input-common {
 	appearance: none;
-	outline: none;
-	font: var(--text-ui);
 	border: none;
+	font: var(--text-ui);
 	margin: 0;
-
+	outline: none;
 	position: relative;
 }
 
@@ -39,8 +38,8 @@
 	@include -input-common;
 
 	background-color: var(--color-window);
-	color: var(--color-window-text);
 	box-shadow: var(--border-field);
+	color: var(--color-window-text);
 	// TODO: "padding-block: 0" if --text-ui-size > 11px
 	// not there yet, see https://github.com/w3c/csswg-drafts/issues/8376
 	// if it *is* there, have to wait for all apps to update to newest chromium
@@ -48,9 +47,10 @@
 }
 
 @mixin input-disabled {
+	--color-button-text: var(--color-button-shadow);
 	--color-window: var(--color-button-face);
 	--color-window-text: var(--color-gray-text);
-	--color-button-text: var(--color-button-shadow);
+
 	text-shadow: 1px 1px var(--color-button-highlight);
 }
 
@@ -63,11 +63,10 @@
 	@include -input-common;
 
 	background-color: var(--color-button-face);
-	color: var(--color-button-text);
 	box-shadow: var(--border-button-raised);
-	padding: var(--button-spacing);
-
+	color: var(--color-button-text);
 	min-width: var(--button-min-width);
+	padding: var(--button-spacing);
 
 	#{$focus-sel} {
 		@include button-focus;
@@ -79,39 +78,37 @@
 }
 
 @mixin button-active {
+	box-shadow: var(--border-button-sunken);
 	color: transparent;
 	text-shadow: 1px 1px var(--color-button-text);
-	box-shadow: var(--border-button-sunken);
 }
 
 @mixin button-focus {
+	box-shadow: var(--border-button-focused);
 	outline: dotted 1px var(--color-button-text);
 	outline-offset: calc(var(--button-spacing) * -1);
-	box-shadow: var(--border-button-focused);
 }
 
 @mixin checkbox($checked-sel, $disabled-sel: "&:disabled") {
 	@include -checkbox-radio-common($checked-sel, $disabled-sel);
 
+	--control-img: icon("checkmark", "mono");
+	--control-img-pos: 3px 3px;
+	--control-img-size: 7px 7px;
+
 	background-color: var(--color-to-change);
 	box-shadow: var(--border-field);
-
-	--control-img: icon("checkmark", "mono");
-	--control-img-size: 7px 7px;
-	--control-img-pos: 3px 3px;
 }
 
 @mixin checkbox-radio-checked {
 	&::before {
-		content: "";
-
-		position: absolute;
-		inset: 0;
-
-		mask: var(--control-img) no-repeat;
-		mask-size: var(--control-img-size);
-		mask-position: var(--control-img-pos);
 		background-color: var(--color-window-text);
+		content: "";
+		inset: 0;
+		mask: var(--control-img) no-repeat;
+		mask-position: var(--control-img-pos);
+		mask-size: var(--control-img-size);
+		position: absolute;
 	}
 }
 
@@ -128,12 +125,12 @@
 	--border-size: 2px;
 	--color-arrow-shadow: var(--color-button-face);
 
-	opacity: 1;
 	background: var(--control-img);
 	background-color: var(--color-window);
 	background-repeat: no-repeat;
 	background-size: 1px 1px;
-	padding-right: calc(
+	opacity: 1;
+	padding-inline-end: calc(
 		var(--border-size) + var(--input-spacing) + var(--scrollbar-size)
 	);
 
@@ -148,10 +145,9 @@
 	// TODO: unify how it works with icon-button
 	@include button($active-sel: "&:active, #{$active-sel}");
 
-	gap: var(--text-spacing);
-
-	display: flex;
 	align-items: center;
+	display: flex;
+	gap: var(--text-spacing);
 
 	#{$active-sel},
 	&:active {
@@ -161,28 +157,25 @@
 	&::before,
 	&::after {
 		content: "";
-
+		inset-block-start: var(--offset-click);
+		inset-inline-start: var(--offset-click);
 		order: 1;
 		position: relative;
-		top: var(--offset-click);
-		left: var(--offset-click);
 	}
 
 	&::before {
-		height: calc(var(--combobox-button-height) - var(--button-spacing) * 2);
-
 		@include separator-horizontal;
 
+		height: calc(var(--combobox-button-height) - var(--button-spacing) * 2);
 		margin: 0;
 	}
 
 	&::after {
-		width: 7px;
-		height: 4px;
-
-		mask: icon("arrow-bottom", "mono");
 		background-color: var(--color-button-text);
+		height: 4px;
+		mask: icon("arrow-bottom", "mono");
 		margin-inline-end: calc(var(--button-spacing) / 2);
+		width: 7px;
 	}
 }
 
@@ -200,12 +193,11 @@
 	);
 	background-repeat: no-repeat;
 	background-size: var(--button-img-size);
-
+	min-height: var(--icon-button-height);
 	min-width: calc(
 		var(--button-spacing) * 2 + var(--text-spacing) * 2 + var(--icon-size) +
 			10px
 	);
-	min-height: var(--icon-button-height);
 
 	&::before {
 		margin-inline-start: calc(var(--icon-size) + var(--text-spacing));
@@ -213,11 +205,10 @@
 }
 
 @mixin drag-handle {
-	// TODO: bruh just rename that shit
 	box-shadow: var(--border-tab-button-raised);
-
-	width: 3px;
 	height: 100%;
+	// TODO: bruh just rename that shit
+	width: 3px;
 }
 
 @mixin groupbox($disabled-sel: "&:disabled") {
@@ -225,12 +216,10 @@
 
 	border: none;
 	box-shadow: var(--border-groupbox);
+	margin: 0;
+	margin-block-end: 0.67rem;
 	padding: 11px;
 	padding-block-start: calc(1rem - 1px);
-	margin: 0;
-	margin-bottom: 0.67rem;
-
-	// For $legend-as-div
 	position: relative;
 }
 
@@ -238,8 +227,8 @@
 @mixin icon-button($selected-sel: "&.hack") {
 	--offset-click: 0px;
 
-	min-width: var(--icon-button-width);
 	height: var(--icon-button-height);
+	min-width: var(--icon-button-width);
 
 	#{$selected-sel},
 	&:active {
@@ -250,17 +239,13 @@
 	}
 
 	&::before {
-		content: "";
-
-		position: absolute;
-		top: var(--offset-click);
-		right: 0;
-		bottom: 0;
-		left: var(--offset-click);
-
 		background: var(--button-img) no-repeat;
 		background-position: var(--button-img-pos, center);
 		background-size: var(--button-img-size, auto);
+		content: "";
+		inset-block: 0 var(--offset-click);
+		inset-inline: 0 var(--offset-click);
+		position: absolute;
 	}
 }
 
@@ -268,9 +253,8 @@
 	appearance: none;
 	background-color: var(--color-button-face);
 	box-shadow: var(--border-statusbar);
+	height: 12px;
 	padding: 1px;
-
-	block-size: 12px;
 
 	#{$filled-sel} {
 		--block-width: 7px;
@@ -289,20 +273,20 @@
 	@include generatedassets.radio;
 
 	--control-img: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0IDQiPjxzdHlsZT5yZWN0e2hlaWdodDoxcHh9PC9zdHlsZT48cmVjdCB4PSIxIiB3aWR0aD0iMiIvPjxyZWN0IHk9IjEiIHdpZHRoPSI0Ii8+PHJlY3QgeT0iMiIgd2lkdGg9IjQiLz48cmVjdCB4PSIxIiB5PSIzIiB3aWR0aD0iMiIvPjwvc3ZnPgo=");
-	--control-img-size: 4px 4px;
 	--control-img-pos: 5px 5px;
+	--control-img-size: 4px 4px;
 }
 
 @mixin separator {
 	border: none;
-	border-top: 1px solid var(--color-button-highlight);
+	border-block-start: 1px solid var(--color-button-highlight);
 	box-shadow: 0 -1px var(--color-button-shadow);
-	margin-top: 3px;
-	margin-bottom: 4px;
+	margin-block-end: 4px;
+	margin-block-start: 3px;
 }
 
 @mixin separator-horizontal {
-	border-left: 1px solid var(--color-button-highlight);
+	border-inline-start: 1px solid var(--color-button-highlight);
 	box-shadow: -1px 0 var(--color-button-shadow);
 	margin-inline: var(--toolbar-spacing);
 }
@@ -322,9 +306,8 @@
 	}
 
 	#{$track-sel} {
-		box-shadow: var(--border-field);
-
 		height: calc(var(--border-size) * 2);
+		box-shadow: var(--border-field);
 	}
 
 	#{$thumb-sel} {
@@ -337,25 +320,22 @@
 	background: var(--control-img);
 	background-repeat: no-repeat;
 	background-size: 1px 1px;
-	margin-top: calc(var(--border-size) * -2 - 3px);
-
-	width: 11px;
 	height: 21px;
+	margin-block-start: calc(var(--border-size) * -2 - 3px);
+	width: 11px;
 }
 
 @mixin slider-tick {
 	background-color: var(--color-button-text);
-
-	width: 1px;
 	height: 3px;
+	width: 1px;
 }
 
 @mixin tab-button($selected-sel) {
 	color: var(--color-button-text);
-	padding: var(--tab-button-spacing);
-
-	min-width: var(--button-min-width);
 	height: var(--tab-button-height);
+	min-width: var(--button-min-width);
+	padding: var(--tab-button-spacing);
 
 	&:hover {
 		box-shadow: var(--border-tab-button-raised);
@@ -366,13 +346,13 @@
 		--offset-click: 1px;
 
 		background: var(--checkerboard);
-		font-weight: bold;
 		box-shadow: var(--border-tab-button-sunken);
+		font-weight: bold;
 
 		& > * {
+			inset-block-start: var(--offset-click);
+			inset-inline-start: var(--offset-click);
 			position: relative;
-			top: var(--offset-click);
-			left: var(--offset-click);
 		}
 	}
 }
@@ -387,20 +367,19 @@
 
 	&::-webkit-inner-spin-button {
 		appearance: none;
-		opacity: 1;
 		background: var(--button-img);
 		background-repeat: no-repeat;
 		background-size: 1px 1px;
-		margin-right: calc(var(--border-size) * -1);
-
-		width: 17px;
 		height: 18px;
+		margin-inline-end: calc(var(--border-size) * -1);
+		opacity: 1;
+		width: 17px;
 	}
 }
 
 @mixin tooltip {
 	background-color: var(--color-tooltip);
-	color: var(--color-tooltip-text);
 	border: 1px solid var(--color-button-shadow-dark);
+	color: var(--color-tooltip-text);
 	padding: 3px;
 }

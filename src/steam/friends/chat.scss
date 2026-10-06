@@ -19,15 +19,15 @@
 
 	background: none;
 	margin: 0 var(--dialog-spacing);
-	margin-bottom: calc(
+	margin-block-end: calc(
 		var(--dialog-spacing) + var(--statusbar-height) + var(--window-gap)
 	);
 }
 
 .chatEntry {
 	background-color: transparent;
+	margin-block-start: var(--window-gap);
 	padding: 0;
-	margin-top: var(--window-gap);
 
 	svg {
 		display: none;
@@ -39,8 +39,10 @@
 	@include window.titlebar-button;
 	@include window.titlebar-button-close;
 
-	top: 0;
-	right: calc(-260px + 16px + 8px + var(--main-window-border-spacing));
+	inset-block-start: 0;
+	inset-inline-end: calc(
+		-260px + 16px + 8px + var(--main-window-border-spacing)
+	);
 	order: -1;
 
 	svg {
@@ -62,20 +64,18 @@
 .chatFileUploadPreviewContainer {
 	@include window.container($child: true);
 
-	gap: var(--text-spacing);
-
-	bottom: calc(var(--main-window-border-spacing) + 21px);
 	align-items: start;
+	gap: var(--text-spacing);
+	inset-block-end: calc(var(--main-window-border-spacing) + 21px);
 
 	& > * {
 		margin: 0;
-		margin-left: 4px;
+		margin-inline-start: 4px;
 	}
 }
 
 .chatHeader {
 	background: none;
-
 	min-height: 0;
 }
 
@@ -86,13 +86,12 @@
 .ChatMessageEntryVoice {
 	@include controls.icon-button;
 
-	opacity: 1;
 	border: none;
 	box-shadow: none;
-	padding: 0;
-	margin-inline: 0 var(--toolbar-spacing);
-
+	opacity: 1;
 	order: -1;
+	margin-inline: 0 var(--toolbar-spacing);
+	padding: 0;
 }
 
 .chatRoomButton {
@@ -107,8 +106,8 @@
 
 	&.InviteToGroupChat {
 		--button-img: icon("room-invite");
-		margin-right: var(--toolbar-spacing);
 
+		margin-inline-end: var(--toolbar-spacing);
 		order: -1;
 	}
 
@@ -122,8 +121,8 @@
 }
 
 .chatRoomChannelGroups {
-	overflow: auto;
 	height: 100%;
+	overflow: auto;
 
 	&::-webkit-scrollbar {
 		display: initial;
@@ -142,7 +141,7 @@
 .chatRoomGroupNavColumn {
 	@include window.content-container;
 
-	margin-right: var(--window-gap);
+	margin-inline-end: var(--window-gap);
 }
 
 .chatRoomGroupStats {
@@ -165,7 +164,6 @@
 
 			&::before {
 				content: attr(title);
-
 				font-size: var(--text-ui-size);
 			}
 		}
@@ -222,9 +220,8 @@
 		background-color: unset;
 		border: none;
 		box-shadow: none;
-		padding: 0;
-
 		height: unset;
+		padding: 0;
 
 		&::before,
 		&::after {
@@ -233,17 +230,16 @@
 	}
 
 	.friend {
-		padding: 0;
-		margin: 0;
-
 		height: unset;
+		margin: 0;
+		padding: 0;
 	}
 }
 
 .ChatTabs {
 	background-color: transparent;
-	box-shadow: none;
 	border: none;
+	box-shadow: none;
 	padding: 0;
 
 	.HorizontalMiniSlider {
@@ -259,19 +255,17 @@
 	}
 
 	.labelHolder {
-		margin: 0;
-
 		height: unset;
+		margin: 0;
 	}
 }
 
 .chatTabSetContainer {
-	padding-right: 0;
-	margin: var(--dialog-spacing);
-	margin-bottom: 0;
-
 	align-items: center;
 	justify-content: space-between;
+	margin: var(--dialog-spacing);
+	margin-block-end: 0;
+	padding-inline-end: 0;
 }
 
 // TODO: this goes out of bounds with too many tabs
@@ -281,7 +275,6 @@
 	@include controls.icon-button;
 
 	background-image: none;
-
 	width: unset;
 
 	// TODO: unify
@@ -293,31 +286,30 @@
 .chatWindow {
 	background: none;
 	font: var(--text-ui);
-
 	inset: calc(var(--border-size) + var(--tabpanel-spacing));
 }
 
 .dropTargetBox {
-	transform: unset;
 	border-color: var(--color-highlight);
+	transform: unset;
 }
 
 .chatRoomGroupStats,
 .FriendChatTypingNotification {
 	--pos: var(--main-window-border-spacing);
 
+	inset-block-end: var(--pos);
+	inset-inline-start: var(--pos);
 	position: fixed;
-	left: var(--pos);
-	bottom: var(--pos);
 	width: calc(100% - var(--pos) * 2);
 }
 
 .FriendChatTypingNotification {
 	@include window.statusbar-item;
 
-	opacity: 1;
 	background: none;
 	color: var(--color-button-text);
+	opacity: 1;
 
 	&:not(.FriendIsTyping) {
 		color: transparent;
@@ -326,7 +318,6 @@
 
 .inviteButtonJoinChat {
 	background-image: none;
-
 	min-height: unset;
 }
 
@@ -350,21 +341,20 @@
 }
 
 .inviteURLLink {
-	width: 100%;
-	min-width: unset;
 	max-width: unset;
+	min-width: unset;
+	width: 100%;
 }
 
 .inviteURLLinkDesc {
 	@include utils.text-reset;
 
-	margin: 0;
-
 	align-self: unset;
+	margin: 0;
 }
 
 .MemberListColumn {
-	margin-left: var(--window-gap);
+	margin-inline-start: var(--window-gap);
 }
 
 .MemberListOption {
@@ -380,13 +370,12 @@
 }
 
 .MemberListOptionsContainer {
-	margin-bottom: var(--window-gap);
-
 	height: unset;
+	margin-block-end: var(--window-gap);
 
 	.socialInputContainer {
 		margin: 0;
-		margin-left: var(--toolbar-spacing);
+		margin-inline-start: var(--toolbar-spacing);
 	}
 }
 
@@ -400,20 +389,20 @@
 .msg {
 	background-color: transparent;
 	font: var(--text-ui);
-	padding-left: calc(var(--steamavatar_size) + 8px + 2px);
+	padding-inline-start: calc(var(--steamavatar_size) + 8px + 2px);
 
 	&.timeDivision {
 		@include utils.text-reset;
 
-		height: unset;
 		align-items: center;
+		height: unset;
 
 		.horizDivider,
 		.preHorizDivider {
 			@include controls.separator;
 
-			width: unset;
 			flex-grow: 1;
+			width: unset;
 		}
 	}
 }
@@ -424,7 +413,6 @@
 
 .RenameChatRoomInline {
 	margin: 0;
-
 	width: 100%;
 }
 
@@ -458,11 +446,10 @@
 
 	background-image: none;
 	font: var(--text-ui);
-	text-shadow: none;
-	text-align: unset;
-
-	position: unset;
 	height: unset;
+	position: unset;
+	text-align: unset;
+	text-shadow: none;
 }
 
 .VoiceChatTextChannelName {
@@ -483,9 +470,8 @@
 		@include controls.button;
 		@include controls.icon-button;
 
+		inset-inline-end: 0;
 		opacity: 1;
-
-		right: 0;
 
 		svg {
 			display: none;
@@ -501,7 +487,7 @@
 }
 
 .VoiceRoomTitleLabels {
-	margin-left: 0;
+	margin-inline-start: 0;
 }
 
 .VoiceToggle {

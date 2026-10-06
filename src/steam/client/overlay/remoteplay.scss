@@ -13,9 +13,8 @@
 	padding: 0;
 
 	#Bottom {
-		font-size: inherit;
-
 		flex: 0;
+		font-size: inherit;
 	}
 
 	#Content {
@@ -28,8 +27,8 @@
 }
 
 #ContentForm {
+	margin-block-start: 32px;
 	padding: 0;
-	margin-top: 32px;
 
 	// "Host" groupbox title
 	.DialogBody,
@@ -49,11 +48,10 @@
 
 	#HowToHint {
 		background: icon("question");
-
-		top: calc((40px - var(--icon-size)) / 2);
-		right: calc(var(--icon-size) * -1 - var(--text-spacing));
-		width: var(--icon-size);
 		height: var(--icon-size);
+		inset-block-start: calc((40px - var(--icon-size)) / 2);
+		inset-inline-end: calc(var(--icon-size) * -1 - var(--text-spacing));
+		width: var(--icon-size);
 	}
 }
 
@@ -61,9 +59,11 @@
 	z-index: 2;
 
 	#HeaderActions {
+		inset-block-start: calc(
+			var(--main-window-titlebar-height) + var(--dialog-spacing)
+		);
+		inset-inline-start: calc(var(--icon-size) * -1);
 		position: absolute;
-		top: calc(var(--main-window-titlebar-height) + var(--dialog-spacing));
-		left: calc(var(--icon-size) * -1);
 	}
 
 	#StreamPausedNote {
@@ -71,20 +71,19 @@
 
 		color: var(--color-button-text);
 		font: var(--text-ui);
+		inset-inline-start: var(--pos);
+		inset-block-end: var(--pos);
 		letter-spacing: 0;
-		text-transform: none;
 		margin: 0;
-
 		position: fixed;
-		left: var(--pos);
-		bottom: var(--pos);
+		text-transform: none;
 		width: calc(100% - var(--pos) * 2);
 	}
 }
 
 #Footer {
-	padding: 0;
 	margin: 0;
+	padding: 0;
 }
 
 #InvitedGuestBox {
@@ -96,10 +95,9 @@
 #MediaBoxBody {
 	background-color: transparent;
 	box-shadow: none;
+	flex: 0 0 auto;
 	gap: 0;
 	padding: 0;
-
-	flex: 0 0 auto;
 }
 
 #MediaBoxTitle {
@@ -142,14 +140,14 @@
 }
 
 #SectionItemMargin {
-	margin-top: 8px;
+	margin-block-start: 8px;
 
 	&::before {
 		@include utils.pseudo-separator;
 	}
 
 	#ContentBox {
-		margin-top: 8px;
+		margin-block-start: 8px;
 	}
 }
 
@@ -169,8 +167,7 @@
 
 #SliderIconContainer {
 	background: icon("sound");
-	padding: 0;
-
-	width: var(--icon-size);
 	height: var(--icon-size);
+	padding: 0;
+	width: var(--icon-size);
 }

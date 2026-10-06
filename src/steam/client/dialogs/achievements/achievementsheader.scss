@@ -4,19 +4,16 @@
 
 #AchievementSearchHeader {
 	gap: var(--text-spacing);
-
+	inset-block-start: calc((var(--steamavatar_size) + var(--text-spacing)) * -1);
+	inset-inline: 0;
 	// Move out of content
 	position: fixed;
-	top: calc((var(--steamavatar_size) + var(--text-spacing)) * -1);
-	right: 0;
-	left: 0;
 }
 
 #GameIcon {
-	margin-right: var(--text-spacing);
-
-	width: var(--icon-size);
 	height: var(--icon-size);
+	margin-inline-end: var(--text-spacing);
+	width: var(--icon-size);
 }
 
 #Label {
@@ -24,13 +21,13 @@
 }
 
 #Progress {
-	margin-top: var(--text-spacing);
+	margin-block-start: var(--text-spacing);
 }
 
 #StatsBlock {
 	background-color: transparent;
+	margin-block-end: var(--text-spacing);
 	padding: 0;
-	margin-bottom: var(--text-spacing);
 }
 
 #Title {
@@ -38,7 +35,6 @@
 
 	body:not(.ModalDialogBody) & {
 		color: var(--color-active-caption-text);
-
-		left: calc(var(--offset) + 2px);
+		inset-inline-start: calc(var(--offset) + 2px);
 	}
 }

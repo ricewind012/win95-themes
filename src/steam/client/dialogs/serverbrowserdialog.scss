@@ -19,20 +19,18 @@
 #AddFavoriteButton {
 	&::before {
 		content: attr(title);
-
 		position: unset;
 	}
 }
 
 #BottomControlsRow {
 	gap: var(--dialog-button-spacing);
-	padding-top: var(--dialog-button-spacing);
-
-	position: absolute;
-	right: var(--dialog-spacing);
-	bottom: calc(1lh + 1px + var(--pos));
-	left: var(--dialog-spacing);
 	height: unset;
+	inset-inline-end: var(--dialog-spacing);
+	inset-block-end: calc(1lh + 1px + var(--pos));
+	inset-inline-start: var(--dialog-spacing);
+	padding-block-start: var(--dialog-button-spacing);
+	position: absolute;
 
 	.DialogFooter {
 		gap: var(--dialog-button-spacing);
@@ -43,11 +41,10 @@
 #ColumnResizer {
 	--separator-size: 13px;
 
+	margin-inline-end: calc(var(--separator-size) / -2);
 	opacity: 0;
 	padding: 0;
-
 	width: var(--separator-size);
-	margin-right: calc(var(--separator-size) / -2);
 }
 
 #DialogBody {
@@ -57,9 +54,9 @@
 	--pos: calc(var(--main-window-border-spacing) + var(--dialog-spacing));
 
 	box-shadow: none;
-	padding: 0;
-	margin: var(--dialog-body-spacing) 0;
 	gap: 0;
+	margin: var(--dialog-body-spacing) 0;
+	padding: 0;
 
 	svg {
 		display: none;
@@ -67,10 +64,9 @@
 }
 
 #DropdownLabel {
-	font: var(--text-ui);
-	margin-bottom: var(--text-spacing);
-
 	display: block;
+	font: var(--text-ui);
+	margin-block-end: var(--text-spacing);
 }
 
 #FilterOptionsCheckboxesCtr {
@@ -78,9 +74,9 @@
 }
 
 #FilterOptionsCtr {
+	margin-block-end: var(--tabpanel-spacing);
 	padding: 0;
-	padding-top: var(--text-spacing);
-	margin-bottom: var(--tabpanel-spacing);
+	padding-block-start: var(--text-spacing);
 
 	&:not(#Collapsed) {
 		gap: var(--label-gap);
@@ -93,10 +89,9 @@
 	}
 
 	& > :not(:last-child) {
-		gap: var(--label-gap);
-
 		display: flex;
 		flex-direction: column;
+		gap: var(--label-gap);
 	}
 
 	.DialogInput {
@@ -140,10 +135,12 @@
 	@include controls.button;
 	@include controls.icon-button;
 
+	inset-block-start: anchor(top, var(--dialog-body-spacing));
+	inset-inline-start: calc(
+		anchor(right, var(--dialog-spacing)) + var(--toolbar-spacing)
+	);
 	position: fixed;
 	position-anchor: --dropdown;
-	top: anchor(top, var(--dialog-body-spacing));
-	left: calc(anchor(right, var(--dialog-spacing)) + var(--toolbar-spacing));
 
 	&#SearchActive {
 		--button-img: icon("clear");
@@ -186,8 +183,8 @@
 	@include table.button;
 	@include shared.table-button-arrows;
 
-	min-width: unset;
 	height: 17px;
+	min-width: unset;
 }
 
 #SwitchTabButton {
@@ -198,26 +195,24 @@
 	// TODO: reuse for more <button> tabs
 	&:active,
 	&:focus {
-		outline: none;
-		color: var(--color-button-text);
-		text-shadow: none;
 		box-shadow:
 			1px 0 var(--color-button-shadow-dark),
 			1px 1px var(--color-tab-border);
+		color: var(--color-button-text);
+		outline: none;
+		text-shadow: none;
 	}
 }
 
 #ServerListHeaderSort {
 	color: inherit;
 	font: var(--text-ui);
-	text-transform: unset;
-
 	justify-content: space-between;
+	text-transform: unset;
 }
 
 #SelectColumnsButton {
 	text-overflow: unset;
-
 	width: 21px;
 }
 
@@ -230,16 +225,16 @@
 
 	&#SelectedRow {
 		--color-window-text: var(--color-highlight-text);
+
 		background: var(--color-highlight);
 		color: var(--color-highlight-text);
 	}
 
 	[role="cell"] {
-		// 4px to make #PasswordColumn checkmark visible
-		padding: 4px 7px;
-
 		// Make text overflow work
 		display: block;
+		// 4px to make #PasswordColumn checkmark visible
+		padding: 4px 7px;
 	}
 }
 
@@ -258,9 +253,9 @@
 	gap: 0;
 
 	.DialogDropDown {
-		position: fixed;
 		anchor-name: --dropdown;
-		top: var(--dialog-body-spacing);
+		inset-block-start: var(--dialog-body-spacing);
+		position: fixed;
 		width: var(--combobox-width);
 	}
 }

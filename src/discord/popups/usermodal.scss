@@ -1,17 +1,15 @@
 // right side
 .container__37bfc {
-	padding: 0;
-	margin: 8px;
-
 	height: calc(100% - var(--tabs-height) - 8px);
+	margin: 8px;
+	padding: 0;
 
 	.tabListScroller__37bfc {
-		padding: 0;
 		margin: 0;
 		// invisible scroller component element
 		margin-block-end: -1px;
-
 		overflow: visible;
+		padding: 0;
 	}
 }
 

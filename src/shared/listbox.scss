@@ -1,7 +1,7 @@
 @mixin container {
 	background-color: var(--color-window);
-	color: var(--color-window-text);
 	border: 1px solid var(--color-window-text);
+	color: var(--color-window-text);
 }
 
 @mixin item($selected-sel) {

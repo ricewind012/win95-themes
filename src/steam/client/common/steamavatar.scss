@@ -1,17 +1,15 @@
 #avatar {
 	border: none;
 	box-shadow: none;
-
-	width: 100%;
 	height: 100%;
+	width: 100%;
 }
 
 #avatarHolder {
-	transform: none;
-
-	position: relative;
-	width: var(--steamavatar_size);
 	height: var(--steamavatar_size);
+	position: relative;
+	transform: none;
+	width: var(--steamavatar_size);
 
 	&:where(.X-Small) {
 		--steamavatar_size: 16px;

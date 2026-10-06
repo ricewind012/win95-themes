@@ -5,8 +5,8 @@
 	color: var(--status-color);
 	font: var(--text-ui);
 	font-weight: bold;
-	padding: 0;
 	margin: 0;
+	padding: 0;
 }
 
 #richPresenceLabel {
@@ -14,7 +14,7 @@
 
 	color: var(--color-gray-text);
 	// Make it fit for 32px avatars
-	margin-top: -2px;
+	margin-block-start: -2px;
 }
 
 #statusAndName {

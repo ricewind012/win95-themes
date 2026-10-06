@@ -2,14 +2,12 @@
 
 :where([role="tab"]) {
 	font: var(--text-ui);
-
-	overflow: visible;
 	min-height: unset;
+	overflow: visible;
 
 	&::after {
-		left: unset;
-
 		border-radius: 0;
+		inset-inline-start: unset;
 		margin: 0;
 	}
 
@@ -21,8 +19,8 @@
 :where([role="tablist"]) {
 	border: none;
 	gap: 0;
-	padding: 0;
 	margin: 0;
+	padding: 0;
 
 	:where(&[aria-orientation="horizontal"]) {
 		@include tabs.container;
@@ -38,8 +36,8 @@
 		:where([role="tab"]) {
 			@include tabs.tab-vertical($selected-sel: "&[aria-selected='true']");
 
-			display: flex;
 			align-items: center;
+			display: flex;
 		}
 	}
 }

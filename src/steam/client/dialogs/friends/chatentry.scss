@@ -22,14 +22,13 @@
 #chatEntryControls {
 	background-color: transparent;
 	box-shadow: none;
-	padding: 0;
 	margin: 0;
+	padding: 0;
 }
 
 #chatEntryControls {
-	gap: var(--dialog-button-spacing);
-
 	align-items: end;
+	gap: var(--dialog-button-spacing);
 }
 
 #chatSubmitButton {
@@ -38,9 +37,8 @@
 	@include controls.icon-button;
 
 	background-image: none;
-
-	width: unset;
 	min-height: unset;
+	width: unset;
 
 	&#EmbedButton {
 		--button-img: icon("file");
@@ -56,7 +54,7 @@
 }
 
 #minHeightZero {
+	align-self: unset;
 	height: unset;
 	min-height: unset;
-	align-self: unset;
 }

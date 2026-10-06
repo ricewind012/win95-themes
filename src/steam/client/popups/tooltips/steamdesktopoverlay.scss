@@ -4,10 +4,9 @@
 #ToolbarToolTip {
 	@include utils.text-reset;
 
-	text-align: start;
-	padding: 0;
-
 	flex-grow: 1;
+	padding: 0;
+	text-align: start;
 
 	// The *actual* tooltip
 	body > div > & {

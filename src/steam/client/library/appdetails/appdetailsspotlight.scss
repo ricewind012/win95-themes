@@ -7,7 +7,7 @@
 	font-weight: bold;
 
 	#Buttons {
-		padding-top: var(--text-spacing);
+		padding-block-start: var(--text-spacing);
 	}
 
 	#Info {
@@ -19,13 +19,12 @@
 		color: inherit;
 		font: inherit;
 		font-weight: normal;
-		margin-top: var(--text-spacing);
+		margin-block-start: var(--text-spacing);
 	}
 
 	#VisitButton {
-		margin-top: var(--text-spacing);
-
 		height: unset;
+		margin-block-start: var(--text-spacing);
 	}
 }
 

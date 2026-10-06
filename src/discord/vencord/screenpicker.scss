@@ -32,15 +32,15 @@
 	&::after {
 		@include utils.pseudo-separator;
 
-		inline-size: 100%;
 		margin-block: 8px 12px;
+		width: 100%;
 	}
 }
 
 .vcd-screen-picker-preview-img-linux {
 	// A bit of contrast in case the colors overlap
 	border: 1px solid var(--color-button-shadow);
-	margin-bottom: var(--text-spacing);
+	margin-block-end: var(--text-spacing);
 }
 
 .vcd-screen-picker-option-radio {
@@ -55,10 +55,9 @@
 
 .vcd-screen-picker-option-radios,
 .vcd-screen-picker-screen-grid {
-	gap: var(--text-spacing);
-
 	display: flex;
 	flex-direction: column;
+	gap: var(--text-spacing);
 }
 
 .vcd-screen-picker-screen-label {

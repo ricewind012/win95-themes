@@ -7,12 +7,11 @@
 }
 
 #ArtworkModalContainer {
-	mask-image: none;
-	padding: var(--tabpanel-spacing);
-
-	overflow: auto;
 	height: calc(100% - 18px);
 	justify-content: center;
+	mask-image: none;
+	overflow: auto;
+	padding: var(--tabpanel-spacing);
 }
 
 // "Close" button

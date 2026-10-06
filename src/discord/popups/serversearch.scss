@@ -3,13 +3,12 @@
 .container__16eb0 {
 	@include listbox.container;
 
+	overflow: auto;
 	padding: 0;
 
-	overflow: auto;
-
 	.wrapper__44b0c {
-		position: absolute;
 		inset-inline-start: 0;
+		position: absolute;
 	}
 
 	[data-text-variant] {
@@ -27,6 +26,7 @@
 
 .divider__971b5 {
 	--border-subtle: currentColor;
+
 	margin: 0;
 }
 
@@ -42,19 +42,17 @@
 .item__971b5 {
 	--avatar-size: 20px;
 
+	min-height: var(--avatar-size);
 	padding: 0;
 	padding-inline-start: calc(var(--avatar-size) + var(--text-spacing));
-
 	// for avatars
 	position: relative;
-	min-height: var(--avatar-size);
 
 	& > .labelWithElements__971b5,
 	& > :not([class]) {
-		gap: var(--text-spacing);
-
-		flex-grow: 1;
 		display: grid;
+		flex-grow: 1;
+		gap: var(--text-spacing);
 		grid-template-columns: repeat(2, 1fr);
 		width: 100%;
 	}

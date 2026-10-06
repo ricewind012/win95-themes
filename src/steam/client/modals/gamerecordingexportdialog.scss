@@ -8,8 +8,8 @@
 
 #Content {
 	@extend %-text-normal;
-	margin: var(--dialog-spacing);
 
+	margin: var(--dialog-spacing);
 	min-height: 440px;
 
 	hr {
@@ -21,11 +21,11 @@
 	@include controls.groupbox;
 
 	font: inherit;
-
 	min-width: 100px;
 
 	#Header {
 		@extend %-text-normal;
+
 		letter-spacing: 0;
 		text-transform: none;
 
@@ -34,8 +34,9 @@
 
 	#Primary {
 		@extend %-text-normal;
+
 		font-weight: bold;
-		margin-bottom: var(--text-spacing);
+		margin-block-end: var(--text-spacing);
 	}
 }
 
@@ -49,7 +50,7 @@
 
 #ExportPreview {
 	gap: calc(var(--dialog-spacing) * 2);
-	padding-top: var(--dialog-spacing);
+	padding-block-start: var(--dialog-spacing);
 }
 
 #PathRow {
@@ -61,6 +62,7 @@
 
 	#File {
 		@extend %-text-normal;
+
 		font-weight: bold;
 	}
 
@@ -85,7 +87,7 @@
 		color: inherit;
 		font: inherit;
 		letter-spacing: 0;
-		padding-top: var(--text-spacing);
+		padding-block-start: var(--text-spacing);
 	}
 
 	#ResolutionNotchTick {

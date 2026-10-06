@@ -3,9 +3,8 @@
 
 .buttons__74017 {
 	gap: 0;
-	margin-inline: var(--toolbar-spacing) 0;
-
 	height: unset;
+	margin-inline: var(--toolbar-spacing) 0;
 
 	[role="button"]:not([aria-expanded]) {
 		@include controls.button;
@@ -41,9 +40,8 @@
 
 	.placeholder__1b31f {
 		font: var(--text-ui);
-		padding: 0;
-
 		inset: calc(var(--border-size) + var(--input-spacing));
+		padding: 0;
 		z-index: 1;
 	}
 
@@ -53,13 +51,12 @@
 }
 
 .inner__74017 {
-	padding: 0;
 	margin-inline: var(--toolbar-container-spacing);
+	padding: 0;
 }
 
 .scrollableContainer__74017 {
 	background: transparent;
-
 	overflow: hidden;
 }
 

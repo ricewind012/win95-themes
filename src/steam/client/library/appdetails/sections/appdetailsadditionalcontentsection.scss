@@ -1,9 +1,9 @@
 #AdditionalItem {
-	padding-top: var(--text-spacing);
+	padding-block-start: var(--text-spacing);
 
 	#Title {
 		color: inherit;
 		font: inherit;
-		margin-left: var(--text-spacing);
+		margin-inline-start: var(--text-spacing);
 	}
 }

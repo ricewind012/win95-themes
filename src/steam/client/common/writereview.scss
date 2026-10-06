@@ -8,7 +8,7 @@
 #CompactThumbButton {
 	@include controls.button;
 
-	margin-left: var(--dialog-button-spacing);
+	margin-inline-start: var(--dialog-button-spacing);
 }
 
 #DescribeGame,
@@ -38,14 +38,13 @@
 
 #OptionButton {
 	background: none;
-
 	width: unset;
 }
 
 #OptionDesc {
-	text-align: left;
 	padding: 0;
-	margin-top: var(--text-spacing);
+	margin-block-start: var(--text-spacing);
+	text-align: start;
 }
 
 #OptionsContainer {
@@ -68,11 +67,10 @@
 }
 
 #RatingContainer {
-	background-color: transparent;
-	padding: 0;
-	margin: var(--text-spacing) 0;
-
 	align-items: center;
+	background-color: transparent;
+	margin: var(--text-spacing) 0;
+	padding: 0;
 }
 
 #ReviewTextArea {
@@ -89,7 +87,7 @@
 	}
 
 	span {
-		padding-left: 10px;
+		padding-inline-start: 10px;
 	}
 }
 
@@ -98,26 +96,25 @@
 }
 
 #ReviewSettingsContainer {
-	margin-top: var(--text-spacing);
+	margin-block-start: var(--text-spacing);
 }
 
 #ReviewSettingsRow {
 	align-items: center;
 
 	& > span {
-		margin-right: var(--text-spacing);
+		margin-inline-end: var(--text-spacing);
 	}
 }
 
 #ThumbIcon {
 	fill: inherit;
-
-	left: var(--icon-size);
-	width: var(--icon-size);
 	height: var(--icon-size);
+	inset-inline-start: var(--icon-size);
+	width: var(--icon-size);
 
 	&#Down {
-		top: 3px;
+		inset-block-start: 3px;
 	}
 }
 

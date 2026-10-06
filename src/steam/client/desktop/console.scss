@@ -15,7 +15,7 @@
 	padding: 0;
 
 	.DialogInput {
-		margin-top: var(--window-gap);
+		margin-block-start: var(--window-gap);
 	}
 }
 
@@ -61,18 +61,16 @@
 	@include listbox.item($selected-sel: "&.hack");
 
 	background-color: transparent;
-
 	height: unset;
 }
 
 #Suggestions {
 	@include listbox.container;
 
-	gap: 0;
-	padding: 0;
-
 	flex-direction: column;
+	gap: 0;
 	height: unset;
+	padding: 0;
 }
 
 #Timestamp {

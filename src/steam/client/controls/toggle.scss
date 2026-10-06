@@ -5,14 +5,14 @@
 	@include utils.text-reset;
 
 	&#Disabled {
-		opacity: 1;
 		color: var(--color-gray-text);
+		opacity: 1;
 	}
 }
 
 #Toggle {
-	width: unset;
 	height: unset;
+	width: unset;
 
 	&#Disabled {
 		opacity: 1;
@@ -29,12 +29,11 @@
 
 #ToggleRow {
 	background-color: transparent;
-	gap: var(--label-spacing);
-	padding: 0;
-	margin-bottom: var(--text-spacing);
-
 	flex-direction: row-reverse;
+	gap: var(--label-spacing);
 	justify-content: start;
+	padding: 0;
+	margin-block-end: var(--text-spacing);
 }
 
 #ToggleSwitch {

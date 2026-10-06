@@ -17,7 +17,7 @@
 #SettingsButton {
 	@include shared.library_in-toolbar;
 
-	right: anchor(right);
+	inset-inline-end: anchor(right);
 
 	#Button {
 		--button-img: icon("settings");

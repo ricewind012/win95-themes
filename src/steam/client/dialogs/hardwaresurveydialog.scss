@@ -24,9 +24,8 @@
 	@include utils.content-container-alt;
 	@include shared.generic-dialog-content-container-offset;
 
-	padding: 2px 10px;
 	border: none;
 	box-shadow: none;
-
 	overflow: auto;
+	padding: 2px 10px;
 }

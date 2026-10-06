@@ -1,14 +1,12 @@
 @use "shared/window";
 
 #ClipProgressDialog {
-	padding: 0;
-
 	display: block;
+	padding: 0;
 
 	.DialogButton {
 		margin: var(--messagebox-spacing);
 		margin-inline-start: auto;
-
 		width: min-content;
 	}
 }

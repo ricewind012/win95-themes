@@ -8,9 +8,8 @@
 		// required
 		@include menu.item($selected-sel: "&[style*='selection']");
 
-		margin: 0;
-
 		height: unset;
+		margin: 0;
 
 		&[aria-disabled] {
 			@include menu.item-disabled;
@@ -44,12 +43,12 @@
 	}
 
 	.action-label {
-		padding-left: 0;
+		padding-inline-start: 0;
 	}
 
 	.keybinding {
-		padding-left: 20px;
-		padding-right: 0;
+		padding-inline-start: 20px;
+		padding-inline-end: 0;
 	}
 }
 
@@ -61,7 +60,7 @@
 div.monaco-menu .monaco-action-bar.vertical .action-label.separator {
 	@include controls.separator;
 
-	border-bottom: none;
+	border-block-end: none;
 }
 
 .menu-item-check,

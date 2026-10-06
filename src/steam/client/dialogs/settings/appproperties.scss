@@ -20,10 +20,10 @@
 
 	color: var(--color-gray-text);
 	font: var(--text-ui);
-	text-transform: none;
-	padding: 0;
 	margin: 0;
 	margin-block-start: 8px;
+	padding: 0;
+	text-transform: none;
 
 	#BetaName {
 		color: inherit;
@@ -36,10 +36,9 @@
 }
 
 #BetaLastUpdated {
-	margin: 0;
-
 	align-items: start;
 	justify-content: start;
+	margin: 0;
 }
 
 #BetaName {
@@ -53,9 +52,8 @@
 }
 
 #BetaRadioButton {
-	border: none;
-
 	align-items: start;
+	border: none;
 	width: var(--sel-button-size);
 
 	input[type="radio"] {
@@ -65,17 +63,16 @@
 
 #BetaRow {
 	background: none;
-	gap: var(--label-spacing);
-
 	display: grid;
+	gap: var(--label-spacing);
 	grid-template-columns: var(--sel-button-size) repeat(2, 1fr);
 }
 
 #BetasTable {
 	background: none;
-	font: var(--text-ui);
 	border: none;
 	box-shadow: none;
+	font: var(--text-ui);
 	gap: var(--text-spacing);
 }
 
@@ -98,7 +95,7 @@
 }
 
 #TopGap {
-	margin-top: var(--text-spacing);
+	margin-block-start: var(--text-spacing);
 }
 
 #TopGapSmall {
@@ -131,9 +128,9 @@
 
 	@include utils.content-container-alt;
 
-	font-size: var(--text-ui-size);
 	border: none;
 	box-shadow: none;
+	font-size: var(--text-ui-size);
 }
 
 #DlcHeader {
@@ -160,7 +157,7 @@
 }
 
 #DlcTopRow > .DialogInput_Wrapper {
-	margin-left: var(--text-spacing);
+	margin-inline-start: var(--text-spacing);
 }
 
 #Name {
@@ -183,24 +180,22 @@
 
 #Details {
 	& > :first-child {
-		width: 88px;
-
 		display: flex;
 		justify-content: center;
+		width: 88px;
 	}
 }
 
 #DragHandle {
-	opacity: 1;
 	color: var(--color-window-text);
-
-	left: 80%;
+	inset-inline-start: 80%;
+	opacity: 1;
 }
 
 #LoadOrder,
 #SortedColumn {
-	font: var(--text-ui);
 	color: var(--color-window-text);
+	font: var(--text-ui);
 }
 
 #TextDetails {
@@ -226,9 +221,9 @@
 }
 
 #WorkshopItemRow {
-	filter: none;
 	background-color: var(--color-window);
 	box-shadow: none;
+	filter: none;
 
 	&#IsDragging {
 		background-color: var(--color-highlight);
@@ -239,8 +234,8 @@
 #WorkshopItemDependencies,
 #WorkshopItemTagsContainer {
 	background-color: transparent;
-	font: var(--text-ui);
 	color: var(--color-gray-text);
+	font: var(--text-ui);
 }
 
 // etc.
@@ -253,7 +248,7 @@
 }
 
 #BrowseDiskSize {
-	margin-left: 0;
+	margin-inline-start: 0;
 }
 
 #SteamCloudSection {
@@ -271,9 +266,8 @@
 #ViewMore {
 	@include text.link;
 
-	padding: 0;
-
 	flex: 0 0 auto;
+	padding: 0;
 
 	&,
 	&:focus {

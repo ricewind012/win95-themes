@@ -2,10 +2,9 @@
 @use "steam/shared";
 
 #ControlBlock {
+	flex-direction: row;
 	gap: var(--toolbar-spacing);
 	padding: 0;
-
-	flex-direction: row;
 
 	svg {
 		display: none;
@@ -13,17 +12,15 @@
 }
 
 #Controls {
-	transform: unset;
 	gap: 0;
-
-	position: unset;
 	min-width: unset;
+	position: unset;
+	transform: unset;
 }
 
 #ControlsAndVolume {
-	gap: var(--toolbar-spacing);
-
 	flex-direction: row;
+	gap: var(--toolbar-spacing);
 	height: unset;
 }
 
@@ -68,10 +65,9 @@
 #VolumeControl {
 	--button-img: icon("sound");
 
-	gap: var(--text-spacing);
-
-	flex-direction: row;
 	align-items: center;
+	flex-direction: row;
+	gap: var(--text-spacing);
 	position: unset;
 
 	&:has(rect) {
@@ -79,15 +75,13 @@
 	}
 
 	&::before {
-		content: "";
-
 		// TODO: utils.icon
 		background-color: currentColor;
 		background: var(--button-img) no-repeat;
 		background-size: var(--button-img-size);
 		background-position: var(--button-img-pos);
-
-		width: var(--icon-size);
+		content: "";
 		height: var(--icon-size);
+		width: var(--icon-size);
 	}
 }

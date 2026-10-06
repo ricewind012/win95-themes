@@ -12,8 +12,8 @@
 
 	.friend {
 		color: var(--color-button-text);
-		padding: 0;
 		margin: 0;
+		padding: 0;
 
 		&::before {
 			display: none;
@@ -28,17 +28,15 @@
 
 .expireLinkInContainer {
 	gap: var(--text-spacing);
-	margin-top: var(--text-spacing);
-
 	justify-content: start;
+	margin-block-start: var(--text-spacing);
 }
 
 .inviteLinkContainer .DialogInput_Wrapper {
 	background-color: transparent;
+	flex-grow: 1;
 	gap: var(--dialog-button-spacing);
 	padding: 0;
-
-	flex-grow: 1;
 
 	.displayRow {
 		flex-grow: 0;

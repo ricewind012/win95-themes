@@ -13,9 +13,9 @@
 .header_ab6641 {
 	background-color: transparent;
 	border: none;
-	padding: 0;
 	margin: var(--dialog-spacing);
-	margin-bottom: 0;
+	margin-block-end: 0;
+	padding: 0;
 
 	span > [role="button"] {
 		@include controls.button;
@@ -33,21 +33,19 @@
 }
 
 .recentMentionsPopout__95796 {
-	width: calc(100% - var(--dialog-spacing) * 2);
 	min-width: unset;
+	width: calc(100% - var(--dialog-spacing) * 2);
 
 	&.messagesPopoutWrap__432f4 {
 		@include tabs.content($compact: true);
 
-		margin-top: 0;
+		margin-block-start: 0;
 
 		&::before {
-			content: "";
-
-			position: absolute;
-			inset: calc(var(--border-size) + var(--tabpanel-spacing));
-
 			box-shadow: var(--border-field);
+			content: "";
+			inset: calc(var(--border-size) + var(--tabpanel-spacing));
+			position: absolute;
 		}
 	}
 

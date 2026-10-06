@@ -22,13 +22,12 @@
 #Remainder {
 	@include controls.button;
 
-	margin: 0;
-
-	min-width: var(--achievementiconbase_size);
-	height: var(--achievementiconbase_size);
-	display: flex;
 	align-items: center;
+	display: flex;
+	height: var(--achievementiconbase_size);
 	justify-content: center;
+	margin: 0;
+	min-width: var(--achievementiconbase_size);
 }
 
 #RemainderText {
@@ -51,8 +50,8 @@
 #TextSection {
 	color: inherit;
 	font: inherit;
+	margin-inline-start: var(--text-spacing);
 	padding: 0;
-	margin-left: var(--text-spacing);
 
 	#Desc {
 		color: inherit;

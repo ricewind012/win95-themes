@@ -3,11 +3,10 @@
 @use "shared++/utils";
 
 #EventOptions {
+	inset-inline-end: 0;
 	opacity: 1;
-	padding-top: var(--text-spacing);
-	padding-right: var(--text-spacing);
-
-	right: 0;
+	padding-block-start: var(--text-spacing);
+	padding-inline-end: var(--text-spacing);
 
 	& > div {
 		@include controls.button;
@@ -28,23 +27,22 @@
 #EventTime {
 	font: var(--text-ui);
 	color: inherit;
-	padding-bottom: var(--text-spacing);
+	padding-block-end: var(--text-spacing);
 }
 
 #GameIcon {
 	filter: none;
-	margin-right: var(--text-spacing);
-
-	width: var(--icon-size);
 	height: var(--icon-size);
+	margin-inline-end: var(--text-spacing);
+	width: var(--icon-size);
 }
 
 #GameIconAndName {
 	@include controls.button;
 
-	min-width: 100%;
 	align-items: center;
 	justify-content: center;
+	min-width: 100%;
 }
 
 #GameName {
@@ -55,7 +53,7 @@
 	@include utils.text-reset;
 
 	padding: 0;
-	padding-top: var(--text-spacing);
+	padding-block-start: var(--text-spacing);
 }
 
 #PartnerEventRowCapsule_TextTitle {

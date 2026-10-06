@@ -2,16 +2,15 @@
 @use "shared++/utils";
 
 .popoutContainer_ce8328 {
-	left: 0;
+	inset-inline-start: 0;
 
 	&::before {
 		display: none;
 	}
 
 	.body_ce8328 {
-		padding: 0;
-
 		overflow: auto;
+		padding: 0;
 
 		& > :not(.menus_ce8328) {
 			display: none;
@@ -64,12 +63,11 @@
 }
 
 .statusItem_ce8328 {
-	padding: 0;
-
-	min-height: unset;
+	align-items: start;
 	display: flex;
 	flex-direction: column;
-	align-items: start;
+	min-height: unset;
+	padding: 0;
 
 	.description_ce8328,
 	.icon_ce8328 {

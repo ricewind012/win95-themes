@@ -3,9 +3,8 @@
 #GameRecordingModal {
 	gap: var(--dialog-button-spacing);
 	margin: var(--dialog-spacing);
-
-	min-width: 240px;
 	min-height: 180px;
+	min-width: 240px;
 }
 
 #GRModalOption {
@@ -24,13 +23,12 @@
 
 #Header {
 	margin: calc(var(--dialog-spacing) * -1);
-	margin-bottom: var(--dialog-spacing);
+	margin-block-end: var(--dialog-spacing);
 }
 
 #ModalButtonRow {
-	gap: var(--dialog-button-spacing);
-
 	align-self: end;
+	gap: var(--dialog-button-spacing);
 	width: max-content;
 }
 
@@ -38,6 +36,6 @@
 	color: var(--color-gray-text);
 	font: inherit;
 	margin: 0;
-	margin-top: var(--text-spacing);
-	margin-left: calc(var(--sel-button-size) + var(--label-spacing));
+	margin-block-start: var(--text-spacing);
+	margin-inline-start: calc(var(--sel-button-size) + var(--label-spacing));
 }

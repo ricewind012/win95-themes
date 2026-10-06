@@ -5,9 +5,8 @@
 @use "steam/shared";
 
 .activeVoiceButtons {
-	padding: 0;
-
 	min-width: unset;
+	padding: 0;
 }
 
 .activeVoiceButtonsSpacer {
@@ -17,9 +16,8 @@
 .activeVoiceControls {
 	background-color: transparent;
 	border: none;
-	margin-top: var(--window-gap);
-
 	height: var(--icon-button-height);
+	margin-block-start: var(--window-gap);
 
 	&::before {
 		display: none;
@@ -97,19 +95,15 @@
 // Making .chatRoomListContainer use .content-container breaks resizing.
 .ChatRoomListContainerParent:not(.Collapsed) {
 	margin: var(--border-size);
-
 	position: relative;
 
 	&::before {
-		content: "";
-
-		position: absolute;
-		inset: calc(var(--border-size) * -1);
-		top: 28px;
-
-		pointer-events: none;
-
 		box-shadow: var(--border-field);
+		content: "";
+		inset: calc(var(--border-size) * -1);
+		inset-block-start: 28px;
+		pointer-events: none;
+		position: absolute;
 	}
 }
 
@@ -125,13 +119,12 @@
 }
 
 .chatSectionTitle {
+	align-items: center;
 	background-color: transparent;
 	color: inherit;
-	text-transform: unset;
-	margin: calc(var(--window-gap) + var(--border-size)) 0;
-
 	height: unset;
-	align-items: center;
+	margin: calc(var(--window-gap) + var(--border-size)) 0;
+	text-transform: unset;
 
 	.createChatRoomButton,
 	.ToggleGroupChatList {
@@ -200,7 +193,6 @@
 	@include window.content-container;
 
 	border: none;
-
 	position: relative;
 
 	html:not([browsertype="DirectHWND"]) & {
@@ -212,8 +204,8 @@
 	}
 
 	.labelHolder {
-		margin-top: 0;
-		margin-right: 0;
+		margin-block-start: 0;
+		margin-inline-end: 0;
 	}
 
 	.statusHeaderGlow {
@@ -237,7 +229,7 @@
 	@include tree.item-icon;
 
 	margin: 0;
-	margin-right: var(--tree-spacing);
+	margin-inline-end: var(--tree-spacing);
 
 	&::before {
 		inset-inline-start: 0;
@@ -249,10 +241,10 @@
 	margin: 0;
 
 	&:first-child {
-		padding-top: 2px;
+		padding-block-start: 2px;
 
 		.ExpandPlusMinus::after {
-			border-left-color: transparent;
+			border-inline-start-color: transparent;
 		}
 	}
 
@@ -263,20 +255,17 @@
 	}
 
 	& > :nth-child(2) {
+		margin-inline-start: var(--icon-size);
 		padding: 0;
-		margin-left: var(--icon-size);
-
 		position: relative;
 
 		&::before {
+			border-inline-start: 1px dotted var(--color-gray-text);
 			content: "";
-
-			position: absolute;
-			top: -7px;
-			left: -8px;
 			height: calc(100% + 10px);
-
-			border-left: 1px dotted var(--color-gray-text);
+			inset-block-start: -7px;
+			inset-inline-start: -8px;
+			position: absolute;
 		}
 	}
 
@@ -286,8 +275,8 @@
 
 	.gameGroupContainer {
 		align-items: center;
-		width: calc(9px + var(--tree-spacing) + var(--icon-size));
 		height: var(--icon-size);
+		width: calc(9px + var(--tree-spacing) + var(--icon-size));
 	}
 
 	.groupName {
@@ -295,10 +284,9 @@
 	}
 
 	.groupIcon {
-		margin: 0;
-
-		width: var(--icon-size);
 		height: var(--icon-size);
+		margin: 0;
+		width: var(--icon-size);
 	}
 
 	.groupName {
@@ -306,7 +294,6 @@
 		@include utils.text-reset;
 
 		margin: 0;
-
 		z-index: 1;
 
 		&::before {
@@ -327,11 +314,10 @@
 
 		@include tree.item($expanded-sel: "&.hack");
 
-		padding: 0;
+		height: var(--avatar-size);
 		margin-inline-start: 20px;
 		margin-block: 4px;
-
-		height: var(--avatar-size);
+		padding: 0;
 
 		&:hover {
 			background-color: color-mix(
@@ -342,8 +328,8 @@
 		}
 
 		&::before {
-			top: calc(var(--avatar-size) / -2);
 			height: calc(var(--avatar-size) + 2px);
+			inset-block-start: calc(var(--avatar-size) / -2);
 		}
 
 		.avatarHolder {
@@ -375,20 +361,17 @@
 	@include window.statusbar-item;
 
 	background-color: transparent;
-
 	min-height: unset;
 
 	&::before {
-		content: ".";
-
 		color: transparent;
+		content: ".";
 	}
 }
 
 .friendListHeaderContainer {
 	background-color: transparent;
 	box-shadow: none;
-
 	min-height: unset;
 }
 
@@ -397,10 +380,9 @@
 	@include controls.button;
 	@include controls.icon-button($selected-sel: "&.friendRequestViewActive");
 
-	gap: var(--text-spacing);
-
-	display: flex;
 	align-items: center;
+	display: flex;
+	gap: var(--text-spacing);
 	width: unset;
 
 	&.friendRequestViewActive {
@@ -409,9 +391,9 @@
 
 	// TODO(controls): maybe stop using position: absolute for this
 	&::before {
+		height: var(--icon-size);
 		position: relative;
 		width: var(--icon-size);
-		height: var(--icon-size);
 	}
 
 	.requestsNumber {
@@ -446,13 +428,11 @@
 	}
 
 	&::before {
-		content: attr(title);
-
-		position: absolute;
-		top: var(--spacing);
-		left: var(--spacing);
-
 		color: var(--color-gray-text);
+		content: attr(title);
+		inset-block-start: var(--spacing);
+		inset-inline-start: var(--spacing);
+		position: absolute;
 	}
 
 	svg {
@@ -461,16 +441,15 @@
 }
 
 .socialListTab {
-	@include utils.text-reset;
-
 	--spacing: calc(var(--border-size) + var(--input-spacing));
+
+	@include utils.text-reset;
 
 	background-color: transparent;
 	box-shadow: none;
-	padding: 0;
-	margin-top: calc(6px + var(--window-gap));
-
 	height: unset;
+	margin-block-start: calc(6px + var(--window-gap));
+	padding: 0;
 
 	.inputContainer {
 		margin: calc(var(--spacing) * -1);
@@ -508,7 +487,6 @@
 .TabSearchButton {
 	@include controls.text-field;
 
-	margin-right: var(--toolbar-spacing);
-
+	margin-inline-end: var(--toolbar-spacing);
 	order: -1;
 }

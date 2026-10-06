@@ -11,16 +11,15 @@
 	@include text.input-label;
 	@include controls.radio($checked-sel: "&#Active");
 
-	font: var(--text-ui);
 	color: var(--color-button-text);
-	text-align: left;
-	text-shadow: none;
-	gap: var(--text-spacing);
-
-	position: relative;
-	width: unset;
 	flex-direction: row;
-	justify-content: left;
+	font: var(--text-ui);
+	gap: var(--text-spacing);
+	justify-content: start;
+	position: relative;
+	text-align: start;
+	text-shadow: none;
+	width: unset;
 
 	&:not(#Active)::before {
 		display: none;
@@ -33,15 +32,15 @@
 
 	// Use as ::before for label spacing
 	&::after {
+		order: -1;
 		width: calc(
 			var(--sel-button-size) + var(--label-spacing) - var(--text-spacing)
 		);
-		order: -1;
 	}
 }
 
 #Group {
 	box-shadow: none;
-	gap: var(--text-spacing);
 	flex-direction: column;
+	gap: var(--text-spacing);
 }

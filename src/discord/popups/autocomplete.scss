@@ -3,8 +3,8 @@
 .autocomplete__13533 {
 	@include listbox.container;
 
-	left: calc(8px + var(--border-size));
-	right: var(--border-size);
+	inset-inline-end: var(--border-size);
+	inset-inline-start: calc(8px + var(--border-size));
 
 	.base__13533 {
 		background-color: transparent;
@@ -22,18 +22,17 @@
 
 .autocompleteRowContent__13533 {
 	color: inherit;
-
 	min-height: unset;
 
 	& > * {
-		text-align: start;
 		margin: 0;
+		text-align: start;
 	}
 
 	.avatar__44b0c,
 	.wrapper__44b0c {
-		width: var(--icon-size);
 		height: var(--icon-size);
+		width: var(--icon-size);
 	}
 }
 
@@ -44,7 +43,7 @@
 
 .autocompleteRowContentPrimary__13533 {
 	&:first-child {
-		margin-left: var(--icon-size);
+		margin-inline-start: var(--icon-size);
 	}
 }
 

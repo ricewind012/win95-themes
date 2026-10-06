@@ -3,9 +3,8 @@
 .DialogListBuilderInput {
 	.DialogTextInputBase {
 		background-color: transparent;
-		padding: 0;
-
 		flex-grow: 1;
+		padding: 0;
 	}
 }
 
@@ -23,7 +22,7 @@
 	background-color: transparent;
 	font: var(--text-ui);
 	margin: 0;
-	margin-right: 2px;
+	margin-inline-end: 2px;
 
 	span {
 		color: var(--color-button-text);

@@ -12,8 +12,8 @@ $-icons: (
 @mixin -arrowscrollbox-button {
 	@include controls.button;
 
-	min-width: var(--tab-button-height);
 	height: var(--tab-button-height);
+	min-width: var(--tab-button-height);
 }
 
 %-horizontal-tabs-button {
@@ -23,15 +23,14 @@ $-icons: (
 }
 
 #pinned-tabs-container[orient="vertical"] {
-	margin-top: var(--toolbar-container-spacing);
+	margin-block-start: var(--toolbar-container-spacing);
 
 	// Undo the scrolling
 	height: unset;
 
 	&::part(scrollbox) {
-		padding-bottom: var(--border-size);
-
 		overflow: hidden;
+		padding-block-end: var(--border-size);
 	}
 
 	.tabbrowser-tab {
@@ -39,9 +38,8 @@ $-icons: (
 			$active-sel: "&:where([selected], [multiselected])"
 		);
 
-		padding: 0;
-
 		min-width: unset;
+		padding: 0;
 	}
 }
 
@@ -61,12 +59,11 @@ $-icons: (
 }
 
 .tab-close-button {
-	list-style-image: icon("close", "mono");
-	padding: 4.5px 4px;
-	margin: 0;
-
-	width: var(--icon-size);
 	height: var(--icon-size);
+	list-style-image: icon("close", "mono");
+	margin: 0;
+	padding: 4.5px 4px;
+	width: var(--icon-size);
 
 	#tabbrowser-arrowscrollbox[orient="vertical"] & {
 		display: flex;
@@ -104,13 +101,13 @@ $-icons: (
 
 .tab-note-icon {
 	list-style-image: icon("file");
-	padding-block: 2px;
 	margin: 0;
+	padding-block: 2px;
 }
 
 .tab-throbber {
-	opacity: 1;
 	background-image: icon("hourglass");
+	opacity: 1;
 }
 
 #tabbrowser-arrowscrollbox {
@@ -118,8 +115,8 @@ $-icons: (
 		@include window.content-container;
 
 		// Lets the arrowscrollbox be able to overflow
-		block-size: 100%;
-		inline-size: calc(100% - var(--border-size) * 2);
+		height: 100%;
+		width: calc(100% - var(--border-size) * 2);
 	}
 
 	&::part(overflow-start-indicator),
@@ -188,14 +185,13 @@ $-icons: (
 	&::after {
 		@include utils.pseudo-icon;
 
-		margin-top: 1px;
-		margin-left: 1px;
+		margin-block-start: 1px;
+		margin-inline-start: 1px;
 	}
 
 	&::before {
-		z-index: 1;
-
 		background-color: var(--color-button-text);
+		z-index: 1;
 	}
 
 	&:active {
@@ -203,8 +199,8 @@ $-icons: (
 		box-shadow: var(--border-button-sunken);
 
 		&::before {
-			top: 1px;
-			left: 1px;
+			inset-block-start: 1px;
+			inset-inline-start: 1px;
 		}
 	}
 
@@ -216,10 +212,9 @@ $-icons: (
 		}
 
 		&::after {
-			top: 1px;
-			left: 1px;
-
 			background-color: var(--color-button-highlight);
+			inset-block-start: 1px;
+			inset-inline-start: 1px;
 		}
 	}
 }
@@ -229,15 +224,14 @@ $-icons: (
 		$selected-sel: "&:is([selected], [multiselected])"
 	);
 
-	padding: 0;
-
 	inset: 0;
+	padding: 0;
 
 	#tabbrowser-tabs[orient="horizontal"] & {
 		margin-inline: var(--tab-button-spacing-x05);
 
 		&:not([pinned]) {
-			top: 1px;
+			inset-block-start: 1px;
 
 			// Restore the original value
 			&[fadein] {

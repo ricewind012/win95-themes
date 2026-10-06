@@ -26,13 +26,11 @@
 
 	&::before {
 		content: attr(aria-label);
-
-		position: absolute;
-		left: calc(var(--border-size) + var(--window-spacing) + 2px);
-		top: calc(var(--border-size) + var(--window-spacing) + 3px);
-
 		font: var(--text-ui);
 		font-weight: bold;
+		inset-inline-start: calc(var(--border-size) + var(--window-spacing) + 2px);
+		inset-block-start: calc(var(--border-size) + var(--window-spacing) + 3px);
+		position: absolute;
 	}
 }
 
@@ -43,9 +41,8 @@
 		var(--color-active-caption-bg-end)
 	);
 	color: var(--color-active-caption-text);
-	padding: 0 2px;
-
 	height: unset;
+	padding: 0 2px;
 
 	.actions-container {
 		height: var(--titlebar-height);
@@ -54,8 +51,7 @@
 
 .dialog-message {
 	font: var(--text-ui);
-	margin-bottom: var(--messagebox-content-spacing);
-
+	margin-block-end: var(--messagebox-content-spacing);
 	min-height: unset;
 }
 
@@ -68,18 +64,17 @@
 }
 
 .dialog-message-container {
-	padding-left: var(--messagebox-content-spacing);
+	padding-inline-start: var(--messagebox-content-spacing);
 }
 
 .dialog-checkbox-row {
 	@include text.input-label;
 
-	padding-top: var(--messagebox-content-spacing);
+	padding-block-start: var(--messagebox-content-spacing);
 }
 
 .dialog-buttons {
 	gap: var(--dialog-button-spacing);
-
 	overflow: visible;
 
 	// !important

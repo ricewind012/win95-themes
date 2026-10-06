@@ -44,14 +44,12 @@ $-icons: (
 	);
 	@include controls.combobox;
 
-	margin: 0;
-
-	height: var(--text-field-height);
-
 	cursor: default;
+	height: var(--text-field-height);
+	margin: 0;
 }
 
 #ViewFiltersBar {
 	margin: 0;
-	margin-left: var(--toolbar-spacing);
+	margin-inline-start: var(--toolbar-spacing);
 }

@@ -19,10 +19,10 @@
 #AdvancedSearchPane {
 	@include window.container($child: true);
 
+	inset: calc(10% - var(--titlebar-height)) 17.5%;
 	overflow: hidden;
 	// Make it an actual window, 17.5% fits 16px text size
 	position: fixed;
-	inset: calc(10% - var(--titlebar-height)) 17.5%;
 }
 
 #AdvancedSearchPaneContainer {
@@ -43,16 +43,14 @@
 
 	background-color: transparent;
 	font: var(--text-ui);
-	margin: 0;
-
 	height: unset;
+	margin: 0;
 }
 
 #SearchInput {
 	font: var(--text-ui);
-
-	overflow: visible;
 	min-height: unset;
+	overflow: visible;
 
 	.DialogInput_Wrapper {
 		position: unset;
@@ -67,10 +65,9 @@
 #SearchFilterInput {
 	@include window.statusbar;
 
+	align-items: center;
 	color: var(--color-button-text);
 	padding: 0;
-
-	align-items: center;
 
 	// TODO: unify
 	svg {

@@ -11,10 +11,9 @@ $-groupbox-header-sel: ":is(h1, h2, h3, h4, h5, h6):first-child";
 	}
 
 	&[data-layout="horizontal"] {
-		gap: var(--label-spacing);
-
 		display: flex;
 		flex-direction: row-reverse;
+		gap: var(--label-spacing);
 		justify-content: start;
 
 		.labelContainer__5a838 {
@@ -50,10 +49,10 @@ $-groupbox-header-sel: ":is(h1, h2, h3, h4, h5, h6):first-child";
 }
 
 .contentColumn__23e6b {
-	min-width: 100%;
-	max-width: 100%;
 	display: flex;
 	flex-direction: column;
+	max-width: 100%;
+	min-width: 100%;
 }
 
 .contentRegionScroller__23e6b {
@@ -69,45 +68,40 @@ $-groupbox-header-sel: ":is(h1, h2, h3, h4, h5, h6):first-child";
 	opacity: 1;
 
 	&[aria-hidden="false"]:not(:only-child) {
-		--windows-titlebar-offset: 22px;
-		--dialog-size: 90%;
 		--c: calc(100% - var(--dialog-size));
 		--c2: calc(var(--c) + var(--border-size));
+		--dialog-size: 90%;
+		--windows-titlebar-offset: 22px;
 
 		@include window.container($child: true);
 
+		inset: var(--c);
 		opacity: 1;
 		transform: unset;
-
-		inset: var(--c);
 		z-index: 999;
 
 		&::before {
-			content: "";
+			@include window.titlebar($focused-sel: "&");
 
 			box-sizing: border-box;
-
-			@include window.titlebar($focused-sel: "&");
+			content: "";
 		}
 
 		[role="tablist"][aria-orientation="vertical"]::before {
-			content: attr(aria-label);
-
-			position: fixed;
-			left: calc(var(--c2) + 3px + var(--window-spacing) + 2px);
-			top: calc(var(--c2) + 3px + 3px);
-
 			color: var(--color-active-caption-text);
+			content: attr(aria-label);
 			font-weight: bold;
+			inset-block-start: calc(var(--c2) + 3px + 3px);
+			inset-inline-start: calc(var(--c2) + 3px + var(--window-spacing) + 2px);
+			position: fixed;
 		}
 	}
 }
 
 .sidebar__23e6b {
-	padding: 0;
-	margin-inline-start: 6px;
-
 	direction: ltr;
+	margin-inline-start: 6px;
+	padding: 0;
 
 	.searchBar_c7e907 {
 		margin-inline-end: 4px;
@@ -121,12 +115,11 @@ $-groupbox-header-sel: ":is(h1, h2, h3, h4, h5, h6):first-child";
 
 .standardSidebarView__23e6b {
 	background-color: var(--color-button-face);
+	inset: var(--border-size);
 	padding: var(--dialog-spacing);
 
-	inset: var(--border-size);
-
 	.platform-win & {
-		top: var(--windows-titlebar-offset);
+		inset-block-start: var(--windows-titlebar-offset);
 	}
 
 	// TODO: move somewhere else
@@ -137,9 +130,11 @@ $-groupbox-header-sel: ":is(h1, h2, h3, h4, h5, h6):first-child";
 }
 
 .tools__23e6b {
+	inset-block-start: calc(
+		var(--c2) + var(--border-size) + 2px + var(--window-gap)
+	);
+	inset-inline-end: calc(var(--c2) + var(--border-size) + 2px * 2);
 	position: fixed;
-	top: calc(var(--c2) + var(--border-size) + 2px + var(--window-gap));
-	right: calc(var(--c2) + var(--border-size) + 2px * 2);
 
 	.closeButton_c2b141 {
 		@include controls.button;
@@ -147,9 +142,8 @@ $-groupbox-header-sel: ":is(h1, h2, h3, h4, h5, h6):first-child";
 		@include window.titlebar-button-close;
 
 		border: none;
-
-		width: unset;
 		flex: unset;
+		width: unset;
 
 		& > svg {
 			display: none;

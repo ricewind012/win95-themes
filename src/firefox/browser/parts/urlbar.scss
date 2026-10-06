@@ -55,7 +55,6 @@ $-input-height: round(
 
 .urlbar-input-container {
 	border: none;
-
 	height: 100%;
 }
 
@@ -72,7 +71,6 @@ $-input-height: round(
 	--urlbarview-row-padding-block: 0px;
 
 	margin: 0;
-
 	width: 100%;
 
 	&:not([noresults]) {
@@ -113,7 +111,6 @@ $-input-height: round(
 
 .urlbarView-title {
 	mask: none;
-
 	text-overflow: ellipsis;
 }
 

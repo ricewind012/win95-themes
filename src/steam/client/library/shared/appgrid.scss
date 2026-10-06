@@ -16,14 +16,13 @@
 }
 
 #SortingDropDown {
-	gap: var(--text-spacing);
-
 	align-items: center;
+	gap: var(--text-spacing);
 
 	#CollectionOptions {
 		@include shared.library_in-toolbar;
 
-		right: anchor(right);
+		inset-inline-end: anchor(right);
 	}
 }
 

@@ -11,9 +11,9 @@
 	}
 
 	.toolbarbutton-badge-stack {
+		inset-block-start: 0;
+		inset-inline-start: 2px;
 		position: absolute;
-		top: 0;
-		left: 2px;
 	}
 
 	.toolbarbutton-icon {
@@ -28,13 +28,11 @@
 	// same selector in #nav-bar
 	.unified-extensions-item-action-button {
 		gap: var(--text-spacing);
-
 		justify-content: space-between;
 
 		&::after {
-			content: attr(badge);
-
 			color: var(--color-gray-text);
+			content: attr(badge);
 		}
 	}
 }

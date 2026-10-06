@@ -11,19 +11,18 @@ toolbarbutton.bookmark-item {
 	@extend %-button;
 
 	& > .toolbarbutton-icon {
-		margin: 0;
-
 		display: flex;
+		margin: 0;
 	}
 }
 
 #PersonalToolbar {
 	// ty mozilla
 	--toolbarbutton-inner-padding: 0px;
-	padding: 0;
 
 	// Oh my God, man, let XUL die already
 	display: grid;
+	padding: 0;
 }
 
 #PlacesChevron {

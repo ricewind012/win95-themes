@@ -4,20 +4,20 @@
 #SteamRuntimeSystemInfoContainer {
 	@include window.content-container;
 
-	margin-top: var(--text-spacing);
+	margin-block-start: var(--text-spacing);
 }
 
 #SteamRuntimeSystemInfoDialogContent {
 	.DialogBody {
 		gap: 0;
 		// Stolen from src/steam/shared/dialogshared.scss
-		padding-bottom: calc(
+		padding-block-end: calc(
 			var(--statusbar-height) + var(--window-gap) + var(--dialog-spacing)
 		);
 	}
 
 	.DialogBodyText {
-		margin-bottom: calc(12px + var(--dialog-button-spacing));
+		margin-block-end: calc(12px + var(--dialog-button-spacing));
 	}
 }
 

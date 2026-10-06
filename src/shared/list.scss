@@ -1,19 +1,18 @@
 @mixin item {
-	height: calc(1rlh + 3px);
-	display: flex;
 	align-items: center;
+	display: flex;
+	height: calc(1rlh + 3px);
 }
 
 @mixin item-image {
 	background: var(--list-icon) center no-repeat;
-
-	min-width: var(--icon-size);
 	min-height: var(--icon-size);
+	min-width: var(--icon-size);
 }
 
 @mixin item-name-container {
-	display: flex;
 	align-items: center;
+	display: flex;
 }
 
 @mixin item-name {
@@ -22,6 +21,6 @@
 
 @mixin item-name-selected {
 	background-color: var(--color-highlight);
-	color: var(--color-highlight-text);
 	border: 1px dotted var(--color-highlight-border);
+	color: var(--color-highlight-text);
 }

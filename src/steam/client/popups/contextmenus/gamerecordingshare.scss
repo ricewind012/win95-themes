@@ -1,13 +1,13 @@
 @use "shared/controls";
 
 #AllChatsMenu {
-	overflow-y: auto;
 	height: unset;
+	overflow-y: auto;
 
 	input {
 		@include controls.text-field;
 
-		margin-bottom: 2px;
+		margin-block-end: 2px;
 	}
 }
 
@@ -20,9 +20,8 @@
 
 #AllChats,
 #Chat {
-	gap: 0;
-
 	flex-direction: row;
+	gap: 0;
 	max-width: unset;
 
 	// "Share -> All chats" divider
@@ -31,15 +30,15 @@
 	}
 
 	.avatarHolder {
+		inset-block-start: 0;
+		inset-inline-start: 0;
 		position: absolute;
-		top: 0;
-		left: 0;
 	}
 
 	#Name {
 		font: inherit;
-		text-align: start;
 		padding: 0;
+		text-align: start;
 	}
 }
 
@@ -50,9 +49,8 @@
 }
 
 #ChatRow {
-	margin: 0;
-
 	flex-direction: column;
+	margin: 0;
 }
 
 #ShareMenuLabel {

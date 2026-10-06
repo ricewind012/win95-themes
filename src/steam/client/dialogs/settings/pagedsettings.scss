@@ -11,11 +11,11 @@
 	@include controls.button;
 	@include controls.icon-button;
 
-	position: fixed;
-	inline-size: unset;
-	inset-inline-start: calc(var(--pos));
 	inset-block-start: unset;
 	inset-block-end: calc(var(--pos) + var(--statusbar-height));
+	inset-inline-start: calc(var(--pos));
+	position: fixed;
+	width: unset;
 
 	svg {
 		display: none;
@@ -29,9 +29,8 @@
 
 #PagedSettingsDialog {
 	margin: var(--dialog-spacing);
-
-	min-width: unset;
 	min-height: unset;
+	min-width: unset;
 
 	.DialogDropDown {
 		min-width: var(--button-min-width);
@@ -45,35 +44,32 @@
 #PagedSettingsDialog_PageList {
 	@include tabs.container-vertical;
 
-	padding: 0;
-
-	overflow: visible;
 	flex-grow: 0;
+	overflow: visible;
+	padding: 0;
 }
 
 #PagedSettingsDialog_PageListColumn {
 	background-color: transparent;
-	padding: 0;
-
-	max-width: unset;
-	min-height: unset;
 	flex-grow: 0;
 	justify-content: space-between;
+	max-width: unset;
+	min-height: unset;
+	padding: 0;
 }
 
 #PagedSettingsDialog_PageListItem {
 	@include tabs.tab-vertical($selected-sel: "&#Active");
 
-	font: var(--text-ui);
-
 	cursor: default;
+	font: var(--text-ui);
 }
 
 #PagedSettingsDialog_Title {
 	@include shared.dialog-title;
 
-	text-transform: unset;
 	padding: 0;
+	text-transform: unset;
 
 	.MillenniumSettings &,
 	html[browsertype="DirectHWND"] & {

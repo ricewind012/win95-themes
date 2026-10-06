@@ -52,17 +52,15 @@
 }
 
 #ButtonWrapper {
-	margin: 0;
-
-	width: unset;
 	height: unset;
+	margin: 0;
+	width: unset;
 }
 
 #ContentTypes {
 	background-image: icon("question");
-
-	width: var(--icon-size);
 	height: var(--icon-size);
+	width: var(--icon-size);
 
 	#Icon {
 		display: none;
@@ -107,13 +105,12 @@
 
 #LabelRow {
 	gap: var(--text-spacing);
-	margin-bottom: var(--text-spacing);
+	margin-block-end: var(--text-spacing);
 
 	#Progress {
 		@include utils.parentheses;
 
 		color: var(--color-gray-text);
-
 		flex-grow: 0;
 	}
 }
@@ -122,7 +119,7 @@
 	color: inherit;
 	font: inherit;
 	font-weight: bold;
-	margin-bottom: var(--text-spacing);
+	margin-block-end: var(--text-spacing);
 }
 
 #Rule {
@@ -130,8 +127,8 @@
 }
 
 #Section {
-	padding: 0;
 	margin: 0;
+	padding: 0;
 
 	&:not(#Active) {
 		@include shared.library_section;
@@ -148,8 +145,8 @@
 		}
 
 		#DragHandle {
-			top: var(--appdetails_container-spacing-y);
-			left: calc(var(--appdetails_container-spacing-x) + 55%);
+			inset-block-start: var(--appdetails_container-spacing-y);
+			inset-inline-start: calc(var(--appdetails_container-spacing-x) + 55%);
 		}
 
 		#SectionList {
@@ -160,11 +157,10 @@
 
 #SectionItem {
 	background-color: transparent;
-	padding: var(--appdetails_container-spacing-y)
-		var(--appdetails_container-spacing-x);
-
 	// A constant scrollbar appears for an OOB #DragHandle
 	overflow: hidden;
+	padding: var(--appdetails_container-spacing-y)
+		var(--appdetails_container-spacing-x);
 }
 
 #SectionItemCenter,
@@ -189,11 +185,10 @@
 	@include shared.library_section-content;
 
 	border: none;
-	padding: 0;
-	margin: 0;
-
 	display: flex;
 	flex-direction: column;
+	margin: 0;
+	padding: 0;
 	position: relative;
 }
 
@@ -201,19 +196,17 @@
 	@include utils.text-reset;
 	@include shared.library_section-header;
 
-	gap: var(--text-spacing);
-
 	align-items: start;
 	flex-direction: column;
+	gap: var(--text-spacing);
 }
 
 #Status {
 	gap: var(--text-spacing);
-	margin-bottom: var(--text-spacing);
+	margin-block-end: var(--text-spacing);
 
 	#Label {
 		color: inherit;
-
 		flex-grow: 0;
 	}
 

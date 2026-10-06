@@ -22,12 +22,11 @@
 }
 
 #SliderNotchContainer {
-	margin-top: 11px;
+	margin-block-start: 11px;
 }
 
 #SliderTrack {
 	background-color: transparent;
-
 	width: 100%;
 
 	&::before {

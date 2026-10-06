@@ -14,8 +14,8 @@
 		inset: 0;
 
 		&.codicon-widget-close {
-			left: 23px;
-			top: -47px;
+			inset-block-start: -47px;
+			inset-inline-start: 23px;
 		}
 	}
 

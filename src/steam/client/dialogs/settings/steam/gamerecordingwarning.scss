@@ -15,10 +15,9 @@
 	--size: 32px;
 
 	background: var(--icon);
-	margin: 0;
-
-	width: var(--size);
 	height: var(--size);
+	margin: 0;
+	width: var(--size);
 
 	* {
 		display: none;

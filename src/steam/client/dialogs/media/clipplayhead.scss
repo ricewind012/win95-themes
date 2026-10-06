@@ -7,7 +7,8 @@
 
 #PlayHeadContainer {
 	--color-to-change: var(--color-button-face);
-	bottom: 12px;
+
+	inset-block-end: 12px;
 }
 
 #PlayHeadContent {

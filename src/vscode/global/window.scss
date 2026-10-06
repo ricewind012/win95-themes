@@ -12,7 +12,7 @@
 .split-view-view {
 	// Content
 	&[style^="top: 35px;"] {
-		margin-top: calc(1lh + 3px);
+		margin-block-start: calc(1lh + 3px);
 	}
 
 	// Statusbar
@@ -23,7 +23,7 @@
 		> .monaco-scrollable-element
 		> .split-view-container
 		> &[style$="height: 22px;"] {
-		margin-top: 4px;
+		margin-block-start: 4px;
 	}
 
 	.monaco-grid-branch-node
@@ -31,14 +31,13 @@
 		> .monaco-scrollable-element
 		> .split-view-container
 		> &[style$="height: 26px;"] {
-		margin-top: 8px;
+		margin-block-start: 8px;
 	}
 
 	// Maximised bottom panel
-	&[style="top: 0px; height: 0px;"] + & > .part.panel {
-		margin-top: calc(1lh + 3px);
-
+	&[style="top: 0px;height:0px;"] + & > .part.panel {
 		height: calc(100% - 44px);
+		margin-block-start: calc(1lh + 3px);
 	}
 }
 

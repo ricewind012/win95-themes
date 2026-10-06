@@ -3,7 +3,7 @@
 #TickLine {
 	@include controls.slider-tick;
 
-	margin-top: 6px;
+	margin-block-start: 6px;
 
 	&#Major {
 		height: 6px;

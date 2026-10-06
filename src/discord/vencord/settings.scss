@@ -6,11 +6,10 @@
 
 %-vencord-groupbox-header {
 	&::before {
-		content: var(--header-text);
-
-		left: 10px;
-
 		@include utils.legend-as-div;
+
+		content: var(--header-text);
+		inset-inline-start: 10px;
 	}
 }
 
@@ -61,10 +60,10 @@
 }
 
 .vc-addon-card {
-	transform: none;
 	background: none;
 	border: none;
 	padding: 0;
+	transform: none;
 }
 
 .vc-addon-card-disabled {
@@ -76,9 +75,8 @@
 }
 
 .vc-addon-header {
-	gap: var(--label-spacing);
-
 	align-items: start;
+	gap: var(--label-spacing);
 
 	& > div:not([class]) {
 		order: -1;
@@ -87,9 +85,8 @@
 
 .vc-addon-note {
 	color: var(--color-gray-text);
-	margin-left: calc(var(--sel-button-size) + var(--label-spacing));
-
 	height: unset;
+	margin-inline-start: calc(var(--sel-button-size) + var(--label-spacing));
 }
 
 .vc-plugin-modal-description {
@@ -198,9 +195,9 @@
 
 .vc-settings-modal-links {
 	gap: 0;
-	position: absolute;
 	inset-block-start: calc(var(--titlebar-height) + var(--dialog-spacing));
 	inset-inline-end: calc(var(--dialog-spacing));
+	position: absolute;
 
 	& > * {
 		@include controls.button;
@@ -234,20 +231,18 @@
 
 .vc-settings-quickActions-card {
 	box-shadow: none;
-	gap: 0;
-	padding: 0;
-	margin: 0;
-
 	display: flex;
 	flex-direction: column;
+	gap: 0;
+	margin: 0;
+	padding: 0;
 	width: 50%;
 
 	&:not(:nth-child(2):last-child)::after {
 		content: "";
+		margin-block: 8px;
 
 		@include controls.separator;
-
-		margin-block: 8px;
 	}
 }
 
@@ -271,7 +266,7 @@
 
 .vc-settings-theme-grid {
 	gap: var(--text-spacing);
-	margin-bottom: var(--text-spacing);
+	margin-block-end: var(--text-spacing);
 }
 
 .vc-special-title {

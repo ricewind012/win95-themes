@@ -16,9 +16,9 @@
 #BitRateTable {
 	all: unset;
 
-	display: table;
-
 	@include window.content-container;
+
+	display: table;
 
 	td {
 		@include table.row;
@@ -37,5 +37,5 @@
 
 #Header {
 	margin: calc(var(--dialog-spacing) * -1);
-	margin-bottom: var(--dialog-spacing);
+	margin-block-end: var(--dialog-spacing);
 }

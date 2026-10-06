@@ -2,17 +2,17 @@
 @use "shared/window";
 
 .search-widget {
-	margin-bottom: var(--text-spacing);
+	margin-block-end: var(--text-spacing);
 }
 
 .search-widgets-container {
-	padding: 0;
 	margin: 0;
+	padding: 0;
 }
 
 .search-view {
 	.monaco-count-badge {
-		margin-right: var(--text-spacing);
+		margin-inline-end: var(--text-spacing);
 	}
 
 	.query-details {
@@ -20,12 +20,11 @@
 	}
 
 	.replace-container {
-		margin-top: 10px;
+		margin-block-start: 10px;
 
 		.monaco-action-bar {
-			margin: 0;
-
 			height: unset;
+			margin: 0;
 
 			.action-label {
 				@include controls.button;
@@ -38,11 +37,10 @@
 		all: unset;
 
 		background-color: currentColor;
+		height: 100%;
 		mask: var(--button-img) no-repeat;
 		mask-position: center;
-
 		position: absolute;
-		height: 100%;
 
 		&.codicon-search-show-replace {
 			--button-img: icon("arrow-big-bottom", "mono");
@@ -57,12 +55,12 @@
 		@include controls.button;
 		@include window.titlebar-button;
 
+		inset-inline-end: 0;
 		position: absolute;
-		right: 0;
 	}
 
 	.message {
 		padding: 0;
-		padding-bottom: var(--text-spacing);
+		padding-block-end: var(--text-spacing);
 	}
 }

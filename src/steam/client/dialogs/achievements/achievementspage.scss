@@ -10,9 +10,9 @@
 }
 
 #DragHandle {
+	inset-inline-end: 0;
 	// Extend the separator to the right
 	position: absolute;
-	right: 0;
 }
 
 #HeaderContainer {
@@ -27,23 +27,20 @@
 #Page {
 	background-color: transparent;
 	margin: 0;
-	margin-top: var(--titlebar-height);
-
+	margin-block-start: var(--titlebar-height);
 	overflow: visible;
 
 	&::after {
-		content: "";
-
-		position: absolute;
-		top: calc(var(--titlebar-height) * -1);
-		width: 100%;
-		height: var(--titlebar-height);
-
 		background-image: linear-gradient(
 			90deg,
 			var(--color-active-caption-bg-start),
 			var(--color-active-caption-bg-end)
 		);
+		content: "";
+		height: var(--titlebar-height);
+		inset-block-start: calc(var(--titlebar-height) * -1);
+		position: absolute;
+		width: 100%;
 	}
 }
 

@@ -5,11 +5,11 @@
 
 	@include tree.item-icon;
 
+	margin-inline-end: 6px;
 	padding: 0;
-	margin-right: 6px;
 
 	&::after {
-		top: -19px;
+		inset-block-start: -19px;
 		height: 22px;
 	}
 

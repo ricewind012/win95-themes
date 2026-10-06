@@ -24,7 +24,6 @@
 		letter-spacing: 0;
 		text-shadow: none;
 		text-transform: none;
-
 		width: 100%;
 	}
 
@@ -36,13 +35,12 @@
 #Header {
 	@include shared.library_in-toolbar;
 
-	color: inherit;
-
 	align-items: center;
-	// Give space to the snapshot button
-	right: anchor(right);
-	left: anchor(left);
+	color: inherit;
 	height: calc(2rlh - 2px);
+	// Give space to the snapshot button
+	inset-inline-end: anchor(right);
+	inset-inline-start: anchor(left);
 
 	#Label {
 		font-weight: bold;

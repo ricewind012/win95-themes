@@ -3,17 +3,15 @@
 
 #ControlsListChild {
 	margin: 0;
-
 	max-width: unset;
 }
 
 #ControlsListOuterPanel {
 	--controls-list-spacing: var(--label-spacing);
 
+	flex: unset;
 	gap: var(--dialog-button-spacing);
 	margin: 0;
-
-	flex: unset;
 }
 
 #Field {
@@ -29,10 +27,9 @@
 	div:not([class]) > & {
 		@include controls.groupbox;
 
-		gap: var(--text-spacing);
-
 		display: flex;
 		flex-direction: column;
+		gap: var(--text-spacing);
 	}
 
 	&::after {
@@ -51,7 +48,7 @@
 	@include utils.text-reset;
 
 	color: var(--color-gray-text);
-	margin-top: var(--text-spacing);
+	margin-block-start: var(--text-spacing);
 }
 
 #FieldIcon {
@@ -59,15 +56,14 @@
 }
 
 #FieldLabel {
-	font: var(--text-ui);
 	color: var(--color-button-text);
+	font: var(--text-ui);
 
 	& > :not([class]) {
+		align-items: center;
+		display: flex;
 		// has something else
 		gap: 1ch;
-
-		display: flex;
-		align-items: center;
 	}
 }
 

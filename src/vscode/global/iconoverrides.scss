@@ -54,11 +54,10 @@ body
 	.action-label.codicon:not(.codicon-more) {
 	background: no-repeat center;
 	color: transparent;
-
+	height: var(--icon-size);
+	inset-block-start: -1px;
 	position: relative;
 	width: var(--icon-size);
-	height: var(--icon-size);
-	top: -1px;
 
 	&.codicon-explorer-view-icon {
 		background-image: icon("folder");

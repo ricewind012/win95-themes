@@ -35,10 +35,10 @@ $-max-nest: 10;
 	}
 
 	.monaco-tl-twistie {
-		padding-left: 0;
-		margin-left: calc(
+		margin-inline-start: calc(
 			var(--offset) + var(--a) + var(--b) * (var(--level) - var(--multiply))
 		);
+		padding-inline-start: 0;
 	}
 }
 
@@ -58,18 +58,18 @@ $-max-nest: 10;
 // God knows why these need an override ...
 .part.sidebar div[aria-level="1"] {
 	&:not([aria-expanded]) {
-		margin-left: 4px;
+		margin-inline-start: 4px;
 
 		&::before {
-			top: -6px;
-			left: 4px;
 			display: initial;
+			inset-block-start: -6px;
+			inset-inline-start: 4px;
 		}
 	}
 
 	&::before {
-		top: -6px;
-		left: 8px;
+		inset-block-start: -6px;
+		inset-inline-start: 8px;
 	}
 
 	.monaco-tl-contents::before,
@@ -131,36 +131,33 @@ $-max-nest: 10;
 		.monaco-icon-name-container {
 			@include list.item-name-selected;
 
-			block-size: 16px;
 			display: block;
+			height: 16px;
 			position: relative;
 		}
 	}
 
 	.monaco-icon-container {
-		margin-top: 1px;
+		margin-block-start: 1px;
 	}
 
 	.monaco-icon-label {
+		align-items: center;
 		gap: 2px;
 
-		align-items: center;
-
 		&::before {
+			height: var(--icon-size);
+			padding-inline-end: 2px;
 			// Fix for source control tab or the extension
 			position: relative;
-			height: var(--icon-size);
 			z-index: 99;
-
-			padding-right: 2px;
 		}
 
 		&::after {
-			width: 12px;
-
-			opacity: 1;
 			font-size: inherit;
 			margin: 0;
+			opacity: 1;
+			width: 12px;
 		}
 	}
 
@@ -175,20 +172,18 @@ $-max-nest: 10;
 }
 
 .explorer-folders-view .explorer-item {
-	line-height: inherit;
-
 	height: inherit;
+	line-height: inherit;
 }
 
 // Tree dots
 .monaco-tl-row {
-	margin-left: -7px;
-
+	margin-inline-start: -7px;
 	overflow: visible;
 }
 
 .monaco-tl-indent {
-	left: 11px;
+	inset-inline-start: 11px;
 }
 
 .monaco-tl-contents {
@@ -199,36 +194,32 @@ $-max-nest: 10;
 	&::before,
 	[aria-expanded] &::after {
 		content: "";
-
 		position: absolute;
 	}
 
 	&::before {
-		left: -6px;
-		top: 50%;
+		border-block-end: 1px dotted var(--color-gray-text);
+		inset-block-start: 50%;
+		inset-inline-start: -6px;
 		width: 7px;
-
-		border-bottom: 1px dotted var(--color-gray-text);
 	}
 }
 
 .monaco-tl-twistie {
 	@include tree.item-icon;
 
-	margin-right: var(--tree-spacing);
-
 	flex-shrink: 0;
+	margin-inline-end: var(--tree-spacing);
 	z-index: 2;
 
 	&::before {
 		border-radius: 0;
-
-		z-index: 1;
 		transform: unset;
+		z-index: 1;
 	}
 
 	&::after {
-		left: 1px;
+		inset-inline-start: 1px;
 		width: 11px;
 	}
 
@@ -241,15 +232,14 @@ $-max-nest: 10;
 }
 
 .monaco-tl-indent {
-	top: -18px;
 	height: calc(100% + 22px);
+	inset-block-start: -18px;
 
 	& > .indent-guide {
-		opacity: 1;
-		border-left: 1px dotted var(--color-gray-text);
-
-		width: calc(11px + var(--tree-spacing));
+		border-inline-start: 1px dotted var(--color-gray-text);
 		height: calc(100% - 1px);
+		opacity: 1;
+		width: calc(11px + var(--tree-spacing));
 
 		&:nth-child(even) {
 			--tree-spacing: 7px;
@@ -275,36 +265,33 @@ $-max-nest: 10;
 // Icons
 .show-file-icons [role="treeitem"] {
 	.file-icon::before {
-		content: "";
-
 		background-image: icon("file");
-		background-size: 13px var(--icon-size);
 		background-position: center;
+		background-size: 13px var(--icon-size);
+		content: "";
 	}
 
 	&[aria-expanded] .monaco-icon-label::before {
-		content: "";
-
 		background-image: icon("folder");
 		background-size: 15px;
+		content: "";
 	}
 }
 
 // Overrides for files not at first level
 [role="treeitem"]:not([aria-expanded]):not([aria-level="1"]) {
 	.monaco-tl-contents::before {
-		left: calc(var(--icon-size) * -1);
-		top: -50%;
-		width: calc(var(--icon-size) - var(--tree-spacing));
+		border-inline-start: 1px dotted var(--color-gray-text);
+		border-block-end: 1px dotted var(--color-gray-text);
 		height: 100%;
+		inset-inline-start: calc(var(--icon-size) * -1);
+		inset-block-start: -50%;
+		width: calc(var(--icon-size) - var(--tree-spacing));
 		z-index: 1;
-
-		border-left: 1px dotted var(--color-gray-text);
-		border-bottom: 1px dotted var(--color-gray-text);
 	}
 
 	.explorer-folders-view & .monaco-icon-label {
-		margin-left: -7px;
+		margin-inline-start: -7px;
 	}
 
 	.search-view & {
@@ -330,7 +317,7 @@ $-max-nest: 10;
 	}
 
 	[aria-expanded] .resource-label-container {
-		margin-left: -3px;
+		margin-inline-start: -3px;
 	}
 }
 

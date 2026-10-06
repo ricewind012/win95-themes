@@ -12,7 +12,7 @@
 }
 
 #ContentFrame {
-	margin-bottom: var(--window-gap);
+	margin-block-end: var(--window-gap);
 }
 
 #FocusBar,
@@ -22,10 +22,9 @@
 
 #LockIcon {
 	background-image: icon("url");
-	margin-right: var(--text-spacing);
-
-	width: var(--icon-size);
 	height: var(--icon-size);
+	margin-inline-end: var(--text-spacing);
+	width: var(--icon-size);
 }
 
 #ReloadButton {
@@ -37,22 +36,19 @@
 #RootMenuBar {
 	@include window.menubar;
 
-	gap: 0;
-	padding: 0;
-	margin: 0;
-
 	flex: initial;
+	gap: 0;
+	margin: 0;
 	max-width: 100%;
+	padding: 0;
 }
 
 #SuperNavBar {
-	padding: 0;
-
+	anchor-name: --supernavbar;
+	flex-direction: column;
 	height: unset;
 	min-height: unset;
-	flex-direction: column;
-
-	anchor-name: --supernavbar;
+	padding: 0;
 	-webkit-app-region: no-drag;
 
 	&::after {
@@ -63,13 +59,12 @@
 #TitleBar {
 	flex-direction: column-reverse;
 	height: unset;
-
 	-webkit-app-region: unset;
 
 	&::before {
 		@include utils.pseudo-separator;
 
-		margin-top: var(--window-gap);
+		margin-block-start: var(--window-gap);
 	}
 }
 
@@ -87,7 +82,7 @@
 	box-shadow: none;
 	gap: var(--toolbar-spacing);
 	padding: 0 var(--toolbar-container-spacing);
-	margin-bottom: var(--window-gap);
+	margin-block-end: var(--window-gap);
 
 	svg {
 		display: none;
@@ -101,11 +96,9 @@
 }
 
 #WindowControls {
-	margin-block-end: var(--window-gap);
-
-	flex: initial;
 	cursor: default;
-
+	flex: initial;
+	margin-block-end: var(--window-gap);
 	-webkit-app-region: drag;
 
 	html[browsertype="DirectHWND"] & {

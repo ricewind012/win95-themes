@@ -5,7 +5,6 @@
 	@include controls.button;
 
 	background-image: none;
-
 	height: var(--combobox-button-height);
 
 	svg {
@@ -20,8 +19,8 @@
 }
 
 #PlayButtonContainer {
-	min-width: unset;
 	height: unset;
+	min-width: unset;
 }
 
 #StreamingSelector {

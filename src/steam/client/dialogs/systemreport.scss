@@ -12,7 +12,7 @@
 		);
 		// Restore .DialogContent padding
 		padding: var(--dialog-spacing);
-		padding-bottom: calc(
+		padding-block-end: calc(
 			var(--statusbar-height) + var(--window-gap) + var(--dialog-spacing)
 		);
 	}

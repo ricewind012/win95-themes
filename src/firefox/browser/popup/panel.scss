@@ -18,6 +18,7 @@ panel {
 	--panel-menuitem-margin: 0px;
 	--panel-menuitem-margin-inline: 0px;
 	--panel-subview-body-padding: 0px;
+
 	font: var(--text-ui);
 
 	&::part(content) {
@@ -50,16 +51,15 @@ panel {
 	background-color: transparent;
 	border: none;
 	margin: 0;
-	margin-bottom: 9px;
+	margin-block-end: 9px;
 
 	&::after {
 		@include utils.pseudo-separator;
 
-		position: absolute;
 		inset-inline: 0;
-		bottom: -8px;
-
+		inset-block-end: -8px;
 		pointer-events: none;
+		position: absolute;
 	}
 }
 

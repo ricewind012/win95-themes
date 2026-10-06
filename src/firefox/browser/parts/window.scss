@@ -8,7 +8,7 @@
 }
 
 #browser {
-	padding-top: var(--window-gap);
+	padding-block-start: var(--window-gap);
 }
 
 .browserContainer {
@@ -53,7 +53,6 @@ menubar {
 	@include window.menubar;
 
 	font: var(--text-ui);
-
 	width: 100%;
 
 	& > menu {
@@ -73,18 +72,17 @@ menubar {
 // #main-window instead of :root for specificity, as :root doesn't do !important
 #main-window:not([inFullscreen], [sizemode="maximized"]) {
 	#statuspanel {
-		--inset-bottom: calc(var(--statusbar-height) * -1 - var(--window-gap));
+		--inset-block-end: calc(var(--statusbar-height) * -1 - var(--window-gap));
 		--width: calc(100% + var(--border-size) * 2);
 
-		visibility: visible;
+		height: var(--statusbar-height);
+		inset-block-end: var(--inset-block-end);
+		margin: calc(var(--border-size) * -1);
+		max-width: var(--width);
 		opacity: 1;
 		padding: 0;
-		margin: calc(var(--border-size) * -1);
-
-		bottom: var(--inset-bottom);
+		visibility: visible;
 		width: var(--width);
-		max-width: var(--width);
-		height: var(--statusbar-height);
 
 		&[inactive] > #statuspanel-label {
 			color: transparent;
@@ -92,7 +90,7 @@ menubar {
 	}
 
 	.browserStack:has(+ findbar:not([hidden])) > #statuspanel {
-		bottom: calc(var(--inset-bottom) - 34px);
+		inset-block-end: calc(var(--inset-block-end) - 34px);
 	}
 
 	#statuspanel-label {
@@ -106,8 +104,7 @@ menubar {
 	#tabbrowser-tabbox {
 		@include window.content-container;
 
-		margin-bottom: calc(var(--statusbar-height) + var(--window-gap));
-
+		margin-block-end: calc(var(--statusbar-height) + var(--window-gap));
 		overflow: visible;
 	}
 }
@@ -125,25 +122,22 @@ menubar {
 
 // XUL sucks
 sidebar-main {
-	padding-bottom: calc(var(--statusbar-height) + var(--window-gap));
-
+	padding-block-end: calc(var(--statusbar-height) + var(--window-gap));
 	position: relative;
 
 	&::before {
-		content: "";
-
-		position: absolute;
-		bottom: 0;
-		width: 100%;
-		height: var(--statusbar-height);
 		box-sizing: border-box;
+		content: "";
+		height: var(--statusbar-height);
+		inset-block-end: 0;
+		position: absolute;
+		width: 100%;
 
 		@include window.statusbar-item;
 	}
 }
 
 #toolbar-menubar {
-	padding: 0;
-
 	flex-direction: column-reverse;
+	padding: 0;
 }

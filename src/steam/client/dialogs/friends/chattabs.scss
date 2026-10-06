@@ -7,8 +7,8 @@
 
 	@include tabs.tab($selected-sel: "&#Active");
 
-	width: unset;
 	height: var(--height);
+	width: unset;
 
 	&#Active {
 		height: calc(var(--height) + 3px);
@@ -19,9 +19,9 @@
 #ChatTabContent_ChatRoomName {
 	@include utils.text-reset;
 
-	mask: none;
 	font-weight: bold;
 	margin-inline-start: var(--text-spacing);
+	mask: none;
 }
 
 #ChatTabTransitionGroup {

@@ -16,8 +16,8 @@
 		@include controls.button;
 		@include utils.use-attr-text("aria-label");
 
-		justify-content: center;
 		height: unset;
+		justify-content: center;
 	}
 
 	.topic__6ec1a {
@@ -31,10 +31,9 @@
 	--custom-channel-header-height: unset;
 
 	border: none;
-	padding: var(--toolbar-container-spacing);
-
 	height: unset;
 	min-height: unset;
+	padding: var(--toolbar-container-spacing);
 }
 
 .icon__9293f,
@@ -43,8 +42,8 @@
 }
 
 .iconWrapper__9293f {
-	width: unset;
 	height: unset;
+	width: unset;
 
 	&:not(.clickable__9293f) {
 		display: none;
@@ -76,7 +75,6 @@
 
 .search__49676 {
 	margin-inline: var(--toolbar-spacing);
-
 	order: -2;
 
 	.icon_c322aa {
@@ -96,9 +94,8 @@
 	.searchBar_c322aa {
 		background-color: transparent;
 		border: none;
-		padding: 0;
-
 		height: unset;
+		padding: 0;
 
 		.editor__25bec {
 			@include controls.text-field;
@@ -112,12 +109,11 @@
 
 	.searchToken_bd8186 {
 		border: none;
-
 		height: unset;
 	}
 }
 
 .toolbar__9293f {
 	gap: 0;
-	margin-right: var(--combobox-icon-button-width);
+	margin-inline-end: var(--combobox-icon-button-width);
 }

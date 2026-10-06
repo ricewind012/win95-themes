@@ -1,21 +1,19 @@
 @use "shared/list";
 
 #Container {
-	overflow: visible;
+	align-items: center;
 	background: none;
-	color: var(--color-window-text);
 	border: none;
 	box-shadow: none;
+	color: var(--color-window-text);
+	overflow: visible;
 	padding: 0 var(--tree-spacing);
-
-	align-items: center;
 }
 
 #SectionHeaderContent {
+	align-items: center;
 	color: inherit;
 	padding: 5px 0;
-
-	align-items: center;
 
 	// This can have *just* the text highlighted,
 	// but better make it consistent with the rest of it.
@@ -24,15 +22,13 @@
 	}
 
 	&::before {
-		content: "";
-
 		background-image: icon("folder");
 		background-position: center;
 		background-repeat: no-repeat;
-		margin-right: 7px;
-
-		width: var(--icon-size);
+		content: "";
 		height: var(--icon-size);
+		margin-inline-end: 7px;
+		width: var(--icon-size);
 		z-index: 1;
 	}
 }
@@ -45,5 +41,5 @@
 
 #SectionCount {
 	color: var(--color-gray-text);
-	margin-left: var(--text-spacing);
+	margin-inline-start: var(--text-spacing);
 }

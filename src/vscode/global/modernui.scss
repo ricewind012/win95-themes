@@ -132,7 +132,7 @@ body {
 		@include tabs.tab($selected-sel: "&[aria-selected='true']");
 
 		&:not([aria-selected="true"]) {
-			margin-top: 1px;
+			margin-block-start: 1px;
 		}
 	}
 

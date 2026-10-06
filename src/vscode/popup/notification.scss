@@ -1,11 +1,10 @@
 @use "shared/window";
 
 .notification-toast {
-	opacity: 1;
 	background-color: transparent;
 	border: none;
 	box-shadow: none;
-
+	opacity: 1;
 	transform: none;
 
 	.monaco-list {
@@ -28,13 +27,12 @@
 }
 
 .notification-list-item-icon {
-	font-size: 0;
-	margin-left: 0;
-	margin-right: var(--messagebox-content-spacing);
-
-	width: 32px;
-	height: 32px;
 	flex: unset;
+	font-size: 0;
+	height: 32px;
+	margin-inline-start: 0;
+	margin-inline-end: var(--messagebox-content-spacing);
+	width: 32px;
 
 	&.codicon-error {
 		background-image: icon("error-32");
@@ -57,15 +55,14 @@
 .notifications-center {
 	@include window.container($child: true);
 
-	width: auto;
 	height: auto;
+	width: auto;
 }
 
 .notifications-center-header {
 	background-color: transparent;
-	padding: 10px;
-
 	height: unset;
+	padding: 10px;
 }
 
 .notifications-center-header-title {

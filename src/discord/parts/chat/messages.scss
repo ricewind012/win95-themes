@@ -30,13 +30,12 @@
 }
 
 .repliedTextContent_c19a55 {
-	padding: 0;
 	margin: 0;
+	padding: 0;
 }
 
 .timestamp_c19a55 {
 	font: var(--text-ui);
-
 	height: unset;
 }
 
@@ -47,14 +46,14 @@
 
 .wrapper_c19a55 {
 	--chat-markup-line-height: 1.5;
+
 	min-height: unset;
 
 	&.compact_c19a55 {
 		i {
-			opacity: 1;
-
-			position: unset;
 			display: contents;
+			opacity: 1;
+			position: unset;
 		}
 
 		.timestamp {
@@ -65,8 +64,7 @@
 	&.cozy_c19a55 {
 		.header_c19a55 {
 			line-height: var(--text-line);
-			margin-bottom: var(--text-spacing);
-
+			margin-block-end: var(--text-spacing);
 			min-height: unset;
 		}
 	}

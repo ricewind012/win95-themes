@@ -26,9 +26,9 @@ div#AppDetailsSectionContainer {
 	@include controls.tooltip;
 
 	background-image: none;
-	font: inherit;
 	box-shadow: none;
-	margin-bottom: var(--library_section-spacing);
+	font: inherit;
+	margin-block-end: var(--library_section-spacing);
 }
 
 #RightColumnSection {

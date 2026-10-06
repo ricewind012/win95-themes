@@ -21,8 +21,8 @@
 }
 
 #ExitGameBtn {
+	margin-block-start: var(--text-spacing);
 	text-transform: unset;
-	margin-top: var(--text-spacing);
 }
 
 #CurrentTime,
@@ -38,13 +38,12 @@
 
 #OverlayPopup {
 	background: none;
+	height: calc(100% - var(--titlebar-height));
 	padding: var(--dialog-spacing);
 
-	height: calc(100% - var(--titlebar-height));
-
 	&#FitToContent {
-		width: fit-content;
 		height: fit-content;
+		width: fit-content;
 
 		#WindowControls {
 			width: calc(100% + var(--dialog-spacing));
@@ -53,8 +52,8 @@
 
 	&.Settings {
 		.ModalPosition_Content > div {
-			margin-left: 0;
-			margin-top: 0;
+			margin-block-start: 0;
+			margin-inline-start: 0;
 		}
 	}
 
@@ -79,38 +78,34 @@
 }
 
 #ToolbarButton {
-	gap: var(--text-spacing);
-
-	height: unset;
-	display: flex;
 	align-items: center;
+	display: flex;
+	gap: var(--text-spacing);
+	height: unset;
 
 	svg {
-		margin: 0;
-
-		width: var(--icon-size);
 		height: var(--icon-size);
+		margin: 0;
+		width: var(--icon-size);
 	}
 }
 
 #ToolbarContainer {
+	inset-inline-start: 0;
 	transform: none;
-
-	left: 0;
 
 	&#LocationBottom {
 		.DialogButton {
-			width: calc(16px + var(--button-spacing) * 2);
 			min-width: var(--icon-size);
+			width: calc(16px + var(--button-spacing) * 2);
 		}
 	}
 }
 
 #WindowControls {
-	margin: calc(var(--dialog-spacing) * -1);
-	margin-bottom: var(--dialog-spacing);
-
 	height: unset;
+	margin: calc(var(--dialog-spacing) * -1);
+	margin-block-end: var(--dialog-spacing);
 }
 
 #Wrapper {
@@ -158,16 +153,16 @@
 		@include utils.text-reset;
 
 		gap: var(--text-spacing);
-		padding: 0;
 		margin: 0;
+		padding: 0;
 	}
 
 	#RecentNewsItem {
 		background: none;
 		color: var(--color-window-text);
 		font: var(--text-ui);
-		padding: 0;
 		margin-block-start: var(--text-spacing);
+		padding: 0;
 
 		#EventDetailTitle {
 			@include text.link;
@@ -184,7 +179,6 @@
 
 	background: none;
 	margin: 0;
-
 	position: relative;
 }
 
@@ -199,8 +193,8 @@
 	#DragHandle {
 		@include shared.library_drag-handle;
 
-		padding: 0;
 		margin: 0;
+		padding: 0;
 	}
 
 	& > svg {

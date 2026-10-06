@@ -14,8 +14,8 @@
 #DynamicLink_Content {
 	color: var(--color-button-text);
 	font: var(--text-ui);
-	text-shadow: none;
 	margin-block: 6px;
+	text-shadow: none;
 }
 
 #DynamicLink_Description {
@@ -26,8 +26,8 @@
 #DynamicLink_Name {
 	@include text.link;
 
-	font: var(--text-ui);
 	border: none;
+	font: var(--text-ui);
 	margin-block-end: var(--text-spacing);
 }
 
@@ -38,7 +38,7 @@
 
 #DynamicLinkBox {
 	background: var(--color-button-face);
-	text-decoration: none;
-	padding: 0;
 	margin: 0;
+	padding: 0;
+	text-decoration: none;
 }

@@ -7,7 +7,7 @@
 }
 
 #ChoiceNote {
-	margin-top: var(--messagebox-content-spacing);
+	margin-block-start: var(--messagebox-content-spacing);
 }
 
 #ConflictChoiceIcon {
@@ -16,21 +16,20 @@
 
 #ConflictChoiceText {
 	gap: var(--text-spacing);
-	margin-left: var(--label-spacing);
+	margin-inline-start: var(--label-spacing);
 }
 
 #DialogChoiceButton {
+	margin-block-end: var(--text-spacing);
 	padding: 0;
-	margin-bottom: var(--text-spacing);
-
 	width: 100%;
 
 	&,
 	&:active,
 	&:focus {
+		box-shadow: none;
 		color: var(--color-button-text);
 		outline: none;
-		box-shadow: none;
 	}
 }
 
@@ -49,9 +48,8 @@
 		$disabled-sel: "#DialogChoiceButton:active &"
 	);
 
-	box-shadow: none;
-
 	align-self: start;
+	box-shadow: none;
 }
 
 #TitleWarning {

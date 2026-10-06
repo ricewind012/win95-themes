@@ -5,8 +5,8 @@
 	background-color: transparent;
 	box-shadow: var(--border-statusbar);
 	border: none;
+	margin-block-end: 0;
 	padding: 3px;
-	margin-bottom: 0;
 }
 
 // This is an <svg>, so I can't do anything here...
@@ -25,6 +25,6 @@
 #ReactionHover {
 	@include controls.tooltip;
 
-	font-size: var(--text-ui-size);
 	box-shadow: none;
+	font-size: var(--text-ui-size);
 }

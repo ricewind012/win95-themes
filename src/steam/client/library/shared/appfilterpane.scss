@@ -3,8 +3,8 @@
 @use "shared++/utils";
 
 #Buttons {
-	margin: 0;
 	gap: var(--dialog-button-spacing);
+	margin: 0;
 }
 
 #Checkbox {
@@ -14,7 +14,7 @@
 }
 
 #CompatDropDown {
-	padding-bottom: var(--text-spacing);
+	padding-block-end: var(--text-spacing);
 
 	.DialogDropDown_CurrentDisplay {
 		width: unset;
@@ -22,7 +22,7 @@
 }
 
 #Container {
-	block-size: calc(100% - var(--titlebar-height));
+	height: calc(100% - var(--titlebar-height));
 	margin-block-start: var(--titlebar-height);
 	overflow: auto;
 	padding: var(--dialog-spacing);
@@ -66,8 +66,8 @@
 #FilterBucketLabel {
 	@include utils.legend-as-div;
 
-	font: var(--text-ui);
 	color: var(--color-button-text);
+	font: var(--text-ui);
 	text-transform: unset;
 
 	// In collection view

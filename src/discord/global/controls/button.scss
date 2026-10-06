@@ -18,10 +18,9 @@
 .button_a22cb0 {
 	@include controls.button;
 
-	opacity: 1;
-
-	width: unset;
 	max-height: unset;
+	opacity: 1;
+	width: unset;
 
 	&[aria-expanded] {
 		@include controls.combobox-button($active-sel: "&[aria-expanded='true']");
@@ -40,10 +39,9 @@
 	}
 
 	.buttonChildrenWrapper_a22cb0 {
-		padding: 0;
-
-		min-width: unset;
 		min-height: unset;
+		min-width: unset;
+		padding: 0;
 	}
 }
 

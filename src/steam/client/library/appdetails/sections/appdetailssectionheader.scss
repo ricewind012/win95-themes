@@ -3,13 +3,12 @@
 #SectionHeader {
 	@include shared.library_section-header;
 
+	align-items: start;
 	color: inherit;
 	font: var(--text-ui);
+	inset-block-start: 0;
 	letter-spacing: 0;
-	text-transform: none;
-
-	align-items: start;
-	position: sticky;
-	top: 0;
 	max-height: 100vh;
+	position: sticky;
+	text-transform: none;
 }
