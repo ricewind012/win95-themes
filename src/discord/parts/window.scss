@@ -1,15 +1,15 @@
 @use "shared/window";
 
 :root {
-	--titlebar-pos: 0px;
 	--main-window-border-spacing: 0px;
+	--titlebar-pos: 0px;
 
 	&.platform-win {
-		--titlebar-pos: calc(
-			var(--main-window-titlebar-height) + var(--window-gap)
-		);
 		--main-window-border-spacing: calc(
 			var(--border-size) + var(--window-spacing)
+		);
+		--titlebar-pos: calc(
+			var(--main-window-titlebar-height) + var(--window-gap)
 		);
 
 		@include window.container;
@@ -17,41 +17,38 @@
 }
 
 .content__5e434 {
-	margin-bottom: calc(var(--statusbar-height) + var(--window-gap));
+	margin-block-end: calc(var(--statusbar-height) + var(--window-gap));
 
 	:root.platform-win & {
-		margin-top: var(--window-gap);
+		margin-block-start: var(--window-gap);
 	}
 }
 
 #app-mount {
-	--sidebar-width: calc(
-		var(--custom-guild-sidebar-width) - var(--custom-guild-list-width)
-	);
-	// TODO: 1px?
 	--actual-sidebar-width: calc(
 		var(--custom-guild-sidebar-width) + var(--scrollbar-size) + 1px
+	);
+	// TODO: 1px?
+	--sidebar-width: calc(
+		var(--custom-guild-sidebar-width) - var(--custom-guild-list-width)
 	);
 	--toolbar-top-margin: calc(
 		var(--toolbar-container-spacing) * 2 + var(--combobox-button-height) +
 			var(--window-gap)
 	);
 
-	width: calc(100% - var(--main-window-border-spacing) * 2);
 	height: calc(100% - var(--main-window-border-spacing) * 2);
+	width: calc(100% - var(--main-window-border-spacing) * 2);
 
 	&::before,
 	&::after {
-		content: "";
-
-		position: fixed;
-		bottom: var(--main-window-border-spacing);
-		height: var(--statusbar-height);
-		z-index: 1;
-
 		box-shadow: var(--border-statusbar);
-
+		content: "";
+		height: var(--statusbar-height);
+		inset-block-end: var(--main-window-border-spacing);
 		pointer-events: none;
+		position: fixed;
+		z-index: 1;
 	}
 
 	&::before {
@@ -64,7 +61,7 @@
 				var(--window-gap)
 		);
 
-		left: var(--pos);
+		inset-inline-start: var(--pos);
 		width: calc(100% - var(--pos));
 	}
 }

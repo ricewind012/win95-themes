@@ -55,6 +55,10 @@ body {
 	}
 }
 
+[data-body-text-color] {
+	color: inherit;
+}
+
 // Many components for friend stuff use these classes
 $-status-colors: (
 	ingame: green,
@@ -79,8 +83,8 @@ $-status-colors: (
 	}
 
 	.avatar {
-		width: calc(100% - 2px);
 		height: calc(100% - 2px);
+		width: calc(100% - 2px);
 	}
 
 	.avatarHolder {

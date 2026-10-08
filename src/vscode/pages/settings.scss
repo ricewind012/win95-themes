@@ -9,35 +9,31 @@
 }
 
 .settings-editor {
-	padding: var(--tabpanel-spacing);
-
-	max-width: unset;
 	height: 100%;
+	max-width: unset;
+	padding: var(--tabpanel-spacing);
 
 	& > .settings-body {
 		height: calc(100% - 50px);
 
 		& > .monaco-split-view2 {
-			margin: 0;
-
 			height: 100%;
+			margin: 0;
 		}
 	}
 }
 
 .settings-header {
-	overflow: visible;
 	background-color: var(--color-button-face);
-	padding: 0;
 	margin: 0;
-
-	position: relative;
 	max-width: unset;
+	overflow: visible;
+	padding: 0;
+	position: relative;
 }
 
 .settings-header-controls {
 	border: none;
-
 	height: unset;
 
 	.monaco-button {
@@ -46,7 +42,7 @@
 }
 
 .settings-right-controls {
-	margin-top: -6px;
+	margin-block-start: -6px;
 }
 
 .settings-group-title-label {
@@ -101,9 +97,8 @@
 }
 
 .setting-item-value-description {
-	gap: var(--label-spacing);
-
 	display: flex;
+	gap: var(--label-spacing);
 }
 
 .setting-item-description {
@@ -114,16 +109,15 @@
 
 .setting-item-modified-indicator {
 	border-color: red;
-
-	left: 3px;
-	top: 0;
-	bottom: 0;
+	inset-inline-start: 3px;
+	inset-block-start: 0;
+	inset-block-end: 0;
 }
 
 .setting-list-object-widget {
 	@include window.content-container;
 
-	margin-bottom: 9px;
+	margin-block-end: 9px;
 }
 
 .setting-list-object-key,
@@ -132,7 +126,6 @@
 
 	line-height: unset;
 	margin: 0;
-
 	min-height: unset;
 }
 
@@ -148,12 +141,11 @@
 }
 
 .setting-toolbar-container {
-	left: -12px;
+	inset-inline-start: -12px;
 }
 
 .search-container {
-	gap: var(--toolbar-spacing);
-
-	display: flex;
 	align-items: center;
+	display: flex;
+	gap: var(--toolbar-spacing);
 }

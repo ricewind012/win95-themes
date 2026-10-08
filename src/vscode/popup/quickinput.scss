@@ -4,11 +4,11 @@
 .quick-input-widget {
 	@include window.container($child: true);
 
-	margin: 0;
-
-	inset: 12.5% 25%;
-	width: 50%;
+	border: none;
 	height: 50%;
+	inset: 12.5% 25%;
+	margin: 0;
+	width: 50%;
 
 	.monaco-scrollable-element {
 		padding: 0;
@@ -18,9 +18,9 @@
 .quick-input-title {
 	@include window.titlebar-name;
 
-	text-align: left;
 	padding: 0;
-	padding-left: 2px;
+	padding-inline-start: 2px;
+	text-align: start;
 
 	// Not even an aria-label !
 	:root:lang(en) &[style="display: none;"] {
@@ -39,7 +39,6 @@
 		var(--color-active-caption-bg-end)
 	);
 	color: var(--color-active-caption-text);
-
 	height: var(--titlebar-height);
 }
 
@@ -54,16 +53,16 @@
 	}
 }
 
-.quick-input-header:not(.hidden-input),
 .quick-input-description,
+.quick-input-header:not(.hidden-input),
 .quick-input-list {
-	padding: 0;
 	margin: var(--dialog-spacing);
+	padding: 0;
 }
 
 .quick-input-list {
-	overflow: hidden;
 	height: calc(100% - 64px);
+	overflow: hidden;
 }
 
 .quick-input-list-label {

@@ -4,7 +4,6 @@
 .container_e131a9 {
 	.actionButtons_e131a9 {
 		gap: 0;
-
 		justify-content: end;
 	}
 
@@ -25,15 +24,13 @@
 }
 
 .panels__5e434 {
-	// ::before is used by the separator, so move it to the avatar element
-	--text: attr(aria-label);
-
 	background-color: transparent;
 	border: none;
-
+	inset-block-end: 0;
+	inset-inline-start: calc(
+		var(--custom-guild-list-width) + var(--scrollbar-size)
+	);
 	width: var(--sidebar-width);
-	bottom: 0;
-	left: calc(var(--custom-guild-list-width) + var(--scrollbar-size));
 }
 
 .accountPopoutButtonWrapper__37e49 {
@@ -45,7 +42,8 @@
 
 	.nameTag__37e49 {
 		&::before {
-			content: var(--text);
+			// Could use the container's aria-label, but the text is too long
+			content: "User status";
 		}
 
 		& > * {
@@ -55,8 +53,8 @@
 }
 
 .button__67645 {
-	--icon-button-width: var(--combobox-button-height);
 	--icon-button-height: var(--combobox-button-height);
+	--icon-button-width: var(--combobox-button-height);
 	@include controls.icon-button;
 
 	&:not(.buttonChevron__5e764) {
@@ -99,7 +97,7 @@
 .container_e131a9 {
 	border: none;
 	padding: var(--toolbar-container-spacing);
-	padding-bottom: 0;
+	padding-block-end: 0;
 
 	&::after {
 		@include utils.pseudo-separator;
@@ -108,10 +106,9 @@
 
 .container__37e49 {
 	gap: var(--toolbar-spacing);
-	padding: var(--toolbar-container-spacing);
-	margin: 0;
-
 	height: unset;
 	// --custom-rtc-account-height
 	min-height: unset;
+	margin: 0;
+	padding: var(--toolbar-container-spacing);
 }

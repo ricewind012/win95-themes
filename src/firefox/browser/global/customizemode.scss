@@ -3,7 +3,7 @@
 @use "shared/window";
 
 #customization-content-container {
-	margin-top: var(--window-gap);
+	margin-block-start: var(--window-gap);
 
 	.toolbarbutton-icon {
 		display: flex;
@@ -59,7 +59,7 @@
 
 #customization-panel-container {
 	// arrow height
-	margin-top: -10px;
+	margin-block-start: -10px;
 }
 
 :root[win95-active-prefs~="win95.customize-mode-as-window"] {
@@ -71,10 +71,9 @@
 		#customization-container {
 			@include window.container($child: true);
 
-			padding-top: calc(var(--titlebar-height) + var(--window-gap));
-
-			position: fixed;
 			inset: 10% 20%;
+			padding-block-start: calc(var(--titlebar-height) + var(--window-gap));
+			position: fixed;
 			z-index: var(--browser-area-z-index-sidebar-splitter);
 		}
 
@@ -83,16 +82,15 @@
 			@include window.titlebar-name;
 
 			font-size: inherit;
-			margin: 0;
-
-			position: absolute;
 			inset: calc(var(--border-size) + var(--window-spacing));
-			bottom: unset;
+			inset-block-end: unset;
+			margin: 0;
+			position: absolute;
 		}
 
 		#customization-panel-container {
+			inset-inline-end: 0;
 			position: fixed;
-			right: 0;
 		}
 
 		#customization-panelWrapper {

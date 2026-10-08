@@ -3,7 +3,7 @@
 @use "shared++/utils";
 
 #AccountCreationPrompt {
-	margin-right: var(--text-spacing);
+	margin-inline-end: var(--text-spacing);
 }
 
 #BackArrow,
@@ -14,9 +14,8 @@
 #BackArrowContainer {
 	@include controls.button;
 
-	text-align: center;
-
 	height: unset;
+	text-align: center;
 
 	&::before {
 		content: var(--NavigateBack);
@@ -30,7 +29,7 @@
 #CheckboxFieldLabel {
 	@include utils.text-reset;
 
-	padding-left: var(--label-spacing);
+	padding-inline-start: var(--label-spacing);
 }
 
 #EmbeddedRoot {
@@ -68,7 +67,7 @@
 }
 
 #QRSection {
-	margin-left: 16px;
+	margin-inline-start: 16px;
 }
 
 #SignInButtonContainer {
@@ -79,7 +78,6 @@
 	@include controls.button;
 
 	background-image: none;
-
 	width: unset;
 }
 

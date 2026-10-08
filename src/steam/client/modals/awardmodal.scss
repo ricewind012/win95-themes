@@ -23,7 +23,7 @@
 	}
 
 	#PointsAmountIcon {
-		padding-right: var(--text-spacing);
+		padding-inline-end: var(--text-spacing);
 	}
 }
 
@@ -33,7 +33,6 @@
 	@include shared.generic-dialog-content-container-offset;
 
 	gap: 0;
-
 	// Display a little more on each row, smallest window size can handle this
 	grid-template-columns: repeat(5, 1fr);
 }
@@ -49,12 +48,11 @@
 }
 
 #Footer {
+	align-items: center;
 	margin-block-start: var(--dialog-button-spacing);
 
-	align-items: center;
-
 	#Action {
-		padding-left: var(--text-spacing);
+		padding-inline-start: var(--text-spacing);
 	}
 
 	#Left {
@@ -65,10 +63,9 @@
 		}
 
 		#BalanceDetails {
+			flex-direction: row;
 			font: inherit;
 			gap: var(--text-spacing);
-
-			flex-direction: row;
 		}
 
 		#BalanceIcon {
@@ -81,10 +78,9 @@
 	}
 
 	#Right {
-		gap: var(--text-spacing);
-
 		align-items: center;
 		flex-direction: row-reverse;
+		gap: var(--text-spacing);
 
 		// steam client bug
 		a {
@@ -106,14 +102,13 @@
 
 	.DialogContent_InnerWidth {
 		margin: var(--dialog-spacing);
-
 		overflow: visible;
 	}
 }
 
 #NotEnoughPoints {
-	opacity: 1;
 	font: inherit;
+	opacity: 1;
 }
 
 #Title {
@@ -124,5 +119,5 @@
 	letter-spacing: 0;
 	text-transform: none;
 	margin: calc(var(--dialog-spacing) * -1);
-	margin-bottom: var(--dialog-spacing);
+	margin-block-end: var(--dialog-spacing);
 }

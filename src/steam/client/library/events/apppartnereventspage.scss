@@ -3,13 +3,12 @@
 @use "steam/shared";
 
 #AppPartnerEventsContainer {
-	padding: 0;
 	margin: 0;
+	padding: 0;
 }
 
 #AppPartnerEventsPage {
 	background-color: var(--color-window);
-
 	inset: var(--border-size);
 }
 
@@ -17,13 +16,11 @@
 	@include shared.library_in-toolbar;
 
 	background-color: var(--color-button-face);
-
-	right: anchor(right);
-	left: anchor(left);
-	width: unset;
 	height: 24px;
-
+	inset-inline-end: anchor(right);
+	inset-inline-start: anchor(left);
 	pointer-events: all;
+	width: unset;
 }
 
 #ControlSectionRightSide {
@@ -34,7 +31,6 @@
 		@include controls.icon-button;
 
 		animation: none;
-
 		width: unset;
 
 		&#CloseButton {
@@ -70,7 +66,6 @@
 
 		#ReminderContainer {
 			margin: 0;
-
 			width: 100%;
 		}
 	}
@@ -90,11 +85,10 @@
 	}
 
 	#TimeandPostedBy {
+		align-items: start;
 		color: var(--color-gray-text);
+		flex-direction: column;
 		gap: var(--text-spacing);
 		margin: 0;
-
-		flex-direction: column;
-		align-items: start;
 	}
 }

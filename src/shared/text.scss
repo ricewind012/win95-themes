@@ -8,10 +8,9 @@
 }
 
 @mixin input-label {
-	gap: var(--label-spacing);
-
-	display: flex;
 	align-items: center;
+	display: flex;
+	gap: var(--label-spacing);
 }
 
 @mixin link {

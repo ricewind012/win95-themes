@@ -6,8 +6,8 @@
 		var(--main-window-border-spacing) + var(--toolbar-container-spacing)
 	);
 
+	inset-block-start: calc(var(--titlebar-pos) + var(--pos));
 	position: fixed;
-	top: calc(var(--titlebar-pos) + var(--pos));
 	width: var(--icon-button-width);
 
 	.listItem__650eb {
@@ -20,8 +20,8 @@
 
 	.wrapper_cc5dd2,
 	.wrapper_cc5dd2 > foreignObject {
-		width: var(--icon-button-width);
 		height: var(--icon-button-height);
+		width: var(--icon-button-width);
 	}
 
 	[role="treeitem"] {
@@ -33,42 +33,41 @@
 }
 
 .scroller_ef3116 {
+	height: 100%;
 	padding: 0;
 
 	& > :nth-child(1) {
 		--button-img: icon("home");
 		@extend %-guilds-top-toolbar-button;
 
-		left: var(--pos);
+		inset-inline-start: var(--pos);
 
 		.childWrapper__6e9f8 {
 			display: none;
 		}
 	}
 
-	& > :nth-last-child(2) {
+	& > :nth-last-child(1) {
 		--button-img: icon("chat-room-list");
 		@extend %-guilds-top-toolbar-button;
 
-		left: calc(var(--pos) + var(--icon-button-width) * 2);
+		inset-inline-start: calc(var(--pos) + var(--icon-button-width) * 2);
 	}
 
-	& > :nth-last-child(3) {
+	& > :nth-last-child(2) {
 		--button-img: icon("room-enter");
 		@extend %-guilds-top-toolbar-button;
 
-		left: calc(var(--pos) + var(--icon-button-width));
+		inset-inline-start: calc(var(--pos) + var(--icon-button-width));
 	}
 
 	.blobContainer_e5445c.selected_e5445c {
 		&::before {
+			background-color: var(--color-highlight);
 			content: "";
-
-			position: absolute;
 			inset-inline: 0;
 			inset-block: calc(var(--space-xs) / -2);
-
-			background-color: var(--color-highlight);
+			position: absolute;
 		}
 	}
 
@@ -91,10 +90,9 @@
 }
 
 .wrapper_ef3116 {
-	mask: none;
 	margin: 0;
-	margin-top: var(--toolbar-top-margin);
-	margin-right: var(--window-gap);
-
+	margin-block-start: var(--toolbar-top-margin);
+	margin-inline-end: var(--window-gap);
+	mask: none;
 	width: calc(var(--custom-guild-list-width) + var(--scrollbar-size));
 }

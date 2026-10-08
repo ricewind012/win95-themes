@@ -4,10 +4,9 @@
 #PanelSection {
 	@include controls.groupbox;
 
-	gap: var(--text-spacing);
-
 	display: flex;
 	flex-direction: column;
+	gap: var(--text-spacing);
 }
 
 #PanelSectionTitle {

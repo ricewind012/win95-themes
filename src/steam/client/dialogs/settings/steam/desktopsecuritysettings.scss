@@ -1,7 +1,7 @@
 @use "shared++/utils";
 
 #EntryLabel {
-	padding-right: var(--text-spacing);
+	padding-inline-end: var(--text-spacing);
 }
 
 #EntryValue {
@@ -11,7 +11,7 @@
 #SteamGuardIcon {
 	color: red;
 
-	&#Enabled {
+	&#EnabledTwoFactor {
 		color: green;
 	}
 }

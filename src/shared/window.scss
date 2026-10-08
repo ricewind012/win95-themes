@@ -3,15 +3,15 @@
 
 @mixin content-container {
 	background-color: var(--color-window);
-	color: var(--color-window-text);
 	box-shadow: var(--border-field);
+	color: var(--color-window-text);
 	padding: var(--border-size);
 }
 
 @mixin container($child: false) {
 	background-color: var(--color-button-face);
-	color: var(--color-button-text);
 	box-shadow: var(--border-window);
+	color: var(--color-button-text);
 
 	@if $child {
 		--window-spacing: 1px;
@@ -25,19 +25,17 @@
 @mixin resize-handle {
 	@include generatedassets.window-resize-handle;
 
-	position: fixed;
-	right: var(--main-window-border-spacing);
-	bottom: var(--main-window-border-spacing);
-	width: 14px;
-	height: 14px;
-
 	cursor: se-resize;
+	height: 14px;
+	inset-block-end: var(--main-window-border-spacing);
+	inset-inline-end: var(--main-window-border-spacing);
+	position: fixed;
+	width: 14px;
 }
 
 @mixin menubar {
 	background-color: var(--color-menubar);
 	color: var(--color-menubar-text);
-
 	display: flex;
 }
 
@@ -52,9 +50,8 @@
 }
 
 @mixin statusbar {
-	gap: 2px;
-
 	display: flex;
+	gap: 2px;
 }
 
 @mixin statusbar-item {
@@ -63,18 +60,17 @@
 }
 
 @mixin titlebar($focused-sel) {
+	align-items: center;
 	background-image: linear-gradient(
 		90deg,
 		var(--color-inactive-caption-bg-start),
 		var(--color-inactive-caption-bg-end)
 	);
 	color: var(--color-inactive-caption-text);
-	padding: 1px 2px;
-	gap: var(--titlebar-spacing);
-
-	height: var(--titlebar-height);
 	display: flex;
-	align-items: center;
+	gap: var(--titlebar-spacing);
+	height: var(--titlebar-height);
+	padding: 1px 2px;
 
 	#{$focused-sel} {
 		--color-inactive-caption-bg-start: var(--color-active-caption-bg-start);
@@ -88,8 +84,8 @@
 }
 
 @mixin titlebar-button($disabled-sel: "&:disabled") {
-	min-width: 16px;
 	height: 14px;
+	min-width: 16px;
 
 	&::before,
 	&::after {
@@ -97,9 +93,8 @@
 	}
 
 	&::before {
-		z-index: 1;
-
 		background-color: var(--color-button-text);
+		z-index: 1;
 	}
 
 	&:active {
@@ -110,43 +105,41 @@
 
 	#{$disabled-sel} {
 		&::after {
-			left: 1px;
-			top: 1px;
-
 			background-color: var(--color-button-highlight);
+			inset-block-start: 1px;
+			inset-inline-start: 1px;
 		}
 	}
 }
 
 @mixin titlebar-button-minimize {
 	--button-img: icon("minimize", "mono");
-	--button-img-size: 6px 2px;
 	--button-img-pos: 4px 9px;
+	--button-img-size: 6px 2px;
 }
 
 @mixin titlebar-button-maximize {
 	--button-img: icon("maximize", "mono");
-	--button-img-size: 9px;
 	--button-img-pos: 3px 2px;
+	--button-img-size: 9px;
 }
 
 @mixin titlebar-button-restore {
 	--button-img: icon("restore", "mono");
-	--button-img-size: 8px 9px;
 	--button-img-pos: 3px 2px;
+	--button-img-size: 8px 9px;
 }
 
 @mixin titlebar-button-close {
 	--button-img: icon("close", "mono");
-	--button-img-size: 8px 7px;
 	--button-img-pos: 4px 3px;
+	--button-img-size: 8px 7px;
 
-	margin-left: 2px;
+	margin-inline-start: 2px;
 }
 
 @mixin toolbar {
+	display: flex;
 	gap: var(--toolbar-spacing);
 	margin: 0 var(--toolbar-container-spacing);
-
-	display: flex;
 }

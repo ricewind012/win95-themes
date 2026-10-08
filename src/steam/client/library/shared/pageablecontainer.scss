@@ -7,11 +7,10 @@
 #HeaderPageControls {
 	@include shared.library_section-header;
 
+	align-items: center;
 	color: var(--color-button-text);
 	font: inherit;
 	gap: var(--text-spacing);
-
-	align-items: center;
 }
 
 #Name {

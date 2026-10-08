@@ -12,9 +12,8 @@
 
 #ImageContainer {
 	box-shadow: none;
-
-	position: unset;
 	height: var(--image-height);
+	position: unset;
 }
 
 #StateDescription {
@@ -30,19 +29,19 @@
 }
 
 #ThumbnailTooltip {
+	--image-height: 175px;
+
 	@include controls.tooltip;
 
-	--image-height: 175px;
-	margin-top: calc(var(--image-height) * -1 - 12px);
+	margin-block-start: calc(var(--image-height) * -1 - 12px);
 }
 
 #TimeDisplayContainer {
 	color: inherit;
 	font: var(--text-monospace);
 	font-weight: bold;
-	padding: 0;
 	margin: 0;
-
+	padding: 0;
 	position: unset;
 }
 
@@ -54,10 +53,9 @@
 
 #TooltipChildren {
 	background-color: transparent;
-	margin-inline: var(--toolbar-container-spacing);
-	margin-top: var(--text-spacing);
-
 	flex-direction: row;
+	margin-block-start: var(--text-spacing);
+	margin-inline: var(--toolbar-container-spacing);
 	width: unset;
 }
 

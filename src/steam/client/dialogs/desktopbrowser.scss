@@ -7,9 +7,9 @@
 	&::after {
 		@include utils.pseudo-separator;
 
-		position: absolute;
-		inset-inline: 0;
 		inset-block-end: -2px;
+		inset-inline: 0;
+		position: absolute;
 		width: 100%;
 	}
 }
@@ -18,8 +18,8 @@
 	@include controls.tab-button($selected-sel: "&#Active");
 
 	background-color: transparent;
-	gap: var(--tab-button-spacing);
 	border: none;
+	gap: var(--tab-button-spacing);
 
 	// New tab button
 	#BrowserTabs > & {
@@ -43,39 +43,34 @@
 	@extend %-separator;
 
 	gap: var(--tab-button-spacing);
-
 	position: relative;
 }
 
 #BrowserViewHost {
 	// Draw the border ...
 	background: var(--color-window);
+	height: calc(100% - var(--border-size) * 2);
 	margin: var(--border-size);
-
 	position: relative;
 	width: calc(100% - var(--border-size) * 2);
-	height: calc(100% - var(--border-size) * 2);
 
 	&::before {
-		content: "";
-
-		position: absolute;
-		top: calc(var(--border-size) * -1);
-		left: calc(var(--border-size) * -1);
-		width: calc(100% + var(--border-size) * 2);
-		height: calc(100% + var(--border-size) * 2);
-
 		box-shadow: var(--border-field);
+		content: "";
+		height: calc(100% + var(--border-size) * 2);
+		inset-block-start: calc(var(--border-size) * -1);
+		inset-inline-start: calc(var(--border-size) * -1);
+		position: absolute;
+		width: calc(100% + var(--border-size) * 2);
 	}
 }
 
 #CloseTabButton {
-	mask: icon("close", "mono") no-repeat center;
 	background-color: currentColor;
-	padding: 0;
-
-	width: var(--icon-size);
 	height: var(--icon-size);
+	mask: icon("close", "mono") no-repeat center;
+	padding: 0;
+	width: var(--icon-size);
 
 	path {
 		display: none;
@@ -127,8 +122,8 @@
 }
 
 #URLBarText {
+	margin-inline-start: var(--toolbar-spacing);
 	padding: 0;
-	margin-left: var(--toolbar-spacing);
 
 	&::after {
 		display: none;

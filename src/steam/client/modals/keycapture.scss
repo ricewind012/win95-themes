@@ -2,13 +2,12 @@
 
 #Header {
 	margin: calc(var(--dialog-spacing) * -1);
-	margin-bottom: var(--dialog-spacing);
+	margin-block-end: var(--dialog-spacing);
 }
 
 #KeyCaptureBottomRow {
-	gap: var(--dialog-button-spacing);
-
 	align-self: end;
+	gap: var(--dialog-button-spacing);
 	width: max-content;
 }
 
@@ -19,7 +18,7 @@
 	#Explainer {
 		color: inherit;
 		font: inherit;
-		margin-bottom: var(--text-spacing);
+		margin-block-end: var(--text-spacing);
 	}
 }
 
@@ -29,11 +28,10 @@
 }
 
 #KeyCaptureModal {
-	margin: var(--dialog-spacing);
-
 	align-items: end;
-	min-width: 240px;
+	margin: var(--dialog-spacing);
 	min-height: 180px;
+	min-width: 240px;
 }
 
 #Subhead {
@@ -43,7 +41,6 @@
 
 #UnbindButton {
 	--button-img: icon("clear");
-
 	@include controls.button;
 	@include controls.icon-button;
 

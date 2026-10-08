@@ -6,48 +6,46 @@
 	--title-top-margin: calc(var(--window-gap) + 6px);
 
 	background-color: transparent;
-	padding: 0 5px 0 7px;
 	border: none;
-
-	overflow: visible;
 	height: calc(100% - var(--title-top-margin) - var(--additional-top-margin));
+	overflow: visible;
+	padding: 0 5px 0 7px;
 
 	&:is(.left, .right) {
 		--additional-top-margin: 40px;
 
-		margin-top: var(--title-top-margin);
+		margin-block-start: var(--title-top-margin);
 		padding: 0;
 
 		.title {
-			margin-top: var(--title-top-margin);
+			margin-block-start: var(--title-top-margin);
 		}
 	}
 
 	&.left {
-		padding-left: 5px;
+		padding-inline-start: 5px;
 	}
 
 	&.right {
-		padding-right: 5px;
+		padding-inline-end: 5px;
 	}
 
 	&:is(.bottom, .top) {
 		--additional-top-margin: 24px;
 
 		.title {
-			margin-top: calc(var(--title-top-margin) * -1);
+			margin-block-start: calc(var(--title-top-margin) * -1);
 		}
 	}
 
 	.title {
 		border: none;
+		height: unset;
+		overflow: visible;
 		padding: 0;
 
-		overflow: visible;
-		height: unset;
-
 		.select-container {
-			margin-right: var(--toolbar-spacing);
+			margin-inline-end: var(--toolbar-spacing);
 		}
 	}
 
@@ -61,8 +59,8 @@
 	& > .content {
 		@include tabs.content($compact: true);
 
-		width: 100%;
 		height: 100%;
+		width: 100%;
 
 		& > .composite {
 			@include window.content-container;
@@ -70,15 +68,14 @@
 	}
 
 	.pane-body {
-		margin-left: 2px;
-		margin-top: 2px;
-
+		margin-block-start: 2px;
+		margin-inline-start: 2px;
 		width: calc(100% - 32px);
 	}
 
 	.single-terminal-tab {
-		width: 36px;
 		justify-content: center;
+		width: 36px;
 
 		&::before {
 			background-color: transparent;
@@ -91,23 +88,21 @@
 }
 
 .pane-header {
-	font: var(--text-ui);
 	border: none;
+	font: var(--text-ui);
 	gap: var(--text-spacing);
-
 	height: unset;
 
 	.title {
 		font: var(--text-ui);
-
 		padding: 0;
 	}
 
 	.twisty-container {
 		background-color: currentColor;
+		margin: 0;
 		mask: var(--button-img) no-repeat;
 		mask-position: center;
-		margin: 0;
 
 		&.codicon-view-pane-container-expanded {
 			--button-img: icon("arrow-big-bottom", "mono");
@@ -137,8 +132,8 @@
 	.marker-source,
 	.related-info-resource,
 	.related-info-resource-separator {
-		opacity: 1;
 		color: var(--color-gray-text);
+		opacity: 1;
 	}
 }
 
@@ -151,9 +146,8 @@
 }
 
 .viewpane-filter-controls {
-	margin-left: var(--toolbar-spacing);
-	margin-bottom: -1px;
-
+	margin-block-end: -1px;
+	margin-inline-start: var(--toolbar-spacing);
 	position: unset;
 }
 
@@ -161,6 +155,6 @@
 	inset: 0 11px 0 -20px;
 
 	canvas {
-		top: -11px;
+		inset-block-start: -11px;
 	}
 }

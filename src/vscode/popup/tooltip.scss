@@ -1,7 +1,7 @@
 @use "shared/controls";
 
-.workbench-hover,
-.monaco-hover {
+.monaco-hover,
+.workbench-hover {
 	animation: none;
 }
 
@@ -53,7 +53,6 @@
 
 	.overloads {
 		font: var(--text-ui);
-
 		height: unset;
 	}
 

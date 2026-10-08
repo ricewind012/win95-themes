@@ -18,15 +18,14 @@
 
 	.DialogHeader {
 		margin: calc(var(--dialog-spacing) * -1);
-		margin-bottom: 0;
+		margin-block-end: 0;
 	}
 }
 
 #ShareDialogRow {
-	gap: var(--dialog-spacing);
-
 	align-items: start;
 	flex-direction: column;
+	gap: var(--dialog-spacing);
 
 	#Label {
 		color: inherit;

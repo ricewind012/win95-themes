@@ -1,8 +1,8 @@
 @use "shared/controls";
 
 #GameIcon {
-	width: var(--icon-size);
 	height: var(--icon-size);
+	width: var(--icon-size);
 }
 
 #ListItemTooltipBase {
@@ -18,6 +18,7 @@
 
 #ListItemTooltipDetailSection {
 	--spacing: 6px;
+
 	margin-inline: var(--spacing);
 
 	&:last-child {

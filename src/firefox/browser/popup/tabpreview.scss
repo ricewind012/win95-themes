@@ -34,9 +34,8 @@
 
 .tab-preview-thumbnail-container {
 	border: none;
-
-	width: auto;
 	height: auto;
+	width: auto;
 
 	&:not(:empty)::before {
 		@include utils.pseudo-separator;

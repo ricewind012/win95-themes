@@ -4,10 +4,9 @@
 .MillenniumDesktopSidebar {
 	@include window.container($child: true);
 
-	margin: auto;
-
-	inset: 0;
 	height: max(60%, 400px);
+	inset: 0;
+	margin: auto;
 }
 
 .MillenniumDesktopSidebar_Content {
@@ -27,8 +26,8 @@
 
 .MillenniumDesktopSidebar_EditorHeader {
 	box-shadow: none;
-	padding: 0;
 	margin: 0 var(--dialog-spacing);
+	padding: 0;
 }
 
 button.MillenniumDesktopSidebar_LibraryItemButton {

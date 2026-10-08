@@ -3,15 +3,13 @@
 #AppTag {
 	background: none;
 	font: var(--text-ui);
-	padding: 0;
 	margin: 0;
+	padding: 0;
 
 	&:not(:last-child)::after {
-		content: ", ";
-
-		display: inline-block;
-
 		color: var(--color-gray-text);
+		content: ", ";
+		display: inline-block;
 		text-decoration: none;
 		white-space: break-spaces;
 	}
@@ -29,8 +27,8 @@
 
 	#ContentsCount {
 		font: var(--text-ui);
-		text-transform: none;
 		margin-block-end: var(--text-spacing);
+		text-transform: none;
 	}
 
 	#PreviewCtn {
@@ -45,7 +43,6 @@
 
 #CapsulePlatform {
 	gap: var(--text-spacing);
-
 	height: var(--icon-size);
 
 	svg {
@@ -103,21 +100,18 @@
 }
 
 #StoreSaleWidgetTags {
-	margin-block: var(--text-spacing);
-
-	position: relative;
 	height: calc(2lh + 2px + 6px);
+	margin-block: var(--text-spacing);
+	position: relative;
 
 	&::before {
-		content: "";
-
-		position: absolute;
-		inset-block-end: 0;
-		inset-inline: 0;
-
 		@include controls.separator;
 
+		content: "";
+		inset-block-end: 0;
+		inset-inline: 0;
 		margin: 0;
+		position: absolute;
 	}
 }
 

@@ -8,7 +8,6 @@
 	@include listbox.item($selected-sel: "&:focus:not([aria-disabled])");
 
 	color: inherit;
-
 	min-height: unset;
 
 	// what? why?
@@ -16,21 +15,20 @@
 		padding: 0;
 	}
 
-	.iconAccessory_ec77f2,
-	.leading_ec77f2 {
-		padding: 0;
-		margin: 0;
-
-		width: unset;
+	.iconAccessory__56a50,
+	.leading__56a50 {
 		height: unset;
+		margin: 0;
+		padding: 0;
+		width: unset;
 	}
 }
 
-.selectDropdown__5fa2f {
+.selectDropdown__0edde {
 	@include listbox.container;
 
 	box-shadow: none;
-	margin-top: -4px;
+	margin-block-start: -4px;
 
 	.content_d125d2,
 	.scrollerBase_d125d2 {

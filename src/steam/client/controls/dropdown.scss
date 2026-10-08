@@ -5,10 +5,9 @@
 
 	svg {
 		color: inherit;
-		margin-inline: 0 var(--text-spacing);
-
 		flex-shrink: 0;
-		width: var(--icon-size);
 		height: var(--icon-size);
+		margin-inline: 0 var(--text-spacing);
+		width: var(--icon-size);
 	}
 }

@@ -43,9 +43,9 @@ splitter {
 }
 
 .toolbarbutton-badge {
+	inset-block-start: var(--offset);
+	inset-inline-start: var(--offset);
 	position: relative;
-	top: var(--offset);
-	left: var(--offset);
 }
 
 .toolbarbutton-icon {

@@ -5,32 +5,30 @@
 @use "shared++/utils";
 
 .badge {
-	margin-left: var(--text-spacing);
-
+	height: unset;
+	margin-inline-start: var(--text-spacing);
 	position: unset;
 	width: unset;
-	height: unset;
 	z-index: initial;
 }
 
 .badge-content {
+	@include utils.parentheses;
+
 	background-color: transparent;
 	color: inherit;
 	font: var(--text-ui);
-	@include utils.parentheses;
-	padding: 0;
-
-	position: unset;
 	height: unset;
+	padding: 0;
+	position: unset;
 }
 
 .decorationsOverviewRuler {
-	top: var(--scrollbar-size);
-	width: var(--scrollbar-size);
 	height: calc(100% - var(--scrollbar-size) * 2);
-	z-index: 12;
-
+	inset-block-start: var(--scrollbar-size);
 	pointer-events: none;
+	width: var(--scrollbar-size);
+	z-index: 12;
 }
 
 .select-container {
@@ -46,9 +44,9 @@
 	@include controls.button;
 
 	// !important
-	.monaco-button-dropdown.disabled > .monaco-button-dropdown-separator,
 	.monaco-button-dropdown.disabled > &.disabled,
-	.monaco-button-dropdown.disabled > &.disabled:focus {
+	.monaco-button-dropdown.disabled > &.disabled:focus,
+	.monaco-button-dropdown.disabled > .monaco-button-dropdown-separator {
 		opacity: 1;
 	}
 
@@ -65,8 +63,8 @@
 	height: unset;
 }
 
-.monaco-text-button-with-short-label,
-.monaco-description-buttons > .monaco-button {
+.monaco-description-buttons > .monaco-button,
+.monaco-text-button-with-short-label {
 	overflow: visible;
 	width: 148px;
 }
@@ -90,38 +88,37 @@
 
 // Text input
 .monaco-inputbox {
-	background-color: transparent;
-	color: var(--color-window-text);
-	font: var(--text-ui);
-	border: none;
 	@include controls.text-field;
 
+	background-color: transparent;
+	border: none;
+	color: var(--color-window-text);
+	font: var(--text-ui);
 	overflow: visible;
 
 	.action-label {
-		padding: 0;
-
 		display: flex;
 		justify-content: center;
+		padding: 0;
 	}
 
 	& > .ibwrapper > .input {
 		// Fix scrollable content cutting off
 		--spacing: calc(var(--border-size) + var(--input-spacing));
+
 		padding: var(--spacing);
 		margin: calc(var(--spacing) * -1);
 	}
 }
 
 .monaco-findInput {
+	align-items: center;
+	display: flex;
 	gap: var(--toolbar-spacing);
 
-	display: flex;
-	align-items: center;
-
 	& > .monaco-scrollable-element {
-		overflow: visible;
 		flex: 1;
+		overflow: visible;
 	}
 
 	input,
@@ -151,14 +148,14 @@
 
 // Badges
 .monaco-count-badge {
+	@include utils.parentheses;
+
 	background-color: transparent;
 	color: var(--color-gray-text);
 	font: var(--text-ui);
-	@include utils.parentheses;
-	padding: 0;
-
-	min-width: unset;
 	min-height: unset;
+	min-width: unset;
+	padding: 0;
 }
 
 // Separator
@@ -168,16 +165,17 @@
 	--vscode-sash-hoverBorder: transparent;
 
 	&.vertical {
-		margin-left: 2px;
+		margin-inline-start: 2px;
 
 		#workbench\.parts\.editor & {
 			--vscode-sash-size: 19px;
-			margin-left: -11px;
+
+			margin-inline-start: -11px;
 		}
 	}
 
 	&.horizontal {
-		margin-top: -16px;
+		margin-block-start: -16px;
 	}
 }
 
@@ -190,8 +188,8 @@
 	@include scrollbar.container;
 
 	&.horizontal {
-		width: 100%;
 		height: var(--scrollbar-size);
+		width: 100%;
 
 		& > .slider {
 			height: var(--scrollbar-size);
@@ -199,8 +197,8 @@
 	}
 
 	&.vertical {
-		width: var(--scrollbar-size);
 		height: 100%;
+		width: var(--scrollbar-size);
 
 		& > .slider {
 			width: var(--scrollbar-size);
@@ -216,33 +214,32 @@
 			@include scrollbar.button;
 
 			font-size: 0;
-
-			left: 0;
+			inset-inline-start: 0;
 		}
 
 		&.codicon-scrollbar-button-up {
 			@include generatedassets.scrollbar-button-vertical-decrement;
 
-			top: 0;
+			inset-block-start: 0;
 		}
 
 		&.codicon-scrollbar-button-down {
 			@include generatedassets.scrollbar-button-vertical-increment;
 
-			bottom: 0;
+			inset-block-end: 0;
 		}
 
 		&.codicon-scrollbar-button-left {
 			@include generatedassets.scrollbar-button-horizontal-decrement;
 
-			left: 0;
+			inset-inline-start: 0;
 		}
 
 		&.codicon-scrollbar-button-right {
 			@include generatedassets.scrollbar-button-horizontal-increment;
 
-			left: unset;
-			right: 0;
+			inset-inline-start: unset;
+			inset-inline-end: 0;
 		}
 	}
 }
@@ -297,8 +294,8 @@
 }
 
 .monaco-list-row {
-	overflow: visible;
 	font: var(--text-ui);
+	overflow: visible;
 
 	&.selected {
 		--vscode-keybindingLabel-border: var(--color-active-caption-text);
@@ -326,10 +323,10 @@
 .suggest-input {
 	&-container {
 		--vscode-input-background: transparent;
+
 		@include controls.text-field;
 
 		border: none;
-
 		flex-grow: 1;
 
 		.view-lines {
@@ -339,9 +336,8 @@
 
 	&-placeholder {
 		font: var(--text-ui);
-		padding: 0;
 		margin: 0;
-
+		padding: 0;
 		width: unset;
 	}
 }
@@ -356,6 +352,5 @@
 	@include controls.checkbox($checked-sel: "&.checked");
 
 	background-image: none;
-
 	min-width: unset;
 }

@@ -77,36 +77,38 @@ $-icons: (
 	list-style-image: icon("history");
 }
 
+#navigator-toolbox {
+	border-block-end: 1px solid transparent;
+}
+
 #nav-bar {
 	background-color: var(--color-button-face);
-	color: var(--color-button-text);
 	border: none;
+	color: var(--color-button-text);
 	margin-inline: var(--toolbar-container-spacing);
 
 	:where(&, #customization-palette) :where(.toolbarbutton-1) {
 		@include shared.toolbar-button;
 
 		&[delegatesanchor]:not([widget-type="button"])::after {
-			content: "";
-
-			position: relative;
-			top: var(--offset);
-			left: var(--offset);
-
 			@include utils.arrow("bottom");
 
 			background-color: var(--color-button-text);
+			content: "";
+			inset-block-start: var(--offset);
+			inset-inline-start: var(--offset);
+			position: relative;
 		}
 
 		.toolbarbutton-icon {
 			--w: var(--width, var(--icon-size));
 			--h: var(--height, var(--icon-size));
 
+			display: flex;
+			height: var(--h);
 			margin: calc((var(--icon-size) - var(--h)) / 2)
 				calc((var(--icon-size) - var(--w)) / 2);
 			width: var(--w);
-			height: var(--h);
-			display: flex;
 		}
 	}
 
@@ -129,6 +131,8 @@ $-icons: (
 }
 
 #PanelUI-menu-button {
+	--panel-banner-item-update-supported-bgcolor: darkgreen;
+
 	list-style-image: url("chrome://branding/content/about-logo.svg");
 }
 
@@ -140,8 +144,7 @@ toolbarpaletteitem {
 
 toolbarpaletteitem[place="toolbar"][id^="wrapper-customizableui-special-spring"],
 toolbarspring {
-	margin-inline: var(--toolbar-spacing);
-
 	flex: unset;
+	margin-inline: var(--toolbar-spacing);
 	min-width: unset;
 }

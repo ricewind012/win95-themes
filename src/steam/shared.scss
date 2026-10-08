@@ -6,35 +6,35 @@
 /// The browser view is above everything else. Used for single element browser
 /// views.
 @mixin browser-view-host {
-	margin-left: var(--border-size);
-	margin-top: var(--border-size);
-
+	margin-block-start: var(--border-size);
+	margin-inline-start: var(--border-size);
 	position: relative;
 	width: calc(100% - var(--border-size) * 2);
 
 	&::before {
-		content: "";
-
-		position: absolute;
-		inset: calc(var(--border-size) * -1);
-
 		@include window.content-container;
+
+		content: "";
+		inset: calc(var(--border-size) * -1);
+		position: absolute;
 	}
 }
 
 @mixin dialog-title {
 	--offset: var(--main-window-border-spacing);
 
+	align-items: center;
 	color: var(--color-inactive-caption-text);
+	display: flex;
 	font: var(--text-ui);
 	font-weight: bold;
-
-	display: flex;
-	align-items: center;
-	position: fixed;
-	left: calc(var(--offset) + var(--icon-size) + var(--titlebar-spacing) + 2px);
-	top: var(--offset);
 	height: var(--main-window-titlebar-height);
+	inset-block-start: var(--offset);
+	inset-inline-start: calc(
+		var(--offset) + var(--icon-size) + var(--titlebar-spacing) + 2px
+	);
+	position: fixed;
+	z-index: 2;
 
 	.WindowFocus & {
 		color: var(--color-active-caption-text);
@@ -62,11 +62,13 @@
 
 @mixin icon-mono-button($disabled-sel: "&:disabled") {
 	--offset-click: 0;
-	min-width: var(--icon-button-width);
+
 	height: var(--icon-button-height);
+	min-width: var(--icon-button-width);
 
 	&:active {
 		--offset-click: 1px;
+
 		background: var(--checkerboard);
 		box-shadow: var(--border-button-sunken);
 	}
@@ -77,50 +79,46 @@
 		}
 
 		&::after {
+			--offset-disabled: 1px;
+
 			@include utils.pseudo-icon;
 
-			--offset-disabled: 1px;
-			top: var(--offset-disabled);
-			left: var(--offset-disabled);
-
 			background-color: var(--color-button-highlight);
+			inset-block-start: var(--offset-disabled);
+			inset-inline-start: var(--offset-disabled);
 		}
 	}
 
 	&::before {
 		@include utils.pseudo-icon;
 
-		top: var(--offset-click);
-		left: var(--offset-click);
-		z-index: 1;
-
 		background-color: var(--color-button-text);
+		inset-block-start: var(--offset-click);
+		inset-inline-start: var(--offset-click);
+		z-index: 1;
 	}
 }
 
 @mixin library_drag-handle {
 	@include controls.drag-handle;
 
-	opacity: 1;
-
-	position: absolute;
-	left: calc(var(--appdetails_container-spacing-x) / 2 - 2px);
 	height: calc(100% - var(--appdetails_container-spacing-y) * 2);
+	inset-inline-start: calc(var(--appdetails_container-spacing-x) / 2 - 2px);
+	opacity: 1;
+	position: absolute;
 
 	&::before {
 		content: "";
-
-		position: absolute;
 		inset: calc(var(--appdetails_container-spacing-y) * -1);
+		position: absolute;
 	}
 }
 
 @mixin library_in-toolbar {
+	inset-block-start: anchor(top);
 	margin-inline: var(--toolbar-container-spacing);
-
 	position: fixed;
 	position-anchor: --librarymainpanel;
-	top: anchor(top);
 }
 
 @mixin library_section {
@@ -144,15 +142,15 @@
 
 @mixin statusbar-alt {
 	&::after {
-		content: "";
-
 		--offset: var(--main-window-border-spacing);
-		position: fixed;
-		inset: var(--offset);
-		top: unset;
-		height: calc(1lh + 2px);
 
 		@include window.statusbar-item;
+
+		content: "";
+		height: calc(1lh + 2px);
+		inset: var(--offset);
+		inset-block-start: unset;
+		position: fixed;
 	}
 }
 
@@ -186,17 +184,16 @@
 		&::before {
 			background: var(--color-button-text);
 			mask: var(--button-img, none) no-repeat;
-			mask-size: var(--button-img-size, auto auto);
 			mask-position: var(--button-img-pos, center);
+			mask-size: var(--button-img-size, auto auto);
 		}
 
 		&::after {
 			@include utils.pseudo-icon;
 
-			left: 1px;
-			top: 1px;
-
 			background-color: var(--color-button-highlight);
+			inset-block-start: 1px;
+			inset-inline-start: 1px;
 		}
 	}
 

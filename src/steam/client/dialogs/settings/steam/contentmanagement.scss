@@ -4,8 +4,7 @@
 
 #AppActionBar {
 	padding: 0;
-	padding-top: var(--dialog-button-spacing);
-
+	padding-block-start: var(--dialog-button-spacing);
 	z-index: 1;
 }
 
@@ -16,9 +15,9 @@
 #AppActionSelected {
 	@include utils.text-reset;
 
+	inset-block-end: 5px;
+	inset-inline-start: 8px;
 	position: fixed;
-	left: 8px;
-	bottom: 5px;
 }
 
 #AppBody {
@@ -44,17 +43,15 @@
 #AppHeaderContainer {
 	@include utils.legend-as-div;
 
-	top: -9px;
+	inset-block-start: -9px;
 }
 
 #AppHeaderValue {
+	@include utils.parentheses;
 	@include utils.text-reset;
 
-	margin-left: var(--text-spacing);
-
 	display: flex;
-
-	@include utils.parentheses;
+	margin-inline-start: var(--text-spacing);
 }
 
 #AppInfoItem {
@@ -74,8 +71,8 @@
 #AppsGrid {
 	@include controls.groupbox;
 
-	margin-top: 20px;
-	margin-bottom: 0;
+	margin-block-start: 20px;
+	margin-block-end: 0;
 }
 
 #AppSize {
@@ -181,19 +178,17 @@ $-colors: (
 }
 
 #LibraryHeader {
-	gap: 11px;
-
 	align-items: start;
+	gap: 11px;
 }
 
 #LibraryInventory {
 	@include window.content-container;
 
-	margin-top: 4px;
+	margin-block-start: 4px;
 }
 
 #Rule {
-	margin: 0 2px;
-
 	height: 0;
+	margin: 0 2px;
 }

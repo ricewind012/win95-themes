@@ -13,10 +13,11 @@
 	);
 	@include text.input-label;
 
-	opacity: 1;
-
-	width: unset;
 	height: unset;
+	min-height: unset;
+	opacity: 1;
+	padding: 0;
+	width: unset;
 
 	&:not([data-selected="true"])::before {
 		display: none;
@@ -29,10 +30,10 @@
 
 	// Use as ::before for label spacing
 	&::after {
+		order: -1;
 		width: calc(
 			var(--sel-button-size) + var(--label-spacing) - var(--text-spacing)
 		);
-		order: -1;
 	}
 
 	& > .stack_dbd263 {

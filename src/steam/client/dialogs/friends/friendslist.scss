@@ -17,16 +17,15 @@
 	@include controls.button;
 
 	background-image: none;
-	text-transform: none;
-
-	width: 100%;
 	height: unset;
+	text-transform: none;
+	width: 100%;
 }
 
 #summaryText {
+	color: inherit;
 	font: var(--text-ui);
 	font-weight: bold;
-	color: inherit;
-	text-align: start;
 	margin: 0;
+	text-align: start;
 }

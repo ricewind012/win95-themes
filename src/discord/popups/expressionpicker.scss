@@ -22,8 +22,8 @@
 		@include window.content-container;
 
 		& > div {
-			top: var(--offset);
-			left: var(--offset);
+			inset-block-start: var(--offset);
+			inset-inline-start: var(--offset);
 		}
 	}
 
@@ -35,14 +35,12 @@
 
 	.result__2dc39 {
 		&:hover::after {
-			inset: calc(var(--offset) * -1);
-			z-index: -1;
-
 			background-color: var(--color-highlight);
 			border-radius: 0;
 			box-shadow: none;
-
+			inset: calc(var(--offset) * -1);
 			transition: none;
+			z-index: -1;
 		}
 	}
 
@@ -53,17 +51,16 @@
 
 // TODO: it's supposed to be resizable or something. Not my problem !
 .drawerSizingWrapper__08434 {
+	height: calc(100% - var(--titlebar-height) - var(--window-gap));
 	position: unset;
 	width: 100%;
-	height: calc(100% - var(--titlebar-height) - var(--window-gap));
 
 	.contentWrapper__08434 {
 		background-color: transparent;
 		border: none;
 		gap: 0;
-		padding: var(--dialog-spacing);
-
 		grid-template-rows: auto;
+		padding: var(--dialog-spacing);
 	}
 
 	.nav__08434 {
@@ -79,7 +76,7 @@
 .expressionPickerPositionLayer__74017 {
 	--custom-emoji-picker-constants-diversity-emoji-size: 16px;
 
-	left: unset;
+	inset-inline-start: unset;
 	width: 610px; // 3 gifs in a row
 }
 
@@ -91,8 +88,8 @@
 	.categoryList_c0e32c {
 		@include window.content-container;
 
-		top: calc(var(--combobox-button-height) + var(--window-gap));
-		left: 0;
+		inset-block-start: calc(var(--combobox-button-height) + var(--window-gap));
+		inset-inline-start: 0;
 		width: calc(48px + var(--scrollbar-size));
 	}
 
@@ -108,14 +105,9 @@
 		}
 	}
 
-	[role="none presentation"] {
-		inset: 0;
-	}
-
 	.emojiPicker_c0e32c {
-		gap: var(--window-gap);
-
 		flex-grow: 1;
+		gap: var(--window-gap);
 		grid-template-columns: calc(48px + var(--scrollbar-size)) auto;
 	}
 
@@ -138,19 +130,19 @@
 
 	.header_c656ac {
 		--button-img: icon("arrow-bottom", "mono");
-		--button-img-width: 7px;
 		--button-img-height: 4px;
+		--button-img-width: 7px;
 
 		background-color: transparent;
-		font: var(--text-ui);
 		box-shadow: none;
+		font: var(--text-ui);
 		gap: var(--window-gap);
 		padding: 0;
 
 		&[aria-expanded="false"] {
 			--button-img: icon("arrow-right", "mono");
-			--button-img-width: 4px;
 			--button-img-height: 7px;
+			--button-img-width: 4px;
 		}
 	}
 
@@ -167,21 +159,18 @@
 	}
 
 	.headerLabel__14245 {
-		text-transform: none;
+		align-items: center;
+		display: flex;
 		gap: var(--text-spacing);
 		margin: 0;
-
-		display: flex;
-		align-items: center;
+		text-transform: none;
 
 		&::after {
-			content: "";
-
-			width: var(--button-img-width);
-			height: var(--button-img-height);
-
 			background-color: var(--color-button-text);
+			content: "";
+			height: var(--button-img-height);
 			mask: var(--button-img);
+			width: var(--button-img-width);
 		}
 	}
 
@@ -193,13 +182,12 @@
 
 	.unicodeShortcut_b9ee0c {
 		--button-img: icon("emoji");
-		--icon-button-width: calc(48px - var(--border-size) * 2);
 		--icon-button-height: 32px;
+		--icon-button-width: calc(48px - var(--border-size) * 2);
 		@include controls.button;
 		@include controls.icon-button;
 
 		margin: var(--border-size);
-
 		position: absolute;
 		width: var(--icon-button-width);
 

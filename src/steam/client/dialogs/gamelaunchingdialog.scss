@@ -7,7 +7,7 @@
 	color: var(--color-button-text);
 	font: var(--text-ui);
 	font-weight: bold;
-	margin-bottom: var(--text-spacing);
+	margin-block-end: var(--text-spacing);
 }
 
 #Layout {
@@ -16,8 +16,7 @@
 }
 
 #OpenSteamButton {
-	margin-top: var(--messagebox-content-spacing);
-
+	margin-block-start: var(--messagebox-content-spacing);
 	width: fit-content;
 }
 
@@ -26,5 +25,5 @@
 }
 
 #StatusWrapper {
-	margin-top: var(--messagebox-content-spacing);
+	margin-block-start: var(--messagebox-content-spacing);
 }

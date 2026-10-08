@@ -5,8 +5,8 @@
 	color: inherit;
 	font: inherit;
 	font-weight: bold;
+	margin-block-end: var(--text-spacing);
 	text-transform: none;
-	margin-bottom: var(--text-spacing);
 }
 
 #AppStatus {
@@ -16,8 +16,8 @@
 #AppTitle {
 	@include utils.text-reset;
 
-	padding: 0;
 	margin: 0;
+	padding: 0;
 }
 
 #AppPortraitHover {
@@ -48,6 +48,7 @@
 
 #DownloadStatus {
 	all: unset;
+
 	width: 100%;
 }
 
@@ -83,9 +84,8 @@
 #PlaytimeDetails {
 	@include utils.text-reset;
 
-	padding: 0;
 	margin: 0;
-
+	padding: 0;
 	// 3px = tooltip spacing, 2px = border
 	width: calc(220px - 3px * 2 - 2px);
 
@@ -96,7 +96,6 @@
 
 #ScreenshotCrossfade {
 	background-color: transparent;
-	mask: none;
-
 	flex-direction: column;
+	mask: none;
 }

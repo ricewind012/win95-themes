@@ -1,6 +1,16 @@
 @use "shared/text";
 @use "shared++/utils";
 
+#SettingsDialogBodyFade {
+	// For remoteplayexplainerdialog
+	.DialogContent[role="dialog"] > div > & > .DialogHeader {
+		--body-spacing: calc(var(--tabpanel-spacing) + var(--border-size));
+
+		margin: calc(var(--body-spacing) * -1);
+		margin-block-end: var(--body-spacing);
+	}
+}
+
 #SettingsDialogBodyText {
 	@include utils.text-reset;
 	@include utils.legend-as-div;

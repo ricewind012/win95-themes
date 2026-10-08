@@ -2,13 +2,12 @@
 
 #CachedAccountName,
 #CachedName {
-	opacity: 1;
 	color: inherit;
 	font: inherit;
-	text-shadow: inherit;
+	opacity: 1;
 	padding: 0;
-
 	position: unset;
+	text-shadow: inherit;
 }
 
 #CachedUserList {
@@ -16,15 +15,13 @@
 }
 
 #LoginCachedAvatar {
-	gap: 8px;
-
 	display: grid;
+	gap: 8px;
 	grid-template-columns: 100px 200px;
 
 	#CachedName {
-		font-weight: bold;
-
 		align-self: end;
+		font-weight: bold;
 	}
 }
 
@@ -32,12 +29,10 @@
 	background-image: none;
 	border: none;
 	box-shadow: none;
-	margin: 0;
-
+	grid-column-start: 1;
 	grid-row-start: 1;
 	grid-row-end: 3;
-	grid-column-start: 1;
-
+	margin: 0;
 	transform: unset;
 
 	& > img {
@@ -56,11 +51,10 @@
 	--button-img: icon("overflow" . "mono");
 	@include controls.icon-button;
 
+	inset-block-end: 50%;
+	inset-inline-end: calc(100% + 8px);
 	opacity: 1;
-
 	position: absolute;
-	bottom: 50%;
-	right: calc(100% + 8px);
 	width: unset;
 }
 

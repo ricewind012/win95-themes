@@ -3,11 +3,10 @@
 }
 
 #CollectionIcon {
-	padding: 0;
-
-	width: 100%;
-	height: unset;
 	display: block;
+	height: unset;
+	padding: 0;
+	width: 100%;
 
 	&::before {
 		content: var(--AllCollectionsView_InfoIconCollections);
@@ -21,6 +20,6 @@
 #Label {
 	color: var(--color-button-text);
 	font: var(--text-ui);
-	text-transform: unset;
 	margin: auto;
+	text-transform: unset;
 }

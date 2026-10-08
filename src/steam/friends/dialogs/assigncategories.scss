@@ -7,11 +7,10 @@
 .AssignCategoriesDialog_AddNewButton {
 	--pos: calc(var(--main-window-border-spacing) + var(--dialog-spacing));
 
+	inset-block-end: calc(var(--pos) - 32px);
+	inset-inline-start: var(--pos);
 	position: fixed;
 	width: min-content;
-
-	bottom: calc(var(--pos) - 32px);
-	left: var(--pos);
 
 	& > button {
 		min-width: max-content;

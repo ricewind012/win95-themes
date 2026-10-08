@@ -5,10 +5,10 @@
 	@include window.container($child: true);
 
 	border: none;
-
 	width: calc(100% - 50px);
 
 	& > .head {
+		align-items: center;
 		background-image: linear-gradient(
 			90deg,
 			var(--color-active-caption-bg-start),
@@ -16,22 +16,19 @@
 		);
 		color: var(--color-active-caption-text);
 		font: var(--text-ui);
-
 		height: var(--titlebar-height);
-		align-items: center;
 	}
 
 	& > .body {
 		border: none;
-		margin-top: var(--window-gap);
-
 		height: calc(100% - var(--window-gap) - 19px);
+		margin-block-start: var(--window-gap);
 	}
 
 	.inline {
+		height: 100%;
 		position: relative;
 		width: 100%;
-		height: 100%;
 	}
 
 	.ref-tree {
@@ -41,25 +38,25 @@
 	.monaco-editor {
 		@include window.content-container;
 
-		width: 100%;
 		height: 100%;
+		width: 100%;
 	}
 
 	.monaco-list {
-		margin-left: var(--window-gap);
+		margin-inline-start: var(--window-gap);
 	}
 }
 
 .peekview-title {
-	margin-left: 2px;
+	margin-inline-start: 2px;
 
-	.filename,
 	.dirname:not(:empty),
+	.filename,
 	.meta {
 		@include window.titlebar-name;
 
-		font-size: var(--text-ui-size);
 		color: inherit;
+		font-size: var(--text-ui-size);
 	}
 
 	.dirname:not(:empty) {
@@ -68,5 +65,5 @@
 }
 
 .peekview-actions {
-	padding-top: var(--text-spacing);
+	padding-block-start: var(--text-spacing);
 }

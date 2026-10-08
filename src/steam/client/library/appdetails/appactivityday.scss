@@ -48,23 +48,27 @@
 	display: none;
 }
 
+#MajorUpdateContentContainer {
+	@include shared.library_section-content;
+}
+
 #MediumImageContainer {
-	margin-right: var(--library_section-spacing);
+	margin-inline-end: var(--library_section-spacing);
 }
 
 #PartnerEvent {
 	background: none;
 	border: none;
 	box-shadow: none;
+}
 
-	&#PartnerEventFeatured {
-		@include shared.library_section;
+#PartnerEventFeatured {
+	@include shared.library_section;
 
-		margin-block-start: 1px;
+	margin-block-start: 1px;
 
-		& > [role="button"] {
-			@include shared.library_section-content;
-		}
+	& > [role="button"] {
+		@include shared.library_section-content;
 	}
 }
 
@@ -76,9 +80,9 @@
 }
 
 // lmao v*lve
-#PartnerEventTextOnly,
 #PartnerEventLargeImage,
-#PartnerEventMediumImage {
+#PartnerEventMediumImage,
+#PartnerEventTextOnly {
 	&_Container {
 		background: none;
 	}
@@ -86,21 +90,21 @@
 	&_Summary {
 		color: inherit;
 		font: var(--text-ui);
-		text-shadow: none;
 		padding: 0;
+		text-shadow: none;
 	}
 
 	&_TextColumn {
-		text-shadow: none;
 		gap: var(--text-spacing);
-		padding: 0;
 		// LargeImage
 		margin: 0;
+		padding: 0;
+		text-shadow: none;
 	}
 
 	&_Title {
 		color: inherit;
-		font: inherit;
+		font: var(--text-ui);
 		font-weight: bold;
 		// LargeImage
 		text-shadow: none;
@@ -110,9 +114,8 @@
 #PartnerEventLargeImage,
 #PartnerEventMediumImage {
 	&_Contents {
-		padding: 0;
-
 		flex-direction: row;
+		padding: 0;
 	}
 }
 
@@ -140,11 +143,10 @@
 #PartnerEventTextOnly_Icon {
 	--size: 32px;
 
-	margin: 0;
-	margin-right: var(--library_section-spacing);
-
-	width: var(--size);
 	height: var(--size);
+	margin: 0;
+	margin-inline-end: var(--library_section-spacing);
+	width: var(--size);
 }
 
 #PartnerEventType {
@@ -154,6 +156,11 @@
 
 	&#PartnerEventTypeUpdate {
 		text-shadow: none;
+	}
+
+	div {
+		color: var(--color-gray-text);
+		font: var(--text-ui);
 	}
 }
 
@@ -199,11 +206,11 @@
 
 #ScreenshotCarousel {
 	#CarouselThumb {
-		opacity: 1;
-		transform: none;
 		background-color: transparent;
 		border: 2px solid transparent;
 		margin: 0;
+		opacity: 1;
+		transform: none;
 
 		&:hover,
 		&#Active {
@@ -212,19 +219,18 @@
 	}
 
 	#CarouselThumbs {
+		display: grid;
 		// Give it at least something to distinguish it better
 		border: 1px solid var(--color-button-shadow);
-
 		// Make a better use of this space
-		overflow: auto;
-		display: grid;
 		grid-template-columns: 1fr 1fr;
+		overflow: auto;
 	}
 
 	#TimeStamp {
 		color: inherit;
 		font: inherit;
 		margin: 0;
-		margin-top: var(--text-spacing);
+		margin-block-start: var(--text-spacing);
 	}
 }

@@ -8,10 +8,9 @@
 }
 
 #FilterInputContainer {
-	padding: 0;
-	margin-bottom: 8px;
-
+	margin-block-end: 8px;
 	order: -1;
+	padding: 0;
 
 	// !important
 	#FilterInput:hover {
@@ -28,19 +27,17 @@
 }
 
 #TabContent {
-	opacity: 1;
 	background-color: transparent;
 	color: var(--color-button-text);
-	padding: 0;
-
-	width: var(--icon-size);
 	height: var(--icon-size);
+	opacity: 1;
+	padding: 0;
+	width: var(--icon-size);
 }
 
 #Tabs {
 	@include tabs.container;
 
 	border: none;
-
 	justify-content: unset;
 }

@@ -1,7 +1,9 @@
 .editor .monaco-editor {
-	.monaco-scrollable-element::after,
-	.empty::before {
-		right: var(--scrollbar-size);
-		z-index: 0;
+	.monaco-editor {
+		.empty::before,
+		.monaco-scrollable-element::after {
+			inset-inline-end: var(--scrollbar-size);
+			z-index: 0;
+		}
 	}
 }

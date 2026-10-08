@@ -9,11 +9,10 @@
 .FriendsSettingsNotificationRow {
 	background-color: transparent;
 	color: var(--color-window-text);
-	font-size: var(--text-ui-size);
-	padding: 0;
-	margin: 0;
-
 	display: flex;
+	font-size: var(--text-ui-size);
+	margin: 0;
+	padding: 0;
 }
 
 .FriendsSettingsNotificationRow_Header {
@@ -26,6 +25,6 @@
 .FriendsSettingsNotificationRow_Label {
 	@include utils.text-reset;
 
-	text-align: start;
 	padding: 2px 5px;
+	text-align: start;
 }

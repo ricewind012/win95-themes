@@ -4,10 +4,9 @@
 #FixCenterAlignScroll {
 	background-color: transparent;
 	gap: 0;
-	padding: 0;
 	margin: 0;
-
 	overflow: visible;
+	padding: 0;
 }
 
 #Glyphs {
@@ -21,14 +20,14 @@
 
 #TabHeaderRowWrapper,
 #TabContents {
-	top: calc(var(--steamavatar_size) + var(--text-spacing));
+	inset-block-start: calc(var(--steamavatar_size) + var(--text-spacing));
 }
 
 #TabContentsScroll {
 	@include tabs.content($compact: true);
 
 	margin: 0;
-	margin-top: var(--tabs-height);
+	margin-block-start: var(--tabs-height);
 
 	// different classes but same outcome
 	& > div {
@@ -40,9 +39,8 @@
 
 		// This has no effect anyway !
 		gap: 0;
-
-		overflow: auto;
 		height: calc(100% - var(--spacing));
+		overflow: auto;
 	}
 }
 

@@ -2,32 +2,22 @@
 	--color-tab-border: var(--color-button-highlight);
 
 	background-color: var(--color-button-face);
-	color: var(--color-button-text);
 	border: 1px solid;
-	border-bottom: none;
+	border-block-end: none;
 	border-color: var(--border-tab);
 	box-shadow:
 		1px 0 var(--color-button-shadow-dark),
 		1px 1px var(--color-tab-border);
-	margin: 2px 1px -1px 0;
-	padding: 3px 4px 2px 6px;
-
-	position: relative;
-	min-width: 45px;
+	color: var(--color-button-text);
 	height: calc(1lh + 5px);
+	margin: 2px 1px -1px 0;
+	min-width: 45px;
+	padding: 3px 4px 2px 6px;
+	position: relative;
 
 	&::before,
 	&::after {
-		content: "";
-
-		position: absolute;
-		top: -1px;
-		width: 3px;
-		height: 2px;
-
 		// Draw the rounding pixel by pixel
-		background-repeat: no-repeat;
-		background-size: 1px 1px;
 		background-position:
 			0 0,
 			1px 0,
@@ -35,28 +25,32 @@
 			0 1px,
 			1px 1px,
 			2px 1px;
+		background-repeat: no-repeat;
+		background-size: 1px 1px;
+		content: "";
+		height: 2px;
+		inset-block-start: -1px;
+		position: absolute;
+		width: 3px;
 	}
 
 	&::before {
-		left: -1px;
-
 		background-image: var(--tab-border-left);
+		inset-inline-start: -1px;
 	}
 
 	&::after {
-		right: -2px;
-
 		background-image: var(--tab-border-right);
+		inset-inline-end: -2px;
 	}
 
 	#{$selected-sel} {
 		--color-tab-border: var(--color-button-face);
 
+		height: calc(1lh + 8px);
 		margin: 0 -2px -1px -2px;
 		padding: 3px 6px;
-		padding-left: 7px;
-
-		height: calc(1lh + 8px);
+		padding-inline-start: 7px;
 		z-index: 1;
 	}
 }
@@ -65,31 +59,21 @@
 	--color-tab-border: var(--color-button-highlight);
 
 	background-color: var(--color-button-face);
-	color: var(--color-button-text);
 	border: 1px solid;
-	border-right: none;
 	border-color: var(--border-tab);
+	border-inline-end: none;
 	box-shadow:
 		0 1px var(--color-button-shadow-dark),
 		1px 1px var(--color-tab-border);
+	color: var(--color-button-text);
+	height: calc(var(--text-ui-size) + 6px);
 	margin: -1px 0 0 0;
 	padding: 3px 6px 2px 6px;
-
 	position: relative;
-	height: calc(var(--text-ui-size) + 6px);
 
 	&::before,
 	&::after {
-		content: "";
-
-		position: absolute;
-		left: -1px;
-		width: 2px;
-		height: 3px;
-
 		// Draw the rounding pixel by pixel
-		background-repeat: no-repeat;
-		background-size: 1px 1px;
 		background-position:
 			0 0,
 			1px 0,
@@ -97,48 +81,50 @@
 			1px 1px,
 			0 2px,
 			1px 2px;
+		background-repeat: no-repeat;
+		background-size: 1px 1px;
+		content: "";
+		height: 3px;
+		inset-inline-start: -1px;
+		position: absolute;
+		width: 2px;
 	}
 
 	&::before {
-		top: -1px;
-
 		background-image: var(--tab-vertical-border-top);
+		inset-block-start: -1px;
 	}
 
 	&::after {
-		bottom: -2px;
-
 		background-image: var(--tab-vertical-border-bottom);
+		inset-block-end: -2px;
 	}
 
 	#{$selected-sel} {
 		--color-tab-border: var(--color-button-face);
 
+		height: calc(var(--text-ui-size) + 9px);
 		margin: -2px 0 -1px -2px;
 		padding: 6px 3px;
-		padding-left: 5px;
-
-		height: calc(var(--text-ui-size) + 9px);
+		padding-inline-start: 5px;
 		z-index: 1;
 	}
 }
 
 @mixin container {
-	margin-left: 2px;
-
 	display: flex;
+	margin-inline-start: 2px;
 }
 
 @mixin container-vertical {
-	margin-top: 2px;
-
 	display: flex;
+	margin-block-start: 2px;
 }
 
 @mixin content($compact: false) {
 	background-color: var(--color-button-face);
-	color: var(--color-window-text);
 	box-shadow: var(--border-button-raised);
+	color: var(--color-window-text);
 	padding: calc(var(--border-size) + var(--tabpanel-spacing));
 
 	@if $compact {

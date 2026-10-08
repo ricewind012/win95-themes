@@ -41,16 +41,15 @@
 #FocusedScreenshotImageContainer {
 	@include window.content-container;
 
-	margin-bottom: 0;
+	margin-block-end: 0;
 }
 
 #Metadata {
+	align-self: unset;
 	color: inherit;
 	font: inherit;
 	font-weight: bold;
-
 	order: 1;
-	align-self: unset;
 
 	#Link {
 		@include text.link;
@@ -58,10 +57,9 @@
 }
 
 #ScreenshotForm {
-	padding: 0;
 	margin-inline: var(--toolbar-container-spacing);
-
 	order: 1;
+	padding: 0;
 }
 
 #ScreenshotFormActions {
@@ -131,7 +129,8 @@
 
 	&:nth-child(1) > :nth-child(2) {
 		--button-img: icon("list");
-		margin-left: calc(var(--toolbar-spacing) * -1);
+
+		margin-inline-start: calc(var(--toolbar-spacing) * -1);
 	}
 
 	// right
@@ -147,8 +146,7 @@
 		}
 
 		& > #ButtonBox {
-			margin-right: var(--toolbar-spacing);
-
+			margin-inline-end: var(--toolbar-spacing);
 			order: -1;
 		}
 
@@ -163,16 +161,15 @@
 }
 
 #TopListButtonRow {
-	margin: 0;
-
 	justify-content: space-between;
+	margin: 0;
 }
 
 #TopListTitle {
 	@include shared.dialog-title;
 
-	text-transform: none;
 	padding: 0;
+	text-transform: none;
 
 	html[browsertype="DirectHWND"] & {
 		display: none;
@@ -184,7 +181,6 @@
 
 #UploadedIcon {
 	color: inherit;
-
-	width: var(--icon-size);
 	height: var(--icon-size);
+	width: var(--icon-size);
 }

@@ -1,17 +1,14 @@
 @mixin -item-check {
-	content: "";
-
-	position: absolute;
-	top: 5px;
-
 	background-color: currentColor;
+	content: "";
+	inset-block-start: 5px;
+	position: absolute;
 }
 
 @mixin item($selected-sel) {
 	color: var(--color-button-text);
 	line-height: 1.25;
 	padding: 2px 20px;
-
 	position: relative;
 
 	#{$selected-sel},
@@ -23,16 +20,14 @@
 
 @mixin item-parent {
 	&::after {
-		content: "";
-
-		position: absolute;
-		top: 4px;
-		right: 6px;
-		width: 4px;
-		height: 7px;
-
-		mask: icon("arrow-right", "mono");
 		background-color: currentColor;
+		content: "";
+		height: 7px;
+		inset-block-start: 4px;
+		inset-inline-end: 6px;
+		mask: icon("arrow-right", "mono");
+		position: absolute;
+		width: 4px;
 	}
 }
 
@@ -44,29 +39,27 @@
 	&::before {
 		@include -item-check;
 
-		left: 6px;
-		width: 7px;
 		height: 7px;
-
+		inset-inline-start: 6px;
 		mask: icon("checkmark", "mono");
+		width: 7px;
 	}
 }
 
 @mixin item-disabled {
 	--color-button-text: var(--color-button-shadow);
-	text-shadow: 1px 1px var(--color-button-highlight);
 
 	pointer-events: none;
+	text-shadow: 1px 1px var(--color-button-highlight);
 }
 
 @mixin item-radio {
 	&::before {
 		@include -item-check;
 
-		left: 7px;
-		width: 6px;
 		height: 6px;
-
+		inset-inline-start: 7px;
 		mask: icon("radio", "mono");
+		width: 6px;
 	}
 }

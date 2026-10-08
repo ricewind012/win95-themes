@@ -4,8 +4,8 @@
 
 #AppLogo {
 	// x1.5, since I have more space anyway
-	width: 132px;
 	height: 60px;
+	width: 132px;
 }
 
 #AppName {
@@ -17,31 +17,27 @@
 	margin: 0;
 
 	&::after {
-		content: "";
-
 		@include controls.separator;
 
-		margin: 8px 0;
-
-		width: 100%;
+		content: "";
 		display: block;
+		margin: 8px 0;
+		width: 100%;
 	}
 }
 
 #AppToInstall {
-	line-height: inherit;
-	border: none;
-	padding: 0;
-
 	align-items: center;
+	border: none;
+	line-height: inherit;
+	padding: 0;
 }
 
 #CreateShortcuts {
+	flex-direction: column;
 	gap: 0;
 	margin: 0;
-	margin-bottom: 12px;
-
-	flex-direction: column;
+	margin-block-end: 12px;
 }
 
 #DiskSpace {
@@ -50,7 +46,7 @@
 
 #FolderFlagStar {
 	margin: 0;
-	margin-top: -2px;
+	margin-block-start: -2px;
 }
 
 #FolderName {
@@ -64,10 +60,9 @@
 	background-color: transparent;
 	color: var(--color-window-text);
 	gap: var(--text-spacing);
-	padding: 0 3px;
-	margin: 0;
-
 	height: var(--text-ui-size);
+	margin: 0;
+	padding: 0 3px;
 
 	&#Active {
 		background-color: var(--color-highlight);
@@ -84,10 +79,20 @@
 }
 
 #FolderSettings {
-	--button-img: icon("overflow" . "mono");
+	--button-img: icon("settings");
 	@include controls.icon-button;
 
+	// The parent also has absolute position...
+	inset-block-start: calc(-100% - 10px);
+	// See dialog's min-width
+	inset-inline-end: -408px;
+	position: absolute;
 	width: unset;
+
+	& > .tool-tip-source {
+		inset: 0;
+		position: absolute;
+	}
 
 	svg {
 		display: none;
@@ -114,9 +119,8 @@
 		--icon-size: 32px;
 
 		background-image: icon("warning-32");
-
-		width: var(--icon-size);
 		height: var(--icon-size);
+		width: var(--icon-size);
 
 		svg {
 			display: none;

@@ -5,13 +5,13 @@
 .privateChannels_e6b769 {
 	@include window.content-container;
 
-	margin-top: var(--toolbar-top-margin);
+	margin-block-start: var(--toolbar-top-margin);
 
 	.channel__972a0 {
 		margin: 0;
 	}
 
-	.interactive_bf202d.selected_bf202d {
+	.interactive_f88cfd.selected_f88cfd {
 		@include list.item-name-selected;
 	}
 
@@ -22,11 +22,12 @@
 
 	.searchBar_e6b769 {
 		border: none;
-		padding: var(--toolbar-container-spacing);
-
-		position: fixed;
-		top: 0;
 		height: unset;
+		inset-block-start: calc(
+			var(--main-window-border-spacing) + var(--titlebar-pos)
+		);
+		padding: var(--toolbar-container-spacing);
+		position: fixed;
 	}
 }
 
@@ -35,9 +36,9 @@
 	@include controls.button;
 	@include controls.icon-button;
 
+	inset-block-start: var(--toolbar-container-spacing);
+	inset-inline-end: var(--toolbar-container-spacing);
 	position: fixed;
-	top: var(--toolbar-container-spacing);
-	right: var(--toolbar-container-spacing);
 }
 
 .privateChannelRecipientsInviteButtonIcon__99e7c {

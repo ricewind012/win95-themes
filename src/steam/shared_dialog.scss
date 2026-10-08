@@ -10,11 +10,10 @@
 :where(.DialogBody) {
 	@include tabs.content;
 
-	mask-image: none; // client settings
 	font: var(--text-ui);
-	margin: 0;
 	gap: var(--text-spacing);
-
+	margin: 0;
+	mask-image: none; // client settings
 	overflow: auto;
 
 	// "In Game" settings tab
@@ -27,11 +26,11 @@
 	}
 }
 
-.DialogBodyText {
+:where(.DialogBodyText) {
 	@include utils.text-reset;
 
 	padding: 0;
-	margin-bottom: var(--text-spacing);
+	margin-block-end: var(--text-spacing);
 }
 
 :where(.DialogButton) {
@@ -44,24 +43,23 @@
 	}
 
 	&::before {
-		opacity: 1;
 		box-shadow: none;
+		opacity: 1;
 	}
 }
 
-.DialogCheckbox {
+:where(.DialogCheckbox) {
 	@include controls.checkbox(
 		$checked-sel: "&.Active",
 		$disabled-sel: "&.Disabled"
 	);
 
+	flex-shrink: 0;
 	margin: 0;
 
-	flex-shrink: 0;
-
 	&.Disabled {
-		opacity: 1;
 		filter: none;
+		opacity: 1;
 	}
 
 	& > svg {
@@ -69,20 +67,20 @@
 	}
 }
 
-.DialogCheckbox_Container {
+:where(.DialogCheckbox_Container) {
 	@include text.input-label;
 
 	background-color: transparent;
 	box-shadow: none;
+	margin-block-end: var(--text-spacing);
 	padding: 0;
-	margin-bottom: var(--text-spacing);
 }
 
 :where(.DialogContent) {
 	background: transparent;
 	font: var(--text-ui);
 	padding: var(--dialog-spacing);
-	padding-bottom: calc(
+	padding-block-end: calc(
 		var(--statusbar-height) + var(--window-gap) + var(--dialog-spacing)
 	);
 
@@ -91,55 +89,59 @@
 	}
 }
 
-.DialogContentTransition {
+:where(.DialogContentTransition) {
 	background: transparent;
 }
 
-.DialogControlsSection {
+:where(.DialogControlsSection) {
 	@include controls.groupbox;
-
-	gap: var(--text-spacing);
 
 	display: flex;
 	flex-direction: column;
+	gap: var(--text-spacing);
 
 	& > .DialogBodyText {
 		@include utils.legend-as-div;
 	}
 }
 
-.DialogControlsSectionHeader {
+:where(.DialogControlsSectionHeader) {
 	@include utils.text-reset;
 	@include utils.legend-as-div;
 }
 
-.DialogDropDown {
+:where(.DialogDropDown) {
 	@include controls.combobox;
 
-	display: flex;
 	align-items: center;
+	display: flex;
 	min-width: 129px;
 }
 
-.DialogDropDown_Arrow {
+:where(.DialogDropDown_Arrow) {
 	display: none;
 }
 
-.DialogDropDown_CurrentDisplay {
+:where(.DialogDropDown_CurrentDisplay) {
 	background-color: transparent;
 	padding: 0;
 }
 
 :where(.DialogFooter) {
-	padding-top: var(--dialog-button-spacing);
+	padding-block-start: var(--dialog-button-spacing);
+
+	// Spinner in game info dialog
+	.DialogButton > span > svg {
+		display: none;
+	}
 }
 
 :where(.DialogHeader) {
 	font-size: var(--text-ui-size);
 	font-weight: bold;
 	text-transform: unset;
-	padding: 0;
 	margin: 0;
+	padding: 0;
 
 	.PopupFullWindow > :last-child & {
 		@include shared.dialog-title;
@@ -156,11 +158,11 @@
 }
 
 // Only used in "Invite to group chat" dialog
-.DialogHeaderSubtitle {
+:where(.DialogHeaderSubtitle) {
 	color: inherit;
-	letter-spacing: 0;
 	font: inherit;
-	margin-left: var(--text-spacing);
+	letter-spacing: 0;
+	margin-inline-start: var(--text-spacing);
 
 	&::before {
 		content: open-quote;
@@ -171,65 +173,63 @@
 	}
 }
 
-.DialogInnerBody {
-	padding: 0;
-
+:where(.DialogInnerBody) {
 	overflow: visible;
+	padding: 0;
 }
 
-.DialogInput {
+:where(.DialogInput) {
 	@include controls.text-field;
 
 	height: unset;
 }
 
-.DialogInputLabelGroup {
+:where(.DialogInputLabelGroup) {
 	margin: 0;
 }
 
-.DialogInput_Wrapper {
+:where(.DialogInput_Wrapper) {
 	gap: var(--dialog-button-spacing);
 }
 
 :where(.DialogLabel) {
-	font: var(--text-ui);
 	color: inherit;
-	text-transform: unset;
+	font: var(--text-ui);
 	margin: 0;
+	text-transform: unset;
 }
 
-.DialogMenuPosition ._DialogInputContainer {
+:where(.DialogMenuPosition ._DialogInputContainer) {
 	@include listbox.container;
 
-	font: var(--text-ui);
 	box-shadow: none;
+	font: var(--text-ui);
 	padding: 0;
 }
 
-.DialogRoundCheckboxField {
-	margin-right: var(--label-spacing);
-
-	width: unset;
+:where(.DialogRoundCheckboxField) {
 	height: unset;
+	margin-inline-end: var(--label-spacing);
+	width: unset;
 }
 
-.DialogRoundCheckboxField_Control {
+:where(.DialogRoundCheckboxField_Control) {
 	@include controls.radio($checked-sel: "&.Active");
 }
 
-.DialogRoundCheckboxField_OuterCircle {
+:where(.DialogRoundCheckboxField_OuterCircle) {
 	display: none;
 }
 
-.DialogSlider_Container {
+:where(.DialogSlider_Container) {
 	background-color: transparent;
 }
 
-.DialogSlider_Grabber {
+:where(.DialogSlider_Grabber) {
 	box-shadow: none;
 }
 
-.DialogSlider_Slider {
+:where(.DialogSlider_Slider) {
 	@include controls.slider(
 		$thumb-sel: ".DialogSlider_Grabber",
 		$track-sel: ".DialogSlider_Value"
@@ -238,7 +238,7 @@
 	box-shadow: none;
 }
 
-.DialogSubHeader {
+:where(.DialogSubHeader) {
 	@include utils.text-reset;
 	@include utils.legend-as-div;
 }
@@ -249,29 +249,27 @@
 	padding-block-start: var(--text-spacing);
 }
 
-.DialogToggle_Label {
-	font: var(--text-ui);
+:where(.DialogToggle_Label) {
 	color: inherit;
+	font: var(--text-ui);
 }
 
 :where(.DialogToggleField) {
+	align-items: start;
 	background: none;
 	color: inherit;
-	gap: var(--label-spacing);
-	padding: 0;
-
 	flex-direction: row-reverse;
-	align-items: start;
+	gap: var(--label-spacing);
 	justify-content: start;
+	padding: 0;
 }
 
 :where(.DialogToggleField_NewUIContainer) {
 	height: unset;
 }
 
-._DialogColLayout {
+:where(._DialogColLayout) {
 	gap: var(--dialog-button-spacing);
-
 	justify-content: end;
 
 	& > ._DialogLayout {
@@ -300,9 +298,8 @@
 }
 
 .GenericConfirmDialog {
-	padding: 0;
-
 	justify-content: start;
+	padding: 0;
 
 	.DialogBody {
 		box-shadow: none;
@@ -311,7 +308,7 @@
 	}
 
 	.DialogBodyText {
-		margin-bottom: 0;
+		margin-block-end: 0;
 	}
 }
 
@@ -320,8 +317,8 @@
 }
 
 .ModalDialogPopup {
-	position: fixed;
 	inset: 0;
+	position: fixed;
 }
 
 .ModalPosition {
@@ -339,8 +336,8 @@
 }
 
 .ModalPosition_Dismiss {
-	top: calc(var(--border-size) + var(--window-spacing) + 1px);
-	right: calc(var(--border-size) + var(--window-spacing) + 1px);
+	inset-block-start: calc(var(--border-size) + var(--window-spacing) + 1px);
+	inset-inline-end: calc(var(--border-size) + var(--window-spacing) + 1px);
 
 	.closeButton {
 		@include controls.button;
@@ -367,7 +364,7 @@
 	}
 }
 
-.SettingsDialogSubHeader {
+:where(.SettingsDialogSubHeader) {
 	@include utils.text-reset;
 	@include utils.legend-as-div;
 }
@@ -380,9 +377,9 @@
 .title-area {
 	@include window.titlebar($focused-sel: ".WindowFocus &");
 
-	position: unset;
-	min-height: var(--main-window-titlebar-height);
 	max-height: var(--main-window-titlebar-height);
+	min-height: var(--main-window-titlebar-height);
+	position: unset;
 
 	html[browsertype="DirectHWND"] & {
 		display: none;
@@ -395,13 +392,11 @@
 	}
 
 	&::before {
-		content: "";
-
-		width: var(--icon-size);
-		height: var(--icon-size);
-
 		background-color: currentColor;
+		content: "";
+		height: var(--icon-size);
 		mask: icon("steam");
+		width: var(--icon-size);
 	}
 }
 
@@ -409,11 +404,11 @@
 .title-area-children {
 	@include window.titlebar-name;
 
-	font-size: var(--text-ui-size);
 	color: var(--color-inactive-caption-text);
-	text-align: start;
+	font-size: var(--text-ui-size);
 	// Overlay browser
 	padding: 0;
+	text-align: start;
 }
 
 :where(.title-area-icon) {

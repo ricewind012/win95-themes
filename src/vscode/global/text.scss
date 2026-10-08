@@ -10,8 +10,9 @@
 }
 
 .monaco-grid-view .label-description:not(:empty, :has(> :empty)) {
-	opacity: 1;
-	font: var(--text-ui);
 	@include utils.parentheses;
-	margin-left: var(--text-spacing);
+
+	font: var(--text-ui);
+	margin-inline-start: var(--text-spacing);
+	opacity: 1;
 }

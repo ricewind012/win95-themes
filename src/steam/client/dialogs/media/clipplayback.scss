@@ -9,7 +9,6 @@
 
 #AddMarkerIcon {
 	color: inherit;
-
 	width: var(--icon-size);
 }
 
@@ -27,7 +26,6 @@
 	@include controls.icon-button;
 
 	transform: none;
-
 	width: unset;
 }
 
@@ -43,10 +41,9 @@
 
 #RightButtons {
 	gap: 0;
-
+	inset-block-start: 0;
+	inset-inline-end: var(--toolbar-container-spacing);
 	position: absolute;
-	top: 0;
-	right: var(--toolbar-container-spacing);
 
 	#DeleteButton {
 		&::after {
@@ -55,8 +52,8 @@
 	}
 
 	.DialogButton {
-		justify-content: center;
 		height: unset;
+		justify-content: center;
 	}
 
 	svg {

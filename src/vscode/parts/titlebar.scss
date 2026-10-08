@@ -7,15 +7,18 @@
 
 .titlebar {
 	background-color: inherit;
-	color: inherit;
 	border: none;
-
+	color: inherit;
 	flex-direction: column;
-	position: absolute;
-	left: 0;
-	// 5px = separator
-	top: calc(var(--menubar-height) + 5px + var(--window-gap));
 	height: unset;
+	// 5px = separator
+	inset-block-start: calc(var(--menubar-height) + 5px + var(--window-gap));
+	inset-inline-start: 0;
+	position: absolute;
+
+	&.inactive > * {
+		opacity: 1;
+	}
 
 	&::after {
 		@include utils.pseudo-separator;
@@ -34,10 +37,9 @@
 		@include controls.button;
 		@include controls.icon-button;
 
-		margin-right: var(--toolbar-spacing);
-
-		width: unset;
+		margin-inline-end: var(--toolbar-spacing);
 		order: -1;
+		width: unset;
 	}
 
 	.codicon-arrow-left {
@@ -64,6 +66,10 @@
 
 .titlebar-right {
 	.action-toolbar-container {
-		padding-right: var(--toolbar-container-spacing);
+		padding-inline-end: var(--toolbar-container-spacing);
+	}
+
+	.update-toolbar-container {
+		display: none;
 	}
 }

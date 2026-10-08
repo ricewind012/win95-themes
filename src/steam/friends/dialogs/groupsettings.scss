@@ -10,19 +10,18 @@
 		@include controls.button;
 		@include utils.text-reset;
 
-		display: flex;
 		align-items: center;
-		justify-content: center;
+		display: flex;
 		height: 28px;
+		justify-content: center;
 	}
 
 	._DialogRow {
 		background: none;
 		color: inherit;
-		padding: 0;
-		margin: 0;
-
 		height: unset;
+		margin: 0;
+		padding: 0;
 
 		svg {
 			display: none;
@@ -37,10 +36,10 @@
 }
 
 .createNewRoleButton {
-	position: fixed;
-	right: var(--pos);
-	bottom: var(--pos);
 	height: unset;
+	inset-inline-end: var(--pos);
+	inset-block-end: var(--pos);
+	position: fixed;
 
 	svg {
 		display: none;
@@ -95,9 +94,9 @@
 }
 
 .roleButton {
-	width: 100%;
 	display: flex;
 	justify-content: space-between;
+	width: 100%;
 
 	svg {
 		display: none;
@@ -120,7 +119,6 @@
 	@include window.titlebar-button($disabled-sel: "&.Disabled");
 
 	opacity: 1;
-
 	width: 16px;
 
 	&.Disabled {
@@ -140,7 +138,7 @@
 	&.roleDown {
 		--button-img: icon("arrow-bottom", "mono");
 
-		top: 0;
+		inset-block-start: 0;
 	}
 
 	svg {
@@ -149,8 +147,8 @@
 }
 
 .rolePriorityContainer {
-	width: unset;
 	height: unset;
+	width: unset;
 }
 
 .roleSubtitle {

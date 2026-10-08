@@ -3,23 +3,22 @@
 
 #ControlsListChild {
 	margin: 0;
-
 	max-width: unset;
 }
 
 #ControlsListOuterPanel {
 	--controls-list-spacing: var(--label-spacing);
 
+	flex: unset;
 	gap: var(--dialog-button-spacing);
 	margin: 0;
-
-	flex: unset;
 }
 
 #Field {
-	--field-row-children-spacing: var(--label-spacing);
-
 	background-color: transparent;
+	flex-direction: row-reverse;
+	gap: var(--label-spacing);
+	margin: 0;
 	padding: 0;
 	padding-inline-start: calc(
 		(var(--sel-button-size) + var(--label-spacing)) * var(--indent-level)
@@ -28,10 +27,9 @@
 	div:not([class]) > & {
 		@include controls.groupbox;
 
-		gap: var(--text-spacing);
-
 		display: flex;
 		flex-direction: column;
+		gap: var(--text-spacing);
 	}
 
 	&::after {
@@ -49,12 +47,8 @@
 #FieldDescription {
 	@include utils.text-reset;
 
-	margin-top: var(--text-spacing);
-
-	#WithDescription > div + & {
-		color: var(--color-gray-text);
-		margin-left: calc(var(--sel-button-size) + var(--label-spacing));
-	}
+	color: var(--color-gray-text);
+	margin-block-start: var(--text-spacing);
 }
 
 #FieldIcon {
@@ -62,20 +56,19 @@
 }
 
 #FieldLabel {
-	font: var(--text-ui);
 	color: var(--color-button-text);
+	font: var(--text-ui);
 
 	& > :not([class]) {
+		align-items: center;
+		display: flex;
 		// has something else
 		gap: 1ch;
-
-		display: flex;
-		align-items: center;
 	}
 }
 
-#FieldLabelRow {
-	flex-direction: row-reverse;
+#LabelFieldValue {
+	color: inherit;
 }
 
 #StandaloneFieldSeparator {

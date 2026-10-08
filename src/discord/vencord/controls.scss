@@ -4,9 +4,8 @@
 .vc-btn-base {
 	@include controls.button;
 
-	opacity: 1;
-
 	min-height: unset;
+	opacity: 1;
 }
 
 .vc-card-base {
@@ -26,11 +25,10 @@
 }
 
 .vc-form-switch {
-	opacity: 1;
-	gap: var(--label-spacing);
-
 	flex-direction: row-reverse;
+	gap: var(--label-spacing);
 	justify-content: start;
+	opacity: 1;
 
 	> :last-child {
 		margin: 0;
@@ -47,10 +45,9 @@
 }
 
 .vc-form-switch-wrapper {
-	margin-bottom: var(--text-spacing);
-
 	// <label>
 	display: block;
+	margin-block-end: var(--text-spacing);
 }
 
 .vc-switch-container {
@@ -59,8 +56,8 @@
 		$disabled-sel: "&.vc-switch-disabled"
 	);
 
-	opacity: 1;
 	border: none;
+	opacity: 1;
 }
 
 .vc-switch-slider {

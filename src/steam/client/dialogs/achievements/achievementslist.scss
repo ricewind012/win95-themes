@@ -19,7 +19,7 @@
 	color: inherit;
 	font: inherit;
 	font-weight: bold;
-	margin-bottom: var(--text-spacing);
+	margin-block-end: var(--text-spacing);
 }
 
 #AchievementDescription,
@@ -52,25 +52,24 @@
 }
 
 #ListTitle {
-	opacity: 1;
 	color: inherit;
 	letter-spacing: 0;
 	margin-inline: 8px;
+	opacity: 1;
 }
 
 #SpoilerWarning {
 	font-weight: bold;
-	margin-inline-start: var(--text-spacing);
-
 	justify-content: start;
+	margin-inline-start: var(--text-spacing);
 }
 
 #UnlockContainer {
 	&:not(:empty) {
 		background-color: currentColor;
 		mask: icon("checkmark", "mono");
-		mask-size: 7px;
-		mask-repeat: no-repeat;
 		mask-position: right;
+		mask-repeat: no-repeat;
+		mask-size: 7px;
 	}
 }

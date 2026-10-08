@@ -8,59 +8,61 @@
 	background-color: var(--color-button-face);
 	color: var(--color-window-text);
 	border: none;
-	margin-top: 8px;
-	margin-left: 6px;
+	margin-block-start: 8px;
+	margin-inline-start: 6px;
 
 	position: relative;
 
 	&.right {
-		margin-left: 0;
-		margin-right: 8px;
+		margin-inline-start: 0;
+		margin-inline-end: 8px;
 	}
 
 	.actions {
-		margin-right: 0;
-
 		display: block;
+		margin-inline-end: 0;
 	}
 
 	.header {
 		border: none;
-		padding: 0;
-
-		overflow: visible;
 		height: unset;
+		overflow: visible;
+		padding: 0;
 
 		.monaco-action-bar {
 			line-height: inherit;
 		}
 	}
 
-	.monaco-list {
+	// TODO(modernui): remove rule & selector below
+	.monaco-workbench:not(.modern-ui) & .monaco-list {
 		height: calc(100% - 16px);
 	}
 
+	.monaco-workbench.modern-ui & .pane {
+		height: calc(100% - 12px);
+	}
+
 	.pane-header[aria-expanded="true"] {
-		margin-bottom: var(--text-spacing);
+		margin-block-end: var(--text-spacing);
 	}
 
 	div.title {
-		padding: 0;
-		margin-top: var(--s);
-		margin-left: calc(var(--s) + var(--offset));
-
 		align-items: center;
+		height: unset;
+		margin-block-start: var(--s);
+		margin-inline-start: calc(var(--s) + var(--offset));
+		overflow: visible;
+		padding: 0;
 		position: absolute;
 		width: calc(100% - var(--s) * 2 - var(--offset) * 2);
-		height: unset;
 		z-index: 1;
-		overflow: visible;
 	}
 
 	h3.title {
 		text-transform: unset;
 		padding: 0;
-		padding-bottom: 1px;
+		padding-block-end: 1px;
 	}
 
 	.title-label {
@@ -68,23 +70,20 @@
 		padding: 0;
 
 		h2 {
+			color: inherit;
 			font: var(--text-ui);
 			font-weight: bold;
-			color: inherit;
 			text-transform: unset;
 		}
 	}
 
 	.title-actions {
-		padding: 0;
-
 		height: unset;
+		padding: 0;
 	}
 
 	& > .content {
 		font: var(--text-ui);
-
-		width: 100%;
 		// prettier-ignore
 		height: calc(
 			100vh
@@ -94,12 +93,13 @@
 			- var(--menubar-height)
 			- var(--statusbar-height)
 		);
+		width: 100%;
 
 		& > .composite {
 			@include tabs.content;
 
 			padding: var(--s);
-			padding-top: calc(var(--s) + var(--icon-button-height));
+			padding-block-start: calc(var(--s) + var(--icon-button-height));
 
 			& > div::before {
 				@include utils.pseudo-separator;

@@ -6,11 +6,11 @@
 	min-width: 400px;
 
 	.DialogBody {
-		padding: 0;
 		margin: var(--messagebox-content-spacing) 0;
+		padding: 0;
 	}
 
 	.DialogHeader {
-		margin-bottom: var(--dialog-spacing);
+		margin-block-end: var(--dialog-spacing);
 	}
 }

@@ -15,24 +15,22 @@
 }
 
 #ScrollbarAndSiblings {
-	padding-top: 4px;
+	padding-block-start: 4px;
 }
 
 #ScrollThumb {
 	@include scrollbar.thumb;
 
-	filter: none;
-	opacity: 1;
 	border: none;
-
+	filter: none;
 	height: calc(100% - var(--border-size) * 2);
-	top: var(--border-size);
+	inset-block-start: var(--border-size);
+	opacity: 1;
 }
 
 #ScrollTrack {
 	background: var(--checkerboard);
 	box-shadow: var(--border-field);
-	padding: var(--border-size);
-
 	height: 12px;
+	padding: var(--border-size);
 }

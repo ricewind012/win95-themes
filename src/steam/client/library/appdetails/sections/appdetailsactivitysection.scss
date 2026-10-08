@@ -21,9 +21,10 @@
 
 	background-color: transparent;
 	font: inherit;
+	inset-block-start: calc(
+		1lh + var(--appdetails_container-spacing-y) + var(--text-spacing)
+	);
+	inset-inline-start: var(--appdetails_container-spacing-x);
 	padding: 0;
-
 	position: absolute;
-	top: calc(1lh + var(--appdetails_container-spacing-y) + var(--text-spacing));
-	left: var(--appdetails_container-spacing-x);
 }

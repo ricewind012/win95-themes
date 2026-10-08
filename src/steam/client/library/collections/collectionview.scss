@@ -27,17 +27,18 @@
 
 	// oh my god bruh
 	--text-offset: 2px;
-	padding-block: calc(var(--button-spacing) - var(--text-offset));
 
 	order: 1;
+	padding-block: calc(var(--button-spacing) - var(--text-offset));
 
 	// different oh my god bruh
 	#Header:has(+ div #FreezeButton) & {
 		// TODO(controls): icon-button-active
 		--offset: 1px;
+
 		background: var(--checkerboard);
-		color: transparent;
 		box-shadow: var(--border-button-sunken);
+		color: transparent;
 		text-shadow: 1px 1px var(--color-button-text);
 	}
 
@@ -46,16 +47,14 @@
 	}
 
 	&::after {
-		content: "";
-
-		position: relative;
-		top: var(--offset);
-		left: var(--offset);
-		width: var(--icon-size);
-		height: var(--icon-size);
-
 		background-image: icon("settings");
+		content: "";
 		margin-inline-start: var(--text-spacing);
+		height: var(--icon-size);
+		inset-block-start: var(--offset);
+		inset-inline-start: var(--offset);
+		position: relative;
+		width: var(--icon-size);
 	}
 
 	#EditButton {
@@ -74,17 +73,15 @@
 #Header {
 	@include shared.library_in-toolbar;
 
-	text-transform: none;
 	gap: var(--toolbar-spacing);
-
-	// Give space to the snapshot button
-	right: calc(anchor(right) + var(--icon-button-width));
-	left: anchor(left);
 	height: calc(2rlh - 2px);
+	// Give space to the snapshot button
+	inset-inline-end: calc(anchor(right) + var(--icon-button-width));
+	inset-inline-start: anchor(left);
+	text-transform: none;
 
 	.DialogInput_Wrapper {
 		margin: 0;
-
 		width: 200px;
 	}
 
@@ -101,12 +98,11 @@
 #RightSideButtons {
 	@include shared.library_in-toolbar;
 
-	padding: 0;
-
-	display: flex;
 	align-items: center;
-	right: anchor(right);
+	display: flex;
 	height: calc(2rlh - 2px);
+	inset-inline-end: anchor(right);
+	padding: 0;
 
 	#FreezeButton {
 		@include controls.button;

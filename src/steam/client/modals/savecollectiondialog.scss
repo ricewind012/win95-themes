@@ -2,10 +2,9 @@
 @use "shared++/utils";
 
 #ActionLabel {
-	text-transform: unset;
-	margin-bottom: var(--text-spacing);
-
+	margin-block-end: var(--text-spacing);
 	min-width: 148px;
+	text-transform: unset;
 
 	svg {
 		display: none;
@@ -30,7 +29,7 @@
 }
 
 #Required {
-	margin-left: var(--text-spacing);
+	margin-inline-start: var(--text-spacing);
 }
 
 #SaveCollectionContainer {
@@ -43,7 +42,7 @@
 	}
 
 	.DialogLabel {
-		margin-bottom: var(--text-spacing);
+		margin-block-end: var(--text-spacing);
 	}
 
 	.DialogTextInputBase {
@@ -53,7 +52,7 @@
 
 #SaveSearchDescription {
 	font: var(--text-ui);
-	margin-top: var(--messagebox-content-spacing);
+	margin-block-start: var(--messagebox-content-spacing);
 }
 
 #TwoOptionsContainer {

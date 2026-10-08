@@ -20,8 +20,8 @@
 	}
 
 	.avatarHolder {
-		top: var(--offset-click);
-		left: var(--offset-click);
+		inset-block-start: var(--offset-click);
+		inset-inline-start: var(--offset-click);
 	}
 }
 
@@ -30,10 +30,9 @@
 	@include controls.icon-button;
 
 	// Align with the left side
-	width: var(--steamdesktop_icon-button-size);
-	min-height: var(--steamdesktop_icon-button-size);
-
 	cursor: default;
+	min-height: var(--steamdesktop_icon-button-size);
+	width: var(--steamdesktop_icon-button-size);
 
 	&#AnnouncementsButton {
 		--button-img: icon("newspaper");
@@ -67,17 +66,15 @@
 }
 
 #TitleBarControls {
+	inset-block-start: anchor(top);
+	inset-inline-end: calc(anchor(right) + var(--toolbar-container-spacing));
 	margin: 0;
-
 	position: fixed;
 	position-anchor: --supernavbar;
-	top: anchor(top);
-	right: calc(anchor(right) + var(--toolbar-container-spacing));
 	z-index: 1;
 
 	& > :has(#AccountMenu) {
 		margin-inline-end: var(--toolbar-spacing);
-
 		order: -1;
 	}
 

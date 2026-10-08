@@ -1,14 +1,13 @@
 @mixin item($expanded-sel, $child-sel: "") {
 	--icon: var(--tree-icon-collapsed);
 
+	margin-inline-start: var(--icon-size);
 	padding: 0 4px;
-	margin-left: var(--icon-size);
-
 	position: relative;
 
 	@if $child-sel != "" {
 		#{$child-sel} {
-			margin-left: 0;
+			margin-inline-start: 0;
 
 			&::before {
 				display: none;
@@ -17,30 +16,26 @@
 	}
 
 	&::before {
+		border-block-end: 1px dotted var(--color-gray-text);
+		border-inline-start: 1px dotted var(--color-gray-text);
 		content: "";
-
-		position: absolute;
-		left: -12px;
-		top: -7px;
-		width: 14px;
 		height: 14px;
-
-		border-left: 1px dotted var(--color-gray-text);
-		border-bottom: 1px dotted var(--color-gray-text);
+		inset-block-start: -7px;
+		inset-inline-start: -12px;
+		position: absolute;
+		width: 14px;
 	}
 
 	#{$expanded-sel} {
 		--icon: var(--tree-icon-expanded);
 
 		&::after {
+			border-inline-start: 1px dotted var(--color-gray-text);
 			content: "";
-
-			position: absolute;
-			left: -12px;
-			top: 9px;
 			height: calc(100% - 17px);
-
-			border-left: 1px dotted var(--color-gray-text);
+			inset-block-start: 9px;
+			inset-inline-start: -12px;
+			position: absolute;
 		}
 	}
 }
@@ -48,36 +43,33 @@
 @mixin item-icon {
 	--icon-size: 9px;
 
-	position: relative;
-	width: var(--icon-size);
 	height: var(--icon-size);
+	width: var(--icon-size);
+	position: relative;
 
 	&::before,
 	&::after {
 		content: "";
-
 		position: absolute;
 	}
 
 	&::before {
-		width: calc(var(--icon-size) - 2px);
-		height: calc(var(--icon-size) - 2px);
-		z-index: 1;
-
 		background: var(--icon);
 		background-color: var(--color-window);
-		background-size: 1px 1px;
 		background-repeat: no-repeat;
+		background-size: 1px 1px;
 		border: 1px solid var(--color-gray-text);
+		height: calc(var(--icon-size) - 2px);
+		width: calc(var(--icon-size) - 2px);
+		z-index: 1;
 	}
 
 	&::after {
-		left: 4px;
-		top: -10px;
-		width: 10px;
+		border-block-end: 1px dotted var(--color-gray-text);
+		border-inline-start: 1px dotted var(--color-gray-text);
 		height: 14px;
-
-		border-left: 1px dotted var(--color-gray-text);
-		border-bottom: 1px dotted var(--color-gray-text);
+		inset-block-start: -10px;
+		inset-inline-start: 4px;
+		width: 10px;
 	}
 }

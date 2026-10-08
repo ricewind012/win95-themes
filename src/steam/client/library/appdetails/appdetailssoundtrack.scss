@@ -4,9 +4,8 @@
 @use "steam/shared";
 
 %-column {
-	mask: none;
 	margin: 0;
-
+	mask: none;
 	overflow: auto;
 }
 
@@ -23,12 +22,11 @@
 }
 
 #DesktopControls {
-	transform: unset;
 	background-color: unset;
-	padding: var(--toolbar-container-spacing);
-
-	position: unset;
 	height: unset;
+	padding: var(--toolbar-container-spacing);
+	position: unset;
+	transform: unset;
 
 	// no way
 	#CurrentTrackContainer {
@@ -46,10 +44,10 @@
 	}
 
 	#AlbumArt {
-		filter: none;
 		box-shadow: var(--border-statusbar);
+		filter: none;
+		margin-block-end: var(--text-spacing);
 		padding: 1px;
-		margin-bottom: var(--text-spacing);
 	}
 
 	#AlbumName {
@@ -64,9 +62,8 @@
 	#AlbumStatsContainer {
 		@include utils.text-reset;
 
-		gap: var(--text-spacing);
-
 		flex-direction: row;
+		gap: var(--text-spacing);
 	}
 
 	#ArtistName {
@@ -74,7 +71,6 @@
 		font: inherit;
 		font-weight: bold;
 		margin: 0;
-
 		order: -1;
 	}
 
@@ -84,10 +80,9 @@
 	}
 
 	#StatsAndParent {
-		gap: var(--text-spacing);
-		margin-top: var(--text-spacing);
-
 		flex-direction: column;
+		gap: var(--text-spacing);
+		margin-block-start: var(--text-spacing);
 
 		&::before {
 			@include utils.pseudo-separator;
@@ -102,7 +97,7 @@
 #PlayButton {
 	@include shared.library_in-toolbar;
 
-	left: anchor(left);
+	inset-inline-start: anchor(left);
 	width: auto;
 }
 
@@ -120,16 +115,14 @@
 #SoundtrackPanel {
 	background: var(--color-button-face);
 	box-shadow: none;
-	padding: 0;
-
 	overflow: hidden;
+	padding: 0;
 	perspective: unset;
 }
 
 #TrackListContainer {
-	padding: 0;
-
 	overflow: auto;
+	padding: 0;
 
 	#Disc {
 		@include table.header-row;

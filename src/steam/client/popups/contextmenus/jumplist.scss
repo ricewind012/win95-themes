@@ -1,7 +1,7 @@
 #GameIcon,
 #Icon {
-	position: absolute;
-	left: 0;
-	width: var(--icon-size);
 	height: var(--icon-size);
+	inset-inline-start: 0;
+	position: absolute;
+	width: var(--icon-size);
 }

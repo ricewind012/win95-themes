@@ -2,8 +2,8 @@
 @use "shared/text";
 
 .attachWrapper__0923f {
-	padding: 0;
 	margin-inline-end: var(--toolbar-spacing);
+	padding: 0;
 
 	.attachButton__0923f {
 		--button-img: icon("plus", "mono");
@@ -13,10 +13,10 @@
 }
 
 .channelTextArea_f75fb0 {
-	--icon-button-width: var(--combobox-button-height);
 	--icon-button-height: var(--combobox-button-height);
+	--icon-button-width: var(--combobox-button-height);
 
-	margin-bottom: var(--toolbar-container-spacing);
+	margin-block-end: var(--toolbar-container-spacing);
 
 	.stackedBars__74017 {
 		background-color: transparent;
@@ -26,12 +26,11 @@
 
 // Reply
 .container__841c8 {
-	gap: var(--toolbar-spacing);
-	margin-right: var(--toolbar-container-spacing);
-	margin-bottom: var(--toolbar-spacing);
-
-	flex-direction: row;
 	align-items: center;
+	flex-direction: row;
+	gap: var(--toolbar-spacing);
+	margin-block-end: var(--toolbar-spacing);
+	margin-inline-end: var(--toolbar-container-spacing);
 
 	.closeButton_e876a8 {
 		--button-img: icon("clear");
@@ -44,16 +43,17 @@
 
 		font-size: 0;
 		font-weight: normal;
-		text-transform: none;
+		margin-inline-end: calc(
+			36px + var(--label-spacing) + var(--toolbar-spacing)
+		);
 		padding: 0;
-		margin-right: calc(36px + var(--label-spacing) + var(--toolbar-spacing));
+		text-transform: none;
 
 		&::before {
 			// TODO: localize
 			content: "Mention";
-
 			font-size: var(--text-ui-size);
-			margin-left: calc(var(--sel-button-size) + var(--label-spacing));
+			margin-inline-start: calc(var(--sel-button-size) + var(--label-spacing));
 		}
 	}
 
@@ -76,9 +76,9 @@
 
 .form_f75fb0 {
 	background-color: var(--color-button-face);
-	padding: 0;
-	padding-top: var(--toolbar-container-spacing);
 	margin: 0;
+	padding: 0;
+	padding-block-start: var(--toolbar-container-spacing);
 
 	&::before,
 	&::after {
@@ -115,17 +115,16 @@
 .typing_b88801 {
 	color: var(--color-button-text);
 	font: var(--text-ui);
-	padding: 0;
-
-	position: fixed;
-	top: unset;
-	right: var(--main-window-border-spacing);
-	bottom: calc(var(--main-window-border-spacing) + 1px);
-	left: calc(
+	height: unset;
+	inset-block-end: calc(var(--main-window-border-spacing) + 1px);
+	inset-block-start: unset;
+	inset-inline-end: var(--main-window-border-spacing);
+	inset-inline-start: calc(
 		var(--main-window-border-spacing) + var(--window-gap) +
 			var(--actual-sidebar-width)
 	);
-	height: unset;
+	padding: 0;
+	position: fixed;
 
 	.cooldownWrapper_b21699 {
 		padding: 0;

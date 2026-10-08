@@ -32,7 +32,6 @@
 	#Remaining {
 		color: inherit;
 		margin: 0;
-
 		-webkit-app-drag: none;
 	}
 
@@ -52,12 +51,11 @@
 		font-weight: bold;
 		// align with buttons
 		margin-block: 1px;
-
 		width: 100%;
 	}
 
 	#TimePartLabel {
-		margin-top: var(--text-spacing);
+		margin-block-start: var(--text-spacing);
 		font: var(--text-ui);
 	}
 
@@ -67,7 +65,6 @@
 }
 
 #Tabs {
-	padding: 0;
-
 	order: -1;
+	padding: 0;
 }

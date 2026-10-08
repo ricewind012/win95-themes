@@ -2,12 +2,12 @@
 @use "shared++/utils";
 
 #AvatarAndLabel {
+	flex: unset;
 	height: unset;
 
 	#LabelHolder {
-		padding: 0;
-
 		height: unset;
+		padding: 0;
 	}
 }
 
@@ -16,8 +16,8 @@
 }
 
 #Subsection {
-	padding: 0;
 	margin: 0;
+	padding: 0;
 
 	&:not(#Recent) {
 		--steamavatar_size: 32px;
@@ -31,5 +31,5 @@
 #SubsectionHeader {
 	@include utils.text-reset;
 
-	padding-bottom: var(--text-spacing);
+	padding-block-end: var(--text-spacing);
 }

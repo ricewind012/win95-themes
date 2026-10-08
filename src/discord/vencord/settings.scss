@@ -1,21 +1,16 @@
 @use "shared/controls";
 @use "shared/tabs";
 @use "shared/text";
+@use "shared/window";
 @use "shared++/utils";
 
 %-vencord-groupbox-header {
 	&::before {
-		content: var(--header-text);
-
-		left: 10px;
-
 		@include utils.legend-as-div;
-	}
-}
 
-.header__49fc1.vc-margin-bottom-8 {
-	font-weight: bold;
-	margin: 0;
+		content: var(--header-text);
+		inset-inline-start: 10px;
+	}
 }
 
 .container__75920 {
@@ -65,10 +60,10 @@
 }
 
 .vc-addon-card {
-	transform: none;
 	background: none;
 	border: none;
 	padding: 0;
+	transform: none;
 }
 
 .vc-addon-card-disabled {
@@ -80,9 +75,8 @@
 }
 
 .vc-addon-header {
-	gap: var(--label-spacing);
-
 	align-items: start;
+	gap: var(--label-spacing);
 
 	& > div:not([class]) {
 		order: -1;
@@ -91,9 +85,8 @@
 
 .vc-addon-note {
 	color: var(--color-gray-text);
-	margin-left: calc(var(--sel-button-size) + var(--label-spacing));
-
 	height: unset;
+	margin-inline-start: calc(var(--sel-button-size) + var(--label-spacing));
 }
 
 .vc-plugin-modal-description {
@@ -146,6 +139,10 @@
 	height: unset;
 }
 
+.vc-plugins-setting-content {
+	gap: var(--text-spacing);
+}
+
 .vc-plugins-setting-description {
 	color: var(--color-gray-text);
 }
@@ -192,22 +189,60 @@
 	}
 }
 
+.vc-settings-modal-link-icon {
+	display: none;
+}
+
+.vc-settings-modal-links {
+	gap: 0;
+	inset-block-start: calc(var(--titlebar-height) + var(--dialog-spacing));
+	inset-inline-end: calc(var(--dialog-spacing));
+	position: absolute;
+
+	& > * {
+		@include controls.button;
+		@include controls.icon-button;
+
+		&.vc-settings-modal-favorite-button {
+			--button-img: icon("book");
+		}
+
+		&[aria-label="View more info"] {
+			--button-img: icon("question");
+		}
+
+		&[aria-label="View source code"] {
+			--button-img: icon("url");
+		}
+	}
+}
+
+.vc-plugin-modal-tag {
+	@include window.statusbar-item;
+
+	border: none;
+}
+
+.vc-plugin-modal-tags {
+	@include window.statusbar;
+
+	margin-block: var(--text-spacing);
+}
+
 .vc-settings-quickActions-card {
 	box-shadow: none;
-	gap: 0;
-	padding: 0;
-	margin: 0;
-
 	display: flex;
 	flex-direction: column;
+	gap: 0;
+	margin: 0;
+	padding: 0;
 	width: 50%;
 
 	&:not(:nth-child(2):last-child)::after {
 		content: "";
+		margin-block: 8px;
 
 		@include controls.separator;
-
-		margin-block: 8px;
 	}
 }
 
@@ -231,7 +266,7 @@
 
 .vc-settings-theme-grid {
 	gap: var(--text-spacing);
-	margin-bottom: var(--text-spacing);
+	margin-block-end: var(--text-spacing);
 }
 
 .vc-special-title {

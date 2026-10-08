@@ -62,14 +62,12 @@
 	@include window.container($child: true);
 
 	border: none;
-
 	width: unset;
 }
 
 .scroller_c1e9c4 {
-	padding: 0;
-
 	overflow: auto;
+	padding: 0;
 }
 
 .separator_c1e9c4 {
@@ -88,19 +86,17 @@
 
 // Emotes
 .wrapper_f563df {
-	gap: 0;
-	padding: 0;
-
 	display: flex;
 	flex-direction: column;
+	gap: 0;
+	padding: 0;
 
 	.button_f563df {
 		@include menu.item($selected-sel: "&.focused_f563df");
 
 		background-color: transparent;
-
-		width: unset;
 		height: unset;
+		width: unset;
 
 		&::before {
 			content: attr(aria-label);
@@ -111,7 +107,6 @@
 
 	.customItem_c1e9c4 {
 		font: var(--text-ui);
-
 		width: 100%;
 
 		& > [aria-label=":thumbsup: :+1: :thumbup: :thumbs_up:"]::before {
@@ -120,10 +115,9 @@
 	}
 
 	& + div::before {
-		content: "";
-
-		display: block;
-
 		@include controls.separator;
+
+		content: "";
+		display: block;
 	}
 }

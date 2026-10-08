@@ -9,7 +9,7 @@ div#AppNameHeader {
 
 #ButtonContainer {
 	gap: var(--dialog-button-spacing);
-	margin-top: var(--dialog-button-spacing);
+	margin-block-start: var(--dialog-button-spacing);
 	margin-inline-end: 0;
 
 	& > div {
@@ -28,16 +28,15 @@ div#AppNameHeader {
 	border: none;
 	box-shadow: none;
 	gap: var(--text-spacing);
-	padding: 0;
-
 	overflow: auto;
+	padding: 0;
 }
 
 // Actually .DialogBodyText
 #ListHeader {
 	@include utils.text-reset;
 
-	margin-bottom: var(--text-spacing);
+	margin-block-end: var(--text-spacing);
 }
 
 #ListItem {
@@ -51,7 +50,7 @@ div#AppNameHeader {
 
 	label {
 		font: var(--text-ui);
-		padding-left: var(--label-spacing);
+		padding-inline-start: var(--label-spacing);
 	}
 }
 

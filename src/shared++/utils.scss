@@ -8,10 +8,9 @@
 	$h: $cond and 4px or 7px;
 
 	background-color: currentColor;
-	mask: icon(arrow-#{$direction}, "mono");
-
-	width: $w;
 	height: $h;
+	mask: icon(arrow-#{$direction}, "mono");
+	width: $w;
 }
 
 /// An alternative to `@include window.content-container` as a pseudo element
@@ -22,14 +21,11 @@
 	margin: var(--border-size);
 
 	&::before {
-		content: "";
-
-		position: fixed;
-		inset: var(--inset);
-
-		pointer-events: none;
-
 		box-shadow: var(--border-field);
+		content: "";
+		inset: var(--inset);
+		pointer-events: none;
+		position: fixed;
 	}
 }
 
@@ -44,19 +40,18 @@
 @mixin legend-as-div {
 	@include text.groupbox-header;
 
-	padding: 0 0.2rem;
+	inset-block-start: calc(-0.5rlh + 1px);
 	margin: 0;
-
+	padding: 0 0.2rem;
 	position: absolute;
-	top: calc(-0.5rlh + 1px);
 }
 
 @mixin move-scrollbar {
 	overflow: hidden;
 
 	& > div {
-		overflow: auto;
 		height: 100%;
+		overflow: auto;
 	}
 }
 
@@ -72,20 +67,17 @@
 
 @mixin pseudo-icon {
 	content: "";
-
-	position: absolute;
 	inset: 0;
-
 	mask: var(--button-img, none) no-repeat;
-	mask-size: var(--button-img-size, auto auto);
 	mask-position: var(--button-img-pos, center);
+	mask-size: var(--button-img-size, auto auto);
+	position: absolute;
 }
 
 @mixin pseudo-separator {
-	content: "";
-
 	@include controls.separator;
 
+	content: "";
 	display: block;
 }
 

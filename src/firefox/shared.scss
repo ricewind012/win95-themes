@@ -4,13 +4,12 @@
 	width: 16px;
 
 	& > .toolbarbutton-icon {
+		background-color: var(--color-button-text);
+		display: flex;
 		mask-image: icon("overflow", "mono");
 		mask-size: 8px 5px;
 		mask-position: center 2px;
 		mask-repeat: no-repeat;
-		background-color: var(--color-button-text);
-
-		display: flex;
 	}
 }
 
@@ -21,7 +20,6 @@
 	&[disabled] {
 		color: var(--color-button-shadow);
 		text-shadow: 1px 1px var(--color-button-highlight);
-
 		pointer-events: none;
 	}
 
@@ -31,10 +29,11 @@
 
 	&:where(:active, [checked], [open]) {
 		--offset: 1px;
-		color: transparent;
-		text-shadow: 1px 1px var(--color-button-text);
+
 		box-shadow:
 			inset -1px -1px var(--color-button-highlight),
 			inset 1px 1px var(--color-button-shadow);
+		color: transparent;
+		text-shadow: 1px 1px var(--color-button-text);
 	}
 }

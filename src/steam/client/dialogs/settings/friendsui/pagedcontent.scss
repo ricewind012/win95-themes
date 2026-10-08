@@ -9,14 +9,13 @@
 	// for bottom buttons
 	--pos: calc(var(--main-window-border-spacing) + var(--dialog-spacing));
 
+	flex-direction: column;
 	margin: var(--dialog-spacing);
-	margin-bottom: calc(
+	margin-block-end: calc(
 		var(--dialog-spacing) + var(--dialog-button-spacing) + 1lh +
 			var(--button-spacing) * 2
 	);
-
 	width: unset;
-	flex-direction: column;
 }
 
 #Content {
@@ -27,10 +26,9 @@
 	@include tabs.container;
 
 	background-color: unset;
-	padding: 0;
-
-	min-width: unset;
 	max-width: unset;
+	min-width: unset;
+	padding: 0;
 }
 
 #NavItem {

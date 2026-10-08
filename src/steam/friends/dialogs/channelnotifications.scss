@@ -29,10 +29,9 @@
 
 	.notificationsChannel {
 		gap: var(--label-spacing);
-		margin-bottom: var(--text-spacing);
-
 		height: unset;
 		justify-content: start;
+		margin-block-end: var(--text-spacing);
 	}
 
 	.notificationsChannelListContainer {

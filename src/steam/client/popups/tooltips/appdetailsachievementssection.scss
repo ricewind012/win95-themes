@@ -4,18 +4,16 @@
 #SingleAchievementProgressBar {
 	@include controls.progress-bar($filled-sel: "#AchievementProgress");
 
-	// Align with text
-	margin-top: 1px;
-
 	flex-grow: 1;
+	// Align with text
+	margin-block-start: 1px;
 }
 
 #SingleAchievementProgressContainer {
-	gap: var(--text-spacing);
-	margin-top: var(--text-spacing);
-
 	display: flex;
 	flex-direction: row-reverse;
+	gap: var(--text-spacing);
+	margin-block-start: var(--text-spacing);
 
 	#ProgressLabel {
 		@include utils.parentheses;

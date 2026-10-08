@@ -9,9 +9,8 @@
 #AddShowcase {
 	@include controls.button($disabled-sel: "&#Disabled");
 
-	opacity: 1;
-
 	justify-content: center;
+	opacity: 1;
 
 	svg {
 		display: none;
@@ -20,16 +19,16 @@
 
 #AddShowcaseRow,
 #DoneReorderingRow {
+	inset-block-start: anchor(top);
+	inset-inline-start: anchor(left);
 	margin-inline: var(--toolbar-container-spacing);
-
 	position: fixed;
 	position-anchor: --librarymainpanel;
-	top: anchor(top);
-	left: anchor(left);
 }
 
 #ChildrenContainer {
 	--library_section-display: block;
+
 	margin: var(--appdetails_container-spacing-y)
 		var(--appdetails_container-spacing-x);
 }
@@ -57,7 +56,7 @@
 #CountDisplay {
 	@include utils.text-reset;
 
-	margin-left: var(--text-spacing);
+	margin-inline-start: var(--text-spacing);
 }
 
 #DeleteButton {
@@ -103,7 +102,6 @@
 		#Message {
 			font: inherit;
 			margin: var(--library_section-spacing) auto;
-
 			position: unset;
 		}
 
@@ -116,12 +114,11 @@
 #ShowcaseHeader {
 	@include shared.library_section-header;
 
+	align-items: center;
+	border: none;
 	color: var(--color-button-text);
 	font: inherit;
 	gap: var(--text-spacing);
-	border: none;
-
-	align-items: center;
 	height: 100%;
 
 	#Rule {

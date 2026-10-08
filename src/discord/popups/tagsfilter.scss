@@ -7,10 +7,9 @@
 	@include window.container($child: true);
 
 	border: none;
-
-	width: auto;
 	display: flex;
 	flex-direction: column-reverse;
+	width: auto;
 
 	.textButton__7a01b {
 		@include menu.item($selected-sel: "&.hack");
@@ -40,9 +39,8 @@
 
 	background-color: transparent;
 	border: none;
-
-	width: 100%;
 	height: unset;
+	width: 100%;
 
 	&[aria-pressed="true"] {
 		@include menu.item-check;
@@ -54,8 +52,7 @@
 }
 
 .tagContainer__5808f {
+	flex-direction: column;
 	gap: 0;
 	padding: 0;
-
-	flex-direction: column;
 }

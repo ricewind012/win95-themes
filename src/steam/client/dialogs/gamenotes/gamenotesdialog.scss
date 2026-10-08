@@ -1,4 +1,5 @@
 @use "shared/controls";
+@use "shared/tabs";
 
 #CloseWindowButton {
 	height: unset;
@@ -8,31 +9,45 @@
 	@include controls.text-field;
 
 	& > .ProseMirror {
-		padding: 0;
-
 		overflow: auto;
+		padding: 0;
+	}
+}
+
+#NewNoteButton {
+	--button-img: icon("edit");
+	@include controls.icon-button;
+
+	margin-inline-start: var(--icon-button-width);
+	width: unset;
+
+	svg {
+		display: none;
 	}
 }
 
 #NoteActions {
 	gap: var(--dialog-button-spacing);
-	margin-top: var(--dialog-button-spacing);
-
+	justify-content: end;
+	margin-block-start: var(--dialog-button-spacing);
 	position: unset;
-	justify-content: right;
 
 	.DialogButton {
 		opacity: 1;
 	}
 
 	svg {
-		width: var(--icon-size);
 		height: var(--icon-size);
+		width: var(--icon-size);
 	}
 }
 
 #NoteEditorArea {
 	margin: 0;
+}
+
+#NotePage {
+	@include tabs.content;
 }
 
 #Toolbar {

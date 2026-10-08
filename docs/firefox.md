@@ -1,8 +1,10 @@
 # Firefox
 
-Last tested version is 149.0a1! Closest ESR version is 140, so if the theme happens to not receive updates, you can try using that version instead.
+Last tested version is 158 (on Nightly)!
 
-## Usage
+![Main Window](../assets/preview/firefox/window.png)
+
+## Installing
 
 1. Install [fx-autoconfig](https://github.com/MrOtherGuy/fx-autoconfig).
 2. Execute the following in terminal (edit the paths!):
@@ -13,6 +15,7 @@ profile_path="/path/to/profile/chrome"
 rm "$profile_path/CSS"/*
 ln -s "$theme_path/src/shared/colors" "$profile_path"
 ln -s "$theme_path/src/firefox/win95_main.uc.mjs" "$profile_path/JS"
+ln -s "$theme_path/src/userscript" "$profile_path/JS"
 ln -s "$theme_path/dist/firefox_global.css" "$profile_path/CSS/firefox_global.uc.css"
 ln -s "$theme_path/dist/firefox_agent.css" "$profile_path/CSS/win95_agent.uc.css"
 ln -s "$theme_path/dist/firefox_author.css" "$profile_path/CSS/win95_author.uc.css"
@@ -28,13 +31,14 @@ user_pref("widget.gtk.overlay-scrollbars.enabled", false);
 user_pref("widget.non-native-theme.scrollbar.size.override", 16);
 user_pref("widget.non-native-theme.scrollbar.style", 4);
 
-// Optional - may work without them, but I did not test with defaults
+// Optional - may work without them, but they were not tested with defaults
 user_pref("browser.tabs.tabMinWidth", 120);
 user_pref("browser.theme.dark-private-windows", false);
 user_pref("browser.urlbar.trimURLs", false);
 user_pref("identity.fxaccounts.enabled", false);
 
 // These have to be enabled, as they are likely to be removed sooner or later
+user_pref("browser.urlbar.trustPanel.featureGate", true);
 user_pref("sidebar.revamp", true);
 ```
 
@@ -67,13 +71,13 @@ user_pref("sidebar.revamp", true);
 
 ## TODO
 
-1. Tabs (maybe)
-   - Tree tab groups
-   - Sidebar expand on hover
+1. Sidebar expand on hover (maybe)
 
 2. Content (including sidebar panels)
 
-   Will have to wait for Mozilla to replace XUL elements with their newer ones, so not any time soon.
+   ~~Will have to wait for Mozilla to replace XUL elements with their newer
+   ones, so not any time soon.~~ Update for settings redesign: wait until the
+   old one is gone
 
    Maybe also open about pages in a window and give them a window styling:
 
@@ -102,7 +106,3 @@ user_pref("sidebar.revamp", true);
    - Stylus
    - uBlock Origin
    - Violentmonkey
-
-## Preview
-
-![Main Window](../assets/preview/firefox/window.png)

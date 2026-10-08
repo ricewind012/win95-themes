@@ -4,20 +4,17 @@
 @use "shared/variables";
 
 * {
-	outline: none;
 	border-radius: 0;
-
 	box-sizing: border-box;
-
+	outline: none;
 	transition: none;
 }
 
 body {
+	box-sizing: border-box;
 	font: var(--text-ui);
 	image-rendering: pixelated;
 	margin: 0;
-
-	box-sizing: border-box;
 }
 
 ::placeholder {

@@ -5,7 +5,6 @@
 	@include listbox.container;
 
 	font: var(--text-ui);
-
 	width: 320px;
 
 	// The actual listbox
@@ -15,8 +14,8 @@
 		padding: 0;
 	}
 
-	.select-box-dropdown-list-container,
-	.select-box-details-pane {
+	.select-box-details-pane,
+	.select-box-dropdown-list-container {
 		padding: 0;
 	}
 

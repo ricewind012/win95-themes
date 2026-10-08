@@ -10,7 +10,6 @@ dialog {
 		@include window.titlebar($focused-sel: "&");
 
 		margin: 0;
-
 		max-width: unset;
 	}
 }

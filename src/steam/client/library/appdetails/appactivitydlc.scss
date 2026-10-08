@@ -1,0 +1,47 @@
+@use "shared/controls";
+@use "steam/shared";
+
+#CarouselImage {
+	box-shadow: none;
+}
+
+#ContentCarousel {
+	@include shared.library_section-content;
+
+	margin: 0;
+}
+
+#Contents {
+	all: unset;
+
+	// #pageablecontainer_HeaderPageControls
+	& > :first-child > :first-child {
+		align-items: start;
+		flex-direction: column;
+
+		// #appdetailssectionheader_SectionHeader
+		// this has some Reset class, TODO when web-app-class-names maybe
+		& > :first-child {
+			box-shadow: none;
+			padding: 0;
+		}
+	}
+}
+
+#Rollup {
+	margin: 0;
+	// Its parent is appdetailsactivitysection_InnerContainer
+	margin-block-start: calc(var(--text-spacing) * -1);
+	position: relative;
+}
+
+#ViewAll {
+	@include controls.button;
+}
+
+#ViewAllRow {
+	inset-block-end: var(--appdetails_container-spacing-y);
+	inset-inline-start: var(--appdetails_container-spacing-x);
+	margin: 0;
+	position: absolute;
+}

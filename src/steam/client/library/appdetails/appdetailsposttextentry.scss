@@ -2,7 +2,6 @@
 
 #Controls {
 	gap: var(--dialog-button-spacing);
-
 	max-height: unset;
 }
 
@@ -15,8 +14,8 @@
 #PostButton {
 	@include controls.button;
 
-	width: unset;
 	height: var(--icon-buttin-height);
+	width: unset;
 
 	#Label {
 		color: inherit;

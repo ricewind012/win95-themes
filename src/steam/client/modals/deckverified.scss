@@ -25,8 +25,8 @@
 #CompatibilityDetailRatingSummary {
 	color: inherit;
 	font: inherit;
-	padding: 0;
 	margin-inline: var(--messagebox-spacing);
+	padding: 0;
 
 	// unknown compat
 	&:last-child {
@@ -56,9 +56,9 @@
 }
 
 #CompatibilityDetailsInterior_NoScroll {
-	padding: 8px;
-
 	--inset: 0px;
+
+	padding: 8px;
 	transform-style: preserve-3d;
 }
 
@@ -68,24 +68,23 @@
 	padding-inline-start: calc(var(--icon-size) + 1em);
 
 	&:last-child {
-		padding-bottom: 0;
+		padding-block-end: 0;
 	}
 }
 
 #CompatibilityDetailsResultIcon {
-	padding: 0;
 	margin-inline-end: 1em;
+	padding: 0;
 }
 
 #CompatibilityDetailsRow {
+	align-items: center;
 	color: inherit;
 	font: inherit;
-	padding-bottom: 1em;
-
-	align-items: center;
+	padding-block-end: 1em;
 
 	&:last-child {
-		padding-bottom: 0;
+		padding-block-end: 0;
 	}
 }
 
@@ -94,7 +93,7 @@
 }
 
 #CompatibilityNotes {
-	border-top: 1px solid var(--color-window-text);
+	border-block-start: 1px solid var(--color-window-text);
 	padding-block: 1em 0;
 }
 
@@ -105,7 +104,7 @@
 #DialogHeader {
 	@include window.titlebar($focused-sel: "&");
 
-	margin-bottom: 10px;
+	margin-block-end: 10px;
 }
 
 #DialogTitle {

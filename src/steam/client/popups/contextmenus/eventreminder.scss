@@ -7,20 +7,18 @@
 }
 
 #ReminderCalendarOptions {
+	flex-direction: column;
 	padding: 0;
 
-	flex-direction: column;
-
 	&::before {
-		content: "";
-
 		@include controls.separator;
+
+		content: "";
 	}
 
 	#ReminderOption {
-		text-decoration: none;
-
 		text-align: start;
+		text-decoration: none;
 	}
 }
 

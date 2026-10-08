@@ -10,7 +10,11 @@
 }
 
 ::-webkit-scrollbar-thumb {
-	visibility: visible;
 	border: none;
 	border-radius: 0;
+	visibility: visible;
+}
+
+.scrollbarGutterStable_d125d2 {
+	scrollbar-gutter: unset;
 }

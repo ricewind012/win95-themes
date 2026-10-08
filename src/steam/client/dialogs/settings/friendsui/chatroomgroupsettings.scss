@@ -5,10 +5,9 @@
 #LeaveButton {
 	@include controls.button;
 
-	text-transform: unset;
-
+	inset-block-end: var(--pos);
 	position: fixed;
-	bottom: var(--pos);
+	text-transform: unset;
 
 	svg {
 		display: none;
@@ -16,10 +15,10 @@
 }
 
 #Avatar {
-	filter: unset;
-	transform: unset;
 	box-shadow: none;
+	filter: unset;
 	margin: 0;
+	transform: unset;
 }
 
 #AvatarAndUser {
@@ -31,15 +30,14 @@
 }
 
 #Back {
-	right: var(--pos);
+	inset-inline-end: var(--pos);
 }
 
 #ChannelsButtons {
+	inset-block-end: var(--pos);
+	inset-inline-end: var(--pos);
 	margin: 0;
-
 	position: fixed;
-	right: var(--pos);
-	bottom: var(--pos);
 
 	svg {
 		display: none;
@@ -52,7 +50,7 @@
 }
 
 #LeaveButton {
-	left: var(--pos);
+	inset-inline-start: var(--pos);
 }
 
 #PermissionsGroup {
@@ -60,8 +58,7 @@
 }
 
 #RoleNameHeader {
-	margin-bottom: 8px;
-
+	margin-block-end: 8px;
 	min-height: unset;
 
 	svg {

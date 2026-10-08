@@ -3,16 +3,14 @@
 
 #BackgroundDiskSpace #DiskSpace {
 	color: unset;
-	font: unset;
-
 	display: flex;
+	font: unset;
 	height: unset;
 
 	#Icon {
 		background-image: icon("question");
 		background-position: center;
 		background-repeat: no-repeat;
-
 		// Align with the operators
 		width: 20px;
 
@@ -33,19 +31,18 @@
 		color: inherit;
 		font: inherit;
 		letter-spacing: 0;
+		margin-block-end: var(--text-spacing);
 		text-transform: unset;
-		margin-bottom: var(--text-spacing);
 	}
 }
 
 #BackgroundSettingOperator {
 	all: unset;
 
-	line-height: 1;
-	margin-top: calc(1lh + var(--text-spacing));
-
-	display: flex;
 	align-items: center;
+	display: flex;
+	line-height: 1;
+	margin-block-start: calc(1lh + var(--text-spacing));
 
 	&#Multiply {
 		&::before {
@@ -59,11 +56,11 @@
 }
 
 #BackgroundSettingRow {
+	border: none;
 	color: inherit;
 	font: inherit;
-	border: none;
-	padding: 0;
 	margin: 0;
+	padding: 0;
 
 	&:not(#AddPerGameRow)::after {
 		@include utils.pseudo-separator;
@@ -72,7 +69,7 @@
 
 #BackgroundSettingSecondRow {
 	gap: var(--text-spacing);
-	padding-bottom: var(--text-spacing);
+	padding-block-end: var(--text-spacing);
 }
 
 // In gamerecordingwarning
@@ -104,8 +101,8 @@
 
 	img,
 	svg {
-		width: var(--icon-size);
 		height: var(--icon-size);
+		width: var(--icon-size);
 	}
 
 	span {
@@ -144,7 +141,7 @@
 		color: var(--color-gray-text);
 		font: inherit;
 		gap: var(--text-spacing);
-		margin-top: var(--text-spacing);
+		margin-block-start: var(--text-spacing);
 	}
 
 	#Header {

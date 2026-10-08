@@ -3,7 +3,6 @@
 
 #ButtonContainer {
 	gap: var(--dialog-button-spacing);
-
 	justify-content: start;
 }
 
@@ -17,10 +16,9 @@
 }
 
 #FeaturedItemDetailsContainer {
-	gap: var(--text-spacing);
-
 	display: flex;
 	flex-direction: column;
+	gap: var(--text-spacing);
 }
 
 #FeaturedItemHideButton {
@@ -28,14 +26,13 @@
 
 	// TODO: utils.icon
 	background-color: currentColor;
-	mask: var(--button-img) no-repeat;
-	mask-size: var(--button-img-size);
-	mask-position: var(--button-img-pos);
-
-	top: 4px;
-	right: 4px;
-	width: var(--icon-size);
 	height: var(--icon-size);
+	inset-block-start: 4px;
+	inset-inline-end: 4px;
+	mask: var(--button-img) no-repeat;
+	mask-position: var(--button-img-pos);
+	mask-size: var(--button-img-size);
+	width: var(--icon-size);
 
 	svg {
 		display: none;
@@ -49,8 +46,7 @@
 }
 
 #FeaturedItemImage {
-	margin-right: var(--text-spacing);
-
+	margin-inline-end: var(--text-spacing);
 	width: var(--appdetails_highlight-img-size);
 }
 

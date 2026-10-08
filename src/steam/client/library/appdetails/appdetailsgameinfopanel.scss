@@ -2,18 +2,19 @@
 @use "shared++/utils";
 
 #Container {
-	@include controls.tooltip;
+	@include controls.groupbox;
 	@include utils.text-reset;
 
 	background-color: transparent;
+	margin: 0;
 }
 
 #DeckVerifiedInfo {
 	background-color: transparent;
 	color: inherit;
 	gap: var(--text-spacing);
+	margin-block-end: var(--text-spacing);
 	padding: 0;
-	margin-bottom: var(--text-spacing);
 
 	&::before {
 		@include utils.pseudo-separator;
@@ -24,7 +25,7 @@
 	}
 
 	#CompatToolContainer {
-		margin-left: var(--text-spacing);
+		margin-inline-start: var(--text-spacing);
 	}
 
 	#Details {

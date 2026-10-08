@@ -11,16 +11,14 @@ $-sel-arrow-forward: "> :nth-child(4)";
 	&::after {
 		@include utils.pseudo-icon;
 
-		top: 0;
-		width: var(--icon-width);
 		height: var(--icon-height);
-
+		inset-block-start: 0;
 		pointer-events: none;
+		width: var(--icon-width);
 	}
 
 	&::before {
 		background-color: var(--color-button-text);
-
 		z-index: 1;
 	}
 }
@@ -32,8 +30,7 @@ $-sel-arrow-forward: "> :nth-child(4)";
 
 	&::after {
 		background-color: var(--color-button-highlight);
-
-		top: var(--icon-disabled-offset);
+		inset-block-start: var(--icon-disabled-offset);
 	}
 }
 
@@ -70,9 +67,8 @@ $-sel-arrow-forward: "> :nth-child(4)";
 	--icon-height: var(--steamdesktop_icon-button-size);
 	--icon-disabled-offset: 1px;
 
-	padding-bottom: 2px;
 	margin: 0 var(--toolbar-container-spacing);
-
+	padding-block-end: 2px;
 	position: relative;
 
 	// Use other buttons as icons, as svgs can not have pseudo-elements
@@ -82,7 +78,7 @@ $-sel-arrow-forward: "> :nth-child(4)";
 
 		&::before,
 		&::after {
-			left: 0;
+			inset-inline-start: 0;
 		}
 	}
 
@@ -92,7 +88,7 @@ $-sel-arrow-forward: "> :nth-child(4)";
 
 		&::before,
 		&::after {
-			left: var(--icon-width);
+			inset-inline-start: var(--icon-width);
 		}
 	}
 
@@ -100,7 +96,7 @@ $-sel-arrow-forward: "> :nth-child(4)";
 		@extend %-arrow-disabled;
 
 		&::after {
-			left: var(--icon-disabled-offset);
+			inset-inline-start: var(--icon-disabled-offset);
 		}
 	}
 
@@ -108,7 +104,7 @@ $-sel-arrow-forward: "> :nth-child(4)";
 		@extend %-arrow-disabled;
 
 		&::after {
-			left: calc(var(--icon-width) + var(--icon-disabled-offset));
+			inset-inline-start: calc(var(--icon-width) + var(--icon-disabled-offset));
 		}
 	}
 }
@@ -116,22 +112,21 @@ $-sel-arrow-forward: "> :nth-child(4)";
 #SuperNavMenu {
 	@include controls.button;
 
-	text-transform: unset;
-
 	height: var(--steamdesktop_icon-button-size);
+	text-transform: unset;
 
 	&:active,
 	&#Selected {
 		// controls.button-active + active tab-button state
 		background: var(--checkerboard);
+		box-shadow: var(--border-tab-button-sunken);
 		color: transparent;
 		font-weight: bold;
 		text-shadow: 1px 1px var(--color-button-text);
-		box-shadow: var(--border-tab-button-sunken);
 	}
 
 	&:where(:nth-child(-n + 1 of &)),
 	&:where(:nth-last-child(-n + 1 of &)) {
-		margin-left: var(--toolbar-spacing);
+		margin-inline-start: var(--toolbar-spacing);
 	}
 }

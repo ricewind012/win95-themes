@@ -5,17 +5,21 @@
 :where([role="tab"]) {
 	@include tabs.tab($selected-sel: "&[aria-selected='true']");
 
+	cursor: unset;
 	font: var(--text-ui);
 
-	cursor: unset;
-
+	// TODO(modernui): remove
 	&[aria-selected="true"]:not(.tab) {
-		margin-top: 1px;
+		margin-block-start: 1px;
+
+		.monaco-workbench.modern-ui & {
+			margin-block-start: 0;
+		}
 	}
 
 	.action-label {
-		font: var(--text-ui);
 		color: inherit;
+		font: var(--text-ui);
 		padding: 0;
 	}
 
@@ -36,7 +40,7 @@
 		div.monaco-workbench
 			.part.editor
 			> .content
-			.editor-group-container.active
+			.editor-group-container:is(.active, .inactive)
 			> .title
 			.tabs-container
 			> &:hover {
@@ -44,22 +48,20 @@
 		}
 	}
 
-	&.dirty:hover,
-	&:not(.dirty) {
-		.codicon-close::before {
-			content: "";
-
-			width: 8px;
-			height: 7px;
-
+	&:not(.dirty),
+	&.dirty:hover {
+		.codicon-close-small::before {
 			background-color: currentColor;
+			content: "";
+			height: 7px;
 			mask: icon("close", "mono");
+			width: 8px;
 		}
 	}
 }
 
-.tab-border-top-container,
-.tab-border-bottom-container {
+.tab-border-bottom-container,
+.tab-border-top-container {
 	display: none;
 }
 
@@ -68,19 +70,19 @@
 
 	a,
 	span {
-		font: var(--text-ui);
 		cursor: unset;
+		font: var(--text-ui);
 	}
 }
 
 .tab-actions {
-	margin-left: var(--text-spacing);
+	margin-inline-start: var(--text-spacing);
 
 	&,
-	.monaco-action-bar,
-	.action-label {
-		width: auto;
+	.action-label,
+	.monaco-action-bar {
 		height: auto;
+		width: auto;
 	}
 
 	/*
@@ -119,15 +121,15 @@
 	.action-item {
 		// Tab borders
 		--insert-border-color: transparent;
+
 		// Allow icon tabs to be small
 		min-width: unset;
 
 		&::before,
 		&::after {
 			display: block;
-
-			opacity: 1;
 			margin: 0;
+			opacity: 1;
 		}
 	}
 }
@@ -138,29 +140,27 @@
 		height: 100%;
 
 		.action-item:not(.select-container) {
+			cursor: unset;
 			font: var(--text-ui);
 			text-transform: unset;
 
-			cursor: unset;
-
 			&::before,
 			&::after {
-				opacity: 1;
 				background-color: transparent;
-				margin: 0;
-
 				display: block;
+				margin: 0;
+				opacity: 1;
 			}
 		}
 	}
 
 	.tabs-container {
-		padding: 0;
 		border: none;
+		padding: 0;
 
 		.monaco-list {
-			width: calc(100% - 64px);
 			height: calc(100% - 2px);
+			width: calc(100% - 64px);
 		}
 
 		.actions {
@@ -180,14 +180,13 @@
 	& > .monaco-action-bar .action-item .action-label {
 		@include tabs.tab($selected-sel: "&.checked");
 
-		opacity: 1;
 		font-size: var(--text-ui-size);
-
+		opacity: 1;
 		overflow: visible;
 
 		&.checked {
 			background-color: var(--color-button-face);
-			margin-top: 1px;
+			margin-block-start: 1px;
 		}
 	}
 }
@@ -196,11 +195,10 @@
 .navbar {
 	@include tabs.container;
 
-	font: var(--text-ui);
 	border: none;
-	padding: 0;
-
+	font: var(--text-ui);
 	height: unset;
+	padding: 0;
 }
 
 // !important
@@ -215,6 +213,6 @@
 	@include tabs.tab($selected-sel: "&[aria-checked='true']");
 
 	&[aria-checked="true"] {
-		margin-top: 1px;
+		margin-block-start: 1px;
 	}
 }

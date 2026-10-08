@@ -2,9 +2,8 @@
 
 #ButtonRow {
 	gap: var(--dialog-button-spacing);
-	margin: var(--dialog-spacing);
-
 	justify-content: end;
+	margin: var(--dialog-spacing);
 
 	#ActionButton,
 	#CancelButton {
@@ -30,10 +29,9 @@
 	@include window.container($child: true);
 
 	font: inherit;
-	margin: auto;
-
-	position: fixed;
 	inset: 0;
+	margin: auto;
+	position: fixed;
 }
 
 #Title {

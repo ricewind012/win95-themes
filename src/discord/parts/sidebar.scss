@@ -7,13 +7,13 @@
 .container__2637a {
 	@include window.content-container;
 
+	margin-block-start: var(--toolbar-top-margin);
+	margin-inline-start: 0;
 	mask: none;
-	margin-top: var(--toolbar-top-margin);
-	margin-left: 0;
 
 	.scroller__629e4 {
-		padding: 0;
 		margin: 0;
+		padding: 0;
 	}
 }
 
@@ -25,6 +25,6 @@
 
 .sidebarList__5e434 {
 	border: none;
-	margin-right: var(--window-gap);
-	margin-bottom: var(--custom-app-panels-height, 0);
+	margin-block-end: var(--custom-app-panels-height, 0);
+	margin-inline-end: var(--window-gap);
 }

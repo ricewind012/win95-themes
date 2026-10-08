@@ -2,9 +2,9 @@
 @use "shared/menu";
 
 #AppCount {
-	opacity: 1;
 	color: var(--color-gray-text);
-	padding-left: var(--text-spacing);
+	opacity: 1;
+	padding-inline-start: var(--text-spacing);
 }
 
 #Row {

@@ -8,10 +8,9 @@
 #AppDetailsMain {
 	background-color: var(--color-window);
 	border: none;
-
 	// for toolbar; 2rlh is good enough by default (12px * 1.2 * 2 = ~29px),
 	// as it fits --icon-button-height and a bit of spacing under the toolbar.
-	top: 2rlh;
+	inset-block-start: 2rlh;
 
 	// for soundtrack
 	:where(& > :not(:empty)) {
@@ -29,16 +28,15 @@
 		@include window.titlebar-button-close;
 
 		background-image: none;
-
+		inset-block-start: var(--offset);
+		inset-inline-end: var(--offset);
 		position: absolute;
-		top: var(--offset);
-		right: var(--offset);
 		width: unset;
 	}
 
 	& > div {
-		background-color: transparent;
 		backdrop-filter: none;
+		background-color: transparent;
 	}
 }
 
@@ -48,7 +46,6 @@
 
 #LibraryWindowDivider {
 	background-color: transparent;
-
 	width: 3px;
 }
 
