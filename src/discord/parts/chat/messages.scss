@@ -1,71 +1,11 @@
 @use "shared/controls";
 
-.avatar_c19a55 {
-	margin: 0;
-}
-
-.buttonContainer_c19a55 {
-	.hoverBarButton_f84418 {
-		@include controls.button;
-		@include controls.icon-button;
-
-		.icon_f84418:not(.buttonContent_f84418) {
-			display: none;
-		}
-	}
-}
-
-.buttons__5126c {
+.popover_f84418.popover_f84418 {
 	background-color: transparent;
 	border: none;
 	padding: 0;
-}
 
-.headerText_c19a55 {
-	margin: 0;
-}
-
-.messageContent_c19a55 {
-	font-size: var(--text-ui-size);
-}
-
-.repliedTextContent_c19a55 {
-	margin: 0;
-	padding: 0;
-}
-
-.timestamp_c19a55 {
-	font: var(--text-ui);
-	height: unset;
-}
-
-.username_c19a55 {
-	font: var(--text-ui);
-	font-weight: bold;
-}
-
-.wrapper_c19a55 {
-	--chat-markup-line-height: 1.5;
-
-	min-height: unset;
-
-	&.compact_c19a55 {
-		i {
-			display: contents;
-			opacity: 1;
-			position: unset;
-		}
-
-		.timestamp {
-			width: 3.5rem;
-		}
-	}
-
-	&.cozy_c19a55 {
-		.header_c19a55 {
-			line-height: var(--text-line);
-			margin-block-end: var(--text-spacing);
-			min-height: unset;
-		}
+	.icon_f84418:not(.buttonContent_f84418) {
+		display: none;
 	}
 }

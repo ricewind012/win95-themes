@@ -1,0 +1,52 @@
+.avatar_c19a55 {
+	margin: 0;
+}
+
+.headerText_c19a55 {
+	margin: 0;
+}
+
+.messageContent_c19a55 {
+	font-size: var(--text-ui-size);
+}
+
+.repliedTextContent_c19a55 {
+	margin: 0;
+	padding: 0;
+}
+
+.timestamp_c19a55 {
+	font: var(--text-ui);
+	height: unset;
+}
+
+.username_c19a55 {
+	font: var(--text-ui);
+	font-weight: bold;
+}
+
+.wrapper_c19a55 {
+	--chat-markup-line-height: 1.5;
+
+	min-height: unset;
+
+	&.compact_c19a55 {
+		.separator_c19a55 {
+			display: contents;
+			opacity: 1;
+			position: unset;
+		}
+
+		.timestamp_c19a55 {
+			width: 3.5rem;
+		}
+	}
+
+	&.cozy_c19a55 {
+		.header_c19a55 {
+			line-height: var(--text-line);
+			margin-block-end: var(--text-spacing);
+			min-height: unset;
+		}
+	}
+}

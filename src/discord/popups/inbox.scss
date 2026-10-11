@@ -31,25 +31,3 @@
 .inboxTitle_ab6641 {
 	display: none;
 }
-
-.recentMentionsPopout__95796 {
-	min-width: unset;
-	width: calc(100% - var(--dialog-spacing) * 2);
-
-	&.messagesPopoutWrap__432f4 {
-		@include tabs.content($compact: true);
-
-		margin-block-start: 0;
-
-		&::before {
-			box-shadow: var(--border-field);
-			content: "";
-			inset: calc(var(--border-size) + var(--tabpanel-spacing));
-			position: absolute;
-		}
-	}
-
-	.channelHeader__35a7e {
-		display: none;
-	}
-}

@@ -1,6 +1,7 @@
 @use "shared/window";
 @use "shared++/utils";
 
+// popout & dialog respectively
 .body__5be3e,
 .profileBody__9c3be {
 	gap: 0;
@@ -39,10 +40,6 @@
 	.root_fccfdf {
 		@include window.statusbar;
 	}
-}
-
-.profile__9c3be {
-	background-color: var(--color-button-face);
 }
 
 .outer_c0bea0 {

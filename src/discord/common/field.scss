@@ -1,0 +1,44 @@
+@use "shared/controls";
+
+.container__5a838 {
+	&[data-disabled="true"] {
+		opacity: 1;
+	}
+
+	&[data-layout="horizontal"] {
+		display: flex;
+		flex-direction: row-reverse;
+		gap: var(--label-spacing);
+		justify-content: start;
+
+		.labelContainer__5a838 {
+			gap: var(--text-spacing);
+			margin: 0;
+		}
+	}
+
+	&[data-layout="vertical"] {
+		.labelContainer__5a838 {
+			margin-block-end: var(--text-spacing);
+		}
+	}
+
+	// Restrict to settings, looks weird everywhere else
+	.contentColumn__23e6b &[data-layout="vertical"] {
+		@include controls.groupbox;
+
+		.label__5a838 {
+			@include utils.legend-as-div;
+
+			margin: 0;
+		}
+	}
+}
+
+.control__5a838 {
+	flex-shrink: 0;
+}
+
+.description__5a838 {
+	margin: 0;
+}

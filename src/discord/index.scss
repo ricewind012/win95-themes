@@ -11,13 +11,11 @@
 @use "global/tooltip" as global-tooltip;
 @use "global/variables" as global-variables;
 
-@use "global/components/channeltextarea" as global-components-channeltextarea;
-@use "global/components/searchbar" as global-components-searchbar;
-
 @use "global/controls/button" as global-controls-button;
 @use "global/controls/checkbox" as global-controls-checkbox;
 @use "global/controls/combobox" as global-controls-combobox;
 @use "global/controls/radio" as global-controls-radio;
+@use "global/controls/searchbar" as global-controls-searchbar;
 @use "global/controls/selectfield" as global-controls-selectfield;
 @use "global/controls/slider" as global-controls-slider;
 @use "global/controls/tab" as global-controls-tab;
@@ -26,19 +24,23 @@
 @use "settings/appearance" as settings-appearance;
 @use "settings/contentsocial" as settings-contentsocial;
 
+@use "common/channeltextarea" as common-channeltextarea;
+@use "common/field" as common-field;
+@use "common/message" as common-message;
+@use "common/popoveractions" as common-popoveractions;
+@use "common/popovermessages" as common-popovermessages;
+@use "common/userprofile" as common-userprofile;
+
 @use "popups/autocomplete" as popups-autocomplete;
 @use "popups/colorpicker" as popups-colorpicker;
 @use "popups/expressionpicker" as popups-expressionpicker;
 @use "popups/inbox" as popups-inbox;
 @use "popups/joinserver" as popups-joinserver;
-@use "popups/messages" as popups-messages;
 @use "popups/selectdropdown" as popups-selectdropdown;
 @use "popups/serversearch" as popups-serversearch;
 @use "popups/tagsfilter" as popups-tagsfilter;
-@use "popups/usermodal" as popups-usermodal;
-@use "popups/userpopoutown" as popups-userpopoutown;
-@use "popups/userpopout" as popups-userpopout;
-@use "popups/usershared" as popups-usershared;
+@use "popups/userpanel" as popups-userpanel;
+@use "popups/userprofile" as popups-userprofile;
 
 @use "dialogs/attachfiles" as dialogs-attachfiles;
 @use "dialogs/customstatus" as dialogs-customstatus;
@@ -49,6 +51,7 @@
 @use "dialogs/searchfilters" as dialogs-searchfilters;
 @use "dialogs/settingsnew" as dialogs-settingsnew;
 @use "dialogs/settings" as dialogs-settings;
+@use "dialogs/userprofile" as dialogs-userprofile;
 
 @use "vencord/controls" as vencord-controls;
 @use "vencord/reviewdb" as vencord-reviewdb;

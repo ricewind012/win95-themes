@@ -1,0 +1,6 @@
+@use "shared/controls";
+
+.button_f7ecac {
+	@include controls.button;
+	@include controls.icon-button;
+}
