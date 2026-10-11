@@ -58,7 +58,7 @@
 
 // !important
 div.monaco-menu .monaco-action-bar.vertical .action-label.separator {
-	@include controls.separator;
+	@include controls.separator-horizontal;
 
 	border-block-end: none;
 }

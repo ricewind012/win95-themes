@@ -23,7 +23,7 @@
 
 .DialogHBar,
 .HBar {
-	@include controls.separator;
+	@include controls.separator-horizontal;
 }
 
 .expireLinkInContainer {

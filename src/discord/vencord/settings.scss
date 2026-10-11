@@ -242,7 +242,7 @@
 		content: "";
 		margin-block: 8px;
 
-		@include controls.separator;
+		@include controls.separator-horizontal;
 	}
 }
 

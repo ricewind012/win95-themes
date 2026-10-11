@@ -105,7 +105,7 @@
 	font-size: inherit;
 
 	#TitleStatusDivider {
-		@include controls.separator-horizontal;
+		@include controls.separator-vertical;
 
 		margin-inline: var(--text-spacing);
 

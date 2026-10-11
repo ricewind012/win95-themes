@@ -58,7 +58,7 @@
 	padding: 0;
 
 	&:not(#MiniAchievements)::after {
-		@include controls.separator-horizontal;
+		@include controls.separator-vertical;
 
 		content: "";
 	}
@@ -110,7 +110,7 @@
 		}
 
 		svg {
-			@include controls.separator-horizontal;
+			@include controls.separator-vertical;
 
 			display: initial;
 			height: calc(var(--combobox-button-height) - var(--button-spacing) * 2);
@@ -181,7 +181,7 @@
 
 #StatusNameContainer {
 	&:not(:only-child)::before {
-		@include controls.separator-horizontal;
+		@include controls.separator-vertical;
 
 		content: "";
 		height: 100%;

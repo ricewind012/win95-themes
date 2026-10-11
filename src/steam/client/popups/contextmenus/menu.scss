@@ -17,7 +17,7 @@
 }
 
 #Separator {
-	@include controls.separator;
+	@include controls.separator-horizontal;
 
 	border-block-end: none;
 }

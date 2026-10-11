@@ -105,7 +105,7 @@
 	position: relative;
 
 	&::before {
-		@include controls.separator;
+		@include controls.separator-horizontal;
 
 		content: "";
 		inset-block-end: 0;

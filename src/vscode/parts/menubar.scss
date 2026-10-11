@@ -12,7 +12,7 @@
 	z-index: 2;
 
 	&::after {
-		@include controls.separator;
+		@include controls.separator-horizontal;
 
 		content: "";
 		inset-block-start: var(--menubar-height);

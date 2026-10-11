@@ -164,7 +164,7 @@
 	}
 
 	&::before {
-		@include separator-horizontal;
+		@include separator-vertical;
 
 		height: calc(var(--combobox-button-height) - var(--button-spacing) * 2);
 		margin: 0;
@@ -277,7 +277,7 @@
 	--control-img-size: 4px 4px;
 }
 
-@mixin separator {
+@mixin separator-horizontal {
 	border: none;
 	border-block-start: 1px solid var(--color-button-highlight);
 	box-shadow: 0 -1px var(--color-button-shadow);
@@ -285,7 +285,7 @@
 	margin-block-start: 3px;
 }
 
-@mixin separator-horizontal {
+@mixin separator-vertical {
 	border-inline-start: 1px solid var(--color-button-highlight);
 	box-shadow: -1px 0 var(--color-button-shadow);
 	margin-inline: var(--toolbar-spacing);

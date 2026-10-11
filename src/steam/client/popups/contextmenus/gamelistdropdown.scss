@@ -22,7 +22,7 @@
 }
 
 #Rule {
-	@include controls.separator;
+	@include controls.separator-horizontal;
 
 	margin-inline: 0;
 }

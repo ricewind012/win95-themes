@@ -11,7 +11,7 @@
 	padding: 0;
 
 	&::before {
-		@include controls.separator;
+		@include controls.separator-horizontal;
 
 		content: "";
 	}

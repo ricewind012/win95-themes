@@ -281,7 +281,7 @@
 	.action-item {
 		// !important
 		.action-label.disabled.separator {
-			@include controls.separator-horizontal;
+			@include controls.separator-vertical;
 
 			margin-block: 0;
 		}

@@ -18,7 +18,7 @@
 		&::before {
 			content: "";
 
-			@include controls.separator;
+			@include controls.separator-horizontal;
 		}
 	}
 

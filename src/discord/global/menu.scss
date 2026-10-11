@@ -71,7 +71,7 @@
 }
 
 .separator_c1e9c4 {
-	@include controls.separator;
+	@include controls.separator-horizontal;
 
 	margin-inline: 0;
 }
@@ -115,7 +115,7 @@
 	}
 
 	& + div::before {
-		@include controls.separator;
+		@include controls.separator-horizontal;
 
 		content: "";
 		display: block;
