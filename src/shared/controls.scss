@@ -33,7 +33,7 @@
 	}
 }
 
-@mixin -text-field-common($disabled-sel: "&:where(:disabled, :read-only)") {
+@mixin -text-field-common($disabled-sel: ":disabled") {
 	@include -input-common-disabled($disabled-sel);
 	@include -input-common;
 
@@ -89,7 +89,7 @@
 	outline-offset: calc(var(--button-spacing) * -1);
 }
 
-@mixin checkbox($checked-sel, $disabled-sel: "&:disabled") {
+@mixin checkbox($checked-sel, $disabled-sel: ":disabled") {
 	@include -checkbox-radio-common($checked-sel, $disabled-sel);
 
 	--control-img: icon("checkmark", "mono");
@@ -357,11 +357,11 @@
 	}
 }
 
-@mixin text-field($disabled-sel: "&:where(:disabled, :read-only)") {
+@mixin text-field($disabled-sel: "&:disabled") {
 	@include -text-field-common($disabled-sel);
 }
 
-@mixin text-field-number($disabled-sel: "&:where(:disabled, :read-only)") {
+@mixin text-field-number($disabled-sel: "&:disabled") {
 	@include text-field($disabled-sel);
 	@include generatedassets.text-field-number;
 
