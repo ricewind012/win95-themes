@@ -1,8 +1,10 @@
+@use "shared/controls";
 @use "shared++/utils";
 
 #EventDaySeparator {
-	// TODO: vertical separators
-	margin: 0 16px;
+	@include controls.separator-vertical;
+
+	margin-block: 0;
 }
 
 #EventHeaderBlock {

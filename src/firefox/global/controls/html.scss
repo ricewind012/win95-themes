@@ -107,7 +107,6 @@ moz-radio {
 		@include controls.text-field;
 
 		background-image: none;
-		// TODO(places): otherwise it's 16px
 		min-width: 150px;
 	}
 }

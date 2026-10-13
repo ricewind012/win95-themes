@@ -25,10 +25,10 @@
 }
 
 #app-mount {
+	// 1px = sidebar container offset in discord css
 	--actual-sidebar-width: calc(
 		var(--custom-guild-sidebar-width) + var(--scrollbar-size) + 1px
 	);
-	// TODO: 1px?
 	--sidebar-width: calc(
 		var(--custom-guild-sidebar-width) - var(--custom-guild-list-width)
 	);

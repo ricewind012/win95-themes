@@ -23,6 +23,11 @@
 	&:horizontal:increment {
 		@include generatedassets.scrollbar-button-horizontal-increment;
 	}
+
+	&:start:increment,
+	&:end:decrement {
+		display: none;
+	}
 }
 
 ::-webkit-scrollbar-corner,
