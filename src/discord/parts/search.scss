@@ -27,25 +27,6 @@
 	}
 }
 
-.pageControlContainer_c15210 {
-	&::before {
-		@include utils.pseudo-separator;
-	}
-
-	.pageButton_c15210 {
-		@include controls.button;
-		@include controls.icon-button($selected-sel: "&[aria-current='page']");
-
-		&.endButton_c15210 {
-			margin-inline: 4px;
-		}
-	}
-
-	.pageControl_c15210 {
-		padding-block: var(--toolbar-container-spacing);
-	}
-}
-
 .paginationDock_a98f3b {
 	border: none;
 }
