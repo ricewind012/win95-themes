@@ -1,22 +1,22 @@
 @use "shared/controls";
 
-.bar__4c059 {
+.bar_ec237e {
 	inset-block-start: 20px;
 }
 
-.barFill__4c059 {
+.barFill_ec237e {
 	display: none;
 }
 
-.grabber__4c059 {
+.grabber_ec237e {
 	border: none;
 	box-shadow: none;
 	cursor: initial;
 }
 
-.slider__4c059 {
+.slider_ec237e {
 	@include controls.slider(
-		$thumb-sel: ".grabber__4c059",
-		$track-sel: ".bar__4c059"
+		$thumb-sel: ".grabber_ec237e",
+		$track-sel: ".bar_ec237e"
 	);
 }

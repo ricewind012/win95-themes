@@ -2,15 +2,15 @@
 @use "shared/tabs";
 @use "shared/window";
 
-.container__9497c {
+.container__8cb2e {
 	@include window.container($child: true);
 }
 
-.controls_ab6641 {
+.controls__06f80 {
 	gap: 0;
 }
 
-.header_ab6641 {
+.header__06f80 {
 	background-color: transparent;
 	border: none;
 	margin: var(--dialog-spacing);
@@ -23,11 +23,11 @@
 	}
 }
 
-.headerTabs_ab6641 {
+.headerTabs__06f80 {
 	margin: 0;
 }
 
-.inboxIcon_ab6641,
-.inboxTitle_ab6641 {
+.headerIcon__06f80,
+.headerTitle__06f80 {
 	display: none;
 }
