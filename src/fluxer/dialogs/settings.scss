@@ -1,0 +1,44 @@
+@use "shared/controls";
+@use "shared/window";
+@use "shared++/utils";
+
+.SettingsHeadingLinkButton\.module__button___bnU4ZT {
+	--button-img: icon("link");
+	@include controls.button;
+	@include controls.icon-button;
+}
+
+.SettingsModalLayout\.module__closeButton___ek1BV1 {
+	@include controls.button;
+	@include window.titlebar-button;
+	@include window.titlebar-button-close;
+}
+
+.SettingsModalLayout\.module__desktopHeader___ek1BV1 {
+	@include window.titlebar($focused-sel: "&");
+}
+
+// TODO: svg unify
+.SettingsModalHeader\.module__icon___bTU5Mn {
+	display: none;
+}
+
+.SettingsSection\.module__section___NWFoVT {
+	@include controls.groupbox;
+}
+
+.SettingsSection\.module__sectionDescription___NWFoVT {
+	display: none;
+}
+
+.SettingsSection\.module__sectionHeader___NWFoVT {
+	@include utils.legend-as-div;
+}
+
+.SettingsSection\.module__sectionTitle___NWFoVT {
+	all: unset;
+}
+
+.SettingsSection\.module__sectionTitleRow___NWFoVT {
+	min-height: unset;
+}

@@ -1,0 +1,34 @@
+/// Thank God for data-flx
+///
+/// @param {String} $prefix - Currently unused - data-flx strings are insanely
+/// inconsistent.
+@mixin -gen-icons($attr, $prefix: null, $map) {
+	@each $id, $icon in $map {
+		[#{$attr}="#{$id}"] {
+			--button-img: icon(#{$icon});
+		}
+	}
+}
+
+// Chat toolbar
+@include -gen-icons(
+	$attr: "data-flx",
+	$map: (
+		"Add Friends to DM": "room-create",
+		"Hide chat": "chat-bubble-alt",
+		"Hide Member List": "user-list",
+		"Show chat": "chat-bubble-alt",
+		"Show Member List": "user-list",
+		"Show User Profile": "user-info",
+		"Show User Profile (Unavailable)": "user-info",
+		"Start Video Call": "camera",
+		"Start Voice Call": "telephone",
+
+		"channel.channel-header.inbox-button": "newspaper",
+		"channel.channel-header-components.channel-notification-settings-button.channel-header-icon.click":
+			"mail-read",
+		"channel.channel-header-components.channel-pins-button.channel-header-icon":
+			"pin",
+		"threads.threads-button.channel-header-icon": "chat-room-list",
+	)
+);

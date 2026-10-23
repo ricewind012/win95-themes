@@ -1,0 +1,61 @@
+@use "shared/controls";
+@use "shared/menu";
+@use "shared/window";
+
+.ContextMenu\.module__checkboxIndicator___RFhyMi,
+.ContextMenu\.module__itemHint___RFhyMi,
+.ContextMenu\.module__itemIcon___RFhyMi {
+	display: none;
+}
+
+.ContextMenu\.module__contextMenu___RFhyMi,
+.ContextMenu\.module__submenuPopover___RFhyMi {
+	@include window.container($child: true);
+
+	border: none;
+
+	svg {
+		display: none;
+	}
+}
+
+.ContextMenu\.module__item___RFhyMi {
+	@include menu.item(
+		// bruh
+		$selected-sel:
+			"&:is(:hover, [data-hovered], [data-focus-visible], [data-highlighted])"
+	);
+
+	border: none;
+	font: var(--text-ui);
+	min-height: unset;
+
+	&:where([data-disabled]) {
+		@include menu.item-disabled;
+
+		opacity: 1;
+	}
+
+	&:where([aria-haspopup]) {
+		@include menu.item-parent;
+	}
+
+	&:where([role="menuitemcheckbox"]) {
+		@include menu.item-check;
+	}
+
+	&:where([role="menuitemradio"]) {
+		@include menu.item-radio;
+	}
+}
+
+.ContextMenu\.module__itemLabel___RFhyMi {
+	min-height: unset;
+}
+
+.ContextMenu\.module__separator___RFhyMi {
+	@include controls.separator-horizontal;
+
+	margin-inline: 0;
+	opacity: 1;
+}

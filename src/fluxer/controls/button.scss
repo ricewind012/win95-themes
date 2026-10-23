@@ -1,0 +1,5 @@
+@use "shared/controls";
+
+.Button\.module__button___X25lMl {
+	@include controls.button($disabled-sel: "&:disabled, &[data-disabled]");
+}

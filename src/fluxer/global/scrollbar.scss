@@ -1,0 +1,28 @@
+@use "shared/scrollbar";
+
+.ScrollerTrack\.module__thumb___dmFlZX {
+	@include scrollbar.thumb;
+}
+
+.ScrollerTrack\.module__track___dmFlZX {
+	@include scrollbar.container;
+
+	opacity: 1;
+	position: unset;
+
+	&:where(.ScrollerTrack\.module__horizontaal___dmFlZX) {
+		width: unset;
+
+		.ScrollerTrack\.module__thumb___dmFlZX {
+			height: inherit;
+		}
+	}
+
+	&:where(.ScrollerTrack\.module__vertical___dmFlZX) {
+		height: unset;
+
+		.ScrollerTrack\.module__thumb___dmFlZX {
+			width: inherit;
+		}
+	}
+}

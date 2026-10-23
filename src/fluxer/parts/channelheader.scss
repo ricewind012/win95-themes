@@ -1,0 +1,22 @@
+@use "shared/controls";
+
+.ChannelHeader\.module__buttonIcon___X3RWcT {
+	display: none;
+}
+
+.ChannelHeader\.module__headerRightSection___X3RWcT {
+	gap: 0;
+}
+
+.ChannelHeader\.module__iconButton___X3RWcT {
+	&:where([aria-haspopup]) {
+		@include controls.combobox-icon-button(
+			$active-sel: "&[aria-expanded='true']"
+		);
+	}
+
+	&:where([aria-pressed]) {
+		@include controls.button;
+		@include controls.icon-button;
+	}
+}

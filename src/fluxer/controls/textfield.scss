@@ -1,0 +1,63 @@
+@use "shared/controls";
+@use "shared/listbox";
+
+.FormInput\.module__input___Sm14SW,
+.FormInput\.module__textarea___Sm14SW {
+	@include controls.text-field;
+
+	&:where(.FormInput\.module__minHeight___Sm14SW) {
+		min-height: unset;
+	}
+}
+
+// TODO: action buttonS ?
+.FormCombobox\.module__actionButtons___VXlraj {
+	display: none;
+}
+
+.FormCombobox\.module__input___VXlraj {
+	color: inherit;
+	padding: 0;
+}
+
+.FormCombobox\.module__inputGroup___VXlraj {
+	@include controls.combobox(
+		$disabled-sel: ".FormCombobox\.module__inputGroupDisabled___VXlraj"
+	);
+}
+
+// Fucking hello move these 3 to popups
+.FormCombobox\.module__item___VXlraj {
+	@include listbox.item($selected-sel: "&[aria-selected='true']");
+}
+
+.FormCombobox\.module__list___VXlraj {
+	gap: 0;
+	padding: 0;
+}
+
+.FormCombobox\.module__popup___VXlraj {
+	@include listbox.container;
+}
+
+.FormSwitch\.module__container___UGVFUG {
+	align-items: start;
+	flex-direction: row-reverse;
+	gap: var(--label-spacing);
+	padding: 0;
+}
+
+.FormSwitch\.module__labelContainer___UGVFUG {
+	gap: var(--text-spacing);
+}
+
+.FormSwitch\.module__switchRoot___UGVFUG {
+	@include controls.checkbox(
+		$checked-sel: "&[aria-checked='true']",
+		$disabled-sel: "&.FormSwitch\\.module__disabled___UGVFUG"
+	);
+}
+
+.FormSwitch\.module__switchThumb___UGVFUG {
+	display: none;
+}

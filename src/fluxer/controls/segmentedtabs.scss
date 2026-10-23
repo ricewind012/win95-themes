@@ -1,0 +1,9 @@
+@use "shared/controls";
+
+.SegmentedTabs\.module__tab___SnZUMl {
+	@include controls.button($active-sel: "&:active, &[aria-selected='true']");
+}
+
+.SegmentedTabs\.module__tabList___SnZUMl {
+	padding: 0;
+}
