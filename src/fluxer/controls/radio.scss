@@ -1,0 +1,40 @@
+@use "shared/controls";
+@use "shared/text";
+
+.RadioGroup\.module__group___NUl5X0 {
+	gap: var(--text-spacing);
+}
+
+.RadioGroup\.module__radioGroupOption___NUl5X0 {
+	@include text.input-label;
+	@include controls.radio($checked-sel: "&[aria-checked='true']");
+
+	height: unset;
+	padding: 0;
+	width: unset;
+
+	&:not([aria-checked="true"])::before {
+		display: none;
+	}
+
+	&::before,
+	&::after {
+		content: "";
+	}
+
+	// Use as ::before for label spacing
+	&::after {
+		order: -1;
+		width: calc(
+			var(--sel-button-size) + var(--label-spacing) - var(--text-spacing)
+		);
+	}
+}
+
+.RadioGroup\.module__radioIndicator___NUl5X0 {
+	display: none;
+}
+
+.RadioGroup\.module__stack___NUl5X0 {
+	gap: var(--text-spacing);
+}
