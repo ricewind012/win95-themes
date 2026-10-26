@@ -36,10 +36,10 @@
 	}
 
 	h3 {
-		@include window.titlebar-name;
-
 		color: inherit;
-		line-height: inherit;
+		font: inherit;
+
+		@include window.titlebar-name;
 	}
 
 	svg {

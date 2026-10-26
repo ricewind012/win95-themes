@@ -1,6 +1,11 @@
 @use "shared/controls";
 @use "shared/text";
 
+[class*="RadioGroup\.module__description_"],
+[class*="RadioGroup\.module__labelText_"] {
+	font: inherit;
+}
+
 [class*="RadioGroup\.module__group_"] {
 	gap: var(--text-spacing);
 }

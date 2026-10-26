@@ -6,6 +6,9 @@
 	--button-img: icon("link");
 	@include controls.button;
 	@include controls.icon-button;
+
+	// Always first to be easier on the eyes
+	order: -1;
 }
 
 [class*="SettingsModalLayout\.module__closeButton_"] {
@@ -18,6 +21,9 @@
 
 [class*="SettingsModalLayout\.module__desktopHeader_"] {
 	@include window.titlebar($focused-sel: "&");
+	@include window.titlebar-name;
+
+	border: none;
 }
 
 // TODO: svg unify
@@ -25,22 +31,57 @@
 	display: none;
 }
 
-[class*="SettingsSection\.module__section_"] {
-	@include controls.groupbox;
+[class*="SettingsModalHeader\.module__title_"] {
+	all: unset;
 }
 
-[class*="SettingsSection\.module__sectionDescription_"] {
+[class*="SettingsSection\.module__section_"] {
+	@include controls.groupbox;
+
+	margin-block-end: calc(var(--icon-button-height) / 2 + 0.5rem);
+	padding-block-start: calc(var(--icon-button-height) / 2 + 11px);
+}
+
+[class*="SettingsSection\.module__sectionContent_"] {
+	gap: var(--text-spacing);
+}
+
+[class*="SettingsSection\.module__sectionDescription_"],
+[class*="SettingsSection\.module__subsectionDescription_"] {
 	display: none;
 }
 
 [class*="SettingsSection\.module__sectionHeader_"] {
 	@include utils.legend-as-div;
+
+	// Move a bit lower for the link button
+	inset-block-start: calc(var(--icon-button-height) / -2.25);
+
+	&[class*="SettingsSection\.module__sectionHeaderWithActions_"] {
+		flex-direction: row;
+		flex-flow: unset;
+		justify-content: space-between;
+		width: calc(100% - 11px * 2);
+	}
 }
 
-[class*="SettingsSection\.module__sectionTitle_"] {
+[class*="SettingsSection\.module__sectionTitle_"],
+[class*="SettingsSection\.module__subsectionTitle_"] {
 	all: unset;
 }
 
 [class*="SettingsSection\.module__sectionTitleRow_"] {
 	min-height: unset;
+}
+
+[class*="SettingsSection\.module__subsectionHeader_"] {
+	@include utils.legend-as-div;
+}
+
+[class*="SettingsTabLayout\.module__content_"] {
+	gap: 0;
+}
+
+[class*="SettingsTabLayout\.module__subsection_"] {
+	@include controls.groupbox;
 }

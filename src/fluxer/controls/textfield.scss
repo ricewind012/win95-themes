@@ -50,16 +50,32 @@
 	box-shadow: none;
 }
 
-// TODO: i can't even look at the code to see where it's declared disabled holy shit
+// lol why?
+[class*="FormCombobox\.module__valueOverlay_"] {
+	display: none;
+}
+
+// TODO: i can't even look at the code to see when it's disabled holy shit
 [class*="FormInput\.module__input_"] {
 	@include controls.text-field;
+
+	min-height: unset;
 }
 
 [class*="FormSwitch\.module__container_"] {
 	align-items: start;
 	flex-direction: row-reverse;
 	gap: var(--label-spacing);
+	min-height: unset;
 	padding: 0;
+}
+
+[class*="FormSwitch\.module__description_"] {
+	font: inherit;
+}
+
+[class*="FormSwitch\.module__label_"] {
+	all: unset;
 }
 
 [class*="FormSwitch\.module__labelContainer_"] {

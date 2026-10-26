@@ -2,13 +2,13 @@
 @use "shared/menu";
 @use "shared/window";
 
-.ContextMenu\.module__checkboxIndicator___RFhyMi,
-.ContextMenu\.module__itemHint___RFhyMi,
+[class*="ContextMenu\.module__checkboxIndicator_"],
+[class*="ContextMenu\.module__itemHint_"],
 [class*="ContextMenu\.module__itemIcon_"] {
 	display: none;
 }
 
-.ContextMenu\.module__contextMenu___RFhyMi,
+[class*="ContextMenu\.module__contextMenu_"],
 [class*="ContextMenu\.module__submenuPopover_"] {
 	@include window.container($child: true);
 

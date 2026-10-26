@@ -1,5 +1,5 @@
 @use "shared/controls";
 
-[class*="Button\.module__button_"] {
+:where([class*="Button\.module__button_"]) {
 	@include controls.button($disabled-sel: "&:disabled, &[data-disabled]");
 }

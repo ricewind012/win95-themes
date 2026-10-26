@@ -10,18 +10,18 @@
 	opacity: 1;
 	position: unset;
 
-	&:where(.ScrollerTrack\.module__horizontaal___dmFlZX) {
+	&:where([class*="ScrollerTrack\.module__horizontal_"]) {
 		width: unset;
 
-		.ScrollerTrack\.module__thumb___dmFlZX {
+		[class*="ScrollerTrack\.module__thumb_"] {
 			height: inherit;
 		}
 	}
 
-	&:where(.ScrollerTrack\.module__vertical___dmFlZX) {
+	&:where([class*="ScrollerTrack\.module__vertical_"]) {
 		height: unset;
 
-		.ScrollerTrack\.module__thumb___dmFlZX {
+		[class*="ScrollerTrack\.module__thumb_"] {
 			width: inherit;
 		}
 	}
