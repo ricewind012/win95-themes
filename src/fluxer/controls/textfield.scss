@@ -2,7 +2,7 @@
 @use "shared/listbox";
 
 .FormInput\.module__input___Sm14SW,
-.FormInput\.module__textarea___Sm14SW {
+[class*="FormInput\.module__textarea_"] {
 	@include controls.text-field;
 
 	&:where(.FormInput\.module__minHeight___Sm14SW) {
@@ -11,53 +11,72 @@
 }
 
 // TODO: action buttonS ?
-.FormCombobox\.module__actionButtons___VXlraj {
+[class*="FormCombobox\.module__actionButtons_"] {
 	display: none;
 }
 
-.FormCombobox\.module__input___VXlraj {
+[class*="FormCombobox\.module__input_"] {
 	color: inherit;
+	font: inherit;
 	padding: 0;
 }
 
-.FormCombobox\.module__inputGroup___VXlraj {
+[class*="FormCombobox\.module__inputGroup_"] {
 	@include controls.combobox(
 		$disabled-sel: ".FormCombobox\.module__inputGroupDisabled___VXlraj"
 	);
+
+	min-height: unset;
 }
 
 // Fucking hello move these 3 to popups
-.FormCombobox\.module__item___VXlraj {
+[class*="FormCombobox\.module__item_"] {
 	@include listbox.item($selected-sel: "&[aria-selected='true']");
 }
 
-.FormCombobox\.module__list___VXlraj {
+[class*="FormCombobox\.module__list_"] {
 	gap: 0;
 	padding: 0;
+
+	// ???
+	&:not([data-empty])::after {
+		display: none;
+	}
 }
 
-.FormCombobox\.module__popup___VXlraj {
+[class*="FormCombobox\.module__popup_"] {
 	@include listbox.container;
+
+	box-shadow: none;
 }
 
-.FormSwitch\.module__container___UGVFUG {
+// TODO: i can't even look at the code to see where it's declared disabled holy shit
+[class*="FormInput\.module__input_"] {
+	@include controls.text-field;
+}
+
+[class*="FormSwitch\.module__container_"] {
 	align-items: start;
 	flex-direction: row-reverse;
 	gap: var(--label-spacing);
 	padding: 0;
 }
 
-.FormSwitch\.module__labelContainer___UGVFUG {
+[class*="FormSwitch\.module__labelContainer_"] {
 	gap: var(--text-spacing);
 }
 
-.FormSwitch\.module__switchRoot___UGVFUG {
+[class*="FormSwitch\.module__switchRoot_"] {
 	@include controls.checkbox(
 		$checked-sel: "&[aria-checked='true']",
-		$disabled-sel: "&.FormSwitch\\.module__disabled___UGVFUG"
+		$disabled-sel: "&:disabled"
 	);
+
+	&:disabled {
+		opacity: 1;
+	}
 }
 
-.FormSwitch\.module__switchThumb___UGVFUG {
+[class*="FormSwitch\.module__switchThumb_"] {
 	display: none;
 }

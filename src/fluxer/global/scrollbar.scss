@@ -1,10 +1,10 @@
 @use "shared/scrollbar";
 
-.ScrollerTrack\.module__thumb___dmFlZX {
+[class*="ScrollerTrack\.module__thumb_"] {
 	@include scrollbar.thumb;
 }
 
-.ScrollerTrack\.module__track___dmFlZX {
+[class*="ScrollerTrack\.module__track_"] {
 	@include scrollbar.container;
 
 	opacity: 1;

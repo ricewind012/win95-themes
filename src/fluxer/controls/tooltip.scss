@@ -1,13 +1,13 @@
 @use "shared/controls";
 
-.Tooltip\.module__tooltip___ODVRYk {
+[class*="Tooltip\.module__tooltip_"] {
 	@include controls.tooltip;
 }
 
-.Tooltip\.module__tooltipContent___ODVRYk {
+[class*="Tooltip\.module__tooltipContent_"] {
 	padding: 0;
 }
 
-.Tooltip\.module__tooltipPointer___ODVRYk {
+[class*="Tooltip\.module__tooltipPointer_"] {
 	display: none;
 }

@@ -4,12 +4,12 @@
 
 .ContextMenu\.module__checkboxIndicator___RFhyMi,
 .ContextMenu\.module__itemHint___RFhyMi,
-.ContextMenu\.module__itemIcon___RFhyMi {
+[class*="ContextMenu\.module__itemIcon_"] {
 	display: none;
 }
 
 .ContextMenu\.module__contextMenu___RFhyMi,
-.ContextMenu\.module__submenuPopover___RFhyMi {
+[class*="ContextMenu\.module__submenuPopover_"] {
 	@include window.container($child: true);
 
 	border: none;
@@ -19,7 +19,7 @@
 	}
 }
 
-.ContextMenu\.module__item___RFhyMi {
+[class*="ContextMenu\.module__item_"] {
 	@include menu.item(
 		// bruh
 		$selected-sel:
@@ -49,11 +49,11 @@
 	}
 }
 
-.ContextMenu\.module__itemLabel___RFhyMi {
+[class*="ContextMenu\.module__itemLabel_"] {
 	min-height: unset;
 }
 
-.ContextMenu\.module__separator___RFhyMi {
+[class*="ContextMenu\.module__separator_"] {
 	@include controls.separator-horizontal;
 
 	margin-inline: 0;

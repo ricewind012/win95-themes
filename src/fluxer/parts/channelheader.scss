@@ -1,14 +1,14 @@
 @use "shared/controls";
 
-.ChannelHeader\.module__buttonIcon___X3RWcT {
+[class*="ChannelHeader\.module__buttonIcon_"] {
 	display: none;
 }
 
-.ChannelHeader\.module__headerRightSection___X3RWcT {
+[class*="ChannelHeader\.module__headerRightSection_"] {
 	gap: 0;
 }
 
-.ChannelHeader\.module__iconButton___X3RWcT {
+[class*="ChannelHeader\.module__iconButton_"] {
 	&:where([aria-haspopup]) {
 		@include controls.combobox-icon-button(
 			$active-sel: "&[aria-expanded='true']"

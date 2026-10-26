@@ -1,11 +1,11 @@
 @use "shared/controls";
 @use "shared/text";
 
-.RadioGroup\.module__group___NUl5X0 {
+[class*="RadioGroup\.module__group_"] {
 	gap: var(--text-spacing);
 }
 
-.RadioGroup\.module__radioGroupOption___NUl5X0 {
+[class*="RadioGroup\.module__radioGroupOption_"] {
 	@include text.input-label;
 	@include controls.radio($checked-sel: "&[aria-checked='true']");
 
@@ -31,10 +31,10 @@
 	}
 }
 
-.RadioGroup\.module__radioIndicator___NUl5X0 {
+[class*="RadioGroup\.module__radioIndicator_"] {
 	display: none;
 }
 
-.RadioGroup\.module__stack___NUl5X0 {
+[class*="RadioGroup\.module__stack_"] {
 	gap: var(--text-spacing);
 }

@@ -10,12 +10,11 @@
 @use "dialogs/base" as dialogs-base;
 @use "dialogs/settings" as dialogs-settings;
 
-@use "unsorted_piece_of_shit/channelheader" as
-	unsorted-piece-of-shit-channelheader;
-
 @use "controls/button" as controls-button;
 @use "controls/radio" as controls-radio;
 @use "controls/segmentedtabs" as controls-segmentedtabs;
 @use "controls/slider" as controls-slider;
 @use "controls/textfield" as controls-textfield;
 @use "controls/tooltip" as controls-tooltip;
+
+@use "parts/channelheader" as parts-channelheader;

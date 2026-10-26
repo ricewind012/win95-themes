@@ -2,43 +2,45 @@
 @use "shared/window";
 @use "shared++/utils";
 
-.SettingsHeadingLinkButton\.module__button___bnU4ZT {
+[class*="SettingsHeadingLinkButton\.module__button_"] {
 	--button-img: icon("link");
 	@include controls.button;
 	@include controls.icon-button;
 }
 
-.SettingsModalLayout\.module__closeButton___ek1BV1 {
+[class*="SettingsModalLayout\.module__closeButton_"] {
 	@include controls.button;
 	@include window.titlebar-button;
 	@include window.titlebar-button-close;
+
+	width: unset;
 }
 
-.SettingsModalLayout\.module__desktopHeader___ek1BV1 {
+[class*="SettingsModalLayout\.module__desktopHeader_"] {
 	@include window.titlebar($focused-sel: "&");
 }
 
 // TODO: svg unify
-.SettingsModalHeader\.module__icon___bTU5Mn {
+[class*="SettingsModalHeader\.module__icon_"] {
 	display: none;
 }
 
-.SettingsSection\.module__section___NWFoVT {
+[class*="SettingsSection\.module__section_"] {
 	@include controls.groupbox;
 }
 
-.SettingsSection\.module__sectionDescription___NWFoVT {
+[class*="SettingsSection\.module__sectionDescription_"] {
 	display: none;
 }
 
-.SettingsSection\.module__sectionHeader___NWFoVT {
+[class*="SettingsSection\.module__sectionHeader_"] {
 	@include utils.legend-as-div;
 }
 
-.SettingsSection\.module__sectionTitle___NWFoVT {
+[class*="SettingsSection\.module__sectionTitle_"] {
 	all: unset;
 }
 
-.SettingsSection\.module__sectionTitleRow___NWFoVT {
+[class*="SettingsSection\.module__sectionTitleRow_"] {
 	min-height: unset;
 }
