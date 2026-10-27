@@ -1,0 +1,107 @@
+@use "shared/controls";
+@use "shared/listbox";
+
+.FormInput.module__input___Sm14SW,
+[class*="FormInput.module__textarea_"] {
+	@include controls.text-field;
+
+	&:where(.FormInput.module__minHeight___Sm14SW) {
+		min-height: unset;
+	}
+}
+
+// TODO: action buttonS ?
+[class*="FormCombobox.module__actionButtons_"] {
+	display: none;
+}
+
+[class*="FormCombobox.module__input_"] {
+	color: inherit;
+	font: inherit;
+	padding: 0;
+}
+
+[class*="FormCombobox.module__inputGroup_"] {
+	@include controls.combobox(
+		$disabled-sel: ".FormCombobox.module__inputGroupDisabled___VXlraj"
+	);
+
+	min-height: unset;
+}
+
+// Fucking hello move these 3 to popups
+[class*="FormCombobox.module__item_"] {
+	@include listbox.item($selected-sel: "&[aria-selected='true']");
+}
+
+[class*="FormCombobox.module__list_"] {
+	gap: 0;
+	padding: 0;
+
+	// ???
+	&:not([data-empty])::after {
+		display: none;
+	}
+}
+
+[class*="FormCombobox.module__popup_"] {
+	@include listbox.container;
+
+	box-shadow: none;
+}
+
+// lol why?
+[class*="FormCombobox.module__valueOverlay_"] {
+	display: none;
+}
+
+[class*="FormInput.module__fieldset"] {
+	gap: var(--text-spacing);
+}
+
+// TODO: i can't even look at the code to see when it's disabled holy shit
+[class*="FormInput.module__input_"],
+[class*="FormInput.module__textareaWrapper_"] {
+	@include controls.text-field;
+
+	min-height: unset;
+}
+
+[class*="FormInput.module__label_"] {
+	all: unset;
+}
+
+[class*="FormSwitch.module__container_"] {
+	align-items: start;
+	flex-direction: row-reverse;
+	gap: var(--label-spacing);
+	min-height: unset;
+	padding: 0;
+}
+
+[class*="FormSwitch.module__description_"] {
+	font: inherit;
+}
+
+[class*="FormSwitch.module__label_"] {
+	all: unset;
+}
+
+[class*="FormSwitch.module__labelContainer_"] {
+	gap: var(--text-spacing);
+}
+
+[class*="FormSwitch.module__switchRoot_"] {
+	@include controls.checkbox(
+		$checked-sel: "&[aria-checked='true']",
+		$disabled-sel: "&:disabled"
+	);
+
+	&:disabled {
+		opacity: 1;
+	}
+}
+
+[class*="FormSwitch.module__switchThumb_"] {
+	display: none;
+}

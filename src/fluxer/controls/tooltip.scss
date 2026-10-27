@@ -1,0 +1,13 @@
+@use "shared/controls";
+
+[class*="Tooltip.module__tooltip_"] {
+	@include controls.tooltip;
+}
+
+[class*="Tooltip.module__tooltipContent_"] {
+	padding: 0;
+}
+
+[class*="Tooltip.module__tooltipPointer_"] {
+	display: none;
+}

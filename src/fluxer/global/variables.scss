@@ -1,0 +1,17 @@
+:root {
+	--background-primary: var(--color-window);
+	--background-secondary: var(--color-button-face);
+	--background-secondary-alt: var(--color-button-face);
+	--background-secondary-lighter: var(--color-button-face);
+
+	--background-modifier-accent: #f09;
+	--background-modifier-hover: #f09;
+	--background-modifier-selected: #f09;
+
+	--text-chat: var(--color-button-text);
+	--text-chat-muted: var(--color-gray-text);
+	--text-primary: var(--color-button-text);
+	--text-primary-muted: var(--color-gray-text);
+	--text-secondary: var(--color-gray-text);
+	--text-tertiary: var(--color-gray-text);
+}

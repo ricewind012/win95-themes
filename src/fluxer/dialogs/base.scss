@@ -1,0 +1,58 @@
+@use "shared/controls";
+@use "shared/window";
+
+[class*="Modal.module__content_"] {
+	padding: var(--dialog-spacing);
+}
+
+[class*="Modal.module__contentLayout_"] {
+	padding: 0;
+}
+
+[class*="Modal.module__description_"] {
+	all: unset;
+}
+
+[class*="Modal.module__footer_"] {
+	background: none;
+	gap: var(--dialog-button-spacing);
+	padding: var(--dialog-spacing);
+}
+
+[class*="Modal.module__header_"] {
+	@include window.titlebar($focused-sel: "&");
+}
+
+[class*="Modal.module__headerInner_"] {
+	width: 100%;
+
+	button {
+		@include controls.button;
+		@include window.titlebar-button;
+		@include window.titlebar-button-close;
+
+		opacity: 1;
+		width: unset;
+	}
+
+	h3 {
+		color: inherit;
+		font: inherit;
+
+		@include window.titlebar-name;
+	}
+
+	svg {
+		display: none;
+	}
+}
+
+[class*="Modal.module__modalBackdrop_"] {
+	display: none;
+}
+
+[class*="Modal.module__root_"] {
+	@include window.container($child: true);
+
+	border: none;
+}
