@@ -2,14 +2,14 @@
 @use "shared/menu";
 @use "shared/window";
 
-[class*="ContextMenu\.module__checkboxIndicator_"],
-[class*="ContextMenu\.module__itemHint_"],
-[class*="ContextMenu\.module__itemIcon_"] {
+[class*="ContextMenu.module__checkboxIndicator_"],
+[class*="ContextMenu.module__itemHint_"],
+[class*="ContextMenu.module__itemIcon_"] {
 	display: none;
 }
 
-[class*="ContextMenu\.module__contextMenu_"],
-[class*="ContextMenu\.module__submenuPopover_"] {
+[class*="ContextMenu.module__contextMenu_"],
+[class*="ContextMenu.module__submenuPopover_"] {
 	@include window.container($child: true);
 
 	border: none;
@@ -19,11 +19,11 @@
 	}
 }
 
-[class*="ContextMenu\.module__item_"] {
+[class*="ContextMenu.module__item_"] {
 	@include menu.item(
 		// bruh
 		$selected-sel:
-			"&:is(:hover, [data-hovered], [data-focus-visible], [data-highlighted])"
+			"&:is(:hover, [data-hovered], [data-focus-visible], [data-highlighted], [data-popup-open])"
 	);
 
 	border: none;
@@ -49,11 +49,37 @@
 	}
 }
 
-[class*="ContextMenu\.module__itemLabel_"] {
+[class*="ContextMenu.module__itemLabel_"] {
 	min-height: unset;
 }
 
-[class*="ContextMenu\.module__separator_"] {
+// WHY is this in the same component
+[class*="ContextMenu.module__quickReactionsGroup_"] {
+	flex-direction: column;
+	gap: 0;
+	padding: 0;
+}
+
+[class*="ContextMenu.module__quickReactionItem_"] {
+	@include menu.item($selected-sel: "&[data-highlighted]");
+
+	// dude what
+	aspect-ratio: unset;
+	background: none;
+	justify-content: start;
+	width: 100%;
+
+	&::after {
+		content: attr(aria-label);
+	}
+
+	& > img {
+		inset-inline-start: 0;
+		position: absolute;
+	}
+}
+
+[class*="ContextMenu.module__separator_"] {
 	@include controls.separator-horizontal;
 
 	margin-inline: 0;

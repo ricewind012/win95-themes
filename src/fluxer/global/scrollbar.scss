@@ -1,27 +1,27 @@
 @use "shared/scrollbar";
 
-[class*="ScrollerTrack\.module__thumb_"] {
+[class*="ScrollerTrack.module__thumb_"] {
 	@include scrollbar.thumb;
 }
 
-[class*="ScrollerTrack\.module__track_"] {
+[class*="ScrollerTrack.module__track_"] {
 	@include scrollbar.container;
 
 	opacity: 1;
 	position: unset;
 
-	&:where([class*="ScrollerTrack\.module__horizontal_"]) {
+	&:where([class*="ScrollerTrack.module__horizontal_"]) {
 		width: unset;
 
-		[class*="ScrollerTrack\.module__thumb_"] {
+		[class*="ScrollerTrack.module__thumb_"] {
 			height: inherit;
 		}
 	}
 
-	&:where([class*="ScrollerTrack\.module__vertical_"]) {
+	&:where([class*="ScrollerTrack.module__vertical_"]) {
 		height: unset;
 
-		[class*="ScrollerTrack\.module__thumb_"] {
+		[class*="ScrollerTrack.module__thumb_"] {
 			width: inherit;
 		}
 	}

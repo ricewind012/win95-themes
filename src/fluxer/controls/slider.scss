@@ -1,20 +1,20 @@
 @use "shared/controls";
 
-[class*="Slider\.module__barFill_"] {
+[class*="Slider.module__barFill_"] {
 	display: none;
 }
 
-[class*="Slider\.module__sliderControl_"] {
+[class*="Slider.module__sliderControl_"] {
 	@include controls.slider(
-		$disabled-sel: "[class*='Slider\\.module__slider_'][data-disabled] &",
-		$thumb-sel: "[class*='Slider\\.module__grabber_']",
-		$track-sel: "[class*='Slider\\.module__track_']"
+		$disabled-sel: "[class*='Slider\.module__slider_'][data-disabled] &",
+		$thumb-sel: "[class*='Slider\.module__grabber_']",
+		$track-sel: "[class*='Slider\.module__track_']"
 	);
 
 	padding: 0;
 }
 
-[class*="Slider\.module__grabber_"] {
+[class*="Slider.module__grabber_"] {
 	border: none;
 	box-shadow: none;
 }

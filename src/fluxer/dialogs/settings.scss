@@ -2,7 +2,7 @@
 @use "shared/window";
 @use "shared++/utils";
 
-[class*="SettingsHeadingLinkButton\.module__button_"] {
+[class*="SettingsHeadingLinkButton.module__button_"] {
 	--button-img: icon("link");
 	@include controls.button;
 	@include controls.icon-button;
@@ -11,7 +11,7 @@
 	order: -1;
 }
 
-[class*="SettingsModalLayout\.module__closeButton_"] {
+[class*="SettingsModalLayout.module__closeButton_"] {
 	@include controls.button;
 	@include window.titlebar-button;
 	@include window.titlebar-button-close;
@@ -19,45 +19,57 @@
 	width: unset;
 }
 
-[class*="SettingsModalLayout\.module__desktopHeader_"] {
+[class*="SettingsModalLayout.module__container_"] {
+	--settings-surface-background: var(--color-button-face);
+}
+
+[class*="SettingsModalLayout.module__desktopHeader_"] {
 	@include window.titlebar($focused-sel: "&");
 	@include window.titlebar-name;
 
 	border: none;
 }
 
+[class*="SettingsModalLayout.module__desktopSidebar_"] {
+	border: none;
+}
+
 // TODO: svg unify
-[class*="SettingsModalHeader\.module__icon_"] {
+[class*="SettingsModalHeader.module__icon_"] {
 	display: none;
 }
 
-[class*="SettingsModalHeader\.module__title_"] {
+[class*="SettingsModalHeader.module__title_"] {
 	all: unset;
 }
 
-[class*="SettingsSection\.module__section_"] {
+[class*="SettingsSection.module__section_"] {
 	@include controls.groupbox;
 
 	margin-block-end: calc(var(--icon-button-height) / 2 + 0.5rem);
 	padding-block-start: calc(var(--icon-button-height) / 2 + 11px);
 }
 
-[class*="SettingsSection\.module__sectionContent_"] {
+[class*="SettingsSection.module__sectionActions_"] {
+	gap: 0;
+}
+
+[class*="SettingsSection.module__sectionContent_"] {
 	gap: var(--text-spacing);
 }
 
-[class*="SettingsSection\.module__sectionDescription_"],
-[class*="SettingsSection\.module__subsectionDescription_"] {
+[class*="SettingsSection.module__sectionDescription_"],
+[class*="SettingsSection.module__subsectionDescription_"] {
 	display: none;
 }
 
-[class*="SettingsSection\.module__sectionHeader_"] {
+[class*="SettingsSection.module__sectionHeader_"] {
 	@include utils.legend-as-div;
 
 	// Move a bit lower for the link button
 	inset-block-start: calc(var(--icon-button-height) / -2.25);
 
-	&[class*="SettingsSection\.module__sectionHeaderWithActions_"] {
+	&[class*="SettingsSection.module__sectionHeaderWithActions_"] {
 		flex-direction: row;
 		flex-flow: unset;
 		justify-content: space-between;
@@ -65,23 +77,27 @@
 	}
 }
 
-[class*="SettingsSection\.module__sectionTitle_"],
-[class*="SettingsSection\.module__subsectionTitle_"] {
+[class*="SettingsSection.module__sectionTitle_"],
+[class*="SettingsSection.module__subsectionTitle_"] {
 	all: unset;
 }
 
-[class*="SettingsSection\.module__sectionTitleRow_"] {
+[class*="SettingsSection.module__sectionTitleRow_"] {
 	min-height: unset;
 }
 
-[class*="SettingsSection\.module__subsectionHeader_"] {
+[class*="SettingsSection.module__subsectionHeader_"] {
 	@include utils.legend-as-div;
 }
 
-[class*="SettingsTabLayout\.module__content_"] {
+[class*="SettingsTabLayout.module__content_"] {
 	gap: 0;
 }
 
-[class*="SettingsTabLayout\.module__subsection_"] {
+[class*="SettingsTabLayout.module__subsection_"] {
 	@include controls.groupbox;
+}
+
+[class*="UserSettingsModal.module__userProfile_"] {
+	@include controls.button;
 }

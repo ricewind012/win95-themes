@@ -1,16 +1,16 @@
 @use "shared/controls";
 @use "shared/text";
 
-[class*="RadioGroup\.module__description_"],
-[class*="RadioGroup\.module__labelText_"] {
+[class*="RadioGroup.module__description_"],
+[class*="RadioGroup.module__labelText_"] {
 	font: inherit;
 }
 
-[class*="RadioGroup\.module__group_"] {
+[class*="RadioGroup.module__group_"] {
 	gap: var(--text-spacing);
 }
 
-[class*="RadioGroup\.module__radioGroupOption_"] {
+[class*="RadioGroup.module__radioGroupOption_"] {
 	@include text.input-label;
 	@include controls.radio($checked-sel: "&[aria-checked='true']");
 
@@ -36,10 +36,10 @@
 	}
 }
 
-[class*="RadioGroup\.module__radioIndicator_"] {
+[class*="RadioGroup.module__radioIndicator_"] {
 	display: none;
 }
 
-[class*="RadioGroup\.module__stack_"] {
+[class*="RadioGroup.module__stack_"] {
 	gap: var(--text-spacing);
 }

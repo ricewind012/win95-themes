@@ -1,5 +1,9 @@
 @use "shared/controls";
 
-:where([class*="Button\.module__button_"]) {
+:where([class*="Button.module__button_"]) {
 	@include controls.button($disabled-sel: "&:disabled, &[data-disabled]");
+
+	svg {
+		display: none;
+	}
 }

@@ -1,29 +1,29 @@
 @use "shared/controls";
 @use "shared/window";
 
-[class*="Modal\.module__content_"] {
+[class*="Modal.module__content_"] {
 	padding: var(--dialog-spacing);
 }
 
-[class*="Modal\.module__contentLayout_"] {
+[class*="Modal.module__contentLayout_"] {
 	padding: 0;
 }
 
-[class*="Modal\.module__description_"] {
+[class*="Modal.module__description_"] {
 	all: unset;
 }
 
-[class*="Modal\.module__footer_"] {
+[class*="Modal.module__footer_"] {
 	background: none;
 	gap: var(--dialog-button-spacing);
 	padding: var(--dialog-spacing);
 }
 
-[class*="Modal\.module__header_"] {
+[class*="Modal.module__header_"] {
 	@include window.titlebar($focused-sel: "&");
 }
 
-[class*="Modal\.module__headerInner_"] {
+[class*="Modal.module__headerInner_"] {
 	width: 100%;
 
 	button {
@@ -47,11 +47,11 @@
 	}
 }
 
-[class*="Modal\.module__modalBackdrop_"] {
+[class*="Modal.module__modalBackdrop_"] {
 	display: none;
 }
 
-[class*="Modal\.module__root_"] {
+[class*="Modal.module__root_"] {
 	@include window.container($child: true);
 
 	border: none;
