@@ -1,0 +1,10 @@
+@use "shared/controls";
+
+:where(#Handle),
+:where(#Track) {
+	display: none;
+}
+
+:where(#Root) {
+	@include controls.checkbox($checked-sel: "&[aria-checked='true']");
+}

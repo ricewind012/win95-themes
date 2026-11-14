@@ -1,0 +1,7 @@
+@use "shared/controls";
+
+:where(#Button) {
+	@include controls.button(
+		$disabled-sel: "&:where(:disabled, [aria-disabled='true'])"
+	);
+}

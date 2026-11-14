@@ -1,0 +1,11 @@
+@use "shared/controls";
+
+:where(#Separator) {
+	&:where([aria-orientation="horizontal"]) {
+		@include controls.separator-horizontal;
+	}
+
+	&:where([aria-orientation="vertical"]) {
+		@include controls.separator-vertical;
+	}
+}

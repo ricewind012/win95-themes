@@ -1,0 +1,19 @@
+@use "shared/controls";
+
+:where(#ControlBox) {
+	box-shadow: none;
+	opacity: 1;
+
+	&:where([role="combobox"]) {
+		@include controls.combobox($disabled-sel: "&:where(#Disabled)");
+	}
+
+	&:where(:not([role="combobox"])) {
+		@include controls.text-field($disabled-sel: "&:where(#Disabled)");
+	}
+
+	// caret
+	& > :last-child {
+		display: none;
+	}
+}

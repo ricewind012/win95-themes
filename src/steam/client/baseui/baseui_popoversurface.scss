@@ -1,0 +1,26 @@
+@use "shared/menu";
+@use "shared/window";
+
+:where(#ListBox) {
+	@include window.container($child: true);
+
+	filter: none;
+}
+
+:where(#ListBoxOption) {
+	@include menu.item(
+		$selected-sel: "&:where([data-focused='true'], [data-selected='true'])"
+	);
+
+	&:has([role="checkbox"][aria-checked="true"]) {
+		@include menu.item-check;
+	}
+
+	&[aria-disabled="true"] {
+		@include menu.item-disabled;
+	}
+
+	[role="checkbox"] {
+		display: none;
+	}
+}

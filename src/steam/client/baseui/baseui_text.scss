@@ -1,0 +1,7 @@
+:where(#Text) {
+	font: inherit;
+
+	&:where([style*="--text-color: var(--color-text-body-"]) {
+		color: inherit;
+	}
+}
