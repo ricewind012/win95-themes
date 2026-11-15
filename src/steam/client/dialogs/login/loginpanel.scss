@@ -1,71 +1,7 @@
-@use "shared/controls";
-
-#CachedAccountName,
-#CachedName {
-	color: inherit;
-	font: inherit;
-	opacity: 1;
-	padding: 0;
-	position: unset;
-	text-shadow: inherit;
-}
-
-#CachedUserList {
-	flex-direction: column;
-}
-
-#LoginCachedAvatar {
-	display: grid;
-	gap: 8px;
-	grid-template-columns: 100px 200px;
-
-	#CachedName {
-		align-self: end;
-		font-weight: bold;
-	}
-}
-
-#LoginCachedAvatarImage {
-	background-image: none;
-	border: none;
-	box-shadow: none;
-	grid-column-start: 1;
-	grid-row-start: 1;
-	grid-row-end: 3;
-	margin: 0;
-	transform: unset;
-
-	& > img {
-		box-shadow: var(--border-field);
-		padding: var(--border-size);
-	}
-}
-
 #LoginStatus {
 	color: var(--color-button-text);
 	font: var(--text-ui);
 	font-weight: bold;
-}
-
-#MoreMenuButton {
-	--button-img: icon("overflow" . "mono");
-	@include controls.icon-button;
-
-	inset-block-end: 50%;
-	inset-inline-end: calc(100% + 8px);
-	opacity: 1;
-	position: absolute;
-	width: unset;
-}
-
-#NewLogin {
-	@include controls.button;
-
-	flex-basis: unset;
-}
-
-#NewLoginIcon {
-	display: none;
 }
 
 #UserContainer {

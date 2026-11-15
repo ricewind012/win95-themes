@@ -1,0 +1,90 @@
+@use "shared/controls";
+
+#CachedUsers {
+	gap: var(--text-spacing);
+}
+
+#Icon {
+	align-items: center;
+	background: none;
+	border: none;
+	box-shadow: none;
+	flex-direction: row-reverse;
+	gap: var(--text-spacing);
+	opacity: 1;
+	transform: unset;
+
+	& > img {
+		--size: 64px;
+
+		block-size: var(--size);
+		box-shadow: var(--border-statusbar);
+		inline-size: var(--size);
+		padding: 1px;
+	}
+}
+
+#MoreMenuButton {
+	--button-img: icon("overflow", "mono");
+	@include controls.icon-button;
+
+	opacity: 1;
+	width: unset;
+}
+
+#MoreMenuIcon {
+	display: none;
+}
+
+#Toggle {
+	width: 50%;
+}
+
+#User {
+	flex-basis: unset;
+
+	#Account,
+	#Persona {
+		color: inherit;
+		font: inherit;
+		margin: 0;
+		opacity: 1;
+		text-shadow: inherit;
+	}
+}
+
+#User#Existing {
+	display: grid;
+	gap: 0 calc(var(--text-spacing) * 2);
+	grid-template-areas: "icon persona" "icon account";
+	grid-template-columns: min-content;
+	padding: 0;
+
+	#Account {
+		grid-area: account;
+	}
+
+	#Icon {
+		grid-area: icon;
+	}
+
+	#Persona {
+		font-weight: bold;
+		grid-area: persona;
+	}
+}
+
+#User#New {
+	@include controls.button;
+
+	#Account,
+	#Icon {
+		display: none;
+	}
+}
+
+#UserList {
+	align-items: start;
+	flex-direction: column;
+	inline-size: 50%;
+}

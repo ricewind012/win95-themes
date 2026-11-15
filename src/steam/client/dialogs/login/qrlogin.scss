@@ -1,6 +1,8 @@
 @use "shared/controls";
 
 #Box {
+	--qr-bright-color: currentColor;
+
 	background-color: transparent;
 
 	& > button {
@@ -19,8 +21,9 @@
 }
 
 #LoginQR {
-	background-color: var(--color-window);
-	border-color: var(--color-window);
+	// Otherwise the mobile app won't be able to scan it
+	background-color: #fff;
+	border-color: #fff;
 
 	&#Blur {
 		filter: none;

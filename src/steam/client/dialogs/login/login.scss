@@ -1,4 +1,3 @@
-@use "shared/dialog";
 @use "steam/shared";
 
 #AvatarContainer {
@@ -6,46 +5,34 @@
 	margin: 0;
 }
 
-#Buttons {
-	@include dialog.buttons;
-
-	background-color: transparent;
-	padding: 0;
-}
-
 #Content {
 	padding: 0;
 
-	// logo (#LogoContainer in newlogindialog)
+	// #newlogindialog_LogoContainer
 	& > :first-child {
 		display: none;
 	}
 }
 
 #Login {
-	background-image: none;
 	border: none;
 	box-shadow: none;
 }
 
-#Paragraph {
-	color: inherit;
-	padding: 0;
-
-	#Highlight {
-		color: inherit;
-		font-weight: bold;
-	}
+#LoginAnimatedBackground {
+	display: none;
 }
 
-#RemoveConfirmation,
+#LoginStaticBackground {
+	background: none;
+}
+
 #UserChooser {
 	height: calc(100% - var(--messagebox-content-spacing));
 	padding: var(--messagebox-spacing);
 	width: 100%;
 }
 
-#Title,
 #WhosPlaying {
 	@include shared.dialog-title;
 
@@ -54,10 +41,4 @@
 
 #TitleContainer {
 	height: unset;
-}
-
-#Warning {
-	gap: var(--messagebox-content-spacing);
-	margin: 0;
-	padding: 0;
 }
