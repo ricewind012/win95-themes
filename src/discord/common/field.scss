@@ -1,7 +1,7 @@
 @use "shared/controls";
 @use "shared++/utils";
 
-.container__5a838 {
+.container_VhFsFg {
 	&[data-disabled="true"] {
 		opacity: 1;
 	}
@@ -12,23 +12,23 @@
 		gap: var(--label-spacing);
 		justify-content: start;
 
-		.labelContainer__5a838 {
+		.labelContainer_VhFsFg {
 			gap: var(--text-spacing);
 			margin: 0;
 		}
 	}
 
 	&[data-layout="vertical"] {
-		.labelContainer__5a838 {
+		.labelContainer_VhFsFg {
 			margin-block-end: var(--text-spacing);
 		}
 	}
 
 	// Restrict to settings, looks weird everywhere else
-	.contentColumn__23e6b &[data-layout="vertical"] {
+	.contentColumn_jnk11m &[data-layout="vertical"] {
 		@include controls.groupbox;
 
-		.label__5a838 {
+		.label_VhFsFg {
 			@include utils.legend-as-div;
 
 			margin: 0;
@@ -36,10 +36,10 @@
 	}
 }
 
-.control__5a838 {
+.control_VhFsFg {
 	flex-shrink: 0;
 }
 
-.description__5a838 {
+.description_VhFsFg {
 	margin: 0;
 }

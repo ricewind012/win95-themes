@@ -1,22 +1,22 @@
 @use "shared/controls";
 
-.bar_ec237e {
+.bar_p3RiOL {
 	inset-block-start: 20px;
 }
 
-.barFill_ec237e {
+.barFill_p3RiOL {
 	display: none;
 }
 
-.grabber_ec237e {
+.grabber_p3RiOL {
 	border: none;
 	box-shadow: none;
 	cursor: initial;
 }
 
-.slider_ec237e {
+.slider_p3RiOL {
 	@include controls.slider(
-		$thumb-sel: ".grabber_ec237e",
-		$track-sel: ".bar_ec237e"
+		$thumb-sel: ".grabber_p3RiOL",
+		$track-sel: ".bar_p3RiOL"
 	);
 }

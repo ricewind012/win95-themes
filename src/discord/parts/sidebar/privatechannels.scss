@@ -2,25 +2,25 @@
 @use "shared/list";
 @use "shared/window";
 
-.privateChannels_e6b769 {
+.privateChannels_u88IQl {
 	@include window.content-container;
 
 	margin-block-start: var(--toolbar-top-margin);
 
-	.channel__972a0 {
+	.channel_zln_tS {
 		margin: 0;
 	}
 
-	.interactive_f88cfd.selected_f88cfd {
+	.interactive_nl_k3a.selected_nl_k3a {
 		@include list.item-name-selected;
 	}
 
-	.scroller__99e7c {
+	.scroller_Bce46W {
 		background-color: transparent;
 		margin: 0;
 	}
 
-	.searchBar_e6b769 {
+	.searchBar_u88IQl {
 		border: none;
 		height: unset;
 		inset-block-start: calc(
@@ -31,7 +31,7 @@
 	}
 }
 
-.privateChannelRecipientsInviteButtonIconContainer__99e7c {
+.privateChannelRecipientsInviteButtonIconContainer_Bce46W {
 	--button-img: icon("room-create");
 	@include controls.button;
 	@include controls.icon-button;
@@ -41,6 +41,6 @@
 	position: fixed;
 }
 
-.privateChannelRecipientsInviteButtonIcon__99e7c {
+.privateChannelRecipientsInviteButtonIcon_Bce46W {
 	display: none;
 }

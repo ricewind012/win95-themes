@@ -1,20 +1,20 @@
 @use "shared/controls";
 @use "shared++/utils";
 
-.pageButton_c15210 {
+.pageButton_0MrDiE {
 	@include controls.button;
 	@include controls.icon-button($selected-sel: "&[aria-current='page']");
 
-	&.endButton_c15210 {
+	&.endButton_0MrDiE {
 		margin-inline: 4px;
 	}
 }
 
-.pageControl_c15210 {
+.pageControl_0MrDiE {
 	padding-block: var(--toolbar-container-spacing);
 }
 
-.pageControlContainer_c15210 {
+.pageControlContainer_0MrDiE {
 	&::before {
 		@include utils.pseudo-separator;
 	}

@@ -2,37 +2,37 @@
 @use "shared/window";
 @use "shared++/utils";
 
-.container_f369db {
+.container_BkGrJJ {
 	@include window.content-container;
 }
 
-.divider_f369db,
-.tagList_f369db {
+.divider_BkGrJJ,
+.tagList_BkGrJJ {
 	display: none;
 }
 
-.formContainer_d9be46 {
-	.prefixElement_d9be46 {
+.formContainer_owUmX8 {
+	.prefixElement_owUmX8 {
 		display: none;
 	}
 
-	.titleContainer_d9be46 {
+	.titleContainer_owUmX8 {
 		gap: var(--toolbar-spacing);
 	}
 
-	.button_a22cb0:not(.hasText_a22cb0) {
+	.button_F7qvhY:not(.hasText_F7qvhY) {
 		@include controls.button;
 		@include utils.use-attr-text("aria-label");
 	}
 }
 
-.mainCard_f369db {
+.mainCard_BkGrJJ {
 	background-color: transparent;
 	border: none;
 }
 
-.sortDropdown_f369db,
-.tagsButton_f369db {
+.sortDropdown_BkGrJJ,
+.tagsButton_BkGrJJ {
 	@include controls.combobox-button;
 
 	inset-inline-start: 0;
@@ -43,14 +43,14 @@
 	}
 }
 
-.sortDropdownInner_f369db,
-.tagsButtonInner_f369db {
+.sortDropdownInner_BkGrJJ,
+.tagsButtonInner_BkGrJJ {
 	color: inherit;
 	justify-content: center;
 	padding: 0;
 }
 
-.tagsContainer_f369db {
+.tagsContainer_BkGrJJ {
 	gap: var(--toolbar-spacing);
 	height: unset;
 	inset-block-start: calc(

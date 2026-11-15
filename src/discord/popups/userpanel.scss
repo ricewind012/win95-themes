@@ -1,38 +1,38 @@
 @use "shared/menu";
 @use "shared++/utils";
 
-.popoutContainer_ce8328 {
+.popoutContainer_nitlyF {
 	inset-inline-start: 0;
 
 	&::before {
 		display: none;
 	}
 
-	.body_ce8328 {
+	.body_nitlyF {
 		overflow: auto;
 		padding: 0;
 
-		& > :not(.menus_ce8328) {
+		& > :not(.menus_nitlyF) {
 			display: none;
 		}
 	}
 
-	.header__5be3e {
+	.header_NOlkhE {
 		display: none;
 	}
 
-	.outer_c0bea0 {
+	.outer_P1YEjQ {
 		width: unset;
 	}
 }
 
-.menuItem_ce8328 {
+.menuItem_nitlyF {
 	&::after {
 		display: none;
 	}
 }
 
-.menuItemContent_ce8328 {
+.menuItemContent_nitlyF {
 	@include menu.item($selected-sel: "&.hack");
 
 	&[aria-expanded] {
@@ -40,15 +40,15 @@
 	}
 }
 
-.menuItemIcon_ce8328 {
+.menuItemIcon_nitlyF {
 	display: none;
 }
 
-.menuItemInner_ce8328 {
+.menuItemInner_nitlyF {
 	padding: 0;
 }
 
-.menuOverlay_ce8328 {
+.menuOverlay_nitlyF {
 	background-color: var(--color-button-face);
 	border: none;
 	padding: 0;
@@ -58,7 +58,7 @@
 	}
 }
 
-.menus_ce8328 {
+.menus_nitlyF {
 	gap: 0;
 }
 
@@ -75,10 +75,10 @@
 	}
 }
 
-.submenuIconWrapper_ce8328 {
+.submenuIconWrapper_nitlyF {
 	display: none;
 }
 
-.submenuPaddingContainer_ce8328 {
+.submenuPaddingContainer_nitlyF {
 	padding: 0;
 }

@@ -1,22 +1,22 @@
 @use "shared/list";
 @use "shared/table";
 
-.channelNameContainer__856b5 {
+.channelNameContainer_Onug95 {
 	display: flex;
 	gap: var(--text-spacing);
 }
 
-.largeSpacing__856b5,
-.spacing__856b5 {
+.largeSpacing_Onug95,
+.spacing_Onug95 {
 	gap: var(--text-spacing);
 	margin-block: var(--text-spacing);
 
-	.divider__1de9c {
+	.divider_6vIioY {
 		display: none;
 	}
 }
 
-.header__856b5 {
+.header_Onug95 {
 	@include table.header-row;
 
 	letter-spacing: 0;
@@ -24,7 +24,7 @@
 	text-transform: none;
 }
 
-.override__856b5 {
+.override_Onug95 {
 	@include list.item;
 
 	background-color: var(--color-window);

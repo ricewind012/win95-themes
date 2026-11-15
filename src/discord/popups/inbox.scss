@@ -2,15 +2,15 @@
 @use "shared/tabs";
 @use "shared/window";
 
-.container__8cb2e {
+.container_uTMZTY {
 	@include window.container($child: true);
 }
 
-.controls__06f80 {
+.controls_LSviKk {
 	gap: 0;
 }
 
-.header__06f80 {
+.header_LSviKk {
 	background-color: transparent;
 	border: none;
 	margin: var(--dialog-spacing);
@@ -23,11 +23,11 @@
 	}
 }
 
-.headerTabs__06f80 {
+.headerTabs_LSviKk {
 	margin: 0;
 }
 
 .headerIcon__06f80,
-.headerTitle__06f80 {
+.headerTitle_LSviKk {
 	display: none;
 }

@@ -1,17 +1,17 @@
 @use "shared/controls";
 @use "shared++/utils";
 
-.container_e131a9 {
-	.actionButtons_e131a9 {
+.container_9U6LUN {
+	.actionButtons_9U6LUN {
 		gap: 0;
 		justify-content: end;
 	}
 
-	.voiceButtonsContainer_e131a9 {
+	.voiceButtonsContainer_9U6LUN {
 		gap: 0;
 	}
 
-	.lottieIcon__5eb9b {
+	.lottieIcon_69Onuk {
 		display: initial;
 	}
 
@@ -23,7 +23,7 @@
 	}
 }
 
-.panels__5e434 {
+.panels_pog62O {
 	background-color: transparent;
 	border: none;
 	inset-block-end: 0;
@@ -33,14 +33,14 @@
 	width: var(--sidebar-width);
 }
 
-.accountPopoutButtonWrapper__37e49 {
+.accountPopoutButtonWrapper_g6VwXp {
 	@include controls.combobox-button($active-sel: "&[aria-expanded='true']");
 
-	.avatar__37e49 {
+	.avatar_g6VwXp {
 		display: none;
 	}
 
-	.nameTag__37e49 {
+	.nameTag_g6VwXp {
 		&::before {
 			// Could use the container's aria-label, but the text is too long
 			content: "User status";
@@ -52,28 +52,28 @@
 	}
 }
 
-.button__67645 {
+.button_Y-8oZW {
 	--icon-button-height: var(--combobox-button-height);
 	--icon-button-width: var(--combobox-button-height);
 	@include controls.icon-button;
 
-	&:not(.buttonChevron__5e764) {
+	&:not(.buttonChevron_gKpIZP) {
 		width: unset;
 	}
 }
 
-.buttonChevron__5e764 {
+.buttonChevron_gKpIZP {
 	--button-img: icon("arrow-bottom", "mono");
 	--icon-button-width: 16px;
 
 	margin-inline-end: var(--toolbar-spacing);
 }
 
-.buttonChevronIcon__5e764 {
+.buttonChevronIcon_gKpIZP {
 	display: none;
 }
 
-.buttons__37e49 {
+.buttons_g6VwXp {
 	gap: 0;
 
 	[aria-label="Deafen"] {
@@ -94,7 +94,7 @@
 }
 
 // vc
-.container_e131a9 {
+.container_9U6LUN {
 	border: none;
 	padding: var(--toolbar-container-spacing);
 	padding-block-end: 0;
@@ -104,7 +104,7 @@
 	}
 }
 
-.container__37e49 {
+.container_g6VwXp {
 	gap: var(--toolbar-spacing);
 	height: unset;
 	// --custom-rtc-account-height

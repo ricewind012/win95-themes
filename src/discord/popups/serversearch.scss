@@ -1,12 +1,12 @@
 @use "shared/listbox";
 
-.container__16eb0 {
+.container_cbVzxY {
 	@include listbox.container;
 
 	overflow: auto;
 	padding: 0;
 
-	.wrapper__44b0c {
+	.wrapper_XpIUHy {
 		inset-inline-start: 0;
 		position: absolute;
 	}
@@ -18,28 +18,28 @@
 	}
 }
 
-.channelNameIcon__971b5,
-.groupHeader__971b5,
-.itemIcon__971b5:where(svg) {
+.channelNameIcon_lm2_KW,
+.groupHeader_lm2_KW,
+.itemIcon_lm2_KW:where(svg) {
 	display: none;
 }
 
-.divider__971b5 {
+.divider_lm2_KW {
 	--border-subtle: currentColor;
 
 	margin: 0;
 }
 
-.filterSublabelTextContainer__971b5,
-.labelWithElements__971b5 {
+.filterSublabelTextContainer_lm2_KW,
+.labelWithElements_lm2_KW {
 	flex-grow: 1;
 }
 
-.groupWrapper__971b5 {
+.groupWrapper_lm2_KW {
 	gap: 0;
 }
 
-.item__971b5 {
+.item_lm2_KW {
 	--avatar-size: 20px;
 
 	min-height: var(--avatar-size);
@@ -48,7 +48,7 @@
 	// for avatars
 	position: relative;
 
-	& > .labelWithElements__971b5,
+	& > .labelWithElements_lm2_KW,
 	& > :not([class]) {
 		display: grid;
 		flex-grow: 1;
@@ -62,6 +62,6 @@
 	}
 }
 
-.itemContainer__971b5 {
+.itemContainer_lm2_KW {
 	@include listbox.item($selected-sel: "&:active, &[aria-selected='true']");
 }

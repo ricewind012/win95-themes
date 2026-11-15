@@ -1,22 +1,22 @@
 @use "shared/controls";
 
-.animatedContainer_f37cb1 {
+.animatedContainer_XH4OpX {
 	opacity: 0.5;
 	margin: 1px;
 	transform: none;
 	width: calc(100% - 2px);
 }
 
-.bannerImage_f37cb1 {
+.bannerImage_XH4OpX {
 	height: inherit;
 	transform: none;
 }
 
-.bannerImg_f37cb1 {
+.bannerImg_XH4OpX {
 	height: inherit;
 }
 
-.container_f37cb1 {
+.container_XH4OpX {
 	--custom-channel-header-height: var(--custom-guild-banner-height);
 	--custom-guild-banner-height: calc(
 		var(--toolbar-top-margin) - var(--window-gap) - 1px
@@ -38,7 +38,7 @@
 	}
 }
 
-.guildDropdown_f37cb1 {
+.guildDropdown_XH4OpX {
 	--button-img: icon("overflow", "mono");
 	--button-img-pos-x: 4px;
 	--button-img-pos-y: 8px;
@@ -50,24 +50,24 @@
 	height: unset;
 }
 
-.header_f37cb1 {
+.header_XH4OpX {
 	background-color: transparent;
 	border: none;
 	padding: var(--toolbar-container-spacing);
 }
 
-.headerContent_f37cb1 {
+.headerContent_XH4OpX {
 	filter: none;
 	gap: 0;
 	justify-content: end;
 }
 
-.guildBadgeAndName_f37cb1,
-.guildIconV2Container__85d16,
-.headerChildren_f37cb1,
-.headerEllipseForeground_f37cb1,
-.headerGlass_f37cb1,
-.inviteButton_f37cb1,
-.name_f37cb1 {
+.guildBadgeAndName_XH4OpX,
+.guildIconV2Container_DV_ZH5,
+.headerChildren_XH4OpX,
+.headerEllipseForeground_XH4OpX,
+.headerGlass_XH4OpX,
+.inviteButton_XH4OpX,
+.name_XH4OpX {
 	display: none;
 }

@@ -1,32 +1,32 @@
 @use "shared/controls";
 @use "shared/window";
 
-.wrapper_cb9592 {
+.wrapper_hbKzX7 {
 	@include window.content-container;
 
 	// TODO: remove when discord decides to use aria-labels again
-	.lottieIcon__5eb9b {
+	.lottieIcon_69Onuk {
 		color: inherit;
 		padding: 0;
 		display: block;
 	}
 }
 
-.wrapper__1405b {
+.wrapper_9bvEB0 {
 	gap: var(--dialog-button-spacing);
 
-	.buttonSection__1405b {
+	.buttonSection_9bvEB0 {
 		background-color: transparent;
 		border: none;
 		gap: 0;
 		padding: 0;
 	}
 
-	.centerButton_f1ceac {
+	.centerButton_K9Xq13 {
 		@include controls.icon-button;
 
 		// TODO: see above
-		.controlIcon_f1ceac {
+		.controlIcon_K9Xq13 {
 			color: inherit;
 		}
 	}

@@ -1,17 +1,17 @@
 @use "shared/tabs";
 
-.messageGroupWrapper__432f4 {
+.messageGroupWrapper_6bgemo {
 	border: none;
 	margin: 0;
 }
 
-.messagesPopout__432f4 {
+.messagesPopout_6bgemo {
 	margin: var(--border-size);
 	padding: 0;
 }
 
 // :not(.recentMentionsPopout__95796)
-.messagesPopoutWrap__432f4 {
+.messagesPopoutWrap_6bgemo {
 	margin: var(--dialog-spacing);
 	max-height: 400px;
 }
@@ -21,7 +21,7 @@
 	min-width: unset;
 	width: calc(100% - var(--dialog-spacing) * 2);
 
-	&.messagesPopoutWrap__432f4 {
+	&.messagesPopoutWrap_6bgemo {
 		@include tabs.content($compact: true);
 
 		margin-block-start: 0;

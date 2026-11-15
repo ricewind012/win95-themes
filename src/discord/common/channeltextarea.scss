@@ -1,7 +1,7 @@
 @use "shared/controls";
 @use "shared++/utils";
 
-.buttons__74017 {
+.buttons_2x8-Qn {
 	gap: 0;
 	height: unset;
 	margin-inline: var(--toolbar-spacing) 0;
@@ -19,26 +19,26 @@
 		);
 	}
 
-	.emojiButton__04eed {
+	.emojiButton_SjG8Ug {
 		--button-img: icon("emoji");
 
-		.spriteContainer__04eed {
+		.spriteContainer_SjG8Ug {
 			display: none;
 		}
 	}
 }
 
-.channelTextArea__74017 {
+.channelTextArea_2x8-Qn {
 	background-color: transparent;
 	border: none;
 
-	.editor__1b31f {
+	.editor_SHcSVi {
 		@include controls.text-field;
 
 		min-height: unset;
 	}
 
-	.placeholder__1b31f {
+	.placeholder_SHcSVi {
 		font: var(--text-ui);
 		inset: calc(var(--border-size) + var(--input-spacing));
 		padding: 0;
@@ -50,16 +50,16 @@
 	}
 }
 
-.inner__74017 {
+.inner_2x8-Qn {
 	margin-inline: var(--toolbar-container-spacing);
 	padding: 0;
 }
 
-.scrollableContainer__74017 {
+.scrollableContainer_2x8-Qn {
 	background: transparent;
 	overflow: hidden;
 }
 
-.textArea__74017 {
+.textArea_2x8-Qn {
 	min-height: unset;
 }

@@ -1,44 +1,44 @@
 @use "shared/controls";
 @use "shared/text";
 
-.attachWrapper__0923f {
+.attachWrapper_7TM4SO {
 	margin-inline-end: var(--toolbar-spacing);
 	padding: 0;
 
-	.attachButton__0923f {
+	.attachButton_7TM4SO {
 		--button-img: icon("plus", "mono");
 		@include controls.button;
 		@include controls.icon-button;
 	}
 }
 
-.channelTextArea_f75fb0 {
+.channelTextArea_z_gUBg {
 	--icon-button-height: var(--combobox-button-height);
 	--icon-button-width: var(--combobox-button-height);
 
 	margin-block-end: var(--toolbar-container-spacing);
 
-	.stackedBars__74017 {
+	.stackedBars_2x8-Qn {
 		background-color: transparent;
 		border: none;
 	}
 }
 
 // Reply
-.container__841c8 {
+.container_rE8-46 {
 	align-items: center;
 	flex-direction: row;
 	gap: var(--toolbar-spacing);
 	margin-block-end: var(--toolbar-spacing);
 	margin-inline-end: var(--toolbar-container-spacing);
 
-	.closeButton_e876a8 {
+	.closeButton_Jldl6o {
 		--button-img: icon("clear");
 		@include controls.button;
 		@include controls.icon-button;
 	}
 
-	.mentionButton__841c8 {
+	.mentionButton_rE8-46 {
 		@include controls.checkbox($checked-sel: "&[aria-checked='true']");
 
 		font-size: 0;
@@ -57,24 +57,24 @@
 		}
 	}
 
-	.name__841c8 {
+	.name_rE8-46 {
 		color: inherit;
 	}
 
-	.replyBar__841c8 {
+	.replyBar_rE8-46 {
 		width: 100%;
 	}
 
-	.replyLabel__841c8 {
+	.replyLabel_rE8-46 {
 		@include text.link;
 	}
 
-	.separator__841c8 {
+	.separator_rE8-46 {
 		display: none;
 	}
 }
 
-.form_f75fb0 {
+.form_z_gUBg {
 	background-color: var(--color-button-face);
 	margin: 0;
 	padding: 0;
@@ -85,34 +85,34 @@
 		display: none;
 	}
 
-	.button__24af7 {
-		&.disabled__24af7 {
+	.button_hfM7yP {
+		&.disabled_hfM7yP {
 			opacity: 1;
 		}
 
-		.buttonWrapper__24af7 {
+		.buttonWrapper_hfM7yP {
 			display: none;
 		}
 	}
 
-	.button_e6e74f {
+	.button_s8hOwn {
 		--button-img: icon("list");
 
 		min-height: unset;
 	}
 
-	.buttonContainer_aa63ab {
+	.buttonContainer_plpOf8 {
 		--button-img: icon("chat-bubble-alt");
 
 		margin-inline-start: var(--toolbar-spacing);
 	}
 
-	.separator_aa63ab {
+	.separator_plpOf8 {
 		display: none;
 	}
 }
 
-.typing_b88801 {
+.typing_U9Tvvz {
 	color: var(--color-button-text);
 	font: var(--text-ui);
 	height: unset;
@@ -126,16 +126,16 @@
 	padding: 0;
 	position: fixed;
 
-	.cooldownWrapper_b21699 {
+	.cooldownWrapper_bbCgC2 {
 		padding: 0;
 	}
 
-	.ellipsis_b88801 {
+	.ellipsis_U9Tvvz {
 		display: none;
 	}
 
-	.text_b88801,
-	.typingDots_b88801 {
+	.text_U9Tvvz,
+	.typingDots_U9Tvvz {
 		margin: 0;
 	}
 }

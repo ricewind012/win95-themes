@@ -1,11 +1,11 @@
 @use "shared/controls";
 
-.footer__5be3e {
+.footer_NOlkhE {
 	padding: 0 8px 8px;
 }
 
-.header__5be3e {
-	.avatar__75742 {
+.header_NOlkhE {
+	.avatar_WRLIGC {
 		inset-inline-start: 14px;
 	}
 
@@ -15,10 +15,10 @@
 }
 
 // top right buttons
-.wrapper__4106a {
+.wrapper_nLdsb1 {
 	gap: var(--toolbar-spacing);
 
-	.bannerButton_fb7f94 {
+	.bannerButton_C4gRrZ {
 		@include controls.button;
 		@include controls.icon-button;
 	}

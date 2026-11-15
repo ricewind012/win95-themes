@@ -2,8 +2,8 @@
 @use "shared++/utils";
 
 // popout & dialog respectively
-.body__5be3e,
-.profileBody__9c3be {
+.body_NOlkhE,
+.profileBody_s3DB6Y {
 	gap: 0;
 	overflow: visible;
 	padding: 0 8px;
@@ -18,14 +18,14 @@
 	}
 }
 
-.inner_c0bea0 {
+.inner_P1YEjQ {
 	--pos: calc(var(--border-size) + var(--window-spacing) + 8px);
 
 	background-color: transparent;
 	gap: 0;
 	padding: 0;
 
-	.note_eb110a {
+	.note_nr7Zul {
 		margin: 0;
 	}
 
@@ -42,7 +42,7 @@
 	}
 }
 
-.outer_c0bea0 {
+.outer_P1YEjQ {
 	background: none;
 	border: none;
 

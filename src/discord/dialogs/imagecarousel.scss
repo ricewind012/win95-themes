@@ -1,6 +1,6 @@
 @use "shared/controls";
 
-.actionButtons_cc1819 {
+.actionButtons_Q2cxvN {
 	background-color: transparent;
 	border: none;
 	gap: 0;
@@ -11,24 +11,24 @@
 	}
 }
 
-.carouselModal_d3a6f0 {
-	// unset .root__49fc1 > div
-	.mediaArea_e03578 {
+.carouselModal_7QK1F9 {
+	// unset .root__KoJTP > div
+	.mediaArea_RtjmOP {
 		overflow: unset;
 	}
 }
 
-.topBar__6088c {
+.topBar_QGyCSa {
 	gap: var(--toolbar-spacing);
 
-	.closeButton__6088c {
+	.closeButton_QGyCSa {
 		--button-img: icon("clear");
 		@include controls.button;
 		@include controls.icon-button;
 
 		width: unset;
 
-		.buttonInner_aec7ab {
+		.buttonInner_zpnerZ {
 			display: none;
 		}
 	}

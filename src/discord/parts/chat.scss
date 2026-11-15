@@ -1,7 +1,7 @@
 @use "shared/controls";
 @use "shared/window";
 
-.barBase__0f481 {
+.barBase_j9Vvzj {
 	background-color: transparent;
 	border: none;
 	height: unset;
@@ -23,19 +23,19 @@
 	}
 }
 
-.barButtonBase__0f481 {
+.barButtonBase_j9Vvzj {
 	@include controls.button;
 
 	text-align: center;
 }
 
-.chat_f75fb0 {
+.chat_z_gUBg {
 	border: none;
 	gap: var(--window-gap);
 }
 
 // Member list
-.container_c8ffbb {
+.container_86es0b {
 	@include window.content-container;
 
 	border: none;
@@ -48,20 +48,20 @@
 	}
 }
 
-.chatGradientBase__36d07 {
+.chatGradientBase_8AE1Qq {
 	display: none;
 }
 
-.messagesWrapper__36d07 {
+.messagesWrapper_8AE1Qq {
 	@include window.content-container;
 
 	mask: none;
 
-	.scroller__36d07 {
+	.scroller_8AE1Qq {
 		inset: var(--border-size);
 	}
 }
 
-.scrollerSpacer__36d07 {
+.scrollerSpacer_8AE1Qq {
 	height: var(--space-16);
 }

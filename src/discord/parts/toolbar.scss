@@ -1,18 +1,18 @@
 @use "shared/controls";
 @use "shared++/utils";
 
-.channelIcon__9293f,
-.dot__9293f,
-.titleWrapper__9293f {
+.channelIcon_ybUK7Z,
+.dot_ybUK7Z,
+.titleWrapper_ybUK7Z {
 	display: none;
 }
 
-.children__9293f {
+.children_ybUK7Z {
 	&::after {
 		display: none;
 	}
 
-	.hoverableContainer__754bd {
+	.hoverableContainer_9yrrgG {
 		@include controls.button;
 		@include utils.use-attr-text("aria-label");
 
@@ -20,13 +20,13 @@
 		justify-content: center;
 	}
 
-	.topic__6ec1a {
+	.topic_pVbL3l {
 		font: var(--text-ui);
 		margin: 0;
 	}
 }
 
-.container__9293f {
+.container_ybUK7Z {
 	--__header-bar-background: transparent;
 	--custom-channel-header-height: unset;
 
@@ -36,27 +36,27 @@
 	padding: var(--toolbar-container-spacing);
 }
 
-.icon__9293f,
-.iconBadge__9293f {
+.icon_ybUK7Z,
+.iconBadge_ybUK7Z {
 	display: none;
 }
 
-.iconWrapper__9293f {
+.iconWrapper_ybUK7Z {
 	height: unset;
 	width: unset;
 
-	&:not(.clickable__9293f) {
+	&:not(.clickable_ybUK7Z) {
 		display: none;
 	}
 
-	&.iconDisabled__9293f {
+	&.iconDisabled_ybUK7Z {
 		opacity: 1;
 	}
 
 	&:not([aria-expanded]) {
 		--icon-button-height: var(--combobox-button-height);
 		@include controls.button;
-		@include controls.icon-button($selected-sel: "&.selected__9293f");
+		@include controls.icon-button($selected-sel: "&.selected_ybUK7Z");
 
 		order: -1;
 
@@ -73,31 +73,31 @@
 	}
 }
 
-.search__49676 {
+.search_bWCaDq {
 	margin-inline: var(--toolbar-spacing);
 	order: -2;
 
-	.icon_c322aa {
+	.icon_i16Ad0 {
 		--button-img: icon("search");
 		@include controls.button;
 		@include controls.icon-button;
 
-		&:has(> .iconContainer__0c4c4 > .clear__0c4c4.visible__0c4c4) {
+		&:has(> .iconContainer_v966Ys > .clear_v966Ys.visible_v966Ys) {
 			--button-img: icon("clear");
 		}
 	}
 
-	.iconContainer__0c4c4 {
+	.iconContainer_v966Ys {
 		display: none;
 	}
 
-	.searchBar_c322aa {
+	.searchBar_i16Ad0 {
 		background-color: transparent;
 		border: none;
 		height: unset;
 		padding: 0;
 
-		.editor__25bec {
+		.editor_uNafB1 {
 			@include controls.text-field;
 		}
 
@@ -107,13 +107,13 @@
 		}
 	}
 
-	.searchToken_bd8186 {
+	.searchToken_tknKcK {
 		border: none;
 		height: unset;
 	}
 }
 
-.toolbar__9293f {
+.toolbar_ybUK7Z {
 	gap: 0;
 	margin-inline-end: var(--combobox-icon-button-width);
 }

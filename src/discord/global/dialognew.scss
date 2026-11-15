@@ -1,9 +1,9 @@
 @use "shared/window";
 
-.actionBar__8a031 {
+.actionBar_dvN-MP {
 	padding: var(--dialog-spacing);
 
-	.stack_dbd263 {
+	.stack_TWWX0S {
 		gap: var(--dialog-button-spacing);
 		justify-content: end;
 	}
@@ -14,48 +14,48 @@
 	}
 }
 
-.body__8a031 {
+.body_dvN-MP {
 	overflow: auto;
 }
 
-.bodyInner__8a031 {
+.bodyInner_dvN-MP {
 	padding: var(--dialog-spacing);
 }
 
 // ???
-.bodySpacerBottom__8a031,
-.bodySpacerTop__8a031 {
+.bodySpacerBottom_dvN-MP,
+.bodySpacerTop_dvN-MP {
 	display: none;
 }
 
-.container__8a031 {
+.container_dvN-MP {
 	@include window.container($child: true);
 
 	border: none;
 }
 
-.header__8a031 {
+.header_dvN-MP {
 	all: unset;
 
-	& > .stack_dbd263 {
+	& > .stack_TWWX0S {
 		gap: var(--dialog-spacing);
 	}
 }
 
-.headerLayout__8a031 {
+.headerLayout_dvN-MP {
 	@include window.titlebar($focused-sel: "&");
 }
 
-.headerSubtitle__8a031 {
+.headerSubtitle_dvN-MP {
 	color: inherit;
 	margin-inline: var(--dialog-spacing);
 }
 
-.headerTitle__8a031 {
+.headerTitle_dvN-MP {
 	color: inherit;
 }
 
-.headerTrailing__8a031 {
+.headerTrailing_dvN-MP {
 	margin: 0;
 
 	button {
