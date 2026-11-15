@@ -1,0 +1,31 @@
+@use "steam/shared";
+
+#Buttons {
+	block-size: fit-content;
+	flex-shrink: 0;
+	gap: var(--dialog-button-spacing);
+	margin: 0;
+}
+
+#FramerateReportingBanner {
+	@include shared.library_section-header;
+
+	align-items: center;
+	background-image: none;
+	border: none;
+	color: inherit;
+	display: flex;
+	font: var(--text-ui);
+}
+
+#Question {
+	color: inherit;
+	font: inherit;
+}
+
+#Title {
+	color: inherit;
+	font: inherit;
+	font-weight: bold;
+	margin: 0;
+}
