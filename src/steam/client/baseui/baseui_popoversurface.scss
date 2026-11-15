@@ -9,8 +9,10 @@
 
 :where(#ListBoxOption) {
 	@include menu.item(
-		$selected-sel: "&:where([data-focused='true'], [data-selected='true'])"
+		$selected-sel: "&[data-focused='true']:not([aria-disabled='true'])"
 	);
+
+	background: none;
 
 	&:has([role="checkbox"][aria-checked="true"]) {
 		@include menu.item-check;

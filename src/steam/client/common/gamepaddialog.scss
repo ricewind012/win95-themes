@@ -32,6 +32,10 @@
 		gap: var(--text-spacing);
 	}
 
+	&:has([role="combobox"]) {
+		flex-direction: row;
+	}
+
 	&::after {
 		// lol
 		display: none;
