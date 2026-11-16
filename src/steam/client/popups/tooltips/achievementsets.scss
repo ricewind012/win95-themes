@@ -1,0 +1,7 @@
+@use "shared/controls";
+
+#CompletedSetsTooltip {
+	--color-dull-1: var(--color-tooltip-text);
+
+	@include controls.tooltip;
+}

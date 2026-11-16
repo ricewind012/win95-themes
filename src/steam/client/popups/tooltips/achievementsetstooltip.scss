@@ -1,0 +1,33 @@
+@use "shared/controls";
+
+#AchievementIconBackground {
+	display: none;
+}
+
+#AchievementTooltip {
+	filter: none;
+}
+
+#AchievementTooltipBody {
+	@include controls.tooltip;
+
+	& > :nth-child(2) > :nth-child(2) {
+		gap: var(--text-spacing);
+
+		& > :first-child {
+			font-weight: bold;
+		}
+	}
+}
+
+#UnlockInfo {
+	background: none;
+	padding: 4px;
+	padding-block-start: 0;
+
+	&::before {
+		@include controls.separator-horizontal;
+
+		content: "";
+	}
+}

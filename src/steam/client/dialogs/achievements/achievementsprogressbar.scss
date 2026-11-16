@@ -1,0 +1,9 @@
+@use "shared/controls";
+
+// TODO: this is from the base bottombarprogressbar component...?
+
+#AchievementProgressBar {
+	--progress-bar-radius: 0px;
+
+	@include controls.progress-bar($filled-sel: "&::after");
+}

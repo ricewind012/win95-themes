@@ -45,6 +45,9 @@ $-colors: (
 	--control-height-2: unset;
 	--control-height-3: unset;
 
+	--default-font-size: var(--text-ui-size);
+	--default-line-height: var(--text-line);
+
 	@each $k in greyneutral mauve slate sage olive sand {
 		@for $i from 1 through $-color-count {
 			--color-#{"" + $k}-#{$i}: #f09;
@@ -77,7 +80,7 @@ $-colors: (
 	--library_section-display: grid;
 	--library_section-header-width: 200px;
 	--library_section-rows: var(--library_section-header-width)
-		calc(100% - var(--library_section-header-width));
+	calc(100% - var(--library_section-header-width));
 	--library_section-spacing: 8px;
 
 	// other

@@ -1,0 +1,24 @@
+@use "shared/controls";
+
+#FriendCompareBox,
+#FriendCompareBoxOpen {
+	background: none;
+	padding: 0;
+
+	&::before {
+		@include controls.separator-horizontal;
+
+		content: "";
+	}
+
+	// "X friends play this game" container
+	[style="--min-height: 28px; --direction: row; --align: center;"] {
+		min-height: unset;
+	}
+}
+
+// In list
+#FriendCompareBoxSm {
+	background: none;
+	padding: 0;
+}

@@ -3,6 +3,8 @@
 
 #AchievementsPageContainer {
 	margin-block: 5%;
+	min-width: 60%;
+	width: 60%;
 }
 
 #AppDetailsMain {
@@ -21,7 +23,7 @@
 
 #AppDetailsOverlayTransitionGroup {
 	#CloseButton {
-		--offset: calc(var(--border-size) + var(--window-spacing) + 2px);
+		--offset: calc(var(--border-size) + var(--window-spacing) + 1px);
 
 		@include controls.button;
 		@include window.titlebar-button;
@@ -29,7 +31,7 @@
 
 		background-image: none;
 		inset-block-start: var(--offset);
-		inset-inline-end: var(--offset);
+		inset-inline-end: calc(var(--offset) + 1px);
 		position: absolute;
 		width: unset;
 	}

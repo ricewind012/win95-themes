@@ -1,0 +1,8 @@
+:where(#Heading) {
+	font: inherit;
+	font-weight: bold;
+
+	&:where(:not([style]), [style*="--text-color: var(--color-text-body-"]) {
+		color: inherit;
+	}
+}

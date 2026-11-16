@@ -1,0 +1,5 @@
+@use "shared/text";
+
+:where(#TextLink) {
+	@include text.link;
+}

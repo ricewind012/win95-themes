@@ -1,36 +1,42 @@
+@use "shared/controls";
 @use "shared++/utils";
-@use "steam/shared";
 
 #Background {
 	display: none;
 }
 
-#Container {
-	padding: var(--dialog-spacing);
-}
+[style$="--gap: var(--spacing-4); --icon-size: 54px;"] {
+	--icon-size: inherit;
 
-#DragHandle {
-	inset-inline-end: 0;
-	// Extend the separator to the right
-	position: absolute;
-}
-
-#HeaderContainer {
-	padding: 0;
-}
-
-#Label {
-	@include utils.text-reset;
-}
-
-// HOW is this a scrollpanel ???
-#Page {
-	background-color: transparent;
-	margin: 0;
+	gap: var(--text-spacing);
+	height: calc(100% - var(--titlebar-height));
 	margin-block-start: var(--titlebar-height);
-	overflow: visible;
+	padding: var(--dialog-spacing);
 
-	&::after {
+	// Overlay
+	.PopupFullWindow.Achievements & {
+		--dialog-offset: calc(var(--border-size) + var(--dialog-spacing));
+
+		--inset-inline: var(--dialog-offset);
+		--inset-block-start: calc(
+			var(--dialog-offset) + var(--titlebar-height) + 32px + 11px +
+				var(--spacing-1) * 2
+		);
+		--inset-block-end: calc(
+			var(--dialog-offset) + var(--statusbar-height) + var(--window-gap)
+		);
+		--inset: var(--inset-block-start) calc(var(--inset-inline) - 2px) var(
+			--inset-block-end
+		)
+		calc(var(--inset-inline) + 2px);
+
+		@include utils.content-container-alt;
+	}
+
+	// NOT overlay
+	[id="popup_target"]:not(.fullheight) &::after {
+		--pos: calc(var(--border-size) + var(--window-spacing));
+
 		background-image: linear-gradient(
 			90deg,
 			var(--color-active-caption-bg-start),
@@ -38,12 +44,69 @@
 		);
 		content: "";
 		height: var(--titlebar-height);
-		inset-block-start: calc(var(--titlebar-height) * -1);
+		inset-block-start: var(--pos);
+		inset-inline-start: var(--pos);
 		position: absolute;
-		width: 100%;
+		width: calc(100% - var(--pos) * 2);
+	}
+
+	& > :first-child {
+		// Icon
+		[style*="--min-height: 16px;"] {
+			--size: 32px;
+
+			height: var(--size);
+			margin: 0;
+			width: var(--size);
+		}
+	}
+
+	& > [style="--direction: column; --gap: var(--spacing-5);"] {
+		gap: 0;
+
+		// Checkboxes container
+		& > div > div > :first-child {
+			align-items: start;
+			flex-basis: unset;
+			flex-direction: column;
+			gap: var(--text-spacing);
+			padding: 0;
+
+			& > * {
+				flex-direction: row-reverse;
+				gap: var(--text-spacing);
+			}
+		}
+
+		& > :nth-child(2) {
+			padding-inline: 0;
+
+			&::before {
+				@include controls.separator-horizontal;
+
+				content: "";
+				//	display: block;
+			}
+		}
+	}
+
+	// Progress bar
+	[style*="--height: 10px;"] {
+		// Dimmed progress, upon hovering on group type progress
+		--color-dull-9: transparent;
+
+		@include controls.progress-bar($filled-sel: "&.Hack");
+	}
+
+	// Group header
+	[style*="line-height: 20px;"] {
+		font-weight: bold;
 	}
 }
 
-#SortableUserAchievementInner {
-	background-color: transparent;
+// Parent of the above one
+[style$="--gap: var(--spacing-5); --icon-size: 54px;"] {
+	--icon-size: inherit;
+
+	gap: 12px;
 }

@@ -1,0 +1,81 @@
+@use "shared/controls";
+
+#AchievementRow {
+	border: none;
+
+	& > div {
+		padding-inline: 0;
+	}
+}
+
+#AchievementsTable {
+	[data-index] > div {
+		// Seen in overlay
+		background: none;
+		padding-inline: 0;
+	}
+}
+
+#AvatarAchievement {
+	border: none;
+
+	&#AvatarUnachieved {
+		filter: grayscale(0.5);
+		opacity: 0.5;
+	}
+}
+
+#EmptyTableDivider {
+	@include controls.separator-horizontal;
+}
+
+#GlobalProgressIcon {
+	background: icon("earth");
+	block-size: var(--icon-size);
+	inline-size: var(--icon-size);
+
+	svg {
+		display: none;
+	}
+}
+
+#GlobalProgressSection {
+	--color-text-light-body: var(--color-button-text);
+
+	min-width: 60px;
+}
+
+#GlobalProgressText {
+	font: var(--text-ui);
+}
+
+#HiddenContent {
+	#SectionGap > & {
+		@include controls.button;
+
+		// for virtualized list
+		padding: var(--spacing-3) var(--spacing-2);
+	}
+
+	#RevealInstructions {
+		@include controls.button;
+
+		position: unset;
+	}
+}
+
+#SectionGap {
+	& > span {
+		// Align with the original height for virtualized list
+		display: flex;
+		flex-direction: column;
+		gap: 2px;
+
+		&::before {
+			@include controls.separator-horizontal;
+
+			content: "";
+			display: block;
+		}
+	}
+}

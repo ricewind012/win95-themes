@@ -1,0 +1,35 @@
+#Avatar {
+	border: none;
+	box-shadow: none;
+	height: 100%;
+	width: 100%;
+}
+
+#AvatarHolder {
+	height: var(--steamavatar_size);
+	position: relative;
+	transform: none;
+	width: var(--steamavatar_size);
+
+	&:where([data-size="X-Small"]) {
+		--steamavatar_size: 16px;
+	}
+
+	&:where([data-size="Medium"]) {
+		// Usually accompanied by text
+		--steamavatar_size: max(24px, 2rlh);
+	}
+
+	&:where([data-size="X-Large"]) {
+		--steamavatar_size: 64px;
+	}
+}
+
+#AvatarStatus {
+	background: var(--status-color);
+
+	// for mask
+	#AwayOrSnooze & {
+		opacity: 1;
+	}
+}

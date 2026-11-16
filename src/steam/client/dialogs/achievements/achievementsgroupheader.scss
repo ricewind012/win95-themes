@@ -1,0 +1,25 @@
+@use "shared/controls";
+
+#CollapseButton {
+	@include controls.button;
+	@include controls.icon-button;
+
+	svg {
+		text-shadow: inherit;
+	}
+}
+
+#GroupHeader {
+	// --background comes from the group type classes
+	background: linear-gradient(90deg, transparent, var(--background));
+
+	&#ArchivedGroup,
+	&#Unowned {
+		--background: var(--color-gray-text);
+	}
+
+	// Group type
+	[style^="--flex-grow: 1;"]:not([style*="--gap:"]) > [style*="--text-color"] {
+		font-weight: bold;
+	}
+}
