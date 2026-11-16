@@ -15,3 +15,7 @@
 	--text-secondary: var(--color-gray-text);
 	--text-tertiary: var(--color-gray-text);
 }
+
+.platform-native {
+	--native-titlebar-height: var(--titlebar-height);
+}

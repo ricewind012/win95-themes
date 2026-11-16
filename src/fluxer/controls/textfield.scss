@@ -6,7 +6,7 @@
 	@include controls.text-field;
 
 	&:where(.FormInput.module__minHeight___Sm14SW) {
-		min-height: unset;
+		min-block-size: unset;
 	}
 }
 
@@ -26,7 +26,7 @@
 		$disabled-sel: ".FormCombobox.module__inputGroupDisabled___VXlraj"
 	);
 
-	min-height: unset;
+	min-block-size: unset;
 }
 
 // Fucking hello move these 3 to popups
@@ -64,7 +64,7 @@
 [class*="FormInput.module__textareaWrapper_"] {
 	@include controls.text-field;
 
-	min-height: unset;
+	min-block-size: unset;
 }
 
 [class*="FormInput.module__label_"] {
@@ -75,7 +75,7 @@
 	align-items: start;
 	flex-direction: row-reverse;
 	gap: var(--label-spacing);
-	min-height: unset;
+	min-block-size: unset;
 	padding: 0;
 }
 

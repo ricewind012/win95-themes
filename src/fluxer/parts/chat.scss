@@ -1,0 +1,5 @@
+@use "shared/window";
+
+[class*="ChannelMessages.module__scrollerContainer_"] {
+	@include window.content-container;
+}

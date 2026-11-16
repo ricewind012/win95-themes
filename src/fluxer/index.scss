@@ -17,4 +17,7 @@
 @use "controls/textfield" as controls-textfield;
 @use "controls/tooltip" as controls-tooltip;
 
+@use "parts/app" as parts-app;
 @use "parts/channelheader" as parts-channelheader;
+@use "parts/chat" as parts-chat;
+@use "parts/titlebar" as parts-titlebar;

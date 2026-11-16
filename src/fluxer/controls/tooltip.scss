@@ -1,6 +1,11 @@
 @use "shared/controls";
 
 [class*="Tooltip.module__tooltip_"] {
+	--tooltip-border-width: 1px;
+	--tooltip-active-border-color: var(--color-tooltip-text);
+	--tooltip-active-surface: var(--color-tooltip);
+	--tooltip-shadow: none;
+
 	@include controls.tooltip;
 }
 

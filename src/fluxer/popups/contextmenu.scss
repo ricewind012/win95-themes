@@ -28,7 +28,7 @@
 
 	border: none;
 	font: var(--text-ui);
-	min-height: unset;
+	min-block-size: unset;
 
 	&:where([data-disabled]) {
 		@include menu.item-disabled;
@@ -50,7 +50,7 @@
 }
 
 [class*="ContextMenu.module__itemLabel_"] {
-	min-height: unset;
+	min-block-size: unset;
 }
 
 // WHY is this in the same component
@@ -66,8 +66,8 @@
 	// dude what
 	aspect-ratio: unset;
 	background: none;
+	inline-size: 100%;
 	justify-content: start;
-	width: 100%;
 
 	&::after {
 		content: attr(aria-label);

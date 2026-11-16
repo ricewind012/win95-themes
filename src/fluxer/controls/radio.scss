@@ -14,9 +14,9 @@
 	@include text.input-label;
 	@include controls.radio($checked-sel: "&[aria-checked='true']");
 
-	height: unset;
+	block-size: unset;
+	inline-size: unset;
 	padding: 0;
-	width: unset;
 
 	&:not([aria-checked="true"])::before {
 		display: none;
@@ -29,10 +29,10 @@
 
 	// Use as ::before for label spacing
 	&::after {
-		order: -1;
-		width: calc(
+		inline-size: calc(
 			var(--sel-button-size) + var(--label-spacing) - var(--text-spacing)
 		);
+		order: -1;
 	}
 }
 
