@@ -1,0 +1,26 @@
+diff --git a/src/postcss_plugins/selector_replacer.js b/src/postcss_plugins/selector_replacer.js
+index f6272a1e5d40f8bdf093f9361e3e90b778f7a97e..7179c385da417a17b7bb94eb3064c0dc2dc1b083 100644
+--- a/src/postcss_plugins/selector_replacer.js
++++ b/src/postcss_plugins/selector_replacer.js
+@@ -65,9 +65,20 @@ export const selectorReplacerPlugin = () => (css) => {
+ 		return;
+ 	}
+ 
++	/*
++	css.walk(node => {
++		const start = node.source?.start;
++		const input = node.source?.input;
++
++		const origin = start && input?.origin(start.line, start.column);
++		const file = origin?.file ?? input?.file;
++		console.log( file );
++	})
++	*/
++
+ 	css.walkRules((rule) => {
+ 		rule.selector = rule.selector.replace(SELECTOR, (_, s) => {
+-			const id = mod[s];
++			const id = mod?.[s];
+ 			if (!id) {
+ 				console.error("[%s] %o is undefined", fileName, `#${s}`);
+ 				return;
