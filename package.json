@@ -18,5 +18,8 @@
 	"devDependencies": {
 		"@biomejs/biome": "^2.4.7",
 		"semantic-release": "^24.2.9"
+	},
+	"patchedDependencies": {
+		"steam-theming-utils@3.6.0": "patches/steam-theming-utils@3.6.0.patch"
 	}
 }
