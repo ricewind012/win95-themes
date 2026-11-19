@@ -2,6 +2,8 @@
 
 [class*="ScrollerTrack.module__thumb_"] {
 	@include scrollbar.thumb;
+
+	position: unset;
 }
 
 [class*="ScrollerTrack.module__track_"] {

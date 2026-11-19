@@ -1,0 +1,48 @@
+@use "shared/controls";
+
+[class*="TextareaButton.module__button_"] {
+	@include controls.combobox-icon-button($active-sel: "&[aria-pressed='true']");
+
+	&[data-flx="channel.lexical-channel-textarea-content.plus-button-above-backdrop.clear-slash-command"] {
+		--button-img: icon("plus", "mono");
+	}
+
+	&[data-expression-picker-tab="gifs"] {
+		--button-img: icon("list");
+	}
+
+	&[data-expression-picker-tab="memes"] {
+		--button-img: icon("url");
+	}
+
+	&[data-expression-picker-tab="emojis"] {
+		--button-img: icon("emoji");
+	}
+
+	&[data-expression-picker-tab="stickers"] {
+		--button-img: icon("file");
+	}
+}
+
+[class*="TextareaInput.module__contentAreaDense_"] {
+	@include controls.text-field;
+
+	block-size: fit-content;
+}
+
+[class*="TextareaInput.module__textareaOuterRow_"] {
+	--composer-action-gap: 0px;
+	--textarea-line-height: var(--text-line);
+	--textarea-min-height: unset;
+	--textarea-padding-y: 0px;
+	--textarea-side-button-padding: 0px;
+	--textarea-upload-gap: var(--toolbar-container-spacing);
+
+	background: none;
+	margin: var(--toolbar-spacing);
+	padding: 0;
+
+	&::after {
+		display: none;
+	}
+}

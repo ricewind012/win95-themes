@@ -1,6 +1,16 @@
 @use "shared/controls";
+@use "shared/tabs";
 @use "shared/window";
 @use "shared++/utils";
+
+// TODO: svg unify
+[class*="SettingsModalHeader.module__icon_"] {
+	display: none;
+}
+
+[class*="SettingsModalHeader.module__title_"] {
+	all: unset;
+}
 
 [class*="SettingsHeadingLinkButton.module__button_"] {
 	--button-img: icon("link");
@@ -30,17 +40,59 @@
 	border: none;
 }
 
+[class*="SettingsModalLayout.module__desktopContentCard_"] > [role="group"] {
+	@include tabs.content;
+
+	inline-size: calc(100% - var(--dialog-spacing));
+	margin: var(--dialog-spacing);
+	margin-inline-start: 0;
+}
+
 [class*="SettingsModalLayout.module__desktopSidebar_"] {
 	border: none;
 }
 
-// TODO: svg unify
-[class*="SettingsModalHeader.module__icon_"] {
-	display: none;
+[class*="SettingsModalLayout.module__desktopSidebarInner_"] {
+	padding: var(--dialog-spacing);
+	padding-inline-end: 0;
 }
 
-[class*="SettingsModalHeader.module__title_"] {
-	all: unset;
+[class*="SettingsModalLayout.module__sidebarCategory_"] {
+	gap: 0;
+	margin: 0;
+}
+
+[class*="SettingsModalLayout.module__sidebarCategoryTitle_"] {
+	font: var(--text-ui);
+	margin: 0;
+	padding: 6px;
+	padding-block: 2px calc(2px + 0.1875rem);
+}
+
+[class*="SettingsModalLayout.module__sidebarItem_"] {
+	@include tabs.tab-vertical($selected-sel: "&[aria-selected='true']");
+
+	font: var(--text-ui);
+	min-block-size: unset;
+}
+
+[class*="SettingsModalLayout.module__sidebarNav_"] {
+	margin: 0;
+}
+
+[class*="SettingsModalLayout.module__sidebarNavContent_"] {
+	padding: 0;
+	padding-inline-start: 8px;
+}
+
+[class*="SettingsModalLayout.module__sidebarNavWrapper_"] > div {
+	flex-direction: row-reverse;
+}
+
+[class*="SettingsModalLayout.module__sidebarItemChevron_"],
+[class*="SettingsModalLayout.module__sidebarItemIcon_"],
+[class*="SettingsModalLayout.module__sidebarSubItemsWrap_"] {
+	display: none;
 }
 
 [class*="SettingsSection.module__section_"] {
@@ -100,4 +152,8 @@
 
 [class*="UserSettingsModal.module__userProfile_"] {
 	@include controls.button;
+
+	&[class*="UserSettingsModal.module__userProfileSelected_"] {
+		@include controls.button-active;
+	}
 }
