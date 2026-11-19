@@ -3,6 +3,11 @@
 :where([class*="Button.module__button_"]) {
 	@include controls.button($disabled-sel: "&:disabled, &[data-disabled]");
 
+	&:disabled,
+	&[data-disabled] {
+		opacity: 1;
+	}
+
 	svg {
 		display: none;
 	}

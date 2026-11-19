@@ -31,6 +31,9 @@
 
 [class*="SettingsModalLayout.module__container_"] {
 	--settings-surface-background: var(--color-button-face);
+
+	margin-block-start: var(--titlebar-height);
+	overflow: visible;
 }
 
 [class*="SettingsModalLayout.module__desktopHeader_"] {
@@ -38,6 +41,9 @@
 	@include window.titlebar-name;
 
 	border: none;
+	inset-block-start: calc(var(--titlebar-height) * -1);
+	inset-inline: 0;
+	position: absolute;
 }
 
 [class*="SettingsModalLayout.module__desktopContentCard_"] > [role="group"] {
@@ -46,6 +52,7 @@
 	inline-size: calc(100% - var(--dialog-spacing));
 	margin: var(--dialog-spacing);
 	margin-inline-start: 0;
+	padding-inline: 0;
 }
 
 [class*="SettingsModalLayout.module__desktopSidebar_"] {
@@ -63,7 +70,9 @@
 }
 
 [class*="SettingsModalLayout.module__sidebarCategoryTitle_"] {
+	color: inherit;
 	font: var(--text-ui);
+	font-weight: bold;
 	margin: 0;
 	padding: 6px;
 	padding-block: 2px calc(2px + 0.1875rem);
