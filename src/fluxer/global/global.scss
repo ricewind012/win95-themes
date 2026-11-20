@@ -1,9 +1,20 @@
+@use "shared/window";
 @use "shared++/global";
 
 html {
+	@include window.container;
+
 	font: var(--text-ui);
+}
+
+body {
 }
 
 img {
 	image-rendering: auto;
+}
+
+#root {
+	//block-size: calc(100% - var(--border-size) * 2);
+	//inline-size: calc(100% - var(--border-size) * 2);
 }

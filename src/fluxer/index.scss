@@ -6,6 +6,7 @@
 @use "global/variables" as global-variables;
 
 @use "popups/contextmenu" as popups-contextmenu;
+@use "popups/userprofile" as popups-userprofile;
 
 @use "dialogs/base" as dialogs-base;
 @use "dialogs/settings" as dialogs-settings;
@@ -21,4 +22,5 @@
 @use "parts/channelheader" as parts-channelheader;
 @use "parts/chatform" as parts-chatform;
 @use "parts/chat" as parts-chat;
+@use "parts/sidebar" as parts-sidebar;
 @use "parts/titlebar" as parts-titlebar;

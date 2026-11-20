@@ -4,6 +4,9 @@
 .fluxer-native-titlebar {
 	@include window.titlebar($focused-sel: ".window-focused &");
 
+	inset: var(--border-size);
+	inset-block-end: unset;
+
 	&__control {
 		@include controls.button;
 		@include window.titlebar-button;

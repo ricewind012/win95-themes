@@ -1,0 +1,94 @@
+@use "shared/controls";
+@use "shared/window";
+
+[class*="ChannelListContent.module__channelListScrollerWrapper_"] {
+	@include window.content-container;
+}
+
+[class*="GuildsLayout.module__userAreaWrapper_"] {
+	inset-inline-start: var(--layout-guild-list-width);
+	padding: 0;
+}
+
+[class*="GuildsLayout.module__guildsLayoutContainer_"] {
+	--layout-user-area-reserved-height: calc(
+		var(--toolbar-container-spacing) * 2 + var(--combobox-button-height)
+	);
+
+	// TODO: wtf
+	block-size: calc(100% - 4px);
+}
+
+[class*="UserArea.module__controlButton_"] {
+	@include controls.button;
+	@include controls.icon-button;
+
+	&[data-flx="app.user-area.user-area-inner.control-button.mute"] {
+		--button-img: icon("sound");
+
+		&[class*="UserArea.module__active_"] {
+			--button-img: icon("sound-muted");
+		}
+	}
+
+	&[data-flx="app.user-area.user-area-inner.control-button.deafen"] {
+		--button-img: icon("microphone");
+
+		&[class*="UserArea.module__active_"] {
+			--button-img: icon("microphone-muted");
+		}
+	}
+
+	&[data-flx="app.user-area.user-area-inner.control-button.settings-click"] {
+		--button-img: icon("settings");
+	}
+
+	svg {
+		display: none;
+	}
+}
+
+[class*="UserArea.module__controlsContainer_"] {
+	--icon-button-height: var(--combobox-button-height);
+	--icon-button-width: var(--combobox-button-height);
+
+	gap: 0;
+	padding: 0;
+}
+
+[class*="UserArea.module__userAreaContainer_"] {
+	gap: var(--toolbar-spacing);
+	min-block-size: unset;
+	padding: var(--toolbar-container-spacing);
+}
+
+[class*="UserArea.module__userAreaInnerWrapper_"] {
+	background: var(--color-button-face);
+	box-shadow: none;
+	inline-size: var(--layout-sidebar-width);
+}
+
+[class*="UserArea.module__userInfo_"] {
+	@include controls.combobox-button($active-sel: "&[aria-expanded='true']");
+
+	block-size: var(--combobox-button-height);
+
+	[class*="BaseAvatar.module__container_"] {
+		--size: 1.5rem;
+
+		block-size: var(--size);
+		inline-size: var(--size);
+		inset-block-start: var(--offset-click);
+		inset-inline-start: var(--offset-click);
+	}
+}
+
+[class*="UserArea.module__userName_"] {
+	color: inherit;
+	font: inherit;
+	text-shadow: inherit;
+}
+
+[class*="UserArea.module__userStatus_"] {
+	display: none;
+}

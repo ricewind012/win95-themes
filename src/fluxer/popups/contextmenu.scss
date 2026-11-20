@@ -40,11 +40,11 @@
 		@include menu.item-parent;
 	}
 
-	&:where([role="menuitemcheckbox"]) {
+	&:where([role="menuitemcheckbox"][aria-checked="true"]) {
 		@include menu.item-check;
 	}
 
-	&:where([role="menuitemradio"]) {
+	&:where([role="menuitemradio"][aria-checked="true"]) {
 		@include menu.item-radio;
 	}
 }
