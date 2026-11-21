@@ -1,5 +1,7 @@
 @use "shared/scrollbar";
 
+// Fluxer author is high and decided to make his own scrollbars
+
 [class*="ScrollerTrack.module__thumb_"] {
 	@include scrollbar.thumb;
 

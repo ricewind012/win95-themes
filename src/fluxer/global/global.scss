@@ -7,14 +7,13 @@ html {
 	font: var(--text-ui);
 }
 
-body {
-}
-
 img {
 	image-rendering: auto;
 }
 
-#root {
-	//block-size: calc(100% - var(--border-size) * 2);
-	//inline-size: calc(100% - var(--border-size) * 2);
+[data-flx="app.app.app-wrapper.app-container"] {
+	--size: calc(100vh - var(--border-size) * 4);
+
+	min-block-size: var(--size);
+	block-size: var(--size);
 }

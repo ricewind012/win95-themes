@@ -6,20 +6,6 @@
 	box-shadow: none;
 }
 
-[class*="ProfileCardFooter.module__footerSection_"] {
-	padding: 0;
-}
-
-[class*="ProfileCardLayout.module__profileCard_"] {
-	@include window.container($child: true);
-
-	border: none;
-
-	& > :where(div, header) {
-		display: none;
-	}
-}
-
 [class*="UserAreaPopout.module__actionButton_"] {
 	@include menu.item($selected-sel: "&[aria-expanded='true']");
 
@@ -48,6 +34,22 @@
 [class*="UserAreaPopout.module__actionLabel_"] {
 	color: inherit;
 	font: inherit;
+}
+
+[class*="UserAreaPopout.module__container_"] {
+	[class*="ProfileCardFooter.module__footerSection_"] {
+		padding: 0;
+	}
+
+	[class*="ProfileCardLayout.module__profileCard_"] {
+		@include window.container($child: true);
+
+		border: none;
+
+		& > :where(div, header) {
+			display: none;
+		}
+	}
 }
 
 [class*="UserAreaPopout.module__editProfileButton_"] {

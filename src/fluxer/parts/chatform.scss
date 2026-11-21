@@ -1,7 +1,19 @@
 @use "shared/controls";
 
+[class*="InputWrapper.module__disabled_"] {
+	opacity: 1;
+}
+
 [class*="TextareaButton.module__button_"] {
 	@include controls.combobox-icon-button($active-sel: "&[aria-pressed='true']");
+
+	background-position-y: calc(
+		var(--button-img-pos-y, 0px) + var(--offset-click) + var(--button-spacing)
+	);
+	block-size: var(--combobox-button-height);
+	min-width: unset;
+	// Disabled state
+	opacity: 1;
 
 	&[data-flx="channel.lexical-channel-textarea-content.plus-button-above-backdrop.clear-slash-command"] {
 		--button-img: icon("plus", "mono");
@@ -22,12 +34,23 @@
 	&[data-expression-picker-tab="stickers"] {
 		--button-img: icon("file");
 	}
+
+	svg {
+		display: none;
+	}
 }
 
 [class*="TextareaInput.module__contentAreaDense_"] {
-	@include controls.text-field;
+	@include controls.text-field(
+		$disabled-sel: "[class*='InputWrapper.module__disabled_'] &"
+	);
 
-	block-size: fit-content;
+	block-size: var(--combobox-button-height);
+}
+
+// piece of shit
+[class*="TextareaInput.module__mainWrapperDense_"] {
+	min-block-size: 0;
 }
 
 [class*="TextareaInput.module__textareaOuterRow_"] {
@@ -36,13 +59,17 @@
 	--textarea-min-height: unset;
 	--textarea-padding-y: 0px;
 	--textarea-side-button-padding: 0px;
-	--textarea-upload-gap: var(--toolbar-container-spacing);
+	--textarea-upload-gap: var(--toolbar-spacing);
 
 	background: none;
-	margin: var(--toolbar-spacing);
+	margin: var(--toolbar-container-spacing);
 	padding: 0;
 
 	&::after {
 		display: none;
+	}
+
+	[class*="LexicalMessageComposer.module__placeholder_"] {
+		inset: 2px;
 	}
 }
