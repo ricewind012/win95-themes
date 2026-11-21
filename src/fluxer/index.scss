@@ -1,0 +1,26 @@
+// DO NOT EDIT! Generated with "npm run build".
+
+@use "global/global" as global-global;
+@use "global/icons" as global-icons;
+@use "global/scrollbar" as global-scrollbar;
+@use "global/variables" as global-variables;
+
+@use "popups/contextmenu" as popups-contextmenu;
+@use "popups/userprofile" as popups-userprofile;
+
+@use "dialogs/base" as dialogs-base;
+@use "dialogs/settings" as dialogs-settings;
+
+@use "controls/button" as controls-button;
+@use "controls/radio" as controls-radio;
+@use "controls/segmentedtabs" as controls-segmentedtabs;
+@use "controls/slider" as controls-slider;
+@use "controls/textfield" as controls-textfield;
+@use "controls/tooltip" as controls-tooltip;
+
+@use "parts/app" as parts-app;
+@use "parts/channelheader" as parts-channelheader;
+@use "parts/chatform" as parts-chatform;
+@use "parts/chat" as parts-chat;
+@use "parts/sidebar" as parts-sidebar;
+@use "parts/titlebar" as parts-titlebar;

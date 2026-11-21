@@ -1,0 +1,45 @@
+@use "shared/controls";
+@use "shared/text";
+
+[class*="RadioGroup.module__description_"],
+[class*="RadioGroup.module__labelText_"] {
+	font: inherit;
+}
+
+[class*="RadioGroup.module__group_"] {
+	gap: var(--text-spacing);
+}
+
+[class*="RadioGroup.module__radioGroupOption_"] {
+	@include text.input-label;
+	@include controls.radio($checked-sel: "&[aria-checked='true']");
+
+	block-size: unset;
+	inline-size: unset;
+	padding: 0;
+
+	&:not([aria-checked="true"])::before {
+		display: none;
+	}
+
+	&::before,
+	&::after {
+		content: "";
+	}
+
+	// Use as ::before for label spacing
+	&::after {
+		inline-size: calc(
+			var(--sel-button-size) + var(--label-spacing) - var(--text-spacing)
+		);
+		order: -1;
+	}
+}
+
+[class*="RadioGroup.module__radioIndicator_"] {
+	display: none;
+}
+
+[class*="RadioGroup.module__stack_"] {
+	gap: var(--text-spacing);
+}

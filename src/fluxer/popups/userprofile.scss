@@ -1,0 +1,78 @@
+@use "shared/controls";
+@use "shared/menu";
+@use "shared/window";
+
+[class*="PopoverPopout.module__popout_"] {
+	box-shadow: none;
+}
+
+[class*="ProfileCardFooter.module__footerSection_"] {
+	padding: 0;
+}
+
+[class*="ProfileCardLayout.module__profileCard_"] {
+	@include window.container($child: true);
+
+	border: none;
+
+	& > :where(div, header) {
+		display: none;
+	}
+}
+
+[class*="UserAreaPopout.module__actionButton_"] {
+	@include menu.item($selected-sel: "&[aria-expanded='true']");
+
+	&[aria-haspopup="true"] {
+		@include menu.item-parent;
+	}
+}
+
+[class*="UserAreaPopout.module__actionChevron_"],
+[class*="UserAreaPopout.module__actionIcon_"] {
+	display: none;
+}
+
+[class*="UserAreaPopout.module__actionDivider_"] {
+	display: none;
+}
+
+[class*="UserAreaPopout.module__actionGroup_"] {
+	&::after {
+		@include controls.separator-horizontal;
+
+		content: "";
+	}
+}
+
+[class*="UserAreaPopout.module__actionLabel_"] {
+	color: inherit;
+	font: inherit;
+}
+
+[class*="UserAreaPopout.module__editProfileButton_"] {
+	all: unset;
+
+	@include menu.item($selected-sel: "&.hack");
+
+	// TODO
+	[class*="Button.module__iconWrapper___c2Z6YV"] {
+		justify-content: start;
+	}
+}
+
+[class*="UserAreaPopout.module__footer_"] {
+	gap: 0;
+}
+
+[class*="UserAreaPopout.module__statusMenu_"] {
+	margin: 0;
+}
+
+[class*="UserAreaPopout.module__statusMenuIcon_"] {
+	display: none;
+}
+
+[class*="UserAreaPopout.module__statusMenuItem_"] {
+	display: flex;
+}

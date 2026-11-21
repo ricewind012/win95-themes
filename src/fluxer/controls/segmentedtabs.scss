@@ -1,0 +1,9 @@
+@use "shared/controls";
+
+[class*="SegmentedTabs.module__tab_"] {
+	@include controls.button($active-sel: "&:active, &[aria-selected='true']");
+}
+
+[class*="SegmentedTabs.module__tabList_"] {
+	padding: 0;
+}

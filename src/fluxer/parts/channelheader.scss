@@ -1,0 +1,56 @@
+@use "shared/controls";
+
+[class*="ChannelHeader.module__buttonIcon_"],
+[class*="ChannelHeader.module__channelIcon_"],
+[class*="ChannelHeader.module__channelName_"],
+[class*="ChannelHeader.module__topicDivider_"] {
+	display: none;
+}
+
+[class*="ChannelHeader.module__headerContainer_"] {
+	block-size: unset;
+	border: none;
+	min-block-size: unset;
+	padding: var(--toolbar-container-spacing);
+}
+
+[class*="ChannelHeader.module__headerRightSection_"] {
+	gap: 0;
+}
+
+[class*="ChannelHeader.module__iconButton_"] {
+	&:where([aria-haspopup]) {
+		@include controls.combobox-icon-button(
+			$active-sel: "&[aria-expanded='true']"
+		);
+
+		order: -1;
+	}
+
+	&:where([aria-pressed]) {
+		@include controls.button;
+		@include controls.icon-button;
+	}
+}
+
+[class*="ChannelHeader.module__messageSearchFocusWrapper_"] {
+	margin-inline-start: var(--toolbar-spacing);
+}
+
+[class*="ChannelHeader.module__topicButton_"] {
+	color: var(--color-button-text);
+}
+
+[class*="MessageSearchBar.module__inputContainer_"] {
+	@include controls.text-field;
+
+	min-block-size: unset;
+
+	[class*="LexicalSearchInput.module__editorShell_"] {
+		min-block-size: unset;
+	}
+}
+
+[class*="MessageSearchBar.module__scopeButton_"] {
+	display: none;
+}

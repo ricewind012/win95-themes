@@ -1,0 +1,30 @@
+@use "shared/scrollbar";
+
+[class*="ScrollerTrack.module__thumb_"] {
+	@include scrollbar.thumb;
+
+	position: unset;
+}
+
+[class*="ScrollerTrack.module__track_"] {
+	@include scrollbar.container;
+
+	opacity: 1;
+	position: unset;
+
+	&:where([class*="ScrollerTrack.module__horizontal_"]) {
+		inline-size: unset;
+
+		[class*="ScrollerTrack.module__thumb_"] {
+			block-size: inherit;
+		}
+	}
+
+	&:where([class*="ScrollerTrack.module__vertical_"]) {
+		block-size: unset;
+
+		[class*="ScrollerTrack.module__thumb_"] {
+			inline-size: inherit;
+		}
+	}
+}
