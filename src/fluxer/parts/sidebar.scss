@@ -28,8 +28,61 @@
 	}
 }
 
+[class*="ChannelListContent.module__channelListScroller_"] {
+	background: none;
+}
+
 [class*="ChannelListContent.module__channelListScrollerWrapper_"] {
 	@include window.content-container;
+}
+
+[class*="GuildHeader.module__bannerClip_"] {
+	block-size: var(--block-size);
+	opacity: 0.5;
+	transform: none;
+}
+
+[class*="GuildHeader.module__bannerImage_"] {
+	background-position: center;
+	block-size: inherit;
+	transform: none;
+}
+
+[class*="GuildBadge.module__badgeWrapper_"],
+[class*="GuildHeader.module__bannerGradient_"],
+[class*="GuildHeader.module__caretIcon_"],
+[class*="GuildHeader.module__headerGlass_"] {
+	display: none;
+}
+
+[class*="GuildHeader.module__guildName_"] {
+	--button-img: icon("overflow", "mono");
+	--button-img-pos-x: 2px;
+	--button-img-pos-y: 5px;
+	@include controls.combobox-icon-button(
+		$active-sel: "[role='button'][aria-expanded='true'] > &"
+	);
+
+	flex: unset;
+	font-size: 0;
+	min-inline-size: unset;
+}
+
+[class*="GuildHeader.module__headerContainer_"] {
+	border: none;
+	box-shadow: var(--border-statusbar);
+	block-size: var(--block-size);
+	margin-block-end: var(--window-gap);
+	min-block-size: var(--block-size);
+}
+
+[class*="GuildHeader.module__headerContent_"] {
+	justify-content: end;
+	padding-inline: var(--toolbar-spacing);
+}
+
+[class*="GuildHeader.module__headerWrapper_"] {
+	--block-size: calc(var(--layout-header-height) - var(--window-gap));
 }
 
 [class*="GuildsLayout.module__userAreaWrapper_"] {
@@ -64,7 +117,7 @@
 [class*="SidebarResizeHandle.module__handle_"] {
 	--sidebar-resize-handle-color: transparent;
 
-	inline-size: 13px;
+	inline-size: 7px;
 }
 
 [class*="UserArea.module__controlButton_"] {

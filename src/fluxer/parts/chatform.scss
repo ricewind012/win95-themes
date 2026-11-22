@@ -5,18 +5,36 @@
 }
 
 [class*="TextareaButton.module__button_"] {
-	@include controls.combobox-icon-button($active-sel: "&[aria-pressed='true']");
-
-	background-position-y: calc(
-		var(--button-img-pos-y, 0px) + var(--offset-click) + var(--button-spacing)
-	);
-	block-size: var(--combobox-button-height);
-	min-width: unset;
 	// Disabled state
 	opacity: 1;
 
+	&:where([aria-pressed]) {
+		@include controls.combobox-icon-button(
+			$active-sel: "&[aria-pressed='true']"
+		);
+
+		background-position-y: calc(
+			var(--button-img-pos-y, 0px) + var(--offset-click) + var(--button-spacing)
+		);
+		block-size: var(--combobox-button-height);
+		min-width: unset;
+	}
+
+	&:where(:not([aria-pressed])) {
+		@include controls.button;
+		@include controls.icon-button;
+
+		block-size: var(--combobox-button-height);
+	}
+
 	&[data-flx="channel.lexical-channel-textarea-content.plus-button-above-backdrop.clear-slash-command"] {
 		--button-img: icon("plus", "mono");
+	}
+
+	&[data-flx="channel.textarea.textarea-buttons.textarea-button.submit--2"] {
+		--button-img: icon("chat-bubble-alt");
+
+		margin-inline-start: var(--toolbar-spacing);
 	}
 
 	&[data-expression-picker-tab="gifs"] {
@@ -48,6 +66,10 @@
 	block-size: var(--combobox-button-height);
 }
 
+[class*="TextareaInput.module__divider_"] {
+	display: none;
+}
+
 // piece of shit
 [class*="TextareaInput.module__mainWrapperDense_"] {
 	min-block-size: 0;
@@ -63,6 +85,7 @@
 
 	background: none;
 	margin: var(--toolbar-container-spacing);
+	min-block-size: unset;
 	padding: 0;
 
 	&::after {
@@ -70,6 +93,7 @@
 	}
 
 	[class*="LexicalMessageComposer.module__placeholder_"] {
-		inset: 2px;
+		inset-block-start: 2px;
+		inset-inline-start: 2px;
 	}
 }

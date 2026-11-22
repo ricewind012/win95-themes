@@ -16,6 +16,11 @@
 	--text-tertiary: var(--color-gray-text);
 
 	--guild-list-item-gap: 0px;
+	--layout-header-height: calc(
+		var(--toolbar-container-spacing) * 2 + var(--combobox-button-height) +
+			var(--window-gap)
+	);
+	--outline-frame-radius-native: 0px;
 	--user-area-divider-color: transparent;
 }
 

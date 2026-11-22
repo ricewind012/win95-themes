@@ -30,6 +30,11 @@
 	&:where([aria-pressed]) {
 		@include controls.button;
 		@include controls.icon-button;
+
+		// first of selector
+		&:where(:nth-child(-n + 1 of &)) {
+			margin-inline-start: var(--toolbar-spacing);
+		}
 	}
 }
 
@@ -39,6 +44,8 @@
 
 [class*="ChannelHeader.module__topicButton_"] {
 	color: var(--color-button-text);
+	font: inherit;
+	margin-inline-start: 4px;
 }
 
 [class*="MessageSearchBar.module__inputContainer_"] {
