@@ -50,6 +50,11 @@
 	box-shadow: none;
 }
 
+[class*="FormCombobox.module__label_"] {
+	color: inherit;
+	font: inherit;
+}
+
 // lol why?
 [class*="FormCombobox.module__valueOverlay_"] {
 	display: none;
@@ -64,6 +69,7 @@
 [class*="FormInput.module__textareaWrapper_"] {
 	@include controls.text-field;
 
+	block-size: unset;
 	min-block-size: unset;
 }
 

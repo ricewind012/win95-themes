@@ -12,6 +12,7 @@
 @use "dialogs/settings" as dialogs-settings;
 
 @use "controls/button" as controls-button;
+@use "controls/checkbox" as controls-checkbox;
 @use "controls/radio" as controls-radio;
 @use "controls/segmentedtabs" as controls-segmentedtabs;
 @use "controls/slider" as controls-slider;
@@ -23,5 +24,6 @@
 @use "parts/chatform" as parts-chatform;
 @use "parts/chat" as parts-chat;
 @use "parts/memberlist" as parts-memberlist;
+@use "parts/search" as parts-search;
 @use "parts/sidebar" as parts-sidebar;
 @use "parts/titlebar" as parts-titlebar;

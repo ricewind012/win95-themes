@@ -32,10 +32,6 @@
 	background: none;
 }
 
-[class*="ChannelListContent.module__channelListScrollerWrapper_"] {
-	@include window.content-container;
-}
-
 [class*="GuildHeader.module__bannerClip_"] {
 	block-size: var(--block-size);
 	opacity: 0.5;
@@ -69,6 +65,7 @@
 }
 
 [class*="GuildHeader.module__headerContainer_"] {
+	background: none;
 	border: none;
 	box-shadow: var(--border-statusbar);
 	block-size: var(--block-size);
@@ -83,6 +80,12 @@
 
 [class*="GuildHeader.module__headerWrapper_"] {
 	--block-size: calc(var(--layout-header-height) - var(--window-gap));
+}
+
+[class*="GuildNavbar.module__guildNavbarContainer_"] {
+	[role="group"]:not([style="overflow: hidden auto;"]) {
+		@include window.content-container;
+	}
 }
 
 [class*="GuildsLayout.module__userAreaWrapper_"] {

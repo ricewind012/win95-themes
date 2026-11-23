@@ -1,0 +1,19 @@
+@use "shared/controls";
+@use "shared/text";
+
+[class*="Checkbox.module__checkboxIndicator_"] {
+	display: none;
+}
+
+[class*="Checkbox.module__checkboxWrapper_"] {
+	@include text.input-label;
+}
+
+[class*="Checkbox.module__checkbox_"] {
+	@include controls.checkbox($checked-sel: "&[aria-checked='true']");
+}
+
+[class*="Checkbox.module__label_"] {
+	margin: 0;
+	padding: 0;
+}

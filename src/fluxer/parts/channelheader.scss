@@ -29,7 +29,7 @@
 
 	&:where([aria-pressed]) {
 		@include controls.button;
-		@include controls.icon-button;
+		@include controls.icon-button($selected-sel: "&[aria-pressed='true']");
 
 		// first of selector
 		&:where(:nth-child(-n + 1 of &)) {

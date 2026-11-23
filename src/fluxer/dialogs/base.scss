@@ -20,11 +20,18 @@
 }
 
 [class*="Modal.module__header_"] {
-	@include window.titlebar($focused-sel: "&");
+	padding: var(--dialog-spacing);
+	padding-block-end: 0;
 }
 
 [class*="Modal.module__headerInner_"] {
-	inline-size: 100%;
+	// Put it here instead, since .header may contain other children other than
+	// this one, see "add favorite channel" modal
+	@include window.titlebar($focused-sel: "&");
+
+	inline-size: calc(100% + var(--dialog-spacing) * 2);
+	margin: calc(var(--dialog-spacing) * -1);
+	margin-block-end: 0;
 
 	button {
 		@include controls.button;
@@ -55,4 +62,7 @@
 	@include window.container($child: true);
 
 	border: none;
+	// Animation
+	opacity: 1;
+	transform: none;
 }
