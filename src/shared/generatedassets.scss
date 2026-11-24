@@ -2,7 +2,7 @@
 // - mask relies on background-color
 // - <select> and ::-webkit-scrollbar can not have pseudo-elements
 
-%combobox {
+@mixin combobox {
 	// prettier-ignore
 	--control-img:
 		linear-gradient(90deg,        var(--color-button-face) 1px,        var(--color-button-face)) calc(100% - 17px)  2px,
@@ -554,10 +554,6 @@
 			linear-gradient(90deg, var(--color-button-shadow) 1px, var(--color-button-shadow)) calc(100% - 16px) 18px,
 			linear-gradient(90deg, var(--color-button-shadow) 1px, var(--color-button-shadow)) calc(100% - 17px) 18px;
 	}
-}
-
-@mixin combobox {
-	@extend %combobox;
 }
 
 @mixin radio {

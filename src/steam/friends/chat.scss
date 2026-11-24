@@ -215,7 +215,7 @@
 
 	// TODO(port): fix selector, but where do I even find this lmao
 	// !important in ../imports/chattabs.scss
-	#popup_target & > div {
+	[id="popup_target"] & > div {
 		background-color: unset;
 		border: none;
 		box-shadow: none;
