@@ -1,5 +1,14 @@
 @use "shared/window";
 
+[class*="ChannelIndexPage.module__channelGrid_"] {
+	grid-template-rows: min-content 1fr;
+}
+
+[class*="ChannelIndexPage.module__searchPanel_"] {
+	border: none;
+	margin-inline-start: var(--window-gap);
+}
+
 [class*="ChannelMessages.module__scrollerContainer_"] {
 	@include window.content-container;
 }

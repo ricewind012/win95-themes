@@ -129,6 +129,8 @@
 
 	// Move a bit lower for the link button
 	inset-block-start: calc(var(--icon-button-height) / -2.25);
+	justify-content: center;
+	min-block-size: var(--icon-button-height);
 
 	&[class*="SettingsSection.module__sectionHeaderWithActions_"] {
 		flex-direction: row;
@@ -149,6 +151,9 @@
 
 [class*="SettingsSection.module__subsectionHeader_"] {
 	@include utils.legend-as-div;
+
+	justify-content: center;
+	min-block-size: var(--icon-button-height);
 }
 
 [class*="SettingsTabLayout.module__content_"] {

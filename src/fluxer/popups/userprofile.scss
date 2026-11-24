@@ -35,7 +35,7 @@
 
 [class*="UserAreaPopout.module__actionLabel_"] {
 	color: inherit;
-	font: inherit;
+	font: var(--text-ui);
 }
 
 [class*="UserAreaPopout.module__container_"] {

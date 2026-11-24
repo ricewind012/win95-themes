@@ -73,10 +73,16 @@
 // piece of shit
 [class*="TextareaInput.module__mainWrapperDense_"] {
 	min-block-size: 0;
+
+	// piece of shit too
+	& > * {
+		min-block-size: unset;
+	}
 }
 
 [class*="TextareaInput.module__textareaOuterRow_"] {
 	--composer-action-gap: 0px;
+	--textarea-font-size: var(--text-ui-size);
 	--textarea-line-height: var(--text-line);
 	--textarea-min-height: unset;
 	--textarea-padding-y: 0px;

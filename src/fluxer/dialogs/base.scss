@@ -44,7 +44,7 @@
 
 	h3 {
 		color: inherit;
-		font: inherit;
+		font: var(--text-ui);
 
 		@include window.titlebar-name;
 	}

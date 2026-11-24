@@ -51,7 +51,8 @@
 	}
 }
 
-[class*="ContextMenu.module__itemLabel_"] {
+[class*="ContextMenu.module__itemLabel_"],
+[class*="ContextMenu.module__itemLabelText_"] {
 	min-block-size: unset;
 }
 

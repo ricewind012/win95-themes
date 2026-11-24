@@ -17,7 +17,7 @@
 
 [class*="FormCombobox.module__input_"] {
 	color: inherit;
-	font: inherit;
+	font: var(--text-ui);
 	padding: 0;
 }
 
@@ -32,6 +32,9 @@
 // Fucking hello move these 3 to popups
 [class*="FormCombobox.module__item_"] {
 	@include listbox.item($selected-sel: "&[aria-selected='true']");
+
+	min-block-size: unset;
+	font: var(--text-ui);
 }
 
 [class*="FormCombobox.module__list_"] {
@@ -52,7 +55,7 @@
 
 [class*="FormCombobox.module__label_"] {
 	color: inherit;
-	font: inherit;
+	font: var(--text-ui);
 }
 
 // lol why?
@@ -86,7 +89,7 @@
 }
 
 [class*="FormSwitch.module__description_"] {
-	font: inherit;
+	font: var(--text-ui);
 }
 
 [class*="FormSwitch.module__label_"] {
@@ -110,4 +113,13 @@
 
 [class*="FormSwitch.module__switchThumb_"] {
 	display: none;
+}
+
+[class*="LexicalSearchInput.module__editable_"] {
+	font: var(--text-ui);
+}
+
+[class*="LexicalSearchInput.module__placeholder_"] {
+	font: var(--text-ui);
+	inset-inline: calc(var(--border-size) + var(--input-spacing));
 }

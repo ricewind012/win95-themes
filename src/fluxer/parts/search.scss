@@ -1,11 +1,6 @@
 @use "shared/controls";
 @use "shared/window";
 
-[class*="ChannelIndexPage.module__searchPanel_"] {
-	border: none;
-	margin-inline-start: var(--window-gap);
-}
-
 [class*="ChannelSearchResults.module__container_"] {
 	border: none;
 

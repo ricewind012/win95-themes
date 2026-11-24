@@ -3,7 +3,7 @@
 
 [class*="RadioGroup.module__description_"],
 [class*="RadioGroup.module__labelText_"] {
-	font: inherit;
+	font: var(--text-ui);
 }
 
 [class*="RadioGroup.module__group_"] {

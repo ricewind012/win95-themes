@@ -127,6 +127,8 @@
 	@include controls.button;
 	@include controls.icon-button;
 
+	inline-size: unset;
+
 	&[data-flx="app.user-area.user-area-inner.control-button.mute"] {
 		--button-img: icon("sound");
 
@@ -178,18 +180,21 @@
 	block-size: var(--combobox-button-height);
 
 	[class*="BaseAvatar.module__container_"] {
-		--size: 1.5rem;
-
-		block-size: var(--size);
-		inline-size: var(--size);
+		block-size: var(--icon-size);
+		inline-size: var(--icon-size);
 		inset-block-start: var(--offset-click);
 		inset-inline-start: var(--offset-click);
+	}
+
+	[class*="BaseAvatar.module__statusContainer_"] {
+		--avatar-status-width: 0.5rem;
+		--avatar-status-height: 0.5rem;
 	}
 }
 
 [class*="UserArea.module__userName_"] {
 	color: inherit;
-	font: inherit;
+	font: var(--text-ui);
 	text-shadow: inherit;
 }
 
