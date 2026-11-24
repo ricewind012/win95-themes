@@ -1,0 +1,431 @@
+// DO NOT EDIT! Generated with "npm run build".
+
+@use "global" as global;
+
+@use "client/overlay/library" as client-overlay-library;
+@use "client/overlay/overlaytimer" as client-overlay-overlaytimer;
+@use "client/overlay/remoteplay" as client-overlay-remoteplay;
+@use "client/overlay/steamdesktopoverlay" as client-overlay-steamdesktopoverlay;
+
+@use "client/modals/activateproductdialog" as
+	client-modals-activateproductdialog;
+@use "client/modals/awardmodal" as client-modals-awardmodal;
+@use "client/modals/backupappsdialog" as client-modals-backupappsdialog;
+@use "client/modals/cloudconflict" as client-modals-cloudconflict;
+@use "client/modals/deckverified" as client-modals-deckverified;
+@use "client/modals/discussionwidget" as client-modals-discussionwidget;
+@use "client/modals/gamerecordingbitrate" as client-modals-gamerecordingbitrate;
+@use "client/modals/gamerecordingclipprogressdialog" as
+	client-modals-gamerecordingclipprogressdialog;
+@use "client/modals/gamerecordingexportdialog" as
+	client-modals-gamerecordingexportdialog;
+@use "client/modals/gamerecordingsettings" as
+	client-modals-gamerecordingsettings;
+@use "client/modals/gamerecordingshare" as client-modals-gamerecordingshare;
+@use "client/modals/installrequest" as client-modals-installrequest;
+@use "client/modals/keycapture" as client-modals-keycapture;
+@use "client/modals/partnereventshared" as client-modals-partnereventshared;
+@use "client/modals/remoteplayexplainerdialog" as
+	client-modals-remoteplayexplainerdialog;
+@use "client/modals/removefreeappdialog" as client-modals-removefreeappdialog;
+@use "client/modals/reportitem" as client-modals-reportitem;
+@use "client/modals/savecollectiondialog" as client-modals-savecollectiondialog;
+@use "client/modals/uninstalldialog" as client-modals-uninstalldialog;
+
+@use "client/common/achievementiconbase" as client-common-achievementiconbase;
+@use "client/common/commentthread" as client-common-commentthread;
+@use "client/common/emoticon" as client-common-emoticon;
+@use "client/common/friendsnooze" as client-common-friendsnooze;
+@use "client/common/gamepaddialog" as client-common-gamepaddialog;
+@use "client/common/personanameandstatus" as client-common-personanameandstatus;
+@use "client/common/personastatusicons" as client-common-personastatusicons;
+@use "client/common/scrollpanel" as client-common-scrollpanel;
+@use "client/common/sharedsvglibrary" as client-common-sharedsvglibrary;
+@use "client/common/soundtrackcontrols" as client-common-soundtrackcontrols;
+@use "client/common/staticsteamavatar" as client-common-staticsteamavatar;
+@use "client/common/steamavatar" as client-common-steamavatar;
+@use "client/common/throbber" as client-common-throbber;
+@use "client/common/writereview" as client-common-writereview;
+
+@use "client/popups/tooltips/achievementsets" as
+	client-popups-tooltips-achievementsets;
+@use "client/popups/tooltips/achievementsetstooltip" as
+	client-popups-tooltips-achievementsetstooltip;
+@use "client/popups/tooltips/allcollections" as
+	client-popups-tooltips-allcollections;
+@use "client/popups/tooltips/appdetailshover" as
+	client-popups-tooltips-appdetailshover;
+@use "client/popups/tooltips/appportraithover" as
+	client-popups-tooltips-appportraithover;
+@use "client/popups/tooltips/clipmanager" as client-popups-tooltips-clipmanager;
+@use "client/popups/tooltips/clipplayback" as
+	client-popups-tooltips-clipplayback;
+@use "client/popups/tooltips/gamelistentry" as
+	client-popups-tooltips-gamelistentry;
+@use "client/popups/tooltips/overlaytimelinepreview" as
+	client-popups-tooltips-overlaytimelinepreview;
+@use "client/popups/tooltips/screenshots" as client-popups-tooltips-screenshots;
+@use "client/popups/tooltips/steamdesktopoverlay" as
+	client-popups-tooltips-steamdesktopoverlay;
+@use "client/popups/tooltips/tooltip" as client-popups-tooltips-tooltip;
+
+@use "client/popups/contextmenus/achievementsetsfriendcomparebox" as
+	client-popups-contextmenus-achievementsetsfriendcomparebox;
+@use "client/popups/contextmenus/appactionbutton" as
+	client-popups-contextmenus-appactionbutton;
+@use "client/popups/contextmenus/cliphighlightcontextmenu" as
+	client-popups-contextmenus-cliphighlightcontextmenu;
+@use "client/popups/contextmenus/cliptimelinecontextmenu" as
+	client-popups-contextmenus-cliptimelinecontextmenu;
+@use "client/popups/contextmenus/contextmenu" as
+	client-popups-contextmenus-contextmenu;
+@use "client/popups/contextmenus/eventreminder" as
+	client-popups-contextmenus-eventreminder;
+@use "client/popups/contextmenus/friendsui" as
+	client-popups-contextmenus-friendsui;
+@use "client/popups/contextmenus/gamelistdropdown" as
+	client-popups-contextmenus-gamelistdropdown;
+@use "client/popups/contextmenus/gamerecordingshare" as
+	client-popups-contextmenus-gamerecordingshare;
+@use "client/popups/contextmenus/jumplist" as
+	client-popups-contextmenus-jumplist;
+@use "client/popups/contextmenus/libraryhomeshowcases" as
+	client-popups-contextmenus-libraryhomeshowcases;
+@use "client/popups/contextmenus/library" as client-popups-contextmenus-library;
+@use "client/popups/contextmenus/menu" as client-popups-contextmenus-menu;
+@use "client/popups/contextmenus/screenshotmanagerdialog" as
+	client-popups-contextmenus-screenshotmanagerdialog;
+@use "client/popups/contextmenus/soundtrackcontrols" as
+	client-popups-contextmenus-soundtrackcontrols;
+
+@use "client/popups/notifications/desktoptoasts" as
+	client-popups-notifications-desktoptoasts;
+@use "client/popups/notifications/notificationcontent" as
+	client-popups-notifications-notificationcontent;
+@use "client/popups/notifications/standardtemplates" as
+	client-popups-notifications-standardtemplates;
+@use "client/popups/notifications/titlebarcontrols" as
+	client-popups-notifications-titlebarcontrols;
+
+@use "client/baseui/baseui_button" as client-baseui-baseui-button;
+@use "client/baseui/baseui_checkbox" as client-baseui-baseui-checkbox;
+@use "client/baseui/baseui_controlbox" as client-baseui-baseui-controlbox;
+@use "client/baseui/baseui_heading" as client-baseui-baseui-heading;
+@use "client/baseui/baseui_popoversurface" as
+	client-baseui-baseui-popoversurface;
+@use "client/baseui/baseui_separator" as client-baseui-baseui-separator;
+@use "client/baseui/baseui_textlink" as client-baseui-baseui-textlink;
+@use "client/baseui/baseui_text" as client-baseui-baseui-text;
+@use "client/baseui/baseui_toggle" as client-baseui-baseui-toggle;
+
+@use "client/library/library" as client-library-library;
+@use "client/library/smartscrollcontainer" as
+	client-library-smartscrollcontainer;
+
+@use "client/library/gamelist/gamelistbar" as
+	client-library-gamelist-gamelistbar;
+@use "client/library/gamelist/gamelistcollapseicon" as
+	client-library-gamelist-gamelistcollapseicon;
+@use "client/library/gamelist/gamelistcollectionmenu" as
+	client-library-gamelist-gamelistcollectionmenu;
+@use "client/library/gamelist/gamelistdropdown" as
+	client-library-gamelist-gamelistdropdown;
+@use "client/library/gamelist/gamelistentry" as
+	client-library-gamelist-gamelistentry;
+@use "client/library/gamelist/gamelisthome" as
+	client-library-gamelist-gamelisthome;
+@use "client/library/gamelist/gamelist" as client-library-gamelist-gamelist;
+@use "client/library/gamelist/gamelistsearchbar" as
+	client-library-gamelist-gamelistsearchbar;
+@use "client/library/gamelist/gamelistsectionheader" as
+	client-library-gamelist-gamelistsectionheader;
+
+@use "client/library/events/apppartnereventspage" as
+	client-library-events-apppartnereventspage;
+@use "client/library/events/bbcodes" as client-library-events-bbcodes;
+@use "client/library/events/discussionwidget" as
+	client-library-events-discussionwidget;
+@use "client/library/events/eventbbcodeparser" as
+	client-library-events-eventbbcodeparser;
+@use "client/library/events/eventreminder" as
+	client-library-events-eventreminder;
+@use "client/library/events/eventsexternalimage" as
+	client-library-events-eventsexternalimage;
+@use "client/library/events/gamehover" as client-library-events-gamehover;
+@use "client/library/events/localdateandtime" as
+	client-library-events-localdateandtime;
+@use "client/library/events/partnereventdisplay" as
+	client-library-events-partnereventdisplay;
+@use "client/library/events/salepreviewwidgets" as
+	client-library-events-salepreviewwidgets;
+@use "client/library/events/youtubeembed" as client-library-events-youtubeembed;
+
+@use "client/library/home/libraryhomenewupdates" as
+	client-library-home-libraryhomenewupdates;
+@use "client/library/home/libraryhomeplaynext" as
+	client-library-home-libraryhomeplaynext;
+@use "client/library/home/libraryhomerecentgames" as
+	client-library-home-libraryhomerecentgames;
+@use "client/library/home/libraryhome" as client-library-home-libraryhome;
+@use "client/library/home/libraryhomeshowcases" as
+	client-library-home-libraryhomeshowcases;
+
+@use "client/library/shared/appactionbutton" as
+	client-library-shared-appactionbutton;
+@use "client/library/shared/appfilterpane" as
+	client-library-shared-appfilterpane;
+@use "client/library/shared/appgrid" as client-library-shared-appgrid;
+@use "client/library/shared/appportrait" as client-library-shared-appportrait;
+@use "client/library/shared/boxcarousel" as client-library-shared-boxcarousel;
+@use "client/library/shared/pageablecontainer" as
+	client-library-shared-pageablecontainer;
+
+@use "client/library/appdetails/appactivityday" as
+	client-library-appdetails-appactivityday;
+@use "client/library/appdetails/appactivitydlc" as
+	client-library-appdetails-appactivitydlc;
+@use "client/library/appdetails/appdetailsbutton" as
+	client-library-appdetails-appdetailsbutton;
+@use "client/library/appdetails/appdetailscommunityfeed" as
+	client-library-appdetails-appdetailscommunityfeed;
+@use "client/library/appdetails/appdetailsfeatureicon" as
+	client-library-appdetails-appdetailsfeatureicon;
+@use "client/library/appdetails/appdetailsframeratereport" as
+	client-library-appdetails-appdetailsframeratereport;
+@use "client/library/appdetails/appdetailsgameinfocontainer" as
+	client-library-appdetails-appdetailsgameinfocontainer;
+@use "client/library/appdetails/appdetailsgameinfopanel" as
+	client-library-appdetails-appdetailsgameinfopanel;
+@use "client/library/appdetails/appdetailsheaderinfo" as
+	client-library-appdetails-appdetailsheaderinfo;
+@use "client/library/appdetails/appdetailsinfoicon" as
+	client-library-appdetails-appdetailsinfoicon;
+@use "client/library/appdetails/appdetailsoverview" as
+	client-library-appdetails-appdetailsoverview;
+@use "client/library/appdetails/appdetailsposttextentry" as
+	client-library-appdetails-appdetailsposttextentry;
+@use "client/library/appdetails/appdetails" as
+	client-library-appdetails-appdetails;
+@use "client/library/appdetails/appdetailssoundtrack" as
+	client-library-appdetails-appdetailssoundtrack;
+@use "client/library/appdetails/appdetailsspotlight" as
+	client-library-appdetails-appdetailsspotlight;
+@use "client/library/appdetails/sharedappdetailsheader" as
+	client-library-appdetails-sharedappdetailsheader;
+@use "client/library/appdetails/spotlightgameplaysummary" as
+	client-library-appdetails-spotlightgameplaysummary;
+
+@use "client/library/appdetails/sections/appdetailsachievementssection" as
+	client-library-appdetails-sections-appdetailsachievementssection;
+@use "client/library/appdetails/sections/appdetailsactivitysection" as
+	client-library-appdetails-sections-appdetailsactivitysection;
+@use "client/library/appdetails/sections/appdetailsadditionalcontentsection" as
+	client-library-appdetails-sections-appdetailsadditionalcontentsection;
+@use "client/library/appdetails/sections/appdetailsdlcsection" as
+	client-library-appdetails-sections-appdetailsdlcsection;
+@use "client/library/appdetails/sections/appdetailsfriendssection" as
+	client-library-appdetails-sections-appdetailsfriendssection;
+@use "client/library/appdetails/sections/appdetailsnotessection" as
+	client-library-appdetails-sections-appdetailsnotessection;
+@use "client/library/appdetails/sections/appdetailsplaysection" as
+	client-library-appdetails-sections-appdetailsplaysection;
+@use "client/library/appdetails/sections/appdetailsprimarylinkssection" as
+	client-library-appdetails-sections-appdetailsprimarylinkssection;
+@use "client/library/appdetails/sections/appdetailsreviewsection" as
+	client-library-appdetails-sections-appdetailsreviewsection;
+@use "client/library/appdetails/sections/appdetailsscreenshotssection" as
+	client-library-appdetails-sections-appdetailsscreenshotssection;
+@use "client/library/appdetails/sections/appdetailssectionheader" as
+	client-library-appdetails-sections-appdetailssectionheader;
+@use "client/library/appdetails/sections/appdetailssection" as
+	client-library-appdetails-sections-appdetailssection;
+@use "client/library/appdetails/sections/appdetailstradingcardssection" as
+	client-library-appdetails-sections-appdetailstradingcardssection;
+@use "client/library/appdetails/sections/appdetailsworkshopsection" as
+	client-library-appdetails-sections-appdetailsworkshopsection;
+
+@use "client/library/collections/allcollections" as
+	client-library-collections-allcollections;
+@use "client/library/collections/collectionview" as
+	client-library-collections-collectionview;
+
+@use "client/dialogs/aboutsteamdialog" as client-dialogs-aboutsteamdialog;
+@use "client/dialogs/addnonsteamgamedialog" as
+	client-dialogs-addnonsteamgamedialog;
+@use "client/dialogs/artworkmodal" as client-dialogs-artworkmodal;
+@use "client/dialogs/controllerconfiguratorinterstitial" as
+	client-dialogs-controllerconfiguratorinterstitial;
+@use "client/dialogs/desktopbrowser" as client-dialogs-desktopbrowser;
+@use "client/dialogs/dialogs" as client-dialogs-dialogs;
+@use "client/dialogs/euladialog" as client-dialogs-euladialog;
+@use "client/dialogs/gameinfodialog" as client-dialogs-gameinfodialog;
+@use "client/dialogs/gamelaunchingdialog" as client-dialogs-gamelaunchingdialog;
+@use "client/dialogs/hardwaresurveydialog" as
+	client-dialogs-hardwaresurveydialog;
+@use "client/dialogs/launchoptionsdialog" as client-dialogs-launchoptionsdialog;
+@use "client/dialogs/libraryhomenewupdates" as
+	client-dialogs-libraryhomenewupdates;
+@use "client/dialogs/playersdialog" as client-dialogs-playersdialog;
+@use "client/dialogs/screenshotmanagerdialog" as
+	client-dialogs-screenshotmanagerdialog;
+@use "client/dialogs/serverbrowserdialog" as client-dialogs-serverbrowserdialog;
+@use "client/dialogs/shutdowndialog" as client-dialogs-shutdowndialog;
+@use "client/dialogs/systemreport" as client-dialogs-systemreport;
+@use "client/dialogs/systemsettings" as client-dialogs-systemsettings;
+
+@use "client/dialogs/login/loginpanel" as client-dialogs-login-loginpanel;
+@use "client/dialogs/login/login" as client-dialogs-login-login;
+@use "client/dialogs/login/loginuserchooser" as
+	client-dialogs-login-loginuserchooser;
+@use "client/dialogs/login/newlogindialog" as
+	client-dialogs-login-newlogindialog;
+@use "client/dialogs/login/qrlogin" as client-dialogs-login-qrlogin;
+
+@use "client/dialogs/settings/appproperties" as
+	client-dialogs-settings-appproperties;
+@use "client/dialogs/settings/pagedsettings" as
+	client-dialogs-settings-pagedsettings;
+@use "client/dialogs/settings/settings" as client-dialogs-settings-settings;
+
+@use "client/dialogs/settings/steam/accountpanel" as
+	client-dialogs-settings-steam-accountpanel;
+@use "client/dialogs/settings/steam/accountsettings" as
+	client-dialogs-settings-steam-accountsettings;
+@use "client/dialogs/settings/steam/contentmanagement" as
+	client-dialogs-settings-steam-contentmanagement;
+@use "client/dialogs/settings/steam/desktopsecuritysettings" as
+	client-dialogs-settings-steam-desktopsecuritysettings;
+@use "client/dialogs/settings/steam/friendssettings" as
+	client-dialogs-settings-steam-friendssettings;
+@use "client/dialogs/settings/steam/gamerecordingbitrate" as
+	client-dialogs-settings-steam-gamerecordingbitrate;
+@use "client/dialogs/settings/steam/gamerecordingsettings" as
+	client-dialogs-settings-steam-gamerecordingsettings;
+@use "client/dialogs/settings/steam/gamerecordingwarning" as
+	client-dialogs-settings-steam-gamerecordingwarning;
+@use "client/dialogs/settings/steam/librarysettings" as
+	client-dialogs-settings-steam-librarysettings;
+@use "client/dialogs/settings/steam/notificationssettings" as
+	client-dialogs-settings-steam-notificationssettings;
+@use "client/dialogs/settings/steam/remoteplaysettings" as
+	client-dialogs-settings-steam-remoteplaysettings;
+@use "client/dialogs/settings/steam/voicesettings" as
+	client-dialogs-settings-steam-voicesettings;
+
+@use "client/dialogs/settings/friendsui/chatroomgroupsettings" as
+	client-dialogs-settings-friendsui-chatroomgroupsettings;
+@use "client/dialogs/settings/friendsui/chatroomnotificationsettings" as
+	client-dialogs-settings-friendsui-chatroomnotificationsettings;
+@use "client/dialogs/settings/friendsui/pagedcontent" as
+	client-dialogs-settings-friendsui-pagedcontent;
+
+@use "client/dialogs/overlay/steamdesktopoverlay" as
+	client-dialogs-overlay-steamdesktopoverlay;
+
+@use "client/dialogs/friends/addonpicker" as client-dialogs-friends-addonpicker;
+@use "client/dialogs/friends/bbcodes" as client-dialogs-friends-bbcodes;
+@use "client/dialogs/friends/chatentry" as client-dialogs-friends-chatentry;
+@use "client/dialogs/friends/chattabs" as client-dialogs-friends-chattabs;
+@use "client/dialogs/friends/emoticon" as client-dialogs-friends-emoticon;
+@use "client/dialogs/friends/friendslist" as client-dialogs-friends-friendslist;
+@use "client/dialogs/friends/insetshadow" as client-dialogs-friends-insetshadow;
+@use "client/dialogs/friends/messages" as client-dialogs-friends-messages;
+@use "client/dialogs/friends/reactions" as client-dialogs-friends-reactions;
+@use "client/dialogs/friends/scrollfade" as client-dialogs-friends-scrollfade;
+
+@use "client/dialogs/media/clipmanager" as client-dialogs-media-clipmanager;
+@use "client/dialogs/media/clipplaybackscrollbar" as
+	client-dialogs-media-clipplaybackscrollbar;
+@use "client/dialogs/media/clipplayback" as client-dialogs-media-clipplayback;
+@use "client/dialogs/media/clipplaybackskip" as
+	client-dialogs-media-clipplaybackskip;
+@use "client/dialogs/media/clipplayhead" as client-dialogs-media-clipplayhead;
+@use "client/dialogs/media/clipplayheadseekscrubber" as
+	client-dialogs-media-clipplayheadseekscrubber;
+@use "client/dialogs/media/cliptimelinebackgroundticks" as
+	client-dialogs-media-cliptimelinebackgroundticks;
+@use "client/dialogs/media/cliptimelinedatedecorator" as
+	client-dialogs-media-cliptimelinedatedecorator;
+@use "client/dialogs/media/cliptimelinegamemodes" as
+	client-dialogs-media-cliptimelinegamemodes;
+@use "client/dialogs/media/cliptimelinemarker" as
+	client-dialogs-media-cliptimelinemarker;
+@use "client/dialogs/media/cliptimelinerecordingdecorator" as
+	client-dialogs-media-cliptimelinerecordingdecorator;
+@use "client/dialogs/media/cliptimeline" as client-dialogs-media-cliptimeline;
+@use "client/dialogs/media/gamerecordingdesktopdialog" as
+	client-dialogs-media-gamerecordingdesktopdialog;
+@use "client/dialogs/media/gamerecordingplayer" as
+	client-dialogs-media-gamerecordingplayer;
+@use "client/dialogs/media/mediadialog" as client-dialogs-media-mediadialog;
+@use "client/dialogs/media/multiselectactions" as
+	client-dialogs-media-multiselectactions;
+@use "client/dialogs/media/screenshotmanagerdialog" as
+	client-dialogs-media-screenshotmanagerdialog;
+@use "client/dialogs/media/screenshotmanagerphaselist" as
+	client-dialogs-media-screenshotmanagerphaselist;
+
+@use "client/dialogs/gamenotes/gamenotesdialog" as
+	client-dialogs-gamenotes-gamenotesdialog;
+@use "client/dialogs/gamenotes/gamenotesprosemirror" as
+	client-dialogs-gamenotes-gamenotesprosemirror;
+
+@use "client/dialogs/achievements/achievementscompletionawards" as
+	client-dialogs-achievements-achievementscompletionawards;
+@use "client/dialogs/achievements/achievementsetsfriendcomparebox" as
+	client-dialogs-achievements-achievementsetsfriendcomparebox;
+@use "client/dialogs/achievements/achievementsets" as
+	client-dialogs-achievements-achievementsets;
+@use "client/dialogs/achievements/achievementsgroupheader" as
+	client-dialogs-achievements-achievementsgroupheader;
+@use "client/dialogs/achievements/achievementspage" as
+	client-dialogs-achievements-achievementspage;
+@use "client/dialogs/achievements/achievementspinnedlist" as
+	client-dialogs-achievements-achievementspinnedlist;
+@use "client/dialogs/achievements/achievementsprogressbar" as
+	client-dialogs-achievements-achievementsprogressbar;
+@use "client/dialogs/achievements/achievementstable" as
+	client-dialogs-achievements-achievementstable;
+
+@use "client/desktop/bottombar" as client-desktop-bottombar;
+@use "client/desktop/console" as client-desktop-console;
+@use "client/desktop/downloadgraph" as client-desktop-downloadgraph;
+@use "client/desktop/downloads" as client-desktop-downloads;
+@use "client/desktop/rootmenu" as client-desktop-rootmenu;
+@use "client/desktop/steamdesktop" as client-desktop-steamdesktop;
+@use "client/desktop/supernav" as client-desktop-supernav;
+@use "client/desktop/titlebarcontrols" as client-desktop-titlebarcontrols;
+
+@use "client/desktop/millennium/quickaccesscontrols" as
+	client-desktop-millennium-quickaccesscontrols;
+@use "client/desktop/millennium/settings" as client-desktop-millennium-settings;
+@use "client/desktop/millennium/shared" as client-desktop-millennium-shared;
+@use "client/desktop/millennium/sidebar" as client-desktop-millennium-sidebar;
+
+@use "client/gamepad/gamepadpage" as client-gamepad-gamepadpage;
+@use "client/gamepad/gamepadtabbedpage" as client-gamepad-gamepadtabbedpage;
+
+@use "client/controls/dropdownlabel" as client-controls-dropdownlabel;
+@use "client/controls/dropdown" as client-controls-dropdown;
+@use "client/controls/gamepadslider" as client-controls-gamepadslider;
+@use "client/controls/progressbar" as client-controls-progressbar;
+@use "client/controls/radio" as client-controls-radio;
+@use "client/controls/sortingdropdowncontrolbutton" as
+	client-controls-sortingdropdowncontrolbutton;
+@use "client/controls/toggle" as client-controls-toggle;
+
+@use "friends/chat" as friends-chat;
+@use "friends/friendslist" as friends-friendslist;
+@use "friends/global" as friends-global;
+
+@use "friends/dialogs/assigncategories" as friends-dialogs-assigncategories;
+@use "friends/dialogs/channelnotifications" as
+	friends-dialogs-channelnotifications;
+@use "friends/dialogs/createcategory" as friends-dialogs-createcategory;
+@use "friends/dialogs/createchannel" as friends-dialogs-createchannel;
+@use "friends/dialogs/editnickname" as friends-dialogs-editnickname;
+@use "friends/dialogs/friendnotifications" as
+	friends-dialogs-friendnotifications;
+@use "friends/dialogs/global" as friends-dialogs-global;
+@use "friends/dialogs/groupinvite" as friends-dialogs-groupinvite;
+@use "friends/dialogs/groupsettings" as friends-dialogs-groupsettings;

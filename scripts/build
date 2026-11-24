@@ -20,24 +20,6 @@ generate_index() {
 	done
 }
 
-# Special behavior because steam-theming-utils requires the file names of each
-# named React component to be available, and IDK how to do that with @use
-if [ "$1" = steam ]; then
-	dir=$DIST_DIR/$1
-
-	# Remove if file already exists for the "release" script
-	[ -f "$file" ] && rm "$file"
-	# .5s shaven off
-	bunx postcss "$SRC_DIR/$1/index_shared.scss" --output "$dir.css"
-	bunx postcss "$SRC_DIR/$1/client/**/*.scss" \
-		--base "$SRC_DIR" \
-		--dir "$DIST_DIR" \
-		--ext css
-	find "$dir" -type f | xargs cat >> "$dir.css"
-	rm -rf "$dir"
-	exit
-fi
-
 mkdir -p "$DIST_DIR"
 # Firefox has its separate index file for the browser UI and web content already
 if [ "$1" = firefox ]; then
