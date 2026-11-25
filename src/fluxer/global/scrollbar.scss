@@ -1,32 +1,10 @@
-@use "shared/scrollbar";
-
-// Fluxer author is high and decided to make his own scrollbars
-
-[class*="ScrollerTrack.module__thumb_"] {
-	@include scrollbar.thumb;
-
-	position: unset;
+[class*="Scroller.module__scroller_"] {
+	// Fluxer author is high and decided to make his own scrollbars, this
+	// reverts it
+	scrollbar-color: initial;
+	scrollbar-width: initial;
 }
 
 [class*="ScrollerTrack.module__track_"] {
-	@include scrollbar.container;
-
-	opacity: 1;
-	position: unset;
-
-	&:where([class*="ScrollerTrack.module__horizontal_"]) {
-		inline-size: unset;
-
-		[class*="ScrollerTrack.module__thumb_"] {
-			block-size: inherit;
-		}
-	}
-
-	&:where([class*="ScrollerTrack.module__vertical_"]) {
-		block-size: unset;
-
-		[class*="ScrollerTrack.module__thumb_"] {
-			inline-size: inherit;
-		}
-	}
+	display: none;
 }

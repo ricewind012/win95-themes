@@ -116,6 +116,7 @@
 }
 
 [class*="LexicalSearchInput.module__editable_"] {
+	min-block-size: unset;
 	font: var(--text-ui);
 }
 

@@ -12,6 +12,10 @@
 	border: none;
 	min-block-size: unset;
 	padding: var(--toolbar-container-spacing);
+
+	svg {
+		display: none;
+	}
 }
 
 [class*="ChannelHeader.module__headerRightSection_"] {
@@ -34,9 +38,11 @@
 		@include controls.button;
 		@include controls.icon-button($selected-sel: "&[aria-pressed='true']");
 
+		block-size: var(--combobox-button-height);
+
 		// first of selector
 		&:where(:nth-child(-n + 1 of &)) {
-			margin-inline-end: var(--toolbar-spacing);
+			margin-inline-start: var(--toolbar-spacing);
 		}
 	}
 }
@@ -52,6 +58,14 @@
 	mask: none;
 }
 
+[class*="MessageSearchBar.module__clearButton_"] {
+	--button-img: icon("clear");
+	@include controls.button;
+	@include controls.icon-button;
+
+	margin-inline-start: var(--toolbar-spacing);
+}
+
 [class*="MessageSearchBar.module__inputContainer_"] {
 	display: contents;
 
@@ -59,6 +73,15 @@
 		@include controls.text-field;
 
 		min-block-size: unset;
+	}
+
+	[class*="LexicalSearchInput.module__tokenBase_"] {
+		background: none;
+		block-size: unset;
+		border: none;
+		box-shadow: var(--border-statusbar);
+		inset-block-start: 0;
+		padding: 2px 6px;
 	}
 }
 
@@ -70,8 +93,4 @@
 	);
 
 	margin-inline-end: var(--toolbar-spacing);
-
-	svg {
-		display: none;
-	}
 }

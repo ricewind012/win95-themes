@@ -5,7 +5,9 @@
 @use "global/scrollbar" as global-scrollbar;
 @use "global/variables" as global-variables;
 
+@use "popups/autocomplete" as popups-autocomplete;
 @use "popups/contextmenu" as popups-contextmenu;
+@use "popups/search" as popups-search;
 @use "popups/userprofile" as popups-userprofile;
 
 @use "dialogs/base" as dialogs-base;
@@ -26,4 +28,4 @@
 @use "parts/memberlist" as parts-memberlist;
 @use "parts/search" as parts-search;
 @use "parts/sidebar" as parts-sidebar;
-@use "parts/titlebar" as parts-titlebar;
+@use "parts/window" as parts-window;

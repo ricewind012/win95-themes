@@ -1,0 +1,84 @@
+@use "shared/controls";
+@use "shared/window";
+
+html {
+	--main-window-border-spacing: 0px;
+	--titlebar-pos: 0px;
+
+	&:not(.native-system-titlebar) {
+		--main-window-border-spacing: calc(
+			var(--border-size) + var(--window-spacing)
+		);
+		--titlebar-pos: calc(
+			var(--main-window-titlebar-height) + var(--window-gap)
+		);
+
+		--native-titlebar-height: var(--titlebar-pos);
+
+		@include window.container;
+
+		[data-flx="app.app.app-wrapper.app-container"] {
+			--size: calc(100vh - var(--border-size) * 4);
+
+			min-block-size: var(--size);
+			block-size: var(--size);
+		}
+	}
+}
+
+.fluxer-native-titlebar {
+	@include window.titlebar($focused-sel: ".window-focused &");
+
+	inset: var(--main-window-border-spacing);
+	inset-block-end: unset;
+}
+
+.fluxer-native-titlebar__control {
+	@include controls.button;
+	@include window.titlebar-button;
+
+	inline-size: unset;
+
+	&[data-window-control="close"] {
+		@include window.titlebar-button-close;
+	}
+
+	&[data-window-control="maximize"] {
+		@include window.titlebar-button-maximize;
+	}
+
+	&[data-window-control="minimize"] {
+		@include window.titlebar-button-minimize;
+	}
+
+	svg {
+		display: none;
+	}
+}
+
+.fluxer-native-titlebar__controls {
+	block-size: unset;
+}
+
+.fluxer-native-titlebar__left {
+	color: inherit;
+	gap: var(--text-spacing);
+	opacity: 1;
+
+	&::before {
+		background-image: icon("chat-bubble-alt");
+		block-size: var(--icon-size);
+		content: "";
+		inline-size: var(--icon-size);
+	}
+
+	&::after {
+		@include window.titlebar-name;
+
+		content: "Fluxer";
+	}
+}
+
+.fluxer-native-titlebar__wordmark {
+	display: none;
+}

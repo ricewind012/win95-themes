@@ -10,7 +10,9 @@
 }
 
 [class*="Checkbox.module__checkbox_"] {
-	@include controls.checkbox($checked-sel: "&[aria-checked='true']");
+	@include controls.checkbox(
+		$checked-sel: "&[class*='Checkbox.module__checked_']"
+	);
 }
 
 [class*="Checkbox.module__label_"] {

@@ -4,9 +4,10 @@
 	--background-secondary-alt: var(--color-button-face);
 	--background-secondary-lighter: var(--color-button-face);
 
-	--background-modifier-accent: #f09;
-	--background-modifier-hover: #f09;
-	--background-modifier-selected: #f09;
+	--status-online: light-dark(darkgreen, green);
+	--status-idle: light-dark(#880, yellow);
+	--status-dnd: light-dark(darkred, red);
+	--status-offline: var(--color-gray-text);
 
 	--text-chat: var(--color-button-text);
 	--text-chat-muted: var(--color-gray-text);
@@ -15,16 +16,18 @@
 	--text-secondary: var(--color-gray-text);
 	--text-tertiary: var(--color-gray-text);
 
+	// debug colors
+	--background-modifier-accent: #f09;
+	--background-modifier-hover: #f09;
+	--background-modifier-selected: #f09;
+	--border-color: #f09;
+
 	--guild-list-divider-line-size: 0px;
 	--guild-list-item-gap: 0px;
+	--layout-guild-list-width: 5rem;
 	--layout-header-height: calc(
-		var(--toolbar-container-spacing) * 2 + var(--combobox-button-height) +
-			var(--window-gap)
+		var(--toolbar-container-spacing) * 2 + var(--combobox-button-height)
 	);
 	--outline-frame-radius-native: 0px;
 	--user-area-divider-color: transparent;
-}
-
-.platform-native {
-	--native-titlebar-height: var(--titlebar-height);
 }

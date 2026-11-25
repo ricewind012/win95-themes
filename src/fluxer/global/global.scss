@@ -1,17 +1,6 @@
-@use "shared/window";
 @use "shared++/global";
-
-html {
-	@include window.container;
-}
+@use "shared++/scrollbar";
 
 img {
 	image-rendering: auto;
-}
-
-[data-flx="app.app.app-wrapper.app-container"] {
-	--size: calc(100vh - var(--border-size) * 4);
-
-	min-block-size: var(--size);
-	block-size: var(--size);
 }

@@ -62,6 +62,7 @@
 	@include window.container($child: true);
 
 	border: none;
+	min-block-size: unset;
 	// Animation
 	opacity: 1;
 	transform: none;
