@@ -1,7 +1,107 @@
 @use "shared/controls";
+@use "shared/text";
+
+// Barrier = announcements
+
+%-placeholder {
+	inset-block-start: 2px;
+	inset-inline-start: 2px;
+}
+
+[class*="BarrierComponents.module__message_"] {
+	@extend %-placeholder;
+
+	color: inherit;
+	font: inherit;
+	position: relative;
+}
+
+[class*="ChannelReplyBar.module__closeButton_"] {
+	--button-img: icon("clear");
+	@include controls.button;
+	@include controls.icon-button;
+
+	inline-size: unset;
+}
+
+[class*="ChannelReplyBar.module__controls_"] {
+	gap: var(--toolbar-spacing);
+	min-block-size: unset;
+}
+
+[class*="ChannelReplyBar.module__mentionToggle_"] {
+	block-size: unset;
+	color: inherit;
+	flex: unset;
+	font: inherit;
+	inline-size: unset;
+	padding: 0;
+	position: relative;
+
+	&::before {
+		@include controls.checkbox($checked-sel: "&[aria-checked='true']");
+
+		content: "";
+	}
+
+	&::after {
+		content: attr(aria-label);
+		margin-inline-start: var(--label-spacing);
+	}
+
+	& > flx-i18n {
+		font-size: 0;
+	}
+
+	// dude just kill me
+	&[aria-checked="true"] > flx-i18n {
+		display: block;
+
+		// TODO(mixins): remove selector args
+		--control-img: icon("checkmark", "mono");
+		--control-img-pos: 3px 3px;
+		--control-img-size: 7px 7px;
+
+		height: var(--sel-button-size);
+		width: var(--sel-button-size);
+
+		background-color: var(--color-window-text);
+		content: "";
+		inset: 0;
+		mask: var(--control-img) no-repeat;
+		mask-position: var(--control-img-pos);
+		mask-size: var(--control-img-size);
+		position: absolute;
+	}
+}
+
+[class*="ChannelReplyBar.module__text_"] {
+	@include text.link;
+
+	font: var(--text-ui);
+}
+
+[class*="InputWrapper.module__barInner_"] {
+	min-block-size: unset;
+	padding: 0;
+}
+
+[class*="InputWrapper.module__composerActionStack_"] {
+	--composer-box-padding-inline: 0px;
+
+	background: none;
+	border: none;
+}
 
 [class*="InputWrapper.module__disabled_"] {
 	opacity: 1;
+}
+
+[class*="InputWrapper.module__separator_"] {
+	@include controls.separator-horizontal;
+
+	display: block;
+	margin-block: var(--toolbar-container-spacing);
 }
 
 [class*="TextareaButton.module__button_"] {
@@ -52,15 +152,12 @@
 	&[data-expression-picker-tab="stickers"] {
 		--button-img: icon("file");
 	}
-
-	svg {
-		display: none;
-	}
 }
 
 [class*="TextareaInput.module__contentAreaDense_"] {
 	@include controls.text-field(
-		$disabled-sel: "[class*='InputWrapper.module__disabled_'] &"
+		$disabled-sel:
+			"[class*='InputWrapper.module__disabled_'] &, &[class*='BarrierComponents.module__messageArea_']"
 	);
 
 	block-size: var(--combobox-button-height);
@@ -70,36 +167,29 @@
 	display: none;
 }
 
-// piece of shit
-[class*="TextareaInput.module__mainWrapperDense_"] {
-	min-block-size: 0;
-
-	// piece of shit too
-	& > * {
-		min-block-size: unset;
-	}
-}
-
 [class*="TextareaInput.module__textareaOuterRow_"] {
 	--composer-action-gap: 0px;
+	--textarea-button-height: none;
 	--textarea-font-size: var(--text-ui-size);
 	--textarea-line-height: var(--text-line);
-	--textarea-min-height: unset;
+	--textarea-min-height: none;
 	--textarea-padding-y: 0px;
 	--textarea-side-button-padding: 0px;
 	--textarea-upload-gap: var(--toolbar-spacing);
 
 	background: none;
 	margin: var(--toolbar-container-spacing);
-	min-block-size: unset;
 	padding: 0;
 
 	&::after {
 		display: none;
 	}
 
+	svg {
+		display: none;
+	}
+
 	[class*="LexicalMessageComposer.module__placeholder_"] {
-		inset-block-start: 2px;
-		inset-inline-start: 2px;
+		@extend %-placeholder;
 	}
 }

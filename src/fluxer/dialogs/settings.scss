@@ -36,6 +36,10 @@
 	overflow: visible;
 }
 
+[class*="SettingsModalLayout.module__desktopContent_"] {
+	background: none;
+}
+
 [class*="SettingsModalLayout.module__desktopHeader_"] {
 	@include window.titlebar($focused-sel: "&");
 	@include window.titlebar-name;
