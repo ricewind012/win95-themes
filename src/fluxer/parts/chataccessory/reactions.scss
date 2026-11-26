@@ -1,0 +1,38 @@
+@use "shared/controls";
+
+[class*="MessageReactions.module__countWrapper_"] {
+	color: inherit;
+	font: var(--text-ui);
+}
+
+[class*="MessageReactions.module__emoji_"] {
+	block-size: var(--icon-size);
+	inline-size: var(--icon-size);
+	margin: 0;
+}
+
+[class*="MessageReactions.module__reactionButton_"] {
+	@include controls.button;
+
+	&[aria-pressed="true"] {
+		@include controls.button-active;
+	}
+}
+
+[class*="MessageReactions.module__reactionInner_"] {
+	justify-content: center;
+	padding: 0;
+}
+
+[class*="MessageReactions.module__reactionPickerButton_"] {
+	--button-img: icon("emoji");
+	@include controls.combobox-icon-button(
+		$active-sel: "&[aria-expanded='true']"
+	);
+
+	block-size: unset;
+
+	svg {
+		display: none;
+	}
+}

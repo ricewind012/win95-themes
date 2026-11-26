@@ -29,6 +29,7 @@
 
 @use "parts/app" as parts-app;
 @use "parts/channelheader" as parts-channelheader;
+@use "parts/chat_accessory" as parts-chat-accessory;
 @use "parts/chatform" as parts-chatform;
 @use "parts/chat" as parts-chat;
 @use "parts/memberlist" as parts-memberlist;

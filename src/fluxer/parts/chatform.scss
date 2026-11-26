@@ -170,7 +170,8 @@
 	flex-direction: column;
 	inline-size: 100%;
 
-	&:not(:has(> :only-child)) {
+	// The screen reader-only element is empty when nobody is typing
+	&:not(:has(> :empty)) {
 		@extend %-separator;
 	}
 }
@@ -260,8 +261,7 @@
 		display: none;
 	}
 
-	[role="textbox"],
-	[class*="LexicalMessageComposer.module__placeholder_"] {
+	[class*="LexicalChannelTextareaContent.module__composerHost_"] {
 		@extend %-editor;
 	}
 }
