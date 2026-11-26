@@ -1,0 +1,4 @@
+:where([class*="BaseAvatar.module__container_"]) {
+	inset-block-start: var(--offset-click);
+	inset-inline-start: var(--offset-click);
+}

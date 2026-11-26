@@ -1,5 +1,96 @@
 @use "shared/controls";
+@use "shared/list";
+@use "shared/tree";
 @use "shared/window";
+
+// Channel list is not virtualized, but also I don't want to rewrite this when
+// it becomes so, fuck this
+
+[class*="ChannelItem.module__channelItem_"] {
+	align-items: center;
+	color: var(--color-window-text);
+	// Match 32px on 100% zoom
+	min-block-size: 2rem;
+	overflow: visible;
+	padding: 0.375rem 0.5rem;
+}
+
+[class*="ChannelItem.module__channelItemCategory_"] {
+	@include tree.item($expanded-sel: "&[aria-expanded='true']", $child-sel: "&");
+
+	flex-direction: row-reverse;
+
+	[class*="ChannelItem.module__categoryName_"] {
+		font: var(--text-ui);
+	}
+
+	[class*="ChannelItem.module__channelItemActions_"] {
+		@include tree.item-icon;
+
+		&::before {
+			// TODO(mixins):
+			box-sizing: content-box;
+		}
+
+		&::after {
+			block-size: calc(2rem + 1px);
+			inset-block-start: -28px;
+		}
+
+		svg {
+			display: none;
+		}
+	}
+}
+
+[class*="ChannelItem.module__channelItemIcon_"] {
+	block-size: var(--icon-size);
+	color: inherit;
+	inline-size: var(--icon-size);
+}
+
+[class*="ChannelItem.module__channelItemMutedState_"] {
+	color: var(--color-gray-text);
+	opacity: 1;
+}
+
+[class*="ChannelItem.module__channelItemRegular_"] {
+	margin-inline-start: 1rem;
+
+	&[aria-current="page"] {
+		@include list.item-name-selected;
+
+		margin-inline-start: calc(1rem - 1px);
+	}
+
+	&::before {
+		block-size: calc(2rem + 1px);
+		border-block-end: 1px dotted var(--color-gray-text);
+		border-inline-start: 1px dotted var(--color-gray-text);
+		content: "";
+		inline-size: 0.5rem;
+		inset-block-start: calc(-1rem + 1px);
+		// 4px = tree item x padding, 9px = tree item icon size
+		inset-inline-start: calc(-1rem + 4px + round(down, calc(9px / 2), 4px));
+		position: absolute;
+	}
+
+	[class*="ChannelItem.module__channelItemActions_"] {
+		display: none;
+	}
+
+	[class*="ChannelItem.module__channelName_"] {
+		font: var(--text-ui);
+	}
+}
+
+[class*="ChannelListContent.module__bannerSpacer_"] {
+	block-size: 0;
+}
+
+[class*="ChannelListContent.module__bottomSpacer_"] {
+	display: none;
+}
 
 [class*="ChannelListContent.module__channelListScroller_"] {
 	background: none;
@@ -57,7 +148,10 @@
 		--block-size: calc(var(--layout-header-height) - var(--window-gap));
 	}
 
-	[role="group"]:not([style="overflow: hidden auto;"]) {
+	[role="group"]:not(
+		[style="overflow: hidden auto;"],
+		[data-flx="threads.sidebar-thread-list.thread-list"]
+	) {
 		@include window.content-container;
 	}
 }
@@ -89,7 +183,7 @@
 	}
 
 	&[data-flx*="favorites-button"] {
-		--button-img: icon("favorites");
+		--button-img: icon("chat-room-list");
 
 		margin-inline-start: var(--icon-button-width);
 	}
@@ -222,8 +316,6 @@
 	[class*="BaseAvatar.module__container_"] {
 		block-size: var(--icon-size);
 		inline-size: var(--icon-size);
-		inset-block-start: var(--offset-click);
-		inset-inline-start: var(--offset-click);
 
 		[class*="BaseAvatar.module__statusContainer_"] {
 			--avatar-status-width: 0.375rem;

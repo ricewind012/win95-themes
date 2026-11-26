@@ -1,4 +1,10 @@
 :root {
+	--alert-note-color: light-dark(darkblue, blue);
+	--alert-tip-color: light-dark(darkgreen, green);
+	--alert-important-color: light-dark(#404, purple);
+	--alert-warning-color: light-dark(#880, yellow);
+	--alert-caution-color: light-dark(darkred, red);
+
 	--background-primary: var(--color-window);
 	--background-secondary: var(--color-button-face);
 	--background-secondary-alt: var(--color-button-face);
@@ -8,6 +14,10 @@
 	--status-idle: light-dark(#880, yellow);
 	--status-dnd: light-dark(darkred, red);
 	--status-offline: var(--color-gray-text);
+
+	--surface-interactive-hover-bg: transparent;
+	--surface-interactive-selected-bg: var(--color-highlight);
+	--surface-interactive-selected-color: var(--color-highlight-text);
 
 	--text-chat: var(--color-button-text);
 	--text-chat-muted: var(--color-gray-text);

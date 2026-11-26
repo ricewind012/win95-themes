@@ -5,6 +5,10 @@
 @use "global/scrollbar" as global-scrollbar;
 @use "global/variables" as global-variables;
 
+@use "common/actiontoolbar" as common-actiontoolbar;
+@use "common/avatar" as common-avatar;
+@use "common/markup" as common-markup;
+
 @use "popups/autocomplete" as popups-autocomplete;
 @use "popups/combobox" as popups-combobox;
 @use "popups/contextmenu" as popups-contextmenu;
@@ -13,6 +17,7 @@
 @use "popups/userprofile" as popups-userprofile;
 
 @use "dialogs/base" as dialogs-base;
+@use "dialogs/media" as dialogs-media;
 @use "dialogs/settings" as dialogs-settings;
 
 @use "controls/button" as controls-button;

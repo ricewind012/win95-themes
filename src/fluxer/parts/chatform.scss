@@ -3,17 +3,32 @@
 
 // Barrier = announcements
 
-%-placeholder {
+%-editor {
 	inset-block-start: 2px;
 	inset-inline-start: 2px;
 }
 
+%-separator {
+	&::after {
+		@include controls.separator-horizontal;
+
+		content: "";
+		display: block;
+		inline-size: 100%;
+		margin-block: var(--toolbar-container-spacing);
+	}
+}
+
 [class*="BarrierComponents.module__message_"] {
-	@extend %-placeholder;
+	@extend %-editor;
 
 	color: inherit;
 	font: inherit;
 	position: relative;
+}
+
+[class*="ChannelAttachmentArea.module__scroller_"] {
+	margin: 0;
 }
 
 [class*="ChannelReplyBar.module__closeButton_"] {
@@ -89,6 +104,8 @@
 [class*="InputWrapper.module__composerActionStack_"] {
 	--composer-box-padding-inline: 0px;
 
+	@extend %-separator;
+
 	background: none;
 	border: none;
 }
@@ -98,10 +115,64 @@
 }
 
 [class*="InputWrapper.module__separator_"] {
-	@include controls.separator-horizontal;
+	display: none;
+}
 
-	display: block;
-	margin-block: var(--toolbar-container-spacing);
+[class*="InputWrapper.module__stackSection_"] {
+	// Used by attachment area
+	& + & {
+		border: none;
+	}
+
+	&:not(:last-child) {
+		@extend %-separator;
+	}
+}
+
+[class*="InputWrapper.module__statusRail_"] {
+	align-items: start;
+	block-size: unset;
+	display: flex;
+	flex-direction: column;
+	gap: 0;
+	position: unset;
+
+	[class*="AvatarStack.module__container_"] {
+		--avatar-size: var(--icon-size);
+	}
+
+	[class*="BaseAvatar.module__container_"] {
+		block-size: var(--icon-size);
+		inline-size: var(--icon-size);
+
+		& > svg {
+			display: initial;
+		}
+	}
+
+	[class*="Message.module__typingAvatarContainer_"] {
+		margin: 0;
+	}
+
+	[class*="Message.module__typingIndicator_"] {
+		display: none;
+	}
+
+	[class*="Message.module__typingText_"] {
+		color: var(--color-window-text);
+		font: var(--text-ui);
+		margin-inline-start: var(--text-spacing);
+	}
+}
+
+[class*="InputWrapper.module__statusRailLeft_"] {
+	align-items: start;
+	flex-direction: column;
+	inline-size: 100%;
+
+	&:not(:has(> :only-child)) {
+		@extend %-separator;
+	}
 }
 
 [class*="TextareaButton.module__button_"] {
@@ -189,7 +260,8 @@
 		display: none;
 	}
 
+	[role="textbox"],
 	[class*="LexicalMessageComposer.module__placeholder_"] {
-		@extend %-placeholder;
+		@extend %-editor;
 	}
 }

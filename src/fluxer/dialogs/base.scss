@@ -54,8 +54,7 @@
 	}
 }
 
-// Begin from the start, as it affects MediaModal
-[class^="Modal.module__modalBackdrop_"] {
+[class*="Modal.module__modalBackdrop_"] {
 	display: none;
 }
 

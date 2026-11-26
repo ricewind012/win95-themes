@@ -174,7 +174,23 @@
 [class*="UserSettingsModal.module__userProfile_"] {
 	@include controls.button;
 
+	&:active,
 	&[class*="UserSettingsModal.module__userProfileSelected_"] {
+		--offset-click: 1px;
+
 		@include controls.button-active;
 	}
+}
+
+[class*="UserSettingsModal.module__userProfileHint_"] {
+	color: inherit;
+	font: var(--text-ui);
+}
+
+[class*="UserSettingsModal.module__userProfileHintIcon_"] {
+	display: none;
+}
+
+[class*="UserSettingsModal.module__userProfileName_"] {
+	font: var(--text-ui);
 }
