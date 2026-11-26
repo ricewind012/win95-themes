@@ -1,5 +1,11 @@
 @use "shared/controls";
 
+// WHY
+[data-flx="ui.tooltip.tooltip.tooltip"] {
+	opacity: 1;
+	transform: none;
+}
+
 [class*="Tooltip.module__tooltip_"] {
 	--tooltip-border-width: 1px;
 	--tooltip-active-border-color: var(--color-tooltip-text);
@@ -7,10 +13,15 @@
 	--tooltip-shadow: none;
 
 	@include controls.tooltip;
+
+	font: var(--text-ui);
 }
 
 [class*="Tooltip.module__tooltipContent_"] {
+	// .tooltipContentLarge, fucking why?
+	font: var(--text-ui);
 	padding: 0;
+	text-align: start;
 }
 
 [class*="Tooltip.module__tooltipPointer_"] {

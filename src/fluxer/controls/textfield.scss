@@ -1,5 +1,4 @@
 @use "shared/controls";
-@use "shared/listbox";
 
 .FormInput.module__input___Sm14SW,
 [class*="FormInput.module__textarea_"] {
@@ -27,30 +26,6 @@
 	);
 
 	min-block-size: unset;
-}
-
-// Fucking hello move these 3 to popups
-[class*="FormCombobox.module__item_"] {
-	@include listbox.item($selected-sel: "&[aria-selected='true']");
-
-	min-block-size: unset;
-	font: var(--text-ui);
-}
-
-[class*="FormCombobox.module__list_"] {
-	gap: 0;
-	padding: 0;
-
-	// ???
-	&:not([data-empty])::after {
-		display: none;
-	}
-}
-
-[class*="FormCombobox.module__popup_"] {
-	@include listbox.container;
-
-	box-shadow: none;
 }
 
 [class*="FormCombobox.module__label_"] {

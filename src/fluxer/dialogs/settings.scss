@@ -90,10 +90,13 @@
 }
 
 [class*="SettingsModalLayout.module__sidebarNav_"] {
+	// Put the scrollbar on the opposite side
+	direction: rtl;
 	margin: 0;
 }
 
 [class*="SettingsModalLayout.module__sidebarNavContent_"] {
+	direction: ltr;
 	padding: 0;
 	padding-inline-start: 8px;
 }

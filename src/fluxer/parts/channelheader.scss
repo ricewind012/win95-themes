@@ -53,9 +53,16 @@
 
 [class*="ChannelHeader.module__topicButton_"] {
 	color: var(--color-button-text);
+	display: -webkit-box;
 	font: var(--text-ui);
+	line-clamp: 2;
+	line-height: calc(var(--combobox-button-height) / 2);
 	margin-inline-start: 4px;
 	mask: none;
+	max-block-size: 2lh;
+	padding: 0;
+	-webkit-line-clamp: 2;
+	-webkit-box-orient: vertical;
 }
 
 [class*="MessageSearchBar.module__clearButton_"] {

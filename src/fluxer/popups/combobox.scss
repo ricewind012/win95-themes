@@ -1,0 +1,24 @@
+@use "shared/listbox";
+
+[class*="FormCombobox.module__item_"] {
+	@include listbox.item($selected-sel: "&[aria-selected='true']");
+
+	min-block-size: 1rem;
+	font: var(--text-ui);
+}
+
+[class*="FormCombobox.module__list_"] {
+	gap: 0;
+	padding: 0;
+
+	// ???
+	&:not([data-empty])::after {
+		display: none;
+	}
+}
+
+[class*="FormCombobox.module__popup_"] {
+	@include listbox.container;
+
+	box-shadow: none;
+}

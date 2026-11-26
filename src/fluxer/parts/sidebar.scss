@@ -51,11 +51,12 @@
 	padding-inline: var(--toolbar-spacing);
 }
 
-[class*="GuildHeader.module__headerWrapper_"] {
-	--block-size: calc(var(--layout-header-height) - var(--window-gap));
-}
-
 [class*="GuildNavbar.module__guildNavbarContainer_"] {
+	// header container
+	& > :first-child {
+		--block-size: calc(var(--layout-header-height) - var(--window-gap));
+	}
+
 	[role="group"]:not([style="overflow: hidden auto;"]) {
 		@include window.content-container;
 	}

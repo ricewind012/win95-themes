@@ -6,8 +6,10 @@
 @use "global/variables" as global-variables;
 
 @use "popups/autocomplete" as popups-autocomplete;
+@use "popups/combobox" as popups-combobox;
 @use "popups/contextmenu" as popups-contextmenu;
 @use "popups/search" as popups-search;
+@use "popups/tooltip" as popups-tooltip;
 @use "popups/userprofile" as popups-userprofile;
 
 @use "dialogs/base" as dialogs-base;
@@ -19,7 +21,6 @@
 @use "controls/segmentedtabs" as controls-segmentedtabs;
 @use "controls/slider" as controls-slider;
 @use "controls/textfield" as controls-textfield;
-@use "controls/tooltip" as controls-tooltip;
 
 @use "parts/app" as parts-app;
 @use "parts/channelheader" as parts-channelheader;
