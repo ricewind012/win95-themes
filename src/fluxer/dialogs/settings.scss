@@ -56,7 +56,7 @@
 	inline-size: calc(100% - var(--dialog-spacing));
 	margin: var(--dialog-spacing);
 	margin-inline-start: 0;
-	padding-inline: 0;
+	padding: 0;
 }
 
 [class*="SettingsModalLayout.module__desktopSidebar_"] {

@@ -1,6 +1,33 @@
 @use "shared/controls";
 @use "shared/window";
 
+[class*="ChannelDivider.module__container_"] {
+	padding: 0;
+}
+
+[class*="ChannelDivider.module__line_"] {
+	background: var(--color-button-shadow);
+	opacity: 1;
+}
+
+[class*="ChannelDivider.module__text_"] {
+	background: none;
+	font: var(--text-ui);
+}
+
+[class*="ChannelDivider.module__unreadBadge_"] {
+	letter-spacing: 0;
+	opacity: 1;
+}
+
+[class*="ChannelDivider.module__unreadContainer_"] {
+	padding: 0;
+}
+
+[class*="ChannelDivider.module__unreadLine_"] {
+	opacity: 0.5;
+}
+
 [class*="ChannelIndexPage.module__channelGrid_"] {
 	grid-template-rows: min-content 1fr;
 }

@@ -7,13 +7,16 @@
 
 @use "common/actiontoolbar" as common-actiontoolbar;
 @use "common/avatar" as common-avatar;
+@use "common/keyboardhint" as common-keyboardhint;
 @use "common/markup" as common-markup;
+@use "common/message" as common-message;
 
 @use "popups/autocomplete" as popups-autocomplete;
 @use "popups/combobox" as popups-combobox;
 @use "popups/contextmenu" as popups-contextmenu;
 @use "popups/search" as popups-search;
 @use "popups/tooltip" as popups-tooltip;
+@use "popups/userareaprofile" as popups-userareaprofile;
 @use "popups/userprofile" as popups-userprofile;
 
 @use "dialogs/base" as dialogs-base;
@@ -29,10 +32,11 @@
 
 @use "parts/app" as parts-app;
 @use "parts/channelheader" as parts-channelheader;
-@use "parts/chat_accessory" as parts-chat-accessory;
 @use "parts/chatform" as parts-chatform;
 @use "parts/chat" as parts-chat;
 @use "parts/memberlist" as parts-memberlist;
 @use "parts/search" as parts-search;
 @use "parts/sidebar" as parts-sidebar;
 @use "parts/window" as parts-window;
+
+@use "parts/chataccessory/reactions" as parts-chataccessory-reactions;

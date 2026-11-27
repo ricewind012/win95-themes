@@ -5,6 +5,11 @@
 	@include controls.icon-button;
 
 	inline-size: unset;
+	padding: 0;
+
+	&:hover {
+		transform: none;
+	}
 }
 
 [class*="ActionToolbar.module__toolbar_"] {

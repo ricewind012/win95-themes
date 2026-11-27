@@ -144,10 +144,6 @@
 	[class*="BaseAvatar.module__container_"] {
 		block-size: var(--icon-size);
 		inline-size: var(--icon-size);
-
-		& > svg {
-			display: initial;
-		}
 	}
 
 	[class*="Message.module__typingAvatarContainer_"] {
@@ -224,6 +220,10 @@
 	&[data-expression-picker-tab="stickers"] {
 		--button-img: icon("file");
 	}
+
+	svg {
+		display: none;
+	}
 }
 
 [class*="TextareaInput.module__contentAreaDense_"] {
@@ -232,7 +232,7 @@
 			"[class*='InputWrapper.module__disabled_'] &, &[class*='BarrierComponents.module__messageArea_']"
 	);
 
-	block-size: var(--combobox-button-height);
+	min-block-size: var(--combobox-button-height);
 }
 
 [class*="TextareaInput.module__divider_"] {
@@ -254,10 +254,6 @@
 	padding: 0;
 
 	&::after {
-		display: none;
-	}
-
-	svg {
 		display: none;
 	}
 

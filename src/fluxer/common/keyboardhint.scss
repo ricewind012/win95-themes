@@ -1,0 +1,24 @@
+[class*="KeybindHint.module__keybindHint_"] {
+	gap: 0;
+}
+
+[class*="KeybindHint.module__key_"] {
+	background: none;
+	block-size: unset;
+	color: inherit;
+	font: var(--text-ui);
+	padding: 0;
+	text-transform: unset;
+
+	&:first-child::before {
+		content: "<";
+	}
+
+	&:last-child::after {
+		content: ">";
+	}
+
+	& + &::before {
+		content: "+";
+	}
+}

@@ -47,6 +47,15 @@
 	block-size: var(--icon-size);
 	color: inherit;
 	inline-size: var(--icon-size);
+
+	// the icon looks atrocious at 16px
+	&[data-flx="channel.channel-utils.get-icon.text-channel-icon"] {
+		$-size: calc(1.25rem - 1px);
+
+		block-size: #{$-size};
+		inline-size: #{$-size};
+		margin-inline: calc((#{$-size} - var(--icon-size)) / -2);
+	}
 }
 
 [class*="ChannelItem.module__channelItemMutedState_"] {
@@ -69,7 +78,7 @@
 		border-inline-start: 1px dotted var(--color-gray-text);
 		content: "";
 		inline-size: 0.5rem;
-		inset-block-start: calc(-1rem + 1px);
+		inset-block-start: calc(-1rem - 1px);
 		// 4px = tree item x padding, 9px = tree item icon size
 		inset-inline-start: calc(-1rem + 4px + round(down, calc(9px / 2), 4px));
 		position: absolute;

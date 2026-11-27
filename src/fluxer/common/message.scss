@@ -1,0 +1,25 @@
+[class*="Message.module__messageText_"] {
+	font: var(--text-ui);
+	padding: 0;
+}
+
+[class*="Message.module__messageAuthorInfo_"] {
+	margin-block-end: 0.125rem;
+}
+
+[class*="Message.module__messageAvatar_"] {
+	// hardcoded
+	inline-size: var(--message-avatar-size);
+	block-size: var(--message-avatar-size);
+}
+
+[class*="Message.module__messageTimestamp_"] {
+	color: var(--color-gray-text);
+	font: var(--text-ui);
+	font-weight: bold;
+}
+
+[class*="Message.module__messageUsername_"] {
+	font: var(--text-ui);
+	font-weight: bold;
+}

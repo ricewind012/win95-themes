@@ -10,6 +10,9 @@
 	--background-secondary-alt: var(--color-button-face);
 	--background-secondary-lighter: var(--color-button-face);
 
+	--message-avatar-size: 2rem;
+	--message-line-height: 1rem;
+
 	--status-online: light-dark(darkgreen, green);
 	--status-idle: light-dark(#880, yellow);
 	--status-dnd: light-dark(darkred, red);
@@ -19,19 +22,22 @@
 	--surface-interactive-selected-bg: var(--color-highlight);
 	--surface-interactive-selected-color: var(--color-highlight-text);
 
-	--text-chat: var(--color-button-text);
+	--text-chat: var(--color-window-text);
 	--text-chat-muted: var(--color-gray-text);
 	--text-link: var(--color-link);
 	--text-primary: var(--color-button-text);
 	--text-primary-muted: var(--color-gray-text);
 	--text-secondary: var(--color-gray-text);
-	--text-tertiary: var(--color-gray-text);
+	--text-tertiary-secondary: var(--color-gray-text);
+	--text-tertiary-muted: var(--color-gray-text);
 
 	// debug colors
+	/*
 	--background-modifier-accent: #f09;
 	--background-modifier-hover: #f09;
 	--background-modifier-selected: #f09;
 	--border-color: #f09;
+	*/
 
 	--guild-icon-size: 2.5rem;
 	--guild-list-divider-line-size: 0px;

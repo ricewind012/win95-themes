@@ -8,6 +8,7 @@ Check these out for the same style!
 
 - [Discord](https://github.com/ricewind012/win95-themes/blob/master/docs/discord.md)
 - [Firefox](https://github.com/ricewind012/win95-themes/blob/master/docs/firefox.md)
+- [Fluxer](https://github.com/ricewind012/win95-themes/blob/master/docs/fluxer.md)
 - [Visual Studio Code](https://github.com/ricewind012/win95-themes/blob/master/docs/vscode.md)
 
 ## Plugin Support
