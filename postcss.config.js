@@ -1,13 +1,13 @@
 import fs from "node:fs";
 import path from "node:path";
 import postcssSassPlugin from "@csstools/postcss-sass";
+import {
+	appendImportantPlugin,
+	selectorReplacementPlugin,
+} from "@web-app-class-maps/postcss-plugins";
 import removeEmpty from "postcss-discard-empty";
 import postcssFunctions from "postcss-functions";
 import postcssSassParser from "postcss-scss";
-import {
-	appendImportantPlugin,
-	selectorReplacerPlugin,
-} from "steam-theming-utils/postcss-plugins";
 
 const unquote = (str) => str.replace(/"/g, "");
 
@@ -51,7 +51,23 @@ export default {
 			includePaths: ["src"],
 			silenceDeprecations: ["legacy-js-api", "mixed-decls", "moz-document"],
 		}),
-		selectorReplacerPlugin(),
+		selectorReplacementPlugin({
+			ignoreExternalRules: (path) => {
+				path = path.slice(path.indexOf("/") + 1);
+				return path.startsWith("shared") || path.startsWith("steam/shared");
+			},
+			ignoreReplacement: (path) => {
+				path = path.slice(path.indexOf("/") + 1);
+				return (
+					path.startsWith("shared") ||
+					(path.startsWith("steam/client/desktop/millennium") &&
+						!path.includes("quickaccesscontrols")) ||
+					path.startsWith("steam/client/popups/contextmenus/friendsui") ||
+					path.startsWith("steam/friends") ||
+					path.startsWith("steam/shared")
+				);
+			},
+		}),
 		appendImportantPlugin({
 			filter: [/^(:where\()?:root/],
 		}),

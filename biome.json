@@ -8,6 +8,6 @@
 		}
 	},
 	"files": {
-		"includes": ["**", "!package.json", "!skin.json"]
+		"includes": ["**", "!dist", "!package.json", "!skin.json"]
 	}
 }
