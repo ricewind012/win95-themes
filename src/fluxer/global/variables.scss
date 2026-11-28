@@ -1,0 +1,57 @@
+:root {
+	--alert-note-color: light-dark(blue, lightblue);
+	--alert-tip-color: light-dark(darkgreen, green);
+	--alert-important-color: light-dark(#404, purple);
+	--alert-warning-color: light-dark(#880, yellow);
+	--alert-caution-color: light-dark(darkred, red);
+
+	--background-primary: var(--color-window);
+	--background-secondary: var(--color-button-face);
+	--background-secondary-alt: var(--color-button-face);
+	--background-secondary-lighter: var(--color-button-face);
+
+	--shadow-sm: none;
+	--shadow-md: none;
+	--shadow-lg: none;
+	--shadow-xl: none;
+
+	--status-online: light-dark(darkgreen, green);
+	--status-idle: light-dark(#880, yellow);
+	--status-dnd: light-dark(darkred, red);
+	--status-offline: var(--color-gray-text);
+
+	--surface-interactive-hover-bg: transparent;
+	--surface-interactive-selected-bg: var(--color-highlight);
+	--surface-interactive-selected-color: var(--color-highlight-text);
+
+	--text-chat: var(--color-window-text);
+	--text-chat-muted: var(--color-gray-text);
+	--text-link: var(--color-link);
+	--text-primary: var(--color-button-text);
+	--text-primary-muted: var(--color-gray-text);
+	--text-secondary: var(--color-gray-text);
+	--text-tertiary: var(--color-gray-text);
+	--text-tertiary-secondary: var(--color-gray-text);
+	--text-tertiary-muted: var(--color-gray-text);
+
+	// debug colors
+	/*
+	--background-modifier-accent: #f09;
+	--background-modifier-hover: #f09;
+	--background-modifier-selected: #f09;
+	--border-color: #f09;
+	*/
+
+	--channel-header-actions-gap: 0px;
+	--guild-icon-size: 2.5rem;
+	--guild-list-divider-line-size: 0px;
+	--guild-list-item-gap: 0px;
+	--layout-guild-list-width: 5rem;
+	--layout-header-height: calc(
+		var(--toolbar-container-spacing) * 2 + var(--combobox-button-height)
+	);
+	--message-avatar-size: 2rem;
+	--message-line-height: 1rem;
+	--outline-frame-radius-native: 0px;
+	--user-area-divider-color: transparent;
+}

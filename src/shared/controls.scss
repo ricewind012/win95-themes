@@ -242,8 +242,8 @@
 		background-position: var(--button-img-pos, center);
 		background-size: var(--button-img-size, auto);
 		content: "";
-		inset-block: 0 var(--offset-click);
-		inset-inline: 0 var(--offset-click);
+		inset-block: var(--offset-click) 0;
+		inset-inline: var(--offset-click) 0;
 		position: absolute;
 	}
 }

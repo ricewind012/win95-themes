@@ -1,0 +1,36 @@
+@use "shared/controls";
+@use "shared/window";
+
+[class*="ChannelSearchResults.module__container_"] {
+	border: none;
+
+	& > [role="group"] {
+		@include window.content-container;
+	}
+}
+
+[class*="ChannelSearchResults.module__header_"] {
+	block-size: unset;
+	border: none;
+	padding: var(--toolbar-container-spacing);
+}
+
+[class*="ChannelSearchResults.module__headerActions_"] {
+	gap: 0;
+
+	button {
+		@include controls.combobox-icon-button(
+			$active-sel: "&[data-context-menu-open='true']"
+		);
+
+		inline-size: unset;
+
+		&[data-flx*="scope-button"] {
+			--button-img: icon("search");
+		}
+
+		&[data-flx*="sort-button"] {
+			--button-img: icon("list");
+		}
+	}
+}

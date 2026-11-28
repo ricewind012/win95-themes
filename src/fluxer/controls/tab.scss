@@ -1,0 +1,15 @@
+@use "shared/tabs";
+
+// s/*/^ to not match SegmentedTabs
+
+[class^="Tabs.module__container_"] {
+	@include tabs.container;
+
+	border: none;
+}
+
+[class^="Tabs.module__tab_"] {
+	@include tabs.tab($selected-sel: "&[aria-selected='true']");
+
+	font: var(--text-ui);
+}

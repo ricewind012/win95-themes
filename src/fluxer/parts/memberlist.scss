@@ -1,0 +1,11 @@
+@use "shared/window";
+
+[class*="MemberListContainer.module__memberListContainer_"] {
+	@include window.content-container;
+
+	margin-inline-start: var(--border-size);
+}
+
+[class*="MemberListContainer.module__memberListScroller_"] {
+	background: none;
+}

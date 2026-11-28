@@ -1,0 +1,62 @@
+@use "shared/controls";
+@use "shared/window";
+
+[class*="ChannelDivider.module__container_"] {
+	padding: 0;
+}
+
+[class*="ChannelDivider.module__line_"] {
+	background: var(--color-button-shadow);
+	opacity: 1;
+}
+
+[class*="ChannelDivider.module__text_"] {
+	background: none;
+	font: var(--text-ui);
+}
+
+[class*="ChannelDivider.module__unreadBadge_"] {
+	letter-spacing: 0;
+	opacity: 1;
+}
+
+[class*="ChannelDivider.module__unreadContainer_"] {
+	padding: 0;
+}
+
+[class*="ChannelDivider.module__unreadLine_"] {
+	opacity: 0.5;
+}
+
+[class*="ChannelIndexPage.module__channelGrid_"] {
+	grid-template-rows: min-content 1fr;
+}
+
+[class*="ChannelIndexPage.module__searchPanel_"] {
+	border: none;
+	margin-inline-start: var(--window-gap);
+}
+
+[class*="ChannelMessages.module__bottomFade_"] {
+	display: none;
+}
+
+[class*="ChannelMessages.module__newMessagesBarBanner_"] {
+	block-size: unset;
+	inset-block-start: 0;
+	inset-inline: 0 var(--scrollbar-size);
+	margin: var(--border-size);
+	padding: 0;
+
+	button {
+		@include controls.button;
+	}
+
+	svg {
+		display: none;
+	}
+}
+
+[class*="ChannelMessages.module__scrollerContainer_"] {
+	@include window.content-container;
+}

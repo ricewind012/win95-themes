@@ -1,0 +1,342 @@
+@use "shared/controls";
+@use "shared/list";
+@use "shared/tree";
+@use "shared/window";
+
+// Channel list is not virtualized, but also I don't want to rewrite this when
+// it becomes so, fuck this
+
+[class*="ChannelItem.module__channelItem_"] {
+	align-items: center;
+	color: var(--color-window-text);
+	// Match 32px on 100% zoom
+	min-block-size: 2rem;
+	overflow: visible;
+	padding: 0.375rem 0.5rem;
+}
+
+[class*="ChannelItem.module__channelItemCategory_"] {
+	@include tree.item($expanded-sel: "&[aria-expanded='true']", $child-sel: "&");
+
+	flex-direction: row-reverse;
+
+	[class*="ChannelItem.module__categoryName_"] {
+		font: var(--text-ui);
+	}
+
+	[class*="ChannelItem.module__channelItemActions_"] {
+		@include tree.item-icon;
+
+		&::before {
+			// TODO(mixins):
+			box-sizing: content-box;
+		}
+
+		&::after {
+			block-size: calc(2rem + 4px);
+			inset-block-start: -31px;
+		}
+
+		svg {
+			display: none;
+		}
+	}
+}
+
+[class*="ChannelItem.module__channelItemIcon_"] {
+	block-size: var(--icon-size);
+	color: inherit;
+	inline-size: var(--icon-size);
+
+	// the icon looks atrocious at 16px
+	&[data-flx="channel.channel-utils.get-icon.text-channel-icon"] {
+		$-size: calc(1.25rem - 1px);
+
+		block-size: #{$-size};
+		inline-size: #{$-size};
+		margin-inline: calc((#{$-size} - var(--icon-size)) / -2);
+	}
+}
+
+[class*="ChannelItem.module__channelItemMutedState_"] {
+	color: var(--color-gray-text);
+	opacity: 1;
+}
+
+[class*="ChannelItem.module__channelItemRegular_"] {
+	margin-inline-start: 1rem;
+
+	&[aria-current="page"] {
+		@include list.item-name-selected;
+
+		margin-inline-start: calc(1rem - 1px);
+	}
+
+	&::before {
+		block-size: calc(2rem + 1px);
+		border-block-end: 1px dotted var(--color-gray-text);
+		border-inline-start: 1px dotted var(--color-gray-text);
+		content: "";
+		inline-size: 0.5rem;
+		inset-block-start: calc(-1rem - 1px);
+		// 4px = tree item x padding, 9px = tree item icon size
+		inset-inline-start: calc(-1rem + 4px + round(down, calc(9px / 2), 4px));
+		position: absolute;
+	}
+
+	[class*="ChannelItem.module__channelItemActions_"] {
+		display: none;
+	}
+
+	[class*="ChannelItem.module__channelName_"] {
+		font: var(--text-ui);
+	}
+}
+
+[class*="ChannelListContent.module__bannerSpacer_"] {
+	block-size: 0;
+}
+
+[class*="ChannelListContent.module__bottomSpacer_"] {
+	display: none;
+}
+
+[class*="ChannelListContent.module__channelListScroller_"] {
+	background: none;
+}
+
+[class*="GuildHeader.module__bannerClip_"] {
+	block-size: var(--block-size);
+	opacity: 0.5;
+	transform: none;
+}
+
+[class*="GuildHeader.module__bannerImage_"] {
+	background-position: center;
+	block-size: inherit;
+	transform: none;
+}
+
+[class*="GuildBadge.module__badgeWrapper_"],
+[class*="GuildHeader.module__bannerGradient_"],
+[class*="GuildHeader.module__caretIcon_"],
+[class*="GuildHeader.module__headerGlass_"] {
+	display: none;
+}
+
+[class*="GuildHeader.module__guildName_"] {
+	--button-img: icon("overflow", "mono");
+	--button-img-pos-x: 2px;
+	--button-img-pos-y: 5px;
+	@include controls.combobox-icon-button(
+		$active-sel: "[role='button'][aria-expanded='true'] > &"
+	);
+
+	flex: unset;
+	font-size: 0;
+	min-inline-size: unset;
+}
+
+[class*="GuildHeader.module__headerContainer_"] {
+	background: none;
+	border: none;
+	box-shadow: var(--border-statusbar);
+	block-size: var(--block-size);
+	margin-block-end: var(--window-gap);
+	min-block-size: var(--block-size);
+}
+
+[class*="GuildHeader.module__headerContent_"] {
+	justify-content: end;
+	padding-inline: var(--toolbar-spacing);
+}
+
+[class*="GuildNavbar.module__guildNavbarContainer_"] {
+	// header container
+	& > :first-child {
+		--block-size: calc(var(--layout-header-height) - var(--window-gap));
+	}
+
+	[role="group"]:not(
+		[style="overflow: hidden auto;"],
+		[data-flx="threads.sidebar-thread-list.thread-list"]
+	) {
+		@include window.content-container;
+	}
+}
+
+[class*="GuildsLayout.module__userAreaWrapper_"] {
+	inline-size: unset;
+	inset-inline-start: var(--layout-guild-list-width);
+	padding: 0;
+}
+
+[class*="GuildLayout.module__guildLayoutContent_"] {
+	gap: var(--window-gap);
+}
+
+[class*="GuildsLayout.module__fluxerButton_"] {
+	--pos: calc(
+		var(--main-window-border-spacing) + var(--toolbar-container-spacing)
+	);
+
+	block-size: unset;
+	inline-size: var(--icon-button-width);
+	inset-block-start: calc(var(--pos) + var(--titlebar-pos));
+	inset-inline-start: var(--pos);
+	padding: 0;
+	position: fixed;
+
+	[class*="GuildsLayout.module__guildIndicator_"] {
+		display: none;
+	}
+
+	&[data-flx*="favorites-button"] {
+		--button-img: icon("chat-room-list");
+
+		margin-inline-start: var(--icon-button-width);
+	}
+
+	// lol
+	&[data-flx*="fluxer-button.fluxer-button"] {
+		--button-img: icon("home");
+	}
+}
+
+[class*="GuildsLayout.module__fluxerButtonIcon_"] {
+	@include controls.button;
+	@include controls.icon-button(
+		$selected-sel: "&[class*='GuildsLayout.module__fluxerButtonIconSelected_']"
+	);
+
+	inline-size: unset;
+
+	svg {
+		display: none;
+	}
+}
+
+[class*="GuildsLayout.module__guildIndicator_"] {
+	&:has(> [style$="height: 2.5rem;"]) {
+		block-size: calc(100% + var(--guild-list-item-inset));
+		inline-size: 100%;
+		inset: calc(var(--guild-list-item-inset) * -0.5) 0;
+		z-index: 0;
+
+		[class*="GuildsLayout.module__guildIndicatorBar_"] {
+			background: var(--color-highlight);
+			block-size: 100%;
+			inline-size: 100%;
+		}
+	}
+}
+
+[class*="GuildsLayout.module__guildListItem_"] {
+	padding-inline: 0;
+}
+
+[class*="GuildsLayout.module__guildListScrollContainer_"] {
+	background: none;
+	overflow-y: scroll;
+	padding: 0;
+}
+
+[class*="GuildsLayout.module__guildListScrollerWrapper_"] {
+	--margin-block-start: calc(var(--layout-header-height));
+
+	@include window.content-container;
+
+	block-size: calc(100% - var(--margin-block-start));
+	margin-block-start: var(--margin-block-start);
+}
+
+[class*="GuildsLayout.module__guildsLayoutContainer_"] {
+	--layout-user-area-reserved-height: calc(
+		var(--toolbar-container-spacing) * 2 + var(--combobox-button-height)
+	);
+
+	gap: var(--window-gap);
+}
+
+[class*="SidebarResizeHandle.module__handle_"] {
+	--sidebar-resize-handle-color: transparent;
+
+	inline-size: 7px;
+}
+
+[class*="UserArea.module__controlButton_"] {
+	@include controls.button;
+	@include controls.icon-button;
+
+	inline-size: unset;
+
+	&[data-flx="app.user-area.user-area-inner.control-button.mute"] {
+		--button-img: icon("sound");
+
+		&[class*="UserArea.module__active_"] {
+			--button-img: icon("sound-muted");
+		}
+	}
+
+	&[data-flx="app.user-area.user-area-inner.control-button.deafen"] {
+		--button-img: icon("microphone");
+
+		&[class*="UserArea.module__active_"] {
+			--button-img: icon("microphone-muted");
+		}
+	}
+
+	&[data-flx="app.user-area.user-area-inner.control-button.settings-click"] {
+		--button-img: icon("settings");
+	}
+
+	svg {
+		display: none;
+	}
+}
+
+[class*="UserArea.module__controlsContainer_"] {
+	--icon-button-height: var(--combobox-button-height);
+	--icon-button-width: var(--combobox-button-height);
+
+	gap: 0;
+	padding: 0;
+}
+
+[class*="UserArea.module__userAreaContainer_"] {
+	gap: var(--toolbar-spacing);
+	min-block-size: unset;
+	padding: var(--toolbar-container-spacing);
+}
+
+[class*="UserArea.module__userAreaInnerWrapper_"] {
+	background: var(--color-button-face);
+	box-shadow: none;
+	inline-size: var(--layout-sidebar-width);
+}
+
+[class*="UserArea.module__userInfo_"] {
+	@include controls.combobox-button($active-sel: "&[aria-expanded='true']");
+
+	block-size: var(--combobox-button-height);
+
+	[class*="BaseAvatar.module__container_"] {
+		block-size: var(--icon-size);
+		inline-size: var(--icon-size);
+
+		[class*="BaseAvatar.module__statusContainer_"] {
+			--avatar-status-width: 0.375rem;
+			--avatar-status-height: 0.375rem;
+		}
+	}
+}
+
+[class*="UserArea.module__userName_"] {
+	color: inherit;
+	font: var(--text-ui);
+	text-shadow: inherit;
+}
+
+[class*="UserArea.module__userStatus_"] {
+	display: none;
+}

@@ -11,6 +11,7 @@ Pick a theme to see the manual installation guide, screenshots, etc.
 
 - [Discord](./docs/discord.md)
 - [Firefox](./docs/firefox.md)
+- [Fluxer](./docs/fluxer.md)
 - [Steam](./docs/steam.md)
 - [Visual Studio Code](./docs/vscode.md)
 

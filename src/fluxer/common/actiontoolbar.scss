@@ -1,0 +1,21 @@
+@use "shared/controls";
+
+[class*="ActionToolbar.module__item_"] {
+	@include controls.button;
+	@include controls.icon-button;
+
+	inline-size: unset;
+	padding: 0;
+
+	&:hover {
+		transform: none;
+	}
+}
+
+[class*="ActionToolbar.module__toolbar_"] {
+	background: none;
+	border: none;
+	box-shadow: none;
+	gap: 0;
+	padding: 0;
+}

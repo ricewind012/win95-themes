@@ -1,0 +1,69 @@
+@use "shared/controls";
+@use "shared/window";
+
+[class*="Modal.module__content_"] {
+	padding: var(--dialog-spacing);
+}
+
+[class*="Modal.module__contentLayout_"] {
+	padding: 0;
+}
+
+[class*="Modal.module__description_"] {
+	all: unset;
+}
+
+[class*="Modal.module__footer_"] {
+	background: none;
+	gap: var(--dialog-button-spacing);
+	padding: var(--dialog-spacing);
+}
+
+[class*="Modal.module__header_"] {
+	padding: var(--dialog-spacing);
+	padding-block-end: 0;
+}
+
+[class*="Modal.module__headerInner_"] {
+	// Put it here instead, since .header may contain other children other than
+	// this one, see "add favorite channel" modal
+	@include window.titlebar($focused-sel: "&");
+
+	inline-size: calc(100% + var(--dialog-spacing) * 2);
+	margin: calc(var(--dialog-spacing) * -1);
+	margin-block-end: 0;
+
+	button {
+		@include controls.button;
+		@include window.titlebar-button;
+		@include window.titlebar-button-close;
+
+		inline-size: unset;
+		opacity: 1;
+	}
+
+	h3 {
+		color: inherit;
+		font: var(--text-ui);
+
+		@include window.titlebar-name;
+	}
+
+	svg {
+		display: none;
+	}
+}
+
+[class*="Modal.module__modalBackdrop_"] {
+	display: none;
+}
+
+[class*="Modal.module__root_"] {
+	@include window.container($child: true);
+
+	border: none;
+	min-block-size: unset;
+	// Animation
+	opacity: 1;
+	transform: none;
+}

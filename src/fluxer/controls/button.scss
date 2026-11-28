@@ -1,0 +1,26 @@
+@use "shared/controls";
+
+:where([class^="Button.module__button_"]) {
+	@include controls.button($disabled-sel: "&:disabled, &[data-disabled]");
+
+	block-size: unset;
+	inline-size: unset;
+	min-block-size: unset;
+
+	&:where([class*="Button.module__square_"]) {
+		@include controls.icon-button;
+
+		& > div {
+			display: none;
+		}
+	}
+
+	&:disabled,
+	&[data-disabled] {
+		opacity: 1;
+	}
+
+	svg {
+		display: none;
+	}
+}

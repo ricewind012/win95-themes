@@ -1,0 +1,44 @@
+@use "shared/listbox";
+
+[class*="Autocomplete.module__containerAttached_"] {
+	@include listbox.container;
+
+	box-shadow: none;
+}
+
+[class*="Autocomplete.module__sectionHeading_"] {
+	display: none;
+}
+
+[class*="Autocomplete.module__scroller_"] {
+	padding: 0;
+}
+
+[class*="AutocompleteItem.module__button_"] {
+	@include listbox.item($selected-sel: "&[aria-selected='true']");
+}
+
+[class*="AutocompleteItem.module__container_"] {
+	background: none;
+	padding: 0;
+}
+
+[class*="AutocompleteItem.module__content_"] {
+	color: inherit;
+}
+
+[class*="AutocompleteItem.module__description_"] {
+	font: var(--text-ui);
+}
+
+[class*="AutocompleteItem.module__name_"] {
+	color: inherit;
+	font: var(--text-ui);
+	font-weight: bold;
+}
+
+[class*="AutocompleteMention.module__divider_"] {
+	background: var(--color-window-text);
+	block-size: 1px;
+	margin: 0;
+}

@@ -1,0 +1,27 @@
+[class*="Markup.module__alert_"] {
+	background: rgb(from currentColor r g b / 0.1);
+
+	&::before {
+		border-radius: 0;
+	}
+}
+
+[class*="Markup.module__alertIcon_"] {
+	block-size: var(--icon-size);
+	inline-size: var(--icon-size);
+	margin-inline-end: var(--text-spacing);
+}
+
+[class*="Markup.module__alertTitle_"] {
+	font: var(--text-ui);
+	font-weight: bold;
+}
+
+[class*="Markup.module__markup_"] {
+	line-height: inherit;
+
+	// bruh
+	&[class*="Markup.module__bio_"] {
+		font: var(--text-ui);
+	}
+}

@@ -1,0 +1,101 @@
+@use "shared/controls";
+
+.FormInput.module__input___Sm14SW,
+[class*="FormInput.module__textarea_"] {
+	@include controls.text-field;
+
+	&:where(.FormInput.module__minHeight___Sm14SW) {
+		min-block-size: unset;
+	}
+}
+
+// TODO: action buttonS ?
+[class*="FormCombobox.module__actionButtons_"] {
+	display: none;
+}
+
+[class*="FormCombobox.module__input_"] {
+	color: inherit;
+	font: var(--text-ui);
+	padding: 0;
+}
+
+[class*="FormCombobox.module__inputGroup_"] {
+	@include controls.combobox(
+		$disabled-sel: ".FormCombobox.module__inputGroupDisabled___VXlraj"
+	);
+
+	min-block-size: unset;
+}
+
+[class*="FormCombobox.module__label_"] {
+	color: inherit;
+	font: var(--text-ui);
+}
+
+// lol why?
+[class*="FormCombobox.module__valueOverlay_"] {
+	display: none;
+}
+
+[class*="FormInput.module__fieldset"] {
+	gap: var(--text-spacing);
+}
+
+// TODO: i can't even look at the code to see when it's disabled holy shit
+[class*="FormInput.module__input_"],
+[class*="FormInput.module__textareaWrapper_"] {
+	@include controls.text-field;
+
+	block-size: unset;
+	min-block-size: unset;
+}
+
+[class*="FormInput.module__label_"] {
+	all: unset;
+}
+
+[class*="FormSwitch.module__container_"] {
+	align-items: start;
+	flex-direction: row-reverse;
+	gap: var(--label-spacing);
+	min-block-size: unset;
+	padding: 0;
+}
+
+[class*="FormSwitch.module__description_"] {
+	font: var(--text-ui);
+}
+
+[class*="FormSwitch.module__label_"] {
+	all: unset;
+}
+
+[class*="FormSwitch.module__labelContainer_"] {
+	gap: var(--text-spacing);
+}
+
+[class*="FormSwitch.module__switchRoot_"] {
+	@include controls.checkbox(
+		$checked-sel: "&[aria-checked='true']",
+		$disabled-sel: "&:disabled"
+	);
+
+	&:disabled {
+		opacity: 1;
+	}
+}
+
+[class*="FormSwitch.module__switchThumb_"] {
+	display: none;
+}
+
+[class*="LexicalSearchInput.module__editable_"] {
+	min-block-size: unset;
+	font: var(--text-ui);
+}
+
+[class*="LexicalSearchInput.module__placeholder_"] {
+	font: var(--text-ui);
+	inset-inline: calc(var(--border-size) + var(--input-spacing));
+}

@@ -1,0 +1,13 @@
+[class*="MediaModal.module__modalContentInner_"] {
+	--media-hud-surface-bg: var(--color-button-face);
+	--media-hud-surface-border: #f09;
+	--media-hud-color: var(--color-button-text);
+	--media-hud-color-muted: var(--color-gray-text);
+	--media-hud-button-bg-hover: black;
+}
+
+[class*="MediaModal.module__modalOverlay_"] {
+	background: var(--color-button-face);
+	inset-block-end: var(--main-window-border-spacing);
+	inset-inline: var(--main-window-border-spacing);
+}
