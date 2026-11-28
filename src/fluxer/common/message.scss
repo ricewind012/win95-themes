@@ -1,5 +1,6 @@
 [class*="Message.module__messageText_"] {
 	font: var(--text-ui);
+	line-height: var(--message-line-height);
 	padding: 0;
 }
 
@@ -22,4 +23,14 @@
 [class*="Message.module__messageUsername_"] {
 	font: var(--text-ui);
 	font-weight: bold;
+}
+
+[class*="Message.module__repliedMessage_"] {
+	--message-reply-font-size: var(--text-ui-size);
+	--message-reply-spine-width: 0.0625rem;
+
+	&::before {
+		border-radius: 0;
+		border-style: dotted;
+	}
 }

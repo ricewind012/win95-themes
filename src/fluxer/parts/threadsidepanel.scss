@@ -1,0 +1,23 @@
+@use "shared/controls";
+
+[class*="ThreadSidePanel.module__header_"] {
+	block-size: unset;
+	border: none;
+	min-block-size: unset;
+	padding: var(--toolbar-container-spacing);
+	position: relative;
+
+	&::before {
+		@include controls.separator-vertical;
+
+		block-size: calc(100% - var(--toolbar-container-spacing) * 2);
+		content: "";
+		inset-inline-start: calc(var(--window-gap) / -2);
+		margin: 0;
+		position: absolute;
+	}
+}
+
+[class*="ThreadSidePanel.module__panel_"] {
+	border-inline-start: var(--window-gap) solid transparent;
+}

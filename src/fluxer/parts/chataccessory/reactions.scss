@@ -13,7 +13,7 @@
 }
 
 [class*="MessageReactions.module__reactionButton_"] {
-	@include controls.button;
+	@include controls.button($disabled-sel: "&[aria-disabled='true']");
 
 	min-inline-size: unset;
 
@@ -24,6 +24,10 @@
 
 [class*="MessageReactions.module__reactionContainer_"] {
 	margin: 0;
+
+	&[class*="MessageReactions.module__reactionContainerDisabled_"] {
+		opacity: 1;
+	}
 }
 
 [class*="MessageReactions.module__reactionInner_"] {

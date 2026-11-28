@@ -137,6 +137,10 @@
 	gap: 0;
 	position: unset;
 
+	[class*="AvatarStack.module__avatarButton_"] {
+		border-radius: 50%;
+	}
+
 	[class*="AvatarStack.module__container_"] {
 		--avatar-size: var(--icon-size);
 	}

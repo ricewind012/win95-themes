@@ -1,0 +1,14 @@
+[class*="RoleManagement.module__roleBadge_"] {
+	background: none;
+	block-size: unset;
+	border: none;
+	box-shadow: var(--border-statusbar);
+}
+
+[class*="RoleManagement.module__roleListContainer_"] {
+	gap: var(--text-spacing);
+}
+
+[class*="RoleManagement.module__roleName_"] {
+	font: var(--text-ui);
+}

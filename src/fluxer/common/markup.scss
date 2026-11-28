@@ -1,9 +1,5 @@
 [class*="Markup.module__alert_"] {
-	background: linear-gradient(
-		90deg,
-		transparent,
-		rgb(from currentColor r g b / 0.1)
-	);
+	background: rgb(from currentColor r g b / 0.1);
 
 	&::before {
 		border-radius: 0;
@@ -23,4 +19,9 @@
 
 [class*="Markup.module__markup_"] {
 	line-height: inherit;
+
+	// bruh
+	&[class*="Markup.module__bio_"] {
+		font: var(--text-ui);
+	}
 }

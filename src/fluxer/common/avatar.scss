@@ -2,3 +2,8 @@
 	inset-block-start: var(--offset-click);
 	inset-inline-start: var(--offset-click);
 }
+
+:where([class*="BaseAvatar.module__statusContainer_"]),
+:where([class*="BaseAvatar.module__typingDot_"]) {
+	border-radius: var(--avatar-status-radius);
+}

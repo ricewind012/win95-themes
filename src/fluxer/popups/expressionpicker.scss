@@ -1,0 +1,11 @@
+@use "shared/window";
+
+[class*="ExpressionPickerPopout.module__container_"] {
+	@include window.container($child: true);
+
+	border: none;
+}
+
+[class*="ExpressionPickerPopout.module__content_"] {
+	@include window.content-container;
+}

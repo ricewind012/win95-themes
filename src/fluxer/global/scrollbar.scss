@@ -1,10 +1,13 @@
-// Fluxer author is high and decided to make his own scrollbars, this reverts it
+// Fluxer author is high and decided to make his own scrollbars, the scrollbar-*
+// props revert it
 
 body {
 	scrollbar-color: initial;
 }
 
 [class*="Scroller.module__scroller_"] {
+	// Allows overflowing
+	clip-path: none;
 	scrollbar-color: initial;
 	scrollbar-width: initial;
 }

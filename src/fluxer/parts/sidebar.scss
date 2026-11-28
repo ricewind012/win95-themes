@@ -33,8 +33,8 @@
 		}
 
 		&::after {
-			block-size: calc(2rem + 1px);
-			inset-block-start: -28px;
+			block-size: calc(2rem + 4px);
+			inset-block-start: -31px;
 		}
 
 		svg {
@@ -237,8 +237,6 @@
 
 [class*="GuildsLayout.module__guildListScrollContainer_"] {
 	background: none;
-	// Allows overflowing for top buttons
-	clip-path: none;
 	overflow-y: scroll;
 	padding: 0;
 }

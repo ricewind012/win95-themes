@@ -1,9 +1,42 @@
-[class*="PopoverPopout.module__popout_"] {
-	box-shadow: none;
-	opacity: 1;
-	transform: none;
-}
+@use "shared/controls";
+@use "shared/window";
 
 [class*="ProfileCardBanner.module__avatarButton_"] {
+	background: var(--color-button-face);
+	border-color: var(--color-button-face);
 	border-radius: 9001rem;
+}
+
+[class*="ProfileCardContent.module__contentSection_"] {
+	gap: 0;
+
+	// ....title
+	& > * [data-flx$="title"] {
+		font: var(--text-ui);
+		font-weight: bold;
+	}
+
+	// and section xddd
+	& > ::after {
+		@include controls.separator-horizontal;
+
+		content: "";
+		display: block;
+	}
+}
+
+[class*="ProfileCardFooter.module__footerSection_"] {
+	padding: 0 1rem;
+}
+
+[class*="ProfileCardLayout.module__profileCard_"] {
+	@include window.container($child: true);
+
+	border: none;
+	padding-block-end: 0.75rem;
+}
+
+// this has nothing to do here, save some space
+[class*="UserProfileShared.module__connectionsCompactWrapper_"] {
+	display: none;
 }

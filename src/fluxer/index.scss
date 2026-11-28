@@ -7,13 +7,17 @@
 
 @use "common/actiontoolbar" as common-actiontoolbar;
 @use "common/avatar" as common-avatar;
-@use "common/keyboardhint" as common-keyboardhint;
+@use "common/channeloriginalicon" as common-channeloriginalicon;
+@use "common/keybindhint" as common-keybindhint;
 @use "common/markup" as common-markup;
 @use "common/message" as common-message;
+@use "common/userprofile" as common-userprofile;
 
 @use "popups/autocomplete" as popups-autocomplete;
 @use "popups/combobox" as popups-combobox;
 @use "popups/contextmenu" as popups-contextmenu;
+@use "popups/expressionpicker" as popups-expressionpicker;
+@use "popups/popover" as popups-popover;
 @use "popups/search" as popups-search;
 @use "popups/tooltip" as popups-tooltip;
 @use "popups/userareaprofile" as popups-userareaprofile;
@@ -21,13 +25,16 @@
 
 @use "dialogs/base" as dialogs-base;
 @use "dialogs/media" as dialogs-media;
+@use "dialogs/quickswitcher" as dialogs-quickswitcher;
 @use "dialogs/settings" as dialogs-settings;
+@use "dialogs/userprofile" as dialogs-userprofile;
 
 @use "controls/button" as controls-button;
 @use "controls/checkbox" as controls-checkbox;
 @use "controls/radio" as controls-radio;
 @use "controls/segmentedtabs" as controls-segmentedtabs;
 @use "controls/slider" as controls-slider;
+@use "controls/tab" as controls-tab;
 @use "controls/textfield" as controls-textfield;
 
 @use "parts/app" as parts-app;
@@ -37,6 +44,7 @@
 @use "parts/memberlist" as parts-memberlist;
 @use "parts/search" as parts-search;
 @use "parts/sidebar" as parts-sidebar;
+@use "parts/threadsidepanel" as parts-threadsidepanel;
 @use "parts/window" as parts-window;
 
 @use "parts/chataccessory/reactions" as parts-chataccessory-reactions;

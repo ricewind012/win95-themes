@@ -1,5 +1,5 @@
 :root {
-	--alert-note-color: light-dark(darkblue, blue);
+	--alert-note-color: light-dark(blue, lightblue);
 	--alert-tip-color: light-dark(darkgreen, green);
 	--alert-important-color: light-dark(#404, purple);
 	--alert-warning-color: light-dark(#880, yellow);
@@ -10,8 +10,10 @@
 	--background-secondary-alt: var(--color-button-face);
 	--background-secondary-lighter: var(--color-button-face);
 
-	--message-avatar-size: 2rem;
-	--message-line-height: 1rem;
+	--shadow-sm: none;
+	--shadow-md: none;
+	--shadow-lg: none;
+	--shadow-xl: none;
 
 	--status-online: light-dark(darkgreen, green);
 	--status-idle: light-dark(#880, yellow);
@@ -28,6 +30,7 @@
 	--text-primary: var(--color-button-text);
 	--text-primary-muted: var(--color-gray-text);
 	--text-secondary: var(--color-gray-text);
+	--text-tertiary: var(--color-gray-text);
 	--text-tertiary-secondary: var(--color-gray-text);
 	--text-tertiary-muted: var(--color-gray-text);
 
@@ -39,6 +42,7 @@
 	--border-color: #f09;
 	*/
 
+	--channel-header-actions-gap: 0px;
 	--guild-icon-size: 2.5rem;
 	--guild-list-divider-line-size: 0px;
 	--guild-list-item-gap: 0px;
@@ -46,6 +50,8 @@
 	--layout-header-height: calc(
 		var(--toolbar-container-spacing) * 2 + var(--combobox-button-height)
 	);
+	--message-avatar-size: 2rem;
+	--message-line-height: 1rem;
 	--outline-frame-radius-native: 0px;
 	--user-area-divider-color: transparent;
 }

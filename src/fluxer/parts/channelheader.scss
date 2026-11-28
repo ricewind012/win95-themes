@@ -18,10 +18,6 @@
 	}
 }
 
-[class*="ChannelHeader.module__headerRightSection_"] {
-	gap: 0;
-}
-
 [class*="ChannelHeader.module__iconButton_"] {
 	block-size: unset;
 	inline-size: unset;
@@ -34,7 +30,32 @@
 		order: -1;
 	}
 
+	&[data-flx="threads.thread-side-panel.panel-header.channel-header-icon.more"] {
+		--button-img: icon("overflow", "mono");
+		--button-img-pos-x: 4px;
+		--button-img-pos-y: 7px;
+		@include controls.combobox-icon-button(
+			$active-sel: "&[data-context-menu-open='true']"
+		);
+
+		order: -1;
+	}
+
 	&:where([aria-pressed]) {
+		@include controls.button;
+		@include controls.icon-button($selected-sel: "&[aria-pressed='true']");
+
+		block-size: var(--combobox-button-height);
+
+		// first of selector
+		&:where(:nth-child(-n + 1 of &)) {
+			margin-inline-start: var(--toolbar-spacing);
+		}
+	}
+
+	// special one
+	&[data-flx="threads.thread-side-panel.panel-header.channel-header-icon.close"] {
+		--button-img: icon("clear");
 		@include controls.button;
 		@include controls.icon-button($selected-sel: "&[aria-pressed='true']");
 

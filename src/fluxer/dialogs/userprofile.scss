@@ -1,0 +1,108 @@
+@use "shared/controls";
+@use "shared/tabs";
+@use "shared/window";
+
+[class*="UserProfileModal.module__actionButtons_"] {
+	gap: 0;
+
+	[data-flx$="send-friend-request"] {
+		--button-img: icon("plus", "mono");
+	}
+
+	[data-flx*="menu"] {
+		--button-img: icon("overflow", "mono");
+		--button-img-pos-x: 4px;
+		--button-img-pos-y: 6px;
+		@include controls.combobox-icon-button(
+			$active-sel: "&[data-context-menu-open='true']"
+		);
+	}
+}
+
+[class*="UserProfileModal.module__actionButtonsContainer_"] {
+	block-size: unset;
+	min-block-size: unset;
+}
+
+[class*="UserProfileModal.module__avatarContainer_"] {
+	border-color: var(--color-button-face);
+	border-radius: 9001rem;
+}
+
+[class*="UserProfileModal.module__contentContainer_"] {
+	gap: 0;
+	margin: var(--dialog-spacing);
+}
+
+[class*="UserProfileModal.module__modalContainer_"] {
+	background: none;
+	border: none;
+}
+
+[class*="UserProfileModal.module__modalRoot_"] {
+	// hell yeah dude
+	[class*="Modal.module__screenReaderLabel_"] {
+		all: unset;
+
+		@include window.titlebar($focused-sel: "&");
+		@include window.titlebar-name;
+	}
+}
+
+[class*="UserProfileModal.module__noteTextareaBase_"] {
+	@include controls.text-field;
+}
+
+[class*="UserProfileModal.module__profileContent_"] {
+	padding: 8px;
+}
+
+[class*="UserProfileModal.module__profileContentWrapper_"] {
+	@include tabs.content($compact: true);
+
+	& > [role="group"] {
+		@include window.content-container;
+	}
+}
+
+[class*="UserProfileModal.module__tabsWrapper_"] {
+	margin: 0;
+}
+
+[class*="UserProfileModal.module__userInfo_"] {
+	margin-block-end: 0.5rem;
+	padding: 0;
+}
+
+[class*="UserProfileShared.module__connectionCard_"] {
+	background: none;
+	border: none;
+	padding-block: 0.25rem;
+	position: relative;
+
+	& > [class] {
+		pointer-events: none;
+		z-index: 1;
+	}
+
+	&:active > [class] {
+		inset-block-start: 1px;
+		inset-inline-start: 1px;
+		position: relative;
+	}
+}
+
+[class*="UserProfileShared.module__connectionCardName_"] {
+	font: var(--text-ui);
+}
+
+[class*="UserProfileShared.module__connectionExternalLink_"] {
+	@include controls.button;
+
+	inset: 0;
+	position: absolute;
+
+	svg {
+		display: none;
+	}
+}
